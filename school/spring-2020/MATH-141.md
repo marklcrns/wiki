@@ -1,0 +1,7 @@
+# [Spring 2020](/index) MATH 141 Pre-calculus
+> Professor: Francisco Marquez<br>
+> Campus: San Diego Mesa College (online)<br>
+> Units: 5<br>
+> Component: Lecture<br>
+> Start: 02/03/2020<br>
+> End: 06/01/2020<br>
