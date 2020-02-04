@@ -1,4 +1,3 @@
-nnoremap <silent> <LocalLeader>vw :<C-u>VimwikiIndex<CR>
 
 let g:vimwiki_list = [
 \   { 'diary_header': 'Diary',
@@ -8,8 +7,14 @@ let g:vimwiki_list = [
 \     'syntax': 'markdown',
 \     'ext': '.md' },
 \   { 'path': '~/Docs/school/',
+\     'path_html': '~/Docs/school/html',
+\     'auto_export': 1,
+\     'automatic_nested_syntaxes':1,
+\     'template_path': '$HOME/Docs/wiki/template/',
+\     'template_ext':'.html',
 \     'syntax': 'markdown',
-\     'ext': '.md' },
+\     'ext': '.md',
+\     'custom_wiki2html': '$HOME/bin/wiki2html.sh' },
 \   { 'path': '~/Docs/references/',
 \     'syntax': 'markdown',
 \     'ext': '.md' },
