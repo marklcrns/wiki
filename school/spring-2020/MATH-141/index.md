@@ -5,3 +5,8 @@
 > Component: Lecture<br>
 > Start: 02/03/2020<br>
 > End: 06/01/2020<br>
+
+## Course Materials
+
+  * [Daabz.com](http://daabz.com/)
+    - My Daabz account [credentials](vfile:./media/daabz_account.txt)
