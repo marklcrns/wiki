@@ -5,7 +5,8 @@
 > Component: Lecture<br>
 > Start: 02/03/2020<br>
 > End: 06/01/2020<br>
-> Office hours:
+
+---
 
 ## Course Requirements
 
@@ -22,3 +23,9 @@
 ### Quizzes
 
   * [Syllabus Quiz Reviewer](quizzes/reviewer/syllabus) -- 4pts
+
+### Project
+
+  * [Project Guideline](file:./media/econ-120_projectGuidlines.pdf)
+  * [UN Survey Chart](file:./media/econ-120_UNSurveryChart.png)
+  * [My Group](group_project/project)
