@@ -14,3 +14,7 @@
     - Any edition of 'Economics A Contemporary Introduction' by
       William A. McEachern, or the one course version of the textbook,
       'Macroeconomics A Contemporary Introduction'.
+
+## Course Materials
+
+  * [Syllabus](file:./media/econ120_syllabus.pdf)
