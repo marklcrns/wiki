@@ -1,3 +1,9 @@
+---
+title: cisc 190
+date: 2020-02-05 08:55
+tags: cisc-190, cisc, java, programming
+---
+
 # [Spring 2020](/index) CISC 190 Java Programming
 > Professor: Tasha Frankie<br>
 > Campus: San Diego Mesa College (online)<br>
@@ -5,7 +11,6 @@
 > Component: Lecture/Lab<br>
 > Start: 02/03/2020<br>
 > End: 06/01/2020<br>
-
 ---
 
 ## Course Requirements

@@ -1,3 +1,9 @@
+---
+title: econ 120
+date: 2020-02-05 08:56
+tags: econ-120, econ
+---
+
 # [Spring 2020](/index) ECON 120 Principles of Macroeconomics
 > Professor: Frederica Carr<br>
 > Campus: San Diego Miramar College (online)<br>
@@ -5,7 +11,6 @@
 > Component: Lecture<br>
 > Start: 02/03/2020<br>
 > End: 06/01/2020<br>
-
 ---
 
 ## Course Requirements

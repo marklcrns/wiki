@@ -1,3 +1,9 @@
+---
+title: index
+date: 2020-02-05 09:09
+tags: wiki
+---
+
 # Wiki
 
 [Vimwiki Official Repo](https://github.com/vimwiki/vimwiki)

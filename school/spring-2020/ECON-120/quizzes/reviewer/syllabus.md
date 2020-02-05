@@ -1,3 +1,9 @@
+---
+title: syllabus
+date: 2020-02-05 09:07
+tags: syllabus, reviewer, quiz
+---
+
 # NOTES
 
 * final grading 500 points total

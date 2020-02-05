@@ -1,3 +1,9 @@
+---
+title: econ 121
+date: 2020-02-05 08:56
+tags: econ-121
+---
+
 # [Spring 2020](/index) ECON 121 Principles of Microeconomics
 > Professor: Xiaochuan Song<br>
 > Campus: San Diego Mesa College (online)<br>
@@ -5,7 +11,6 @@
 > Component: Lecture<br>
 > Start: 02/03/2020<br>
 > End: 06/01/2020<br>
-
 ---
 
 ## Course Requirements
@@ -28,3 +33,6 @@ Textbook
   * [The New Your Times](https://www.nytimes.com/)
   * [TV News](https://www.msn.com/)
 
+### Notes
+
+  * [Chapter 1](notes/ch-1)
