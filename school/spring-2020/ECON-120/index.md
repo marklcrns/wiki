@@ -18,3 +18,7 @@
 ## Course Materials
 
   * [Syllabus](file:./media/econ120_syllabus.pdf)
+
+### Quizzes
+
+  * [Syllabus Quiz Reviewer](quizzes/reviewer/syllabus) -- 4pts
