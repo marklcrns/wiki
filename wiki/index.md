@@ -4,6 +4,10 @@ date: 2020-02-05 09:09
 tags: wiki
 ---
 
+# Contents
+  - [Wiki](#Wiki)
+    - [Interwikis](#Wiki#Interwikis)
+
 # Wiki
 
 [Vimwiki Official Repo](https://github.com/vimwiki/vimwiki)
@@ -12,5 +16,5 @@ tags: wiki
 
 ## Interwikis
 
-  * [[wiki1:index|School]] -- College Notes
-  * [[wiki2:index|References]] -- Personal Documentations of every programs I used
+  * [School](wiki1:index) -- College Notes
+  * [References](wiki2:index) -- Personal Documentations of every programs I used

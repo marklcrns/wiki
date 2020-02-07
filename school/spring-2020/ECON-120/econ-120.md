@@ -4,14 +4,20 @@ date: 2020-02-05 08:56
 tags: econ-120, econ
 ---
 
-# [Spring 2020](/index) ECON 120 Principles of Macroeconomics
+# Contents
+  - [ECON 120 Principles of Macroeconomics](#ECON 120 Principles of Macroeconomics)
+    - [Course Requirements](#ECON 120 Principles of Macroeconomics#Course Requirements)
+    - [Course Materials](#ECON 120 Principles of Macroeconomics#Course Materials)
+      - [Project](#ECON 120 Principles of Macroeconomics#Course Materials#Project)
+    - [Quizzes](#ECON 120 Principles of Macroeconomics#Quizzes)
+
+# ECON 120 Principles of Macroeconomics
 > Professor: Frederica Carr<br>
 > Campus: San Diego Miramar College (online)<br>
 > Units: 3<br>
 > Component: Lecture<br>
 > Start: 02/03/2020<br>
 > End: 06/01/2020<br>
----
 
 ## Course Requirements
 
@@ -25,12 +31,13 @@ tags: econ-120, econ
 
   * [Syllabus](file:./media/econ120_syllabus.pdf)
 
-### Quizzes
-
-  * [Syllabus Quiz Reviewer](quizzes/reviewer/syllabus) -- 4pts
-
 ### Project
 
   * [Project Guideline](file:./media/econ-120_projectGuidlines.pdf)
   * [UN Survey Chart](file:./media/econ-120_UNSurveryChart.png)
   * [My Group](group_project/project)
+
+## Quizzes
+
+  * [Syllabus Quiz Reviewer](quizzes/reviewer/syllabus) -- 4pts
+
