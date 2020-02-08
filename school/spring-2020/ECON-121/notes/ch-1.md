@@ -21,6 +21,17 @@ tags: econ-121, chapter-1, ch-1
       - [1.3.4 Rational People Respond to Incentives](#ECON 121 - Chapter 1 Notes#1.3 The Economic Way of Thinking#1.3.4 Rational People Respond to Incentives)
       - [1.3.5 Example: Southern California Addresses Its Congestion Problem](#ECON 121 - Chapter 1 Notes#1.3 The Economic Way of Thinking#1.3.5 Example: Southern California Addresses Its Congestion Problem)
     - [1.4 Employability: Economic Logic on the Job](#ECON 121 - Chapter 1 Notes#1.4 Employability: Economic Logic on the Job)
+    - [1.5 Preview of Coming Attractions: Macroeconomics](#ECON 121 - Chapter 1 Notes#1.5 Preview of Coming Attractions: Macroeconomics)
+      - [Three ways we can use Macroeconomics](#ECON 121 - Chapter 1 Notes#1.5 Preview of Coming Attractions: Macroeconomics#Three ways we can use Macroeconomics)
+    - [1.6 Preview of Coming Attractions: Microeconomics](#ECON 121 - Chapter 1 Notes#1.6 Preview of Coming Attractions: Microeconomics)
+      - [Three ways we can use Microeconomics analysis](#ECON 121 - Chapter 1 Notes#1.6 Preview of Coming Attractions: Microeconomics#Three ways we can use Microeconomics analysis)
+    - [1A.1 Using Graphs](#ECON 121 - Chapter 1 Notes#1A.1 Using Graphs)
+      - [Graph of Single Variables](#ECON 121 - Chapter 1 Notes#1A.1 Using Graphs#Graph of Single Variables)
+      - [Graphing Two variables](#ECON 121 - Chapter 1 Notes#1A.1 Using Graphs#Graphing Two variables)
+      - [Computing the Slope](#ECON 121 - Chapter 1 Notes#1A.1 Using Graphs#Computing the Slope)
+    - [1A.2 Computing Percentage Changes and Using Equations](#ECON 121 - Chapter 1 Notes#1A.2 Computing Percentage Changes and Using Equations)
+      - [Computing Percentage Changes](#ECON 121 - Chapter 1 Notes#1A.2 Computing Percentage Changes and Using Equations#Computing Percentage Changes)
+        - [The Perils of Percentages](#ECON 121 - Chapter 1 Notes#1A.2 Computing Percentage Changes and Using Equations#Computing Percentage Changes#The Perils of Percentages)
     - [Resources](#ECON 121 - Chapter 1 Notes#Resources)
 
 # ECON 121 - Chapter 1 Notes
@@ -76,6 +87,7 @@ tags: econ-121, chapter-1, ch-1
 
 **Positive Analysis**
 
+  - Most of modern economics is based on positive analysis.
   - Answers the question "What is?" or "What will be?"
 
 **Normative Analysis**
@@ -93,14 +105,14 @@ tags: econ-121, chapter-1, ch-1
 
 #### The Three Key Economic Questions: What, How, and Who?
 
-1. What products do we produce?
+1. **What products do we produce?**
     - Trade-offs exist: If a hospital uses its resources to perform more heart
       transplants, it has fewer resources to care for premature infants.
-2. How do we produce the products?
+2. **How do we produce the products?**
     - Alternative means of production are available: Power companies can produce
       electricity with coal, natural gas, or wind power. Professors can teach in
       large lecture halls or small classrooms.
-3. Who consumes the products?
+3. **Who consumes the products?**
     - We must decide how to distribute the products of society. If some people
       earn more money than others, should they consume more goods? How much
       money should the government take from the rich and give to the poor?
@@ -348,13 +360,180 @@ Examples:
   15. The manager of a software startup decides when to “go public” by selling
       shares of stock.
 
+## 1.5 Preview of Coming Attractions: Macroeconomics
+
+**Macroeconomics**
+
+  - The study of the nation's economy as a whole; focuses on the issues of
+    inflation (a general rise in prices), unemployment, and economic growth.
+
+### Three ways we can use Macroeconomics
+
+1. **Using Macroeconomics to Understand Why Economies Grow.**
+
+  - Macroeconomics explains why resources increase over time and the
+    consequences for our standard of living.
+  - e.g., In the fastest growing countries, citizens save a large fraction of
+    the money they earn, and have well-educated workforces, allowing firms to
+    quickly adopt new technologies that increase worker productivity.
+
+2. **Using Macroeconomics to Understand Economic Fluctuations**
+
+  - Macroeconomics helps us understand the economy sometimes cools and sometimes
+    overheats.
+
+3. **Using Macroeconomics to Make Informed Business Decisions**
+
+  - The government uses various policies to influence interest rates (the price
+    of borrowing money) and the inflation rate.
+  -  A manager who studies macroeconomics will be better equipped to understand
+     the complexities of interest rates and inflation and how they affect the
+     firm.
+
+## 1.6 Preview of Coming Attractions: Microeconomics
+
+**Microeconomics**
+
+  - The study of the choices made by households, firm, and government and how
+    these choices affect the market for goods and services.
+
+### Three ways we can use Microeconomics analysis
+
+1. **Using Microeconomics to Understand Markets and Predict Changes**
+
+  - One reason for studying microeconomics is to better understand how markets
+    work and to predict how various events affect the prices and quantities of
+    products in markets.
+  - e.g., A tax on beer would make the product more expensive, and young adults,
+    like other beer drinkers, would therefore consume less of it. Consequently,
+    a tax that decreases beer consumption by roughly 10 percent will decrease
+    highway deaths among young adults by roughly 10 percent, too.
+
+2. **Using Microeconomics to Make Personal and Managerial Decisions**
+
+  - On the personal level, we use economic analysis to decide how to spend our
+    time, what career to pursue, and how to spend and save the money we earn.
+    Managers use economic analysis to decide how to produce goods and services,
+    how much to produce, and how much to charge for them.
+  - e.g., If the existing coffee shops in your city are profitable and you have
+    enough money to start your own shop, should you do it? If you enter this
+    market, the competition among the shops for consumers will heat up, causing
+    some coffee shops to drop their prices. In addition, your costs may be
+    higher than the costs of the stores that are already established. It would
+    be sensible to enter the market only if you expect a small drop in price and
+    a small difference in costs.
+
+3. **Using Microeconomics to Evaluate Public Policies**
+
+  - Like other innovations, prescription drugs are protected by government
+    patents, giving the developer the exclusive right to sell a new drug for a
+    fixed period of time. Once the patent expires, other pharmaceutical
+    companies can legally produce and sell generic versions of the drug, which
+    causes its price to drop. Should drug patents be shorter? Shortening the
+    patent has trade-offs. The good news is that generic versions of the drug
+    will be available sooner, so prices will drop sooner and more people will
+    use the drug to improve their health. The bad news is that the financial
+    payoff from developing new drugs will be smaller, so pharmaceutical
+    companies won't develop as many new drugs. The question is whether the
+    benefit of shorter patents (lower prices) exceeds the cost (fewer drugs
+    developed).
+
+## 1A.1 Using Graphs
+
+### Graph of Single Variables
+
+  * **Pie Graph**
+    - Useful for visualizing and compare the share of something among its
+      competitors, industry, sector, or peers.
+  * **Bar Graph**
+    - Very useful for making quick comparisons across different sections
+
+Time Series Graphs
+
+  * **Normal Time-Series Graph**
+    - Shows the change of a variable overtime at each points.
+
+  * **Truncated Vertical Axis Time-Series Graph**
+    - Shows a truncated vertical axis (y-axis) to accentuate the fluctuations of
+      the time-series line of a variable.
+
+### Graphing Two variables
+
+  * **Positive Relationship**
+    - A relationship in which two variables move in the same direction.
+  * **Negative Relationship**
+    - A relationship in which two variables move in opposite directions.
+    - When a variable increase the other variable decreases, and vice versa.
+
+### Computing the Slope
+
+             Vertical difference between two points (y-axis)    rise
+    Slope = ------------------------------------------------- = ----
+            Horizontal difference between two points (x-axis)   run
+
+             y² - y¹
+    Slope = ---------
+             x² - x¹
+
+             △y
+    Slope = ----
+             △x
 
 
+## 1A.2 Computing Percentage Changes and Using Equations
 
+### Computing Percentage Changes
 
+                          New value - initial value
+    Percentage change =  --------------------------- × 100
+                                Initial value
 
+Example 1: Increase
 
+                         22 - 20          2
+    Percentage change =  -------- × 100 = -- × 100 = 10%
+                            20            20
 
+Example 2: Decrease
+
+                         19 - 20            1
+    Percentage change =  -------- × 100 = - -- × 100 = -5%
+                            20              20
+
+Alternative. Basing the percentage change on the average value, or the midpoint,
+of the variable:
+
+                          New value - initial value
+    Percentage change =  --------------------------- × 100
+                                Average value
+
+Example:
+
+                            22 - 20              2            2
+    Percentage change =  ------------- × 100 = ------ × 100 = -- × 100
+                         (20 + 22) / 2         42 / 2         21
+
+                      = 9.52%
+
+#### The Perils of Percentages
+
+In the 1970s the government of Mexico City repainted the highway lane lines on
+the Viaducto to transform a four-lane highway into a six-lane highway. The
+government announced that the highway capacity had increased by 50 percent
+(equal to 2 divided by 4). Unfortunately, the number of collisions and traffic
+fatalities increased, and one year later, the government restored the four-lane
+highway and announced that the capacity had decreased by 33 percent (equal to 2
+divided by 6). The government announced that the net effect of the two changes
+was an increase in the highway capacity by 17 percent (equal to 50 percent minus
+33 percent).
+
+This anecdote reveals a potential problem with using the simple approach to
+compute percentage changes. Because the initial value (the denominator) changes,
+the computation of percentage increases and decreases are not symmetric. In
+contrast, if the government had used the midpoint method, the percentage
+increase in capacity would be 40 percent (equal to 2 divided by 5), the same as
+the percentage decrease. In that case, we get the more sensible result that the
+net effect of the two changes is zero.
 
 ## Resources
 

@@ -9,7 +9,7 @@ tags: econ-121
     - [Course Requirements](#ECON 121 Principles of Microeconomics#Course Requirements)
     - [Course Materials](#ECON 121 Principles of Microeconomics#Course Materials)
       - [Recommended Readings](#ECON 121 Principles of Microeconomics#Course Materials#Recommended Readings)
-      - [Notes](#ECON 121 Principles of Microeconomics#Course Materials#Notes)
+    - [Personal Notes](#ECON 121 Principles of Microeconomics#Personal Notes)
 
 # ECON 121 Principles of Microeconomics
 > Professor: Xiaochuan Song<br>
@@ -29,6 +29,8 @@ Textbook
 ## Course Materials
 
   * [Syllabus](file:./media/econ-121_syllabus.pdf)
+    - To prevent technical problems, **quiz** and **exams** doubled the amount
+      of time for completion and increased from 3 to 5 attempts each.
   * [MyLab & Mastering](https://portal.mypearson.com/course-home)
     - My Pearson account [credentials](vfile:./media/pearson_account.txt)
 
@@ -39,6 +41,6 @@ Textbook
   * [The New Your Times](https://www.nytimes.com/)
   * [TV News](https://www.msn.com/)
 
-### Notes
+## Personal Notes
 
   * [Chapter 1](notes/ch-1)
