@@ -17,11 +17,7 @@ tags: math-141, notes, ch-1, chapter-1
         - [Step 3: Collect x's](#MATH 141 - Chapter 1: The Basics - Notes#1.3 Solving: Polynomial Degree 1#4 Steps in Solving Linear Equations#Step 3: Collect x's)
         - [Step 2: Move x's](#MATH 141 - Chapter 1: The Basics - Notes#1.3 Solving: Polynomial Degree 1#4 Steps in Solving Linear Equations#Step 2: Move x's)
         - [Step 1: Free x's](#MATH 141 - Chapter 1: The Basics - Notes#1.3 Solving: Polynomial Degree 1#4 Steps in Solving Linear Equations#Step 1: Free x's)
-  - [Step 1](#Step 1)
-  - [Step 2](#Step 2)
-  - [Step 3](#Step 3)
-  - [Step 4](#Step 4)
-    - [1.4 Solving: Polynomial Degree 2](#Step 4#1.4 Solving: Polynomial Degree 2)
+    - [1.4 Solving: Polynomial Degree 2](#MATH 141 - Chapter 1: The Basics - Notes#1.4 Solving: Polynomial Degree 2)
 
 # MATH 141 - Chapter 1: The Basics - Notes
 
@@ -299,17 +295,17 @@ Consider 3(x + 1) = 2(x - 5)
 
 Solution:
 
-    # Step 1
+    Step 1:
     3(x + 1) = 2(x - 5)
     3x + 3 = 2x + -10       Distributive property. Free the x's out of ()'s
 
-    # Step 2
+    Step 2
     3x + -2x = -10 + -3     Move 2x to the other side to gather all x's
 
-    # Step 3
+    Step 3
     (3 + -2)x = -10 + -3    Gather the x's
 
-    # Step 4
+    Step 4
     x = -10 - 3            Kill the coefficient
         --------
          3 - 2
