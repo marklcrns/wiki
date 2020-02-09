@@ -1,6 +1,7 @@
 ---
 title: econ 121
-date: 2020-02-05 08:56
+author: Mark Lucernas
+date: 2020-02-05
 tags: econ-121
 ---
 

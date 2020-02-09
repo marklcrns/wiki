@@ -1,6 +1,7 @@
 ---
 title: ch-1
-date: 2020-02-05 09:13
+author: Mark Lucernas
+date: 2020-02-05
 tags: econ-121, chapter-1, ch-1
 ---
 

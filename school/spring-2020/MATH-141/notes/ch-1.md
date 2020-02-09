@@ -1,6 +1,7 @@
 ---
 title: ch 1
-date: 2020-02-06 10:30
+author: Mark Lucernas
+date: 2020-02-06
 tags: math-141, notes, ch-1, chapter-1
 ---
 

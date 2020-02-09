@@ -1,6 +1,7 @@
 ---
 title: syllabus
-date: 2020-02-05 09:07
+author: Mark Lucernas
+date: 2020-02-05
 tags: syllabus, reviewer, quiz
 ---
 

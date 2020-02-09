@@ -1,6 +1,7 @@
 ---
 title: cisc 190
-date: 2020-02-05 08:55
+author: Mark Lucernas
+date: 2020-02-05
 tags: cisc-190, cisc, java, programming
 ---
 

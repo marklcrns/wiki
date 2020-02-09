@@ -1,6 +1,7 @@
 ---
 title: index
-date: 2020-02-05 09:09
+author: Mark Lucernas
+date: 2020-02-05
 tags: wiki
 ---
 

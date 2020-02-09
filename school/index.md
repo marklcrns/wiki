@@ -1,12 +1,13 @@
 ---
 title: index
-date: 2020-02-05 08:35
+author: Mark Lucernas
+date: 2020-02-05
 tags: school, spring-2020
 ---
 
 # Contents
-  - [College Courses](#College Courses)
-    - [Spring 2020](#College Courses#Spring 2020)
+    - [College Courses](#College Courses)
+        - [Spring 2020](#College Courses#Spring 2020)
 
 # College Courses
 

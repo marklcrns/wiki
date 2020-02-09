@@ -1,6 +1,7 @@
 ---
 title: math 141
-date: 2020-02-05 08:57
+author: Mark Lucernas
+date: 2020-02-05
 tags: math-141, math
 ---
 
