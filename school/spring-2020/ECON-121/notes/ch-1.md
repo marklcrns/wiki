@@ -84,7 +84,7 @@ tags: econ-121, chapter-1, ch-1
 ### 1.1.2 Positive versus Normative Analysis
 
 > Economics doesn't tell us what to choose, but simply helps us to understand
-> trade-offs.
+trade-offs.
 
 **Positive Analysis**
 
@@ -126,7 +126,7 @@ tags: econ-121, chapter-1, ch-1
     graph.
 
 > Economists use _economic models_ to explore the choices people make and the
-> consequences of those choices.
+consequences of those choices.
 
 ## 1.2 Economic Analysis and Modern Problems
 
@@ -264,7 +264,7 @@ policies to keep the economy growing without causing inflation.</b>
 ### 1.3.2 Isolate Variables--_Ceteris Paribus_
 
 > _Ceteris paribus_ is a latin expression meaning that other variables are held
-> fix
+fix
 
 * Economic analysis often involves variables and how they affect one another.
   - A _variable_ is a measure of something that can take on different

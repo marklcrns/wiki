@@ -6,8 +6,8 @@ tags: school, spring-2020
 ---
 
 # Contents
-    - [College Courses](#College Courses)
-        - [Spring 2020](#College Courses#Spring 2020)
+  - [College Courses](#College Courses)
+    - [Spring 2020](#College Courses#Spring 2020)
 
 # College Courses
 

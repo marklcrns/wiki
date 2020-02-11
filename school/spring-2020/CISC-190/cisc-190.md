@@ -9,7 +9,9 @@ tags: cisc-190, cisc, java, programming
   - [CISC 190 Java Programming](#CISC 190 Java Programming)
     - [Course Requirements](#CISC 190 Java Programming#Course Requirements)
     - [Course Materials](#CISC 190 Java Programming#Course Materials)
-      - [Module 0](#CISC 190 Java Programming#Course Materials#Module 0)
+    - [Notes](#CISC 190 Java Programming#Notes)
+    - [Homeworks](#CISC 190 Java Programming#Homeworks)
+      - [Module 1](#CISC 190 Java Programming#Homeworks#Module 1)
     - [Skills I will learn or improve in this course--Applicable for Resumes](#CISC 190 Java Programming#Skills I will learn or improve in this course--Applicable for Resumes)
 
 # CISC 190 Java Programming
@@ -29,20 +31,35 @@ Install the following programs
     - Choose a JVM: HotSpot
     - [Installation Guide](file:./media/openJDKInstallationGuide.pdf)
   * [JRE 8](https://www.java.com/en/download/)
-  * [Dr. Java](http://www.drjava.org/)
-    - NOTE: Make sure to download `.jar` file instead of the executable
-  * [Net Beans 8.2](https://netbeans.org/downloads/8.2/) IDE
 
 ## Course Materials
 
   * [Syllabus](file:./media/cisc-190_syllabus.pdf)
+  * [Dr. Java](http://www.drjava.org/)
+    - NOTE: Make sure to download `.jar` file instead of the executable
+  * [Net Beans 8.2](https://netbeans.org/downloads/8.2/) IDE
+  * [CISC 190 bookClasses.zip](https://sdccd.instructure.com/courses/2376907/modules/items/39304903)
+  * [CISC 190 mediasources.zip](https://sdccd.instructure.com/courses/2376907/modules/items/39304904)
+    - [Tutorial on how to set up class paths with Dr. Java](https://www.youtube.com/watch?v=AxRCoRMpPy4)
+
+Text books
+
   * [Java, Java, Java Object-Oriented Problem Solving 3rd Ed](file:./media/java_book_objectOrientedProblemSolving.pdf)
   * [Introduction to Programming Using Java](file:./media/java_book_introToProgramming.pdf)
-
-### Module 0
-
   * [Intro to Computing and Programming in Java: A Multimedia Approach (ch. 1-4)](file:./media/java_book_mediaComp_ch1-4.pdf)
-    - Chapter 1 to 2.2
+
+## Notes
+
+  * [Module 0](file:./media/java_book_mediaComp_ch1-4.pdf) -- Chapter 1 to 2.2
+    - This is the resource used in the Module, **not notes**.
+  * [Module 1](notes/m-1) -- Chapter 2.3 - 3.4
+
+## Homeworks
+
+### Module 1
+
+  * ![Turtle Homework Image](file:./media/module-1_turtleHomework.png)
+  * [Turtle Homework Code](vfile:./media/module-1_turtleHomework.java)
 
 ---
 ## Skills I will learn or improve in this course--Applicable for Resumes
@@ -55,7 +72,7 @@ Install the following programs
   * Planning
   * Creativity
   * Written communication
-  * Teamwork/collaration
-  * Resilience/perseverence
+  * Teamwork/collaboration
+  * Resilience/perseverance
   * Lifelong learning
 

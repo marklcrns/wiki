@@ -336,6 +336,5 @@ Solution:
         ------------------
           3 - 1/2 + 11/3
 
-
 ## 1.4 Solving: Polynomial Degree 2
 

@@ -1,0 +1,436 @@
+<html>
+<head>
+<title>Module 1 Notes</title>
+<link rel="stylesheet" href="../../../style.css">
+<meta http-equiv="Content-Type" content="text/html">
+</head>
+<body>
+<div>
+    <a href="../../../index.html">Wiki Root</a> > Module 1 Notes
+    </div>
+<hr />
+<h1 id="contents">Contents</h1>
+<ul>
+<li><a href="#Chapter%202.html">Chapter 2</a>
+<ul>
+<li><a href="#Chapter%202#2.3%20Java%20Basics">2.3 Java Basics</a>
+<ul>
+<li><a href="#Chapter%202#2.3%20Java%20Basics#2.3.1%20Math%20Operators">2.3.1 Math Operators</a></li>
+<li><a href="#Chapter%202#2.3%20Java%20Basics#2.3.2%20Printing%20the%20Result%20of%20a%20Statement">2.3.2 Printing the Result of a Statement</a></li>
+<li><a href="#Chapter%202#2.3%20Java%20Basics#2.3.3%20Data%20Types%20in%20Math%20Expressions">2.3.3 Data Types in Math Expressions</a>
+<ul>
+<li><a href="#Chapter%202#2.3%20Java%20Basics#2.3.3%20Data%20Types%20in%20Math%20Expressions#Integer%20and%20Floating%20Point%20Numbers">Integer and Floating Point Numbers</a></li>
+<li><a href="#Chapter%202#2.3%20Java%20Basics#2.3.3%20Data%20Types%20in%20Math%20Expressions#Additionals">Additionals</a></li>
+<li><a href="#Chapter%202#2.3%20Java%20Basics#2.3.3%20Data%20Types%20in%20Math%20Expressions#Casting">Casting</a></li>
+</ul></li>
+<li><a href="#Chapter%202#2.3%20Java%20Basics#2.3.5%20Relational%20Operators">2.3.5 Relational Operators</a></li>
+<li><a href="#Chapter%202#2.3%20Java%20Basics#2.3.6%20Strings">2.3.6 Strings</a>
+<ul>
+<li><a href="#Chapter%202#2.3%20Java%20Basics#2.3.6%20Strings#Concatenation">Concatenation</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#Chapter%202#2.4%20Variables">2.4 Variables</a>
+<ul>
+<li><a href="#Chapter%202#2.4%20Variables#2.4.1%20Declaring%20Variables">2.4.1 Declaring Variables</a></li>
+<li><a href="#Chapter%202#2.4%20Variables#2.4.2%20Using%20Variables%20in%20Calculations">2.4.2 Using Variables in Calculations</a></li>
+<li><a href="#Chapter%202#2.4%20Variables#2.4.3%20Memory%20Maps%20of%20Variables">2.4.3 Memory Maps of Variables</a></li>
+<li><a href="#Chapter%202#2.4%20Variables#2.4.4%20Object%20Variables">2.4.4 Object Variables</a></li>
+<li><a href="#Chapter%202#2.4%20Variables#2.4.5%20Reusing%20Variables">2.4.5 Reusing Variables</a></li>
+<li><a href="#Chapter%202#2.4%20Variables#2.4.6%20Multiple%20References%20to%20an%20Object">2.4.6 Multiple References to an Object</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#Chapter%203:%20Introduction%20to%20Programming.html">Chapter 3: Introduction to Programming</a>
+<ul>
+<li><a href="#Chapter%203:%20Introduction%20to%20Programming#3.1%20Programming%20is%20About%20Naming">3.1 Programming is About Naming</a></li>
+<li><a href="#Chapter%203:%20Introduction%20to%20Programming#3.2%20Files%20and%20Their%20Names">3.2 Files and Their Names</a></li>
+<li><a href="#Chapter%203:%20Introduction%20to%20Programming#3.3%20Class%20and%20Object%20Methods">3.3 Class and Object Methods</a>
+<ul>
+<li><a href="#Chapter%203:%20Introduction%20to%20Programming#3.3%20Class%20and%20Object%20Methods#3.3.1%20Invoking%20Class%20Methods">3.3.1 Invoking Class Methods</a></li>
+<li><a href="#Chapter%203:%20Introduction%20to%20Programming#3.3%20Class%20and%20Object%20Methods#3.3.2%20Executing%20Object%20Methods">3.3.2 Executing Object Methods</a></li>
+</ul></li>
+<li><a href="#Chapter%203:%20Introduction%20to%20Programming#3.4%20Working%20With%20Turtles">3.4 Working With Turtles</a>
+<ul>
+<li><a href="#Chapter%203:%20Introduction%20to%20Programming#3.4%20Working%20With%20Turtles#3.4.1%20Defining%20Classes">3.4.1 Defining Classes</a></li>
+<li><a href="#Chapter%203:%20Introduction%20to%20Programming#3.4%20Working%20With%20Turtles#3.4.2%20Creating%20Objects">3.4.2 Creating Objects</a></li>
+<li><a href="#Chapter%203:%20Introduction%20to%20Programming#3.4%20Working%20With%20Turtles#3.4.3%20Sending%20Messages%20to%20Objects">3.4.3 Sending Messages to Objects</a></li>
+<li><a href="#Chapter%203:%20Introduction%20to%20Programming#3.4%20Working%20With%20Turtles#3.4.5%20Additional%20Turtle%20Capabilities">3.4.5 Additional Turtle Capabilities</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#References.html">References</a></li>
+</ul>
+<p><strong>Module 1 Notes From Chapter 2.3 to 3.4</strong></p>
+<h1 id="chapter-2">Chapter 2</h1>
+<h2 id="java-basics">2.3 Java Basics</h2>
+<p><strong>Comment operator</strong></p>
+<pre><code>/**
+ * Comment Goes Here
+ */
+
+or
+
+/* Comment Goes Here */
+
+or
+
+// Comment Goes Here</code></pre>
+<h3 id="math-operators">2.3.1 Math Operators</h3>
+<p><strong>Addition</strong></p>
+<pre><code>&gt; 34 + 56
+90</code></pre>
+<p><strong>Subtraction</strong></p>
+<pre><code>&gt; 26 - 3
+23</code></pre>
+<p><strong>Multiplication</strong></p>
+<pre><code>&gt; 3 * 4
+12</code></pre>
+<p><strong>Division</strong></p>
+<pre><code>&gt; 4 / 2
+2</code></pre>
+<p><strong>Modulo or Modulus</strong></p>
+<p>This operator calculates the <em>remainder</em> of the first number divided by the second number</p>
+<pre><code>&gt; 9 % 4
+1</code></pre>
+<h3 id="printing-the-result-of-a-statement">2.3.2 Printing the Result of a Statement</h3>
+<ul>
+<li>Always end a statement with a semicolon <code>;</code></li>
+</ul>
+<p><strong>Printing Statement</strong></p>
+<pre><code>System.out.println();</code></pre>
+<h3 id="data-types-in-math-expressions">2.3.3 Data Types in Math Expressions</h3>
+<h4 id="integer-and-floating-point-numbers">Integer and Floating Point Numbers</h4>
+<p>Using <em>floating</em> point numbers (numbers with decimals)</p>
+<ul>
+<li>Represented by <code>int</code>, <code>byte</code>, <code>short</code>, or <code>long</code>
+<ul>
+<li><code>byte</code> takes up <strong>8 bits</strong> of memory (1 byte)</li>
+<li><code>short</code> takes up <strong>16 bits</strong> of memory (2 bytes)</li>
+<li><code>int</code> takes up <strong>32 bits</strong> of memory (4 bytes)</li>
+<li><p><code>long</code> takes up <strong>64 bits</strong> of memory (8 bytes)</p>
+<blockquote>
+<p>System.out.println(1.0/2.0); 0.5</p>
+</blockquote></li>
+</ul></li>
+</ul>
+<p>Using <em>integers</em> (numbers without decimals)</p>
+<ul>
+<li>Represented by <code>double</code> or <code>float</code>
+<ul>
+<li><code>float</code> takes up <strong>32 bits</strong> of memory (4 bytes)</li>
+<li><p><code>double</code> takes up <strong>64 bits</strong> of memory (8 bytes)</p>
+<blockquote>
+<p>System.out.println(1/2); 0</p>
+</blockquote></li>
+</ul></li>
+</ul>
+<h4 id="additionals">Additionals</h4>
+<p>Characters</p>
+<ul>
+<li>Individual characters such as ‘a’ or ‘A’</li>
+<li>Represented by <code>char</code>
+<ul>
+<li><code>char</code> takes up <strong>16 bits</strong> of memory (2 bytes)</li>
+<li>Specified in Java using single quotes <code>'a'</code>.</li>
+</ul></li>
+</ul>
+<p>Boolean</p>
+<ul>
+<li>Represented by <code>boolean</code> and has two possible values of <code>true</code> and <code>false</code></li>
+<li>While boolean could be represented by just <em>one bit</em>, the size of a boolean if up to the virtual machine.</li>
+</ul>
+<h4 id="casting">Casting</h4>
+<ul>
+<li><p>Casting is used to get the correct result from the division of two integers.</p>
+<pre><code>&gt; System.out.println((double) 1 / 2);
+0.5
+&gt; System.out.println(1 / (double) 2);
+0.5</code></pre></li>
+</ul>
+<p>However, if we cast the result of the integer division to a double it is too late since the result has already been calculated after applying the <code>double</code> cast.</p>
+<pre><code>&gt; System.out.println((double) (1/2));
+0.0</code></pre>
+<h3 id="relational-operators">2.3.5 Relational Operators</h3>
+<p>Greater than</p>
+<pre><code>&gt; System.out.println(3 &gt; 2);
+true
+&gt; System.out.println(2 &gt; 3);
+false</code></pre>
+<p>Less than</p>
+<pre><code>&gt; System.out.println(’a’ &lt; ’b’);
+true
+&gt; System.out.println(’j’ &gt; ’c’);
+true</code></pre>
+<p>Equal to</p>
+<pre><code>&gt; System.out.println(2 == 2);
+true
+&gt; System.out.println(true == false);
+false</code></pre>
+<p>Not equal to</p>
+<pre><code>&gt; System.out.println(2 != 2);
+false</code></pre>
+<p>Greater than or equal to</p>
+<pre><code>&gt; System.out.println(2 &gt;= 2);
+true</code></pre>
+<p>Lesser than or equal to</p>
+<pre><code>&gt; System.out.println(2 &lt;= 2);
+true</code></pre>
+<h3 id="strings">2.3.6 Strings</h3>
+<p><strong>Strings</strong> are sequences of characters. Java recognize strings (lists of characters) starting with a <code>"</code> double quotes and closing it with another.</p>
+<pre><code>&gt; System.out.println(&quot;Mark&quot;);
+Mark
+&gt; System.out.println(&quot;13 + 5&quot;);
+13 + 5</code></pre>
+<p>To print doubles quotes <code>"</code> inside of a string, you can use <code>\</code> backslash character (escape character) to treat the next character differently.</p>
+<pre><code>&gt; System.out.println(&quot;Barb says, \&quot;Hi\&quot;.&quot;);
+Barb says, &quot;Hi.&quot;</code></pre>
+<blockquote>
+<p>Using <code>\</code> in a string also has special uses. For instance, using <code>\n</code> will tell Java to go to the next line instead of printing the letter <em>n</em>.</p>
+</blockquote>
+<h4 id="concatenation">Concatenation</h4>
+<p><strong>Appending</strong> or <strong>concatenating</strong> strings are the act of combining strings together using the <code>+</code> operator.</p>
+<pre><code>&gt; System.out.println(&quot;Barbara&quot; + &quot;Ericson&quot;);
+BarbaraEricson
+&gt; System.out.println(&quot;Barbara&quot; + &quot; &quot; + &quot;Ericson&quot;);
+Barbara Ericson
+&gt; System.out.println(&quot;Barbara &quot; + &quot;Ericson&quot;);
+Barbara Ericson
+space inside a string as shown in &quot;Barbara &quot; + &quot;Ericson&quot;.
+&gt; System.out.println(&quot;The total is &quot; + (13 + 5));
+The total is 18
+&gt; System.out.println(&quot;The total is &quot; + 13 + 5);
+The total is 135</code></pre>
+<h2 id="variables">2.4 Variables</h2>
+<p><strong>Variables</strong> are used to store data into memory to be accessed for later use.</p>
+<h3 id="declaring-variables">2.4.1 Declaring Variables</h3>
+<p>To access the variables stored into memory, we used variable names. This process is called <em>declaring a variable</em>.</p>
+<p>When Declaring a variable in Java you specify the type for the variable and a name then the value or expression after the <code>=</code> sign, <code>type name = expression</code>. You need to specify a type so that Java knows how many bits to reserve in memory and how to interpret the bits.</p>
+<h3 id="using-variables-in-calculations">2.4.2 Using Variables in Calculations</h3>
+<pre><code>&gt; int numPeople = 2;
+&gt; System.out.println(numPeople);
+2
+&gt; double bill = 32.45;
+&gt; System.out.println(bill);
+32.45
+&gt; double tip = bill * 0.2;
+&gt; System.out.println(tip);
+6.490000000000001
+&gt; double total = bill + tip;
+&gt; System.out.println(total);
+38.940000000000005
+&gt; double totalPerPerson = total / numPeople;
+&gt; System.out.println(totalPerPerson);
+19.470000000000002</code></pre>
+<h3 id="memory-maps-of-variables">2.4.3 Memory Maps of Variables</h3>
+<p>When declaring a variable in Java, it sets aside a space in the memory based from the type of variable being stored and remembers the location of that space with an address. e.g., The code <code>int number</code> reserves 32 bits of space and associates the name “number” with that reserved space.</p>
+<h3 id="object-variables">2.4.4 Object Variables</h3>
+<p><strong>Object variables</strong> are variables declared to be of any type other than the primitive types: <em>byte</em>, <em>short</em>, <em>int</em>, <em>long</em>, <em>float</em>, <em>double</em>, <em>boolean</em>, or <em>char</em>. This is because all other types <em>inherit</em> from the class <strong>Object</strong>.</p>
+<blockquote>
+<p>Inheritance is saying that one class “is a kind of” another class. For instance, a dog is an animal (its primitive type) that is of mammal kind (its class). Therefore, the dog is of class mammal and <em>inherits</em> the characteristics of its class, while a fish is also if type animal but does not inherit the primitive characteristics of the four legged dog that is of class mammal.</p>
+</blockquote>
+<p><strong>String</strong> is an array of <code>char</code> and is not a member of the <em>Object</em> class. However it inherits from the <em>Object</em> class and creates a type of its own.</p>
+<pre><code>&gt; String test;
+&gt; System.out.println(test);
+null
+&gt; test = &quot;Hi&quot;;
+&gt; System.out.println(test);
+Hi
+&gt; test = new String(&quot;Bye&quot;);
+&gt; System.out.println(test);
+Bye
+When the variable test was declared</code></pre>
+<blockquote>
+<p>Once the variable have been reassigned to a new value, the space of which the variable was once referring to will be reused and put back into available spaces. This is called <code>garbage collection</code>.</p>
+</blockquote>
+<p>Java automatically handles freeing used memory when it is no longer needed. When a memory was no longer in use and was never freed, it is called <em>memory leak</em>.</p>
+<h3 id="reusing-variables">2.4.5 Reusing Variables</h3>
+<p>Once we have declared variables we can reuse them by assigning new values to them.</p>
+<pre><code>&gt; String myName = &quot;Mark&quot;;
+&gt; System.out.println(myName);
+Mark
+&gt; myName = &quot;Barb&quot;;
+&gt; System.out.println(myName);
+Barb</code></pre>
+<blockquote>
+<p>Variables versus Literals: <em>Variables</em> can be reassigned as many times as you hence we call it variables. On the other hand, <em>Literals</em> stays the same and the value of it will never change. e.g., Sring literals such as “Hi”. You can set the value of a variable to a literal but you can’t set the value of a literal to a variable.</p>
+</blockquote>
+<h3 id="multiple-references-to-an-object">2.4.6 Multiple References to an Object</h3>
+<pre><code>&gt; String name1 = &quot;Suzanne Clark&quot;;
+&gt; System.out.println(name1);
+Suzanne Clark
+&gt; String name2 = name1;
+&gt; System.out.println(name2);
+Suzanne Clark</code></pre>
+<p>When a string was set to null, its value can now be garbage collected.</p>
+<pre><code>&gt; name1 = null;
+&gt; System.out.println(name1);
+null
+&gt; System.out.println(name2);
+&gt; name2 = null;
+&gt; System.out.println(name2);
+null</code></pre>
+<h1 id="chapter-3-introduction-to-programming">Chapter 3: Introduction to Programming</h1>
+<h2 id="programming-is-about-naming">3.1 Programming is About Naming</h2>
+<p><strong>Programming language</strong> is a set of names that a computer has encodings for, such that those names make the computer do expected actions and interpret our data in expected ways.</p>
+<h2 id="files-and-their-names">3.2 Files and Their Names</h2>
+<ul>
+<li><strong>Hard Disk</strong> Stores all your data after the power of the computer gets turned off.</li>
+<li><strong>RAM</strong> (Random Access Memory) stores your data impermanently and is relatively small. Therefore faster than the <em>hard disk</em>.</li>
+</ul>
+<blockquote>
+<p>However, data must be read from <em>hard disk</em> into memory (RAM) before you can work with it</p>
+</blockquote>
+<h2 id="class-and-object-methods">3.3 Class and Object Methods</h2>
+<p>Every method or function in Java must be defined inside a class.</p>
+<p>Two types of methods in Java: <em>class methods</em> or <em>object methods</em>.</p>
+<p><strong>Class Methods</strong></p>
+<ul>
+<li>Are methods that can be executed using the class name or on an object of the class.</li>
+<li>Class methods are used for general methods that <strong>don’t pertain to a particular object</strong>.</li>
+<li>Defined using the keyword <code>static</code>.</li>
+</ul>
+<p><strong>Object Methods</strong></p>
+<ul>
+<li>Work with a particular object’s data (the object the method was called on).</li>
+</ul>
+<h3 id="invoking-class-methods">3.3.1 Invoking Class Methods</h3>
+<p><em>Class Methods</em> can be invoked (executed) by using the class name followed by a period and then the method name: <code>ClassName.methodName();</code>.</p>
+<ul>
+<li>By convention, class names in Java start with an <em>uppercase</em> letter: like the <em>Character</em> class.</li>
+</ul>
+<p><strong>Character class</strong> is a wrapper class for the primitive type <code>char</code>. It also provides general character methods</p>
+<pre><code>&gt; System.out.println(Character.getNumericValue(’A’));
+10</code></pre>
+<p><strong>Wrapper Classes</strong></p>
+<ul>
+<li>Are classes that you use to “wrap” around <em>primitive types</em> in order to have an object to work with.</li>
+</ul>
+<blockquote>
+<p>Many general purpose classes in Java such as the collection classes (List and Set) require the values that you add to the collections to be objects. Since primitive types are not objects you wouldn’t be able to use them in collections (prior to Java version 5.0). However, if you wrap a primitive type with a wrapper object you will be able to use it with classes that require objects. As of Java version 5.0 (also called jdk 1.5) the wrapping of a primitive value is automatically done when it is needed. This is called boxing and unboxing.</p>
+</blockquote>
+<p>Another class method that’s built in to the Math class in Java is named <code>abs</code>– it’s the <em>absolute value</em> function. It returns the absolute value of the input numeric value.</p>
+<pre><code>&gt; System.out.println(Math.abs(1));
+1
+&gt; System.out.println(Math.abs(-1));
+1</code></pre>
+<h3 id="executing-object-methods">3.3.2 Executing Object Methods</h3>
+<p>Object methods are methods that <strong>must</strong> be executed on an object using <code>objectReference.methodName();</code>.</p>
+<p>An object reference can be the name of an object variable. You can’t invoke object methods using the class name like you can with class methods.</p>
+<p>Here are some examples of Object methods from the Class <code>Strings</code></p>
+<pre><code>&gt; String name = &quot;Fred Farmer&quot;;
+&gt; System.out.println(name);
+Fred Farmer
+&gt; String lowerName = name.toLowerCase();
+&gt; System.out.println(lowerName);
+fred farmer
+&gt; String upperName = name.toUpperCase();
+&gt; System.out.println(upperName);
+FRED FARMER
+&gt; System.out.println(name);
+Fred Farmer</code></pre>
+<blockquote>
+<p>Notice that the value of name didn’t change even though we invoked the method toLowerCase on it. All of the String methods that can modify a string don’t change the original string but instead return a new string with the action done on that string. We say that strings are <em>immutable</em>, meaning that they don’t change.</p>
+</blockquote>
+<h2 id="working-with-turtles">3.4 Working With Turtles</h2>
+<p>Creating a program with a <em>turtle</em> object that can move around a <em>world</em> leaving a trail behind it as it moves forward, turn left or right, or some specified angle.</p>
+<h3 id="defining-classes">3.4.1 Defining Classes</h3>
+<p>In order to create a turtle and its world to move about, we need to define it by using classes. <em>World</em> and <em>Turtle</em> class. In Java, each new class is usually defined in a file with the same name as the class and an extension of “.java”.</p>
+<ul>
+<li>Class names start with a capital letter and the first letter of each additional word is capitalized.</li>
+</ul>
+<h3 id="creating-objects">3.4.2 Creating Objects</h3>
+<p>Object-oriented programs consist of objects. The class knows what each object of that class needs to keep track of and what it should be able to do, so the class creates the objects of that class. You can <strong>think of a class as an object factory</strong>. The factory can create many objects.</p>
+<p>To create and initialize an object use <code>new Class(parameterList)</code> where the parameter list is a list of items used to initialize the new object.</p>
+<p>One way to create an object of the class <em>World</em> is to use the <code>new World()</code></p>
+<blockquote>
+<p>We don’t have to pass any parameters to initialize a class all the time. Objects can have default values.</p>
+</blockquote>
+<pre><code>&gt; System.out.println(new World());
+A 640 by 480 world with 0 turtles in it.</code></pre>
+<p>A blank window should pop out after executing this command. However it will only be garbaged collected after you close the window as it wasn’t stored in a variable.</p>
+<p>To declare a variable in Java you must give the type of the variable and a name for it:</p>
+<pre><code>Type name;</code></pre>
+<p>The <code>Type</code> is the name of the class if you are creating a variable that refers to an object.</p>
+<blockquote>
+<p>Remember, by convention, class names need to be Capitalized each addition word. Also variable names, also by convention, starts with lowercased letters and capitalizes each addition words after the first.</p>
+</blockquote>
+<pre><code>&gt; World worldObj = new World();
+&gt; System.out.println(worldObj);
+A 640 by 480 world with 0 turtles in it.</code></pre>
+<p>This says to create a variable with the name of worldObj that will be of type World (will refer to an object of the class World). It will refer to the object created by the World class because of the code: new World(). We can use <code>System.out.println(worldObj)</code> to ask the new World object to print out some information about itself.</p>
+<p>To create a turtle object in this world we will again use:</p>
+<pre><code>new Class (parameterList)</code></pre>
+<p>This time we will ask the Turtle class to create the object in our World by passing a reference to the world to create it in.</p>
+<pre><code>&gt; Turtle turtle1 = new Turtle(worldObj);
+&gt; System.out.println(turtle1);
+No name turtle at 320, 240 heading 0.</code></pre>
+<p>To create another turtle in a specific location</p>
+<pre><code>&gt; Turtle turtle2 = new Turtle(30,50,worldObj);
+&gt; System.out.println(turtle2);
+No name turtle at 30, 50 heading 0.</code></pre>
+<h3 id="sending-messages-to-objects">3.4.3 Sending Messages to Objects</h3>
+<p>A way to make an object of a class do something is to send a message to it. The full syntax for sending a message is:</p>
+<pre><code>objectReference.message(parameterList);</code></pre>
+<p>To use in on our turtle</p>
+<pre><code>&gt; turtle1.forward(20);
+&gt; turtle1.turnLeft();
+&gt; turtle1.forward(30);
+&gt; turtle1.turnRight();
+&gt; turtle1.forward(40);
+&gt; turtle1.turn(-45);
+&gt; turtle1.forward(30);
+&gt; turtle1.turn(90);
+&gt; turtle1.forward(20);
+
+&gt; turtle2.turnRight();
+&gt; turtle2.forward(200);
+&gt; turtle2.turnRight();
+&gt; turtle2.forward(200);</code></pre>
+<h3 id="additional-turtle-capabilities">3.4.5 Additional Turtle Capabilities</h3>
+<ul>
+<li><code>backward(amount)</code> go backward amount of pixels</li>
+<li><code>hide()</code>stops the turtle from drawing itself</li>
+<li><code>show()</code> starts the turtle to draw itself again</li>
+<li><code>penUp()</code> stops the turtle to leave its trail behind</li>
+<li><code>pendown()</code> start the turtle to leave its trail behind</li>
+<li><code>setPenWidth(width)</code> set the pen width to width pixels</li>
+<li><code>moveTo(x, y)</code> ask the turtle to move to a specific location or coordinate</li>
+<li><code>setName()</code> sets a name for the turtle for when you print it.</li>
+</ul>
+<pre><code>&gt; World world1 = new World();
+&gt; Turtle turtle1 = new Turtle(50,50,world1);
+&gt; turtle1.setName(&quot;Jane&quot;);
+&gt; turtle1.turnRight();
+&gt; turtle1.forward(30);
+&gt; turtle1.turnRight();
+&gt; turtle1.forward(30);
+&gt; turtle1.turnRight();
+&gt; turtle1.forward(30);
+&gt; turtle1.turnRight();
+&gt; turtle1.forward(30);
+&gt; turtle1.penUp();
+&gt; turtle1.moveTo(200,200);
+&gt; turtle1.hide();
+&gt; turtle1.penDown();
+&gt; turtle1.turnRight();
+&gt; turtle1.forward(30);
+&gt; turtle1.turnRight();
+&gt; turtle1.forward(30);
+&gt; turtle1.turnRight();
+&gt; turtle1.forward(30);
+&gt; turtle1.turnRight();
+&gt; turtle1.forward(30);
+&gt; System.out.println(turtle1);
+Jane turtle at 200, 200 heading 0.</code></pre>
+<h1 id="references">References</h1>
+<ul>
+<li><a href="../media/java_book_mediaComp_ch1-4.pdf">Intro to Computing and Programming in Java</a></li>
+<li><a href="https://www.youtube.com/watch?v=AxRCoRMpPy4">Getting Started with Dr. Java</a></li>
+<li><a href="../media/turtle.pdf">Getting Started PDF Slides</a></li>
+</ul>
+<hr />
+<div>
+    <a href="../../../index.html">Wiki Root</a> > Module 1 Notes
+      </ol>
+    </div>
+	</div>
+</body>
+</html>

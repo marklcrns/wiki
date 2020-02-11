@@ -10,7 +10,9 @@ tags: econ-120, econ
     - [Course Requirements](#ECON 120 Principles of Macroeconomics#Course Requirements)
     - [Course Materials](#ECON 120 Principles of Macroeconomics#Course Materials)
       - [Project](#ECON 120 Principles of Macroeconomics#Course Materials#Project)
-    - [Quizzes](#ECON 120 Principles of Macroeconomics#Quizzes)
+    - [Notes](#ECON 120 Principles of Macroeconomics#Notes)
+      - [Quiz Reviewer](#ECON 120 Principles of Macroeconomics#Notes#Quiz Reviewer)
+      - [Unit One](#ECON 120 Principles of Macroeconomics#Notes#Unit One)
 
 # ECON 120 Principles of Macroeconomics
 > Professor: Frederica Carr<br>
@@ -31,6 +33,12 @@ tags: econ-120, econ
 ## Course Materials
 
   * [Syllabus](file:./media/econ120_syllabus.pdf)
+  * ECON MACRO 6th Edition
+    - [Chegg](https://ereader.chegg.com/#/books/9781337671804/cfi/3!/4/2@100:0.00) -- eTextbook
+    - [Chegg](https://www.chegg.com/my/orders) -- eTextbook
+      * Sign-in with Google
+    - Purchased 2020-02-09
+    - Good for 120 Days
 
 ### Project
 
@@ -38,7 +46,31 @@ tags: econ-120, econ
   * [UN Survey Chart](file:./media/econ-120_UNSurveryChart.png)
   * [My Group](group_project/project)
 
-## Quizzes
+## Notes
+
+### Quiz Reviewer
 
   * [Syllabus Quiz Reviewer](quizzes/reviewer/syllabus) -- 4pts
 
+### Unit One
+
+Textbook
+
+  - [Chegg](https://ereader.chegg.com/#/books/9781337671804/cfi/3!/4/2@100:0.00) -- eTextbook
+  - Part 1: The Art and Science of Economic Analysis Economic Systems
+
+Files
+
+  * [What is Economics and Notes on Graphing](file:./media/unit-1/What is Economics and Notes on Graphing2.pdf)
+  * [What is an Economy](file:./media/unit-1/What is an economy.100s06-1.pdf)
+  * [What is Rationality](file:./media/unit-1/What is Rationality.pdf)
+
+Session Notes
+
+  * [Notes 1](file:./media/unit-1/U1.1.28.M.png)
+  * [Notes 2](file:./media/unit-1/6.20Notes1.png)
+  * [Notes 3](file:./media/unit-1/6.20Notes2.png)
+
+Personal Notes
+
+  * [Unit 1 notes](notes/u-1.md)

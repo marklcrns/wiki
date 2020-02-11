@@ -1,0 +1,101 @@
+---
+title: Module 1 Notes
+author: Mark Lucernas
+date: 2020-02-09
+tags: m-1, module-1, notes
+---
+
+# Contents
+  - [Module 1 Notes Chapter 2.3 to 3.5](#Module 1 Notes Chapter 2.3 to 3.5)
+    - [2.3 Java Basics](#Module 1 Notes Chapter 2.3 to 3.5#2.3 Java Basics)
+    - [2.3.1 Math Operators](#Module 1 Notes Chapter 2.3 to 3.5#2.3.1 Math Operators)
+    - [2.3.2 Printing the Result of a Statement](#Module 1 Notes Chapter 2.3 to 3.5#2.3.2 Printing the Result of a Statement)
+    - [2.3.3 Data Types in Math Expressions](#Module 1 Notes Chapter 2.3 to 3.5#2.3.3 Data Types in Math Expressions)
+      - [Casting](#Module 1 Notes Chapter 2.3 to 3.5#2.3.3 Data Types in Math Expressions#Casting)
+
+# Module 1 Notes Chapter 2.3 to 3.5
+
+Ref: [Intro to Computing and Programming in Java](file:../media/java_book_mediaComp_ch1-4.pdf)
+
+## 2.3 Java Basics
+
+**Comment operator**
+
+    /**
+     * Comment Goes Here
+     */
+
+    or
+
+    /* Comment Goes Here */
+
+    or
+
+    // Comment Goes Here
+
+## 2.3.1 Math Operators
+
+**Addition**
+
+    > 34 + 56
+    90
+
+**Subtraction**
+
+    > 26 - 3
+    23
+
+**Multiplication**
+
+    > 3 * 4
+    12
+
+**Division**
+
+    > 4 / 2
+    2
+
+**Modulo or Modulus**
+
+This operator calculates the _remainder_ of the first number divided by the
+second number
+
+    > 9 % 4
+    1
+
+## 2.3.2 Printing the Result of a Statement
+
+* Always end a statement with a semicolon `;`
+
+**Printing Statement**
+
+    System.out.println();
+
+## 2.3.3 Data Types in Math Expressions
+
+Using _floating_ point numbers
+
+    > System.out.println(1.0/2.0);
+    0.5
+
+Using _integers_
+
+    > System.out.println(1/2);
+    0
+
+### Casting
+
+  - Casting is used to get the correct result from the division of two integers.
+
+  > System.out.println((double) 1 / 2);
+  0.5
+  > System.out.println(1 / (double) 2);
+  0.5
+
+However, if we cast the result of the integer division to a double it is too
+late since the result has already been calculated after applying the `double`
+cast.
+
+    > System.out.println((double) (1/2)); 0.0
+
+
