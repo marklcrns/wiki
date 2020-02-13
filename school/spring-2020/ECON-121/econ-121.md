@@ -34,7 +34,7 @@ Textbook
       of time for completion and increased from 3 to 5 attempts each.
   * [MyLab & Mastering](https://portal.mypearson.com/course-home)
     - My Pearson account [credentials](vfile:./media/pearson_account.txt)
-  * [Calendar](file:./media/calendar.pdf)
+  * [Course Calendar](file:./media/calendar.pdf)
 
 ### Recommended Readings
 

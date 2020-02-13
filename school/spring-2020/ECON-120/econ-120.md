@@ -13,6 +13,7 @@ tags: econ-120, econ
     - [Notes](#ECON 120 Principles of Macroeconomics#Notes)
       - [Quiz Reviewer](#ECON 120 Principles of Macroeconomics#Notes#Quiz Reviewer)
       - [Unit One](#ECON 120 Principles of Macroeconomics#Notes#Unit One)
+    - [Assignments](#ECON 120 Principles of Macroeconomics#Assignments)
 
 # ECON 120 Principles of Macroeconomics
 > Professor: Frederica Carr<br>
@@ -33,9 +34,9 @@ tags: econ-120, econ
 ## Course Materials
 
   * [Syllabus](file:./media/econ120_syllabus.pdf)
-  * ECON MACRO 6th Edition
-    - [Chegg](https://ereader.chegg.com/#/books/9781337671804/cfi/3!/4/2@100:0.00) -- eTextbook
-    - [Chegg](https://www.chegg.com/my/orders) -- eTextbook
+  * Textbook
+    - [ECON Macro 6th Edition](https://ereader.chegg.com/#/books/9781337671804/cfi/3!/4/2@100:0.00) -- eTextbook
+    - [Chegg](https://www.chegg.com/my/orders) -- My eTextbooks
       * Sign-in with Google
     - Purchased 2020-02-09
     - Good for 120 Days
@@ -54,10 +55,14 @@ tags: econ-120, econ
 
 ### Unit One
 
+Source
+
+  * [Unit ONE - Readings](https://sdccd.instructure.com/courses/2381435/pages/unit-one-readings?module_item_id=39185504)
+
 Textbook
 
-  - [Chegg](https://ereader.chegg.com/#/books/9781337671804/cfi/3!/4/2@100:0.00) -- eTextbook
-  - Part 1: The Art and Science of Economic Analysis Economic Systems
+  * [ECON Macro 6th Edition](https://ereader.chegg.com/#/books/9781337671804/cfi/3!/4/2@100:0.00) -- eTextbook
+  * Part 1: The Art and Science of Economic Analysis Economic Systems
 
 Files
 
@@ -71,6 +76,14 @@ Session Notes
   * [Notes 2](file:./media/unit-1/6.20Notes1.png)
   * [Notes 3](file:./media/unit-1/6.20Notes2.png)
 
+Recordings
+
+  * [Unite 1 Recordings 2016-09-06](https://youtu.be/k_AorQJBx1E)
+
 Personal Notes
 
   * [Unit 1 notes](notes/u-1.md)
+
+## Assignments
+
+  - [Unit 1](file:./media/unit-1/u-1_assignment.docx)
