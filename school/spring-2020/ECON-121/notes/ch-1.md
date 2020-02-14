@@ -5,36 +5,6 @@ date: 2020-02-05
 tags: econ-121, chapter-1, ch-1
 ---
 
-# Contents
-  - [ECON 121 - Chapter 1 Notes](#ECON 121 - Chapter 1 Notes)
-    - [1.1 What is Economics?](#ECON 121 - Chapter 1 Notes#1.1 What is Economics?)
-      - [1.1.2 Positive versus Normative Analysis](#ECON 121 - Chapter 1 Notes#1.1 What is Economics?#1.1.2 Positive versus Normative Analysis)
-        - [The Three Key Economic Questions: What, How, and Who?](#ECON 121 - Chapter 1 Notes#1.1 What is Economics?#1.1.2 Positive versus Normative Analysis#The Three Key Economic Questions: What, How, and Who?)
-      - [1.1.3 Economic Models](#ECON 121 - Chapter 1 Notes#1.1 What is Economics?#1.1.3 Economic Models)
-    - [1.2 Economic Analysis and Modern Problems](#ECON 121 - Chapter 1 Notes#1.2 Economic Analysis and Modern Problems)
-      - [1.2.1 Economic View of Traffic Congestion](#ECON 121 - Chapter 1 Notes#1.2 Economic Analysis and Modern Problems#1.2.1 Economic View of Traffic Congestion)
-      - [1.2.2 Trade-offs from International Trade](#ECON 121 - Chapter 1 Notes#1.2 Economic Analysis and Modern Problems#1.2.2 Trade-offs from International Trade)
-      - [1.2.3 Economic View of Managing the U.S. Economy](#ECON 121 - Chapter 1 Notes#1.2 Economic Analysis and Modern Problems#1.2.3 Economic View of Managing the U.S. Economy)
-    - [1.3 The Economic Way of Thinking](#ECON 121 - Chapter 1 Notes#1.3 The Economic Way of Thinking)
-      - [1.3.1 Use Assumptions to Simplify](#ECON 121 - Chapter 1 Notes#1.3 The Economic Way of Thinking#1.3.1 Use Assumptions to Simplify)
-      - [1.3.2 Isolate Variables--_Ceteris Paribus_](#ECON 121 - Chapter 1 Notes#1.3 The Economic Way of Thinking#1.3.2 Isolate Variables--_Ceteris Paribus_)
-      - [1.3.3 Think at the Margin](#ECON 121 - Chapter 1 Notes#1.3 The Economic Way of Thinking#1.3.3 Think at the Margin)
-      - [1.3.4 Rational People Respond to Incentives](#ECON 121 - Chapter 1 Notes#1.3 The Economic Way of Thinking#1.3.4 Rational People Respond to Incentives)
-      - [1.3.5 Example: Southern California Addresses Its Congestion Problem](#ECON 121 - Chapter 1 Notes#1.3 The Economic Way of Thinking#1.3.5 Example: Southern California Addresses Its Congestion Problem)
-    - [1.4 Employability: Economic Logic on the Job](#ECON 121 - Chapter 1 Notes#1.4 Employability: Economic Logic on the Job)
-    - [1.5 Preview of Coming Attractions: Macroeconomics](#ECON 121 - Chapter 1 Notes#1.5 Preview of Coming Attractions: Macroeconomics)
-      - [Three ways we can use Macroeconomics](#ECON 121 - Chapter 1 Notes#1.5 Preview of Coming Attractions: Macroeconomics#Three ways we can use Macroeconomics)
-    - [1.6 Preview of Coming Attractions: Microeconomics](#ECON 121 - Chapter 1 Notes#1.6 Preview of Coming Attractions: Microeconomics)
-      - [Three ways we can use Microeconomics analysis](#ECON 121 - Chapter 1 Notes#1.6 Preview of Coming Attractions: Microeconomics#Three ways we can use Microeconomics analysis)
-    - [1A.1 Using Graphs](#ECON 121 - Chapter 1 Notes#1A.1 Using Graphs)
-      - [Graph of Single Variables](#ECON 121 - Chapter 1 Notes#1A.1 Using Graphs#Graph of Single Variables)
-      - [Graphing Two variables](#ECON 121 - Chapter 1 Notes#1A.1 Using Graphs#Graphing Two variables)
-      - [Computing the Slope](#ECON 121 - Chapter 1 Notes#1A.1 Using Graphs#Computing the Slope)
-    - [1A.2 Computing Percentage Changes and Using Equations](#ECON 121 - Chapter 1 Notes#1A.2 Computing Percentage Changes and Using Equations)
-      - [Computing Percentage Changes](#ECON 121 - Chapter 1 Notes#1A.2 Computing Percentage Changes and Using Equations#Computing Percentage Changes)
-        - [The Perils of Percentages](#ECON 121 - Chapter 1 Notes#1A.2 Computing Percentage Changes and Using Equations#Computing Percentage Changes#The Perils of Percentages)
-    - [Resources](#ECON 121 - Chapter 1 Notes#Resources)
-
 # ECON 121 - Chapter 1 Notes
 
 **Economics**

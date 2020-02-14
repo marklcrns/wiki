@@ -6,8 +6,8 @@ tags: wiki
 ---
 
 # Contents
-    - [Wiki](#Wiki)
-        - [Interwikis](#Wiki#Interwikis)
+  - [Wiki](#Wiki)
+    - [Interwikis](#Wiki#Interwikis)
 
 # Wiki
 

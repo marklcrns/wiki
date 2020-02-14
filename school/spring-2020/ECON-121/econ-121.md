@@ -5,13 +5,6 @@ date: 2020-02-05
 tags: econ-121
 ---
 
-# Contents
-  - [ECON 121 Principles of Microeconomics](#ECON 121 Principles of Microeconomics)
-    - [Course Requirements](#ECON 121 Principles of Microeconomics#Course Requirements)
-    - [Course Materials](#ECON 121 Principles of Microeconomics#Course Materials)
-      - [Recommended Readings](#ECON 121 Principles of Microeconomics#Course Materials#Recommended Readings)
-    - [Personal Notes](#ECON 121 Principles of Microeconomics#Personal Notes)
-
 # ECON 121 Principles of Microeconomics
 > Professor: Xiaochuan Song<br>
 > Campus: San Diego Mesa College (online)<br>

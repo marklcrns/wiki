@@ -5,15 +5,6 @@ date: 2020-02-05
 tags: cisc-190, cisc, java, programming
 ---
 
-# Contents
-  - [CISC 190 Java Programming](#CISC 190 Java Programming)
-    - [Course Requirements](#CISC 190 Java Programming#Course Requirements)
-    - [Course Materials](#CISC 190 Java Programming#Course Materials)
-    - [Notes](#CISC 190 Java Programming#Notes)
-    - [Homeworks](#CISC 190 Java Programming#Homeworks)
-      - [Module 1](#CISC 190 Java Programming#Homeworks#Module 1)
-    - [Skills I will learn or improve in this course--Applicable for Resumes](#CISC 190 Java Programming#Skills I will learn or improve in this course--Applicable for Resumes)
-
 # CISC 190 Java Programming
 > Professor: Tasha Frankie<br>
 > Campus: San Diego Mesa College (online)<br>

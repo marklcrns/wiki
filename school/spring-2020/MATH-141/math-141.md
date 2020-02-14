@@ -5,11 +5,6 @@ date: 2020-02-05
 tags: math-141, math
 ---
 
-# Contents
-  - [MATH 141 Pre-calculus](#MATH 141 Pre-calculus)
-    - [Course Materials](#MATH 141 Pre-calculus#Course Materials)
-    - [Notes](#MATH 141 Pre-calculus#Notes)
-
 # MATH 141 Pre-calculus
 > Professor: Francisco Marquez<br>
 > Campus: San Diego Mesa College (online)<br>
@@ -31,3 +26,4 @@ tags: math-141, math
 ## Notes
 
   * [Chapter 1](notes/ch-1)
+

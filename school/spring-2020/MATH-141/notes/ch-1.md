@@ -5,21 +5,6 @@ date: 2020-02-06
 tags: math-141, notes, ch-1, chapter-1
 ---
 
-# Contents
-  - [MATH 141 - Chapter 1: The Basics - Notes](#MATH 141 - Chapter 1: The Basics - Notes)
-    - [1.1 Sets and Axioms](#MATH 141 - Chapter 1: The Basics - Notes#1.1 Sets and Axioms)
-      - [Sets of Numbers](#MATH 141 - Chapter 1: The Basics - Notes#1.1 Sets and Axioms#Sets of Numbers)
-      - [Axioms](#MATH 141 - Chapter 1: The Basics - Notes#1.1 Sets and Axioms#Axioms)
-    - [1.2 Add, Subtract, Multiply, Divide, Simplify, etc](#MATH 141 - Chapter 1: The Basics - Notes#1.2 Add, Subtract, Multiply, Divide, Simplify, etc)
-    - [1.3 Solving: Polynomial Degree 1](#MATH 141 - Chapter 1: The Basics - Notes#1.3 Solving: Polynomial Degree 1)
-      - [Solving Linear Equations Intro](#MATH 141 - Chapter 1: The Basics - Notes#1.3 Solving: Polynomial Degree 1#Solving Linear Equations Intro)
-      - [4 Steps in Solving Linear Equations](#MATH 141 - Chapter 1: The Basics - Notes#1.3 Solving: Polynomial Degree 1#4 Steps in Solving Linear Equations)
-        - [Step 4: Kill the coefficient](#MATH 141 - Chapter 1: The Basics - Notes#1.3 Solving: Polynomial Degree 1#4 Steps in Solving Linear Equations#Step 4: Kill the coefficient)
-        - [Step 3: Collect x's](#MATH 141 - Chapter 1: The Basics - Notes#1.3 Solving: Polynomial Degree 1#4 Steps in Solving Linear Equations#Step 3: Collect x's)
-        - [Step 2: Move x's](#MATH 141 - Chapter 1: The Basics - Notes#1.3 Solving: Polynomial Degree 1#4 Steps in Solving Linear Equations#Step 2: Move x's)
-        - [Step 1: Free x's](#MATH 141 - Chapter 1: The Basics - Notes#1.3 Solving: Polynomial Degree 1#4 Steps in Solving Linear Equations#Step 1: Free x's)
-    - [1.4 Solving: Polynomial Degree 2](#MATH 141 - Chapter 1: The Basics - Notes#1.4 Solving: Polynomial Degree 2)
-
 # MATH 141 - Chapter 1: The Basics - Notes
 
 ## 1.1 Sets and Axioms
@@ -87,6 +72,9 @@ have the following properties (a, b, c arbitrary real numbers):
 No lecture...
 
 ## 1.3 Solving: Polynomial Degree 1
+
+- [Dividing polynomials using long division](https://www.youtube.com/watch?v=-q-vjfXrLqA)
+- [Basic operations of complex/imaginary numbers](https://www.youtube.com/watch?v=fPtyZKuDUV4)
 
 ### Solving Linear Equations Intro
 
@@ -336,5 +324,127 @@ Solution:
         ------------------
           3 - 1/2 + 11/3
 
-## 1.4 Solving: Polynomial Degree 2
+## 1.5 Solving: Polynomial Degree 3+
+
+### Synthetic Division
+
+  - [Synthetic Division part 1](https://www.youtube.com/watch?v=1byR9UEQJN0)
+  - [Synthetic Division part 2](https://www.youtube.com/watch?v=3Ee_huKclEQ)
+
+### Rational Zero Theorem
+
+  - [Finding all Zeros of a Polynomial Function: Rational Zero Theorem](https://www.youtube.com/watch?v=Iaq7z7reznM)
+
+#### Video Notes
+
+**Quadratic Formula**
+
+$$x = \frac{-b \pm \sqrt{b^{2} - 4ac}}{2a}$$
+
+> Note: Getting the **square root** of a **negative** number is an imaginary
+number
+
+### Descartes' Rule of Signs
+
+Descartes' Rule of Signs can be used to determine the number of positive real
+zeros, negative real zeros, and imaginary zeros in a **polynomial function**.
+
+**Positive real zeros**
+
+The number of **positive** real zeros in y = P(x) is equal to the number of
+changes if sign in front of each term, **or is less than this by an even
+number**.
+
+    P(x) 9x⁵ - 4x⁴ - 2x³ - x² + 5x - 7
+          +     -     -    -    +    -
+
+This has **3** change of signs, from 9x⁵ to 4x⁴, x² to 5x, and 5x to 7.  Also,
+_the number less than this (3) by an even number_ (which is 2) suggest that the
+other number is 1. Therefore there are 3 (or 1) positive real zeros.
+
+**Negative real zeros**
+
+The number of **negative** real zeros in y = P(x) is the same as the number of
+changes of sign in front of each terms of P(-x), **or is less than this value by
+an even number**.
+
+    P(x) 9x⁵ - 4x⁴ - 2x³ - x² + 5x - 7
+
+    Rewrite this as
+
+    P(x) 9(-x)⁵ - 4(-x)⁴ - 2(-x)³ - (-x)² + 5(-x) - 7
+
+    P(-x) -9x⁵ - 4x⁴ + 2x³ - x² - 5x - 7
+            -     -     +    -    -    -
+
+This has **2** sign changes, from 4x⁴ to 2x³ and 2x³ to x². Also, _the number
+less than this (2) value by an even number_ (which is 0) suggests the number 0.
+Therefore there are 2 (or 0) negative real zeros.
+
+| Positive Real Zeros | Negative Real Zeros | Number of Imaginary Zeros |
+|---------------------|---------------------|---------------------------|
+| 3                   | 2                   | 5 - 3 - 2 = 0             |
+| 1                   | 0                   | 5 - 1 - 0 = 4             |
+| 3                   | 0                   | 5 - 3 - 0 = 2             |
+| 1                   | 2                   | 5 - 1 - 2 = 2             |
+
+**The 5 in the imaginary number is the highest exponent in the equation**
+
+Video Explanations
+
+  - [Video Lecture Playlist](https://www.youtube.com/watch?v=vefTFpdG4zM&list=PLk9w1T-d9etEqZazMp-axuRvRpvF83bxu&index=1)
+  - [Descartes' Rule of Signs Alternative Video](https://www.youtube.com/watch?v=nTjnon4W8Sg)
+
+## 1.6 Solving Rational Equations
+
+  - [Video Lecture](https://www.youtube.com/watch?v=BHEEoiqGC1Y)
+    * 0:29 Problem 1
+      - $\frac{3}{4x} = \frac{5}{2x} - \frac{7}{4}$
+    * 4:05 Problem 2
+      - $\frac{2}{3x + 1} = \frac{1}{x} - \frac{6x}{3x + 1}$
+    * 9:32 Problem 3
+      - $\frac{x - 4}{x + 6} = \frac{2x}{2x - 1}$
+    * 12:26 Problem 4
+      - $\frac{1}{x + 4} + \frac{x}{x - 4} = \frac{-8}{x^{2} - 16}$
+    * 16:30 Problem 5
+      - $\frac{1}{y - 1} + \frac{5}{12} = \frac{-2}{3y - 3}$
+    * 20:36 Problem 6
+      - $\frac{1}{y + 2} + \frac{3}{y + 7} = \frac{5}{y^{2} + 9y + 14}$
+
+Video Lecture Notes
+
+  - The null set Ø, also called the **empty set**, can be used to represent the
+    answer of an equation with **no solution**.
+
+**Extraneous Solutions**
+
+  - Results that cannot be verified in the original equation even if you solve
+    the problem correctly
+  - Because a 0 in a denominator would make it undefined
+  - One example is having values of x that would result to a zero (0) e.g., 1/2x
+    where x = 0 will result to undefined.
+
+#### Extras
+
+##### Factoring Quadratic Trinomials
+
+  - [Factoring Quadratic Trinomials part 1](https://www.youtube.com/watch?v=q6_pWifXKcQ)
+  - [Factoring Quadratic Trinomials part 2](https://www.youtube.com/watch?v=S3GNmhI0-sU)
+
+Video Notes
+
+  - The sign middle term is always going to be the sign of the biggest factor,
+  and the sign last term is going to be whether to add or subtract to get the
+  middle number.
+
+##### Finding The Domain of a Function
+
+  - [Finding the Domain of a Function](https://www.youtube.com/watch?v=yU3Yu9jIjbM)
+
+Domain Restrictions:
+
+  - Denominator should never be equals to zero (0)
+  - Can't have negative even roots or less than 0
+    * e.g., square root of -4 is an imaginary number
+  - Logs should be greater than 0
 
