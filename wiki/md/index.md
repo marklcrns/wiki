@@ -1,13 +1,9 @@
 ---
-title: index
+title: Wiki Index
 author: Mark Lucernas
 date: 2020-02-05
 tags: wiki
 ---
-
-# Contents
-  - [Wiki](#Wiki)
-    - [Interwikis](#Wiki#Interwikis)
 
 # Wiki
 
@@ -15,7 +11,11 @@ tags: wiki
 
   * [Vimwiki Cheatsheet](http://thedarnedestthing.com/vimwiki%20cheatsheet) -- Cheatsheet for vimwiki commands
 
+## Diary
+
+  - [Wiki Diary](diary/diary.md)
+
 ## Interwikis
 
-  * [School](wiki1:index) -- College Notes
-  * [References](wiki2:index) -- Personal Documentations of every programs I used
+  * [School](../../school/md/index) -- College Notes
+  * [References](../../references/md/index) -- Personal Documentations of every programs I used

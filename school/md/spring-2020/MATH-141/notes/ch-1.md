@@ -1,18 +1,12 @@
 ---
-title: ch 1
+title: MATH 141 Chapter 1
 author: Mark Lucernas
 date: 2020-02-06
-tags: math-141, notes, ch-1, chapter-1
 ---
 
-# MATH 141 - Chapter 1: The Basics - Notes
+# Chapter 1: The Basics - Notes
 
 ## 1.1 Sets and Axioms
-
-Ref:
-
-  * [Pre-calc Textbook Reference 1](file:../media/pre-calc_textbookRef.pdf)
-    - Pages 8-10
 
 ### Sets of Numbers
 
@@ -339,7 +333,9 @@ Solution:
 
 **Quadratic Formula**
 
-$$x = \frac{-b \pm \sqrt{b^{2} - 4ac}}{2a}$$
+$$
+x = \frac{-b \pm \sqrt{b^{2} - 4ac}}{2a}
+$$
 
 > Note: Getting the **square root** of a **negative** number is an imaginary
 number
@@ -433,9 +429,18 @@ Video Lecture Notes
 
 Video Notes
 
-  - The sign middle term is always going to be the sign of the biggest factor,
-  and the sign last term is going to be whether to add or subtract to get the
-  middle number.
+  - The sign of the **middle term** is always going to be the sign of the
+    **biggest factor**, and the sign of the **last term** is going to be whether
+    to **add or subtract to get the middle number**.
+
+Additional Notes
+
+  - $ax^{2} + bx + c$
+    * $(+ax +c)(+ax +c)$
+    * $-(+ax +c)-(+ax +c)$ = $(-ax -c)(-ax -c)$
+  - $ax^{2} - bx + c$
+    * $(-ax +c)(-ax +c)$
+    * $-(-ax +c)-(-ax +c)$ = $(+ax -c)(+ax -c)$
 
 ##### Finding The Domain of a Function
 
@@ -447,4 +452,9 @@ Domain Restrictions:
   - Can't have negative even roots or less than 0
     * e.g., square root of -4 is an imaginary number
   - Logs should be greater than 0
+
+## References
+
+  * [Pre-calc Textbook Reference 1](file:../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)
+    - Pages 8-10
 

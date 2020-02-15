@@ -1,8 +1,7 @@
 ---
-title: econ 121
+title: ECON 121
 author: Mark Lucernas
 date: 2020-02-05
-tags: econ-121
 ---
 
 # ECON 121 Principles of Microeconomics
@@ -22,12 +21,12 @@ Textbook
 
 ## Course Materials
 
-  * [Syllabus](file:./media/econ-121_syllabus.pdf)
+  * [Syllabus](file:../../../files/spring-2020/ECON-121/econ-121_syllabus.pdf)
     - To prevent technical problems, **quiz** and **exams** doubled the amount
       of time for completion and increased from 3 to 5 attempts each.
   * [MyLab & Mastering](https://portal.mypearson.com/course-home)
-    - My Pearson account [credentials](vfile:./media/pearson_account.txt)
-  * [Course Calendar](file:./media/calendar.pdf)
+    - My Pearson account [credentials](vfile:../../../files/spring-2020/ECON-121/pearson_account.txt)
+  * [Course Calendar](file:../../../files/spring-2020/ECON-121/calendar.pdf)
 
 ### Recommended Readings
 
@@ -39,3 +38,4 @@ Textbook
 ## Personal Notes
 
   * [Chapter 1](notes/ch-1)
+  * [Chapter 2](notes/ch-2)

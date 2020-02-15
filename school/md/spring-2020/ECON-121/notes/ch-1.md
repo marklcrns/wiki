@@ -1,11 +1,10 @@
 ---
-title: ch-1
+title: ECON 121 Chapter 1
 author: Mark Lucernas
 date: 2020-02-05
-tags: econ-121, chapter-1, ch-1
 ---
 
-# ECON 121 - Chapter 1 Notes
+# Chapter 1: Introduction: What is Economics?
 
 **Economics**
 
@@ -70,9 +69,9 @@ trade-offs.
 |--------------------------------------------------------------------------------------|--------------------------------------------------------------------|
 | If the government increases the minimum wage, how many workers will lose their jobs? | Should the government increase the minimum wage?                   |
 | If two office-supply firms merge, will the price of office supplies increase?        | Should the government block the merger of two office-supply firms? |
-| How does a college education affect a person's productivity and earnings? | Should the government subsidize a college education?
-| How do consumers respond to a cut in income taxes? | Should the government cut taxes to stimulate the economy?
-| If a nation restricts shoe imports, who benefits and who bears the cost? | Should the government restrict imports?
+| How does a college education affect a person's productivity and earnings?            | Should the government subsidize a college education?               |
+| How do consumers respond to a cut in income taxes?                                   | Should the government cut taxes to stimulate the economy?          |
+| If a nation restricts shoe imports, who benefits and who bears the cost?             | Should the government restrict imports?                            |
 
 #### The Three Key Economic Questions: What, How, and Who?
 
@@ -218,7 +217,6 @@ objective of policy makers is to adjust taxes, spending, and financial
 policies to keep the economy growing without causing inflation.</b>
 </pre>
 
-%%
 ## 1.3 The Economic Way of Thinking
 
 > **There are 4 Elements of the economic way of thinking...**
@@ -506,7 +504,7 @@ increase in capacity would be 40 percent (equal to 2 divided by 5), the same as
 the percentage decrease. In that case, we get the more sensible result that the
 net effect of the two changes is zero.
 
-## Resources
+## References
 
 Text Books
 

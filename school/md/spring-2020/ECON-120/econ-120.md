@@ -1,8 +1,7 @@
 ---
-title: econ 120
+title: ECON 120
 author: Mark Lucernas
 date: 2020-02-05
-tags: econ-120, econ
 ---
 
 # ECON 120 Principles of Macroeconomics
@@ -23,7 +22,7 @@ tags: econ-120, econ
 
 ## Course Materials
 
-  * [Syllabus](file:./media/econ120_syllabus.pdf)
+  * [Syllabus](file:../../../files/spring-2020/ECON-120/econ120_syllabus.pdf)
   * Textbook
     - [ECON Macro 6th Edition](https://ereader.chegg.com/#/books/9781337671804/cfi/3!/4/2@100:0.00) -- eTextbook
     - [Chegg](https://www.chegg.com/my/orders) -- My eTextbooks
@@ -33,8 +32,8 @@ tags: econ-120, econ
 
 ### Project
 
-  * [Project Guideline](file:./media/econ-120_projectGuidlines.pdf)
-  * [UN Survey Chart](file:./media/econ-120_UNSurveryChart.png)
+  * [Project Guideline](file:../../../files/spring-2020/ECON-120/econ-120_projectGuidlines.pdf)
+  * [UN Survey Chart](file:../../../files/spring-2020/ECON-120/econ-120_UNSurveryChart.png)
   * [My Group](group_project/project)
 
 ## Notes
@@ -56,15 +55,15 @@ Textbook
 
 Files
 
-  * [What is Economics and Notes on Graphing](file:./media/unit-1/What is Economics and Notes on Graphing2.pdf)
-  * [What is an Economy](file:./media/unit-1/What is an economy.100s06-1.pdf)
-  * [What is Rationality](file:./media/unit-1/What is Rationality.pdf)
+  * [What is Economics and Notes on Graphing](file:../../../files/spring-2020/ECON-120/unit-1/What is Economics and Notes on Graphing2.pdf)
+  * [What is an Economy](file:../../../files/spring-2020/ECON-120/unit-1/What is an economy.100s06-1.pdf)
+  * [What is Rationality](file:../../../files/spring-2020/ECON-120/unit-1/What is Rationality.pdf)
 
 Session Notes
 
-  * [Notes 1](file:./media/unit-1/U1.1.28.M.png)
-  * [Notes 2](file:./media/unit-1/6.20Notes1.png)
-  * [Notes 3](file:./media/unit-1/6.20Notes2.png)
+  * [Notes 1](file:../../../files/spring-2020/ECON-120/unit-1/U1.1.28.M.png)
+  * [Notes 2](file:../../../files/spring-2020/ECON-120/unit-1/6.20Notes1.png)
+  * [Notes 3](file:../../../files/spring-2020/ECON-120/unit-1/6.20Notes2.png)
 
 Recordings
 
@@ -76,4 +75,4 @@ Personal Notes
 
 ## Assignments
 
-  - [Unit 1](file:./media/unit-1/u-1_assignment.docx)
+  - [Unit 1](file:../../../files/spring-2020/ECON-120/unit-1/u-1_assignment.docx)
