@@ -49,7 +49,7 @@ Text books
 ### Module 1
 
   * ![Turtle Homework Image](file:../../../files/spring-2020/CISC-190/module-1_turtleHomework.png)
-  * [Turtle Homework Code](vfile:~/Projects/Dev/School/CISC-190/module-1_turtleAssignment.java)
+  * [Turtle Homework Code](vfile:/home/marklcrns/Projects/Dev/School/CISC-190/module-1_turtleAssignment.java)
 
 ---
 ## Skills I will learn or improve in this course--Applicable for Resumes

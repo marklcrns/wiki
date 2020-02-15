@@ -409,8 +409,8 @@ Video Explanations
 
 Video Lecture Notes
 
-  - The null set Ø, also called the **empty set**, can be used to represent the
-    answer of an equation with **no solution**.
+  - The null set $\emptyset$, also called the **empty set**, can be used to
+    represent the answer of an equation with **no solution**.
 
 **Extraneous Solutions**
 
