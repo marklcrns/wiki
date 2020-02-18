@@ -19,3 +19,7 @@ tags: wiki
 
   * [School](../../school/md/index) -- College Notes
   * [References](../../references/md/index) -- Personal Documentations of every programs I used
+
+## TODO
+
+CTRL + SHIFT + S = NEOSNIPPET

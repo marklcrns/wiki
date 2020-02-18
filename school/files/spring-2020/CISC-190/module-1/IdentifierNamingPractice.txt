@@ -1,0 +1,15 @@
+// Variables
+1. int studentsEnrolled;
+2. String employerName;
+3. String carColor;
+4. double bankAccountBalance;
+
+// Class
+public class EmployeeData
+public class VehicleTypeData
+public class CarDealersData
+
+// Methods
+static void deposit()
+static void changeName()
+static void turtleDrawLetterA()

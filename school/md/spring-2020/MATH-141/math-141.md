@@ -15,9 +15,9 @@ date: 2020-02-05
 ## Course Materials
 
   * [Syllabus](file:../../../files/spring-2020/MATH-141/math-141_syllabus.pdf)
+  * [Algebra Review](file:../../../files/spring-2020/MATH-141/algebra_review.pdf)
   * [Pre-calc Textbook Reference 1](file:../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)
   * [Pre-calc Textbook Reference 2](file:../../../files/spring-2020/MATH-141/pre-calc_textbookRef2.pdf)
-  * [Algebra Review](file:../../../files/spring-2020/MATH-141/algebra_review.pdf)
   * [Daabz.com](http://daabz.com/)
     - [Daabz Introduction](file:../../../files/spring-2020/MATH-141/daabz_intro.pdf)
     - My Daabz account [credentials](vfile:../../../files/spring-2020/MATH-141/daabz_account.txt)
@@ -26,3 +26,9 @@ date: 2020-02-05
 
   * [Chapter 1](notes/ch-1)
 
+## Quizzes
+
+  - [Quiz 1 Questionaire](file:../../../files/spring-2020/MATH-141/ch-1/math-141_quiz_1.pdf)
+    * Answers:
+  - [Quiz 2 Questionaire](file:../../../files/spring-2020/MATH-141/ch-1/math-141_quiz_2.pdf)
+    * Answers:

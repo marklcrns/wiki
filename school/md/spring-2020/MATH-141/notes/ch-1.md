@@ -85,7 +85,7 @@ Samples of Linear Equations:
 
 #### Step 4: Kill the coefficient
 
-  * [Video Lecture](https://www.youtube.com/embed/BSIXtFkNvzk)
+  - [Video Lecture](https://www.youtube.com/embed/BSIXtFkNvzk)
 
 **Example 1:**
 
@@ -113,7 +113,7 @@ Solution:
 
 #### Step 3: Collect x's
 
-  * [Video Lecture](https://www.youtube.com/embed/e6w0VbPYXKg)
+  - [Video Lecture](https://www.youtube.com/embed/e6w0VbPYXKg)
 
 **Example 1:**
 
@@ -188,7 +188,7 @@ Solution:
 
 #### Step 2: Move x's
 
-  * [Video Lecture](https://www.youtube.com/embed/001YOoma3B0)
+  - [Video Lecture](https://www.youtube.com/embed/001YOoma3B0)
 
 We CAN'T gather the x's if they are NOT all on one side
 
@@ -268,7 +268,7 @@ Solution:
 
 #### Step 1: Free x's
 
-* [Video Lecture](https://www.youtube.com/embed/sA9W32Wx5Hw)
+  - [Video Lecture](https://www.youtube.com/embed/sA9W32Wx5Hw)
 
 We CAN'T MOVE the x's if they are trapped inside ()'s or fractions
 
@@ -329,7 +329,7 @@ Solution:
 
   - [Finding all Zeros of a Polynomial Function: Rational Zero Theorem](https://www.youtube.com/watch?v=Iaq7z7reznM)
 
-#### Video Notes
+Video Lecture Notes:
 
 **Quadratic Formula**
 
@@ -394,20 +394,23 @@ Video Explanations
 ## 1.6 Solving Rational Equations
 
   - [Video Lecture](https://www.youtube.com/watch?v=BHEEoiqGC1Y)
-    * 0:29 Problem 1
-      - $\frac{3}{4x} = \frac{5}{2x} - \frac{7}{4}$
-    * 4:05 Problem 2
-      - $\frac{2}{3x + 1} = \frac{1}{x} - \frac{6x}{3x + 1}$
-    * 9:32 Problem 3
-      - $\frac{x - 4}{x + 6} = \frac{2x}{2x - 1}$
-    * 12:26 Problem 4
-      - $\frac{1}{x + 4} + \frac{x}{x - 4} = \frac{-8}{x^{2} - 16}$
-    * 16:30 Problem 5
-      - $\frac{1}{y - 1} + \frac{5}{12} = \frac{-2}{3y - 3}$
-    * 20:36 Problem 6
-      - $\frac{1}{y + 2} + \frac{3}{y + 7} = \frac{5}{y^{2} + 9y + 14}$
 
-Video Lecture Notes
+Timestamps
+
+  - 0:29 Problem 1
+    * $\frac{3}{4x} = \frac{5}{2x} - \frac{7}{4}$
+  - 4:05 Problem 2
+    * $\frac{2}{3x + 1} = \frac{1}{x} - \frac{6x}{3x + 1}$
+  - 9:32 Problem 3
+    * $\frac{x - 4}{x + 6} = \frac{2x}{2x - 1}$
+  - 12:26 Problem 4
+    * $\frac{1}{x + 4} + \frac{x}{x - 4} = \frac{-8}{x^{2} - 16}$
+  - 16:30 Problem 5
+    * $\frac{1}{y - 1} + \frac{5}{12} = \frac{-2}{3y - 3}$
+  - 20:36 Problem 6
+    * $\frac{1}{y + 2} + \frac{3}{y + 7} = \frac{5}{y^{2} + 9y + 14}$
+
+Video Lecture Notes:
 
   - The null set $\emptyset$, also called the **empty set**, can be used to
     represent the answer of an equation with **no solution**.
@@ -427,7 +430,7 @@ Video Lecture Notes
   - [Factoring Quadratic Trinomials part 1](https://www.youtube.com/watch?v=q6_pWifXKcQ)
   - [Factoring Quadratic Trinomials part 2](https://www.youtube.com/watch?v=S3GNmhI0-sU)
 
-Video Notes
+Video Lecture Notes:
 
   - The sign of the **middle term** is always going to be the sign of the
     **biggest factor**, and the sign of the **last term** is going to be whether
@@ -435,12 +438,57 @@ Video Notes
 
 Additional Notes
 
-  - $ax^{2} + bx + c$
-    * $(+ax +c)(+ax +c)$
-    * $-(+ax +c)-(+ax +c)$ = $(-ax -c)(-ax -c)$
-  - $ax^{2} - bx + c$
-    * $(-ax +c)(-ax +c)$
-    * $-(-ax +c)-(-ax +c)$ = $(+ax -c)(+ax -c)$
+Trinomial factorization
+
+> Note these solutions were not verified and may be wrong as they were
+personally made
+
+  - $ax^{2}$ **+** $bx$ **+** $c$
+    * $($**+**$ax$ **+**$c$$)$$($**+**$ax$ **+**$c$$)$
+    * $($**-**$ax$ **-**$c$$)$$($**-**$ax$ **-**$c$$)$ inverse
+  - $ax^{2}$ **+** $bx$ **-** $c$
+    * $($**+**$ax$ **-**$c$$)$$($**+**$ax$ **+**$c$$)$
+    * $($**-**$ax$ **+**$c$$)$$($**-**$ax$ **-**$c$$)$ inverse
+  - $ax^{2}$ **-** $bx$ **+** $c$
+    * $($**-**$ax$ **+**$c$$)$$($**-**$ax$ **+**$c$$)$
+    * $($**+**$ax$ **-**$c$$)$$($**+**$ax$ **-**$c$$)$ inverse
+  - $ax^{2}$ **-** $bx$ **-** $c$
+    * $($**+**$ax$ **+**$c$$)$$($**+**$ax$ **-**$c$$)$
+    * $($**-**$ax$ **-**$c$$)$$($**-**$ax$ **+**$c$$)$ inverse
+  - **-**$ax^{2}$ **-** $bx$ **+** $c$
+    * $($**+**$ax$ **+**$c$$)$$($**-**$ax$ **+**$c$$)$
+    * $($**-**$ax$ **-**$c$$)$$($**+**$ax$ **-**$c$$)$ inverse
+  - **-**$ax^{2}$ **-** $bx$ **-** $c$
+    * $($**-**$ax$ **-**$c$$)$$($**+**$ax$ **+**$c$$)$
+    * $($**+**$ax$ **+**$c$$)$$($**-**$ax$ **-**$c$$)$ inverse
+
+Extras
+
+  - $12x + 22\sqrt{x - 3} - 28$
+    * Solution: $(4\sqrt{x - 3} + 2)(3\sqrt{x - 3} + 4)$
+
+> TIP: $\sqrt{x} * \sqrt{x} = x$ or $\sqrt{x - 3 } * \sqrt{x - 3} = x - 3$
+
+  - [Factoring Trinomials Shortcut](https://www.youtube.com/watch?v=KkJGUvCIrNI)
+
+Binomial factorization
+
+> Note these solutions were not verified and may be wrong as they were
+personally made
+
+  - $ax$ **+** $\frac{b}{x}$
+    * $($$ax$ **+** $b$$)$$($$\frac{b}{x}$ **+** $a$$)$
+    * $($**-**$ax$ **-** $b$$)$$($**-**$\frac{b}{x}$ **-** $a$$)$ inverse
+  - $ax$ **-** $\frac{b}{x}$
+    * $($$ax$ **-** $b$$)$$($$\frac{b}{x}$ **+** $a$$)$
+    * $($**-**$ax$ **+** $b$$)$$($**-**$\frac{b}{x}$ **-** $a$$)$ inverse
+    * $($$ax$ **+** $b$$)$$($**-**$\frac{b}{x}$ **+** $a$$)$
+    * $($**-**$ax$ **-** $b$$)$$($$\frac{b}{x}$ **-** $a$$)$ inverse
+  - **-**$ax$ **+** $\frac{b}{x}$
+    * $($$ax$ **+** $b$$)$$($$\frac{b}{x}$ **-** $a$$)$
+    * $($**-**$ax$ **-** $b$$)$$($**-**$\frac{b}{x}$ **+** $a$$)$ inverse
+    * $($**-**$ax$ **+** $b$$)$$($$\frac{b}{x}$ **+** $a$$)$
+    * $($$ax$ **-** $b$$)$$($**-**$\frac{b}{x}$ **-** $a$$)$ inverse
 
 ##### Finding The Domain of a Function
 
@@ -453,8 +501,108 @@ Domain Restrictions:
     * e.g., square root of -4 is an imaginary number
   - Logs should be greater than 0
 
+## 1.7 Solving Rational Inequalities
+
+  - [Video Lecture](https://www.youtube.com/watch?v=YC43-wy2kCo)
+
+Timestamps
+
+  - 1:40 Problem 1
+    * $\frac{-2}{1 - x} < 7$
+  - 9:35 Problem 2
+    * $\frac{5}{x - 3} \geq \frac{4}{x - 2}$
+
+Video Lecture Notes:
+
+  1. Move everything to one side
+  2. Combine into a single fraction
+  3. Find where the top = 0
+  4. Find where the bottom = 0
+  5. Use a table to test numbers around the values from step 3 and 4
+  6. Write the intervals that satisfy the inequality
+  7. Check the end points of each interval
+
+### Equations and Inequalities
+
+  - [Pre-calc Textbook Reference 1](file:../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)
+    * Chapter 2: Equations and Inequalities
+
+**Linear Equations**
+
+  - $ax + b = 0$
+    * if $a \neq 0$, a linear equation has exactly one solution.
+    * if $a = 0$, the equation has no solutions unless $b = 0$.
+
+**Quadratic Equations**
+
+Standard form
+
+  - $ax^{2} + bx + c = 0$, where $(a \neq 0)$
+
+**Four methods for solving quadratic equations.**
+
+1. **Factoring**. If the polynomial $ax^{2} + bx + c$ has linear factors with
+   rational coefficients, write it in factored form, then apply the zero-factor
+   property that $AB = 0$ only if $A = 0$ or $B = 0$.
+2. **Square Root Property**. If the equation is in the form $A^{2} = b$, where
+   $b$ is a constant, then its solutions are found as $A = \sqrt{b}$ and $A =
+   −\sqrt{b}$ , generally written $A = \pm\sqrt{b}$.
+3. **Completing the Square**.
+  - Write the equation in the form $x^{2} + px = q$.
+  - Add $p^{2} /4$ to both sides to form $x^{2}+ px + p^{2}/4 = q + p^{2}/4$.
+  - The left side is now a perfect square. Write $(x + p/2)^{2} = q + p^{2}/4$ and
+    apply the square root property.
+  - [Youtube: Completing the Square Lecture](https://www.youtube.com/watch?v=prx_Bf2hakw)
+4. **Quadratic Formula**. The solutions of $ax^{2} + bx + c = 0$, $(a ≠ 0)$ can always
+   be written as:
+
+$$
+x = \frac{-b \pm \sqrt{b^{2} - 4ac}}{2a}
+$$
+
+In general, a quadratic equation is
+solved by first checking whether it is easily factorable. If it is, then the
+factoring method is used; otherwise the quadratic formula is used.
+
+In the quadratic formula, the quantity $b^{2} − 4ac$ is called the
+_discriminant_.  The sign of this quantity determines the number and type of
+solutions of a quadratic equation
+
+| Sign of discriminant | Number and type of solutions |
+|:--------------------:|:----------------------------:|
+| positive             | 2 real solutions             |
+| zero                 | 1 repeated real solution     |
+| negative             | 2 imaginary solutions        |
+
+### Radical Equations
+
+Equations containing radicals require an additional operation: In general, the
+equation $a = b$ is not equivalent to the equation $a^{n} = b^{n}$ ; however,
+if $n$ is odd, they have the same real solutions. If $n$ is even, all solutions
+of $a = b$ are found among the solutions of $a^{n} = b^{n}$ . Hence it is
+permissible to raise both sides to an even power if all solutions of the
+resulting equation are checked to see if they are solutions of the original
+equation.
+
+## Refreshers
+
+  - [Algebra Review](file:../../../../files/spring-2020/MATH-141/algebra_review.pdf)
+
+Geometric Series
+
+  - $x^{8} - 1$
+    * = $(x^{4} + 1)(x^{2} + 1)(x + 1)(x - 1)$
+
+### Radical Expressions
+
+  - [Adding and subtracting radical expressions](https://www.youtube.com/watch?v=o9onBMWckDc)
+  - [Rationalizing the denominator with a binomial and radical](https://www.youtube.com/watch?v=iXswh-So308)
+  - [Rationalizing the denominator with two radicals in the denominator](https://www.youtube.com/watch?v=hthLZbH7mkU&list=PL0G-Nd0V5ZMpS8k9YvdRY8FWjuyW0SSf6)
+  - [Dividing two binomial radical expression](https://www.youtube.com/watch?v=PoOrBlf53mk)
+
 ## References
 
-  * [Pre-calc Textbook Reference 1](file:../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)
-    - Pages 8-10
+  - [Pre-calc Textbook Reference 1](file:../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)
+    * Chapter 1 pages 8 - 19
+    * Chapter 2 pages 20 - 33
 

@@ -48,8 +48,20 @@ Text books
 
 ### Module 1
 
-  * ![Turtle Homework Image](file:../../../files/spring-2020/CISC-190/module-1_turtleHomework.png)
-  * [Turtle Homework Code](vfile:/home/marklcrns/Projects/Dev/School/CISC-190/module-1_turtleAssignment.java)
+Turtle
+
+  * ![Turtle Homework Image](file:../../../files/spring-2020/CISC-190/module-1/turtleHomework.png)
+  * [Turtle Homework Code](vfile:../../../files/spring-2020/CISC-190/module-1/MyTurtleTest.java)
+
+DrawMyName
+
+  * [DrawMyName Code](vfile:../../../files/spring-2020/CISC-190/module-1/DrawMark.java)
+  * ![DrawMyName Image](file:../../../files/spring-2020/CISC-190/module-1/drawMark.png)
+
+Extra Credits
+
+  * [Variable and Operator Practice](vfile:../../../files/spring-2020/CISC-190/module-1/VariableAndOperatorPractice.java)
+  * [Identifier Naming Practice](vfile:../../../files/spring-2020/CISC-190/module-1/IdentifierNamingPractice.txt)
 
 ---
 ## Skills I will learn or improve in this course--Applicable for Resumes

@@ -20,6 +20,6 @@ Courses:
 
 ## Interwikis
 
-  * [Wiki](../../wiki/md/index) -- Main Wiki
+  * [Wiki](../../wiki/md/index) -- Main Viki
   * [References](../../references/md/index) -- Personal Documentations of every programs I used
 
