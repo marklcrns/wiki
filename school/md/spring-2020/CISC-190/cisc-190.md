@@ -65,7 +65,7 @@ Extra Credits
 
 Explain
 
-  * [VIDEO: Explain Homework - Making a Circle with Turtle Class](file:../../../files/spring-2020/CISC-190/module-1/m-1_makingCircleWithTurtleClass.mp4)
+  * [VIDEO: Explain Homework - Making a Circle with Turtle Class](https://www.youtube.com/watch?v=sA4Zvt4v5xY)
 
 ---
 ## Skills I will learn or improve in this course--Applicable for Resumes
