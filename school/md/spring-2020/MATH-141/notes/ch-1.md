@@ -4,7 +4,7 @@ author: Mark Lucernas
 date: 2020-02-06
 ---
 
-# Chapter 1: The Basics - Notes
+# Chapter 1: The Basics
 
 ## 1.1 Sets and Axioms
 

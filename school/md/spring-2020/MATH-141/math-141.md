@@ -25,6 +25,7 @@ date: 2020-02-05
 ## Notes
 
   * [Chapter 1](notes/ch-1)
+  * [Chapter 2](notes/ch-2)
 
 ## Quizzes
 

@@ -63,6 +63,10 @@ Extra Credits
   * [Variable and Operator Practice](vfile:../../../files/spring-2020/CISC-190/module-1/VariableAndOperatorPractice.java)
   * [Identifier Naming Practice](vfile:../../../files/spring-2020/CISC-190/module-1/IdentifierNamingPractice.txt)
 
+Explain
+
+  * [VIDEO: Explain Homework - Making a Circle with Turtle Class](file:../../../files/spring-2020/CISC-190/module-1/m-1_makingCircleWithTurtleClass.mp4)
+
 ---
 ## Skills I will learn or improve in this course--Applicable for Resumes
 
