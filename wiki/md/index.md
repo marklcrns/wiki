@@ -22,4 +22,4 @@ tags: wiki
 
 ## TODO
 
-CTRL + SHIFT + S = NEOSNIPPET
+CTRL + SHIFT + S = quickly peak outside of tmux

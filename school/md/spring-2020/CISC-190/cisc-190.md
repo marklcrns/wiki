@@ -43,6 +43,7 @@ Text books
   * [Module 0](file:../../../files/spring-2020/CISC-190/java_book_mediaComp_ch1-4.pdf) -- Chapter 1 to 2.2
     - This is the resource used in the Module, **not notes**.
   * [Module 1](notes/m-1) -- Chapter 2.3 - 3.4
+  * [Module 2](notes/m-2) -- Chapter 3.5
 
 ## Homeworks
 
