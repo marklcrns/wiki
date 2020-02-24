@@ -22,4 +22,7 @@ tags: wiki
 
 ## TODO
 
+- [ ] npm -g install stylelint prettier
+- [ ] Install html tidy
+
 CTRL + SHIFT + S = quickly peak outside of tmux

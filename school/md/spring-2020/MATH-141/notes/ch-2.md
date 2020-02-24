@@ -70,8 +70,7 @@ Video lecture notes:
     as $f(x) = \frac{P(x)}{Q(x)}$, where $P(x)$ and $Q(x)$ are polynomial
     functions.
 
-  For example:
-
+Example 1:
 
 $$
 f(x) = \frac{12}{x}, g(x) = \frac{x^2}{x^2 - 9}, h(x) = \frac{(x + 1)(x -
