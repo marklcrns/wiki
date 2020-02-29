@@ -8,6 +8,8 @@ date: 2020-02-18
 
 ## 2.1 Vocabulary and Notations
 
+#### Video Lecture
+
 [VIDEO: What are functions?](https://www.youtube.com/watch?v=52tpYl2tTqk)
 
 Video lecture notes:
@@ -30,6 +32,8 @@ outputs to more than one solution is NOT considered a function.
   - A graphing test to see if there's more than one output to every input ($y's$
     to every $x$ in an ordered pair) of a function.
 
+#### Video Lecture
+
 [VIDEO: Surjective and Injective functions](https://www.youtube.com/watch?v=xKNX8BUWR0g)
 
 Video lecture notes:
@@ -45,6 +49,8 @@ Video lecture notes:
     _domain_.
 
 ## 2.2 Polynomial Functions
+
+#### Video Lecture
 
 [VIDEO: What are polynomials](https://www.youtube.com/watch?v=ffLLmV4mZwU)
 
@@ -85,6 +91,8 @@ These are examples of rational functions. The domains are, respectively:
   - for $k$, $\mathbb{R}$ (since the denominator polynomial is never 0)
 
 ## 2.4 Linear Functions
+
+#### Video Lecture
 
 [VIDEO: Linear Functions](https://www.youtube.com/watch?v=AqIMrHOBM4g)
 
@@ -134,10 +142,204 @@ If a line is horizontal, any line perpendicular to it is vertical, and
 conversely. If two nonvertical lines, with slopes $m_1$ and $m_2$, are
 perpendicular, the their slopes satisfy $m_1m_2 = -1$ or $m_2 = -1/m_1$
 
-References
-===
+## 2.6 Exponential Function and Factorials
 
-  - [VIDEO: What are functions?](https://www.youtube.com/watch?v=52tpYl2tTqk)
-  - [VIDEO: Surjective and Injective functions](https://www.youtube.com/watch?v=xKNX8BUWR0g)
+### Exponential Function
+
+#### Video Lecture
+
+[VIDEO: Solving Exponential Equations With Different Bases Using Logarithms](https://www.youtube.com/watch?v=oVUJMVR1JpA)
+
+Timestamps
+
+  - Problem 1: 0:00
+    * $3^x = 5$
+  - Problem 2: 2:14
+    * $5^{2x + 3} = 8$
+  - Problem 3: 3:44
+    * $3^{x + 2} = 4^{2 - x}$
+  - Problem 4: 6:02
+    * $27^{x + 1} = 9^{3 - x}$
+  - Problem 5: 7:23
+    * $4^{x + 2} = 8^{3x - 1}$
+  - Problem 6: 9:22
+    * $16^{5x - 2} = 32^{3x + 1}$
+
+Video Lecture Notes:
+
+Quick solution
+
+  - $3^x = 5$
+  - $x = \frac{\log 5}{\log 3}$
+
+Manual Solution
+
+  - $3^x = 5$
+  - $x\log3 = \log5$
+  - $x\frac{\log3}{\log3} = \frac{\log5}{\log3}$
+  - $x = \frac{\log 5}{\log 3}$
+
+
+### Factorials
+
+#### Video Lecture
+
+[VIDEO: Factorials](https://www.youtube.com/watch?v=pxh__ugRKz8)
+
+Timestamps
+
+  - Problem 1 2:26
+    * $\frac{9!}{7!}$
+  - Problem 2 3:21
+    * $\frac{4! \cdot 5!}{6!}$
+  - Problem 3 4:25
+    * $\frac{12!}{3! \cdot 10!}$
+  - Problem 4 5:10
+    * $\frac{(n + 1)!}{n!}$
+  - Problem 5 7:32
+    * $\frac{(n - 1)!}{n!}$
+  - Problem 6 8:53
+    * $\frac{(n + 2)!}{n!}$
+  - Problem 7 10:19
+    * $\frac{(2n + 1)!}{(2n)!}$
+
+Video Lecture Notes
+
+  - $0! = 1$
+  - $4! = 4 \cdot 3 \cdot 2 \cdot 1$
+    * $24$
+  - $6! = 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1$
+    * $720$
+  - $\frac{9!}{7!} = \frac{9 \cdot 8 \cdot 7!}{7!}$
+    * $9 \cdot 8 = 72$
+
+## Logarithmic Functions
+
+### Logarithm Basics
+
+A logarithmic function, $f(x) = \log_{a}x, a > 0, a \neq 1$, is the inverse
+function to an exponential function $F(x) = a^x$. Thus, if $y = \log_{a}x$, then
+$x = a^y$. That is, the logarithm of $x$ to the base $a$ is the exponent to
+which $a$ must be raised to obtain $x$. Conversely, if $x = a^y$, then $y =
+\log_{a}x$. Therefore the relation between logarithmic and exponential functions
+can be described as:
+
+$$
+\log_{a}a^x = x \text{ and } a^{\log_{a}x} = x
+$$
+
+#### Video Lecture 1
+
+[VIDEO 1: Logarithms](https://www.youtube.com/watch?v=Zw5t6BTQYRU)
+
+Video 1 Lecture Notes:
+
+  - $\log_{b}m = x,\text{ is the inverse of exponential function } b^x = m$
+
+#### Video Lecture 2
+
+[VIDEO 2: Solving Logarithmic Equations](https://www.youtube.com/watch?v=Kv2iHde7Xgw)
+
+Timestamps
+
+  - Problem 1: 0:00
+    * $log\ x + log\ 3 = 2\ log\ 4 - log\ 2$
+
+Video 2 Lecture Notes:
+
+  - $log$ without a base $log_b$ or common log, it is implicit to have a base of
+    10, $log_{10}$.
+
+#### Video Lecture 3
+
+[VIDEO 3: Solving Logarithmic Equations](https://www.youtube.com/watch?v=rBnQiLa2TYo)
+
+Timestamps
+
+  - Equality Property 3:00
+  - Product Property 5:59
+
+Video 3 Lecture Notes:
+
+  - $\log$ of a negative number is undefined, so you would have to throw out
+    that number.
+
+  - **Logarithmic Properties:**
+    * _Equality Property_
+      - $\log_{b}m = \log_{b}n \Longleftrightarrow m = n$
+      - Only for bases that are positive and not equal to 1
+    * _Product Property_
+      - $\log_{a}b + \log_{a}c = \log_{a}bc$
+    * _Power Property_
+      - $\log_{b}a^p = p\log_{b}a$
+    * _Quotient Property_
+      - $\log_{a}b - \log_{a}c = \log_{a}\frac{b}{c}$
+    * Additional Properties
+      - $\log_{a}1 = 0$
+      - $\log_{a}a = 1$
+
+### Logarithmic Equations
+
+#### Video Lecture
+
+[VIDEO: Logarithmic Equations](https://www.youtube.com/watch?v=G_kHwdrxyeU)
+
+Timestamps
+
+  - Problem 1 0:00
+    * $\log_{4}(2x +7) = 2$
+  - Problem 2 1:17
+    * $\ln_{e}(\sqrt{5x - 4})$
+  - Problem 3 3:04
+    * $\ln (x^3)= 8$
+  - Problem 4 4:17
+    * $\log_{5}(8x - 7) = \log_{5}(2x + 13)$
+  - Problem 5 5:50
+    * $\log_{2}(x + 5) + \log_{2}(x + 1) + 5$
+  - Problem 6 9:45
+    * $\log_{3}(5x + 7) - \log_{3}(x + 5) = x - 3$
+    * $\log_{3}(5x + 7) - \log_{3}(x + 5) = 1$
+
+Video Lecture Notes
+
+  - $\log_{3}9 = 2$
+    * $3^2 = 9$
+  - $\log_{4}(2x + 7) = 2$
+    * $4^2 = 2x + 7$
+    * $16 = 2x + 7$
+    * $\frac{9}{2} = \frac{2x}{2}$
+    * $x = \frac{9}{2}$
+
+$\ln$ is a natural log and always has a base of $e$, $\ln_{e}$
+
+### Daabz Questions
+
+  - $\frac{d}{dx}\ln a$
+    * Solution: $\frac{\frac{d}{dx}a}{a}$
+  - $\frac{1}{\log_{a}(4)}$
+    * Solution: $\log_{4}(a)$
+  - $\log_{a}(x) = \frac{\log_{\theta}(x)}{\log_{\theta}(a)} = \frac{\log(x)}{\log(a)}$
+    * Solution: true
+  - $\log_{2}(A)$
+    * Solution: $\frac{\ln(A)}{\ln(2)}$ or $\frac{\log(A)}{\log(2)}$
+  - $\log_{5}(A)$
+    * Solution: $\frac{\log (A)}{\log (5)}$
+  - $\frac{d}{dx}\ln^2[e^x]$
+    * Solution: $2\ln^1[e^x] \cdot \frac{1}{[e^x]}\frac{d}{dx}[e^x]$
+  - $\frac{d}{dw}\ln^{10}\alpha$
+    * $10\ln^9\alpha \cdot \frac{1}{\alpha}\frac{d}{dw}\alpha$
+
+
+References
+=====
+
   - [Pre-calc Textbook Reference 1](file:../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)
     * Chapter 5 pages 61 - 77
+    * Chapter 6 page 80
+  - [VIDEO: What are functions?](https://www.youtube.com/watch?v=52tpYl2tTqk)
+  - [VIDEO: Surjective and Injective functions](https://www.youtube.com/watch?v=xKNX8BUWR0g)
+  - [VIDEO: Solving Exponential Equations With Different Bases Using Logarithms](https://www.youtube.com/watch?v=oVUJMVR1JpA)
+  - [VIDEO: Factorials](https://www.youtube.com/watch?v=pxh__ugRKz8)
+  - [VIDEO 1: Introduction to Logarithms](https://www.youtube.com/watch?v=mQTWzLpCcW0&t=426s)
+  - [VIDEO 2: Solving Logarithmic Equations](https://www.youtube.com/watch?v=Kv2iHde7Xgw)
+  - [VIDEO: Logarithmic Equations](https://www.youtube.com/watch?v=G_kHwdrxyeU)

@@ -18,8 +18,3 @@ Courses:
   * ~~[ECON 120](spring-2020/ECON-120/econ-120) -- Principles of Macroeconomics (26977 - online)~~
     - dropped on 2020-02-13
 
-## Interwikis
-
-  * [Wiki](../../wiki/md/index) -- Main Viki
-  * [References](../../references/md/index) -- Personal Documentations of every programs I used
-

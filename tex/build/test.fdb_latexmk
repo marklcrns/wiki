@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1582179954 "test.tex" "build/test.pdf" "test" 1582180259
+["pdflatex"] 1582872968 "test.tex" "build/test.pdf" "test" 1582872968
   "/etc/texmf/web2c/texmf.cnf" 1580491538 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm" 1136768653 1116 4e6ba9d7914baa6482fd69f67d126380 ""
@@ -69,13 +69,13 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1575846954 38842 929a1d7a93d5a7ba93034bbe3531fec4 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1582177623 127996 c69a1f91d45845645373db3357ed9b73 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1582177624 826645 4f054ffda79e05d1dec8bf0a9182a38b ""
-  "build/test.aux" 1582179954 1877 34d78586aa90462a96019f901afd9a1a "pdflatex"
-  "build/test.out" 1582179954 367 32b8ca851f8eeb6491e555cf5f7131a6 "pdflatex"
-  "build/test.toc" 1582179954 535 ef0a0f35960a5e4af5bd87dc44e60882 "pdflatex"
-  "test.tex" 1582177872 6354 90fd76622097350f11f64f45a2ed8804 ""
+  "build/test.aux" 1582872968 1877 34d78586aa90462a96019f901afd9a1a "pdflatex"
+  "build/test.out" 1582872968 367 32b8ca851f8eeb6491e555cf5f7131a6 "pdflatex"
+  "build/test.toc" 1582872968 535 ef0a0f35960a5e4af5bd87dc44e60882 "pdflatex"
+  "test.tex" 1582872967 6354 90fd76622097350f11f64f45a2ed8804 ""
   (generated)
   "build/test.pdf"
   "build/test.out"
-  "build/test.log"
-  "build/test.toc"
   "build/test.aux"
+  "build/test.toc"
+  "build/test.log"

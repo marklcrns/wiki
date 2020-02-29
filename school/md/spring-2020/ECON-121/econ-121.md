@@ -40,3 +40,4 @@ Textbook
   * [Chapter 1](notes/ch-1)
   * [Chapter 2](notes/ch-2)
   * [Chapter 4](notes/ch-4)
+  * [Chapter 5](notes/ch-5)

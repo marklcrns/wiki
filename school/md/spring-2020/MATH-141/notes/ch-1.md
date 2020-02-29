@@ -397,17 +397,17 @@ Video Explanations
 
 Timestamps
 
-  - 0:29 Problem 1
+  - Problem 1: 0:29
     * $\frac{3}{4x} = \frac{5}{2x} - \frac{7}{4}$
-  - 4:05 Problem 2
+  - Problem 2: 4:05
     * $\frac{2}{3x + 1} = \frac{1}{x} - \frac{6x}{3x + 1}$
-  - 9:32 Problem 3
+  - Problem 3: 9:32
     * $\frac{x - 4}{x + 6} = \frac{2x}{2x - 1}$
-  - 12:26 Problem 4
+  - Problem 4: 12:26
     * $\frac{1}{x + 4} + \frac{x}{x - 4} = \frac{-8}{x^{2} - 16}$
-  - 16:30 Problem 5
+  - Problem 5: 16:30
     * $\frac{1}{y - 1} + \frac{5}{12} = \frac{-2}{3y - 3}$
-  - 20:36 Problem 6
+  - Problem 6: 20:36
     * $\frac{1}{y + 2} + \frac{3}{y + 7} = \frac{5}{y^{2} + 9y + 14}$
 
 Video Lecture Notes:
@@ -507,9 +507,9 @@ Domain Restrictions:
 
 Timestamps
 
-  - 1:40 Problem 1
+  - Problem 1: 1:40
     * $\frac{-2}{1 - x} < 7$
-  - 9:35 Problem 2
+  - Problem 2: 9:35
     * $\frac{5}{x - 3} \geq \frac{4}{x - 2}$
 
 Video Lecture Notes:
