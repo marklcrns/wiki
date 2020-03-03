@@ -9,5 +9,7 @@ date: 2020-03-02
 
 ## Notes
 
-  - [Module 3](../notes/m-3_notes) -- Chapter 3.6 & 4
+  - [Module 3](../notes/m-3) -- Chapter 3.6 & 4
+
+## Homeworks
 

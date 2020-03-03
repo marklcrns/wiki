@@ -1,5 +1,5 @@
 ---
-title: ECON 121 Chapter 3
+title: ECON 121 Chapter 3 Notes
 author: Mark Lucernas
 date: 2020-02-20
 ---

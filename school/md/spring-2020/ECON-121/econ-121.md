@@ -35,7 +35,7 @@ Textbook
   * [The New Your Times](https://www.nytimes.com/)
   * [TV News](https://www.msn.com/)
 
-## Personal Notes
+## Notes
 
   * [Chapter 1](notes/ch-1)
   * [Chapter 2](notes/ch-2)
