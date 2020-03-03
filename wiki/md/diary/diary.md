@@ -6,6 +6,7 @@
 - [ ] Install html tidy
 - [ ] Install vint and all additional linters for neomake
 - [ ] Update dotfiles from other laptop.
+- [ ] Fix colors when using Goyo
 
 CTRL + SHIFT + S = quickly peak outside of tmux
 
@@ -13,7 +14,12 @@ CTRL + SHIFT + S = quickly peak outside of tmux
 
 ## 2020
 
+### March
+  * [To-do 2020-03-02](2020-03-02)
+  * [To-do 2020-03-01](2020-03-01)
+
 ### February
+  * [To-do 2020-02-29](2020-02-29)
   * [To-do 2020-02-28](2020-02-28)
   * [To-do 2020-02-27](2020-02-27)
   * [To-do 2020-02-26](2020-02-26)

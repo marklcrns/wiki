@@ -38,63 +38,12 @@ Text books
   - [Introduction to Programming Using Java](file:../../../files/spring-2020/CISC-190/java_book_introToProgramming.pdf)
   - [Intro to Computing and Programming in Java: A Multimedia Approach (ch. 1-4)](file:../../../files/spring-2020/CISC-190/java_book_mediaComp_ch1-4.pdf)
 
-## Notes
+## Modules
 
-  - [Module 0](file:../../../files/spring-2020/CISC-190/java_book_mediaComp_ch1-4.pdf) -- Chapter 1 to 2.2
-    * This is the resource used in the Module, **not notes**.
-  - [Module 1](notes/m-1) -- Chapter 2.3 - 3.4
-  - [Module 2](notes/m-2) -- Chapter 3.5
-  - [Module 3](notes/m-3) -- Chapter 3.6 & 4
-
-## Homeworks
-
-### Module 1
-
-#### Turtle
-
-  - [Turtle Homework Code](vfile:../../../files/spring-2020/CISC-190/module-1/MyTurtleTest.java)
-  - ![Turtle Homework Image](file:../../../files/spring-2020/CISC-190/module-1/turtleHomework.png)
-
-#### Draw My Name
-
-  - [DrawMyName Code](vfile:../../../files/spring-2020/CISC-190/module-1/DrawMark.java)
-  - ![DrawMyName Image](file:../../../files/spring-2020/CISC-190/module-1/drawMark.png)
-
-#### Extra Credits
-
-  - [Variable and Operator Practice](vfile:../../../files/spring-2020/CISC-190/module-1/VariableAndOperatorPractice.java)
-  - [Identifier Naming Practice](vfile:../../../files/spring-2020/CISC-190/module-1/IdentifierNamingPractice.txt)
-
-#### Explain
-
-  - [VIDEO: CISC 190 M-1 Explain: Making Circles With Turtle Method](https://www.youtube.com/watch?v=sA4Zvt4v5xY)
-
-#### Reflect
-
-  - [Module 1 Reflect](file:../../../files/spring-2020/CISC-190/module-1/m-1_reflect.docx)
-
-### Module 2
-
-#### Draw Square Method
-
-  - ![Draw Square Method Image](file:../../../files/spring-2020/CISC-190/module-2/m-2_drawSquareMethod.png)
-
-#### Draw Shape
-
-  - [CreateShape Code](vfile:../../../files/spring-2020/CISC-190/module-2/CreateShapes.java)
-  - ![CreateShape Image](file:../../../files/spring-2020/CISC-190/module-2/m-2_createShapes.png)
-
-#### Extra Credits
-
-  - [TurtleNameTester Code](vfile:../../../files/spring-2020/CISC-190/module-2/TurtleNameTester.java)
-
-#### Explain
-
-  - [VIDEO: CISC 190 M-2 Explain: Creating Canvas Grid](https://www.youtube.com/watch?v=dL-Q_4gOqeQ)
-
-#### Reflect
-
-  - [Module 2 Reflect](file:../../../files/spring-2020/CISC-190/module-2/m-2_reflect.docx)
+  - [Module 0](modules/module_0)
+  - [Module 1](modules/module_1)
+  - [Module 2](modules/module_2)
+  - [Module 3](modules/module_3)
 
 ## Skills I will learn or improve in this course--Applicable for Resumes
 

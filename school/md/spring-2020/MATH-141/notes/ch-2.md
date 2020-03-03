@@ -32,9 +32,9 @@ outputs to more than one solution is NOT considered a function.
   - A graphing test to see if there's more than one output to every input ($y's$
     to every $x$ in an ordered pair) of a function.
 
-#### Video Lecture
+#### Video Lecture 1
 
-[VIDEO: Surjective and Injective functions](https://www.youtube.com/watch?v=xKNX8BUWR0g)
+[VIDEO 1: Surjective and Injective functions](https://www.youtube.com/watch?v=xKNX8BUWR0g)
 
 Video lecture notes:
 
@@ -47,6 +47,10 @@ Video lecture notes:
 
   - A function is _injective_ if a member of a set of _range_ maps to only one
     _domain_.
+
+#### Video Lecture 2
+
+[VIDEO 2: How To Find The Inverse of a Function](https://www.youtube.com/watch?v=2zeYEx4eTdc)
 
 ## 2.2 Polynomial Functions
 
@@ -89,6 +93,7 @@ These are examples of rational functions. The domains are, respectively:
   - for $g$, $\big\{x \in \mathbb{R} \mid x \neq \pm 3\big\}$
   - for $h$, $\big\{x \in \mathbb{R} \mid x \neq 0,2,-3\big\}$
   - for $k$, $\mathbb{R}$ (since the denominator polynomial is never 0)
+
 
 ## 2.4 Linear Functions
 
@@ -142,6 +147,7 @@ If a line is horizontal, any line perpendicular to it is vertical, and
 conversely. If two nonvertical lines, with slopes $m_1$ and $m_2$, are
 perpendicular, the their slopes satisfy $m_1m_2 = -1$ or $m_2 = -1/m_1$
 
+
 ## 2.6 Exponential Function and Factorials
 
 ### Exponential Function
@@ -179,6 +185,10 @@ Manual Solution
   - $x\frac{\log3}{\log3} = \frac{\log5}{\log3}$
   - $x = \frac{\log 5}{\log 3}$
 
+### Additional
+
+  - [VIDEO: Solving Exponential Equations - Some Basic Examples](https://www.youtube.com/watch?v=M6f6dANVyxA)
+  - [VIDEO: How to solve an exponential equation with two different bases](https://www.youtube.com/watch?v=oM25leefVRQ)
 
 ### Factorials
 
@@ -213,7 +223,8 @@ Video Lecture Notes
   - $\frac{9!}{7!} = \frac{9 \cdot 8 \cdot 7!}{7!}$
     * $9 \cdot 8 = 72$
 
-## Logarithmic Functions
+
+## 2.7 Logarithmic Functions
 
 ### Logarithm Basics
 
@@ -228,9 +239,16 @@ $$
 \log_{a}a^x = x \text{ and } a^{\log_{a}x} = x
 $$
 
+Logarithmic expressions can be rewritten in terms of other bases by means of the
+change-of-base formula:
+
+$$
+\log_{a}x = \frac{\log_{b}x}{\log_{b}a}
+$$
+
 #### Video Lecture 1
 
-[VIDEO 1: Logarithms](https://www.youtube.com/watch?v=Zw5t6BTQYRU)
+[VIDEO 1: Logarithms... How? (NancyPi)](https://www.youtube.com/watch?v=Zw5t6BTQYRU)
 
 Video 1 Lecture Notes:
 
@@ -238,7 +256,7 @@ Video 1 Lecture Notes:
 
 #### Video Lecture 2
 
-[VIDEO 2: Solving Logarithmic Equations](https://www.youtube.com/watch?v=Kv2iHde7Xgw)
+[VIDEO 2: Solving Logarithmic Equations | Khan Academy](https://www.youtube.com/watch?v=Kv2iHde7Xgw)
 
 Timestamps
 
@@ -252,12 +270,14 @@ Video 2 Lecture Notes:
 
 #### Video Lecture 3
 
-[VIDEO 3: Solving Logarithmic Equations](https://www.youtube.com/watch?v=rBnQiLa2TYo)
+[VIDEO 3: Solving Logarithmic Equations... How? (NancyPi)](https://www.youtube.com/watch?v=rBnQiLa2TYo)
 
 Timestamps
 
   - Equality Property 3:00
   - Product Property 5:59
+  - Power Property 10:30
+  - Quotient Property 12:47
 
 Video 3 Lecture Notes:
 
@@ -282,7 +302,7 @@ Video 3 Lecture Notes:
 
 #### Video Lecture
 
-[VIDEO: Logarithmic Equations](https://www.youtube.com/watch?v=G_kHwdrxyeU)
+[VIDEO: Solving Logarithmic Equations With Logs on Both Sides ...](https://www.youtube.com/watch?v=G_kHwdrxyeU)
 
 Timestamps
 
@@ -329,6 +349,11 @@ $\ln$ is a natural log and always has a base of $e$, $\ln_{e}$
   - $\frac{d}{dw}\ln^{10}\alpha$
     * $10\ln^9\alpha \cdot \frac{1}{\alpha}\frac{d}{dw}\alpha$
 
+### Additional
+
+  - [VIDEO: (Hard) Log/Exponential Equations Example](https://www.youtube.com/watch?v=HgJF4gSVGfA)
+  - [VIDEO: Solving (Challenging) Log Equations Different Bases](https://www.youtube.com/watch?v=xx80CyHZfLQ)
+
 
 References
 =====
@@ -337,9 +362,14 @@ References
     * Chapter 5 pages 61 - 77
     * Chapter 6 page 80
   - [VIDEO: What are functions?](https://www.youtube.com/watch?v=52tpYl2tTqk)
-  - [VIDEO: Surjective and Injective functions](https://www.youtube.com/watch?v=xKNX8BUWR0g)
+  - [VIDEO 1: Surjective and Injective functions](https://www.youtube.com/watch?v=xKNX8BUWR0g)
+  - [VIDEO 2: How To Find The Inverse of a Function](https://www.youtube.com/watch?v=2zeYEx4eTdc)
   - [VIDEO: Solving Exponential Equations With Different Bases Using Logarithms](https://www.youtube.com/watch?v=oVUJMVR1JpA)
+  - [VIDEO: Solving Exponential Equations - Some Basic Examples](https://www.youtube.com/watch?v=M6f6dANVyxA)
   - [VIDEO: Factorials](https://www.youtube.com/watch?v=pxh__ugRKz8)
-  - [VIDEO 1: Introduction to Logarithms](https://www.youtube.com/watch?v=mQTWzLpCcW0&t=426s)
-  - [VIDEO 2: Solving Logarithmic Equations](https://www.youtube.com/watch?v=Kv2iHde7Xgw)
-  - [VIDEO: Logarithmic Equations](https://www.youtube.com/watch?v=G_kHwdrxyeU)
+  - [VIDEO 1: Logarithms... How? (NancyPi)](https://www.youtube.com/watch?v=Zw5t6BTQYRU)
+  - [VIDEO 2: Solving Logarithmic Equations | Khan Academy](https://www.youtube.com/watch?v=Kv2iHde7Xgw)
+  - [VIDEO 3: Solving Logarithmic Equations... How? (NancyPi)](https://www.youtube.com/watch?v=rBnQiLa2TYo)
+  - [VIDEO: Solving Logarithmic Equations With Logs on Both Sides ...](https://www.youtube.com/watch?v=G_kHwdrxyeU)
+  - [VIDEO: (Hard) Log/Exponential Equations Example](https://www.youtube.com/watch?v=HgJF4gSVGfA)
+  - [VIDEO: Solving (Challenging) Log Equations Different Bases](https://www.youtube.com/watch?v=xx80CyHZfLQ)

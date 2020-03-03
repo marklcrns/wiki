@@ -569,7 +569,7 @@ _discriminant_.  The sign of this quantity determines the number and type of
 solutions of a quadratic equation
 
 | Sign of discriminant | Number and type of solutions |
-|:--------------------:|:----------------------------:|
+|----------------------|------------------------------|
 | positive             | 2 real solutions             |
 | zero                 | 1 repeated real solution     |
 | negative             | 2 imaginary solutions        |

@@ -8,7 +8,7 @@ date: 2020-02-05
 
 ## Spring 2020
 
-![Daily Schedule](file:../files/spring-2020/spring-2020_dailySchedule_v1.png)
+![Daily Schedule](file:../files/spring-2020/spring-2020_dailySchedule_v2.png)
 
 Courses:
 

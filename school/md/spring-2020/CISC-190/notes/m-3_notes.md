@@ -183,6 +183,9 @@ Loops through each elements of an array.
 Syntax:
 ```
 for (Type variableName : array)
+{
+  // commands to be done inside loop
+}
 ```
 
 ### 4.3.2 Using While Loops
@@ -193,7 +196,7 @@ Syntax:
 ```
 while (test)
 {
-  /** commands to be done go here */
+  // commands to be done inside loop
 }
 ```
 

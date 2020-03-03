@@ -4,15 +4,19 @@ author: Mark Lucernas
 date: 2020-02-24
 ---
 
+
 # Chapter 5: Elasticity: A Measure of Responsiveness
+
 
 ## 5.1 The Price Elasticity of Demand
 
 **Price elasticity of demand ($E_d$)**
 
-  -  A measure of the responsiveness of the quantity demanded to changes in
-     price; equal to the absolute values of the percentage change in quantity
-     demanded.
+  - A measure of the responsiveness of the quantity demanded to changes in
+    price; equal to the absolute values of the percentage change in quantity
+    demanded.
+  - Result will always be a negative value, since the law of demand states that
+    when supply rises, demand falls.
 
 $$
 E_{d} = \left |\frac{\text{percentage change in quantity demanded}}{\text{percentage change in price}}\right |
@@ -24,22 +28,23 @@ that the demand for the product is very elastic, or very responsive to changes
 in price. In contrast, a small number indicates that the demand for a product is
 very inelastic.
 
+
 ### Computing Percentage Changes and Elasticities
 
 Two ways to compute percentage change:
 
 For example, if a price increases from $20 to $22.
 
-**Using the initial-value method**
+**Initial-value method**
 
 $$
 \text{percent change with initial value} = \frac{22 - 20}{20} \cdot 100 = \frac{2}{20} \cdot 100 = 10\%
 $$
 
-**Using the midpoint method**
+**Midpoint method**
 
 $$
-\text{percentage change with midpoint value} = \frac{2}{\frac{20 + 22}{2}} \cdot 100 = \frac{2}{21} \cdot 100 = 9.52\%
+\text{percentage change with midpoint value} = \frac{\left | 22 - 20 \right |}{\frac{20 + 22}{2}} \cdot 100 = \frac{2}{21} \cdot 100 = 9.52\%
 $$
 
 The advantage of the midpoint approach is that it generates the same absolute
@@ -47,6 +52,7 @@ percentage change whether the variable has increased or decreased. The reason is
 that the denominator is the same in both cases. In contrast, the initial-value
 computation is based on the initial value, so our answer there depends on the
 direction of the change--which of the two values is the initial value.
+
 
 ### 5.1.2 Price Elasticity and the Demand Curve
 
@@ -90,6 +96,7 @@ direction of the change--which of the two values is the initial value.
       price but would sell nothing at any price above the market price.
 
 ![Elasticity and Demand Curves](file:../../../../files/spring-2020/ECON-121/ch-5/elasticity.png)
+
 
 ### 5.1.3 Elasticity and the Availability of Substitutes
 
@@ -142,6 +149,7 @@ more elastic.
 |              | Movies                    | 3.7                        |
 |              | Specific brands of coffee | 5.6                        |
 
+
 ### 5.1.4 Other Determinants of the Price Elasticity of Demand
 
 Two other factors help determine the price elasticity of demand for a product:
@@ -153,7 +161,7 @@ Two other factors help determine the price elasticity of demand for a product:
     demand is relatively inelastic. For example, suppose the price of pencils is
     20 cents and then increases by 10 percent, or 2 cents. Because the price
     change is tiny compared to the income of the typical consumer, we would
-    expect a relatively small decrease in the quantity of pencils demanded.In
+    expect a relatively small decrease in the quantity of pencils demanded. In
     contrast, if the price of a car is $20,000 and then increases 10 percent
     ($2,000), we would expect a bigger response because the change in price is
     large relative to the income of the typical consumer.
@@ -175,7 +183,9 @@ Determinants of Elasticity
 | Fraction of consumer        | is large.                           | is small.                             |
 | Necessity                   | the product is a luxury.            | the product is a necessity.           |
 
+
 ## 5.2 Using Price Elasticity
+
 
 ### 5.2.1 Predicting Changes in Quantity
 
@@ -188,6 +198,7 @@ percentage change in price.
 $$
 \text{percentage change in quantity demanded} = \text{percentage change in price} \times E_d
 $$
+
 
 ### 5.2.2 Price Elasticity and Total Revenue
 
@@ -230,8 +241,148 @@ $$
 | $\uparrow$   | $\uparrow$        | Smaller than the percentage change in price.     |
 | $\downarrow$ | $\downarrow$      | Smaller than the percentage change in price.     |
 
-## 5.3 Elasticity and Total Revenue for a Linear Demand Curve
 
+## 5.4 Other Elasticities of Demand
+
+
+### 5.4.1 Income Elasticity of Demand
+
+**Income elasticity of demand**
+
+  - A measure of the responsiveness of demand to changes in consumer income;
+    equal to the percentage change in the quantity demanded divided by the
+    percentage change in income.
+
+$$
+E_t = \frac{\text{percentage change in quantity demanded}}{\text{percentage change in income}}
+$$
+
+If the income elasticity is _positive_--indicating a positive relationship between
+income and demand--we say that the good is normal. New cars and new clothes are
+products that have positive income elasticities and are thus considered normal
+goods. In contrast, if the income elasticity is _negative_--indicating a negative
+relationship between income and demand--we say the good is “inferior.” Some
+examples of inferior goods are intercity bus travel, used clothing, and used
+cars.
+
+
+### 5.4.2 Cross-Price Elasticity of Demand
+
+**Cross-price elasticity of demand**
+
+  - A measure of the responsiveness of demand to changes in the price of another
+    good; equal to the percentage change in the quantity demanded of one good
+    (X) divided by the percentage change in the price of another good (Y).
+
+$$
+E_{xy} = \frac{\text{percentage change in quantity of X demanded}}{\text{percentage change in price of Y}}
+$$
+
+| This elasticity        | Is positive for ... | Is negative for ... |
+|------------------------|---------------------|---------------------|
+| Income elasticity      | Normal goods        | Inferior goods      |
+| Cross-price elasticity | Substitute goods    | Complementary goods |
+
+## 5.5 The Price Elasticity of Supply
+
+**Price elasticity of supply**
+
+  - A measure of the responsiveness of the quantity supplied to changes in
+    price; equal to the percentage change in quantity supplied divided by the
+    percentage change in price.
+  - Result will always be a positive value.
+
+$$
+E_s = \frac{\text{percentage change in quantity supplied}}{\text{percentage change in price}}
+$$
+
+
+### 5.5.2 The Role of Time: Short-Run versus Long-Run Supply Elasticity
+
+  - _Short run_. A higher price encourages existing firms to increase their output
+    by purchasing more materials and hiring more workers.
+  - _Long run_. New firms enter the market and existing firms expand their
+    production facilities to produce more output.
+
+The short-run response is limited because of [The principle of diminishing returns](ch-2#2.4 The Principle of Diminishing Returns).
+
+  - In the short run, the fixed input is the firm's production facility.
+    Although a higher price will induce firms to produce more, the response is
+    limited by the fixed capacity of the firms’ production facilities. As a
+    result, the short-run supply curve is relatively steep and the short-run
+    supply elasticity is relatively small.
+
+The long-run supply response to an increase in price is not limited by
+diminishing returns because production facilities are not fixed.
+
+  - Over time, new firms enter the market with new production facilities and old
+    firms build new facilities. As a result, a given increase in price generates
+    a larger increase in quantity supplied. The long-run supply curve will be
+    relatively flat and the elasticity of supply will be relatively large.
+
+
+### 5.5.3 Extreme Cases: Perfectly Inelastic Supply and Perfectly Elastic Supply
+
+**Perfectly inelastic supply**
+
+  - The price elasticity of supply equals zero.
+  - Vertical supply curve
+  - Land is an example of a product that has a perfectly inelastic supply. In
+    the words of American humorist and author Will Rogers, "The trouble with
+    land is that they’re not making it anymore."
+
+**Perfectly elastic supply**
+
+  - The price elasticity of supply is equal to infinity.
+  - A horizontal supply curve indicates that the marginal cost of production
+    doesn't change as the total output of the industry increases. For example,
+    if the production cost per pencil is $0.20 no matter how many pencils the
+    industry produces, the supply curve will be horizontal at $0.20.
+
+
+## 5.6 Using Elasticities to Predict Changes in Prices
+
+
+### 5.6.1 The Price Effects of a Change in Demand
+
+Under what conditions will an **increase in demand** cause a relatively small
+increase in price?
+
+  - _Small increase in demand_. If the shift of the demand curve is relatively
+    small, the gap between the new demand and the old supply will be relatively
+    small, and the small excess demand can be eliminated with a relatively small
+    increase in price.
+
+  - _Highly elastic demand_. If consumers are very responsive to changes in price,
+    the increase in price caused by excess demand will cause a large reduction
+    in the quantity demanded. As a result, the excess demand will be eliminated
+    with a relatively small increase in price.
+
+  - _Highly elastic supply_. If producers are very responsive to changes in price,
+    the increase in price caused by excess demand will cause a large increase in
+    the quantity supplied. As a result, the excess demand will be eliminated
+    with a relatively small increase in price.
+
+
+### 5.6.2 The Price Effects of a Change in Supply
+
+Under what conditions will a **decrease in supply** cause a relatively small
+increase in price?
+
+  - _Small decrease in supply_. If the shift of the supply curve is relatively
+    small, the gap between the new supply and the old demand will be relatively
+    small, and the small excess demand can be eliminated with a relatively small
+    increase in price.
+
+  - _Highly elastic demand_. If consumers are very responsive to changes in price,
+    the increase in price caused by excess demand will cause a large reduction
+    in the quantity demanded. As a result, the excess demand will be eliminated
+    with a relatively small increase in price.
+
+  - _Highly elastic supply_. If producers are very responsive to changes in price,
+    the increase in price caused by excess demand will cause a large increase in
+    the quantity supplied. As a result, the excess demand will be eliminated
+    with a relatively small increase in price.
 
 
 References
