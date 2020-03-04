@@ -13,7 +13,7 @@ date: 2020-03-02
 
 ## Homeworks
 
-### Draw Square Method
+### Read and Try
 
   - ![Draw Square Method Image](file:../../../../files/spring-2020/CISC-190/module-2/m-2_drawSquareMethod.png)
 

@@ -13,7 +13,7 @@ date: 2020-03-02
 
 ## Homeworks
 
-### Turtle
+### Read and Try
 
   - [Turtle Homework Code](vfile:../../../../files/spring-2020/CISC-190/module-1/MyTurtleTest.java)
   - ![Turtle Homework Image](file:../../../../files/spring-2020/CISC-190/module-1/turtleHomework.png)

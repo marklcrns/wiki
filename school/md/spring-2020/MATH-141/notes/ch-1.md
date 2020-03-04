@@ -1,5 +1,5 @@
 ---
-title: MATH 141 Chapter 1
+title: MATH 141 Chapter 1 Notes
 author: Mark Lucernas
 date: 2020-02-06
 ---
