@@ -5,6 +5,8 @@
 - [ ] npm -g install stylelint prettier - [ ] Install html tidy
 - [ ] Install vint and all additional linters for neomake
 - [ ] Update dotfiles from other laptop.
+  - [ ] Ultisnips
+  - [ ] gtd
 - [ ] Fix colors when using Goyo
 
 CTRL + SHIFT + S = quickly peak outside of tmux
