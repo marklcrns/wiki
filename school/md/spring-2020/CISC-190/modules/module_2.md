@@ -15,16 +15,17 @@ date: 2020-03-02
 
 ### Read and Try
 
-  - ![Draw Square Method Image](file:../../../../files/spring-2020/CISC-190/module-2/m-2_drawSquareMethod.png)
+![Draw Square Method Image](file:../../../../files/spring-2020/CISC-190/module-2/m-2_drawSquareMethod.png)
 
 ### Draw Shape
 
-  - [CreateShape Code](vfile:../../../../files/spring-2020/CISC-190/module-2/CreateShapes.java)
-  - ![CreateShape Image](file:../../../../files/spring-2020/CISC-190/module-2/m-2_createShapes.png)
+![CreateShape Image](file:../../../../files/spring-2020/CISC-190/module-2/m-2_createShapes.png)
+
+  - [CreateShape.java](vfile:../../../../files/spring-2020/CISC-190/module-2/CreateShapes.java)
 
 ### Extra Credits
 
-  - [TurtleNameTester Code](vfile:../../../../files/spring-2020/CISC-190/module-2/TurtleNameTester.java)
+  - [TurtleNameTester.java](vfile:../../../../files/spring-2020/CISC-190/module-2/TurtleNameTester.java)
 
 ### Explain
 

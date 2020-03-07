@@ -15,18 +15,20 @@ date: 2020-03-02
 
 ### Read and Try
 
-  - [Turtle Homework Code](vfile:../../../../files/spring-2020/CISC-190/module-1/MyTurtleTest.java)
-  - ![Turtle Homework Image](file:../../../../files/spring-2020/CISC-190/module-1/turtleHomework.png)
+![Turtle Homework Image](file:../../../../files/spring-2020/CISC-190/module-1/turtleHomework.png)
+
+  - [MyTurtleTest.java](vfile:../../../../files/spring-2020/CISC-190/module-1/MyTurtleTest.java)
 
 ### Draw My Name
 
-  - [DrawMyName Code](vfile:../../../../files/spring-2020/CISC-190/module-1/DrawMark.java)
-  - ![DrawMyName Image](file:../../../../files/spring-2020/CISC-190/module-1/drawMark.png)
+![DrawMyName Image](file:../../../../files/spring-2020/CISC-190/module-1/drawMark.png)
+
+  - [DrawMark.java](vfile:../../../../files/spring-2020/CISC-190/module-1/DrawMark.java)
 
 ### Extra Credits
 
-  - [Variable and Operator Practice](vfile:../../../../files/spring-2020/CISC-190/module-1/VariableAndOperatorPractice.java)
-  - [Identifier Naming Practice](vfile:../../../../files/spring-2020/CISC-190/module-1/IdentifierNamingPractice.txt)
+  - [VariableAndOperatorPractice.java](vfile:../../../../files/spring-2020/CISC-190/module-1/VariableAndOperatorPractice.java)
+  - [IdentifierNamingPractice.txt](vfile:../../../../files/spring-2020/CISC-190/module-1/IdentifierNamingPractice.txt)
 
 ### Explain
 

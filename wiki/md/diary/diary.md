@@ -10,16 +10,20 @@ date: 2020-02-05
 ## To-do
 
 - [ ] Fix colors when using Goyo
+- [ ] Learn shell script
 - [ ] Windows Laptop
   - [ ] Dotfiles
     - [ ] Tmux update
     - [ ] bash_aliases Update
+- [ ] Linux Laptop
+  - [ ] Zathura configs
 
 # Diary
 
 ## 2020
 
 ### March
+  * [To-do 2020-03-07](2020-03-07)
   * [To-do 2020-03-06](2020-03-06)
   * [To-do 2020-03-05](2020-03-05)
   * [To-do 2020-03-04](2020-03-04)
