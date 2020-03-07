@@ -4,7 +4,7 @@ author: Mark Lucernas
 date: 2020-02-24
 ---
 
-# Vim Plugin Wiki: vimwiki/vimwiki
+# Vim Plugin: vimwiki/vimwiki
 
 [Git Repo](https://github.com/vimwiki/vimwiki)
 [Vimwiki Cheatsheet](http://thedarnedestthing.com/vimwiki%20cheatsheet)

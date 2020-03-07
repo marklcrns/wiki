@@ -4,7 +4,7 @@ author: Mark Lucernas
 date: 2020-02-26
 ---
 
-# Vim Plugin wiki: junegunn/vim-easy-align
+# Vim Plugin: junegunn/vim-easy-align
 
 [Git Repo](https://github.com/junegunn/vim-easy-align)
 

@@ -7,11 +7,10 @@ tags: wiki
 
 # Diary
 
-- [Wiki Diary](diary/diary.md)
+  - [Wiki Diary](diary/diary.md)
 
 # Wiki
 
-## Vim/Neovim
-
-  - [Plugins](vim/plugins/index)
+  - [Tmux](tmux/index)
+  - [Vim/Neovim](vim/index)
 

@@ -1,21 +1,26 @@
+---
+title: Wiki Diary
+author: Mark Lucernas
+date: 2020-02-05
+---
+
+
 # Reminders
 
 ## To-do
 
-- [ ] npm -g install stylelint prettier - [ ] Install html tidy
-- [ ] Install vint and all additional linters for neomake
-- [ ] Update dotfiles from other laptop.
-  - [ ] Ultisnips
-  - [ ] gtd
 - [ ] Fix colors when using Goyo
-
-CTRL + SHIFT + S = quickly peak outside of tmux
+- [ ] Windows Laptop
+  - [ ] Dotfiles
+    - [ ] Tmux update
+    - [ ] bash_aliases Update
 
 # Diary
 
 ## 2020
 
 ### March
+  * [To-do 2020-03-06](2020-03-06)
   * [To-do 2020-03-05](2020-03-05)
   * [To-do 2020-03-04](2020-03-04)
   * [To-do 2020-03-03](2020-03-03)

@@ -4,7 +4,7 @@ author: Mark Lucernas
 date: 2020-02-24
 ---
 
-# Vim Plugin Wiki: itchyny/calendar.vim
+# Vim Plugin: itchyny/calendar.vim
 
 [Git Repo](https://github.com/itchyny/calendar.vim)
 
@@ -25,7 +25,7 @@ While inside Calendar buffer:
   - `)` = Go to last line
   - `]` = Go to last line
 
-  ## Events and Tasks
+## Events and Tasks
 
   ```
   Calendar:
