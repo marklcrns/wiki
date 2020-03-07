@@ -40,10 +40,10 @@ Text books
 
 ## Modules
 
-  - [Module 0](modules/module_0)
-  - [Module 1](modules/module_1)
-  - [Module 2](modules/module_2)
-  - [Module 3](modules/module_3)
+  - [Module 0](modules/module_0) -- Introduction
+  - [Module 1](modules/module_1) -- Using Methods and Parameters
+  - [Module 2](modules/module_2) -- Writing Methods
+  - [Module 3](modules/module_3) -- Loops and Arrays
 
 ## Skills I will learn or improve in this course--Applicable for Resumes
 

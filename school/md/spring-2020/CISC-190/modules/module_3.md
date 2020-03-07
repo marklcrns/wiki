@@ -5,7 +5,7 @@ date: 2020-03-02
 ---
 
 
-# CISC 190 Module 3
+# Module 3: Loops and Arrays
 
 ## Notes
 
@@ -34,6 +34,9 @@ date: 2020-03-02
   - [TriEffect.java](vfile:../../../../files/spring-2020/CISC-190/module-3/tri-effect/TriEffect.java)
   - ![Tri Effect Image](file:../../../../files/spring-2020/CISC-190/module-3/tri-effect/m-3_TriEffect.png)
 
+### Technical Interview Practice
 
-
+  - [Picture.java](vfile:../../../../files/spring-2020/CISC-190/module-3/tip/Picture.java)
+  - [Weighted.java](vfile:../../../../files/spring-2020/CISC-190/module-3/tip/Weighted.java)
+  - ![TIP Practice Image](file:../../../../files/spring-2020/CISC-190/module-3/tip/m-3_weighted.png)
 

@@ -5,7 +5,7 @@ date: 2020-03-02
 ---
 
 
-# CISC 190 Module 2
+# Module 2: Writing Methods
 
 ## Notes
 

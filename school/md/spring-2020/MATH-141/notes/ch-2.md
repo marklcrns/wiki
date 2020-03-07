@@ -97,7 +97,7 @@ These are examples of rational functions. The domains are, respectively:
 
 ## 2.4 Linear Functions
 
-#### Video Lecture
+### Video Lecture
 
 [VIDEO: Linear Functions](https://www.youtube.com/watch?v=AqIMrHOBM4g)
 

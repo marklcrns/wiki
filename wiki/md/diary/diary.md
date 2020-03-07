@@ -2,8 +2,7 @@
 
 ## To-do
 
-- [ ] npm -g install stylelint prettier
-- [ ] Install html tidy
+- [ ] npm -g install stylelint prettier - [ ] Install html tidy
 - [ ] Install vint and all additional linters for neomake
 - [ ] Update dotfiles from other laptop.
 - [ ] Fix colors when using Goyo
@@ -15,6 +14,7 @@ CTRL + SHIFT + S = quickly peak outside of tmux
 ## 2020
 
 ### March
+  * [To-do 2020-03-05](2020-03-05)
   * [To-do 2020-03-04](2020-03-04)
   * [To-do 2020-03-03](2020-03-03)
   * [To-do 2020-03-02](2020-03-02)

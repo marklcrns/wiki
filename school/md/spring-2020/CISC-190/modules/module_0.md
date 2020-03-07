@@ -5,7 +5,7 @@ date: 2020-03-02
 ---
 
 
-# CISC 190 Module 0
+# Module 0: Introduction
 
 ## Notes
 
