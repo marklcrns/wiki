@@ -363,6 +363,12 @@ increase in price?
     the quantity supplied. As a result, the excess demand will be eliminated
     with a relatively small increase in price.
 
+**Price-Change Formula**
+
+$$
+\text{percentage change in equilibrium price} = \frac{\text{percentage change in
+demand}}{E_{s} + E_{d}}
+$$
 
 ### 5.6.2 The Price Effects of a Change in Supply
 

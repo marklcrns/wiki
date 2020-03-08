@@ -10,13 +10,16 @@ date: 2020-02-05
 ## To-do
 
 - [ ] Fix colors when using Goyo
+- [ ] Fix vimwiki snippets
+- [ ] Fix vimwiki table mappings
+  * [ ] Change iA or i to wA
 - [ ] Learn shell script
 - [ ] Windows Laptop
-  - [ ] Dotfiles
+  * [ ] Dotfiles
     - [ ] Tmux update
     - [ ] bash_aliases Update
 - [ ] Linux Laptop
-  - [ ] Zathura configs
+  * [ ] Zathura configs
 
 # Diary
 

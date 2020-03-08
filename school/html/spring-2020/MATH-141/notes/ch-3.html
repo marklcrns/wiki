@@ -90,6 +90,7 @@ SOFTWARE.
 <li><a href="#matrices-introduction">Matrices Introduction</a><ul>
 <li><a href="#video-1-lecture">Video 1 Lecture</a></li>
 <li><a href="#video-2-lecture">Video 2 Lecture</a></li>
+<li><a href="#video-lecture-3">Video Lecture 3</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#references">References</a></li>
@@ -134,6 +135,106 @@ y = mx + b
 <li>Multiplying matrices have to be of the same size.</li>
 </ul></li>
 </ul>
+<p>Playlist 1 Video 4 Lecture Notes</p>
+<ul>
+<li>The values inside a matrix are called <em>elements</em> or <em>entries</em></li>
+</ul>
+<p><strong>Order of matrix</strong></p>
+<ul>
+<li>order = rows <span class="math inline">\(\times\)</span> columns
+<ul>
+<li>e.g., <span class="math inline">\(\boldsymbol{A} = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{bmatrix}\)</span>
+<ul>
+<li>order of <span class="math inline">\(\boldsymbol{A} = 2 \times 3\)</span></li>
+</ul></li>
+<li>e.g., <span class="math inline">\(\boldsymbol{B} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}\)</span>
+<ul>
+<li>order of <span class="math inline">\(\boldsymbol{B} = 3 \times 1\)</span></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Playlist 1 Video 5 Lecture Notes</p>
+<ul>
+<li>Matrix is a rectangular arrangement of rows and columns.</li>
+<li>Each row and each column has to have equal number of elements.
+<ul>
+<li><span class="math inline">\(\begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}\)</span> is a matrix.</li>
+<li><span class="math inline">\(\begin{bmatrix} 1 &amp; 2 \\ 3 &amp; \end{bmatrix}\)</span> is <strong>NOT</strong> a matrix.</li>
+</ul></li>
+</ul>
+<p>Playlist 1 Video 7 Lecture Notes</p>
+<p><strong>Equality of Matrices</strong></p>
+<ul>
+<li>e.g., <span class="math inline">\(\boldsymbol{A} = \begin{bmatrix} -1 &amp; 2 \\ 3 &amp; -4 \end{bmatrix} \text{
+\&amp; } \boldsymbol{B} = \begin{bmatrix} -1 &amp; 2 \\ 3 &amp; -4 \end{bmatrix}\)</span> are <strong>EQUAL</strong> to each other</li>
+<li>e.g., <span class="math inline">\(\boldsymbol{A} = \begin{bmatrix} -1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix} \text{
+\&amp; } \boldsymbol{B} = \begin{bmatrix} 1 &amp; -2 \\ 3 &amp; 4 \end{bmatrix}\)</span> are <strong>NOT EQUAL</strong> to each other</li>
+</ul>
+<p>Playlist 1 Video 8 Lecture Notes</p>
+<p><strong>Square Matrix</strong></p>
+<ul>
+<li><span class="math inline">\(\begin{bmatrix} 1 \end{bmatrix} =&gt; 1 \times 1\)</span></li>
+<li><span class="math inline">\(\begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix} =&gt; 2 \times 2\)</span></li>
+<li><span class="math inline">\(\begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{bmatrix} =&gt; 3 \times 3\)</span></li>
+</ul>
+<p><strong>Rectangular Matrix</strong></p>
+<ul>
+<li><span class="math inline">\(\begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{bmatrix} =&gt; 2 \times 3\)</span></li>
+</ul>
+<p><strong>Row Matrix</strong></p>
+<ul>
+<li><span class="math inline">\(\begin{bmatrix} 1 &amp; 2 &amp; 3 \end{bmatrix} =&gt; 1 \times 3\)</span></li>
+</ul>
+<p><strong>Column Matrix</strong></p>
+<ul>
+<li><span class="math inline">\(\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} =&gt; 3 \times 1\)</span></li>
+</ul>
+<p><strong>Null Matrix / Zero Matrix</strong></p>
+<ul>
+<li><span class="math inline">\(\begin{bmatrix} 0 &amp; 0 &amp; 0 \end{bmatrix} =&gt; 0_{1 \times 3}\)</span></li>
+</ul>
+<p><strong>Principal Diagonal Matrix</strong></p>
+<ul>
+<li><span class="math inline">\(\begin{bmatrix} \boldsymbol{1} &amp; 2 &amp; 3 \\ 4 &amp; \boldsymbol{5} &amp; 6 \\ 7 &amp; 8 &amp; \boldsymbol{9} \end{bmatrix} 1 + 5 + 9\)</span>. <span class="math inline">\(trace \boldsymbol{A} = 15\)</span></li>
+</ul>
+<p><strong>Scalar Matrix</strong></p>
+<ul>
+<li><span class="math inline">\(\begin{bmatrix} 2 &amp; 0 &amp; 0 \\ 0 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 2 \end{bmatrix}\)</span></li>
+</ul>
+<p><strong>Diagonal Matrix</strong></p>
+<ul>
+<li><span class="math inline">\(\begin{bmatrix} 2 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\)</span></li>
+</ul>
+<p><strong>Triangular Matrix</strong></p>
+<ul>
+<li><span class="math inline">\(\begin{bmatrix} 1 &amp; \boldsymbol{0} &amp; \boldsymbol{0} \\ 4 &amp; 5 &amp; \boldsymbol{0} \\ 7 &amp; 8 &amp; 9 \end{bmatrix} \text{Lower Triangular Matrix}\)</span></li>
+<li><span class="math inline">\(\begin{bmatrix} 1 &amp; 2 &amp; 3 \\ \boldsymbol{0} &amp; 5 &amp; 6 \\ \boldsymbol{0} &amp; \boldsymbol{0} &amp; 9 \end{bmatrix} \text{Upper Triangular Matrix}\)</span></li>
+</ul>
+<p><strong>Identity Matrix / Unit Matrix</strong></p>
+<ul>
+<li><span class="math inline">\(\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} =&gt; \boldsymbol{I_{3}}\)</span></li>
+</ul>
+<p><strong>Transpose of a Matrix</strong></p>
+<ul>
+<li>Transpose each row to column
+<ul>
+<li><span class="math inline">\(\boldsymbol{A} = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \\ 5 &amp; 6 \end{bmatrix}\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A^{T}} = \begin{bmatrix} 1 &amp; 3 &amp; 5 \\ 2 &amp; 4 &amp; 6 \end{bmatrix}\)</span></li>
+</ul></li>
+<li>Transpose each column to row
+<ul>
+<li><span class="math inline">\(\boldsymbol{B} = \begin{bmatrix} a &amp; b &amp; c \\ d &amp; e &amp; f \end{bmatrix}\)</span></li>
+<li><span class="math inline">\(\boldsymbol{B^{T}} = \begin{bmatrix} a &amp; d \\ b &amp; e \\ c &amp; f \end{bmatrix}\)</span></li>
+</ul></li>
+</ul>
+<p><strong>Symmetric Matrix</strong></p>
+<ul>
+<li>A matrix is symmetric when the transposed is still equals to the original. <span class="math inline">\(\boldsymbol{A} = \boldsymbol{A^{T}}\)</span>
+<ul>
+<li><span class="math inline">\(\boldsymbol{A} = \begin{bmatrix} 2 &amp; 3 &amp; 1 \\ 3 &amp; 4 &amp; 5 \\ 1 &amp; 5 &amp; 7 \end{bmatrix}\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A^{T}} = \begin{bmatrix} 2 &amp; 3 &amp; 1 \\ 3 &amp; 4 &amp; 5 \\ 1 &amp; 5 &amp; 7 \end{bmatrix}\)</span></li>
+</ul></li>
+</ul>
 <h3 id="video-2-lecture">Video 2 Lecture</h3>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=AJi16SLXObk&amp;list=PLaCvjCCHYhspLApshl8YorGhHFpQpN9Tl">PLAYLIST 2: Calc 5.5 Determinants and Cramer’s Rule</a></li>
@@ -141,8 +242,94 @@ y = mx + b
 <p>Playlist 2 Video 1 Lecture Notes</p>
 <p><strong>Determinant</strong></p>
 <ul>
+<li>The determinant of a matrix <span class="math inline">\(\boldsymbol{A}\)</span> is denoted as <span class="math inline">\(det(A), detA, or |A|\)</span> (not an absolute value, matrices doesn’t have an absolute value).</li>
 <li>Value that can be computed from the elements of a <strong>square</strong> matrix.</li>
 <li>It can help you find the inverse of a 2 by 2 square matrix.</li>
+</ul>
+<p>Example 1: Given <span class="math inline">\(\boldsymbol{A} = \begin{bmatrix} 2 &amp; -3 \\ -4 &amp; 1  \end{bmatrix}\)</span>, find det(A)</p>
+<p><span class="math display">\[
+\begin{align}
+det(A) &amp;= 2(1) - (-4)(-3) \\
+ &amp;= 2 - 12 \\
+det(A) &amp;= -10
+\end{align}
+\]</span></p>
+<p>Example 2: Given <span class="math inline">\(\boldsymbol{D} = \begin{bmatrix} 2 &amp; -3 \\ -4 &amp; 1 \end{bmatrix}\)</span>, find <span class="math inline">\(D^{-1}\)</span></p>
+<p><strong>Method 1: Echelon Row Reduce</strong></p>
+<ul>
+<li>Multiply row 1 by 2 and add the result to the bottom row to turn <span class="math inline">\(D(2,1)\)</span>, -4, into zero</li>
+</ul>
+<p><span class="math display">\[
+\left[\begin{matrix}
+2 &amp; -3 \\
+-4 &amp; 1
+\end{matrix}\right|
+\left.\begin{matrix}
+1 &amp; 0 \\
+0 &amp; 1
+\end{matrix}\right]
+r_{1}(2) + r_{2} \to R_{2}
+\]</span></p>
+<ul>
+<li>Divide row 1 by 2 to and row 2 by -5 to turn <span class="math inline">\(D(1,1)\)</span>, 2, and <span class="math inline">\(D(2,2)\)</span>, -5, into 1</li>
+</ul>
+<p><span class="math display">\[
+\left[\begin{matrix}
+2 &amp; -3 \\
+0 &amp; -5
+\end{matrix}\right|
+\left.\begin{matrix}
+1 &amp; 0 \\
+2 &amp; 1
+\end{matrix}\right]
+\frac{r_{1}}{2} \to R_{1} \text{ and } \frac{r_{2}}{-5} \to R_{2}
+\]</span></p>
+<ul>
+<li>Multiply row 2 by <span class="math inline">\(\tfrac{-3}{2}\)</span> and add the result to row 1 to turn <span class="math inline">\(D(1,2)\)</span>, <span class="math inline">\(\tfrac{-3}{2}\)</span>, into zero</li>
+</ul>
+<p><span class="math display">\[
+\left[\begin{matrix}
+1 &amp; \frac{-3}{2} \\
+0 &amp; 1
+\end{matrix}\right|
+\left.\begin{matrix}
+\frac{1}{2} &amp; 0 \\
+\frac{-2}{5} &amp; \frac{-1}{5}
+\end{matrix}\right]
+r_{2}(\tfrac{3}{2}) + r_{1} \to R_{1}
+\]</span></p>
+<p><span class="math display">\[
+\left[\begin{matrix}
+1 &amp; 0 \\
+0 &amp; 1
+\end{matrix}\right|
+\left.\begin{matrix}
+\frac{-1}{10} &amp; \frac{-3}{10} \\
+\frac{-2}{5} &amp; \frac{-1}{5}
+\end{matrix}\right]
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{D^{-1}} = \begin{bmatrix} \frac{-1}{10} &amp; \frac{-3}{10} \\ \frac{-2}{5} &amp; \frac{-1}{5} \end{bmatrix}\)</span></li>
+</ul>
+<p><strong>Method 2: Using Determinants</strong></p>
+<p><span class="math inline">\(\boldsymbol{D} = \begin{bmatrix} 2 &amp; -3 \\ -4 &amp; 1 \end{bmatrix}\)</span></p>
+<p>Inverse determinant formula - <span class="math inline">\(\begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}^{-1} = \frac{1}{det}  \begin{bmatrix} d &amp; -b \\ -c &amp; a \end{bmatrix}\)</span></p>
+<p><span class="math display">\[
+\left | D \right | = 2 - 12 = -10
+\]</span></p>
+<p><span class="math display">\[
+D^{-1} = \tfrac{1}{10}
+\begin{bmatrix}
+1 &amp; 3 \\
+4 &amp; 2
+\end{bmatrix}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{D^{-1}} = \begin{bmatrix} \frac{-1}{10} &amp; \frac{-3}{10} \\  \frac{-2}{5} &amp; \frac{-1}{5} \end{bmatrix}\)</span></li>
+</ul>
+<h3 id="video-lecture-3">Video Lecture 3</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=IjMxFP8AtpA">[Linear Algebra] Properties of Determinants</a></li>
 </ul>
 <h1 id="references">References</h1>
 <ul>
