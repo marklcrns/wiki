@@ -20,12 +20,14 @@ date: 2020-02-05
     - [ ] bash_aliases Update
 - [ ] Linux Laptop
   * [ ] Zathura configs
+  * [ ] Copy zsh history configs from Pengwin
 
 # Diary
 
 ## 2020
 
 ### March
+  * [To-do 2020-03-08](2020-03-08)
   * [To-do 2020-03-07](2020-03-07)
   * [To-do 2020-03-06](2020-03-06)
   * [To-do 2020-03-05](2020-03-05)
