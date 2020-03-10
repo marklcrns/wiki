@@ -11,7 +11,7 @@ date: 2020-03-04
 
 ### Video Lecture
 
-  - [video, Learn how to solve a system of equations by graphing](https://www.youtube.com/watch?v=OWS2xr7M6NY)
+  - [VIDEO: Learn how to solve a system of equations by graphing](https://www.youtube.com/watch?v=OWS2xr7M6NY)
 
 #### Video Lecture Notes
 
@@ -24,7 +24,7 @@ $$
 
 ### Video Lecture
 
-  - [video, Solving Systems of Equations... Substitution Method](https://www.youtube.com/watch?v=YriMMWbndn0)
+  - [VIDEO: Solving Systems of Equations... Substitution Method](https://www.youtube.com/watch?v=YriMMWbndn0)
 
 #### Video Lecture Notes
 
@@ -36,11 +36,11 @@ different number, the system of equations has no solution (video, 15:25).
 
 ### Video Lecture
 
-  - [video, Solving Systems of Equations... Elimination Method](https://www.youtube.com/watch?v=XOJgzW4P7T8)
+  - [VIDEO: Solving Systems of Equations... Elimination Method](https://www.youtube.com/watch?v=XOJgzW4P7T8)
 
 #### Video Lecture Notes
 
-Adding or subtraction system of equations to eliminate a variable works the same
+Adding or subtracting system of equations to eliminate a variable works the same
 
 ## Matrices Introduction
 
@@ -188,7 +188,7 @@ det(A) &= -10
 \end{aligned}
 $$
 
-Example 2: Given $\boldsymbol{D} = \begin{bmatrix} 2 & -3 \\ -4 & 1
+Example 2 (video, 3:48): Given $\boldsymbol{D} = \begin{bmatrix} 2 & -3 \\ -4 & 1
 \end{bmatrix}$, find $D^{-1}$
 
 **Method 1: Echelon Row Reduce**
@@ -288,7 +288,7 @@ $$
 a & b & c \\
 d & e & f \\
 g & h & i
-\end{vmatrix} = 
+\end{vmatrix} =
 a \begin{vmatrix}
 e & f \\
 h & i
@@ -450,14 +450,14 @@ $$
 $$
 
   - Finally, subtract the result of the top row from the bottom row
-    * $\text{Bottom Row} - \text{Top Row}$
+    * $\text{Bottom result} - \text{Top result}$
 
 $$
 \begin{aligned}
-\left | \boldsymbol{A} \right | &= -36 - 6 \\
+\left | \boldsymbol{A} \right | &= -36 - 61 \\
 \left | \boldsymbol{A} \right | &= -97
 \end{aligned}
-$$ 
+$$
 
 
 ### Video Lecture 3
@@ -465,6 +465,57 @@ $$
   - [(Linear Algebra) Properties of Determinants](https://www.youtube.com/watch?v=IjMxFP8AtpA)
 
 #### Video Lecture 3 Notes
+
+Elementary Row Operations
+
+  - $R_{i} \rightarrow R_{i} + cR_{j}$, adding a row to a scaled row
+  - $R_{i} \leftrightarrow R_{j}$, row switching
+  - $R_{i} \rightarrow cR_{i}$, multiplying entire row by a scalar
+  - Note:
+    * $\boldsymbol{R}$ represents the row, and its subset as the nth row
+    * $\boldsymbol{c}$ represents the multiplier or scalar
+
+Properties of Determinants
+
+  - $\det(B) = \det(A)$
+  - $\det(B) = -\det(A)$
+  - $\det(B) = c\det(A)$
+  - $\det A = \det A^{t}$
+  - $\det (AB) = \det (A) \cdot \det (B)$
+
+### Additional Video Lecture
+
+  - [Multiplying Matrices](https://www.youtube.com/watch?v=kuixY2bCc_0)
+
+## 3.5 Cramer's Rule
+
+### Video 1 Lecture
+
+  - [VIDEO 1: Algebra - Solving Linear Equations using Determinants 3/3](https://www.youtube.com/watch?v=IVxMEy4mfhI)
+
+### Video 2 Lecture
+
+  - [VIDEO 2: Determinant of 3x3 matrix](https://www.youtube.com/watch?v=V3e7m-qFDFU)
+
+### Additional Video 1 Lecture
+
+  - [+VIDEO 1: 5.5.6 Cramer's Rule](https://www.youtube.com/watch?v=DQOHnr0byUM)
+
+### Additional Video 2 Lecture
+
+  - [+VIDEO 2: Cramer's Rule to Solve a System of 3 Linear Equations](https://www.youtube.com/watch?v=TtxVGMWXMSE)
+
+#### Additional Video 2 Lecture Notes
+
+$$
+x = \frac{D_{x}}{D},\; y = \frac{D_{y}}{D},\; z =\frac{D_{z}}{D}
+$$
+
+## 3.6 Solve by Row Reduction
+
+### Video Lecture
+
+  - [VIDEO: Introduction to Echelon Row Reduction, How and Why](https://www.youtube.com/watch?v=06zE9IEv4OA)
 
 
 References
@@ -474,7 +525,12 @@ References
   - [video, Learn how to solve a system of equations by graphing](https://www.youtube.com/watch?v=OWS2xr7M6NY)
   - [video, Solving Systems of Equations... Substitution Method](https://www.youtube.com/watch?v=YriMMWbndn0)
   - [video, Solving Systems of Equations... Elimination Method](https://www.youtube.com/watch?v=XOJgzW4P7T8)
-  - [PLAYLIST 1: Introduction to Matrices](https://www.youtube.com/watch?v=kqWCwwyeE6k&list=PLBu4cfksLjchoB_Zb5vbTkZ-4y3-ur_6y)
+  - [PLAYLIST 1: Introduction to Matrices](https://www.yocube.com/watch?v=kqWCwwyeE6k&list=PLBu4cfksLjchoB_Zb5vbTkZ-4y3-ur_6y)
   - [PLAYLIST 2: Calc 5.5 Determinants and Cramer's Rule](https://www.youtube.com/watch?v=AJi16SLXObk&list=PLaCvjCCHYhspLApshl8YorGhHFpQpN9Tl)
   - [(Linear Algebra) Properties of Determinants](https://www.youtube.com/watch?v=IjMxFP8AtpA)
+  - [VIDEO 1: Algebra - Solving Linear Equations using Determinants 3/3](https://www.youtube.com/watch?v=IVxMEy4mfhI)
+  - [VIDEO 2: Determinant of 3x3 matrix](https://www.youtube.com/watch?v=V3e7m-qFDFU)
+  - [+VIDEO 1: 5.5.6 Cramer's Rule](https://www.youtube.com/watch?v=DQOHnr0byUM)
+  - [+VIDEO 2: Cramer's Rule to Solve a System of 3 Linear Equations](https://www.youtube.com/watch?v=TtxVGMWXMSE)
+  - [VIDEO: Introduction to Echelon Row Reduction, How and Why](https://www.youtube.com/watch?v=06zE9IEv4OA)
 

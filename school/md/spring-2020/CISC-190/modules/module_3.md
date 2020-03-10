@@ -47,4 +47,7 @@ date: 2020-03-02
   - [Picture.java](vfile:../../../../files/spring-2020/CISC-190/module-3/tip/Picture.java)
   - [Weighted.java](vfile:../../../../files/spring-2020/CISC-190/module-3/tip/Weighted.java)
 
+### Reflect
+
+  - [M3 Reflect](file:../../../../files/spring-2020/CISC-190/module-4/m-3_reflect.docx)
 

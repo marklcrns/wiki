@@ -27,6 +27,8 @@ date: 2020-02-05
 ## 2020
 
 ### March
+  * [To-do 2020-03-10](2020-03-10)
+  * [To-do 2020-03-09](2020-03-09)
   * [To-do 2020-03-08](2020-03-08)
   * [To-do 2020-03-07](2020-03-07)
   * [To-do 2020-03-06](2020-03-06)
@@ -54,3 +56,56 @@ date: 2020-02-05
   * [To-do 2020-02-07](2020-02-07)
   * [To-do 2020-02-06](2020-02-06)
   * [To-do 2020-02-05](2020-02-05)
+
+$$
+\begin{aligned}
+\det A &=\left.
+\begin{array}{c}
+\;\;\text{*)} \\
+-1\text{)} \\
+-2\text{)} \\
+-2\text{)}
+\end{array}
+\right.
+\begin{vmatrix}
+1 & 3 & 2 & -6 \\
+1 & 2 & -2 & -5 \\
+2 & 4 & -2 & -9 \\
+2 & 4 & -6 & -9
+\end{vmatrix}
+=
+\begin{vmatrix}
+1 & 3 & 2 & -6 \\
+0 & -1 & -4 & 1 \\
+0 & -2 & -6 & 3 \\
+0 & -2 & -10 & 3
+\end{vmatrix}
+\\
+&& \\
+&=\left.
+\begin{array}{c}
+\;\;\text{*)} \\
+-2\text{)} \\
+-2\text{)}
+\end{array}
+\right.
+\begin{vmatrix}
+1 & 4 & 1 \\
+2 & 6 & 3 \\
+2 & 10 & 3
+\end{vmatrix}
+=
+\begin{vmatrix}
+1 & 4 & 1 \\
+0 & -2 & 1 \\
+0 & 2 & 1
+\end{vmatrix}
+=
+\begin{vmatrix}
+-2 & 1 \\
+2 & 1
+\end{vmatrix}
+=-4
+\end{aligned}
+$$
+

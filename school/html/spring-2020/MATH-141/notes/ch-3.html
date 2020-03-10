@@ -60,7 +60,7 @@ SOFTWARE.
   </style>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -110,6 +110,18 @@ SOFTWARE.
 <li><a href="#video-lecture-3">Video Lecture 3</a><ul>
 <li><a href="#video-lecture-3-notes">Video Lecture 3 Notes</a></li>
 </ul></li>
+<li><a href="#additional-video-lecture">Additional Video Lecture</a></li>
+</ul></li>
+<li><a href="#cramers-rule">3.5 Cramer’s Rule</a><ul>
+<li><a href="#video-1-lecture-1">Video 1 Lecture</a></li>
+<li><a href="#video-2-lecture-1">Video 2 Lecture</a></li>
+<li><a href="#additional-video-1-lecture">Additional Video 1 Lecture</a></li>
+<li><a href="#additional-video-2-lecture">Additional Video 2 Lecture</a><ul>
+<li><a href="#additional-video-2-lecture-notes">Additional Video 2 Lecture Notes</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#solve-by-row-reduction">3.6 Solve by Row Reduction</a><ul>
+<li><a href="#video-lecture-4">Video Lecture</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#references">References</a></li>
@@ -120,7 +132,7 @@ SOFTWARE.
 <h2 id="solve-by-graphing">3.1 Solve By Graphing</h2>
 <h3 id="video-lecture">Video Lecture</h3>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=OWS2xr7M6NY">video, Learn how to solve a system of equations by graphing</a></li>
+<li><a href="https://www.youtube.com/watch?v=OWS2xr7M6NY">VIDEO: Learn how to solve a system of equations by graphing</a></li>
 </ul>
 <h4 id="video-lecture-notes">Video Lecture Notes</h4>
 <p><strong>Slope-intercept form</strong>. Where <span class="math inline">\(m\)</span> as the slope, and <span class="math inline">\(b\)</span> as the y-intercept <span class="math display">\[
@@ -129,17 +141,17 @@ y = mx + b
 <h2 id="solve-by-substitution">3.2 Solve By Substitution</h2>
 <h3 id="video-lecture-1">Video Lecture</h3>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=YriMMWbndn0">video, Solving Systems of Equations… Substitution Method</a></li>
+<li><a href="https://www.youtube.com/watch?v=YriMMWbndn0">VIDEO: Solving Systems of Equations… Substitution Method</a></li>
 </ul>
 <h4 id="video-lecture-notes-1">Video Lecture Notes</h4>
 <p>In getting the value of <span class="math inline">\(x\)</span> or <span class="math inline">\(y\)</span>, when a number equals itself, it means it has infinitely many solutions (video, 14:30). Conversely, when a number equals to a different number, the system of equations has no solution (video, 15:25).</p>
 <h2 id="solve-by-elimination">3.3 Solve By Elimination</h2>
 <h3 id="video-lecture-2">Video Lecture</h3>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=XOJgzW4P7T8">video, Solving Systems of Equations… Elimination Method</a></li>
+<li><a href="https://www.youtube.com/watch?v=XOJgzW4P7T8">VIDEO: Solving Systems of Equations… Elimination Method</a></li>
 </ul>
 <h4 id="video-lecture-notes-2">Video Lecture Notes</h4>
-<p>Adding or subtraction system of equations to eliminate a variable works the same</p>
+<p>Adding or subtracting system of equations to eliminate a variable works the same</p>
 <h2 id="matrices-introduction">Matrices Introduction</h2>
 <h3 id="video-1-lecture">Video 1 Lecture</h3>
 <ul>
@@ -276,7 +288,7 @@ det(A) &amp;= 2(1) - (-4)(-3) \\
 det(A) &amp;= -10
 \end{aligned}
 \]</span></p>
-<p>Example 2: Given <span class="math inline">\(\boldsymbol{D} = \begin{bmatrix} 2 &amp; -3 \\ -4 &amp; 1 \end{bmatrix}\)</span>, find <span class="math inline">\(D^{-1}\)</span></p>
+<p>Example 2 (video, 3:48): Given <span class="math inline">\(\boldsymbol{D} = \begin{bmatrix} 2 &amp; -3 \\ -4 &amp; 1 \end{bmatrix}\)</span>, find <span class="math inline">\(D^{-1}\)</span></p>
 <p><strong>Method 1: Echelon Row Reduce</strong></p>
 <ul>
 <li>Multiply row 1 by 2 and add the result to the bottom row to turn <span class="math inline">\(D(2,1)\)</span>, -4, into zero</li>
@@ -360,7 +372,7 @@ D^{-1} = \tfrac{1}{10}
 a &amp; b &amp; c \\
 d &amp; e &amp; f \\
 g &amp; h &amp; i
-\end{vmatrix} = 
+\end{vmatrix} =
 a \begin{vmatrix}
 e &amp; f \\
 h &amp; i
@@ -496,12 +508,12 @@ det(A) &amp;= -97
 <ul>
 <li>Finally, subtract the result of the top row from the bottom row
 <ul>
-<li><span class="math inline">\(\text{Bottom Row} - \text{Top Row}\)</span></li>
+<li><span class="math inline">\(\text{Bottom result} - \text{Top result}\)</span></li>
 </ul></li>
 </ul>
 <p><span class="math display">\[
 \begin{aligned}
-\left | \boldsymbol{A} \right | &amp;= -36 - 6 \\
+\left | \boldsymbol{A} \right | &amp;= -36 - 61 \\
 \left | \boldsymbol{A} \right | &amp;= -97
 \end{aligned}
 \]</span></p>
@@ -510,15 +522,69 @@ det(A) &amp;= -97
 <li><a href="https://www.youtube.com/watch?v=IjMxFP8AtpA">(Linear Algebra) Properties of Determinants</a></li>
 </ul>
 <h4 id="video-lecture-3-notes">Video Lecture 3 Notes</h4>
+<p>Elementary Row Operations</p>
+<ul>
+<li><span class="math inline">\(R_{i} \rightarrow R_{i} + cR_{j}\)</span>, adding a row to a scaled row</li>
+<li><span class="math inline">\(R_{i} \leftrightarrow R_{j}\)</span>, row switching</li>
+<li><span class="math inline">\(R_{i} \rightarrow cR_{i}\)</span>, multiplying entire row by a scalar</li>
+<li>Note:
+<ul>
+<li><span class="math inline">\(\boldsymbol{R}\)</span> represents the row, and its subset as the nth row</li>
+<li><span class="math inline">\(\boldsymbol{c}\)</span> represents the multiplier or scalar</li>
+</ul></li>
+</ul>
+<p>Properties of Determinants</p>
+<ul>
+<li><span class="math inline">\(\det(B) = \det(A)\)</span></li>
+<li><span class="math inline">\(\det(B) = -\det(A)\)</span></li>
+<li><span class="math inline">\(\det(B) = c\det(A)\)</span></li>
+<li><span class="math inline">\(\det A = \det A^{t}\)</span></li>
+<li><span class="math inline">\(\det (AB) = \det (A) \cdot \det (B)\)</span></li>
+</ul>
+<h3 id="additional-video-lecture">Additional Video Lecture</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=kuixY2bCc_0">Multiplying Matrices</a></li>
+</ul>
+<h2 id="cramers-rule">3.5 Cramer’s Rule</h2>
+<h3 id="video-1-lecture-1">Video 1 Lecture</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=IVxMEy4mfhI">VIDEO 1: Algebra - Solving Linear Equations using Determinants 3/3</a></li>
+</ul>
+<h3 id="video-2-lecture-1">Video 2 Lecture</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=V3e7m-qFDFU">VIDEO 2: Determinant of 3x3 matrix</a></li>
+</ul>
+<h3 id="additional-video-1-lecture">Additional Video 1 Lecture</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=DQOHnr0byUM">+VIDEO 1: 5.5.6 Cramer’s Rule</a></li>
+</ul>
+<h3 id="additional-video-2-lecture">Additional Video 2 Lecture</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=TtxVGMWXMSE">+VIDEO 2: Cramer’s Rule to Solve a System of 3 Linear Equations</a></li>
+</ul>
+<h4 id="additional-video-2-lecture-notes">Additional Video 2 Lecture Notes</h4>
+<p><span class="math display">\[
+x = \frac{D_{x}}{D},\; y = \frac{D_{y}}{D},\; z =\frac{D_{z}}{D}
+\]</span></p>
+<h2 id="solve-by-row-reduction">3.6 Solve by Row Reduction</h2>
+<h3 id="video-lecture-4">Video Lecture</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=06zE9IEv4OA">VIDEO: Introduction to Echelon Row Reduction, How and Why</a></li>
+</ul>
 <h1 id="references">References</h1>
 <ul>
 <li><a href="../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf">Pre-calc Textbook Reference 1</a></li>
 <li><a href="https://www.youtube.com/watch?v=OWS2xr7M6NY">video, Learn how to solve a system of equations by graphing</a></li>
 <li><a href="https://www.youtube.com/watch?v=YriMMWbndn0">video, Solving Systems of Equations… Substitution Method</a></li>
 <li><a href="https://www.youtube.com/watch?v=XOJgzW4P7T8">video, Solving Systems of Equations… Elimination Method</a></li>
-<li><a href="https://www.youtube.com/watch?v=kqWCwwyeE6k&amp;list=PLBu4cfksLjchoB_Zb5vbTkZ-4y3-ur_6y">PLAYLIST 1: Introduction to Matrices</a></li>
+<li><a href="https://www.yocube.com/watch?v=kqWCwwyeE6k&amp;list=PLBu4cfksLjchoB_Zb5vbTkZ-4y3-ur_6y">PLAYLIST 1: Introduction to Matrices</a></li>
 <li><a href="https://www.youtube.com/watch?v=AJi16SLXObk&amp;list=PLaCvjCCHYhspLApshl8YorGhHFpQpN9Tl">PLAYLIST 2: Calc 5.5 Determinants and Cramer’s Rule</a></li>
 <li><a href="https://www.youtube.com/watch?v=IjMxFP8AtpA">(Linear Algebra) Properties of Determinants</a></li>
+<li><a href="https://www.youtube.com/watch?v=IVxMEy4mfhI">VIDEO 1: Algebra - Solving Linear Equations using Determinants 3/3</a></li>
+<li><a href="https://www.youtube.com/watch?v=V3e7m-qFDFU">VIDEO 2: Determinant of 3x3 matrix</a></li>
+<li><a href="https://www.youtube.com/watch?v=DQOHnr0byUM">+VIDEO 1: 5.5.6 Cramer’s Rule</a></li>
+<li><a href="https://www.youtube.com/watch?v=TtxVGMWXMSE">+VIDEO 2: Cramer’s Rule to Solve a System of 3 Linear Equations</a></li>
+<li><a href="https://www.youtube.com/watch?v=06zE9IEv4OA">VIDEO: Introduction to Echelon Row Reduction, How and Why</a></li>
 </ul>
 <hr>
 <div>

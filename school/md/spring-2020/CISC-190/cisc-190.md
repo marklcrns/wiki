@@ -44,6 +44,7 @@ Text books
   - [Module 1](modules/module_1) -- Using Methods and Parameters
   - [Module 2](modules/module_2) -- Writing Methods
   - [Module 3](modules/module_3) -- Loops and Arrays
+  - [Module 4](modules/module_4) -- Nested Loops
 
 ## Skills I will learn or improve in this course--Applicable for Resumes
 
