@@ -21,6 +21,7 @@ date: 2020-02-05
 - [ ] Linux Laptop
   * [ ] Zathura configs
   * [ ] Copy zsh history configs from Pengwin
+- [ ] Make thinkvim and pandoc-goodies private repos
 
 # Diary
 

@@ -47,6 +47,10 @@ date: 2020-03-02
   - [Picture.java](vfile:../../../../files/spring-2020/CISC-190/module-3/tip/Picture.java)
   - [Weighted.java](vfile:../../../../files/spring-2020/CISC-190/module-3/tip/Weighted.java)
 
+### Explain
+
+  - [VIDEO: CISC 190 M-3 Explain: Arrays](https://www.youtube.com/watch?v=8k7w-m7S5R8](https://www.youtube.com/watch?v=8k7w-m7S5R8)
+
 ### Reflect
 
   - [M3 Reflect](file:../../../../files/spring-2020/CISC-190/module-4/m-3_reflect.docx)
