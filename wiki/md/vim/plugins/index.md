@@ -12,6 +12,7 @@ date: 2020-02-24
 
 ## Junegunn
 
+  - [Fzf](junegunn/fzf)
   - [Vim-easy-align](junegunn/vim-easy-align)
 
 ## Vimwiki

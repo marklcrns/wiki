@@ -227,6 +227,7 @@ hike will increase or decrease the firm's total revenue.
 $$
 \text{Elastic Demand:} E_d > 1.0
 $$
+
 | if price ... | Total revenue ... | Because the percentage change in quantity is ... |
 |--------------|-------------------|--------------------------------------------------|
 | $\uparrow$   | $\downarrow$      | Larger than the percentage change in price.      |

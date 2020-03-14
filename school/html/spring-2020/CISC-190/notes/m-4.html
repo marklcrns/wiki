@@ -146,6 +146,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#mirroring-a-picture">5.1.2 Mirroring a Picture</a></li>
 <li><a href="#copying-and-transforming-picture">Copying and Transforming Picture</a></li>
 </ul></li>
+<li><a href="#blending-picture">5.2.3 Blending Picture</a></li>
+<li><a href="#rotation">5.2.4 Rotation</a></li>
+<li><a href="#scaling">5.2.5 Scaling</a></li>
+<li><a href="#nested-loops">5.3.2 Nested Loops</a></li>
+<li><a href="#two-dimensionalarrays">5.3.1 Two-DimensionalArrays</a></li>
+<li><a href="#returning-a-value-from-a-method">5.3.3 Returning a Value from a Method</a></li>
+<li><a href="#method-overloading">5.3.4 Method Overloading</a></li>
+<li><a href="#objects-and-methods-summary">Objects and Methods Summary</a></li>
+</ul></li>
+<li><a href="#the-java-api-and-user-input">The Java API and User Input</a><ul>
+<li><a href="#using-the-java-api">Using the Java API</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#references">References</a></li>
@@ -289,6 +300,251 @@ public void copyKatie()
       targetPixel = this.getPixel(targetX, targetY);
       targetPixel.setColor(sourcePixel.getColor());
     }
+  }
+}</code></pre>
+<h3 id="blending-picture">5.2.3 Blending Picture</h3>
+<pre><code>/** Program 28: Blending Two Pictures
+ * Method to blend two sisters together onto the current
+ * picture
+ */
+public void blendPicture()
+{
+  // create the sister Pictures
+  Picture katiePicture =
+    new Picture(FileChooser.getMediaPath(&quot;KatieFancy.jpg&quot;));
+  Picture jennyPicture =
+    new Picture(FileChooser.getMediaPath(&quot;jenny-red.jpg&quot;));
+
+  // declare the source and target pixel variables
+  Pixel katiePixel = null;
+  Pixel jennyPixel = null;
+  Pixel targetPixel = null;
+
+  /*
+    * Declare the target x and source x since we will need
+    * the values after the for loop
+    */
+  int sourceX = 0;
+  int targetX = 0;
+
+  // copy the first 150 pixels of katie to the canvas
+  for(; sourceX &lt; 150; sourceX++, targetX++)
+  {
+    for (int sourceY=0, targetY=0;
+        sourceY &lt; katiePicture.getHeight();
+        sourceY++, targetY++)
+    {
+      katiePixel = katiePicture.getPixel(sourceX, sourceY);
+      targetPixel = this.getPixel(targetX, targetY);
+      targetPixel.setColor(katiePixel.getColor());
+    }
+  }
+  /*
+   * Copy 50% of katie and 50% of jenny till
+   * the end of katie&#39;s width
+   */
+  for (; sourceX &lt; katiePicture.getWidth();
+      sourceX++, targetX++)
+  {
+    for (int sourceY=0, targetY=0;
+        sourceY &lt; katiePicture.getHeight();
+        sourceY++, targetY++)
+    {
+      katiePixel = katiePicture.getPixel(sourceX, sourceY);
+      jennyPixel =
+        jennyPicture.getPixel(sourceX - 150, sourceY);
+      targetPixel = this.getPixel(targetX, targetY);
+      targetPixel.setColor(
+          new Color((int) (katiePixel.getRed()* 0.5 +
+                            jennyPixel.getRed() * 0.5),
+                    (int) (katiePixel.getGreen() * 0.5 +
+                            jennyPixel.getGreen() * 0.5),
+                    (int) (katiePixel.getBlue() * 0.5 +
+                            jennyPixel.getBlue() * 0.5)));
+    }
+  }
+  // copyt the rest of Jenny
+  sourceX = sourceX - 150;
+  for (;sourceX &lt; jennyPicture.getWidth();
+      sourceX++, targetX++)
+  {
+    for (int sourceY = 0, targetY = 0;
+        sourceY &lt; jennyPicture.getHeight();
+        sourceY++, targetY++)
+    {
+      jennyPixel = jennyPicture.getPixel(sourceX, sourceY);
+      targetPixel = this.getPixel(targetX, targetY);
+      targetPixel.setColor(jennyPixel.getColor());
+    }
+  }
+}</code></pre>
+<h3 id="rotation">5.2.4 Rotation</h3>
+<pre><code>/** program 29: rotating a picture left 90 degrees
+ * method to copy the picture of katie but rotate
+ * her left 90 degrees on the current picture
+ */
+public void copykatieleftrotation()
+{
+  string sourcefile =
+    filechooser.getmediapath(&quot;katiefancy.jpg&quot;);
+  picture sourcepicture = new picture(sourcefile);
+  pixel sourcepixel = null;
+  pixel targetpixel = null;
+
+  // loop through the the columns
+  for (int sourcex = 0;
+      sourcex &lt; sourcepicture.getwidth();
+      sourcex++)
+  {
+    // loop through the rows
+    for (int sourcey = 0;
+        sourcey &lt; sourcepicture.getheight();
+        sourcey++)
+    {
+      // set the target pixel color to the source pixel colo
+      sourcepixel = sourcepicture.getpixel(sourcex, sourcey);
+      targetpixel = this.getpixel(sourcex,
+          sourcepicture.getwidth() - 1 - sourcex);
+      targetpixel.setcolor(sourcepixel.getcolor());
+    }
+  }
+}</code></pre>
+<h3 id="scaling">5.2.5 Scaling</h3>
+<pre><code>/* Program 32: General Scale Up Method
+ * Method to create a new picture that is scaled up by the
+ * assed number of times.
+ * @return the new scaled up picture
+ */
+public Picture scaleUp(int numTimes)
+{
+  Picture targetPicture =
+    new Picture(this.getWidth() * numTimes,
+        this.getHeight() * numTimes);
+  Pixel sourcePixel = null;
+  Pixel targetPixel = null;
+  int targetX = 0;
+  int targetY = 0;
+
+  // loop through the source picture columns
+  for (int sourceX = 0;
+      sourceX &lt; this.getWidth();
+      sourceX++)
+  {
+    // loop through the source picture rows
+    for (int sourceY = 0;
+        sourceY &lt; this.getHeight();
+        sourceY++)
+    {
+      // get the source pixelrightPixel
+      sourcePixel = this.getPixel(sourceX, sourceY);
+
+      // loop copying to the target y
+      for (int indexY = 0; indexY &lt; numTimes; indexY++)
+      {
+        // loop copying tot the target x
+        for (int indexX = 0; indexX &lt; numTimes; indexX++)
+        {
+          targetX = sourceX * numTimes + indexX;
+          targetY = sourceY * numTimes + indexY;
+          targetPixel = targetPicture.getPixel(targetX, targetY);
+          targetPixel.setColor(sourcePixel.getColor());
+        }
+      }
+    }
+  }
+
+  return targetPicture;
+}</code></pre>
+<h3 id="nested-loops">5.3.2 Nested Loops</h3>
+<pre><code>// loop through the rows y(direction)
+for (int y = 0; y &lt; this.getHeight(); y++)
+{
+  // loop through the columns (x direction)
+  for (int x = 0; x &lt; this.getWidth(); x++)
+  {
+    // get the current pixel at this x and y position
+    pixel = this.getPixel(x, y);
+
+    // do something to the color
+
+    // set the new color
+    pixel.setColor(aColor);
+  }
+}</code></pre>
+<h3 id="two-dimensionalarrays">5.3.1 Two-DimensionalArrays</h3>
+<p>Pixels are stored in a two-dimensional array. A two-dimensional array is similar to seating in an auditorium. You can find your seat based on the row and chair number. You can access a location in a two-dimensional array by specifying an x and y. All indices start with 0.</p>
+<h3 id="returning-a-value-from-a-method">5.3.3 Returning a Value from a Method</h3>
+<p>To declare a method you specify the visibility for the method, the type of thing it returns, the name of the method, and the parameter list inside parentheses. This is followed by the body of the method which is inside of an open and close curly brace.</p>
+<pre><code>visibility returnType name(parameterList)
+{
+  // statements in method
+
+  // return a value
+  return valueToReturn
+}</code></pre>
+<p>Methods that do not return any value use the keyword <code>void</code> as the return type.</p>
+<h3 id="method-overloading">5.3.4 Method Overloading</h3>
+<p>A class can have more than one method with the same name as long as the parameter list is different. The methods can take a different number of parameters, or the types of the parameters can be different, or the order of the types can be different. You can’t have two methods with the same name and the same number of parameters with the same types in the same order.</p>
+<pre><code>public void copyPictureTo(Picture sourcePicture, int xstart)
+public void copyPictureTo(Picture sourcePicture, int xStart,
+                          int yStart)</code></pre>
+<h3 id="objects-and-methods-summary">Objects and Methods Summary</h3>
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>new Picture(int width, int height)</code></td>
+<td>Creates a new Picture object with the give width and height. All pixels are white.</td>
+</tr>
+<tr class="even">
+<td><code>getMediaPath(String fileName)</code></td>
+<td>Returns the full path name with the media directory followed by the passed file name</td>
+</tr>
+<tr class="odd">
+<td><code>setMediaPath(String directory)</code></td>
+<td>Set the media directory to use when getting a full path using <code>getMediaPath(String fileName)</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Notice that there are two method declarations with the same name but one takes</p>
+<h2 id="the-java-api-and-user-input">The Java API and User Input</h2>
+<p>Java API Documentations <a href="https://docs.oracle.com/javase/7/docs/api/">Java™ Platform, Standard Edition 7</a></p>
+<h3 id="using-the-java-api">Using the Java API</h3>
+<p>Using the Scanner class to get keyboard input</p>
+<pre><code>/*
+ * @author Tasha
+ * This is an example program that accepts an integer from the user,
+ * then repeats it.
+ */
+
+// Import the package needed to use the Scanner class
+import java.util.Scanner;
+
+public class Repeat
+{
+  public static void main(String[] args)
+  {
+    // Declare and initialize variables
+    // create a scanner object that is connected to the keyboard.
+    Scanner input = new Scanner(System.in);
+    int x;
+
+    // Prompt the user for input
+    System.out.print(&quot;Enter an integer: &quot;);
+    // Read the value that the user provided and store it in x2
+    x = input.nextInt();
+
+    // Output the user&#39;s integer
+    System.out.println(&quot;You input the number &quot; + x);
   }
 }</code></pre>
 <h1 id="references">References</h1>

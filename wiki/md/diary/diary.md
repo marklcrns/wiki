@@ -22,12 +22,16 @@ date: 2020-02-05
   * [ ] Zathura configs
   * [ ] Copy zsh history configs from Pengwin
 - [ ] Make thinkvim and pandoc-goodies private repos
+- [ ] Fix R-pandoc resource output path
 
 # Diary
 
 ## 2020
 
 ### March
+  * [To-do 2020-03-13](2020-03-13)
+  * [To-do 2020-03-12](2020-03-12)
+  * [To-do 2020-03-11](2020-03-11)
   * [To-do 2020-03-10](2020-03-10)
   * [To-do 2020-03-09](2020-03-09)
   * [To-do 2020-03-08](2020-03-08)
@@ -110,3 +114,12 @@ $$
 \end{aligned}
 $$
 
+~~~ {.Rplot}
+require(stats)
+D = 150
+T = 10
+t = seq(0, 80, 0.01)
+x = -D*exp(-(t/T))+D
+v = (D/T)*exp(-(t/T))
+plot(t, x, type="l", main="position through time", xlab="time (s)", ylab="position (m)", xlim=c(0,80), ylim=c(0, D+10),  xaxs = "i", yaxs = "i")
+~~~

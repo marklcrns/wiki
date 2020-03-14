@@ -17,4 +17,3 @@ Courses:
   - [MATH 141](spring-2020/MATH-141/math-141) -- Pre-calculus (21576 - blended)
   - ~~[ECON 120](spring-2020/ECON-120/econ-120) -- Principles of Macroeconomics (26977 - online)~~
     * dropped on 2020-02-13
-
