@@ -52,7 +52,7 @@ date: 2020-02-05
       AC, 12) B, 13) E, 14) D, 15) A, 16) B, 17) A, 18) B, 19) F, 20) A, 21) A,
       22) A, 23) B, 24) A, 25) A, 26) A, 27) C, 28) E, 29) A, 30) A
   - [Quiz 4 Questionaire](file:../../../files/spring-2020/MATH-141/ch-2/math-141_quiz_4.pdf)
-    * Score: 107
+    * Score: 110
     * Answers: 1) E, 2) B, 3) C, 4) E, 5) B, 6) B, 7) A, 8) D, 9) C, 10) A, 11)
       E, 12) G, 13) G, 14) C, 15) C, 16) E, 17) B, 18) A, 19) B, 20) D, 21) A,
       22) B, 23) A, 24) E, 25) B, 26) A, 27) D, 28) C, 29) D, 30) C

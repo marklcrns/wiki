@@ -23,12 +23,16 @@ date: 2020-02-05
   * [ ] Copy zsh history configs from Pengwin
 - [ ] Make thinkvim and pandoc-goodies private repos
 - [ ] Fix R-pandoc resource output path
+- [ ] Create index page for wiki repo
+  * [ ] Rename wiki to personal wiki and isolate
+  * [ ] Transfer vim and tmux wiki to references
 
 # Diary
 
 ## 2020
 
 ### March
+  * [To-do 2020-03-14](2020-03-14)
   * [To-do 2020-03-13](2020-03-13)
   * [To-do 2020-03-12](2020-03-12)
   * [To-do 2020-03-11](2020-03-11)

@@ -116,10 +116,23 @@ Formulas
       upright height.
     * Slanted cylinders or any similar shapes does not change the volume as it
       is upright, as long as the upright height remains the same.
+  - Surface Area of a cylinder [(24:46)](https://www.youtube.com/watch?v=Me0Isx2FO9I&t=1486)
+    * $SA = 2\pi \cdot r \cdot h$
   - Volume of a prism or Volume of a cone [(7:37)](https://www.youtube.com/watch?v=Me0Isx2FO9I&t=457)
     * $V = \frac{1}{3}h \cdot A$
-  - Volume of a sphere
+  - Surface Area of a cone
+    * $\frac{1}{3}\pi r^{2} \cdot h$
+  - Volume of a sphere [(27:45)](https://www.youtube.com/watch?v=Me0Isx2FO9I&t=1665)
     * $V = \frac{4}{3}\pi \cdot r^{3}$
+  - Surface Area of a sphere
+    * $4 \cdot \pi r^{2}$
+
+#### Daaabz Questions
+
+  - Surface Area of truncated cylindrical cone
+    * $\frac{r + R}{2} \cdot 2\pi \cdot s$, where $r$ is the radius of the top
+      circle, $R$ is the radius of the base circle, and $s$ as the distance from
+      outline of the base to the outline of the top circle.
 
 #### Video Lecture 2
 
@@ -127,12 +140,23 @@ Formulas
 
 ##### Video Lecture 2 Notes
 
+> Pythagorean theorem only applies to a right triangle with 2 known sides to get
+the third and final side.
+
   - Pythagorean Formula [(0:20)](https://www.youtube.com/watch?v=X6THazimvmI&t=20)
     * $c^{2} = a^{2} + b^{2}$
 
 ### 4.4 The Secret
 
   - [Handout Trig Notes 5](file:../../../../files/spring-2020/MATH-141/ch-4/m-4_TrigNotes_5.pdf)
+
+### Video Lecture
+
+  - [VIDEO: Fundamental Theorem of Trigonometry Secret to solving right triangles](https://www.youtube.com/watch?v=BdVyEB-0FCw)
+
+#### Video Lecture Notes
+
+
 
 ### 4.5 30-60 and 45-45 Triangles
 
