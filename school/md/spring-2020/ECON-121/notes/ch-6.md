@@ -328,6 +328,6 @@ References
 
 Text Books
 
-  * Microeconomics: _Principles, Applications, and Tools_ 10th ed (eText).
-    - Authors: O'Sullivan/Sheffrin/Perez
+  - Microeconomics: _Principles, Applications, and Tools_ 10th ed (eText).
+    * Authors: O'Sullivan/Sheffrin/Perez
 

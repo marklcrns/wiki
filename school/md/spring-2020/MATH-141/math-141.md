@@ -20,14 +20,14 @@ date: 2020-02-05
   * [Pre-calc Textbook Reference 2](file:../../../files/spring-2020/MATH-141/pre-calc_textbookRef2.pdf)
   * [Daabz.com](http://daabz.com/)
     - [Daabz Introduction](file:../../../files/spring-2020/MATH-141/daabz_intro.pdf)
-    - My Daabz account [credentials](vfile:../../../files/spring-2020/MATH-141/daabz_account.txt)
+    - My Dabs account [credentials](vfile:../../../files/spring-2020/MATH-141/daabz_account.txt)
 
 ## Notes
 
-  * [Chapter 1](notes/ch-1)
-  * [Chapter 2](notes/ch-2)
-  * [Chapter 3](notes/ch-3)
-  * [Chapter 4](notes/ch-4)
+  * [Chapter 1](notes/ch-1) -- The Basics
+  * [Chapter 2](notes/ch-2) -- Functions
+  * [Chapter 3](notes/ch-3) -- System of Equations
+  * [Chapter 4](notes/ch-4) -- Angles Triangles and Areas
 
 ## Quizzes
 
@@ -65,6 +65,11 @@ date: 2020-02-05
       ADGH , 10) F , 11) try D , 12) C, 13) C , 14) B, 15) D, 16) E , 17) D, 18)
       D , 19) D , 20) A, 21) AB, 22) C, 23) A, 24) BDF, 25) D , 26) D, 27) C,
       28) A , 29) C, 30) A
+
+### Chapter 4
+
+  - [Quiz 6 Questionaire](file:../../../files/spring-2020/MATH-141/ch-4/math-141_quiz_6.pdf)
+
 
 ## Exams
 

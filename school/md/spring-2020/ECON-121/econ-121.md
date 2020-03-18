@@ -42,6 +42,7 @@ Textbook
   - [Chapter 4](notes/ch-4)
   - [Chapter 5](notes/ch-5)
   - [Chapter 6](notes/ch-6)
+  - [Chapter 8](notes/ch-8)
 
 ## Exams
 

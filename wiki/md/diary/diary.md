@@ -10,10 +10,11 @@ date: 2020-02-05
 ## To-do
 
 - [ ] Fix colors when using Goyo
-- [ ] Fix vimwiki snippets
-- [ ] Fix vimwiki table mappings
-  * [ ] Change iA or i to wA
+- [X] Fix vimwiki snippets
+- [X] Fix vimwiki table mappings
+  * [X] Change iA or i to wA
 - [ ] Learn shell script
+  * [ ] Study sed perl and awk
 - [ ] Windows Laptop
   * [ ] Dotfiles
     - [ ] Tmux update
@@ -26,12 +27,15 @@ date: 2020-02-05
 - [ ] Create index page for wiki repo
   * [ ] Rename wiki to personal wiki and isolate
   * [ ] Transfer vim and tmux wiki to references
+- [ ] Study vim-abolish plugin
 
 # Diary
 
 ## 2020
 
 ### March
+  * [To-do 2020-03-16](2020-03-16)
+  * [To-do 2020-03-15](2020-03-15)
   * [To-do 2020-03-14](2020-03-14)
   * [To-do 2020-03-13](2020-03-13)
   * [To-do 2020-03-12](2020-03-12)
