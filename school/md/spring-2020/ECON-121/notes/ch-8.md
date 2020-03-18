@@ -59,11 +59,8 @@ $$
 \text{accounting profit} = \text{total revenue} - \text{accounting cost}
 $$
 
-[Implicit cost](#implicit-cost)
-
 
 ## 8.2 A Firm with a Fixed Production Facility: Short-Run Costs
-
 
 ### 8.2.1 Production and Marginal Product
 
@@ -71,8 +68,39 @@ $$
 
   - The change in output from one additional unit of labor
 
+This table shows how the quantity of paddles produced varies with
+the number of workers.
 
-### 8.2.2
+| Labor | Quantity of Output Produced | Marginal Product of Labor |
+|-------|-----------------------------|---------------------------|
+| 1     | 1                           | 1                         |
+| 2     | 5                           | 4                         |
+| 3     | 8                           | 3                         |
+| 4     | 10                          | 2                         |
+| 5     | 11                          | 1                         |
+| 6     | 11.5                        | 0.5                       |
+
+Why does the marginal product increase as output increases? When a firm
+increases its workforce, workers can specialize in production tasks.
+Productivity increases because of the benefits of continuity--each worker spends
+less time switching between production tasks. In addition, there are benefits
+from repetition--each worker becomes more proficient at an assigned task. A
+two-worker operation produces more than twice as many paddles as a one-person
+operation because the two workers can specialize, one being responsible for
+preparing the plastic for the mold and the other for working the mold.
+
+Starting with the third worker, the production process is subject to
+[diminishing returns](ch-2#the-principle-of-diminishing-returns), one of the key
+principles of economics. Diminishing returns occur because each worker gets a
+smaller share of the production facility.
+
+<a name="total-product-curve">**Total-product curve**</a>
+
+  - A curve showing the relationship between the quantity of labor and the
+    quantity of output produced, ceteris paribus.
+
+
+### 8.2.2 Short-Run Total Cost
 
 
 References

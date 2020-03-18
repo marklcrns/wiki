@@ -1,17 +1,26 @@
-Exam 1 answers: Attempt 2
-Score: 37/40 92.5%
+---
+title: Exam 1 Attempt 1
+author: Mark Lucernas
+date: 2020-03-08
+---
 
-x *1. The market supply curve is
-   - a tabular representation of the supply schedule.
+
+# Exam 1 Attempt 1 Answer Sheet
+
+> Score: 37/40 92.5%
+> CX -> Partially correct answers<br>
+> X -> Incorrect answers<br>
+
+x 1. The market supply curve is
+
+   - a graphical representation of the individual supply schedule.
 
 2. A change in price causes movement along a demand curve and a change in
-   - the quantity demanded.
+   <kbd>the quantity demanded</kbd>.
 
-3. Your savings account pays 8 percent per​ year: Each​ $100 in the
-   bank grows to ​$108 over a​ one-year period.  If prices increase by
-   8 percent per​ year, by keeping​ $100 in the bank for a year you
-   actually gain ​$
-    - 0
+3. Your savings account pays 8 percent per year: Each $100 in the bank grows to
+   $108 over a one-year period. If prices increase by 8 percent per year, by
+   keeping $100 in the bank for a year you actually gain $<kbd>0</kbd>
 
 4. Demand is
    - elastic

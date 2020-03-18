@@ -250,8 +250,8 @@ date: 2020-03-08
     <kbd>small</kbd> fraction of his or her budget on the product.
 
 38. Your savings account pays 12 percent per year: Each $100 in the bank grows
-    to $112 over a one-year period.  If prices increase by 8 percent per year,
-    by keeping $100 in the bank for a year you actually gain $<kbd>4</kbd>
+    to $112 over a one-year period. If prices increase by 8 percent per year, by
+    keeping $100 in the bank for a year you actually gain $<kbd>4</kbd>
 
 39. According to the principle of voluntary exchange,
 

@@ -1,5 +1,6 @@
 ---
 title: CISC 190 Module 4
+summary: Module 4 notes and exercises
 author: Mark Lucernas
 date: 2020-03-10
 ---
@@ -18,3 +19,4 @@ date: 2020-03-10
   - ![Read and Try Image](../../../../files/spring-2020/CISC-190/module-4/read-and-try/m-4_ReadAndTry.png)
   - [NestedLoops.java](vfile:../../../../files/spring-2020/CISC-190/module-4/read-and-try/NestedLoops.java)
   - [Picture.java](vfile:../../../../files/spring-2020/CISC-190/module-4/read-and-try/Picture.java)
+
