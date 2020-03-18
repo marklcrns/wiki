@@ -1,5 +1,6 @@
 ---
 title: School Index
+summary: College notes
 author: Mark Lucernas
 date: 2020-02-05
 ---
