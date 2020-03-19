@@ -47,7 +47,7 @@ Text books
   - [Module 3](modules/module_3) -- Loops and Arrays
   - [Module 4](modules/module_4) -- Nested Loops
 
-## Skills I will learn or improve in this course--Applicable for Resumes
+## Skills Applicable to Resumes
 
   - Critical thinking
   - Problem solving
