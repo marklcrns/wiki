@@ -2,6 +2,7 @@
 title: CISC 190 Module 1
 author: Mark Lucernas
 date: 2020-03-02
+summary: Module 1 notes and exercises
 ---
 
 

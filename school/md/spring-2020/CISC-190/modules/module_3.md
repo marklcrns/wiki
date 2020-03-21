@@ -1,8 +1,8 @@
 ---
 title: CISC 190 Module 3
-summary: Module 3 notes and exercises
 author: Mark Lucernas
 date: 2020-03-02
+summary: Module 3 notes and exercises
 ---
 
 

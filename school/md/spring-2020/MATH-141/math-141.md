@@ -1,8 +1,10 @@
 ---
 title: MATH 141
+summary: MATH 141 Pre-calculus class
 author: Mark Lucernas
 date: 2020-02-05
 ---
+
 
 # MATH 141 Pre-calculus
 > Professor: Francisco Marquez<br>
@@ -11,6 +13,7 @@ date: 2020-02-05
 > Component: Lecture<br>
 > Start: 02/03/2020<br>
 > End: 06/01/2020<br>
+
 
 ## Course Materials
 
@@ -22,12 +25,15 @@ date: 2020-02-05
     - [Daabz Introduction](file:../../../files/spring-2020/MATH-141/daabz_intro.pdf)
     - My Dabs account [credentials](vfile:../../../files/spring-2020/MATH-141/daabz_account.txt)
 
+
 ## Notes
 
   * [Chapter 1](notes/ch-1) -- The Basics
   * [Chapter 2](notes/ch-2) -- Functions
   * [Chapter 3](notes/ch-3) -- System of Equations
   * [Chapter 4](notes/ch-4) -- Angles Triangles and Areas
+  * [Chapter 5](notes/ch-5) -- Trig Functions
+
 
 ## Quizzes
 
@@ -69,6 +75,11 @@ date: 2020-02-05
 ### Chapter 4
 
   - [Quiz 6 Questionaire](file:../../../files/spring-2020/MATH-141/ch-4/math-141_quiz_6.pdf)
+    * Score: 110
+    * Answers: 1) B, 2) A, 3) B, 4) A, 5) F, 6) CF, 7) AB, 8) AG, 9) D, 10) ADF,
+      11) C, 12) AB, 13) F, 14) A, 15) A, 16) A, 17) A, 18) AB, 19) B, 20) C,
+      21) AB, 22) A, 23) A, 24) C, 25) B, 26) C, 27) B, 28) B, 29) BD, 30) CD
+    * [Solutions](file:../../../files/spring-2020/MATH-141/ch-4/math-141_quiz_6_solutions.pdf)
 
 
 ## Exams

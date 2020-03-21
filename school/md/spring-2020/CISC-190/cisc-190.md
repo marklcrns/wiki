@@ -1,8 +1,8 @@
 ---
 title: CISC 190
-summary: CISC 190 Java Programming class
 author: Mark Lucernas
 date: 2020-02-05
+summary: CISC 190 Java Programming class
 ---
 
 # CISC 190 Java Programming

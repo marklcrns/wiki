@@ -1,5 +1,6 @@
 ---
 title: MATH 141 Chapter 4 Notes
+summary: Angles, Triangles, and Areas
 author: Mark Lucernas
 date: 2020-03-12
 ---
@@ -11,19 +12,19 @@ date: 2020-03-12
 
   - [Handout Trig Notes 1](file:../../../../files/spring-2020/MATH-141/ch-4/m-4_TrigNotes_1.pdf)
 
-**Degrees**
+<a name="degrees">**Degrees**</a>
 
   - Degrees are units of measurement for angles. One degree is defined to be the
     measurement of the angle created by slicing up a circle into 360 equal
     slices.
 
-**Radians**
+<a name="radians">**Radians**</a>
 
   - Radians are units of measurement for angles. One Radian is defined to be the
     measurement of the angle created by the distance of one radius along part of
     the circumference of a circle.
 
-**Definition of $\pi$**
+<a name="definition-of-pi">**Definition of $\pi$**</a>
 
   - the _exact_ number of radians that fit in a half-circle.
   - $\pi \approx 3.14$
@@ -43,6 +44,15 @@ $$
  &\approx 1.309 rad
 \end{aligned}
 $$
+
+<a name="complementary-angles">**Complementary angles**</a>
+
+  - Two angles that adds to $90^{\circ}.$
+
+<a name="supplementary-angle">**Supplementary angle**</a>
+
+  - Two angles that adds to $180^{\circ}.$
+
 
 ### Video Lecture
 
@@ -180,7 +190,7 @@ the third and final side.
     * From the small side to big side, $s \cdot \sqrt{3} = S$
     * From hypotenuse to small side, $\frac{h}{2} = s$
     * From big side to small side, $\frac{S}{\sqrt{3}} = s$
-  - 30 60 Theorem proof [(21:46)](https://www.youtube.com/watch?v=1kz7sxySOnU&t=1306)
+  - 30-60 Theorem proof [(21:46)](https://www.youtube.com/watch?v=1kz7sxySOnU&t=1306)
 
 ### Video Lecture 2
 
@@ -200,7 +210,7 @@ the third and final side.
 
 
 References
-=====
+---
 
   - [Handout Trig Notes 1](file:../../../../files/spring-2020/MATH-141/ch-4/m-4_TrigNotes_1.pdf)
   - [VIDEO: TRIG What is basic trigonometry? what is it supposed to do?](https://www.youtube.com/watch?v=4uV9iO7hEq0)
