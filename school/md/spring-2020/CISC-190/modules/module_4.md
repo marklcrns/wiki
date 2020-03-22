@@ -32,3 +32,11 @@ summary: Module 4 notes and exercises
 
   - [SimpleCollage.java](vfile:../../../../files/spring-2020/CISC-190/module-4/simple-collage/SimpleCollage.java)
   - [Picture.java](vfile:../../../../files/spring-2020/CISC-190/module-4/simple-collage/Picture.java)
+
+### Technical Interview Practice
+
+![Swap Colors Image](../../../../files/spring-2020/CISC-190/module-4/tip/SwapColors.png)
+
+  - [SwapColors.java](vfile:../../../../files/spring-2020/CISC-190/module-4/tip/SwapColors.java)
+  - [Picture.java](vfile:../../../../files/spring-2020/CISC-190/module-4/tip/Picture.java)
+

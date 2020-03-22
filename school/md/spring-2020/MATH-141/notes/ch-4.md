@@ -84,12 +84,13 @@ Formulas
   - Circumference of a circle
     * $C = 2 \pi r$
   - Area of a sector [(14:41)](https://www.youtube.com/watch?v=czgTI0IUFgw&t=881)
-    * $A_{s} = \pi r^{2} \cdot \frac{x}{2\pi}$
+    * $A_{s} = \color{#ff0000}{\pi} r^{2} \cdot
+      \frac{x}{2\color{#ff0000}{\pi}}$, cancel out $\pi$.
       - $A_{s} = \frac{x}{2} r^{2}$, where $x$ in radians.
     * $A_{s} = \pi r^{2} \cdot \frac{x^{\circ}}{360^{\circ}}$, where $x$ in
       degrees.
   - Arc-length [(22:57)](https://www.youtube.com/watch?v=czgTI0IUFgw&t=1377)
-    * $S = \frac{x}{2\pi} \cdot 2\pi r$
+    * $S = \frac{x}{\color{#ff0000}{2\pi}} \cdot \color{#ff0000}{2\pi} r$, cancel $2\pi$
       - $S = x \cdot r$, where $x$ in radians.
     * $S = \frac{x^{\circ}}{360^{\circ}} \cdot 2 \pi r$, where $x$ in degrees.
 

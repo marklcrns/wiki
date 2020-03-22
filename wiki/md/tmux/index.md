@@ -12,8 +12,3 @@ date: 2020-03-06
   - [Commands](commands)
   - [Mappings](mappings)
 
-
-References
-=====
-
-  - [Git Repo](https://github.com/tmux/tmux)

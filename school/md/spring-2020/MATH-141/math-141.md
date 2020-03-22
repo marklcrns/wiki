@@ -81,6 +81,10 @@ date: 2020-02-05
       21) AB, 22) A, 23) A, 24) C, 25) B, 26) C, 27) B, 28) B, 29) BD, 30) CD
     * [Solutions](file:../../../files/spring-2020/MATH-141/ch-4/math-141_quiz_6_solutions.pdf)
 
+### Chapter 5
+
+  - [Quiz 7 Questionaire](file:../../../files/spring-2020/MATH-141/ch-5/math-141_quiz_7.pdf)
+
 
 ## Exams
 

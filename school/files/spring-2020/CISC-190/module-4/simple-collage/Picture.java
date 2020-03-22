@@ -212,16 +212,14 @@ public class Picture extends SimplePicture
   }
 
   /** M5 Simple Collage
-   * Combines 3 pictures into one placing them side by side.
+   * Combines 3 pictures into one side by side onto the calling object.
    * @param pic1 Picture object 1
    * @param pic2 Picture object 2
    * @param pic3 Picture object 3
    */
-  public Picture collage(Picture pic1, Picture pic2, Picture pic3) {
+  public void collage(Picture pic1, Picture pic2, Picture pic3) {
     int picWidth = pic1.getWidth();
     int picHeight = pic1.getHeight();
-
-    Picture canvas = new Picture(picWidth * 3, picHeight);
 
     Pixel srcPixel, tgtPixel = null;
     int sourceX, sourceY, targetX, targetY;
@@ -233,7 +231,7 @@ public class Picture extends SimplePicture
       {
         // Copies every pixel from pic3 onto the final third of the canvas
         srcPixel = pic1.getPixel(sourceX, sourceY);
-        tgtPixel = canvas.getPixel(targetX, targetY);
+        tgtPixel = this.getPixel(targetX, targetY);
         tgtPixel.setColor(srcPixel.getColor());
       }
     }
@@ -245,7 +243,7 @@ public class Picture extends SimplePicture
       {
         // Copies every pixel from pic2 onto the second third of the canvas
         srcPixel = pic2.getPixel(sourceX, sourceY);
-        tgtPixel = canvas.getPixel(targetX, targetY);
+        tgtPixel = this.getPixel(targetX, targetY);
         tgtPixel.setColor(srcPixel.getColor());
       }
     }
@@ -257,11 +255,10 @@ public class Picture extends SimplePicture
       {
         // Copies every pixel from pic3 onto the final third of the canvas
         srcPixel = pic3.getPixel(sourceX, sourceY);
-        tgtPixel = canvas.getPixel(targetX, targetY);
+        tgtPixel = this.getPixel(targetX, targetY);
         tgtPixel.setColor(srcPixel.getColor());
       }
     }
-    return canvas;
   }
 
 } // this } is the end of class Picture, put all new methods before this

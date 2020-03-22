@@ -1,3 +1,4 @@
+
 /*
  * Filename: SimpleCollage.java
  *
@@ -16,23 +17,26 @@ public class SimpleCollage
     String file = FileChooser.pickAFile();
 
     // Picture objects
-    Picture canvas = new Picture();
     Picture pic = new Picture(file);
+    int picWidth = pic.getWidth();
+    int picHeight = pic.getHeight();
+    pic.show();  // show original picture
+
+    // Canvas for collage
+    Picture canvas = new Picture(picWidth * 3, picHeight);
+
     // Picture copies
     Picture picCopy1 = new Picture(pic);
     Picture picCopy2 = new Picture(pic);
 
-    pic.show();  // show original picture
-
-    int picPixelCount = pic.getPixels().length;
-
     // Apply filters to all picture objects
+    int picPixelCount = pic.getPixels().length;
     pic.negative(0, picPixelCount);
     picCopy1.myFilter(0, picPixelCount);
     picCopy2.mirrorHorizontalBottomToTop();
 
     // Combine all three pictures with collage method
-    canvas = canvas.collage(pic, picCopy1, picCopy2);
+    canvas.collage(pic, picCopy1, picCopy2);
     canvas.show();
   }
 }

@@ -28,6 +28,8 @@ date: 2020-02-05
   * [ ] Rename wiki to personal wiki and isolate
   * [ ] Transfer vim and tmux wiki to references
 - [ ] Study vim-abolish plugin
+- [ ] https://www.youtube.com/watch?v=pJTCwSX9Ym8
+  * [ ] Finish sequence 4 and 5
 
 # Diary
 
