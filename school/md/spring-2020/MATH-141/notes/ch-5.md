@@ -92,11 +92,12 @@ References
 ---
 
   - [Handout 13: Ratios nirvana v1](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-13.pdf)
-  - [VIDEO 1: Ratio nirvana 1](https://www.youtube.com/watch?v=mh1nzhymVbc)
-  - [VIDEO 2: Ratio nirvana 2](https://www.youtube.com/watch?v=ltT78ePg9pw)
-  - [VIDEO 3: Inverse functions](https://www.youtube.com/watch?v=mKhTE82mECI)
   - [Handout 14: Inverses intro](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-14.pdf)
   - [Handout 15: Ratios nirvana v2](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-15.pdf)
   - [Handout 16: Soh-Cah-Toa formula guide](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-16.pdf)
+  - [VIDEO 1: Ratio nirvana 1](https://www.youtube.com/watch?v=mh1nzhymVbc)
+  - [VIDEO 2: Ratio nirvana 2](https://www.youtube.com/watch?v=ltT78ePg9pw)
+  - [VIDEO 3: Inverse functions](https://www.youtube.com/watch?v=mKhTE82mECI)
   - [Handout 17: The promise mission accomplished](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-17.pdf)
+  - [VIDEO: Mission Accomplished](https://www.youtube.com/watch?v=nSNTkZ52gl8)
 
