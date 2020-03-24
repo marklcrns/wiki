@@ -277,9 +277,9 @@ Market effects of changes in demand or supply
 | Increase in supply         | Decrease                               | Increase                                  |
 | Decrease in supply         | Increase                               | Decreases                                 |
 
+<br>
 
-References
-===
+# References
 
 Text Books
 

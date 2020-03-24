@@ -504,7 +504,9 @@ increase in capacity would be 40 percent (equal to 2 divided by 5), the same as
 the percentage decrease. In that case, we get the more sensible result that the
 net effect of the two changes is zero.
 
-## References
+<br>
+
+# References
 
 Text Books
 

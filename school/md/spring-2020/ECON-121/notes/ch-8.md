@@ -2,6 +2,7 @@
 title: ECON 121 Chapter 8
 author: Mark Lucernas
 date: 2020-03-16
+summary: Production, technology and cost
 ---
 
 
@@ -102,9 +103,253 @@ smaller share of the production facility.
 
 ### 8.2.2 Short-Run Total Cost
 
+<a name="fixed-cost">**Fixed cost (FC)**</a>
 
-References
----
+  - Cost that does not vary with the quantity produced.
+
+<a name="variable-cost">**Variable cost (VC)**</a>
+
+  - Cost that varies with the quantity produced.
+
+<a name="short-run-total-cost">**Short-run total cost (TC)**</a>
+
+  - The total cost of production when at least one input is fixed; equal to
+    fixed cost plus variable cost.
+
+$$
+\mathit{TC} = \mathit{FC} + \mathit{VC}
+$$
+
+Suppose the opportunity cost of your time is $50 per day, and you can hire
+workers for your workshop at the market wage of $50 per day. You can purchase
+your workshop, including the building and the paddle mold, for $365,000. If the
+interest rate you could have earned on that money is 10 percent per year, the
+opportunity cost of tying up your $365,000 in the workshop is $36,500 per year,
+or $100 per day.
+
+| Labor | Output (Q) | Fixed Cost (FC) | Variable Cost (VC) | Total Cost (TC) | Average Fixed cost (AFC) | Average Variable Cost (AVC) | Average Total Cost (ATC) | Marginal Cost (MC) |
+|-------|------------|-----------------|--------------------|-----------------|--------------------------|-----------------------------|--------------------------|--------------------|
+| 0     | 0          | $100            | $0                 | $100            | -                        | -                           | -                        | -                  |
+| 1     | 1          | 100             | $50                | 150             | $100                     | $50.00                      | $150.00                  | $50                |
+| 2     | 5          | 100             | 100                | 200             | 20.00                    | 20.00                       | 40.00                    | 12.50              |
+| 3     | 8          | 100             | 150                | 250             | 12.50                    | 18.75                       | 31.25                    | 16.67              |
+| 4     | 10         | 100             | 200                | 300             | 10.00                    | 20.00                       | 30.00                    | 25.00              |
+| 5     | 11         | 100             | 250                | 350             | 9.09                     | 22.73                       | 31.82                    | 50.00              |
+| 6     | 11.5       | 100             | 300                | 400             | 8.70                     | 26.09                       | 34.78                    | 100.00             |
+
+![Figure 8.2](file:../../../../files/spring-2020/ECON-121/ch-8/ch-8_Figure_8.2.png)
+
+### 8.2.3 Short-Run Average Costs
+
+<a name="average-fixed-cost">**Average fixed cost (AFC)**</a>
+
+  - Fixed cost divided by the quantity produced.
+
+$$
+\mathit{AFC} = \frac{\mathit{FC}}{Q}
+$$
+
+<a name="average-variable-cost">**Average variable cost (AVC)**</a>
+
+  - Variable cost divided by the quantity produced.
+
+$$
+\mathit{AVC} = \frac{\mathit{VC}}{\mathit{Q}}
+$$
+
+<a name="short-run-average-total-cost">**Short-run average total cost (ATC)**</a>
+
+  - Short-run total cost divided by the quantity produced; equal to AFC plus
+    AVC.
+  - The short-run average-total-cost curve (ATC) is U-shaped because of the
+    conflicting effects of (a) fixed costs being spread over a larger quantity
+    of output and (b) diminishing returns.
+
+$$
+\mathit{ATC}
+\color{#ff0000}{=} \frac{\mathit{TC}}{\mathit{Q}}
+\color{#ff0000}{=} \frac{\mathit{FC}}{\mathit{Q}}
++ \frac{\mathit{VC}}{\mathit{Q}}
+\color{#ff0000}{=} \mathit{AFC} + \mathit{AVC}
+$$
+
+![Figure 8.3](file:../../../../files/spring-2020/ECON-121/ch-8/ch-8_Figure_8.3.png)
+
+The ATC curve in Figure 8.3 is negatively sloped at quantities less than 10
+paddles. The negative slope results from two forces that work together to push
+average cost down as output increases:
+
+  - **Spreading the fixed cost**. For small quantities of output, a one-unit
+    increase in output reduces AFC by a large amount because the fixed cost is
+    pretty "thick," being spread over just a few units of output. For example,
+    going from one paddle to five paddles decreases AFC from $100 to $20 per
+    paddle.
+
+  - **Labor specialization**. For small quantities of output, AVC decreases as
+    output increases because labor specialization increases worker productivity.
+
+These two forces both push ATC downward as output increases, so the curve is
+negatively sloped for small quantities of output.
+
+### 8.2.4 Short-Run Marginal Cost
+
+<a name="short-run-marginal-cost">**Short-run marginal cost (MC)**</a>
+
+  - The change in short-run total cost resulting from a one-unit increase in
+    output.
+  - The negatively sloped portion of the short-run marginal-cost curve (MC)
+    results from input specialization that causes increasing marginal returns.
+  - The positively sloped portion of the MC results from diminishing returns.
+  - see [Marginal cost](ch-2#marginal-cost).
+
+$$
+\mathit{MC}
+= \frac{\Delta \mathit{TC}}{\Delta \mathit{Q}}
+= \frac{\text{change in TC}}{\text{change in output}}
+$$
+
+### 8.2.5 The Relationship between Marginal Cost and Average Cost
+
+![Figure 8.4](file:../../../../files/spring-2020/ECON-121/ch-8/ch-8_Figure_8.4.png)
+
+
+## 8.3 Production and Cost in the Long Run
+
+The key difference between the short run and the long run is that there are no
+diminishing returns in the long run. Recall that
+[diminishing returns](ch-2#the-principle-of-diminishing-returns) occur because
+workers share a fixed production facility, so the larger the number of workers
+in the facility, the smaller the share of the facility available for each
+worker. In the long run, a firm can expand its production facility as its
+workforce grows, so there are no diminishing returns.
+
+### 8.3.1 Expansion and Replication
+
+In order to effectively double the output of your production, one possibility is
+to double the original operation or to build an identical operation from the
+original.
+
+<a name="long-run-total-cost">**Long-run total cost (LTC)**</a>
+
+  - The total cost of production when a firm is perfectly flexible in choosing
+    its inputs.
+
+![Figure 8.5](file:../../../../files/spring-2020/ECON-121/ch-8/ch-8_Figure_8.5.png)
+
+| Labor | Capital | Output | Labor Cost | Long-run Total Cost (LTC) | Long-run Average Cost (LAC) |
+|-------|---------|--------|------------|---------------------------|-----------------------------|
+| 1     | $100    | 1      | $50        | $150                      | $150                        |
+| 2     | 100     | 5      | 100        | 200                       | 40                          |
+| 4     | 100     | 10     | 200        | 300                       | 30                          |
+| 8     | 200     | 20     | 400        | 600                       | 30                          |
+| 12    | 300     | 30     | 600        | 900                       | 30                          |
+
+<a name="long-run-average-cost">**Long-run average cost (LAC)**</a>
+
+  - The long-run cost divided by the quantity produced.
+  - The long-run average-cost curve (LAC) is horizontal over some range of
+    output because replication is an option, so doubling output will no more
+    than double long-run total cost.
+  - The LAC is negatively sloped for small quantities of output because (a)
+    there are indivisible inputs that cannot be scaled down and (b) a smaller
+    operation has limited opportunities for labor specialization.
+
+$$
+\mathit{LAC} = \frac{\mathit{LTC}}{Q}
+$$
+
+<a name="constant-returns-to-scale">**Constant returns to scale**</a>
+
+  - A situation in which the long-run total cost increases proportionately with
+    output, so average cost is constant.
+
+<a name="long-run-marginal-cost">**Long-run marginal cost (LMC)**</a>
+
+  - The change in long-run cost resulting from a one-unit increase in output.
+
+$$
+\mathit{LMC} = \frac{\Delta \mathit{LTC}}{\Delta \mathit{Q}}
+$$
+
+### 8.3.2 Reducing Output with Indivisible Inputs
+
+What would happen if you decide to produce only 5 paddles per day instead of 10?
+Although it's tempting to think that your total costs would be cut in half,
+that's not necessarily the case. Remember that you use a single mold to produce
+10 paddles per day. If you cut your output in half, you would still need the
+mold, so your capital costs won't be cut in half. In addition, if each mold
+requires a fixed amount of floor space, you would still need the same floor
+space. Therefore, cutting output in half wouldn't decrease the cost of your
+production facility at all. You would still have a cost of $100 per day for the
+mold and the workspace.
+
+<a name="indivisible-input">**Indivisible input**</a>
+
+  - An input that cannot be scaled down to produce a smaller quantity of output.
+
+Mold is an example of an indivisible input.
+
+### 8.3.3 Scaling Down and Labor Specialization
+
+A second possible reason for higher average long-run costs in a smaller
+operation is that labor will be less specialized in the small operation. As we
+saw earlier in the chapter, labor specialization--each worker specializing in an
+individual production task--makes workers more productive because of continuity
+and repetition. Reversing this process, when we reduce the workforce each worker
+will become less specialized, performing a wider variety of production tasks.
+The loss of specialization will decrease labor productivity, leading to higher
+average cost.
+
+### 8.3.4 Economies of Scale
+
+<a name="economies-of-scale">**Economies of scale**</a>
+
+  - A situation in which the long-run average cost of production decreases as
+    output increases.
+
+One way to quantify the extent of scale economies in the production of a
+particular good is to determine the minimum efficient scale for producing the
+good.
+
+<a name="minimum-efficient-scale">**Minimum efficient scale**</a>
+
+  - The output at which scale economies are exhausted.
+
+  If a firm starts out with a quantity of output below the minimum efficient
+  scale, an increase in output will decrease the average cost. Once the minimum
+  efficient scale has been reached, the average cost no longer decreases as
+  output increases.
+
+### 8.3.5 Diseconomies of Scale
+
+<a name="diseconomies-of-scale">**Diseconomies of scale**</a>
+
+  - A situation in which the long-run average cost of production increases as
+    output increases.
+
+Diseconomies of scale can occur for two reasons:
+
+  - **Coordination problems**. One of the problems of a large organization is
+    that it requires several layers of management to coordinate the activities
+    of the different parts of the organization. A large organization requires
+    more meetings, reports, and administrative work, leading to higher unit
+    cost. If an increase in the firm’s output requires additional layers of
+    management, the long-run average-cost curve may be positively sloped.
+
+  - **Increasing input costs**. When a firm increases its output, it will demand
+    more of each of its inputs and may be forced to pay higher prices for some
+    of these inputs.
+
+For example, an expanding construction firm may be forced to pay higher
+wages to attract more workers. Alternatively, an expanding firm may be
+forced to hire workers who are less skilled than the original workers. An
+increase in wages or a decrease in productivity will increase the average
+cost of production, generating a positively sloped long-run average-cost
+curve.
+
+<br>
+
+# References
 
 Text Books
 

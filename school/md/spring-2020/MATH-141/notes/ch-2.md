@@ -355,8 +355,9 @@ $\ln$ is a natural log and always has a base of $e$, $\ln_{e}$
   - [VIDEO: Solving (Challenging) Log Equations Different Bases](https://www.youtube.com/watch?v=xx80CyHZfLQ)
 
 
-References
-=====
+<br>
+
+# References
 
   - [Pre-calc Textbook Reference 1](file:../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)
     * Chapter 5 pages 61 - 77

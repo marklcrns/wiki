@@ -600,7 +600,10 @@ Geometric Series
   - [Rationalizing the denominator with two radicals in the denominator](https://www.youtube.com/watch?v=hthLZbH7mkU&list=PL0G-Nd0V5ZMpS8k9YvdRY8FWjuyW0SSf6)
   - [Dividing two binomial radical expression](https://www.youtube.com/watch?v=PoOrBlf53mk)
 
-## References
+
+<br>
+
+# References
 
   - [Pre-calc Textbook Reference 1](file:../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)
     * Chapter 1 pages 8 - 19

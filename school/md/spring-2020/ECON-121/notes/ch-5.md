@@ -95,7 +95,7 @@ direction of the change--which of the two values is the initial value.
     * e.g. Each wheat farmer can sell as much as he or she wants at the market
       price but would sell nothing at any price above the market price.
 
-![Elasticity and Demand Curves](../../../../files/spring-2020/ECON-121/ch-5/elasticity.png)
+![Elasticity and Demand Curves](file:../../../../files/spring-2020/ECON-121/ch-5/elasticity.png)
 
 
 ### 5.1.3 Elasticity and the Availability of Substitutes
@@ -391,9 +391,9 @@ increase in price?
     the quantity supplied. As a result, the excess demand will be eliminated
     with a relatively small increase in price.
 
+<br>
 
-References
-=====
+# References
 
 Text Books
 

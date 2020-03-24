@@ -16,13 +16,13 @@ summary: Module 1 notes and exercises
 
 ### Read and Try
 
-![Turtle Homework Image](../../../../files/spring-2020/CISC-190/module-1/turtleHomework.png)
+![Turtle Homework Image](file:../../../../files/spring-2020/CISC-190/module-1/turtleHomework.png)
 
   - [MyTurtleTest.java](vfile:../../../../files/spring-2020/CISC-190/module-1/MyTurtleTest.java)
 
 ### Draw My Name
 
-![DrawMyName Image](../../../../files/spring-2020/CISC-190/module-1/drawMark.png)
+![DrawMyName Image](file:../../../../files/spring-2020/CISC-190/module-1/drawMark.png)
 
   - [DrawMark.java](vfile:../../../../files/spring-2020/CISC-190/module-1/DrawMark.java)
 

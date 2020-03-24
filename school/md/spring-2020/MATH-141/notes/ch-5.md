@@ -88,8 +88,9 @@ Timestamps
 ## 5.4 Inverse Functions
 
 
-References
----
+<br>
+
+# References
 
   - [Handout 13: Ratios nirvana v1](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-13.pdf)
   - [Handout 14: Inverses intro](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-14.pdf)

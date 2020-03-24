@@ -2,9 +2,10 @@
 title: Vim Plugins Wiki
 author: Mark Lucernas
 date: 2020-02-24
+summary: Vim plugins references
 ---
 
-# Vim Plugins Wiki
+# Vim Plugins
 
 ## Itchyny
 

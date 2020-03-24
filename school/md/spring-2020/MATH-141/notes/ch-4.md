@@ -210,8 +210,9 @@ the third and final side.
   - 45-45 Theorem proof [(7:35)](https://www.youtube.com/watch?v=Jg1fwmH-6eA&t=455)
 
 
-References
----
+<br>
+
+# References
 
   - [Handout Trig Notes 1](file:../../../../files/spring-2020/MATH-141/ch-4/m-4_TrigNotes_1.pdf)
   - [VIDEO: TRIG What is basic trigonometry? what is it supposed to do?](https://www.youtube.com/watch?v=4uV9iO7hEq0)

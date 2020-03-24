@@ -9,7 +9,7 @@ date: 2020-02-14
 In this chapter, **five key principles** that provide a foundation for economic
 analysis will be introduced.
 
-**Principle**
+<a name="principle">**Principle**</a>
 
   - A self evident truth that most people readily understand and accept.
 
@@ -20,7 +20,7 @@ analysis will be introduced.
 Economics is all about making choices, and to make good choices we must compare
 the benefit of something to its cost.
 
-**Opportunity cost**
+<a name="opportunity-cost">**Opportunity cost**</a>
 
   - What you sacrifice to get something.
 
@@ -41,11 +41,11 @@ variable affects the value of another variable and people's decisions.
 The marginal principle is based on a comparison of the marginal benefits and
 marginal costs of a particular activity.
 
-**Marginal benefit**
+<a name="marginal-benefit">**Marginal benefit**</a>
 
   - The additional benefit resulting from a small increase in some activity.
 
-**Marginal cost**
+<a name="marginal-cost">**Marginal cost**</a>
 
   - The additional cost resulting from a small increase in some activity.
 
@@ -94,12 +94,12 @@ amount of money they have but also in how much their money will buy.
 Economists use special terms to express the ideas behind the real-nominal
 principle:
 
-**Nominal value**
+<a name="nominal-value">**Nominal value**</a>
 
   - An amount of money simply its face value.
   - For example, the nominal wage paid by the bookstore is $10 per hour.
 
-**Real value**
+<a name="real-value">**Real value**</a>
 
   - An amount of money measured in terms of the quantity of goods the money can
     buy.
@@ -107,7 +107,9 @@ principle:
     of movies and snacks increase, even though your nominal wage stayed the
     same.
 
-## References
+<br>
+
+# References
 
 Text Books
 
