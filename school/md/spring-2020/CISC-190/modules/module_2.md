@@ -20,13 +20,15 @@ summary: Module 2 notes and exercises
 
 ### Draw Shape
 
-![CreateShape Image](file:../../../../files/spring-2020/CISC-190/module-2/m-2_createShapes.png)
+![Create Shape Image](file:../../../../files/spring-2020/CISC-190/module-2/m-2_createShapes.png)
 
   - [CreateShape.java](vfile:../../../../files/spring-2020/CISC-190/module-2/CreateShapes.java)
+  - [Turtle.java](vfile:../../../../files/spring-2020/CISC-190/module-2/Turtle.java)
 
 ### Extra Credits
 
   - [TurtleNameTester.java](vfile:../../../../files/spring-2020/CISC-190/module-2/TurtleNameTester.java)
+  - [Turtle.java](vfile:../../../../files/spring-2020/CISC-190/module-2/Turtle.java)
 
 ### Explain
 

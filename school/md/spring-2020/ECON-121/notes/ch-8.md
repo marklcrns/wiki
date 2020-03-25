@@ -60,6 +60,13 @@ $$
 \text{accounting profit} = \text{total revenue} - \text{accounting cost}
 $$
 
+A firm's accounting cost is always lower than its economic cost, so its
+accounting profit is always higher than its economic profit. For the rest of
+this book, when we refer to cost and profit, we mean economic cost and economic
+profit.
+
+Accounting profit is larger than economic profit.
+
 
 ## 8.2 A Firm with a Fixed Production Facility: Short-Run Costs
 
@@ -126,6 +133,8 @@ your workshop, including the building and the paddle mold, for $365,000. If the
 interest rate you could have earned on that money is 10 percent per year, the
 opportunity cost of tying up your $365,000 in the workshop is $36,500 per year,
 or $100 per day.
+
+Table 8.2 Short-Run costs
 
 | Labor | Output (Q) | Fixed Cost (FC) | Variable Cost (VC) | Total Cost (TC) | Average Fixed cost (AFC) | Average Variable Cost (AVC) | Average Total Cost (ATC) | Marginal Cost (MC) |
 |-------|------------|-----------------|--------------------|-----------------|--------------------------|-----------------------------|--------------------------|--------------------|
@@ -201,12 +210,19 @@ negatively sloped for small quantities of output.
     results from input specialization that causes increasing marginal returns.
   - The positively sloped portion of the MC results from diminishing returns.
   - see [Marginal cost](ch-2#marginal-cost).
+  - To calculate marginal cost, take the change in TC with the previous row then
+    it by the change in output with the previous row.
 
 $$
 \mathit{MC}
 = \frac{\Delta \mathit{TC}}{\Delta \mathit{Q}}
 = \frac{\text{change in TC}}{\text{change in output}}
 $$
+
+Whenever the **marginal cost is less than the average cost**, the **average will
+fall**; whenever the **marginal cost exceeds the average cost**, the **average
+will rise**; and whenever the **marginal cost equals the average cost**, the
+**average will not change**.
 
 ### 8.2.5 The Relationship between Marginal Cost and Average Cost
 
@@ -262,6 +278,7 @@ $$
 
   - A situation in which the long-run total cost increases proportionately with
     output, so average cost is constant.
+  - Horizontal part of the curve
 
 <a name="long-run-marginal-cost">**Long-run marginal cost (LMC)**</a>
 
@@ -306,6 +323,7 @@ average cost.
 
   - A situation in which the long-run average cost of production decreases as
     output increases.
+  - Downward-sloping part of the curve
 
 One way to quantify the extent of scale economies in the production of a
 particular good is to determine the minimum efficient scale for producing the
@@ -326,6 +344,7 @@ good.
 
   - A situation in which the long-run average cost of production increases as
     output increases.
+  - Upward-sloping part of the curve
 
 Diseconomies of scale can occur for two reasons:
 
@@ -333,7 +352,7 @@ Diseconomies of scale can occur for two reasons:
     that it requires several layers of management to coordinate the activities
     of the different parts of the organization. A large organization requires
     more meetings, reports, and administrative work, leading to higher unit
-    cost. If an increase in the firm’s output requires additional layers of
+    cost. If an increase in the firm's output requires additional layers of
     management, the long-run average-cost curve may be positively sloped.
 
   - **Increasing input costs**. When a firm increases its output, it will demand
@@ -346,6 +365,51 @@ forced to hire workers who are less skilled than the original workers. An
 increase in wages or a decrease in productivity will increase the average
 cost of production, generating a positively sloped long-run average-cost
 curve.
+
+
+## Chapter Summary
+
+Here are the main points of the chapter:
+
+  1. The negatively sloped portion of the short-run _marginal-cost curve_ (MC)
+     results from input specialization that causes increasing marginal returns.
+  2. The positively sloped portion of the MC results from _diminishing
+     returns_.
+  3. The short-run _average-total-cost curve_ (ATC) is U-shaped because of the
+     conflicting effects of (a) fixed costs being spread over a larger quantity
+     of output and (b) diminishing returns.
+  4. The long-run _average-cost curve_ (LAC) is horizontal over some range of
+     output because replication is an option, so doubling output will no more
+     than double long-run total cost.
+  5. The LAC is negatively sloped for small quantities of output because (a)
+     there are indivisible inputs that cannot be scaled down and (b) a smaller
+     operation has limited opportunities for labor specialization.
+  6. _Diseconomies of scale_ arise if there are problems in coordinating a
+     large operation or higher input costs in a larger organization.
+
+The short run is a period of time where **at least one input is fixed**, while
+the long run is a period of time where **all inputs are variable**.
+
+Table 8.5 The Language and Mathematics of Costs
+
+| Type of Cost                 | Definition                                                                                                   | Symbols and Equations                                    |
+|------------------------------|--------------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
+| Economic cost                | The opportunity cost of the inputs used in the production process; equal to explicit cost plus implicit cost | -                                                        |
+| Explicit cost                | The actual monetary payment for inputs                                                                       | -                                                        |
+| Implicit cost                | The opportunity cost of inputs that do not involve a monetary payment                                        | -                                                        |
+| Accounting cost              | Explicit cost                                                                                                | -                                                        |
+| Short-Run Costs              |                                                                                                              |                                                          |
+| Fixed cost                   | Cost that does not vary with the quantity produced                                                           | $\mathit{FC}$                                            |
+| Variable cost                | Cost that varies with the quantity produced                                                                  | $\mathit{VC}$                                            |
+| Short-run total cost         | The total cost of production when at least one input is fixed                                                | $\mathit{TC} = \mathit{FC} + \mathit{VC}$                |
+| Short-run marginal cost      | The change in cost from a one-unit increase in output                                                        | $\mathit{MC} = \Delta \mathit{TC} / \Delta \mathit{Q}$   |
+| Average fixed cost           | Fixed cost divided by the quantity produced                                                                  | $\mathit{AFC} = \mathit{FC} / \mathit{Q}$                |
+| Average variable cost        | Variable cost divided by the quantity produced                                                               | $\mathit{AVC} = \mathit{VC} / \mathit{Q}$                |
+| Short-run average total cost | Short-run total cost divided by the quantity produced                                                        | $\mathit{ATC} = \mathit{AFC} + \mathit{AVC}$             |
+| Long-Run Costs               |                                                                                                              |                                                          |
+| Long-run total cost          | The total cost of production when a firm is perfectly flexible in choosing its inputs                        |                                                          |
+| Long-run average cost        | Long-run total cost divided by the quantity produced                                                         | $\mathit{LAC} = \mathit{LTC} / \mathit{Q}$               |
+| Long-run marginal cost       | The change in long-run cost resulting from a one-unit increase in output                                     | $\mathit{LMC} = \Delta \mathit{LTC} / \Delta \mathit{Q}$ |
 
 <br>
 
