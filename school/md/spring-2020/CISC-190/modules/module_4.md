@@ -40,3 +40,9 @@ summary: Module 4 notes and exercises
   - [SwapColors.java](vfile:../../../../files/spring-2020/CISC-190/module-4/tip/SwapColors.java)
   - [Picture.java](vfile:../../../../files/spring-2020/CISC-190/module-4/tip/Picture.java)
 
+### Explain
+
+### Reflect
+
+  - [M4 Reflect](file:../../../../files/spring-2020/CISC-190/module-4/m-4_reflect.docx)
+

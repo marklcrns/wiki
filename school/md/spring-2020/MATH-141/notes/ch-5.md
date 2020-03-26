@@ -84,9 +84,27 @@ Timestamps
 
 ## 5.3 The Reference Triangle and Rest of Functions
 
+  - [Handout 15: Ratios nirvana v2](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-15.pdf)
+    * Reference Triangles: page 53
+    * The Rest of the Trig: page 96
+
+  - **Reference angles** are drawn starting from _positive_ $\mathit{X}$ axis.
+  - **Positive angles** are drawn counter-clockwise from _positive_ $\mathit{X}$
+    axis.
+  - **Negative angles** are drawn clockwise from _positive_ $\mathit{X}$ axis.
+
+Cosecant, Secant and Cotangent
+
+  - $sin(\theta^{\circ}) = \frac{\text{opp}}{\text{hyp}}$, $csc(\theta^{\circ}) = \frac{\text{hyp}}{\text{opp}}$
+  - $cos(\theta^{\circ}) = \frac{\text{adj}}{\text{hyp}}$, $sec(\theta^{\circ}) = \frac{\text{hyp}}{\text{adj}}$
+  - $tan(\theta^{\circ}) = \frac{\text{opp}}{\text{adj}}$, $cot(\theta^{\circ}) = \frac{\text{adj}}{\text{opp}}$
+
 
 ## 5.4 Inverse Functions
 
+### Video Lecture
+
+  - [VIDEO: The rest of the inverse functions](https://www.youtube.com/watch?v=7zBjTAs1DSA)
 
 <br>
 

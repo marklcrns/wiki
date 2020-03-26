@@ -211,7 +211,7 @@ public class Picture extends SimplePicture
     }
   }
 
-  /** M5 Simple Collage
+  /** M4 Simple Collage
    * Combines 3 pictures into one side by side onto the calling object.
    * @param pic1 Picture object 1
    * @param pic2 Picture object 2

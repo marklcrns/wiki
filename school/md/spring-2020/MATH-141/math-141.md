@@ -84,6 +84,11 @@ date: 2020-02-05
 ### Chapter 5
 
   - [Quiz 7 Questionaire](file:../../../files/spring-2020/MATH-141/ch-5/math-141_quiz_7.pdf)
+    * Score: 110
+    * Answers: 1) A, 2) B, 3) F, 4) A, 5) ABCEFHI, 6) AC, 7) A, 8) A, 9) G, 10)
+      B, 11) C, 12) A, 13) B, 14) BDEFG, 15) B, 16) B, 17) C, 18) E, 19) AC, 20)
+      AEFG, 21) A, 22) ABCDE, 23) BEGH, 24) B, 25) D
+    * [Solutions](file:../../../files/spring-2020/MATH-141/ch-5/math-141_quiz_7_solutions.pdf)
 
 
 ## Exams
@@ -91,6 +96,8 @@ date: 2020-02-05
 ### Exam 1
 
 Handouts and Worksheets
+
+> Exam 1 was moved online due to COVID-19 crisis.
 
   - [Pre Examination Worksheet](file:../../../files/spring-2020/MATH-141/exam-1/exam-1_preExamWorksheet.pdf)
     * [Solutions](file:../../../files/spring-2020/MATH-141/exam-1/exam-1_preExamWorksheet_solution.pdf)

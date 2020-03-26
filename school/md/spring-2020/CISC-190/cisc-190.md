@@ -46,6 +46,7 @@ Text books
   - [Module 2](modules/module_2) -- Writing Methods
   - [Module 3](modules/module_3) -- Loops and Arrays
   - [Module 4](modules/module_4) -- Nested Loops
+  - [Module 5](modules/module_5) -- Nested Loops
 
 ## Skills Applicable to Resumes
 

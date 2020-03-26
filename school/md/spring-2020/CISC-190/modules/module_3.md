@@ -54,5 +54,5 @@ summary: Module 3 notes and exercises
 
 ### Reflect
 
-  - [M3 Reflect](file:../../../../files/spring-2020/CISC-190/module-4/m-3_reflect.docx)
+  - [M3 Reflect](file:../../../../files/spring-2020/CISC-190/module-3/m-3_reflect.docx)
 

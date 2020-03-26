@@ -209,7 +209,6 @@ the third and final side.
   - From hypotenuse to the equal sides, $\frac{h}{\sqrt{2}} = s$
   - 45-45 Theorem proof [(7:35)](https://www.youtube.com/watch?v=Jg1fwmH-6eA&t=455)
 
-
 <br>
 
 # References
