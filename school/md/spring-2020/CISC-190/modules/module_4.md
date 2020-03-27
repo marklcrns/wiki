@@ -42,6 +42,8 @@ summary: Module 4 notes and exercises
 
 ### Explain
 
+  - [VIDEO: CISC 190 M-4 Explain: Loops](https://www.youtube.com/watch?v=uAwXhd4bMmI)
+
 ### Reflect
 
   - [M4 Reflect](file:../../../../files/spring-2020/CISC-190/module-4/m-4_reflect.docx)

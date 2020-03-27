@@ -87,7 +87,7 @@ direction of the change--which of the two values is the initial value.
     switch to a substitute good or do without.
     * e.g. Medicines such as insulin for diabetics that have no substitutes.
 
-**Perfectly elastic demand**
+<a name="perfectly-elastic-demand">**Perfectly elastic demand**</a>
 
   - The price elasticity of demand is infinite.
   - In the case of perfect elasticity, the price elasticity is infinite and the

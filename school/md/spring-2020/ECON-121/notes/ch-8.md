@@ -57,7 +57,8 @@ $$
   - Total revenue minus accounting cost.
 
 $$
-\text{accounting profit} = \text{total revenue} - \text{accounting cost}
+\text{accounting profit} = \text{total revenue} - \text{accounting cost (explicit
+cost)}
 $$
 
 A firm's accounting cost is always lower than its economic cost, so its
@@ -65,7 +66,8 @@ accounting profit is always higher than its economic profit. For the rest of
 this book, when we refer to cost and profit, we mean economic cost and economic
 profit.
 
-Accounting profit is larger than economic profit.
+Because accountants ignore implicit costs, accounting profit usually larger than
+economic profit.
 
 
 ## 8.2 A Firm with a Fixed Production Facility: Short-Run Costs

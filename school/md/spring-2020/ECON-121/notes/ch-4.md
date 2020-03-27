@@ -49,7 +49,7 @@ date: 2020-02-20
 
 ## 4.2 The Supply Curve
 
-**Law of supply**
+<a name="law-of-supply">**Law of supply**</a>
 
   - There is a positive relationship between price and quantity supplied,
     ceteris paribus.
