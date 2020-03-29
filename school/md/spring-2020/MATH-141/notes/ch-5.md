@@ -2,7 +2,7 @@
 title: MATH 141 Chapter 5 Notes
 author: Mark Lucernas
 date: 2020-03-18
-summary: Trigonometric Functions
+summary: Right triangle ratios and angles
 ---
 
 

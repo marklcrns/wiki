@@ -89,6 +89,7 @@ date: 2020-02-05
       B, 11) C, 12) A, 13) B, 14) BDEFG, 15) B, 16) B, 17) C, 18) E, 19) AC, 20)
       AEFG, 21) A, 22) ABCDE, 23) BEGH, 24) B, 25) D
     * [Solutions](file:../../../files/spring-2020/MATH-141/ch-5/math-141_quiz_7_solutions.pdf)
+  - [Quiz 8 Questionaire](file:../../../files/spring-2020/MATH-141/ch-5/math-141_quiz_8.pdf)
 
 
 ## Exams
