@@ -7,36 +7,22 @@ date: 2020-02-05
 
 # Reminders
 
-## To-do
-
-- [ ] Fix colors when using Goyo
-- [X] Fix vimwiki snippets
-- [X] Fix vimwiki table mappings
-  * [X] Change iA or i to wA
-- [ ] Learn shell script
-  * [ ] Study sed perl and awk
-- [ ] Windows Laptop
-  * [ ] Dotfiles
-    - [ ] Tmux update
-    - [ ] bash_aliases Update
-- [ ] Linux Laptop
-  * [ ] Zathura configs
-  * [ ] Copy zsh history configs from Pengwin
-- [ ] Make thinkvim and pandoc-goodies private repos
-- [ ] Fix R-pandoc resource output path
-- [ ] Fix Diagrams-pandoc
-- [ ] Create index page for wiki repo
-  * [ ] Rename wiki to personal wiki and isolate
-  * [ ] Transfer vim and tmux wiki to references
-- [ ] Study vim-abolish plugin
-- [ ] https://www.youtube.com/watch?v=pJTCwSX9Ym8
-  * [ ] Finish sequence 4 and 5
+  * [Home Tasks](tasks-home)
 
 # Diary
 
 ## 2020
 
+### April
+  * [2020-04-01](2020-04-01)
+
 ### March
+  * [2020-03-31](2020-03-31)
+  * [2020-03-28](2020-03-28)
+  * [2020-03-27](2020-03-27)
+  * [2020-03-26](2020-03-26)
+  * [2020-03-25](2020-03-25)
+  * [2020-03-24](2020-03-24)
   * [2020-03-23](2020-03-23)
   * [2020-03-22](2020-03-22)
   * [2020-03-21](2020-03-21)
@@ -131,13 +117,3 @@ $$
 =-4
 \end{aligned}
 $$
-
-~~~ {.Rplot}
-require(stats)
-D = 150
-T = 10
-t = seq(0, 80, 0.01)
-x = -D*exp(-(t/T))+D
-v = (D/T)*exp(-(t/T))
-plot(t, x, type="l", main="position through time", xlab="time (s)", ylab="position (m)", xlim=c(0,80), ylim=c(0, D+10),  xaxs = "i", yaxs = "i")
-~~~
