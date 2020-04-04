@@ -1,1 +1,6 @@
 .tags
+.gitignore
+tex/
+wiki/md/diary
+wiki/html/diary
+wiki/html/reminders
