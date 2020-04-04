@@ -1,8 +1,0 @@
-\contentsline {section}{\numberline {1}Delimiters}{1}{section.1}%
-\contentsline {section}{\numberline {2}Spacing}{2}{section.2}%
-\contentsline {section}{\numberline {3}Arrays}{2}{section.3}%
-\contentsline {section}{\numberline {4}Equation arrays}{3}{section.4}%
-\contentsline {section}{\numberline {5}Functions}{4}{section.5}%
-\contentsline {section}{\numberline {6}Accents}{4}{section.6}%
-\contentsline {section}{\numberline {7}Command definition}{5}{section.7}%
-\contentsline {section}{\numberline {8}Theorems et al.}{5}{section.8}%
