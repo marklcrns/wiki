@@ -7,10 +7,9 @@ summary: Personal wiki and references
 
 # Diary
 
-  - [Wiki Diary](diary/diary.md)
+  - [Wiki Diary](diary/diary)
 
 # Wiki
 
   - [Tmux](tmux/index)
   - [Vim/Neovim](vim/index)
-
