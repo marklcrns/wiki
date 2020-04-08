@@ -90,6 +90,10 @@ date: 2020-02-05
       AEFG, 21) A, 22) ABCDE, 23) BEGH, 24) B, 25) D
     * [Solutions](file:../../../files/spring-2020/MATH-141/ch-5/math-141_quiz_7_solutions.pdf)
   - [Quiz 8 Questionaire](file:../../../files/spring-2020/MATH-141/ch-5/math-141_quiz_8.pdf)
+    * Score: 70 (Late submission)
+    * Answers: 1) H, 2) A, 3) ACDFGHI, 4) D, 5) C, 6) E, 7) ABCDE, 8) A, 9) A,
+      10) E, 11) ABCEF, 12) E, 13) BCDEFGH, 14) AEGH, 15) AD, 16) CFGH , 17) F,
+      18) B, 19) ABDEFGHI, 20) E, 21) D, 22) DE, 23) ACDFGHI, 24) ABCEG , 25) B
 
 
 ## Exams
@@ -105,3 +109,7 @@ Handouts and Worksheets
   - [Algebra Review](file:../../../files/spring-2020/MATH-141/exam-1/exam-1_algebraReview.pdf)
   - [Exam Basic Instructions](file:../../../files/spring-2020/MATH-141/exam-1/exam-1_basicInstructions.pdf)
 
+  - [Exam 1 Questionaire v1]()
+    * Score: 110
+    * Answers: 1) D, 2) A, 3) A, 4) A, 5) E, 6) B, 7) A, 8) C, 9) C, 10) D, 11) D,
+      12) B
