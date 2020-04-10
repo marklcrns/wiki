@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<!--
+==============================================================================
+           "GitHub HTML5 Pandoc Template" v2.1 — by Tristano Ajmone           
+==============================================================================
+Copyright © Tristano Ajmone, 2017, MIT License (MIT). Project's home:
+
+- https://github.com/tajmone/pandoc-goodies
+
+The CSS in this template reuses source code taken from the following projects:
+
+- GitHub Markdown CSS: Copyright © Sindre Sorhus, MIT License (MIT):
+  https://github.com/sindresorhus/github-markdown-css
+
+- Primer CSS: Copyright © 2016-2017 GitHub Inc., MIT License (MIT):
+  http://primercss.io/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The MIT License 
+
+Copyright (c) Tristano Ajmone, 2017 (github.com/tajmone/pandoc-goodies)
+Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)
+Copyright (c) 2017 GitHub Inc.
+
+"GitHub Pandoc HTML5 Template" is Copyright (c) Tristano Ajmone, 2017, released
+under the MIT License (MIT); it contains readaptations of substantial portions
+of the following third party softwares:
+
+(1) "GitHub Markdown CSS", Copyright (c) Sindre Sorhus, MIT License (MIT).
+(2) "Primer CSS", Copyright (c) 2016 GitHub Inc., MIT License (MIT).
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+==============================================================================-->
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Mark Lucernas" />
+  <meta name="dcterms.date" content="2020-04-09" />
+  <title>ECON 121 Chapter 10</title>
+  <style type="text/css">
+@charset "UTF-8";.markdown-body{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#24292e;font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:16px;line-height:1.5;word-wrap:break-word;box-sizing:border-box;min-width:200px;max-width:980px;margin:0 auto;padding:45px}.markdown-body a{color:#0366d6;background-color:transparent;text-decoration:none;-webkit-text-decoration-skip:objects}.markdown-body a:active,.markdown-body a:hover{outline-width:0}.markdown-body a:hover{text-decoration:underline}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body strong{font-weight:600}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1{font-size:2em;margin:.67em 0;padding-bottom:.3em;border-bottom:1px solid #eaecef}.markdown-body h2{padding-bottom:.3em;font-size:1.5em;border-bottom:1px solid #eaecef}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#6a737d}.markdown-body img{border-style:none}.markdown-body svg:not(:root){overflow:hidden}.markdown-body hr{box-sizing:content-box;height:.25em;margin:24px 0;padding:0;overflow:hidden;background-color:#e1e4e8;border:0}.markdown-body hr::before{display:table;content:""}.markdown-body hr::after{display:table;clear:both;content:""}.markdown-body input{margin:0;overflow:visible;font:inherit;font-family:inherit;font-size:inherit;line-height:inherit}.markdown-body [type=checkbox]{box-sizing:border-box;padding:0}.markdown-body *{box-sizing:border-box}.markdown-body blockquote{margin:0}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol ol,.markdown-body ul ol{list-style-type:lower-roman}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body ol ol ol,.markdown-body ol ul ol,.markdown-body ul ol ol,.markdown-body ul ul ol{list-style-type:lower-alpha}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dd{margin-left:0}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:600}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body code{font-family:SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace}.markdown-body pre{font:12px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;word-wrap:normal}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body blockquote{padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body table{display:block;width:100%;overflow:auto;border-spacing:0;border-collapse:collapse}.markdown-body table th{font-weight:600}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #dfe2e5}.markdown-body table tr{background-color:#fff;border-top:1px solid #c6cbd1}.markdown-body table tr:nth-child(2n){background-color:#f6f8fa}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body code{padding:.2em 0;margin:0;font-size:85%;background-color:rgba(27,31,35,.05);border-radius:3px}.markdown-body code::after,.markdown-body code::before{letter-spacing:-.2em;content:" "}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:0 0;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f6f8fa;border-radius:3px}.markdown-body pre code{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code::after,.markdown-body pre code::before{content:normal}.markdown-body .full-commit .btn-outline:not(:disabled):hover{color:#005cc5;border-color:#005cc5}.markdown-body kbd{box-shadow:inset 0 -1px 0 #959da5;display:inline-block;padding:3px 5px;font:11px/10px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;color:#444d56;vertical-align:middle;background-color:#fcfcfc;border:1px solid #c6cbd1;border-bottom-color:#959da5;border-radius:3px;box-shadow:inset 0 -1px 0 #959da5}.markdown-body :checked+.radio-label{position:relative;z-index:1;border-color:#0366d6}.markdown-body .task-list-item{list-style-type:none}.markdown-body .task-list-item+.task-list-item{margin-top:3px}.markdown-body .task-list-item input{margin:0 .2em .25em -1.6em;vertical-align:middle}.markdown-body::before{display:table;content:""}.markdown-body::after{display:table;clear:both;content:""}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.Alert,.Error,.Note,.Success,.Warning{padding:11px;margin-bottom:24px;border-style:solid;border-width:1px;border-radius:4px}.Alert p,.Error p,.Note p,.Success p,.Warning p{margin-top:0}.Alert p:last-child,.Error p:last-child,.Note p:last-child,.Success p:last-child,.Warning p:last-child{margin-bottom:0}.Alert{color:#246;background-color:#e2eef9;border-color:#bac6d3}.Warning{color:#4c4a42;background-color:#fff9ea;border-color:#dfd8c2}.Error{color:#911;background-color:#fcdede;border-color:#d2b2b2}.Success{color:#22662c;background-color:#e2f9e5;border-color:#bad3be}.Note{color:#2f363d;background-color:#f6f8fa;border-color:#d5d8da}.Alert h1,.Alert h2,.Alert h3,.Alert h4,.Alert h5,.Alert h6{color:#246;margin-bottom:0}.Warning h1,.Warning h2,.Warning h3,.Warning h4,.Warning h5,.Warning h6{color:#4c4a42;margin-bottom:0}.Error h1,.Error h2,.Error h3,.Error h4,.Error h5,.Error h6{color:#911;margin-bottom:0}.Success h1,.Success h2,.Success h3,.Success h4,.Success h5,.Success h6{color:#22662c;margin-bottom:0}.Note h1,.Note h2,.Note h3,.Note h4,.Note h5,.Note h6{color:#2f363d;margin-bottom:0}.Alert h1:first-child,.Alert h2:first-child,.Alert h3:first-child,.Alert h4:first-child,.Alert h5:first-child,.Alert h6:first-child,.Error h1:first-child,.Error h2:first-child,.Error h3:first-child,.Error h4:first-child,.Error h5:first-child,.Error h6:first-child,.Note h1:first-child,.Note h2:first-child,.Note h3:first-child,.Note h4:first-child,.Note h5:first-child,.Note h6:first-child,.Success h1:first-child,.Success h2:first-child,.Success h3:first-child,.Success h4:first-child,.Success h5:first-child,.Success h6:first-child,.Warning h1:first-child,.Warning h2:first-child,.Warning h3:first-child,.Warning h4:first-child,.Warning h5:first-child,.Warning h6:first-child{margin-top:0}h1.title,p.subtitle{text-align:center}h1.title.followed-by-subtitle{margin-bottom:0}p.subtitle{font-size:1.5em;font-weight:600;line-height:1.25;margin-top:0;margin-bottom:16px;padding-bottom:.3em}div.line-block{white-space:pre-line}
+  </style>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<article class="markdown-body">
+<div style="text-align: center; font-size: 11px; letter-spacing: 2px;">
+<a href="../../../index.html">Wiki Root</a>
+</div>
+<header>
+<h1 class="title">ECON 121 Chapter 10</h1>
+<p class="author">Mark Lucernas</p>
+<p class="date">2020-04-09</p>
+<div class="summary">
+Monopoly and price discrimination
+</div>
+</header>
+<hr>
+<nav id="TOC">
+<h1 class="toc-title">Contents</h1>
+<ul>
+<li><a href="#chapter-10-monolopoly-and-price-discrimination">Chapter 10: Monolopoly and Price Discrimination</a><ul>
+<li><a href="#the-monopolists-output-decision">10.1 The Monopolist’s Output Decision</a><ul>
+<li><a href="#total-revenue-and-marginal-revenue">10.1.1 Total Revenue and Marginal Revenue</a></li>
+<li><a href="#a-formula-for-marginal-revenue">10.1.2 A formula for Marginal Revenue</a></li>
+<li><a href="#using-the-marginal-principle">10.1.3 Using the Marginal Principle</a></li>
+</ul></li>
+<li><a href="#the-social-cost-of-monopoly">10.2 The Social Cost of Monopoly</a><ul>
+<li><a href="#section">10.2.1</a></li>
+<li><a href="#section-1">10.2.2</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#references">References</a></li>
+</ul>
+</nav>
+<hr>
+<h1 id="chapter-10-monolopoly-and-price-discrimination">Chapter 10: Monolopoly and Price Discrimination</h1>
+<p><a name="monopoly"><strong>Monopoly</strong></a></p>
+<ul>
+<li>A market in which a single firm sells a product that does not have any close substitutes.</li>
+<li>In contrast with a perfectly competitive, or price-taking, firm, a monopolist controls the price of its product, so we can refer to a monopolist as a <em>price maker</em>.</li>
+<li>A monopolist has market power, the ability to affect the price of its product.</li>
+</ul>
+<p><a name="market-power"><strong>Market power</strong></a></p>
+<ul>
+<li>The ability of a firm to affect the price of its product.</li>
+</ul>
+<p><a name="barrier-to-entry"><strong>Barrier to entry</strong></a></p>
+<ul>
+<li>Something that prevents firms entering a profitable market.</li>
+</ul>
+<p>A monopoly occurs when a barrier to entry prevents a second firm from entering a profitable market. Among the possible barriers to entry are patents, network externalities, government licensing, the ownership or control of a key resource, and large economies of scale in production:</p>
+<ul>
+<li>A <strong>patent</strong> grants an inventor the exclusive right to sell a new product for some period of time, currently 20 years under international rules.</li>
+<li>When the value of a product to a consumer increases with the number of consumers who use it, <strong>network externalities</strong> are at work. For example, the larger the number of people on an online social network, the greater the opportunities for interaction. Similarly, the larger the number of people using a software application such as a word processor, the greater the opportunities to share files. Network externalities provide an advantage to existing firms and may inhibit the entry of new ones.</li>
+<li>Under a licensing policy, the government chooses a single firm to sell a particular product. Some examples are licensing for radio and television stations, off-street parking in cities, and vendors in national parks.</li>
+<li>If a firm owns or controls a key resource, the firm can prevent entry by refusing to sell the input to other firms. The classic example is DeBeers, the South African company that controls about 80 percent of the world’s production of diamonds. Before the 1940s, the Aluminum Company of AmericaALCOAhad long-term contracts to buy most of the world’s available bauxite, a key input to the production of aluminum.</li>
+<li>A <strong>natural monopoly</strong> occurs when the scale economies in production are so large that only a single large firm can earn a profit. The market can support only one profitable firm because if a second firm entered the market, both firms would lose money. Some examples are cable TV service, electricity transmission, and water systems.</li>
+</ul>
+<h2 id="the-monopolists-output-decision">10.1 The Monopolist’s Output Decision</h2>
+<h3 id="total-revenue-and-marginal-revenue">10.1.1 Total Revenue and Marginal Revenue</h3>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-10/ch-10_figure-10.1.png" alt="Figure 10.1 The Demand Curve and the Marginal-Revenue Curve" /><figcaption>Figure 10.1 The Demand Curve and the Marginal-Revenue Curve</figcaption>
+</figure>
+<blockquote>
+<p>Marginal revenue equals the price for the first unit sold, but is less than the price for additional units sold. To sell an additional unit, the firm cuts the price and receives less revenue on the units that could have been sold at the higher price. The marginal revenue is positive for the first four units, and negative for larger quantities.</p>
+</blockquote>
+<p>The trade-offs faced by a monopolist in cutting the price to sell a larger quantity. When the firm cuts its price from $12 to $10, there is good news and bad news:</p>
+<ul>
+<li><strong>Good news</strong>: The firm collects $10 from the new customer (the third), so revenue increases by $10.</li>
+<li><strong>Bad news</strong>: The firm cuts the price for all its customers, so it gets less revenue from the customers who would have been willing to pay the higher price of $12. Specifically, the firm collects $2 less from each of the two original customers, so revenue from the original customers decreases by $4.</li>
+</ul>
+<p>Our discussion of good news and bad news has revealed a key feature of a monopoly: Marginal revenue is less than price. To sell one more unit, the monopolist must cut its price, and the difference between marginal revenue and price is the bad news–the loss in revenue from consumers who would have bought the good at the higher price. In fact, this is true for any firm that must cut its price to sell more.</p>
+<p>If a perfectly competitive firm sells one unit at $12, it can sell a second unit at the same price, so its marginal revenue is $12 for the second unit sold, just as it was $12 for the first unit sold. For a perfectly competitive firm, marginal revenue is always equal to the price, no matter how many units the firm sells. A perfectly competitive firm does not cut the price to sell more, so there is no bad news associated with selling more.</p>
+<h3 id="a-formula-for-marginal-revenue">10.1.2 A formula for Marginal Revenue</h3>
+<p>We can use a simple formula to compute marginal revenue. The formula quantifies the good news and bad news from selling one more unit:</p>
+<p><span class="math display">\[
+\text{marginal revenue} = \text{new price} + (\text{slope of demand curve}
+\times \text{old quantity})
+\]</span></p>
+<p>The first part of the formula is the good news, the money received for the extra unit sold. The second part is the bad news from selling one more unit, the revenue lost by cutting the price for the original customers. The revenue change equals the price change required to sell one more unitthe slope of the demand curve, which is a negative numbertimes the number of original customers who get a price cut.</p>
+<p>Suppose the monopolist wants to increase the quantity sold from two to three, so it cuts the price from $12 to $10. The new price is $10, the old quantity is two units, and the slope of the demand curve is -$2, so marginal revenue is $6:</p>
+<p><span class="math display">\[
+\text{marginal revenue} = \$10 - (\$2\text{ per unit} \times 2 \text{ units}) = \$6
+\]</span></p>
+<p>Similarly, to sell the fifth unit, the firm would cut the price from $8 to $6, and marginal revenue is actually negative:</p>
+<p><span class="math display">\[
+\text{marginal revenue} = \$6 - (\$2 \text{ per unit} \times 4 \text{units} =
+-\$2
+\]</span></p>
+<h3 id="using-the-marginal-principle">10.1.3 Using the Marginal Principle</h3>
+<p>A monopolist can use the <a href="ch-2.html#the-marginal-principle">marginal principle</a> to decide how much output to produce.</p>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-10/ch-10_figure-10.2.png" alt="Figure 10.2 The monopolist Picks a Quantity and a Price" /><figcaption>Figure 10.2 The monopolist Picks a Quantity and a Price</figcaption>
+</figure>
+<blockquote>
+<p>To maximize profit, the monopolist picks point a, where marginal revenue equals marginal cost. The monopolist produces 900 doses per hour at a price of $15 (point b). The average cost is $8 (point c), so the profit per dose is $7 (equal to the $15 price minus the $8 average cost) and the total profit is $6,300 (equal to $7 per dose times 900 doses). The profit is shown by the shaded rectangle.</p>
+</blockquote>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 12%" />
+<col style="width: 20%" />
+<col style="width: 13%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>(1) Price (P)</th>
+<th>(2) Quantity Sold (Q)</th>
+<th>(3) Marginal Revenue</th>
+<th>(4) Marginal Cost</th>
+<th>(5) Total Revenue (TR = P x Q)</th>
+<th>(6) Total cost (TC)</th>
+<th>(7) profit (TR - TC)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>$18</td>
+<td>600</td>
+<td>$12</td>
+<td>$4.00</td>
+<td>$10,800</td>
+<td>$5,710</td>
+<td>$5,090</td>
+</tr>
+<tr class="even">
+<td>17</td>
+<td>700</td>
+<td>10</td>
+<td>4.60</td>
+<td>11,900</td>
+<td>6,140</td>
+<td>5,760</td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td>800</td>
+<td>8</td>
+<td>5.30</td>
+<td>12,800</td>
+<td>6,635</td>
+<td>6,165</td>
+</tr>
+<tr class="even">
+<td>15</td>
+<td>900</td>
+<td>6</td>
+<td>6.00</td>
+<td>13,500</td>
+<td>7,200</td>
+<td>6,300</td>
+</tr>
+<tr class="odd">
+<td>14</td>
+<td>1,000</td>
+<td>4</td>
+<td>6.70</td>
+<td>14,000</td>
+<td>7,835</td>
+<td>6,165</td>
+</tr>
+<tr class="even">
+<td>13</td>
+<td>1,100</td>
+<td>2</td>
+<td>7.80</td>
+<td>14,300</td>
+<td>8,560</td>
+<td>5,740</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>1,200</td>
+<td>0</td>
+<td>9.00</td>
+<td>14,400</td>
+<td>9,400</td>
+<td>5,000</td>
+</tr>
+</tbody>
+</table>
+<p>We can use the marginal-revenue formula explained earlier to compute marginal revenue for different quantities of output:</p>
+<p><span class="math display">\[
+\text{marginal revenue} = new price + (\text{slope of demand curve} \times
+\text{old quantity})
+\]</span></p>
+<p>For example, at a price of $18, the quantity sold is 600 doses, so marginal revenue is $12:</p>
+<p><span class="math display">\[
+\text{marginal revenue} = \$18 - (\$0.01 \times \text{600 doses}) = \$12
+\]</span></p>
+<p>Similarly, at a price of $15, the quantity is 900 doses and marginal revenue is $6:</p>
+<p><span class="math display">\[
+\text{marginal revenue} = \$15 - (\$0.01 \times \text{900 doses}) = \$6
+\]</span></p>
+<p>We can compute the firm’s profit in two ways. First, profit equals total revenue minus total cost:</p>
+<p><span class="math display">\[
+\text{profit} = \text{total revenue} - \text{total cost} \\
+\text{profit} = \text{\$15 per dose} \times \text{900 doses} - \text{\$8 per
+dose} \times \text{900 doses} = \$6,300
+\]</span></p>
+<p>Second, we can compute the profit per dose and multiply it by the number of doses:</p>
+<p><span class="math display">\[
+\text{profit} = \text{profit per dose} \times \text{quantity of doses}
+\]</span></p>
+<p>The profit per dose is the price minus the average cost: <span class="math inline">\(\$7 = \$15 - \$8\)</span>:</p>
+<p><span class="math display">\[
+\text{profit} = \text{\$7 per dose} \times \text{900 doses} = \$6,300
+\]</span></p>
+<p>Why should the firm stop at 900 doses? Beyond 900 doses, the marginal revenue from an additional dose will be less than the marginal cost associated with producing it. Although the firm could cut its price and sell a larger quantity, an additional dose would add less to revenue than it adds to cost, so the firm’s total profit would decrease. As shown in the fifth row in the table in Figure 10.2, the firm could sell 1,000 doses at a price of $14, but the marginal revenue at this quantity is only $4, while the marginal cost at this quantity is $6.70. Producing the 1,000th dose would decrease the firm’s profit by $2.70.</p>
+<p>The three-step process how a monopolist picks a quantity and how to compute the monopoly profit:</p>
+<ol type="1">
+<li>Find the quantity that satisfies the marginal principle, that is, the quantity at which marginal revenue equals marginal cost. In the example shown in Figure 10.2, marginal revenue equals marginal cost at point a, so the monopolist produces 900 doses.</li>
+<li>Using the demand curve, find the price associated with the monopolist’s chosen quantity. In Figure 10.2, the price required to sell 900 doses is $15 (point b).</li>
+<li>Compute the monopolist’s profit. The profit per unit sold equals the price minus the average cost, and the total profit equals the profit per unit times the number of units sold. In Figure 10.2, the profit is shown by the shaded rectangle, with height equal to the profit per unit sold and width equal to the number of units sold.</li>
+</ol>
+<h2 id="the-social-cost-of-monopoly">10.2 The Social Cost of Monopoly</h2>
+<h3 id="section">10.2.1</h3>
+<h3 id="section-1">10.2.2</h3>
+<p><br></p>
+<h1 id="references">References</h1>
+<p>Text Books</p>
+<ul>
+<li>Microeconomics: <em>Principles, Applications, and Tools</em> 10th ed (eText).
+<ul>
+<li>Authors: O’Sullivan/Sheffrin/Perez</li>
+</ul></li>
+</ul>
+<hr>
+<div>
+<div style="text-align: center; font-size: 11px; letter-spacing: 2px;">
+<a href="../../../index.html">Wiki Root</a>
+</div>
+</div>
+</article>
+</body>
+</html>
