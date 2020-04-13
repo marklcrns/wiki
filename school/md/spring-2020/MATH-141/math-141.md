@@ -96,21 +96,27 @@ date: 2020-02-05
       10) E, 11) ABCEF, 12) E, 13) BCDEFGH, 14) AEGH, 15) AD, 16) CFGH , 17) F,
       18) B, 19) ABDEFGHI, 20) E, 21) D, 22) DE, 23) ACDFGHI, 24) ABCEG , 25) B
 
+### Chapter 6
+
+  - [Quiz 9 Questionnaire](file:../../../files/spring-2020/MATH-141/ch-6/math-141_quiz_9.pdf)
 
 ## Exams
 
+  - [Exam Basic Instructions](file:../../../files/spring-2020/MATH-141/exam-1/exam-1_basicInstructions.pdf)
+
 ### Exam 1
 
-Handouts and Worksheets
-
 > Exam 1 was moved online due to COVID-19 crisis.
+
+Practice
 
   - [Pre Examination Worksheet](file:../../../files/spring-2020/MATH-141/exam-1/exam-1_preExamWorksheet.pdf)
     * [Solutions](file:../../../files/spring-2020/MATH-141/exam-1/exam-1_preExamWorksheet_solution.pdf)
   - [Algebra Review](file:../../../files/spring-2020/MATH-141/exam-1/exam-1_algebraReview.pdf)
-  - [Exam Basic Instructions](file:../../../files/spring-2020/MATH-141/exam-1/exam-1_basicInstructions.pdf)
 
-  - [Exam 1 Questionnaire v1]()
+Exam
+
+  - [Exam 1 Questionnaire v1](file:../../../files/spring-2020/MATH-141/exam-1/math-141_exam_1.pdf)
     * Score: 110
-    * Answers: 1) D, 2) A, 3) A, 4) A, 5) E, 6) B, 7) A, 8) C, 9) C, 10) D, 11) D,
-      12) B
+    * Answers: 1) D, 2) A, 3) A, 4) A, 5) E, 6) B, 7) A, 8) C, 9) C, 10) D, 11)
+      D, 12) B

@@ -600,7 +600,6 @@ Geometric Series
   - [Rationalizing the denominator with two radicals in the denominator](https://www.youtube.com/watch?v=hthLZbH7mkU&list=PL0G-Nd0V5ZMpS8k9YvdRY8FWjuyW0SSf6)
   - [Dividing two binomial radical expression](https://www.youtube.com/watch?v=PoOrBlf53mk)
 
-
 <br>
 
 # References
@@ -608,4 +607,27 @@ Geometric Series
   - [Pre-calc Textbook Reference 1](file:../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)
     * Chapter 1 pages 8 - 19
     * Chapter 2 pages 20 - 33
-
+  - [Dividing polynomials using long division](https://www.youtube.com/watch?v=-q-vjfXrLqA)
+  - [Basic operations of complex/imaginary numbers](https://www.youtube.com/watch?v=fPtyZKuDUV4)
+  - [Video Lecture](https://www.youtube.com/embed/BSIXtFkNvzk)
+  - [Video Lecture](https://www.youtube.com/embed/e6w0VbPYXKg)
+  - [Video Lecture](https://www.youtube.com/embed/001YOoma3B0)
+  - [Video Lecture](https://www.youtube.com/embed/sA9W32Wx5Hw)
+  - [Synthetic Division part 1](https://www.youtube.com/watch?v=1byR9UEQJN0)
+  - [Synthetic Division part 2](https://www.youtube.com/watch?v=3Ee_huKclEQ)
+  - [Finding all Zeros of a Polynomial Function: Rational Zero Theorem](https://www.youtube.com/watch?v=Iaq7z7reznM)
+  - [Video Lecture Playlist](https://www.youtube.com/watch?v=vefTFpdG4zM&list=PLk9w1T-d9etEqZazMp-axuRvRpvF83bxu&index=1)
+  - [Descartes' Rule of Signs Alternative Video](https://www.youtube.com/watch?v=nTjnon4W8Sg)
+  - [Video Lecture](https://www.youtube.com/watch?v=BHEEoiqGC1Y)
+  - [Factoring Quadratic Trinomials part 1](https://www.youtube.com/watch?v=q6_pWifXKcQ)
+  - [Factoring Quadratic Trinomials part 2](https://www.youtube.com/watch?v=S3GNmhI0-sU)
+  - [Factoring Trinomials Shortcut](https://www.youtube.com/watch?v=KkJGUvCIrNI)
+  - [Finding the Domain of a Function](https://www.youtube.com/watch?v=yU3Yu9jIjbM)
+  - [Video Lecture](https://www.youtube.com/watch?v=YC43-wy2kCo)
+  - [Youtube: Completing the Square Lecture](https://www.youtube.com/watch?v=prx_Bf2hakw)
+  - [Algebra Review](file:../../../../files/spring-2020/MATH-141/algebra_review.pdf)
+  - [Adding and subtracting radical expressions](https://www.youtube.com/watch?v=o9onBMWckDc)
+  - [Rationalizing the denominator with a binomial and radical](https://www.youtube.com/watch?v=iXswh-So308)
+  - [Rationalizing the denominator with two radicals in the denominator](https://www.youtube.com/watch?v=hthLZbH7mkU&list=PL0G-Nd0V5ZMpS8k9YvdRY8FWjuyW0SSf6)
+  - [Dividing two binomial radical expression](https://www.youtube.com/watch?v=PoOrBlf53mk)
+  - [Pre-calc Textbook Reference 1](file:../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)

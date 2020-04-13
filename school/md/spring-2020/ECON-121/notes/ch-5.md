@@ -10,7 +10,7 @@ date: 2020-02-24
 
 ## 5.1 The Price Elasticity of Demand
 
-**Price elasticity of demand ($E_d$)**
+<a name="price-elasticity-of-demand">**Price elasticity of demand ($E_d$)**</a>
 
   - A measure of the responsiveness of the quantity demanded to changes in
     price; equal to the absolute values of the percentage change in quantity
@@ -35,13 +35,13 @@ Two ways to compute percentage change:
 
 For example, if a price increases from $20 to $22.
 
-**Initial-value method**
+<a name="initial-value-method">**Initial-value method**</a>
 
 $$
 \text{percent change with initial value} = \frac{22 - 20}{20} \cdot 100 = \frac{2}{20} \cdot 100 = 10\%
 $$
 
-**Midpoint method**
+<a name="midpoint-method">**Midpoint method**</a>
 
 $$
 \text{percentage change with midpoint value} = \frac{\left | 22 - 20 \right |}{\frac{20 + 22}{2}} \cdot 100 = \frac{2}{21} \cdot 100 = 9.52\%
@@ -56,7 +56,7 @@ direction of the change--which of the two values is the initial value.
 
 ### 5.1.2 Price Elasticity and the Demand Curve
 
-**Elastic demand**
+<a name="elastic-demand">**Elastic demand**</a>
 
   - The price elasticity of demand is greater than one, so the percentage change
     in quantity exceeds the percentage change in price.
@@ -64,7 +64,7 @@ direction of the change--which of the two values is the initial value.
     _elastic_, or highly responsive to changes in price.
     * e.g. Restaurant meals, air travel and movies.
 
-**Inelastic demand**
+<a name="inelastic-demand">**Inelastic demand**</a>
 
   - The price elasticity of demand is less than one, so the percentage change in
     quantity is less than the percentage change in price.
@@ -72,13 +72,13 @@ direction of the change--which of the two values is the initial value.
     not very responsive to changes in price.
     * e.g. Salt, eggs, coffee and cigarettes.
 
-**Unit elastic demand**
+<a name="unit-elastic-demand">**Unit elastic demand**</a>
 
   - The price elasticity of demand is one, so the percentage change in quantity
     equals the percentage change in price.
     * e.g. Housing and fruit juice.
 
-**Perfectly inelastic demand**
+<a name="perfectly-inelastic-demand">**Perfectly inelastic demand**</a>
 
   - The price elasticity of demand is zero.
   - When demand is _perfectly inelastic_, the quantity doesn't change as the price
@@ -185,7 +185,6 @@ Determinants of Elasticity
 
 
 ## 5.2 Using Price Elasticity
-
 
 ### 5.2.1 Predicting Changes in Quantity
 

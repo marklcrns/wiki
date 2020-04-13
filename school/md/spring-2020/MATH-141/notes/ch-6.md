@@ -109,6 +109,65 @@ Methods to prove an equation is an identity:
 
 ## 6.4 Identities: Pythagoras Quick Review
 
+### Video Lecture 1
+
+  - [VIDEO 1: TRIGONOMETRY IDENTITIES pythagoras identities part 1](https://www.youtube.com/watch?v=RrCQGk--M0E)
+
+#### Video Lecture 1 Notes
+
+  - $\sin^{2}(\theta) + \cos^{2}(\theta) = 1$
+  - $a^{2} + b^{2} = c^{2}$
+    * $\frac{a^{2} + b^{2}}{\color{#ff0000}{c^{2}}} = \frac{c^{2}}{\color{#ff0000}{c^{2}}}$
+    * $\frac{a^{2} + b^{2}}{c^{2}}$
+    * $\frac{c^{2}}{c^{2}} = 1$
+  - $\tan^{2}(\theta) + 1 = \sec^{2}(\theta)$ [(15:53)](https://www.youtube.com/watch?v=RrCQGk--M0E&t=953)
+
+### Video Lecture 2
+
+  - [VIDEO 2: TRIGONOMETRY IDENTITIES pythagoras identities part 2](https://www.youtube.com/watch?v=K1ekCMLygtI)
+
+#### Video Lecture 2 Notes
+
+  - $\tan(\theta) + 1 = \sec(\theta)$ [(0:00)](https://www.youtube.com/watch?v=K1ekCMLygtI&t=0)
+    * $tan(\theta) = \pm \sqrt{\sec^{2}(\theta) - 1}$
+  - $\tan(\theta) + 1 = \sec(\theta)$ [(2:10)](https://www.youtube.com/watch?v=K1ekCMLygtI&t=130)
+      * $\sin^{2}(\theta) + \cos^{2}(\theta)$
+  - $\frac{1}{1 - \sin(\theta)} + \frac{1}{1 + \sin(\theta)} = 2\sec^{2}(\theta)$ [(15:55)](https://www.youtube.com/watch?v=K1ekCMLygtI&t=955)
+
+### Daabz Questions
+
+Part 1
+
+  - $1$ can be exchanged for:
+    * $\csc^{2}(x) - \cot^{2}(x)$
+  - $\sec^{2}(x)$ can be exchanged for:
+    * $\frac{1}{1 - \sin^{2}(x)}$
+    * $1 + \tan^{2}(x)$
+    * $1 + \frac{\sin^{2}(x)}{\cos^{2}(x)}$
+  - $\csc^{2}(x)$ can be exchanged for:
+    * $\frac{1}{1 - \cos^{2}(x)}$
+    * $1 + \cot^{2}(x)$
+    * $1 + \frac{\cos^{2}(x)}{\sin^{2}(x)}$
+  - $\cos^{2}(x)$ can be exchanged for:
+    * $1 - \frac{1}{\csc^{2}(x)}$
+
+Part 2
+
+  - $\sin(u)\cos(\theta) - \cos(u)\sin(\theta)$
+    * $\sin(u - \theta)$
+  - $\sin(u)\cos(\theta) + \cos(u)\sin(\theta)$
+    * $\sin(u + \theta)$
+  - $\cos(x)\cos(y) + \sin(x)\sin(y)$
+    * $\cos(x - y)$
+  - $\cos(x)\cos(y) - \sin(x)\sin(y)$
+    * $\cos(x + y)$
+  - $\cos(t - u)$
+    * $\cos(t)\cos(u) + \sin(t)\sin(u)$
+  - $\frac{\tan(b) + \tan(u)}{1 - \tan(b)\tan(u)}$
+    * $\tan(b + u)$
+  - $\frac{\tan(b) - \tan(u)}{1 + \tan(b)\tan(u)}$
+    * $\tan(b - u)$
+
 ## 6.5 Identities: The Mother of Them All
 
 ## 6.6 Identities: Double Angle & Product-to-Sums and Sums-to-Products
@@ -123,3 +182,6 @@ Methods to prove an equation is an identity:
   - [VIDEO 2: TRIGONOMETRY IDENTITIES first look part 1](https://www.youtube.com/watch?v=j4CHZmn8NMc)
   - [VIDEO 3: TRIGONOMETRY IDENTITIES first look part 2](https://www.youtube.com/watch?v=vNeCkLrya2E)
   - [VIDEO: TRIGONOMETRY IDENTITIES cofunctions](https://www.youtube.com/watch?v=nAmXELRD6vM)
+  - [VIDEO: TRIGONOMETRY IDENTITIES even odd identities](https://www.youtube.com/watch?v=ScGHyV-3ABE)
+  - [VIDEO 1: TRIGONOMETRY IDENTITIES pythagoras identities part 1](https://www.youtube.com/watch?v=RrCQGk--M0E)
+  - [VIDEO 2: TRIGONOMETRY IDENTITIES pythagoras identities part 2](https://www.youtube.com/watch?v=K1ekCMLygtI)
