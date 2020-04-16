@@ -21,9 +21,15 @@ summary: Module 5 notes and exercises
   - [M5ConditionalExecution.java ](vfile:../../../../files/spring-2020/CISC-190/module-5/read-and-try/M5ConditionalExecution.java)
   - [Picture.java ](vfile:../../../../files/spring-2020/CISC-190/module-5/read-and-try/Picture.java)
 
+### Persusall Discussion
+
+![Make Bird A Convict](file:../../../../files/spring-2020/CISC-190/module-5/perusall-discussion/m-5_green-bird.png)
+
 ### Technical Interview Practice
 
 ### Explain
 
 ### Reflect
+
+
 

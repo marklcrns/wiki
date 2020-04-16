@@ -6,6 +6,9 @@ date: 2020-02-06
 
 # Chapter 1: The Basics
 
+  - [Pre-calc Textbook Reference 1](file:../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)
+    * Chapter 1 pages 8 - 19
+
 ## 1.1 Sets and Axioms
 
 ### Sets of Numbers

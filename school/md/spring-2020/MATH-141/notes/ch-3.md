@@ -7,6 +7,8 @@ date: 2020-03-04
 
 # Chapter 3: System of Equations
 
+  - [Pre-calc Textbook Reference 1](file:../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)
+
 ## 3.1 Solve By Graphing
 
 ### Video Lecture
@@ -517,21 +519,20 @@ $$
 
   - [VIDEO: Introduction to Echelon Row Reduction, How and Why](https://www.youtube.com/watch?v=06zE9IEv4OA)
 
-
 <br>
 
 # References
 
   - [Pre-calc Textbook Reference 1](file:../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)
-  - [video, Learn how to solve a system of equations by graphing](https://www.youtube.com/watch?v=OWS2xr7M6NY)
-  - [video, Solving Systems of Equations... Substitution Method](https://www.youtube.com/watch?v=YriMMWbndn0)
-  - [video, Solving Systems of Equations... Elimination Method](https://www.youtube.com/watch?v=XOJgzW4P7T8)
-  - [PLAYLIST 1: Introduction to Matrices](https://www.yocube.com/watch?v=kqWCwwyeE6k&list=PLBu4cfksLjchoB_Zb5vbTkZ-4y3-ur_6y)
+  - [VIDEO: Learn how to solve a system of equations by graphing](https://www.youtube.com/watch?v=OWS2xr7M6NY)
+  - [VIDEO: Solving Systems of Equations... Substitution Method](https://www.youtube.com/watch?v=YriMMWbndn0)
+  - [VIDEO: Solving Systems of Equations... Elimination Method](https://www.youtube.com/watch?v=XOJgzW4P7T8)
+  - [PLAYLIST 1: Introduction to Matrices](https://www.youtube.com/watch?v=kqWCwwyeE6k&list=PLBu4cfksLjchoB_Zb5vbTkZ-4y3-ur_6y)
   - [PLAYLIST 2: Calc 5.5 Determinants and Cramer's Rule](https://www.youtube.com/watch?v=AJi16SLXObk&list=PLaCvjCCHYhspLApshl8YorGhHFpQpN9Tl)
   - [(Linear Algebra) Properties of Determinants](https://www.youtube.com/watch?v=IjMxFP8AtpA)
+  - [Multiplying Matrices](https://www.youtube.com/watch?v=kuixY2bCc_0)
   - [VIDEO 1: Algebra - Solving Linear Equations using Determinants 3/3](https://www.youtube.com/watch?v=IVxMEy4mfhI)
   - [VIDEO 2: Determinant of 3x3 matrix](https://www.youtube.com/watch?v=V3e7m-qFDFU)
   - [+VIDEO 1: 5.5.6 Cramer's Rule](https://www.youtube.com/watch?v=DQOHnr0byUM)
   - [+VIDEO 2: Cramer's Rule to Solve a System of 3 Linear Equations](https://www.youtube.com/watch?v=TtxVGMWXMSE)
   - [VIDEO: Introduction to Echelon Row Reduction, How and Why](https://www.youtube.com/watch?v=06zE9IEv4OA)
-
