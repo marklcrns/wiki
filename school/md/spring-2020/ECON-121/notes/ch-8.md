@@ -221,10 +221,10 @@ $$
 = \frac{\text{change in TC}}{\text{change in output}}
 $$
 
-Whenever the **marginal cost is less than the average cost**, the **average will
-fall**; whenever the **marginal cost exceeds the average cost**, the **average
-will rise**; and whenever the **marginal cost equals the average cost**, the
-**average will not change**.
+Whenever the **marginal cost is less than the average cost**, the **average cost
+will fall**; whenever the **marginal cost exceeds the average cost**, the
+**average will rise**; and whenever the **marginal cost equals the average
+cost**, the **average will not change**.
 
 ### 8.2.5 The Relationship between Marginal Cost and Average Cost
 

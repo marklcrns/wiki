@@ -25,11 +25,29 @@ summary: Module 5 notes and exercises
 
 ![Make Bird A Convict](file:../../../../files/spring-2020/CISC-190/module-5/perusall-discussion/m-5_green-bird.png)
 
+### Advanced Collage
+
+![Advanced Collage](file:../../../../files/spring-2020/CISC-190/module-5/advanced-collage/Lucernas_AdvancedCollage.jpg)
+
+  - [AdvancedCollage.java](vfile:../../../../files/spring-2020/CISC-190/module-5/advanced-collage/AdvancedCollage.java)
+  - [Picture.java](vfile:../../../../files/spring-2020/CISC-190/module-5/advanced-collage/Picture.java)
+
+### Chromakey
+
+![Chromakey](file:../../../../files/spring-2020/CISC-190/module-5/chromakey/Lucernas_Chromakey.jpg)
+
+  - [Chromakey.java](vfile:../../../../files/spring-2020/CISC-190/module-5/chromakey/Chromakey.java)
+  - [Picture.java](vfile:../../../../files/spring-2020/CISC-190/module-5/chromakey/Picture.java)
+
+### Boundaries - Extra Credit
+
+  - [Boundaries.java](vfile:../../../../files/spring-2020/CISC-190/module-5/boundaries/Boundaries.java)
+  - [Picture.java](vfile:../../../../files/spring-2020/CISC-190/module-5/boundaries/Picture.java)
+
 ### Technical Interview Practice
 
 ### Explain
 
 ### Reflect
-
 
 

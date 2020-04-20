@@ -6,7 +6,6 @@ date: 2020-03-08
 
 
 # Exam 1 Attempt 1 Answer Sheet
-
 > Score: 37/40 92.5%
 > CX -> Partially correct answers<br>
 > X -> Incorrect answers<br>

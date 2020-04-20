@@ -100,6 +100,9 @@ date: 2020-02-05
 
   - [Quiz 9 Questionnaire](file:../../../files/spring-2020/MATH-141/ch-6/math-141_quiz_9.pdf)
 
+  - [Quiz 10 Questionnaire](file:../../../files/spring-2020/MATH-141/ch-6/math-141_quiz_10.pdf)
+
+
 ## Exams
 
   - [Exam Basic Instructions](file:../../../files/spring-2020/MATH-141/exam-1/exam-1_basicInstructions.pdf)
@@ -124,8 +127,10 @@ Exam
 ### Exam 2
 
 Practice
+
   - [Pre Examination Worksheet](file:../../../files/spring-2020/MATH-141/exam-2/exam-2_preExamWorksheet.pdf)
 
 Exam
 
   - [Exam 2 Questionnaire v1](file:../../../files/spring-2020/MATH-141/exam-2/math-141_exam_2.pdf)
+    * Score: 102
