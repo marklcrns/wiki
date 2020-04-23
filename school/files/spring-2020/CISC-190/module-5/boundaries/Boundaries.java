@@ -130,7 +130,7 @@ public class Boundaries
     String status = "\n*BOX " + boxNum + " STATUS*\n";
     status += "X: " + x + ", Y: " + y + ", Width: " + width + ", Height: " + height;
     // visual separator that adjusts to the length of status string
-    status += "\n" + "-".repeat(status.length()) + "\n";
+    status += "\n" + "--------------------" + "\n";
     // print status
     System.out.println(status);
   }

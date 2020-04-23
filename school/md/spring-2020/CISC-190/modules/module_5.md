@@ -46,8 +46,13 @@ summary: Module 5 notes and exercises
 
 ### Technical Interview Practice
 
+![Conditional Execution](file:../../../../files/spring-2020/CISC-190/module-5/tip-practice/m5_tip_conditionalExecution.png)
+
 ### Explain
+
+  - [VIDEO: CISC 190 M5 Explain: Conditional Execution](https://www.youtube.com/watch?v=_tSQClAafcM)
 
 ### Reflect
 
+  - [M5 Conditional Execution](file:../../../../files/spring-2020/CISC-190/module-5/m-5_reflect.docx)
 
