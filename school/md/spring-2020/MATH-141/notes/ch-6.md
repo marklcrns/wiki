@@ -94,7 +94,7 @@ Methods to prove an equation is an identity:
 ## 6.3 Identities: Even and Odd
 
   - Functions that produces the same value regardless if one is a negative
-    number, is called an **even** identitiy.
+    number, is called an **even** identity.
 
 ### Video Lecture
 
@@ -170,8 +170,79 @@ Part 2
 
 ## 6.5 Identities: The Mother of Them All
 
+### Video Lecture 1
+
+  - [VIDEO 1: TRIGONOMETRY IDENTITIES difference angle sum angele identities part 1](https://www.youtube.com/watch?v=zUiHEmi_26w)
+
+#### Video Lecture 1 Notes
+
+the **M.O.T.A**
+
+  - $\cos(a - b) = \cos(a)\cos(b) + \sin(a)\sin(b)$
+
+$\cos()$ function is an **EVEN** function, which always produces a positive
+number regardless of the sign. $\cos(x) = \cos(-x)$.
+
+Similarly, $\sec()$ is also an **EVEN** function that always produce a positive
+number.
+
+In contrast, $\sin()$ is not, and therefore an **ODD** function.
+
+  - $\tan(a + b)$ [(12:33)](https://www.youtube.com/watch?v=zUiHEmi_26w&t=753)
+    * $\frac{\tan(a) + \tan(b)}{1 - \tan(a)\tan(b)}$
+
+### Video Lecture 2
+
+  - [VIDEO 2: TRIGONOMETRY IDENTITIES difference angle sum angele identities part 2](https://www.youtube.com/watch?v=WNF7d5tA-Kk)
+
+#### Video Lecture 2 Notes
+
+Getting the $x$ and $y$ coordinates of an angle
+
+  - $(x, y) = (r\cos(\theta),r\sin(\theta))$
+
+Distance formula
+
+  - $d^{2} = (x_{1}^{2} - x_{1}^{2}) + (y_{1}^{2} - y_{1}^{2})$
+    * $d = \sqrt{(x_{1}^{2} - x_{1}^{2}) + (y_{1}^{2} - y_{1}^{2})}$
+
+### Video Lecture 3
+
+  - [VIDEO 3: TRIGONOMETRY IDENTITIES double angle identities](https://www.youtube.com/watch?v=5YDh-wfOSJU)
+
+#### Video Lecture 3 Notes
+
+  - $\cos(2x) = \ldots$
+    * $1 - \sin^{2}(x)$
+    * $2\cos^{2}(x) - 1$
+  - $2\cos^{2}(x) = 1 + \cos(2x)$
+    * $\cos^{2}(x) = \frac{1 + \cos(2x)}{2}$
+  - $\sin^{2}(x) =$
+    * $\frac{1 - \cos(2x)}{2}$
+  - $\sin(2x) =$
+    * $2\sin(x)\cos(x)$
+
+### Daabz Questions
+
+  - $\cos^{2}(x) = \ldots$
+    * $\frac{1 + \cos(2x)}{2}$
+  - $\cos^{2}(\theta) + \sin^{2}(\theta) = 1$
+    * $\frac{\cos^{2}(x)}{\color{#ff0000}{cos^{2}(x)}} + \frac{\sin^{2}(x)}{\color{#ff0000}{\cos^{2}}} = \frac{1}{\color{#ff0000}{cos^{2}(x)}}$
+    * ${\color{#ff0000}{1}} + \frac{sin^{2}(x)}{cos^{2}(x)} = \frac{1}{cos^{2}(x)}$
+    * $1 + {\color{#ff0000}{\tan^{2}(x)}} = {\color{#ff0000}{\sec^{2}(x)}}$
+
 ## 6.6 Identities: Double Angle & Product-to-Sums and Sums-to-Products
 
+### Video Lecture
+
+  - [VIDEO: TRIGONOMETRY IDENTITIES sum to product and product to sum identities](https://www.youtube.com/watch?v=YsL1TuWGn1c)
+
+### Daabz Questions
+
+  - $2\cos(\frac{a + b}{2})\cos(\frac{a - b}{2})$
+    * $\cos(a) + \cos(b)$
+  - $2\sin(\frac{a - b}{2})\cos(\frac{a + b}{2})$
+    * $\sin(a) - \sin(b)$
 
 <br>
 
@@ -185,3 +256,7 @@ Part 2
   - [VIDEO: TRIGONOMETRY IDENTITIES even odd identities](https://www.youtube.com/watch?v=ScGHyV-3ABE)
   - [VIDEO 1: TRIGONOMETRY IDENTITIES pythagoras identities part 1](https://www.youtube.com/watch?v=RrCQGk--M0E)
   - [VIDEO 2: TRIGONOMETRY IDENTITIES pythagoras identities part 2](https://www.youtube.com/watch?v=K1ekCMLygtI)
+  - [VIDEO 1: TRIGONOMETRY IDENTITIES difference angle sum angele identities part 1](https://www.youtube.com/watch?v=zUiHEmi_26w)
+  - [VIDEO 2: TRIGONOMETRY IDENTITIES difference angle sum angele identities part 2](https://www.youtube.com/watch?v=WNF7d5tA-Kk)
+  - [VIDEO 3: TRIGONOMETRY IDENTITIES double angle identities](https://www.youtube.com/watch?v=5YDh-wfOSJU)
+  - [VIDEO: TRIGONOMETRY IDENTITIES sum to product and product to sum identities](https://www.youtube.com/watch?v=YsL1TuWGn1c)
