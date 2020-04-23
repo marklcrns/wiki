@@ -37,14 +37,15 @@ Textbook
 
 ## Notes
 
-  - [Chapter 1](notes/ch-1)
-  - [Chapter 2](notes/ch-2)
-  - [Chapter 4](notes/ch-4)
-  - [Chapter 5](notes/ch-5)
-  - [Chapter 6](notes/ch-6)
-  - [Chapter 8](notes/ch-8)
-  - [Chapter 9](notes/ch-9)
-  - [Chapter 10](notes/ch-10)
+  - [Chapter 1](notes/ch-1) -- Introduction: What is Economics?
+  - [Chapter 2](notes/ch-2) -- The Key Principle of Economics
+  - [Chapter 4](notes/ch-4) -- Demand, Supply and Market Equilibrium
+  - [Chapter 5](notes/ch-5) -- Elasticity: A measure of Responsiveness
+  - [Chapter 6](notes/ch-6) -- Market Efficiency and Government Intervention
+  - [Chapter 8](notes/ch-8) -- Production Technology and Cost
+  - [Chapter 9](notes/ch-9) -- Perfect Competition
+  - [Chapter 10](notes/ch-10) -- Monopoly and Price Discrimination
+  - [Chapter 11](notes/ch-11) -- Market Entry and Monopolistic Competition
 
 ## Exams
 

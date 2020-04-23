@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--
+==============================================================================
+           "GitHub HTML5 Pandoc Template" v2.1 — by Tristano Ajmone           
+==============================================================================
+Copyright © Tristano Ajmone, 2017, MIT License (MIT). Project's home:
+
+- https://github.com/tajmone/pandoc-goodies
+
+The CSS in this template reuses source code taken from the following projects:
+
+- GitHub Markdown CSS: Copyright © Sindre Sorhus, MIT License (MIT):
+  https://github.com/sindresorhus/github-markdown-css
+
+- Primer CSS: Copyright © 2016-2017 GitHub Inc., MIT License (MIT):
+  http://primercss.io/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The MIT License 
+
+Copyright (c) Tristano Ajmone, 2017 (github.com/tajmone/pandoc-goodies)
+Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)
+Copyright (c) 2017 GitHub Inc.
+
+"GitHub Pandoc HTML5 Template" is Copyright (c) Tristano Ajmone, 2017, released
+under the MIT License (MIT); it contains readaptations of substantial portions
+of the following third party softwares:
+
+(1) "GitHub Markdown CSS", Copyright (c) Sindre Sorhus, MIT License (MIT).
+(2) "Primer CSS", Copyright (c) 2016 GitHub Inc., MIT License (MIT).
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+==============================================================================-->
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Mark Lucernas" />
+  <meta name="dcterms.date" content="2020-04-23" />
+  <title>ECON 121 Chapter 11 Notes</title>
+  <style type="text/css">
+@charset "UTF-8";.markdown-body{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#24292e;font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:16px;line-height:1.5;word-wrap:break-word;box-sizing:border-box;min-width:200px;max-width:980px;margin:0 auto;padding:45px}.markdown-body a{color:#0366d6;background-color:transparent;text-decoration:none;-webkit-text-decoration-skip:objects}.markdown-body a:active,.markdown-body a:hover{outline-width:0}.markdown-body a:hover{text-decoration:underline}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body strong{font-weight:600}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1{font-size:2em;margin:.67em 0;padding-bottom:.3em;border-bottom:1px solid #eaecef}.markdown-body h2{padding-bottom:.3em;font-size:1.5em;border-bottom:1px solid #eaecef}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#6a737d}.markdown-body img{border-style:none}.markdown-body svg:not(:root){overflow:hidden}.markdown-body hr{box-sizing:content-box;height:.25em;margin:24px 0;padding:0;overflow:hidden;background-color:#e1e4e8;border:0}.markdown-body hr::before{display:table;content:""}.markdown-body hr::after{display:table;clear:both;content:""}.markdown-body input{margin:0;overflow:visible;font:inherit;font-family:inherit;font-size:inherit;line-height:inherit}.markdown-body [type=checkbox]{box-sizing:border-box;padding:0}.markdown-body *{box-sizing:border-box}.markdown-body blockquote{margin:0}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol ol,.markdown-body ul ol{list-style-type:lower-roman}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body ol ol ol,.markdown-body ol ul ol,.markdown-body ul ol ol,.markdown-body ul ul ol{list-style-type:lower-alpha}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dd{margin-left:0}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:600}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body code{font-family:SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace}.markdown-body pre{font:12px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;word-wrap:normal}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body blockquote{padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body table{display:block;width:100%;overflow:auto;border-spacing:0;border-collapse:collapse}.markdown-body table th{font-weight:600}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #dfe2e5}.markdown-body table tr{background-color:#fff;border-top:1px solid #c6cbd1}.markdown-body table tr:nth-child(2n){background-color:#f6f8fa}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body code{padding:.2em 0;margin:0;font-size:85%;background-color:rgba(27,31,35,.05);border-radius:3px}.markdown-body code::after,.markdown-body code::before{letter-spacing:-.2em;content:" "}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:0 0;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f6f8fa;border-radius:3px}.markdown-body pre code{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code::after,.markdown-body pre code::before{content:normal}.markdown-body .full-commit .btn-outline:not(:disabled):hover{color:#005cc5;border-color:#005cc5}.markdown-body kbd{box-shadow:inset 0 -1px 0 #959da5;display:inline-block;padding:3px 5px;font:11px/10px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;color:#444d56;vertical-align:middle;background-color:#fcfcfc;border:1px solid #c6cbd1;border-bottom-color:#959da5;border-radius:3px;box-shadow:inset 0 -1px 0 #959da5}.markdown-body :checked+.radio-label{position:relative;z-index:1;border-color:#0366d6}.markdown-body .task-list-item{list-style-type:none}.markdown-body .task-list-item+.task-list-item{margin-top:3px}.markdown-body .task-list-item input{margin:0 .2em .25em -1.6em;vertical-align:middle}.markdown-body::before{display:table;content:""}.markdown-body::after{display:table;clear:both;content:""}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.Alert,.Error,.Note,.Success,.Warning{padding:11px;margin-bottom:24px;border-style:solid;border-width:1px;border-radius:4px}.Alert p,.Error p,.Note p,.Success p,.Warning p{margin-top:0}.Alert p:last-child,.Error p:last-child,.Note p:last-child,.Success p:last-child,.Warning p:last-child{margin-bottom:0}.Alert{color:#246;background-color:#e2eef9;border-color:#bac6d3}.Warning{color:#4c4a42;background-color:#fff9ea;border-color:#dfd8c2}.Error{color:#911;background-color:#fcdede;border-color:#d2b2b2}.Success{color:#22662c;background-color:#e2f9e5;border-color:#bad3be}.Note{color:#2f363d;background-color:#f6f8fa;border-color:#d5d8da}.Alert h1,.Alert h2,.Alert h3,.Alert h4,.Alert h5,.Alert h6{color:#246;margin-bottom:0}.Warning h1,.Warning h2,.Warning h3,.Warning h4,.Warning h5,.Warning h6{color:#4c4a42;margin-bottom:0}.Error h1,.Error h2,.Error h3,.Error h4,.Error h5,.Error h6{color:#911;margin-bottom:0}.Success h1,.Success h2,.Success h3,.Success h4,.Success h5,.Success h6{color:#22662c;margin-bottom:0}.Note h1,.Note h2,.Note h3,.Note h4,.Note h5,.Note h6{color:#2f363d;margin-bottom:0}.Alert h1:first-child,.Alert h2:first-child,.Alert h3:first-child,.Alert h4:first-child,.Alert h5:first-child,.Alert h6:first-child,.Error h1:first-child,.Error h2:first-child,.Error h3:first-child,.Error h4:first-child,.Error h5:first-child,.Error h6:first-child,.Note h1:first-child,.Note h2:first-child,.Note h3:first-child,.Note h4:first-child,.Note h5:first-child,.Note h6:first-child,.Success h1:first-child,.Success h2:first-child,.Success h3:first-child,.Success h4:first-child,.Success h5:first-child,.Success h6:first-child,.Warning h1:first-child,.Warning h2:first-child,.Warning h3:first-child,.Warning h4:first-child,.Warning h5:first-child,.Warning h6:first-child{margin-top:0}h1.title,p.subtitle{text-align:center}h1.title.followed-by-subtitle{margin-bottom:0}p.subtitle{font-size:1.5em;font-weight:600;line-height:1.25;margin-top:0;margin-bottom:16px;padding-bottom:.3em}div.line-block{white-space:pre-line}
+  </style>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<article class="markdown-body">
+<div style="text-align: center; font-size: 11px; letter-spacing: 2px;">
+<a href="../../../index.html">Wiki Root</a>
+</div>
+<header>
+<h1 class="title">ECON 121 Chapter 11 Notes</h1>
+<p class="author">Mark Lucernas</p>
+<p class="date">2020-04-23</p>
+<div class="summary">
+Market Entry and Monopolistic Competition
+</div>
+</header>
+<hr>
+<nav id="TOC">
+<h1 class="toc-title">Contents</h1>
+<ul>
+<li><a href="#chapter-11-market-entry-and-monopolistic-competition">Chapter 11: Market Entry and Monopolistic Competition</a><ul>
+<li><a href="#the-effects-of-market-entry">11.1 The Effects of Market Entry</a><ul>
+<li><a href="#entry-squeezes-profits-from-three-sides">11.1.1 Entry Squeezes Profits from Three Sides</a></li>
+</ul></li>
+<li><a href="#monopolistic-competition">11.2 Monopolistic Competition</a><ul>
+<li><a href="#when-entry-stops-long-run-equilibrium">11.2.1 When Entry Stops: Long-Run Equilibrium</a></li>
+<li><a href="#differentiation-by-location">11.2.2 Differentiation by Location</a></li>
+</ul></li>
+<li><a href="#trade-offs-with-entry-and-monopolistic-competition">11.3 Trade-Offs with Entry and Monopolistic Competition</a><ul>
+<li><a href="#average-cost-and-variety">11.3.1 Average Cost and Variety</a></li>
+<li><a href="#monopolistic-competition-versus-perfect-competition">11.3.2 Monopolistic Competition versus Perfect Competition</a></li>
+</ul></li>
+<li><a href="#advertising-for-product-differentiation">11.4 Advertising for Product Differentiation</a></li>
+<li><a href="#chapter-summary">Chapter Summary</a></li>
+</ul></li>
+<li><a href="#references">References</a></li>
+</ul>
+</nav>
+<hr>
+<h1 id="chapter-11-market-entry-and-monopolistic-competition">Chapter 11: Market Entry and Monopolistic Competition</h1>
+<p><a name="monopolistic-competition-term"><strong>Monopolistic competition</strong></a></p>
+<ul>
+<li><p>A market served by many firms that sell slightly different products.</p>
+<ul>
+<li><p>Each firm in the market produces a good that is slightly different from the goods of other firms, so each firm has a narrowly defined monopoly.</p></li>
+<li><p>The products sold by different firms in the market are close substitutes for one another, so there is intense competition between firms for consumers. For example, your local grocery store may stock several brands of toothbrushes with different design features. If the price of one brand increases, some loyal customers will continue to buy the brand, but others will switch to different brands that are close substitutes.</p></li>
+</ul></li>
+</ul>
+<h2 id="the-effects-of-market-entry">11.1 The Effects of Market Entry</h2>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-11/ch-11_figure-11.1.png" alt="Figure 11.1 Market Entry Decreases Price and Squeezes Profit" /><figcaption>Figure 11.1 Market Entry Decreases Price and Squeezes Profit</figcaption>
+</figure>
+<blockquote>
+<ol type="A">
+<li>A monopolist maximizes profit at point a, where marginal revenue equals marginal cost. The firm sells 300 toothbrushes at a price of $2.00 (point b) and an average cost of $0.90 (point c). The profit of $330 is shown by the shaded rectangle. (B) The entry of a second firm shifts the firm-specific demand curve for the original firm to the left. The firm produces only 200 toothbrushes (point d) at a lower price ($1.80, shown by point e) and a higher average cost ($1.00, shown by point f). The firm’s profit, shown by the shaded rectangle, shrinks to $160.</li>
+</ol>
+</blockquote>
+<p>The firm’s profit, shown by the shaded rectangle, is $330:</p>
+<p><span class="math display">\[
+\text{profit} = (\text{price - average cost}) \times quantity = (\$2.00 -
+\$0.09) \times 300 = \$330
+\]</span></p>
+<h3 id="entry-squeezes-profits-from-three-sides">11.1.1 Entry Squeezes Profits from Three Sides</h3>
+<p>In Panel B of Figure 11.1, the firm-specific demand curve for the original monopolist shifts to the left, and profit decreases for three reasons:</p>
+<ol type="1">
+<li><em>The market price drops</em>. The marginal principle is satisfied at point d, so the original firm now produces 200 toothbrushes at a price of $1.80 (point e). The competition between the two firms causes the price to drop, from $2.00 to $1.80.</li>
+<li><em>The quantity produced by the first firm decreases</em>. The original firm produces only 200 toothbrushes, down from the 300 it produced as a monopolist.</li>
+<li><em>The first firm’s average cost of production increases</em>. The decrease in the quantity produced causes the firm to move upward along its negatively sloped average-cost curve to a higher average cost per toothbrush, from $0.90 to $1.00 (point f).</li>
+</ol>
+<p>The effects of entry are shown by comparing the profit rectangles in Panels A and B of Figure 11.1. Entry shrinks the firm’s profit rectangle because it is squeezed from three directions. The top of the rectangle drops because the price decreases. The bottom of the rectangle rises because the average cost increases. The right side of the rectangle moves to the left because the quantity decreases. In this example, profit drops from $330 to $160:</p>
+<p><span class="math display">\[
+\text{profit} = (\text{price} - \text{average cost}) \times \text{quantity} =
+(\$1.80 - 1.00) \times 200 = \$160
+\]</span></p>
+<h2 id="monopolistic-competition">11.2 Monopolistic Competition</h2>
+<p>We’ve seen that the entry of a firm in a profitable market decreases the price and the profit per firm. Under a market structure called <a href="ch-11.html#monopolistic-competition-term">monopolistic competition</a>, firms will continue to enter the market until economic profit is zero. Here are the features of monopolistic competition:</p>
+<ul>
+<li><p><em>Many firms</em>. Because there are relatively small <a href="ch-8.html#economies-of-scale-term">economies of scale</a>, a small firm can produce its product at about the same average cost as a large firm. For example, a small donut shop can produce donuts and coffee at about the same average cost as a large shop. Because even a small firm can cover its costs, the market can support many firms.</p></li>
+<li><p><em>A differentiated product</em>. Firms engage in <a href="ch-11#product-differentiation-term">product differentiation</a>, the process used by firms to distinguish their products from the products of competing firms. A firm can distinguish its products from the products of other firms by offering a different performance level or appearance. For example, automobiles differ in horsepower and fuel efficiency, and toothpastes differ in flavor and their ability to clean teeth. Some products are differentiated by the services that come with them. For example, some stores provide informative and helpful salespeople, whereas others require consumers to make decisions on their own. Some pizza places offer home delivery, and some software producers offer free technical assistance. As we see later in the chapter, some products are differentiated by where they are sold.</p></li>
+<li><p><em>No artificial barriers to entry</em>. There are no patents or regulations that could prevent firms from entering the market.</p></li>
+</ul>
+<p>These characteristics explain the logic behind the label “monopolistic competition.” Product differentiation means each firm is the sole seller of a narrowly defined good. For example, each firm in the toothbrush market has a unique design for its toothbrushes, so each is a monopolist in the narrowly defined market for that design. Because the products from different firms are close substitutes, there is keen competition for consumers. When one toothbrush maker increases its price, many of its consumers will switch to the similar toothbrushes produced by other firms. In other words, the demand for the product of a monopolistically competitive firm is very price elastic: An increase in price decreases the quantity demanded by a relatively large amount because consumers can easily switch to another firm selling a similar product.</p>
+<p><a name="product-differentiation-term"><strong>Product differentiation</strong></a></p>
+<ul>
+<li>The process used by firms to distinguish their product of competing firms.</li>
+</ul>
+<h3 id="when-entry-stops-long-run-equilibrium">11.2.1 When Entry Stops: Long-Run Equilibrium</h3>
+<p>Because there are no barriers to entering the toothbrush market, firms will continue to enter until each firm makes zero economic profit. Figure 11.2 shows the long-run equilibrium from the perspective of the typical firm. Suppose a total of six firms are in the toothbrush market. Given the firm-specific demand curve in a market with six firms, the typical firm satisfies the marginal principle at point a by selling 80 brushes per minute at a price of $1.40 (point b) and an average cost of $1.40. Because the price equals the average cost, the typical firm makes zero economic profit. Each firm’s revenue is high enough to cover all its costs–including the opportunity cost of all its inputs–but not enough to cause additional firms to enter the market. In other words, each firm makes just enough money to stay in business.</p>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-11/ch-11_figure-11.2.png" alt="Figure 11.2 Long-Run Equilibrium with Monopolistic Compition" /><figcaption>Figure 11.2 Long-Run Equilibrium with Monopolistic Compition</figcaption>
+</figure>
+<blockquote>
+<p>Under monopolistic competition, firms continue to enter the market until economic profit is zero. Entry shifts the firm-specific demand curve to the left. The typical firm maximizes profit at point a, where marginal revenue equals marginal cost. At a quantity of 80 toothbrushes, price equals average cost (shown by point b), so economic profit is zero.</p>
+</blockquote>
+<h3 id="differentiation-by-location">11.2.2 Differentiation by Location</h3>
+<p>In some monopolistically competitive markets, differentiation is simply a matter of location. Some examples are gas stations, music stores, bookstores, grocery stores, movie theaters, and ice cream parlors. In each case, many firms sell the same product at different locations. Your city probably has several bookstores, each of which sells a particular book at about the same price. Everything else being equal, you are likely to purchase books from the most convenient store, but if a store across town offers lower prices, you might purchase your books there instead. In other words, each store has a monopoly in its own neighborhood, but competes with bookstores in the rest of the city.</p>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-11/ch-11_figure-11.3.png" alt="Figure 11.3 Long-Run Equilibrium with Spatial Competition" /><figcaption>Figure 11.3 Long-Run Equilibrium with Spatial Competition</figcaption>
+</figure>
+<blockquote>
+<p>Bookstores and other retailers differentiate their products by selling them at different locations. The typical bookstore chooses the quantity of books at which its marginal revenue equals its marginal cost (point a). Economic profit is zero because the price equals average cost (point b).</p>
+</blockquote>
+<h2 id="trade-offs-with-entry-and-monopolistic-competition">11.3 Trade-Offs with Entry and Monopolistic Competition</h2>
+<h3 id="average-cost-and-variety">11.3.1 Average Cost and Variety</h3>
+<p>There are some trade-offs associated with monopolistic competition. Although the average cost of production is higher than the minimum, there is also more product-variety. In a market with many toothbrush firms, consumers can choose from a wide variety of designs, so the higher average cost is at least partly offset by greater product variety. Here are two other examples of the benefits of product variety:</p>
+<ul>
+<li><p><em>Restaurant meals</em>. The typical large city has dozens of Italian restaurants, each of which has a different menu and prepares its food in different ways. Consumers can pick from restaurants offering a wide variety of menus and preparation techniques. Although a city with a single Italian restaurant would have a lower average cost of preparing Italian meals, consumers would get less variety.</p></li>
+<li><p><em>Shoes and clothing</em>. Shoes are differentiated according to their style and performance. If we all wore the same type of shoes, the average cost of producing shoes would be lower, but consumers would be unable to match their shoe preferences with suitable shoes. Similarly, if we all wore uniforms, the average cost of clothing would be lower, but that would eliminate clothing choice.</p></li>
+</ul>
+<p>What are the trade-offs when products are differentiated by location? When firms sell the same product at different locations, the larger the number of firms, the higher the average cost of production. But when firms are numerous, consumers travel shorter distances to get the product. Therefore, higher production costs are at least partly offset by lower travel costs. If a large metropolitan area had only one bookstore, the average cost of books would be lower, but consumers would spend more time traveling to get the books.</p>
+<h3 id="monopolistic-competition-versus-perfect-competition">11.3.2 Monopolistic Competition versus Perfect Competition</h3>
+<p>Product differentiation is what makes monopolistic competition different from perfect competition. Perfectly competitive firms produce homogeneous products, while monopolistically competitive firms produce differentiated products.</p>
+<p>Panel A of Figure 11.4 shows the equilibrium for a perfectly competitive firm. Each price-taking firm has a horizontal demand curve. Point a shows the long-run equilibrium because the typical firm (1) satisfies the marginal principle, choosing the quantity where marginal revenue equals marginal cost, and (2) earns zero</p>
+<p><span class="math display">\[
+\text{price} = \text{marginal cost} = \text{average cost}
+\]</span></p>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-11/ch-11_figure-11.4.png" alt="Figure 11.4 Monopolistic Competition versus Perfect Competition" /><figcaption>Figure 11.4 Monopolistic Competition versus Perfect Competition</figcaption>
+</figure>
+<blockquote>
+<ol type="A">
+<li>In a perfectly competitive market, the firm-specific demand curve is horizontal at the market price, and marginal revenue equals price. In equilibrium, <span class="math inline">\(\text{price} = \text{marginal cost} = \text{average cost}\)</span>. The equilibrium occurs at the minimum of the average-cost curve. (B) In a monopolistically competitive market, the firm-specific demand curve is negatively sloped and marginal revenue is less than price. In equilibrium, marginal revenue equals marginal cost (point b) and price equals average cost (point c).</li>
+</ol>
+</blockquote>
+<h2 id="advertising-for-product-differentiation">11.4 Advertising for Product Differentiation</h2>
+<p>By paying millions of dollars to run an advertisement featuring a celebrity, a firm sends a signal to consumers that the advertised product is appealing and likely to be popular. To illustrate this signaling effect, consider a firm that develops a new energy bar and picks a celebrity to endorse it. The purpose of a celebrity advertisement is to get people to try the product for the first time. After that, a consumer will base any repeat purchases on the taste and nutritional value of the energy bar. Suppose an advertisement with a cost of $10 million would cause 10 million consumers to try the energy bar. As shown in the first row of Table 11.1, energy bar A is an appealing product, and half the consumers who try it will become repeat consumers. If the firm makes a profit of $4 on each repeat customer, the firm’s profit of $20 million exceeds the $10 million cost of the advertisement, so the firm will run the advertisement.</p>
+<p><strong>Table 11.1</strong> Advertising Profitability and Signaling</p>
+<table>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 25%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 18%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Product</th>
+<th>Number of consumers who try the product</th>
+<th>Number of repeat customers</th>
+<th>Profit per repeat customer</th>
+<th>Profit from repeat customers</th>
+<th>Cost of advertisement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Energy bar A</td>
+<td>10 million</td>
+<td>5 million</td>
+<td>$4</td>
+<td>$20 million</td>
+<td>$10 million</td>
+</tr>
+<tr class="even">
+<td>Energy bar B</td>
+<td>10 million</td>
+<td>1 million</td>
+<td>4</td>
+<td>4 million</td>
+<td>10 million</td>
+</tr>
+</tbody>
+</table>
+<p>What about a product that is less appealing? The second row of Table 11.1 shows the effects of an advertisement for energy bar B. Only 1 in 10 people who try energy bar B will become a repeat customer, so the firm’s profit from an advertisement is only $4 million. That is not enough to cover the $10 million cost, so the firm won’t advertise the less-appealing product. Notice that celebrity endorsements for the two products are equally effective in getting people to try the products, but <strong>what matters is repeat customers</strong>. The less-appealing product gets fewer repeat customers because it’s an inferior product, and that’s why it’s not worthwhile to pay for an advertisement.</p>
+<h2 id="chapter-summary">Chapter Summary</h2>
+<p>This chapter is about market entry and monopolistic competition. In a monopolistically competitive market, entry continues until each firm in the market makes zero economic profit. Firms can differentiate their products by design, level of service, location, or product image. Here are the main points of the chapter:</p>
+<ol type="1">
+<li>The entry of a firm into a market decreases the market price, decreases output per firm, and increases the average cost of production.</li>
+<li>In a <a href="ch-11.html#monopolistic-competition-term">monopolistically competitive</a> market, firms compete for customers by producing <a href="ch-11.html#product-differentiation-term">differentiated products</a>.</li>
+<li>In the long-run equilibrium with monopolistic competition, marginal revenue equals marginal cost, price equals average cost, and economic profit is zero.</li>
+<li>Under monopolistic competition, the average cost of production is higher than the minimum, but there is also more product variety.</li>
+<li>A firm can use celebrity endorsements and other costly advertisements to signal its belief that a product will be appealing.</li>
+</ol>
+<p><br></p>
+<h1 id="references">References</h1>
+<p>Text Books</p>
+<ul>
+<li>Microeconomics: <em>Principles, Applications, and Tools</em> 10th ed (eText).
+<ul>
+<li>Authors: O’Sullivan/Sheffrin/Perez</li>
+</ul></li>
+</ul>
+<hr>
+<div>
+<div style="text-align: center; font-size: 11px; letter-spacing: 2px;">
+<a href="../../../index.html">Wiki Root</a>
+</div>
+</div>
+</article>
+</body>
+</html>

@@ -1,5 +1,5 @@
 ---
-title: ECON 121 Chapter 8
+title: ECON 121 Chapter 8 Notes
 author: Mark Lucernas
 date: 2020-03-16
 summary: Production, technology and cost
@@ -321,7 +321,7 @@ average cost.
 
 ### 8.3.4 Economies of Scale
 
-<a name="economies-of-scale">**Economies of scale**</a>
+<a name="economies-of-scale-term">**Economies of scale**</a>
 
   - A situation in which the long-run average cost of production decreases as
     output increases.

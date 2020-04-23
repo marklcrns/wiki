@@ -1,5 +1,5 @@
 ---
-title: ECON 121 Chapter 9
+title: ECON 121 Chapter 9 Notes
 author: Mark Lucernas
 date: 2020-03-25
 summary: Perfect competition
