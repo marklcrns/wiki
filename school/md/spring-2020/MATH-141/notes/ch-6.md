@@ -172,7 +172,7 @@ Part 2
 
 ### Video Lecture 1
 
-  - [VIDEO 1: TRIGONOMETRY IDENTITIES difference angle sum angele identities part 1](https://www.youtube.com/watch?v=zUiHEmi_26w)
+  - [VIDEO 1: TRIGONOMETRY IDENTITIES difference angle sum angle identities part 1](https://www.youtube.com/watch?v=zUiHEmi_26w)
 
 #### Video Lecture 1 Notes
 
@@ -193,7 +193,7 @@ In contrast, $\sin()$ is not, and therefore an **ODD** function.
 
 ### Video Lecture 2
 
-  - [VIDEO 2: TRIGONOMETRY IDENTITIES difference angle sum angele identities part 2](https://www.youtube.com/watch?v=WNF7d5tA-Kk)
+  - [VIDEO 2: TRIGONOMETRY IDENTITIES difference angle sum angle identities part 2](https://www.youtube.com/watch?v=WNF7d5tA-Kk)
 
 #### Video Lecture 2 Notes
 
@@ -256,7 +256,7 @@ Distance formula
   - [VIDEO: TRIGONOMETRY IDENTITIES even odd identities](https://www.youtube.com/watch?v=ScGHyV-3ABE)
   - [VIDEO 1: TRIGONOMETRY IDENTITIES pythagoras identities part 1](https://www.youtube.com/watch?v=RrCQGk--M0E)
   - [VIDEO 2: TRIGONOMETRY IDENTITIES pythagoras identities part 2](https://www.youtube.com/watch?v=K1ekCMLygtI)
-  - [VIDEO 1: TRIGONOMETRY IDENTITIES difference angle sum angele identities part 1](https://www.youtube.com/watch?v=zUiHEmi_26w)
-  - [VIDEO 2: TRIGONOMETRY IDENTITIES difference angle sum angele identities part 2](https://www.youtube.com/watch?v=WNF7d5tA-Kk)
+  - [VIDEO 1: TRIGONOMETRY IDENTITIES difference angle sum angle identities part 1](https://www.youtube.com/watch?v=zUiHEmi_26w)
+  - [VIDEO 2: TRIGONOMETRY IDENTITIES difference angle sum angle identities part 2](https://www.youtube.com/watch?v=WNF7d5tA-Kk)
   - [VIDEO 3: TRIGONOMETRY IDENTITIES double angle identities](https://www.youtube.com/watch?v=5YDh-wfOSJU)
   - [VIDEO: TRIGONOMETRY IDENTITIES sum to product and product to sum identities](https://www.youtube.com/watch?v=YsL1TuWGn1c)
