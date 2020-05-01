@@ -34,6 +34,7 @@ date: 2020-02-05
   * [Chapter 4](notes/ch-4) -- Angles Triangles and Areas
   * [Chapter 5](notes/ch-5) -- Trig Functions
   * [Chapter 6](notes/ch-6) -- Trig Identities
+  * [Chapter 7](notes/ch-7) -- Misc Topics
 
 
 ## Quizzes
@@ -121,7 +122,6 @@ date: 2020-02-05
       BCDEFGH, 19) A, 20) A, 21) AB, 22) A, 23) A, 24) A, 25) BC, 26) ACDE, 27)
       ACDE, 28) BC, 29) A, 30) A
 
-\frac{}{}
 ## Exams
 
   - [Exam Basic Instructions](file:../../../files/spring-2020/MATH-141/exam-1/exam-1_basicInstructions.pdf)
