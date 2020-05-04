@@ -100,4 +100,9 @@ Examples of Polar to Cartesian
 # References
 
   - [Handout 27: Intro to Polar Coordinates](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-27.pdf)
+  - [Handout 28: Chapter 7 Review](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-28.pdf)
+  - [Handout 29: Euler's Identity: Solutions to some exercises](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-29.pdf)
   - [VIDEO: TRIGONOMETRY intro to POLAR COORDINATES](https://www.youtube.com/watch?v=6RmC_k4xBSk)
+  - [Handout 30: Converting Equations Polar & Cartesian](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-30.pdf)
+  - [VIDEO 1: Polar graphs intro](https://www.youtube.com/watch?v=u_Y7V5CSCcc)
+  - [VIDEO 2: TRIGONOMETRY intro to POLAR equations converting](https://www.youtube.com/watch?v=eWFJo--R8w4)

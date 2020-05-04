@@ -35,19 +35,20 @@ Install the following programs
 
 Text books
 
-  - [Java, Java, Java Object-Oriented Problem Solving 3rd Ed](file:../../../files/spring-2020/CISC-190/java_book_objectOrientedProblemSolving.pdf)
+  - [Java, Java, Java Object-Oriented Problem Solving 3rd Ed](file:../../../files/spring-2020/CISC-190/java_book_javaJavaJava.pdf)
   - [Introduction to Programming Using Java](file:../../../files/spring-2020/CISC-190/java_book_introToProgramming.pdf)
   - [Intro to Computing and Programming in Java: A Multimedia Approach (ch. 1-4)](file:../../../files/spring-2020/CISC-190/java_book_mediaComp_ch1-4.pdf)
 
 ## Modules
 
-  - [Module 0](modules/module_0) = Introduction
-  - [Module 1](modules/module_1) = Using Methods and Parameters
-  - [Module 2](modules/module_2) = Writing Methods
-  - [Module 3](modules/module_3) = Loops and Arrays
-  - [Module 4](modules/module_4) = Nested Loops
-  - [Module 5](modules/module_5) = Conditional Execution
-  - [Module 6](modules/module_6) = Creating Your Own Custom Class
+  - [Module 0](modules/module_0) -- Introduction
+  - [Module 1](modules/module_1) -- Using Methods and Parameters
+  - [Module 2](modules/module_2) -- Writing Methods
+  - [Module 3](modules/module_3) -- Loops and Arrays
+  - [Module 4](modules/module_4) -- Nested Loops
+  - [Module 5](modules/module_5) -- Conditional Execution
+  - [Module 6](modules/module_6) -- Creating Your Own Custom Class
+  - [Module 7](modules/module_7) -- Advanced Topics
 
 ## Skills Applicable to Resumes
 

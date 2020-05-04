@@ -1,0 +1,43 @@
+Creating a Field with the no-arg constructor.
+Checking that the no-arg Field has the correct values.
+No-arg constructor test PASSED
+
+Creating a Field with the one-arg constructor.
+Checking that the one-arg Field has the correct values.
+One-arg constructor test PASSED
+
+Creating a Field with the three-arg constructor.
+Checking that the three-arg Field has the correct values.
+Three-arg constructor test PASSED
+
+Creating a Field with the no-arg constructor.
+Setting a new crop
+Checking that the new crop has the correct values.
+Crop setter test PASSED
+
+Setting a new valid width
+Checking that the new width has the correct values.
+Width setter with valid value test PASSED
+
+Setting a new invalid width.  This test will fail if the previous test failed.
+Checking that the width value was not changed.
+Width setter with invalid value test PASSED
+
+Setting a new valid length
+Checking that the new length has the correct values.
+Length setter with valid value test PASSED
+
+Setting a new invalid length.  This test will fail if the previous test failed.
+Checking that the length value was not changed.
+Length setter with invalid value test PASSED
+
+Creating a Field with the no-arg constructor.
+Calculating the area of the no-arg field
+
+Calculate area test PASSED
+
+Creating a Field with the three-arg constructor.
+Verifying that toString returns the correct String
+toString test PASSED
+
+10 tests out of 10 tests passed

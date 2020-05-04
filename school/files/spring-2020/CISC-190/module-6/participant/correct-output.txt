@@ -1,0 +1,130 @@
+Creating a default participant
+
+Test #0: Testing correct default name using the getName method
+
+	Test PASSED!
+
+Test #1: Testing correct default weight using the getWeight method
+
+	Test PASSED!
+
+Test #2: Testing correct default height using the getHeight method
+
+	Test PASSED!
+
+Test #3: Testing the getBMI method on the first participant
+
+	Test PASSED!
+
+Test #4: Testing each set method using a default participant
+
+Test #5: Testing setName("Sally Jane") method using the getName method
+
+	Test PASSED!
+
+Test #6: Testing setWeight(100) method using the getWeight method
+
+	Test PASSED!
+
+Test #7: Testing setHeight(5.0) using the getHeight method
+
+	Test PASSED!
+
+Test #8: Testing the getBMI method on the first participant after changing weight and height
+
+	Test PASSED!
+
+Creating a new participant using the single parameter constructor
+
+Test #9: Testing correct name using the getName method
+
+	Test PASSED!
+
+Test #10: Testing correct default weight using the getWeight method
+
+	Test PASSED!
+
+Test #11: Testing correct default height using the getHeight method
+
+	Test PASSED!
+
+Test #12: Testing the getBMI method on the second participant
+
+	Test PASSED!
+
+Creating a new participant
+
+Test #13: Testing correct name using the getName method
+
+	Test PASSED!
+
+Test #14: Testing correct weight using the getWeight method
+
+	Test PASSED!
+
+Test #15: Testing correct height using the getHeight method
+
+	Test PASSED!
+
+Test #16: Testing the getBMI method on the third participant
+
+	Test PASSED!
+
+Test #17: Testing the toString method
+
+	Test PASSED!
+
+Creating a new participant
+
+Test #18: Testing correct name using the getName method
+
+	Test PASSED!
+
+Test #19: Testing correct weight using the getWeight method
+
+	Test PASSED!
+
+Test #20: Testing correct height using the getHeight method
+
+	Test PASSED!
+
+Test #21: Testing the getBMI method on the third participant
+
+	Test PASSED!
+
+Test #22: Testing the toString method
+
+	Test PASSED!
+
+Test #23: Testing three parameter constructor with negative height
+
+Should print "Incorrect height, height must be positive. Height will be set to default value (6.0)."
+Incorrect height, height must be positive. Height will be set to default value (6.0).
+
+	Test PASSED!
+
+Test #24: Testing setWeight method with negative weight
+
+Should print "Incorrect weight, weight must be positive. Weight will not be updated."
+
+Incorrect weight, weight must be positive.  Weight will not be updated.
+	Test PASSED!
+
+Test #25: Testing three parameter constructor with negative weight
+
+Should print "Incorrect weight, weight must be positive. Weight will be set to default value (200)."
+Incorrect weight, weight must be positive. Weight will be set to default value (200).
+
+	Test PASSED!
+
+Test #26: Testing setHeight method with negative height
+
+Should print "Incorrect height, height must be positive. Height will not be updated."
+Incorrect height, height must be positive.  Height will not be updated.
+
+	Test PASSED!
+
+*****************************************************
+Final Testing Results:
+*****************************************************
+26 passed, 0 failed

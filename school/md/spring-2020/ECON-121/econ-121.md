@@ -46,6 +46,7 @@ Textbook
   - [Chapter 9](notes/ch-9) -- Perfect Competition
   - [Chapter 10](notes/ch-10) -- Monopoly and Price Discrimination
   - [Chapter 11](notes/ch-11) -- Market Entry and Monopolistic Competition
+  - [Chapter 12](notes/ch-12) -- Oligopoly and Strategic Behavior
 
 ## Exams
 

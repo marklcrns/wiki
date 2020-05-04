@@ -21,7 +21,17 @@ summary: Module 6 notes and exercises
   - [CreateStudent.java](vfile:../../../../files/spring-2020/CISC-190/module-6/read-and-try/CreateStudent.java)
   - [Student.java](vfile:../../../../files/spring-2020/CISC-190/module-6/read-and-try/Student.java)
 
-### Technical Interview Practice
+### Participant
+
+  - [Participant.java](vfile:../../../../files/spring-2020/CISC-190/module-6/participant/Participant.java)
+  - [ParticipantTester.java](vfile:../../../../files/spring-2020/CISC-190/module-6/participant/ParticipantTester.java)
+  - [correct-output.txt](vfile:../../../../files/spring-2020/CISC-190/module-6/participant/correct-output.txt)
+
+### Field - Extra Credit
+
+  - [Field.java](vfile:../../../../files/spring-2020/CISC-190/module-6/field/Field.java)
+  - [FieldTester.java](vfile:../../../../files/spring-2020/CISC-190/module-6/field/FieldTester.java)
+  - [FieldTesterCorrectOutput.txt](vfile:../../../../files/spring-2020/CISC-190/module-6/field/FieldTesterCorrectOutput.txt)
 
 ### Explain
 
