@@ -86,7 +86,83 @@ Examples of Polar to Cartesian
 
 ## 7.3 Complex Numbers Intro
 
+  - [Handout 31: Intro to Complex Numbers exercises v1](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-31.pdf)
+  - [Handout 32: Intro to Complex Numbers exercises v2](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-32.pdf)
+
+
+### Video Lecture
+
+  - [VIDEO: INTRODUCTION To complex numbers](https://www.youtube.com/watch?v=rShl_0B72To)
+
+#### Video Lecture Notes
+
+|           |               |
+| :-------: | :-----------: |
+| $i$       | $i$           |
+| $i^{2}$   | $1$           |
+| $i^{3}$   | $\text{-}i$   |
+| $i^{4}$   | $1$           |
+| $i^{5}$   | $i$           |
+| $i^{6}$   | $\text{-}1$   |
+| $i^{7}$   | $\text{-}i$   |
+| $i^{8}$   | $1$           |
+| $i^{9}$   | $i$           |
+| ...       | ...           |
+
+$$
+\begin{aligned}
+i^{103} &= i^{100} \cdot i^{3} \\
+ &= (i^{4})^{25} \cdot \\
+ &= i^{25} \cdot i^{3} \\
+ &=  1 \cdot i^{3} \\
+ &= -i
+\end{aligned}
+$$
+
+Using Conjugates
+
+  - $(3 + 2i)(3 - 2i)$ [(13:27)](https://www.youtube.com/watch?v=rShl_0B72To&t=807)
+  - $\dfrac{3}{2 + 5i}$ [(19:32)](https://www.youtube.com/watch?v=rShl_0B72To&t=1172)
+
+
+<a name="conjugates-term">**Conjugates**</a>
+
+  - Two binomials with all terms are identical except for the sign in between
+    two terms of the binomial are opposite.
+  - Only works for $+$ and $-$ sign.
+
+
 ## 7.4 Complex Numbers Part II
+
+  - [Handout 33: More on Complex Numbers exercises v1](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-33.pdf)
+  - [Handout 34: More on Complex Numbers exercises v2](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-34.pdf)
+
+
+### Video Lecture
+
+  - [VIDEO: Converting to Euler form of complex number](https://www.youtube.com/watch?v=IoOKpGrL0RQ)
+
+#### Video Lecture Notes
+
+  - $i = e^{i \cdot 90^{\circ}}$ [(21:26)](https://www.youtube.com/watch?v=IoOKpGrL0RQ&t=1286)
+  - $0 = e^{i\p} + 1$
+
+<a name="euler's-identity-term">**Euler's identity**</a>
+
+  - $e^{i\theta} = \cos(\theta) + i\sin(\theta)$
+
+
+> Euler's uses **RADIANS** instead of degrees
+
+
+Converting complex numbers to Euler form
+
+  - $3 + 2i \to re^{i\theta}$ [(14:53)](https://www.youtube.com/watch?v=IoOKpGrL0RQ&t=893)
+
+
+Converting numbers to complex numbers
+
+  - $-1 \to \mathbb{C}$ (Complex number) [(22:40)](https://www.youtube.com/watch?v=IoOKpGrL0RQ&t=1360)
 
 ## 7.5 Eulers Identity
 
@@ -106,3 +182,9 @@ Examples of Polar to Cartesian
   - [Handout 30: Converting Equations Polar & Cartesian](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-30.pdf)
   - [VIDEO 1: Polar graphs intro](https://www.youtube.com/watch?v=u_Y7V5CSCcc)
   - [VIDEO 2: TRIGONOMETRY intro to POLAR equations converting](https://www.youtube.com/watch?v=eWFJo--R8w4)
+  - [Handout 31: Intro to Complex Numbers exercises v1](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-31.pdf)
+  - [Handout 32: Intro to Complex Numbers exercises v2](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-32.pdf)
+  - [VIDEO: INTRODUCTION To complex numbers](https://www.youtube.com/watch?v=rShl_0B72To)
+  - [Handout 33: More on Complex Numbers exercises v1](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-33.pdf)
+  - [Handout 34: More on Complex Numbers exercises v2](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-34.pdf)
+  - [VIDEO: Converting to Euler form of complex number](https://www.youtube.com/watch?v=IoOKpGrL0RQ)
