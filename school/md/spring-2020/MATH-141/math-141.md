@@ -162,3 +162,15 @@ Exam
     * [Exam 2 Solutions](file:../../../files/spring-2020/MATH-141/exam-2/math-141_exam_2_solutions.pdf)
     * Answers: 1) B, 2) B, 3) C, 4) A, 5) B, 6) BCE, 7) CD, 8) C, 9) A, 10) CE,
       11) D, 12) ACE
+
+
+### Exam 3
+
+Practice
+
+  - [Exam 3 Pre Examination Worksheet](file:../../../files/spring-2020/MATH-141/exam-3/exam-3_preExamWorksheet.pdf)
+
+Exam
+
+  - [Exam 3 Questionnaire v1](file:../../../files/spring-2020/MATH-141/exam-3/math-141_exam_3.pdf)
+    * [Exam 3 Solutions](file:../../../files/spring-2020/MATH-141/exam-3/math-141_exam_3_solutions.pdf)

@@ -84,6 +84,7 @@ Examples of Polar to Cartesian
     * ${\color{#ff0000}{\frac{y}{x}}} = \tan(2.5)$
     * $y = \tan(2.5) \cdot {\color{#ff0000}{x}}$
 
+
 ## 7.3 Complex Numbers Intro
 
   - [Handout 31: Intro to Complex Numbers exercises v1](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-31.pdf)

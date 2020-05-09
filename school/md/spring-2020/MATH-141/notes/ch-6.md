@@ -7,6 +7,14 @@ summary: Trig Identities
 
 # Chapter 6: Trig Identities
 
+  - [VIDEO: Law of Sines](https://www.youtube.com/watch?v=bDPRWJdVzfs)
+    * $\frac{\sin(A)}{a} = \frac{\sin(B)}{b} = \frac{\sin(C)}{c}$
+    * or
+    * $\frac{a}{\sin(A)} = \frac{b}{\sin(B)} = \frac{c}{\sin(C)}$
+  - [VIDEO: Law of Cosines](https://www.youtube.com/watch?v=ZElOxG7_m3c)
+    * $a^{2} = b^{2} + c^{2} - 2bc\cos(\theta)$
+
+
 ## 6.1 Identities Introduction
 
   - [Handout 24: Famous Trigonometry Identities](file:../../../../files/spring-2020/MATH-141/ch-6/ch-6_handout-24.pdf)
@@ -57,6 +65,7 @@ Methods to prove an equation is an identity:
   - if $A(x) = B(x)$ is an IDENTITY then within the respective domain $A(x) and
     B(x)$ are **interchangeable**.
 
+
 ## 6.2 Identities: Definition & Cofunctions
 
 ### Video Lecture
@@ -91,6 +100,7 @@ Methods to prove an equation is an identity:
       - $\frac{\cos(\theta)}{\color{#ff0000}{\sin(\theta)}} \cdot \color{#ff0000}{\sin(\theta)}$
         * $\cos(\theta) = \frac{1}{\sec(\theta)}$
 
+
 ## 6.3 Identities: Even and Odd
 
   - Functions that produces the same value regardless if one is a negative
@@ -106,6 +116,7 @@ Methods to prove an equation is an identity:
     * $f(x) = f(-x)$
   - Odd function [(11:23)](https://www.youtube.com/watch?v=ScGHyV-3ABE&t=683)
     * $f(-x) = -f(x)$
+
 
 ## 6.4 Identities: Pythagoras Quick Review
 
@@ -167,6 +178,7 @@ Part 2
     * $\tan(b + u)$
   - $\frac{\tan(b) - \tan(u)}{1 + \tan(b)\tan(u)}$
     * $\tan(b - u)$
+
 
 ## 6.5 Identities: The Mother of Them All
 
@@ -231,6 +243,7 @@ Distance formula
     * ${\color{#ff0000}{1}} + \frac{sin^{2}(x)}{cos^{2}(x)} = \frac{1}{cos^{2}(x)}$
     * $1 + {\color{#ff0000}{\tan^{2}(x)}} = {\color{#ff0000}{\sec^{2}(x)}}$
 
+
 ## 6.6 Identities: Double Angle & Product-to-Sums and Sums-to-Products
 
 ### Video Lecture
@@ -248,6 +261,8 @@ Distance formula
 
 # References
 
+  - [VIDEO: Law of Sines](https://www.youtube.com/watch?v=bDPRWJdVzfs)
+  - [VIDEO: Law of Cosines](https://www.youtube.com/watch?v=ZElOxG7_m3c)
   - [Handout 24: Famous Trigonometry Identities](file:../../../../files/spring-2020/MATH-141/ch-6/ch-6_handout-24.pdf)
   - [VIDEO 1: TRIGONOMETRY IDENTITIES intro observations](https://www.youtube.com/watch?v=mERrO4A4GQQ)
   - [VIDEO 2: TRIGONOMETRY IDENTITIES first look part 1](https://www.youtube.com/watch?v=j4CHZmn8NMc)
