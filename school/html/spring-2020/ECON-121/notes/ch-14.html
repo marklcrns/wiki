@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<!--
+==============================================================================
+           "GitHub HTML5 Pandoc Template" v2.1 — by Tristano Ajmone           
+==============================================================================
+Copyright © Tristano Ajmone, 2017, MIT License (MIT). Project's home:
+
+- https://github.com/tajmone/pandoc-goodies
+
+The CSS in this template reuses source code taken from the following projects:
+
+- GitHub Markdown CSS: Copyright © Sindre Sorhus, MIT License (MIT):
+  https://github.com/sindresorhus/github-markdown-css
+
+- Primer CSS: Copyright © 2016-2017 GitHub Inc., MIT License (MIT):
+  http://primercss.io/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The MIT License 
+
+Copyright (c) Tristano Ajmone, 2017 (github.com/tajmone/pandoc-goodies)
+Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)
+Copyright (c) 2017 GitHub Inc.
+
+"GitHub Pandoc HTML5 Template" is Copyright (c) Tristano Ajmone, 2017, released
+under the MIT License (MIT); it contains readaptations of substantial portions
+of the following third party softwares:
+
+(1) "GitHub Markdown CSS", Copyright (c) Sindre Sorhus, MIT License (MIT).
+(2) "Primer CSS", Copyright (c) 2016 GitHub Inc., MIT License (MIT).
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+==============================================================================-->
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Mark Lucernas" />
+  <meta name="dcterms.date" content="2020-05-08" />
+  <title>ECON 121 Chapter 14 Notes</title>
+  <style type="text/css">
+@charset "UTF-8";.markdown-body{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#24292e;font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:16px;line-height:1.5;word-wrap:break-word;box-sizing:border-box;min-width:200px;max-width:980px;margin:0 auto;padding:45px}.markdown-body a{color:#0366d6;background-color:transparent;text-decoration:none;-webkit-text-decoration-skip:objects}.markdown-body a:active,.markdown-body a:hover{outline-width:0}.markdown-body a:hover{text-decoration:underline}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body strong{font-weight:600}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1{font-size:2em;margin:.67em 0;padding-bottom:.3em;border-bottom:1px solid #eaecef}.markdown-body h2{padding-bottom:.3em;font-size:1.5em;border-bottom:1px solid #eaecef}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#6a737d}.markdown-body img{border-style:none}.markdown-body svg:not(:root){overflow:hidden}.markdown-body hr{box-sizing:content-box;height:.25em;margin:24px 0;padding:0;overflow:hidden;background-color:#e1e4e8;border:0}.markdown-body hr::before{display:table;content:""}.markdown-body hr::after{display:table;clear:both;content:""}.markdown-body input{margin:0;overflow:visible;font:inherit;font-family:inherit;font-size:inherit;line-height:inherit}.markdown-body [type=checkbox]{box-sizing:border-box;padding:0}.markdown-body *{box-sizing:border-box}.markdown-body blockquote{margin:0}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol ol,.markdown-body ul ol{list-style-type:lower-roman}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body ol ol ol,.markdown-body ol ul ol,.markdown-body ul ol ol,.markdown-body ul ul ol{list-style-type:lower-alpha}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dd{margin-left:0}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:600}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body code{font-family:SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace}.markdown-body pre{font:12px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;word-wrap:normal}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body blockquote{padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body table{display:block;width:100%;overflow:auto;border-spacing:0;border-collapse:collapse}.markdown-body table th{font-weight:600}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #dfe2e5}.markdown-body table tr{background-color:#fff;border-top:1px solid #c6cbd1}.markdown-body table tr:nth-child(2n){background-color:#f6f8fa}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body code{padding:.2em 0;margin:0;font-size:85%;background-color:rgba(27,31,35,.05);border-radius:3px}.markdown-body code::after,.markdown-body code::before{letter-spacing:-.2em;content:" "}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:0 0;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f6f8fa;border-radius:3px}.markdown-body pre code{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code::after,.markdown-body pre code::before{content:normal}.markdown-body .full-commit .btn-outline:not(:disabled):hover{color:#005cc5;border-color:#005cc5}.markdown-body kbd{box-shadow:inset 0 -1px 0 #959da5;display:inline-block;padding:3px 5px;font:11px/10px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;color:#444d56;vertical-align:middle;background-color:#fcfcfc;border:1px solid #c6cbd1;border-bottom-color:#959da5;border-radius:3px;box-shadow:inset 0 -1px 0 #959da5}.markdown-body :checked+.radio-label{position:relative;z-index:1;border-color:#0366d6}.markdown-body .task-list-item{list-style-type:none}.markdown-body .task-list-item+.task-list-item{margin-top:3px}.markdown-body .task-list-item input{margin:0 .2em .25em -1.6em;vertical-align:middle}.markdown-body::before{display:table;content:""}.markdown-body::after{display:table;clear:both;content:""}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.Alert,.Error,.Note,.Success,.Warning{padding:11px;margin-bottom:24px;border-style:solid;border-width:1px;border-radius:4px}.Alert p,.Error p,.Note p,.Success p,.Warning p{margin-top:0}.Alert p:last-child,.Error p:last-child,.Note p:last-child,.Success p:last-child,.Warning p:last-child{margin-bottom:0}.Alert{color:#246;background-color:#e2eef9;border-color:#bac6d3}.Warning{color:#4c4a42;background-color:#fff9ea;border-color:#dfd8c2}.Error{color:#911;background-color:#fcdede;border-color:#d2b2b2}.Success{color:#22662c;background-color:#e2f9e5;border-color:#bad3be}.Note{color:#2f363d;background-color:#f6f8fa;border-color:#d5d8da}.Alert h1,.Alert h2,.Alert h3,.Alert h4,.Alert h5,.Alert h6{color:#246;margin-bottom:0}.Warning h1,.Warning h2,.Warning h3,.Warning h4,.Warning h5,.Warning h6{color:#4c4a42;margin-bottom:0}.Error h1,.Error h2,.Error h3,.Error h4,.Error h5,.Error h6{color:#911;margin-bottom:0}.Success h1,.Success h2,.Success h3,.Success h4,.Success h5,.Success h6{color:#22662c;margin-bottom:0}.Note h1,.Note h2,.Note h3,.Note h4,.Note h5,.Note h6{color:#2f363d;margin-bottom:0}.Alert h1:first-child,.Alert h2:first-child,.Alert h3:first-child,.Alert h4:first-child,.Alert h5:first-child,.Alert h6:first-child,.Error h1:first-child,.Error h2:first-child,.Error h3:first-child,.Error h4:first-child,.Error h5:first-child,.Error h6:first-child,.Note h1:first-child,.Note h2:first-child,.Note h3:first-child,.Note h4:first-child,.Note h5:first-child,.Note h6:first-child,.Success h1:first-child,.Success h2:first-child,.Success h3:first-child,.Success h4:first-child,.Success h5:first-child,.Success h6:first-child,.Warning h1:first-child,.Warning h2:first-child,.Warning h3:first-child,.Warning h4:first-child,.Warning h5:first-child,.Warning h6:first-child{margin-top:0}h1.title,p.subtitle{text-align:center}h1.title.followed-by-subtitle{margin-bottom:0}p.subtitle{font-size:1.5em;font-weight:600;line-height:1.25;margin-top:0;margin-bottom:16px;padding-bottom:.3em}div.line-block{white-space:pre-line}
+  </style>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="style.css">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<article class="markdown-body">
+<div style="text-align: center; font-size: 11px; letter-spacing: 2px;">
+<a href="../../../index.html">Wiki Root</a>
+</div>
+<header>
+<h1 class="title">ECON 121 Chapter 14 Notes</h1>
+<p class="author">Mark Lucernas</p>
+<p class="date">2020-05-08</p>
+<div class="summary">
+Imperfect Information - Adverse Selection and Moral Hazard
+</div>
+</header>
+<hr>
+<nav id="TOC">
+<h1 class="toc-title">Contents</h1>
+<ul>
+<li><a href="#chapter-14-imperfect-information-adverse-selection-and-moral-hazard">Chapter 14: Imperfect Information: Adverse Selection and Moral Hazard</a><ul>
+<li><a href="#adverse-selection-for-buyers-the-lemons-and-problem">14.1 Adverse Selection for Buyers: The Lemons and Problem</a><ul>
+<li><a href="#uninformed-buyers-and-knowledgeable-sellers">14.1.1 Uninformed Buyers and Knowledgeable Sellers</a></li>
+<li><a href="#equilibrium-with-all-low-quality-goods">14.1.2 Equilibrium with All Low-Quality Goods</a></li>
+<li><a href="#a-thin-market-equilibrium-with-some-high-quality-goods">14.1.3 A Thin Market: Equilibrium with Some High-Quality Goods</a></li>
+</ul></li>
+<li><a href="#responding-to-the-lemons-problem">14.2 Responding to the Lemons Problem</a><ul>
+<li><a href="#buyers-invest-in-information">14.2.1 Buyers Invest in Information</a></li>
+<li><a href="#consumer-satisfaction-scores-from-angies-list-and-ebay">14.2.2 Consumer Satisfaction Scores from Angie‘s List and eBay</a></li>
+<li><a href="#guarantees-and-lemons-laws">14.2.3 Guarantees and Lemons Laws</a></li>
+</ul></li>
+<li><a href="#adverse-selection-for-sellers-insurance">14.3 Adverse Selection for Sellers: Insurance</a><ul>
+<li><a href="#health-insurance">14.3.1 Health Insurance</a></li>
+<li><a href="#equilibrium-with-all-high-cost-consumers">14.3.2 Equilibrium with All High-Cost Consumers</a></li>
+<li><a href="#responding-to-adverse-selection-in-insurance-group-insurance">14.3.3 Responding to Adverse Selection in Insurance: Group Insurance</a></li>
+<li><a href="#the-uninsured">14.3.4 The Uninsured</a></li>
+</ul></li>
+<li><a href="#insurance-and-moral-hazard">14.4 Insurance and Moral Hazard</a><ul>
+<li><a href="#insurance-companies-and-moral-hazard">14.4.1 Insurance Companies and Moral Hazard</a></li>
+</ul></li>
+<li><a href="#chapter-summary">Chapter Summary</a></li>
+</ul></li>
+<li><a href="#references">References</a></li>
+</ul>
+</nav>
+<hr>
+<h1 id="chapter-14-imperfect-information-adverse-selection-and-moral-hazard">Chapter 14: Imperfect Information: Adverse Selection and Moral Hazard</h1>
+<h2 id="adverse-selection-for-buyers-the-lemons-and-problem">14.1 Adverse Selection for Buyers: The Lemons and Problem</h2>
+<p><a name="asymmetric-information-term"><strong>Asymmetric information</strong></a></p>
+<ul>
+<li>A situation in which one side of the market–either buyers or sellers–has better information than the other.</li>
+</ul>
+<p><a name="mixed-market-term"><strong>Mixed market</strong></a></p>
+<ul>
+<li>A market in which goods of different qualities are sold for the same price.</li>
+</ul>
+<h3 id="uninformed-buyers-and-knowledgeable-sellers">14.1.1 Uninformed Buyers and Knowledgeable Sellers</h3>
+<p>To determine a consumer’s willingness to pay in a mixed market with both lemons (low-quality) and plums (hight quality), we must answer three questions:</p>
+<ol type="1">
+<li>How much is the consumer willing to pay for a plum?</li>
+<li>How much is the consumer willing to pay for a lemon?</li>
+<li>What is the chance that a used car purchased in a mixed market will be of low quality?</li>
+</ol>
+<p>In used car mixed markets, suppose the typical buyer is willing to pay $4,000 for a plum and $2,000 for a lemon. The buyer is willing to pay less for a lemon because it is less reliable and has higher repair costs. For someone willing to put up with the hassle and repair expense, a lemon is a reasonable car. That’s why the typical buyer is willing to pay $2,000, not $0, for a low-quality car we tag with the label “lemon.” <strong>Someone who pays $2,000 and gets a lemon is just as happy as someone who pays $4,000 and gets a plum.</strong></p>
+<p>A reasonable assumption is that a <strong>buyer in the mixed market is willing to pay the average value of the two types of cars, or $3,000.</strong> In other words, a buyer is willing to pay $3,000 for a 50–50 chance of getting either a plum or a lemon.</p>
+<p>The current owner of a used car knows from everyday experience whether the car is a lemon or a plum. Given the single market price for all used cars, lemons and plums alike, the question for each owner is “Should I sell my car?” The answers to this question are shown by the two supply curves in Figure 14.1, one for lemons and one for plums:</p>
+<ol type="1">
+<li><em>Lemon supply</em>. As shown by the lower curve, the minimum supply price for lemons is $500: At any price less than $500, no lemons will be supplied. Lemons have a lower minimum price because they are worth less to their current owners. The number of lemons supplied increases with price. For example, 80 cars will be supplied at a price of $3,000 (point b).</li>
+<li><em>Plum supply</em>. As shown by the upper curve, the minimum supply price for plums is $2,500: At any price less than $2,500, no plums will be supplied. Consistent with the law of supply, the higher the price of used cars, the larger the number of plums supplied. For example, 20 plums will be supplied at a price of $3,000 (point a).</li>
+</ol>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-14/ch-14_figure-14.1.png" alt="Figure 14.1 All Used Cars on the Matket are Lemons" /><figcaption>Figure 14.1 All Used Cars on the Matket are Lemons</figcaption>
+</figure>
+<blockquote>
+<p>If buyers assume that there is a 50–50 chance of getting a lemon or a plum, they are willing to pay $3,000 for a used car. At this price, 20 plums are supplied (point a) along with 80 lemons (point b). <strong>This is not an equilibrium because consumers’ expectations of a 50–50 split are not realized.</strong> If consumers become pessimistic and assume that all cars on the market will be lemons, they are willing to pay $2,000 for a used car. At this price, only lemons will be supplied (point c). Consumer expectations are realized, so the equilibrium is shown by point c, with an equilibrium price of $2,000.</p>
+</blockquote>
+<blockquote>
+<p>A <strong>market is in equilibrium</strong> when consumers’ <strong>expectations are consistent with their actual experiences</strong>.</p>
+</blockquote>
+<h3 id="equilibrium-with-all-low-quality-goods">14.1.2 Equilibrium with All Low-Quality Goods</h3>
+<p><strong>Table 14.1</strong> Equilibrium with All Low-Quality Goods</p>
+<table>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 28%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Demand side of Market</th>
+<th>Buyers Initially Have 50 50 Expectations</th>
+<th>Equilibrium: Pessimistic Expectations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Amount buyer is willing to pay for a lemon</td>
+<td>$2,000</td>
+<td>$2,000</td>
+</tr>
+<tr class="even">
+<td>Amount buyer is willing to pay for a plum</td>
+<td>$4,000</td>
+<td>$4,000</td>
+</tr>
+<tr class="odd">
+<td>Assumed chance of getting a lemon</td>
+<td>50%</td>
+<td>100%</td>
+</tr>
+<tr class="even">
+<td>Assumed chance of getting a plum</td>
+<td>50%</td>
+<td>0%</td>
+</tr>
+<tr class="odd">
+<td>Amount buyer is willing to pay for a used car in a mixed market</td>
+<td>$3,000</td>
+<td>$2,000</td>
+</tr>
+<tr class="even">
+<td><strong>Supply Side of Market</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Number of lemons supplied</td>
+<td>80</td>
+<td>45</td>
+</tr>
+<tr class="even">
+<td>Number of plums supplied</td>
+<td>20</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Total number of used cars supplied</td>
+<td>100</td>
+<td>45</td>
+</tr>
+<tr class="even">
+<td>Actual change of getting a lemon</td>
+<td>80%</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p>The experiences of these 100 consumers show that the actual chance of getting a lemon is 80 percent, not 50 percent as initially assumed. Once future buyers realize this, they will of course become more pessimistic about the used-car market. Suppose they assume that all the used cars on the market will be lemons. Under this assumption, the typical buyer will be willing to pay only $2,000 (the value of a lemon) for a used car. As shown in Figure 14.1, this price is less than the $2,500 minimum price for supplying plums, so plums will disappear from the used-car market. At a price of $2,000, the quantity of plums supplied is zero, but the quantity of lemons supplied is 45 (point c). In other words, all the used cars will be lemons, so consumers’ pessimism is justified. Because consumers’ <strong>expectations are consistent with their actual experiences in the market</strong>, the <strong>equilibrium price of used cars is $2,000</strong>. The equilibrium in the used-car market is shown in the second column of Table 14.1.</p>
+<ol type="1">
+<li>The presence of low-quality goods on the market pulls down the price consumers are willing to pay.</li>
+<li>The decrease in price decreases the number of high-quality goods supplied, decreasing the average quality of goods on the market.</li>
+<li>This decrease in the average quality of goods on the market pulls down the price consumers are willing to pay again.</li>
+</ol>
+<p><strong>In this equilibrium, no plums are bought or sold, so every buyer will get a lemon.</strong></p>
+<p><a name="adverse-selection-problem-term"><strong>Adverse selection problem</strong></a></p>
+<ul>
+<li>A situation in which the uniformed side of the market must choose from an undesirable or adverse selection of goods.</li>
+</ul>
+<h3 id="a-thin-market-equilibrium-with-some-high-quality-goods">14.1.3 A Thin Market: Equilibrium with Some High-Quality Goods</h3>
+<p><a name="thin-market-term"><strong>Thin market</strong></a></p>
+<ul>
+<li>A market in which some high-quality goods are sold but fewer than would be sold in a market with perfect information.</li>
+</ul>
+<p>Figure 14.2 shows the situation that leads to a thin market. The minimum supply price for plums is $1,833, and the quantity of plums supplied increases with the price of used cars. Suppose consumers are initially pessimistic, assuming all cars for sale will be lemons. This means consumers are willing to pay only $2,000 for a used car. Because the minimum supply price for plums ($1,833) is now less than the willingness to pay for a lemon, some plums will be supplied at a price of $2,000. In Figure 14.2, 5 plums and 45 lemons are supplied at this price, so 1 of every 10 buyers will get a plum. In this case, pessimism is not an equilibrium because some buyers will get plums when they expect lemons. This is also shown in the first column of Table 14.2.</p>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-14/ch-14_figure-14.2.png" alt="Figure 14.2 The Market for High-Qualtiy Cars (Plums) Is Thin" /><figcaption>Figure 14.2 The Market for High-Qualtiy Cars (Plums) Is Thin</figcaption>
+</figure>
+<blockquote>
+<p>If buyers are pessimistic and assume that only lemons will be sold, they are willing to pay $2,000 for a used car. At this price, 5 plums are supplied (point a), along with 45 lemons (point b). This is not an equilibrium because 10 percent of consumers get plums, contrary to their expectations. If consumers assume that there is a 25 percent chance of getting a plum, they are willing to pay $2,500 for a used car. At this price, 20 plums are supplied (point c), along with 60 lemons (point d). This is an equilibrium because 25 percent of consumers get plums, consistent with their expectations. Consumer expectations are realized, so the equilibrium is shown by points c and d.</p>
+</blockquote>
+<p><strong>Table 14.2</strong> A Thin Market for High-Quality Goods</p>
+<table>
+<colgroup>
+<col style="width: 49%" />
+<col style="width: 25%" />
+<col style="width: 24%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Demand side of Market</th>
+<th>Initial Pessimistic Expectations</th>
+<th>Equilibrium 75 25 Expectations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Amount buyer is willing to pay for a lemon</td>
+<td>$2,000</td>
+<td>$2,000</td>
+</tr>
+<tr class="even">
+<td>Amount buyer is willing to pay for a plum</td>
+<td>$4,000</td>
+<td>$4,000</td>
+</tr>
+<tr class="odd">
+<td>Assumed chance of getting a lemon</td>
+<td>100%</td>
+<td>75%</td>
+</tr>
+<tr class="even">
+<td>Assumed chance of getting a plum</td>
+<td>0%</td>
+<td>25%</td>
+</tr>
+<tr class="odd">
+<td>Amount buyer is willing to pay for a used car in a mixed market</td>
+<td>$2,000</td>
+<td>$2,500</td>
+</tr>
+<tr class="even">
+<td><strong>Supply Side of Market</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Number of lemons supplied</td>
+<td>45</td>
+<td>60</td>
+</tr>
+<tr class="even">
+<td>Number of plums supplied</td>
+<td>5</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>Total number of used cars supplied</td>
+<td>50</td>
+<td>80</td>
+</tr>
+<tr class="even">
+<td>Actual change of getting a lemon</td>
+<td>90%</td>
+<td>75%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="responding-to-the-lemons-problem">14.2 Responding to the Lemons Problem</h2>
+<p>In a market with asymmetric information, there are strong incentives for buyers and sellers to solve the lemons problem.</p>
+<p>The challenge is to identify a high-quality car in the mixed market.</p>
+<h3 id="buyers-invest-in-information">14.2.1 Buyers Invest in Information</h3>
+<p>The more information a buyer has, the greater the chance of picking a plum from the cars in the mixed market.</p>
+<p>By consulting information sources, like Carfax.com or a local car mechanic, a buyer improves the chances of getting a high-quality car.</p>
+<h3 id="consumer-satisfaction-scores-from-angies-list-and-ebay">14.2.2 Consumer Satisfaction Scores from Angie‘s List and eBay</h3>
+<p>Some organizations provide information about firms that provide consumers services such as landscaping, auto repair, and home improvement.</p>
+<p>The members of Angie’s list use grades of A to F to rate companies, with grades based on price, the quality of service, and the punctuality and responsiveness of workers.</p>
+<p>Buyers help other purchasers distinguish “good” from “bad” sellers on eBay by rating them online with “stars,” indicating their satisfaction with their transactions.</p>
+<h3 id="guarantees-and-lemons-laws">14.2.3 Guarantees and Lemons Laws</h3>
+<p>Used-car sellers also have an incentive to solve the lemons problem. Sellers can identify a car as a plum in a sea of lemons by offering one of the following guarantees:</p>
+<ul>
+<li><em>Money-back guarantees</em>. The seller could promise to refund the $4,000 price if the car turns out to be a lemon. Because the car is in fact a plum–a fact known by the seller–the buyer will not ask for a refund, so both the buyer and the seller will be happy with the transaction.</li>
+<li><em>Warranties and repair guarantees</em>. The seller could promise to cover any extraordinary repair costs for 1 year. Because the car is a plum, there won’t be any extraordinary costs, so both the buyer and the seller will be happy with the transaction.</li>
+</ul>
+<p>California’s Song-Beverly Consumer Warranty Act, also known as the “Lemons Law,” auto dealers are required to repurchase vehicles that have been brought back for repair at least four times for the same problem or have been in the mechanic’s shop for at least 30 calendar days in the first year following purchase.</p>
+<h2 id="adverse-selection-for-sellers-insurance">14.3 Adverse Selection for Sellers: Insurance</h2>
+<p>The same sorts of problems occur when buyers are more knowledgeable than sellers. The best example of superior knowledge on the demand side of the market is insurance. A person who buys an insurance policy knows much more about his or her risks and needs for insurance than the insurance company knows.</p>
+<h3 id="health-insurance">14.3.1 Health Insurance</h3>
+<p>The insurance company cannot distinguish between high-cost and low-cost people, but it still must pick a price for its coverage.</p>
+<p>To simplify matters, let’s assume the insurance company sets the price equal to its average cost per customer, equal to the total medical bills paid by the insurance company divided by the number of customers.</p>
+<p>What is the insurance company’s average cost per customer? To determine the average cost in a mixed market, we must answer three questions:</p>
+<ul>
+<li>What is the cost of providing medical care to a high-cost person?</li>
+<li>What is the cost of providing medical care to a low-cost person?</li>
+<li>What fraction of the customers are low-cost people?</li>
+</ul>
+<p>Suppose that half the population is high cost and the other half is low cost. Let’s assume the insurance company is somewhat naive and initially assumes that he mix of insurance buyers will be the same as the population mix.</p>
+<p>There is asymmetric information in the insurance market because <strong>potential buyers know from everyday experience and family histories what type of customer they are, either low cost or high cost.</strong> For each person, the question is “Given the single market price for all insurance, for low-cost and high-cost people alike, should I buy insurance?” The answers to this question are shown in two demand curves in Figure 14.3. The demand curve for the high-cost people is higher than the curve for the low-cost people, reflecting their larger benefits from having medical insurance.</p>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-14/ch-14_figure-14.3.png" alt="Figure 14.3 All Insurance Customers Are High-Cost People" /><figcaption>Figure 14.3 All Insurance Customers Are High-Cost People</figcaption>
+</figure>
+<blockquote>
+<p>If insurance companies assume there will be a 50–50 split between high-cost and low-cost customers, the average cost of insurance and its price is $4,000. At this price, there are 25 low-cost customers (point a) and 75 high-cost customers (point b). This is not an equilibrium because 75 percent of insurance buyers are high-cost customers, contrary to the expectations of a 50–50 split. If insurance companies become pessimistic and assume that all buyers will be high-cost consumers, the average cost and price is $6,000. The insurance company’s expectations are realized, so the equilibrium is shown by point c.</p>
+</blockquote>
+<h3 id="equilibrium-with-all-high-cost-consumers">14.3.2 Equilibrium with All High-Cost Consumers</h3>
+<p>Table 14.3 shows two scenarios for our hypothetical insurance market, with numbers based on the demand curves shown in Figure 14.3. In the first column, firms initially assume a 50–50 mix of customers.</p>
+<p>From the demand curves in Figure 14.3, we know that at this price 25 low-cost people will buy insurance (point a), along with 75 high-cost people (point b). In this case, insurance companies are too optimistic and underestimate the fraction of customers with large medical bills. <strong>The actual fraction of high-cost customers is 75 percent, and the actual average cost is $5,000 (equal to 0.25 times $2,000, plus 0.75 times $6,000). The company’s average cost of $5,000 exceeds its price of $4,000, so the firm will lose money.</strong></p>
+<p><strong>Table 14.3</strong> Equilibrium with All Heigh-Cost Customers</p>
+<table>
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 19%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Supply side of market</th>
+<th>50 50 Expectations</th>
+<th>Equilibrium: Pessimistic Expectation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cost of serving a high-cost customer</td>
+<td>$6,000</td>
+<td>$6,000</td>
+</tr>
+<tr class="even">
+<td>Cost of serving a low-cost customer</td>
+<td>$2,000</td>
+<td>$2,000</td>
+</tr>
+<tr class="odd">
+<td>Assumed fraction of high-cost customers</td>
+<td>50%</td>
+<td>100%</td>
+</tr>
+<tr class="even">
+<td>Assumed chance of low-cost customers</td>
+<td>50%</td>
+<td>0%</td>
+</tr>
+<tr class="odd">
+<td>Expected average cost per customer (price)</td>
+<td>$4,000</td>
+<td>$6,000</td>
+</tr>
+<tr class="even">
+<td><strong>Demand Side of Market</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Number of high-cost customers</td>
+<td>75</td>
+<td>40</td>
+</tr>
+<tr class="even">
+<td>Number of low-cost customers</td>
+<td>25</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Total number of customers</td>
+<td>100</td>
+<td>40</td>
+</tr>
+<tr class="even">
+<td>Actual fraction of high-cost customer so</td>
+<td>75%</td>
+<td>100%</td>
+</tr>
+<tr class="odd">
+<td>Actual average cost per customer</td>
+<td>$5,000</td>
+<td>$6,000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>They assume that all their customers will be high-cost people.</strong> Under this assumption, the average cost per customer is $6,000, the average cost per high-cost customer, and that’s the pessimistic price. As shown in Figure 14.3, this price exceeds the maximum that low-cost people are willing to pay for insurance ($5,200), <strong>so none of the low-cost consumers will buy insurance at this price.</strong> But a total of 40 high-cost consumers will buy insurance at this price (point c).</p>
+<p>The domination of the insurance market by high-cost people is another example of the adverse-selection problem. The uninformed side of the market (sellers in this case) must choose from an undesirable or adverse selection of consumers. The asymmetric information in the market generates an upward spiral of price and average cost of service:</p>
+<ul>
+<li>The presence of high-cost consumers in the market pulls up the average cost of service, pulling up the price.</li>
+<li>The increase in price decreases the number of low-cost consumers who purchase insurance.</li>
+<li>This decrease in the number of low-cost consumers pulls up the average cost of insurance.</li>
+<li>In the extreme case, the upward spiral continues until all insurance customers are high-cost people.</li>
+</ul>
+<p>Our example of health insurance indicates that only high-cost people buy insurance. A more realistic outcome is a thin market, with a relatively small number of low-cost people buying insurance. <strong>The adverse-selection problem could be less severe, but it will still be present as long as insurance companies cannot distinguish perfectly between low-cost and high-cost people.</strong></p>
+<h3 id="responding-to-adverse-selection-in-insurance-group-insurance">14.3.3 Responding to Adverse Selection in Insurance: Group Insurance</h3>
+<p><strong>Insurance companies use group insurance plans to diminish the adverse-selection problem.</strong> By enrolling all the employees of an organization in one or two insurance plans, they ensure that all workers, not just high-cost people, join the pool of consumers.</p>
+<p>Most insurance companies use experience rating to set their prices for group insurance.</p>
+<p><a name="experience-rating-term"><strong>Experience rating</strong></a></p>
+<ul>
+<li>A situation in which insurance companies charge different prices for medical insurance to different firms depending on the past medical bills of a firm’s employees.</li>
+</ul>
+<p>A firm whose employees have low medical bills pays a low price for its employees’ health insurance. <strong>Experience rating gives firms an incentive to decrease the health costs of their workers by investing in safety and health programs for them.</strong> Firms also have an incentive to avoid hiring applicants with health problems.</p>
+<h3 id="the-uninsured">14.3.4 The Uninsured</h3>
+<p>One implication of asymmetrical information in insurance markets is that many people will not voluntarily carry insurance.</p>
+<p><a name="the-affordable-care-act-term"><strong>The Affordable Care Act (ACA)</strong></a></p>
+<ul>
+<li>Includes a provision commonly known as the individual mandate that requires most residents of the U.S. to have health insurance that meets specified standards for coverage.</li>
+<li>The provision imposes penalties on people who do not have health insurance.</li>
+</ul>
+<p>The individual mandate reduced the problem of the uninsured by increasing the number of people with health insurance.</p>
+<h2 id="insurance-and-moral-hazard">14.4 Insurance and Moral Hazard</h2>
+<p>Does insurance affect people’s risk-taking behavior? The answer is yes. Insurance causes people to take greater risks because they know part of the cost of an undesirable outcome will be borne by their insurance companies. The risky behavior triggered by insurance is an example of the moral-hazard problem.</p>
+<p><a name="moral-hazard-term"><strong>Moral hazard</strong></a></p>
+<ul>
+<li>A situation in which one side of an economic relationship takes undesirable or costly actions that the other side of the relationship cannot observe.</li>
+</ul>
+<p>Just as collision insurance encourages risky driving, life insurance encourages risky activities such as flying small airplanes, parachuting, and bungee jumping. Similarly, health insurance encourages risky behavior such as smoking, drinking, and unhealthy diets.</p>
+<h3 id="insurance-companies-and-moral-hazard">14.4.1 Insurance Companies and Moral Hazard</h3>
+<p>Insurance companies use various measures to decrease the moral-hazard problem. Many insurance policies have a deductible–a dollar amount that a policyholder must pay before getting compensation from the insurance company.</p>
+<p>Savvy insurance companies anticipate moral hazard and set its price accordingly.</p>
+<h2 id="chapter-summary">Chapter Summary</h2>
+<p>In this chapter, we’ve seen what happens when one of the assumptions underlying most supply and demand analysis–that people make informed decisions–is violated. If either buyers or sellers don’t have reliable information about a particular good or service, the market will suffer from the adverse-selection problem. The uninformed side picks from an adverse selection of goods or customers. Here are the main points of the chapter:</p>
+<ol type="1">
+<li>The <em>adverse-selection problem</em> occurs when one side of the market cannot distinguish between high-quality and low-quality goods. The presence of low-quality goods pulls down the price that buyers are willing to pay, which decreases the quantity of high-quality goods supplied, which further decreases the average quality and the price. In the extreme case, only low-quality goods are sold.</li>
+<li>A <em>thin market</em> occurs when the sellers of high-quality goods have a relatively low minimum supply price, so some high-quality goods are sold.</li>
+<li>In a market subject to <em>asymmetric information</em>, buyers have an incentive to invest in information to help make better choices and sellers have an incentive to provide quality guarantees.</li>
+<li>Insurance markets suffer from adverse selection because compared to insurance sellers, buyers have better information about the risks they face.</li>
+<li>Insurance encourages risky behavior because part of the cost of an unfavorable outcome will be paid by an insurance company.</li>
+<li>A market is in <em>equilibrium</em> when consumers’ expectations are consistent with their actual experiences.
+<ul>
+<li><strong>Price will drop</strong> when the market is <strong>too optimistic with lemons</strong>.</li>
+<li><strong>Price will stay the same</strong> when the market is in <strong>equilibrium</strong>.</li>
+<li><strong>Price will rise</strong> when the market is <strong>too pessimistic with lemons</strong>.</li>
+</ul></li>
+</ol>
+<p><br></p>
+<h1 id="references">References</h1>
+<p>Text Books</p>
+<ul>
+<li>Microeconomics: <em>Principles, Applications, and Tools</em> 10th ed (eText).
+<ul>
+<li>Authors: O’Sullivan/Sheffrin/Perez</li>
+</ul></li>
+</ul>
+<hr>
+<div>
+<div style="text-align: center; font-size: 11px; letter-spacing: 2px;">
+<a href="../../../index.html">Wiki Root</a>
+</div>
+</div>
+</article>
+</body>
+</html>
