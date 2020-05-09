@@ -47,6 +47,7 @@ Textbook
   - [Chapter 10](notes/ch-10) -- Monopoly and Price Discrimination
   - [Chapter 11](notes/ch-11) -- Market Entry and Monopolistic Competition
   - [Chapter 12](notes/ch-12) -- Oligopoly and Strategic Behavior
+  - [Chapter 14](notes/ch-14) -- Imperfect Information: Adverse Selection and Moral Hazard
 
 ## Exams
 
