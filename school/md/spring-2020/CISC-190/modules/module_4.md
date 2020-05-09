@@ -16,7 +16,7 @@ summary: Module 4 notes and exercises
 
 ### Read and Try
 
-![Read and Try Image](file:../../../../files/spring-2020/CISC-190/module-4/read-and-try/m-4_ReadAndTry.png)
+![Read and Try Image](../../../../files/spring-2020/CISC-190/module-4/read-and-try/m-4_ReadAndTry.png)
 
   - [NestedLoops.java](vfile:../../../../files/spring-2020/CISC-190/module-4/read-and-try/NestedLoops.java)
   - [Picture.java](vfile:../../../../files/spring-2020/CISC-190/module-4/read-and-try/Picture.java)
@@ -28,14 +28,14 @@ summary: Module 4 notes and exercises
 
 ### Simple Collage
 
-![Simple Collage Image](file:../../../../files/spring-2020/CISC-190/module-4/simple-collage/m-4_SimpleCollage.png)
+![Simple Collage Image](../../../../files/spring-2020/CISC-190/module-4/simple-collage/m-4_SimpleCollage.png)
 
   - [SimpleCollage.java](vfile:../../../../files/spring-2020/CISC-190/module-4/simple-collage/SimpleCollage.java)
   - [Picture.java](vfile:../../../../files/spring-2020/CISC-190/module-4/simple-collage/Picture.java)
 
 ### Technical Interview Practice
 
-![Swap Colors Image](file:../../../../files/spring-2020/CISC-190/module-4/tip/SwapColors.png)
+![Swap Colors Image](../../../../files/spring-2020/CISC-190/module-4/tip/SwapColors.png)
 
   - [SwapColors.java](vfile:../../../../files/spring-2020/CISC-190/module-4/tip/SwapColors.java)
   - [Picture.java](vfile:../../../../files/spring-2020/CISC-190/module-4/tip/Picture.java)

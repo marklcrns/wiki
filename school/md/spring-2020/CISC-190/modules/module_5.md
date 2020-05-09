@@ -16,25 +16,25 @@ summary: Module 5 notes and exercises
 
 ### Read and Try
 
-![Conditional Execution Image](file:../../../../files/spring-2020/CISC-190/module-5/read-and-try/m-5_readAndTry.png)
+![Conditional Execution Image](../../../../files/spring-2020/CISC-190/module-5/read-and-try/m-5_readAndTry.png)
 
   - [M5ConditionalExecution.java ](vfile:../../../../files/spring-2020/CISC-190/module-5/read-and-try/M5ConditionalExecution.java)
   - [Picture.java ](vfile:../../../../files/spring-2020/CISC-190/module-5/read-and-try/Picture.java)
 
 ### Persusall Discussion
 
-![Make Bird A Convict](file:../../../../files/spring-2020/CISC-190/module-5/perusall-discussion/m-5_green-bird.png)
+![Make Bird A Convict](../../../../files/spring-2020/CISC-190/module-5/perusall-discussion/m-5_green-bird.png)
 
 ### Advanced Collage
 
-![Advanced Collage](file:../../../../files/spring-2020/CISC-190/module-5/advanced-collage/Lucernas_AdvancedCollage.jpg)
+![Advanced Collage](../../../../files/spring-2020/CISC-190/module-5/advanced-collage/Lucernas_AdvancedCollage.jpg)
 
   - [AdvancedCollage.java](vfile:../../../../files/spring-2020/CISC-190/module-5/advanced-collage/AdvancedCollage.java)
   - [Picture.java](vfile:../../../../files/spring-2020/CISC-190/module-5/advanced-collage/Picture.java)
 
 ### Chromakey
 
-![Chromakey](file:../../../../files/spring-2020/CISC-190/module-5/chromakey/Lucernas_Chromakey.jpg)
+![Chromakey](../../../../files/spring-2020/CISC-190/module-5/chromakey/Lucernas_Chromakey.jpg)
 
   - [Chromakey.java](vfile:../../../../files/spring-2020/CISC-190/module-5/chromakey/Chromakey.java)
   - [Picture.java](vfile:../../../../files/spring-2020/CISC-190/module-5/chromakey/Picture.java)
@@ -46,7 +46,7 @@ summary: Module 5 notes and exercises
 
 ### Technical Interview Practice
 
-![Conditional Execution](file:../../../../files/spring-2020/CISC-190/module-5/tip-practice/m5_tip_conditionalExecution.png)
+![Conditional Execution](../../../../files/spring-2020/CISC-190/module-5/tip-practice/m5_tip_conditionalExecution.png)
 
 ### Explain
 

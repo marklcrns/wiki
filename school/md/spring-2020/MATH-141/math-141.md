@@ -116,7 +116,7 @@ date: 2020-02-05
       ABCD, 29) BCDE, 30) E
   - [Quiz 11 Questionnaire](file:../../../files/spring-2020/MATH-141/ch-6/math-141_quiz_11.pdf)
     * Score: 110/110
-    *
+    * [Quiz 11 Solutions](file:../../../files/spring-2020/MATH-141/ch-6/math-141_quiz_11_solutions.pdf)
     * Answers: 1) BC, 2) B, 3) ABCDEF, 4) ABC, 5) B, 6) ABD, 7) A, 8) B, 9) A,
       10) B, 11) AB, 12) B, 13) BC, 14) BCDEFG, 15) AB, 16) ABC, 17) BC, 18)
       BCDEFGH, 19) A, 20) A, 21) AB, 22) A, 23) A, 24) A, 25) BC, 26) ACDE, 27)
@@ -138,7 +138,7 @@ date: 2020-02-05
 
 Practice
 
-  - [Pre Examination Worksheet](file:../../../files/spring-2020/MATH-141/exam-1/exam-1_preExamWorksheet.pdf)
+  - [Exam 1 Pre Examination Worksheet](file:../../../files/spring-2020/MATH-141/exam-1/exam-1_preExamWorksheet.pdf)
     * [Solutions](file:../../../files/spring-2020/MATH-141/exam-1/exam-1_preExamWorksheet_solution.pdf)
   - [Algebra Review](file:../../../files/spring-2020/MATH-141/exam-1/exam-1_algebraReview.pdf)
 
@@ -153,7 +153,7 @@ Exam
 
 Practice
 
-  - [Pre Examination Worksheet](file:../../../files/spring-2020/MATH-141/exam-2/exam-2_preExamWorksheet.pdf)
+  - [Exam 2 Pre Examination Worksheet](file:../../../files/spring-2020/MATH-141/exam-2/exam-2_preExamWorksheet.pdf)
 
 Exam
 
