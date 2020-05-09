@@ -9,9 +9,9 @@ summary: College notes
 
 ## Spring 2020
 
-![Daily Schedule](file:../files/spring-2020/spring-2020_dailySchedule_v2.png)
+Start/End Date: 2020-02-03 -- 2020-06-01
 
-Courses:
+### Classes
 
   - [CISC 190](spring-2020/CISC-190/cisc-190) -- Java Programming (23337 - online)
   - [ECON 121](spring-2020/ECON-121/econ-121) -- Principles of Microeconomics (21661 - online)
@@ -20,3 +20,6 @@ Courses:
     * dropped on 2020-02-13
 
 Total Units Enrolled: $15 - 3 = \mathbf{12}$ units
+
+![Daily Schedule](file:../files/spring-2020/spring-2020_dailySchedule_v2.png)
+
