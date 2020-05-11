@@ -76,13 +76,7 @@ Examples of Cartesian to Polar
 Examples of Polar to Cartesian
 
   - $r = 6\cos(\theta)$ [(5:52)](https://www.youtube.com/watch?v=eWFJo--R8w4&t=352)
-    * $\color{#ff0000}{r} \cdot r = \color{#ff0000}{r} \cdot 6\cos(\theta)$
-    * $r^{{\color{#ff0000}{2}}} = 6 \cdot r\cos(\theta)$
-    * $\color{#ff0000}{x^{2} + y^{2}} = 6\color{#ff0000}{x}$
   - $\theta = 2.5$ [(10:13)](https://www.youtube.com/watch?v=eWFJo--R8w4&t=613)
-    * $\color{#ff0000}{\tan(}\theta\color{#ff0000}{)} = \color{#ff0000}{\tan(}2.5\color{#ff0000}{)}$
-    * $\color{#ff0000}{\frac{y}{x}} = \tan(2.5)$
-    * $y = \tan(2.5) \cdot \color{#ff0000}{x}$
 
 
 ## 7.3 Complex Numbers Intro
@@ -146,7 +140,7 @@ Using Conjugates
 #### Video Lecture Notes
 
   - $i = e^{i \cdot 90^{\circ}}$ [(21:26)](https://www.youtube.com/watch?v=IoOKpGrL0RQ&t=1286)
-  - $0 = e^{i\p} + 1$
+  - $0 = e^{i \pi} + 1$
 
 <a name="euler's-identity-term">**Euler's identity**</a>
 
