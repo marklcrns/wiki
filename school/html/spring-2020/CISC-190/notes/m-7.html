@@ -156,6 +156,13 @@ Inheritance and Polymorphism
 <li><a href="#the-java-event-model">13.5 The Java Event Model</a></li>
 <li><a href="#case-study-designing-a-basic-gui">13.6 CASE STUDY: Designing a Basic GUI</a></li>
 <li><a href="#containers-and-layout-managers">13.7 Containers and Layout Managers</a></li>
+<li><a href="#checkboxes-radio-buttons-and-borders">13.8 Checkboxes, Radio Buttons, and Borders</a></li>
+<li><a href="#menus-and-scroll-panes">13.9 Menus and Scroll Panes</a></li>
+</ul></li>
+<li><a href="#file-input-and-output">File Input and Output</a><ul>
+<li><a href="#creating-a-handle-to-a-file">Creating a Handle to a File</a></li>
+<li><a href="#reading-from-a-text-file">Reading from a Text File</a></li>
+<li><a href="#writing-to-a-text-file">Writing to a Text File</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#references">References</a></li>
@@ -570,24 +577,25 @@ Inheritance and Polymorphism
 <a class="sourceLine" id="cb23-9" title="9">  <span class="kw">private</span> <span class="bu">String</span> labels[] = <span class="co">// and array of button labels</span></a>
 <a class="sourceLine" id="cb23-10" title="10">              { <span class="st">&quot;1&quot;</span>, <span class="st">&quot;2&quot;</span>, <span class="st">&quot;3&quot;</span>,</a>
 <a class="sourceLine" id="cb23-11" title="11">                <span class="st">&quot;4&quot;</span>, <span class="st">&quot;5&quot;</span>, <span class="st">&quot;6&quot;</span>,</a>
-<a class="sourceLine" id="cb23-12" title="12">                <span class="st">&quot;7&quot;</span>, <span class="st">&quot;8&quot;</span>, <span class="st">&quot;9&quot;</span>};</a>
-<a class="sourceLine" id="cb23-13" title="13"></a>
-<a class="sourceLine" id="cb23-14" title="14">  <span class="kw">public</span> <span class="fu">KeyPad</span>(KeyPadClient kpc) {</a>
-<a class="sourceLine" id="cb23-15" title="15">    <span class="kw">this</span>.<span class="fu">kpc</span> = kpc;</a>
-<a class="sourceLine" id="cb23-16" title="16">    buttons = <span class="kw">new</span> <span class="bu">JButton</span>[NBUTTONS]; <span class="co">// Create the array</span></a>
-<a class="sourceLine" id="cb23-17" title="17">    <span class="co">// For each labeled button</span></a>
-<a class="sourceLine" id="cb23-18" title="18">    <span class="kw">for</span> (<span class="dt">int</span> k = <span class="dv">0</span>;k &lt; buttons.<span class="fu">length</span>; k++) {</a>
-<a class="sourceLine" id="cb23-19" title="19">      buttons[k] = <span class="kw">new</span> <span class="bu">JButton</span>(labels[k]); <span class="co">// Create button</span></a>
-<a class="sourceLine" id="cb23-20" title="20">      buttons[k].<span class="fu">addActionListener</span>(<span class="kw">this</span>); <span class="co">// and a listener</span></a>
-<a class="sourceLine" id="cb23-21" title="21">      <span class="fu">add</span>(buttons[k]); <span class="co">// and add it to the panel</span></a>
-<a class="sourceLine" id="cb23-22" title="22">    } <span class="co">// for</span></a>
-<a class="sourceLine" id="cb23-23" title="23">  } <span class="co">// KeyPad()</span></a>
-<a class="sourceLine" id="cb23-24" title="24"></a>
-<a class="sourceLine" id="cb23-25" title="25">  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">actionPerformed</span>(<span class="bu">ActionEvent</span> e) {</a>
-<a class="sourceLine" id="cb23-26" title="26">    <span class="bu">String</span> keylabel = ((<span class="bu">JButton</span>)e.<span class="fu">getSource</span>()).<span class="fu">getText</span>();</a>
-<a class="sourceLine" id="cb23-27" title="27">    kpc.<span class="fu">keypressCallback</span>(keylabel);</a>
-<a class="sourceLine" id="cb23-28" title="28">  } <span class="co">// actionPerformed()</span></a>
-<a class="sourceLine" id="cb23-29" title="29">} <span class="co">// KeyPad</span></a></code></pre></div>
+<a class="sourceLine" id="cb23-12" title="12">                <span class="st">&quot;7&quot;</span>, <span class="st">&quot;8&quot;</span>, <span class="st">&quot;9&quot;</span>,</a>
+<a class="sourceLine" id="cb23-13" title="13">                <span class="st">&quot;C&quot;</span>, <span class="st">&quot;0&quot;</span>, <span class="st">&quot;.&quot;</span> };</a>
+<a class="sourceLine" id="cb23-14" title="14"></a>
+<a class="sourceLine" id="cb23-15" title="15">  <span class="kw">public</span> <span class="fu">KeyPad</span>(KeyPadClient kpc) {</a>
+<a class="sourceLine" id="cb23-16" title="16">    <span class="kw">this</span>.<span class="fu">kpc</span> = kpc;</a>
+<a class="sourceLine" id="cb23-17" title="17">    buttons = <span class="kw">new</span> <span class="bu">JButton</span>[NBUTTONS]; <span class="co">// Create the array</span></a>
+<a class="sourceLine" id="cb23-18" title="18">    <span class="co">// For each labeled button</span></a>
+<a class="sourceLine" id="cb23-19" title="19">    <span class="kw">for</span> (<span class="dt">int</span> k = <span class="dv">0</span>;k &lt; buttons.<span class="fu">length</span>; k++) {</a>
+<a class="sourceLine" id="cb23-20" title="20">      buttons[k] = <span class="kw">new</span> <span class="bu">JButton</span>(labels[k]); <span class="co">// Create button</span></a>
+<a class="sourceLine" id="cb23-21" title="21">      buttons[k].<span class="fu">addActionListener</span>(<span class="kw">this</span>); <span class="co">// and a listener</span></a>
+<a class="sourceLine" id="cb23-22" title="22">      <span class="fu">add</span>(buttons[k]); <span class="co">// and add it to the panel</span></a>
+<a class="sourceLine" id="cb23-23" title="23">    } <span class="co">// for</span></a>
+<a class="sourceLine" id="cb23-24" title="24">  } <span class="co">// KeyPad()</span></a>
+<a class="sourceLine" id="cb23-25" title="25"></a>
+<a class="sourceLine" id="cb23-26" title="26">  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">actionPerformed</span>(<span class="bu">ActionEvent</span> e) {</a>
+<a class="sourceLine" id="cb23-27" title="27">    <span class="bu">String</span> keylabel = ((<span class="bu">JButton</span>)e.<span class="fu">getSource</span>()).<span class="fu">getText</span>();</a>
+<a class="sourceLine" id="cb23-28" title="28">    kpc.<span class="fu">keypressCallback</span>(keylabel);</a>
+<a class="sourceLine" id="cb23-29" title="29">  } <span class="co">// actionPerformed()</span></a>
+<a class="sourceLine" id="cb23-30" title="30">} <span class="co">// KeyPad</span></a></code></pre></div>
 <p>Re-implement <code>Converter</code> class to include <code>KeyPadClient</code> interface, which means it must provide an implementation of the <code>keypressCallback()</code> method:</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb24-1" title="1"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">keypressCallback</span>(<span class="bu">String</span> s) {</a>
 <a class="sourceLine" id="cb24-2" title="2">  <span class="kw">if</span> (s.<span class="fu">equals</span>(<span class="st">&quot;C&quot;</span>))</a>
@@ -608,44 +616,420 @@ Inheritance and Polymorphism
 <a class="sourceLine" id="cb25-9" title="9">  <span class="kw">private</span> <span class="bu">JTextField</span> input = <span class="kw">new</span> <span class="bu">JTextField</span>(<span class="dv">6</span>);</a>
 <a class="sourceLine" id="cb25-10" title="10">  <span class="kw">private</span> <span class="bu">JTextArea</span> display = <span class="kw">new</span> <span class="bu">JTextArea</span>(<span class="dv">10</span>, <span class="dv">20</span>);</a>
 <a class="sourceLine" id="cb25-11" title="11">  <span class="kw">private</span> <span class="bu">JButton</span> convert = <span class="kw">new</span> <span class="bu">JButton</span>(<span class="st">&quot;Convert!&quot;</span>);</a>
-<a class="sourceLine" id="cb25-12" title="12"></a>
-<a class="sourceLine" id="cb25-13" title="13">  <span class="kw">public</span> <span class="fu">Converter</span>() {</a>
-<a class="sourceLine" id="cb25-14" title="14">    <span class="fu">getContentPane</span>().<span class="fu">setLayout</span>(<span class="kw">new</span> <span class="bu">FlowLayout</span>());</a>
-<a class="sourceLine" id="cb25-15" title="15">    <span class="fu">getContentPane</span>().<span class="fu">add</span>(prompt);</a>
-<a class="sourceLine" id="cb25-16" title="16">    <span class="fu">getContentPane</span>().<span class="fu">add</span>(input);</a>
-<a class="sourceLine" id="cb25-17" title="17">    <span class="fu">getContentPane</span>().<span class="fu">add</span>(convert);</a>
-<a class="sourceLine" id="cb25-18" title="18">    <span class="fu">getContentPane</span>().<span class="fu">add</span>(display);</a>
-<a class="sourceLine" id="cb25-19" title="19">    display.<span class="fu">setLineWrap</span>(<span class="kw">true</span>);</a>
-<a class="sourceLine" id="cb25-20" title="20">    display.<span class="fu">setEditable</span>(<span class="kw">false</span>);</a>
-<a class="sourceLine" id="cb25-21" title="21">    convert.<span class="fu">addActionListener</span>(<span class="kw">this</span>);</a>
-<a class="sourceLine" id="cb25-22" title="22">    input.<span class="fu">addActionListener</span>(<span class="kw">this</span>);</a>
-<a class="sourceLine" id="cb25-23" title="23">  } <span class="co">// Converter()</span></a>
-<a class="sourceLine" id="cb25-24" title="24"></a>
-<a class="sourceLine" id="cb25-25" title="25">  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">actionPerformed</span>( <span class="bu">ActionEvent</span> e ) {</a>
-<a class="sourceLine" id="cb25-26" title="26">    <span class="dt">double</span> miles =</a>
-<a class="sourceLine" id="cb25-27" title="27">      <span class="bu">Double</span>.<span class="fu">valueOf</span>(input.<span class="fu">getText</span>()).<span class="fu">doubleValue</span>();</a>
-<a class="sourceLine" id="cb25-28" title="28">    <span class="dt">double</span> km = MetricConverter.<span class="fu">milesToKm</span>(miles);</a>
-<a class="sourceLine" id="cb25-29" title="29">    display.<span class="fu">append</span>(miles + <span class="st">&quot; miles equals &quot;</span> + km + <span class="st">&quot; Kilometers</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
-<a class="sourceLine" id="cb25-30" title="30">  } <span class="co">// actionPerformed();</span></a>
-<a class="sourceLine" id="cb25-31" title="31"></a>
-<a class="sourceLine" id="cb25-32" title="32">  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">keypressCallback</span>(<span class="bu">String</span> s) {</a>
-<a class="sourceLine" id="cb25-33" title="33">    <span class="kw">if</span> (s.<span class="fu">equals</span>(<span class="st">&quot;C&quot;</span>))</a>
-<a class="sourceLine" id="cb25-34" title="34">      input.<span class="fu">setText</span>(<span class="st">&quot;&quot;</span>);</a>
-<a class="sourceLine" id="cb25-35" title="35">    <span class="kw">else</span></a>
-<a class="sourceLine" id="cb25-36" title="36">      input.<span class="fu">setText</span>(input.<span class="fu">getText</span>() + s);</a>
-<a class="sourceLine" id="cb25-37" title="37">  } <span class="co">// keypressCallBack()</span></a>
-<a class="sourceLine" id="cb25-38" title="38"></a>
-<a class="sourceLine" id="cb25-39" title="39">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span> args[]) {</a>
-<a class="sourceLine" id="cb25-40" title="40">    Converter f = <span class="kw">new</span> <span class="fu">Converter</span>();</a>
-<a class="sourceLine" id="cb25-41" title="41">    f.<span class="fu">setSize</span>(<span class="dv">400</span>, <span class="dv">300</span>);</a>
-<a class="sourceLine" id="cb25-42" title="42">    f.<span class="fu">setVisible</span>(<span class="kw">true</span>);</a>
-<a class="sourceLine" id="cb25-43" title="43">    f.<span class="fu">addWindowListener</span>(<span class="kw">new</span> <span class="bu">WindowAdapter</span>() {</a>
-<a class="sourceLine" id="cb25-44" title="44">      <span class="kw">public</span> <span class="dt">void</span> <span class="fu">windowClosing</span>(<span class="bu">WindowEvent</span> e) {</a>
-<a class="sourceLine" id="cb25-45" title="45">        <span class="bu">System</span>.<span class="fu">exit</span>(<span class="dv">0</span>); <span class="co">// Quit the application</span></a>
-<a class="sourceLine" id="cb25-46" title="46">      }</a>
-<a class="sourceLine" id="cb25-47" title="47">    });</a>
-<a class="sourceLine" id="cb25-48" title="48">  } <span class="co">// main()</span></a>
-<a class="sourceLine" id="cb25-49" title="49">} <span class="co">// Converter</span></a></code></pre></div>
+<a class="sourceLine" id="cb25-12" title="12">  <span class="kw">private</span> KeyPad keypad = <span class="kw">new</span> <span class="fu">KeyPad</span>(<span class="kw">this</span>);</a>
+<a class="sourceLine" id="cb25-13" title="13"></a>
+<a class="sourceLine" id="cb25-14" title="14">  <span class="kw">public</span> <span class="fu">Converter</span>() {</a>
+<a class="sourceLine" id="cb25-15" title="15">    <span class="fu">getContentPane</span>().<span class="fu">setLayout</span>(<span class="kw">new</span> <span class="bu">FlowLayout</span>());</a>
+<a class="sourceLine" id="cb25-16" title="16">    <span class="fu">getContentPane</span>().<span class="fu">add</span>(prompt);</a>
+<a class="sourceLine" id="cb25-17" title="17">    <span class="fu">getContentPane</span>().<span class="fu">add</span>(input);</a>
+<a class="sourceLine" id="cb25-18" title="18">    <span class="fu">getContentPane</span>().<span class="fu">add</span>(convert);</a>
+<a class="sourceLine" id="cb25-19" title="19">    <span class="fu">getContentPane</span>().<span class="fu">add</span>(display);</a>
+<a class="sourceLine" id="cb25-20" title="20">    <span class="fu">getContentPane</span>().<span class="fu">add</span>(keypad);</a>
+<a class="sourceLine" id="cb25-21" title="21">    display.<span class="fu">setLineWrap</span>(<span class="kw">true</span>);</a>
+<a class="sourceLine" id="cb25-22" title="22">    display.<span class="fu">setEditable</span>(<span class="kw">false</span>);</a>
+<a class="sourceLine" id="cb25-23" title="23">    convert.<span class="fu">addActionListener</span>(<span class="kw">this</span>);</a>
+<a class="sourceLine" id="cb25-24" title="24">    input.<span class="fu">addActionListener</span>(<span class="kw">this</span>);</a>
+<a class="sourceLine" id="cb25-25" title="25">  } <span class="co">// Converter()</span></a>
+<a class="sourceLine" id="cb25-26" title="26"></a>
+<a class="sourceLine" id="cb25-27" title="27">  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">actionPerformed</span>( <span class="bu">ActionEvent</span> e ) {</a>
+<a class="sourceLine" id="cb25-28" title="28">    <span class="dt">double</span> miles =</a>
+<a class="sourceLine" id="cb25-29" title="29">      <span class="bu">Double</span>.<span class="fu">valueOf</span>(input.<span class="fu">getText</span>()).<span class="fu">doubleValue</span>();</a>
+<a class="sourceLine" id="cb25-30" title="30">    <span class="dt">double</span> km = MetricConverter.<span class="fu">milesToKm</span>(miles);</a>
+<a class="sourceLine" id="cb25-31" title="31">    display.<span class="fu">append</span>(miles + <span class="st">&quot; miles equals &quot;</span> + km + <span class="st">&quot; Kilometers</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
+<a class="sourceLine" id="cb25-32" title="32">  } <span class="co">// actionPerformed();</span></a>
+<a class="sourceLine" id="cb25-33" title="33"></a>
+<a class="sourceLine" id="cb25-34" title="34">  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">keypressCallback</span>(<span class="bu">String</span> s) {</a>
+<a class="sourceLine" id="cb25-35" title="35">    <span class="kw">if</span> (s.<span class="fu">equals</span>(<span class="st">&quot;C&quot;</span>))</a>
+<a class="sourceLine" id="cb25-36" title="36">      input.<span class="fu">setText</span>(<span class="st">&quot;&quot;</span>);</a>
+<a class="sourceLine" id="cb25-37" title="37">    <span class="kw">else</span></a>
+<a class="sourceLine" id="cb25-38" title="38">      input.<span class="fu">setText</span>(input.<span class="fu">getText</span>() + s);</a>
+<a class="sourceLine" id="cb25-39" title="39">  } <span class="co">// keypressCallBack()</span></a>
+<a class="sourceLine" id="cb25-40" title="40"></a>
+<a class="sourceLine" id="cb25-41" title="41">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span> args[]) {</a>
+<a class="sourceLine" id="cb25-42" title="42">    Converter f = <span class="kw">new</span> <span class="fu">Converter</span>();</a>
+<a class="sourceLine" id="cb25-43" title="43">    f.<span class="fu">setSize</span>(<span class="dv">400</span>, <span class="dv">300</span>);</a>
+<a class="sourceLine" id="cb25-44" title="44">    f.<span class="fu">setVisible</span>(<span class="kw">true</span>);</a>
+<a class="sourceLine" id="cb25-45" title="45">    f.<span class="fu">addWindowListener</span>(<span class="kw">new</span> <span class="bu">WindowAdapter</span>() {</a>
+<a class="sourceLine" id="cb25-46" title="46">      <span class="kw">public</span> <span class="dt">void</span> <span class="fu">windowClosing</span>(<span class="bu">WindowEvent</span> e) {</a>
+<a class="sourceLine" id="cb25-47" title="47">        <span class="bu">System</span>.<span class="fu">exit</span>(<span class="dv">0</span>); <span class="co">// Quit the application</span></a>
+<a class="sourceLine" id="cb25-48" title="48">      }</a>
+<a class="sourceLine" id="cb25-49" title="49">    });</a>
+<a class="sourceLine" id="cb25-50" title="50">  } <span class="co">// main()</span></a>
+<a class="sourceLine" id="cb25-51" title="51">} <span class="co">// Converter</span></a></code></pre></div>
+<h4 id="layout-managers">13.7.1 Layout Managers</h4>
+<p>The hard work of organizing and managing the elements within a container is the task of the layout manager. Among other tasks, the layout manager determines:</p>
+<ul>
+<li>The overall size of the container.</li>
+<li>The size of each element in the container.</li>
+<li>The spacing between elements.</li>
+<li>The positioning of the elements.</li>
+</ul>
+<p>Some AWT’s built-in layouts:</p>
+<ul>
+<li><code>FlowLayout</code></li>
+<li><code>GridLayout</code></li>
+<li><code>BorderLayout</code></li>
+</ul>
+<p>Some of the widely used Swing containers have a default layout manager assigned to them (Table 13.4).</p>
+<p><strong>Table 13.3</strong> Som of Java’s AWT and Swing layout managers.</p>
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 76%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Manager</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>java.awt.BorderLayout</code></td>
+<td>Arranges elements along the north, south, east, west, and in the center of the container.</td>
+</tr>
+<tr class="even">
+<td><code>java.swing.BoxLayout</code></td>
+<td>Arranges elements in a single row or single column.</td>
+</tr>
+<tr class="odd">
+<td><code>java.awt.CardLayout</code></td>
+<td>Arranges elements like a stack of cards, with on visible at a time.</td>
+</tr>
+<tr class="even">
+<td><code>java.awt.FlowLayout</code></td>
+<td>Arranges elements in left to right across the container.</td>
+</tr>
+<tr class="odd">
+<td><code>java.awt.GridBagLayout</code></td>
+<td>Arranges elements in a grid of variably sized cells (complicated).</td>
+</tr>
+<tr class="even">
+<td><code>java.awt.GridLayout</code></td>
+<td>Arranges elements into a two-dimensional grid of equally sized cells.</td>
+</tr>
+<tr class="odd">
+<td><code>java.swing.OverlayLayout</code></td>
+<td>Arranges elements on top of each other.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 13.4</strong> Default layouts for some of the common Swing containers.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Container</th>
+<th>Layout Manager</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>JApplet</code></td>
+<td><code>BorderLayout</code> (on its content pane)</td>
+</tr>
+<tr class="even">
+<td><code>JBox</code></td>
+<td><code>BoxLayout</code></td>
+</tr>
+<tr class="odd">
+<td><code>JDialog</code></td>
+<td><code>BorderLayout</code> (on its content pane)</td>
+</tr>
+<tr class="even">
+<td><code>JFrame</code></td>
+<td><code>BorderLayout</code> (on its content pane)</td>
+</tr>
+<tr class="odd">
+<td><code>JPanel</code></td>
+<td><code>FlowLayout</code></td>
+</tr>
+<tr class="even">
+<td><code>JWindow</code></td>
+<td><code>BorderLayout</code> (on its content pane)</td>
+</tr>
+</tbody>
+</table>
+<p>To override the default layout for any of the <code>JApplet</code>, <code>JDialog</code>, <code>JFrame</code>, and <code>JWindow</code> containers, you must remember to use the <code>getContentPane()</code>.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb26-1" title="1"><span class="fu">getContentPane</span>().<span class="fu">setLayout</span>(<span class="kw">new</span> <span class="bu">FlowLayout</span>());</a></code></pre></div>
+<h4 id="the-gridlayout-manager">13.7.2 The GridLayout Manager</h4>
+<p>It is simple to remedy the layout problem that affected the keypad in the most recent version of the <code>Converter</code> program.</p>
+<p>Setting default layout of <code>KeyPad</code>–which is <code>FlowLayout</code> that is the default layout manager of its superclass, <code>JPanel</code>–to <code>GridLayout</code>. This takes a single statement, which should be added to the beginning of the <code>Keypad() constructor</code>.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb27-1" title="1"><span class="fu">setLayout</span>(<span class="kw">new</span> <span class="bu">GridLayout</span>(<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>));</a></code></pre></div>
+<ul>
+<li><code>4</code> = number of rows</li>
+<li><code>3</code> = number of columns</li>
+<li><code>1</code> = row spacing</li>
+<li><code>1</code> = column spacing</li>
+</ul>
+<blockquote>
+<p>Note that for <code>JPanel</code>, the <code>setLayout()</code> method applies to the panel itself. Unlike the top-level containers, such as <code>JFrame</code>, other containers don’t have content panes. The same point would apply when adding components to a <code>JPanel</code>: They are added directly to the panel, not to a content pane.</p>
+</blockquote>
+<h4 id="the-borderlayout-manager">13.7.4 The BorderLayout Manager</h4>
+<p>Divides the frame into five areas: north, sourth east, west, and center.</p>
+<figure>
+<img src="../../../../files/spring-2020/CISC-190/module-7/notes/JavaJavaJava_ch-3_Fig-13.22.png" alt="Figure 13.22" /><figcaption>Figure 13.22</figcaption>
+</figure>
+<p>The <code>BorderLayout</code> class contains two constructors:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">public</span> <span class="bu">BorderLayout</span>();</a>
+<a class="sourceLine" id="cb28-2" title="2"><span class="kw">public</span> <span class="bu">BorderLayout</span>(<span class="dt">int</span> hgap, <span class="dt">int</span> vgap);</a></code></pre></div>
+<p>Two parameters in the second version of the constructor allow you to insert spacing between the areas.</p>
+<p>Components are added to a <code>BorderLayout</code> by using the <code>add(Component, String)</code> method found in the <code>Container</code> class. For example:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb29-1" title="1"><span class="fu">getContentPane</span>().<span class="fu">setLayout</span>(<span class="kw">new</span> <span class="bu">BorderLayout</span>(<span class="dv">2</span>, <span class="dv">2</span>));</a>
+<a class="sourceLine" id="cb29-2" title="2"><span class="fu">getContentPane</span>().<span class="fu">add</span>(keypad, <span class="st">&quot;East&quot;</span>);</a></code></pre></div>
+<p>Second parameter of the <code>add()</code> method must be capitalized <code>String</code> with one of the names, “North,” “South,” “East,” “West,” or “Center.”</p>
+<p><strong>One limitation</strong> of the <code>BorderLayout</code> is that <strong>only one component can be added to each area.</strong> That means that if you want to add several components to an area, you must first enclose them within a <code>JPanel</code> and then add the entire panel to the area. For example:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb30-1" title="1"><span class="bu">JPanel</span> inputPanel = <span class="kw">new</span> <span class="bu">JPanel</span>(); <span class="co">// Create panel</span></a>
+<a class="sourceLine" id="cb30-2" title="2">inputPanel.<span class="fu">add</span>(prompt);               <span class="co">// Add label</span></a>
+<a class="sourceLine" id="cb30-3" title="3">inputPanel.<span class="fu">add</span>(input);            <span class="co">// Add textfield</span></a>
+<a class="sourceLine" id="cb30-4" title="4"><span class="co">// Add the panel to the frame</span></a>
+<a class="sourceLine" id="cb30-5" title="5"><span class="fu">getContentPane</span>().<span class="fu">add</span>(inputPanel, <span class="st">&quot;North&quot;</span>);</a></code></pre></div>
+<p>The same point would apply if we want to group the keypad with the convert button and place them at the east edge.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb31-1" title="1"><span class="bu">JPanel</span> controlPanel = <span class="kw">new</span> <span class="bu">JPanel</span>(<span class="kw">new</span> <span class="bu">BorderLayout</span>(<span class="dv">0</span>, <span class="dv">0</span>));</a>
+<a class="sourceLine" id="cb31-2" title="2">controlPanel.<span class="fu">add</span>(keypad, <span class="st">&quot;Center&quot;</span>);</a>
+<a class="sourceLine" id="cb31-3" title="3">controlPanel.<span class="fu">add</span>(convert, <span class="st">&quot;South&quot;</span>);</a>
+<a class="sourceLine" id="cb31-4" title="4"><span class="co">// Add the panel to the frame</span></a>
+<a class="sourceLine" id="cb31-5" title="5">getContentPane.<span class="fu">add</span>(controlPanel, <span class="st">&quot;East&quot;</span>);</a></code></pre></div>
+<blockquote>
+<p>In a <code>BorderLayout</code>, when one (or more) border area is not used, then one or more of the other areas will be extended to fill the unused area.</p>
+</blockquote>
+<div class="sourceCode" id="cb32"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb32-1" title="1"><span class="kw">public</span> <span class="fu">Converter</span>() {</a>
+<a class="sourceLine" id="cb32-2" title="2">  <span class="fu">getContentPane</span>().<span class="fu">setLayout</span>(<span class="kw">new</span> <span class="bu">BorderLayout</span>());</a>
+<a class="sourceLine" id="cb32-3" title="3">  keypad = <span class="kw">new</span> <span class="fu">KeyPad</span>(<span class="kw">this</span>);</a>
+<a class="sourceLine" id="cb32-4" title="4"></a>
+<a class="sourceLine" id="cb32-5" title="5">  <span class="bu">JPanel</span> inputPanel = <span class="kw">new</span> <span class="bu">JPanel</span>(); <span class="co">// input panel</span></a>
+<a class="sourceLine" id="cb32-6" title="6">  inputPanel.<span class="fu">add</span>(prompt);</a>
+<a class="sourceLine" id="cb32-7" title="7">  inputPanel.<span class="fu">add</span>(input);</a>
+<a class="sourceLine" id="cb32-8" title="8">  <span class="fu">getContentPane</span>().<span class="fu">add</span>(inputPanel, <span class="st">&quot;North&quot;</span>);</a>
+<a class="sourceLine" id="cb32-9" title="9"></a>
+<a class="sourceLine" id="cb32-10" title="10">  <span class="bu">JPanel</span> controlPanel = <span class="kw">new</span> <span class="bu">JPanel</span>(<span class="kw">new</span> <span class="bu">BorderLayout</span>(<span class="dv">0</span>, <span class="dv">0</span>));</a>
+<a class="sourceLine" id="cb32-11" title="11">  <span class="co">// Control panel</span></a>
+<a class="sourceLine" id="cb32-12" title="12">  controlPanel.<span class="fu">add</span>(keypad, <span class="st">&quot;Center&quot;</span>);</a>
+<a class="sourceLine" id="cb32-13" title="13">  controlPanel.<span class="fu">add</span>(convert, <span class="st">&quot;South&quot;</span>);</a>
+<a class="sourceLine" id="cb32-14" title="14">  <span class="fu">getContentPane</span>().<span class="fu">add</span>(controlPanel, <span class="st">&quot;East&quot;</span>);</a>
+<a class="sourceLine" id="cb32-15" title="15">  <span class="co">// Output display</span></a>
+<a class="sourceLine" id="cb32-16" title="16">  <span class="fu">getContentPane</span>().<span class="fu">add</span>(display, <span class="st">&quot;Center&quot;</span>);</a>
+<a class="sourceLine" id="cb32-17" title="17">  display.<span class="fu">setLineWrap</span>(<span class="kw">true</span>);</a>
+<a class="sourceLine" id="cb32-18" title="18">  display.<span class="fu">setEditable</span>(<span class="kw">false</span>);</a>
+<a class="sourceLine" id="cb32-19" title="19"></a>
+<a class="sourceLine" id="cb32-20" title="20">  convert.<span class="fu">addActionListener</span>(<span class="kw">this</span>);</a>
+<a class="sourceLine" id="cb32-21" title="21">  input.<span class="fu">addActionListener</span>(<span class="kw">this</span>);</a>
+<a class="sourceLine" id="cb32-22" title="22">} <span class="co">// Converter()</span></a></code></pre></div>
+<h3 id="checkboxes-radio-buttons-and-borders">13.8 Checkboxes, Radio Buttons, and Borders</h3>
+<p>A <code>JCheckbox</code> is a button that can be selected and deselected and that always displays its current state to the user.</p>
+<h4 id="checkbox-and-radio-button-arrays">13.8.1 Checkbox and Radio Button Arrays</h4>
+<div class="sourceCode" id="cb33"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb33-1" title="1"><span class="kw">private</span> <span class="bu">ButtonGroup</span> optGroup = <span class="kw">new</span> <span class="bu">ButtonGroup</span>();</a>
+<a class="sourceLine" id="cb33-2" title="2"><span class="kw">private</span> <span class="bu">JCheckBox</span> titles[] = <span class="kw">new</span> <span class="bu">JCheckBox</span>[NTITLES];</a>
+<a class="sourceLine" id="cb33-3" title="3"><span class="kw">private</span> <span class="bu">JRadioButton</span> option[] = <span class="kw">new</span> <span class="bu">JRadioButton</span>[NOPTIONS];</a>
+<a class="sourceLine" id="cb33-4" title="4"><span class="kw">private</span> <span class="bu">String</span> titleLables[] =</a>
+<a class="sourceLine" id="cb33-5" title="5">  {<span class="st">&quot;Chess Master - $59.95&quot;</span>, <span class="st">&quot;Checkers Pro - $39.95&quot;</span>,</a>
+<a class="sourceLine" id="cb33-6" title="6">                            <span class="st">&quot;Crossword Maker - $19.95&quot;</span>};</a>
+<a class="sourceLine" id="cb33-7" title="7"><span class="kw">private</span> <span class="bu">String</span> optionLabesl[] = {<span class="st">&quot;Credit Card&quot;</span>, <span class="st">&quot;Debit Card&quot;</span>, <span class="st">&quot;E-cash&quot;</span>};</a></code></pre></div>
+<p>The advantage of this design is that it simplifies the instantiation and initialization of the buttons.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb34-1" title="1"><span class="kw">for</span>(<span class="dt">int</span> k = <span class="dv">0</span>; k &lt; titles.<span class="fu">length</span>; k++) {</a>
+<a class="sourceLine" id="cb34-2" title="2">  titles[k] = <span class="kw">new</span> <span class="fu">jCheckbox</span>(titleLables[k]);</a>
+<a class="sourceLine" id="cb34-3" title="3">  titles[k].<span class="fu">addItemListener</span>(<span class="kw">this</span>);</a>
+<a class="sourceLine" id="cb34-4" title="4">  choicePanel.<span class="fu">add</span>(titles[k]);</a>
+<a class="sourceLine" id="cb34-5" title="5">}</a></code></pre></div>
+<p>The only difference between this array of checkboxes and the keypad array of buttons that we used in the <code>Converter</code> program is that checkboxes generate <code>ItemEvents</code> instead <code>ActionEvents</code>. Therefore, each checkbox must be registered with an <code>ItemListener</code> (and, of course, the applet itself must implement the ItemListener interface).</p>
+<p>Code for instantiating and initializing the radio buttons is almost the same:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb35-1" title="1"><span class="kw">for</span>(<span class="dt">int</span> k = <span class="dv">0</span>; k &lt; options.<span class="fu">length</span>; k++) {</a>
+<a class="sourceLine" id="cb35-2" title="2">  optinos[k] = <span class="kw">new</span> <span class="bu">JRadioButton</span>(optionLabels[k]);</a>
+<a class="sourceLine" id="cb35-3" title="3">  options[k].<span class="fu">addItemListener</span>(<span class="kw">this</span>);</a>
+<a class="sourceLine" id="cb35-4" title="4">  optionPanel.<span class="fu">add</span>(options[k]);</a>
+<a class="sourceLine" id="cb35-5" title="5">  optGroup.<span class="fu">add</span>(options[k]);</a>
+<a class="sourceLine" id="cb35-6" title="6">}</a>
+<a class="sourceLine" id="cb35-7" title="7">options[<span class="dv">0</span>].<span class="fu">setSelected</span>(<span class="kw">true</span>); <span class="co">// Set first button &#39;on&#39;</span></a></code></pre></div>
+<h4 id="swing-borders">13.8.2 Swing Borders</h4>
+<p>The Swing <code>Border</code> and <code>BorderFactory</code> classes can place borders around virtually any GUI element. Using borders is an effective way to make the grouping of components more apparent. Borders can have titles, which enhance the GUI’s ability to guide and inform the user.</p>
+<p>Attaching a titled border to a component–inthis case to a <code>JPanel</code>–is very simple. It takes one statement:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb36-1" title="1">choicePanel.<span class="fu">setBorder</span>(</a>
+<a class="sourceLine" id="cb36-2" title="2">  <span class="bu">BorderFactory</span>.<span class="fu">createTitledBorder</span>(<span class="st">&quot;Titles&quot;</span>);</a>
+<a class="sourceLine" id="cb36-3" title="3">)</a></code></pre></div>
+<p>The <code>setBorder()</code> method is defined in <code>JComponent</code>, is inherited by all Swing components, and takes a <code>Border</code> argument. In this case, we use the <code>BorderFactory</code> class to create a border and assign it a title.</p>
+<h4 id="the-boxlayout-manager">13.8.3 The BoxLayout Manager</h4>
+<p>A <code>BoxLayout</code> is like a one-dimensional grid layout. It allows multiple components to be arranged either vertically or horizontally in a row. <strong>The layout will not wrap around</strong>, as does the <code>FlowLayout</code>. Unlike the <code>GridLayout</code>, the <code>BoxLayout</code> <strong>does not force all its components to be the same size.</strong> Instead, it tries to use each component’s preferred width (or height) in arranging them horizontally (or vertically). (Every Swing component has a preferred size that is used by the various layout managers in determining the component’s actual size in the interface.)</p>
+<p>To set the layout manager for a container:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb37-1" title="1">choicePanel.<span class="fu">setLayout</span>(<span class="kw">new</span></a>
+<a class="sourceLine" id="cb37-2" title="2">            <span class="bu">BoxLayout</span>(choicePanel, <span class="bu">BoxLayout</span>.<span class="fu">Y_AXIS</span>));</a></code></pre></div>
+<p>The <code>BoxLayout()</code> constructor has two parameters. The first is a reference to the container that’s being managed, and the second is a constant that determines whether horizontal (x-axis) or vertical (y-axis) alignment is used.</p>
+<h4 id="the-itemlistener-interface">13.8.4 The ItemListener Interface</h4>
+<p>Whenever the user makes a menu selection, or clicks a checkbox or radio button, an <code>ItemEvent</code> is generated. Item events are handled by the <code>ItemListener</code> interface, which consists of a single method, the <code>itemStateChanged()</code> method:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">itemStateChanged</span>(<span class="bu">ItemEvent</span> e) {</a>
+<a class="sourceLine" id="cb38-2" title="2">  display.<span class="fu">setText</span>(<span class="st">&quot;Your order so far (Payment by: &quot;</span>);</a>
+<a class="sourceLine" id="cb38-3" title="3">  <span class="kw">for</span> (<span class="dt">int</span> k = <span class="dv">0</span>; k &lt; options.<span class="fu">length</span>; k++)</a>
+<a class="sourceLine" id="cb38-4" title="4">    <span class="kw">if</span> (options[k].<span class="fu">isSelected</span>())</a>
+<a class="sourceLine" id="cb38-5" title="5">      display.<span class="fu">append</span>(options[k].<span class="fu">getText</span>() + <span class="st">&quot;)</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
+<a class="sourceLine" id="cb38-6" title="6">  <span class="kw">for</span> (<span class="dt">int</span> k = <span class="dv">0</span>; k &lt;titles.<span class="fu">length</span>; k++)</a>
+<a class="sourceLine" id="cb38-7" title="7">    <span class="kw">if</span> (titles[k].<span class="fu">isSelected</span>())</a>
+<a class="sourceLine" id="cb38-8" title="8">      display.<span class="fu">append</span>(<span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span> + titles[k].<span class="fu">getText</span>() + <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
+<a class="sourceLine" id="cb38-9" title="9">} <span class="co">// itemStateChanged()</span></a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb39-1" title="1"><span class="fu">getItem</span>(); <span class="co">// Returns a menu item within a menu</span></a></code></pre></div>
+<p>The <code>getItem()</code> method is the <code>ItemListener</code>’s analogue to the <code>ActionEvent</code>’s <code>getSource()</code> method. It enables you to obtain the object that generated the event but returns a representation of the item that was selected or deselected.</p>
+<h4 id="the-orderapplet">13.8.5 The OrderApplet</h4>
+<div class="sourceCode" id="cb40"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb40-1" title="1"><span class="kw">import</span><span class="im"> javax.swing.*;</span></a>
+<a class="sourceLine" id="cb40-2" title="2"><span class="kw">import</span><span class="im"> javax.swing.border.*;</span></a>
+<a class="sourceLine" id="cb40-3" title="3"><span class="kw">import</span><span class="im"> java.awt.*;</span></a>
+<a class="sourceLine" id="cb40-4" title="4"><span class="kw">import</span><span class="im"> java.awt.event.*;</span></a>
+<a class="sourceLine" id="cb40-5" title="5"></a>
+<a class="sourceLine" id="cb40-6" title="6"><span class="kw">public</span> <span class="kw">class</span> OrderApplet <span class="kw">extends</span> <span class="bu">JApplet</span></a>
+<a class="sourceLine" id="cb40-7" title="7">                    <span class="kw">implements</span> <span class="bu">ItemListener</span>, <span class="bu">ActionListener</span> {</a>
+<a class="sourceLine" id="cb40-8" title="8">  <span class="kw">private</span> <span class="dt">final</span> <span class="dt">int</span> NTITLES = <span class="dv">3</span>, NOPTIONS = <span class="dv">3</span>;</a>
+<a class="sourceLine" id="cb40-9" title="9">  <span class="kw">private</span> <span class="bu">JPanel</span> mainPanel= <span class="kw">new</span> <span class="bu">JPanel</span>(),</a>
+<a class="sourceLine" id="cb40-10" title="10">                 centerPanel = <span class="kw">new</span> <span class="bu">JPanel</span>(),</a>
+<a class="sourceLine" id="cb40-11" title="11">                 choicePanel = <span class="kw">new</span> <span class="bu">JPanel</span>(),</a>
+<a class="sourceLine" id="cb40-12" title="12">                 optionPanel = <span class="kw">new</span> <span class="bu">JPanel</span>(),</a>
+<a class="sourceLine" id="cb40-13" title="13">                 buttonPanel = <span class="kw">new</span> <span class="bu">JPanel</span>();</a>
+<a class="sourceLine" id="cb40-14" title="14">  <span class="kw">private</span> <span class="bu">ButtonGroup</span> optGroup = <span class="kw">new</span> <span class="bu">ButtonGroup</span>();</a>
+<a class="sourceLine" id="cb40-15" title="15">  <span class="kw">private</span> <span class="bu">JCheckBox</span> titles[] = <span class="kw">new</span> <span class="bu">JCheckBox</span>[NTITLES];</a>
+<a class="sourceLine" id="cb40-16" title="16">  <span class="kw">private</span> <span class="bu">JRadioButton</span> options[] = <span class="kw">new</span> <span class="bu">JRadioButton</span>[NOPTIONS];</a>
+<a class="sourceLine" id="cb40-17" title="17">  <span class="kw">private</span> <span class="bu">String</span> titleLabels[] =</a>
+<a class="sourceLine" id="cb40-18" title="18">    {<span class="st">&quot;Chess Master - $59.95&quot;</span>, <span class="st">&quot;Checkers PRo - $39.95&quot;</span>,</a>
+<a class="sourceLine" id="cb40-19" title="19">                              <span class="st">&quot;Crossword Maker - $19.95&quot;</span>};</a>
+<a class="sourceLine" id="cb40-20" title="20">  <span class="kw">private</span> <span class="bu">String</span> optionLabels[] = {<span class="st">&quot;Credit Card&quot;</span>,</a>
+<a class="sourceLine" id="cb40-21" title="21">                                   <span class="st">&quot;Debit Card&quot;</span>, <span class="st">&quot;E-cash&quot;</span>};</a>
+<a class="sourceLine" id="cb40-22" title="22">  <span class="kw">private</span> <span class="bu">JTextArea</span> display = <span class="kw">new</span> <span class="bu">JTextArea</span>(<span class="dv">7</span>, <span class="dv">25</span>);</a>
+<a class="sourceLine" id="cb40-23" title="23">  <span class="kw">private</span> <span class="bu">JButton</span> submit = <span class="kw">new</span> <span class="bu">JButton</span>(<span class="st">&quot;Submit Order&quot;</span>),</a>
+<a class="sourceLine" id="cb40-24" title="24">                  cancel = <span class="kw">new</span> <span class="bu">JButton</span>(<span class="st">&quot;Cancel&quot;</span>);</a>
+<a class="sourceLine" id="cb40-25" title="25"></a>
+<a class="sourceLine" id="cb40-26" title="26">  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">init</span>() {</a>
+<a class="sourceLine" id="cb40-27" title="27">    mainPanel.<span class="fu">setBorder</span>(<span class="bu">BorderFactory</span>.<span class="fu">createTitledBorder</span>(</a>
+<a class="sourceLine" id="cb40-28" title="28">                                    <span class="st">&quot;Acme Software Titles&quot;</span>));</a>
+<a class="sourceLine" id="cb40-29" title="29">    mainPanel.<span class="fu">setLayout</span>(<span class="kw">new</span> <span class="bu">GridLayout</span>(<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>));</a>
+<a class="sourceLine" id="cb40-30" title="30">    cancel.<span class="fu">addActionListener</span>(<span class="kw">this</span>);</a>
+<a class="sourceLine" id="cb40-31" title="31">    submit.<span class="fu">addActionListener</span>(<span class="kw">this</span>);</a>
+<a class="sourceLine" id="cb40-32" title="32">    <span class="fu">initChoices</span>();</a>
+<a class="sourceLine" id="cb40-33" title="33">    <span class="fu">initOptions</span>();</a>
+<a class="sourceLine" id="cb40-34" title="34">    buttonPanel.<span class="fu">setBorder</span>(<span class="bu">BorderFactory</span>.<span class="fu">createTitledBorder</span>(</a>
+<a class="sourceLine" id="cb40-35" title="35">                                      <span class="st">&quot;Order Today&quot;</span>));</a>
+<a class="sourceLine" id="cb40-36" title="36">    buttonPanel.<span class="fu">add</span>(cancel);</a>
+<a class="sourceLine" id="cb40-37" title="37">    buttonPanel.<span class="fu">add</span>(submit);</a>
+<a class="sourceLine" id="cb40-38" title="38">    centerPanel.<span class="fu">add</span>(choicePanel);</a>
+<a class="sourceLine" id="cb40-39" title="39">    centerPanel.<span class="fu">add</span>(optionPanel);</a>
+<a class="sourceLine" id="cb40-40" title="40"></a>
+<a class="sourceLine" id="cb40-41" title="41">    mainPanel.<span class="fu">add</span>(display);</a>
+<a class="sourceLine" id="cb40-42" title="42">    mainPanel.<span class="fu">add</span>(centerPanel);</a>
+<a class="sourceLine" id="cb40-43" title="43">    mainPanel.<span class="fu">add</span>(buttonPanel);</a>
+<a class="sourceLine" id="cb40-44" title="44">    <span class="fu">getContentPane</span>().<span class="fu">add</span>(mainPanel);</a>
+<a class="sourceLine" id="cb40-45" title="45">    <span class="fu">setSize</span>(<span class="dv">400</span>, <span class="dv">400</span>);</a>
+<a class="sourceLine" id="cb40-46" title="46">  } <span class="co">// init()</span></a>
+<a class="sourceLine" id="cb40-47" title="47"></a>
+<a class="sourceLine" id="cb40-48" title="48">  <span class="kw">private</span> <span class="dt">void</span> <span class="fu">initChoices</span>() {</a>
+<a class="sourceLine" id="cb40-49" title="49">    choicePanel.<span class="fu">setBorder</span>(</a>
+<a class="sourceLine" id="cb40-50" title="50">              <span class="bu">BorderFactory</span>.<span class="fu">createTitledBorder</span>(<span class="st">&quot;Titles&quot;</span>));</a>
+<a class="sourceLine" id="cb40-51" title="51">    choicePanel.<span class="fu">setLayout</span>(</a>
+<a class="sourceLine" id="cb40-52" title="52">              <span class="kw">new</span> <span class="bu">BoxLayout</span>(choicePanel, <span class="bu">BoxLayout</span>.<span class="fu">Y_AXIS</span>));</a>
+<a class="sourceLine" id="cb40-53" title="53">    <span class="kw">for</span> (<span class="dt">int</span> k = <span class="dv">0</span>; k &lt; titles.<span class="fu">length</span>; k++) {</a>
+<a class="sourceLine" id="cb40-54" title="54">      titles[k] = <span class="kw">new</span> <span class="bu">JCheckBox</span>(titleLabels[k]);</a>
+<a class="sourceLine" id="cb40-55" title="55">      titles[k].<span class="fu">addItemListener</span>(<span class="kw">this</span>);</a>
+<a class="sourceLine" id="cb40-56" title="56">      choicePanel.<span class="fu">add</span>(titles[k]);</a>
+<a class="sourceLine" id="cb40-57" title="57">    }</a>
+<a class="sourceLine" id="cb40-58" title="58">  } <span class="co">// initChoices()</span></a>
+<a class="sourceLine" id="cb40-59" title="59"></a>
+<a class="sourceLine" id="cb40-60" title="60">  <span class="kw">private</span> <span class="dt">void</span> <span class="fu">initOptions</span>() {</a>
+<a class="sourceLine" id="cb40-61" title="61">    optionPanel.<span class="fu">setBorder</span>(</a>
+<a class="sourceLine" id="cb40-62" title="62">              <span class="bu">BorderFactory</span>.<span class="fu">createTitledBorder</span>(<span class="st">&quot;Payment By&quot;</span>));</a>
+<a class="sourceLine" id="cb40-63" title="63">    optionPanel.<span class="fu">setLayout</span>(</a>
+<a class="sourceLine" id="cb40-64" title="64">              <span class="kw">new</span> <span class="bu">BoxLayout</span>(optionPanel, <span class="bu">BoxLayout</span>.<span class="fu">Y_AXIS</span>));</a>
+<a class="sourceLine" id="cb40-65" title="65">    <span class="kw">for</span> (<span class="dt">int</span> k = <span class="dv">0</span>; k &lt; options.<span class="fu">length</span>; k++) {</a>
+<a class="sourceLine" id="cb40-66" title="66">      options[k] = <span class="kw">new</span> <span class="bu">JRadioButton</span>(optionLabels[k]);</a>
+<a class="sourceLine" id="cb40-67" title="67">      options[k].<span class="fu">addItemListener</span>(<span class="kw">this</span>);</a>
+<a class="sourceLine" id="cb40-68" title="68">      optionPanel.<span class="fu">add</span>(options[k]);</a>
+<a class="sourceLine" id="cb40-69" title="69">      optGroup.<span class="fu">add</span>(options[k]);</a>
+<a class="sourceLine" id="cb40-70" title="70">    }</a>
+<a class="sourceLine" id="cb40-71" title="71">    options[<span class="dv">0</span>].<span class="fu">setSelected</span>(<span class="kw">true</span>);</a>
+<a class="sourceLine" id="cb40-72" title="72">  } <span class="co">// initOptions()</span></a>
+<a class="sourceLine" id="cb40-73" title="73"></a>
+<a class="sourceLine" id="cb40-74" title="74">  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">itemStateChanged</span>(<span class="bu">ItemEvent</span> e) {</a>
+<a class="sourceLine" id="cb40-75" title="75">    display.<span class="fu">setText</span>(<span class="st">&quot;Your order so far (Payment by: &quot;</span>);</a>
+<a class="sourceLine" id="cb40-76" title="76">    <span class="kw">for</span> (<span class="dt">int</span> k = <span class="dv">0</span>; k &lt; options.<span class="fu">length</span>; k++)</a>
+<a class="sourceLine" id="cb40-77" title="77">      <span class="kw">if</span> (options[k].<span class="fu">isSelected</span>())</a>
+<a class="sourceLine" id="cb40-78" title="78">        display.<span class="fu">append</span>(options[k].<span class="fu">getText</span>() + <span class="st">&quot;)</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
+<a class="sourceLine" id="cb40-79" title="79">    <span class="kw">for</span> (<span class="dt">int</span> k = <span class="dv">0</span>; k &lt;titles.<span class="fu">length</span>; k++)</a>
+<a class="sourceLine" id="cb40-80" title="80">      <span class="kw">if</span> (titles[k].<span class="fu">isSelected</span>())</a>
+<a class="sourceLine" id="cb40-81" title="81">        display.<span class="fu">append</span>(<span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span> + titles[k].<span class="fu">getText</span>() + <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
+<a class="sourceLine" id="cb40-82" title="82">  } <span class="co">// itemStateChanged()</span></a>
+<a class="sourceLine" id="cb40-83" title="83"></a>
+<a class="sourceLine" id="cb40-84" title="84">  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">actionPerformed</span>(<span class="bu">ActionEvent</span> e) {</a>
+<a class="sourceLine" id="cb40-85" title="85">    <span class="bu">String</span> label = submit.<span class="fu">getText</span>();</a>
+<a class="sourceLine" id="cb40-86" title="86">    <span class="kw">if</span> (e.<span class="fu">getSource</span>() == submit) {</a>
+<a class="sourceLine" id="cb40-87" title="87">      <span class="kw">if</span> (label.<span class="fu">equals</span>(<span class="st">&quot;Submit Order&quot;</span>)) {</a>
+<a class="sourceLine" id="cb40-88" title="88">        display.<span class="fu">append</span>(</a>
+<a class="sourceLine" id="cb40-89" title="89">          <span class="st">&quot;Thank you, Press &#39;Confirm&#39; to submit your order!</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
+<a class="sourceLine" id="cb40-90" title="90">        submit.<span class="fu">setText</span>(<span class="st">&quot;Confirm Order&quot;</span>);</a>
+<a class="sourceLine" id="cb40-91" title="91">      } <span class="kw">else</span> {</a>
+<a class="sourceLine" id="cb40-92" title="92">        display.<span class="fu">append</span>(</a>
+<a class="sourceLine" id="cb40-93" title="93">          <span class="st">&quot;Thank you, you will receive your order tomorrow!</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
+<a class="sourceLine" id="cb40-94" title="94">        submit.<span class="fu">setText</span>(<span class="st">&quot;Submit Order&quot;</span>);</a>
+<a class="sourceLine" id="cb40-95" title="95">      }</a>
+<a class="sourceLine" id="cb40-96" title="96">    } <span class="kw">else</span></a>
+<a class="sourceLine" id="cb40-97" title="97">      display.<span class="fu">setText</span>(</a>
+<a class="sourceLine" id="cb40-98" title="98">        <span class="st">&quot;Thank you. Maybe we can serve you next time!</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
+<a class="sourceLine" id="cb40-99" title="99">  } <span class="co">// actionPerformed()</span></a>
+<a class="sourceLine" id="cb40-100" title="100">} <span class="co">// OrderApplet</span></a></code></pre></div>
+<h3 id="menus-and-scroll-panes">13.9 Menus and Scroll Panes</h3>
+<h2 id="file-input-and-output">File Input and Output</h2>
+<p>There are two types of files in Java - text files and binary files. <strong>A text file is processed as sequence of characters. A binary file is processed as a sequence of bytes.</strong></p>
+<p>In a text file you have the illusion that the file is divided into lines. There is a special end-of-line symbol that creates this illusion. In addition you can think that there is a special end-of-file symbol that follows the last component in a file. <strong>A big advantage of text files is their portability. In binary files, the representation used varies from computer to computer. Java binary files are platform independent.</strong> They can be interpreted by any computer that supports Java.</p>
+<p>A <em>stream</em> is a device for transmitting or retrieving 8-bit or byte values. A file is a collection of items stored on an external device. The Java object FileStream provides the means to access the data values but does not actually hold the file contents.</p>
+<p>There are two independent and largely parallel systems involved in I/O. <em>InputStream</em> and <em>OutputStream</em> are used to read and write 8-bit quantities and process binary files. The alternative hierarchy has two different classes Reader and Writer that are used to read and write 16-bit Unicode character values and process text files.</p>
+<p>The <code>File</code> class provides methods for dealing with files or directories.</p>
+<p>When a program is running, the program’ directory is considered the current directory. Any files located in the current directory can be referred to by name alone. <strong>The relative path is the location of a file with respect to the current directory. The absolute path starts at the root directory.</strong></p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb41-1" title="1"><span class="kw">public</span> <span class="kw">class</span> <span class="bu">File</span> <span class="kw">extends</span> <span class="bu">Object</span> <span class="kw">implements</span> <span class="bu">Serializable</span></a>
+<a class="sourceLine" id="cb41-2" title="2">{</a>
+<a class="sourceLine" id="cb41-3" title="3">  <span class="co">// Constructors</span></a>
+<a class="sourceLine" id="cb41-4" title="4">  <span class="kw">public</span> <span class="bu">File</span> ( <span class="bu">String</span> path );</a>
+<a class="sourceLine" id="cb41-5" title="5">  <span class="kw">public</span> <span class="bu">File</span> ( <span class="bu">String</span> path, <span class="bu">String</span> name );</a>
+<a class="sourceLine" id="cb41-6" title="6"></a>
+<a class="sourceLine" id="cb41-7" title="7">  <span class="co">// Public methods</span></a>
+<a class="sourceLine" id="cb41-8" title="8">  <span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">canRead</span>();        <span class="co">// is the file readable?</span></a>
+<a class="sourceLine" id="cb41-9" title="9">  <span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">canWrite</span>();       <span class="co">// is the file writeable?</span></a>
+<a class="sourceLine" id="cb41-10" title="10">  <span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">delete</span>();         <span class="co">// delete the file</span></a>
+<a class="sourceLine" id="cb41-11" title="11">  <span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">exists</span>();         <span class="co">// does the file exist</span></a>
+<a class="sourceLine" id="cb41-12" title="12">  <span class="kw">public</span> <span class="dt">long</span> <span class="fu">lastModified</span>();      <span class="co">// when was the file last modified</span></a>
+<a class="sourceLine" id="cb41-13" title="13">  <span class="kw">public</span> <span class="dt">long</span> <span class="fu">length</span>();            <span class="co">// How many bytes does it contain</span></a>
+<a class="sourceLine" id="cb41-14" title="14">  <span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">renameTo</span>(<span class="bu">File</span> f); <span class="co">// rename this file to f&#39;s name</span></a>
+<a class="sourceLine" id="cb41-15" title="15">}</a></code></pre></div>
+<h3 id="creating-a-handle-to-a-file">Creating a Handle to a File</h3>
+<p>A <em>handle</em> to a file is created by passing the name of the file to the constructor for the File object:</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb42-1" title="1"><span class="bu">File</span> inFile = <span class="kw">new</span> <span class="bu">File</span> ( <span class="st">&quot;FileIO.txt&quot;</span> );</a></code></pre></div>
+<h3 id="reading-from-a-text-file">Reading from a Text File</h3>
+<p>A text file can be read using a Scanner object. Using the Scanner offers the advantage of using the methods that come with the Scanner class.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb43-1" title="1"><span class="kw">import</span><span class="im"> java.util.Scanner;</span></a>
+<a class="sourceLine" id="cb43-2" title="2"><span class="kw">import</span><span class="im"> java.io.*;</span></a>
+<a class="sourceLine" id="cb43-3" title="3"></a>
+<a class="sourceLine" id="cb43-4" title="4"><span class="kw">public</span> <span class="kw">class</span> ReadTextFile</a>
+<a class="sourceLine" id="cb43-5" title="5">{</a>
+<a class="sourceLine" id="cb43-6" title="6">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span> (<span class="bu">String</span> [] args) <span class="kw">throws</span> <span class="bu">IOException</span></a>
+<a class="sourceLine" id="cb43-7" title="7">  {</a>
+<a class="sourceLine" id="cb43-8" title="8">    <span class="bu">File</span> inFile = <span class="kw">new</span> <span class="bu">File</span> (<span class="st">&quot;input.txt&quot;</span>);</a>
+<a class="sourceLine" id="cb43-9" title="9"></a>
+<a class="sourceLine" id="cb43-10" title="10">    <span class="bu">Scanner</span> sc = <span class="kw">new</span> <span class="bu">Scanner</span> (inFile);</a>
+<a class="sourceLine" id="cb43-11" title="11">    <span class="kw">while</span> (sc.<span class="fu">hasNextLine</span>())</a>
+<a class="sourceLine" id="cb43-12" title="12">    {</a>
+<a class="sourceLine" id="cb43-13" title="13">      <span class="bu">String</span> line = sc.<span class="fu">nextLine</span>();</a>
+<a class="sourceLine" id="cb43-14" title="14">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span> (line);</a>
+<a class="sourceLine" id="cb43-15" title="15">    }</a>
+<a class="sourceLine" id="cb43-16" title="16">    sc.<span class="fu">close</span>();</a>
+<a class="sourceLine" id="cb43-17" title="17">  }</a>
+<a class="sourceLine" id="cb43-18" title="18">}</a></code></pre></div>
+<h3 id="writing-to-a-text-file">Writing to a Text File</h3>
+<p>To write text to a file you open an output stream by using the class <code>FileWriter</code>. If the file does not exist a new empty file with this name is created. If the file already exists opening it erases the data in the file. If you want to append to the file use the following option when creating the <code>FileWriter</code> object:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb44-1" title="1"><span class="bu">FileWriter</span> fWriter = <span class="kw">new</span> <span class="bu">FileWriter</span> (outFile, <span class="kw">true</span>);</a></code></pre></div>
+<p>The class PrintWriter has methods <code>print()</code>, <code>printf()</code> and <code>println()</code> that will allow us to write to a file.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb45-1" title="1"><span class="kw">import</span><span class="im"> java.io.*;</span></a>
+<a class="sourceLine" id="cb45-2" title="2"></a>
+<a class="sourceLine" id="cb45-3" title="3"><span class="kw">public</span> <span class="kw">class</span> WriteTextFile</a>
+<a class="sourceLine" id="cb45-4" title="4">{</a>
+<a class="sourceLine" id="cb45-5" title="5">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span> (<span class="bu">String</span> [] args) <span class="kw">throws</span> <span class="bu">IOException</span></a>
+<a class="sourceLine" id="cb45-6" title="6">  {</a>
+<a class="sourceLine" id="cb45-7" title="7">    <span class="bu">File</span> outFile = <span class="kw">new</span> <span class="bu">File</span> (<span class="st">&quot;output.txt&quot;</span>);</a>
+<a class="sourceLine" id="cb45-8" title="8">    <span class="bu">FileWriter</span> fWriter = <span class="kw">new</span> <span class="bu">FileWriter</span> (outFile);</a>
+<a class="sourceLine" id="cb45-9" title="9">    <span class="bu">PrintWriter</span> pWriter = <span class="kw">new</span> <span class="bu">PrintWriter</span> (fWriter);</a>
+<a class="sourceLine" id="cb45-10" title="10">    pWriter.<span class="fu">println</span> (<span class="st">&quot;This is a line.&quot;</span>);</a>
+<a class="sourceLine" id="cb45-11" title="11">    pWriter.<span class="fu">println</span> (<span class="st">&quot;This is another line.&quot;</span>);</a>
+<a class="sourceLine" id="cb45-12" title="12">    pWriter.<span class="fu">close</span>();</a>
+<a class="sourceLine" id="cb45-13" title="13">  }</a>
+<a class="sourceLine" id="cb45-14" title="14">}</a></code></pre></div>
 <p><br></p>
 <h1 id="references">References</h1>
 <ul>
@@ -653,11 +1037,11 @@ Inheritance and Polymorphism
 <ul>
 <li>Chapter 11.9</li>
 </ul></li>
-<li><a href="http://www.cs.utexas.edu/~mitra/csSummer2009/cs303/lectures/fileIO.html">File I/O</a></li>
 <li><a href="../../../../files/spring-2020/CISC-190/java_book_javaJavaJava.pdf">Java, Java, Java Object-Oriented Problem Solving 3rd Ed</a>
 <ul>
-<li>Chapter 8, 10, 11, 13</li>
+<li>Chapter 10, 11, 13</li>
 </ul></li>
+<li><a href="http://www.cs.utexas.edu/~mitra/csSummer2009/cs303/lectures/fileIO.html">File I/O</a></li>
 </ul>
 <hr>
 <div>
