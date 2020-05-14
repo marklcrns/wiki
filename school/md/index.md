@@ -13,10 +13,10 @@ Start/End Date: 2020-02-03 -- 2020-06-01
 
 ### Classes
 
-  - [CISC 190](spring-2020/CISC-190/cisc-190) -- Java Programming (23337 - online)
-  - [ECON 121](spring-2020/ECON-121/econ-121) -- Principles of Microeconomics (21661 - online)
-  - [MATH 141](spring-2020/MATH-141/math-141) -- Pre-calculus (21576 - blended)
-  - ~~[ECON 120](spring-2020/ECON-120/econ-120) -- Principles of Macroeconomics (26977 - online)~~
+  - [CISC 190](spring-2020/CISC-190/index) -- Java Programming (23337 - online)
+  - [ECON 121](spring-2020/ECON-121/index) -- Principles of Microeconomics (21661 - online)
+  - [MATH 141](spring-2020/MATH-141/index) -- Pre-calculus (21576 - blended)
+  - ~~[ECON 120](spring-2020/ECON-120/index) -- Principles of Macroeconomics (26977 - online)~~
     * dropped on 2020-02-13
 
 Total Units Enrolled: $15 - 3 = \mathbf{12}$ units

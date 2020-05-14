@@ -67,11 +67,19 @@ SOFTWARE.
 </head>
 <body>
 <article class="markdown-body">
-<div style="text-align: center; font-size: 11px; letter-spacing: 2px;">
+<div style="position: -webkit-sticky-; position: sticky; top: 0; z-index: 9999;
+padding-top: 10px; background-color: rgba(255, 255, 255, .7)">
+<div style="text-align: center; font-size: 12px; letter-spacing: 2px;">
 <a href="../../../index.html">Wiki Root</a>
+</div>
+<div style="text-align: center; font-size: 11px; letter-spacing: 1px;">
+<a href=".">directory</a>
+|
+<a href="../index.html">index</a>
 </div>
 <header>
 <h1 class="title">MATH 141 Chapter 7 Notes</h1>
+</div>
 <p class="author">Mark Lucernas</p>
 <p class="date">2020-04-29</p>
 <div class="summary">
@@ -96,11 +104,21 @@ Misc Topics
 <li><a href="#complex-numbers-part-ii">7.4 Complex Numbers Part II</a><ul>
 <li><a href="#video-lecture-4">Video Lecture</a></li>
 </ul></li>
-<li><a href="#eulers-identity">7.5 Eulers Identity</a></li>
-<li><a href="#introduction-to-vectors">7.6 Introduction To Vectors</a></li>
-<li><a href="#introduction-to-the-dot-product">7.7 Introduction To The Dot Product</a></li>
+<li><a href="#eulers-identity">7.5 Eulers Identity</a><ul>
+<li><a href="#video-lecture-5">Video Lecture</a></li>
+<li><a href="#daabz-questions">Daabz Questions</a></li>
 </ul></li>
-<li><a href="#references">References</a></li>
+<li><a href="#introduction-to-vectors">7.6 Introduction To Vectors</a><ul>
+<li><a href="#video-lecture-6">Video Lecture</a></li>
+</ul></li>
+<li><a href="#introduction-to-the-dot-product">7.7 Introduction To The Dot Product</a><ul>
+<li><a href="#video-lecture-7">Video Lecture</a></li>
+</ul></li>
+<li><a href="#comprehensive-review">Comprehensive Review</a><ul>
+<li><a href="#daabz-questions-1">Daabz Questions</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#resources">Resources</a></li>
 </ul>
 </nav>
 <hr>
@@ -291,10 +309,184 @@ i^{103} &amp;= i^{100} \cdot i^{3} \\
 <li><span class="math inline">\(-1 \to \mathbb{C}\)</span> (Complex number) <a href="https://www.youtube.com/watch?v=IoOKpGrL0RQ&amp;t=1360">(22:40)</a></li>
 </ul>
 <h2 id="eulers-identity">7.5 Eulers Identity</h2>
+<ul>
+<li><a href="../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-35.pdf">Handout 35: Converting Complex numbers From and To EULER FORM</a></li>
+<li><a href="../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-36.pdf">Handout 36: Euler’s Identity</a></li>
+</ul>
+<h3 id="video-lecture-5">Video Lecture</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=mrADnifzTy0">VIDEO: Euler’s Identity Part 2 Introduction</a></li>
+</ul>
+<h4 id="video-lecture-notes-3">Video Lecture Notes</h4>
+<p>Converting complex numbers in standard form to Euler form and…</p>
+<p>Multiplying:</p>
+<ul>
+<li><span class="math inline">\((3 + 2i)(1 + 2i)\)</span> <a href="https://www.youtube.com/watch?v=mrADnifzTy0&amp;t=60">(1:00)</a></li>
+<li><span class="math inline">\((\frac{1}{2} + \frac{\sqrt{3}}{2}i)(\frac{\sqrt{3}}{2} + \frac{1}{2}i)\)</span> <a href="https://www.youtube.com/watch?v=mrADnifzTy0&amp;t=206">(3:26)</a></li>
+</ul>
+<blockquote>
+<p>Multiplying numbers with exponents with the same base: add the exponents together and copy the base.</p>
+</blockquote>
+<p>Dividing:</p>
+<ul>
+<li><span class="math inline">\(\dfrac{(3 + 2i)}{(1 + 2i)}\)</span> <a href="https://www.youtube.com/watch?v=mrADnifzTy0&amp;t=374">(6:14)</a></li>
+</ul>
+<blockquote>
+<p>Dividing numbers with exponents with the same base: subtract the exponents from the subtrahend and copy the base.</p>
+</blockquote>
+<p>Dealing with Complex numbers in standard form with powers:</p>
+<ul>
+<li><span class="math inline">\((3 + 2i)^{10}\)</span> <a href="https://www.youtube.com/watch?v=mrADnifzTy0&amp;t=605">(10:05)</a></li>
+</ul>
+<p>Dealing with roots of complex numbers:</p>
+<ul>
+<li><span class="math inline">\(\sqrt{i} = e^{90^{\circ}i}\)</span> <a href="https://www.youtube.com/watch?v=mrADnifzTy0&amp;t=850">(14:10)</a></li>
+</ul>
+<p>Roots of unity <a href="https://www.youtube.com/watch?v=mrADnifzTy0&amp;t=1200">(20:00)</a></p>
+<h3 id="daabz-questions">Daabz Questions</h3>
+<ul>
+<li><span class="math inline">\([4e^{i(180^{\circ})}]^{\frac{1}{7}}\)</span>
+<ul>
+<li><span class="math inline">\(4^{\frac{1}{7}}e^{i(\frac{180^{\circ}}{7})}\)</span></li>
+<li><span class="math inline">\(\sqrt[7]{4}e^{i(\frac{180^{\circ}}{7})}\)</span></li>
+</ul></li>
+<li>Suppose <span class="math inline">\(-7 + -2i = re^{i\theta}\)</span>
+<ul>
+<li><span class="math inline">\(\tan(\theta) = \frac{-2}{-7}\)</span></li>
+<li><span class="math inline">\(r^{2} = (-7)^{2} + (-2)^{2}\)</span></li>
+</ul></li>
+<li><span class="math inline">\(\sqrt[3]{[9\cos(-180^{\circ}) + i9\sin(-180^{\circ})]}\)</span>
+<ul>
+<li><span class="math inline">\(\sqrt[3]{9}[\cos(\frac{-180^{\circ}}{3}) + i\sin(\frac{-180^{\circ}}{3}))]\)</span></li>
+<li><span class="math inline">\(\sqrt[3]{9}^{i(\frac{-180^{\circ}}{3})}\)</span></li>
+<li><span class="math inline">\(9^{\frac{1}{3}}e^{(\frac{-180^{\circ}}{3})}\)</span></li>
+</ul></li>
+<li><span class="math inline">\(9e^{i(-270^{\circ})} \cdot 2e^{i(-180^{\circ})}\)</span>
+<ul>
+<li><span class="math inline">\(18\cos(-450^{\circ}) + i18\sin(-450^{\circ})\)</span></li>
+<li><span class="math inline">\((9 \cdot 2) \cdot e^{i(-270^{\circ} + (-180^{\circ}))}\)</span></li>
+</ul></li>
+<li><span class="math inline">\(\frac{4\cos(-120^{\circ}) + i4\sin(-120^{\circ})}{5\cos(240^{\circ}) + i5\sin(240^{\circ})}\)</span>
+<ul>
+<li><span class="math inline">\(\frac{4}{5}\cos(-120^{\circ} - 240^{\circ}) + i\frac{4}{5}\sin(-120^{\circ} - 240^{\circ})\)</span></li>
+<li><span class="math inline">\(\frac{4}{5}\cos(-360^{\circ}) + i \cdot \frac{4}{5}\sin(-360^{\circ})\)</span></li>
+</ul></li>
+<li><span class="math inline">\(\sqrt[7]{3e^{i(330^{\circ})}}\)</span>
+<ul>
+<li><span class="math inline">\(3^{\frac{1}{7}}e^{i(\frac{330^{\circ}}{7})}\)</span></li>
+</ul></li>
+<li><span class="math inline">\(\frac{5e^{i(210^{\circ})}}{8e^{i(-150^{\circ})}}\)</span>
+<ul>
+<li><span class="math inline">\(\frac{5}{8}\cos(360^{\circ}) + i \cdot \frac{5}{8}\sin(360^{\circ})\)</span></li>
+<li><span class="math inline">\(\frac{5}{8}\cos(210^{\circ}- (-150^{\circ}) + i\frac{5}{8}\sin(210^{\circ}) - (-150^{\circ}))\)</span></li>
+</ul></li>
+</ul>
 <h2 id="introduction-to-vectors">7.6 Introduction To Vectors</h2>
+<ul>
+<li><a href="../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-37.pdf">Handout 37: Vectors Introduction</a></li>
+</ul>
+<h3 id="video-lecture-6">Video Lecture</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=PObj5z__5yQ">VIDEO: Introduction to Vectors</a></li>
+</ul>
+<h4 id="video-lecture-notes-4">Video Lecture Notes</h4>
+<p><a name="vector-term"><strong>Vector</strong></a></p>
+<ul>
+<li>Represents <strong>direction</strong> and <strong>size/magnitude</strong>.</li>
+<li>Adding/Subtracting Vectors <a href="https://www.youtube.com/watch?v=PObj5z__5yQ&amp;t=300">(5:00)</a></li>
+<li>Scalars <a href="https://www.youtube.com/watch?v=PObj5z__5yQ&amp;t=650">(10:50)</a>
+<ul>
+<li>Scaling the size (flip direction if negative) of a vector</li>
+</ul></li>
+<li>Magnitude, Normalize a Vector <a href="https://www.youtube.com/watch?v=PObj5z__5yQ&amp;t=847">(14:07)</a>
+<ul>
+<li>Size of the hypotenuse that the vectors make</li>
+<li>Use pythagorean to get the magnitude</li>
+<li>Denoted by <span class="math inline">\(\|\vec{V}\|\)</span>, where <span class="math inline">\(\vec{V}\)</span> as the vector and <span class="math inline">\(\|\|\)</span> as the magnitude of the vector.</li>
+<li><strong>Normalized vector/Unit vector</strong> is a vector that has a magnitude exactly equals to 1.</li>
+</ul></li>
+</ul>
 <h2 id="introduction-to-the-dot-product">7.7 Introduction To The Dot Product</h2>
+<ul>
+<li><a href="../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-38.pdf">Handout 38: Introduction to the Dot Product</a></li>
+</ul>
+<p>Some famous Dot Product properties</p>
+<ul>
+<li><span class="math inline">\(u \cdot v = v \cdot u\)</span></li>
+<li><span class="math inline">\((u + w) \cdot v = u \cdot v + w \cdot v\)</span></li>
+<li><span class="math inline">\(u \cdot (cv) = c(u \cdot v)\)</span></li>
+<li><span class="math inline">\(u \cdot u \ge 0\)</span></li>
+<li><span class="math inline">\(u \cdot u = 0 \Longleftrightarrow u = 0\)</span></li>
+</ul>
+<h3 id="video-lecture-7">Video Lecture</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=VvoUzq6NLr8">VIDEO: Intro to Dot Product Full Lecture</a></li>
+</ul>
+<h4 id="video-lecture-notes-5">Video Lecture Notes</h4>
+<ul>
+<li><span class="math inline">\(&lt;{\color{#ff0000}{1}}, {\color{#00ff00}{5}}, {\color{#0000ff}{0}}&gt; \cdot &lt;{\color{#ff0000}{3}}, {\color{#00ff00}{1}}, {\color{#0000ff}{-5}}&gt;\)</span>
+<ul>
+<li><span class="math inline">\({\color{#ff0000}{2}} + {\color{#00ff00}{5}} + {\color{#0000ff}{0}} = 7\)</span></li>
+</ul></li>
+</ul>
+<p>Magnitude by Dot <a href="https://www.youtube.com/watch?v=VvoUzq6NLr8&amp;t=635">(10:35)</a></p>
+<ul>
+<li><span class="math inline">\(\|\vec{v}\|^{2} = \vec{v} \cdot \vec{v}\)</span></li>
+</ul>
+<p>Distance by Dot</p>
+<ul>
+<li><span class="math inline">\(\|\vec{w} - \vec{v}\|^2 = (\vec{w} - \vec{v}) \cdot (\vec{w} - \vec{v})\)</span></li>
+<li><span class="math inline">\(\|\vec{w} - \vec{v}\| = \sqrt{(\vec{w} - \vec{v}) \cdot (\vec{w} - \vec{v})}\)</span></li>
+</ul>
+<p>Angle between by Dot <a href="https://www.youtube.com/watch?v=vvoUzq6NLr8&amp;t=934">(15:34)</a></p>
+<ul>
+<li><span class="math inline">\(\cos(\theta) = \dfrac{\vec{v} \cdot \vec{w}}{\|\vec{v}\| \|\vec{w}\|}\)</span></li>
+</ul>
+<p>Perpendicular <span class="math inline">\(\perp\)</span> Test by Dot <a href="https://www.youtube.com/watch?v=vvoUzq6NLr8&amp;t=1464">(24:24)</a></p>
+<ul>
+<li>If the <strong>Dot Product is zero</strong>, its <strong>perpendicular</strong></li>
+<li><span class="math inline">\(\vec{v} \perp \vec{w} \Longleftrightarrow \vec{v} \cdot \vec{w} = 0\)</span></li>
+</ul>
+<p>Projections by Dot <a href="https://www.youtube.com/watch?v=vvoUzq6NLr8&amp;t=1710">(28:30)</a></p>
+<ul>
+<li><span class="math inline">\(proj_{\vec{w}}\vec{v} = \dfrac{\vec{v} \cdot \vec{w}}{\|\vec{w}\| \|\vec{w}\|} \cdot \vec{w}\)</span></li>
+</ul>
+<h2 id="comprehensive-review">Comprehensive Review</h2>
+<h3 id="daabz-questions-1">Daabz Questions</h3>
+<ul>
+<li>If the equation of a graph is modified by replacing <span class="math inline">\(x \to 5x -12\)</span>, the consequences on the graph are
+<ul>
+<li>shift RIGHT 12 then SCALE <span class="math inline">\(x\)</span>’s by <span class="math inline">\(\frac{1}{5}\)</span></li>
+</ul></li>
+<li>If the equation of a graph is modified by replacing <span class="math inline">\(y \to 3y -8\)</span>, the consequences on the graph are
+<ul>
+<li>shift UP 8 then SCALE <span class="math inline">\(y\)</span>’s by <span class="math inline">\(\frac{1}{3}\)</span></li>
+</ul></li>
+<li><span class="math inline">\(\dfrac{\tan(A) - \tan(B)}{1 + \tan(A)\tan(B)}\)</span>
+<ul>
+<li><span class="math inline">\(\tan(A - B)\)</span></li>
+</ul></li>
+<li><span class="math inline">\(\cot(x)\)</span>
+<ul>
+<li><span class="math inline">\(\tan(\frac{\pi}{2} - x)\)</span></li>
+</ul></li>
+<li>One solution to the equation <span class="math inline">\(0 = \sin(x) is 0\)</span>
+<ul>
+<li><span class="math inline">\(x = 0 + \pi\)</span></li>
+<li><span class="math inline">\(x = \pi\)</span></li>
+</ul></li>
+<li><span class="math inline">\(\cos^{2}(x)\)</span> can be exchanged for
+<ul>
+<li><span class="math inline">\(1 - \dfrac{1}{\csc()^{2}(x)}\)</span></li>
+</ul></li>
+<li>One slution to the equation <span class="math inline">\(-1 = \sin(x)\)</span> is <span class="math inline">\(-\frac{1}{2}\pi\)</span>, What is the NEXT real solution to the right?
+<ul>
+<li><span class="math inline">\(x = \frac{3}{2}\pi\)</span></li>
+<li><span class="math inline">\(x = -\frac{1}{2}\pi + 2\pi\)</span></li>
+</ul></li>
+</ul>
 <p><br></p>
-<h1 id="references">References</h1>
+<h1 id="resources">Resources</h1>
 <ul>
 <li><a href="../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-27.pdf">Handout 27: Intro to Polar Coordinates</a></li>
 <li><a href="../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-28.pdf">Handout 28: Chapter 7 Review</a></li>
@@ -309,13 +501,15 @@ i^{103} &amp;= i^{100} \cdot i^{3} \\
 <li><a href="../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-33.pdf">Handout 33: More on Complex Numbers exercises v1</a></li>
 <li><a href="../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-34.pdf">Handout 34: More on Complex Numbers exercises v2</a></li>
 <li><a href="https://www.youtube.com/watch?v=IoOKpGrL0RQ">VIDEO: Converting to Euler form of complex number</a></li>
+<li><a href="../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-35.pdf">Handout 35: Converting Complex numbers From and To EULER FORM</a></li>
+<li><a href="../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-36.pdf">Handout 36: Euler’s Identity</a></li>
+<li><a href="https://www.youtube.com/watch?v=mrADnifzTy0">VIDEO: Euler’s Identity Part 2 Introduction</a></li>
+<li><a href="../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-37.pdf">Handout 37: Vectors Introduction</a></li>
+<li><a href="https://www.youtube.com/watch?v=PObj5z__5yQ">VIDEO: Introduction to Vectors</a></li>
+<li><a href="../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-38.pdf">Handout 38: Introduction to the Dot Product</a></li>
+<li><a href="https://www.youtube.com/watch?v=VvoUzq6NLr8">VIDEO: Intro to Dot product Full Lecture</a></li>
 </ul>
 <hr>
-<div>
-<div style="text-align: center; font-size: 11px; letter-spacing: 2px;">
-<a href="../../../index.html">Wiki Root</a>
-</div>
-</div>
 </article>
 </body>
 </html>

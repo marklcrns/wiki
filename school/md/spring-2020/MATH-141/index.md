@@ -121,12 +121,18 @@ date: 2020-02-05
       10) B, 11) AB, 12) B, 13) BC, 14) BCDEFG, 15) AB, 16) ABC, 17) BC, 18)
       BCDEFGH, 19) A, 20) A, 21) AB, 22) A, 23) A, 24) A, 25) BC, 26) ACDE, 27)
       ACDE, 28) BC, 29) A, 30) A
+
+### Chapter 7
+
   - [Quiz 12 Questionnaire](file:../../../files/spring-2020/MATH-141/ch-7/math-141_quiz_12.pdf)
     * Score: 110/110
     * [Quiz 12 Solutions](file:../../../files/spring-2020/MATH-141/ch-7/math-141_quiz_12_solutions.pdf)
     * Answers: A, 2) A, 3) ACD, 4) C, 5) A, 6) ACD, 7) C, 8) A, 9) BC, 10) C,
       11) B, 12) B, 13) B, 14) A, 15) B, 16) A, 17) B, 18) AB, 19) B, 20) B, 21)
       D, 22) BD, 23) C, 24) A, 25) C
+  - [Quiz 13 Questionnaire](file:../../../files/spring-2020/MATH-141/ch-7/math-141_quiz_13.pdf)
+    * Score: 102/110
+    * [Quiz 13 Solutions](file:../../../files/spring-2020/MATH-141/ch-7/math-141_quiz_13_solutions.pdf)
 
 ## Exams
 

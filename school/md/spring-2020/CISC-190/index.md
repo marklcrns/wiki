@@ -49,6 +49,7 @@ Text books
   - [Module 5](modules/module_5) -- Conditional Execution
   - [Module 6](modules/module_6) -- Creating Your Own Custom Class
   - [Module 7](modules/module_7) -- Advanced Topics
+  - [Module 8](modules/module_8) -- Final Project
 
 ## Skills Applicable to Resumes
 
