@@ -328,6 +328,12 @@ Projections by Dot [(28:30)](https://www.youtube.com/watch?v=vvoUzq6NLr8&t=1710)
     NEXT real solution to the right?
     * $x = \frac{3}{2}\pi$
     * $x = -\frac{1}{2}\pi + 2\pi$
+  - $\frac{d}{dx}[\cos(x)]$
+    * $-\sin(x)$
+  - $\cos(x)$ can be exchanged for
+    * $-\sin(\frac{\pi}{2} - x)$
+  - $\sin(2x)$ can be exchanged for
+    * $2\sin(x)\cos(x)$
 
 <br>
 
