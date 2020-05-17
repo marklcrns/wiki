@@ -180,3 +180,6 @@ Exam
 
   - [Exam 3 Questionnaire v1](file:../../../files/spring-2020/MATH-141/exam-3/math-141_exam_3.pdf)
     * [Exam 3 Solutions](file:../../../files/spring-2020/MATH-141/exam-3/math-141_exam_3_solutions.pdf)
+    * Answers: 1) C, 2) B, 3) B, 4) AB, 5) A, 6) AB, 7) C, 8) ABCDEFG, 9) C ,
+      10) BC, 11) C, 12) C
+

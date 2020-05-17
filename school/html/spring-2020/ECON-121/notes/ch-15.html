@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!--
+==============================================================================
+           "GitHub HTML5 Pandoc Template" v2.1 — by Tristano Ajmone           
+==============================================================================
+Copyright © Tristano Ajmone, 2017, MIT License (MIT). Project's home:
+
+- https://github.com/tajmone/pandoc-goodies
+
+The CSS in this template reuses source code taken from the following projects:
+
+- GitHub Markdown CSS: Copyright © Sindre Sorhus, MIT License (MIT):
+  https://github.com/sindresorhus/github-markdown-css
+
+- Primer CSS: Copyright © 2016-2017 GitHub Inc., MIT License (MIT):
+  http://primercss.io/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The MIT License 
+
+Copyright (c) Tristano Ajmone, 2017 (github.com/tajmone/pandoc-goodies)
+Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)
+Copyright (c) 2017 GitHub Inc.
+
+"GitHub Pandoc HTML5 Template" is Copyright (c) Tristano Ajmone, 2017, released
+under the MIT License (MIT); it contains readaptations of substantial portions
+of the following third party softwares:
+
+(1) "GitHub Markdown CSS", Copyright (c) Sindre Sorhus, MIT License (MIT).
+(2) "Primer CSS", Copyright (c) 2016 GitHub Inc., MIT License (MIT).
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+==============================================================================-->
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Mark Lucernas" />
+  <meta name="dcterms.date" content="2020-05-17" />
+  <title>ECON 121 Chapter 15 Notes</title>
+  <style type="text/css">
+@charset "UTF-8";.markdown-body{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#24292e;font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:16px;line-height:1.5;word-wrap:break-word;box-sizing:border-box;min-width:200px;max-width:980px;margin:0 auto;padding:45px}.markdown-body a{color:#0366d6;background-color:transparent;text-decoration:none;-webkit-text-decoration-skip:objects}.markdown-body a:active,.markdown-body a:hover{outline-width:0}.markdown-body a:hover{text-decoration:underline}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body strong{font-weight:600}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1{font-size:2em;margin:.67em 0;padding-bottom:.3em;border-bottom:1px solid #eaecef}.markdown-body h2{padding-bottom:.3em;font-size:1.5em;border-bottom:1px solid #eaecef}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#6a737d}.markdown-body img{border-style:none}.markdown-body svg:not(:root){overflow:hidden}.markdown-body hr{box-sizing:content-box;height:.25em;margin:24px 0;padding:0;overflow:hidden;background-color:#e1e4e8;border:0}.markdown-body hr::before{display:table;content:""}.markdown-body hr::after{display:table;clear:both;content:""}.markdown-body input{margin:0;overflow:visible;font:inherit;font-family:inherit;font-size:inherit;line-height:inherit}.markdown-body [type=checkbox]{box-sizing:border-box;padding:0}.markdown-body *{box-sizing:border-box}.markdown-body blockquote{margin:0}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol ol,.markdown-body ul ol{list-style-type:lower-roman}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body ol ol ol,.markdown-body ol ul ol,.markdown-body ul ol ol,.markdown-body ul ul ol{list-style-type:lower-alpha}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dd{margin-left:0}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:600}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body code{font-family:SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace}.markdown-body pre{font:12px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;word-wrap:normal}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body blockquote{padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body table{display:block;width:100%;overflow:auto;border-spacing:0;border-collapse:collapse}.markdown-body table th{font-weight:600}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #dfe2e5}.markdown-body table tr{background-color:#fff;border-top:1px solid #c6cbd1}.markdown-body table tr:nth-child(2n){background-color:#f6f8fa}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body code{padding:.2em 0;margin:0;font-size:85%;background-color:rgba(27,31,35,.05);border-radius:3px}.markdown-body code::after,.markdown-body code::before{letter-spacing:-.2em;content:" "}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:0 0;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f6f8fa;border-radius:3px}.markdown-body pre code{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code::after,.markdown-body pre code::before{content:normal}.markdown-body .full-commit .btn-outline:not(:disabled):hover{color:#005cc5;border-color:#005cc5}.markdown-body kbd{box-shadow:inset 0 -1px 0 #959da5;display:inline-block;padding:3px 5px;font:11px/10px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;color:#444d56;vertical-align:middle;background-color:#fcfcfc;border:1px solid #c6cbd1;border-bottom-color:#959da5;border-radius:3px;box-shadow:inset 0 -1px 0 #959da5}.markdown-body :checked+.radio-label{position:relative;z-index:1;border-color:#0366d6}.markdown-body .task-list-item{list-style-type:none}.markdown-body .task-list-item+.task-list-item{margin-top:3px}.markdown-body .task-list-item input{margin:0 .2em .25em -1.6em;vertical-align:middle}.markdown-body::before{display:table;content:""}.markdown-body::after{display:table;clear:both;content:""}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.Alert,.Error,.Note,.Success,.Warning{padding:11px;margin-bottom:24px;border-style:solid;border-width:1px;border-radius:4px}.Alert p,.Error p,.Note p,.Success p,.Warning p{margin-top:0}.Alert p:last-child,.Error p:last-child,.Note p:last-child,.Success p:last-child,.Warning p:last-child{margin-bottom:0}.Alert{color:#246;background-color:#e2eef9;border-color:#bac6d3}.Warning{color:#4c4a42;background-color:#fff9ea;border-color:#dfd8c2}.Error{color:#911;background-color:#fcdede;border-color:#d2b2b2}.Success{color:#22662c;background-color:#e2f9e5;border-color:#bad3be}.Note{color:#2f363d;background-color:#f6f8fa;border-color:#d5d8da}.Alert h1,.Alert h2,.Alert h3,.Alert h4,.Alert h5,.Alert h6{color:#246;margin-bottom:0}.Warning h1,.Warning h2,.Warning h3,.Warning h4,.Warning h5,.Warning h6{color:#4c4a42;margin-bottom:0}.Error h1,.Error h2,.Error h3,.Error h4,.Error h5,.Error h6{color:#911;margin-bottom:0}.Success h1,.Success h2,.Success h3,.Success h4,.Success h5,.Success h6{color:#22662c;margin-bottom:0}.Note h1,.Note h2,.Note h3,.Note h4,.Note h5,.Note h6{color:#2f363d;margin-bottom:0}.Alert h1:first-child,.Alert h2:first-child,.Alert h3:first-child,.Alert h4:first-child,.Alert h5:first-child,.Alert h6:first-child,.Error h1:first-child,.Error h2:first-child,.Error h3:first-child,.Error h4:first-child,.Error h5:first-child,.Error h6:first-child,.Note h1:first-child,.Note h2:first-child,.Note h3:first-child,.Note h4:first-child,.Note h5:first-child,.Note h6:first-child,.Success h1:first-child,.Success h2:first-child,.Success h3:first-child,.Success h4:first-child,.Success h5:first-child,.Success h6:first-child,.Warning h1:first-child,.Warning h2:first-child,.Warning h3:first-child,.Warning h4:first-child,.Warning h5:first-child,.Warning h6:first-child{margin-top:0}h1.title,p.subtitle{text-align:center}h1.title.followed-by-subtitle{margin-bottom:0}p.subtitle{font-size:1.5em;font-weight:600;line-height:1.25;margin-top:0;margin-bottom:16px;padding-bottom:.3em}div.line-block{white-space:pre-line}
+  </style>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<article class="markdown-body">
+<div style="text-align: center; position: -webkit-sticky-; position: sticky;
+top: 0; z-index: 9999; padding-top: 10px; background-color: rgba(255, 255, 255, .8)">
+<div style="font-size: 12px; letter-spacing: 2px;">
+<a href="../../../index.html">Wiki Root</a>
+</div>
+<div style="text-align: center; font-size: 11px; letter-spacing: 1px;">
+<a href="../index.html">index</a>
+</div>
+<header>
+<h1 class="title">ECON 121 Chapter 15 Notes</h1>
+</div>
+<p class="author">Mark Lucernas</p>
+<p class="date">2020-05-17</p>
+<div class="summary">
+Public Goods and Public Choices
+</div>
+</header>
+<hr>
+<nav id="TOC">
+<h2 class="toc-title">Contents</h1>
+<ul>
+<li><a href="#chapter-15-public-goods-and-public-choice">Chapter 15: Public Goods and Public Choice</a><ul>
+<li><a href="#external-benefits-and-public-goods">15.1 External Benefits and Public Goods</a><ul>
+<li><a href="#public-goods-and-the-free-rider-problem">15.1.1 Public Goods and the Free-Rider Problem</a></li>
+<li><a href="#behavioral-economics-and-free-riding">15.1.2 Behavioral Economics and Free Riding</a></li>
+<li><a href="#overcoming-the-free-rider-problem">15.1.3 Overcoming the Free-Rider Problem</a></li>
+</ul></li>
+<li><a href="#private-goods-and-external-benefits">15.2 Private Goods and External Benefits</a><ul>
+<li><a href="#external-benefits-from-education">15.2.1 External Benefits from Education</a></li>
+<li><a href="#external-benefits-and-the-marginal-principle">15.2.2 External Benefits and the Marginal Principle</a></li>
+<li><a href="#other-private-goods-that-generate-external-benefits">Other Private Goods That Generate External Benefits</a></li>
+</ul></li>
+<li><a href="#public-choice-and-the-median-voter">15.3 Public Choice and the Median Voter</a><ul>
+<li><a href="#voting-and-the-median-voter-rule">15.3.1 Voting and the Median-Voter Rule</a></li>
+<li><a href="#voting-with-feet">15.3.2 Voting with Feet</a></li>
+<li><a href="#the-median-voter-and-the-median-location">15.3.3 The Median Voter and the Median Location</a></li>
+<li><a href="#alternative-models-of-government-self-interest-and-special-interest">15.3.4 Alternative Models of Government: Self-Interest and Special Interest</a></li>
+</ul></li>
+<li><a href="#chapter-summary">Chapter Summary</a></li>
+</ul></li>
+<li><a href="#resources">Resources</a></li>
+</ul>
+</nav>
+<hr>
+<h1 id="chapter-15-public-goods-and-public-choice">Chapter 15: Public Goods and Public Choice</h1>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-15/ch-15_figure-15.1.png" alt="Figure 15.1 Spending Programs for Local, State, and Federal Governments" /><figcaption>Figure 15.1 Spending Programs for Local, State, and Federal Governments</figcaption>
+</figure>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-15/ch-15_figure-15.2.png" alt="Figure 15.2 Revenue Sources for Local, State, and Federal Government" /><figcaption>Figure 15.2 Revenue Sources for Local, State, and Federal Government</figcaption>
+</figure>
+<h2 id="external-benefits-and-public-goods">15.1 External Benefits and Public Goods</h2>
+<p>As we saw earlier in the chapter on market efficiency, when there are neither external benefits nor external costs, the market equilibrium is efficient. When a government intervenes in an efficient market, the result is inefficiency. In this chapter, we see that a market with external benefits is inefficient, so there is an opportunity for government to promote efficiency.</p>
+<p>For most goods, the benefits of consumption are confined to the person who buys the good. The benefit experienced by a buyer is called a <em>private benefit</em>. In contrast, when someone else benefits from a good, the good generates an external benefit.</p>
+<p><a name="external-benefits-term"><strong>External benefits</strong></a></p>
+<ul>
+<li>A benefit from a good experienced by someone other than the person who buys the good.</li>
+</ul>
+<p>To illustrate the idea of external benefits and inefficiency, consider a dam built for flood-control purposes. One thousand people would be protected by the dam, and each person would get a $50 benefit. <strong>If one person builds a dam, the private benefit is $50 and the external benefit is $49,950, or $50 for each of the 999 other people who benefit.</strong> If the cost of building the dam is $20,000, <strong>no single person will build it because the cost exceeds the $50 private benefit.</strong> In other words, if we rely on the forces of supply and demand, with each person considering only the private benefits and costs of the dam, it won’t be built.</p>
+<p><strong>When there are external benefits from a good, collective decision making generates more efficient choices.</strong> In the case of the dam, the total benefit of $50,000 exceeds the $20,000 cost, so the dam is efficient and society as a whole will be better off if it is built. <strong>The government can solve this problem by collecting enough tax revenue to pay for the dam.</strong> Suppose the government proposes to collect $20 per person to pay for the dam. The tax raises $20,000 in tax revenue ($20 per person times 1,000 people), which is just high enough to pay the $20,000 cost of the dam. Most people will support this proposal because the $20 tax per person is less than the $50 benefit per person. <strong>The government can use its taxing power to provide a good that would otherwise not be provided.</strong></p>
+<h3 id="public-goods-and-the-free-rider-problem">15.1.1 Public Goods and the Free-Rider Problem</h3>
+<p><a name="public-good-term"><strong>Public good</strong></a></p>
+<ul>
+<li>A good that is available for everyone to consume, regardless of who pays and who doesn’t</li>
+<li>A good that is <em>nonrival</em> in consumption: The fact that one person benefits from a good does not prevent another person from benefiting.</li>
+<li>A good that is <em>nonexcludable</em>: It is impractical to exlclude people who don’t pay.</li>
+<li>Some examples of public goods are national defense, law enforcement, space exploration, the preservation of endangered species, the protection of the earth’s ozone layer, and fireworks shows.</li>
+</ul>
+<p><a name="private-good-term"><strong>Private good</strong></a></p>
+<ul>
+<li>A good that is consumed by a single person or household</li>
+<li>A good that is <em>rival</em> in consumption and <em>excludable</em>.</li>
+<li>For example, only one person can eat a hot dog, so it is a private good.</li>
+</ul>
+<p><em>Most public goods are supported by taxes</em>. What would happen if we eliminated taxes and asked people to contribute money to pay for national defense, dams, city streets, and the police? Would people contribute enough money to support these programs at the efficient level? The problem with using voluntary contributions to support public goods is known as the <em>free-rider problem</em>.</p>
+<p><a name="free-rider-term"><strong>Free rider</strong></a></p>
+<ul>
+<li>A person who gets the benefit from a good but does not pay for it.</li>
+</ul>
+<p>The flip side of the free–rider problem is the chump problem: No one wants to be the chump–the person who gives free rides to other people—so no one contributes any money.</p>
+<h3 id="behavioral-economics-and-free-riding">15.1.2 Behavioral Economics and Free Riding</h3>
+<p>People are willing to cooperate by contributing in the social interest as long as other people cooperate, too.</p>
+<p>The conclusion from the contribution experiment is that most people are willing to cooperate, but no one wants to be a chump. We can define a chump as a person who is systematically exploited by others.</p>
+<p>Once a contributor realizes that he or she is playing the chump to free riders, the response is to contribute less or nothing. <strong>Over the course of the game, the recognition of chump status spreads to more and more contributors, so the average contribution decreases to zero.</strong></p>
+<h3 id="overcoming-the-free-rider-problem">15.1.3 Overcoming the Free-Rider Problem</h3>
+<p>Many organizations, including public radio and television, religious organizations, and charitable organizations, raise money through voluntary contributions. The successful organizations use a number of techniques to encourage people to contribute:</p>
+<ul>
+<li><em>Giving contributors private goods such as coffee mugs, books, musical recordings, and magazine subscriptions</em>. People are more likely to contribute if they get something for it.</li>
+<li><em>Arranging matching contributions</em>. You are more likely to contribute if you know your $30 contribution will be matched with a contribution from another person or your employer.</li>
+<li><em>Appealing to a person’s sense of civic or moral responsibility</em>. People are more likely to contribute when they are reminded that they benefit from the service.</li>
+</ul>
+<h2 id="private-goods-and-external-benefits">15.2 Private Goods and External Benefits</h2>
+<p>In contrast to a public good, a private good can be utilized by only a single person or household. However, some private goods generate benefits for people who do not directly consume the good. For example, suppose I replace the peeling paint on my house with a fresh coat of paint. I benefit from the new paint because it protects my house from decay and my house will look better. My neighbors will also benefit from the improved appearance of the neighborhood. Similarly, if I buy a fire extinguisher and install fireproof roofing, my neighbors benefit because a fire is less likely to spread to their houses.</p>
+<h3 id="external-benefits-from-education">15.2.1 External Benefits from Education</h3>
+<p>Education generates three kinds of external benefits:</p>
+<ol type="1">
+<li><em>Workplace externalities</em>. In most workplaces, people work in groups and teamwork is important. A well-educated person understands instructions readily and is more likely to suggest ways to improve the production process. As a result, when a well-educated person joins a work team, the productivity of everyone on the team increases. Higher productivity generally leads to higher profits for firms, and members of the team are likely to earn higher salaries.</li>
+<li><em>Civic externalities</em>. Citizens in a democratic society make collective decisions by voting in elections, and each citizen must live with these decisions. A well-educated person is more likely to vote intelligently, so there are external benefits for other citizens.</li>
+<li><em>Crime externalities</em>. Educated people earn higher legal incomes and thus commit less crime. High school dropouts have relatively low wages and high crime rates, so increasing the high school graduation rate generates large reductions in crime.</li>
+</ol>
+<h3 id="external-benefits-and-the-marginal-principle">15.2.2 External Benefits and the Marginal Principle</h3>
+<p>In Figure 15.3, the marginal private benefit curve shows the extra benefit to the child from each additional book, measured as the increase in future income. Assume the marginal cost of books is constant at $8 per book. Applying the marginal principle, the parent will choose point <span class="math inline">\(a\)</span>, where the marginal benefit equals the marginal cost, and buy nine books.</p>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-15/ch-15_figure-15.3.png" alt="Figure 15.3 External Benefits and the Marginal Principle" /><figcaption>Figure 15.3 External Benefits and the Marginal Principle</figcaption>
+</figure>
+<blockquote>
+<p>Education (represented here as the number of books read) generates external benefits, so the marginal social benefit exceeds the marginal private benefit. Using books as an example of education, an individual picks point a, where the marginal private benefit equals the marginal cost. Point b is the socially efficient point, where the marginal social benefit equals the marginal cost.</p>
+</blockquote>
+<p>The social benefit exceeds the $8 cost, so providing the book is efficient from the social perspective. The private benefit of $6 is less than the $8 cost, however, so the parent won’t buy the 12th book, but instead will stop with nine books. <strong>The lesson is that when there are external benefits, decisions based on private benefits will generate an inefficiently small quantity of the good.</strong></p>
+<p><strong>Because of the external benefits from education, the government uses various policies to encourage people to become educated.</strong> Local governments provide free education through high school. States subsidize students at public colleges and universities, providing college education at a fraction of its actual cost. In addition, the federal government provides financial aid to students in both public and private schools.</p>
+<h3 id="other-private-goods-that-generate-external-benefits">Other Private Goods That Generate External Benefits</h3>
+<p>The government subsidizes other goods that generate external benefits. Subsidies for on-the-job training and education encourage workers and firms to invest in human capital and increase labor productivity. It is sensible for the government to subsidize training and education because some of the benefits are transferred to other firms when workers change employers. Another example of external benefits is research at universities and other nonprofit organizations. If a research project provides knowledge or technology that leads to the development of new products or the improvement of old ones, the benefits from the project spill over onto consumers and producers. When there are external benefits, the government can encourage people to take actions that benefit other people. By making beneficial transactions happen, the government can increase efficiency.</p>
+<h2 id="public-choice-and-the-median-voter">15.3 Public Choice and the Median Voter</h2>
+<p><a name="public-choice-economics-term"><strong>Public-choice economics</strong></a></p>
+<ul>
+<li>A filed of economics that uses models of rational choice to explore decision making in the public sector.</li>
+</ul>
+<h3 id="voting-and-the-median-voter-rule">15.3.1 Voting and the Median-Voter Rule</h3>
+<p><a name="median-voter-rule-term"><strong>Median-voter rule</strong></a></p>
+<ul>
+<li>The choices made by the government will match the preferences of the median voter.</li>
+</ul>
+<p>To see the logic of the median-voter rule, consider a state where there are two candidates for governor—Penny and Buck—and the only issue in the election is how much the state should spend on education. Each citizen will vote for the candidate whose proposed education budget is closest to the citizen’s preferred budget. Figure 15.4 shows citizens’ preferences for education spending, with different preferred budgets on the horizontal axis and the number of voters on the vertical axis. For example, two citizens have a preferred budget of $1 billion, four have a preferred budget of $2 billion, and so on. The median budget, which splits the rest of the voters into two equal groups (20 voters on each side), is $5 billion.</p>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-15/ch-15_figure-15.4.png" alt="Figure 15.4 The Median-Voter Rule" /><figcaption>Figure 15.4 The Median-Voter Rule</figcaption>
+</figure>
+<blockquote>
+<p>If Penny proposes a $3 billion budget and Buck proposes a $7 billion budget, the election will result in a tie. By moving toward the median budget, Penny can increase her chance of being elected. In equilibrium, both candidates will propose a budget close to the $5 billion preferred budget of the median voter.</p>
+</blockquote>
+<p>Suppose the two candidates start out with very different proposed education budgets. Penny proposes a budget of $3 billion, and Buck proposes $7 billion. The 20 citizens with preferred budgets less than or equal to $4 billion will vote for Penny because her proposed budget is closest to their preferred budgets. Buck’s supporters include the 20 citizens with preferred budgets greater than or equal to $6 billion. The two candidates will split the 10 voters with a preferred budget of $5 billion (halfway between the two proposed budgets), so each candidate will get a total of 25 votes, resulting in a tie.</p>
+<p>Penny could increase her chance of being elected by increasing her proposed budget. Let’s say she proposes $4 billion instead of $3 billion. All the voters with a preferred budget of $5 billion will vote for Penny because Penny’s $4 billion proposal is now closer to their $5 billion preferred budget than Buck’s $7 billion proposal. Penny won’t lose any of her other votes either, so she will win the election by a vote of 30 (equal to <span class="math inline">\(2 + 4 + 6 + 8 + 10\)</span>) to 20 (equals <span class="math inline">\(8 + 8 + 4\)</span>). If Buck is smart, he will realize that he could get more votes by moving toward the median budget. For example, if he decreases his proposed budget to $6 billion, the election would result in a tie vote again. Penny and Buck will continue to move their proposed budgets toward the median budget ($5 billion) until they both propose budgets that are very close to the median budget.</p>
+<p>Powerful forces pull the two candidates toward the preferences of the median voter. <strong>As long as Penny proposes a smaller budget than Buck, the people with small preferred budgets will continue to vote for her. The benefit of moving toward the median is that she can take some votes from Buck. Similarly, Buck doesn’t have to worry about people with large preferred budgets but can concentrate instead on the battle for voters in the middle.</strong> The result is that by election day the two candidates have adopted virtually the same position: The position of the median voter. Voters trying to choose between two candidates may feel they don’t have much choice. In fact, <strong>the median-voter rule says the choices made by government will match the preferences of the median voter, regardless of who wins the election.</strong></p>
+<h3 id="voting-with-feet">15.3.2 Voting with Feet</h3>
+<p>Although we usually think that people make political decisions by voting in elections, it is also possible to “vote with your feet.” In 1956 economist Charles M. Tiebout suggested that a household’s choice of which community to live in is based in part on the tax and spending policies of different communities. <strong>Households express their preferences by moving to communities that offer the best package of services and taxes. A community with inefficient public services will experience a loss in population, perhaps causing the local officials to make public services more efficient to attract new residents.</strong></p>
+<h3 id="the-median-voter-and-the-median-location">15.3.3 The Median Voter and the Median Location</h3>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-15/ch-15_figure-15.5.png" alt="Figure 15.5 Competition on a Beach Leads to a Median Location for Both Sellers" /><figcaption>Figure 15.5 Competition on a Beach Leads to a Median Location for Both Sellers</figcaption>
+</figure>
+<blockquote>
+<ol type="A">
+<li>If one seller starts at the 1/4-mile mark and the other starts at the 3/4-mile mark, each has a territory of 1/2 mile and sells 60 cones. (B) If Lefty moves to the median location, his territory increases to the 5/8 mile mark, and he sells 75 cones, compared to 45 for Righty. (C) Righty can recover her lost territory by moving to the median location. In equilibrium, both sellers locate at the median location and each has half the market.</li>
+</ol>
+</blockquote>
+<p>The outcome of the ice cream vendors’ game is the same as for the politicians’ game. Like politicians, the vendors have an incentive to move to the median location, so there is no real difference between the two vendors.</p>
+<h3 id="alternative-models-of-government-self-interest-and-special-interest">15.3.4 Alternative Models of Government: Self-Interest and Special Interest</h3>
+<p>The <em>self-interest</em> theory of government explains why voters sometimes approve explicit limits on taxes and government spending. For example, many states have limits on property tax rates and total revenue, and many states also limit total government spending. According to the self-interest theory of government, limitations on taxes and spending are necessary safeguards against politicians and bureaucrats who benefit from larger budgets.</p>
+<p>Another model of government is based on the idea that small groups of people manipulate government for their own gain. Suppose the total benefit of a dam is less than its total cost, so the project is inefficient, but a few farmers reap large benefits from the dam, while the costs are spread over a million taxpayers. The farmers have a strong incentive to spend time and money convincing policymakers to build the dam. In contrast, if the tax is only $1 per person, few taxpayers will make their preferences known to policymakers because the marginal benefit (the $1 tax savings) is less than the marginal cost (the opportunity cost of their time). If politicians listen to people who express their preferences and contribute money to political campaigns, the inefficient project may be approved. This is an example of a <em>special-interest</em> group (farmers) <strong>manipulating the government at the expense of a larger group</strong> (all taxpayers). <strong>In general, when a few people share the benefit from a project and a large number of people share the cost, the government is more likely to approve inefficient projects.</strong></p>
+<h2 id="chapter-summary">Chapter Summary</h2>
+<p>In this chapter, we’ve seen why the government provides public goods. The free-rider problem means that we can’t rely on voluntary contributions to support public goods and subsidies, so taxes are necessary to support public programs. We’ve also examined different views on how governments actually make decisions. Here are the main points of the chapter:</p>
+<ol type="1">
+<li>When a good generates <em>external benefits</em>, collective decision making generates more efficient choices.</li>
+<li>A <em>public good</em> is available for everyone to consume (nonrival in consumption), regardless of who pays and who doesn’t (nonexcludable).</li>
+<li>A system of voluntary contributions suffers from the <em>free-rider problem</em>: People do not have a financial incentive to support public goods.</li>
+<li>Education generates external benefits in the workplace and in elections and reduces crime.</li>
+<li>The <em>median-voter rule</em> suggests that government choices will match the preferences of the median voter, defined as the voter whose preferences lie in the middle of voter preferences.</li>
+</ol>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<p>Text Books</p>
+<ul>
+<li>Microeconomics: <em>Principles, Applications, and Tools</em> 10th ed (eText).
+<ul>
+<li>Authors: O’Sullivan/Sheffrin/Perez</li>
+</ul></li>
+</ul>
+<hr>
+</article>
+</body>
+</html>

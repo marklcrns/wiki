@@ -48,6 +48,7 @@ Textbook
   - [Chapter 11](notes/ch-11) -- Market Entry and Monopolistic Competition
   - [Chapter 12](notes/ch-12) -- Oligopoly and Strategic Behavior
   - [Chapter 14](notes/ch-14) -- Imperfect Information: Adverse Selection and Moral Hazard
+  - [Chapter 15](notes/ch-15) -- Pulic Goods and Public Choice
 
 ## Exams
 

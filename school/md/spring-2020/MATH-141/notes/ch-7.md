@@ -275,7 +275,8 @@ Some famous Dot Product properties
 #### Video Lecture Notes
 
   - $<{\color{#ff0000}{1}}, {\color{#00ff00}{5}}, {\color{#0000ff}{0}}> \cdot <{\color{#ff0000}{3}}, {\color{#00ff00}{1}}, {\color{#0000ff}{-5}}>$
-    * ${\color{#ff0000}{2}} + {\color{#00ff00}{5}} + {\color{#0000ff}{0}} = 7$
+    * multiply each, ${\color{#ff0000}{3}} + {\color{#00ff00}{5}} + {\color{#0000ff}{0}}$
+    * $8$
 
 
 Magnitude by Dot [(10:35)](https://www.youtube.com/watch?v=VvoUzq6NLr8&t=635)
