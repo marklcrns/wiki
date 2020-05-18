@@ -250,8 +250,11 @@ Roots of unity [(20:00)](https://www.youtube.com/watch?v=mrADnifzTy0&t=1200)
     * Use pythagorean to get the magnitude
     * Denoted by $\|\vec{V}\|$, where $\vec{V}$ as the vector and $\|\|$ as the
       magnitude of the vector.
-    * **Normalized vector/Unit vector** is a vector that has a magnitude exactly
+    * **Normalized/Unit vector** is a vector that has a magnitude exactly
       equals to 1.
+      + $N_{\vec{v}}$ Can be computed as $\dfrac{1}{\|\vec{v}\|}\vec{v}$
+      + $N_{\vec{v}}$ only changes the magnitude, therefore, $N_{\vec{v}}$ has
+        the same direction as $\vec{v}$
 
 
 ## 7.7 Introduction To The Dot Product
@@ -274,7 +277,7 @@ Some famous Dot Product properties
 
 #### Video Lecture Notes
 
-  - $<{\color{#ff0000}{1}}, {\color{#00ff00}{5}}, {\color{#0000ff}{0}}> \cdot <{\color{#ff0000}{3}}, {\color{#00ff00}{1}}, {\color{#0000ff}{-5}}>$
+  - $\langle {\color{#ff0000}{1}}, {\color{#00ff00}{5}}, {\color{#0000ff}{0}} \rangle \cdot \langle {\color{#ff0000}{3}}, {\color{#00ff00}{1}}, {\color{#0000ff}{-5}} \rangle$
     * multiply each, ${\color{#ff0000}{3}} + {\color{#00ff00}{5}} + {\color{#0000ff}{0}}$
     * $8$
 

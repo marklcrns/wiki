@@ -133,6 +133,16 @@ date: 2020-02-05
   - [Quiz 13 Questionnaire](file:../../../files/spring-2020/MATH-141/ch-7/math-141_quiz_13.pdf)
     * Score: 102/110
     * [Quiz 13 Solutions](file:../../../files/spring-2020/MATH-141/ch-7/math-141_quiz_13_solutions.pdf)
+    * Answers: 1) AB , 2) B, 3) ACF, 4) C, 5) AB, 6) AD, 7) B, 8) BC, 9) A, 10)
+      AE, 11) DF, 12) C, 13) ADE , 14) CD, 15) B, 16) A, 17) C, 18) G, 19) A,
+      20) AB, 21) A, 22) BC, 23) CD, 24) D, 25) AC
+  - [Quiz 14 Questionnaire](file:../../../files/spring-2020/MATH-141/ch-7/math-141_quiz_14.pdf)
+    * Score: 110/110
+    * [Quiz 14 Solutions](file:../../../files/spring-2020/MATH-141/ch-7/math-141_quiz_14_solutions.pdf)
+    * Answers: 1) B, 2) F, 3) B, 4) C, 5) A, 6) ACD, 7) A, 8) C, 9) D, 10) B,
+      11) B, 12) B, 13) B, 14) A, 15) D, 16) B, 17) A, 18) B, 19) F, 20) A, 21)
+      D, 22) A, 23) B, 24) B, 25) E
+
 
 ## Exams
 
