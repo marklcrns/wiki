@@ -18,38 +18,46 @@ The Game of the Generals (GoG) Board Game
 
 ### Week 1: Checkpoint 1 Project Proposal
 
-  - Create `Board`, `Tiles`, `Piece` and all individual pieces class.
-  - Implement menu GUI interface.
-  - Implement game GUI interface.
+  - Write the project proposal.
+  - Plan the code.  Determine Classes, methods, variables needed.
+  - Sketch the GUI layout.
+  - Create the complete GUI of the program.
+    * Lobby and lobby menus.
     * Design GoG game board.
     * Design GoG game pieces.
-    * Game start menu.
+    * Menu bar
+
+
+![Week 1 Checkpoint Screenshot](../../../../files/spring-2020/CISC-190/module-8/cisc-190_final_proj_week_1.png)
 
 ### Week 2: Checkpoint 2 Code Submission
 
   - Add GoG game logic/checkers:
     * Game pieces chain of command hierarchy.
-    * Piece alliance (my side/opponent side)
+    * Piece alliance (my side/opponent side).
     * Legal and unavailable moves.
-    * Piece-on-piece trump/defeat checker.
-    * Game win/loss checker.
+    * Piece-on-piece engagement.
+    * Other gameplay checkers
   - Create tester classes for all game logic classes.
+
+
+![Week 2 Checkpoint Screenshot](../../../../files/spring-2020/CISC-190/module-8/cisc-190_final_proj_week_2.png)
 
 ### Week 3: Checkpoint 3 Code Submission
 
-  - GUI: Highlight available and invalid moves
-  - Add "Save game" feature.
-  - Add "Score board".
-    * Use simple `.txt` file to save game state.
+  - Implement event handling
+  - Implement  "Save game/Load game" feature.
+  - GUI: Highlight available and invalid moves.
 
 ### Week 4: Final Project Final Submission
 
-  - Improve game engine performance.
+  - Improve program performance.
     * Remove unnecessary codes.
-    * Potential refactoring for performance improvement.
-  - Improve class object properties security/immutability.
-  - Clean and improve code documentations.
+    * Potential refactoring for better performance and readability.
+  - Improve Class security and documentations.
   - Fix remaining bugs.
+  - Present final project.
+  - Fill out requirements file with line numbers from the final version of code.
 
 ## References
 
