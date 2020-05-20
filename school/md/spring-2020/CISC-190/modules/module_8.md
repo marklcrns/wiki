@@ -41,7 +41,8 @@ The Game of the Generals (GoG) Board Game
   - Create tester classes for all game logic classes.
 
 
-![Week 2 Checkpoint Screenshot](../../../../files/spring-2020/CISC-190/module-8/cisc-190_final_proj_week_2.png)
+![Week 2 Checkpoint Screenshot](../../../../files/spring-2020/CISC-190/module-8/cisc-190_final_proj_week_2_1.png)
+![Week 2 Checkpoint Demo](../../../../files/spring-2020/CISC-190/module-8/cisc-190_final_proj_week_2_2.gif)
 
 ### Week 3: Checkpoint 3 Code Submission
 
