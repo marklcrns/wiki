@@ -161,7 +161,7 @@ Practice
 Exam
 
   - [Exam 1 Questionnaire v1](file:../../../files/spring-2020/MATH-141/exam-1/math-141_exam_1.pdf)
-    * Score: 110
+    * Score: 110/110
     * Answers: 1) D, 2) A, 3) A, 4) A, 5) E, 6) B, 7) A, 8) C, 9) C, 10) D, 11)
       D, 12) B
 
@@ -174,7 +174,7 @@ Practice
 Exam
 
   - [Exam 2 Questionnaire v1](file:../../../files/spring-2020/MATH-141/exam-2/math-141_exam_2.pdf)
-    * Score: 102
+    * Score: 102/110
     * [Exam 2 Solutions](file:../../../files/spring-2020/MATH-141/exam-2/math-141_exam_2_solutions.pdf)
     * Answers: 1) B, 2) B, 3) C, 4) A, 5) B, 6) BCE, 7) CD, 8) C, 9) A, 10) CE,
       11) D, 12) ACE
@@ -189,7 +189,20 @@ Practice
 Exam
 
   - [Exam 3 Questionnaire v1](file:../../../files/spring-2020/MATH-141/exam-3/math-141_exam_3.pdf)
+    * Score: 94/110
     * [Exam 3 Solutions](file:../../../files/spring-2020/MATH-141/exam-3/math-141_exam_3_solutions.pdf)
-    * Answers: 1) C, 2) B, 3) B, 4) AB, 5) A, 6) AB, 7) C, 8) ABCDEFG, 9) C ,
+    * Answers: 1) C, 2) B, 3) B, 4) AB, 5) A, 6) AB, 7) C, 8) ABCDEFG, 9) C,
       10) BC, 11) C, 12) C
+
+### Exam 4
+
+Practice
+
+  - [Exam 4 Pre Examination Worksheet](file:../../../files/spring-2020/MATH-141/exam-4/exam-4_preExamWorksheet.pdf)
+
+Exam
+
+  - [Exam 4 Questionnaire v1](file:../../../files/spring-2020/MATH-141/exam-4/math-141_exam_4.pdf)
+    * Score: 80/100 + points for question typo on #8
+    * [Exam 4 Solutions](file:../../../files/spring-2020/MATH-141/exam-4/math-141_exam_4_solutions.pdf)
 

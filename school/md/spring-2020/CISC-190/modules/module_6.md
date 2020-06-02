@@ -39,5 +39,5 @@ summary: Module 6 notes and exercises
 
 ### Reflect
 
-  - [M6_Reflect](file:../../../../files/spring-2020/CISC-190/module-7/m-6_reflect.docx)
+  - [M6_Reflect](file:../../../../files/spring-2020/CISC-190/module-6/m-6_reflect.docx)
 
