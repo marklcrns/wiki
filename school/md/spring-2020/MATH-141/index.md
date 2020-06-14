@@ -205,4 +205,5 @@ Exam
   - [Exam 4 Questionnaire v1](file:../../../files/spring-2020/MATH-141/exam-4/math-141_exam_4.pdf)
     * Score: 80/100 + points for question typo on #8
     * [Exam 4 Solutions](file:../../../files/spring-2020/MATH-141/exam-4/math-141_exam_4_solutions.pdf)
+    * 1) B, 2) F , 3) B , 4) B, 5) A, 6) E, 7) BC, 8) G, 9) D, 10) B
 
