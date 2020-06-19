@@ -51,8 +51,17 @@ summary: The Warehouse by Rob Hart Part 1 notes
     * Receiving a teeth cleaning once a year
     * .05 credits for every week you maintain a five-star rating. Rating must be
       maintained for the entire week to take effect.
+  - Staff polo shirt colors. pg 45.
+    * Red: Pickers and placers.
+    * Brown: Tech support.
+    * Yellow: Customer service.
+    * Green: Food service, cleaners and other odd jobs.
+    * White: Managers.
+    * Purple: Teachers.
+    * Orange: Drone field.
+    * Blue: Security.
 
-      k
+
 ## Paxton
 
   - On a bus ride to his a job processing at the Cloud in a scorching hot sunny
@@ -75,14 +84,15 @@ summary: The Warehouse by Rob Hart Part 1 notes
 
 ## Zinnia
 
-  - One of the applicants who passed the screening test at the Cloud.
+  - Half latina applicant who passed the screening test at the Cloud.
   - Used to be math teacher who were layed off because of job reduction.
-  - The women 8 seats across from Paxton whom she called the "goof" who now is
-    seating besides her on the Cloud bus.
+  - The women 8 seats across from Paxton whom she called the "goof" who sat
+    besides her on the Cloud bus bound to MotherCloud.
   - Heard from the woman in lavender pantsuit who also an applicant at the Cloud
     that the test was simple: answering too quick, means you are powering
     through, waiting too long, and your relationship to reason was wanting. The
     video recording was review was automated by keywords and eye-contacts.
+  - Got a red polo shirt (Pickers and placers job).
   - Seems to be hiding something. Always keeping a low-profile and avoiding
     standing out. Picks different name every other jobs.
     * Aims to be a part of the tech crew but got a different job.

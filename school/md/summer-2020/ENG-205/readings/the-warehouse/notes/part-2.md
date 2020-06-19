@@ -35,6 +35,13 @@ summary: The Warehouse by Rob Hart Part 2 notes
 ## Zinnia
 
 
+## Miguel Velandres
+
+  - Strong latino man (bisexual) who trained Zinnia on the job.
+  - Married to a german man
+  - Contented to his current job position.
+
+
 <br>
 
 # Resources
