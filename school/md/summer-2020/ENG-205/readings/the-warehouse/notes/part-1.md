@@ -8,7 +8,7 @@ summary: The Warehouse by Rob Hart Part 1 notes
 
 # Part 1: Processing
 
-Gibson Wells
+## Gibson Wells
 
   - Dying within a year.
     * Stage-four pancreatic cancer. Final stage.
@@ -26,13 +26,34 @@ Gibson Wells
     * This is where he got the idea for starting the Cloud company.
 
 
-The Cloud/MotherCloud
+## The Cloud/MotherCloud
 
   - A massive business like Amazon
   - Biggest electronic retail and cloud computing company in the world.
+  - Distributes _CloudBand_, a watch that functions as navigation, payment
+    method, health & location tracker, master key, notifier and more, to all
+    employees. May only remove at night while charging.
+    - _CloudBands_ must be worn at all times outside room and is coded only to
+      the owner. Will notify or alarm if has been off the user's wrist for too
+      long or someone else is wearing the band.
+  - Docked pay offenses:
+    * Damage to Cloud property
+    * Arriving to work late more than twice
+    * Not meeting monthly quotas as set by a manager
+    * Personal health care negligence
+    * Going over you allotment of sick days
+    * Losing or breaking your watch
+    * Disorderly conduct
+  - Additional credits for:
+    * Meeting your monthly quotas for three months or more
+    * Using no sick days for six months or more
+    * Receiving a health checkup every six months
+    * Receiving a teeth cleaning once a year
+    * .05 credits for every week you maintain a five-star rating. Rating must be
+      maintained for the entire week to take effect.
 
-
-Paxton
+      k
+## Paxton
 
   - On a bus ride to his a job processing at the Cloud in a scorching hot sunny
     day seeing through the window from the inside of the bus a used-to-be busy
@@ -52,7 +73,7 @@ Paxton
   - Starting to develop a liking for Zinnia.
 
 
-Zinnia
+## Zinnia
 
   - One of the applicants who passed the screening test at the Cloud.
   - Used to be math teacher who were layed off because of job reduction.
@@ -64,3 +85,15 @@ Zinnia
     video recording was review was automated by keywords and eye-contacts.
   - Seems to be hiding something. Always keeping a low-profile and avoiding
     standing out. Picks different name every other jobs.
+    * Aims to be a part of the tech crew but got a different job.
+    * Experienced at penetrating security systems and reconnaissance.
+    * Seems to be infiltrating the Cloud company. A "corporate espionage".
+    * Hired by someone, competition of the Cloud, to infiltrate.
+
+
+<br>
+
+# Resources
+
+  - _The Warehouse_ by Rob Hart
+

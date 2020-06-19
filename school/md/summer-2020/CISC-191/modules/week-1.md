@@ -10,5 +10,5 @@ summary: Week 1 notes and activities
 
 ## Notes
 
-  - [Week 1](../notes/w-1) -- Chapter
+  - [Week 1 Notes](../notes/w-1)
 
