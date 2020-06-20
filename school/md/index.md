@@ -19,6 +19,7 @@ Start/End Date: 2020-02-03 -- 2020-06-01
   - ~~[ECON 120](spring-2020/ECON-120/index) -- Principles of Macroeconomics (26977 - online)~~
     * dropped on 2020-02-13
 
+
 Total Units Enrolled: $15 - 3 = \mathbf{12}$ units
 
 ![Daily Schedule](file:../files/spring-2020/spring-2020_dailySchedule_v2.png)
@@ -31,4 +32,7 @@ Start/End Date: 2020-06-15 -- 2020-08-08
 ### Classes
 
   - [CISC 191](summer-2020/CISC-191/index) -- Intermediate Java Programming (31750 - online)
-  - [ENGL 205](summer-2020/ENG-205/index)
+  - [ENGL 205](summer-2020/ENG-205/index) -- Critical Thinking and Intermediate Composition (32472 - online)
+
+
+Total Units Enrolled: $\mathbf{7}$ units

@@ -10,8 +10,8 @@ summary: ENGL 205
 > Professor: Michael Zimmerman
 > email: mjzimmer@sdccd.edu
 > Campus: San Diego Mesa College (online)<br>
-> Units: 4<br>
-> Component: Lecture/Lab<br>
+> Units: 3<br>
+> Component: Lecture<br>
 > Start: 2020-06-15<br>
 > End: 2020-08-08<br>
 
