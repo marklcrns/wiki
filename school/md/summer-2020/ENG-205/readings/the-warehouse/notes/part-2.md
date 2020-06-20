@@ -10,8 +10,8 @@ summary: The Warehouse by Rob Hart Part 2 notes
 
 ## Gibson Wells
 
-  - Dreamed of creating drones as package air delivery service since he was a
-    kid. pg. 72
+  - Dreamed of creating drones for air delivery service since he was a kid. pg.
+    72
 
 
 ## Ray Carson
@@ -34,12 +34,28 @@ summary: The Warehouse by Rob Hart Part 2 notes
 
 ## Zinnia
 
+  - Starts her training as a picker and placer. Met Miguel Velandres.
+
 
 ## Miguel Velandres
 
   - Strong latino man (bisexual) who trained Zinnia on the job.
   - Married to a german man
   - Contented to his current job position.
+
+
+## Paxton
+
+  - Were offered an extra assignment from Sheriff Dobbs to keep an eye for
+    Oblivion drugs going around the company.
+
+
+## Sheriff Dobbs
+
+  - The Sheriff that deputized Paxton along with other new security guards.
+  - Dealing with contraband named Oblivion, a highly addictive modified heroin
+    drug that rewires the brain. Makes user's body not function without it.
+  - Liked and respected by Paxton.
 
 
 <br>
