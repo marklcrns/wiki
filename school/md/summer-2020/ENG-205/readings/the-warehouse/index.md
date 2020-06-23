@@ -11,17 +11,19 @@ summary: The Warehouse by Rob Hart Notes
 ## Notes
 
   - [Part 1: Processing](notes/part-1) -- pages 6 to 71
-  - [Part 2: Processing](notes/part-2) -- pages 72 to
+  - [Part 2: Orientation](notes/part-2) -- pages 72 to 135
+  - [Part 3: Grace Period](notes/part-3) -- pages 136
 
 
 ## Progress Notes
 
-  - [Progress Notes 1](file:../../../../../files/summer-2020/ENGL-205/progress-notes/progress_notes_1.docx) -- pages 3 to 50
+  - [Progress Notes 1](file:../../../../../files/summer-2020/ENGL-205/progress-notes/progress_notes_1.docx)
+  - [Progress Notes 2](file:../../../../../files/summer-2020/ENGL-205/progress-notes/progress_notes_2.docx)
 
 
 ## Reading Response
 
-  - [Reading Response 1](file:../../../../../files/summer-2020/ENGL-205/reading-response/reading_response_1.docx) -- pages 3 to 50
+  - [Reading Response 1](file:../../../../../files/summer-2020/ENGL-205/reading-response/reading_response_1.docx)
 
 
 <br>
