@@ -15,6 +15,7 @@ summary: The Warehouse by Rob Hart Notes
   - [Part 3: Grace Period](notes/part-3)
   - [Part 4: Cut Day](notes/part-4)
   - [Part 5: Grind](notes/part-5)
+  - [Part 6: Software Update](notes/part-6)
 
 
 ## Progress Notes
