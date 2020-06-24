@@ -10,9 +10,10 @@ summary: The Warehouse by Rob Hart Notes
 
 ## Notes
 
-  - [Part 1: Processing](notes/part-1) -- pages 6 to 71
-  - [Part 2: Orientation](notes/part-2) -- pages 72 to 135
-  - [Part 3: Grace Period](notes/part-3) -- pages 136
+  - [Part 1: Processing](notes/part-1)
+  - [Part 2: Orientation](notes/part-2)
+  - [Part 3: Grace Period](notes/part-3)
+  - [Part 4: Cut Day](notes/part-4)
 
 
 ## Progress Notes

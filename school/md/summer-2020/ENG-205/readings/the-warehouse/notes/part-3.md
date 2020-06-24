@@ -30,10 +30,16 @@ summary: The Warehouse by Rob Hart Part 3 notes
 
 ## Paxton
 
-  - Concerned about Vikram that he might be on his ass and pull him down.
+  - Concerned about Viral that he might be on his ass and pull him down.
   - Had a drinks with Zinnia then went to the arcade to play some video game
     when he saw Warren with a man wearing brown shirt. Didn't get a chance to
     see the man's face.
+  - Dakota was furious that he let a lead off his hands. Worst, their
+    conversation might have heard by Vikram.
+  - For some reason, Vikram might have tipped Dobbs off, he was sent to Dobbs
+    office immediately after he left Admin and was reassigned to scanner duty.
+    He was frustrated and wanted to make things right.
+
 
 ## Vikram
 
@@ -60,7 +66,13 @@ summary: The Warehouse by Rob Hart Part 3 notes
   - Met Cynthia, neighbor on a wheelchair whom she helped with her stuff to her
     room, which surprisingly just as constraining as Zinnia's apartment for a
     handicapped person.
-  - Had drinks with Paxton after her shift that night.
+  - Had drinks with Paxton after her shift that night and had a great time.
+  - Knew that Paxton was following someone from the arcade.
+  - Took a shower in gender-neutral bathroom with five-minute allotment of
+    water. Pay for extra minutes of shower water. She was pissed.
+  - Met a man wearing white polo shirt (manager) in the gender-neutral bathroom
+    that sexually harassed her. She did not resisted as to prevent blowing her
+    cover.
 
 
 <br>
