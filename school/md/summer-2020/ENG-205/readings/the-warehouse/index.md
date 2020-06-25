@@ -16,6 +16,8 @@ summary: The Warehouse by Rob Hart Notes
   - [Part 4: Cut Day](notes/part-4)
   - [Part 5: Grind](notes/part-5)
   - [Part 6: Software Update](notes/part-6)
+  - [Part 7: Day Trip](notes/part-7)
+  - [Part 8: Prep](notes/part-8)
 
 
 ## Progress Notes

@@ -173,7 +173,23 @@ Object Oriented Programming
 <li><a href="#a-subclass-cannot-weaken-the-accessibility">A Subclass Cannot Weaken the Accessibility</a></li>
 <li><a href="#the-final-modifier">The final Modifier</a></li>
 </ul></li>
-<li><a href="#exceptions-handling-and-text-io">Exceptions Handling and Text IO</a></li>
+<li><a href="#exceptions-handling-and-text-io">Exceptions Handling and Text IO</a><ul>
+<li><a href="#system-errors">System Errors</a></li>
+<li><a href="#exceptions">Exceptions</a></li>
+<li><a href="#runtime-exceptions">Runtime Exceptions</a></li>
+<li><a href="#checked-exceptions-vs.-unchecked-exceptions">Checked Exceptions vs. Unchecked Exceptions</a></li>
+<li><a href="#declaring-exceptions">Declaring Exceptions</a></li>
+<li><a href="#throwing-exceptions">Throwing Exceptions</a></li>
+<li><a href="#catching-exceptions">Catching Exceptions</a></li>
+<li><a href="#catch-or-declare-checked-exceptions">Catch or Declare Checked Exceptions</a></li>
+<li><a href="#rethrowing-exceptions">Rethrowing Exceptions</a></li>
+<li><a href="#the-finally-clause">The finally Clause</a></li>
+<li><a href="#cautions-when-using-exceptions">Cautions When Using Exceptions</a></li>
+<li><a href="#when-to-throw-exceptions">When to Throw Exceptions</a></li>
+<li><a href="#when-to-use-exceptions">When to Use Exceptions</a></li>
+<li><a href="#defining-custom-exception-classes">Defining Custom Exception Classes</a></li>
+<li><a href="#assertions">Assertions</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#resources">Resources</a></li>
 </ul>
@@ -427,6 +443,203 @@ Object Oriented Programming
 <ul>
 <li><a href="../../../../files/summer-2020/CISC-191/week-2/exceptions_handling.ppt">Exceptions Handling</a></li>
 </ul>
+<h3 id="system-errors">System Errors</h3>
+<p>System <em>errors</em> are thrown by JVM and represented in the <code>Error</code> class. The <code>Error</code> class describes internal system errors. Such errors rarely occur. If one does, there is little you can do beyond notifying the user and trying to terminate the program gracefully.</p>
+<h3 id="exceptions">Exceptions</h3>
+<p><em>Exception</em> describes errors caused by your program and external circumstances. These errors can be caught and handled by your program.</p>
+<h3 id="runtime-exceptions">Runtime Exceptions</h3>
+<p>RuntimeException is caused by programming errors, such as bad casting, accessing an out-of-bounds array, and numeric errors.</p>
+<h3 id="checked-exceptions-vs.-unchecked-exceptions">Checked Exceptions vs. Unchecked Exceptions</h3>
+<p><code>RuntimeException</code>, <code>Error</code> and their subclasses are known as <em>unchecked exceptions</em>. All other exceptions are known as <em>checked exceptions</em>, meaning that the compiler forces the programmer to check and deal with the exceptions.</p>
+<h4 id="unchecked-exceptions">Unchecked Exceptions</h4>
+<p>In most cases, unchecked exceptions reflect programming logic errors that are not recoverable. For example, a <code>NullPointerException</code> is thrown if you access an object through a reference variable before an object is assigned to it; an <code>IndexOutOfBoundsException</code> is thrown if you access an element in an array outside the bounds of the array. These are the logic errors that should be corrected in the program. Unchecked exceptions can occur anywhere in the program. To avoid cumbersome overuse of try-catch blocks, Java does not mandate you to write code to catch unchecked exceptions.</p>
+<h3 id="declaring-exceptions">Declaring Exceptions</h3>
+<p>Every method must state the types of checked exceptions it might throw. This is known as <em>declaring exceptions</em>.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">myMethod</span>() <span class="kw">throws</span> <span class="bu">IOException</span></a>
+<a class="sourceLine" id="cb18-2" title="2"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">myMethod</span>() <span class="kw">throws</span> <span class="bu">IOException</span>, OtherException</a></code></pre></div>
+<h3 id="throwing-exceptions">Throwing Exceptions</h3>
+<p>When the program detects an error, the program can create an instance of an appropriate exception type and throw it. This is known as throwing an exception. Here is an example,</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">throw</span> <span class="kw">new</span> <span class="fu">TheException</span>();</a>
+<a class="sourceLine" id="cb19-2" title="2">TheException ex = <span class="kw">new</span> <span class="fu">TheException</span>();</a>
+<a class="sourceLine" id="cb19-3" title="3"><span class="kw">throw</span> ex;</a></code></pre></div>
+<p>Example</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb20-1" title="1"><span class="co">/**</span> Set a new radius <span class="co">*/</span></a>
+<a class="sourceLine" id="cb20-2" title="2"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">setRadius</span>(<span class="dt">double</span> newRadius) <span class="kw">throws</span> <span class="bu">IllegalArgumentException</span> {</a>
+<a class="sourceLine" id="cb20-3" title="3">  <span class="kw">if</span> (newRadius &gt;= <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb20-4" title="4">    radius =  newRadius;</a>
+<a class="sourceLine" id="cb20-5" title="5">  <span class="kw">else</span></a>
+<a class="sourceLine" id="cb20-6" title="6">    <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">IllegalArgumentException</span>(<span class="st">&quot;Radius cannot be negative&quot;</span>);</a>
+<a class="sourceLine" id="cb20-7" title="7">}</a></code></pre></div>
+<h3 id="catching-exceptions">Catching Exceptions</h3>
+<div class="sourceCode" id="cb21"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">try</span> {</a>
+<a class="sourceLine" id="cb21-2" title="2">  statements;  <span class="co">// Statements that may throw exceptions</span></a>
+<a class="sourceLine" id="cb21-3" title="3">}</a>
+<a class="sourceLine" id="cb21-4" title="4"><span class="kw">catch</span> (Exception1 exVar1) {</a>
+<a class="sourceLine" id="cb21-5" title="5">  handler <span class="kw">for</span> exception1;</a>
+<a class="sourceLine" id="cb21-6" title="6">}</a>
+<a class="sourceLine" id="cb21-7" title="7"><span class="kw">catch</span> (Exception2 exVar2) {</a>
+<a class="sourceLine" id="cb21-8" title="8">  handler <span class="kw">for</span> exception2;</a>
+<a class="sourceLine" id="cb21-9" title="9">}</a>
+<a class="sourceLine" id="cb21-10" title="10">...</a>
+<a class="sourceLine" id="cb21-11" title="11"><span class="kw">catch</span> (ExceptionN exVar3) {</a>
+<a class="sourceLine" id="cb21-12" title="12">  handler <span class="kw">for</span> exceptionN;</a>
+<a class="sourceLine" id="cb21-13" title="13">}</a></code></pre></div>
+<h3 id="catch-or-declare-checked-exceptions">Catch or Declare Checked Exceptions</h3>
+<p>Java forces you to deal with checked exceptions. If a method declares a checked exception (i.e., an exception other than <code>Error</code> or <code>RuntimeException</code>), you must invoke it in a try-catch block or declare to throw the exception in the calling method.</p>
+<h3 id="rethrowing-exceptions">Rethrowing Exceptions</h3>
+<p>try { statements; } catch(TheException ex) { perform operations before exits; throw ex; }</p>
+<h3 id="the-finally-clause">The finally Clause</h3>
+<div class="sourceCode" id="cb22"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">try</span> {</a>
+<a class="sourceLine" id="cb22-2" title="2">  statements;</a>
+<a class="sourceLine" id="cb22-3" title="3">}</a>
+<a class="sourceLine" id="cb22-4" title="4"><span class="kw">catch</span>(TheException ex) {</a>
+<a class="sourceLine" id="cb22-5" title="5">  handling ex;</a>
+<a class="sourceLine" id="cb22-6" title="6">}</a>
+<a class="sourceLine" id="cb22-7" title="7"><span class="kw">finally</span> {</a>
+<a class="sourceLine" id="cb22-8" title="8">  finalStatements;</a>
+<a class="sourceLine" id="cb22-9" title="9">}</a></code></pre></div>
+<h3 id="cautions-when-using-exceptions">Cautions When Using Exceptions</h3>
+<p>Exception handling separates error-handling code from normal programming tasks, thus making programs easier to read and to modify. Be aware, however, that exception handling usually requires more time and resources because it requires instantiating a new exception object, rolling back the call stack, and propagating the errors to the calling methods.</p>
+<h3 id="when-to-throw-exceptions">When to Throw Exceptions</h3>
+<p>An exception occurs in a method. If you want the exception to be processed by its caller, you should create an exception object and throw it. If you can handle the exception in the method where it occurs, there is no need to throw it.</p>
+<h3 id="when-to-use-exceptions">When to Use Exceptions</h3>
+<p>When should you use the try-catch block in the code? You should use it to deal with unexpected error conditions. Do not use it to deal with simple, expected situations. For example, the following code</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">try</span> {</a>
+<a class="sourceLine" id="cb23-2" title="2">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(refVar.<span class="fu">toString</span>());</a>
+<a class="sourceLine" id="cb23-3" title="3">}</a>
+<a class="sourceLine" id="cb23-4" title="4"><span class="kw">catch</span> (<span class="bu">NullPointerException</span> ex) {</a>
+<a class="sourceLine" id="cb23-5" title="5">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;refVar is null&quot;</span>);</a>
+<a class="sourceLine" id="cb23-6" title="6">}</a></code></pre></div>
+<p>is better to be replaced by</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb24-1" title="1"><span class="kw">if</span> (refVar != <span class="kw">null</span>)</a>
+<a class="sourceLine" id="cb24-2" title="2">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(refVar.<span class="fu">toString</span>());</a>
+<a class="sourceLine" id="cb24-3" title="3"><span class="kw">else</span></a>
+<a class="sourceLine" id="cb24-4" title="4">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;refVar is null&quot;</span>);</a></code></pre></div>
+<h3 id="defining-custom-exception-classes">Defining Custom Exception Classes</h3>
+<ul>
+<li>Use the exception classes in the API whenever possible.</li>
+<li>Define custom exception classes if the predefined classes are not sufficient.</li>
+<li>Define custom exception classes by extending Exception or a subclass of Exception.</li>
+</ul>
+<p>Examples:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">public</span> <span class="kw">class</span> InvalidRadiusException <span class="kw">extends</span> <span class="bu">Exception</span> {</a>
+<a class="sourceLine" id="cb25-2" title="2">  <span class="kw">private</span> <span class="dt">double</span> radius;</a>
+<a class="sourceLine" id="cb25-3" title="3"></a>
+<a class="sourceLine" id="cb25-4" title="4">  <span class="co">/**</span> Construct an exception <span class="co">*/</span></a>
+<a class="sourceLine" id="cb25-5" title="5">  <span class="kw">public</span> <span class="fu">InvalidRadiusException</span>(<span class="dt">double</span> radius) {</a>
+<a class="sourceLine" id="cb25-6" title="6">    <span class="kw">super</span>(<span class="st">&quot;Invalid radius &quot;</span> + radius);</a>
+<a class="sourceLine" id="cb25-7" title="7">    <span class="kw">this</span>.<span class="fu">radius</span> = radius;</a>
+<a class="sourceLine" id="cb25-8" title="8">  }</a>
+<a class="sourceLine" id="cb25-9" title="9"></a>
+<a class="sourceLine" id="cb25-10" title="10">  <span class="co">/**</span> Return the radius <span class="co">*/</span></a>
+<a class="sourceLine" id="cb25-11" title="11">  <span class="kw">public</span> <span class="dt">double</span> <span class="fu">getRadius</span>() {</a>
+<a class="sourceLine" id="cb25-12" title="12">    <span class="kw">return</span> radius;</a>
+<a class="sourceLine" id="cb25-13" title="13">  }</a>
+<a class="sourceLine" id="cb25-14" title="14">}</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb26-1" title="1"><span class="kw">public</span> <span class="kw">class</span> CircleWithRadiusException {</a>
+<a class="sourceLine" id="cb26-2" title="2">  <span class="co">/**</span> The radius of the circle <span class="co">*/</span></a>
+<a class="sourceLine" id="cb26-3" title="3">  <span class="kw">private</span> <span class="dt">double</span> radius;</a>
+<a class="sourceLine" id="cb26-4" title="4"></a>
+<a class="sourceLine" id="cb26-5" title="5">  <span class="co">/**</span> The number of the objects created <span class="co">*/</span></a>
+<a class="sourceLine" id="cb26-6" title="6">  <span class="kw">private</span> <span class="dt">static</span> <span class="dt">int</span> numberOfObjects = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb26-7" title="7"></a>
+<a class="sourceLine" id="cb26-8" title="8">  <span class="co">/**</span> Construct a circle with radius <span class="co">1</span> <span class="co">*/</span></a>
+<a class="sourceLine" id="cb26-9" title="9">  <span class="kw">public</span> <span class="fu">CircleWithRadiusException</span>() {</a>
+<a class="sourceLine" id="cb26-10" title="10">    <span class="kw">this</span>(<span class="fl">1.</span><span class="dv">0</span>);</a>
+<a class="sourceLine" id="cb26-11" title="11">  }</a>
+<a class="sourceLine" id="cb26-12" title="12"></a>
+<a class="sourceLine" id="cb26-13" title="13">  <span class="co">/**</span> Construct a circle with a specified radius <span class="co">*/</span></a>
+<a class="sourceLine" id="cb26-14" title="14">  <span class="kw">public</span> <span class="fu">CircleWithRadiusException</span>(<span class="dt">double</span> newRadius) {</a>
+<a class="sourceLine" id="cb26-15" title="15">    <span class="kw">try</span> {</a>
+<a class="sourceLine" id="cb26-16" title="16">      <span class="fu">setRadius</span>(newRadius);</a>
+<a class="sourceLine" id="cb26-17" title="17">      numberOfObjects++;</a>
+<a class="sourceLine" id="cb26-18" title="18">    }</a>
+<a class="sourceLine" id="cb26-19" title="19">    <span class="kw">catch</span> (InvalidRadiusException ex) {</a>
+<a class="sourceLine" id="cb26-20" title="20">      ex.<span class="fu">printStackTrace</span>();</a>
+<a class="sourceLine" id="cb26-21" title="21">    }</a>
+<a class="sourceLine" id="cb26-22" title="22">  }</a>
+<a class="sourceLine" id="cb26-23" title="23"></a>
+<a class="sourceLine" id="cb26-24" title="24">  <span class="co">/**</span> Return radius <span class="co">*/</span></a>
+<a class="sourceLine" id="cb26-25" title="25">  <span class="kw">public</span> <span class="dt">double</span> <span class="fu">getRadius</span>() {</a>
+<a class="sourceLine" id="cb26-26" title="26">    <span class="kw">return</span> radius;</a>
+<a class="sourceLine" id="cb26-27" title="27">  }</a>
+<a class="sourceLine" id="cb26-28" title="28"></a>
+<a class="sourceLine" id="cb26-29" title="29">  <span class="co">/**</span> Set a new radius <span class="co">*/</span></a>
+<a class="sourceLine" id="cb26-30" title="30">  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">setRadius</span>(<span class="dt">double</span> newRadius)</a>
+<a class="sourceLine" id="cb26-31" title="31">      <span class="kw">throws</span> InvalidRadiusException {</a>
+<a class="sourceLine" id="cb26-32" title="32">    <span class="kw">if</span> (newRadius &gt;= <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb26-33" title="33">      radius =  newRadius;</a>
+<a class="sourceLine" id="cb26-34" title="34">    <span class="kw">else</span></a>
+<a class="sourceLine" id="cb26-35" title="35">      <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">InvalidRadiusException</span>(newRadius);</a>
+<a class="sourceLine" id="cb26-36" title="36">  }</a>
+<a class="sourceLine" id="cb26-37" title="37"></a>
+<a class="sourceLine" id="cb26-38" title="38">  <span class="co">/**</span> Return numberOfObjects <span class="co">*/</span></a>
+<a class="sourceLine" id="cb26-39" title="39">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">int</span> <span class="fu">getNumberOfObjects</span>() {</a>
+<a class="sourceLine" id="cb26-40" title="40">    <span class="kw">return</span> numberOfObjects;</a>
+<a class="sourceLine" id="cb26-41" title="41">  }</a>
+<a class="sourceLine" id="cb26-42" title="42"></a>
+<a class="sourceLine" id="cb26-43" title="43">  <span class="co">/**</span> Return the area of this circle <span class="co">*/</span></a>
+<a class="sourceLine" id="cb26-44" title="44">  <span class="kw">public</span> <span class="dt">double</span> <span class="fu">findArea</span>() {</a>
+<a class="sourceLine" id="cb26-45" title="45">    <span class="kw">return</span> radius * radius * <span class="fl">3.</span><span class="dv">14159</span>;</a>
+<a class="sourceLine" id="cb26-46" title="46">  }</a>
+<a class="sourceLine" id="cb26-47" title="47">}</a></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb27-1" title="1"><span class="kw">public</span> <span class="kw">class</span> TestCircleWithRadiusException {</a>
+<a class="sourceLine" id="cb27-2" title="2">  <span class="co">/**</span> Main method <span class="co">*/</span></a>
+<a class="sourceLine" id="cb27-3" title="3">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb27-4" title="4">    <span class="kw">try</span> {</a>
+<a class="sourceLine" id="cb27-5" title="5">      CircleWithRadiusException c1 = <span class="kw">new</span> <span class="fu">CircleWithRadiusException</span>(<span class="dv">5</span>);</a>
+<a class="sourceLine" id="cb27-6" title="6">      c1.<span class="fu">setRadius</span>(-<span class="dv">5</span>);</a>
+<a class="sourceLine" id="cb27-7" title="7">      CircleWithRadiusException c3 = <span class="kw">new</span> <span class="fu">CircleWithRadiusException</span>(<span class="dv">0</span>);</a>
+<a class="sourceLine" id="cb27-8" title="8">    }</a>
+<a class="sourceLine" id="cb27-9" title="9">    <span class="kw">catch</span> (InvalidRadiusException ex) {</a>
+<a class="sourceLine" id="cb27-10" title="10">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(ex);</a>
+<a class="sourceLine" id="cb27-11" title="11">    }</a>
+<a class="sourceLine" id="cb27-12" title="12"></a>
+<a class="sourceLine" id="cb27-13" title="13">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Number of objects created: &quot;</span> +</a>
+<a class="sourceLine" id="cb27-14" title="14">      CircleWithRadiusException.<span class="fu">getNumberOfObjects</span>());</a>
+<a class="sourceLine" id="cb27-15" title="15">  }</a>
+<a class="sourceLine" id="cb27-16" title="16">}</a></code></pre></div>
+<h3 id="assertions">Assertions</h3>
+<p>An assertion is a Java statement that enables you to assert an assumption about your program. An assertion contains a Boolean expression that should be true during program execution. Assertions can be used to assure program correctness and avoid logic errors.</p>
+<p>An assertion is declared using the new Java keyword <code>assert</code> in JDK 1.4 as follows:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb28-1" title="1">assert assertion; or</a>
+<a class="sourceLine" id="cb28-2" title="2">assert assertion : detailMessage;</a></code></pre></div>
+<p>where <code>assertion</code> is a Boolean expression and <code>detailMessage</code> is a primitive-type or an Object value.</p>
+<h4 id="executing-assertions">Executing Assertions</h4>
+<p>When an assertion statement is executed, Java evaluates the assertion. If it is <code>false</code>, an <code>AssertionError</code> will be thrown. The <code>AssertionError</code> class has a no-arg constructor and seven overloaded single-argument constructors of type <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>, <code>boolean</code>, <code>char</code>, and <code>Object</code>.</p>
+<p>For the first assert statement with no detail message, the no-arg constructor of <code>AssertionError</code> is used. For the second assert statement with a detail message, an appropriate <code>AssertionError</code> constructor is used to match the data type of the message. Since <code>AssertionError</code> is a subclass of <code>Error</code>, when an assertion becomes <code>false</code>, the program displays a message on the console and exits.</p>
+<p>Example:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb29-1" title="1"><span class="kw">public</span> <span class="kw">class</span> AssertionDemo {</a>
+<a class="sourceLine" id="cb29-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb29-3" title="3">    <span class="dt">int</span> i; <span class="dt">int</span> sum = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb29-4" title="4">    <span class="kw">for</span> (i = <span class="dv">0</span>; i &lt; <span class="dv">10</span>; i++) {</a>
+<a class="sourceLine" id="cb29-5" title="5">      sum += i;</a>
+<a class="sourceLine" id="cb29-6" title="6">    }</a>
+<a class="sourceLine" id="cb29-7" title="7">    assert i == <span class="dv">10</span>;</a>
+<a class="sourceLine" id="cb29-8" title="8">    assert sum &gt; <span class="dv">10</span> &amp;&amp; sum &lt; <span class="dv">5</span> * <span class="dv">10</span> : <span class="st">&quot;sum is &quot;</span> + sum;</a>
+<a class="sourceLine" id="cb29-9" title="9">  }</a>
+<a class="sourceLine" id="cb29-10" title="10">}</a></code></pre></div>
+<h4 id="running-programs-with-assertions">Running Programs with Assertions</h4>
+<p>By default, the assertions are disabled at runtime. To enable it, use the switch <code>–enableassertions</code>, or <code>–ea</code> for short, as follows:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb30-1" title="1">java –ea AssertionDemo</a></code></pre></div>
+<p>Assertions can be selectively enabled or disabled at class level or package level. The disable switch is <code>–disableassertions</code> or <code>–da</code> for short. For example, the following command enables assertions in package package1 and disables assertions in class Class1.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb31-1" title="1">java –ea:package1 –da:Class1 AssertionDemo</a></code></pre></div>
+<h4 id="using-exception-handing-or-assertions">Using Exception Handing or Assertions</h4>
+<p>Assertion should not be used to replace exception handling. Exception handling deals with unusual circumstances during program execution. Assertions are to assure the correctness of the program. Exception handling addresses robustness and assertion addresses correctness. Like exception handling, assertions are not used for normal tests, but for internal consistency and validity checks. Assertions are checked at runtime and can be turned on or off at startup time.</p>
+<p><em>Do not use assertions for argument checking in public methods</em>. Valid arguments that may be passed to a public method are considered to be part of the method’s contract. The contract must always be obeyed whether assertions are enabled or disabled. For example, the following code in the Circle class should be rewritten using exception handling.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb32-1" title="1"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">setRadius</span>(<span class="dt">double</span> newRadius) {</a>
+<a class="sourceLine" id="cb32-2" title="2">  assert newRadius &gt;= <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb32-3" title="3">  radius =  newRadius;</a>
+<a class="sourceLine" id="cb32-4" title="4">}</a></code></pre></div>
+<p><em>Use assertions to reaffirm assumptions</em>. This gives you more confidence to assure correctness of the program. A common use of assertions is to replace assumptions with assertions in the code.</p>
+<p>Another good use of assertions is place assertions in a switch statement without a default case. For example,</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb33-1" title="1"><span class="kw">switch</span> (month) {</a>
+<a class="sourceLine" id="cb33-2" title="2">  <span class="kw">case</span> <span class="dv">1</span>: <span class="kw">... </span>; <span class="kw">break</span>;</a>
+<a class="sourceLine" id="cb33-3" title="3">  <span class="kw">case</span> <span class="dv">2</span>: <span class="kw">... </span>; <span class="kw">break</span>;</a>
+<a class="sourceLine" id="cb33-4" title="4">  ...</a>
+<a class="sourceLine" id="cb33-5" title="5">  <span class="kw">case</span> <span class="dv">12</span>: <span class="kw">... </span>; <span class="kw">break</span>;</a>
+<a class="sourceLine" id="cb33-6" title="6">  <span class="kw">default</span>: assert <span class="kw">false</span> : <span class="st">&quot;Invalid month: &quot;</span> + month</a>
+<a class="sourceLine" id="cb33-7" title="7">} </a></code></pre></div>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
