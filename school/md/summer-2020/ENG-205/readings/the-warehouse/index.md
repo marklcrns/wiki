@@ -22,6 +22,7 @@ summary: The Warehouse by Rob Hart Notes
 
   - [Progress Notes 1](file:../../../../../files/summer-2020/ENGL-205/progress-notes/progress_notes_1.docx)
   - [Progress Notes 2](file:../../../../../files/summer-2020/ENGL-205/progress-notes/progress_notes_2.docx)
+  - [Progress Notes 3](file:../../../../../files/summer-2020/ENGL-205/progress-notes/progress_notes_3.docx)
 
 
 ## Reading Response
