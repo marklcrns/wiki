@@ -153,7 +153,9 @@ Object Oriented Programming
 <li><a href="#uml">UML</a><ul>
 <li><a href="#sign-indicators">Sign Indicators</a></li>
 </ul></li>
-<li><a href="#objects-and-classes">Objects and Classes</a></li>
+<li><a href="#objects-and-classes">Objects and Classes</a><ul>
+<li><a href="#modifier-scope">Modifier Scope</a></li>
+</ul></li>
 <li><a href="#object-oriented-thinking">Object-Oriented Thinking</a><ul>
 <li><a href="#wrapper-classes">Wrapper Classes</a></li>
 <li><a href="#the-string-class">The String Class</a></li>
@@ -190,6 +192,27 @@ Object Oriented Programming
 <li><a href="#defining-custom-exception-classes">Defining Custom Exception Classes</a></li>
 <li><a href="#assertions">Assertions</a></li>
 </ul></li>
+<li><a href="#objects-introduction">7.1 Objects: Introduction</a><ul>
+<li><a href="#abstraction-or-information-hiding">Abstraction or Information hiding</a></li>
+</ul></li>
+<li><a href="#defining-a-class">7.3 Defining a class</a></li>
+<li><a href="#mutators-accessors-and-private-helpers">7.4 Mutators, Accessors, and Private Helpers</a><ul>
+<li><a href="#mutators-and-accessors">Mutators and accessors</a></li>
+</ul></li>
+<li><a href="#initialization-and-constructors">7.5 Initialization and Constructors</a></li>
+<li><a href="#choosing-classes-to-create">7.6 Choosing Classes to Create</a><ul>
+<li><a href="#decomposing-into-classes">Decomposing Into Classes</a></li>
+</ul></li>
+<li><a href="#defining-main-in-a-programmer-defined-class">7.7 Defining main() in a Programmer-Defined Class</a></li>
+<li><a href="#unit-testing-classes">Unit testing (classes)</a><ul>
+<li><a href="#testbenches">Testbenches</a></li>
+<li><a href="#regression-testing">Regression Testing</a></li>
+<li><a href="#erroneous-unit-tests">Erroneous Unit Tests</a></li>
+</ul></li>
+<li><a href="#objects-and-references">7.10 Objects and References</a><ul>
+<li><a href="#references">References</a></li>
+</ul></li>
+<li><a href="#the-this-implicit-parameter">7.11 The ‘this’ Implicit Parameter</a></li>
 </ul></li>
 <li><a href="#resources">Resources</a></li>
 </ul>
@@ -234,6 +257,8 @@ Object Oriented Programming
 <li>If the contents of an object cannot be changed once the object is created, the object is called an <em>immutable</em> object and its class is called an <em>immutable</em> class.</li>
 <li>For a class to be immutable, it must mark all data fields private and provide no <em>mutator</em> methods (getters) and no <em>accessor</em> methods (setters) that would return a reference to a mutable data field object.</li>
 </ul>
+<h3 id="modifier-scope">Modifier Scope</h3>
+<p>private = class Default = class, package protected = class, package, subclass public = class, package, subclass, outside package</p>
 <h2 id="object-oriented-thinking">Object-Oriented Thinking</h2>
 <ul>
 <li><a href="../../../../files/summer-2020/CISC-191/week-2/object-oriented_thinking.ppt">Object-Oriented Thinking</a></li>
@@ -639,7 +664,81 @@ Object Oriented Programming
 <a class="sourceLine" id="cb33-4" title="4">  ...</a>
 <a class="sourceLine" id="cb33-5" title="5">  <span class="kw">case</span> <span class="dv">12</span>: <span class="kw">... </span>; <span class="kw">break</span>;</a>
 <a class="sourceLine" id="cb33-6" title="6">  <span class="kw">default</span>: assert <span class="kw">false</span> : <span class="st">&quot;Invalid month: &quot;</span> + month</a>
-<a class="sourceLine" id="cb33-7" title="7">} </a></code></pre></div>
+<a class="sourceLine" id="cb33-7" title="7">}</a></code></pre></div>
+<h2 id="objects-introduction">7.1 Objects: Introduction</h2>
+<h3 id="abstraction-or-information-hiding">Abstraction or Information hiding</h3>
+<p><strong>Abstraction</strong> means to have a user interact with an item at a high-level, with lower-level internal details hidden from the user (aka information hiding or encapsulation).</p>
+<p><a name="abstract-data-type-term"><strong>Abstract data type (ADT)</strong></a></p>
+<ul>
+<li>is a data type whose creation and update are constrained to specific well-defined operations. A class can be used to implement an ADT.</li>
+</ul>
+<h2 id="defining-a-class">7.3 Defining a class</h2>
+<p><a name="private-fields-term"><strong>Private fields</strong></a></p>
+<ul>
+<li>Variables that member methods can access but class user cannot.</li>
+</ul>
+<blockquote>
+<p>A class’ fields and methods are collectively called <strong>class members</strong>.</p>
+</blockquote>
+<p>The programmer defines the details of each member method, sometimes called the class’ <strong>implementation</strong>. A <strong>method definition</strong> provides an access modifier, return type, name, arguments, and the method’s statements. A member method can access all private fields.</p>
+<h2 id="mutators-accessors-and-private-helpers">7.4 Mutators, Accessors, and Private Helpers</h2>
+<h3 id="mutators-and-accessors">Mutators and accessors</h3>
+<p>A class’ public methods are commonly classified as either mutators or accessors.</p>
+<ul>
+<li>A <strong>mutator</strong> method may modify (“mutate”) a class’ fields.</li>
+<li>An <strong>accessor</strong> method accesses fields but may not modify a class’ fields.</li>
+</ul>
+<p>Commonly, a field has two associated methods: a mutator for setting the value, and an accessor for getting the value, known as a <strong>setter</strong> and <strong>getter</strong> method, respectively, and typically with names starting with set or get. Other mutators and accessors may exist that aren’t associated with just one field, such as the <code>print()</code> method below.</p>
+<h2 id="initialization-and-constructors">7.5 Initialization and Constructors</h2>
+<p>A <strong>good practice</strong> is to initialize all variables when declared. This section deals with initializing the fields of a class when a variable of the class type is allocated.</p>
+<p>If a class does not have a programmer-defined constructor, then the Java compiler implicitly defines a default constructor with no arguments. The Java compiler also initializes all fields to their default values. Good practice is to explicitly define a default constructor or use field initialization to initialize all fields.</p>
+<p><strong>Field initialization is usually preferred over using a constructor</strong>. However, sometimes initializations are more complicated, in which case a constructor is needed.</p>
+<h2 id="choosing-classes-to-create">7.6 Choosing Classes to Create</h2>
+<h3 id="decomposing-into-classes">Decomposing Into Classes</h3>
+<p>Creating a program may start by a programmer deciding what “things” exist, and what each thing contains and does.</p>
+<h2 id="defining-main-in-a-programmer-defined-class">7.7 Defining main() in a Programmer-Defined Class</h2>
+<p>The <code>main()</code> method can be defined within a programmer-defined class and create objects of that class type.</p>
+<p><code>main()</code> is a static method, which means <code>main()</code> does not have direct access to the class’ instance members. A programmer must create objects within <code>main()</code> to call instance methods.</p>
+<h2 id="unit-testing-classes">Unit testing (classes)</h2>
+<h3 id="testbenches">Testbenches</h3>
+<p><a name="testbenches-term"><strong>Testbenches</strong></a></p>
+<ul>
+<li>Like a chef who tastes food before serving, a class creator should test a class before allowing use. A <strong>testbench</strong> is a program whose job is to thoroughly test another program (or portion) via a series of input/output checks known as <strong>test cases</strong>.</li>
+</ul>
+<p><a name="unit-testing-term"><strong>Unit testing</strong></a></p>
+<ul>
+<li>means to create and run a testbench for a specific item (or “unit”) like a method or a class.</li>
+</ul>
+<p>Features of a good testbench include:</p>
+<ul>
+<li>Automatic checks. Ex: Values are compared, as in testData.GetNum1() != 100. For conciseness, only fails are printed.</li>
+<li>Independent test cases. Ex: The test case for GetAverage() assigns new values, vs. relying on earlier values.</li>
+<li>100% code coverage: Every line of code is executed. A good testbench would have more test cases than below.</li>
+<li>Includes not just typical values but also border cases: Unus</li>
+</ul>
+<h3 id="regression-testing">Regression Testing</h3>
+<p><a name="regression-testing-term"><strong>Regression testing</strong></a></p>
+<ul>
+<li>means to retest an item like a class anytime that item is changed; if previously-passed test cases fail, the item has “regressed”.</li>
+</ul>
+<p>A testbench should be maintained along with the item, to always be usable for regression testing.</p>
+<p>Testbenches may be complex, with thousands of test cases. Various tools support testing, and companies employ test engineers who only test other programmers’ items. A large percent, like 50% or more, of commercial software development time may go into testing.</p>
+<h3 id="erroneous-unit-tests">Erroneous Unit Tests</h3>
+<p>An erroneous unit test may fail even if the code being tested is correct. A common error is for a programmer to assume that a failing unit test means that the code being tested has a bug. Such an assumption may lead the programmer to spend time trying to “fix” code that is already correct. Good practice is to inspect the code of a failing unit test before making changes to the code being tested.</p>
+<blockquote>
+<p><a href="https://junit.org/junit5/">JUnit</a> testing framework for Java.</p>
+</blockquote>
+<h2 id="objects-and-references">7.10 Objects and References</h2>
+<h3 id="references">References</h3>
+<p>A <strong>reference</strong> is a variable type that refers to an object. A reference may be thought of as storing the memory address of an object. Variables of a class data type (and array types, discussed elsewhere) are reference variables.</p>
+<blockquote>
+<p>Java does not provide a direct way to determine the memory location of an object, or to determine the exact address to which a reference variable refers. The “value” of a reference variable is unknown to the programmer.</p>
+</blockquote>
+<h2 id="the-this-implicit-parameter">7.11 The ‘this’ Implicit Parameter</h2>
+<p><a name="implicit-parameter-term"><strong>Implicit parameter</strong></a></p>
+<ul>
+<li>An object’s member method is called using the syntax known as an <strong>implicit parameter</strong> of the member method because the compiler <code>objectReference.method()</code>. The object reference before the method name is converts the call syntax objectReference.method(…) into a method call with the object reference implicitly passed as a parameter. Ex: method(objectReference, …).</li>
+</ul>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
@@ -647,6 +746,8 @@ Object Oriented Programming
 <li><a href="../../../../files/summer-2020/CISC-191/week-2/objects_and_classes.ppt">Objects and Classes</a></li>
 <li><a href="../../../../files/summer-2020/CISC-191/week-2/object-oriented_thinking.ppt">Object-Oriented Thinking</a></li>
 <li><a href="../../../../files/summer-2020/CISC-191/week-2/inheritance_and_polymorphism.ppt">Inheritance and Polymorphism</a></li>
+<li><a href="../../../../files/summer-2020/CISC-191/week-2/exceptions_handling.ppt">Exceptions Handling</a></li>
+<li><a href="https://www.zybooks.com/">Andrew Huang CISC 191: Intermediate Java Programming - zyBooks</a></li>
 </ul>
 <hr>
 </article>
