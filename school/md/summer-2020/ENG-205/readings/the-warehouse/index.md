@@ -18,6 +18,9 @@ summary: The Warehouse by Rob Hart Notes
   - [Part 6: Software Update](notes/part-6)
   - [Part 7: Day Trip](notes/part-7)
   - [Part 8: Prep](notes/part-8)
+  - [Part 9: Remembrance](notes/part-9)
+  - [Part 10: The Man](notes/part-10)
+  - [Part 11: Life Status](notes/part-11)
 
 
 ## Progress Notes

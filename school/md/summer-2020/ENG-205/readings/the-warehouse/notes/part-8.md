@@ -29,7 +29,27 @@ summary: The Warehouse by Rob Hart Part 8
 
 ## Paxton
 
-  -
+  - Paxton told Dakota a story from when he was still in prison on how some
+    prisoners smuggle contraband through drones.
+  - He and Dakota were watching from the roof under extreme heat from the sun
+    when they saw a handoff and got the skell (Lucas).
+  - They took Lucas in for investigation and Dobbs was "... damn proud of you,
+    son." (268).
+  - They got some information from Lucas that the tech guys hacked some drones
+    algorithm to dock on the same place every time to transport the Oblivion.
+  - Dakota gave Paxton the news about how the Oblivion dealers get around
+    undetected. Turns out, the bands' sensors to detect the registered user on
+    the wrist is broken. It doesn't matter who wears them, as long as theres a
+    warm body that does.
+
+
+## Zinnia
+
+  - Despondent about finishing her mission. Because finishing it means killing
+    innocent people and Paxton in the process. She thought of ditching her
+    mission and just staying in the cloud or running away.
+  - Zinnia found out that the bands are broken from Paxton and her hope was
+    revitalized.
 
 
 <br>
