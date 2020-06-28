@@ -33,6 +33,7 @@ summary: The Warehouse by Rob Hart Notes
 ## Reading Response
 
   - [Reading Response 1](file:../../../../../files/summer-2020/ENGL-205/reading-response/reading_response_1.docx)
+  - [Reading Response 2](file:../../../../../files/summer-2020/ENGL-205/reading-response/reading_response_2.docx)
 
 
 <br>
