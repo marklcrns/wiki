@@ -213,6 +213,15 @@ Object Oriented Programming
 <li><a href="#references">References</a></li>
 </ul></li>
 <li><a href="#the-this-implicit-parameter">7.11 The ‘this’ Implicit Parameter</a></li>
+<li><a href="#primitive-and-reference-types">7.12 Primitive and Reference Types</a><ul>
+<li><a href="#wrapper-classes-1">Wrapper classes</a></li>
+<li><a href="#limits-on-initialization-values">Limits on Initialization Values</a></li>
+<li><a href="#comparing-wrapper-class-objects">Comparing Wrapper Class Objects</a></li>
+</ul></li>
+<li><a href="#java-documentation-for-classes">7.17 Java Documentation for Classes</a><ul>
+<li><a href="#common-block-tags-used-in-javadoc-comments">Common Block Tags Used in Javadoc Comments</a></li>
+</ul></li>
+<li><a href="#parameters-of-reference-types">7.18 Parameters of Reference Types</a></li>
 </ul></li>
 <li><a href="#resources">Resources</a></li>
 </ul>
@@ -738,7 +747,157 @@ Object Oriented Programming
 <p><a name="implicit-parameter-term"><strong>Implicit parameter</strong></a></p>
 <ul>
 <li>An object’s member method is called using the syntax known as an <strong>implicit parameter</strong> of the member method because the compiler <code>objectReference.method()</code>. The object reference before the method name is converts the call syntax objectReference.method(…) into a method call with the object reference implicitly passed as a parameter. Ex: method(objectReference, …).</li>
+<li>Within a member method, the implicitly-passed object reference is accessible via the keyword <code>this</code>. In particular, a class member can be accessed as this.classMember. The “.” is the member access operator.</li>
+<li>Using this makes clear that a class member is being accessed and is essential if a field member and parameter have the same identifier. In the example below, this is necessary to differentiate between the field member sideLength and the parameter sideLength.</li>
 </ul>
+<h2 id="primitive-and-reference-types">7.12 Primitive and Reference Types</h2>
+<h3 id="wrapper-classes-1">Wrapper classes</h3>
+<p>Java variables are one of two types.</p>
+<pre><code>- A primitive type variable directly stores the data for that variable type,
+  such as int, double, or char. Ex: int numStudents = 20; declares an int
+  that directly stores the data 20.
+- A reference type variable can refer to an instance of a class, also known
+  as an object.</code></pre>
+<p>Commonly used wrapper classes</p>
+<table>
+<thead>
+<tr class="header">
+<th>Reference type</th>
+<th>Associated primitive type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Character</td>
+<td>char</td>
+</tr>
+<tr class="even">
+<td>Integer</td>
+<td>int</td>
+</tr>
+<tr class="odd">
+<td>Double</td>
+<td>double</td>
+</tr>
+<tr class="even">
+<td>Boolean</td>
+<td>boolean</td>
+</tr>
+<tr class="odd">
+<td>Long</td>
+<td>long</td>
+</tr>
+</tbody>
+</table>
+<p>A wrapper class object (as well as a String object) is <strong>immutable</strong>, meaning a programmer cannot change the object via methods or variable assignments after object creation. When the result of an expression is assigned to an Integer reference variable, memory for a new Integer object with the computed value is allocated, and the reference (or address) of this new object is assigned to the reference variable. A new memory allocation occurs every time a new value is assigned to an <code>Integer</code> variable, and the previous memory location to which the variable referred, remains unmodified.</p>
+<h3 id="limits-on-initialization-values">Limits on Initialization Values</h3>
+<p>When using a literal for initialization, the programmer must ensure that the literal’s value falls within the appropriate numeric range, e.g., -2,147,483,648 to 2,147,483,647 for an integer. The wrapper classes (except for Character and Boolean) declare the <code>MAX_VALUE</code> and <code>MIN_VALUE</code> fields, which are static fields initialized with the maximum and minimum values a type may represent, respectively. A programmer may access these fields to check the supported numeric range by typing the wrapper class’ name followed by a dot and the field name, as in <code>Integer.MIN_VALUE</code>, which returns -2,147,483,648.</p>
+<h3 id="comparing-wrapper-class-objects">Comparing Wrapper Class Objects</h3>
+<p>For reference variables of wrapper classes (e.g., Integer, Double, Boolean), a common error is to use the equality operators == and != when comparing values, which does not work as expected. Using the equality operators on any two reference variables evaluates to either true or false depending on each operand’s referenced object. For example, given two Integers num1 and num2, the expression num1 == num2 compares if both num1 and num2 reference the same Integer object, but does not compare the Integers’ contents. Because those references will (usually) be different, num1 == num2 will evaluate to false. This is not a syntax error, but clearly a logic error.</p>
+<p>Although a programmer should never compare two reference variables of wrapper classes using the equality operators, a programmer may use the equality operators when comparing a wrapper class object with a primitive variable or a literal constant. The relational operators &lt;, &lt;=, &gt;, and &gt;= may be used to compare wrapper class objects. However, note that relational operators are not typically valid for other reference types. The following table summarizes allowable comparisons.</p>
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><code>objectVar == objectVar</code></th>
+<th>DO NOT USE. Compares references to objects, not the value of the objects</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>objectVar == primitiveVar</code></td>
+<td>OK. Compares value of object to value of primitive variable.</td>
+</tr>
+<tr class="even">
+<td><code>objectVar == 100</code></td>
+<td>OK. Compares value of objects to literal constant.</td>
+</tr>
+<tr class="odd">
+<td><code>objectVar &lt; objectVar</code></td>
+<td>OK. Compares values of objects.</td>
+</tr>
+<tr class="even">
+<td><code>objectVar &lt; primitiveVar</code></td>
+<td>OK. Compares values of object to value of primitive.</td>
+</tr>
+<tr class="odd">
+<td><code>objectVar &lt; 100</code></td>
+<td>OK. Compares values of object to literal constant.</td>
+</tr>
+</tbody>
+</table>
+<p>Reference variables of wrapper classes can also be compared using the <code>equals()</code> and <code>compareTo()</code> methods. These method descriptions are presented for the Integer class, but apply equally well to the other wrapper classes. Although the use of comparison methods is slightly cumbersome in comparison to relational operators, <strong>these comparison methods may be preferred by programmers who do not wish to memorize exactly which comparison operators work as expected.</strong></p>
+<p><code>equals(otherInt)</code></p>
+<ul>
+<li>true if both Integers contain the same value. otherInteger may be an Integer object, int variable, or integer literal.</li>
+</ul>
+<div class="sourceCode" id="cb35"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb35-1" title="1">num1.<span class="fu">equals</span>(num2) <span class="co">// Evaluates to false</span></a>
+<a class="sourceLine" id="cb35-2" title="2">num1.<span class="fu">equals</span>(<span class="dv">10</span>)   <span class="co">// Evaluates to true</span></a>
+<a class="sourceLine" id="cb35-3" title="3">!(num2.<span class="fu">equals</span>(regularInt)) <span class="co">// Evaluates to true because 8 != 20</span></a></code></pre></div>
+<p><code>compareTo(otherInt)</code></p>
+<ul>
+<li>return 0 if the two Integer values are equal, returns a negative number if the Integer value is less than otherInteger’s value, and returns a positive number if the Integer value is greater than otherInteger’s value. otherInteger may be an Integer object, int variable, or integer literal.</li>
+</ul>
+<div class="sourceCode" id="cb36"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb36-1" title="1">num1.<span class="fu">compareTo</span>(num2) <span class="co">// Returns value greater than 0, because 10 &gt; 8</span></a>
+<a class="sourceLine" id="cb36-2" title="2">num2.<span class="fu">compareTo</span>(<span class="dv">8</span>)    <span class="co">// Returns 0 because 8 == 8</span></a>
+<a class="sourceLine" id="cb36-3" title="3">num1.<span class="fu">compareTo</span>(regularInt)   <span class="co">// Returns value less than 0, because 10 &lt; 20</span></a></code></pre></div>
+<blockquote>
+<p>Other workaround with <code>objectVar</code> to <code>objectVar</code> <code>==</code> or <code>=!</code> comparison is to assign one <code>objectVar</code> to an instance of a primitive counterpart before the comparison.</p>
+</blockquote>
+<h2 id="java-documentation-for-classes">7.17 Java Documentation for Classes</h2>
+<p>The <strong>Javadoc</strong> tool parses source code along with specially formatted comments to generate documentation. The documentation generated by Javadoc is known as an <strong>API</strong> for classes and class members. API is short for <strong>application programming interface</strong>.</p>
+<p>The specially formatted comments for Javadoc are called Doc comments, which are multi-line comments consisting of all text enclosed between the <code>/**</code> and <code>*/</code> characters. Importantly, Doc comments are distinguished by the opening characters <code>/**,</code> which include two asterisks.</p>
+<h3 id="common-block-tags-used-in-javadoc-comments">Common Block Tags Used in Javadoc Comments</h3>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 23%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Block tag</th>
+<th>Compatibility</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>@author</code></td>
+<td>classes</td>
+<td>Used to specify an author.</td>
+</tr>
+<tr class="even">
+<td><code>@version</code></td>
+<td>classes</td>
+<td>Used to specify a version number.</td>
+</tr>
+<tr class="odd">
+<td><code>@param</code></td>
+<td>methods, constructors</td>
+<td>Used to describe a parameter.</td>
+</tr>
+<tr class="even">
+<td><code>@return</code></td>
+<td>methods</td>
+<td>Used to describe the value or object returned by the method.</td>
+</tr>
+<tr class="odd">
+<td><code>@see</code></td>
+<td>all</td>
+<td>Used to refer reder to relevant websites or class memebers.</td>
+</tr>
+</tbody>
+</table>
+<p>The block tag specification below creates a reference to ElapsedTime’s <code>printTime()</code> method.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb37-1" title="1"><span class="at">@see</span> ElapsedTime#<span class="fu">printTime</span>()</a></code></pre></div>
+<p>Private class members are not included by default in the API documentation generated by the Javadoc tool. API documentation is meant to provide a summary of all functionality available to external applications interfacing with the described classes. Thus, private class members, which cannot be accessed by other classes, are not typically included in the documentation. The Java Scanner class specification, for example, only describes the public class members available to programmers using the class.</p>
+<p>Similarly, the resulting API documentation for the above classes need only include information that enables their use by other programmers. However, if a programmer needs to document a class’s complete structure, the Javadoc tool can be executed with the <code>-private</code> flag, as in <code>javadoc -private -d destination class1.java class2.java</code>, to enable the documentation of private class members.</p>
+<h2 id="parameters-of-reference-types">7.18 Parameters of Reference Types</h2>
+<p>A <strong>reference variable</strong> is a variable that points to, or refers to, an object or array. Internally, a reference variable stores a reference, or the memory location, of the object to which it refers. A programmer can only access the data or functionality provided by objects through the use of reference variables. Because reference variables store object locations and not the object data itself, passing a reference variable as a method argument assigns the argument’s stored reference to the corresponding method parameter. Similarly, returning a reference variable returns an object reference.</p>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
