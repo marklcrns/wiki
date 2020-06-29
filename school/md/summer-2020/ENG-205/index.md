@@ -18,7 +18,7 @@ summary: ENGL 205
 
 ## Course Materials
 
-  - [Syllabus](file:../../../files/summer-2020/ENGL-205/syllabysu.pdf)
+  - [Syllabus](file:../../../files/summer-2020/ENGL-205/syllabus.pdf)
   - Class Texts:
     * The Warehouse by Rob Hart
     * The United States of Paranoia: A Conspiracy Theory be Jesse Walker
