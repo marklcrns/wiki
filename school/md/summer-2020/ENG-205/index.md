@@ -24,7 +24,8 @@ summary: ENGL 205
     * The United States of Paranoia: A Conspiracy Theory be Jesse Walker
 
 
-## Notes
+## Readings
 
   - [The Warehouse by Rob Hart](readings/the-warehouse/index)
+  - [The United STates of Paranoia by Jessy Walker](readings/the-unite-states-of-paranoia/index)
 

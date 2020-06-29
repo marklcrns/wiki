@@ -2,7 +2,7 @@
 title: ENGL 205 The Warehouse Notes
 author: Mark Lucernas
 date: 2020-06-16
-summary: The Warehouse by Rob Hart Notes
+summary: The Warehouse by Rob Hart notes
 ---
 
 
@@ -34,6 +34,11 @@ summary: The Warehouse by Rob Hart Notes
 
   - [Reading Response 1](file:../../../../../files/summer-2020/ENGL-205/reading-response/reading_response_1.docx)
   - [Reading Response 2](file:../../../../../files/summer-2020/ENGL-205/reading-response/reading_response_2.docx)
+
+
+## Essay
+
+  - [The Warehouse Essay 1](essay)
 
 
 <br>
