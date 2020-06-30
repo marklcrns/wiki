@@ -2,7 +2,7 @@
 title: CISC 190 Week 1
 author: Mark Lucernas
 date: 2020-06-15
-summary: Week 1 notes and activities
+summary: CISC 191 Week 1 notes and activities
 ---
 
 
@@ -10,5 +10,5 @@ summary: Week 1 notes and activities
 
 ## Notes
 
-  - [Week 1 Notes](../notes/w-1)
+  - [Week 1: Java Review](../notes/w-1)
 

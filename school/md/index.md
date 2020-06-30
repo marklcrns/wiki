@@ -32,7 +32,7 @@ Start/End Date: 2020-06-15 -- 2020-08-08
 ### Classes
 
   - [CISC 191](summer-2020/CISC-191/index) -- Intermediate Java Programming (31750 - online)
-  - [ENGL 205](summer-2020/ENG-205/index) -- Critical Thinking and Intermediate Composition (32472 - online)
+  - [ENGL 205](summer-2020/ENGL-205/index) -- Critical Thinking and Intermediate Composition (32472 - online)
 
 
 Total Units Enrolled: $\mathbf{7}$ units

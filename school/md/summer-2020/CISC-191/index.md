@@ -24,4 +24,5 @@ summary: CISC 191 Intermediate Java Programming class
 
   - [Week 1](modules/week-1)
   - [Week 2](modules/week-2)
+  - [Week 3](modules/week-3)
 
