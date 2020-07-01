@@ -86,10 +86,14 @@ Linked Data Structures and Recursion
 <h2 class="toc-title">Contents</h1>
 <ul>
 <li><a href="#week-3-linked-data-structures-and-recursion">Week 3: Linked Data Structures and Recursion</a><ul>
-<li><a href="#recursion">Recursion</a></li>
+<li><a href="#recursion">Recursion</a><ul>
+<li><a href="#recursion-java-sample-codes">Recursion Java Sample Codes</a></li>
+<li><a href="#stack-overflow">Stack Overflow</a></li>
+</ul></li>
 <li><a href="#list-and-queues">List and Queues</a></li>
 <li><a href="#binary-search">Binary Search</a></li>
 <li><a href="#avl-trees">AVL Trees</a></li>
+<li><a href="#searching-and-algorithms">Searching and Algorithms</a></li>
 <li><a href="#mist-topics">Mist Topics</a></li>
 </ul></li>
 <li><a href="#resources">Resources</a></li>
@@ -102,6 +106,13 @@ Linked Data Structures and Recursion
 <li><a href="../../../../files/summer-2020/CISC-191/week-3/recursion.ppt">Recursion</a></li>
 <li><a href="https://www.youtube.com/watch?v=neuDuf_i8Sg">VIDEO: Java Recursion</a></li>
 </ul>
+<h3 id="recursion-java-sample-codes">Recursion Java Sample Codes</h3>
+<ul>
+<li><a href="extras/recursion_sample_codes.html">Recursion Java Sample Codes</a></li>
+</ul>
+<h3 id="stack-overflow">Stack Overflow</h3>
+<p>Recursion enables an elegant solution to some problems. But, for large problems, deep recursion can cause memory problems. Part of a program’s memory is reserved to support function calls. Each method call places a new <strong>stack frame</strong> on the stack, for local parameters, local variables, and more method items. Upon return, the frame is deleted.</p>
+<p>Deep recursion could fill the stack region and cause a stack overflow, meaning a stack frame extends beyond the memory region allocated for stack, <strong>Stack overflow</strong> usually causes the program to crash and report an error like: stack overflow error or stack overflow exception.</p>
 <h2 id="list-and-queues">List and Queues</h2>
 <ul>
 <li><a href="../../../../files/summer-2020/CISC-191/week-3/list-and-queues.ppt">List and Queues</a></li>
@@ -117,6 +128,8 @@ Linked Data Structures and Recursion
 <ul>
 <li><a href="../../../../files/summer-2020/CISC-191/week-3/avl-trees.ppt">AVL Trees</a></li>
 </ul>
+<h2 id="searching-and-algorithms">Searching and Algorithms</h2>
+<p>An <strong>algorithm</strong> is a sequence of steps for accomplishing a task. <strong>Linear search</strong> is a search algorithm that starts from the beginning of a list, and checks each element until the search key is found or the end of the list is reached.</p>
 <h2 id="mist-topics">Mist Topics</h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=oSWTXtMglKE">VIDEO: Data Structures: Trees</a></li>
@@ -422,7 +435,11 @@ Linked Data Structures and Recursion
 </ul>
 <p>Textbook</p>
 <ul>
-<li><a href="https://www.zybooks.com/">Andrew Huang CISC 191: Intermediate Java Programming - zyBooks</a></li>
+<li><a href="https://www.zybooks.com/">Andrew Huang CISC 191: Intermediate Java Programming - zyBooks</a>
+<ul>
+<li>Chapter 11 Recursion</li>
+<li>Chapter 17 Searching and algorithms</li>
+</ul></li>
 </ul>
 <hr>
 </article>
