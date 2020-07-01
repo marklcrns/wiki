@@ -2,11 +2,13 @@
 title: The United States of Paranoia Part 1 Ch 2
 author: Mark Lucernas
 date: 2020-06-30
-summary: The United States of Paranoia by Jessy Walker Part 1 Ch 2
+summary: The United States of Paranoia by Jesse Walker Part 1 Ch 2
 ---
 
 
-# Ch 2: The Devil in the Wilderness
+# Chapter 2: The Devil in the Wilderness
+
+The Enemy Outside
 
 American Indians are the Devil's pawns (p. 24).
 
@@ -39,6 +41,8 @@ whites (European). Miscommunication fanned by the newspapers. (p. 39).
 "Some of this was simply traditional ethnic bigotry brought to new heights by war
 fever." (p. 41).
 
+Osama bin Laden (p. 46)
+
 
 Vocabs
 
@@ -57,3 +61,4 @@ Vocabs
 
 # Resources
 
+  - Walker, Jesse. _The United States of Paranoia_. Harper. Kindle Edition.

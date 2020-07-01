@@ -6,7 +6,7 @@ summary: The United States of Paranoia by Jesse Walker Part 1 Ch 1
 ---
 
 
-# Ch 1: The Paranoid Style is American Politics
+# Chapter 1: The Paranoid Style is American Politics
 
 Andrew Jackson - January 30, 1835
 
@@ -179,9 +179,10 @@ content." (p. 17).
 
 Vocabs
 
-  - fringe
-  - dissidents
-  - demagogues
+  - fringe = outsider
+  - dissidents = person opposing an official policy
+  - demagogues = political leader who seeks support by appealing to the desires
+    and prejudices of ordinary people rather than by using rational argument.
 
 
 
