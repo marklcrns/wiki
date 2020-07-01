@@ -13,6 +13,7 @@ summary: The United States of Paranoia ny Jesse Walker notes
 ### Part I: Primal Myths
 
   - [1 - The Paranoid Style is American Politics](notes/part-1/ch-1)
+  - [2 - The Devil in the Wilderness](notes/part-1/ch-2)
 
 ### Part II: Modern Fear
 
