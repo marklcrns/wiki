@@ -23,6 +23,8 @@ summary: The United States of Paranoia ny Jesse Walker notes
 
 ## Reading Response
 
+  - [Reading Response 3](file:../../../../../files/summer-2020/ENGL-205/reading-response/reading_response_3.docx)
+
 
 ## Essay
 
@@ -37,7 +39,8 @@ summary: The United States of Paranoia ny Jesse Walker notes
   https://www.youtube.com/watch?v=-EkxCG4b7nM
 - The distortion of content through gossips and speculations
   - message relay game
-
+- Religion, more often than not, always in to the narratives of conspiracy
+  theories. "With the new wave of worship came a new wave of paranoia." (p. 56).
 
 Intro ideas
 

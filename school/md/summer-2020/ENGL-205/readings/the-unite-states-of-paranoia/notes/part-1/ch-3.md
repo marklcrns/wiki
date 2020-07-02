@@ -45,6 +45,12 @@ Anyone could conceivably be-or become-a part of the conspiracy." (p. 54).
 
 "When the Enemy Within is at work, ordinary life is a masquerade." (p. 54).
 
+"A religious revival swept the United States in the early nineteenth century, a
+spiritually rambunctious period now known as the Second Great Awakening. On the
+outskirts of the excitement, unusual sects were finding new followers: not just
+Shakers but Adventists, Mormons, Oneidans. With the new wave of worship came a
+new wave of paranoia." (p. 56).
+
 
 ## Vocabs
 
@@ -53,6 +59,7 @@ Anyone could conceivably be-or become-a part of the conspiracy." (p. 54).
     investigation
   - apostate = a person who renounces a religious or political belief or
     principle
+  - rambunctious = uncontrollably exuberant; boisterous.
 
 
 <br>
