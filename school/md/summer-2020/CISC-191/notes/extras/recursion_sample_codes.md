@@ -781,4 +781,3 @@ Textbook
 
   + [Andrew Huang CISC 191: Intermediate Java Programming - zyBooks](https://www.zybooks.com/)
     - Chapter 11 Recursion
-    - Chapter 17 Searching and algorithms
