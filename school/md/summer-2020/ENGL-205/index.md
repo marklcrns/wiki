@@ -26,6 +26,6 @@ summary: ENGL 205
 
 ## Readings
 
-  - [The Warehouse by Rob Hart](readings/the-warehouse/index)
-  - [The United STates of Paranoia by Jessy Walker](readings/the-unite-states-of-paranoia/index)
+  - [+The Warehouse by Rob Hart](readings/the-warehouse/index)
+  - [+The United STates of Paranoia by Jessy Walker](readings/the-unite-states-of-paranoia/index)
 

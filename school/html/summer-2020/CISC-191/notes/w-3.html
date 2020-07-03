@@ -133,7 +133,8 @@ Linked Data Structures and Recursion
 <li><a href="https://www.youtube.com/watch?v=M6lYob8STMI">VIDEO: Java Binary Search Tree</a></li>
 <li><a href="https://www.youtube.com/watch?v=UcOxGmj45AA">VIDEO: Java Binary Search Tree 2</a></li>
 </ul>
-<p>Binary search is incredibly efficient in finding an element within a sorted list. During each iteration or step of the algorithm, binary search reduces the search space (i.e., the remaining elements to search within) by half. The search terminates when the element is found or the search space is empty (element not found). For a 32 element list, if the search key is not found, the search space is halved to have 16 elements, then 8, 4, 2, 1, and finally none, requiring only 6 steps. For an N element list, the maximum number of steps required to reduce the search space to an empty sublist is <span class="math inline">\([\ \log_{2} N\ ] + 1\)</span> <span class="math display">\[
+<p>Binary search is incredibly efficient in finding an element within a sorted list. During each iteration or step of the algorithm, binary search reduces the search space (i.e., the remaining elements to search within) by half. The search terminates when the element is found or the search space is empty (element not found). For a 32 element list, if the search key is not found, the search space is halved to have 16 elements, then 8, 4, 2, 1, and finally none, requiring only 6 steps. For an N element list, the maximum number of steps required to reduce the search space to an empty sublist is <span class="math inline">\([\ \log_{2} N\ ] + 1\)</span></p>
+<p><span class="math display">\[
 \text{Ex. }[\ \log_{2} N\ ] + 1 = 6
 \]</span></p>
 <h2 id="avl-trees">AVL Trees</h2>
@@ -142,289 +143,152 @@ Linked Data Structures and Recursion
 </ul>
 <h2 id="big-o-notation">Big O Notation</h2>
 <ul>
+<li><a href="extras/big_o_java_collections.html">+Big O Performance of Some Common Functions of Java Collections</a>)</li>
 <li><a href="https://www.youtube.com/watch?v=__vX2sjlpXU">VIDEO: Big-O Notation in 5 Minutes</a></li>
 </ul>
-<p>Below are the Big O performance of common functions of different Java Collections.</p>
+<p>Big O notation is a mathematical way of describing how a function (running time of an algorithm) generally behaves in relation to the input size. In Big O notation, all functions that have the same growth rate (as determined by the highest order term of the function) are characterized using the same Big O notation. In essence, all functions that have the same growth rate are considered equivalent in Big O notation.</p>
+<p>Given a function that describes the running time of an algorithm, the Big O notation for that function can be determined using the following rules:</p>
+<ol type="1">
+<li>If <span class="math inline">\(f(x)\)</span> is a sum of several terms, the highest order term (the one with the fastest growth rate) is kept and others are discarded.</li>
+<li>If <span class="math inline">\(f(x)\)</span> has a term that is a product of several factors, all constants (those that are not in terms of x) are omitted.</li>
+</ol>
+<p>Rules for determining Big O notation of composite functions.</p>
 <table>
 <thead>
 <tr class="header">
-<th>List</th>
-<th>Add</th>
-<th>Remove</th>
-<th>Get</th>
-<th>Contains</th>
-<th>Next</th>
-<th>Data Structure</th>
+<th>Composite function</th>
+<th>Big O notation</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>ArrayList</td>
-<td>O(1)</td>
-<td>O(n)</td>
-<td>O(1)</td>
-<td>O(n)</td>
-<td>O(1)</td>
-<td>Array</td>
+<td><span class="math inline">\(c \cdot O(f(x))\)</span></td>
+<td><span class="math inline">\(O(f(x))\)</span></td>
 </tr>
 <tr class="even">
-<td>LinkedList</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(n)</td>
-<td>O(n)</td>
-<td>O(1)</td>
-<td>Linked List</td>
+<td><span class="math inline">\(c + O(f(x))\)</span></td>
+<td><span class="math inline">\(O(f(x))\)</span></td>
 </tr>
 <tr class="odd">
-<td>CopyOnWriteArrayList</td>
-<td>O(n)</td>
-<td>O(n)</td>
-<td>O(1)</td>
-<td>O(n)</td>
-<td>O(1)</td>
-<td>Array</td>
+<td><span class="math inline">\(g(x) \cdot O(f(x))\)</span></td>
+<td><span class="math inline">\(O(g(x) \cdot O(f(x)))\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(g(x) + O(f(x))\)</span></td>
+<td><span class="math inline">\(O(g(x) + O(f(x)))\)</span></td>
 </tr>
 </tbody>
 </table>
+<p>Sample 1:</p>
+<p><span class="math display">\[
+\text{Algorithm steps: } 5 + 13 \cdot N + 7 \cdot N^{2}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{Big O notation: } O(5 + 13 \cdot N + 7 \cdot N^{2}) &amp;= O(7 \cdot N^{2}) \\
+ &amp;= O(N^{2})
+\end{aligned}
+\]</span></p>
+<p>Sample 2:</p>
+<p><span class="math display">\[
+\text{Algorithm steps: } 10 \cdot O(N^{2})
+\]</span></p>
+<p><span class="math display">\[
+\text{Big O notation: } 10 \cdot O(N^{2}) = O(10 \cdot N^{2}) = O(N^{2})
+\]</span></p>
+<p>Sample 3:</p>
+<p><span class="math display">\[
+\text{Algorithm steps: } 3 \cdot N \cdot O(N^{2})
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{Big O notation: } &amp;= 3 \cdot N \cdot O(N^{2}) \\
+ &amp;= O(3 \cdot N \cdot N^{2}) \\
+ &amp;= O(3 \cdot N^{3}) = O(N^{3})
+\end{aligned}
+\]</span></p>
+<p>Sample 4:</p>
+<p><span class="math display">\[
+\text{Algorithm steps: } 2 \cdot N^{3} + O(N^{2})
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{Big O notation: } &amp;= 2 \cdot N^{3} + O(N^{2}) \\
+ &amp;= O(2 \cdot N^{3} + N^{2}) \\
+ &amp;= O(N^{3})
+\end{aligned}
+\]</span></p>
+<p>Growth rates for different input sizes.</p>
+<p>One consideration in evaluating algorithms is that the efficiency of the algorithm is most critical for large input sizes. Small inputs are likely to result in fast running times because <span class="math inline">\(N\)</span> is small, so efficiency is less of a concern. The table below shows the runtime to perform <span class="math inline">\(f(N)\)</span> instructions for different functions <span class="math inline">\(f\)</span> and different values of <span class="math inline">\(N\)</span>. For large <span class="math inline">\(N\)</span>, the difference in computation time varies greatly with the rate of growth of the function <span class="math inline">\(f\)</span>. The data assumes that a single instruction takes <span class="math inline">\(1 \mu s\)</span> to execute.</p>
 <table>
 <thead>
 <tr class="header">
-<th>Set</th>
-<th>Add</th>
-<th>Remove</th>
-<th>Contains</th>
-<th>Next</th>
-<th>Size</th>
-<th>Data Structure</th>
+<th>Function</th>
+<th>N = 10</th>
+<th>N = 100</th>
+<th>N = 1000</th>
+<th>N = 10000</th>
+<th>N = 100000</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>HashSet</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(h/n)</td>
-<td>O(1)</td>
-<td>Hash Table</td>
+<td><span class="math inline">\(log N\)</span></td>
+<td><span class="math inline">\(3.3 \mu s\)</span></td>
+<td><span class="math inline">\(5.65 \mu s\)</span></td>
+<td><span class="math inline">\(6.6 \mu s\)</span></td>
+<td><span class="math inline">\(9.9 \mu s\)</span></td>
+<td><span class="math inline">\(13.3 \mu s\)</span></td>
+<td><span class="math inline">\(16.6 \mu s\)</span></td>
 </tr>
 <tr class="even">
-<td>LinkedHashSet</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>Hash Table + Linked List</td>
+<td><span class="math inline">\(N\)</span></td>
+<td><span class="math inline">\(10 \mu s\)</span></td>
+<td><span class="math inline">\(50 \mu s\)</span></td>
+<td><span class="math inline">\(100 \mu s\)</span></td>
+<td><span class="math inline">\(1000 \mu s\)</span></td>
+<td><span class="math inline">\(10 ms\)</span></td>
+<td><span class="math inline">\(0.1 s\)</span></td>
 </tr>
 <tr class="odd">
-<td>EnumSet</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>Bit Vector</td>
+<td><span class="math inline">\(N log N\)</span></td>
+<td><span class="math inline">\(.03 ms\)</span></td>
+<td><span class="math inline">\(.28 ms\)</span></td>
+<td><span class="math inline">\(.66 ms\)</span></td>
+<td><span class="math inline">\(.099 s\)</span></td>
+<td><span class="math inline">\(.132 s\)</span></td>
+<td><span class="math inline">\(1.66 s\)</span></td>
 </tr>
 <tr class="even">
-<td>TreeSet</td>
-<td>O(log n)</td>
-<td>O(log n)</td>
-<td>O(log n)</td>
-<td>O(log n)</td>
-<td>O(1)</td>
-<td>Red-black tree</td>
+<td><span class="math inline">\(N^{2}\)</span></td>
+<td><span class="math inline">\(.1 ms\)</span></td>
+<td><span class="math inline">\(2.5 ms\)</span></td>
+<td><span class="math inline">\(10 ms\)</span></td>
+<td><span class="math inline">\(1 s\)</span></td>
+<td><span class="math inline">\(100 s\)</span></td>
+<td><span class="math inline">\(2.7 \text{ hours}\)</span></td>
 </tr>
 <tr class="odd">
-<td>CopyOnWriteArraySet</td>
-<td>O(n)</td>
-<td>O(n)</td>
-<td>O(n)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>Array</td>
+<td><span class="math inline">\(N^{3}\)</span></td>
+<td><span class="math inline">\(1 ms\)</span></td>
+<td><span class="math inline">\(.125 s\)</span></td>
+<td><span class="math inline">\(1 s\)</span></td>
+<td><span class="math inline">\(16.7 \text{ min}\)</span></td>
+<td><span class="math inline">\(11.57 \text{ days}\)</span></td>
+<td><span class="math inline">\(31.7 \text{ years}\)</span></td>
 </tr>
 <tr class="even">
-<td>ConcurrentSkipListSet</td>
-<td>O(log n)</td>
-<td>O(log n)</td>
-<td>O(log n)</td>
-<td>O(1)</td>
-<td>O(n)</td>
-<td>Skip List</td>
+<td><span class="math inline">\(2^{N}\)</span></td>
+<td><span class="math inline">\(.001 s\)</span></td>
+<td><span class="math inline">\(35.7 \text{ years}\)</span></td>
+<td><span class="math inline">\(*\)</span></td>
+<td><span class="math inline">\(*\)</span></td>
+<td><span class="math inline">\(*\)</span></td>
+<td><span class="math inline">\(*\)</span></td>
 </tr>
 </tbody>
 </table>
-<table>
-<thead>
-<tr class="header">
-<th>Queue</th>
-<th>Offer</th>
-<th>Peak</th>
-<th>Poll</th>
-<th>Remove</th>
-<th>Size</th>
-<th>Data Structure</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>PriorityQueue</td>
-<td>O(log n)</td>
-<td>O(1)</td>
-<td>O(log n)</td>
-<td>O(n)</td>
-<td>O(1)</td>
-<td>Priority Heap</td>
-</tr>
-<tr class="even">
-<td>LinkedList</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>Array</td>
-</tr>
-<tr class="odd">
-<td>ArrayDequeue</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(n)</td>
-<td>O(1)</td>
-<td>Linked List</td>
-</tr>
-<tr class="even">
-<td>ConcurrentLinkedQueue</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(n)</td>
-<td>O(n)</td>
-<td>Linked List</td>
-</tr>
-<tr class="odd">
-<td>ArrayBlockingQueue</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(n)</td>
-<td>O(1)</td>
-<td>Array</td>
-</tr>
-<tr class="even">
-<td>PriorirityBlockingQueue</td>
-<td>O(log n)</td>
-<td>O(1)</td>
-<td>O(log n)</td>
-<td>O(n)</td>
-<td>O(1)</td>
-<td>Priority Heap</td>
-</tr>
-<tr class="odd">
-<td>SynchronousQueue</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(n)</td>
-<td>O(1)</td>
-<td>None!</td>
-</tr>
-<tr class="even">
-<td>DelayQueue</td>
-<td>O(log n)</td>
-<td>O(1)</td>
-<td>O(log n)</td>
-<td>O(n)</td>
-<td>O(1)</td>
-<td>Priority Heap</td>
-</tr>
-<tr class="odd">
-<td>LinkedBlockingQueue</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(n)</td>
-<td>O(1)</td>
-<td>Linked List</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr class="header">
-<th>Map</th>
-<th>Get</th>
-<th>ContainsKey</th>
-<th>Next</th>
-<th>Data Structure</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>HashMap</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(h / n)</td>
-<td>Hash Table</td>
-</tr>
-<tr class="even">
-<td>LinkedHashMap</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>Hash Table + Linked List</td>
-</tr>
-<tr class="odd">
-<td>IdentityHashMap</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(h / n)</td>
-<td>Array</td>
-</tr>
-<tr class="even">
-<td>WeakHashMap</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(h / n)</td>
-<td>Hash Table</td>
-</tr>
-<tr class="odd">
-<td>EnumMap</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>Array</td>
-</tr>
-<tr class="even">
-<td>TreeMap</td>
-<td>O(log n)</td>
-<td>O(log n)</td>
-<td>O(log n)</td>
-<td>Red-black tree</td>
-</tr>
-<tr class="odd">
-<td>ConcurrentHashMap</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(h / n)</td>
-<td>Hash Tables</td>
-</tr>
-<tr class="even">
-<td>ConcurrentSkipListMap</td>
-<td>O(log n)</td>
-<td>O(log n)</td>
-<td>O(1)</td>
-<td>Skip List</td>
-</tr>
-</tbody>
-</table>
-<p>Source:</p>
-<ul>
-<li><a href="https://gist.github.com/iSergius/e06963c6eca0a639023666097227427c">Java Collections Complexity cheatsheet</a></li>
-</ul>
 <h2 id="mist-topics">Mist Topics</h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=oSWTXtMglKE">VIDEO: Data Structures: Trees</a></li>
@@ -441,10 +305,9 @@ Linked Data Structures and Recursion
 <li><a href="https://www.youtube.com/watch?v=M6lYob8STMI">VIDEO: Java Binary Search Tree</a></li>
 <li><a href="https://www.youtube.com/watch?v=UcOxGmj45AA">VIDEO: Java Binary Search Tree 2</a></li>
 <li><a href="../../../../files/summer-2020/CISC-191/week-3/avl-trees.ppt">AVL Trees</a></li>
+<li><a href="https://www.youtube.com/watch?v=__vX2sjlpXU">VIDEO: Big-O Notation in 5 Minutes</a></li>
 <li><a href="https://www.youtube.com/watch?v=oSWTXtMglKE">VIDEO: Data Structures: Trees</a></li>
 <li><a href="https://www.youtube.com/watch?v=JUOyKSZScW0">VIDEO: Java Sort Algorithm</a></li>
-<li><a href="https://www.youtube.com/watch?v=__vX2sjlpXU">VIDEO: Big-O Notation in 5 Minutes</a></li>
-<li><a href="https://gist.github.com/iSergius/e06963c6eca0a639023666097227427c">Java Collections Complexity cheatsheet</a></li>
 </ul>
 <p>Textbook</p>
 <ul>
