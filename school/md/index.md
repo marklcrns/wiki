@@ -22,7 +22,7 @@ Start/End Date: 2020-02-03 -- 2020-06-01
 
 Total Units Enrolled: $15 - 3 = \mathbf{12}$ units
 
-![Daily Schedule](file:../files/spring-2020/spring-2020_dailySchedule_v2.png)
+  - [FILE: Daily Schedule](file:../files/spring-2020/spring-2020_dailySchedule_v2.png)
 
 
 ## Summer 2020
