@@ -188,7 +188,6 @@ Final Project Stock Portfolio Formulas
 <li>Ratio relative to 1. Very common and easier to understand</li>
 <li>Aka P/L Ratio or profit-loss ratio</li>
 </ul>
-<p>Stop loss = trigger price to sell if the market price dropped to the stop loss priced that was set.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="dt">double</span> ratio = <span class="dv">1</span> / (entryPrice - stopLossPrice) / (targetPrice - entryPrice);</a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;1 : &quot;</span> + ratio);</a></code></pre></div>
 <h3 id="breakevenaverage-price">Breakeven/Average Price</h3>
@@ -275,8 +274,8 @@ Final Project Stock Portfolio Formulas
 <h2 id="glossary">Glossary</h2>
 <table>
 <colgroup>
-<col style="width: 22%" />
-<col style="width: 77%" />
+<col style="width: 17%" />
+<col style="width: 82%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -298,16 +297,24 @@ Final Project Stock Portfolio Formulas
 <td>Buy or sell stock to exit trade</td>
 </tr>
 <tr class="even">
+<td>Long Trade</td>
+<td>Entering trade by buying stock shares then closing by selling the same amount of shares</td>
+</tr>
+<tr class="odd">
 <td>Price Filled</td>
 <td>Order price officially bought or sold at</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Realized Profit/Loss</td>
 <td>Trade profit or loss that has been closed</td>
 </tr>
+<tr class="odd">
+<td>Short Trade (Shorting)</td>
+<td>Entering trade by borrowing or selling stock shares later to be returned by buying the same amount of shares</td>
+</tr>
 <tr class="even">
 <td>Stop Loss Price</td>
-<td>Stop price to execute automatically once market price drops certain amount</td>
+<td>Trigger price to exit automatically once market price drops went up (if shorting) certain amount</td>
 </tr>
 <tr class="odd">
 <td>Unrealized Profit/Loss</td>

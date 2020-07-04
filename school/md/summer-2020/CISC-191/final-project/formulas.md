@@ -39,9 +39,6 @@ Formula 1: $\dfrac{\text{New Value}}{\text{Old Value}} - 1$
   - Aka P/L Ratio or profit-loss ratio
 
 
-Stop loss = trigger price to sell if the market price dropped to the stop loss
-            priced that was set.
-
 ```java
 double ratio = 1 / (entryPrice - stopLossPrice) / (targetPrice - entryPrice);
 System.out.println("1 : " + ratio);
@@ -182,15 +179,17 @@ Formula 2: $\dfrac{\text{New Account Value} - \text{Previous Account Value}}{\te
 
 ## Glossary
 
-| Term                   | Definition                                                                      |
-|------------------------|---------------------------------------------------------------------------------|
-| Entry Price            | Buy or sell stock to open new trade                                             |
-| Executed Price         | Refers to both entry and exit price                                             |
-| Exit Price             | Buy or sell stock to exit trade                                                 |
-| Price Filled           | Order price officially bought or sold at                                        |
-| Realized Profit/Loss   | Trade profit or loss that has been closed                                       |
-| Stop Loss Price        | Stop price to execute automatically once market price drops certain amount      |
-| Unrealized Profit/Loss | Trade profit or loss that on paper or hasn't been closed and will likely change |
+| Term                   | Definition                                                                                                   |
+|------------------------|--------------------------------------------------------------------------------------------------------------|
+| Entry Price            | Buy or sell stock to open new trade                                                                          |
+| Executed Price         | Refers to both entry and exit price                                                                          |
+| Exit Price             | Buy or sell stock to exit trade                                                                              |
+| Long Trade             | Entering trade by buying stock shares then closing by selling the same amount of shares                      |
+| Price Filled           | Order price officially bought or sold at                                                                     |
+| Realized Profit/Loss   | Trade profit or loss that has been closed                                                                    |
+| Short Trade (Shorting) | Entering trade by borrowing or selling stock shares later to be returned by buying the same amount of shares |
+| Stop Loss Price        | Trigger price to exit automatically once market price drops went up (if shorting) certain amount             |
+| Unrealized Profit/Loss | Trade profit or loss that on paper or hasn't been closed and will likely change                              |
 
 <br>
 
