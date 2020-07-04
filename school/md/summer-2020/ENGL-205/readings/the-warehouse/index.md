@@ -10,16 +10,16 @@ summary: The Warehouse by Rob Hart notes
 
 ## Notes
 
-  - [Part 1: Processing](notes/part-1)
-  - [Part 2: Orientation](notes/part-2)
-  - [Part 3: Grace Period](notes/part-3)
-  - [Part 4: Cut Day](notes/part-4)
-  - [Part 5: Grind](notes/part-5)
-  - [Part 6: Software Update](notes/part-6)
-  - [Part 7: Day Trip](notes/part-7)
-  - [Part 8: Prep](notes/part-8)
-  - [Part 9: Remembrance](notes/part-9)
-  - [Part 10: The Man](notes/part-10)
+  - [+Part 1: Processing](notes/part-1)
+  - [+Part 2: Orientation](notes/part-2)
+  - [+Part 3: Grace Period](notes/part-3)
+  - [+Part 4: Cut Day](notes/part-4)
+  - [+Part 5: Grind](notes/part-5)
+  - [+Part 6: Software Update](notes/part-6)
+  - [+Part 7: Day Trip](notes/part-7)
+  - [+Part 8: Prep](notes/part-8)
+  - [+Part 9: Remembrance](notes/part-9)
+  - [+Part 10: The Man](notes/part-10)
   - [Part 11: Life Status](notes/part-11)
 
 
@@ -38,7 +38,7 @@ summary: The Warehouse by Rob Hart notes
 
 ## Essay
 
-  - [The Warehouse Essay 1](essay)
+  - [+The Warehouse Essay 1](essay)
 
 
 <br>
