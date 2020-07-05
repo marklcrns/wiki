@@ -89,7 +89,7 @@ $$
 \end{aligned}
 $$
 
-### Growth Rates for Different Input Sizes
+## Growth Rates for Different Input Sizes
 
 One consideration in evaluating algorithms is that the efficiency of the
 algorithm is most critical for large input sizes. Small inputs are likely to
@@ -109,7 +109,7 @@ execute.
 | $N^{3}$   | $1 ms$      | $.125 s$             | $1 s$       | $16.7 \text{ min}$ | $11.57 \text{ days}$ | $31.7 \text{ years}$ |
 | $2^{N}$   | $.001 s$    | $35.7 \text{ years}$ | $*$         | $*$                | $*$                  | $*$                  |
 
-### Runtime Complexities For Various Pseudocode Examples.
+## Runtime Complexities For Various Pseudocode Examples.
 
 $O(1)$ **Constant:**
 
@@ -209,7 +209,7 @@ Fibonacci(N) {
 }
 ```
 
-### Worst-Case Algorithm Analysis
+## Worst-Case Algorithm Analysis
 
 Worst-case algorithm analysis
 
@@ -226,9 +226,9 @@ knowledge of the statistical properties of the expected data inputs.
 
 ![Runtime analysis](../../../../../../../files/summer-2020/CISC-191/week-3/notes/big-o-notation/runtime_analysis.gif)
 
-> by zyBooks.com
+> from zyBooks.com
 
-### Counting constant time operations
+## Counting constant time operations
 
 For algorithm analysis, the definition of a single operation does not need to be
 precise. An operation can be any statement (or constant number of statements)
@@ -246,9 +246,9 @@ operations is O(1).
 
 ![Simplified Runtime Analysis](../../../../../../../files/summer-2020/CISC-191/week-3/notes/big-o-notation/simplified_runtime_analysis.gif)
 
-> by zyBooks.com
+> from zyBooks.com
 
-### Runtime Analysis of Nested Loop: Selection Sort Algorithm
+## Runtime Analysis of Nested Loop: Selection Sort Algorithm
 
 Runtime analysis for nested loops requires summing the runtime of the inner loop
 over each outer loop iteration. The resulting summation can be simplified to
@@ -258,13 +258,55 @@ determine the big-O notation.
 
 ![Runtime Analysis of Nested Loop](../../../../../../../files/summer-2020/CISC-191/week-3/notes/big-o-notation/runtime_analysis_nested_loop.gif)
 
-> by zyBooks.com
+> from zyBooks.com
 
 Common summation: Summation of consecutive numbers:
 
 $$
 (N - 1) + (N - 2) + \ldots + 2 + 1 = \dfrac{N(N - 1)}{2} = O(N^{2})
 $$
+
+
+## Common Data Structure Operations
+
+| Data Structure     | <<<               | <<<               | <<<               | Time Complexity   | >>>         | >>>         | >>>           | >>>          | Space Complexity |
+|--------------------|-------------------|-------------------|-------------------|-------------------|-------------|-------------|---------------|--------------|------------------|
+|                    | **<<<**           | **Average**       | **>>>**           | **>>>**           | **<<<**     | **Worst**   | **>>>**       | **>>>**      | **Worst**        |
+|                    | **Access**        | **Search**        | **Insertion**     | **Deletion**      | **Access**  | **Search**  | **Insertion** | **Deletion** |                  |
+| Array              | $\theta (1)$      | $\theta (n)$      | $\theta (n)$      | $\theta (n)$      | $O(1)$      | $O(n)$      | $O(n)$        | $O(n)$       | $O(n)$           |
+| Stack              | $\theta (n)$      | $\theta (n)$      | $\theta (1)$      | $\theta (1)$      | $O(n)$      | $O(n)$      | $O(1)$        | $O(1)$       | $O(n)$           |
+| Queue              | $\theta (n)$      | $\theta (n)$      | $\theta (1)$      | $\theta (1)$      | $O(n)$      | $O(n)$      | $O(1)$        | $O(1)$       | $O(n)$           |
+| Singly-Linked List | $\theta (n)$      | $\theta (n)$      | $\theta (1)$      | $\theta (1)$      | $O(n)$      | $O(n)$      | $O(1)$        | $O(1)$       | $O(n)$           |
+| Doubly-Linked List | $\theta (n)$      | $\theta (n)$      | $\theta (1)$      | $\theta (1)$      | $O(n)$      | $O(n)$      | $O(1)$        | $O(1)$       | $O(n)$           |
+| Skip List          | $\theta (log(n))$ | $\theta (log(n))$ | $\theta (log(n))$ | $\theta (log(n))$ | $O(n)$      | $O(n)$      | $O(n)$        | $O(n)$       | $O(n log(n))$    |
+| Hash Table         | $N/A$             | $\theta (1)$      | $\theta (1)$      | $\theta (1)$      | $N/A$       | $O(n)$      | $O(n)$        | $O(n)$       | $O(n)$           |
+| Binary Search Tree | $\theta (log(n))$ | $\theta (log(n))$ | $\theta (log(n))$ | $\theta (log(n))$ | $O(n)$      | $O(n)$      | $O(n)$        | $O(n)$       | $O(n)$           |
+| Cartesian Tree     | $N/A$             | $\theta (log(n))$ | $\theta (log(n))$ | $\theta (log(n))$ | $N/A$       | $O(n)$      | $O(n)$        | $O(n)$       | $O(n)$           |
+| B-Tree             | $\theta (log(n))$ | $\theta (log(n))$ | $\theta (log(n))$ | $\theta (log(n))$ | $O(log(n))$ | $O(log(n))$ | $O(log(n))$   | $O(log(n))$  | $O(n)$           |
+| Red-Black Tree     | $\theta (log(n))$ | $\theta (log(n))$ | $\theta (log(n))$ | $\theta (log(n))$ | $O(log(n))$ | $O(log(n))$ | $O(log(n))$   | $O(log(n))$  | $O(n)$           |
+| Splay Tree         | $N/A$             | $\theta (log(n))$ | $\theta (log(n))$ | $\theta (log(n))$ | $N/A$       | $O(log(n))$ | $O(log(n))$   | $O(log(n))$  | $O(n)$           |
+| AVL Tree           | $\theta (log(n))$ | $\theta (log(n))$ | $\theta (log(n))$ | $\theta (log(n))$ | $O(log(n))$ | $O(log(n))$ | $O(log(n))$   | $O(log(n))$  | $O(n)$           |
+| KD Tree            | $\theta (log(n))$ | $\theta (log(n))$ | $\theta (log(n))$ | $\theta (log(n))$ | $O(n)$      | $O(n)$      | $O(n)$        | $O(n)$       | $O(n)$           |
+
+
+## Array Sorting Algorithms
+
+| Algorithm      | <<<                 | Time Complexity        | >>>              | Space Complexity |
+|----------------|---------------------|------------------------|------------------|------------------|
+|                | **Best**            | **Average**            | **Worst**        | **Worst**        |
+| Quicksort      | $\Omega (n log(n))$ | $\theta (n log(n))$    | $O(n^2)$         | $O(log(n))$      |
+| Mergesort      | $\Omega (n log(n))$ | $\theta (n log(n))$    | $O(n log(n))$    | $O(n)$           |
+| Timsort        | $\Omega (n)$        | $\theta (n log(n))$    | $O(n log(n))$    | $O(n)$           |
+| Heapsort       | $\Omega (n log(n))$ | $\theta (n log(n))$    | $O(n log(n))$    | $O(1)$           |
+| Bubble Sort    | $\Omega (n)$        | $\theta (n^2)$         | $O(n^2)$         | $O(1)$           |
+| Insertion Sort | $\Omega (n)$        | $\theta (n^2)$         | $O(n^2)$         | $O(1)$           |
+| Selection Sort | $\Omega (n^2)$      | $\theta (n^2)$         | $O(n^2)$         | $O(1)$           |
+| Tree Sort      | $\Omega (n log(n))$ | $\theta (n log(n))$    | $O(n^2)$         | $O(n)$           |
+| Shell Sort     | $\Omega (n log(n))$ | $\theta (n(log(n))^2)$ | $O(n(log(n))^2)$ | $O(1)$           |
+| Bucket Sort    | $\Omega (n+k)$      | $\theta (n+k)$         | $O(n^2)$         | $O(n)$           |
+| Radix Sort     | $\Omega (nk)$       | $\theta (nk)$          | $O(nk)$          | $O(n+k)$         |
+| Counting Sort  | $\Omega (n+k)$      | $\theta (n+k)$         | $O(n+k)$         | $O(k)$           |
+| Cubesort       | $\Omega (n)$        | $\theta (n log(n))$    | $O(n log(n))$    | $O(n)$           |
 
 
 <br>

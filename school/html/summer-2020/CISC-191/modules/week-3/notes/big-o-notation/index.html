@@ -128,7 +128,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
 </head>
-<body>
+<body style="
+width: 100%;
+height: 100%;
+margin: 0;
+padding: 0;
+">
 <article class="markdown-body">
 <div style="
 text-align:center;
@@ -165,6 +170,8 @@ CISC 191 Big O Notation Notes
 <li><a href="#worst-case-algorithm-analysis">Worst-Case Algorithm Analysis</a></li>
 <li><a href="#counting-constant-time-operations">Counting constant time operations</a></li>
 <li><a href="#runtime-analysis-of-nested-loop-selection-sort-algorithm">Runtime Analysis of Nested Loop: Selection Sort Algorithm</a></li>
+<li><a href="#common-data-structure-operations">Common Data Structure Operations</a></li>
+<li><a href="#array-sorting-algorithms">Array Sorting Algorithms</a></li>
 </ul></li>
 <li><a href="#resources">Resources</a></li>
 </ul>
@@ -247,7 +254,7 @@ CISC 191 Big O Notation Notes
  &amp;= O(N^{3})
 \end{aligned}
 \]</span></p>
-<h3 id="growth-rates-for-different-input-sizes">Growth Rates for Different Input Sizes</h3>
+<h2 id="growth-rates-for-different-input-sizes">Growth Rates for Different Input Sizes</h2>
 <p>One consideration in evaluating algorithms is that the efficiency of the algorithm is most critical for large input sizes. Small inputs are likely to result in fast running times because <span class="math inline">\(N\)</span> is small, so efficiency is less of a concern. The table below shows the runtime to perform <span class="math inline">\(f(N)\)</span> instructions for different functions <span class="math inline">\(f\)</span> and different values of <span class="math inline">\(N\)</span>. For large <span class="math inline">\(N\)</span>, the difference in computation time varies greatly with the rate of growth of the function <span class="math inline">\(f\)</span>. The data assumes that a single instruction takes <span class="math inline">\(1 \mu s\)</span> to execute.</p>
 <table>
 <thead>
@@ -318,7 +325,7 @@ CISC 191 Big O Notation Notes
 </tr>
 </tbody>
 </table>
-<h3 id="runtime-complexities-for-various-pseudocode-examples.">Runtime Complexities For Various Pseudocode Examples.</h3>
+<h2 id="runtime-complexities-for-various-pseudocode-examples.">Runtime Complexities For Various Pseudocode Examples.</h2>
 <p><span class="math inline">\(O(1)\)</span> <strong>Constant:</strong></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">FindMin</span>(x, y) {</a>
 <a class="sourceLine" id="cb1-2" title="2">   <span class="kw">if</span> (x &lt; y) {</a>
@@ -393,7 +400,7 @@ CISC 191 Big O Notation Notes
 <a class="sourceLine" id="cb6-4" title="4">  }</a>
 <a class="sourceLine" id="cb6-5" title="5">  <span class="kw">return</span> <span class="fu">Fibonacci</span>(N-<span class="dv">1</span>) + <span class="fu">Fibonacci</span>(N-<span class="dv">2</span>)</a>
 <a class="sourceLine" id="cb6-6" title="6">}</a></code></pre></div>
-<h3 id="worst-case-algorithm-analysis">Worst-Case Algorithm Analysis</h3>
+<h2 id="worst-case-algorithm-analysis">Worst-Case Algorithm Analysis</h2>
 <p>Worst-case algorithm analysis</p>
 <p>To analyze how runtime of an algorithm scales as the input size increases, we first determine how many operations the algorithm executes for a specific input size, N. Then, the big-O notation for that function is determined. Algorithm runtime analysis often focuses on the worst-case runtime complexity. The <strong>worst-case runtime</strong> of an algorithm is the runtime complexity for an input that results in the longest execution. Other runtime analyses include best-case runtime and average-case runtime. Determining the average-case runtime requires knowledge of the statistical properties of the expected data inputs.</p>
 <blockquote>
@@ -403,9 +410,9 @@ CISC 191 Big O Notation Notes
 <img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/big-o-notation/runtime_analysis.gif" alt="Runtime analysis" /><figcaption>Runtime analysis</figcaption>
 </figure>
 <blockquote>
-<p>by zyBooks.com</p>
+<p>from zyBooks.com</p>
 </blockquote>
-<h3 id="counting-constant-time-operations">Counting constant time operations</h3>
+<h2 id="counting-constant-time-operations">Counting constant time operations</h2>
 <p>For algorithm analysis, the definition of a single operation does not need to be precise. An operation can be any statement (or constant number of statements) that has a constant runtime complexity, O(1). Since constants are omitted in big-O notation, any constant number of constant time operations is O(1). So, precisely counting the number of constant time operations in a finite sequence is not needed. Ex: An algorithm with a single loop that execute 5 operations before the loop, 3 operations each loop iteration, and 6 operations after the loop would have a runtime of f(N) = 5 + 3N + 6, which can be written as O(1) + O(N) + O(1) = O(N). If the number of operations before the loop was 100, the big-O notation for those operation is still O(1).</p>
 <blockquote>
 <p>17.4.3: Simplified runtime analysis: A constant number of constant time operations is O(1).</p>
@@ -414,9 +421,9 @@ CISC 191 Big O Notation Notes
 <img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/big-o-notation/simplified_runtime_analysis.gif" alt="Simplified Runtime Analysis" /><figcaption>Simplified Runtime Analysis</figcaption>
 </figure>
 <blockquote>
-<p>by zyBooks.com</p>
+<p>from zyBooks.com</p>
 </blockquote>
-<h3 id="runtime-analysis-of-nested-loop-selection-sort-algorithm">Runtime Analysis of Nested Loop: Selection Sort Algorithm</h3>
+<h2 id="runtime-analysis-of-nested-loop-selection-sort-algorithm">Runtime Analysis of Nested Loop: Selection Sort Algorithm</h2>
 <p>Runtime analysis for nested loops requires summing the runtime of the inner loop over each outer loop iteration. The resulting summation can be simplified to determine the big-O notation.</p>
 <blockquote>
 <p>17.4.5: Runtime analysis of nested loop: Selection sort algorithm.</p>
@@ -425,12 +432,347 @@ CISC 191 Big O Notation Notes
 <img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/big-o-notation/runtime_analysis_nested_loop.gif" alt="Runtime Analysis of Nested Loop" /><figcaption>Runtime Analysis of Nested Loop</figcaption>
 </figure>
 <blockquote>
-<p>by zyBooks.com</p>
+<p>from zyBooks.com</p>
 </blockquote>
 <p>Common summation: Summation of consecutive numbers:</p>
 <p><span class="math display">\[
 (N - 1) + (N - 2) + \ldots + 2 + 1 = \dfrac{N(N - 1)}{2} = O(N^{2})
 \]</span></p>
+<h2 id="common-data-structure-operations">Common Data Structure Operations</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Data Structure</th>
+<th>&lt;&lt;&lt;</th>
+<th>&lt;&lt;&lt;</th>
+<th>&lt;&lt;&lt;</th>
+<th>Time Complexity</th>
+<th>&gt;&gt;&gt;</th>
+<th>&gt;&gt;&gt;</th>
+<th>&gt;&gt;&gt;</th>
+<th>&gt;&gt;&gt;</th>
+<th>Space Complexity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td><strong>&lt;&lt;&lt;</strong></td>
+<td><strong>Average</strong></td>
+<td><strong>&gt;&gt;&gt;</strong></td>
+<td><strong>&gt;&gt;&gt;</strong></td>
+<td><strong>&lt;&lt;&lt;</strong></td>
+<td><strong>Worst</strong></td>
+<td><strong>&gt;&gt;&gt;</strong></td>
+<td><strong>&gt;&gt;&gt;</strong></td>
+<td><strong>Worst</strong></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>Access</strong></td>
+<td><strong>Search</strong></td>
+<td><strong>Insertion</strong></td>
+<td><strong>Deletion</strong></td>
+<td><strong>Access</strong></td>
+<td><strong>Search</strong></td>
+<td><strong>Insertion</strong></td>
+<td><strong>Deletion</strong></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Array</td>
+<td><span class="math inline">\(\theta (1)\)</span></td>
+<td><span class="math inline">\(\theta (n)\)</span></td>
+<td><span class="math inline">\(\theta (n)\)</span></td>
+<td><span class="math inline">\(\theta (n)\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+</tr>
+<tr class="even">
+<td>Stack</td>
+<td><span class="math inline">\(\theta (n)\)</span></td>
+<td><span class="math inline">\(\theta (n)\)</span></td>
+<td><span class="math inline">\(\theta (1)\)</span></td>
+<td><span class="math inline">\(\theta (1)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Queue</td>
+<td><span class="math inline">\(\theta (n)\)</span></td>
+<td><span class="math inline">\(\theta (n)\)</span></td>
+<td><span class="math inline">\(\theta (1)\)</span></td>
+<td><span class="math inline">\(\theta (1)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+</tr>
+<tr class="even">
+<td>Singly-Linked List</td>
+<td><span class="math inline">\(\theta (n)\)</span></td>
+<td><span class="math inline">\(\theta (n)\)</span></td>
+<td><span class="math inline">\(\theta (1)\)</span></td>
+<td><span class="math inline">\(\theta (1)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Doubly-Linked List</td>
+<td><span class="math inline">\(\theta (n)\)</span></td>
+<td><span class="math inline">\(\theta (n)\)</span></td>
+<td><span class="math inline">\(\theta (1)\)</span></td>
+<td><span class="math inline">\(\theta (1)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+</tr>
+<tr class="even">
+<td>Skip List</td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n log(n))\)</span></td>
+</tr>
+<tr class="odd">
+<td>Hash Table</td>
+<td><span class="math inline">\(N/A\)</span></td>
+<td><span class="math inline">\(\theta (1)\)</span></td>
+<td><span class="math inline">\(\theta (1)\)</span></td>
+<td><span class="math inline">\(\theta (1)\)</span></td>
+<td><span class="math inline">\(N/A\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+</tr>
+<tr class="even">
+<td>Binary Search Tree</td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Cartesian Tree</td>
+<td><span class="math inline">\(N/A\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(N/A\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+</tr>
+<tr class="even">
+<td>B-Tree</td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(O(log(n))\)</span></td>
+<td><span class="math inline">\(O(log(n))\)</span></td>
+<td><span class="math inline">\(O(log(n))\)</span></td>
+<td><span class="math inline">\(O(log(n))\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Red-Black Tree</td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(O(log(n))\)</span></td>
+<td><span class="math inline">\(O(log(n))\)</span></td>
+<td><span class="math inline">\(O(log(n))\)</span></td>
+<td><span class="math inline">\(O(log(n))\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+</tr>
+<tr class="even">
+<td>Splay Tree</td>
+<td><span class="math inline">\(N/A\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(N/A\)</span></td>
+<td><span class="math inline">\(O(log(n))\)</span></td>
+<td><span class="math inline">\(O(log(n))\)</span></td>
+<td><span class="math inline">\(O(log(n))\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+</tr>
+<tr class="odd">
+<td>AVL Tree</td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(O(log(n))\)</span></td>
+<td><span class="math inline">\(O(log(n))\)</span></td>
+<td><span class="math inline">\(O(log(n))\)</span></td>
+<td><span class="math inline">\(O(log(n))\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+</tr>
+<tr class="even">
+<td>KD Tree</td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(\theta (log(n))\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="array-sorting-algorithms">Array Sorting Algorithms</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Algorithm</th>
+<th>&lt;&lt;&lt;</th>
+<th>Time Complexity</th>
+<th>&gt;&gt;&gt;</th>
+<th>Space Complexity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td><strong>Best</strong></td>
+<td><strong>Average</strong></td>
+<td><strong>Worst</strong></td>
+<td><strong>Worst</strong></td>
+</tr>
+<tr class="even">
+<td>Quicksort</td>
+<td><span class="math inline">\(\Omega (n log(n))\)</span></td>
+<td><span class="math inline">\(\theta (n log(n))\)</span></td>
+<td><span class="math inline">\(O(n^2)\)</span></td>
+<td><span class="math inline">\(O(log(n))\)</span></td>
+</tr>
+<tr class="odd">
+<td>Mergesort</td>
+<td><span class="math inline">\(\Omega (n log(n))\)</span></td>
+<td><span class="math inline">\(\theta (n log(n))\)</span></td>
+<td><span class="math inline">\(O(n log(n))\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+</tr>
+<tr class="even">
+<td>Timsort</td>
+<td><span class="math inline">\(\Omega (n)\)</span></td>
+<td><span class="math inline">\(\theta (n log(n))\)</span></td>
+<td><span class="math inline">\(O(n log(n))\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Heapsort</td>
+<td><span class="math inline">\(\Omega (n log(n))\)</span></td>
+<td><span class="math inline">\(\theta (n log(n))\)</span></td>
+<td><span class="math inline">\(O(n log(n))\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
+</tr>
+<tr class="even">
+<td>Bubble Sort</td>
+<td><span class="math inline">\(\Omega (n)\)</span></td>
+<td><span class="math inline">\(\theta (n^2)\)</span></td>
+<td><span class="math inline">\(O(n^2)\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Insertion Sort</td>
+<td><span class="math inline">\(\Omega (n)\)</span></td>
+<td><span class="math inline">\(\theta (n^2)\)</span></td>
+<td><span class="math inline">\(O(n^2)\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
+</tr>
+<tr class="even">
+<td>Selection Sort</td>
+<td><span class="math inline">\(\Omega (n^2)\)</span></td>
+<td><span class="math inline">\(\theta (n^2)\)</span></td>
+<td><span class="math inline">\(O(n^2)\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Tree Sort</td>
+<td><span class="math inline">\(\Omega (n log(n))\)</span></td>
+<td><span class="math inline">\(\theta (n log(n))\)</span></td>
+<td><span class="math inline">\(O(n^2)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+</tr>
+<tr class="even">
+<td>Shell Sort</td>
+<td><span class="math inline">\(\Omega (n log(n))\)</span></td>
+<td><span class="math inline">\(\theta (n(log(n))^2)\)</span></td>
+<td><span class="math inline">\(O(n(log(n))^2)\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Bucket Sort</td>
+<td><span class="math inline">\(\Omega (n+k)\)</span></td>
+<td><span class="math inline">\(\theta (n+k)\)</span></td>
+<td><span class="math inline">\(O(n^2)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+</tr>
+<tr class="even">
+<td>Radix Sort</td>
+<td><span class="math inline">\(\Omega (nk)\)</span></td>
+<td><span class="math inline">\(\theta (nk)\)</span></td>
+<td><span class="math inline">\(O(nk)\)</span></td>
+<td><span class="math inline">\(O(n+k)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Counting Sort</td>
+<td><span class="math inline">\(\Omega (n+k)\)</span></td>
+<td><span class="math inline">\(\theta (n+k)\)</span></td>
+<td><span class="math inline">\(O(n+k)\)</span></td>
+<td><span class="math inline">\(O(k)\)</span></td>
+</tr>
+<tr class="even">
+<td>Cubesort</td>
+<td><span class="math inline">\(\Omega (n)\)</span></td>
+<td><span class="math inline">\(\theta (n log(n))\)</span></td>
+<td><span class="math inline">\(O(n log(n))\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+</tr>
+</tbody>
+</table>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>

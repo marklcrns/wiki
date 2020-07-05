@@ -64,7 +64,12 @@ SOFTWARE.
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
 </head>
-<body>
+<body style="
+width: 100%;
+height: 100%;
+margin: 0;
+padding: 0;
+">
 <article class="markdown-body">
 <div style="
 text-align:center;
@@ -97,6 +102,7 @@ CISC 191 Week 3 notes and activities
 <ul>
 <li><a href="#week-3">Week 3</a><ul>
 <li><a href="#notes">Notes</a></li>
+<li><a href="#graded-discussion">Graded Discussion</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -106,6 +112,21 @@ CISC 191 Week 3 notes and activities
 <ul>
 <li><a href="notes/index.html">+Week 3: Linked Data Structures and Recursion Notes</a></li>
 </ul>
+<h2 id="graded-discussion">Graded Discussion</h2>
+<p>Part 1</p>
+<ol type="1">
+<li>Recursive program for prime number</li>
+</ol>
+<p>I pick this one mainly because of its readability and elegant looking in recursive from. It has 3 base case and a super simple recursive case. Performance-wise, it’s relatively slower than an iterative counterpart because of repeated method calls which takes up extra space in that stack frame. But because of readability and much simpler to solve in recursion (for me at least), I find that this is a great use of recursion.</p>
+<ol start="2" type="1">
+<li>Sum Triangle from array</li>
+</ol>
+<p>Since this problem requires to create a new array of length N until array length == 1, to create a triangle shape output with each element of each level is the summation of the two numbers below it.  At first sight, this calls for a recursive method because of a pyramid like stack (in this case, stack of arrays) which is very conducive to when recursion starts returning values, which is way easier to understand than creating multiple nested for/while loops. Plus, the recursive solution is way too readable than its iterative counter part</p>
+<ol start="3" type="1">
+<li>Recursive Tower of Hanoi using 4 pegs / rods</li>
+</ol>
+<p>Obviously, Tower of Hanoi is a recursive problem. Again readability-wise, its simpler in recursive form because you can focus more on solving the problem with its recursive cases than worrying about looping over arbitrary amount of moves in an arbitrary amount of pegs and rods. It would be difficult to create an iterative form of the solution to this problem and isn’t as readable as the recursive solution. Recursion is almost always slower than iteration because of extra method calls into the stack frame but the elegance and readability far outweighs the marginal difference between two approach.</p>
+<p>Part 2</p>
 <hr>
 </article>
 </body>

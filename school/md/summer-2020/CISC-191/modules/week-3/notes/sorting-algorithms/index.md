@@ -23,7 +23,7 @@ summary: CISC 191 Sorting Algorithms Notes
 
 ![Selection Sort Java](../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/selection_sort_java.gif)
 
-> by zyBooks.com
+> from zyBooks.com
 
 Selection sort may require a large number of comparisons. The selection sort
 algorithm runtime is $O(N^{2})$. If a list has N elements, the outer loop
@@ -75,7 +75,7 @@ the runtime increases $X^{2}$ times.
 
 ![Insertion Sort Java](../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/insertion_sort_java.gif)
 
-> by zyBooks.com
+> from zyBooks.com
 
 Insertion sort's typical runtime is $O(N^{2})$. If a list has $N$ elements, the
 outer loop executes $N - 1$ times. For each outer loop execution, the inner loop
@@ -134,7 +134,7 @@ pivot value and a high part with data greater than/equal to a pivot value
 
 ![Quicksort Partitions Java](../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/quicksort_partition_java.gif)
 
-> by zyBooks.com
+> from zyBooks.com
 
 To partition the input, the quicksort algorithm divides the array into two
 parts, referred to as the low partition and the high partition. All values in
@@ -241,7 +241,7 @@ half, and merges the lists together.
 
 ![Merge Sort](../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/merge_sort.gif)
 
-> by zyBooks.com
+> from zyBooks.com
 
 The merge sort algorithm uses three index variables to keep track of the
 elements to sort for each recursive method call. The index variable i is the
@@ -256,7 +256,7 @@ copied back to the original list.
 
 ![Merge Sort Java](../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/merge_sort_java.gif)
 
-> by zyBooks.com
+> from zyBooks.com
 
 The merge sort algorithm's runtime is $O(N \log N)$. Merge sort divides the
 input in half until a list of 1 element is reached, which requires $log N$

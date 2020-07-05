@@ -34,7 +34,7 @@ space by half each iteration.
 
 ![Binary Search](../../../../../../../files/summer-2020/CISC-191/week-3/notes/searching-algorithms/binary_search.gif)
 
-> by zyBooks.com
+> from zyBooks.com
 
 Pros:
 
@@ -65,7 +65,7 @@ sorted list.
 
 ![Linear versus Binary Search](../../../../../../../files/summer-2020/CISC-191/week-3/notes/searching-algorithms/linear_vs_binary_search.gif)
 
-> by zyBooks.com
+> from zyBooks.com
 
 <br>
 

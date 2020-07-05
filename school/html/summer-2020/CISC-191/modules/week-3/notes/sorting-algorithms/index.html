@@ -65,7 +65,12 @@ SOFTWARE.
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
 </head>
-<body>
+<body style="
+width: 100%;
+height: 100%;
+margin: 0;
+padding: 0;
+">
 <article class="markdown-body">
 <div style="
 text-align:center;
@@ -131,7 +136,7 @@ CISC 191 Sorting Algorithms Notes
 <img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/selection_sort_java.gif" alt="Selection Sort Java" /><figcaption>Selection Sort Java</figcaption>
 </figure>
 <blockquote>
-<p>by zyBooks.com</p>
+<p>from zyBooks.com</p>
 </blockquote>
 <p>Selection sort may require a large number of comparisons. The selection sort algorithm runtime is <span class="math inline">\(O(N^{2})\)</span>. If a list has N elements, the outer loop executes <span class="math inline">\(N - 1\)</span> times. For each of those <span class="math inline">\(N - 1\)</span> outer loop executions, the inner loop executes an average of <span class="math inline">\(\frac{N}{2}\)</span> times. So the total number of comparisons is proportional to <span class="math inline">\((N - 1) \cdot \frac{N}{2}\)</span>, or <span class="math inline">\(O(N^{2})\)</span>. Other sorting algorithms involve more complex algorithms but have faster execution times.</p>
 <h3 id="selection-sort-runtime">Selection sort runtime</h3>
@@ -156,7 +161,7 @@ CISC 191 Sorting Algorithms Notes
 <img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/insertion_sort_java.gif" alt="Insertion Sort Java" /><figcaption>Insertion Sort Java</figcaption>
 </figure>
 <blockquote>
-<p>by zyBooks.com</p>
+<p>from zyBooks.com</p>
 </blockquote>
 <p>Insertion sort’s typical runtime is <span class="math inline">\(O(N^{2})\)</span>. If a list has <span class="math inline">\(N\)</span> elements, the outer loop executes <span class="math inline">\(N - 1\)</span> times. For each outer loop execution, the inner loop may need to examine all elements in the sorted part. Thus, the inner loop executes on average <span class="math inline">\(\frac{N}{2}\)</span> times. So the total number of comparisons is proportional to <span class="math inline">\((N - 1) \cdot (\frac{N}{2})\)</span>, or <span class="math inline">\(O(N^{2})\)</span>. Other sorting algorithms involve more complex algorithms but faster execution.</p>
 <h3 id="insertion-sort-runtime">Insertion Sort Runtime</h3>
@@ -183,7 +188,7 @@ CISC 191 Sorting Algorithms Notes
 <img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/quicksort_partition_java.gif" alt="Quicksort Partitions Java" /><figcaption>Quicksort Partitions Java</figcaption>
 </figure>
 <blockquote>
-<p>by zyBooks.com</p>
+<p>from zyBooks.com</p>
 </blockquote>
 <p>To partition the input, the quicksort algorithm divides the array into two parts, referred to as the low partition and the high partition. All values in the low partition are less than or equal to the pivot value. All values in the high partition are greater than or equal to the pivot value. The values in each partition are not necessarily sorted. Ex: Partitioning {4 34 10 25 1} with a pivot value of 10 results in a low partition of {4 10 1} and a high partition of {34 25}. Values equal to the pivot may appear in either or both of the 9partitions.</p>
 <p>The quicksort algorithm’s runtime is typically <span class="math inline">\(O(N \log N)\)</span>. Quicksort has several partitioning levels , the first level dividing the input into 2 parts, the second into 4 parts, the third into 8 parts, etc. At each level, the algorithm does at most <span class="math inline">\(N\)</span> comparisons moving the <code>l</code> and <code>h</code> indices. If the pivot yields two equal-sized parts, then there will be <span class="math inline">\(\log N\)</span> levels, requiring the <span class="math inline">\(N \cdot \log N\)</span> comparisons.</p>
@@ -237,7 +242,7 @@ CISC 191 Sorting Algorithms Notes
 <img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/merge_sort.gif" alt="Merge Sort" /><figcaption>Merge Sort</figcaption>
 </figure>
 <blockquote>
-<p>by zyBooks.com</p>
+<p>from zyBooks.com</p>
 </blockquote>
 <p>The merge sort algorithm uses three index variables to keep track of the elements to sort for each recursive method call. The index variable i is the index of first element in the list, and the index variable k is the index of the last element. The index variable j is used to divide the list into two halves. Elements from i to j are in the left half, and elements from j + 1 to k are in the right half.</p>
 <blockquote>
@@ -247,7 +252,7 @@ CISC 191 Sorting Algorithms Notes
 <img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/merge_sort_java.gif" alt="Merge Sort Java" /><figcaption>Merge Sort Java</figcaption>
 </figure>
 <blockquote>
-<p>by zyBooks.com</p>
+<p>from zyBooks.com</p>
 </blockquote>
 <p>The merge sort algorithm’s runtime is <span class="math inline">\(O(N \log N)\)</span>. Merge sort divides the input in half until a list of 1 element is reached, which requires <span class="math inline">\(log N\)</span> partitioning levels. At each level, the algorithm does about <span class="math inline">\(N\)</span> comparisons selecting and copying elements from the left and right partitions, yielding <span class="math inline">\(N \cdot \log N\)</span> comparisons.</p>
 <p>Merge sort requires <span class="math inline">\(O(N)\)</span> additional memory elements for the temporary array of merged elements. For the final merge operation, the temporary list has the same number of elements as the input. Some sorting algorithms sort the list elements in place and require no additional memory, but are more complex to write and understand.</p>
