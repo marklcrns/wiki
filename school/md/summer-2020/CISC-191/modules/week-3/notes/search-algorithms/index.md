@@ -24,10 +24,17 @@ items, could require more than 3 minutes.
 
 ### Binary Search Algorithm
 
-  - [FILE: Binary Search](file:../../../../../../../files/summer-2020/CISC-191/week-3/binary-search.ppt)
-  - [VIDEO: Java Binary Search Tree](https://www.youtube.com/watch?v=M6lYob8STMI)
-  - [VIDEO: Java Binary Search Tree 2](https://www.youtube.com/watch?v=UcOxGmj45AA)
+  - [*Binary Search](file:../../../../../../../files/summer-2020/CISC-191/week-3/binary-search.ppt)
+  - [`Java Binary Search Tree](https://www.youtube.com/watch?v=M6lYob8STMI)
+  - [`Java Binary Search Tree 2](https://www.youtube.com/watch?v=UcOxGmj45AA)
 
+
+> 17.2.3: Binary search efficiently searches sorted list by reducing the search
+space by half each iteration.
+
+![Binary Search](../../../../../../../files/summer-2020/CISC-191/week-3/notes/searching-algorithms/binary_search.gif)
+
+> by zyBooks.com
 
 Pros:
 
@@ -53,13 +60,20 @@ $$
 \text{Ex. }[\ \log_{2} N\ ] + 1 = 6
 $$
 
+> 17.2.5: Speed of linear search versus binary search to find a number within a
+sorted list.
+
+![Linear versus Binary Search](../../../../../../../files/summer-2020/CISC-191/week-3/notes/searching-algorithms/linear_vs_binary_search.gif)
+
+> by zyBooks.com
+
 <br>
 
 # Resources
 
-  - [FILE: Binary Search](file:../../../../../../../files/summer-2020/CISC-191/week-3/binary-search.ppt)
-  - [VIDEO: Java Binary Search Tree](https://www.youtube.com/watch?v=M6lYob8STMI)
-  - [VIDEO: Java Binary Search Tree 2](https://www.youtube.com/watch?v=UcOxGmj45AA)
+  - [*Binary Search](file:../../../../../../../files/summer-2020/CISC-191/week-3/binary-search.ppt)
+  - [`Java Binary Search Tree](https://www.youtube.com/watch?v=M6lYob8STMI)
+  - [`Java Binary Search Tree 2](https://www.youtube.com/watch?v=UcOxGmj45AA)
 
 Textbook
 
