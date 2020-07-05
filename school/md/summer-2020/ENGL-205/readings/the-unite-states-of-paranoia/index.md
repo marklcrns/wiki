@@ -12,13 +12,13 @@ summary: The United States of Paranoia ny Jesse Walker notes
 
 ### Part I: Primal Myths
 
-  - [1 - The Paranoid Style is American Politics](notes/part-1/ch-1)
-  - [2 - The Devil in the Wilderness](notes/part-1/ch-2)
-  - [3 - The Devil Next Door](notes/part-1/ch-3)
+  - [1 - The Paranoid Style is American Politics](notes/ch-1)
+  - [2 - The Devil in the Wilderness](notes/ch-2)
+  - [3 - The Devil Next Door](notes/ch-3)
 
 ### Part II: Modern Fear
 
-  - [7 - The Water's Gate](notes/part-2/ch-7)
+  - [7 - The Water's Gate](notes/ch-7)
 
 
 ## Reading Response

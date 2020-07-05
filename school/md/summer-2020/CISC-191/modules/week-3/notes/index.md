@@ -10,7 +10,7 @@ summary: Linked Data Structures and Recursion
 
 ## Recursion
 
-  - [+Recursion Notes](recursion/notes)
+  - [+Recursion Notes](recursion/index)
 
 
 ## List and Queues
@@ -21,12 +21,12 @@ summary: Linked Data Structures and Recursion
 
 ## Searching Algorithms
 
-  - [+Search Algorithms Notes](search-algorithms/notes)
+  - [+Search Algorithms Notes](search-algorithms/index)
 
 
 ## Sorting Algorithms
 
-  - [+Sorting Algorithms Notes](sorting-algorithms/notes)
+  - [+Sorting Algorithms Notes](sorting-algorithms/index)
 
 
 ## AVL Trees
@@ -36,7 +36,7 @@ summary: Linked Data Structures and Recursion
 
 ## Big O Notation
 
-  - [+Big O Notation Notes](big-o-notation/notes)
+  - [+Big O Notation Notes](big-o-notation/index)
 
 
 ## Mist Topics

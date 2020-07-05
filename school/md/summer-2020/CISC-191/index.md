@@ -22,9 +22,7 @@ summary: CISC 191 Intermediate Java Programming class
 
 ## Modules
 
-  - [+Week 1](modules/week-1/index)
-  - [+Week 2](modules/week-2/index)
-  - [+Week 3](modules/week-3/index)
+  - [+Modules](modules/index)
 
 
 ## Final Project: Stock Journal

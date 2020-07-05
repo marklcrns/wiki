@@ -57,7 +57,7 @@ Conclusions
 
 ## Drafts
 
-  - [Essay 1 Draft](file:../../../../../files/summer-2020/ENGL-205/essay/essay-1_draft.docx)
+  - [FILE: Essay 1 Draft](file:../../../../../files/summer-2020/ENGL-205/essay/essay-1_draft.docx)
 
 ## Final Submission
 

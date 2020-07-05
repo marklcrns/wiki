@@ -25,15 +25,15 @@ summary: The Warehouse by Rob Hart notes
 
 ## Progress Notes
 
-  - [Progress Notes 1](file:../../../../../files/summer-2020/ENGL-205/progress-notes/progress_notes_1.docx)
-  - [Progress Notes 2](file:../../../../../files/summer-2020/ENGL-205/progress-notes/progress_notes_2.docx)
-  - [Progress Notes 3](file:../../../../../files/summer-2020/ENGL-205/progress-notes/progress_notes_3.docx)
+  - [FILE: Progress Notes 1](file:../../../../../files/summer-2020/ENGL-205/progress-notes/progress_notes_1.docx)
+  - [FILE: Progress Notes 2](file:../../../../../files/summer-2020/ENGL-205/progress-notes/progress_notes_2.docx)
+  - [FILE: Progress Notes 3](file:../../../../../files/summer-2020/ENGL-205/progress-notes/progress_notes_3.docx)
 
 
 ## Reading Response
 
-  - [Reading Response 1](file:../../../../../files/summer-2020/ENGL-205/reading-response/reading_response_1.docx)
-  - [Reading Response 2](file:../../../../../files/summer-2020/ENGL-205/reading-response/reading_response_2.docx)
+  - [FILE: Reading Response 1](file:../../../../../files/summer-2020/ENGL-205/reading-response/reading_response_1.docx)
+  - [FILE: Reading Response 2](file:../../../../../files/summer-2020/ENGL-205/reading-response/reading_response_2.docx)
 
 
 ## Essay
