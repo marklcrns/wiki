@@ -10,5 +10,5 @@ summary: CISC 191 Week 2 notes and activities
 
 ## Notes
 
-  - [+Week 2: Object Oriented Programming](notes/w-2)
+  - [+Week 2: Object Oriented Programming Notes](notes/w-2)
 

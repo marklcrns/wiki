@@ -8,8 +8,8 @@ summary: CISC 191 Week 3 Recursion Notes
 
 # Recursion
 
-  - [FILE: Recursion](file:../../../../../../../files/summer-2020/CISC-191/week-3/recursion.ppt)
-  - [VIDEO: Java Recursion](https://www.youtube.com/watch?v=neuDuf_i8Sg)
+  - [*Recursion](file:../../../../../../../files/summer-2020/CISC-191/week-3/recursion.ppt)
+  - [`Java Recursion](https://www.youtube.com/watch?v=neuDuf_i8Sg)
 
 
 ## Recursion Java Sample Codes
@@ -34,8 +34,8 @@ overflow error or stack overflow exception.
 
 # Resources
 
-  - [FILE: Recursion](file:../../../../../../../files/summer-2020/CISC-191/week-3/recursion.ppt)
-  - [VIDEO: Java Recursion](https://www.youtube.com/watch?v=neuDuf_i8Sg)
+  - [*Recursion](file:../../../../../../../files/summer-2020/CISC-191/week-3/recursion.ppt)
+  - [`Java Recursion](https://www.youtube.com/watch?v=neuDuf_i8Sg)
 
 Textbook
 

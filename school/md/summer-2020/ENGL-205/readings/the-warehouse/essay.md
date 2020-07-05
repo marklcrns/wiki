@@ -55,9 +55,8 @@ Conclusions
     take our technology to the right direction.
 
 
-## Drafts
+## Submissions
 
-  - [FILE: Essay 1 Draft](file:../../../../../files/summer-2020/ENGL-205/essay/essay-1_draft.docx)
-
-## Final Submission
+  - [*Essay 1 Draft](file:../../../../../files/summer-2020/ENGL-205/essay/essay-1_draft.docx)
+  - [*Essay 1 Final](file:../../../../../files/summer-2020/ENGL-205/essay/essay-2_final.docx)
 

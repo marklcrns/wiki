@@ -8,9 +8,9 @@ summary: Java Review
 
 # Week 1: Java Review
 
-  - [Java Introduction](file:../../../../../../files/summer-2020/CISC-191/week-1/java_intro.ppt)
-  - [Single Dimensional Arrays](file:../../../../../../files/summer-2020/CISC-191/week-1/single_dimensional_arrays.pptx)
-  - [Multi Dimensional Arrays](file:../../../../../../files/summer-2020/CISC-191/week-1/multi_dimensional_arrays.ppt)
+  - [*Java Introduction](file:../../../../../../files/summer-2020/CISC-191/week-1/java_intro.ppt)
+  - [*Single Dimensional Arrays](file:../../../../../../files/summer-2020/CISC-191/week-1/single_dimensional_arrays.pptx)
+  - [*Multi Dimensional Arrays](file:../../../../../../files/summer-2020/CISC-191/week-1/multi_dimensional_arrays.ppt)
 
 
 ## What is a Computer?
@@ -155,7 +155,7 @@ programming language.
 
 # Resources
 
-  - [Java Introduction](file:../../../../../../files/summer-2020/CISC-191/week-1/java_intro.ppt)
-  - [Single Dimensional Arrays](file:../../../../../../files/summer-2020/CISC-191/week-1/single_dimensional_arrays.pptx)
-  - [Multi Dimensional Arrays](file:../../../../../../files/summer-2020/CISC-191/week-1/multi_dimensional_arrays.ppt)
+  - [*Java Introduction](file:../../../../../../files/summer-2020/CISC-191/week-1/java_intro.ppt)
+  - [*Single Dimensional Arrays](file:../../../../../../files/summer-2020/CISC-191/week-1/single_dimensional_arrays.pptx)
+  - [*Multi Dimensional Arrays](file:../../../../../../files/summer-2020/CISC-191/week-1/multi_dimensional_arrays.ppt)
 

@@ -17,7 +17,7 @@ summary: CISC 191 Intermediate Java Programming class
 
 ## Course Materials
 
-  - [FILE: Syllabus](file:../../../files/summer-2020/CISC-191/syllabus.pdf)
+  - [*Syllabus](file:../../../files/summer-2020/CISC-191/syllabus.pdf)
 
 
 ## Modules

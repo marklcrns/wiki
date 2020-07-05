@@ -10,5 +10,5 @@ summary: CISC 191 Week 3 notes and activities
 
 ## Notes
 
-  - [+Week 3: Linked Data Structures and Recursion](notes/index)
+  - [+Week 3: Linked Data Structures and Recursion Notes](notes/index)
 
