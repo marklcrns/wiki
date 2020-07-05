@@ -112,7 +112,6 @@ public class BinarySearch {
 }
 ```
 
-
 <br>
 
 # Resources

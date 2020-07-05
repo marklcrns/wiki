@@ -53,8 +53,8 @@ SOFTWARE.
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Mark Lucernas" />
-  <meta name="dcterms.date" content="2020-06-29" />
-  <title>% DELETE ME</title>
+  <meta name="dcterms.date" content="2020-07-04" />
+  <title>CISC 191 Big O Notation Notes</title>
   <style type="text/css">
 @charset "UTF-8";.markdown-body{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#24292e;font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:16px;line-height:1.5;word-wrap:break-word;box-sizing:border-box;min-width:200px;max-width:980px;margin:0 auto;padding:45px}.markdown-body a{color:#0366d6;background-color:transparent;text-decoration:none;-webkit-text-decoration-skip:objects}.markdown-body a:active,.markdown-body a:hover{outline-width:0}.markdown-body a:hover{text-decoration:underline}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body strong{font-weight:600}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1{font-size:2em;margin:.67em 0;padding-bottom:.3em;border-bottom:1px solid #eaecef}.markdown-body h2{padding-bottom:.3em;font-size:1.5em;border-bottom:1px solid #eaecef}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#6a737d}.markdown-body img{border-style:none}.markdown-body svg:not(:root){overflow:hidden}.markdown-body hr{box-sizing:content-box;height:.25em;margin:24px 0;padding:0;overflow:hidden;background-color:#e1e4e8;border:0}.markdown-body hr::before{display:table;content:""}.markdown-body hr::after{display:table;clear:both;content:""}.markdown-body input{margin:0;overflow:visible;font:inherit;font-family:inherit;font-size:inherit;line-height:inherit}.markdown-body [type=checkbox]{box-sizing:border-box;padding:0}.markdown-body *{box-sizing:border-box}.markdown-body blockquote{margin:0}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol ol,.markdown-body ul ol{list-style-type:lower-roman}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body ol ol ol,.markdown-body ol ul ol,.markdown-body ul ol ol,.markdown-body ul ul ol{list-style-type:lower-alpha}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dd{margin-left:0}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:600}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body code{font-family:SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace}.markdown-body pre{font:12px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;word-wrap:normal}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body blockquote{padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body table{display:block;width:100%;overflow:auto;border-spacing:0;border-collapse:collapse}.markdown-body table th{font-weight:600}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #dfe2e5}.markdown-body table tr{background-color:#fff;border-top:1px solid #c6cbd1}.markdown-body table tr:nth-child(2n){background-color:#f6f8fa}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body code{padding:.2em 0;margin:0;font-size:85%;background-color:rgba(27,31,35,.05);border-radius:3px}.markdown-body code::after,.markdown-body code::before{letter-spacing:-.2em;content:" "}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:0 0;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f6f8fa;border-radius:3px}.markdown-body pre code{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code::after,.markdown-body pre code::before{content:normal}.markdown-body .full-commit .btn-outline:not(:disabled):hover{color:#005cc5;border-color:#005cc5}.markdown-body kbd{box-shadow:inset 0 -1px 0 #959da5;display:inline-block;padding:3px 5px;font:11px/10px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;color:#444d56;vertical-align:middle;background-color:#fcfcfc;border:1px solid #c6cbd1;border-bottom-color:#959da5;border-radius:3px;box-shadow:inset 0 -1px 0 #959da5}.markdown-body :checked+.radio-label{position:relative;z-index:1;border-color:#0366d6}.markdown-body .task-list-item{list-style-type:none}.markdown-body .task-list-item+.task-list-item{margin-top:3px}.markdown-body .task-list-item input{margin:0 .2em .25em -1.6em;vertical-align:middle}.markdown-body::before{display:table;content:""}.markdown-body::after{display:table;clear:both;content:""}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.Alert,.Error,.Note,.Success,.Warning{padding:11px;margin-bottom:24px;border-style:solid;border-width:1px;border-radius:4px}.Alert p,.Error p,.Note p,.Success p,.Warning p{margin-top:0}.Alert p:last-child,.Error p:last-child,.Note p:last-child,.Success p:last-child,.Warning p:last-child{margin-bottom:0}.Alert{color:#246;background-color:#e2eef9;border-color:#bac6d3}.Warning{color:#4c4a42;background-color:#fff9ea;border-color:#dfd8c2}.Error{color:#911;background-color:#fcdede;border-color:#d2b2b2}.Success{color:#22662c;background-color:#e2f9e5;border-color:#bad3be}.Note{color:#2f363d;background-color:#f6f8fa;border-color:#d5d8da}.Alert h1,.Alert h2,.Alert h3,.Alert h4,.Alert h5,.Alert h6{color:#246;margin-bottom:0}.Warning h1,.Warning h2,.Warning h3,.Warning h4,.Warning h5,.Warning h6{color:#4c4a42;margin-bottom:0}.Error h1,.Error h2,.Error h3,.Error h4,.Error h5,.Error h6{color:#911;margin-bottom:0}.Success h1,.Success h2,.Success h3,.Success h4,.Success h5,.Success h6{color:#22662c;margin-bottom:0}.Note h1,.Note h2,.Note h3,.Note h4,.Note h5,.Note h6{color:#2f363d;margin-bottom:0}.Alert h1:first-child,.Alert h2:first-child,.Alert h3:first-child,.Alert h4:first-child,.Alert h5:first-child,.Alert h6:first-child,.Error h1:first-child,.Error h2:first-child,.Error h3:first-child,.Error h4:first-child,.Error h5:first-child,.Error h6:first-child,.Note h1:first-child,.Note h2:first-child,.Note h3:first-child,.Note h4:first-child,.Note h5:first-child,.Note h6:first-child,.Success h1:first-child,.Success h2:first-child,.Success h3:first-child,.Success h4:first-child,.Success h5:first-child,.Success h6:first-child,.Warning h1:first-child,.Warning h2:first-child,.Warning h3:first-child,.Warning h4:first-child,.Warning h5:first-child,.Warning h6:first-child{margin-top:0}h1.title,p.subtitle{text-align:center}h1.title.followed-by-subtitle{margin-bottom:0}p.subtitle{font-size:1.5em;font-weight:600;line-height:1.25;margin-top:0;margin-bottom:16px;padding-bottom:.3em}div.line-block{white-space:pre-line}
   </style>
@@ -133,35 +133,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div style="text-align: center; position: -webkit-sticky-; position: sticky;
 top: 0; z-index: 9999; padding-top: 10px; background-color: rgba(255, 255, 255, .8)">
 <div style="font-size: 12px; letter-spacing: 2px;">
-<a href="../../../index.html">Wiki Root</a> | 
+<a href="../../../../../../index.html">Wiki Root</a> | 
 <a href="../index.html">index</a>
 </div>
 <header>
-<h1 class="title">% DELETE ME</h1>
+<h1 class="title">CISC 191 Big O Notation Notes</h1>
 </div>
 <p class="author">Mark Lucernas</p>
-<p class="date">2020-06-29</p>
+<p class="date">2020-07-04</p>
 <div class="summary">
-Linked Data Structures and Recursion
+CISC 191 Big O Notation Notes
 </div>
 </header>
 <hr>
 <nav id="TOC">
 <h2 class="toc-title">Contents</h1>
 <ul>
-<li><a href="#week-3-linked-data-structures-and-recursion">Week 3: Linked Data Structures and Recursion</a><ul>
-<li><a href="#recursion">Recursion</a></li>
-<li><a href="#list-and-queues">List and Queues</a></li>
-<li><a href="#searching-algorithms">Searching Algorithms</a><ul>
-<li><a href="#binary-search-algorithm">Binary Search Algorithm</a></li>
-</ul></li>
-<li><a href="#sorting-algorithms">Sorting Algorithms</a><ul>
-<li><a href="#selection-sort">Selection Sort</a></li>
-<li><a href="#insertion-sort">Insertion Sort</a></li>
-<li><a href="#quicksort">Quicksort</a></li>
-<li><a href="#merge-sort">Merge Sort</a></li>
-</ul></li>
-<li><a href="#avl-trees">AVL Trees</a></li>
 <li><a href="#big-o-notation">Big O Notation</a><ul>
 <li><a href="#growth-rates-for-different-input-sizes">Growth Rates for Different Input Sizes</a></li>
 <li><a href="#runtime-complexities-for-various-pseudocode-examples.">Runtime Complexities For Various Pseudocode Examples.</a></li>
@@ -169,153 +156,13 @@ Linked Data Structures and Recursion
 <li><a href="#counting-constant-time-operations">Counting constant time operations</a></li>
 <li><a href="#runtime-analysis-of-nested-loop-selection-sort-algorithm">Runtime Analysis of Nested Loop: Selection Sort Algorithm</a></li>
 </ul></li>
-<li><a href="#mist-topics">Mist Topics</a></li>
-</ul></li>
 <li><a href="#resources">Resources</a></li>
 </ul>
 </nav>
 <hr>
-<h1 id="week-3-linked-data-structures-and-recursion">Week 3: Linked Data Structures and Recursion</h1>
-<h2 id="recursion">Recursion</h2>
+<h1 id="big-o-notation">Big O Notation</h1>
 <ul>
-<li><a href="week-3/recursion/notes.html">+Recursion Notes</a></li>
-</ul>
-<h2 id="list-and-queues">List and Queues</h2>
-<ul>
-<li><a href="../../../../files/summer-2020/CISC-191/week-3/list-and-queues.ppt">FILE: List and Queues</a></li>
-<li><a href="https://www.youtube.com/watch?v=195KUinjBpU">VIDEO: Linked List in Java</a></li>
-</ul>
-<h2 id="searching-algorithms">Searching Algorithms</h2>
-<ul>
-<li><a href="extras/search_algorithms_sample_codes.html">+Search Algorithms Java Sample Codes</a></li>
-</ul>
-<p>An <strong>algorithm</strong> is a sequence of steps for accomplishing a task. <strong>Linear search</strong> is a search algorithm that starts from the beginning of a list, and checks each element until the search key is found or the end of the list is reached.</p>
-<p>An algorithm’s <strong>runtime</strong> is the time the algorithm takes to execute. If each comparison takes 1 µs (1 microsecond), a linear search algorithm’s runtime is up to 1 s to search a list with 1,000,000 elements, 10 s for 10,000,000 elements, and so on. Ex: Searching Amazon’s online store, which has more than 200 million items, could require more than 3 minutes.</p>
-<h3 id="binary-search-algorithm">Binary Search Algorithm</h3>
-<ul>
-<li><a href="../../../../files/summer-2020/CISC-191/week-3/binary-search.ppt">FILE: Binary Search</a></li>
-<li><a href="https://www.youtube.com/watch?v=M6lYob8STMI">VIDEO: Java Binary Search Tree</a></li>
-<li><a href="https://www.youtube.com/watch?v=UcOxGmj45AA">VIDEO: Java Binary Search Tree 2</a></li>
-</ul>
-<p>Pros:</p>
-<ul>
-<li>One of the quickest search algorithm</li>
-</ul>
-<p>Cons</p>
-<ul>
-<li>Array needs to be sorted</li>
-<li>Duplicates will cause search inaccuracy</li>
-</ul>
-<p>Binary search is incredibly efficient in finding an element within a sorted list. During each iteration or step of the algorithm, binary search reduces the search space (i.e., the remaining elements to search within) by half. The search terminates when the element is found or the search space is empty (element not found). For a 32 element list, if the search key is not found, the search space is halved to have 16 elements, then 8, 4, 2, 1, and finally none, requiring only 6 steps. For an N element list, the maximum number of steps required to reduce the search space to an empty sublist is <span class="math inline">\([\ \log_{2} N\ ] + 1\)</span></p>
-<p><span class="math display">\[
-\text{Ex. }[\ \log_{2} N\ ] + 1 = 6
-\]</span></p>
-<h2 id="sorting-algorithms">Sorting Algorithms</h2>
-<ul>
-<li><a href="extras/sorting_algorithms_sample_codes.html">+Sorting Algorithms Java Sample Codes</a></li>
-</ul>
-<h3 id="selection-sort">Selection Sort</h3>
-<p><a name="selection-sort-term"><strong>Selection sort</strong></a></p>
-<ul>
-<li>is a sorting algorithm that treats the input as two parts, a sorted part and an unsorted part, and repeatedly selects the proper next value to move from the unsorted part to the end of the sorted part.</li>
-</ul>
-<p>Selection sort may require a large number of comparisons. The selection sort algorithm runtime is <span class="math inline">\(O(N^{2})\)</span>. If a list has N elements, the outer loop executes <span class="math inline">\(N - 1\)</span> times. For each of those <span class="math inline">\(N - 1\)</span> outer loop executions, the inner loop executes an average of <span class="math inline">\(\frac{N}{2}\)</span> times. So the total number of comparisons is proportional to <span class="math inline">\((N - 1) \cdot \frac{N}{2}\)</span>, or <span class="math inline">\(O(N^{2})\)</span>. Other sorting algorithms involve more complex algorithms but have faster execution times.</p>
-<p>Q: How many times longer will sorting a list of 20 elements take compared to sorting a list of 10 elements?</p>
-<p>A: <span class="math inline">\(20^{2} / 10^{2} = 400 / 100 = \boldsymbol{4}\)</span></p>
-<h3 id="insertion-sort">Insertion Sort</h3>
-<p><a name="insertion-sort-term"><strong>Insertion sort</strong></a></p>
-<ul>
-<li>is a sorting algorithm that treats the input as two parts, a sorted part and an unsorted part, and repeatedly inserts the next value from the unsorted part into the correct location in the sorted part.</li>
-</ul>
-<p>Insertion sort’s typical runtime is <span class="math inline">\(O(N^{2})\)</span>. If a list has <span class="math inline">\(N\)</span> elements, the outer loop executes <span class="math inline">\(N - 1\)</span> times. For each outer loop execution, the inner loop may need to examine all elements in the sorted part. Thus, the inner loop executes on average <span class="math inline">\(\frac{N}{2}\)</span> times. So the total number of comparisons is proportional to <span class="math inline">\((N - 1) \cdot (\frac{N}{2})\)</span>, or <span class="math inline">\(O(N^{2})\)</span>. Other sorting algorithms involve more complex algorithms but faster execution.</p>
-<p>Q: In the worst case, assuming each comparison takes 1 µs, how long will insertion sort algorithm take to sort a list of 10 elements?</p>
-<p>A: <span class="math inline">\((1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9) \cdot 1 \mu s = \boldsymbol{45 \mu s}\)</span></p>
-<p>Q: Using the Big O runtime complexity, how many times longer will sorting a list of 20 elements take compared to sorting a list of 10 elements?</p>
-<p>A: <span class="math inline">\(20^{2} / 10^{2} = 400 /100 = \boldsymbol{4}\)</span></p>
-<p>For sorted or nearly sorted inputs, insertion sort’s runtime is <span class="math inline">\(O(N)\)</span>. A <strong>nearly sorted</strong> list only contains a few elements not in sorted order. Ex: {4, 5, 17, 25, 89, 14} is nearly sorted having only one element not in sorted position.</p>
-<p>For each outer loop execution, if the element is already in sorted position, only a single comparison is made. Each element not in sorted position requires at most N comparisons. If there are a constant number, C, of unsorted elements, sorting the N - C sorted elements requires one comparison each, and sorting the C unsorted elements requires at most N comparisons each. The runtime for nearly sorted inputs is <span class="math inline">\(O((N - C) * 1 + C * N) = \boldsymbol{O(N)}\)</span></p>
-<h3 id="quicksort">Quicksort</h3>
-<p><a name="quicksort-term"><strong>Quicksort</strong></a></p>
-<ul>
-<li>is a sorting algorithm that repeatedly partitions the input into low and high parts (each part unsorted), and then recursively sorts each of those parts. To partition the input, quicksort chooses a pivot to divide the data into low and high parts.</li>
-<li>The <strong>pivot</strong> can be any value within the array being sorted, commonly the value of the middle array element. Ex: For the list {4 34 10 25 1}, the middle element is located at index 2 (the middle of indices 0..4) and has a value of 10.</li>
-</ul>
-<p>To partition the input, the quicksort algorithm divides the array into two parts, referred to as the low partition and the high partition. All values in the low partition are less than or equal to the pivot value. All values in the high partition are greater than or equal to the pivot value. The values in each partition are not necessarily sorted. Ex: Partitioning {4 34 10 25 1} with a pivot value of 10 results in a low partition of {4 10 1} and a high partition of {34 25}. Values equal to the pivot may appear in either or both of the 9partitions.</p>
-<p>The quicksort algorithm’s runtime is typically <span class="math inline">\(O(N \log N)\)</span>. Quicksort has several partitioning levels , the first level dividing the input into 2 parts, the second into 4 parts, the third into 8 parts, etc. At each level, the algorithm does at most <span class="math inline">\(N\)</span> comparisons moving the <code>l</code> and <code>h</code> indices. If the pivot yields two equal-sized parts, then there will be <span class="math inline">\(\log N\)</span> levels, requiring the <span class="math inline">\(N \cdot \log N\)</span> comparisons.</p>
-<blockquote>
-<p>Assume quicksort always chooses a pivot that divides the elements into two equal parts.</p>
-</blockquote>
-<p>Q: How many partitioning levels are required for a list of 8 elements?</p>
-<p>A: 3</p>
-<pre><code>1st: {a b c d} {e f g h}
-2nd: {a b} {c d} {e f} {g h}
-3rd: {a} {b} {c} {d} {e} {f} {g} {h}</code></pre>
-<p>Q: How many partitioning “levels” are required for a list of 1024 elements?</p>
-<p>A: 10</p>
-<p><span class="math inline">\(\log_{2} 1024 = 10\)</span>. Assuming equal-size partitions, for <span class="math inline">\(N\)</span> elements, the number of levels is <span class="math inline">\(\log_{2} N\)</span>.</p>
-<p>Q: How many total comparisons are required to sort a list of 1024 elements?</p>
-<p>A: 10240</p>
-<p><span class="math inline">\(\log_{2} 1024 \cdot 1024 = 10 \cdot 1024 = 10240\)</span> comparisons. There will be <span class="math inline">\(\log_{2} N\)</span> partitioning levels, and each level requires <span class="math inline">\(N\)</span> comparisons.</p>
-<p>For typical unsorted data, such equal partitioning occurs. However, partitioning may yield unequal sized part in some cases. If the pivot selected for partitioning is the smallest or largest element, one partition will have just 1 element, and the other partition will have all other elements. If this unequal partitioning happens at every level, there will be <span class="math inline">\(N - 1\)</span> levels, yielding <span class="math inline">\((N - 1) \cdot N\)</span>, which is <span class="math inline">\(O(N^{2})\)</span>. So the worst case runtime for the quicksort algorithm is <span class="math inline">\(O(N^{2})\)</span>. Fortunately, this worst case runtime rarely occurs.</p>
-<blockquote>
-<p>Assume quicksort always chooses the smallest element as the pivot.</p>
-</blockquote>
-<p>Q: Given numbers = {7 4 2 25 19}, i = 0, and k = 4, what is contents of the low partition? Use curly braces in your answer.</p>
-<p>A: {2}</p>
-<p>The low partition is {2}, and the high partition is {4 7 25 19}.</p>
-<p>Q: How many partitioning “levels” of are required for a list of 5 elements?</p>
-<p>A: 4</p>
-<pre><code>1st: {a} {b c d e}
-2nd: {a} {b} {c d e}
-3rd: {a} {b} {c} {d e}
-4th: {a} {b} {c} {d} {e}</code></pre>
-<p>Q: How many partitioning “levels” are required for a list of 1024 elements?</p>
-<p>A: 1023</p>
-<p>In the worst case, for <span class="math inline">\(N\)</span> elements, there will be <span class="math inline">\(N - 1\)</span> levels.</p>
-<p>Q: How many total comparisons are required to sort a list of 1024 elements?</p>
-<p>A: 1047552</p>
-<p><span class="math inline">\((1024 - 1) \cdot 1024 = 1023 \cdot 1024 = 1047552\)</span> comparisons.</p>
-<h3 id="merge-sort">Merge Sort</h3>
-<p><a name="merge-sort-term"><strong>Merge sort</strong></a></p>
-<ul>
-<li>is a sorting algorithm that divides a list into two halves, recursively sorts each half, and then merges the sorted halves to produce a sorted list. The recursive partitioning continues until a list of 1 element is reached, as list of 1 element is already sorted.</li>
-</ul>
-<blockquote>
-<p>17.9.1: Merge sort recursively divides the input into two halves, sorts each half, and merges the lists together.</p>
-</blockquote>
-<figure>
-<img src="../../../../files/summer-2020/CISC-191/week-3/notes/merge_sort.gif" alt="Merge Sort" /><figcaption>Merge Sort</figcaption>
-</figure>
-<blockquote>
-<p>by zyBooks.com</p>
-</blockquote>
-<p>The merge sort algorithm uses three index variables to keep track of the elements to sort for each recursive method call. The index variable i is the index of first element in the list, and the index variable k is the index of the last element. The index variable j is used to divide the list into two halves. Elements from i to j are in the left half, and elements from j + 1 to k are in the right half.</p>
-<blockquote>
-<p>17.9.3: Merging partitions: Smallest element from left or right partition is added one at a time to a temporary merged list. Once merged, temporary list is copied back to the original list.</p>
-</blockquote>
-<figure>
-<img src="../../../../files/summer-2020/CISC-191/week-3/notes/merge_sort_java.gif" alt="Merge Sort Java" /><figcaption>Merge Sort Java</figcaption>
-</figure>
-<blockquote>
-<p>by zyBooks.com</p>
-</blockquote>
-<p>The merge sort algorithm’s runtime is <span class="math inline">\(O(N \log N)\)</span>. Merge sort divides the input in half until a list of 1 element is reached, which requires <span class="math inline">\(log N\)</span> partitioning levels. At each level, the algorithm does about <span class="math inline">\(N\)</span> comparisons selecting and copying elements from the left and right partitions, yielding <span class="math inline">\(N \cdot \log N\)</span> comparisons.</p>
-<p>Merge sort requires <span class="math inline">\(O(N)\)</span> additional memory elements for the temporary array of merged elements. For the final merge operation, the temporary list has the same number of elements as the input. Some sorting algorithms sort the list elements in place and require no additional memory, but are more complex to write and understand.</p>
-<h4 id="merge-sort-runtime-and-memory-complexity.">17.9.5: Merge sort runtime and memory complexity.</h4>
-<p>Q: How many recursive partitioning levels are required for a list of 8 elements?</p>
-<p>A: 3</p>
-<pre><code>1st: {a b c d} {e f g h}
-2nd: {a b} {c d} {e f} {g h}
-3rd: {a} {b} {c} {d} {e} {f} {g} {h}
-
-For $N$ elements, the number of levels is $log N$. $log 8 = 3$.</code></pre>
-<h2 id="avl-trees">AVL Trees</h2>
-<ul>
-<li><a href="../../../../files/summer-2020/CISC-191/week-3/avl-trees.ppt">FILE: AVL Trees</a></li>
-</ul>
-<h2 id="big-o-notation">Big O Notation</h2>
-<ul>
-<li><a href="extras/big_o_java_collections.html">+Big O Performance of Some Common Functions of Java Collections</a>)</li>
+<li><a href="big_o_notation_java_collections.html">+Big O Performance of Some Common Functions of Java Collections</a>)</li>
 <li><a href="https://www.youtube.com/watch?v=__vX2sjlpXU">VIDEO: Big-O Notation in 5 Minutes</a></li>
 </ul>
 <p>Big O notation is a mathematical way of describing how a function (running time of an algorithm) generally behaves in relation to the input size. In Big O notation, all functions that have the same growth rate (as determined by the highest order term of the function) are characterized using the same Big O notation. In essence, all functions that have the same growth rate are considered equivalent in Big O notation.</p>
@@ -463,122 +310,126 @@ For $N$ elements, the number of levels is $log N$. $log 8 = 3$.</code></pre>
 </table>
 <h3 id="runtime-complexities-for-various-pseudocode-examples.">Runtime Complexities For Various Pseudocode Examples.</h3>
 <p><span class="math inline">\(O(1)\)</span> <strong>Constant:</strong></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">FindMin</span>(x, y) {</a>
-<a class="sourceLine" id="cb4-2" title="2">   <span class="kw">if</span> (x &lt; y) {</a>
-<a class="sourceLine" id="cb4-3" title="3">      <span class="kw">return</span> x</a>
-<a class="sourceLine" id="cb4-4" title="4">   }</a>
-<a class="sourceLine" id="cb4-5" title="5">   <span class="kw">else</span> {</a>
-<a class="sourceLine" id="cb4-6" title="6">      <span class="kw">return</span> y</a>
-<a class="sourceLine" id="cb4-7" title="7">   }</a>
-<a class="sourceLine" id="cb4-8" title="8">}</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">FindMin</span>(x, y) {</a>
+<a class="sourceLine" id="cb1-2" title="2">   <span class="kw">if</span> (x &lt; y) {</a>
+<a class="sourceLine" id="cb1-3" title="3">      <span class="kw">return</span> x</a>
+<a class="sourceLine" id="cb1-4" title="4">   }</a>
+<a class="sourceLine" id="cb1-5" title="5">   <span class="kw">else</span> {</a>
+<a class="sourceLine" id="cb1-6" title="6">      <span class="kw">return</span> y</a>
+<a class="sourceLine" id="cb1-7" title="7">   }</a>
+<a class="sourceLine" id="cb1-8" title="8">}</a></code></pre></div>
 <p><span class="math inline">\(O(\log N)\)</span> <strong>Logarithmic</strong></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">BinarySearch</span>(numbers, N, key) {</a>
-<a class="sourceLine" id="cb5-2" title="2">    mid = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb5-3" title="3">   low = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb5-4" title="4">   high = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb5-5" title="5"></a>
-<a class="sourceLine" id="cb5-6" title="6">   high = N - <span class="dv">1</span>;</a>
-<a class="sourceLine" id="cb5-7" title="7"></a>
-<a class="sourceLine" id="cb5-8" title="8">   <span class="kw">while</span> (high &gt;= low) {</a>
-<a class="sourceLine" id="cb5-9" title="9">      mid = (high + low) / <span class="dv">2</span></a>
-<a class="sourceLine" id="cb5-10" title="10">      <span class="kw">if</span> (numbers[mid] &lt; key) {</a>
-<a class="sourceLine" id="cb5-11" title="11">         low = mid + <span class="dv">1</span></a>
-<a class="sourceLine" id="cb5-12" title="12">      }</a>
-<a class="sourceLine" id="cb5-13" title="13">      <span class="kw">else</span> <span class="kw">if</span> (numbers[mid] &gt; key) {</a>
-<a class="sourceLine" id="cb5-14" title="14">         high = mid - <span class="dv">1</span></a>
-<a class="sourceLine" id="cb5-15" title="15">      }</a>
-<a class="sourceLine" id="cb5-16" title="16">      <span class="kw">else</span> {</a>
-<a class="sourceLine" id="cb5-17" title="17">         <span class="kw">return</span> mid</a>
-<a class="sourceLine" id="cb5-18" title="18">      }</a>
-<a class="sourceLine" id="cb5-19" title="19">   }</a>
-<a class="sourceLine" id="cb5-20" title="20"></a>
-<a class="sourceLine" id="cb5-21" title="21">   <span class="kw">return</span> -<span class="dv">1</span>   <span class="co">// not found</span></a>
-<a class="sourceLine" id="cb5-22" title="22">}</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">BinarySearch</span>(numbers, N, key) {</a>
+<a class="sourceLine" id="cb2-2" title="2">    mid = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb2-3" title="3">   low = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb2-4" title="4">   high = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb2-5" title="5"></a>
+<a class="sourceLine" id="cb2-6" title="6">   high = N - <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb2-7" title="7"></a>
+<a class="sourceLine" id="cb2-8" title="8">   <span class="kw">while</span> (high &gt;= low) {</a>
+<a class="sourceLine" id="cb2-9" title="9">      mid = (high + low) / <span class="dv">2</span></a>
+<a class="sourceLine" id="cb2-10" title="10">      <span class="kw">if</span> (numbers[mid] &lt; key) {</a>
+<a class="sourceLine" id="cb2-11" title="11">         low = mid + <span class="dv">1</span></a>
+<a class="sourceLine" id="cb2-12" title="12">      }</a>
+<a class="sourceLine" id="cb2-13" title="13">      <span class="kw">else</span> <span class="kw">if</span> (numbers[mid] &gt; key) {</a>
+<a class="sourceLine" id="cb2-14" title="14">         high = mid - <span class="dv">1</span></a>
+<a class="sourceLine" id="cb2-15" title="15">      }</a>
+<a class="sourceLine" id="cb2-16" title="16">      <span class="kw">else</span> {</a>
+<a class="sourceLine" id="cb2-17" title="17">         <span class="kw">return</span> mid</a>
+<a class="sourceLine" id="cb2-18" title="18">      }</a>
+<a class="sourceLine" id="cb2-19" title="19">   }</a>
+<a class="sourceLine" id="cb2-20" title="20"></a>
+<a class="sourceLine" id="cb2-21" title="21">   <span class="kw">return</span> -<span class="dv">1</span>   <span class="co">// not found</span></a>
+<a class="sourceLine" id="cb2-22" title="22">}</a></code></pre></div>
 <p><span class="math inline">\(O(N)\)</span> <strong>Linear</strong></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">LinearSearch</span>(numbers, N, key) {</a>
-<a class="sourceLine" id="cb6-2" title="2">  <span class="kw">for</span> (i = <span class="dv">0</span>; i &lt; N; ++i) {</a>
-<a class="sourceLine" id="cb6-3" title="3">      <span class="kw">if</span> (numbers[i] == key) {</a>
-<a class="sourceLine" id="cb6-4" title="4">         <span class="kw">return</span> i</a>
-<a class="sourceLine" id="cb6-5" title="5">      }</a>
-<a class="sourceLine" id="cb6-6" title="6">   }</a>
-<a class="sourceLine" id="cb6-7" title="7"></a>
-<a class="sourceLine" id="cb6-8" title="8">   <span class="kw">return</span> -<span class="dv">1</span> <span class="co">// not found</span></a>
-<a class="sourceLine" id="cb6-9" title="9">}</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">LinearSearch</span>(numbers, N, key) {</a>
+<a class="sourceLine" id="cb3-2" title="2">  <span class="kw">for</span> (i = <span class="dv">0</span>; i &lt; N; ++i) {</a>
+<a class="sourceLine" id="cb3-3" title="3">      <span class="kw">if</span> (numbers[i] == key) {</a>
+<a class="sourceLine" id="cb3-4" title="4">         <span class="kw">return</span> i</a>
+<a class="sourceLine" id="cb3-5" title="5">      }</a>
+<a class="sourceLine" id="cb3-6" title="6">   }</a>
+<a class="sourceLine" id="cb3-7" title="7"></a>
+<a class="sourceLine" id="cb3-8" title="8">   <span class="kw">return</span> -<span class="dv">1</span> <span class="co">// not found</span></a>
+<a class="sourceLine" id="cb3-9" title="9">}</a></code></pre></div>
 <p><span class="math inline">\(O(N \log N)\)</span> <strong>Log-linear</strong></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb7-1" title="1"><span class="fu">MergeSort</span>(numbers, i, k) {</a>
-<a class="sourceLine" id="cb7-2" title="2">   j = <span class="dv">0</span></a>
-<a class="sourceLine" id="cb7-3" title="3">   <span class="kw">if</span> (i &lt; k) {</a>
-<a class="sourceLine" id="cb7-4" title="4">      j = (i + k) / <span class="dv">2</span>              <span class="co">// Find midpoint</span></a>
-<a class="sourceLine" id="cb7-5" title="5"></a>
-<a class="sourceLine" id="cb7-6" title="6">      <span class="fu">MergeSort</span>(numbers, i, j)     <span class="co">// Sort left part</span></a>
-<a class="sourceLine" id="cb7-7" title="7">      <span class="fu">MergeSort</span>(numbers, j + <span class="dv">1</span>, k) <span class="co">// Sort right part</span></a>
-<a class="sourceLine" id="cb7-8" title="8">      <span class="fu">Merge</span>(numbers, i, j, k)      <span class="co">// Merge parts</span></a>
-<a class="sourceLine" id="cb7-9" title="9">   }</a>
-<a class="sourceLine" id="cb7-10" title="10">}</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">MergeSort</span>(numbers, i, k) {</a>
+<a class="sourceLine" id="cb4-2" title="2">   j = <span class="dv">0</span></a>
+<a class="sourceLine" id="cb4-3" title="3">   <span class="kw">if</span> (i &lt; k) {</a>
+<a class="sourceLine" id="cb4-4" title="4">      j = (i + k) / <span class="dv">2</span>              <span class="co">// Find midpoint</span></a>
+<a class="sourceLine" id="cb4-5" title="5"></a>
+<a class="sourceLine" id="cb4-6" title="6">      <span class="fu">MergeSort</span>(numbers, i, j)     <span class="co">// Sort left part</span></a>
+<a class="sourceLine" id="cb4-7" title="7">      <span class="fu">MergeSort</span>(numbers, j + <span class="dv">1</span>, k) <span class="co">// Sort right part</span></a>
+<a class="sourceLine" id="cb4-8" title="8">      <span class="fu">Merge</span>(numbers, i, j, k)      <span class="co">// Merge parts</span></a>
+<a class="sourceLine" id="cb4-9" title="9">   }</a>
+<a class="sourceLine" id="cb4-10" title="10">}</a></code></pre></div>
 <p><span class="math inline">\(O(N^{2})\)</span> <span class="math inline">\(Quadratic\)</span></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb8-1" title="1"><span class="fu">SelectionSort</span>(number, N) {</a>
-<a class="sourceLine" id="cb8-2" title="2">   <span class="kw">for</span> (i = <span class="dv">0</span>; i &lt; N; ++i) {</a>
-<a class="sourceLine" id="cb8-3" title="3">      indexSmallest = i</a>
-<a class="sourceLine" id="cb8-4" title="4">      <span class="kw">for</span> (j = i + <span class="dv">1</span>; j &lt; N; ++j) {</a>
-<a class="sourceLine" id="cb8-5" title="5">         <span class="kw">if</span> (numbers[j] &lt; numbers[indexSmallest]) {</a>
-<a class="sourceLine" id="cb8-6" title="6">            indexSmallest = j</a>
-<a class="sourceLine" id="cb8-7" title="7">         }</a>
-<a class="sourceLine" id="cb8-8" title="8">      }</a>
-<a class="sourceLine" id="cb8-9" title="9"></a>
-<a class="sourceLine" id="cb8-10" title="10">      temp = numbers[i]</a>
-<a class="sourceLine" id="cb8-11" title="11">      numbers[i] = numbers[indexSmallest]</a>
-<a class="sourceLine" id="cb8-12" title="12">      numbers[indexSmallest] = temp</a>
-<a class="sourceLine" id="cb8-13" title="13">}</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">SelectionSort</span>(number, N) {</a>
+<a class="sourceLine" id="cb5-2" title="2">   <span class="kw">for</span> (i = <span class="dv">0</span>; i &lt; N; ++i) {</a>
+<a class="sourceLine" id="cb5-3" title="3">      indexSmallest = i</a>
+<a class="sourceLine" id="cb5-4" title="4">      <span class="kw">for</span> (j = i + <span class="dv">1</span>; j &lt; N; ++j) {</a>
+<a class="sourceLine" id="cb5-5" title="5">         <span class="kw">if</span> (numbers[j] &lt; numbers[indexSmallest]) {</a>
+<a class="sourceLine" id="cb5-6" title="6">            indexSmallest = j</a>
+<a class="sourceLine" id="cb5-7" title="7">         }</a>
+<a class="sourceLine" id="cb5-8" title="8">      }</a>
+<a class="sourceLine" id="cb5-9" title="9"></a>
+<a class="sourceLine" id="cb5-10" title="10">      temp = numbers[i]</a>
+<a class="sourceLine" id="cb5-11" title="11">      numbers[i] = numbers[indexSmallest]</a>
+<a class="sourceLine" id="cb5-12" title="12">      numbers[indexSmallest] = temp</a>
+<a class="sourceLine" id="cb5-13" title="13">}</a></code></pre></div>
 <p><span class="math inline">\(O(c^{N})\)</span> <strong>Exponential</strong></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb9-1" title="1"><span class="fu">Fibonacci</span>(N) {</a>
-<a class="sourceLine" id="cb9-2" title="2">  <span class="kw">if</span> ((<span class="dv">1</span> == N) || (<span class="dv">2</span> == N)) {</a>
-<a class="sourceLine" id="cb9-3" title="3">    <span class="kw">return</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb9-4" title="4">  }</a>
-<a class="sourceLine" id="cb9-5" title="5">  <span class="kw">return</span> <span class="fu">Fibonacci</span>(N-<span class="dv">1</span>) + <span class="fu">Fibonacci</span>(N-<span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb9-6" title="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">Fibonacci</span>(N) {</a>
+<a class="sourceLine" id="cb6-2" title="2">  <span class="kw">if</span> ((<span class="dv">1</span> == N) || (<span class="dv">2</span> == N)) {</a>
+<a class="sourceLine" id="cb6-3" title="3">    <span class="kw">return</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb6-4" title="4">  }</a>
+<a class="sourceLine" id="cb6-5" title="5">  <span class="kw">return</span> <span class="fu">Fibonacci</span>(N-<span class="dv">1</span>) + <span class="fu">Fibonacci</span>(N-<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb6-6" title="6">}</a></code></pre></div>
 <h3 id="worst-case-algorithm-analysis">Worst-Case Algorithm Analysis</h3>
 <p>Worst-case algorithm analysis</p>
 <p>To analyze how runtime of an algorithm scales as the input size increases, we first determine how many operations the algorithm executes for a specific input size, N. Then, the big-O notation for that function is determined. Algorithm runtime analysis often focuses on the worst-case runtime complexity. The <strong>worst-case runtime</strong> of an algorithm is the runtime complexity for an input that results in the longest execution. Other runtime analyses include best-case runtime and average-case runtime. Determining the average-case runtime requires knowledge of the statistical properties of the expected data inputs.</p>
+<blockquote>
+<p>17.4.1: Runtime analysis: Finding the max value.</p>
+</blockquote>
 <figure>
-<img src="../../../../files/summer-2020/CISC-191/week-3/notes/runtime_analysis.png" alt="Runtime analysis: Finding the max value" /><figcaption>Runtime analysis: Finding the max value</figcaption>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/big-o-notation/runtime_analysis.gif" alt="Runtime analysis" /><figcaption>Runtime analysis</figcaption>
 </figure>
+<blockquote>
+<p>by zyBooks.com</p>
+</blockquote>
 <h3 id="counting-constant-time-operations">Counting constant time operations</h3>
 <p>For algorithm analysis, the definition of a single operation does not need to be precise. An operation can be any statement (or constant number of statements) that has a constant runtime complexity, O(1). Since constants are omitted in big-O notation, any constant number of constant time operations is O(1). So, precisely counting the number of constant time operations in a finite sequence is not needed. Ex: An algorithm with a single loop that execute 5 operations before the loop, 3 operations each loop iteration, and 6 operations after the loop would have a runtime of f(N) = 5 + 3N + 6, which can be written as O(1) + O(N) + O(1) = O(N). If the number of operations before the loop was 100, the big-O notation for those operation is still O(1).</p>
+<blockquote>
+<p>17.4.3: Simplified runtime analysis: A constant number of constant time operations is O(1).</p>
+</blockquote>
 <figure>
-<img src="../../../../files/summer-2020/CISC-191/week-3/notes/simplified_runtime_analysis.png" alt="Simplified runtime analysis" /><figcaption>Simplified runtime analysis</figcaption>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/big-o-notation/simplified_runtime_analysis.gif" alt="Simplified Runtime Analysis" /><figcaption>Simplified Runtime Analysis</figcaption>
 </figure>
+<blockquote>
+<p>by zyBooks.com</p>
+</blockquote>
 <h3 id="runtime-analysis-of-nested-loop-selection-sort-algorithm">Runtime Analysis of Nested Loop: Selection Sort Algorithm</h3>
 <p>Runtime analysis for nested loops requires summing the runtime of the inner loop over each outer loop iteration. The resulting summation can be simplified to determine the big-O notation.</p>
+<blockquote>
+<p>17.4.5: Runtime analysis of nested loop: Selection sort algorithm.</p>
+</blockquote>
 <figure>
-<img src="../../../../files/summer-2020/CISC-191/week-3/notes/runtime_analysis_nested_loop.png" alt="Runtime analysis of nested loop: Selection sort algorithm" /><figcaption>Runtime analysis of nested loop: Selection sort algorithm</figcaption>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/big-o-notation/runtime_analysis_nested_loop.gif" alt="Runtime Analysis of Nested Loop" /><figcaption>Runtime Analysis of Nested Loop</figcaption>
 </figure>
+<blockquote>
+<p>by zyBooks.com</p>
+</blockquote>
 <p>Common summation: Summation of consecutive numbers:</p>
 <p><span class="math display">\[
 (N - 1) + (N - 2) + \ldots + 2 + 1 = \dfrac{N(N - 1)}{2} = O(N^{2})
 \]</span></p>
-<h2 id="mist-topics">Mist Topics</h2>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=oSWTXtMglKE">VIDEO: Data Structures: Trees</a></li>
-<li><a href="https://www.youtube.com/watch?v=JUOyKSZScW0">VIDEO: Java Sort Algorithm</a></li>
-</ul>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
-<li><a href="../../../../files/summer-2020/CISC-191/week-3/list-and-queues.ppt">FILE: List and Queues</a></li>
-<li><a href="https://www.youtube.com/watch?v=195KUinjBpU">VIDEO: Linked List in Java</a></li>
-<li><a href="../../../../files/summer-2020/CISC-191/week-3/binary-search.ppt">FILE: Binary Search</a></li>
-<li><a href="https://www.youtube.com/watch?v=M6lYob8STMI">VIDEO: Java Binary Search Tree</a></li>
-<li><a href="https://www.youtube.com/watch?v=UcOxGmj45AA">VIDEO: Java Binary Search Tree 2</a></li>
-<li><a href="../../../../files/summer-2020/CISC-191/week-3/avl-trees.ppt">FILE: AVL Trees</a></li>
 <li><a href="https://www.youtube.com/watch?v=__vX2sjlpXU">VIDEO: Big-O Notation in 5 Minutes</a></li>
-<li><a href="https://www.youtube.com/watch?v=oSWTXtMglKE">VIDEO: Data Structures: Trees</a></li>
-<li><a href="https://www.youtube.com/watch?v=JUOyKSZScW0">VIDEO: Java Sort Algorithm</a></li>
 </ul>
 <p>Textbook</p>
 <ul>
 <li><a href="https://www.zybooks.com/">Andrew Huang CISC 191: Intermediate Java Programming - zyBooks</a>
 <ul>
-<li>Chapter 11 Recursion</li>
 <li>Chapter 17 Searching and algorithms</li>
 </ul></li>
 </ul>

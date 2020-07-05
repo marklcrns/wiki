@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<!--
+==============================================================================
+           "GitHub HTML5 Pandoc Template" v2.1 — by Tristano Ajmone           
+==============================================================================
+Copyright © Tristano Ajmone, 2017, MIT License (MIT). Project's home:
+
+- https://github.com/tajmone/pandoc-goodies
+
+The CSS in this template reuses source code taken from the following projects:
+
+- GitHub Markdown CSS: Copyright © Sindre Sorhus, MIT License (MIT):
+  https://github.com/sindresorhus/github-markdown-css
+
+- Primer CSS: Copyright © 2016-2017 GitHub Inc., MIT License (MIT):
+  http://primercss.io/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The MIT License 
+
+Copyright (c) Tristano Ajmone, 2017 (github.com/tajmone/pandoc-goodies)
+Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)
+Copyright (c) 2017 GitHub Inc.
+
+"GitHub Pandoc HTML5 Template" is Copyright (c) Tristano Ajmone, 2017, released
+under the MIT License (MIT); it contains readaptations of substantial portions
+of the following third party softwares:
+
+(1) "GitHub Markdown CSS", Copyright (c) Sindre Sorhus, MIT License (MIT).
+(2) "Primer CSS", Copyright (c) 2016 GitHub Inc., MIT License (MIT).
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+==============================================================================-->
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Mark Lucernas" />
+  <meta name="dcterms.date" content="2020-07-04" />
+  <title>CISC 191 Sorting Algorithms Notes</title>
+  <style type="text/css">
+@charset "UTF-8";.markdown-body{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#24292e;font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:16px;line-height:1.5;word-wrap:break-word;box-sizing:border-box;min-width:200px;max-width:980px;margin:0 auto;padding:45px}.markdown-body a{color:#0366d6;background-color:transparent;text-decoration:none;-webkit-text-decoration-skip:objects}.markdown-body a:active,.markdown-body a:hover{outline-width:0}.markdown-body a:hover{text-decoration:underline}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body strong{font-weight:600}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1{font-size:2em;margin:.67em 0;padding-bottom:.3em;border-bottom:1px solid #eaecef}.markdown-body h2{padding-bottom:.3em;font-size:1.5em;border-bottom:1px solid #eaecef}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#6a737d}.markdown-body img{border-style:none}.markdown-body svg:not(:root){overflow:hidden}.markdown-body hr{box-sizing:content-box;height:.25em;margin:24px 0;padding:0;overflow:hidden;background-color:#e1e4e8;border:0}.markdown-body hr::before{display:table;content:""}.markdown-body hr::after{display:table;clear:both;content:""}.markdown-body input{margin:0;overflow:visible;font:inherit;font-family:inherit;font-size:inherit;line-height:inherit}.markdown-body [type=checkbox]{box-sizing:border-box;padding:0}.markdown-body *{box-sizing:border-box}.markdown-body blockquote{margin:0}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol ol,.markdown-body ul ol{list-style-type:lower-roman}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body ol ol ol,.markdown-body ol ul ol,.markdown-body ul ol ol,.markdown-body ul ul ol{list-style-type:lower-alpha}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dd{margin-left:0}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:600}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body code{font-family:SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace}.markdown-body pre{font:12px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;word-wrap:normal}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body blockquote{padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body table{display:block;width:100%;overflow:auto;border-spacing:0;border-collapse:collapse}.markdown-body table th{font-weight:600}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #dfe2e5}.markdown-body table tr{background-color:#fff;border-top:1px solid #c6cbd1}.markdown-body table tr:nth-child(2n){background-color:#f6f8fa}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body code{padding:.2em 0;margin:0;font-size:85%;background-color:rgba(27,31,35,.05);border-radius:3px}.markdown-body code::after,.markdown-body code::before{letter-spacing:-.2em;content:" "}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:0 0;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f6f8fa;border-radius:3px}.markdown-body pre code{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code::after,.markdown-body pre code::before{content:normal}.markdown-body .full-commit .btn-outline:not(:disabled):hover{color:#005cc5;border-color:#005cc5}.markdown-body kbd{box-shadow:inset 0 -1px 0 #959da5;display:inline-block;padding:3px 5px;font:11px/10px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;color:#444d56;vertical-align:middle;background-color:#fcfcfc;border:1px solid #c6cbd1;border-bottom-color:#959da5;border-radius:3px;box-shadow:inset 0 -1px 0 #959da5}.markdown-body :checked+.radio-label{position:relative;z-index:1;border-color:#0366d6}.markdown-body .task-list-item{list-style-type:none}.markdown-body .task-list-item+.task-list-item{margin-top:3px}.markdown-body .task-list-item input{margin:0 .2em .25em -1.6em;vertical-align:middle}.markdown-body::before{display:table;content:""}.markdown-body::after{display:table;clear:both;content:""}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.Alert,.Error,.Note,.Success,.Warning{padding:11px;margin-bottom:24px;border-style:solid;border-width:1px;border-radius:4px}.Alert p,.Error p,.Note p,.Success p,.Warning p{margin-top:0}.Alert p:last-child,.Error p:last-child,.Note p:last-child,.Success p:last-child,.Warning p:last-child{margin-bottom:0}.Alert{color:#246;background-color:#e2eef9;border-color:#bac6d3}.Warning{color:#4c4a42;background-color:#fff9ea;border-color:#dfd8c2}.Error{color:#911;background-color:#fcdede;border-color:#d2b2b2}.Success{color:#22662c;background-color:#e2f9e5;border-color:#bad3be}.Note{color:#2f363d;background-color:#f6f8fa;border-color:#d5d8da}.Alert h1,.Alert h2,.Alert h3,.Alert h4,.Alert h5,.Alert h6{color:#246;margin-bottom:0}.Warning h1,.Warning h2,.Warning h3,.Warning h4,.Warning h5,.Warning h6{color:#4c4a42;margin-bottom:0}.Error h1,.Error h2,.Error h3,.Error h4,.Error h5,.Error h6{color:#911;margin-bottom:0}.Success h1,.Success h2,.Success h3,.Success h4,.Success h5,.Success h6{color:#22662c;margin-bottom:0}.Note h1,.Note h2,.Note h3,.Note h4,.Note h5,.Note h6{color:#2f363d;margin-bottom:0}.Alert h1:first-child,.Alert h2:first-child,.Alert h3:first-child,.Alert h4:first-child,.Alert h5:first-child,.Alert h6:first-child,.Error h1:first-child,.Error h2:first-child,.Error h3:first-child,.Error h4:first-child,.Error h5:first-child,.Error h6:first-child,.Note h1:first-child,.Note h2:first-child,.Note h3:first-child,.Note h4:first-child,.Note h5:first-child,.Note h6:first-child,.Success h1:first-child,.Success h2:first-child,.Success h3:first-child,.Success h4:first-child,.Success h5:first-child,.Success h6:first-child,.Warning h1:first-child,.Warning h2:first-child,.Warning h3:first-child,.Warning h4:first-child,.Warning h5:first-child,.Warning h6:first-child{margin-top:0}h1.title,p.subtitle{text-align:center}h1.title.followed-by-subtitle{margin-bottom:0}p.subtitle{font-size:1.5em;font-weight:600;line-height:1.25;margin-top:0;margin-bottom:16px;padding-bottom:.3em}div.line-block{white-space:pre-line}
+  </style>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<article class="markdown-body">
+<div style="text-align: center; position: -webkit-sticky-; position: sticky;
+top: 0; z-index: 9999; padding-top: 10px; background-color: rgba(255, 255, 255, .8)">
+<div style="font-size: 12px; letter-spacing: 2px;">
+<a href="../../../../../../index.html">Wiki Root</a> | 
+<a href="../index.html">index</a>
+</div>
+<header>
+<h1 class="title">CISC 191 Sorting Algorithms Notes</h1>
+</div>
+<p class="author">Mark Lucernas</p>
+<p class="date">2020-07-04</p>
+<div class="summary">
+CISC 191 Sorting Algorithms Notes
+</div>
+</header>
+<hr>
+<nav id="TOC">
+<h2 class="toc-title">Contents</h1>
+<ul>
+<li><a href="#sorting-algorithms">Sorting Algorithms</a><ul>
+<li><a href="#selection-sort">Selection Sort</a><ul>
+<li><a href="#selection-sort-runtime">Selection sort runtime</a></li>
+</ul></li>
+<li><a href="#insertion-sort">Insertion Sort</a><ul>
+<li><a href="#insertion-sort-runtime">Insertion Sort Runtime</a></li>
+</ul></li>
+<li><a href="#quicksort">Quicksort</a><ul>
+<li><a href="#quicksort-runtime">Quicksort runtime</a></li>
+<li><a href="#worst-case-quicksort-runtime">Worst Case Quicksort Runtime</a></li>
+</ul></li>
+<li><a href="#merge-sort">Merge Sort</a><ul>
+<li><a href="#merge-sort-runtime-and-memory-complexity.">Merge sort runtime and memory complexity.</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#resources">Resources</a></li>
+</ul>
+</nav>
+<hr>
+<h1 id="sorting-algorithms">Sorting Algorithms</h1>
+<ul>
+<li><a href="sorting_algorithms_sample_codes.html">+Sorting Algorithms Java Sample Codes</a></li>
+</ul>
+<h2 id="selection-sort">Selection Sort</h2>
+<p><a name="selection-sort-term"><strong>Selection sort</strong></a></p>
+<ul>
+<li>is a sorting algorithm that treats the input as two parts, a sorted part and an unsorted part, and repeatedly selects the proper next value to move from the unsorted part to the end of the sorted part.</li>
+</ul>
+<blockquote>
+<p>17.6.1: Selection sort.</p>
+</blockquote>
+<figure>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/selection_sort_java.gif" alt="Selection Sort Java" /><figcaption>Selection Sort Java</figcaption>
+</figure>
+<blockquote>
+<p>by zyBooks.com</p>
+</blockquote>
+<p>Selection sort may require a large number of comparisons. The selection sort algorithm runtime is <span class="math inline">\(O(N^{2})\)</span>. If a list has N elements, the outer loop executes <span class="math inline">\(N - 1\)</span> times. For each of those <span class="math inline">\(N - 1\)</span> outer loop executions, the inner loop executes an average of <span class="math inline">\(\frac{N}{2}\)</span> times. So the total number of comparisons is proportional to <span class="math inline">\((N - 1) \cdot \frac{N}{2}\)</span>, or <span class="math inline">\(O(N^{2})\)</span>. Other sorting algorithms involve more complex algorithms but have faster execution times.</p>
+<h3 id="selection-sort-runtime">Selection sort runtime</h3>
+<p><strong>Q: When sorting a list with 50 elements, indexSmallest will be assigned to a minimum of _____ times.</strong></p>
+<p>A: 49</p>
+<p>The outer loop always assigns to indexSmallest at the beginning of each iteration. The inner loop never assigns to indexSmallest if the list is already sorted. A list of 50 elements causes 49 outer loop iterations, and thus a minimum of 49 assignments to indexSmallest.</p>
+<p><strong>Q: How many times longer will sorting a list of 20 elements take compared to sorting a list of 10 elements?</strong></p>
+<p>A: <span class="math inline">\(20^{2} / 10^{2} = 400 / 100 = \boldsymbol{4}\)</span></p>
+<p>A list with twice as many elements requires 4 times as many comparisons.</p>
+<p><strong>Q: How many times longer will sorting a list of 500 elements take compared to a list of 50 elements?</strong></p>
+<p>A: 100</p>
+<p><span class="math inline">\(500^{2} / 50^{2} = 250000 / 2500 = 100\)</span>. Selection sort’s runtime grows quadratically with the input size. If the input increases in size by <span class="math inline">\(X\)</span> times, the runtime increases <span class="math inline">\(X^{2}\)</span> times.</p>
+<h2 id="insertion-sort">Insertion Sort</h2>
+<p><a name="insertion-sort-term"><strong>Insertion sort</strong></a></p>
+<ul>
+<li>is a sorting algorithm that treats the input as two parts, a sorted part and an unsorted part, and repeatedly inserts the next value from the unsorted part into the correct location in the sorted part.</li>
+</ul>
+<blockquote>
+<p>17.7.1: Insertion sort.</p>
+</blockquote>
+<figure>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/insertion_sort_java.gif" alt="Insertion Sort Java" /><figcaption>Insertion Sort Java</figcaption>
+</figure>
+<blockquote>
+<p>by zyBooks.com</p>
+</blockquote>
+<p>Insertion sort’s typical runtime is <span class="math inline">\(O(N^{2})\)</span>. If a list has <span class="math inline">\(N\)</span> elements, the outer loop executes <span class="math inline">\(N - 1\)</span> times. For each outer loop execution, the inner loop may need to examine all elements in the sorted part. Thus, the inner loop executes on average <span class="math inline">\(\frac{N}{2}\)</span> times. So the total number of comparisons is proportional to <span class="math inline">\((N - 1) \cdot (\frac{N}{2})\)</span>, or <span class="math inline">\(O(N^{2})\)</span>. Other sorting algorithms involve more complex algorithms but faster execution.</p>
+<h3 id="insertion-sort-runtime">Insertion Sort Runtime</h3>
+<p><strong>Q: In the worst case, assuming each comparison takes 1 µs, how long will insertion sort algorithm take to sort a list of 10 elements?</strong></p>
+<p>A: <span class="math inline">\((1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9) \cdot 1 \mu s = \boldsymbol{45 \mu s}\)</span></p>
+<p><strong>Q: Using the Big O runtime complexity, how many times longer will sorting a list of 20 elements take compared to sorting a list of 10 elements?</strong></p>
+<p>A: <span class="math inline">\(20^{2} / 10^{2} = 400 /100 = \boldsymbol{4}\)</span></p>
+<p>For sorted or nearly sorted inputs, insertion sort’s runtime is <span class="math inline">\(O(N)\)</span>. A <strong>nearly sorted</strong> list only contains a few elements not in sorted order. Ex: {4, 5, 17, 25, 89, 14} is nearly sorted having only one element not in sorted position.</p>
+<p>For each outer loop execution, if the element is already in sorted position, only a single comparison is made. Each element not in sorted position requires at most N comparisons. If there are a constant number, C, of unsorted elements, sorting the N - C sorted elements requires one comparison each, and sorting the C unsorted elements requires at most N comparisons each. The runtime for nearly sorted inputs is <span class="math inline">\(O((N - C) * 1 + C * N) = \boldsymbol{O(N)}\)</span></p>
+<blockquote>
+<p>17.7.5: Using insertion sort for nearly sorted list.</p>
+</blockquote>
+<figure>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/insertion_sort_nearly_sorted.gif" alt="Insertion Sort Nearly Sorted" /><figcaption>Insertion Sort Nearly Sorted</figcaption>
+</figure>
+<h2 id="quicksort">Quicksort</h2>
+<p><a name="quicksort-term"><strong>Quicksort</strong></a></p>
+<ul>
+<li>is a sorting algorithm that repeatedly partitions the input into low and high parts (each part unsorted), and then recursively sorts each of those parts. To partition the input, quicksort chooses a pivot to divide the data into low and high parts.</li>
+<li>The <strong>pivot</strong> can be any value within the array being sorted, commonly the value of the middle array element. Ex: For the list {4 34 10 25 1}, the middle element is located at index 2 (the middle of indices 0..4) and has a value of 10.</li>
+</ul>
+<p>17.8.1: Quicksort partitions data into a low part with data less than/equal to a pivot value and a high part with data greater than/equal to a pivot value</p>
+<figure>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/quicksort_partition_java.gif" alt="Quicksort Partitions Java" /><figcaption>Quicksort Partitions Java</figcaption>
+</figure>
+<blockquote>
+<p>by zyBooks.com</p>
+</blockquote>
+<p>To partition the input, the quicksort algorithm divides the array into two parts, referred to as the low partition and the high partition. All values in the low partition are less than or equal to the pivot value. All values in the high partition are greater than or equal to the pivot value. The values in each partition are not necessarily sorted. Ex: Partitioning {4 34 10 25 1} with a pivot value of 10 results in a low partition of {4 10 1} and a high partition of {34 25}. Values equal to the pivot may appear in either or both of the 9partitions.</p>
+<p>The quicksort algorithm’s runtime is typically <span class="math inline">\(O(N \log N)\)</span>. Quicksort has several partitioning levels , the first level dividing the input into 2 parts, the second into 4 parts, the third into 8 parts, etc. At each level, the algorithm does at most <span class="math inline">\(N\)</span> comparisons moving the <code>l</code> and <code>h</code> indices. If the pivot yields two equal-sized parts, then there will be <span class="math inline">\(\log N\)</span> levels, requiring the <span class="math inline">\(N \cdot \log N\)</span> comparisons.</p>
+<figure>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/quicksort_java.gif" alt="Quicksort Java" /><figcaption>Quicksort Java</figcaption>
+</figure>
+<h3 id="quicksort-runtime">Quicksort runtime</h3>
+<blockquote>
+<p>Assume quicksort always chooses a pivot that divides the elements into two equal parts.</p>
+</blockquote>
+<p><strong>Q: How many partitioning levels are required for a list of 8 elements?</strong></p>
+<p>A: 3</p>
+<pre><code>1st: {a b c d} {e f g h}
+2nd: {a b} {c d} {e f} {g h}
+3rd: {a} {b} {c} {d} {e} {f} {g} {h}</code></pre>
+<p><strong>Q: How many partitioning “levels” are required for a list of 1024 elements?</strong></p>
+<p>A: 10</p>
+<p><span class="math inline">\(\log_{2} 1024 = 10\)</span>. Assuming equal-size partitions, for <span class="math inline">\(N\)</span> elements, the number of levels is <span class="math inline">\(\log_{2} N\)</span>.</p>
+<p><strong>Q: How many total comparisons are required to sort a list of 1024 elements?</strong></p>
+<p>A: 10240</p>
+<p><span class="math inline">\(\log_{2} 1024 \cdot 1024 = 10 \cdot 1024 = 10240\)</span> comparisons. There will be <span class="math inline">\(\log_{2} N\)</span> partitioning levels, and each level requires <span class="math inline">\(N\)</span> comparisons.</p>
+<p>For typical unsorted data, such equal partitioning occurs. However, partitioning may yield unequal sized part in some cases. If the pivot selected for partitioning is the smallest or largest element, one partition will have just 1 element, and the other partition will have all other elements. If this unequal partitioning happens at every level, there will be <span class="math inline">\(N - 1\)</span> levels, yielding <span class="math inline">\((N - 1) \cdot N\)</span>, which is <span class="math inline">\(O(N^{2})\)</span>. So the worst case runtime for the quicksort algorithm is <span class="math inline">\(O(N^{2})\)</span>. Fortunately, this worst case runtime rarely occurs.</p>
+<h3 id="worst-case-quicksort-runtime">Worst Case Quicksort Runtime</h3>
+<blockquote>
+<p>Assume quicksort always chooses the smallest element as the pivot.</p>
+</blockquote>
+<p><strong>Q: Given numbers = {7 4 2 25 19}, i = 0, and k = 4, what is contents of the low partition? Use curly braces in your answer.</strong></p>
+<p>A: {2}</p>
+<p>The low partition is {2}, and the high partition is {4 7 25 19}.</p>
+<p><strong>Q: How many partitioning “levels” of are required for a list of 5 elements?</strong></p>
+<p>A: 4</p>
+<pre><code>1st: {a} {b c d e}
+2nd: {a} {b} {c d e}
+3rd: {a} {b} {c} {d e}
+4th: {a} {b} {c} {d} {e}</code></pre>
+<p><strong>Q: How many partitioning “levels” are required for a list of 1024 elements?</strong></p>
+<p>A: 1023</p>
+<p>In the worst case, for <span class="math inline">\(N\)</span> elements, there will be <span class="math inline">\(N - 1\)</span> levels.</p>
+<p><strong>Q: How many total comparisons are required to sort a list of 1024 elements?</strong></p>
+<p>A: 1047552</p>
+<p><span class="math inline">\((1024 - 1) \cdot 1024 = 1023 \cdot 1024 = 1047552\)</span> comparisons.</p>
+<h2 id="merge-sort">Merge Sort</h2>
+<p><a name="merge-sort-term"><strong>Merge sort</strong></a></p>
+<ul>
+<li>is a sorting algorithm that divides a list into two halves, recursively sorts each half, and then merges the sorted halves to produce a sorted list. The recursive partitioning continues until a list of 1 element is reached, as list of 1 element is already sorted.</li>
+</ul>
+<blockquote>
+<p>17.9.1: Merge sort recursively divides the input into two halves, sorts each half, and merges the lists together.</p>
+</blockquote>
+<figure>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/merge_sort.gif" alt="Merge Sort" /><figcaption>Merge Sort</figcaption>
+</figure>
+<blockquote>
+<p>by zyBooks.com</p>
+</blockquote>
+<p>The merge sort algorithm uses three index variables to keep track of the elements to sort for each recursive method call. The index variable i is the index of first element in the list, and the index variable k is the index of the last element. The index variable j is used to divide the list into two halves. Elements from i to j are in the left half, and elements from j + 1 to k are in the right half.</p>
+<blockquote>
+<p>17.9.3: Merging partitions: Smallest element from left or right partition is added one at a time to a temporary merged list. Once merged, temporary list is copied back to the original list.</p>
+</blockquote>
+<figure>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/merge_sort_java.gif" alt="Merge Sort Java" /><figcaption>Merge Sort Java</figcaption>
+</figure>
+<blockquote>
+<p>by zyBooks.com</p>
+</blockquote>
+<p>The merge sort algorithm’s runtime is <span class="math inline">\(O(N \log N)\)</span>. Merge sort divides the input in half until a list of 1 element is reached, which requires <span class="math inline">\(log N\)</span> partitioning levels. At each level, the algorithm does about <span class="math inline">\(N\)</span> comparisons selecting and copying elements from the left and right partitions, yielding <span class="math inline">\(N \cdot \log N\)</span> comparisons.</p>
+<p>Merge sort requires <span class="math inline">\(O(N)\)</span> additional memory elements for the temporary array of merged elements. For the final merge operation, the temporary list has the same number of elements as the input. Some sorting algorithms sort the list elements in place and require no additional memory, but are more complex to write and understand.</p>
+<h3 id="merge-sort-runtime-and-memory-complexity.">Merge sort runtime and memory complexity.</h3>
+<p><strong>Q: How many recursive partitioning levels are required for a list of 8 elements?</strong></p>
+<p>A: 3</p>
+<pre><code>1st: {a b c d} {e f g h}
+2nd: {a b} {c d} {e f} {g h}
+3rd: {a} {b} {c} {d} {e} {f} {g} {h}
+
+For $N$ elements, the number of levels is $log N$. $log 8 = 3$.</code></pre>
+<p><strong>Q: How many recursive partitioning levels are required for a list of 2048 elements?</strong></p>
+<p>A: 11</p>
+<p><span class="math inline">\(\log_{2} 2048 = 11\)</span></p>
+<p><strong>Q: How many elements will the temporary merge list have for merging two partitions with 250 elements each?</strong></p>
+<p>A: 500</p>
+<p>The temporary list must be large enough to merge all elements from the two partitions.</p>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<p>Textbook</p>
+<ul>
+<li><a href="https://www.zybooks.com/">Andrew Huang CISC 191: Intermediate Java Programming - zyBooks</a>
+<ul>
+<li>Chapter 17 Searching and Sorting Algorithms</li>
+</ul></li>
+</ul>
+<hr>
+</article>
+</body>
+</html>

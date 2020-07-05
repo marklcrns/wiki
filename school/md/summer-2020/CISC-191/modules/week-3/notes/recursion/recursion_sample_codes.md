@@ -1,6 +1,6 @@
 ---
 title: Recursion Java Sample Codes
-uthor: Mark Lucernas
+author: Mark Lucernas
 date: 2020-06-30
 summary: Recursion Java Sample Codes
 ---

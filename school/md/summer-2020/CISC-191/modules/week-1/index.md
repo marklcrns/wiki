@@ -10,5 +10,5 @@ summary: CISC 191 Week 1 notes and activities
 
 ## Notes
 
-  - [+Week 1: Java Review](../notes/w-1)
+  - [+Week 1: Java Review](notes/w-1)
 
