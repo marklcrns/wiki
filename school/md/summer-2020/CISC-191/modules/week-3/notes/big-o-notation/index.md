@@ -308,6 +308,9 @@ $$
 | Counting Sort  | $\Omega (n+k)$      | $\theta (n+k)$         | $O(n+k)$         | $O(k)$           |
 | Cubesort       | $\Omega (n)$        | $\theta (n log(n))$    | $O(n log(n))$    | $O(n)$           |
 
+> Best case scenario is denoted by $\Omega$ sign, average case by $\theta$ sign
+and $O$ for the worst case scenario.
+
 
 <br>
 
