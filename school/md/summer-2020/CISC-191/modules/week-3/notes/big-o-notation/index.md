@@ -1,8 +1,8 @@
 ---
-title: CISC 191 Big O Notation Notes
+title: Big O Notation
 author: Mark Lucernas
 date: 2020-07-04
-summary: CISC 191 Big O Notation Notes
+summary: CISC 191 Week 3 Big O Notation Notes
 ---
 
 

@@ -13,10 +13,9 @@ summary: Linked Data Structures and Recursion
   - [+Recursion Notes](recursion/index)
 
 
-## List and Queues
+## List, Stacks, and Queues
 
-  - [*List and Queues](file:../../../../../../files/summer-2020/CISC-191/week-3/list-and-queues.ppt)
-  - [`Linked List in Java](https://www.youtube.com/watch?v=195KUinjBpU)
+  - [+List, Stacks, and Queues Notes](list-stacks-queues/index)
 
 
 ## Searching Algorithms
@@ -32,6 +31,7 @@ summary: Linked Data Structures and Recursion
 ## AVL Trees
 
   - [*AVL Trees](file:../../../../../../files/summer-2020/CISC-191/week-3/avl-trees.ppt)
+  - [`Data Structures: Trees](https://www.youtube.com/watch?v=oSWTXtMglKE)
   - [`Tree Sort (EASY EXPLANATION)](https://www.youtube.com/watch?v=Qg_a1jrIhoc)
 
 
@@ -40,22 +40,12 @@ summary: Linked Data Structures and Recursion
   - [+Big O Notation Notes](big-o-notation/index)
 
 
-## Mist Topics
-
-  - [`Data Structures: Trees](https://www.youtube.com/watch?v=oSWTXtMglKE)
-  - [`Java Sort Algorithm](https://www.youtube.com/watch?v=JUOyKSZScW0)
-
-
 <br>
 
 # Resources
 
-  - [*List and Queues](file:../../../../../../files/summer-2020/CISC-191/week-3/list-and-queues.ppt)
-  - [`Linked List in Java](https://www.youtube.com/watch?v=195KUinjBpU)
   - [*AVL Trees](file:../../../../../../files/summer-2020/CISC-191/week-3/avl-trees.ppt)
   - [`Tree Sort (EASY EXPLANATION)](https://www.youtube.com/watch?v=Qg_a1jrIhoc)
-  - [`Data Structures: Trees](https://www.youtube.com/watch?v=oSWTXtMglKE)
-  - [`Java Sort Algorithm](https://www.youtube.com/watch?v=JUOyKSZScW0)
 
 
 Textbook

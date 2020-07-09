@@ -1,5 +1,5 @@
 ---
-title: CISC 191 Week 3 Recursion Notes
+title: Recursion
 author: Mark Lucernas
 date: 2020-07-04
 summary: CISC 191 Week 3 Recursion Notes

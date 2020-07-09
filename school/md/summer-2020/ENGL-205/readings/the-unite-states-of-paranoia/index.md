@@ -27,6 +27,7 @@ summary: The United States of Paranoia ny Jesse Walker notes
 ## Reading Response
 
   - [*Reading Response 3](file:../../../../../files/summer-2020/ENGL-205/reading-response/reading_response_3.docx)
+  - [*Reading Response 4](file:../../../../../files/summer-2020/ENGL-205/reading-response/reading_response_4.docx)
 
 
 ## Essay
@@ -58,6 +59,7 @@ https://www.youtube.com/watch?v=4Qr0cAM1IEA
 
   - [*Identifying Claims and Analizing Arguments](file:../../../../../files/summer-2020/ENGL-205/identitying_claims_and_analyzing_arguments.pptx)
   - [*Reading Response 3](file:../../../../../files/summer-2020/ENGL-205/reading-response/reading_response_3.docx)
+  - [*Reading Response 4](file:../../../../../files/summer-2020/ENGL-205/reading-response/reading_response_4.docx)
 
 
 Book

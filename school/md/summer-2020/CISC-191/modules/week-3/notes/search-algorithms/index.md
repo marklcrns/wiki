@@ -1,5 +1,5 @@
 ---
-title: CISC 191 Week 3 Search Algorithms Notes
+title: Search Algorithms
 author: Mark Lucernas
 date: 2020-07-04
 summary: CISC 191 Week 3 Search Algorithms Notes
@@ -24,7 +24,7 @@ items, could require more than 3 minutes.
 
 ### Binary Search Algorithm
 
-  - [*Binary Search](file:../../../../../../../files/summer-2020/CISC-191/week-3/binary-search.ppt)
+  - [*Binary Search Trees](file:../../../../../../../files/summer-2020/CISC-191/week-3/binary-search.ppt)
   - [`Java Binary Search Tree](https://www.youtube.com/watch?v=M6lYob8STMI)
   - [`Java Binary Search Tree 2](https://www.youtube.com/watch?v=UcOxGmj45AA)
 
@@ -71,9 +71,10 @@ sorted list.
 
 # Resources
 
-  - [*Binary Search](file:../../../../../../../files/summer-2020/CISC-191/week-3/binary-search.ppt)
+  - [*Binary Search Trees](file:../../../../../../../files/summer-2020/CISC-191/week-3/binary-search.ppt)
   - [`Java Binary Search Tree](https://www.youtube.com/watch?v=M6lYob8STMI)
   - [`Java Binary Search Tree 2](https://www.youtube.com/watch?v=UcOxGmj45AA)
+
 
 Textbook
 

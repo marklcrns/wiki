@@ -1,13 +1,14 @@
 ---
-title: CISC 191 Sorting Algorithms Notes
+title: Sorting Algorithms
 author: Mark Lucernas
 date: 2020-07-04
-summary: CISC 191 Sorting Algorithms Notes
+summary: CISC 191 Week 3 Sorting Algorithms Notes
 ---
 
 
 # Sorting Algorithms
 
+  - [`Java Sort Algorithm](https://www.youtube.com/watch?v=JUOyKSZScW0)
   - [+Sorting Algorithms Java Sample Codes](sorting_algorithms_sample_codes)
 
 ## Selection Sort
