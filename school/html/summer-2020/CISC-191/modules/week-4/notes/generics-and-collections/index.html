@@ -166,6 +166,16 @@ CISC 191 Week 4 Generics and Collections notes
 <li><a href="#generics-and-collections">Generics and Collections</a><ul>
 <li><a href="#generics">Generics</a><ul>
 <li><a href="#comparable-interface-sorting-an-arraylist">Comparable Interface: Sorting an ArrayList</a></li>
+<li><a href="#generic-method">Generic Method</a></li>
+<li><a href="#generic-class">Generic Class</a></li>
+</ul></li>
+<li><a href="#collections">Collections</a><ul>
+<li><a href="#enhanced-for-loop">Enhanced for loop</a></li>
+<li><a href="#list-linkedlist">List: LinkedList</a></li>
+<li><a href="#map-hashmap">Map: HashMap</a></li>
+<li><a href="#set-hashset">Set: HashSet</a></li>
+<li><a href="#queue-interface">Queue Interface</a></li>
+<li><a href="#deque-interface">Deque Interface</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#resources">Resources</a></li>
@@ -180,9 +190,9 @@ CISC 191 Week 4 Generics and Collections notes
 </ul>
 <h2 id="generics">Generics</h2>
 <h3 id="comparable-interface-sorting-an-arraylist">Comparable Interface: Sorting an ArrayList</h3>
-<p>Sorting the elements of an ArrayList into ascending or descending order is a common programming task. Java’s <strong>Collections</strong> class provides static methods that operate on various types of lists such as an ArrayList. The sort() method sorts collections into ascending order provided that the elements within the collection implement the Comparable interface (i.e., the elements are also of the type Comparable). For example, each of the primitive wrapper classes (e.g., Integer, Double, etc.) implements the <strong>Comparable</strong> interface, which declares the compareTo() method. Classes implementing the Comparable interface must define a custom implementation of the compareTo() method. A programmer may use sort() to sort an ArrayList in which the elements implement the Comparable interface (e.g., Integer). The programmer must import java.util.Collections to use the sort() method. The following example demonstrates the use of sort() to sort an ArrayList of Integer objects.</p>
+<p>Sorting the elements of an ArrayList into ascending or descending order is a common programming task. Java’s <strong>Collections</strong> class provides static methods that operate on various types of lists such as an ArrayList. The <code>sort()</code> method sorts collections into ascending order provided that the elements within the collection implement the Comparable interface (i.e., the elements are also of the type Comparable). For example, each of the primitive wrapper classes (e.g., Integer, Double, etc.) implements the <strong>Comparable</strong> interface, which declares the <code>compareTo()</code> method. Classes implementing the Comparable interface must define a custom implementation of the <code>compareTo()</code> method. A programmer may use <code>sort()</code> to sort an ArrayList in which the elements implement the Comparable interface (e.g., Integer). The programmer must import java.util.Collections to use the <code>sort()</code> method. The following example demonstrates the use of <code>sort()</code> to sort an ArrayList of Integer objects.</p>
 <blockquote>
-<p>Collections’ sort() method operates on lists of Integer objects.</p>
+<p>Collections’ <code>sort()</code> method operates on lists of Integer objects.</p>
 </blockquote>
 <div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">import</span><span class="im"> java.util.Scanner;</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="kw">import</span><span class="im"> java.util.ArrayList;</span></a>
@@ -213,10 +223,425 @@ CISC 191 Week 4 Generics and Collections notes
 <a class="sourceLine" id="cb1-27" title="27">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;&quot;</span>);</a>
 <a class="sourceLine" id="cb1-28" title="28">   }</a>
 <a class="sourceLine" id="cb1-29" title="29">}</a></code></pre></div>
+<p>The Collections’ <code>sort()</code> method calls the <code>compareTo()</code> method on each object within the ArrayList to determine the order and produce a sorted list.</p>
+<p>The <code>sort()</code> method can also be used to sort an ArrayList containing elements of a user-defined class type. The only requirement, however, is that the user-defined class must also implement the Comparable interface and override the <code>compareTo()</code> method, which should return a number that determines the ordering of the two objects being compared as shown below.</p>
+<p><code>compareTo(otherComparable)</code> compares a Comparable object to otherComparable, returning a number indicating if the Comparable object is less than, equal to, or greater than otherComparable. The method <code>compareTo()</code> will return 0 if the two Comparable objects are equal. Otherwise, <code>compareTo()</code> returns a negative number if the Comparable object is less than otherComparable, or a positive number if the Comparable object is greater than otherComparable.</p>
+<blockquote>
+<p>Sorting an ArrayList of employee records.</p>
+</blockquote>
+<ul>
+<li><a href="employee_records.html">+EmployeeRecords</a></li>
+</ul>
+<p>Classes that already inherit from a base class can also be defined to implement an interface. For example, the above EmployeeData class could have been defined so that it extends a Person class and implements the Comparable interface, as in</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">public</span> <span class="kw">class</span> EmployeeData <span class="kw">extends</span> Person <span class="kw">implements</span> <span class="bu">Comparable</span>&lt;EmployeeData&gt; {</a>
+<a class="sourceLine" id="cb2-2" title="2">  ...</a>
+<a class="sourceLine" id="cb2-3" title="3">}</a></code></pre></div>
+<p>Finally, note that Comparable’s <code>compareTo()</code> method is meant to work with any class. Thus, a programmer must append the class name in angle brackets to “Comparable”, as in <code>Comparable&lt;EmployeeData&gt;</code>, in order to tell the compiler that the <code>compareTo()</code> method requires an argument of the indicated class type. Generic methods, classes, and interfaces are discussed in more detail elsewhere.</p>
+<h3 id="generic-method">Generic Method</h3>
+<blockquote>
+<p>Methods may have identical behavior, differing only in data types.</p>
+</blockquote>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1"><span class="co">// Find the minimum of three **ints**</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw">public</span> <span class="dt">static</span> <span class="bu">Integer</span> <span class="fu">tripleMinInt</span>(<span class="bu">Integer</span> item1, <span class="bu">Integer</span> item2, <span class="bu">Integer</span> item3) {</a>
+<a class="sourceLine" id="cb3-3" title="3">   <span class="bu">Integer</span> minVal;</a>
+<a class="sourceLine" id="cb3-4" title="4"></a>
+<a class="sourceLine" id="cb3-5" title="5">   minVal = item1;</a>
+<a class="sourceLine" id="cb3-6" title="6"></a>
+<a class="sourceLine" id="cb3-7" title="7">   <span class="kw">if</span> (item2.<span class="fu">compareTo</span>(minVal) &lt; <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb3-8" title="8">      minVal = item2;</a>
+<a class="sourceLine" id="cb3-9" title="9">   }</a>
+<a class="sourceLine" id="cb3-10" title="10">   <span class="kw">if</span> (item3.<span class="fu">compareTo</span>(minVal) &lt; <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb3-11" title="11">      minVal = item3;</a>
+<a class="sourceLine" id="cb3-12" title="12">   }</a>
+<a class="sourceLine" id="cb3-13" title="13">   <span class="kw">return</span> minVal;</a>
+<a class="sourceLine" id="cb3-14" title="14">}</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="co">// Find the minimum of three **chars**</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">public</span> <span class="dt">static</span> <span class="bu">Character</span> <span class="fu">tripleMinChar</span>(<span class="bu">Character</span> item1, <span class="bu">Character</span> item2, <span class="bu">Character</span> item3) {</a>
+<a class="sourceLine" id="cb4-3" title="3">   <span class="bu">Character</span> minVal;</a>
+<a class="sourceLine" id="cb4-4" title="4"></a>
+<a class="sourceLine" id="cb4-5" title="5">   minVal = item1;</a>
+<a class="sourceLine" id="cb4-6" title="6"></a>
+<a class="sourceLine" id="cb4-7" title="7">   <span class="kw">if</span> (item2.<span class="fu">compareTo</span>(minVal) &lt; <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb4-8" title="8">      minVal = item2;</a>
+<a class="sourceLine" id="cb4-9" title="9">   }</a>
+<a class="sourceLine" id="cb4-10" title="10">   <span class="kw">if</span> (item3.<span class="fu">compareTo</span>(minVal) &lt; <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb4-11" title="11">      minVal = item3;</a>
+<a class="sourceLine" id="cb4-12" title="12">   }</a>
+<a class="sourceLine" id="cb4-13" title="13">   <span class="kw">return</span> minVal;</a>
+<a class="sourceLine" id="cb4-14" title="14">}</a></code></pre></div>
+<p>Writing and maintaining redundant methods that only differ by data type can be time-consuming and error-prone. The language supports a better approach.</p>
+<p>A generic method is a method definition having a special type parameter that may be used in place of types in the method.</p>
+<blockquote>
+<p>A generic method enables a method to handle various class types.</p>
+</blockquote>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">public</span> <span class="kw">class</span> ItemMinimum {</a>
+<a class="sourceLine" id="cb5-2" title="2">   <span class="kw">public</span> <span class="dt">static</span> &lt;TheType <span class="kw">extends</span> <span class="bu">Comparable</span>&lt;TheType&gt;&gt;</a>
+<a class="sourceLine" id="cb5-3" title="3">   TheType <span class="fu">tripleMin</span>(TheType item1, TheType item2, TheType item3) {</a>
+<a class="sourceLine" id="cb5-4" title="4">      TheType minVal = item1; <span class="co">// Holds min item value, init to first item</span></a>
+<a class="sourceLine" id="cb5-5" title="5"></a>
+<a class="sourceLine" id="cb5-6" title="6">      <span class="kw">if</span> (item2.<span class="fu">compareTo</span>(minVal) &lt; <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb5-7" title="7">         minVal = item2;</a>
+<a class="sourceLine" id="cb5-8" title="8">      }</a>
+<a class="sourceLine" id="cb5-9" title="9">      <span class="kw">if</span> (item3.<span class="fu">compareTo</span>(minVal) &lt; <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb5-10" title="10">         minVal = item3;</a>
+<a class="sourceLine" id="cb5-11" title="11">      }</a>
+<a class="sourceLine" id="cb5-12" title="12">      <span class="kw">return</span> minVal;</a>
+<a class="sourceLine" id="cb5-13" title="13">   }</a>
+<a class="sourceLine" id="cb5-14" title="14"></a>
+<a class="sourceLine" id="cb5-15" title="15">   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb5-16" title="16">      <span class="bu">Integer</span> num1 = <span class="dv">55</span>;    <span class="co">// Test case 1, item1</span></a>
+<a class="sourceLine" id="cb5-17" title="17">      <span class="bu">Integer</span> num2 = <span class="dv">99</span>;    <span class="co">// Test case 1, item2</span></a>
+<a class="sourceLine" id="cb5-18" title="18">      <span class="bu">Integer</span> num3 = <span class="dv">66</span>;    <span class="co">// Test case 1, item3</span></a>
+<a class="sourceLine" id="cb5-19" title="19"></a>
+<a class="sourceLine" id="cb5-20" title="20">      <span class="bu">Character</span> let1 = <span class="ch">&#39;a&#39;</span>; <span class="co">// Test case 2, item1</span></a>
+<a class="sourceLine" id="cb5-21" title="21">      <span class="bu">Character</span> let2 = <span class="ch">&#39;z&#39;</span>; <span class="co">// Test case 2, item2</span></a>
+<a class="sourceLine" id="cb5-22" title="22">      <span class="bu">Character</span> let3 = <span class="ch">&#39;m&#39;</span>; <span class="co">// Test case 2, item3</span></a>
+<a class="sourceLine" id="cb5-23" title="23"></a>
+<a class="sourceLine" id="cb5-24" title="24">      <span class="bu">String</span> str1 = <span class="st">&quot;zzz&quot;</span>;  <span class="co">// Test case 3, item1</span></a>
+<a class="sourceLine" id="cb5-25" title="25">      <span class="bu">String</span> str2 = <span class="st">&quot;aaa&quot;</span>;  <span class="co">// Test case 3, item2</span></a>
+<a class="sourceLine" id="cb5-26" title="26">      <span class="bu">String</span> str3 = <span class="st">&quot;mmm&quot;</span>;  <span class="co">// Test case 3, item3</span></a>
+<a class="sourceLine" id="cb5-27" title="27"></a>
+<a class="sourceLine" id="cb5-28" title="28">      <span class="co">// Try tripleMin method with Integers</span></a>
+<a class="sourceLine" id="cb5-29" title="29">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Items: &quot;</span> + num1 + <span class="st">&quot; &quot;</span> + num2 + <span class="st">&quot; &quot;</span> + num3);</a>
+<a class="sourceLine" id="cb5-30" title="30">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Min: &quot;</span> + <span class="fu">tripleMin</span>(num1, num2, num3) + <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
+<a class="sourceLine" id="cb5-31" title="31"></a>
+<a class="sourceLine" id="cb5-32" title="32">      <span class="co">// Try tripleMin method with Characters</span></a>
+<a class="sourceLine" id="cb5-33" title="33">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Items: &quot;</span> + let1 + <span class="st">&quot; &quot;</span> + let2 + <span class="st">&quot; &quot;</span> + let3);</a>
+<a class="sourceLine" id="cb5-34" title="34">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Min: &quot;</span> + <span class="fu">tripleMin</span>(let1, let2, let3) + <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
+<a class="sourceLine" id="cb5-35" title="35"></a>
+<a class="sourceLine" id="cb5-36" title="36">      <span class="co">// Try tripleMin method with Strings</span></a>
+<a class="sourceLine" id="cb5-37" title="37">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Items: &quot;</span> + str1 + <span class="st">&quot; &quot;</span> + str2 + <span class="st">&quot; &quot;</span> + str3);</a>
+<a class="sourceLine" id="cb5-38" title="38">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Min: &quot;</span> + <span class="fu">tripleMin</span>(str1, str2, str3) + <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
+<a class="sourceLine" id="cb5-39" title="39">   }</a>
+<a class="sourceLine" id="cb5-40" title="40">}</a></code></pre></div>
+<p>The method return type is preceded by <code>&lt;TheType extends Comparable&lt;TheType&gt;&gt;</code>, where TheType can be any identifier. That type is known as a <strong>type parameter</strong> and can be used throughout the method for any parameter types, return types, or local variable types. The identifier is known as a template parameter, and may be various reference types or even another template parameter.</p>
+<p>A type parameter may be associated with a <strong>type bound</strong> to specify the class types for which a type parameter is valid. Type bounds are specified using the extends keyword and appear after the corresponding type parameter. For example, the code <code>&lt;TheType extends Comparable&lt;TheType&gt;&gt;</code> specifies that TheType is bounded by the type bound Comparable<TheType>. Thus, TheType may only represent types that implement the Comparable interface. If the type bound is a class type (e.g., the Number class), the type parameter may only represent types that are of the type specified by the type bound or any derived classes.</p>
+<p>Type bounds are also necessary to enable access to the class members of the class specified by the type bound (e.g., <code>compareTo()</code>) via a variable of a generic type (e.g., item1, item2, item3, and min). By bounding TheType to the Comparable interface, the programmer is able to invoke the Comparable interface’s <code>compareTo()</code> method with the generic types, as in item2.compareTo(min);. Attempting to invoke a class member via a generic type without specifying the appropriate type bound results in a compiler error.</p>
+<p>Importantly, type arguments cannot be primitive types such as int, char, and double. Instead, the type arguments must be reference types. If primitive types are desired, a programmer should use the corresponding primitive wrapper classes (e.g., Integer, Character, Double, etc.), discussed elsewhere.</p>
+<p>Programmers optionally may explicitly specify the generic type as a special argument, as in ItemMinimum.<Integer>tripleMin(num1, num2, num3);.</p>
+<p>A generic method may have multiple parameters:</p>
+<blockquote>
+<p>Method definition with multiple generics.</p>
+</blockquote>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1">modifiers &lt;Type1 <span class="kw">extends</span> BoundType1, Type2 <span class="kw">extends</span> BoundType2&gt;</a>
+<a class="sourceLine" id="cb6-2" title="2">ReturnType <span class="fu">methodName</span>(parameters) {</a>
+<a class="sourceLine" id="cb6-3" title="3">   ...</a>
+<a class="sourceLine" id="cb6-4" title="4">}</a></code></pre></div>
+<h3 id="generic-class">Generic Class</h3>
+<p>Multiple classes may be nearly identical, differing only in their data types. The following shows a class managing three Integer numbers, and a nearly identical class managing three Short numbers.</p>
+<blockquote>
+<p>Classes may be nearly identical, differing only in data type.</p>
+</blockquote>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">public</span> <span class="kw">class</span> TripleInt {</a>
+<a class="sourceLine" id="cb7-2" title="2">   <span class="kw">private</span> <span class="bu">Integer</span> item1; <span class="co">// Data value 1</span></a>
+<a class="sourceLine" id="cb7-3" title="3">   <span class="kw">private</span> <span class="bu">Integer</span> item2; <span class="co">// Data value 2</span></a>
+<a class="sourceLine" id="cb7-4" title="4">   <span class="kw">private</span> <span class="bu">Integer</span> item3; <span class="co">// Data value 3</span></a>
+<a class="sourceLine" id="cb7-5" title="5"></a>
+<a class="sourceLine" id="cb7-6" title="6">   <span class="kw">public</span> <span class="fu">TripleInt</span>(<span class="bu">Integer</span> i1, <span class="bu">Integer</span> i2, <span class="bu">Integer</span> i3) {</a>
+<a class="sourceLine" id="cb7-7" title="7">      item1 = i1;</a>
+<a class="sourceLine" id="cb7-8" title="8">      item2 = i2;</a>
+<a class="sourceLine" id="cb7-9" title="9">      item3 = i3;</a>
+<a class="sourceLine" id="cb7-10" title="10">   }</a>
+<a class="sourceLine" id="cb7-11" title="11"></a>
+<a class="sourceLine" id="cb7-12" title="12">   <span class="co">// Print all data member values</span></a>
+<a class="sourceLine" id="cb7-13" title="13">   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">printAll</span>() {</a>
+<a class="sourceLine" id="cb7-14" title="14">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;(&quot;</span> + item1 + <span class="st">&quot;,&quot;</span> + item2 + <span class="st">&quot;,&quot;</span> + item3 + <span class="st">&quot;)&quot;</span>);</a>
+<a class="sourceLine" id="cb7-15" title="15">   }</a>
+<a class="sourceLine" id="cb7-16" title="16"></a>
+<a class="sourceLine" id="cb7-17" title="17">   <span class="co">// Return min data member value</span></a>
+<a class="sourceLine" id="cb7-18" title="18">   <span class="kw">public</span> <span class="bu">Integer</span> <span class="fu">minItem</span>() {</a>
+<a class="sourceLine" id="cb7-19" title="19">      <span class="bu">Integer</span> minVal;         <span class="co">// Holds min item value, init to first item</span></a>
+<a class="sourceLine" id="cb7-20" title="20"></a>
+<a class="sourceLine" id="cb7-21" title="21">      minVal = item1;</a>
+<a class="sourceLine" id="cb7-22" title="22"></a>
+<a class="sourceLine" id="cb7-23" title="23">      <span class="kw">if</span> (item2.<span class="fu">compareTo</span>(minVal) &lt; <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb7-24" title="24">         minVal = item2;</a>
+<a class="sourceLine" id="cb7-25" title="25">      }</a>
+<a class="sourceLine" id="cb7-26" title="26">      <span class="kw">if</span> (item3.<span class="fu">compareTo</span>(minVal) &lt; <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb7-27" title="27">         minVal = item3;</a>
+<a class="sourceLine" id="cb7-28" title="28">      }</a>
+<a class="sourceLine" id="cb7-29" title="29">      <span class="kw">return</span> minVal;</a>
+<a class="sourceLine" id="cb7-30" title="30">   }</a>
+<a class="sourceLine" id="cb7-31" title="31">}</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">public</span> <span class="kw">class</span> TripleShort {</a>
+<a class="sourceLine" id="cb8-2" title="2">   <span class="kw">private</span> <span class="bu">Short</span> item1; <span class="co">// Data value 1</span></a>
+<a class="sourceLine" id="cb8-3" title="3">   <span class="kw">private</span> <span class="bu">Short</span> item2; <span class="co">// Data value 2</span></a>
+<a class="sourceLine" id="cb8-4" title="4">   <span class="kw">private</span> <span class="bu">Short</span> item3; <span class="co">// Data value 3</span></a>
+<a class="sourceLine" id="cb8-5" title="5"></a>
+<a class="sourceLine" id="cb8-6" title="6">   <span class="kw">public</span> <span class="fu">TripleShort</span>(<span class="bu">Short</span> i1, <span class="bu">Short</span> i2, <span class="bu">Short</span> i3) {</a>
+<a class="sourceLine" id="cb8-7" title="7">      item1 = i1;</a>
+<a class="sourceLine" id="cb8-8" title="8">      item2 = i2;</a>
+<a class="sourceLine" id="cb8-9" title="9">      item3 = i3;</a>
+<a class="sourceLine" id="cb8-10" title="10">   }</a>
+<a class="sourceLine" id="cb8-11" title="11"></a>
+<a class="sourceLine" id="cb8-12" title="12">   <span class="co">// Print all data member values</span></a>
+<a class="sourceLine" id="cb8-13" title="13">   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">printAll</span>() {</a>
+<a class="sourceLine" id="cb8-14" title="14">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;(&quot;</span> + item1 + <span class="st">&quot;,&quot;</span> + item2 + <span class="st">&quot;,&quot;</span> + item3 + <span class="st">&quot;)&quot;</span>);</a>
+<a class="sourceLine" id="cb8-15" title="15">   }</a>
+<a class="sourceLine" id="cb8-16" title="16"></a>
+<a class="sourceLine" id="cb8-17" title="17">   <span class="co">// Return min data member value</span></a>
+<a class="sourceLine" id="cb8-18" title="18">   <span class="kw">public</span> <span class="bu">Short</span> <span class="fu">minItem</span>() {</a>
+<a class="sourceLine" id="cb8-19" title="19">      <span class="bu">Short</span> minVal;         <span class="co">// Holds min item value, init to first item</span></a>
+<a class="sourceLine" id="cb8-20" title="20"></a>
+<a class="sourceLine" id="cb8-21" title="21">      minVal = item1;</a>
+<a class="sourceLine" id="cb8-22" title="22"></a>
+<a class="sourceLine" id="cb8-23" title="23">      <span class="kw">if</span> (item2.<span class="fu">compareTo</span>(minVal) &lt; <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb8-24" title="24">         minVal = item2;</a>
+<a class="sourceLine" id="cb8-25" title="25">      }</a>
+<a class="sourceLine" id="cb8-26" title="26">      <span class="kw">if</span> (item3.<span class="fu">compareTo</span>(minVal) &lt; <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb8-27" title="27">         minVal = item3;</a>
+<a class="sourceLine" id="cb8-28" title="28">      }</a>
+<a class="sourceLine" id="cb8-29" title="29">      <span class="kw">return</span> minVal;</a>
+<a class="sourceLine" id="cb8-30" title="30">   }</a>
+<a class="sourceLine" id="cb8-31" title="31">}</a></code></pre></div>
+<p>Writing and maintaining redundant classes that only differ by data type can be time-consuming and error-prone. The language supports a better approach.</p>
+<p>A <strong>generic class</strong> is a class definition having a special type parameter that may be used in place of types in the class. A variable declared of that <strong>generic</strong> class type must indicate a specific type.</p>
+<blockquote>
+<p>A generic class enables one class to handle various data types.</p>
+</blockquote>
+<p>TripleItem.java</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">public</span> <span class="kw">class</span> TripleItem &lt;TheType <span class="kw">extends</span> <span class="bu">Comparable</span>&lt;TheType&gt;&gt; {</a>
+<a class="sourceLine" id="cb9-2" title="2">   <span class="kw">private</span> TheType item1; <span class="co">// Data value 1</span></a>
+<a class="sourceLine" id="cb9-3" title="3">   <span class="kw">private</span> TheType item2; <span class="co">// Data value 2</span></a>
+<a class="sourceLine" id="cb9-4" title="4">   <span class="kw">private</span> TheType item3; <span class="co">// Data value 3</span></a>
+<a class="sourceLine" id="cb9-5" title="5"></a>
+<a class="sourceLine" id="cb9-6" title="6">   <span class="kw">public</span> <span class="fu">TripleItem</span>(TheType i1, TheType i2, TheType i3) {</a>
+<a class="sourceLine" id="cb9-7" title="7">      item1 = i1;</a>
+<a class="sourceLine" id="cb9-8" title="8">      item2 = i2;</a>
+<a class="sourceLine" id="cb9-9" title="9">      item3 = i3;</a>
+<a class="sourceLine" id="cb9-10" title="10">   }</a>
+<a class="sourceLine" id="cb9-11" title="11"></a>
+<a class="sourceLine" id="cb9-12" title="12">   <span class="co">// Print all data member values</span></a>
+<a class="sourceLine" id="cb9-13" title="13">   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">printAll</span>() {</a>
+<a class="sourceLine" id="cb9-14" title="14">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;(&quot;</span> + item1 + <span class="st">&quot;,&quot;</span> + item2 + <span class="st">&quot;,&quot;</span> + item3 + <span class="st">&quot;)&quot;</span>);</a>
+<a class="sourceLine" id="cb9-15" title="15">   }</a>
+<a class="sourceLine" id="cb9-16" title="16"></a>
+<a class="sourceLine" id="cb9-17" title="17">   <span class="co">// Return min data member value</span></a>
+<a class="sourceLine" id="cb9-18" title="18">   <span class="kw">public</span> TheType <span class="fu">minItem</span>() {</a>
+<a class="sourceLine" id="cb9-19" title="19">      TheType minVal;        <span class="co">// Holds min item value, init to first item</span></a>
+<a class="sourceLine" id="cb9-20" title="20"></a>
+<a class="sourceLine" id="cb9-21" title="21">      minVal = item1;</a>
+<a class="sourceLine" id="cb9-22" title="22"></a>
+<a class="sourceLine" id="cb9-23" title="23">      <span class="kw">if</span> (item2.<span class="fu">compareTo</span>(minVal) &lt; <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb9-24" title="24">         minVal = item2;</a>
+<a class="sourceLine" id="cb9-25" title="25">      }</a>
+<a class="sourceLine" id="cb9-26" title="26">      <span class="kw">if</span> (item3.<span class="fu">compareTo</span>(minVal) &lt; <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb9-27" title="27">         minVal = item3;</a>
+<a class="sourceLine" id="cb9-28" title="28">      }</a>
+<a class="sourceLine" id="cb9-29" title="29">      <span class="kw">return</span> minVal;</a>
+<a class="sourceLine" id="cb9-30" title="30">   }</a>
+<a class="sourceLine" id="cb9-31" title="31">}</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">public</span> <span class="kw">class</span> TripleItemManager {</a>
+<a class="sourceLine" id="cb10-2" title="2">   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb10-3" title="3"></a>
+<a class="sourceLine" id="cb10-4" title="4">      <span class="co">// TripleItem class with Integers</span></a>
+<a class="sourceLine" id="cb10-5" title="5">      TripleItem&lt;<span class="bu">Integer</span>&gt; triInts = <span class="kw">new</span> TripleItem&lt;<span class="bu">Integer</span>&gt;(<span class="dv">9999</span>, <span class="dv">5555</span>, <span class="dv">6666</span>);</a>
+<a class="sourceLine" id="cb10-6" title="6"></a>
+<a class="sourceLine" id="cb10-7" title="7">      <span class="co">// TripleItem class with Shorts</span></a>
+<a class="sourceLine" id="cb10-8" title="8">      TripleItem&lt;<span class="bu">Short</span>&gt; triShorts = <span class="kw">new</span> TripleItem&lt;<span class="bu">Short</span>&gt;((<span class="dt">short</span>)<span class="dv">99</span>, (<span class="dt">short</span>)<span class="dv">55</span>, (<span class="dt">short</span>)<span class="dv">66</span>);</a>
+<a class="sourceLine" id="cb10-9" title="9"></a>
+<a class="sourceLine" id="cb10-10" title="10">      <span class="co">// Try methods from TripleItem</span></a>
+<a class="sourceLine" id="cb10-11" title="11">      triInts.<span class="fu">printAll</span>();</a>
+<a class="sourceLine" id="cb10-12" title="12">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Min: &quot;</span> + triInts.<span class="fu">minItem</span>() + <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
+<a class="sourceLine" id="cb10-13" title="13"></a>
+<a class="sourceLine" id="cb10-14" title="14">      triShorts.<span class="fu">printAll</span>();</a>
+<a class="sourceLine" id="cb10-15" title="15">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Min: &quot;</span> + triShorts.<span class="fu">minItem</span>());</a>
+<a class="sourceLine" id="cb10-16" title="16">   }</a>
+<a class="sourceLine" id="cb10-17" title="17">}</a></code></pre></div>
+<p>Output</p>
+<pre><code>(9999,5555,6666)
+Min: 5555
+
+(99,55,66)
+Min: 55</code></pre>
+<p>The class name is succeeded by <code>&lt;TheType ... &gt;</code>, where TheType can be any identifier. That type is known as a <strong>type parameter</strong> and can be used throughout the class, such as for parameter types, method return types, or field types. An object of this class can be instantiated by appending after the class name a specific type in angle brackets, such as</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb12-1" title="1">TripleItem&lt;<span class="bu">Short</span>&gt; triShorts = <span class="kw">new</span> TripleItem&lt;<span class="bu">Short</span>&gt;((<span class="dt">short</span>)<span class="dv">99</span>, (<span class="dt">short</span>)<span class="dv">55</span>, (<span class="dt">short</span>)<span class="dv">66</span>);</a></code></pre></div>
+<p>Each type parameter can be associated with type bounds to specify the data types a programmer is allowed to use for the type arguments. As with generic methods, type bounds also allow a programmer to utilize the class members specified by the bounding type with variables of a generic type (e.g., item1, item2, item3, and min). Thus, above, TripleItem is a generic class whose instances expect type arguments that implement the <code>Comparable&lt;TheType&gt;</code> interface. By bounding the generic class’s type parameter to the Comparable interface, a programmer can invoke the Comparable interface’s <code>compareTo()</code> method with the generic types, as in <code>item2.compareTo(min)</code>.</p>
+<p>A generic class may have multiple type parameters, separated by commas. Additionally, each type parameter may have type bounds.</p>
+<blockquote>
+<p>Generic class template with multiple parameters.</p>
+</blockquote>
+<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">public</span> <span class="kw">class</span> ClassName &lt;Type1 <span class="kw">extends</span> BoundType1, Type2 <span class="kw">extends</span> BoundType2&gt; {</a>
+<a class="sourceLine" id="cb13-2" title="2">   ...</a>
+<a class="sourceLine" id="cb13-3" title="3">}</a></code></pre></div>
+<p>Importantly, type arguments cannot be primitive types such as int, char, and double. Instead, the type arguments must be reference types. If primitive types are desired, a programmer should use the corresponding primitive wrapper classes (e.g., Integer, Char, Double, etc.), discussed elsewhere.</p>
+<p>Note that Java’s ArrayList class is a generic class, which is why a variable declared as an ArrayList indicates the type in angle brackets, as in ArrayList<Integer> nums = new ArrayList<Integer>();.</p>
+<h2 id="collections">Collections</h2>
+<h3 id="enhanced-for-loop">Enhanced for loop</h3>
+<p>The <strong>enhanced for loop</strong> is a for loop that iterates through each element in an array or Collection. An enhanced for loop is also known as a <strong>for each loop</strong>. The enhanced for loop declares a new variable that will be assigned with each successive element of a container object, such as an array or ArrayList. The enhanced for loop only allows elements to be accessed forward from the first element to the last element.</p>
+<blockquote>
+<p>The enhanced for loop declares a new variable and assigns the variable with each successive element of the container object.</p>
+</blockquote>
+<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb14-1" title="1"><span class="bu">ArrayList</span>&lt;<span class="bu">String</span>&gt; teamRoster = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;<span class="bu">String</span>&gt;();</a>
+<a class="sourceLine" id="cb14-2" title="2"></a>
+<a class="sourceLine" id="cb14-3" title="3"><span class="co">// Adding player names</span></a>
+<a class="sourceLine" id="cb14-4" title="4">teamRoster.<span class="fu">add</span>(<span class="st">&quot;Mike&quot;</span>);</a>
+<a class="sourceLine" id="cb14-5" title="5">teamRoster.<span class="fu">add</span>(<span class="st">&quot;Scottie&quot;</span>);</a>
+<a class="sourceLine" id="cb14-6" title="6">teamRoster.<span class="fu">add</span>(<span class="st">&quot;Toni&quot;</span>);</a>
+<a class="sourceLine" id="cb14-7" title="7"></a>
+<a class="sourceLine" id="cb14-8" title="8"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Current roster:&quot;</span>);</a>
+<a class="sourceLine" id="cb14-9" title="9"></a>
+<a class="sourceLine" id="cb14-10" title="10"><span class="kw">for</span> (<span class="bu">String</span> playerName : teamRoster) {</a>
+<a class="sourceLine" id="cb14-11" title="11">   <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(playerName);</a>
+<a class="sourceLine" id="cb14-12" title="12">}</a></code></pre></div>
+<h3 id="list-linkedlist">List: LinkedList</h3>
+<p>A LinkedList is one of several types that implement the List interface. The LinkedList type is an ADT implemented as a generic class that supports different types of elements. A LinkedList can be declared and created as:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb15-1" title="1"><span class="bu">LinkedList</span>&lt;T&gt; linkedList = <span class="kw">new</span> <span class="bu">LinkedList</span>&lt;T&gt;();</a></code></pre></div>
+<p>where <code>T</code> represents the LinkedList’s type, such as Integer or String. The statement <code>import java.util.LinkedList;</code> enables use of a <code>LinkedList</code> within a program.</p>
+<blockquote>
+<p>LinkedList: <code>add()</code> method adds elements to end of list or at specified index.</p>
+</blockquote>
+<div class="sourceCode" id="cb16"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb16-1" title="1"><span class="bu">LinkedList</span>&lt;<span class="bu">String</span>&gt; authorsList = <span class="kw">new</span> <span class="bu">LinkedList</span>&lt;<span class="bu">String</span>&gt;();</a>
+<a class="sourceLine" id="cb16-2" title="2"></a>
+<a class="sourceLine" id="cb16-3" title="3">authorsList.<span class="fu">add</span>(<span class="st">&quot;Gamow&quot;</span>);</a>
+<a class="sourceLine" id="cb16-4" title="4">authorsList.<span class="fu">add</span>(<span class="st">&quot;Penrose&quot;</span>);</a>
+<a class="sourceLine" id="cb16-5" title="5">authorsList.<span class="fu">add</span>(<span class="st">&quot;Hawking&quot;</span>);</a>
+<a class="sourceLine" id="cb16-6" title="6"></a>
+<a class="sourceLine" id="cb16-7" title="7">authorsList.<span class="fu">add</span>(<span class="dv">1</span>, <span class="st">&quot;Greene&quot;</span>);</a></code></pre></div>
+<blockquote>
+<p>LinkedList: <code>get()</code> returns elements at specified location and set<code>()</code> replaces element at specified location.</p>
+</blockquote>
+<div class="sourceCode" id="cb17"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb17-1" title="1"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(authorsList.<span class="fu">get</span>(<span class="dv">2</span>));</a>
+<a class="sourceLine" id="cb17-2" title="2"></a>
+<a class="sourceLine" id="cb17-3" title="3">authorsList.<span class="fu">set</span>(<span class="dv">2</span>, <span class="st">&quot;Sagan&quot;</span>);</a>
+<a class="sourceLine" id="cb17-4" title="4"></a>
+<a class="sourceLine" id="cb17-5" title="5"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(authorsList.<span class="fu">get</span>(<span class="dv">2</span>));</a></code></pre></div>
+<blockquote>
+<p>LinkedList: <code>remove()</code> method removes element from specified position.</p>
+</blockquote>
+<div class="sourceCode" id="cb18"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb18-1" title="1"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(authorsList.<span class="fu">get</span>(<span class="dv">1</span>));</a>
+<a class="sourceLine" id="cb18-2" title="2"></a>
+<a class="sourceLine" id="cb18-3" title="3">authorsList.<span class="fu">remove</span>(<span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb18-4" title="4"></a>
+<a class="sourceLine" id="cb18-5" title="5"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(authorsList.<span class="fu">get</span>(<span class="dv">1</span>));</a></code></pre></div>
+<h4 id="iterating-through-a-list">Iterating through a list</h4>
+<p>LinkedList methods with index parameters, such as <code>get()</code> or <code>set(),</code> cause the list to be traversed from the first element to the specified element each time the method is called. <strong>Thus, using the LinkedLists’ <code>get()</code> or <code>set()</code> methods within a loop that iterates through all list elements is inefficient.</strong></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb19-1" title="1"><span class="bu">LinkedList</span>&lt;<span class="bu">String</span>&gt; authorsList = <span class="kw">new</span> <span class="bu">LinkedList</span>&lt;<span class="bu">String</span>&gt;();</a>
+<a class="sourceLine" id="cb19-2" title="2"><span class="bu">String</span> authorName;</a>
+<a class="sourceLine" id="cb19-3" title="3"><span class="dt">int</span> i;</a>
+<a class="sourceLine" id="cb19-4" title="4"></a>
+<a class="sourceLine" id="cb19-5" title="5">authorsList.<span class="fu">add</span>(<span class="st">&quot;Gamow&quot;</span>);</a>
+<a class="sourceLine" id="cb19-6" title="6">authorsList.<span class="fu">add</span>(<span class="st">&quot;Greene&quot;</span>);</a>
+<a class="sourceLine" id="cb19-7" title="7">authorsList.<span class="fu">add</span>(<span class="st">&quot;Penrose&quot;</span>);</a>
+<a class="sourceLine" id="cb19-8" title="8"></a>
+<a class="sourceLine" id="cb19-9" title="9"><span class="kw">for</span> (i = <span class="dv">0</span>; i &lt; authorsList.<span class="fu">size</span>(); ++i) {</a>
+<a class="sourceLine" id="cb19-10" title="10">   authorName = authorsList.<span class="fu">get</span>(i);</a>
+<a class="sourceLine" id="cb19-11" title="11">   <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(authorName);</a>
+<a class="sourceLine" id="cb19-12" title="12">}</a></code></pre></div>
+<p>Efficient iteration through a LinkedList necessitates keeping track of the current position in the loop without using an index. A <strong>ListIterator</strong> is an object that points to a location in a List and provides methods to access an element and advance the ListIterator to the next position in the list.</p>
+<p>LinkedList’s <code>listIterator()</code> method returns a ListIterator object for traversing a list. The statement <code>import java.util.ListIterator;</code> enables use of a <code>ListIterator</code> in a program.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb20-1" title="1"><span class="bu">LinkedList</span>&lt;<span class="bu">String</span>&gt; authorsList = <span class="kw">new</span> <span class="bu">LinkedList</span>&lt;<span class="bu">String</span>&gt;();</a>
+<a class="sourceLine" id="cb20-2" title="2"><span class="bu">String</span> authorName;</a>
+<a class="sourceLine" id="cb20-3" title="3"><span class="bu">ListIterator</span>&lt;<span class="bu">String</span>&gt; listIterator;</a>
+<a class="sourceLine" id="cb20-4" title="4"></a>
+<a class="sourceLine" id="cb20-5" title="5">authorsList.<span class="fu">add</span>(<span class="st">&quot;Gamow&quot;</span>);</a>
+<a class="sourceLine" id="cb20-6" title="6">authorsList.<span class="fu">add</span>(<span class="st">&quot;Greene&quot;</span>);</a>
+<a class="sourceLine" id="cb20-7" title="7">authorsList.<span class="fu">add</span>(<span class="st">&quot;Penrose&quot;</span>);</a>
+<a class="sourceLine" id="cb20-8" title="8"></a>
+<a class="sourceLine" id="cb20-9" title="9">listIterator = authorsList.<span class="fu">listIterator</span>();</a>
+<a class="sourceLine" id="cb20-10" title="10"></a>
+<a class="sourceLine" id="cb20-11" title="11"><span class="kw">while</span> (listIterator.<span class="fu">hasNext</span>()) {</a>
+<a class="sourceLine" id="cb20-12" title="12">   authorName = listIterator.<span class="fu">next</span>();</a>
+<a class="sourceLine" id="cb20-13" title="13">   <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(authorName);</a>
+<a class="sourceLine" id="cb20-14" title="14">}</a></code></pre></div>
+<p>A ListIterator is located between two elements in a list. The <code>next()</code> method returns the next element in the list and moves the ListIterator to the next location. The <code>hasNext()</code> method returns true if there is a next element, and false otherwise. A good practice is to always call <code>hasNext()</code> before calling <code>next()</code> to ensure a list element exists.</p>
+<h3 id="map-hashmap">Map: HashMap</h3>
+<p><a name="map-container-term"><strong>Map container</strong></a></p>
+<ul>
+<li>A programmer may wish to lookup values or elements based on another value, such as looking up an employee’s record based on an employee ID. The <strong>Map</strong> interface within the Java Collections Framework defines a Collection that associates (or maps) keys to values. The statement <code>import java.util.HashMap;</code> enables use of a HashMap.</li>
+</ul>
+<p>The HashMap type is an ADT implemented as a generic class that supports different types of keys and values. Generically, a HashMap can be declared and created as <code>HashMap&lt;K, V&gt; hashMap = new HashMap&lt;K, V&gt;();</code> where K represents the HashMap’s key type and V represents the HashMap’s value type.</p>
+<p>The <code>put()</code> method associates a key with the specified value. If the key does not already exist, a new entry within the map is created. If the key already exists, the old value for the key is replaced with the new value. Thus, a map associates at most one value for a key.</p>
+<p>The <code>get()</code> method returns the value associated with a key, such as <code>statePopulation.get("CA")</code>.</p>
+<blockquote>
+<p>A HashMap allows a programmer to map keys to values.</p>
+</blockquote>
+<div class="sourceCode" id="cb21"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb21-1" title="1"><span class="bu">HashMap</span>&lt;<span class="bu">String</span>, <span class="bu">Integer</span>&gt; statePopulation = <span class="kw">new</span> <span class="bu">HashMap</span>&lt;<span class="bu">String</span>, <span class="bu">Integer</span>&gt;();</a>
+<a class="sourceLine" id="cb21-2" title="2"></a>
+<a class="sourceLine" id="cb21-3" title="3"><span class="co">// 2013 population data from census.gov</span></a>
+<a class="sourceLine" id="cb21-4" title="4">statePopulation.<span class="fu">put</span>(<span class="st">&quot;CA&quot;</span>, <span class="dv">38332521</span>);</a>
+<a class="sourceLine" id="cb21-5" title="5">statePopulation.<span class="fu">put</span>(<span class="st">&quot;AZ&quot;</span>, <span class="dv">6626624</span>);</a>
+<a class="sourceLine" id="cb21-6" title="6">statePopulation.<span class="fu">put</span>(<span class="st">&quot;MA&quot;</span>, <span class="dv">6692824</span>);</a>
+<a class="sourceLine" id="cb21-7" title="7"></a>
+<a class="sourceLine" id="cb21-8" title="8"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(<span class="st">&quot;Population of Arizona in 2013 is &quot;</span>);</a>
+<a class="sourceLine" id="cb21-9" title="9"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(statePopulation.<span class="fu">get</span>(<span class="st">&quot;AZ&quot;</span>));</a>
+<a class="sourceLine" id="cb21-10" title="10"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;.&quot;</span>);</a></code></pre></div>
+<h3 id="set-hashset">Set: HashSet</h3>
+<p><a name="set-container-term"><strong>Set container</strong></a></p>
+<ul>
+<li>The <strong>Set</strong> interface defined within the Java Collections Framework defines a Collection of unique elements. The Set interface supports methods for adding and removing elements, as well as querying if a set contains an element. For example, a programmer may use a set to store employee names and use that set to determine which customers are eligible for employee discounts.</li>
+</ul>
+<p>The HashSet type is an ADT implemented as a generic class that supports different types of elements. A HashSet can be declared and created as <code>HashSet&lt;T&gt; hashSet = new HashSet&lt;T&gt;();</code> where T represents the HashSet’s type, such as Integer or String. The statement <code>import java.util.HashSet;</code> enables use of a HashSet within a program.</p>
+<h4 id="add-and-remove-methods">add() and remove() Methods</h4>
+<p>The <code>add()</code> method does not add duplicate elements to a set. If a programmer tries to add a duplicate element, the <code>add()</code> method fails and returns false. Otherwise, <code>add()</code> returns true.</p>
+<p>The <code>remove()</code> method only removes elements that exist within the set. If the element exists, the <code>remove()</code> method removes the element and returns true. Otherwise, <code>remove()</code> returns false.</p>
+<h3 id="queue-interface">Queue Interface</h3>
+<p>The <strong>Queue</strong> interface defined within the Java Collections Framework defines a Collection of ordered elements that supports element insertion at the tail and element retrieval from the head.</p>
+<p>A LinkedList is one of several types that implements the Queue interface. A LinkedList implementation of a Queue can be declared and created as <code>Queue&lt;T&gt; queue = new LinkedList&lt;T&gt;();</code> where T represents the element’s type, such as Integer or String. Java supports automatic conversion of an object, e.g., LinkedList, to a reference variable of an interface type, e.g., Queue, as long as the object implements the interface.</p>
+<p>The statements <code>import java.util.LinkedList;</code> and <code>import java.util.Queue;</code> enable use of a <code>LinkedList</code> and <code>Queue</code> within a program.</p>
+<p>A Queue’s <code>add()</code> method adds an element to the tail of the queue and increases the queue’s size by one. A Queue’s <code>remove()</code> method removes and returns the element at the head of the queue. If the queue is empty, <code>remove()</code> throws an exception.</p>
+<blockquote>
+<p>Queue: add() method adds an element to the tail of the queue, and remove() method returns and removes the element at the head of the queue.</p>
+</blockquote>
+<div class="sourceCode" id="cb22"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb22-1" title="1"><span class="bu">Queue</span>&lt;<span class="bu">String</span>&gt; waitList = <span class="kw">new</span> <span class="bu">LinkedList</span>&lt;<span class="bu">String</span>&gt;();</a>
+<a class="sourceLine" id="cb22-2" title="2"></a>
+<a class="sourceLine" id="cb22-3" title="3">waitList.<span class="fu">add</span>(<span class="st">&quot;Neumann party of 1&quot;</span>);</a>
+<a class="sourceLine" id="cb22-4" title="4">waitList.<span class="fu">add</span>(<span class="st">&quot;Amdahl party of 2&quot;</span>);</a>
+<a class="sourceLine" id="cb22-5" title="5">waitList.<span class="fu">add</span>(<span class="st">&quot;Flynn party of 4&quot;</span>);</a>
+<a class="sourceLine" id="cb22-6" title="6"></a>
+<a class="sourceLine" id="cb22-7" title="7"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Serving: &quot;</span> + waitList.<span class="fu">remove</span>());</a>
+<a class="sourceLine" id="cb22-8" title="8"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Serving: &quot;</span> + waitList.<span class="fu">remove</span>());</a>
+<a class="sourceLine" id="cb22-9" title="9"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Serving: &quot;</span> + waitList.<span class="fu">remove</span>());</a></code></pre></div>
+<p>Output</p>
+<pre><code>Serving:
+Neumann party of 1
+Serving:
+Amdahl party of 2
+Serving:
+Flynn party of 4</code></pre>
+<h3 id="deque-interface">Deque Interface</h3>
+<p>The <strong>Deque</strong> (pronounced “deck”) interface defined within the Java Collections Framework defines a Collection of ordered elements that supports element insertion and removal at both ends (i.e., at the head and tail of the deque).</p>
+<p>A LinkedList is one of several types that implements the Deque interface. A LinkedList implementation of a Deque can be declared and created as <code>Deque&lt;T&gt; deque = new LinkedList&lt;T&gt;();</code> where T represents the element’s type, such as Integer or String. Java supports automatic conversion of an object, e.g., LinkedList, to a reference variable of an interface type, e.g., Deque, as long as the object implements the interface.</p>
+<p>The statements import java.util.LinkedList; and import java.util.Deque; enable use of a LinkedList and Deque within a program.</p>
+<p>Deque’s <code>addFirst()</code> and <code>removeFirst()</code> methods allow a Deque to be used as a <strong>stack</strong>. A stack is an ADT in which elements are only added or removed from the top of a stack. Deque’s <code>addFirst()</code> method adds an element at the head of the deque and increases the deque’s size by one. The <code>addFirst()</code> method shifts elements in the deque to make room for the new element. The <code>removeFirst()</code> method removes and returns the element at the head of the deque. If the deque is empty, <code>removeFirst()</code> throws an exception.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb24-1" title="1"><span class="bu">Deque</span>&lt;<span class="bu">String</span>&gt; tripRoute = <span class="kw">new</span> <span class="bu">LinkedList</span>&lt;<span class="bu">String</span>&gt;();</a>
+<a class="sourceLine" id="cb24-2" title="2"></a>
+<a class="sourceLine" id="cb24-3" title="3"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Depart Tokyo&quot;</span>);</a>
+<a class="sourceLine" id="cb24-4" title="4">tripRoute.<span class="fu">addFirst</span>(<span class="st">&quot;Tokyo&quot;</span>);</a>
+<a class="sourceLine" id="cb24-5" title="5"></a>
+<a class="sourceLine" id="cb24-6" title="6"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Transfer at Osaka&quot;</span>);</a>
+<a class="sourceLine" id="cb24-7" title="7">tripRoute.<span class="fu">addFirst</span>(<span class="st">&quot;Osaka&quot;</span>);</a>
+<a class="sourceLine" id="cb24-8" title="8"></a>
+<a class="sourceLine" id="cb24-9" title="9"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Arrive in Nara&quot;</span>);</a>
+<a class="sourceLine" id="cb24-10" title="10">tripRoute.<span class="fu">addFirst</span>(<span class="st">&quot;Nara&quot;</span>);</a>
+<a class="sourceLine" id="cb24-11" title="11"></a>
+<a class="sourceLine" id="cb24-12" title="12"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Return trip: &quot;</span>);</a>
+<a class="sourceLine" id="cb24-13" title="13"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Depart &quot;</span> + tripRoute.<span class="fu">removeFirst</span>());</a>
+<a class="sourceLine" id="cb24-14" title="14"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Transfer at &quot;</span> + tripRoute.<span class="fu">removeFirst</span>());</a>
+<a class="sourceLine" id="cb24-15" title="15"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Arrive in &quot;</span> + tripRoute.<span class="fu">removeFirst</span>());</a></code></pre></div>
+<p>Output</p>
+<pre><code>Depart Tokyo
+Transfer at Osaka
+Arrive in Nara
+
+Return trip:
+Depart Nara
+Transfer at Osaka
+Arrive in Tokyo</code></pre>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
 <li><a href="../../../../../../../files/summer-2020/CISC-191/week-4/generics.ppt">*Generics</a></li>
+<li><a href="https://www.youtube.com/watch?v=0OXZuxe_TVk">`Java intro to Generics and Collections Framework using LinkedList</a></li>
+<li><a href="https://www.youtube.com/watch?v=8GviG6nSSTA">`Java Concurrent Collections: Introduction</a></li>
+</ul>
+<p>Textbook</p>
+<ul>
+<li><a href="https://www.zybooks.com/">Andrew Huang CISC 191: Intermediate Java Programming - zyBooks</a>
+<ul>
+<li>Chapter 13 Generics</li>
+<li>Chapter 14 Collections</li>
+</ul></li>
 </ul>
 <hr>
 </article>

@@ -107,7 +107,7 @@ Revolution to the War on Terror." (p. 8).
   property from assassination at the hands of these conspirators, if their dark
   and damning deeds are allowed to continue and be perfected?" (p. 12)
 
-```md
+```
 This enemy seems to be on many counts a projection of the self: both the ideal
 and the unacceptable aspects of the self are attributed to him. A fundamental
 paradox of the paranoid style is the imitation of the enemy. The enemy, for

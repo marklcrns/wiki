@@ -22,6 +22,9 @@ summary: The United States of Paranoia ny Jesse Walker notes
 
   - [+7 - The Water's Gate](notes/ch-7)
   - [+9 - Operation Mindfuck](notes/ch-9)
+  - [+10 - Operation Mindfuck](notes/ch-10)
+  - [+11 - The Demonic Cafeteria](notes/ch-11)
+  - [+12 - Everything is a Clue](notes/ch-12)
 
 
 ## Reading Response

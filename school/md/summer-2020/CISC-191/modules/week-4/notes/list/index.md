@@ -10,6 +10,7 @@ summary: CISC 191 Week 4 Lists notes
 
   - [*Lists](file:../../../../../../../files/summer-2020/CISC-191/week-4/lists.ppt)
 
+
 <br>
 
 # Resources

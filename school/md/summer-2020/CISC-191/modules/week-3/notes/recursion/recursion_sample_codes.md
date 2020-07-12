@@ -710,13 +710,13 @@ orderings of those names, one ordering per line.
 
 When the input is:
 
-```md
+```
 Julia Lucas Mia -1
 ```
 
 then the output is (must match the below ordering):
 
-```md
+```
 Julia Lucas Mia
 Julia Mia Lucas
 Lucas Julia Mia
