@@ -8,7 +8,7 @@ summary: The United States of Paranoia ny Jesse Walker notes
 
 # The United States of Paranoia ny Jesse Walker
 
-  - [*Identifying Claims and Analizing Arguments](file:../../../../../files/summer-2020/ENGL-205/identitying_claims_and_analyzing_arguments.pptx)
+  - [*Identifying Claims and Analyzing Arguments](file:../../../../../files/summer-2020/ENGL-205/identitying_claims_and_analyzing_arguments.pptx)
 
 ## Notes
 
