@@ -12,3 +12,8 @@ summary: CISC 191 Week 3 notes and activities
 
   - [+Week 3 Notes](notes/index)
 
+
+## Graded Discussion
+
+  - [+Week 3 Graded Discussion Entry](graded_discussion)
+

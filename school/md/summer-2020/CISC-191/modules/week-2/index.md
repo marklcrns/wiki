@@ -12,3 +12,7 @@ summary: CISC 191 Week 2 notes and activities
 
   - [+Week 2 Notes](notes/w-2)
 
+
+## Graded Discussion
+
+  - [+Week 2 Graded Discussion Entry](graded_discussion)
