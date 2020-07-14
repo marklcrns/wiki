@@ -22,7 +22,7 @@ summary: The United States of Paranoia ny Jesse Walker notes
 
   - [+7 - The Water's Gate](notes/ch-7)
   - [+9 - Operation Mindfuck](notes/ch-9)
-  - [+10 - Operation Mindfuck](notes/ch-10)
+  - [+10 - The Ghost of Rambo](notes/ch-10)
   - [+11 - The Demonic Cafeteria](notes/ch-11)
   - [+12 - Everything is a Clue](notes/ch-12)
 
@@ -31,6 +31,7 @@ summary: The United States of Paranoia ny Jesse Walker notes
 
   - [*Reading Response 3](file:../../../../../files/summer-2020/ENGL-205/reading-response/reading_response_3.docx)
   - [*Reading Response 4](file:../../../../../files/summer-2020/ENGL-205/reading-response/reading_response_4.docx)
+  - [*Reading Response 5](file:../../../../../files/summer-2020/ENGL-205/reading-response/reading_response_5.docx)
 
 
 ## Essay
