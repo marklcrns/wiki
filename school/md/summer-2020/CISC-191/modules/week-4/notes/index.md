@@ -13,16 +13,6 @@ summary: Generics, Collections, Streams, and IOStreams
   - [+Generics and Collections Notes](generics-and-collections/index)
 
 
-## Lists
-
-  - [+Lists Notes](list/index)
-
-
-## Sets and Maps
-
-  - [+Sets and Maps Notes](sets-and-maps/index)
-
-
 ## Streams and IOStreams
 
   - [+Streams and IOStreams](streams/index)

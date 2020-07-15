@@ -12,4 +12,5 @@ summary: CISC 191 Modules
   - [+Week 2: Object Oriented Programming](week-2/index)
   - [+Week 3: Linked Data Structures and Recursion](week-3/index)
   - [+Week 4: Generics, Collections, Streams, and IOStreams](week-4/index)
+  - [+Week 5: Concurrency, Threads and Multiprocessing](week-5/index)
 

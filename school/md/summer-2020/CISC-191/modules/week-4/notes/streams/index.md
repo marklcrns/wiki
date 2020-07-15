@@ -638,6 +638,235 @@ Enter "firstname lastname age":
 ```
 
 
+## File Input
+
+### Opening and reading from a file
+
+Sometimes a program should get input from a file rather than from a user typing
+on a keyboard. To read file input, a programmer can create a new input stream
+that comes from a file, rather than the predefined input stream System.in that
+comes from the standard input (keyboard). An input stream can then be used just
+like the familiar Scanner and System.in combination.
+
+The statement `fileByteStream = new FileInputStream(str);` creates a file input
+stream and opens the file denoted by a String variable, str, for reading.
+FileInputStream's constructor also allows a programmer to pass the filename as a
+String literal. Ex: fileByteStream = new FileInputStream("numFile.txt");
+
+> Input from a file.
+
+```java
+import java.util.Scanner;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class FileReadNums {
+   public static void main (String[] args) throws IOException {
+      FileInputStream fileByteStream = null; // File input stream
+      Scanner inFS = null;                   // Scanner object
+      int fileNum1;                          // Data value from file
+      int fileNum2;                          // Data value from file
+
+      // Try to open file
+      System.out.println("Opening file numFile.txt.");
+      fileByteStream = new FileInputStream("numFile.txt");
+      inFS = new Scanner(fileByteStream);
+
+      // File is open and valid if we got this far
+      // (otherwise exception thrown)
+      // numFile.txt should contain two integers, else problems
+      System.out.println("Reading two integers.");
+      fileNum1 = inFS.nextInt();
+      fileNum2 = inFS.nextInt();
+
+      // Output values read from file
+      System.out.println("num1: " + fileNum1);
+      System.out.println("num2: " + fileNum2);
+      System.out.println("num1+num2: " + (fileNum1 + fileNum2));
+
+      // Done with file, so try to close it
+      System.out.println("Closing file myfile.txt.");
+      fileByteStream.close(); // close() may throw IOException if fails
+   }
+}
+```
+
+### Reading until the end of the file
+
+A program can read varying amounts of data in a file by using a loop that reads
+until valid data is unavailable or the end of the file has been reached. The
+`hasNextInt()` method returns true if an integer is available for reading. If
+the next item in the file is not an integer or if the previous stream operation
+reached the end of the file, the method returns false. The Scanner class offers
+multiple `hasNext()` methods for various data types such as int, double, String,
+etc.
+
+> Reading a varying amount of data from a file.
+
+```java
+import java.util.Scanner;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class FileReadVaryingAmount {
+   public static void main(String[] args) throws IOException {
+      FileInputStream fileByteStream = null; // File input stream
+      Scanner inFS = null;                   // Scanner object
+      int fileNum;                           // Data value from file
+
+      // Try to open file
+      System.out.println("Opening file myfile.txt.");
+      fileByteStream = new FileInputStream("myfile.txt");
+      inFS = new Scanner(fileByteStream);
+
+      // File is open and valid if we got this far (otherwise exception thrown)
+      System.out.println("Reading and printing numbers.");
+
+      while (inFS.hasNextInt()) {
+         fileNum = inFS.nextInt();
+         System.out.println("num: " + fileNum);
+      }
+
+      // Done with file, so try to close it
+      System.out.println("Closing file myfile.txt.");
+      fileByteStream.close(); // close() may throw IOException if fails
+   }
+}
+```
+
+myFile.txt
+
+```txt
+111
+222
+333
+444
+555
+```
+
+Output
+
+```
+Opening file myfile.txt.
+Reading and printing numbers.
+num: 111
+num: 222
+num: 333
+num: 444
+num: 555
+Closing file myfile.txt.
+```
+
+
+## File Output
+
+### Opening and writing to a file
+
+A FileOutputStream is a class that supports writing to a file. The
+FileOutputStream class inherits from OutputStream.
+
+After declaring a variable of type FileOutputStream, a file is opened using the
+FileOutputStream's constructor, which can take a file name string as an
+argument. The constructor throws an exception if the file cannot be opened for
+writing.
+
+FileOutputStream only contains methods for writing bytes. To write strings and
+other common data types, a PrintWriter is commonly used. A PrintWriter has
+methods such as print() and println() and can be constructed from any
+OutputStream.
+
+> Basic steps for opening and writing a file.
+
+```java
+FileOutputStream fileStream = new FileOutputStream("helloWorld.txt");
+PrintWriter outFS = new PrintWriter(fileStream);
+outFS.println("Hello World!");
+fileStream.close();
+```
+
+> Writing to an output text file.
+
+```java
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class TextFileWriteSample {
+   public static void main(String[] args) throws IOException {
+      FileOutputStream fileStream = null;
+      PrintWriter outFS = null;
+
+      // Try to open file
+      fileStream = new FileOutputStream("myoutfile.txt");
+      outFS = new PrintWriter(fileStream);
+
+      // Arriving here implies that the file can now be written
+      // to, otherwise an exception would have been thrown.
+      outFS.println("Hello");
+      outFS.println("1 2 3");
+      outFS.flush();
+
+      // Done with file, so try to close
+      // Note that close() may throw an IOException on failure
+      fileStream.close();
+   }
+}
+```
+
+> Writing simple html to a file and to the console.
+
+```java
+import java.io.PrintWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+
+public class HTMLFileWriteSample {
+   static void writeHTMLFile(PrintWriter printer, String innerHTML) {
+      printer.println("<!DOCTYPE html>");
+      printer.println("<html>");
+      printer.println("  <body>");
+      printer.println("    <p>" + innerHTML + "</p>");
+      printer.println("  </body>");
+      printer.println("</html>");
+   }
+   public static void main(String[] args) throws IOException {
+      // Open an output file stream and create a PrintWriter
+      FileOutputStream fileStream = new FileOutputStream("simple.html");
+      PrintWriter filePrinter = new PrintWriter(fileStream);
+
+      // Write the HTML file, then close filePrinter
+      writeHTMLFile(filePrinter, "Hello <b>HTML</b> world!");
+      filePrinter.close();
+
+      // Use the same function, writeHTMLFile, to write to the console
+      PrintWriter systemOutPrinter = new PrintWriter(System.out);
+      writeHTMLFile(systemOutPrinter, "Hello <b>HTML</b> world!");
+   }
+}
+```
+
+Console
+
+```md
+<!DOCTYPE html>
+<html>
+<body>
+ <p>Hello <b>HTML</b> world!</p>
+</body>
+</html>
+```
+
+simple.html file contents
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+ <p>Hello <b>HTML</b> world!</p>
+</body>
+</html>
+```
+
 
 <br>
 
