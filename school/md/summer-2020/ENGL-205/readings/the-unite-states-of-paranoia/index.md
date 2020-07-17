@@ -27,6 +27,11 @@ summary: The United States of Paranoia ny Jesse Walker notes
   - [+12 - Everything is a Clue](notes/ch-12)
 
 
+## Progress Notes
+
+  - [*Progress Notes 4](file:../../../../../files/summer-2020/ENGL-205/progress-notes/progress_notes_4.docx)
+
+
 ## Reading Response
 
   - [*Reading Response 3](file:../../../../../files/summer-2020/ENGL-205/reading-response/reading_response_3.docx)
