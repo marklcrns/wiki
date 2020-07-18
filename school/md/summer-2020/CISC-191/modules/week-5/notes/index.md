@@ -14,7 +14,6 @@ summary: Week 5 Concurrency, Threads and Multiprocessing
   - [`Advanced Java: Multi-threading Playlist](https://www.youtube.com/watch?v=YdlnEWC-7Wo&list=PLBB24CFB073F1048E&index=1)
 
 
-
 <br>
 
 # Resources
