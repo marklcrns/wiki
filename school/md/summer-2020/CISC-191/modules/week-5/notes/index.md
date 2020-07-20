@@ -22,6 +22,7 @@ summary: Week 5 Concurrency, Threads and Multiprocessing
   - [`Basic Threading](https://www.youtube.com/watch?v=F-CkaU8aQZI)
   - [`Advanced Threading: Locking, ThreadPools](https://www.youtube.com/watch?v=G2Xd5avyk_0)
   - [`Advanced Java: Multi-threading Playlist](https://www.youtube.com/watch?v=YdlnEWC-7Wo&list=PLBB24CFB073F1048E&index=1)
+  - [+Multi-threading Playlist Source Code](multi-threading-tutorial)
 
 
 ## The Thread Class
@@ -365,6 +366,8 @@ Failure to do so may result in nondeterministic behavior, such as
     - [ThreadCooperation.java](https://liveexample.pearsoncmg.com/html/ThreadCooperation.html)
     - [ConsumerProducer.java](https://liveexample.pearsoncmg.com/html/ConsumerProducer.html)
     - [ConsumerProducerUsingBlockingQueue.java](https://liveexample.pearsoncmg.com/html/ConsumerProducerUsingBlockingQueue.html)
+    - [ParallelMergeSort](https://liveexample.pearsoncmg.com/html/ParallelMergeSort.html)
+    - [ParallelMax](https://liveexample.pearsoncmg.com/html/ParallelMax.html)
   - [`Basic Threading](https://www.youtube.com/watch?v=F-CkaU8aQZI)
   - [`Advanced Threading: Locking, ThreadPools](https://www.youtube.com/watch?v=G2Xd5avyk_0)
   - [`Advanced Java: Multi-threading Playlist](https://www.youtube.com/watch?v=YdlnEWC-7Wo&list=PLBB24CFB073F1048E&index=1)
