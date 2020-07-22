@@ -17,3 +17,7 @@ summary: CISC 191 Week 6 notes and activities
 
   - [+Week 6 Graded Discussion Entry](graded_discussion)
 
+
+## Lab
+
+  -  [+Networking Lab](lab)
