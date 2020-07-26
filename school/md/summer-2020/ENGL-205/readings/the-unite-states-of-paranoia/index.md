@@ -39,28 +39,11 @@ summary: The United States of Paranoia ny Jesse Walker notes
   - [*Reading Response 5](file:../../../../../files/summer-2020/ENGL-205/reading-response/reading_response_5.docx)
 
 
-## Essay
+## Essay Submission
 
-- The effects of media to the impressionable crowd
-- Are polls really effective? Do politician pre-bake poll responses.
-  - Studies of priming.
-- History inevitably repeats itself
-  - Same narratives but with different characters
-- Teaches us to be vigilant
-- "People loosing control over their life would be attracted to ideas about a
-  cabal plotting against American liberty and sovereignty", Jesse Walker,
-  https://www.youtube.com/watch?v=-EkxCG4b7nM
-- The distortion of content through gossips and speculations
-  - message relay game
-- Religion, more often than not, always in to the narratives of conspiracy
-  theories. "With the new wave of worship came a new wave of paranoia." (p. 56).
+  - [*Essay 2 Draft](file:../../../../../files/summer-2020/ENGL-205/essay/essay-2_draft.docx)
+  - [*Essay 2 Final](file:../../../../../files/summer-2020/ENGL-205/essay/essay-2_final.docx)
 
-Intro ideas
-
-quote something out of context then prove the reader's expectations to be
-wrong in the body of the essay
-
-https://www.youtube.com/watch?v=4Qr0cAM1IEA
 
 <br>
 
