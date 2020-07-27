@@ -12,8 +12,3 @@ summary: CISC 191 Week 7 notes and activities
 
   - [+Week 7 Notes](notes/index)
 
-
-<br>
-
-# Resources
-

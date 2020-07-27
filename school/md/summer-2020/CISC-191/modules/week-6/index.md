@@ -21,3 +21,4 @@ summary: CISC 191 Week 6 notes and activities
 ## Lab
 
   -  [+Networking Lab](lab)
+
