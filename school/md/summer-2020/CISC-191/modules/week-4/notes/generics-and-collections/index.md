@@ -738,7 +738,7 @@ Arrive in Tokyo
 
 Textbook
 
-  * [Andrew Huang CISC 191: Intermediate Java Programming - zyBooks](https://www.zybooks.com/)
+  + [Andrew Huang CISC 191: Intermediate Java Programming - zyBooks](https://www.zybooks.com/)
     - Chapter 13 Generics
     - Chapter 14 Collections
 
