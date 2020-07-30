@@ -17,7 +17,7 @@ summary: Basic Git Commands
 
 **Cloning remote repository**
 
-  - `git clone https://github.com/SomeUsername/UserRepository.git [cloned-repo-name]`
+  - `git clone https://github.com/<repo-owner>/<repository>.git [cloned-repo-name]`
 
 
 > `[cloned-repo-name]` is optional to name the repository directory other than
@@ -53,10 +53,11 @@ message for cleaner commit history.
   - [Git 50/72 Rule](https://www.midori-global.com/blog/2018/04/02/git-50-72-rule)
 
 
-## Branching
+## Branch
 
   - [`Git Branch, Checkout Commands Tutorial](https://www.youtube.com/watch?v=S7SKhR9NVBk)
   - [How to Delete a Git Branch Both Locally and Remotely](https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/)
+  - [How can I tell a local branch to track a remote branch?](https://www.git-tower.com/learn/git/faq/track-remote-upstream-branch)
 
 
 **Display all local branches**
@@ -78,6 +79,11 @@ message for cleaner commit history.
 
   - `git branch <new-branch>`
   - `git checkout -b <new-branch>` -- Creates new branch and checkout.
+
+
+**Pushing newly created local branch into remote repository**
+
+  - `git push -u origin <branch-name>`
 
 
 **Delete existing branch (Only locally)**
@@ -168,6 +174,26 @@ commit history.
     `git stash list`
 
 
+## Fork
+
+  - [Github's Fork & Pull Workflow for Git Beginners](https://reflectoring.io/github-fork-and-pull/)
+
+**Updating your Fork**
+
+```bash
+# add the original repository as remote repository called "upstream"
+git remote add upstream https://github.com/<original-owner>/<repository>.git
+
+# fetch all changes from the upstream repository
+git fetch upstream
+
+# switch to the master branch of your fork
+git checkout master
+
+# merge changes from the upstream repository into your fork
+git merge upstream/master
+```
+
 <br>
 
 # Resources
@@ -175,7 +201,9 @@ commit history.
   - [Git 50/72 Rule](https://www.midori-global.com/blog/2018/04/02/git-50-72-rule)
   - [`Git Branch, Checkout Commands Tutorial](https://www.youtube.com/watch?v=S7SKhR9NVBk)
   - [How to Delete a Git Branch Both Locally and Remotely](https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/)
+  - [How can I tell a local branch to track a remote branch?](https://www.git-tower.com/learn/git/faq/track-remote-upstream-branch)
   - [`Merging Branches Tutorial](https://www.youtube.com/watch?v=XX-Kct0PfFc)
   - [`Git Tutorial: Using the Stash Command](https://www.youtube.com/watch?v=KLEDKgMmbBI)
   - [Git Stash Docs](https://git-scm.com/docs/git-stash)
+  - [Github's Fork & Pull Workflow for Git Beginners](https://reflectoring.io/github-fork-and-pull/)
 

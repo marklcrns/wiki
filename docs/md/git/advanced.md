@@ -8,7 +8,7 @@ summary: Advanced Git Commands
 
 # Advanced Git Commands
 
-## Branching
+## Branch
 
   - [How to fetch all Git branches](https://intellipaat.com/community/3649/git-fetch-all-branches-how-to-fetch-all-git-branches)
   - [Remove tracking branches no longer on remote](https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote)
@@ -48,7 +48,7 @@ git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream
 branch, replace `git branch -D` with `git branch -d`
 
 
-## Fetching
+## Fetch
 
   - [Where to find chances due to git fetch](https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch)
 
@@ -62,6 +62,31 @@ git log origin/master ^master # Replace master with <branch-name> for other bran
 ```
 
 
+## Remote/Upstream
+
+  - [Common problems with GIT](https://ducmanhphan.github.io/2019-02-17-Common-problems-with-git/)
+
+**Reconfigure URL of git in local repository**
+
+  - `git remote set-url origin https://github.com/<repo-owner>/<repository>.git`
+
+
+**There is no tracking information for the current branch**
+
+Solution 1:
+
+  - `git pull origin master`
+
+
+Solution 2: Set it up so that local master branch tracks github master branch as
+an upstream:
+
+```bash
+git branch --set-upstream-to=origin/master <current-branch>
+git pull
+```
+
+
 <br>
 
 # Resources
@@ -69,4 +94,5 @@ git log origin/master ^master # Replace master with <branch-name> for other bran
   - [How to fetch all Git branches](https://intellipaat.com/community/3649/git-fetch-all-branches-how-to-fetch-all-git-branches)
   - [Remove tracking branches no longer on remote](https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote)
   - [Where to find chances due to git fetch](https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch)
+  - [Common problems with GIT](https://ducmanhphan.github.io/2019-02-17-Common-problems-with-git/)
 

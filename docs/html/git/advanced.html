@@ -164,15 +164,16 @@ Advanced Git Commands
 <h2 class="toc-title">Contents</h1>
 <ul>
 <li><a href="#advanced-git-commands">Advanced Git Commands</a><ul>
-<li><a href="#branching">Branching</a></li>
-<li><a href="#fetching">Fetching</a></li>
+<li><a href="#branch">Branch</a></li>
+<li><a href="#fetch">Fetch</a></li>
+<li><a href="#remoteupstream">Remote/Upstream</a></li>
 </ul></li>
 <li><a href="#resources">Resources</a></li>
 </ul>
 </nav>
 <hr>
 <h1 id="advanced-git-commands">Advanced Git Commands</h1>
-<h2 id="branching">Branching</h2>
+<h2 id="branch">Branch</h2>
 <ul>
 <li><a href="https://intellipaat.com/community/3649/git-fetch-all-branches-how-to-fetch-all-git-branches">How to fetch all Git branches</a></li>
 <li><a href="https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote">Remove tracking branches no longer on remote</a></li>
@@ -198,7 +199,7 @@ Advanced Git Commands
 <blockquote>
 <p><strong>NOTE</strong>: This removes both merge and unmerged branch. To only remove merged branch, replace <code>git branch -D</code> with <code>git branch -d</code></p>
 </blockquote>
-<h2 id="fetching">Fetching</h2>
+<h2 id="fetch">Fetch</h2>
 <ul>
 <li><a href="https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch">Where to find chances due to git fetch</a></li>
 </ul>
@@ -207,12 +208,29 @@ Advanced Git Commands
 <a class="sourceLine" id="cb4-2" title="2"><span class="fu">git</span> fetch origin</a>
 <a class="sourceLine" id="cb4-3" title="3"><span class="co"># Then</span></a>
 <a class="sourceLine" id="cb4-4" title="4"><span class="fu">git</span> log origin/master ^master <span class="co"># Replace master with &lt;branch-name&gt; for other branch</span></a></code></pre></div>
+<h2 id="remoteupstream">Remote/Upstream</h2>
+<ul>
+<li><a href="https://ducmanhphan.github.io/2019-02-17-Common-problems-with-git/">Common problems with GIT</a></li>
+</ul>
+<p><strong>Reconfigure URL of git in local repository</strong></p>
+<ul>
+<li><code>git remote set-url origin https://github.com/&lt;repo-owner&gt;/&lt;repository&gt;.git</code></li>
+</ul>
+<p><strong>There is no tracking information for the current branch</strong></p>
+<p>Solution 1:</p>
+<ul>
+<li><code>git pull origin master</code></li>
+</ul>
+<p>Solution 2: Set it up so that local master branch tracks github master branch as an upstream:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">git</span> branch --set-upstream-to=origin/master <span class="op">&lt;</span>current-branch<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="fu">git</span> pull</a></code></pre></div>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
 <li><a href="https://intellipaat.com/community/3649/git-fetch-all-branches-how-to-fetch-all-git-branches">How to fetch all Git branches</a></li>
 <li><a href="https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote">Remove tracking branches no longer on remote</a></li>
 <li><a href="https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch">Where to find chances due to git fetch</a></li>
+<li><a href="https://ducmanhphan.github.io/2019-02-17-Common-problems-with-git/">Common problems with GIT</a></li>
 </ul>
 <hr>
 </article>
