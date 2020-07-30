@@ -13,6 +13,20 @@ summary: Research Essay
   - [*Progress Notes 5](file:../../../../../files/summer-2020/ENGL-205/progress-notes/progress_notes_5.docx)
 
 
+## Essay Research Notes
+
+  - [`Why Do We Lie? | The Behavioral Science Guys](https://www.youtube.com/watch?v=GYyvmyIqiGk)
+  - [`Honest liars -- the psychology of self-deception: Cortney Warren at TEDxUNLV](https://www.youtube.com/watch?v=YpEeSa6zBTE)
+
+
+"At the core, we lie to ourselves because we don't have enough psychological
+strength to admit the truth and deal with the consequences that will follow.",
+Dr. Cortney Warren, TEDxUNLV.
+
+At an early age, most of us concluded that to make people love us, we need to be
+perfect. "As an adult, when someone points out [our] imperfection, [we] feel
+tremendous anxiety but deny were it comes from.", Dr. Cortney Warren.
+
 ## Topic Ideas
 
   - [40 Best Topics for Cause and Effect Essay](https://essayinfo.com/essays/cause-and-effect-essay/topics/)
