@@ -17,6 +17,8 @@ summary: Research Essay
 
   - [`Why Do We Lie? | The Behavioral Science Guys](https://www.youtube.com/watch?v=GYyvmyIqiGk)
   - [`Honest liars -- the psychology of self-deception: Cortney Warren at TEDxUNLV](https://www.youtube.com/watch?v=YpEeSa6zBTE)
+  - [9 Things You Should Know About Liars](https://www.scienceofpeople.com/9-things-know-liars/)
+  - [Jordan Peterson - Side Effects of Telling Lies](https://www.youtube.com/watch?v=23gRI_j5InA)
 
 
 "At the core, we lie to ourselves because we don't have enough psychological
@@ -26,6 +28,18 @@ Dr. Cortney Warren, TEDxUNLV.
 At an early age, most of us concluded that to make people love us, we need to be
 perfect. "As an adult, when someone points out [our] imperfection, [we] feel
 tremendous anxiety but deny were it comes from.", Dr. Cortney Warren.
+
+Product review lies
+
+Astroturfing [Jeff Hancock: 3 types of (digital) lies](https://youtu.be/nn5k4snG3rA?t=300)
+
+People lie more often when theres less risk of fact audit. Facebook vs LinkedIn.
+
+"The problem of lying is that its a hydra", Dr. Jordan B. Peterson Psychology
+Professor. [Jordan Peterson - Side Effects of Telling Lies](https://youtu.be/23gRI_j5InA?t=300)
+
+Nixon Scandal
+
 
 ## Topic Ideas
 
