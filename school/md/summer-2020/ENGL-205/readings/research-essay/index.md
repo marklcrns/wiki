@@ -42,15 +42,6 @@ Professor. [Jordan Peterson - Side Effects of Telling Lies](https://youtu.be/23g
 Nixon Scandal
 
 
-
-
-
-
-
-
-
-
-
 ## Topic Ideas
 
   - [40 Best Topics for Cause and Effect Essay](https://essayinfo.com/essays/cause-and-effect-essay/topics/)
