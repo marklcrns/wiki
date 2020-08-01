@@ -164,6 +164,7 @@ Advanced Git Commands
 <h2 class="toc-title">Contents</h1>
 <ul>
 <li><a href="#advanced-git-commands">Advanced Git Commands</a><ul>
+<li><a href="#reset">Reset</a></li>
 <li><a href="#branch">Branch</a></li>
 <li><a href="#fetch">Fetch</a></li>
 <li><a href="#remoteupstream">Remote/Upstream</a></li>
@@ -173,6 +174,27 @@ Advanced Git Commands
 </nav>
 <hr>
 <h1 id="advanced-git-commands">Advanced Git Commands</h1>
+<h2 id="reset">Reset</h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/3528245/whats-the-difference-between-git-reset-mixed-soft-and-hard">What’s the difference between git reset –mixed, –soft, and –hard?</a></li>
+<li><a href="https://git-scm.com/docs/git-reset">Git reset docs</a></li>
+</ul>
+<p><strong>Discarding changes from commit history</strong></p>
+<ul>
+<li><code>git reset --hard HEAD^</code> – discard last commit of local repo</li>
+<li><code>git reset --hard HEAD~2</code> – discard last 2 commit of local repo. the <code>2</code> can be changed to how far to remove commits.</li>
+</ul>
+<blockquote>
+<p><strong>NOTE:</strong> <code>--hard</code> reset cannot be reversed and all the changes will be <strong>permanently deleted</strong>.</p>
+</blockquote>
+<p><strong>Uncommitting changes from commit history</strong></p>
+<ul>
+<li><code>git reset --soft HEAD^</code> – uncommit last commit of local repo</li>
+</ul>
+<p><strong>Uncommit and unstage changes from commit history</strong></p>
+<ul>
+<li><code>git reset --mixed HEAD^</code> – uncommit and unstage last commit of local repo</li>
+</ul>
 <h2 id="branch">Branch</h2>
 <ul>
 <li><a href="https://intellipaat.com/community/3649/git-fetch-all-branches-how-to-fetch-all-git-branches">How to fetch all Git branches</a></li>
@@ -190,14 +212,14 @@ Advanced Git Commands
 <a class="sourceLine" id="cb2-5" title="5"><span class="fu">git</span> branch --merged <span class="op">&gt;</span>/tmp/merged-branches <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
 <a class="sourceLine" id="cb2-6" title="6">  <span class="ex">vim</span> /tmp/merged-branches <span class="kw">&amp;&amp;</span> <span class="fu">xargs</span> git branch -d <span class="op">&lt;</span>/tmp/merged-branches</a></code></pre></div>
 <blockquote>
-<p><strong>NOTE</strong>: Both this method only removes merged branch and does not remove unmerged branch that exists in local but not from remote.</p>
+<p><strong>NOTE:</strong> Both this method only removes merged branch and does not remove unmerged branch that exists in local but not from remote.</p>
 </blockquote>
 <p><strong>Remove tracking branches no longer on remote (Method 2)</strong></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">git</span> fetch -p <span class="kw">&amp;&amp;</span> <span class="kw">for</span> <span class="ex">branch</span> in <span class="va">$(</span><span class="fu">git</span> branch -vv <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&#39;: gone]&#39;</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{print $1}&#39;</span><span class="va">)</span><span class="kw">;</span> <span class="kw">do</span> <span class="fu">git</span> branch -D <span class="va">$branch</span><span class="kw">;</span> <span class="kw">done</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="co"># Much safer way</span></a>
 <a class="sourceLine" id="cb3-3" title="3"><span class="fu">git</span> fetch -p <span class="kw">&amp;&amp;</span> <span class="kw">for</span> <span class="ex">branch</span> in <span class="va">$(</span><span class="fu">git</span> for-each-ref --format <span class="st">&#39;%(refname) %(upstream:track)&#39;</span> refs/heads <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;$2 == &quot;[gone]&quot; {sub(&quot;refs/heads/&quot;, &quot;&quot;, $1); print $1}&#39;</span><span class="va">)</span><span class="kw">;</span> <span class="kw">do</span> <span class="fu">git</span> branch -D <span class="va">$branch</span><span class="kw">;</span> <span class="kw">done</span></a></code></pre></div>
 <blockquote>
-<p><strong>NOTE</strong>: This removes both merge and unmerged branch. To only remove merged branch, replace <code>git branch -D</code> with <code>git branch -d</code></p>
+<p><strong>NOTE:</strong> This removes both merge and unmerged branch. To only remove merged branch, replace <code>git branch -D</code> with <code>git branch -d</code></p>
 </blockquote>
 <h2 id="fetch">Fetch</h2>
 <ul>
@@ -227,6 +249,7 @@ Advanced Git Commands
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
+<li><a href="https://stackoverflow.com/questions/3528245/whats-the-difference-between-git-reset-mixed-soft-and-hard">What’s the difference between git reset –mixed, –soft, and –hard?</a></li>
 <li><a href="https://intellipaat.com/community/3649/git-fetch-all-branches-how-to-fetch-all-git-branches">How to fetch all Git branches</a></li>
 <li><a href="https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote">Remove tracking branches no longer on remote</a></li>
 <li><a href="https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch">Where to find chances due to git fetch</a></li>

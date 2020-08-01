@@ -266,7 +266,7 @@ Basic Git Commands
 <p>Changes that are not ready to be committed but wants to revert back to previous commits without loosing those changes can be <em>stashed</em>. It will be saved in a temporary space and can be accessed and applied at anytime and any branch or commit history.</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=KLEDKgMmbBI">`Git Tutorial: Using the Stash Command</a></li>
-<li><a href="https://git-scm.com/docs/git-stash">Git Stash Docs</a></li>
+<li><a href="https://git-scm.com/docs/git-stash">Git stash docs</a></li>
 </ul>
 <p><strong>Stashing current changes</strong></p>
 <ul>
@@ -274,7 +274,10 @@ Basic Git Commands
 <li><code>git stash save "&lt;message&gt;"</code> – With stash message</li>
 </ul>
 <blockquote>
-<p><strong>NOTE</strong>: Stashing changes will be kept until “unstashed” applied. <code>git status</code> or <code>git diff</code> will not show the changes that has been stashed.</p>
+<p><strong>NOTE:</strong> You can add the <code>-p</code> flag to interactively select hunks from diff or changes.</p>
+</blockquote>
+<blockquote>
+<p><strong>NOTE:</strong> Stashing changes will be kept until “unstashed” applied. <code>git status</code> or <code>git diff</code> will not show the changes that has been stashed.</p>
 </blockquote>
 <p><strong>Listing all stashed changes</strong></p>
 <ul>
@@ -291,7 +294,7 @@ Basic Git Commands
 <li><code>git stash apply stash@{&lt;stash-number&gt;}</code> – Apply specific stash from <code>git stash list</code></li>
 </ul>
 <blockquote>
-<p><strong>NOTE</strong>: Applying stash does not delete the stash.</p>
+<p><strong>NOTE:</strong> Applying stash does not delete the stash.</p>
 </blockquote>
 <p><strong>Drops (delete) a stash</strong></p>
 <ul>

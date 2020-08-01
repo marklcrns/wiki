@@ -125,7 +125,7 @@ temporary space and can be accessed and applied at anytime and any branch or
 commit history.
 
   - [`Git Tutorial: Using the Stash Command](https://www.youtube.com/watch?v=KLEDKgMmbBI)
-  - [Git Stash Docs](https://git-scm.com/docs/git-stash)
+  - [Git stash docs](https://git-scm.com/docs/git-stash)
 
 
 **Stashing current changes**
@@ -133,8 +133,11 @@ commit history.
   - `git stash`
   - `git stash save "<message>"` -- With stash message
 
+> **NOTE:** You can add the `-p` flag to interactively select hunks from diff or
+changes.
 
-> **NOTE**: Stashing changes will be kept until "unstashed" applied. `git status` or
+
+> **NOTE:** Stashing changes will be kept until "unstashed" applied. `git status` or
 `git diff` will not show the changes that has been stashed.
 
 **Listing all stashed changes**
@@ -157,7 +160,7 @@ commit history.
     `git stash list`
 
 
-> **NOTE**: Applying stash does not delete the stash.
+> **NOTE:** Applying stash does not delete the stash.
 
 **Drops (delete) a stash**
 

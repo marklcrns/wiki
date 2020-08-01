@@ -8,6 +8,31 @@ summary: Advanced Git Commands
 
 # Advanced Git Commands
 
+## Reset
+
+  - [What's the difference between git reset --mixed, --soft, and --hard?](https://stackoverflow.com/questions/3528245/whats-the-difference-between-git-reset-mixed-soft-and-hard)
+  - [Git reset docs](https://git-scm.com/docs/git-reset)
+
+
+**Discarding changes from commit history**
+
+  - `git reset --hard HEAD^` -- discard last commit of local repo
+  - `git reset --hard HEAD~2` -- discard last 2 commit of local repo. the `2`
+    can be changed to how far to remove commits.
+
+
+> **NOTE:** `--hard` reset cannot be reversed and all the changes will be
+**permanently deleted**.
+
+**Uncommitting changes from commit history**
+
+  - `git reset --soft HEAD^` -- uncommit last commit of local repo
+
+
+**Uncommit and unstage changes from commit history**
+
+  - `git reset --mixed HEAD^` -- uncommit and unstage last commit of local repo
+
 ## Branch
 
   - [How to fetch all Git branches](https://intellipaat.com/community/3649/git-fetch-all-branches-how-to-fetch-all-git-branches)
@@ -33,7 +58,7 @@ git branch --merged >/tmp/merged-branches && \
   vim /tmp/merged-branches && xargs git branch -d </tmp/merged-branches
 ```
 
-> **NOTE**: Both this method only removes merged branch and does not remove
+> **NOTE:** Both this method only removes merged branch and does not remove
 unmerged branch that exists in local but not from remote.
 
 **Remove tracking branches no longer on remote (Method 2)**
@@ -44,7 +69,7 @@ git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1
 git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done
 ```
 
-> **NOTE**: This removes both merge and unmerged branch. To only remove merged
+> **NOTE:** This removes both merge and unmerged branch. To only remove merged
 branch, replace `git branch -D` with `git branch -d`
 
 
@@ -91,6 +116,7 @@ git pull
 
 # Resources
 
+  - [What's the difference between git reset --mixed, --soft, and --hard?](https://stackoverflow.com/questions/3528245/whats-the-difference-between-git-reset-mixed-soft-and-hard)
   - [How to fetch all Git branches](https://intellipaat.com/community/3649/git-fetch-all-branches-how-to-fetch-all-git-branches)
   - [Remove tracking branches no longer on remote](https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote)
   - [Where to find chances due to git fetch](https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch)
