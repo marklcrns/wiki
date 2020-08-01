@@ -8,12 +8,18 @@ summary: Basic Git Commands
 
 # Basic Git Commands
 
-## Init and Cloning
+## Init
 
-**Initialize local git repository**
+Initialize local git repository.
+
+**Create new local git repo**
 
   - `git init`
 
+
+## Clone
+
+Clone or download remote repository.
 
 **Cloning remote repository**
 
@@ -50,15 +56,67 @@ the original name from the remote.
 > 50/72 rule suggest to compose not more than 50 characters (72 MAX) commit
 message for cleaner commit history.
 
+Ref:
+
   - [Git 50/72 Rule](https://www.midori-global.com/blog/2018/04/02/git-50-72-rule)
+
+
+## Push
+
+**Pushing commits to remote branch**
+
+  - `git push` -- push all commits to remote branch
+  - `git push --force` -- forcefully push all commits to remote branch. This
+    will rewrite commit history of remote branch if local branch diverged.
+
+
+## Pull
+
+Updates local branch of new changes from remote branch
+
+**Pull new changes from remote branch**
+
+  - `git pull`
+  - `git pull --all` -- update all local branches
+
+
+## Fetch
+
+Fetch new changes from remote branch without applying those changes yet.
+
+**Fetch new changes from remote branch**
+
+  - `git fetch`
+  - `git fetch --all` -- fetch all local branches
+
+
+**Log new changes from remote branch after fetching**
+
+  - `git log origin/<branch-name> ^<branch-name>`
+
+
+**Diff local branch agains new changes from remote branch after fetching**
+
+  - `git diff <branch-name> origin/<branch-name>`
+
+
+**Checking out latest commits from remote branch after fetching**
+
+```bash
+git fetch
+git checkout <branch-name> origin/<branch-name>
+```
+
+Ref:
+
+  - [Where to find changes due to `git fetch`](https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch/10685691)
 
 
 ## Branch
 
-  - [`Git Branch, Checkout Commands Tutorial](https://www.youtube.com/watch?v=S7SKhR9NVBk)
-  - [How to Delete a Git Branch Both Locally and Remotely](https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/)
-  - [How can I tell a local branch to track a remote branch?](https://www.git-tower.com/learn/git/faq/track-remote-upstream-branch)
-
+Branch other than the master branch to work on the code base without affecting
+the remote main branch (master). Use `merge` or `rebase` to apply changes from
+one branch to another.
 
 **Display all local branches**
 
@@ -105,9 +163,16 @@ server copy). <br>WARNING: This cannot be undone.**
   - `git checkout .` -- Will dispose all changes in current directory
 
 
-### Branch Merging
+Ref:
 
-  - [`Merging Branches Tutorial](https://www.youtube.com/watch?v=XX-Kct0PfFc)
+  - [`Git Branch, Checkout Commands Tutorial](https://www.youtube.com/watch?v=S7SKhR9NVBk)
+  - [How to Delete a Git Branch Both Locally and Remotely](https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/)
+  - [How can I tell a local branch to track a remote branch?](https://www.git-tower.com/learn/git/faq/track-remote-upstream-branch)
+
+
+## Merge
+
+Merge changes of one branch to another branch.
 
 **Merging branch to _master_ branch**
 
@@ -116,6 +181,42 @@ git checkout master
 git merge <branch-name>
 ```
 
+**Merging _master_ branch to another branch**
+
+```bash
+git checkout <branch-name>
+git merge master
+```
+
+Ref:
+
+  - [`Merging Branches Tutorial](https://www.youtube.com/watch?v=XX-Kct0PfFc)
+
+
+## Rebase
+
+Rebase (re-anchor) current branch commit history against another branch to
+latest changes.
+
+**Rebase a branch against master branch**
+
+```bash
+git checkout <branch-name>
+git rebase master
+```
+
+**Rebase master branch against another branch**
+
+```bash
+git checkout master
+git rebase <branch-name>
+```
+
+Ref:
+
+  - [`A Better Git Workflow with Rebase](https://www.youtube.com/watch?v=f1wnYdLEpgI)
+  - [`Git MERGE vs REBASE](https://www.youtube.com/watch?v=CRlGDDprdOQ)
+
 
 ## Stash
 
@@ -123,10 +224,6 @@ Changes that are not ready to be committed but wants to revert back to previous
 commits without loosing those changes can be _stashed_. It will be saved in a
 temporary space and can be accessed and applied at anytime and any branch or
 commit history.
-
-  - [`Git Tutorial: Using the Stash Command](https://www.youtube.com/watch?v=KLEDKgMmbBI)
-  - [Git stash docs](https://git-scm.com/docs/git-stash)
-
 
 **Stashing current changes**
 
@@ -177,9 +274,18 @@ changes.
     `git stash list`
 
 
+Ref:
+
+  - [`Git Tutorial: Using the Stash Command](https://www.youtube.com/watch?v=KLEDKgMmbBI)
+  - [Git stash docs](https://git-scm.com/docs/git-stash)
+
+
 ## Fork
 
-  - [Github's Fork & Pull Workflow for Git Beginners](https://reflectoring.io/github-fork-and-pull/)
+Make a copy of someone else's repository and make it as your own. You can make
+**pull requests** to propose updates from your fork to the original repository,
+once approved by the original owner, will merge all commits in forked repo from
+when the pull request was made.
 
 **Updating your Fork**
 
@@ -197,16 +303,24 @@ git checkout master
 git merge upstream/master
 ```
 
+Ref:
+
+  - [Github's Fork & Pull Workflow for Git Beginners](https://reflectoring.io/github-fork-and-pull/)
+
+
 <br>
 
 # Resources
 
   - [Git 50/72 Rule](https://www.midori-global.com/blog/2018/04/02/git-50-72-rule)
+  - [Where to find changes due to `git fetch`](https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch/10685691)
   - [`Git Branch, Checkout Commands Tutorial](https://www.youtube.com/watch?v=S7SKhR9NVBk)
   - [How to Delete a Git Branch Both Locally and Remotely](https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/)
   - [How can I tell a local branch to track a remote branch?](https://www.git-tower.com/learn/git/faq/track-remote-upstream-branch)
   - [`Merging Branches Tutorial](https://www.youtube.com/watch?v=XX-Kct0PfFc)
+  - [`A Better Git Workflow with Rebase](https://www.youtube.com/watch?v=f1wnYdLEpgI)
+  - [`Git MERGE vs REBASE](https://www.youtube.com/watch?v=CRlGDDprdOQ)
   - [`Git Tutorial: Using the Stash Command](https://www.youtube.com/watch?v=KLEDKgMmbBI)
-  - [Git Stash Docs](https://git-scm.com/docs/git-stash)
+  - [Git stash docs](https://git-scm.com/docs/git-stash)
   - [Github's Fork & Pull Workflow for Git Beginners](https://reflectoring.io/github-fork-and-pull/)
 
