@@ -11,9 +11,10 @@ summary: Research Essay
 ## Progress Notes
 
   - [*Progress Notes 5](file:../../../../../files/summer-2020/ENGL-205/progress-notes/progress_notes_5.docx)
+  - [*Progress Notes 6](file:../../../../../files/summer-2020/ENGL-205/progress-notes/progress_notes_6.docx)
 
 
-## Essay Research Notes
+## Essay Research Notes (The Science of Lying)
 
   - [`Why Do We Lie? | The Behavioral Science Guys](https://www.youtube.com/watch?v=GYyvmyIqiGk)
   - [`Honest liars -- the psychology of self-deception: Cortney Warren at TEDxUNLV](https://www.youtube.com/watch?v=YpEeSa6zBTE)
@@ -39,6 +40,15 @@ People lie more often when theres less risk of fact audit. Facebook vs LinkedIn.
 Professor. [Jordan Peterson - Side Effects of Telling Lies](https://youtu.be/23gRI_j5InA?t=300)
 
 Nixon Scandal
+
+
+
+
+
+
+
+
+
 
 
 ## Topic Ideas
