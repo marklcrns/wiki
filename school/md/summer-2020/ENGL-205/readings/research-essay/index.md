@@ -14,6 +14,11 @@ summary: Research Essay
   - [*Progress Notes 6](file:../../../../../files/summer-2020/ENGL-205/progress-notes/progress_notes_6.docx)
 
 
+## Annotated Bibliography
+
+  - [*Essay 3 Annotated Bibliography](file:../../../../../files/summer-2020/ENGL-205/essay/essay_3_annotated_bibliography.docx)
+
+
 ## Essay Research Notes (The Science of Lying)
 
   - [`Why Do We Lie? | The Behavioral Science Guys](https://www.youtube.com/watch?v=GYyvmyIqiGk)
