@@ -187,11 +187,11 @@ story).
 
 # Resources
 
-  - https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats
-  - https://stackoverflow.com/questions/11102645/java-serialization-vs-json-vs-xml
-  - https://www.javacodegeeks.com/2013/09/optimizing-java-serialization-java-vs-xml-vs-json-vs-kryo-vs-pof.html
-  - https://github.com/google/gson
-  - https://www.sitepoint.com/data-serialization-comparison-json-yaml-bson-messagepack/
-  - http://bsonspec.org/
-  - https://www.youtube.com/watch?v=vcV0DK45P-Q
+  - <https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats>
+  - <https://stackoverflow.com/questions/11102645/java-serialization-vs-json-vs-xml>
+  - <https://www.javacodegeeks.com/2013/09/optimizing-java-serialization-java-vs-xml-vs-json-vs-kryo-vs-pof.html>
+  - <https://github.com/google/gson>
+  - <https://www.sitepoint.com/data-serialization-comparison-json-yaml-bson-messagepack/>
+  - <http://bsonspec.org/>
+  - <https://www.youtube.com/watch?v=vcV0DK45P-Q>
 
