@@ -68,6 +68,16 @@ Nixon Scandal
     in
 
 
+## Submissions
+
+  - [*Essay 3 Draft](file:../../../../../files/summer-2020/ENGL-205/essay/essay_3_draft.docx)
+
+
+TODO: Benefits of lying
+      Self-deception
+      Compulsive/pathological liars
+
+
 <br>
 
 # Resources
