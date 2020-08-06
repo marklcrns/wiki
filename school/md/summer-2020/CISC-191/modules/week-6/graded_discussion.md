@@ -72,7 +72,7 @@ public class SerializationSample {
     Object deserializedObject = null;
 
     try {
-      // Needs casting to convert into a Java object
+      // NOTE: Needs casting to convert into a specific Java object class
       deserializedObject = objectInputStream.readObject();
     } catch(ClassNotFoundException e) {
       e.printStackTrace();
