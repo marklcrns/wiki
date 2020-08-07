@@ -168,6 +168,9 @@ Advanced Git Commands
 <li><a href="#branch">Branch</a></li>
 <li><a href="#fetch">Fetch</a></li>
 <li><a href="#remoteupstream">Remote/Upstream</a></li>
+<li><a href="#merge">Merge</a></li>
+<li><a href="#difftool">Difftool</a></li>
+<li><a href="#extras">Extras</a></li>
 </ul></li>
 <li><a href="#resources">Resources</a></li>
 </ul>
@@ -231,9 +234,6 @@ Advanced Git Commands
 <a class="sourceLine" id="cb4-3" title="3"><span class="co"># Then</span></a>
 <a class="sourceLine" id="cb4-4" title="4"><span class="fu">git</span> log origin/master ^master <span class="co"># Replace master with &lt;branch-name&gt; for other branch</span></a></code></pre></div>
 <h2 id="remoteupstream">Remote/Upstream</h2>
-<ul>
-<li><a href="https://ducmanhphan.github.io/2019-02-17-Common-problems-with-git/">Common problems with GIT</a></li>
-</ul>
 <p><strong>Reconfigure URL of git in local repository</strong></p>
 <ul>
 <li><code>git remote set-url origin https://github.com/&lt;repo-owner&gt;/&lt;repository&gt;.git</code></li>
@@ -246,14 +246,77 @@ Advanced Git Commands
 <p>Solution 2: Set it up so that local master branch tracks github master branch as an upstream:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">git</span> branch --set-upstream-to=origin/master <span class="op">&lt;</span>current-branch<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb5-2" title="2"><span class="fu">git</span> pull</a></code></pre></div>
+<p>Ref:</p>
+<ul>
+<li><a href="https://ducmanhphan.github.io/2019-02-17-Common-problems-with-git/">Common problems with GIT</a></li>
+</ul>
+<h2 id="merge">Merge</h2>
+<p><strong>Manual interactive merging (with <code>git add --interactive</code>)</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1">git merge --no-commit --no-ff &lt;branch-to merge&gt; # Merges with branch without committing</a>
+<a class="sourceLine" id="cb6-2" title="2">git reset HEAD                                  # Unstage all merge changes</a>
+<a class="sourceLine" id="cb6-3" title="3">git add --interactive                           # Add pieces interactively</a></code></pre></div>
+<p><strong>Manual interactive merging (with <code>git mergetool</code>)</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb7-1" title="1">git merge --no-commit --no-ff &lt;branch-to-merge&gt; # Merges with branch without committing</a>
+<a class="sourceLine" id="cb7-2" title="2">git mergetool                                   # Resolve conflict manually with graphics</a></code></pre></div>
+<p><strong>Other very manual way of merging</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb8-1" title="1"># Merges with branch without committing</a>
+<a class="sourceLine" id="cb8-2" title="2">git merge --no-commit --no-ff &lt;branch-to-merge&gt;</a>
+<a class="sourceLine" id="cb8-3" title="3"></a>
+<a class="sourceLine" id="cb8-4" title="4"># Then you&#39;ll ask git <span class="kw">for</span> the file as it appeared in the two branches:</a>
+<a class="sourceLine" id="cb8-5" title="5">git show HEAD:filename &gt;filename.<span class="fu">HEAD</span></a>
+<a class="sourceLine" id="cb8-6" title="6">git show branch-to-merge:filename &gt;filename.<span class="fu">branch</span></a>
+<a class="sourceLine" id="cb8-7" title="7"></a>
+<a class="sourceLine" id="cb8-8" title="8"># and their merge base,</a>
+<a class="sourceLine" id="cb8-9" title="9">git show `git merge-base HEAD &lt;branch-to-merge&gt;`:filename  &gt;filename.<span class="fu">base</span></a>
+<a class="sourceLine" id="cb8-10" title="10"></a>
+<a class="sourceLine" id="cb8-11" title="11"># You&#39;ll merge them using whatever tool you <span class="fu">want</span> (e.<span class="fu">g</span>.)</a>
+<a class="sourceLine" id="cb8-12" title="12">meld filename.{HEAD,branch,base} # meld can be replaced by other diff tools</a></code></pre></div>
+<p>Ref:</p>
+<ul>
+<li><a href="https://stackoverflow.com/a/22392289">Interactive merging with git add –interactive</a></li>
+<li><a href="https://stackoverflow.com/a/17754621">Interactive merging with git mergetool</a></li>
+<li><a href="https://stackoverflow.com/a/10935340">Other very manual way of merging with git show</a></li>
+</ul>
+<h2 id="difftool">Difftool</h2>
+<p><strong>Use difftool to manually merge two branches with default terminal editor (preferably Vim or Neovim)</strong></p>
+<ul>
+<li><code>git difftool &lt;branch-name&gt;</code></li>
+</ul>
+<blockquote>
+<p>While in Vim or Neovim with difftool, use <code>dp</code> for diffput or applying changes from current buffer to the next and <code>do</code> for diffget or getting the changes from the other buffer to the current buffer. <code>]c</code> and <code>[c</code> to jump to next or previous diff conflict.</p>
+</blockquote>
+<p>Ref:</p>
+<ul>
+<li><a href="https://stackoverflow.com/a/20256067">How do I prevent an automerge using Git?</a></li>
+</ul>
+<h2 id="extras">Extras</h2>
+<p><strong>Refering to previous commit in commit messages</strong></p>
+<p>Examples:</p>
+<ul>
+<li><code>SHA: be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2</code></li>
+<li><code>User@SHA ref: mojombo@be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2</code></li>
+<li><code>User/Project@SHA: mojombo/god@be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2</code></li>
+<li><code>#Num: #1</code></li>
+<li><code>User/#Num: mojombo#1</code></li>
+<li><code>User/Project#Num: mojombo/god#1</code></li>
+</ul>
+<p>Ref:</p>
+<ul>
+<li><a href="https://stackoverflow.com/a/13577344">How to refer to a previous commit in git commit message</a></li>
+</ul>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
 <li><a href="https://stackoverflow.com/questions/3528245/whats-the-difference-between-git-reset-mixed-soft-and-hard">What’s the difference between git reset –mixed, –soft, and –hard?</a></li>
+<li><a href="https://git-scm.com/docs/git-reset">Git reset docs</a></li>
 <li><a href="https://intellipaat.com/community/3649/git-fetch-all-branches-how-to-fetch-all-git-branches">How to fetch all Git branches</a></li>
 <li><a href="https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote">Remove tracking branches no longer on remote</a></li>
 <li><a href="https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch">Where to find chances due to git fetch</a></li>
 <li><a href="https://ducmanhphan.github.io/2019-02-17-Common-problems-with-git/">Common problems with GIT</a></li>
+<li><a href="https://stackoverflow.com/a/22392289">Interactive merging with git add –interactive</a></li>
+<li><a href="https://stackoverflow.com/a/17754621">Interactive merging with git mergetool</a></li>
+<li><a href="https://stackoverflow.com/a/10935340">Other very manual way of merging with git show</a></li>
+<li><a href="https://stackoverflow.com/a/20256067">How do I prevent an automerge using Git?</a></li>
 </ul>
 <hr>
 </article>

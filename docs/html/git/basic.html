@@ -174,7 +174,8 @@ Basic Git Commands
 <li><a href="#merge">Merge</a></li>
 <li><a href="#rebase">Rebase</a></li>
 <li><a href="#stash">Stash</a></li>
-<li><a href="#fork">Fork</a></li>
+<li><a href="#clean">Clean</a></li>
+<li><a href="#forking-repos">Forking Repos</a></li>
 </ul></li>
 <li><a href="#resources">Resources</a></li>
 </ul>
@@ -320,10 +321,17 @@ Basic Git Commands
 <p><strong>Rebase master branch against another branch</strong></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">git</span> checkout master</a>
 <a class="sourceLine" id="cb5-2" title="2"><span class="fu">git</span> rebase <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a></code></pre></div>
+<p><strong>Undoing rebase</strong></p>
+<ul>
+<li><code>git reflog</code> – Logs all reference point to reset into</li>
+<li><code>git reset --hard HEAD@{&lt;ref-log-number&gt;}</code> – Reset back to specific references</li>
+<li>Sample: <code>git reset --hard HEAD@{5}</code> will reset 5 reference point back</li>
+</ul>
 <p>Ref:</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=f1wnYdLEpgI">`A Better Git Workflow with Rebase</a></li>
 <li><a href="https://www.youtube.com/watch?v=CRlGDDprdOQ">`Git MERGE vs REBASE</a></li>
+<li><a href="https://stackoverflow.com/a/135614">`Undoing a git rebase</a></li>
 </ul>
 <h2 id="stash">Stash</h2>
 <p>Changes that are not ready to be committed but wants to revert back to previous commits without loosing those changes can be <em>stashed</em>. It will be saved in a temporary space and can be accessed and applied at anytime and any branch or commit history.</p>
@@ -369,9 +377,25 @@ Basic Git Commands
 <p>Ref:</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=KLEDKgMmbBI">`Git Tutorial: Using the Stash Command</a></li>
-<li><a href="https://git-scm.com/docs/git-stash">Git stash docs</a></li>
+<li><a href="https://git-scm.com/docs/git-stash">Git stash official docs</a></li>
 </ul>
-<h2 id="fork">Fork</h2>
+<h2 id="clean">Clean</h2>
+<p>Cleans the working tree by recursively removing files that are not under version control, starting from the current directory.</p>
+<blockquote>
+<p><code>[path]</code> is optional</p>
+</blockquote>
+<ul>
+<li><code>git clean [path]</code> – Clean working tree directory (non-recursive)</li>
+<li><code>git clean -d [path]</code> – Clean working tree recursively</li>
+<li><code>git clean -i [path]</code> – Clean working tree interactively</li>
+<li><code>git clean -f [path]</code> – Clean working tree forcefully</li>
+<li><code>git clean -n [path]</code> – Dry-run clean working tree</li>
+</ul>
+<p>Ref:</p>
+<ul>
+<li><a href="https://git-scm.com/docs/git-clean">Git clean official docs</a></li>
+</ul>
+<h2 id="forking-repos">Forking Repos</h2>
 <p>Make a copy of someone else’s repository and make it as your own. You can make <strong>pull requests</strong> to propose updates from your fork to the original repository, once approved by the original owner, will merge all commits in forked repo from when the pull request was made.</p>
 <p><strong>Updating your Fork</strong></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># add the original repository as remote repository called &quot;upstream&quot;</span></a>
@@ -400,8 +424,10 @@ Basic Git Commands
 <li><a href="https://www.youtube.com/watch?v=XX-Kct0PfFc">`Merging Branches Tutorial</a></li>
 <li><a href="https://www.youtube.com/watch?v=f1wnYdLEpgI">`A Better Git Workflow with Rebase</a></li>
 <li><a href="https://www.youtube.com/watch?v=CRlGDDprdOQ">`Git MERGE vs REBASE</a></li>
+<li><a href="https://stackoverflow.com/a/135614">`Undoing a git rebase</a></li>
 <li><a href="https://www.youtube.com/watch?v=KLEDKgMmbBI">`Git Tutorial: Using the Stash Command</a></li>
-<li><a href="https://git-scm.com/docs/git-stash">Git stash docs</a></li>
+<li><a href="https://git-scm.com/docs/git-stash">Git stash official docs</a></li>
+<li><a href="https://git-scm.com/docs/git-clean">Git clean official docs</a></li>
 <li><a href="https://reflectoring.io/github-fork-and-pull/">Github’s Fork &amp; Pull Workflow for Git Beginners</a></li>
 </ul>
 <hr>

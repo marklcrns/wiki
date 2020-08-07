@@ -212,10 +212,19 @@ git checkout master
 git rebase <branch-name>
 ```
 
+**Undoing rebase**
+
+  - `git reflog` -- Logs all reference point to reset into
+  - `git reset --hard HEAD@{<ref-log-number>}` -- Reset back to specific
+    references
+  - Sample: `git reset --hard HEAD@{5}` will reset 5 reference point back
+
+
 Ref:
 
   - [`A Better Git Workflow with Rebase](https://www.youtube.com/watch?v=f1wnYdLEpgI)
   - [`Git MERGE vs REBASE](https://www.youtube.com/watch?v=CRlGDDprdOQ)
+  - [`Undoing a git rebase](https://stackoverflow.com/a/135614)
 
 
 ## Stash
@@ -277,10 +286,29 @@ changes.
 Ref:
 
   - [`Git Tutorial: Using the Stash Command](https://www.youtube.com/watch?v=KLEDKgMmbBI)
-  - [Git stash docs](https://git-scm.com/docs/git-stash)
+  - [Git stash official docs](https://git-scm.com/docs/git-stash)
 
 
-## Fork
+## Clean
+
+Cleans the working tree by recursively removing files that are not under version
+control, starting from the current directory.
+
+> `[path]` is optional
+
+  - `git clean [path]` -- Clean working tree directory (non-recursive)
+  - `git clean -d [path]` -- Clean working tree recursively
+  - `git clean -i [path]` -- Clean working tree interactively
+  - `git clean -f [path]` -- Clean working tree forcefully
+  - `git clean -n [path]` -- Dry-run clean working tree
+
+
+Ref:
+
+  - [Git clean official docs](https://git-scm.com/docs/git-clean)
+
+
+## Forking Repos
 
 Make a copy of someone else's repository and make it as your own. You can make
 **pull requests** to propose updates from your fork to the original repository,
@@ -320,7 +348,9 @@ Ref:
   - [`Merging Branches Tutorial](https://www.youtube.com/watch?v=XX-Kct0PfFc)
   - [`A Better Git Workflow with Rebase](https://www.youtube.com/watch?v=f1wnYdLEpgI)
   - [`Git MERGE vs REBASE](https://www.youtube.com/watch?v=CRlGDDprdOQ)
+  - [`Undoing a git rebase](https://stackoverflow.com/a/135614)
   - [`Git Tutorial: Using the Stash Command](https://www.youtube.com/watch?v=KLEDKgMmbBI)
-  - [Git stash docs](https://git-scm.com/docs/git-stash)
+  - [Git stash official docs](https://git-scm.com/docs/git-stash)
+  - [Git clean official docs](https://git-scm.com/docs/git-clean)
   - [Github's Fork & Pull Workflow for Git Beginners](https://reflectoring.io/github-fork-and-pull/)
 
