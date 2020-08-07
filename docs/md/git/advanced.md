@@ -205,4 +205,5 @@ Ref:
   - [Interactive merging with git mergetool](https://stackoverflow.com/a/17754621)
   - [Other very manual way of merging with git show](https://stackoverflow.com/a/10935340)
   - [How do I prevent an automerge using Git?](https://stackoverflow.com/a/20256067)
+  - [How to refer to a previous commit in git commit message](https://stackoverflow.com/a/13577344)
 
