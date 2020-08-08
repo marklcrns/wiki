@@ -53,8 +53,8 @@ SOFTWARE.
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Mark Lucernas" />
-  <meta name="dcterms.date" content="2020-07-29" />
-  <title>Advanced Git Commands</title>
+  <meta name="dcterms.date" content="2020-08-07" />
+  <title>Bash Mounting Drive</title>
   <style type="text/css">
 @charset "UTF-8";.markdown-body{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#24292e;font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:16px;line-height:1.5;word-wrap:break-word;box-sizing:border-box;min-width:200px;max-width:980px;margin:0 auto;padding:45px}.markdown-body a{color:#0366d6;background-color:transparent;text-decoration:none;-webkit-text-decoration-skip:objects}.markdown-body a:active,.markdown-body a:hover{outline-width:0}.markdown-body a:hover{text-decoration:underline}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body strong{font-weight:600}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1{font-size:2em;margin:.67em 0;padding-bottom:.3em;border-bottom:1px solid #eaecef}.markdown-body h2{padding-bottom:.3em;font-size:1.5em;border-bottom:1px solid #eaecef}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#6a737d}.markdown-body img{border-style:none}.markdown-body svg:not(:root){overflow:hidden}.markdown-body hr{box-sizing:content-box;height:.25em;margin:24px 0;padding:0;overflow:hidden;background-color:#e1e4e8;border:0}.markdown-body hr::before{display:table;content:""}.markdown-body hr::after{display:table;clear:both;content:""}.markdown-body input{margin:0;overflow:visible;font:inherit;font-family:inherit;font-size:inherit;line-height:inherit}.markdown-body [type=checkbox]{box-sizing:border-box;padding:0}.markdown-body *{box-sizing:border-box}.markdown-body blockquote{margin:0}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol ol,.markdown-body ul ol{list-style-type:lower-roman}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body ol ol ol,.markdown-body ol ul ol,.markdown-body ul ol ol,.markdown-body ul ul ol{list-style-type:lower-alpha}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dd{margin-left:0}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:600}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body code{font-family:SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace}.markdown-body pre{font:12px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;word-wrap:normal}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body blockquote{padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body table{display:block;width:100%;overflow:auto;border-spacing:0;border-collapse:collapse}.markdown-body table th{font-weight:600}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #dfe2e5}.markdown-body table tr{background-color:#fff;border-top:1px solid #c6cbd1}.markdown-body table tr:nth-child(2n){background-color:#f6f8fa}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body code{padding:.2em 0;margin:0;font-size:85%;background-color:rgba(27,31,35,.05);border-radius:3px}.markdown-body code::after,.markdown-body code::before{letter-spacing:-.2em;content:" "}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:0 0;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f6f8fa;border-radius:3px}.markdown-body pre code{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code::after,.markdown-body pre code::before{content:normal}.markdown-body .full-commit .btn-outline:not(:disabled):hover{color:#005cc5;border-color:#005cc5}.markdown-body kbd{box-shadow:inset 0 -1px 0 #959da5;display:inline-block;padding:3px 5px;font:11px/10px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;color:#444d56;vertical-align:middle;background-color:#fcfcfc;border:1px solid #c6cbd1;border-bottom-color:#959da5;border-radius:3px;box-shadow:inset 0 -1px 0 #959da5}.markdown-body :checked+.radio-label{position:relative;z-index:1;border-color:#0366d6}.markdown-body .task-list-item{list-style-type:none}.markdown-body .task-list-item+.task-list-item{margin-top:3px}.markdown-body .task-list-item input{margin:0 .2em .25em -1.6em;vertical-align:middle}.markdown-body::before{display:table;content:""}.markdown-body::after{display:table;clear:both;content:""}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.Alert,.Error,.Note,.Success,.Warning{padding:11px;margin-bottom:24px;border-style:solid;border-width:1px;border-radius:4px}.Alert p,.Error p,.Note p,.Success p,.Warning p{margin-top:0}.Alert p:last-child,.Error p:last-child,.Note p:last-child,.Success p:last-child,.Warning p:last-child{margin-bottom:0}.Alert{color:#246;background-color:#e2eef9;border-color:#bac6d3}.Warning{color:#4c4a42;background-color:#fff9ea;border-color:#dfd8c2}.Error{color:#911;background-color:#fcdede;border-color:#d2b2b2}.Success{color:#22662c;background-color:#e2f9e5;border-color:#bad3be}.Note{color:#2f363d;background-color:#f6f8fa;border-color:#d5d8da}.Alert h1,.Alert h2,.Alert h3,.Alert h4,.Alert h5,.Alert h6{color:#246;margin-bottom:0}.Warning h1,.Warning h2,.Warning h3,.Warning h4,.Warning h5,.Warning h6{color:#4c4a42;margin-bottom:0}.Error h1,.Error h2,.Error h3,.Error h4,.Error h5,.Error h6{color:#911;margin-bottom:0}.Success h1,.Success h2,.Success h3,.Success h4,.Success h5,.Success h6{color:#22662c;margin-bottom:0}.Note h1,.Note h2,.Note h3,.Note h4,.Note h5,.Note h6{color:#2f363d;margin-bottom:0}.Alert h1:first-child,.Alert h2:first-child,.Alert h3:first-child,.Alert h4:first-child,.Alert h5:first-child,.Alert h6:first-child,.Error h1:first-child,.Error h2:first-child,.Error h3:first-child,.Error h4:first-child,.Error h5:first-child,.Error h6:first-child,.Note h1:first-child,.Note h2:first-child,.Note h3:first-child,.Note h4:first-child,.Note h5:first-child,.Note h6:first-child,.Success h1:first-child,.Success h2:first-child,.Success h3:first-child,.Success h4:first-child,.Success h5:first-child,.Success h6:first-child,.Warning h1:first-child,.Warning h2:first-child,.Warning h3:first-child,.Warning h4:first-child,.Warning h5:first-child,.Warning h6:first-child{margin-top:0}h1.title,p.subtitle{text-align:center}h1.title.followed-by-subtitle{margin-bottom:0}p.subtitle{font-size:1.5em;font-weight:600;line-height:1.25;margin-top:0;margin-bottom:16px;padding-bottom:.3em}div.line-block{white-space:pre-line}
   </style>
@@ -151,181 +151,58 @@ letter-spacing: 2px;">
 <header>
 <h1 class="title" style="
 font-size: clamp(1rem, 3vw, 2rem);
-">Advanced Git Commands</h1>
+">Bash Mounting Drive</h1>
 </div>
 <p class="author">Mark Lucernas</p>
-<p class="date">2020-07-29</p>
+<p class="date">2020-08-07</p>
 <div class="summary">
-Advanced Git Commands
+Mounting drive and other commands
 </div>
 </header>
 <hr>
 <nav id="TOC">
 <h2 class="toc-title">Contents</h1>
 <ul>
-<li><a href="#advanced-git-commands">Advanced Git Commands</a><ul>
-<li><a href="#reset">Reset</a></li>
-<li><a href="#branch">Branch</a></li>
-<li><a href="#fetch">Fetch</a></li>
-<li><a href="#remoteupstream">Remote/Upstream</a></li>
-<li><a href="#merge">Merge</a></li>
-<li><a href="#difftool">Difftool</a></li>
-<li><a href="#extras">Extras</a></li>
+<li><a href="#mounting-drive">Mounting Drive</a><ul>
+<li><a href="#mounting-flash-drive">Mounting flash drive</a><ul>
+<li><a href="#unmounting-drive">Unmounting Drive</a></li>
+</ul></li>
+<li><a href="#formatting-drive">Formatting Drive</a><ul>
+<li><a href="#format-to-vfat-filesystem">Format to vFat FileSystem</a></li>
+<li><a href="#format-to-ext44-filesystem">Format to EXT44 FileSystem</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#resources">Resources</a></li>
 </ul>
 </nav>
 <hr>
-<h1 id="advanced-git-commands">Advanced Git Commands</h1>
-<h2 id="reset">Reset</h2>
-<p><strong>Discarding recent changes in working tree or in current branch</strong></p>
+<h1 id="mounting-drive">Mounting Drive</h1>
+<h2 id="mounting-flash-drive">Mounting flash drive</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> fdisk -l               <span class="co"># Check for available drive to mount</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="fu">sudo</span> mount /dev/sda1 /mnt   <span class="co"># Example: Mount &#39;/dev/sda1&#39; drive into &#39;/mnt&#39;</span></a></code></pre></div>
+<h3 id="unmounting-drive">Unmounting Drive</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">sudo</span> unmount <span class="op">&lt;</span>drive<span class="op">&gt;</span></a></code></pre></div>
+<p>Ref:</p>
 <ul>
-<li><code>git reset HEAD</code></li>
+<li><a href="https://www.tutorialspoint.com/how-to-mount-usb-drive-in-a-linux-system">How to mount usb drive in a linux system</a></li>
 </ul>
-<p><strong>Discarding changes from commit history</strong></p>
+<h2 id="formatting-drive">Formatting Drive</h2>
+<h3 id="format-to-vfat-filesystem">Format to vFat FileSystem</h3>
 <ul>
-<li><code>git reset --hard HEAD</code> – discard all resent changes</li>
-<li><code>git reset --hard HEAD^</code> – discard all changes up to last commit of local branch</li>
-<li><code>git reset --hard HEAD~2</code> – discard all changes up to last 2 commit of local branch. the <code>2</code> can be changed to how far to remove changes and commits.</li>
+<li><code>sudo mkfs.vfat &lt;drive&gt;</code></li>
 </ul>
-<blockquote>
-<p><strong>NOTE:</strong> <code>--hard</code> reset cannot be reversed and all the changes will be <strong>permanently deleted</strong>.</p>
-</blockquote>
-<p><strong>Uncommitting changes from commit history</strong></p>
+<h3 id="format-to-ext44-filesystem">Format to EXT44 FileSystem</h3>
 <ul>
-<li><code>git reset --soft HEAD^</code> – uncommit last commit of local repo</li>
-</ul>
-<p><strong>Uncommit and unstage changes from commit history</strong></p>
-<ul>
-<li><code>git reset --mixed HEAD^</code> – uncommit and unstage last commit of local repo</li>
+<li><code>sudo mkfs.ext4 &lt;drive&gt;</code></li>
 </ul>
 <p>Ref:</p>
 <ul>
-<li><a href="https://stackoverflow.com/questions/3528245/whats-the-difference-between-git-reset-mixed-soft-and-hard">What’s the difference between git reset –mixed, –soft, and –hard?</a></li>
-<li><a href="https://git-scm.com/docs/git-reset">Git reset docs</a></li>
-</ul>
-<h2 id="branch">Branch</h2>
-<p><strong>Fetching all Git branches</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">for</span> <span class="ex">remote</span> in <span class="kw">`</span><span class="fu">git</span> branch -r<span class="kw">`;</span> <span class="kw">do</span> <span class="fu">git</span> branch --track <span class="va">${remote#</span>origin/<span class="va">}</span> <span class="va">$remote</span><span class="kw">;</span> <span class="kw">done</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="fu">git</span> fetch --all</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="fu">git</span> pull --all</a></code></pre></div>
-<p><strong>Remove tracking branches no longer on remote (Method 1)</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">git</span> checkout master</a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="fu">git</span> remote prune origin</a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="co"># List all branches merged into the current branch into vim buffer.</span></a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="co"># Once loaded in vim, delete branches you want to exclude from branch deletion.</span></a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="fu">git</span> branch --merged <span class="op">&gt;</span>/tmp/merged-branches <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
-<a class="sourceLine" id="cb2-6" title="6">  <span class="ex">vim</span> /tmp/merged-branches <span class="kw">&amp;&amp;</span> <span class="fu">xargs</span> git branch -d <span class="op">&lt;</span>/tmp/merged-branches</a></code></pre></div>
-<blockquote>
-<p><strong>NOTE:</strong> Both this method only removes merged branch and does not remove unmerged branch that exists in local but not from remote.</p>
-</blockquote>
-<p><strong>Remove tracking branches no longer on remote (Method 2)</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">git</span> fetch -p <span class="kw">&amp;&amp;</span> <span class="kw">for</span> <span class="ex">branch</span> in <span class="va">$(</span><span class="fu">git</span> branch -vv <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&#39;: gone]&#39;</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{print $1}&#39;</span><span class="va">)</span><span class="kw">;</span> <span class="kw">do</span> <span class="fu">git</span> branch -D <span class="va">$branch</span><span class="kw">;</span> <span class="kw">done</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="co"># Much safer way</span></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="fu">git</span> fetch -p <span class="kw">&amp;&amp;</span> <span class="kw">for</span> <span class="ex">branch</span> in <span class="va">$(</span><span class="fu">git</span> for-each-ref --format <span class="st">&#39;%(refname) %(upstream:track)&#39;</span> refs/heads <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;$2 == &quot;[gone]&quot; {sub(&quot;refs/heads/&quot;, &quot;&quot;, $1); print $1}&#39;</span><span class="va">)</span><span class="kw">;</span> <span class="kw">do</span> <span class="fu">git</span> branch -D <span class="va">$branch</span><span class="kw">;</span> <span class="kw">done</span></a></code></pre></div>
-<blockquote>
-<p><strong>NOTE:</strong> This removes both merge and unmerged branch. To only remove merged branch, replace <code>git branch -D</code> with <code>git branch -d</code></p>
-</blockquote>
-<p>Ref:</p>
-<ul>
-<li><a href="https://intellipaat.com/community/3649/git-fetch-all-branches-how-to-fetch-all-git-branches">How to fetch all Git branches</a></li>
-<li><a href="https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote">Remove tracking branches no longer on remote</a></li>
-</ul>
-<h2 id="fetch">Fetch</h2>
-<p><strong>Log all new fetched remote changes</strong></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># First make sure to</span></a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="fu">git</span> fetch origin</a>
-<a class="sourceLine" id="cb4-3" title="3"><span class="co"># Then</span></a>
-<a class="sourceLine" id="cb4-4" title="4"><span class="fu">git</span> log origin/master ^master <span class="co"># Replace master with &lt;branch-name&gt; for other branch</span></a></code></pre></div>
-<p>Ref:</p>
-<ul>
-<li><a href="https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch">Where to find chances due to git fetch</a></li>
-</ul>
-<h2 id="remoteupstream">Remote/Upstream</h2>
-<p><strong>Reconfigure URL of git in local repository</strong></p>
-<ul>
-<li><code>git remote set-url origin https://github.com/&lt;repo-owner&gt;/&lt;repository&gt;.git</code></li>
-</ul>
-<p><strong>There is no tracking information for the current branch</strong></p>
-<p>Solution 1:</p>
-<ul>
-<li><code>git pull origin master</code></li>
-</ul>
-<p>Solution 2: Set it up so that local master branch tracks github master branch as an upstream:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">git</span> branch --set-upstream-to=origin/master <span class="op">&lt;</span>current-branch<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="fu">git</span> pull</a></code></pre></div>
-<p>Ref:</p>
-<ul>
-<li><a href="https://ducmanhphan.github.io/2019-02-17-Common-problems-with-git/">Common problems with GIT</a></li>
-</ul>
-<h2 id="merge">Merge</h2>
-<p><strong>Manual interactive merging (with <code>git add --interactive</code>)</strong></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1">git merge --no-commit --no-ff &lt;branch-to merge&gt; # Merges with branch without committing</a>
-<a class="sourceLine" id="cb6-2" title="2">git reset HEAD                                  # Unstage all merge changes</a>
-<a class="sourceLine" id="cb6-3" title="3">git add --interactive                           # Add pieces interactively</a></code></pre></div>
-<p><strong>Manual interactive merging (with <code>git mergetool</code>)</strong></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb7-1" title="1">git merge --no-commit --no-ff &lt;branch-to-merge&gt; # Merges with branch without committing</a>
-<a class="sourceLine" id="cb7-2" title="2">git mergetool                                   # Resolve conflict manually with graphics</a></code></pre></div>
-<p><strong>Other very manual way of merging</strong></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb8-1" title="1"># Merges with branch without committing</a>
-<a class="sourceLine" id="cb8-2" title="2">git merge --no-commit --no-ff &lt;branch-to-merge&gt;</a>
-<a class="sourceLine" id="cb8-3" title="3"></a>
-<a class="sourceLine" id="cb8-4" title="4"># Then you&#39;ll ask git <span class="kw">for</span> the file as it appeared in the two branches:</a>
-<a class="sourceLine" id="cb8-5" title="5">git show HEAD:filename &gt;filename.<span class="fu">HEAD</span></a>
-<a class="sourceLine" id="cb8-6" title="6">git show branch-to-merge:filename &gt;filename.<span class="fu">branch</span></a>
-<a class="sourceLine" id="cb8-7" title="7"></a>
-<a class="sourceLine" id="cb8-8" title="8"># and their merge base,</a>
-<a class="sourceLine" id="cb8-9" title="9">git show `git merge-base HEAD &lt;branch-to-merge&gt;`:filename  &gt;filename.<span class="fu">base</span></a>
-<a class="sourceLine" id="cb8-10" title="10"></a>
-<a class="sourceLine" id="cb8-11" title="11"># You&#39;ll merge them using whatever tool you <span class="fu">want</span> (e.<span class="fu">g</span>.)</a>
-<a class="sourceLine" id="cb8-12" title="12">meld filename.{HEAD,branch,base} # meld can be replaced by other diff tools</a></code></pre></div>
-<p>Ref:</p>
-<ul>
-<li><a href="https://stackoverflow.com/a/22392289">Interactive merging with git add –interactive</a></li>
-<li><a href="https://stackoverflow.com/a/17754621">Interactive merging with git mergetool</a></li>
-<li><a href="https://stackoverflow.com/a/10935340">Other very manual way of merging with git show</a></li>
-</ul>
-<h2 id="difftool">Difftool</h2>
-<p><strong>Use difftool to manually merge two branches with default terminal editor (preferably Vim or Neovim)</strong></p>
-<ul>
-<li><code>git difftool &lt;branch-name&gt;</code></li>
-</ul>
-<blockquote>
-<p>While in Vim or Neovim with difftool, use <code>dp</code> for diffput or applying changes from current buffer to the next and <code>do</code> for diffget or getting the changes from the other buffer to the current buffer. <code>]c</code> and <code>[c</code> to jump to next or previous diff conflict.</p>
-</blockquote>
-<p>Ref:</p>
-<ul>
-<li><a href="https://stackoverflow.com/a/20256067">How do I prevent an automerge using Git?</a></li>
-</ul>
-<h2 id="extras">Extras</h2>
-<p><strong>Refering to previous commit in commit messages</strong></p>
-<p>Examples:</p>
-<ul>
-<li><code>SHA: be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2</code></li>
-<li><code>User@SHA ref: mojombo@be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2</code></li>
-<li><code>User/Project@SHA: mojombo/god@be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2</code></li>
-<li><code>#Num: #1</code></li>
-<li><code>User/#Num: mojombo#1</code></li>
-<li><code>User/Project#Num: mojombo/god#1</code></li>
-</ul>
-<p>Ref:</p>
-<ul>
-<li><a href="https://stackoverflow.com/a/13577344">How to refer to a previous commit in git commit message</a></li>
+<li><a href="https://www.tutorialspoint.com/how-to-mount-usb-drive-in-a-linux-system">How to mount usb drive in a linux system</a></li>
 </ul>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
-<li><a href="https://stackoverflow.com/questions/3528245/whats-the-difference-between-git-reset-mixed-soft-and-hard">What’s the difference between git reset –mixed, –soft, and –hard?</a></li>
-<li><a href="https://git-scm.com/docs/git-reset">Git reset docs</a></li>
-<li><a href="https://intellipaat.com/community/3649/git-fetch-all-branches-how-to-fetch-all-git-branches">How to fetch all Git branches</a></li>
-<li><a href="https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote">Remove tracking branches no longer on remote</a></li>
-<li><a href="https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch">Where to find chances due to git fetch</a></li>
-<li><a href="https://ducmanhphan.github.io/2019-02-17-Common-problems-with-git/">Common problems with GIT</a></li>
-<li><a href="https://stackoverflow.com/a/22392289">Interactive merging with git add –interactive</a></li>
-<li><a href="https://stackoverflow.com/a/17754621">Interactive merging with git mergetool</a></li>
-<li><a href="https://stackoverflow.com/a/10935340">Other very manual way of merging with git show</a></li>
-<li><a href="https://stackoverflow.com/a/20256067">How do I prevent an automerge using Git?</a></li>
-<li><a href="https://stackoverflow.com/a/13577344">How to refer to a previous commit in git commit message</a></li>
+<li><a href="https://www.tutorialspoint.com/how-to-mount-usb-drive-in-a-linux-system">How to mount usb drive in a linux system</a></li>
 </ul>
 <hr>
 </article>

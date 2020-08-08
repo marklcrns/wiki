@@ -128,6 +128,14 @@ one branch to another.
   - `git branch -a`
 
 
+**Renaming current branch**
+
+```java
+git branch -m <new-branch-name>
+git push origin -u <new-branch-name>
+git push origin --delete <old-branch-name>
+```
+
 **Switching local repo to different branch**
 
   - `git checkout <branch-name>`
@@ -151,7 +159,7 @@ one branch to another.
     changes
 
 
-**Delete existing branch from remote**
+**Delete existing branch from remote after local deletion**
 
   - `git push origin --delete <remote-branch-name>`
 
@@ -168,6 +176,28 @@ Ref:
   - [`Git Branch, Checkout Commands Tutorial](https://www.youtube.com/watch?v=S7SKhR9NVBk)
   - [How to Delete a Git Branch Both Locally and Remotely](https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/)
   - [How can I tell a local branch to track a remote branch?](https://www.git-tower.com/learn/git/faq/track-remote-upstream-branch)
+  - [Rename a Local and Remotee Git Branch](https://linuxize.com/post/how-to-rename-local-and-remote-git-branch/)
+
+
+## Checkout
+
+**Checking out to previous commits**
+
+  - `git checkout <commit-sha>` -- Checkout to previous commit. `<commit-sha>`
+    is the unique commit SHA digits of the commit. Can be found in `git log`
+  - `git checkout <branch-name>` -- Going back to latest commit in branch
+
+
+> NOTE: `git reflog` can also be a checkout reference point.
+
+**Checkout back to last checkout point**
+
+  - `git checkout -`
+
+
+Ref:
+
+  - [How to get back to the latest commit after checking out a previous commit?](https://stackoverflow.com/a/2427389)
 
 
 ## Merge
@@ -345,6 +375,8 @@ Ref:
   - [`Git Branch, Checkout Commands Tutorial](https://www.youtube.com/watch?v=S7SKhR9NVBk)
   - [How to Delete a Git Branch Both Locally and Remotely](https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/)
   - [How can I tell a local branch to track a remote branch?](https://www.git-tower.com/learn/git/faq/track-remote-upstream-branch)
+  - [Rename a Local and Remotee Git Branch](https://linuxize.com/post/how-to-rename-local-and-remote-git-branch/)
+  - [How to get back to the latest commit after checking out a previous commit?](https://stackoverflow.com/a/2427389)
   - [`Merging Branches Tutorial](https://www.youtube.com/watch?v=XX-Kct0PfFc)
   - [`A Better Git Workflow with Rebase](https://www.youtube.com/watch?v=f1wnYdLEpgI)
   - [`Git MERGE vs REBASE](https://www.youtube.com/watch?v=CRlGDDprdOQ)

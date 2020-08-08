@@ -20,3 +20,7 @@ summary: Personal documentations wiki
 
   - [+MySQL](mysql/index)
 
+
+## Bash
+
+  - [+Bash](bash/index)

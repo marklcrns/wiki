@@ -171,6 +171,7 @@ Basic Git Commands
 <li><a href="#pull">Pull</a></li>
 <li><a href="#fetch">Fetch</a></li>
 <li><a href="#branch">Branch</a></li>
+<li><a href="#checkout">Checkout</a></li>
 <li><a href="#merge">Merge</a></li>
 <li><a href="#rebase">Rebase</a></li>
 <li><a href="#stash">Stash</a></li>
@@ -268,6 +269,10 @@ Basic Git Commands
 <ul>
 <li><code>git branch -a</code></li>
 </ul>
+<p><strong>Renaming current branch</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1">git branch -m &lt;<span class="kw">new</span>-branch-name&gt;</a>
+<a class="sourceLine" id="cb2-2" title="2">git push origin -u &lt;<span class="kw">new</span>-branch-name&gt;</a>
+<a class="sourceLine" id="cb2-3" title="3">git push origin --delete &lt;old-branch-name&gt;</a></code></pre></div>
 <p><strong>Switching local repo to different branch</strong></p>
 <ul>
 <li><code>git checkout &lt;branch-name&gt;</code></li>
@@ -286,7 +291,7 @@ Basic Git Commands
 <li><code>git branch -d &lt;branch-name&gt;</code> – Wont work if theres unmerged changes</li>
 <li><code>git branch -D &lt;branch-name&gt;</code> – Force delete while theres still unmerged changes</li>
 </ul>
-<p><strong>Delete existing branch from remote</strong></p>
+<p><strong>Delete existing branch from remote after local deletion</strong></p>
 <ul>
 <li><code>git push origin --delete &lt;remote-branch-name&gt;</code></li>
 </ul>
@@ -300,15 +305,33 @@ Basic Git Commands
 <li><a href="https://www.youtube.com/watch?v=S7SKhR9NVBk">`Git Branch, Checkout Commands Tutorial</a></li>
 <li><a href="https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/">How to Delete a Git Branch Both Locally and Remotely</a></li>
 <li><a href="https://www.git-tower.com/learn/git/faq/track-remote-upstream-branch">How can I tell a local branch to track a remote branch?</a></li>
+<li><a href="https://linuxize.com/post/how-to-rename-local-and-remote-git-branch/">Rename a Local and Remotee Git Branch</a></li>
+</ul>
+<h2 id="checkout">Checkout</h2>
+<p><strong>Checking out to previous commits</strong></p>
+<ul>
+<li><code>git checkout &lt;commit-sha&gt;</code> – Checkout to previous commit. <code>&lt;commit-sha&gt;</code> is the unique commit SHA digits of the commit. Can be found in <code>git log</code></li>
+<li><code>git checkout &lt;branch-name&gt;</code> – Going back to latest commit in branch</li>
+</ul>
+<blockquote>
+<p>NOTE: <code>git reflog</code> can also be a checkout reference point.</p>
+</blockquote>
+<p><strong>Checkout back to last checkout point</strong></p>
+<ul>
+<li><code>git checkout -</code></li>
+</ul>
+<p>Ref:</p>
+<ul>
+<li><a href="https://stackoverflow.com/a/2427389">How to get back to the latest commit after checking out a previous commit?</a></li>
 </ul>
 <h2 id="merge">Merge</h2>
 <p>Merge changes of one branch to another branch.</p>
 <p><strong>Merging branch to <em>master</em> branch</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">git</span> checkout master</a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="fu">git</span> merge <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">git</span> checkout master</a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="fu">git</span> merge <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a></code></pre></div>
 <p><strong>Merging <em>master</em> branch to another branch</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">git</span> checkout <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="fu">git</span> merge master</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">git</span> checkout <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="fu">git</span> merge master</a></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=XX-Kct0PfFc">`Merging Branches Tutorial</a></li>
@@ -316,11 +339,11 @@ Basic Git Commands
 <h2 id="rebase">Rebase</h2>
 <p>Rebase (re-anchor) current branch commit history against another branch to latest changes.</p>
 <p><strong>Rebase a branch against master branch</strong></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">git</span> checkout <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="fu">git</span> rebase master</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">git</span> checkout <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="fu">git</span> rebase master</a></code></pre></div>
 <p><strong>Rebase master branch against another branch</strong></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">git</span> checkout master</a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="fu">git</span> rebase <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">git</span> checkout master</a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="fu">git</span> rebase <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a></code></pre></div>
 <p><strong>Undoing rebase</strong></p>
 <ul>
 <li><code>git reflog</code> – Logs all reference point to reset into</li>
@@ -398,17 +421,17 @@ Basic Git Commands
 <h2 id="forking-repos">Forking Repos</h2>
 <p>Make a copy of someone else’s repository and make it as your own. You can make <strong>pull requests</strong> to propose updates from your fork to the original repository, once approved by the original owner, will merge all commits in forked repo from when the pull request was made.</p>
 <p><strong>Updating your Fork</strong></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># add the original repository as remote repository called &quot;upstream&quot;</span></a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="fu">git</span> remote add upstream https://github.com/<span class="op">&lt;</span>original-owner<span class="op">&gt;</span>/<span class="op">&lt;</span>repository<span class="op">&gt;</span>.git</a>
-<a class="sourceLine" id="cb6-3" title="3"></a>
-<a class="sourceLine" id="cb6-4" title="4"><span class="co"># fetch all changes from the upstream repository</span></a>
-<a class="sourceLine" id="cb6-5" title="5"><span class="fu">git</span> fetch upstream</a>
-<a class="sourceLine" id="cb6-6" title="6"></a>
-<a class="sourceLine" id="cb6-7" title="7"><span class="co"># switch to the master branch of your fork</span></a>
-<a class="sourceLine" id="cb6-8" title="8"><span class="fu">git</span> checkout master</a>
-<a class="sourceLine" id="cb6-9" title="9"></a>
-<a class="sourceLine" id="cb6-10" title="10"><span class="co"># merge changes from the upstream repository into your fork</span></a>
-<a class="sourceLine" id="cb6-11" title="11"><span class="fu">git</span> merge upstream/master</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="co"># add the original repository as remote repository called &quot;upstream&quot;</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="fu">git</span> remote add upstream https://github.com/<span class="op">&lt;</span>original-owner<span class="op">&gt;</span>/<span class="op">&lt;</span>repository<span class="op">&gt;</span>.git</a>
+<a class="sourceLine" id="cb7-3" title="3"></a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="co"># fetch all changes from the upstream repository</span></a>
+<a class="sourceLine" id="cb7-5" title="5"><span class="fu">git</span> fetch upstream</a>
+<a class="sourceLine" id="cb7-6" title="6"></a>
+<a class="sourceLine" id="cb7-7" title="7"><span class="co"># switch to the master branch of your fork</span></a>
+<a class="sourceLine" id="cb7-8" title="8"><span class="fu">git</span> checkout master</a>
+<a class="sourceLine" id="cb7-9" title="9"></a>
+<a class="sourceLine" id="cb7-10" title="10"><span class="co"># merge changes from the upstream repository into your fork</span></a>
+<a class="sourceLine" id="cb7-11" title="11"><span class="fu">git</span> merge upstream/master</a></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://reflectoring.io/github-fork-and-pull/">Github’s Fork &amp; Pull Workflow for Git Beginners</a></li>
@@ -421,6 +444,8 @@ Basic Git Commands
 <li><a href="https://www.youtube.com/watch?v=S7SKhR9NVBk">`Git Branch, Checkout Commands Tutorial</a></li>
 <li><a href="https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/">How to Delete a Git Branch Both Locally and Remotely</a></li>
 <li><a href="https://www.git-tower.com/learn/git/faq/track-remote-upstream-branch">How can I tell a local branch to track a remote branch?</a></li>
+<li><a href="https://linuxize.com/post/how-to-rename-local-and-remote-git-branch/">Rename a Local and Remotee Git Branch</a></li>
+<li><a href="https://stackoverflow.com/a/2427389">How to get back to the latest commit after checking out a previous commit?</a></li>
 <li><a href="https://www.youtube.com/watch?v=XX-Kct0PfFc">`Merging Branches Tutorial</a></li>
 <li><a href="https://www.youtube.com/watch?v=f1wnYdLEpgI">`A Better Git Workflow with Rebase</a></li>
 <li><a href="https://www.youtube.com/watch?v=CRlGDDprdOQ">`Git MERGE vs REBASE</a></li>
