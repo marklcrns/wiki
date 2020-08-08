@@ -1,8 +1,8 @@
 ---
-title: Bash Docs
+title: Bash
 author: Mark Lucernas
 date: 2020-08-07
-summary: Bash commands documentations
+summary: Bash wiki
 ---
 
 
