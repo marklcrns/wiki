@@ -90,12 +90,23 @@ Fetch new changes from remote branch without applying those changes yet.
   - `git fetch --all` -- fetch all local branches
 
 
-**Log new changes from remote branch after fetching**
+**Display new changes from remote branch after fetching**
 
-  - `git log origin/<branch-name> ^<branch-name>`
+```bash
+git log origin/<branch-name> ^<branch-name>
+
+# or
+git log --oneline --decorate origin/<branch-name>
+
+# or for files which will be modified with `git pull`
+git fetch && git diff HEAD @{u} --name-only
+
+# or all the difference between the current version and the incoming
+git fetch && git diff @{u} --name-only
+```
 
 
-**Diff local branch agains new changes from remote branch after fetching**
+**Diff local branch against new changes from remote branch after fetching**
 
   - `git diff <branch-name> origin/<branch-name>`
 
@@ -107,9 +118,13 @@ git fetch
 git checkout <branch-name> origin/<branch-name>
 ```
 
+
+
+
+
 Ref:
 
-  - [Where to find changes due to `git fetch`](https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch/10685691)
+  - [Where to find changes due to `git fetch`](https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch)
 
 
 ## Branch

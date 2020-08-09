@@ -244,20 +244,27 @@ Basic Git Commands
 <li><code>git fetch</code></li>
 <li><code>git fetch --all</code> – fetch all local branches</li>
 </ul>
-<p><strong>Log new changes from remote branch after fetching</strong></p>
-<ul>
-<li><code>git log origin/&lt;branch-name&gt; ^&lt;branch-name&gt;</code></li>
-</ul>
-<p><strong>Diff local branch agains new changes from remote branch after fetching</strong></p>
+<p><strong>Display new changes from remote branch after fetching</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">git</span> log origin/<span class="op">&lt;</span>branch-name<span class="op">&gt;</span> ^<span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co"># or</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="fu">git</span> log --oneline --decorate origin/<span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="co"># or for files which will be modified with `git pull`</span></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="fu">git</span> fetch <span class="kw">&amp;&amp;</span> <span class="fu">git</span> diff HEAD @<span class="dt">{u}</span> --name-only</a>
+<a class="sourceLine" id="cb1-8" title="8"></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="co"># or all the difference between the current version and the incoming</span></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="fu">git</span> fetch <span class="kw">&amp;&amp;</span> <span class="fu">git</span> diff @<span class="dt">{u}</span> --name-only</a></code></pre></div>
+<p><strong>Diff local branch against new changes from remote branch after fetching</strong></p>
 <ul>
 <li><code>git diff &lt;branch-name&gt; origin/&lt;branch-name&gt;</code></li>
 </ul>
 <p><strong>Checking out latest commits from remote branch after fetching</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">git</span> fetch</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="fu">git</span> checkout <span class="op">&lt;</span>branch-name<span class="op">&gt;</span> origin/<span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">git</span> fetch</a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="fu">git</span> checkout <span class="op">&lt;</span>branch-name<span class="op">&gt;</span> origin/<span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a></code></pre></div>
 <p>Ref:</p>
 <ul>
-<li><a href="https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch/10685691">Where to find changes due to <code>git fetch</code></a></li>
+<li><a href="https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch">Where to find changes due to <code>git fetch</code></a></li>
 </ul>
 <h2 id="branch">Branch</h2>
 <p>Branch other than the master branch to work on the code base without affecting the remote main branch (master). Use <code>merge</code> or <code>rebase</code> to apply changes from one branch to another.</p>
@@ -270,9 +277,9 @@ Basic Git Commands
 <li><code>git branch -a</code></li>
 </ul>
 <p><strong>Renaming current branch</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1">git branch -m &lt;<span class="kw">new</span>-branch-name&gt;</a>
-<a class="sourceLine" id="cb2-2" title="2">git push origin -u &lt;<span class="kw">new</span>-branch-name&gt;</a>
-<a class="sourceLine" id="cb2-3" title="3">git push origin --delete &lt;old-branch-name&gt;</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1">git branch -m &lt;<span class="kw">new</span>-branch-name&gt;</a>
+<a class="sourceLine" id="cb3-2" title="2">git push origin -u &lt;<span class="kw">new</span>-branch-name&gt;</a>
+<a class="sourceLine" id="cb3-3" title="3">git push origin --delete &lt;old-branch-name&gt;</a></code></pre></div>
 <p><strong>Switching local repo to different branch</strong></p>
 <ul>
 <li><code>git checkout &lt;branch-name&gt;</code></li>
@@ -327,11 +334,11 @@ Basic Git Commands
 <h2 id="merge">Merge</h2>
 <p>Merge changes of one branch to another branch.</p>
 <p><strong>Merging branch to <em>master</em> branch</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">git</span> checkout master</a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="fu">git</span> merge <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">git</span> checkout master</a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="fu">git</span> merge <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a></code></pre></div>
 <p><strong>Merging <em>master</em> branch to another branch</strong></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">git</span> checkout <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="fu">git</span> merge master</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">git</span> checkout <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="fu">git</span> merge master</a></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=XX-Kct0PfFc">`Merging Branches Tutorial</a></li>
@@ -339,11 +346,11 @@ Basic Git Commands
 <h2 id="rebase">Rebase</h2>
 <p>Rebase (re-anchor) current branch commit history against another branch to latest changes.</p>
 <p><strong>Rebase a branch against master branch</strong></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">git</span> checkout <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="fu">git</span> rebase master</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">git</span> checkout <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="fu">git</span> rebase master</a></code></pre></div>
 <p><strong>Rebase master branch against another branch</strong></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">git</span> checkout master</a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="fu">git</span> rebase <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="fu">git</span> checkout master</a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="fu">git</span> rebase <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a></code></pre></div>
 <p><strong>Undoing rebase</strong></p>
 <ul>
 <li><code>git reflog</code> – Logs all reference point to reset into</li>
@@ -421,17 +428,17 @@ Basic Git Commands
 <h2 id="forking-repos">Forking Repos</h2>
 <p>Make a copy of someone else’s repository and make it as your own. You can make <strong>pull requests</strong> to propose updates from your fork to the original repository, once approved by the original owner, will merge all commits in forked repo from when the pull request was made.</p>
 <p><strong>Updating your Fork</strong></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="co"># add the original repository as remote repository called &quot;upstream&quot;</span></a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="fu">git</span> remote add upstream https://github.com/<span class="op">&lt;</span>original-owner<span class="op">&gt;</span>/<span class="op">&lt;</span>repository<span class="op">&gt;</span>.git</a>
-<a class="sourceLine" id="cb7-3" title="3"></a>
-<a class="sourceLine" id="cb7-4" title="4"><span class="co"># fetch all changes from the upstream repository</span></a>
-<a class="sourceLine" id="cb7-5" title="5"><span class="fu">git</span> fetch upstream</a>
-<a class="sourceLine" id="cb7-6" title="6"></a>
-<a class="sourceLine" id="cb7-7" title="7"><span class="co"># switch to the master branch of your fork</span></a>
-<a class="sourceLine" id="cb7-8" title="8"><span class="fu">git</span> checkout master</a>
-<a class="sourceLine" id="cb7-9" title="9"></a>
-<a class="sourceLine" id="cb7-10" title="10"><span class="co"># merge changes from the upstream repository into your fork</span></a>
-<a class="sourceLine" id="cb7-11" title="11"><span class="fu">git</span> merge upstream/master</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="co"># add the original repository as remote repository called &quot;upstream&quot;</span></a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="fu">git</span> remote add upstream https://github.com/<span class="op">&lt;</span>original-owner<span class="op">&gt;</span>/<span class="op">&lt;</span>repository<span class="op">&gt;</span>.git</a>
+<a class="sourceLine" id="cb8-3" title="3"></a>
+<a class="sourceLine" id="cb8-4" title="4"><span class="co"># fetch all changes from the upstream repository</span></a>
+<a class="sourceLine" id="cb8-5" title="5"><span class="fu">git</span> fetch upstream</a>
+<a class="sourceLine" id="cb8-6" title="6"></a>
+<a class="sourceLine" id="cb8-7" title="7"><span class="co"># switch to the master branch of your fork</span></a>
+<a class="sourceLine" id="cb8-8" title="8"><span class="fu">git</span> checkout master</a>
+<a class="sourceLine" id="cb8-9" title="9"></a>
+<a class="sourceLine" id="cb8-10" title="10"><span class="co"># merge changes from the upstream repository into your fork</span></a>
+<a class="sourceLine" id="cb8-11" title="11"><span class="fu">git</span> merge upstream/master</a></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://reflectoring.io/github-fork-and-pull/">Github’s Fork &amp; Pull Workflow for Git Beginners</a></li>

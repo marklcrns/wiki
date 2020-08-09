@@ -11,6 +11,7 @@ summary: Personal documentations wiki
 ## Shell Applications
 
   - [+Git](git/index)
+  - [+Git-lfs](git-lfs/index)
   - [+Taskwarrior](taskwarrior/index)
   - [+Tmux](tmux/index)
   - [+Vim/Neovim](vim/index)
