@@ -40,9 +40,14 @@ git commit -m "Add design file"
 git push origin master
 ```
 
+Ref:
+
+  - [Git-lfs official docs](https://git-lfs.github.com/)
 
 
 <br>
 
 # Resources
+
+  - [Git-lfs official docs](https://git-lfs.github.com/)
 

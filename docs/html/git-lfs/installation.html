@@ -185,6 +185,9 @@ Git-lfs installation
 <a class="sourceLine" id="cb1-6" title="6"></a>
 <a class="sourceLine" id="cb1-7" title="7"><span class="co"># For existing repository installation only</span></a>
 <a class="sourceLine" id="cb1-8" title="8"><span class="fu">git</span> lfs install --local</a></code></pre></div>
+<blockquote>
+<p><strong>NOTE:</strong> An additional <code>--skip-smudge</code> can be added to skip automatic downloading of objects on <code>clone</code> or <code>pull</code>. Conversely, it would require a manual <code>git lfs pull</code> every time a new commit is checked out on your repository. This is more useful for cases where you don’t always want to download/checkout every large file.</p>
+</blockquote>
 <h3 id="uninstall">Uninstall</h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># For global uninstall</span></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="fu">git</span> lfs uninstall</a>

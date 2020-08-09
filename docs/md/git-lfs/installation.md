@@ -25,6 +25,12 @@ git lfs install
 git lfs install --local
 ```
 
+> **NOTE:** An additional `--skip-smudge` can be added to skip automatic
+downloading of objects on `clone` or `pull`. Conversely, it would require a
+manual `git lfs pull` every time a new commit is checked out on your repository.
+This is more useful for cases where you don't always want to download/checkout
+every large file.
+
 ### Uninstall
 
 ```bash
