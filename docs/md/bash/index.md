@@ -6,6 +6,14 @@ summary: Bash wiki
 ---
 
 
-# Bash Commands
+# Bash
+
+## Commands
 
   - [+Mounting Drive](mount)
+
+
+## Scripting
+
+  - [+Scripting](scripting/index)
+

@@ -2,11 +2,11 @@
 title: Docs
 author: Mark Lucernas
 date: 2020-02-05
-summary: Personal documentations wiki
+summary: Personal wiki documentations
 ---
 
 
-# Docs
+# Personal Wiki Documentations
 
 ## Shell Applications
 
@@ -25,3 +25,4 @@ summary: Personal documentations wiki
 ## Bash
 
   - [+Bash](bash/index)
+
