@@ -12,6 +12,8 @@ summary: Git-lfs usage
 
 **Initialize git lfs (provided its already installed)**
 
+[#Installation](installation.md#git-lfs-Installation)
+
 ```bash
 # Global initialization
 git lfs install
