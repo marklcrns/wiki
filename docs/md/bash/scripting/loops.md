@@ -16,6 +16,12 @@ list="One\ntwo\nthree\nfour"
 while IFS= read -r line; do
   echo "$line"
 done <<< "$list"
+
+# or
+
+echo "$list" | while IFS= read -r line; do
+  echo "$line"
+done
 ```
 
 Ref:
