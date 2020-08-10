@@ -33,7 +33,13 @@ summary: Bash scripting wiki index
   - [+Output Streams](out-streams)
 
 
+## String
+
+  - [+String](string)
+
+
 ## Variable
 
   - [+Variable](variable)
+
 
