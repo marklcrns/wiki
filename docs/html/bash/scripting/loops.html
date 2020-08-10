@@ -164,6 +164,7 @@ Bash scripting with loops
 <h2 class="toc-title">Contents</h1>
 <ul>
 <li><a href="#loops">Loops</a><ul>
+<li><a href="#looping-over-lines-in-a-variable-string">Looping Over Lines in a Variable String</a></li>
 <li><a href="#looping-over-filtered-file-path-returned-by-find">Looping Over Filtered File Path Returned by Find</a></li>
 </ul></li>
 <li><a href="#resources">Resources</a></li>
@@ -171,19 +172,29 @@ Bash scripting with loops
 </nav>
 <hr>
 <h1 id="loops">Loops</h1>
+<h2 id="looping-over-lines-in-a-variable-string">Looping Over Lines in a Variable String</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="va">list=</span><span class="st">&quot;One\ntwo\nthree\nfour&quot;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">while</span> <span class="va">IFS=</span> <span class="bu">read</span> -r <span class="va">line</span>; <span class="kw">do</span></a>
+<a class="sourceLine" id="cb1-4" title="4">  <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$line</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="kw">done</span> <span class="op">&lt;&lt;&lt;</span> <span class="st">&quot;</span><span class="va">$list</span><span class="st">&quot;</span></a></code></pre></div>
+<p>Ref:</p>
+<ul>
+<li><a href="https://superuser.com/a/284226">Bash: Iterating over lines in a variable</a></li>
+</ul>
 <h2 id="looping-over-filtered-file-path-returned-by-find">Looping Over Filtered File Path Returned by Find</h2>
 <p>Method 1:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">find</span> . -name <span class="st">&#39;*.txt&#39;</span> - print0 <span class="kw">|</span></a>
-<a class="sourceLine" id="cb1-2" title="2">  <span class="kw">while</span> <span class="va">IFS=</span> <span class="bu">read</span> -r -d <span class="st">&#39;&#39;</span> <span class="va">file</span>; <span class="kw">do</span></a>
-<a class="sourceLine" id="cb1-3" title="3">    <span class="co"># do something with &quot;$file&quot;</span></a>
-<a class="sourceLine" id="cb1-4" title="4">  <span class="kw">done</span></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">find</span> . -name <span class="st">&#39;*.txt&#39;</span> - print0 <span class="kw">|</span></a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="kw">while</span> <span class="va">IFS=</span> <span class="bu">read</span> -r -d <span class="st">&#39;&#39;</span> <span class="va">file</span>; <span class="kw">do</span></a>
+<a class="sourceLine" id="cb2-3" title="3">    <span class="co"># do something with &quot;$file&quot;</span></a>
+<a class="sourceLine" id="cb2-4" title="4">  <span class="kw">done</span></a></code></pre></div>
 <blockquote>
 <p><strong>NOTE:</strong> <em>Each command of a pipeline is executed in a separate subshell</em>. So variables outside of the loop that are modified inside of the subshell will not change the value of the variables outside.</p>
 </blockquote>
 <p>Method 2: (Recommended)</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">while</span> <span class="va">IFS=</span> <span class="bu">read</span> -r -d <span class="st">&#39;&#39;</span> <span class="va">file</span>; <span class="kw">do</span></a>
-<a class="sourceLine" id="cb2-2" title="2">  <span class="co"># do something with &quot;$file&quot;</span></a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="kw">done</span> <span class="op">&lt;</span> <span class="op">&lt;(</span><span class="fu">find</span> . -name <span class="st">&#39;*.txt&#39;</span> - print0<span class="op">)</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">while</span> <span class="va">IFS=</span> <span class="bu">read</span> -r -d <span class="st">&#39;&#39;</span> <span class="va">file</span>; <span class="kw">do</span></a>
+<a class="sourceLine" id="cb3-2" title="2">  <span class="co"># do something with &quot;$file&quot;</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="kw">done</span> <span class="op">&lt;</span> <span class="op">&lt;(</span><span class="fu">find</span> . -name <span class="st">&#39;*.txt&#39;</span> - print0<span class="op">)</span></a></code></pre></div>
 <blockquote>
 <p>This method allows for variable modification outside of the loop. See <em>process substitution</em>.</p>
 </blockquote>
@@ -196,8 +207,10 @@ Bash scripting with loops
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
+<li><a href="https://superuser.com/a/284226">Bash: Iterating over lines in a variable</a></li>
 <li><a href="https://stackoverflow.com/a/9612232/11850077">How to loop through file names returned by find?: Method 1 reference</a></li>
 <li><a href="https://stackoverflow.com/a/37210472/11850077">How to loop through file names returned by find?: Method 2 reference</a></li>
+<li><a href="http://mywiki.wooledge.org/BashFAQ/024">Variables disappearing after loop in a pipeline terminates</a></li>
 </ul>
 <hr>
 </article>

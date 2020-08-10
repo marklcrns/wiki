@@ -8,6 +8,21 @@ summary: Bash scripting with loops
 
 # Loops
 
+## Looping Over Lines in a Variable String
+
+```bash
+list="One\ntwo\nthree\nfour"
+
+while IFS= read -r line; do
+  echo "$line"
+done <<< "$list"
+```
+
+Ref:
+
+  - [Bash: Iterating over lines in a variable](https://superuser.com/a/284226)
+
+
 ## Looping Over Filtered File Path Returned by Find
 
 Method 1:
@@ -44,6 +59,8 @@ Ref:
 
 # Resources
 
+  - [Bash: Iterating over lines in a variable](https://superuser.com/a/284226)
   - [How to loop through file names returned by find?: Method 1 reference](https://stackoverflow.com/a/9612232/11850077)
   - [How to loop through file names returned by find?: Method 2 reference](https://stackoverflow.com/a/37210472/11850077)
+  - [Variables disappearing after loop in a pipeline terminates](http://mywiki.wooledge.org/BashFAQ/024)
 
