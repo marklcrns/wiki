@@ -18,8 +18,12 @@ while IFS= read -r line; do
 done <<< "$list"
 
 # or
-
 echo "$list" | while IFS= read -r line; do
+  echo "$line"
+done
+
+# If both didn't work
+echo -e "$list" | while IFS= read -r line; do
   echo "$line"
 done
 ```

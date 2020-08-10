@@ -180,10 +180,14 @@ Bash scripting with loops
 <a class="sourceLine" id="cb1-5" title="5"><span class="kw">done</span> <span class="op">&lt;&lt;&lt;</span> <span class="st">&quot;</span><span class="va">$list</span><span class="st">&quot;</span></a>
 <a class="sourceLine" id="cb1-6" title="6"></a>
 <a class="sourceLine" id="cb1-7" title="7"><span class="co"># or</span></a>
-<a class="sourceLine" id="cb1-8" title="8"></a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$list</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="kw">while</span> <span class="va">IFS=</span> <span class="bu">read</span> -r <span class="va">line</span>; <span class="kw">do</span></a>
-<a class="sourceLine" id="cb1-10" title="10">  <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$line</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb1-11" title="11"><span class="kw">done</span></a></code></pre></div>
+<a class="sourceLine" id="cb1-8" title="8"><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$list</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="kw">while</span> <span class="va">IFS=</span> <span class="bu">read</span> -r <span class="va">line</span>; <span class="kw">do</span></a>
+<a class="sourceLine" id="cb1-9" title="9">  <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$line</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="kw">done</span></a>
+<a class="sourceLine" id="cb1-11" title="11"></a>
+<a class="sourceLine" id="cb1-12" title="12"><span class="co"># If both didn&#39;t work</span></a>
+<a class="sourceLine" id="cb1-13" title="13"><span class="bu">echo</span> -e <span class="st">&quot;</span><span class="va">$list</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="kw">while</span> <span class="va">IFS=</span> <span class="bu">read</span> -r <span class="va">line</span>; <span class="kw">do</span></a>
+<a class="sourceLine" id="cb1-14" title="14">  <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$line</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb1-15" title="15"><span class="kw">done</span></a></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://superuser.com/a/284226">Bash: Iterating over lines in a variable</a></li>
