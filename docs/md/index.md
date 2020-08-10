@@ -15,6 +15,7 @@ summary: Personal wiki documentations
   - [+Taskwarrior](taskwarrior/index)
   - [+Tmux](tmux/index)
   - [+Vim/Neovim](vim/index)
+  - [+Ydiff](ydiff/index)
 
 
 ## Databases

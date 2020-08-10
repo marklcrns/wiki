@@ -164,67 +164,119 @@ Bash scripting with arrays
 <h2 class="toc-title">Contents</h1>
 <ul>
 <li><a href="#array">Array</a><ul>
+<li><a href="#basics">Basics</a></li>
 <li><a href="#appending-to-array">Appending to Array</a></li>
+<li><a href="#split-string-into-array">Split String Into Array</a></li>
 </ul></li>
 <li><a href="#resources">Resources</a></li>
 </ul>
 </nav>
 <hr>
 <h1 id="array">Array</h1>
+<h2 id="basics">Basics</h2>
+<p><strong>Access an individual element</strong></p>
+<ul>
+<li><code>echo "${array[0]}"</code> – Access the first index of an array</li>
+<li><code>echo "${array[-1]}"'</code> – Access the last index of an array</li>
+</ul>
+<p><strong>Iterate over the elements of an array</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">for</span> <span class="ex">element</span> in <span class="st">&quot;</span><span class="va">${array[@]}</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$element</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">done</span></a></code></pre></div>
+<p>With index and value</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">for</span> <span class="ex">index</span> in <span class="st">&quot;</span><span class="va">${!array[@]}</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$index</span><span class="st"> </span><span class="va">${array[index]}</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="kw">done</span></a></code></pre></div>
+<p><strong>Deleting values of an index</strong></p>
+<ul>
+<li><code>unset "array[1]"</code></li>
+</ul>
+<p><strong>Adding values to an index</strong></p>
+<ul>
+<li><code>array[42]="Some string"</code> – Bash arrays are not contiguous and can add elements in an arbitrary index</li>
+</ul>
+<p><strong>Get length of an array</strong></p>
+<ul>
+<li><code>echo "${#array[@]}"</code></li>
+</ul>
 <h2 id="appending-to-array">Appending to Array</h2>
 <p><strong>Appending array element by using shorthand operator</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># Declare a string array</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="va">arrVar=(</span><span class="st">&quot;element 1&quot;</span> <span class="st">&quot;element 2&quot;</span> <span class="st">&quot;element 3&quot;</span> <span class="st">&quot;element 4&quot;</span><span class="va">)</span></a>
-<a class="sourceLine" id="cb1-3" title="3"></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="co"># Add new element at the end of the array</span></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="va">arrVar+=(</span><span class="st">&quot;element 5&quot;</span><span class="va">)</span></a>
-<a class="sourceLine" id="cb1-6" title="6"></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="co"># Iterate the loop to read and print each array element</span></a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="kw">for</span> <span class="ex">value</span> in <span class="st">&quot;</span><span class="va">${arrVar[@]}</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">do</span></a>
-<a class="sourceLine" id="cb1-9" title="9">  <span class="bu">echo</span> <span class="va">$value</span></a>
-<a class="sourceLine" id="cb1-10" title="10"><span class="kw">done</span></a></code></pre></div>
-<p><strong>Appending array element by defining the last index</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># Declare a string array</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="va">arrVar=(</span><span class="st">&quot;element 1&quot;</span> <span class="st">&quot;element 2&quot;</span> <span class="st">&quot;element 3&quot;</span> <span class="st">&quot;element 4&quot;</span><span class="va">)</span></a>
-<a class="sourceLine" id="cb2-3" title="3"></a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="co"># Add new element at the end of the array</span></a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="va">arrVar[${#arrVar[@]}]=</span><span class="st">&quot;element 5&quot;</span></a>
-<a class="sourceLine" id="cb2-6" title="6"></a>
-<a class="sourceLine" id="cb2-7" title="7"><span class="co"># Iterate the loop to read and print each array element</span></a>
-<a class="sourceLine" id="cb2-8" title="8"><span class="kw">for</span> <span class="ex">value</span> in <span class="st">&quot;</span><span class="va">${arrVar[@]}</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">do</span></a>
-<a class="sourceLine" id="cb2-9" title="9">  <span class="bu">echo</span> <span class="va">$value</span></a>
-<a class="sourceLine" id="cb2-10" title="10"><span class="kw">done</span></a></code></pre></div>
-<p><strong>Appending array element by using bracket</strong></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># Declare a string array</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="va">arrVar=(</span><span class="st">&quot;element 1&quot;</span> <span class="st">&quot;element 2&quot;</span> <span class="st">&quot;element 3&quot;</span> <span class="st">&quot;element 4&quot;</span><span class="va">)</span></a>
 <a class="sourceLine" id="cb3-3" title="3"></a>
 <a class="sourceLine" id="cb3-4" title="4"><span class="co"># Add new element at the end of the array</span></a>
-<a class="sourceLine" id="cb3-5" title="5"><span class="va">arrVar=(${#arrVar[@]}</span> <span class="st">&quot;element 5&quot;</span><span class="va">)</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="va">arrVar+=(</span><span class="st">&quot;element 5&quot;</span><span class="va">)</span></a>
 <a class="sourceLine" id="cb3-6" title="6"></a>
 <a class="sourceLine" id="cb3-7" title="7"><span class="co"># Iterate the loop to read and print each array element</span></a>
 <a class="sourceLine" id="cb3-8" title="8"><span class="kw">for</span> <span class="ex">value</span> in <span class="st">&quot;</span><span class="va">${arrVar[@]}</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">do</span></a>
 <a class="sourceLine" id="cb3-9" title="9">  <span class="bu">echo</span> <span class="va">$value</span></a>
 <a class="sourceLine" id="cb3-10" title="10"><span class="kw">done</span></a></code></pre></div>
-<p><strong>Append multiple elements at the end of the array</strong></p>
+<p><strong>Appending array element by defining the last index</strong></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># Declare a string array</span></a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="va">arrVar1=(</span><span class="st">&quot;element 1&quot;</span> <span class="st">&quot;element 2&quot;</span> <span class="st">&quot;element 3&quot;</span><span class="va">)</span></a>
-<a class="sourceLine" id="cb4-3" title="3"><span class="va">arrVar2=(</span><span class="st">&quot;element 4&quot;</span> <span class="st">&quot;element 5&quot;</span> <span class="st">&quot;element 6&quot;</span><span class="va">)</span></a>
-<a class="sourceLine" id="cb4-4" title="4"></a>
-<a class="sourceLine" id="cb4-5" title="5"><span class="co"># Add new element at the end of the array</span></a>
-<a class="sourceLine" id="cb4-6" title="6"><span class="va">arrVar=(${#arrVar1[@]}</span> <span class="va">${#arrVar2[@]})</span></a>
-<a class="sourceLine" id="cb4-7" title="7"></a>
-<a class="sourceLine" id="cb4-8" title="8"><span class="co"># Iterate the loop to read and print each array element</span></a>
-<a class="sourceLine" id="cb4-9" title="9"><span class="kw">for</span> <span class="ex">value</span> in <span class="st">&quot;</span><span class="va">${arrVar[@]}</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">do</span></a>
-<a class="sourceLine" id="cb4-10" title="10">  <span class="bu">echo</span> <span class="va">$value</span></a>
-<a class="sourceLine" id="cb4-11" title="11"><span class="kw">done</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-2" title="2"><span class="va">arrVar=(</span><span class="st">&quot;element 1&quot;</span> <span class="st">&quot;element 2&quot;</span> <span class="st">&quot;element 3&quot;</span> <span class="st">&quot;element 4&quot;</span><span class="va">)</span></a>
+<a class="sourceLine" id="cb4-3" title="3"></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="co"># Add new element at the end of the array</span></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="va">arrVar[${#arrVar[@]}]=</span><span class="st">&quot;element 5&quot;</span></a>
+<a class="sourceLine" id="cb4-6" title="6"></a>
+<a class="sourceLine" id="cb4-7" title="7"><span class="co"># Iterate the loop to read and print each array element</span></a>
+<a class="sourceLine" id="cb4-8" title="8"><span class="kw">for</span> <span class="ex">value</span> in <span class="st">&quot;</span><span class="va">${arrVar[@]}</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb4-9" title="9">  <span class="bu">echo</span> <span class="va">$value</span></a>
+<a class="sourceLine" id="cb4-10" title="10"><span class="kw">done</span></a></code></pre></div>
+<p><strong>Appending array element by using bracket</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># Declare a string array</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="va">arrVar=(</span><span class="st">&quot;element 1&quot;</span> <span class="st">&quot;element 2&quot;</span> <span class="st">&quot;element 3&quot;</span> <span class="st">&quot;element 4&quot;</span><span class="va">)</span></a>
+<a class="sourceLine" id="cb5-3" title="3"></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="co"># Add new element at the end of the array</span></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="va">arrVar=(${#arrVar[@]}</span> <span class="st">&quot;element 5&quot;</span><span class="va">)</span></a>
+<a class="sourceLine" id="cb5-6" title="6"></a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="co"># Iterate the loop to read and print each array element</span></a>
+<a class="sourceLine" id="cb5-8" title="8"><span class="kw">for</span> <span class="ex">value</span> in <span class="st">&quot;</span><span class="va">${arrVar[@]}</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb5-9" title="9">  <span class="bu">echo</span> <span class="va">$value</span></a>
+<a class="sourceLine" id="cb5-10" title="10"><span class="kw">done</span></a></code></pre></div>
+<p><strong>Append multiple elements at the end of the array</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># Declare a string array</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="va">arrVar1=(</span><span class="st">&quot;element 1&quot;</span> <span class="st">&quot;element 2&quot;</span> <span class="st">&quot;element 3&quot;</span><span class="va">)</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="va">arrVar2=(</span><span class="st">&quot;element 4&quot;</span> <span class="st">&quot;element 5&quot;</span> <span class="st">&quot;element 6&quot;</span><span class="va">)</span></a>
+<a class="sourceLine" id="cb6-4" title="4"></a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="co"># Add new element at the end of the array</span></a>
+<a class="sourceLine" id="cb6-6" title="6"><span class="va">arrVar=(${#arrVar1[@]}</span> <span class="va">${#arrVar2[@]})</span></a>
+<a class="sourceLine" id="cb6-7" title="7"></a>
+<a class="sourceLine" id="cb6-8" title="8"><span class="co"># Iterate the loop to read and print each array element</span></a>
+<a class="sourceLine" id="cb6-9" title="9"><span class="kw">for</span> <span class="ex">value</span> in <span class="st">&quot;</span><span class="va">${arrVar[@]}</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb6-10" title="10">  <span class="bu">echo</span> <span class="va">$value</span></a>
+<a class="sourceLine" id="cb6-11" title="11"><span class="kw">done</span></a></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://linuxhint.com/bash_append_array/">Bash append to array</a></li>
+</ul>
+<h2 id="split-string-into-array">Split String Into Array</h2>
+<p>Method 1:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="va">string=</span><span class="st">&quot;Paris, France, Europe&quot;</span></a>
+<a class="sourceLine" id="cb7-2" title="2"></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="co"># Split string into array delimited by &#39;, &#39;</span></a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="va">IFS=</span><span class="st">&#39;, &#39;</span> <span class="bu">read</span> -r -a <span class="va">array</span> <span class="op">&lt;&lt;&lt;</span> <span class="st">&quot;</span><span class="va">$string</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb7-5" title="5"></a>
+<a class="sourceLine" id="cb7-6" title="6"><span class="co"># Iterate over the elements</span></a>
+<a class="sourceLine" id="cb7-7" title="7"><span class="kw">for</span> <span class="ex">element</span> in <span class="st">&quot;</span><span class="va">${array[@]}</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb7-8" title="8">  <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$element</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb7-9" title="9"><span class="kw">done</span></a></code></pre></div>
+<p>Method 2: (recommended)</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="co"># &#39;arr&#39; as the variable for the array</span></a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="ex">readarray</span> -td <span class="st">&#39;&#39;</span> arr <span class="op">&lt;</span> <span class="op">&lt;(</span><span class="fu">awk</span> <span class="st">&#39;{ gsub(/, /,&quot;\0&quot;); print; }&#39;</span> <span class="op">&lt;&lt;&lt;</span><span class="st">&quot;</span><span class="va">$string</span><span class="st">, &quot;</span><span class="op">)</span><span class="kw">;</span> <span class="bu">unset</span> <span class="st">&#39;arr[-1]&#39;</span>; <span class="bu">declare</span> -p <span class="va">arr</span>;</a></code></pre></div>
+<blockquote>
+<p><strong>NOTE:</strong> Must read <a href="https://stackoverflow.com/a/45201229/11850077">this</a> to understand the comparison about <code>read</code> and <code>readarray</code> when splitting string into array.</p>
+</blockquote>
+<p>Ref:</p>
+<ul>
+<li><a href="https://stackoverflow.com/a/10586169/11850077">Split string into an array in Bash: Method 1</a></li>
+<li><a href="https://stackoverflow.com/a/45201229/11850077">Split string into an array in Bash: Method 2</a></li>
 </ul>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
 <li><a href="https://linuxhint.com/bash_append_array/">Bash append to array</a></li>
+<li><a href="https://stackoverflow.com/a/10586169/11850077">Split string into an array in Bash: Method 1</a></li>
+<li><a href="https://stackoverflow.com/a/45201229/11850077">Split string into an array in Bash: Method 2</a></li>
 </ul>
 <hr>
 </article>

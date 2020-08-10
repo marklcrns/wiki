@@ -8,6 +8,46 @@ summary: Bash scripting with arrays
 
 # Array
 
+## Basics
+
+**Access an individual element**
+
+  - `echo "${array[0]}"` -- Access the first index of an array
+  - `echo "${array[-1]}"'` -- Access the last index of an array
+
+
+**Iterate over the elements of an array**
+
+```bash
+for element in "${array[@]}"; do
+  echo "$element"
+done
+```
+
+With index and value
+
+```bash
+for index in "${!array[@]}"; do
+  echo "$index ${array[index]}"
+done
+```
+
+**Deleting values of an index**
+
+  - `unset "array[1]"`
+
+
+**Adding values to an index**
+
+  - `array[42]="Some string"` -- Bash arrays are not contiguous and can add
+    elements in an arbitrary index
+
+
+**Get length of an array**
+
+  - `echo "${#array[@]}"`
+
+
 ## Appending to Array
 
 **Appending array element by using shorthand operator**
@@ -76,9 +116,43 @@ Ref:
   - [Bash append to array](https://linuxhint.com/bash_append_array/)
 
 
+## Split String Into Array
+
+Method 1:
+
+```bash
+string="Paris, France, Europe"
+
+# Split string into array delimited by ', '
+IFS=', ' read -r -a array <<< "$string"
+
+# Iterate over the elements
+for element in "${array[@]}"; do
+  echo "$element"
+done
+```
+
+Method 2: (recommended)
+
+```bash
+# 'arr' as the variable for the array
+readarray -td '' arr < <(awk '{ gsub(/, /,"\0"); print; }' <<<"$string, "); unset 'arr[-1]'; declare -p arr;
+```
+
+> **NOTE:** Must read [this](https://stackoverflow.com/a/45201229/11850077) to
+understand the comparison about `read` and `readarray` when splitting string
+into array.
+
+Ref:
+
+  - [Split string into an array in Bash: Method 1](https://stackoverflow.com/a/10586169/11850077)
+  - [Split string into an array in Bash: Method 2](https://stackoverflow.com/a/45201229/11850077)
+
 <br>
 
 # Resources
 
   - [Bash append to array](https://linuxhint.com/bash_append_array/)
+  - [Split string into an array in Bash: Method 1](https://stackoverflow.com/a/10586169/11850077)
+  - [Split string into an array in Bash: Method 2](https://stackoverflow.com/a/45201229/11850077)
 

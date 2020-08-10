@@ -13,6 +13,16 @@ summary: Bash scripting wiki index
   - [+Array](array)
 
 
+## Function
+
+  - [+Function](function)
+
+
+## If Else Statements
+
+  - [+If Else Statements](if-else)
+
+
 ## Loops
 
   - [+Loops](loops)
