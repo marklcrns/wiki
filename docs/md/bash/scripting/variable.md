@@ -119,6 +119,7 @@ SCRIPTDIR="$(dirname ${SCRIPTPATH})"
 Ref:
 
   - [Reliable way for a Bash script to get the full path to itself](https://stackoverflow.com/a/4774063/11850077)
+  - [How to get the source directory of a Bash script from within the script itself?](https://stackoverflow.com/a/246128/11850077)
   - [Get script name in shell script](https://www.golinuxcloud.com/get-script-name-get-script-path-shell-script/)
 
 
@@ -129,5 +130,6 @@ Ref:
   - [How to increment a variable in bash?](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
   - [Various options to increment by 1, and performance analysis](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
   - [Reliable way for a Bash script to get the full path to itself](https://stackoverflow.com/a/4774063/11850077)
+  - [How to get the source directory of a Bash script from within the script itself?](https://stackoverflow.com/a/246128/11850077)
   - [Get script name in shell script](https://www.golinuxcloud.com/get-script-name-get-script-path-shell-script/)
 
