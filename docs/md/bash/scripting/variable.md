@@ -102,6 +102,7 @@ i=0; i=$(expr $i + 1)   user    0m5.464s
 
 Ref:
 
+  - [How to Increment and Decrement Variable in Bash (Counter)](https://linuxize.com/post/bash-increment-decrement-variable/)
   - [How to increment a variable in bash?](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
   - [Various options to increment by 1, and performance analysis](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
 
@@ -129,6 +130,7 @@ Ref:
 
 # Resources
 
+  - [How to Increment and Decrement Variable in Bash (Counter)](https://linuxize.com/post/bash-increment-decrement-variable/)
   - [How to increment a variable in bash?](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
   - [Various options to increment by 1, and performance analysis](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
   - [Reliable way for a Bash script to get the full path to itself](https://stackoverflow.com/a/4774063/11850077)
