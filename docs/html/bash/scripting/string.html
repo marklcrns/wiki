@@ -166,6 +166,7 @@ Bash scripting with strings
 <li><a href="#string">String</a><ul>
 <li><a href="#ansi-string-colors">ANSI String Colors</a></li>
 <li><a href="#comparing-strings">Comparing Strings</a></li>
+<li><a href="#string-manipulation">String Manipulation</a></li>
 </ul></li>
 <li><a href="#resources">Resources</a></li>
 </ul>
@@ -243,12 +244,27 @@ Bash scripting with strings
 <li><a href="https://linuxize.com/post/how-to-compare-strings-in-bash/">How to Compare Strings in Bash</a></li>
 <li><a href="https://stackoverflow.com/a/40322497/11850077">Shell script Bash, Check if string starts and ends with single quotes</a></li>
 </ul>
+<h2 id="string-manipulation">String Manipulation</h2>
+<p><strong>Strip single trailing backslash</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="va">VALUE=</span>/looks/like/a/path/</a>
+<a class="sourceLine" id="cb5-2" title="2"></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="bu">echo</span> <span class="va">${VALUE%</span>/<span class="va">}</span></a></code></pre></div>
+<p><strong>Strip all trailing backslashes ‘/’</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="va">VALUE=</span>/looks/like/a/path///</a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="va">TRIMMED=$(</span><span class="bu">echo</span> <span class="va">$VALUE</span> <span class="kw">|</span> <span class="fu">sed</span> <span class="st">&#39;s:/*$::&#39;</span><span class="va">)</span></a>
+<a class="sourceLine" id="cb6-3" title="3"></a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="bu">echo</span> <span class="va">$VALUE</span> <span class="va">$TRIMMED</span></a></code></pre></div>
+<p>Ref:</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/9018723/what-is-the-simplest-way-to-remove-a-trailing-slash-from-each-parameter">What is the simplest way to remove a trailing slash from each parameter?</a></li>
+</ul>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
 <li><a href="https://techstop.github.io/bash-script-colors/">Colors in Bash Scripts</a></li>
 <li><a href="https://linuxize.com/post/how-to-compare-strings-in-bash/">How to Compare Strings in Bash</a></li>
 <li><a href="https://stackoverflow.com/a/40322497/11850077">Shell script Bash, Check if string starts and ends with single quotes</a></li>
+<li><a href="https://stackoverflow.com/questions/9018723/what-is-the-simplest-way-to-remove-a-trailing-slash-from-each-parameter">What is the simplest way to remove a trailing slash from each parameter?</a></li>
 </ul>
 <hr>
 </article>

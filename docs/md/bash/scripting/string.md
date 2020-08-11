@@ -100,6 +100,30 @@ Ref:
   - [Shell script Bash, Check if string starts and ends with single quotes](https://stackoverflow.com/a/40322497/11850077)
 
 
+## String Manipulation
+
+**Strip single trailing backslash**
+
+```bash
+VALUE=/looks/like/a/path/
+
+echo ${VALUE%/}
+```
+
+**Strip all trailing backslashes '/'**
+
+```bash
+VALUE=/looks/like/a/path///
+TRIMMED=$(echo $VALUE | sed 's:/*$::')
+
+echo $VALUE $TRIMMED
+```
+
+Ref:
+
+  - [What is the simplest way to remove a trailing slash from each parameter?](https://stackoverflow.com/questions/9018723/what-is-the-simplest-way-to-remove-a-trailing-slash-from-each-parameter)
+
+
 <br>
 
 # Resources
@@ -107,4 +131,5 @@ Ref:
   - [Colors in Bash Scripts](https://techstop.github.io/bash-script-colors/)
   - [How to Compare Strings in Bash](https://linuxize.com/post/how-to-compare-strings-in-bash/)
   - [Shell script Bash, Check if string starts and ends with single quotes](https://stackoverflow.com/a/40322497/11850077)
+  - [What is the simplest way to remove a trailing slash from each parameter?](https://stackoverflow.com/questions/9018723/what-is-the-simplest-way-to-remove-a-trailing-slash-from-each-parameter)
 
