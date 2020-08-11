@@ -42,9 +42,69 @@ Ref:
   - [Colors in Bash Scripts](https://techstop.github.io/bash-script-colors/)
 
 
+## Comparing Strings
+
+**Comparing two strings if equal**
+
+```bash
+if [[ "$STRING1" == "$STRING2" ]]; then
+    echo "Strings are equal."
+else
+    echo "Strings are not equal."
+fi
+
+if [ "$STRING1" = "$STRING2" ]; then
+    echo "Strings are equal."
+else
+    echo "Strings are not equal."
+fi
+```
+
+**Comparing if a string contains a substring**
+
+```bash
+VAR='GNU/Linux is an operating system'
+if [[ $VAR == *"Linux"* ]]; then
+  echo "It's there."
+fi
+
+# With regex operator `=~`
+VAR='GNU/Linux is an operating system'
+if [[ $VAR =~ .*Linux.* ]]; then
+  echo "It's there."
+fi
+```
+
+> **NOTE:** Using regex operator `=~` pattern should not be within quotes (') or
+double quotes (")
+
+**Check if string is empty**
+
+```bash
+VAR=''
+if [[ -z $VAR ]]; then
+  echo "String is empty."
+fi
+
+VAR='Linuxize'
+if [[ ! -n $VAR ]]; then
+  echo "String is empty."
+fi
+```
+
+> **NOTE:** Type `man test` for more variable checks
+
+Ref:
+
+  - [How to Compare Strings in Bash](https://linuxize.com/post/how-to-compare-strings-in-bash/)
+  - [Shell script Bash, Check if string starts and ends with single quotes](https://stackoverflow.com/a/40322497/11850077)
+
+
 <br>
 
 # Resources
 
   - [Colors in Bash Scripts](https://techstop.github.io/bash-script-colors/)
+  - [How to Compare Strings in Bash](https://linuxize.com/post/how-to-compare-strings-in-bash/)
+  - [Shell script Bash, Check if string starts and ends with single quotes](https://stackoverflow.com/a/40322497/11850077)
 

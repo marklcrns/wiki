@@ -98,10 +98,30 @@ Ref:
   - [Various options to increment by 1, and performance analysis](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
 
 
+## Get Script Paths and Name
+
+```bash
+SCRIPTPATH="$( cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 ; pwd -P )"
+# or
+SCRIPTPATH="$(realpath -s $0)"
+
+# Script name and directory
+SCRIPTNAME="$(basename ${0})"
+SCRIPTDIR="$(dirname ${SCRIPTPATH})"
+```
+
+Ref:
+
+  - [Reliable way for a Bash script to get the full path to itself](https://stackoverflow.com/a/4774063/11850077)
+  - [Get script name in shell script](https://www.golinuxcloud.com/get-script-name-get-script-path-shell-script/)
+
+
 <br>
 
 # Resources
 
   - [How to increment a variable in bash?](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
   - [Various options to increment by 1, and performance analysis](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
+  - [Reliable way for a Bash script to get the full path to itself](https://stackoverflow.com/a/4774063/11850077)
+  - [Get script name in shell script](https://www.golinuxcloud.com/get-script-name-get-script-path-shell-script/)
 
