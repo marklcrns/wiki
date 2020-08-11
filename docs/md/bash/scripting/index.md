@@ -42,4 +42,3 @@ summary: Bash scripting wiki index
 
   - [+Variable](variable)
 
-

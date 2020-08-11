@@ -114,7 +114,7 @@ echo ${VALUE%/}
 
 ```bash
 VALUE=/looks/like/a/path///
-TRIMMED=$(echo $VALUE | sed 's:/*$::')
+TRIMMED=$(echo $VALUE | sed 's,/*$,,')
 
 echo $VALUE $TRIMMED
 ```

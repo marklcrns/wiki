@@ -251,7 +251,7 @@ Bash scripting with strings
 <a class="sourceLine" id="cb5-3" title="3"><span class="bu">echo</span> <span class="va">${VALUE%</span>/<span class="va">}</span></a></code></pre></div>
 <p><strong>Strip all trailing backslashes ‘/’</strong></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="va">VALUE=</span>/looks/like/a/path///</a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="va">TRIMMED=$(</span><span class="bu">echo</span> <span class="va">$VALUE</span> <span class="kw">|</span> <span class="fu">sed</span> <span class="st">&#39;s:/*$::&#39;</span><span class="va">)</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="va">TRIMMED=$(</span><span class="bu">echo</span> <span class="va">$VALUE</span> <span class="kw">|</span> <span class="fu">sed</span> <span class="st">&#39;s,/*$,,&#39;</span><span class="va">)</span></a>
 <a class="sourceLine" id="cb6-3" title="3"></a>
 <a class="sourceLine" id="cb6-4" title="4"><span class="bu">echo</span> <span class="va">$VALUE</span> <span class="va">$TRIMMED</span></a></code></pre></div>
 <p>Ref:</p>

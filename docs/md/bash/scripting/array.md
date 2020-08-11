@@ -10,6 +10,16 @@ summary: Bash scripting with arrays
 
 ## Basics
 
+**Declaring bash array**
+
+  - `declare -a array_name`
+
+
+**Initializing bash array**
+
+  - `array_name=( element_1 element_2 element_n ) `
+
+
 **Access an individual element**
 
   - `echo "${array[0]}"` -- Access the first index of an array
@@ -113,6 +123,7 @@ done
 
 Ref:
 
+  - [Bash Array – Declare, Initialize and Access – Examples](https://www.tutorialkart.com/bash-shell-scripting/bash-array/)
   - [Bash append to array](https://linuxhint.com/bash_append_array/)
 
 
@@ -152,6 +163,7 @@ Ref:
 
 # Resources
 
+  - [Bash Array – Declare, Initialize and Access – Examples](https://www.tutorialkart.com/bash-shell-scripting/bash-array/)
   - [Bash append to array](https://linuxhint.com/bash_append_array/)
   - [Split string into an array in Bash: Method 1](https://stackoverflow.com/a/10586169/11850077)
   - [Split string into an array in Bash: Method 2](https://stackoverflow.com/a/45201229/11850077)
