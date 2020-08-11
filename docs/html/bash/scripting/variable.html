@@ -164,7 +164,7 @@ Bash scripting with variables
 <h2 class="toc-title">Contents</h1>
 <ul>
 <li><a href="#variable">Variable</a><ul>
-<li><a href="#increment-an-integer-variable">Increment An Integer Variable</a></li>
+<li><a href="#increment-or-decrement-an-integer-variable">Increment or Decrement an Integer Variable</a></li>
 <li><a href="#get-script-paths-and-name">Get Script Paths and Name</a></li>
 </ul></li>
 <li><a href="#resources">Resources</a></li>
@@ -172,7 +172,7 @@ Bash scripting with variables
 </nav>
 <hr>
 <h1 id="variable">Variable</h1>
-<h2 id="increment-an-integer-variable">Increment An Integer Variable</h2>
+<h2 id="increment-or-decrement-an-integer-variable">Increment or Decrement an Integer Variable</h2>
 <p><strong>With Arithmetic Expansion</strong></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="va">var=$((</span>var+1<span class="va">))</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="kw">((</span>var=var+1<span class="kw">))</span></a>
@@ -241,6 +241,9 @@ let i++                 user    0m0.820s
 declare -i i; i=i+1     user    0m0.528s
 declare -i i; i+=1      user    0m0.492s
 i=0; i=$(expr $i + 1)   user    0m5.464s</code></pre>
+<blockquote>
+<p><strong>NOTE:</strong> Decrementing integer variable need just switch <code>+</code> sign to <code>-</code></p>
+</blockquote>
 <p>Ref:</p>
 <ul>
 <li><a href="https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash">How to increment a variable in bash?</a></li>

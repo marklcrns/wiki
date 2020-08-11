@@ -8,7 +8,7 @@ summary: Bash scripting with variables
 
 # Variable
 
-## Increment An Integer Variable
+## Increment or Decrement an Integer Variable
 
 **With Arithmetic Expansion**
 
@@ -97,6 +97,8 @@ declare -i i; i=i+1     user    0m0.528s
 declare -i i; i+=1      user    0m0.492s
 i=0; i=$(expr $i + 1)   user    0m5.464s
 ```
+
+> **NOTE:** Decrementing integer variable need just switch `+` sign to `-`
 
 Ref:
 
