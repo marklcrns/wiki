@@ -182,47 +182,49 @@ Bash scripting with variables
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="bu">let</span> <span class="st">&quot;var=var+1&quot;</span></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="bu">let</span> <span class="st">&quot;var+=1&quot;</span></a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="bu">let</span> <span class="st">&quot;var++&quot;</span></a></code></pre></div>
+<p><strong>Incrementing variable with another variable</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="va">total=$(</span><span class="fu">expr</span> <span class="va">${var1_count}</span> + <span class="va">${var2_count})</span></a></code></pre></div>
 <p><strong>Finding best performing variable increment operation</strong></p>
 <p>Test Code</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># To focus exclusively on the performance of each type of increment</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="co"># statement, we should exclude bash performing while loops from the</span></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="co"># performance measure. So, let&#39;s time individual scripts that</span></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="co"># increment $i in their own unique way.</span></a>
-<a class="sourceLine" id="cb3-5" title="5"></a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="co"># Declare i as an integer for tests 12 and 13.</span></a>
-<a class="sourceLine" id="cb3-7" title="7"><span class="bu">echo</span> <span class="op">&gt;</span> t12 <span class="st">&#39;declare -i i; i=i+1&#39;</span></a>
-<a class="sourceLine" id="cb3-8" title="8"><span class="bu">echo</span> <span class="op">&gt;</span> t13 <span class="st">&#39;declare -i i; i+=1&#39;</span></a>
-<a class="sourceLine" id="cb3-9" title="9"><span class="co"># Set i for test 14.</span></a>
-<a class="sourceLine" id="cb3-10" title="10"><span class="bu">echo</span> <span class="op">&gt;</span> t14 <span class="st">&#39;i=0; i=$(expr $i + 1)&#39;</span></a>
-<a class="sourceLine" id="cb3-11" title="11"></a>
-<a class="sourceLine" id="cb3-12" title="12"><span class="va">x=</span>100000</a>
-<a class="sourceLine" id="cb3-13" title="13"><span class="kw">while</span> <span class="kw">((</span>x--<span class="kw">))</span>; <span class="kw">do</span></a>
-<a class="sourceLine" id="cb3-14" title="14">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t0 <span class="st">&#39;i=$((i+1))&#39;</span></a>
-<a class="sourceLine" id="cb3-15" title="15">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t1 <span class="st">&#39;i=$((i++))&#39;</span></a>
-<a class="sourceLine" id="cb3-16" title="16">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t2 <span class="st">&#39;((i=i+1))&#39;</span></a>
-<a class="sourceLine" id="cb3-17" title="17">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t3 <span class="st">&#39;((i+=1))&#39;</span></a>
-<a class="sourceLine" id="cb3-18" title="18">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t4 <span class="st">&#39;((i++))&#39;</span></a>
-<a class="sourceLine" id="cb3-19" title="19">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t5 <span class="st">&#39;((++i))&#39;</span></a>
-<a class="sourceLine" id="cb3-20" title="20">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t6 <span class="st">&#39;let &quot;i=i+1&quot;&#39;</span></a>
-<a class="sourceLine" id="cb3-21" title="21">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t7 <span class="st">&#39;let &quot;i+=1&quot;&#39;</span></a>
-<a class="sourceLine" id="cb3-22" title="22">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t8 <span class="st">&#39;let &quot;i++&quot;&#39;</span></a>
-<a class="sourceLine" id="cb3-23" title="23">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t9 <span class="st">&#39;let i=i+1&#39;</span></a>
-<a class="sourceLine" id="cb3-24" title="24">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t10 <span class="st">&#39;let i+=1&#39;</span></a>
-<a class="sourceLine" id="cb3-25" title="25">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t11 <span class="st">&#39;let i++&#39;</span></a>
-<a class="sourceLine" id="cb3-26" title="26">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t12 <span class="st">&#39;i=i+1&#39;</span></a>
-<a class="sourceLine" id="cb3-27" title="27">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t13 <span class="st">&#39;i+=1&#39;</span></a>
-<a class="sourceLine" id="cb3-28" title="28">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t14 <span class="st">&#39;i=$(expr $i + 1)&#39;</span></a>
-<a class="sourceLine" id="cb3-29" title="29"><span class="kw">done</span></a>
-<a class="sourceLine" id="cb3-30" title="30"></a>
-<a class="sourceLine" id="cb3-31" title="31"><span class="kw">for</span> <span class="ex">script</span> in t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14<span class="kw">;</span> <span class="kw">do</span></a>
-<a class="sourceLine" id="cb3-32" title="32">    <span class="va">line1=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">head</span> -1 <span class="st">&quot;</span><span class="va">$script</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb3-33" title="33">    <span class="bu">printf</span> <span class="st">&quot;%-24s&quot;</span> <span class="st">&quot;</span><span class="va">$line1</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb3-34" title="34">    <span class="kw">{</span> <span class="bu">time</span> bash <span class="st">&quot;</span><span class="va">$script</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">}</span> <span class="kw">|&amp;</span> <span class="fu">grep</span> user</a>
-<a class="sourceLine" id="cb3-35" title="35">    <span class="co"># Since stderr is being piped to grep above, this will confirm</span></a>
-<a class="sourceLine" id="cb3-36" title="36">    <span class="co"># there are no errors from running the command:</span></a>
-<a class="sourceLine" id="cb3-37" title="37">    <span class="bu">eval</span> <span class="st">&quot;</span><span class="va">$line1</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb3-38" title="38">    <span class="fu">rm</span> <span class="st">&quot;</span><span class="va">$script</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb3-39" title="39"><span class="kw">done</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># To focus exclusively on the performance of each type of increment</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="co"># statement, we should exclude bash performing while loops from the</span></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="co"># performance measure. So, let&#39;s time individual scripts that</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="co"># increment $i in their own unique way.</span></a>
+<a class="sourceLine" id="cb4-5" title="5"></a>
+<a class="sourceLine" id="cb4-6" title="6"><span class="co"># Declare i as an integer for tests 12 and 13.</span></a>
+<a class="sourceLine" id="cb4-7" title="7"><span class="bu">echo</span> <span class="op">&gt;</span> t12 <span class="st">&#39;declare -i i; i=i+1&#39;</span></a>
+<a class="sourceLine" id="cb4-8" title="8"><span class="bu">echo</span> <span class="op">&gt;</span> t13 <span class="st">&#39;declare -i i; i+=1&#39;</span></a>
+<a class="sourceLine" id="cb4-9" title="9"><span class="co"># Set i for test 14.</span></a>
+<a class="sourceLine" id="cb4-10" title="10"><span class="bu">echo</span> <span class="op">&gt;</span> t14 <span class="st">&#39;i=0; i=$(expr $i + 1)&#39;</span></a>
+<a class="sourceLine" id="cb4-11" title="11"></a>
+<a class="sourceLine" id="cb4-12" title="12"><span class="va">x=</span>100000</a>
+<a class="sourceLine" id="cb4-13" title="13"><span class="kw">while</span> <span class="kw">((</span>x--<span class="kw">))</span>; <span class="kw">do</span></a>
+<a class="sourceLine" id="cb4-14" title="14">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t0 <span class="st">&#39;i=$((i+1))&#39;</span></a>
+<a class="sourceLine" id="cb4-15" title="15">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t1 <span class="st">&#39;i=$((i++))&#39;</span></a>
+<a class="sourceLine" id="cb4-16" title="16">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t2 <span class="st">&#39;((i=i+1))&#39;</span></a>
+<a class="sourceLine" id="cb4-17" title="17">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t3 <span class="st">&#39;((i+=1))&#39;</span></a>
+<a class="sourceLine" id="cb4-18" title="18">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t4 <span class="st">&#39;((i++))&#39;</span></a>
+<a class="sourceLine" id="cb4-19" title="19">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t5 <span class="st">&#39;((++i))&#39;</span></a>
+<a class="sourceLine" id="cb4-20" title="20">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t6 <span class="st">&#39;let &quot;i=i+1&quot;&#39;</span></a>
+<a class="sourceLine" id="cb4-21" title="21">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t7 <span class="st">&#39;let &quot;i+=1&quot;&#39;</span></a>
+<a class="sourceLine" id="cb4-22" title="22">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t8 <span class="st">&#39;let &quot;i++&quot;&#39;</span></a>
+<a class="sourceLine" id="cb4-23" title="23">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t9 <span class="st">&#39;let i=i+1&#39;</span></a>
+<a class="sourceLine" id="cb4-24" title="24">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t10 <span class="st">&#39;let i+=1&#39;</span></a>
+<a class="sourceLine" id="cb4-25" title="25">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t11 <span class="st">&#39;let i++&#39;</span></a>
+<a class="sourceLine" id="cb4-26" title="26">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t12 <span class="st">&#39;i=i+1&#39;</span></a>
+<a class="sourceLine" id="cb4-27" title="27">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t13 <span class="st">&#39;i+=1&#39;</span></a>
+<a class="sourceLine" id="cb4-28" title="28">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t14 <span class="st">&#39;i=$(expr $i + 1)&#39;</span></a>
+<a class="sourceLine" id="cb4-29" title="29"><span class="kw">done</span></a>
+<a class="sourceLine" id="cb4-30" title="30"></a>
+<a class="sourceLine" id="cb4-31" title="31"><span class="kw">for</span> <span class="ex">script</span> in t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14<span class="kw">;</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb4-32" title="32">    <span class="va">line1=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">head</span> -1 <span class="st">&quot;</span><span class="va">$script</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb4-33" title="33">    <span class="bu">printf</span> <span class="st">&quot;%-24s&quot;</span> <span class="st">&quot;</span><span class="va">$line1</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb4-34" title="34">    <span class="kw">{</span> <span class="bu">time</span> bash <span class="st">&quot;</span><span class="va">$script</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">}</span> <span class="kw">|&amp;</span> <span class="fu">grep</span> user</a>
+<a class="sourceLine" id="cb4-35" title="35">    <span class="co"># Since stderr is being piped to grep above, this will confirm</span></a>
+<a class="sourceLine" id="cb4-36" title="36">    <span class="co"># there are no errors from running the command:</span></a>
+<a class="sourceLine" id="cb4-37" title="37">    <span class="bu">eval</span> <span class="st">&quot;</span><span class="va">$line1</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb4-38" title="38">    <span class="fu">rm</span> <span class="st">&quot;</span><span class="va">$script</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb4-39" title="39"><span class="kw">done</span></a></code></pre></div>
 <p>Output</p>
 <pre><code>i=$((i+1))              user    0m0.992s
 i=$((i++))              user    0m0.964s
@@ -245,13 +247,13 @@ i=0; i=$(expr $i + 1)   user    0m5.464s</code></pre>
 <li><a href="https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash">Various options to increment by 1, and performance analysis</a></li>
 </ul>
 <h2 id="get-script-paths-and-name">Get Script Paths and Name</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="va">SCRIPTPATH=</span><span class="st">&quot;</span><span class="va">$(</span> <span class="bu">cd</span> <span class="st">&quot;</span><span class="va">$(</span><span class="fu">dirname</span> <span class="st">&quot;</span><span class="va">${BASH_SOURCE[0]}</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span> <span class="op">&gt;</span>/dev/null <span class="op">2&gt;&amp;1</span> <span class="kw">;</span> <span class="bu">pwd</span> -P <span class="va">)</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="co"># or</span></a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="va">SCRIPTPATH=</span><span class="st">&quot;</span><span class="va">$(</span><span class="ex">realpath</span> -s <span class="va">$0)</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb5-4" title="4"></a>
-<a class="sourceLine" id="cb5-5" title="5"><span class="co"># Script name and directory</span></a>
-<a class="sourceLine" id="cb5-6" title="6"><span class="va">SCRIPTNAME=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${0})</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb5-7" title="7"><span class="va">SCRIPTDIR=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">dirname</span> <span class="va">${SCRIPTPATH})</span><span class="st">&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="va">SCRIPTPATH=</span><span class="st">&quot;</span><span class="va">$(</span> <span class="bu">cd</span> <span class="st">&quot;</span><span class="va">$(</span><span class="fu">dirname</span> <span class="st">&quot;</span><span class="va">${BASH_SOURCE[0]}</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span> <span class="op">&gt;</span>/dev/null <span class="op">2&gt;&amp;1</span> <span class="kw">;</span> <span class="bu">pwd</span> -P <span class="va">)</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="co"># or</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="va">SCRIPTPATH=</span><span class="st">&quot;</span><span class="va">$(</span><span class="ex">realpath</span> -s <span class="va">$0)</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb6-4" title="4"></a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="co"># Script name and directory</span></a>
+<a class="sourceLine" id="cb6-6" title="6"><span class="va">SCRIPTNAME=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${0})</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb6-7" title="7"><span class="va">SCRIPTDIR=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">dirname</span> <span class="va">${SCRIPTPATH})</span><span class="st">&quot;</span></a></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://stackoverflow.com/a/4774063/11850077">Reliable way for a Bash script to get the full path to itself</a></li>

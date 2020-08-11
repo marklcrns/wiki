@@ -27,6 +27,12 @@ let "var+=1"
 let "var++"
 ```
 
+**Incrementing variable with another variable**
+
+```bash
+total=$(expr ${var1_count} + ${var2_count})
+```
+
 **Finding best performing variable increment operation**
 
 Test Code

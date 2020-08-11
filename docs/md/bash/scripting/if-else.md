@@ -59,8 +59,28 @@ then
 fi
 ```
 
+## Break-like Statement for If Statements
+
+Using `:` built-in shell command that does nothing.
+
+```bash
+if [[ <condition> ]]; then
+  echo "Some commands"
+elif [[ <condition> ]]; then
+  :
+else
+  echo "Another commands"
+fi
+```
+
+Ref:
+
+  - [how to 'break' out of an if loop in bash?](https://stackoverflow.com/a/21011024/11850077)
+
 
 <br>
 
 # Resources
+
+  - [how to 'break' out of an if loop in bash?](https://stackoverflow.com/a/21011024/11850077)
 
