@@ -10,35 +10,40 @@ summary: Bash scripting wiki index
 
 ## Array
 
-  - [+Array](array)
+- [+Array](array)
 
 
 ## Function
 
-  - [+Function](function)
+- [+Function](function)
 
 
-## If Else Statements
+## If-Else Statements
 
-  - [+If Else Statements](if-else)
+- [+If-Else Statements](if-else)
 
 
 ## Loops
 
-  - [+Loops](loops)
+- [+Loops](loops)
 
 
 ## Streams
 
-  - [+Output Streams](out-streams)
+- [+Output Streams](out-streams)
 
 
 ## String
 
-  - [+String](string)
+- [+String](string)
 
 
 ## Variable
 
-  - [+Variable](variable)
+- [+Variable](variable)
+
+
+## Extras
+
+- [Extras](extras)
 

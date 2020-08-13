@@ -10,20 +10,20 @@ summary: Personal wiki documentations
 
 ## Shell Applications
 
-  - [+Git](git/index)
-  - [+Git-lfs](git-lfs/index)
-  - [+Taskwarrior](taskwarrior/index)
-  - [+Tmux](tmux/index)
-  - [+Vim/Neovim](vim/index)
-  - [+Ydiff](ydiff/index)
+- [+Git](git/index)
+- [+Git-lfs](git-lfs/index)
+- [+Taskwarrior](taskwarrior/index)
+- [+Tmux](tmux/index)
+- [+Vim/Neovim](vim/index)
+- [+Ydiff](ydiff/index)
 
 
 ## Databases
 
-  - [+MySQL](mysql/index)
+- [+MySQL](mysql/index)
 
 
 ## Bash
 
-  - [+Bash](bash/index)
+- [+Bash](bash/index)
 

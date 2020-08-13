@@ -8,7 +8,9 @@ summary: Bash scripting with strings
 
 # String
 
-## ANSI String Colors
+## ANSI String Color Codes
+
+**Most Commonly Used**
 
 ```bash
 RED="\e[0;91m"
@@ -16,14 +18,14 @@ BLUE="\e[0;94m"
 GREEN="\e[0;92m"
 YELLOW='\033[1;33m'
 WHITE="\e[0;97m"
-EXPAND_BG="\e[K"
-RED_BG="\e[0;101m${expand_bg}"
-BLUE_BG="\e[0;104m${expand_bg}"
-GREEN_BG="\e[0;102m${expand_bg}"
-YELLOW_BG="\e[0;103m${expand_bg}"
-BOLD="\e[1m"
-ULINE="\e[4m"
-NC="\e[0m" # No/reset color
+BG_RED="\e[0;101m${expand_bg}"
+BG_BLUE="\e[0;104m${expand_bg}"
+BG_GREEN="\e[0;102m${expand_bg}"
+BG_YELLOW="\e[0;103m${expand_bg}"
+BG_EXPAND="\e[K" # Expand any background color horizontally
+BO_NC="\e[1m" # No color bold output
+UL_NC="\e[4m" # No color underlined output
+NC="\e[0m" # Reset to default output color
 ```
 
 Sample
@@ -33,6 +35,108 @@ Sample
   - `echo -e "${RED}ERROR: File does not exists${NC}"` -- Echo variation.
     Requires `-e` flag to enable '\' interpretation in `echo` command.
 
+
+### More ANSI Color Codes
+
+**Regular Colors**
+
+```bash
+BLACK="\e[0;30m"
+RED="\e[0;31m"
+GREEN="\e[0;32m"
+YELLOW="\e[0;33m"
+BLUE="\e[0;34m"
+PURPLE="\e[0;35m"
+CYAN="\e[0;36m"
+WHITE="\e[0;37m"
+```
+
+**Bold**
+
+```bash
+BO_BLACK="\e[1;30m"
+BO_RED="\e[1;31m"
+BO_GREEN="\e[1;32m"
+BO_YELLOW="\e[1;33m"
+BO_BLUE="\e[1;34m"
+BO_PURPLE="\e[1;35m"
+BO_CYAN="\e[1;36m"
+BO_WHITE="\e[1;37m"
+BO_NC="\e[1m" # Bold default color
+```
+
+**Underline**
+
+```bash
+UL_BLACK="\e[4;30m"
+UL_RED="\e[4;31m"
+UL_GREEN="\e[4;32m"
+UL_YELLOW="\e[4;33m"
+UL_BLUE="\e[4;34m"
+UL_PURPLE="\e[4;35m"
+UL_CYAN="\e[4;36m"
+UL_WHITE="\e[4;37m"
+UL_NC="\e[4m" # Underlined default color
+```
+
+**Background**
+
+```bash
+BG_BLACK="\e[40m"
+BG_RED="\e[41m"
+BG_GREEN="\e[42m"
+BG_YELLOW="\e[43m"
+BG_BLUE="\e[44m"
+BG_PURPLE="\e[45m"
+BG_CYAN="\e[46m"
+BG_WHITE="\e[47m"
+BG_EXPAND="\e[K" # Expand any background color horizontally
+```
+
+**High Intensty**
+
+```bash
+HI_BLACK="\e[0;90m"
+HI_RED="\e[0;91m"
+HI_GREEN="\e[0;92m"
+HI_YELLOW="\e[0;93m"
+HI_BLUE="\e[0;94m"
+HI_PURPLE="\e[0;95m"
+HI_CYAN="\e[0;96m"
+HI_WHITE="\e[0;97m"
+```
+
+**Bold High Intensty**
+
+```bash
+BO_HI_BLACK="\e[1;90m"
+BO_HI_RED="\e[1;91m"
+BO_HI_GREEN="\e[1;92m"
+BO_HI_YELLOW="\e[1;93m"
+BO_HI_BLUE="\e[1;94m"
+BO_HI_PURPLE="\e[1;95m"
+BO_HI_CYAN="\e[1;96m"
+BO_HI_WHITE="\e[1;97m"
+```
+
+**High Intensty backgrounds**
+
+```bash
+BG_HI_BLACK="\e[0;100m"
+BG_HI_RED="\e[0;101m"
+BG_HI_GREEN="\e[0;102m"
+BG_HI_YELLOW="\e[0;103m"
+BG_HI_BLUE="\e[0;104m"
+BG_HI_PURPLE="\e[0;105m"
+BG_HI_CYAN="\e[0;106m"
+BG_HI_WHITE="\e[0;107m"
+```
+
+**Reset to Default**
+
+```bash
+NC="\e[0m"
+```
 
 > **NOTE:** Using ANSI color codes will change all the string onwards. So
 resetting the string colors with `\e[0m` at the end of each message is a must.
