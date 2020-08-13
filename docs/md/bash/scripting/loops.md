@@ -18,11 +18,21 @@ while IFS= read -r line; do
 done <<< "$list"
 
 # or
+
 echo "$list" | while IFS= read -r line; do
   echo "$line"
 done
 
-# For variables with literal string
+# or
+
+for line in $(echo ${list}); do
+  echo "$line"
+done
+```
+
+For variables with literal string
+
+```bash
 echo -e "$list" | while IFS= read -r line; do
   echo "$line"
 done
