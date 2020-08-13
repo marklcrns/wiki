@@ -239,21 +239,34 @@ Bash scripting with strings
 <blockquote>
 <p><strong>NOTE:</strong> Type <code>man test</code> for more variable checks</p>
 </blockquote>
+<p><strong>Check if string is empty, newline or spaces</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">if [[</span> <span class="ot">-n</span> <span class="st">&quot;#(echo &quot;</span><span class="va">$VARIABLE</span><span class="st">&quot; | tr -d &#39;\n&#39;)&quot;</span><span class="kw"> ]]</span>; <span class="kw">then</span></a>
+<a class="sourceLine" id="cb5-2" title="2">  <span class="co"># Do something if not empty or has new line</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="kw">fi</span></a>
+<a class="sourceLine" id="cb5-4" title="4"></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="co">#or</span></a>
+<a class="sourceLine" id="cb5-6" title="6"></a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="kw">if [[</span> <span class="ot">-n</span> <span class="st">&quot;</span><span class="va">${param//</span> <span class="va">}</span><span class="st">&quot;</span><span class="kw"> ]]</span>; <span class="kw">then</span></a>
+<a class="sourceLine" id="cb5-8" title="8">  <span class="co"># Do something if not empty or has spaces</span></a>
+<a class="sourceLine" id="cb5-9" title="9"><span class="kw">fi</span></a></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://linuxize.com/post/how-to-compare-strings-in-bash/">How to Compare Strings in Bash</a></li>
 <li><a href="https://stackoverflow.com/a/40322497/11850077">Shell script Bash, Check if string starts and ends with single quotes</a></li>
+<li><a href="https://www.unix.com/shell-programming-and-scripting/129086-how-check-variable-empty-newline.html">How to check a variable for empty and a newline</a></li>
+<li><a href="https://unix.stackexchange.com/a/146945">How can I test if a variable is empty or contains only spaces?</a></li>
+<li><a href="https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html.html#Shell-Parameter-Expansion">Shell Parameter Expansion</a></li>
 </ul>
 <h2 id="string-manipulation">String Manipulation</h2>
 <p><strong>Strip single trailing backslash</strong></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="va">VALUE=</span>/looks/like/a/path/</a>
-<a class="sourceLine" id="cb5-2" title="2"></a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="bu">echo</span> <span class="va">${VALUE%</span>/<span class="va">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="va">VALUE=</span>/looks/like/a/path/</a>
+<a class="sourceLine" id="cb6-2" title="2"></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="bu">echo</span> <span class="va">${VALUE%</span>/<span class="va">}</span></a></code></pre></div>
 <p><strong>Strip all trailing backslashes ‘/’</strong></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="va">VALUE=</span>/looks/like/a/path///</a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="va">TRIMMED=$(</span><span class="bu">echo</span> <span class="va">$VALUE</span> <span class="kw">|</span> <span class="fu">sed</span> <span class="st">&#39;s,/*$,,&#39;</span><span class="va">)</span></a>
-<a class="sourceLine" id="cb6-3" title="3"></a>
-<a class="sourceLine" id="cb6-4" title="4"><span class="bu">echo</span> <span class="va">$VALUE</span> <span class="va">$TRIMMED</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="va">VALUE=</span>/looks/like/a/path///</a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="va">TRIMMED=$(</span><span class="bu">echo</span> <span class="va">$VALUE</span> <span class="kw">|</span> <span class="fu">sed</span> <span class="st">&#39;s,/*$,,&#39;</span><span class="va">)</span></a>
+<a class="sourceLine" id="cb7-3" title="3"></a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="bu">echo</span> <span class="va">$VALUE</span> <span class="va">$TRIMMED</span></a></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://stackoverflow.com/questions/9018723/what-is-the-simplest-way-to-remove-a-trailing-slash-from-each-parameter">What is the simplest way to remove a trailing slash from each parameter?</a></li>
@@ -264,6 +277,9 @@ Bash scripting with strings
 <li><a href="https://techstop.github.io/bash-script-colors/">Colors in Bash Scripts</a></li>
 <li><a href="https://linuxize.com/post/how-to-compare-strings-in-bash/">How to Compare Strings in Bash</a></li>
 <li><a href="https://stackoverflow.com/a/40322497/11850077">Shell script Bash, Check if string starts and ends with single quotes</a></li>
+<li><a href="https://www.unix.com/shell-programming-and-scripting/129086-how-check-variable-empty-newline.html">How to check a variable for empty and a newline</a></li>
+<li><a href="https://unix.stackexchange.com/a/146945">How can I test if a variable is empty or contains only spaces?</a></li>
+<li><a href="https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html.html#Shell-Parameter-Expansion">Shell Parameter Expansion</a></li>
 <li><a href="https://stackoverflow.com/questions/9018723/what-is-the-simplest-way-to-remove-a-trailing-slash-from-each-parameter">What is the simplest way to remove a trailing slash from each parameter?</a></li>
 </ul>
 <hr>

@@ -30,6 +30,8 @@ let "var++"
 **Incrementing variable with another variable**
 
 ```bash
+total=$(( ${var1_count} + ${var2_count} ))
+# or
 total=$(expr ${var1_count} + ${var2_count})
 ```
 
@@ -103,6 +105,7 @@ i=0; i=$(expr $i + 1)   user    0m5.464s
 Ref:
 
   - [How to Increment and Decrement Variable in Bash (Counter)](https://linuxize.com/post/bash-increment-decrement-variable/)
+  - [Shell Script to Add Two Integers](https://tecadmin.net/tutorial/bash/examples/add-to-numbers/)
   - [How to increment a variable in bash?](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
   - [Various options to increment by 1, and performance analysis](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
 
@@ -110,13 +113,12 @@ Ref:
 ## Get Script Paths and Name
 
 ```bash
-SCRIPTPATH="$( cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 ; pwd -P )"
-# or
 SCRIPTPATH="$(realpath -s $0)"
 
 # Script name and directory
 SCRIPTNAME="$(basename ${0})"
 SCRIPTDIR="$(dirname ${SCRIPTPATH})"
+SCRIPTDIR="$( cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 ; pwd -P )"
 ```
 
 Ref:
@@ -131,6 +133,7 @@ Ref:
 # Resources
 
   - [How to Increment and Decrement Variable in Bash (Counter)](https://linuxize.com/post/bash-increment-decrement-variable/)
+  - [Shell Script to Add Two Integers](https://tecadmin.net/tutorial/bash/examples/add-to-numbers/)
   - [How to increment a variable in bash?](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
   - [Various options to increment by 1, and performance analysis](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
   - [Reliable way for a Bash script to get the full path to itself](https://stackoverflow.com/a/4774063/11850077)
