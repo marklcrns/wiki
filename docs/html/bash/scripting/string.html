@@ -177,14 +177,14 @@ Bash scripting with strings
 <h1 id="string">String</h1>
 <h2 id="ansi-string-color-codes">ANSI String Color Codes</h2>
 <p><strong>Most Commonly Used</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="va">RED=</span><span class="st">&quot;\e[0;91m&quot;</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="va">BLUE=</span><span class="st">&quot;\e[0;94m&quot;</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="va">GREEN=</span><span class="st">&quot;\e[0;92m&quot;</span></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="va">YELLOW=</span><span class="st">&#39;\033[1;33m&#39;</span></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="va">WHITE=</span><span class="st">&quot;\e[0;97m&quot;</span></a>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="va">RED=</span><span class="st">&quot;\e[0;31m&quot;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="va">GREEN=</span><span class="st">&quot;\e[0;32m&quot;</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="va">BLUE=</span><span class="st">&quot;\e[0;34m&quot;</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="va">YELLOW=</span><span class="st">&quot;\e[0;33m&quot;</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="va">WHITE=</span><span class="st">&quot;\e[0;37m&quot;</span></a>
 <a class="sourceLine" id="cb1-6" title="6"><span class="va">BG_RED=</span><span class="st">&quot;\e[0;101m</span><span class="va">${expand_bg}</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="va">BG_BLUE=</span><span class="st">&quot;\e[0;104m</span><span class="va">${expand_bg}</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="va">BG_GREEN=</span><span class="st">&quot;\e[0;102m</span><span class="va">${expand_bg}</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="va">BG_GREEN=</span><span class="st">&quot;\e[0;102m</span><span class="va">${expand_bg}</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="va">BG_BLUE=</span><span class="st">&quot;\e[0;104m</span><span class="va">${expand_bg}</span><span class="st">&quot;</span></a>
 <a class="sourceLine" id="cb1-9" title="9"><span class="va">BG_YELLOW=</span><span class="st">&quot;\e[0;103m</span><span class="va">${expand_bg}</span><span class="st">&quot;</span></a>
 <a class="sourceLine" id="cb1-10" title="10"><span class="va">BG_EXPAND=</span><span class="st">&quot;\e[K&quot;</span> <span class="co"># Expand any background color horizontally</span></a>
 <a class="sourceLine" id="cb1-11" title="11"><span class="va">BO_NC=</span><span class="st">&quot;\e[1m&quot;</span> <span class="co"># No color bold output</span></a>

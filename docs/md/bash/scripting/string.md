@@ -13,14 +13,14 @@ summary: Bash scripting with strings
 **Most Commonly Used**
 
 ```bash
-RED="\e[0;91m"
-BLUE="\e[0;94m"
-GREEN="\e[0;92m"
-YELLOW='\033[1;33m'
-WHITE="\e[0;97m"
+RED="\e[0;31m"
+GREEN="\e[0;32m"
+BLUE="\e[0;34m"
+YELLOW="\e[0;33m"
+WHITE="\e[0;37m"
 BG_RED="\e[0;101m${expand_bg}"
-BG_BLUE="\e[0;104m${expand_bg}"
 BG_GREEN="\e[0;102m${expand_bg}"
+BG_BLUE="\e[0;104m${expand_bg}"
 BG_YELLOW="\e[0;103m${expand_bg}"
 BG_EXPAND="\e[K" # Expand any background color horizontally
 BO_NC="\e[1m" # No color bold output
