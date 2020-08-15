@@ -8,8 +8,19 @@ summary: Personal wiki documentations
 
 # Personal Wiki Documentations
 
+## Bash
+
+- [+Bash](bash/index)
+
+
+## Databases
+
+- [+MySQL](mysql/index)
+
+
 ## Shell Applications
 
+- [+Docker](docker)
 - [+Git](git/index)
 - [+Git-lfs](git-lfs/index)
 - [+Taskwarrior](taskwarrior/index)
@@ -18,12 +29,7 @@ summary: Personal wiki documentations
 - [+Ydiff](ydiff/index)
 
 
-## Databases
+## WSL/WSL2
 
-- [+MySQL](mysql/index)
-
-
-## Bash
-
-- [+Bash](bash/index)
+- [+WSL/WSL2](wsl/index)
 
