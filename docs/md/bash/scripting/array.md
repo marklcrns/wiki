@@ -176,6 +176,29 @@ Ref:
 - [How do I check if variable is an array?](https://stackoverflow.com/a/14525326/11850077)
 
 
+## Passing An Array as Function Argument
+
+```bash
+#!/bin/bash
+
+my_function() {
+  arr=("$@")
+
+  # Loop over array
+  for i in "${arr[@]}"; do
+    echo "$i"
+  done
+}
+
+array=("one" "two" "three")
+my_function "${array[@]}"
+```
+
+Ref:
+
+- [How to pass an array as function argument?](https://askubuntu.com/a/674347)
+
+
 <br>
 
 # Resources
@@ -185,4 +208,5 @@ Ref:
 - [Split string into an array in Bash: Method 1](https://stackoverflow.com/a/10586169/11850077)
 - [Split string into an array in Bash: Method 2](https://stackoverflow.com/a/45201229/11850077)
 - [How do I check if variable is an array?](https://stackoverflow.com/a/14525326/11850077)
+- [How to pass an array as function argument?](https://askubuntu.com/a/674347)
 

@@ -9,8 +9,8 @@ summary: Bash scripting wiki index
 # Bash Scripting
 
 - [+Arguments](arguments)
-- [+Flags](flags)
 - [+Array](array)
+- [+Flags](flags)
 - [+Function](function)
 - [+If-Else Statements](if-else)
 - [+Loops](loops)

@@ -113,11 +113,13 @@ Ref:
 ## Get Script Paths and Name
 
 ```bash
+# Script absolute path
 SCRIPTPATH="$(realpath -s $0)"
-
-# Script name and directory
+# Script name
 SCRIPTNAME="$(basename ${0})"
+# Script directory
 SCRIPTDIR="$(dirname ${SCRIPTPATH})"
+SCRIPTDIR="$( cd "$( dirname "$0" )" && pwd )"
 SCRIPTDIR="$( cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 ; pwd -P )"
 ```
 

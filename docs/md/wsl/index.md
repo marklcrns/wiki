@@ -8,5 +8,7 @@ summary: WSL 2 wiki
 
 # WSL 2
 
+## Applications
+
 [+Docker](docker)
 
