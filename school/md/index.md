@@ -21,7 +21,7 @@ Total Units Enrolled: 15 - 3 = **12** units
 
 **Start/End Date:** 2020-06-15 - 2020-08-08
 
-Total Units Enrolled: $\mathbf{7}$ units
+Total Units Enrolled: **7** units
 
 - [+Summer 2020](summer-2020/index)
 

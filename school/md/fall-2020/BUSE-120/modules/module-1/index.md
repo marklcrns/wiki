@@ -8,8 +8,7 @@ summary: BUSE 120 module 1 notes and activities
 
 # Module 1: Course Introduction
 
+## Notes
 
-<br>
-
-# Resources
+- [+Module 1 Notes](notes)
 

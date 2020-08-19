@@ -8,7 +8,7 @@ summary: BUSE 120 Principles of Money Management
 
 # BUSE 120 Principles of Money Management
 > Professor: Duane Short<br>
-> email: <br>
+> email: dshort@sdccd.edu<br>
 > Campus: San Diego Miraramar College (online)<br>
 > Units: 3<br>
 > Component: Lecture<br>
@@ -18,6 +18,7 @@ summary: BUSE 120 Principles of Money Management
 ## Course Materials
 
 - [*Syllabus](file:../../../files/fall-2020/BUSE-120/syllabus.pdf)
+- [*BUSE 120 Full Textbook](file:../../../files/fall-2020/BUSE-120/textbook_full.pdf)
 
 ## Modules
 

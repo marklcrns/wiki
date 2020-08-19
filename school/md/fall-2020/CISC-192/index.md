@@ -19,6 +19,7 @@ summary: CISC 192 C/C++ Programming
 
 - [*Syllabus](file:../../../files/fall-2020/CISC-192/syllabus.pdf)
 
+
 ## Chapters
 
 - [+Chapters](chapters/index)
