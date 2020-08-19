@@ -60,6 +60,7 @@ SOFTWARE.
   </style>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -101,7 +102,9 @@ MATH 150 chapter 2 Limits and Derivatives
 <h2 class="toc-title">Contents</h1>
 <ul>
 <li><a href="#chapter-2-limits-and-derivatives">Chapter 2: Limits and Derivatives</a><ul>
-<li><a href="#the-tangent-line-and-velocity-problem">2.1 The Tangent Line and Velocity Problem</a></li>
+<li><a href="#the-tangent-line-and-velocity-problem">2.1 The Tangent Line and Velocity Problem</a><ul>
+<li><a href="#the-tangent-problem">The Tangent Problem</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#resources">Resources</a></li>
 </ul>
@@ -114,11 +117,108 @@ MATH 150 chapter 2 Limits and Derivatives
 </ul>
 <p><a name="tangent-term"><strong>Tangent</strong></a></p>
 <ul>
-<li>The word <em>tangent</em> is derived from the Latin word <em>tangens</em>, which means “touching”.</li>
+<li>The word <em>tangent</em> is derived from the Latin word <em>tangent</em>, which means “touching”.</li>
 </ul>
 <p><a name="secant-term"><strong>Secant</strong></a></p>
 <ul>
-<li>A <em>secant line</em>, from the Latin word <em>secans</em>, meaning cutting, is a line that cuts (intersects) a curve more than once.</li>
+<li>A <em>secant line</em>, from the Latin word <em>secant</em>, meaning cutting, is a line that cuts (intersects) a curve more than once.</li>
+</ul>
+<h3 id="the-tangent-problem">The Tangent Problem</h3>
+<p>Finding the slope of a tangent (approximation) using only the tangent point.</p>
+<p>Example 1: Find an equation of the tangent line to the parabola <span class="math inline">\(y = x^{2}\)</span></p>
+<p>Solution:</p>
+<p><span class="math display">\[
+m_{PQ} = \frac{x^{2} - 1}{x - 1}
+\]</span></p>
+<p>For instance, for the point <span class="math inline">\(Q\)</span> (1.5, 2.25) we have</p>
+<p><span class="math display">\[
+m_{PQ} = \frac{2.25 - 1}{1.5 - 1} = \frac{1.25}{0.5} = 2.5
+\]</span></p>
+<center>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(x\)</span></th>
+<th><span class="math inline">\(m_{PQ}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>1.5</td>
+<td>2.5</td>
+</tr>
+<tr class="odd">
+<td>1.1</td>
+<td>2.1</td>
+</tr>
+<tr class="even">
+<td>1.01</td>
+<td>2.01</td>
+</tr>
+<tr class="odd">
+<td>1.001</td>
+<td>2.001</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(x\)</span></th>
+<th><span class="math inline">\(m_{PQ}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>0.5</td>
+<td>1.5</td>
+</tr>
+<tr class="odd">
+<td>0.9</td>
+<td>1.9</td>
+</tr>
+<tr class="even">
+<td>0.99</td>
+<td>1.99</td>
+</tr>
+<tr class="odd">
+<td>0.999</td>
+<td>1.999</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>This suggests that the slope of the tangent line <span class="math inline">\(t\)</span> should be <span class="math inline">\(m = 2\)</span>.</p>
+<p>We say that the slope of the tangent line is the <em>limit</em> of the slopes of the secant lines, and we express this symbolically by writing</p>
+<p><span class="math display">\[
+\lim_{Q \to P} m_{PQ} = m
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\lim_{x \to 1} \frac{x^{2} - 1}{x - 1} = 2
+\]</span></p>
+<p>Assuming that the slope of the tangent line is indeed 2, we use the point-slope form of the equation of a line <a href="../../../spring-2020/MATH-141/notes/ch-2.html#point-slope-form-term">#Point-Slope Form</a> to write the equation of the tangent line through (1, 1) as</p>
+<p><span class="math display">\[
+y - 1 = 2(x - 1)
+\]</span></p>
+<p>or</p>
+<p><span class="math display">\[
+y = 2x - 1
+\]</span></p>
+<blockquote>
+<p>Figure 3 illustrates the limiting process that occurs in this example. As <span class="math inline">\(Q\)</span> approaches <span class="math inline">\(P\)</span> along the parabola, the corresponding secant lines rotate about <span class="math inline">\(P\)</span> and approach the tangent line <span class="math inline">\(t\)</span>. <img src="../../../../files/fall-2020/MATH-150/chapter-2/figure_3.png" alt="Figure 3" /></p>
+</blockquote>
+<p>Other Resources:</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=723jsxCO7Oc">Calculus 1: Limits &amp; Derivatives (2 of 27) The Slope of a Line</a></li>
 </ul>
 <p><br></p>
 <h1 id="resources">Resources</h1>

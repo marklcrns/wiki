@@ -129,13 +129,20 @@ $$
 
 The equation of a line can be written in several forms:
 
-1. _Slope-Intercept Form:_
-  - $y = mx + b$
-2. _Point-Slope Form:_
-  - $y - y_0 = m(x - x_0)$
-3. _Standard Form:_
-  - $Ax + By = C$, where $A, B, C$ are integers with no common factors; $A$ and
-    $B$ are not both zero.
+<a name="slope-intercept-form-term">**Slope-intercept form**</a>
+
+- $y = mx + b$
+
+
+<a name="point-slope-form-term">**Point-slope form**</a>
+
+- $y - y_0 = m(x - x_{1})$
+
+
+<a name="standard-form-term">**Standard form**</a>
+
+- $Ax + By = C$, where $A, B, C$ are integers with no common factors; $A$ and
+  $B$ are not both zero.
 
 **Parallel and Perpendicular Lines**
 
