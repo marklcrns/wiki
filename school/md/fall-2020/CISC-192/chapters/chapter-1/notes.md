@@ -16,6 +16,12 @@ summary: CISC 192 chapter 1 notes
 - [`CISC 192 CPP Section 1.6 The Programming Process](https://www.youtube.com/watch?v=f_wvPJBeo-c)
 - [`CISC 192 CPP Section 1.7 Procedural and Object-Oriented Programming](https://www.youtube.com/watch?v=GhzTpLj4coA)
 
+## Textbook
+
+### 1.3 Programs and Programming Languages
+
+
+
 
 <br>
 

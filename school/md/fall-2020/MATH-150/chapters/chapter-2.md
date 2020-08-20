@@ -12,6 +12,7 @@ summary: MATH 150 chapter 2 Limits and Derivatives
 
 - [`The Tangent Line and Velocity Problem](https://www.youtube.com/watch?v=EvAa4p-tWlQ)
 
+
 <a name="tangent-term">**Tangent**</a>
 
 - The word _tangent_ is derived from the Latin word _tangent_, which means
@@ -244,7 +245,7 @@ limit of the slopes of the secant lines).
 
 Other Resources:
 
-- [Calculus 1: Limits & Derivatives (2 of 27) The Slope of a Line](https://www.youtube.com/watch?v=723jsxCO7Oc)
+- [`Calculus 1: Limits & Derivatives (2 of 27) The Slope of a Line](https://www.youtube.com/watch?v=723jsxCO7Oc)
 
 
 <br>
@@ -252,7 +253,8 @@ Other Resources:
 # Resources
 
 - [`The Tangent Line and Velocity Problem](https://www.youtube.com/watch?v=EvAa4p-tWlQ)
-- [Calculus 1: Limits & Derivatives (2 of 27) The Slope of a Line](https://www.youtube.com/watch?v=723jsxCO7Oc)
+- [`Calculus 1: Limits & Derivatives (2 of 27) The Slope of a Line](https://www.youtube.com/watch?v=723jsxCO7Oc)
+
 
 Textbook
 
