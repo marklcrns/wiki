@@ -1,8 +1,8 @@
 ---
 title: BUSE 120 Modules
+subtitle: Modules
 author: Mark Lucernas
 date: 2020-08-17
-summary: BUSE 120 modules
 ---
 
 

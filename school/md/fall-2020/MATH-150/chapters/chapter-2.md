@@ -1,8 +1,8 @@
 ---
 title: MATH 150 Chapter 2
+subtitle: Limits and Derivatives
 author: Mark Lucernas
 date: 2020-08-18
-summary: MATH 150 chapter 2 Limits and Derivatives
 ---
 
 

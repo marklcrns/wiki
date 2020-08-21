@@ -1,8 +1,8 @@
 ---
 title: MATH 150 Chapters
+subtitle: Notes and activities
 author: Mark Lucernas
 date: 2020-08-18
-summary: MATH 150 chapters notes and activities
 ---
 
 

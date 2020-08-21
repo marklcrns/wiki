@@ -1,8 +1,8 @@
 ---
 title: Chapter 1 Notes
+subtitle: Notes
 author: Mark Lucernas
 date: 2020-08-17
-summary: CISC 192 chapter 1 notes
 ---
 
 

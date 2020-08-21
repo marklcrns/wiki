@@ -1,8 +1,8 @@
 ---
 title: Module 1 Notes
+subtitle: Personal Financial Planning
 author: Mark Lucernas
 date: 2020-08-18
-summary: BUSE 120 module 1 notes
 ---
 
 
