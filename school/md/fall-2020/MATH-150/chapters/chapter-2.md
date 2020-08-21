@@ -105,7 +105,7 @@ $$
 > Figure 3 illustrates the limiting process that occurs in this example. As $Q$
 approaches $P$ along the parabola, the corresponding secant lines rotate about
 $P$ and approach the tangent line $t$.
-![Figure 3](../../../../files/fall-2020/MATH-150/chapter-2/figure_3.png)
+![Figure 3](../../../../files/fall-2020/MATH-150/chapter-2/2.1_figure_3.png)
 
 **Example 2:**
 
@@ -162,7 +162,7 @@ By this method, the slope of the tangent line is approximately $\mathbf{-675}$
 Another method is to draw an approximation to the tangent line at $P$ and
 measure the sides of the triangle $ABC$
 
-![Figure 5](../../../../files/fall-2020/MATH-150/chapter-2/figure_5.png)
+![Figure 5](../../../../files/fall-2020/MATH-150/chapter-2/2.1_figure_5.png)
 
 This gives an estimate of the slop of the tangent line as
 
@@ -240,13 +240,76 @@ Therefore the velocity at time $t = a$ (the limit of these average velocities as
 $h$ approaches $0$) must be equal to the slope of the tangent line at $P$ (the
 limit of the slopes of the secant lines).
 
-![Figure 6](../../../../files/fall-2020/MATH-150/chapter-2/figure_6.png)
-
+![Figure 6](../../../../files/fall-2020/MATH-150/chapter-2/2.1_figure_6.png)
 
 Other Resources:
 
 - [`Calculus 1: Limits & Derivatives (2 of 27) The Slope of a Line](https://www.youtube.com/watch?v=723jsxCO7Oc)
 
+
+## 2.2 The Limit of a Function
+
+Behavior of the function $f$ defined by $f(x) = x^{2} - x + 2$ for values of
+$x$ near 2.
+
+The following table gives values of $f(x)$ for values of $x$ close to 2 but not
+equal to 2.
+
+<center>
+
+| $x$   | $f(x)$   |
+|-------|----------|
+| 1.0   | 2.000000 |
+| 1.5   | 2.750000 |
+| 1.8   | 3.440000 |
+| 1.9   | 3.710000 |
+| 1.95  | 3.852500 |
+| 1.99  | 3.970100 |
+| 1.995 | 3.985025 |
+| 1.999 | 3.997001 |
+| 3.0   | 8.000000 |
+| 2.5   | 5.750000 |
+| 2.2   | 4.640000 |
+| 2.1   | 4.310000 |
+| 2.05  | 4.152500 |
+| 2.01  | 4.030100 |
+| 2.005 | 4.015025 |
+| 2.001 | 4.003001 |
+
+</center>
+
+From the table and the graph of $f$(a parabola) shown in Figure 1 we see that
+the closer $x$ is to 2 (on either side of 2), the closer $f(x)$ is to 4. In
+fact, it appears that we can make the values of $f(x)$ as close as we like to 4
+by taking $x$ sufficiently close to 2. We express this by saying "the limit of
+the function $f(x) = x^{2} - x + 2$ as $x$ approaches 2 is equal to 4". The
+notation for this is
+
+$$
+\lim_{x \to 2} (x^{2} - x + 2) = 4
+$$
+
+![Figure 1](../../../../files/fall-2020/MATH-150/chapter-2/2.2_figure_1.png)
+
+**Intuitive Definition of a Limit**
+
+Suppose $f(x)$ is defined when $x$ is near the number $a$. (This means that $f$
+is defined on some open interval that contains $a$, except possibly at $a$
+itself.) then we write
+
+$$
+\lim_{x \to a} f(x) = L
+$$
+
+and say
+
+"the limit of $f(x)$, as $x$ approaches $a$, equals $L$"
+
+if we can make the value of $f(x)$ arbitrarily close to $L$ (as close to $L$ as
+we like) by restricting $x$ to be sufficiently close to $a$ (on either side of
+$a$) but not equal to $a$.
+
+![Explore It: Graphical Idea of a Limit](../../../../files/fall-2020/MATH-150/chapter-2/2.2_explore_it_graphical_idea_of_a_limit.png)
 
 <br>
 

@@ -1,8 +1,8 @@
 ---
 title: ECON 120
+subtitle: Principles of Macroeconomics
 author: Mark Lucernas
 date: 2020-08-17
-summary: ECON 120 Principles of Macroeconomics
 ---
 
 
@@ -18,6 +18,13 @@ summary: ECON 120 Principles of Macroeconomics
 ## Course Materials
 
 - [*Syllabus](file:../../../files/fall-2020/ECON-120/syllabus.pdf)
+- Macroeconomics: Principles/Applications/Tools, 10e by Arthur O'Sullivan,
+  Steven Sheffrin, Stepehn Perez
 - [MyLab & Mastering](https://portal.mypearson.com/course-home)
   * My Pearson account [credentials](vfile:../../../files/fall-2020/ECON-120/pearson_account.txt)
+
+
+## Chapters
+
+- [+Chapters](chapters/index)
 

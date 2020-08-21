@@ -106,6 +106,7 @@ MATH 150 chapter 2 Limits and Derivatives
 <li><a href="#the-tangent-problem">The Tangent Problem</a></li>
 <li><a href="#the-velocity-problem">The Velocity Problem</a></li>
 </ul></li>
+<li><a href="#the-limit-of-a-function">2.2 The Limit of a Function</a></li>
 </ul></li>
 <li><a href="#resources">Resources</a></li>
 </ul>
@@ -224,7 +225,7 @@ y - 1 = 2(x - 1)
 y = 2x - 1
 \]</span></p>
 <blockquote>
-<p>Figure 3 illustrates the limiting process that occurs in this example. As <span class="math inline">\(Q\)</span> approaches <span class="math inline">\(P\)</span> along the parabola, the corresponding secant lines rotate about <span class="math inline">\(P\)</span> and approach the tangent line <span class="math inline">\(t\)</span>. <img src="../../../../files/fall-2020/MATH-150/chapter-2/figure_3.png" alt="Figure 3" /></p>
+<p>Figure 3 illustrates the limiting process that occurs in this example. As <span class="math inline">\(Q\)</span> approaches <span class="math inline">\(P\)</span> along the parabola, the corresponding secant lines rotate about <span class="math inline">\(P\)</span> and approach the tangent line <span class="math inline">\(t\)</span>. <img src="../../../../files/fall-2020/MATH-150/chapter-2/2.1_figure_3.png" alt="Figure 3" /></p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
 <p>Use the data to draw the graph of this function and estimate the slope of the tangent line at the point where <span class="math inline">\(t = 0.04\)</span></p>
@@ -309,7 +310,7 @@ m_{PR} = \frac{100.00 - 67.03}{0.00 - 0.04} = -824.25
 <p>By this method, the slope of the tangent line is approximately <span class="math inline">\(\mathbf{-675}\)</span></p>
 <p>Another method is to draw an approximation to the tangent line at <span class="math inline">\(P\)</span> and measure the sides of the triangle <span class="math inline">\(ABC\)</span></p>
 <figure>
-<img src="../../../../files/fall-2020/MATH-150/chapter-2/figure_5.png" alt="Figure 5" /><figcaption>Figure 5</figcaption>
+<img src="../../../../files/fall-2020/MATH-150/chapter-2/2.1_figure_5.png" alt="Figure 5" /><figcaption>Figure 5</figcaption>
 </figure>
 <p>This gives an estimate of the slop of the tangent line as</p>
 <p><span class="math display">\[
@@ -375,12 +376,109 @@ m_{PQ} = \frac{4.9(a + h)^{2} - 4.9a^{2}}{(a + h) + a}
 \]</span></p>
 <p>which is the same as the average velocity over the time interval <span class="math inline">\([a, a + h]\)</span>. Therefore the velocity at time <span class="math inline">\(t = a\)</span> (the limit of these average velocities as <span class="math inline">\(h\)</span> approaches <span class="math inline">\(0\)</span>) must be equal to the slope of the tangent line at <span class="math inline">\(P\)</span> (the limit of the slopes of the secant lines).</p>
 <figure>
-<img src="../../../../files/fall-2020/MATH-150/chapter-2/figure_6.png" alt="Figure 6" /><figcaption>Figure 6</figcaption>
+<img src="../../../../files/fall-2020/MATH-150/chapter-2/2.1_figure_6.png" alt="Figure 6" /><figcaption>Figure 6</figcaption>
 </figure>
 <p>Other Resources:</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=723jsxCO7Oc">`Calculus 1: Limits &amp; Derivatives (2 of 27) The Slope of a Line</a></li>
 </ul>
+<h2 id="the-limit-of-a-function">2.2 The Limit of a Function</h2>
+<p>Behavior of the function <span class="math inline">\(f\)</span> defined by <span class="math inline">\(f(x) = x^{2} - x + 2\)</span> for values of <span class="math inline">\(x\)</span> near 2.</p>
+<p>The following table gives values of <span class="math inline">\(f(x)\)</span> for values of <span class="math inline">\(x\)</span> close to 2 but not equal to 2.</p>
+<center>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(x\)</span></th>
+<th><span class="math inline">\(f(x)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1.0</td>
+<td>2.000000</td>
+</tr>
+<tr class="even">
+<td>1.5</td>
+<td>2.750000</td>
+</tr>
+<tr class="odd">
+<td>1.8</td>
+<td>3.440000</td>
+</tr>
+<tr class="even">
+<td>1.9</td>
+<td>3.710000</td>
+</tr>
+<tr class="odd">
+<td>1.95</td>
+<td>3.852500</td>
+</tr>
+<tr class="even">
+<td>1.99</td>
+<td>3.970100</td>
+</tr>
+<tr class="odd">
+<td>1.995</td>
+<td>3.985025</td>
+</tr>
+<tr class="even">
+<td>1.999</td>
+<td>3.997001</td>
+</tr>
+<tr class="odd">
+<td>3.0</td>
+<td>8.000000</td>
+</tr>
+<tr class="even">
+<td>2.5</td>
+<td>5.750000</td>
+</tr>
+<tr class="odd">
+<td>2.2</td>
+<td>4.640000</td>
+</tr>
+<tr class="even">
+<td>2.1</td>
+<td>4.310000</td>
+</tr>
+<tr class="odd">
+<td>2.05</td>
+<td>4.152500</td>
+</tr>
+<tr class="even">
+<td>2.01</td>
+<td>4.030100</td>
+</tr>
+<tr class="odd">
+<td>2.005</td>
+<td>4.015025</td>
+</tr>
+<tr class="even">
+<td>2.001</td>
+<td>4.003001</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>From the table and the graph of <span class="math inline">\(f\)</span>(a parabola) shown in Figure 1 we see that the closer <span class="math inline">\(x\)</span> is to 2 (on either side of 2), the closer <span class="math inline">\(f(x)\)</span> is to 4. In fact, it appears that we can make the values of <span class="math inline">\(f(x)\)</span> as close as we like to 4 by taking <span class="math inline">\(x\)</span> sufficiently close to 2. We express this by saying “the limit of the function <span class="math inline">\(f(x) = x^{2} - x + 2\)</span> as <span class="math inline">\(x\)</span> approaches 2 is equal to 4”. The notation for this is</p>
+<p><span class="math display">\[
+\lim_{x \to 2} (x^{2} - x + 2) = 4
+\]</span></p>
+<figure>
+<img src="../../../../files/fall-2020/MATH-150/chapter-2/2.2_figure_1.png" alt="Figure 1" /><figcaption>Figure 1</figcaption>
+</figure>
+<p><strong>Intuitive Definition of a Limit</strong></p>
+<p>Suppose <span class="math inline">\(f(x)\)</span> is defined when <span class="math inline">\(x\)</span> is near the number <span class="math inline">\(a\)</span>. (This means that <span class="math inline">\(f\)</span> is defined on some open interval that contains <span class="math inline">\(a\)</span>, except possibly at <span class="math inline">\(a\)</span> itself.) then we write</p>
+<p><span class="math display">\[
+\lim_{x \to a} f(x) = L
+\]</span></p>
+<p>and say</p>
+<p>“the limit of <span class="math inline">\(f(x)\)</span>, as <span class="math inline">\(x\)</span> approaches <span class="math inline">\(a\)</span>, equals <span class="math inline">\(L\)</span>”</p>
+<p>if we can make the value of <span class="math inline">\(f(x)\)</span> arbitrarily close to <span class="math inline">\(L\)</span> (as close to <span class="math inline">\(L\)</span> as we like) by restricting <span class="math inline">\(x\)</span> to be sufficiently close to <span class="math inline">\(a\)</span> (on either side of <span class="math inline">\(a\)</span>) but not equal to <span class="math inline">\(a\)</span>.</p>
+<figure>
+<img src="../../../../files/fall-2020/MATH-150/chapter-2/2.2_explore_it_graphical_idea_of_a_limit.png" alt="Explore It: Graphical Idea of a Limit" /><figcaption>Explore It: Graphical Idea of a Limit</figcaption>
+</figure>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>

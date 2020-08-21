@@ -73,6 +73,12 @@ systems.
 
 ![Figure 1-6](../../../../../files/fall-2020/CISC-192/chapter-1/figure_1-6.png)
 
+<a name="integrated-development-environments-term">**Integrated Development Environments (IDE)**</a>
+
+- These environments consists of a text editor, compiler, debugger, and other
+  utilities integrated into a package with a single set of menus.
+
+
 ### 1.4 What is a Program Made of?
 
 #### Language Elements
@@ -91,7 +97,17 @@ systems.
 
 - A _variable_ is a named storage location in the computer's memory for holding
   a piece of data. **Variables are symbolic names that represents locations in
-  the computer's random access memeory (RAM)**.
+  the computer's random access memory (RAM)**.
+
+
+#### Lines and Statements
+
+A **line** is just that--a single line as it appears in the body of a program.
+Most of the lines contain something meaningful; however, some of the lines are
+empty.
+
+A **statement** is a complete instructions that causes the computer to perform
+some action.
 
 
 ### The Programming Process
