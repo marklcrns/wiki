@@ -247,6 +247,12 @@ Other Resources:
 - [`Calculus 1: Limits & Derivatives (2 of 27) The Slope of a Line](https://www.youtube.com/watch?v=723jsxCO7Oc)
 
 
+Other Resources:
+
+- [`Limits Intro](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-2/v/introduction-to-limits-hd)
+- [Limits Intro Article](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-2/a/limits-intro)
+
+
 ## 2.2 The Limit of a Function
 
 Behavior of the function $f$ defined by $f(x) = x^{2} - x + 2$ for values of
@@ -311,13 +317,145 @@ $a$) but not equal to $a$.
 
 ![Explore It: Graphical Idea of a Limit](../../../../files/fall-2020/MATH-150/chapter-2/2.2_explore_it_graphical_idea_of_a_limit.png)
 
+### One-Sided Limits
+
+We write
+
+$$
+\lim_{x \to a^{-}} f(x) = L
+$$
+
+and say the **left-hand limit of $f(x)$ as $x$ approaches $a$** [or the **limit
+of $f(x)$ as $x$ approaches $a$ from the left**] is equal to $L$ we can make the
+values of $f(x)$ arbitrarily close to $L$ by taking $x$ to be sufficiently close
+to $a$ with $x$ less less than $a$.
+
+Similarly, if we require that $x$ be greater than $a$ we get "the **right-hand
+limit of $f(x)$ as $x$ approaches $a$** is equal to $L$" and we write
+
+$$
+\lim_{x \to a^{+}} f(x) = L
+$$
+
+![Figure 9](../../../../files/fall-2020/MATH-150/chapter-2/2.2_figure_9.png)
+
+$$
+\lim_{x \to a} = L
+\text{\;\;if and only if\;\;}
+\lim_{x \to a^{-}} f(x) = L
+\text{\;\;and\;\;}
+\lim_{x \to a^{+}} f(x) = L
+$$
+
+When a limit doesn't approach the same value from both sides, we say that the
+limit doesn't exist.
+
+![Figure 10](../../../../files/fall-2020/MATH-150/chapter-2/2.2_figure_10.png)
+
+- $\lim_{x \to 2^{-}} g(x) = 3$ and
+- $\lim_{x \to 2^{+}} g(x) = 1$
+  - Since the left and right limits are different, we conclude that
+    $\lim_{x \to 2} g(x)$ does not exist.
+- $\lim_{x \to 5^{-}} g(x) = 2$ and
+- $\lim_{x \to 5^{+}} g(x) = 2$
+  - This time the left and right limits are the same and so we have
+    $\lim_{x \to 5} g(x) = 2$
+
+
+Despite this fact, notice that $g(5) \neq 2$.
+
+### Infinite Limits
+
+Let $f$ be a function defined on both sides of $a$, except possibly at
+$a$itself. then
+
+$$
+\lim_{x \to a} f(x) = \infty
+$$
+
+means that the values of $f(x)$ can be made arbitrarily large (as alrge as we
+please) by taking $x$ sufficiently close to $a$, but not equal to $a$.
+
+![Video: The Limit of a Function](../../../../files/fall-2020/MATH-150/chapter-2/2.2_infinite_limits.png)
+
+Another notation for $\lim_{x \to a} f(x) = \infty$ is
+
+$$
+f(x) = \infty \;\;\; as \;\;\; x \to a
+$$
+
+![Figure 12](../../../../files/fall-2020/MATH-150/chapter-2/2.2_figure_12.png)
+
+![Figure 13](../../../../files/fall-2020/MATH-150/chapter-2/2.2_figure_13.png)
+
+![Figure 14](../../../../files/fall-2020/MATH-150/chapter-2/2.2_figure_14.png)
+
+The vertical line $x = a$ is called a **vertical asymptote** of the curve
+$y = f(x)$ if at least one of the following statements is true:
+
+$$
+\lim_{x \to a} f(x) = \infty  \lim_{x \to a^{-}} f(x) = \infty \;\; \lim_{x \to a^{+}} = \infty \\
+\lim_{x \to a} f(x) = -\infty \;\; \lim_{x \to a^{-}} f(x) = -\infty \;\; \lim_{x \to a^{+}} f(x) = -\infty
+$$
+
+**Example 10:**
+
+Find the vertical asymptote of $f(x) = \tan(x)$.
+
+**Solution**
+
+Because
+
+$$
+\tan(x) = \frac{\sin(x)}{\cos(x)}
+$$
+
+There are potential vertical asymptotes where $\cos(x) = 0$. In fact, since
+$\cos(x) \to 0^{+}$ as $x \to (\pi/2)^{-}$ and $\cos(x) \to 0^{-}$ as
+$x \to (\pi/2)^{+}$, whereas $\sin(x)$ is positive (near 1) when $x$ is near
+$\pi/2$, we have
+
+$$
+\lim_{x \to (\pi/2)^{-}} \tan(x) = \infty
+$$
+
+and
+
+$$
+\lim_{x \to (\pi/2)^{+}} \tan(x) = -\infty
+$$
+
+![Figure 16](../../../../files/fall-2020/MATH-150/chapter-2/2.2_figure_16.png)
+
+
+Other Resources:
+
+- [`Estimating limit values from graphs](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-3/v/limits-from-graphs)
+- [`Unbounded limits](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-3/v/unbounded-limits)
+- [`One-sided limits from graphs](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-3/v/one-sided-limits-from-graphs)
+- [`One-sided limits from graphs: asymptote](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-3/v/one-sided-limits-from-graphs-asymptote)
+- [`Connecting limits and graphical behavior](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-3/v/connecting-limits-and-graphical-behavior)
+- [`Approximating limits using tables](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-4/v/approximating-limit-from-table)
+- [`Estimating limits from tables](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-4/v/estimating-limit-from-table)
+- [`One-sided limits from tables](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-4/v/one-sided-limits-from-tables)
+
+
 <br>
 
 # Resources
 
 - [`The Tangent Line and Velocity Problem](https://www.youtube.com/watch?v=EvAa4p-tWlQ)
 - [`Calculus 1: Limits & Derivatives (2 of 27) The Slope of a Line](https://www.youtube.com/watch?v=723jsxCO7Oc)
-
+- [`Limits Intro](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-2/v/introduction-to-limits-hd)
+- [Limits Intro Article](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-2/a/limits-intro)
+- [`Estimating limit values from graphs](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-3/v/limits-from-graphs)
+- [`Unbounded limits](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-3/v/unbounded-limits)
+- [`One-sided limits from graphs](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-3/v/one-sided-limits-from-graphs)
+- [`One-sided limits from graphs: asymptote](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-3/v/one-sided-limits-from-graphs-asymptote)
+- [`Connecting limits and graphical behavior](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-3/v/connecting-limits-and-graphical-behavior)
+- [`Approximating limits using tables](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-4/v/approximating-limit-from-table)
+- [`Estimating limits from tables](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-4/v/estimating-limit-from-table)
+- [`One-sided limits from tables](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-4/v/one-sided-limits-from-tables)
 
 Textbook
 
