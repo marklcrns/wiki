@@ -19,6 +19,12 @@ summary: CISC 192 C/C++ Programming
 
 - [*Syllabus](file:../../../files/fall-2020/CISC-192/syllabus.pdf)
 
+Textbook
+
+- [MyLab with eText](https://portal.mypearson.com/course-home) Starting Out with
+  C++: Early Objects by Tony Gaddis, Judy Walters, Godfrey Muganda
+  * My Pearson account [credentials](vfile:../../../files/fall-2020/CISC-192/pearson_account.txt)
+
 
 ## Chapters
 

@@ -151,3 +151,9 @@ some action.
 - [`CISC 192 CPP Section 1.6 The Programming Process](https://www.youtube.com/watch?v=f_wvPJBeo-c)
 - [`CISC 192 CPP Section 1.7 Procedural and Object-Oriented Programming](https://www.youtube.com/watch?v=GhzTpLj4coA)
 
+
+Textbook
+
+- Starting Out with C++: Early Objects by Tony Gaddis, Judy Walters, Godfrey
+  Muganda
+
