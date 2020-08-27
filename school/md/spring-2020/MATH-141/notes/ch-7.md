@@ -114,17 +114,17 @@ i^{103} &= i^{100} \cdot i^{3} \\
 \end{aligned}
 $$
 
-Using Conjugates
-
-  - $(3 + 2i)(3 - 2i)$ [(13:27)](https://www.youtube.com/watch?v=rShl_0B72To&t=807)
-  - $\dfrac{3}{2 + 5i}$ [(19:32)](https://www.youtube.com/watch?v=rShl_0B72To&t=1172)
-
-
 <a name="conjugates-term">**Conjugates**</a>
 
   - Two binomials with all terms are identical except for the sign in between
     two terms of the binomial are opposite.
   - Only works for $+$ and $-$ sign.
+
+
+Using Conjugates
+
+  - $(3 + 2i)(3 - 2i)$ [(13:27)](https://www.youtube.com/watch?v=rShl_0B72To&t=807)
+  - $\dfrac{3}{2 + 5i}$ [(19:32)](https://www.youtube.com/watch?v=rShl_0B72To&t=1172)
 
 
 ## 7.4 Complex Numbers Part II

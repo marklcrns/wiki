@@ -439,6 +439,150 @@ Other Resources:
 - [`Estimating limits from tables](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-4/v/estimating-limit-from-table)
 - [`One-sided limits from tables](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-4/v/one-sided-limits-from-tables)
 
+## 2.3 Calculating Limits Using the Limit Laws
+
+Suppose that $c$ is a constant and the limits
+
+$$
+\lim_{x \to a} f(x)
+$$
+
+and
+
+$$
+\lim_{x \to a} g(x)
+$$
+
+exist. Then...
+
+> Limit Laws
+
+$$
+\underline{\boldsymbol{Sum Law}} \\
+1.\; \lim_{x \to a} [f(x) + g(x)] = \lim_{x \to a} f(x) + \lim_{x \to a} g(x) \\
+~\\
+\underline{\boldsymbol{Difference Law}} \\
+2.\; \lim_{x \to a} [f(x) - g(x)] = \lim_{x \to a} f(x) - \lim_{x \to a} g(x) \\
+~\\
+\underline{\boldsymbol{Constant Multiple Law}} \\
+3.\; \lim_{x \to a} [cf(x)] = c \lim_{x \to a} f(x) \\
+~\\
+\underline{\boldsymbol{Product Law}} \\
+4.\; \lim_{x \to a} [f(x)g(x)] = \lim_{x \to a} f(x) \cdot \lim_{x \to a} g(x) \\
+~\\
+\underline{\boldsymbol{Quotient Law}} \\
+5.\; \lim_{x \to a} \frac{f(x)}{g(x)} = \frac{\lim_{x \to a} f(x)}{\lim_{x \to a} g(x)} \text{ if } \lim_{x \to a} g(x) \neq 0 \\
+~\\
+\underline{\boldsymbol{Power Law}} \\
+6.\; \lim_{x \to a} [f(x)]^{n} = [\lim_{x \to a} f(x)]^{n} \; \text{ where } n \text{ is a positive integer } \\
+7.\; \lim_{x \to a} c = c \\
+8.\; \lim_{x \to a} x = a \\
+9.\; \lim_{x \to a} x^{n} = a^{n} \; \text{ where } n \text{ is a positive integer } \\
+10.\; \lim_{x \to a} \sqrt[n]{x} = \sqrt[n]{a} \; \text{ where } n \text{ is a positive integer }
+~\\
+\underline{\boldsymbol{Root Law}} \\
+11.\; \lim_{x \to a} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x \to a} f(x)} \; \text{ where } n \text{ is a positive integer } \\
+[\text{ if  } n \text{ is even, we assume that } \lim_{x \to a} f(x) > 0 \text{. }]
+$$
+
+![Example 1.1](../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-1.1.png)
+![Example 1.2](../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-1.2.png)
+![Example 1.3](../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-1.3.png)
+![Example 1.4](../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-1.4.png)
+![Example 2](../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-2.png)
+
+> Direct Substitution Property
+
+If $f$ is a polynomial or a rational function and $a$ is in the domain of $f$,
+then
+
+$$
+\lim_{x \to a} f(x) = f(a)
+$$
+
+![Example 3](../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-3.png)
+
+> **NOTE:** Notice that in Example 3 we do not have an infinite limit even
+though the denominator approaches $0$ as $x \to 1$. When both numerator and
+denominator approach 0 the limit may be infinite or it may be some finite value.
+
+![Example 4](../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-4.png)
+![Example 5](../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-5.png)
+![Example 6](../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-6.png)
+
+[#Conjugates](../../../spring-2020/MATH-141/notes/ch-7.md#conjugates-term)
+
+![Figure 2](../../../../files/fall-2020/MATH-150/chapter-2/2.3_figure-2.png)
+
+> Theorem 1
+
+$$
+\lim_{x \to a} f(x) = L
+$$
+
+if and only if
+
+$$
+\lim_{x \to a^{-}} f(x) = L = \lim_{x \to a^{+}} f(x)
+$$
+
+![Example 7](../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-7.png)
+![Figure 3](../../../../files/fall-2020/MATH-150/chapter-2/2.3_figure-3.png)
+![Example 8](../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-8.png)
+![Example 9.1](../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-9.1.png)
+![Example 9.2](../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-9.2.png)
+![Example 10](../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-10.png)
+![Figure 6](../../../../files/fall-2020/MATH-150/chapter-2/2.3_figure-6.png)
+
+> Theorem 2
+
+if $f(x) \le g(x)$ when $x$ is near $a$ (except possibly at $a$) and the limits
+of $f$ and $g$ both exist as $x$ approaches $a$ then
+
+$$
+\lim_{x \to a} f(x) \le \lim_{x \to a} g(x)
+$$
+
+> The Squeeze Theorem
+
+if $f(x) \le g(x) \le h(x)$ when $x$ is near $a$ (except possibly at $x$) and
+
+$$
+\lim_{x \to a} f(x) = \lim_{x \to a} h(x) = L
+$$
+
+then
+
+$$
+\lim_{x \to a} g(x) = L
+$$
+
+The Squeeze Theorem, which is sometimes called the _Sandwich Theorem_ or the
+_Pinching Theorem_, is illustrated by Figure 7. It says if $g(x)$ is squeezed
+between $f(x)$ and $h(x)$ near $a$, and if $f$ and $h$ have the same limit $L$
+at $a$, then $g$ is forced to have the same limit $L$ at $a$.
+
+![Figure 7](../../../../files/fall-2020/MATH-150/chapter-2/2.3_figure-7.png)
+
+![Example 11.1](../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-11.1.png)
+![Example 11.2](../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-11.2.png)
+![Example 11.3](../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-11.3.png)
+
+
+Other Resources:
+
+- [`Limit properties](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5a/v/limit-properties)
+- [`Limits of combined functions](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5a/v/limits-of-combined-functions)
+- [`Limits of combined functions: piecewise functions](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5a/v/limits-of-combined-functions-piecewise)
+- [`Limits of composite functions](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5a/v/limits-of-composite-functions)
+- [`Limits by direct substitution](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5b/v/limit-by-substitution)
+- [`Undefined limits by direct substitution](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5b/v/undefined-limit-by-substitution)
+- [`Limits of trigonometric functions](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5b/v/limits-of-trigonometric-functions)
+- [`Limits of piecewise functions](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5b/v/limits-of-piecewise-functions)
+- [`Limits of piecewise functions: absolute value](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5b/v/limit-at-a-point-of-discontinuity)
+- [`Limits by factoring](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-6/v/limit-example-1?modal=1)
+- [`Limits by rationalizing](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-6/v/limits-by-rationalizing?modal=1)
+
 
 <br>
 
@@ -456,6 +600,17 @@ Other Resources:
 - [`Approximating limits using tables](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-4/v/approximating-limit-from-table)
 - [`Estimating limits from tables](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-4/v/estimating-limit-from-table)
 - [`One-sided limits from tables](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-4/v/one-sided-limits-from-tables)
+- [`Limit properties](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5a/v/limit-properties)
+- [`Limits of combined functions](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5a/v/limits-of-combined-functions)
+- [`Limits of combined functions: piecewise functions](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5a/v/limits-of-combined-functions-piecewise)
+- [`Limits of composite functions](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5a/v/limits-of-composite-functions)
+- [`Limits by direct substitution](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5b/v/limit-by-substitution)
+- [`Undefined limits by direct substitution](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5b/v/undefined-limit-by-substitution)
+- [`Limits of trigonometric functions](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5b/v/limits-of-trigonometric-functions)
+- [`Limits of piecewise functions](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5b/v/limits-of-piecewise-functions)
+- [`Limits of piecewise functions: absolute value](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5b/v/limit-at-a-point-of-discontinuity)
+- [`Limits by factoring](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-6/v/limit-example-1?modal=1)
+- [`Limits by rationalizing](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-6/v/limits-by-rationalizing?modal=1)
 
 Textbook
 
