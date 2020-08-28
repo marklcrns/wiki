@@ -508,7 +508,7 @@ net effect of the two changes is zero.
 
 <br>
 
-# References
+# Resources
 
 Text Books
 

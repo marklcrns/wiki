@@ -8,6 +8,21 @@ date: 2020-08-18
 
 # Notes
 
+## Web Notes
+
+### 1.6 SMART Goals
+
+- [SMART Goals - Quick Overview](https://www.youtube.com/watch?v=1-SvuFIQjK8)
+
+### 1.7 Life Stages
+
+- [*Your Financial Checklist For Every Stage of Life](file:../../../../../files/fall-2020/BUSE-120/module-1/life_stages_article.pdf)
+
+### 1.8 Financial Identitiy
+
+- [Financial Identity Quiz from Smart About Money](https://www.smartaboutmoney.org/Tools/Financial-Identity)
+
+
 ## Chapter 1: Personal Financial Planning
 
 ### 1.1 Individual or "Micro" Factors That Affect Financial Thinking
@@ -17,20 +32,17 @@ Family Structure
 - Marital status and dependents, such as children, parents, or siblings,
   determine whether you are planning only for yourself or for others as well.
 
-
 Health
 
 - Personal financial planning should include some protection against the risk of
   chronic illness, accident, or long-term disability and some provision for
   short-term events, such as pregnancy and birth.
 
-
 Career Choice
 
 - Your career choices affect your financial planning, especially through
   educational requirements, income potential, and characteristics of the
   occupation or profession you choose.
-
 
 Age
 
@@ -176,23 +188,6 @@ that investments return don't have the same value as the dollars that the
 investment was expected to return.**
 
 
-## Misc
-
-### 1.6 SMART Goals
-
-- [SMART Goals - Quick Overview](https://www.youtube.com/watch?v=1-SvuFIQjK8)
-
-### 1.7 Life Stages
-
-- [*Your Financial Checklist For Every Stage of Life](file:../../../../../files/fall-2020/BUSE-120/module-1/life_stages_article.pdf)
-
-### 1.8 Financial Identitiy
-
-- [Financial Identity Quiz from Smart About Money](https://www.smartaboutmoney.org/Tools/Financial-Identity)
-
-
-
-
 <br>
 
 # Resources
@@ -200,6 +195,7 @@ investment was expected to return.**
 - [SMART Goals - Quick Overview](https://www.youtube.com/watch?v=1-SvuFIQjK8)
 - [*Your Financial Checklist For Every Stage of Life](file:../../../../../files/fall-2020/BUSE-120/module-1/life_stages_article.pdf)
 - [Financial Identity Quiz from Smart About Money](https://www.smartaboutmoney.org/Tools/Financial-Identity)
+
 
 Textbook
 

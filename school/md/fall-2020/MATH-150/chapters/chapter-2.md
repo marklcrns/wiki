@@ -584,6 +584,17 @@ Other Resources:
 - [`Limits by rationalizing](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-6/v/limits-by-rationalizing?modal=1)
 
 
+## 2.5 Continuity
+
+Other Resources:
+
+- [`Types of discontinuities](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-10/v/types-of-discontinuities?modal=1)
+- [`Continuity at a point](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-11/v/continuity-at-a-point)
+- [`Worked example: Continuity at a point(graphical)](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-11/v/continuity-at-a-point-graphically)
+- [`Worked example: point where a function is continuous](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-11/v/limit-of-piecewise-function-that-is-defined)
+- [`Worked example: point where a function isn't continuous](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-11/v/limit-of-piecewise-function-that-is-undefined)
+
+
 <br>
 
 # Resources
