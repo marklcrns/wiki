@@ -39,6 +39,13 @@ summary: Personal wiki documentations
 - [↪ WSL/WSL2](wsl/index)
 
 
+## Desktop Applications
+
+### Terminal
+
+- [↪ Alacritty](desktop-apps/alacritty/index)
+
+
 ## Misc
 
 - [↪ Supported Markdown Emojis by Pandoc](emojis)
