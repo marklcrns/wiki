@@ -10,5 +10,5 @@ date: 2020-08-17
 
 ## Notes
 
-- [+Chapter 2 Notes](notes)
+- [↪ Chapter 2 Notes](notes)
 

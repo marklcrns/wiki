@@ -134,22 +134,22 @@ some action.
 
 ## Videos
 
-- [`CISC 192 CPP Sections 1.1 - 1.3](https://www.youtube.com/watch?v=A0J3kgf-TLw)
-- [`CISC 192 CPP Section 1.4 What is a Program Made Of](https://www.youtube.com/watch?v=SsNzFXgggIg)
-- [`CISC 192 CPP Section 1.5 Purpose, Input, Processing, Output](https://www.youtube.com/watch?v=51uWnPDjIIE)
-- [`CISC 192 CPP Section 1.6 The Programming Process](https://www.youtube.com/watch?v=f_wvPJBeo-c)
-- [`CISC 192 CPP Section 1.7 Procedural and Object-Oriented Programming](https://www.youtube.com/watch?v=GhzTpLj4coA)
+- [🎬 CISC 192 CPP Sections 1.1 - 1.3](https://www.youtube.com/watch?v=A0J3kgf-TLw)
+- [🎬 CISC 192 CPP Section 1.4 What is a Program Made Of](https://www.youtube.com/watch?v=SsNzFXgggIg)
+- [🎬 CISC 192 CPP Section 1.5 Purpose, Input, Processing, Output](https://www.youtube.com/watch?v=51uWnPDjIIE)
+- [🎬 CISC 192 CPP Section 1.6 The Programming Process](https://www.youtube.com/watch?v=f_wvPJBeo-c)
+- [🎬 CISC 192 CPP Section 1.7 Procedural and Object-Oriented Programming](https://www.youtube.com/watch?v=GhzTpLj4coA)
 
 
 <br>
 
 # Resources
 
-- [`CISC 192 CPP Sections 1.1 - 1.3](https://www.youtube.com/watch?v=A0J3kgf-TLw)
-- [`CISC 192 CPP Section 1.4 What is a Program Made Of](https://www.youtube.com/watch?v=SsNzFXgggIg)
-- [`CISC 192 CPP Section 1.5 Purpose, Input, Processing, Output](https://www.youtube.com/watch?v=51uWnPDjIIE)
-- [`CISC 192 CPP Section 1.6 The Programming Process](https://www.youtube.com/watch?v=f_wvPJBeo-c)
-- [`CISC 192 CPP Section 1.7 Procedural and Object-Oriented Programming](https://www.youtube.com/watch?v=GhzTpLj4coA)
+- [🎬 CISC 192 CPP Sections 1.1 - 1.3](https://www.youtube.com/watch?v=A0J3kgf-TLw)
+- [🎬 CISC 192 CPP Section 1.4 What is a Program Made Of](https://www.youtube.com/watch?v=SsNzFXgggIg)
+- [🎬 CISC 192 CPP Section 1.5 Purpose, Input, Processing, Output](https://www.youtube.com/watch?v=51uWnPDjIIE)
+- [🎬 CISC 192 CPP Section 1.6 The Programming Process](https://www.youtube.com/watch?v=f_wvPJBeo-c)
+- [🎬 CISC 192 CPP Section 1.7 Procedural and Object-Oriented Programming](https://www.youtube.com/watch?v=GhzTpLj4coA)
 
 
 Textbook

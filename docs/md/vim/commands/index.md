@@ -12,7 +12,7 @@ summary: Useful Vim command line commands
 
 ### Search and Replace Multiple Files
 
-  - [Multiple files search and replace](https://gabri.me/blog/multiple-files-search-and-replace-in-vim)
+- [🌎 Multiple files search and replace](https://gabri.me/blog/multiple-files-search-and-replace-in-vim)
 
 Using `:args`, search all files from current directory recursively with `I hate
 Vim` characters and load all to Vim buffer.
@@ -37,6 +37,6 @@ Using `:argdo`, replace all files loaded into buffer with `I love vim`
 
 # References
 
-  - [Search and Replace multiple files at once](https://gabri.me/blog/multiple-files-search-and-replace-in-vim)
+- [🌎 Search and Replace multiple files at once](https://gabri.me/blog/multiple-files-search-and-replace-in-vim)
 
 

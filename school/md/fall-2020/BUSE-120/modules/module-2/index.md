@@ -10,5 +10,5 @@ date: 2020-08-17
 
 ## Notes
 
-- [+Module 2 Notes](notes)
+- [↪ Module 2 Notes](notes)
 

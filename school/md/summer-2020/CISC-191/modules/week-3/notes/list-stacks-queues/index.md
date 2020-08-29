@@ -8,8 +8,8 @@ summary: CISC 191 Week 3 List Stacks and Queues Notes
 
 # List, Stacks, and Queues
 
-  - [*List, Stacks, and Queues](file:../../../../../../../files/summer-2020/CISC-191/week-3/list-and-queues.ppt)
-  - [`Linked List in Java](https://www.youtube.com/watch?v=195KUinjBpU)
+- [⬇ List, Stacks, and Queues](file:../../../../../../../files/summer-2020/CISC-191/week-3/list-and-queues.ppt)
+- [🎬 Linked List in Java](https://www.youtube.com/watch?v=195KUinjBpU)
 
 
 ## Lists
@@ -162,6 +162,6 @@ with the highest priority is treated first.
 
 # Resources
 
-  - [*List, Stacks, and Queues](file:../../../../../../../files/summer-2020/CISC-191/week-3/list-and-queues.ppt)
-  - [`Linked List in Java](https://www.youtube.com/watch?v=195KUinjBpU)
+- [⬇ List, Stacks, and Queues](file:../../../../../../../files/summer-2020/CISC-191/week-3/list-and-queues.ppt)
+- [🎬 Linked List in Java](https://www.youtube.com/watch?v=195KUinjBpU)
 

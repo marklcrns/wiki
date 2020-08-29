@@ -9,13 +9,13 @@ summary: Vim plugins references
 
 ## Itchyny
 
-  - [Calendar.vim](itchyny/calendar)
+- [↪ Calendar.vim](itchyny/calendar)
 
 ## Junegunn
 
-  - [Fzf](junegunn/fzf)
-  - [Vim-easy-align](junegunn/vim-easy-align)
+- [↪ Fzf](junegunn/fzf)
+- [↪ Vim-easy-align](junegunn/vim-easy-align)
 
 ## Vimwiki
 
-  - [Vimwiki](vimwiki/vimwiki)
+- [↪ Vimwiki](vimwiki/vimwiki)

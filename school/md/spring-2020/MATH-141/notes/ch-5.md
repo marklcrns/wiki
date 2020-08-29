@@ -10,10 +10,10 @@ summary: Right triangle ratios and angles
 
 ## 5.1 Ratio Nirvana and Inverse Functions
 
-  - [Handout 13: Ratios nirvana v1](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-13.pdf)
-  - [Handout 14: Inverses intro](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-14.pdf)
-  - [Handout 15: Ratios nirvana v2](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-15.pdf)
-  - [Handout 16: Soh-Cah-Toa formula guide](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-16.pdf)
+- [⬇ Handout 13: Ratios nirvana v1](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-13.pdf)
+- [⬇ Handout 14: Inverses intro](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-14.pdf)
+- [⬇ Handout 15: Ratios nirvana v2](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-15.pdf)
+- [⬇ Handout 16: Soh-Cah-Toa formula guide](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-16.pdf)
 
 > In order to solve the triangle, at least one side and either a ratio or an
 > angle are needed.
@@ -38,11 +38,11 @@ summary: Right triangle ratios and angles
 
 ### Video Lecture 1
 
-  - [VIDEO 1: Ratio nirvana 1](https://www.youtube.com/watch?v=mh1nzhymVbc)
+- [🎬 VIDEO 1: Ratio nirvana 1](https://www.youtube.com/watch?v=mh1nzhymVbc)
 
 ### Video Lecture 2
 
-  - [VIDEO 2: Ratio nirvana 2](https://www.youtube.com/watch?v=ltT78ePg9pw)
+- [🎬 VIDEO 2: Ratio nirvana 2](https://www.youtube.com/watch?v=ltT78ePg9pw)
 
 Timestamps
 
@@ -50,7 +50,7 @@ Timestamps
 
 ### Video Lecture 3
 
-  - [VIDEO 3: Inverse functions](https://www.youtube.com/watch?v=mKhTE82mECI)
+- [🎬 VIDEO 3: Inverse functions](https://www.youtube.com/watch?v=mKhTE82mECI)
 
 Timestamps
 
@@ -64,14 +64,14 @@ Timestamps
 
 ## 5.2 Mission Accomplished
 
-  - [Handout 17: The promise mission accomplished](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-17.pdf)
+- [⬇ Handout 17: The promise mission accomplished](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-17.pdf)
 
 > A triangle that has no sides given but the ratios and angles are known has
 > **infinitely many solutions**.
 
 ### Video Lecture
 
-  - [VIDEO: Mission Accomplished](https://www.youtube.com/watch?v=nSNTkZ52gl8)
+- [🎬 Mission Accomplished](https://www.youtube.com/watch?v=nSNTkZ52gl8)
 
 Timestamps
 
@@ -84,7 +84,7 @@ Timestamps
 
 ## 5.3 The Reference Triangle and Rest of Functions
 
-  - [Handout 15: Ratios nirvana v2](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-15.pdf)
+- [⬇ Handout 15: Ratios nirvana v2](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-15.pdf)
     * Reference Triangles: page 53
     * The Rest of the Trig: page 96
 
@@ -104,19 +104,19 @@ Cosecant, Secant and Cotangent
 
 ### Video Lecture
 
-  - [VIDEO: The rest of the inverse functions](https://www.youtube.com/watch?v=7zBjTAs1DSA)
+- [🎬 The rest of the inverse functions](https://www.youtube.com/watch?v=7zBjTAs1DSA)
 
 <br>
 
 # References
 
-  - [Handout 13: Ratios nirvana v1](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-13.pdf)
-  - [Handout 14: Inverses intro](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-14.pdf)
-  - [Handout 15: Ratios nirvana v2](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-15.pdf)
-  - [Handout 16: Soh-Cah-Toa formula guide](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-16.pdf)
-  - [VIDEO 1: Ratio nirvana 1](https://www.youtube.com/watch?v=mh1nzhymVbc)
-  - [VIDEO 2: Ratio nirvana 2](https://www.youtube.com/watch?v=ltT78ePg9pw)
-  - [VIDEO 3: Inverse functions](https://www.youtube.com/watch?v=mKhTE82mECI)
-  - [Handout 17: The promise mission accomplished](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-17.pdf)
-  - [VIDEO: Mission Accomplished](https://www.youtube.com/watch?v=nSNTkZ52gl8)
+- [⬇ Handout 13: Ratios nirvana v1](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-13.pdf)
+- [⬇ Handout 14: Inverses intro](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-14.pdf)
+- [⬇ Handout 15: Ratios nirvana v2](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-15.pdf)
+- [⬇ Handout 16: Soh-Cah-Toa formula guide](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-16.pdf)
+- [🎬 VIDEO 1: Ratio nirvana 1](https://www.youtube.com/watch?v=mh1nzhymVbc)
+- [🎬 VIDEO 2: Ratio nirvana 2](https://www.youtube.com/watch?v=ltT78ePg9pw)
+- [🎬 VIDEO 3: Inverse functions](https://www.youtube.com/watch?v=mKhTE82mECI)
+- [⬇ Handout 17: The promise mission accomplished](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-17.pdf)
+- [🎬 Mission Accomplished](https://www.youtube.com/watch?v=nSNTkZ52gl8)
 

@@ -75,12 +75,12 @@ fi
 
 Ref:
 
-  - [how to 'break' out of an if loop in bash?](https://stackoverflow.com/a/21011024/11850077)
+- [🌎 how to 'break' out of an if loop in bash?](https://stackoverflow.com/a/21011024/11850077)
 
 
 <br>
 
 # Resources
 
-  - [how to 'break' out of an if loop in bash?](https://stackoverflow.com/a/21011024/11850077)
+- [🌎 how to 'break' out of an if loop in bash?](https://stackoverflow.com/a/21011024/11850077)
 

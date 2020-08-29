@@ -6,7 +6,7 @@ date: 2020-02-26
 
 # Vim Plugin: junegunn/vim-easy-align
 
-[Git Repo](https://github.com/junegunn/vim-easy-align)
+- [🌎 Git Repo](https://github.com/junegunn/vim-easy-align)
 
 ## Default Mappings
 
@@ -27,7 +27,9 @@ With visual map   | Description                        | Equivalent command ~
 <Enter><Enter>**= | Right-left alternating around =    | :'<,'>EasyAlign!**=
 ------------------+------------------------------------+--------------------
 
-References
-=====
+<br>
 
-  - [Git Repo](https://github.com/junegunn/vim-easy-align)
+# Resources
+
+- [🌎 Git Repo](https://github.com/junegunn/vim-easy-align)
+

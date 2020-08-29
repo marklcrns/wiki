@@ -8,7 +8,7 @@ summary: CISC 191 Week 3 Search Algorithms Notes
 
 # Search Algorithms
 
-  - [+Search Algorithms Java Sample Codes](search_algorithms_sample_codes)
+- [↪ Search Algorithms Java Sample Codes](search_algorithms_sample_codes)
 
 An **algorithm** is a sequence of steps for accomplishing a task. **Linear
 search** is a search algorithm that starts from the beginning of a list, and
@@ -24,9 +24,9 @@ items, could require more than 3 minutes.
 
 ### Binary Search Algorithm
 
-  - [*Binary Search Trees](file:../../../../../../../files/summer-2020/CISC-191/week-3/binary-search.ppt)
-  - [`Java Binary Search Tree](https://www.youtube.com/watch?v=M6lYob8STMI)
-  - [`Java Binary Search Tree 2](https://www.youtube.com/watch?v=UcOxGmj45AA)
+- [⬇ Binary Search Trees](file:../../../../../../../files/summer-2020/CISC-191/week-3/binary-search.ppt)
+- [🎬 Java Binary Search Tree](https://www.youtube.com/watch?v=M6lYob8STMI)
+- [🎬 Java Binary Search Tree 2](https://www.youtube.com/watch?v=UcOxGmj45AA)
 
 
 > 17.2.3: Binary search efficiently searches sorted list by reducing the search
@@ -71,13 +71,13 @@ sorted list.
 
 # Resources
 
-  - [*Binary Search Trees](file:../../../../../../../files/summer-2020/CISC-191/week-3/binary-search.ppt)
-  - [`Java Binary Search Tree](https://www.youtube.com/watch?v=M6lYob8STMI)
-  - [`Java Binary Search Tree 2](https://www.youtube.com/watch?v=UcOxGmj45AA)
+- [⬇ Binary Search Trees](file:../../../../../../../files/summer-2020/CISC-191/week-3/binary-search.ppt)
+- [🎬 Java Binary Search Tree](https://www.youtube.com/watch?v=M6lYob8STMI)
+- [🎬 Java Binary Search Tree 2](https://www.youtube.com/watch?v=UcOxGmj45AA)
 
 
 Textbook
 
-  + [Andrew Huang CISC 191: Intermediate Java Programming - zyBooks](https://www.zybooks.com/)
++ [🌎 Andrew Huang CISC 191: Intermediate Java Programming - zyBooks](https://www.zybooks.com/)
     - Chapter 17 Searching and Sorting Algorithms
 

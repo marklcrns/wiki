@@ -10,6 +10,6 @@ summary: Tmux wiki
 
 [Git Repo](https://github.com/tmux/tmux)
 
-  - [Commands](commands)
-  - [Mappings](mappings)
+- [↪ Commands](commands)
+- [↪ Mappings](mappings)
 

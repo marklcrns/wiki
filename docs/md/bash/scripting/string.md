@@ -143,7 +143,7 @@ resetting the string colors with `\e[0m` at the end of each message is a must.
 
 Ref:
 
-  - [Colors in Bash Scripts](https://techstop.github.io/bash-script-colors/)
+- [🌎 Colors in Bash Scripts](https://techstop.github.io/bash-script-colors/)
 
 
 ## Comparing Strings
@@ -214,11 +214,11 @@ fi
 
 Ref:
 
-  - [How to Compare Strings in Bash](https://linuxize.com/post/how-to-compare-strings-in-bash/)
-  - [Shell script Bash, Check if string starts and ends with single quotes](https://stackoverflow.com/a/40322497/11850077)
-  - [How to check a variable for empty and a newline](https://www.unix.com/shell-programming-and-scripting/129086-how-check-variable-empty-newline.html)
-  - [How can I test if a variable is empty or contains only spaces?](https://unix.stackexchange.com/a/146945)
-  - [Shell Parameter Expansion](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion)
+- [🌎 How to Compare Strings in Bash](https://linuxize.com/post/how-to-compare-strings-in-bash/)
+- [🌎 Shell script Bash, Check if string starts and ends with single quotes](https://stackoverflow.com/a/40322497/11850077)
+- [🌎 How to check a variable for empty and a newline](https://www.unix.com/shell-programming-and-scripting/129086-how-check-variable-empty-newline.html)
+- [🌎 How can I test if a variable is empty or contains only spaces?](https://unix.stackexchange.com/a/146945)
+- [🌎 Shell Parameter Expansion](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion)
 
 
 ## String Manipulation
@@ -242,18 +242,18 @@ echo $VALUE $TRIMMED
 
 Ref:
 
-  - [What is the simplest way to remove a trailing slash from each parameter?](https://stackoverflow.com/questions/9018723/what-is-the-simplest-way-to-remove-a-trailing-slash-from-each-parameter)
+- [🌎 What is the simplest way to remove a trailing slash from each parameter?](https://stackoverflow.com/questions/9018723/what-is-the-simplest-way-to-remove-a-trailing-slash-from-each-parameter)
 
 
 <br>
 
 # Resources
 
-  - [Colors in Bash Scripts](https://techstop.github.io/bash-script-colors/)
-  - [How to Compare Strings in Bash](https://linuxize.com/post/how-to-compare-strings-in-bash/)
-  - [Shell script Bash, Check if string starts and ends with single quotes](https://stackoverflow.com/a/40322497/11850077)
-  - [How to check a variable for empty and a newline](https://www.unix.com/shell-programming-and-scripting/129086-how-check-variable-empty-newline.html)
-  - [How can I test if a variable is empty or contains only spaces?](https://unix.stackexchange.com/a/146945)
-  - [Shell Parameter Expansion](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion)
-  - [What is the simplest way to remove a trailing slash from each parameter?](https://stackoverflow.com/questions/9018723/what-is-the-simplest-way-to-remove-a-trailing-slash-from-each-parameter)
+- [🌎 Colors in Bash Scripts](https://techstop.github.io/bash-script-colors/)
+- [🌎 How to Compare Strings in Bash](https://linuxize.com/post/how-to-compare-strings-in-bash/)
+- [🌎 Shell script Bash, Check if string starts and ends with single quotes](https://stackoverflow.com/a/40322497/11850077)
+- [🌎 How to check a variable for empty and a newline](https://www.unix.com/shell-programming-and-scripting/129086-how-check-variable-empty-newline.html)
+- [🌎 How can I test if a variable is empty or contains only spaces?](https://unix.stackexchange.com/a/146945)
+- [🌎 Shell Parameter Expansion](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion)
+- [🌎 What is the simplest way to remove a trailing slash from each parameter?](https://stackoverflow.com/questions/9018723/what-is-the-simplest-way-to-remove-a-trailing-slash-from-each-parameter)
 

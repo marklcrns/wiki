@@ -10,7 +10,7 @@ summary: Module 7 notes and exercises
 
 ## Notes
 
-  - [Module 7](../notes/m-7) -- Chapter 11
+- [↪ Module 7](../notes/m-7) -- Chapter 11
 
 ## Homeworks
 

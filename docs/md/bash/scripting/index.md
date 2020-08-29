@@ -8,17 +8,17 @@ summary: Bash scripting wiki index
 
 # Bash Scripting
 
-- [+Arguments](arguments)
-- [+Array](array)
-- [+Flags](flags)
-- [+Function](function)
-- [+If-Else Statements](if-else)
-- [+Loops](loops)
-- [+Output Streams](out-streams)
-- [+String](string)
-- [+Variable](variable)
+- [↪ Arguments](arguments)
+- [↪ Array](array)
+- [↪ Flags](flags)
+- [↪ Function](function)
+- [↪ If-Else Statements](if-else)
+- [↪ Loops](loops)
+- [↪ Output Streams](out-streams)
+- [↪ String](string)
+- [↪ Variable](variable)
 
 ## Misc
 
-- [+Extras](extras)
+- [↪ Extras](extras)
 

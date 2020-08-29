@@ -74,11 +74,11 @@ echo $result2
 
 Ref:
 
-  - [Returning Values from Bash Functions](https://www.linuxjournal.com/content/return-values-bash-functions#:~:text=The%20simplest%20way%20to%20return%20a%20value%20from,the%20global%20variable%20myresult%20to%20the%20function%20result.)
+- [🌎 Returning Values from Bash Functions](https://www.linuxjournal.com/content/return-values-bash-functions#:~:text=The%20simplest%20way%20to%20return%20a%20value%20from,the%20global%20variable%20myresult%20to%20the%20function%20result.)
 
 <br>
 
 # Resources
 
-  - [Returning Values from Bash Functions](https://www.linuxjournal.com/content/return-values-bash-functions#:~:text=The%20simplest%20way%20to%20return%20a%20value%20from,the%20global%20variable%20myresult%20to%20the%20function%20result.)
+- [🌎 Returning Values from Bash Functions](https://www.linuxjournal.com/content/return-values-bash-functions#:~:text=The%20simplest%20way%20to%20return%20a%20value%20from,the%20global%20variable%20myresult%20to%20the%20function%20result.)
 

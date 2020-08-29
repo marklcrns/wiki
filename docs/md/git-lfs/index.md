@@ -10,9 +10,9 @@ summary: Git-lsf (Large File Storage) wiki
 
 ## Installation
 
-  - [+Installation](installation)
+- [↪ Installation](installation)
 
 ## Usage
 
-  - [+Usage](usage)
+- [↪ Usage](usage)
 

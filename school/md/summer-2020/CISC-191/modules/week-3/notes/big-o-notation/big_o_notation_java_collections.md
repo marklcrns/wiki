@@ -51,11 +51,11 @@ ConcurrentSkipListMap | O(log n) |   O(log n)  | O(1)     | Skip List
 
 Source:
 
-  - [Java Collections Complexity cheatsheet](https://gist.github.com/iSergius/e06963c6eca0a639023666097227427c)
+- [🌎 Java Collections Complexity cheatsheet](https://gist.github.com/iSergius/e06963c6eca0a639023666097227427c)
 
 <br>
 
 # Resources
 
-  - [Java Collections Complexity cheatsheet](https://gist.github.com/iSergius/e06963c6eca0a639023666097227427c)
+- [🌎 Java Collections Complexity cheatsheet](https://gist.github.com/iSergius/e06963c6eca0a639023666097227427c)
 

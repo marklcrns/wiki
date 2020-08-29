@@ -8,8 +8,8 @@ summary: CISC 191 Week 3 Sorting Algorithms Notes
 
 # Sorting Algorithms
 
-  - [`Java Sort Algorithm](https://www.youtube.com/watch?v=JUOyKSZScW0)
-  - [+Sorting Algorithms Java Sample Codes](sorting_algorithms_sample_codes)
+- [🎬 Java Sort Algorithm](https://www.youtube.com/watch?v=JUOyKSZScW0)
+- [↪ Sorting Algorithms Java Sample Codes](sorting_algorithms_sample_codes)
 
 ## Selection Sort
 
@@ -306,10 +306,10 @@ partitions.
 
 # Resources
 
-  - [`Java Sort Algorithm](https://www.youtube.com/watch?v=JUOyKSZScW0)
+- [🎬 Java Sort Algorithm](https://www.youtube.com/watch?v=JUOyKSZScW0)
 
 
 Textbook
 
-  + [Andrew Huang CISC 191: Intermediate Java Programming - zyBooks](https://www.zybooks.com/)
++ [🌎 Andrew Huang CISC 191: Intermediate Java Programming - zyBooks](https://www.zybooks.com/)
     - Chapter 17 Searching and Sorting Algorithms

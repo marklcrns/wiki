@@ -8,11 +8,11 @@ summary: CISC 191 Week 4 Generics and Collections notes
 
 # Generics and Collections
 
-  - [*Generics](file:../../../../../../../files/summer-2020/CISC-191/week-4/generics.ppt)
-  - [`Java intro to Generics and Collections Framework using LinkedList](https://www.youtube.com/watch?v=0OXZuxe_TVk)
-  - [`Java Concurrent Collections: Introduction](https://www.youtube.com/watch?v=8GviG6nSSTA)
-  - [*Sets and Maps](file:../../../../../../../files/summer-2020/CISC-191/week-4/sets_and_maps.ppt)
-  - [*Lists](file:../../../../../../../files/summer-2020/CISC-191/week-4/lists.ppt)
+- [⬇ Generics](file:../../../../../../../files/summer-2020/CISC-191/week-4/generics.ppt)
+- [🎬 Java intro to Generics and Collections Framework using LinkedList](https://www.youtube.com/watch?v=0OXZuxe_TVk)
+- [🎬 Java Concurrent Collections: Introduction](https://www.youtube.com/watch?v=8GviG6nSSTA)
+- [⬇ Sets and Maps](file:../../../../../../../files/summer-2020/CISC-191/week-4/sets_and_maps.ppt)
+- [⬇ Lists](file:../../../../../../../files/summer-2020/CISC-191/week-4/lists.ppt)
 
 ## Generics
 
@@ -85,7 +85,7 @@ number if the Comparable object is greater than otherComparable.
 
 > Sorting an ArrayList of employee records.
 
-  - [+EmployeeRecords](employee_records)
+- [↪ EmployeeRecords](employee_records)
 
 
 Classes that already inherit from a base class can also be defined to implement
@@ -729,16 +729,16 @@ Arrive in Tokyo
 
 # Resources
 
-  - [*Generics](file:../../../../../../../files/summer-2020/CISC-191/week-4/generics.ppt)
-  - [`Java intro to Generics and Collections Framework using LinkedList](https://www.youtube.com/watch?v=0OXZuxe_TVk)
-  - [`Java Concurrent Collections: Introduction](https://www.youtube.com/watch?v=8GviG6nSSTA)
-  - [*Sets and Maps](file:../../../../../../../files/summer-2020/CISC-191/week-4/sets_and_maps.ppt)
-  - [*Lists](file:../../../../../../../files/summer-2020/CISC-191/week-4/lists.ppt)
+- [⬇ Generics](file:../../../../../../../files/summer-2020/CISC-191/week-4/generics.ppt)
+- [🎬 Java intro to Generics and Collections Framework using LinkedList](https://www.youtube.com/watch?v=0OXZuxe_TVk)
+- [🎬 Java Concurrent Collections: Introduction](https://www.youtube.com/watch?v=8GviG6nSSTA)
+- [⬇ Sets and Maps](file:../../../../../../../files/summer-2020/CISC-191/week-4/sets_and_maps.ppt)
+- [⬇ Lists](file:../../../../../../../files/summer-2020/CISC-191/week-4/lists.ppt)
 
 
 Textbook
 
-  + [Andrew Huang CISC 191: Intermediate Java Programming - zyBooks](https://www.zybooks.com/)
++ [🌎 Andrew Huang CISC 191: Intermediate Java Programming - zyBooks](https://www.zybooks.com/)
     - Chapter 13 Generics
     - Chapter 14 Collections
 

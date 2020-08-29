@@ -10,10 +10,10 @@ summary: Bash wiki
 
 ## Commands
 
-  - [+Mounting Drive](mount)
+- [↪ Mounting Drive](mount)
 
 
 ## Scripting
 
-  - [+Scripting](scripting/index)
+- [↪ Scripting](scripting/index)
 

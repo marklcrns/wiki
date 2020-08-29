@@ -8,7 +8,7 @@ summary: ENGL 205 Readings Notes
 
 # Readings Notes
 
-  - [+The Warehouse by Rob Hart](the-warehouse/index)
-  - [+The United States of Paranoia by Jesse Walker](the-unite-states-of-paranoia/index)
-  - [+Research Essay](research-essay/index)
+- [↪ The Warehouse by Rob Hart](the-warehouse/index)
+- [↪ The United States of Paranoia by Jesse Walker](the-unite-states-of-paranoia/index)
+- [↪ Research Essay](research-essay/index)
 

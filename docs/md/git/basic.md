@@ -58,7 +58,7 @@ message for cleaner commit history.
 
 Ref:
 
-  - [Git 50/72 Rule](https://www.midori-global.com/blog/2018/04/02/git-50-72-rule)
+- [🌎 Git 50/72 Rule](https://www.midori-global.com/blog/2018/04/02/git-50-72-rule)
 
 
 ## Push
@@ -124,7 +124,7 @@ git checkout <branch-name> origin/<branch-name>
 
 Ref:
 
-  - [Where to find changes due to `git fetch`](https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch)
+- [🌎 Where to find changes due to `git fetch`](https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch)
 
 
 ## Branch
@@ -188,10 +188,10 @@ server copy). <br>WARNING: This cannot be undone.**
 
 Ref:
 
-  - [`Git Branch, Checkout Commands Tutorial](https://www.youtube.com/watch?v=S7SKhR9NVBk)
-  - [How to Delete a Git Branch Both Locally and Remotely](https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/)
-  - [How can I tell a local branch to track a remote branch?](https://www.git-tower.com/learn/git/faq/track-remote-upstream-branch)
-  - [Rename a Local and Remotee Git Branch](https://linuxize.com/post/how-to-rename-local-and-remote-git-branch/)
+- [🎬 Git Branch, Checkout Commands Tutorial](https://www.youtube.com/watch?v=S7SKhR9NVBk)
+- [🌎 How to Delete a Git Branch Both Locally and Remotely](https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/)
+- [🌎 How can I tell a local branch to track a remote branch?](https://www.git-tower.com/learn/git/faq/track-remote-upstream-branch)
+- [🌎 Rename a Local and Remotee Git Branch](https://linuxize.com/post/how-to-rename-local-and-remote-git-branch/)
 
 
 ## Checkout
@@ -212,7 +212,7 @@ Ref:
 
 Ref:
 
-  - [How to get back to the latest commit after checking out a previous commit?](https://stackoverflow.com/a/2427389)
+- [🌎 How to get back to the latest commit after checking out a previous commit?](https://stackoverflow.com/a/2427389)
 
 
 ## Merge
@@ -235,7 +235,7 @@ git merge master
 
 Ref:
 
-  - [`Merging Branches Tutorial](https://www.youtube.com/watch?v=XX-Kct0PfFc)
+- [🎬 Merging Branches Tutorial](https://www.youtube.com/watch?v=XX-Kct0PfFc)
 
 
 ## Rebase
@@ -267,9 +267,9 @@ git rebase <branch-name>
 
 Ref:
 
-  - [`A Better Git Workflow with Rebase](https://www.youtube.com/watch?v=f1wnYdLEpgI)
-  - [`Git MERGE vs REBASE](https://www.youtube.com/watch?v=CRlGDDprdOQ)
-  - [`Undoing a git rebase](https://stackoverflow.com/a/135614)
+- [🎬 A Better Git Workflow with Rebase](https://www.youtube.com/watch?v=f1wnYdLEpgI)
+- [🎬 Git MERGE vs REBASE](https://www.youtube.com/watch?v=CRlGDDprdOQ)
+- [🌎 Undoing a git rebase](https://stackoverflow.com/a/135614)
 
 
 ## Stash
@@ -330,8 +330,8 @@ changes.
 
 Ref:
 
-  - [`Git Tutorial: Using the Stash Command](https://www.youtube.com/watch?v=KLEDKgMmbBI)
-  - [Git stash official docs](https://git-scm.com/docs/git-stash)
+- [🎬 Git Tutorial: Using the Stash Command](https://www.youtube.com/watch?v=KLEDKgMmbBI)
+- [🌎 Git stash official docs](https://git-scm.com/docs/git-stash)
 
 
 ## Clean
@@ -350,7 +350,7 @@ control, starting from the current directory.
 
 Ref:
 
-  - [Git clean official docs](https://git-scm.com/docs/git-clean)
+- [🌎 Git clean official docs](https://git-scm.com/docs/git-clean)
 
 
 ## Forking Repos
@@ -378,26 +378,26 @@ git merge upstream/master
 
 Ref:
 
-  - [Github's Fork & Pull Workflow for Git Beginners](https://reflectoring.io/github-fork-and-pull/)
+- [🌎 Github's Fork & Pull Workflow for Git Beginners](https://reflectoring.io/github-fork-and-pull/)
 
 
 <br>
 
 # Resources
 
-  - [Git 50/72 Rule](https://www.midori-global.com/blog/2018/04/02/git-50-72-rule)
-  - [Where to find changes due to `git fetch`](https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch/10685691)
-  - [`Git Branch, Checkout Commands Tutorial](https://www.youtube.com/watch?v=S7SKhR9NVBk)
-  - [How to Delete a Git Branch Both Locally and Remotely](https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/)
-  - [How can I tell a local branch to track a remote branch?](https://www.git-tower.com/learn/git/faq/track-remote-upstream-branch)
-  - [Rename a Local and Remotee Git Branch](https://linuxize.com/post/how-to-rename-local-and-remote-git-branch/)
-  - [How to get back to the latest commit after checking out a previous commit?](https://stackoverflow.com/a/2427389)
-  - [`Merging Branches Tutorial](https://www.youtube.com/watch?v=XX-Kct0PfFc)
-  - [`A Better Git Workflow with Rebase](https://www.youtube.com/watch?v=f1wnYdLEpgI)
-  - [`Git MERGE vs REBASE](https://www.youtube.com/watch?v=CRlGDDprdOQ)
-  - [`Undoing a git rebase](https://stackoverflow.com/a/135614)
-  - [`Git Tutorial: Using the Stash Command](https://www.youtube.com/watch?v=KLEDKgMmbBI)
-  - [Git stash official docs](https://git-scm.com/docs/git-stash)
-  - [Git clean official docs](https://git-scm.com/docs/git-clean)
-  - [Github's Fork & Pull Workflow for Git Beginners](https://reflectoring.io/github-fork-and-pull/)
+- [🌎 Git 50/72 Rule](https://www.midori-global.com/blog/2018/04/02/git-50-72-rule)
+- [🌎 Where to find changes due to `git fetch`](https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch/10685691)
+- [🎬 Git Branch, Checkout Commands Tutorial](https://www.youtube.com/watch?v=S7SKhR9NVBk)
+- [🌎 How to Delete a Git Branch Both Locally and Remotely](https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/)
+- [🌎 How can I tell a local branch to track a remote branch?](https://www.git-tower.com/learn/git/faq/track-remote-upstream-branch)
+- [🌎 Rename a Local and Remotee Git Branch](https://linuxize.com/post/how-to-rename-local-and-remote-git-branch/)
+- [🌎 How to get back to the latest commit after checking out a previous commit?](https://stackoverflow.com/a/2427389)
+- [🎬 Merging Branches Tutorial](https://www.youtube.com/watch?v=XX-Kct0PfFc)
+- [🎬 A Better Git Workflow with Rebase](https://www.youtube.com/watch?v=f1wnYdLEpgI)
+- [🎬 Git MERGE vs REBASE](https://www.youtube.com/watch?v=CRlGDDprdOQ)
+- [🌎 Undoing a git rebase](https://stackoverflow.com/a/135614)
+- [🎬 Git Tutorial: Using the Stash Command](https://www.youtube.com/watch?v=KLEDKgMmbBI)
+- [🌎 Git stash official docs](https://git-scm.com/docs/git-stash)
+- [🌎 Git clean official docs](https://git-scm.com/docs/git-clean)
+- [🌎 Github's Fork & Pull Workflow for Git Beginners](https://reflectoring.io/github-fork-and-pull/)
 

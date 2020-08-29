@@ -14,7 +14,7 @@ date: Aug 29, 2020
 
 Total Units Enrolled: 15 - 3 = **12** units
 
-- [+Spring 2020 Classes](spring-2020/index)
+- [↪ Spring 2020 Classes](spring-2020/index)
 
 
 ## Summer 2020
@@ -23,7 +23,7 @@ Total Units Enrolled: 15 - 3 = **12** units
 
 Total Units Enrolled: **7** units
 
-- [+Summer 2020](summer-2020/index)
+- [↪ Summer 2020](summer-2020/index)
 
 
 ## Fall 2020
@@ -32,5 +32,5 @@ Total Units Enrolled: **7** units
 
 Total Units Enrolled: **15** units
 
-- [+Fall 2020](fall-2020/index)
+- [↪ Fall 2020](fall-2020/index)
 

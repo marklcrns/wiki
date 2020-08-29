@@ -1,20 +1,12 @@
 ---
-title: syllabus
+title: Syllabus
 author: Mark Lucernas
 date: 2020-02-05
 tags: syllabus, reviewer, quiz
 ---
 
-# Contents
-  - [NOTES](#NOTES)
-    - [Assignments 10](#NOTES#Assignments 10)
-    - [Online Quizzes 15/Optional Assignments 10](#NOTES#Online Quizzes 15/Optional Assignments 10)
-    - [Group Project](#NOTES#Group Project)
-    - [Tests 6](#NOTES#Tests 6)
-    - [Final Exam](#NOTES#Final Exam)
-    - [Zoom Sessions](#NOTES#Zoom Sessions)
 
-# NOTES
+# Notes
 
 * final grading 500 points total
 

@@ -17,11 +17,11 @@ date: 2020-08-17
 
 ## Course Materials
 
-- [Cengage e-Textbook: Calculus Early Transcendentals, Eighth Edition, Stewart](https://webassign.com/)
+- [🌎 Cengage e-Textbook: Calculus Early Transcendentals, Eighth Edition, Stewart](https://webassign.com/)
   * Cengage account [credentials](vfile:../../../files/fall-2020/MATH-150/cengage_account.txt)
 
 
 ## Chapters
 
-- [+Chapters](chapters/index)
+- [↪ Chapters](chapters/index)
 

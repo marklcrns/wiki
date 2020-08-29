@@ -10,9 +10,9 @@ summary: Git wiki
 
 ## Installation
 
-  - [+Installation](installation)
+- [↪ Installation](installation)
 
 ## Usage
 
-  - [+Usage](usage)
+- [↪ Usage](usage)
 

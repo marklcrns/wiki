@@ -10,15 +10,15 @@ summary: Week 7 Java GUI, Lambdas and Stream API notes
 
 ## AWT and Swing
 
-  - [+AWT and Swing GUI](awt_swing)
+- [↪ AWT and Swing GUI](awt_swing)
 
 
 ## JavaFX
 
-  - [+JavaFX](javafx)
+- [↪ JavaFX](javafx)
 
 
 # Lambdas and Stream API
 
-  - [+Lambdas and Stream API](lambda_stream)
+- [↪ Lambdas and Stream API](lambda_stream)
 

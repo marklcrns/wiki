@@ -8,9 +8,9 @@ summary: Week 5 Graded Discussion Entry
 
 # Materials
 
-  - [`How to Make UML Sequence Diagram](https://www.youtube.com/watch?v=pCK6prSq8aw)
-  - [`UML Class Diagram Tutorial](https://www.youtube.com/watch?v=UI6lqHOVHic&list=PLUoebdZqEHTxNC7hWPPwLsBmWI0KEhZOd)
-  - [Lucidchart.com](http://www.lucidchart.com)
+- [🎬 How to Make UML Sequence Diagram](https://www.youtube.com/watch?v=pCK6prSq8aw)
+- [🎬 UML Class Diagram Tutorial](https://www.youtube.com/watch?v=UI6lqHOVHic&list=PLUoebdZqEHTxNC7hWPPwLsBmWI0KEhZOd)
+- [🌎 Lucidchart.com](https://www.lucidchart.com)
 
 
 # Week 5 Graded Discussion
@@ -38,7 +38,7 @@ Repeat forever.
 
 # Resources
 
-  - [`How to Make UML Sequence Diagram](https://www.youtube.com/watch?v=pCK6prSq8aw)
-  - [`UML Class Diagram Tutorial](https://www.youtube.com/watch?v=UI6lqHOVHic&list=PLUoebdZqEHTxNC7hWPPwLsBmWI0KEhZOd)
-  - [Lucidchart.com](http://www.lucidchart.com)
+- [🎬 How to Make UML Sequence Diagram](https://www.youtube.com/watch?v=pCK6prSq8aw)
+- [🎬 UML Class Diagram Tutorial](https://www.youtube.com/watch?v=UI6lqHOVHic&list=PLUoebdZqEHTxNC7hWPPwLsBmWI0KEhZOd)
+- [🌎 Lucidchart.com](https://www.lucidchart.com)
 

@@ -8,18 +8,18 @@ summary: Java Networking, Socket Programming.
 
 # Java Networking
 
-  - [*Networking](file:../../../../../../../files/summer-2020/CISC-191/week-6/networking.ppt)
-    - [Server.java](https://liveexample.pearsoncmg.com/html/Server.html)
-    - [Client.java](https://liveexample.pearsoncmg.com/html/Client.html)
-    - [MultiThreadServer.java](https://liveexample.pearsoncmg.com/html/MultiThreadServer.html)
-    - [StudentAddress.java](https://liveexample.pearsoncmg.com/html/StudentAddress.html)
-    - [StudentServer.java](https://liveexample.pearsoncmg.com/html/StudentServer.html)
-    - [StudentClient.java](https://liveexample.pearsoncmg.com/html/StudentClient.html)
-    - [TicTacToeServer](https://liveexample.pearsoncmg.com/html/TicTacToeServer.html)
-    - [TicTacToeClient](https://liveexample.pearsoncmg.com/html/TicTacToeClient.html)
-    - [DatagramServer](https://liveexample.pearsoncmg.com/html/DatagramServer.html)
-    - [DatagramClient](https://liveexample.pearsoncmg.com/html/DatagramClient.html)
-  - [`Java Socket Programming](https://www.youtube.com/watch?v=-xKgxqG411c)
+- [⬇ Networking](file:../../../../../../../files/summer-2020/CISC-191/week-6/networking.ppt)
+- [🌎 Server.java](https://liveexample.pearsoncmg.com/html/Server.html)
+- [🌎 Client.java](https://liveexample.pearsoncmg.com/html/Client.html)
+- [🌎 MultiThreadServer.java](https://liveexample.pearsoncmg.com/html/MultiThreadServer.html)
+- [🌎 StudentAddress.java](https://liveexample.pearsoncmg.com/html/StudentAddress.html)
+- [🌎 StudentServer.java](https://liveexample.pearsoncmg.com/html/StudentServer.html)
+- [🌎 StudentClient.java](https://liveexample.pearsoncmg.com/html/StudentClient.html)
+- [🌎 TicTacToeServer](https://liveexample.pearsoncmg.com/html/TicTacToeServer.html)
+- [🌎 TicTacToeClient](https://liveexample.pearsoncmg.com/html/TicTacToeClient.html)
+- [🌎 DatagramServer](https://liveexample.pearsoncmg.com/html/DatagramServer.html)
+- [🌎 DatagramClient](https://liveexample.pearsoncmg.com/html/DatagramClient.html)
+- [🎬 Java Socket Programming](https://www.youtube.com/watch?v=-xKgxqG411c)
 
 ## Client/Server Communications
 
@@ -101,16 +101,16 @@ use DatagramSocket to send and receive packets.
 
 # Resources
 
-  - [*Networking](file:../../../../../../../files/summer-2020/CISC-191/week-6/networking.ppt)
-    - [Server.java](https://liveexample.pearsoncmg.com/html/Server.html)
-    - [Client.java](https://liveexample.pearsoncmg.com/html/Client.html)
-    - [MultiThreadServer.java](https://liveexample.pearsoncmg.com/html/MultiThreadServer.html)
-    - [StudentAddress.java](https://liveexample.pearsoncmg.com/html/StudentAddress.html)
-    - [StudentServer.java](https://liveexample.pearsoncmg.com/html/StudentServer.html)
-    - [StudentClient.java](https://liveexample.pearsoncmg.com/html/StudentClient.html)
-    - [TicTacToeServer](https://liveexample.pearsoncmg.com/html/TicTacToeServer.html)
-    - [TicTacToeClient](https://liveexample.pearsoncmg.com/html/TicTacToeClient.html)
-    - [DatagramServer](https://liveexample.pearsoncmg.com/html/DatagramServer.html)
-    - [DatagramClient](https://liveexample.pearsoncmg.com/html/DatagramClient.html)
-  - [`Java Socket Programming](https://www.youtube.com/watch?v=-xKgxqG411c)
+- [⬇ Networking](file:../../../../../../../files/summer-2020/CISC-191/week-6/networking.ppt)
+- [🌎 Server.java](https://liveexample.pearsoncmg.com/html/Server.html)
+- [🌎 Client.java](https://liveexample.pearsoncmg.com/html/Client.html)
+- [🌎 MultiThreadServer.java](https://liveexample.pearsoncmg.com/html/MultiThreadServer.html)
+- [🌎 StudentAddress.java](https://liveexample.pearsoncmg.com/html/StudentAddress.html)
+- [🌎 StudentServer.java](https://liveexample.pearsoncmg.com/html/StudentServer.html)
+- [🌎 StudentClient.java](https://liveexample.pearsoncmg.com/html/StudentClient.html)
+- [🌎 TicTacToeServer](https://liveexample.pearsoncmg.com/html/TicTacToeServer.html)
+- [🌎 TicTacToeClient](https://liveexample.pearsoncmg.com/html/TicTacToeClient.html)
+- [🌎 DatagramServer](https://liveexample.pearsoncmg.com/html/DatagramServer.html)
+- [🌎 DatagramClient](https://liveexample.pearsoncmg.com/html/DatagramClient.html)
+- [🎬 Java Socket Programming](https://www.youtube.com/watch?v=-xKgxqG411c)
 

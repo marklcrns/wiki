@@ -10,9 +10,9 @@ summary: Week 6 Networking notes
 
 ## Networking
 
-  - [+Networking](networking/index)
+- [↪ Networking](networking/index)
 
 ## Database
 
-  - [+Database Programming](database/index)
+- [↪ Database Programming](database/index)
 

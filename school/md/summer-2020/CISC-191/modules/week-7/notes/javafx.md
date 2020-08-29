@@ -8,10 +8,10 @@ summary: Java JavaFX GUIi notes
 
 # JavaFX
 
-  - [*JavaFX Basics](file:../../../../../../files/summer-2020/CISC-191/week-7/javafx_basics.pdf)
-  - [*JavaFX UI Controls and Multimedia](file:../../../../../../files/summer-2020/CISC-191/week-7/javafx_UIControls_and_multimedia.pdf)
-  - [*JavaFX Advanced](file:../../../../../../files/summer-2020/CISC-191/week-7/javafx_advanced.pdf)
-  - [`JavaFX Java GUI Design Tutorials](https://www.youtube.com/watch?v=FLkOX4Eez6o&list=PL6gx4Cwl9DGBzfXLWLSYVy8EbTdpGbUIG)
+- [⬇ JavaFX Basics](file:../../../../../../files/summer-2020/CISC-191/week-7/javafx_basics.pdf)
+- [⬇ JavaFX UI Controls and Multimedia](file:../../../../../../files/summer-2020/CISC-191/week-7/javafx_UIControls_and_multimedia.pdf)
+- [⬇ JavaFX Advanced](file:../../../../../../files/summer-2020/CISC-191/week-7/javafx_advanced.pdf)
+- [🎬 JavaFX Java GUI Design Tutorials](https://www.youtube.com/watch?v=FLkOX4Eez6o&list=PL6gx4Cwl9DGBzfXLWLSYVy8EbTdpGbUIG)
 
 
 ## Introduction to graphical user interfaces with JavaFX
@@ -517,14 +517,14 @@ public class HistogramViewerFx extends Application {
 
 # Resources
 
-  - [*JavaFX Basics](file:../../../../../../files/summer-2020/CISC-191/week-7/javafx_basics.pdf)
-  - [*JavaFX UI Controls and Multimedia](file:../../../../../../files/summer-2020/CISC-191/week-7/javafx_UIControls_and_multimedia.pdf)
-  - [*JavaFX Advanced](file:../../../../../../files/summer-2020/CISC-191/week-7/javafx_advanced.pdf)
-  - [`JavaFX Java GUI Design Tutorials](https://www.youtube.com/watch?v=FLkOX4Eez6o&list=PL6gx4Cwl9DGBzfXLWLSYVy8EbTdpGbUIG)
+- [⬇ JavaFX Basics](file:../../../../../../files/summer-2020/CISC-191/week-7/javafx_basics.pdf)
+- [⬇ JavaFX UI Controls and Multimedia](file:../../../../../../files/summer-2020/CISC-191/week-7/javafx_UIControls_and_multimedia.pdf)
+- [⬇ JavaFX Advanced](file:../../../../../../files/summer-2020/CISC-191/week-7/javafx_advanced.pdf)
+- [🎬 JavaFX Java GUI Design Tutorials](https://www.youtube.com/watch?v=FLkOX4Eez6o&list=PL6gx4Cwl9DGBzfXLWLSYVy8EbTdpGbUIG)
 
 
 Textbook
 
-  + [Andrew Huang CISC 191: Intermediate Java Programming - zyBooks](https://www.zybooks.com/)
++ [🌎 Andrew Huang CISC 191: Intermediate Java Programming - zyBooks](https://www.zybooks.com/)
     - Chapter 16 JavaFX
 

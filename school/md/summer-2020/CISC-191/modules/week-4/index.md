@@ -10,10 +10,10 @@ summary: CISC 191 Week 4 notes and activities
 
 ## Notes
 
-  - [+Week 4 Notes](notes/index)
+- [↪ Week 4 Notes](notes/index)
 
 
 ## Graded Discussion
 
-  - [+Week 4 Graded Discussion Entry](graded_discussion)
+- [↪ Week 4 Graded Discussion Entry](graded_discussion)
 

@@ -43,12 +43,12 @@ git lfs uninstall --local
 
 Ref:
 
-  - [Git-lfs Wiki Installation](https://github.com/git-lfs/git-lfs/wiki/Installation)
+- [🌎 Git-lfs Wiki Installation](https://github.com/git-lfs/git-lfs/wiki/Installation)
 
 
 <br>
 
 # Resources
 
-  - [Git-lfs Wiki Installation](https://github.com/git-lfs/git-lfs/wiki/Installation)
+- [🌎 Git-lfs Wiki Installation](https://github.com/git-lfs/git-lfs/wiki/Installation)
 

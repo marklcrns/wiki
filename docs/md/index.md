@@ -10,26 +10,36 @@ summary: Personal wiki documentations
 
 ## Bash
 
-- [+Bash](bash/index)
+- [↪ Bash](bash/index)
+
+
+## PowerShell
+
+- [↪ PowerShell](powershell/index)
 
 
 ## Databases
 
-- [+MySQL](mysql/index)
+- [↪ MySQL](mysql/index)
 
 
 ## Shell Applications
 
-- [+Docker](docker)
-- [+Git](git/index)
-- [+Git-lfs](git-lfs/index)
-- [+Taskwarrior](taskwarrior/index)
-- [+Tmux](tmux/index)
-- [+Vim/Neovim](vim/index)
-- [+Ydiff](ydiff/index)
+- [↪ Docker](docker)
+- [↪ Git](git/index)
+- [↪ Git-lfs](git-lfs/index)
+- [↪ Taskwarrior](taskwarrior/index)
+- [↪ Tmux](tmux/index)
+- [↪ Vim/Neovim](vim/index)
+- [↪ Ydiff](ydiff/index)
 
 
 ## WSL/WSL2
 
-- [+WSL/WSL2](wsl/index)
+- [↪ WSL/WSL2](wsl/index)
+
+
+## Misc
+
+- [↪ Supported Markdown Emojis by Pandoc](emojis)
 

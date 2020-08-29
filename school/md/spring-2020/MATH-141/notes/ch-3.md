@@ -7,13 +7,13 @@ date: 2020-03-04
 
 # Chapter 3: System of Equations
 
-  - [Pre-calc Textbook Reference 1](file:../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)
+- [⬇ Pre-calc Textbook Reference 1](file:../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)
 
 ## 3.1 Solve By Graphing
 
 ### Video Lecture
 
-  - [VIDEO: Learn how to solve a system of equations by graphing](https://www.youtube.com/watch?v=OWS2xr7M6NY)
+- [🎬 Learn how to solve a system of equations by graphing](https://www.youtube.com/watch?v=OWS2xr7M6NY)
 
 #### Video Lecture Notes
 
@@ -26,7 +26,7 @@ $$
 
 ### Video Lecture
 
-  - [VIDEO: Solving Systems of Equations... Substitution Method](https://www.youtube.com/watch?v=YriMMWbndn0)
+- [🎬 Solving Systems of Equations... Substitution Method](https://www.youtube.com/watch?v=YriMMWbndn0)
 
 #### Video Lecture Notes
 
@@ -38,7 +38,7 @@ different number, the system of equations has no solution (video, 15:25).
 
 ### Video Lecture
 
-  - [VIDEO: Solving Systems of Equations... Elimination Method](https://www.youtube.com/watch?v=XOJgzW4P7T8)
+- [🎬 Solving Systems of Equations... Elimination Method](https://www.youtube.com/watch?v=XOJgzW4P7T8)
 
 #### Video Lecture Notes
 
@@ -49,7 +49,7 @@ Adding or subtracting system of equations to eliminate a variable works the same
 
 ### Video 1 Lecture
 
-  - [PLAYLIST 1: Introduction to Matrices](https://www.youtube.com/watch?v=kqWCwwyeE6k&list=PLBu4cfksLjchoB_Zb5vbTkZ-4y3-ur_6y)
+- [🎬 PLAYLIST 1: Introduction to Matrices](https://www.youtube.com/watch?v=kqWCwwyeE6k&list=PLBu4cfksLjchoB_Zb5vbTkZ-4y3-ur_6y)
 
 #### Playlist 1 Video 2 Lecture Notes
 
@@ -166,7 +166,7 @@ Adding or subtracting system of equations to eliminate a variable works the same
 
 ### Video 2 Lecture
 
-  - [PLAYLIST 2: Calc 5.5 Determinants and Cramer's Rule](https://www.youtube.com/watch?v=AJi16SLXObk&list=PLaCvjCCHYhspLApshl8YorGhHFpQpN9Tl)
+- [🎬 PLAYLIST 2: Calc 5.5 Determinants and Cramer's Rule](https://www.youtube.com/watch?v=AJi16SLXObk&list=PLaCvjCCHYhspLApshl8YorGhHFpQpN9Tl)
 
 #### Playlist 2 Video 1 Lecture Notes
 
@@ -464,7 +464,7 @@ $$
 
 ### Video Lecture 3
 
-  - [(Linear Algebra) Properties of Determinants](https://www.youtube.com/watch?v=IjMxFP8AtpA)
+- [🎬 (Linear Algebra) Properties of Determinants](https://www.youtube.com/watch?v=IjMxFP8AtpA)
 
 #### Video Lecture 3 Notes
 
@@ -487,25 +487,25 @@ Properties of Determinants
 
 ### Additional Video Lecture
 
-  - [Multiplying Matrices](https://www.youtube.com/watch?v=kuixY2bCc_0)
+- [🎬 Multiplying Matrices](https://www.youtube.com/watch?v=kuixY2bCc_0)
 
 ## 3.5 Cramer's Rule
 
 ### Video 1 Lecture
 
-  - [VIDEO 1: Algebra - Solving Linear Equations using Determinants 3/3](https://www.youtube.com/watch?v=IVxMEy4mfhI)
+- [🎬 VIDEO 1: Algebra - Solving Linear Equations using Determinants 3/3](https://www.youtube.com/watch?v=IVxMEy4mfhI)
 
 ### Video 2 Lecture
 
-  - [VIDEO 2: Determinant of 3x3 matrix](https://www.youtube.com/watch?v=V3e7m-qFDFU)
+- [🎬 VIDEO 2: Determinant of 3x3 matrix](https://www.youtube.com/watch?v=V3e7m-qFDFU)
 
 ### Additional Video 1 Lecture
 
-  - [+VIDEO 1: 5.5.6 Cramer's Rule](https://www.youtube.com/watch?v=DQOHnr0byUM)
+- [🎬 VIDEO 1: 5.5.6 Cramer's Rule](https://www.youtube.com/watch?v=DQOHnr0byUM)
 
 ### Additional Video 2 Lecture
 
-  - [+VIDEO 2: Cramer's Rule to Solve a System of 3 Linear Equations](https://www.youtube.com/watch?v=TtxVGMWXMSE)
+- [🎬 VIDEO 2: Cramer's Rule to Solve a System of 3 Linear Equations](https://www.youtube.com/watch?v=TtxVGMWXMSE)
 
 #### Additional Video 2 Lecture Notes
 
@@ -517,22 +517,26 @@ $$
 
 ### Video Lecture
 
-  - [VIDEO: Introduction to Echelon Row Reduction, How and Why](https://www.youtube.com/watch?v=06zE9IEv4OA)
+- [🎬 Introduction to Echelon Row Reduction, How and Why](https://www.youtube.com/watch?v=06zE9IEv4OA)
 
 <br>
 
 # References
 
-  - [Pre-calc Textbook Reference 1](file:../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)
-  - [VIDEO: Learn how to solve a system of equations by graphing](https://www.youtube.com/watch?v=OWS2xr7M6NY)
-  - [VIDEO: Solving Systems of Equations... Substitution Method](https://www.youtube.com/watch?v=YriMMWbndn0)
-  - [VIDEO: Solving Systems of Equations... Elimination Method](https://www.youtube.com/watch?v=XOJgzW4P7T8)
-  - [PLAYLIST 1: Introduction to Matrices](https://www.youtube.com/watch?v=kqWCwwyeE6k&list=PLBu4cfksLjchoB_Zb5vbTkZ-4y3-ur_6y)
-  - [PLAYLIST 2: Calc 5.5 Determinants and Cramer's Rule](https://www.youtube.com/watch?v=AJi16SLXObk&list=PLaCvjCCHYhspLApshl8YorGhHFpQpN9Tl)
-  - [(Linear Algebra) Properties of Determinants](https://www.youtube.com/watch?v=IjMxFP8AtpA)
-  - [Multiplying Matrices](https://www.youtube.com/watch?v=kuixY2bCc_0)
-  - [VIDEO 1: Algebra - Solving Linear Equations using Determinants 3/3](https://www.youtube.com/watch?v=IVxMEy4mfhI)
-  - [VIDEO 2: Determinant of 3x3 matrix](https://www.youtube.com/watch?v=V3e7m-qFDFU)
-  - [+VIDEO 1: 5.5.6 Cramer's Rule](https://www.youtube.com/watch?v=DQOHnr0byUM)
-  - [+VIDEO 2: Cramer's Rule to Solve a System of 3 Linear Equations](https://www.youtube.com/watch?v=TtxVGMWXMSE)
-  - [VIDEO: Introduction to Echelon Row Reduction, How and Why](https://www.youtube.com/watch?v=06zE9IEv4OA)
+- [⬇ Pre-calc Textbook Reference 1](file:../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)
+- [🎬 Learn how to solve a system of equations by graphing](https://www.youtube.com/watch?v=OWS2xr7M6NY)
+- [🎬 Solving Systems of Equations... Substitution Method](https://www.youtube.com/watch?v=YriMMWbndn0)
+- [🎬 Solving Systems of Equations... Elimination Method](https://www.youtube.com/watch?v=XOJgzW4P7T8)
+- [🎬 PLAYLIST 1: Introduction to Matrices](https://www.youtube.com/watch?v=kqWCwwyeE6k&list=PLBu4cfksLjchoB_Zb5vbTkZ-4y3-ur_6y)
+- [🎬 PLAYLIST 2: Calc 5.5 Determinants and Cramer's Rule](https://www.youtube.com/watch?v=AJi16SLXObk&list=PLaCvjCCHYhspLApshl8YorGhHFpQpN9Tl)
+- [🎬 (Linear Algebra) Properties of Determinants](https://www.youtube.com/watch?v=IjMxFP8AtpA)
+- [🎬 Multiplying Matrices](https://www.youtube.com/watch?v=kuixY2bCc_0)
+- [🎬 VIDEO 1: Algebra - Solving Linear Equations using Determinants 3/3](https://www.youtube.com/watch?v=IVxMEy4mfhI)
+- [🎬 VIDEO 2: Determinant of 3x3 matrix](https://www.youtube.com/watch?v=V3e7m-qFDFU)
+- [🎬 VIDEO 1: 5.5.6 Cramer's Rule](https://www.youtube.com/watch?v=DQOHnr0byUM)
+- [🎬 VIDEO 2: Cramer's Rule to Solve a System of 3 Linear Equations](https://www.youtube.com/watch?v=TtxVGMWXMSE)
+- [🎬 Introduction to Echelon Row Reduction, How and Why](https://www.youtube.com/watch?v=06zE9IEv4OA)
+- [🎬 Introduction to Echelon Row Reduction, How and Why](https://www.youtube.com/watch?v=06zE9IEv4OA)
+- [🎬 Introduction to Echelon Row Reduction, How and Why](https://www.youtube.com/watch?v=06zE9IEv4OA)
+- [🎬 Introduction to Echelon Row Reduction, How and Why](https://www.youtube.com/watch?v=06zE9IEv4OA)
+- [🎬 Introduction to Echelon Row Reduction, How and Why](https://www.youtube.com/watch?v=06zE9IEv4OA)

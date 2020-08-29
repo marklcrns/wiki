@@ -10,5 +10,5 @@ summary: CISC 191 Week 1 notes and activities
 
 ## Notes
 
-  - [+Week 1 Notes](notes/index)
+- [↪ Week 1 Notes](notes/index)
 

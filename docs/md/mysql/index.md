@@ -8,5 +8,5 @@ summary: MySQL Database Wiki
 
 # MySQL
 
-  - [+Usage](usage)
+- [↪ Usage](usage)
 

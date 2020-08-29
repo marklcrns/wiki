@@ -59,25 +59,25 @@ sudo add-apt-repository \
 
 Ref:
 
-- [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+- [🌎 Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 
 
 ### Windows
 
 #### WSL/WSL2
 
-- [+WSL 2 Docker](wsl/docker)
+- [↪ WSL 2 Docker](wsl/docker)
 
 
 ## Usage
 
-- [Docker For Beginners: From Docker Desktop to Deployment](https://www.youtube.com/watch?v=i7ABlHngi1Q)
+- [🎬 Docker For Beginners: From Docker Desktop to Deployment](https://www.youtube.com/watch?v=i7ABlHngi1Q)
 
 
 <br>
 
 # Resources
 
-- [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
-- [Docker For Beginners: From Docker Desktop to Deployment](https://www.youtube.com/watch?v=i7ABlHngi1Q)
+- [🌎 Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+- [🎬 Docker For Beginners: From Docker Desktop to Deployment](https://www.youtube.com/watch?v=i7ABlHngi1Q)
 

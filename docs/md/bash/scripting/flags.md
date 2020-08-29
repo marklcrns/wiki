@@ -112,14 +112,14 @@ verbose flab options such as `--help`.
 > WARNING: `OPTARG` at the end of a command may be considered a part of command
 line arguments even after `shift "$((OPTIND-1))"`.
 
-- [How to get arguments with flags in Bash](https://stackoverflow.com/questions/7069682/how-to-get-arguments-with-flags-in-bash/21128172)
-- [Explain the shell command: shift $(($optind - 1))](https://unix.stackexchange.com/a/214151)
+- [🌎 How to get arguments with flags in Bash](https://stackoverflow.com/questions/7069682/how-to-get-arguments-with-flags-in-bash/21128172)
+- [🌎 Explain the shell command: shift $(($optind - 1))](https://unix.stackexchange.com/a/214151)
 
 
 <br>
 
 # Resources
 
-- [How to get arguments with flags in Bash](https://stackoverflow.com/questions/7069682/how-to-get-arguments-with-flags-in-bash/21128172)
-- [Explain the shell command: shift $(($optind - 1))](https://unix.stackexchange.com/a/214151)
+- [🌎 How to get arguments with flags in Bash](https://stackoverflow.com/questions/7069682/how-to-get-arguments-with-flags-in-bash/21128172)
+- [🌎 Explain the shell command: shift $(($optind - 1))](https://unix.stackexchange.com/a/214151)
 

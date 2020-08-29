@@ -10,12 +10,12 @@ summary: CISC 191 Week 6 notes and activities
 
 ## Notes
 
-  - [+Week 6 Notes](notes/index)
+- [↪ Week 6 Notes](notes/index)
 
 
 ## Graded Discussion
 
-  - [+Week 6 Graded Discussion Entry](graded_discussion)
+- [↪ Week 6 Graded Discussion Entry](graded_discussion)
 
 
 ## Lab

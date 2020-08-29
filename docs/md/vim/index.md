@@ -8,5 +8,5 @@ summmary: Vim/Neovim wiki
 
 # Vim/Neovim Wiki
 
-- [Vim Command Line Commands](commands/index)
-- [Plugins](plugins/index)
+- [↪ Vim Command Line Commands](commands/index)
+- [↪ Plugins](plugins/index)

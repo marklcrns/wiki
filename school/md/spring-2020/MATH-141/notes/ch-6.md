@@ -7,21 +7,21 @@ summary: Trig Identities
 
 # Chapter 6: Trig Identities
 
-  - [VIDEO: Law of Sines](https://www.youtube.com/watch?v=bDPRWJdVzfs)
+- [🎬 Law of Sines](https://www.youtube.com/watch?v=bDPRWJdVzfs)
     * $\frac{\sin(A)}{a} = \frac{\sin(B)}{b} = \frac{\sin(C)}{c}$
     * or
     * $\frac{a}{\sin(A)} = \frac{b}{\sin(B)} = \frac{c}{\sin(C)}$
-  - [VIDEO: Law of Cosines](https://www.youtube.com/watch?v=ZElOxG7_m3c)
+- [🎬 Law of Cosines](https://www.youtube.com/watch?v=ZElOxG7_m3c)
     * $a^{2} = b^{2} + c^{2} - 2bc\cos(\theta)$
 
 
 ## 6.1 Identities Introduction
 
-  - [Handout 24: Famous Trigonometry Identities](file:../../../../files/spring-2020/MATH-141/ch-6/ch-6_handout-24.pdf)
+- [⬇ Handout 24: Famous Trigonometry Identities](file:../../../../files/spring-2020/MATH-141/ch-6/ch-6_handout-24.pdf)
 
 ### Video Lecture 1
 
-  - [VIDEO 1: TRIGONOMETRY IDENTITIES intro observations](https://www.youtube.com/watch?v=mERrO4A4GQQ)
+- [🎬 VIDEO 1: TRIGONOMETRY IDENTITIES intro observations](https://www.youtube.com/watch?v=mERrO4A4GQQ)
 
 #### Video Lecture 1 Notes
 
@@ -32,11 +32,11 @@ summary: Trig Identities
 
 ### Video Lecture  2
 
-  - [VIDEO 2: TRIGONOMETRY IDENTITIES first look part 1](https://www.youtube.com/watch?v=j4CHZmn8NMc)
+- [🎬 VIDEO 2: TRIGONOMETRY IDENTITIES first look part 1](https://www.youtube.com/watch?v=j4CHZmn8NMc)
 
 ### Video Lecture 3
 
-  - [VIDEO 3: TRIGONOMETRY IDENTITIES first look part 2](https://www.youtube.com/watch?v=vNeCkLrya2E)
+- [🎬 VIDEO 3: TRIGONOMETRY IDENTITIES first look part 2](https://www.youtube.com/watch?v=vNeCkLrya2E)
 
 #### Video Lecture 3 Notes
 
@@ -70,7 +70,7 @@ Methods to prove an equation is an identity:
 
 ### Video Lecture
 
-  - [VIDEO: TRIGONOMETRY IDENTITIES cofunctions](https://www.youtube.com/watch?v=nAmXELRD6vM)
+- [🎬 TRIGONOMETRY IDENTITIES cofunctions](https://www.youtube.com/watch?v=nAmXELRD6vM)
 
 #### Video Lecture Notes
 
@@ -108,7 +108,7 @@ Methods to prove an equation is an identity:
 
 ### Video Lecture
 
-  - [VIDEO: TRIGONOMETRY IDENTITIES even odd identities](https://www.youtube.com/watch?v=ScGHyV-3ABE)
+- [🎬 TRIGONOMETRY IDENTITIES even odd identities](https://www.youtube.com/watch?v=ScGHyV-3ABE)
 
 #### Video Lecture Notes
 
@@ -122,7 +122,7 @@ Methods to prove an equation is an identity:
 
 ### Video Lecture 1
 
-  - [VIDEO 1: TRIGONOMETRY IDENTITIES pythagoras identities part 1](https://www.youtube.com/watch?v=RrCQGk--M0E)
+- [🎬 VIDEO 1: TRIGONOMETRY IDENTITIES pythagoras identities part 1](https://www.youtube.com/watch?v=RrCQGk--M0E)
 
 #### Video Lecture 1 Notes
 
@@ -135,7 +135,7 @@ Methods to prove an equation is an identity:
 
 ### Video Lecture 2
 
-  - [VIDEO 2: TRIGONOMETRY IDENTITIES pythagoras identities part 2](https://www.youtube.com/watch?v=K1ekCMLygtI)
+- [🎬 VIDEO 2: TRIGONOMETRY IDENTITIES pythagoras identities part 2](https://www.youtube.com/watch?v=K1ekCMLygtI)
 
 #### Video Lecture 2 Notes
 
@@ -184,7 +184,7 @@ Part 2
 
 ### Video Lecture 1
 
-  - [VIDEO 1: TRIGONOMETRY IDENTITIES difference angle sum angle identities part 1](https://www.youtube.com/watch?v=zUiHEmi_26w)
+- [🎬 VIDEO 1: TRIGONOMETRY IDENTITIES difference angle sum angle identities part 1](https://www.youtube.com/watch?v=zUiHEmi_26w)
 
 #### Video Lecture 1 Notes
 
@@ -205,7 +205,7 @@ In contrast, $\sin()$ is not, and therefore an **ODD** function.
 
 ### Video Lecture 2
 
-  - [VIDEO 2: TRIGONOMETRY IDENTITIES difference angle sum angle identities part 2](https://www.youtube.com/watch?v=WNF7d5tA-Kk)
+- [🎬 VIDEO 2: TRIGONOMETRY IDENTITIES difference angle sum angle identities part 2](https://www.youtube.com/watch?v=WNF7d5tA-Kk)
 
 #### Video Lecture 2 Notes
 
@@ -220,7 +220,7 @@ Distance formula
 
 ### Video Lecture 3
 
-  - [VIDEO 3: TRIGONOMETRY IDENTITIES double angle identities](https://www.youtube.com/watch?v=5YDh-wfOSJU)
+- [🎬 VIDEO 3: TRIGONOMETRY IDENTITIES double angle identities](https://www.youtube.com/watch?v=5YDh-wfOSJU)
 
 #### Video Lecture 3 Notes
 
@@ -248,7 +248,7 @@ Distance formula
 
 ### Video Lecture
 
-  - [VIDEO: TRIGONOMETRY IDENTITIES sum to product and product to sum identities](https://www.youtube.com/watch?v=YsL1TuWGn1c)
+- [🎬 TRIGONOMETRY IDENTITIES sum to product and product to sum identities](https://www.youtube.com/watch?v=YsL1TuWGn1c)
 
 ### Daabz Questions
 
@@ -261,17 +261,17 @@ Distance formula
 
 # References
 
-  - [VIDEO: Law of Sines](https://www.youtube.com/watch?v=bDPRWJdVzfs)
-  - [VIDEO: Law of Cosines](https://www.youtube.com/watch?v=ZElOxG7_m3c)
-  - [Handout 24: Famous Trigonometry Identities](file:../../../../files/spring-2020/MATH-141/ch-6/ch-6_handout-24.pdf)
-  - [VIDEO 1: TRIGONOMETRY IDENTITIES intro observations](https://www.youtube.com/watch?v=mERrO4A4GQQ)
-  - [VIDEO 2: TRIGONOMETRY IDENTITIES first look part 1](https://www.youtube.com/watch?v=j4CHZmn8NMc)
-  - [VIDEO 3: TRIGONOMETRY IDENTITIES first look part 2](https://www.youtube.com/watch?v=vNeCkLrya2E)
-  - [VIDEO: TRIGONOMETRY IDENTITIES cofunctions](https://www.youtube.com/watch?v=nAmXELRD6vM)
-  - [VIDEO: TRIGONOMETRY IDENTITIES even odd identities](https://www.youtube.com/watch?v=ScGHyV-3ABE)
-  - [VIDEO 1: TRIGONOMETRY IDENTITIES pythagoras identities part 1](https://www.youtube.com/watch?v=RrCQGk--M0E)
-  - [VIDEO 2: TRIGONOMETRY IDENTITIES pythagoras identities part 2](https://www.youtube.com/watch?v=K1ekCMLygtI)
-  - [VIDEO 1: TRIGONOMETRY IDENTITIES difference angle sum angle identities part 1](https://www.youtube.com/watch?v=zUiHEmi_26w)
-  - [VIDEO 2: TRIGONOMETRY IDENTITIES difference angle sum angle identities part 2](https://www.youtube.com/watch?v=WNF7d5tA-Kk)
-  - [VIDEO 3: TRIGONOMETRY IDENTITIES double angle identities](https://www.youtube.com/watch?v=5YDh-wfOSJU)
-  - [VIDEO: TRIGONOMETRY IDENTITIES sum to product and product to sum identities](https://www.youtube.com/watch?v=YsL1TuWGn1c)
+- [🎬 Law of Sines](https://www.youtube.com/watch?v=bDPRWJdVzfs)
+- [🎬 Law of Cosines](https://www.youtube.com/watch?v=ZElOxG7_m3c)
+- [⬇ Handout 24: Famous Trigonometry Identities](file:../../../../files/spring-2020/MATH-141/ch-6/ch-6_handout-24.pdf)
+- [🎬 VIDEO 1: TRIGONOMETRY IDENTITIES intro observations](https://www.youtube.com/watch?v=mERrO4A4GQQ)
+- [🎬 VIDEO 2: TRIGONOMETRY IDENTITIES first look part 1](https://www.youtube.com/watch?v=j4CHZmn8NMc)
+- [🎬 VIDEO 3: TRIGONOMETRY IDENTITIES first look part 2](https://www.youtube.com/watch?v=vNeCkLrya2E)
+- [🎬 TRIGONOMETRY IDENTITIES cofunctions](https://www.youtube.com/watch?v=nAmXELRD6vM)
+- [🎬 TRIGONOMETRY IDENTITIES even odd identities](https://www.youtube.com/watch?v=ScGHyV-3ABE)
+- [🎬 VIDEO 1: TRIGONOMETRY IDENTITIES pythagoras identities part 1](https://www.youtube.com/watch?v=RrCQGk--M0E)
+- [🎬 VIDEO 2: TRIGONOMETRY IDENTITIES pythagoras identities part 2](https://www.youtube.com/watch?v=K1ekCMLygtI)
+- [🎬 VIDEO 1: TRIGONOMETRY IDENTITIES difference angle sum angle identities part 1](https://www.youtube.com/watch?v=zUiHEmi_26w)
+- [🎬 VIDEO 2: TRIGONOMETRY IDENTITIES difference angle sum angle identities part 2](https://www.youtube.com/watch?v=WNF7d5tA-Kk)
+- [🎬 VIDEO 3: TRIGONOMETRY IDENTITIES double angle identities](https://www.youtube.com/watch?v=5YDh-wfOSJU)
+- [🎬 TRIGONOMETRY IDENTITIES sum to product and product to sum identities](https://www.youtube.com/watch?v=YsL1TuWGn1c)

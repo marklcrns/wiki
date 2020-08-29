@@ -10,7 +10,7 @@ summary: Module 2 notes and exercises
 
 ## Notes
 
-  - [Module 2](../notes/m-2) -- Chapter 3.5
+- [↪ Module 2](../notes/m-2) -- Chapter 3.5
 
 ## Homeworks
 
@@ -22,19 +22,19 @@ summary: Module 2 notes and exercises
 
 ![Create Shape Image](../../../../files/spring-2020/CISC-190/module-2/m-2_createShapes.png)
 
-  - [CreateShape.java](vfile:../../../../files/spring-2020/CISC-190/module-2/CreateShapes.java)
-  - [Turtle.java](vfile:../../../../files/spring-2020/CISC-190/module-2/Turtle.java)
+- [⬇ CreateShape.java](vfile:../../../../files/spring-2020/CISC-190/module-2/CreateShapes.java)
+- [⬇ Turtle.java](vfile:../../../../files/spring-2020/CISC-190/module-2/Turtle.java)
 
 ### Extra Credits
 
-  - [TurtleNameTester.java](vfile:../../../../files/spring-2020/CISC-190/module-2/TurtleNameTester.java)
-  - [Turtle.java](vfile:../../../../files/spring-2020/CISC-190/module-2/Turtle.java)
+- [⬇ TurtleNameTester.java](vfile:../../../../files/spring-2020/CISC-190/module-2/TurtleNameTester.java)
+- [⬇ Turtle.java](vfile:../../../../files/spring-2020/CISC-190/module-2/Turtle.java)
 
 ### Explain
 
-  - [VIDEO: CISC 190 M-2 Explain: Creating Canvas Grid](https://www.youtube.com/watch?v=dL-Q_4gOqeQ)
+- [🎬 CISC 190 M-2 Explain: Creating Canvas Grid](https://www.youtube.com/watch?v=dL-Q_4gOqeQ)
 
 ### Reflect
 
-  - [Module 2 Reflect](file:../../../../files/spring-2020/CISC-190/module-2/m-2_reflect.docx)
+- [⬇ Module 2 Reflect](file:../../../../files/spring-2020/CISC-190/module-2/m-2_reflect.docx)
 

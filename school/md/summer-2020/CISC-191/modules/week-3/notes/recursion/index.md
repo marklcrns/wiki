@@ -8,13 +8,13 @@ summary: CISC 191 Week 3 Recursion Notes
 
 # Recursion
 
-  - [*Recursion](file:../../../../../../../files/summer-2020/CISC-191/week-3/recursion.ppt)
-  - [`Java Recursion](https://www.youtube.com/watch?v=neuDuf_i8Sg)
+- [⬇ Recursion](file:../../../../../../../files/summer-2020/CISC-191/week-3/recursion.ppt)
+- [🎬 Java Recursion](https://www.youtube.com/watch?v=neuDuf_i8Sg)
 
 
 ## Recursion Java Sample Codes
 
-  - [+Recursion Java Sample Codes](recursion_sample_codes)
+- [↪ Recursion Java Sample Codes](recursion_sample_codes)
 
 
 ## Stack Overflow
@@ -34,10 +34,10 @@ overflow error or stack overflow exception.
 
 # Resources
 
-  - [*Recursion](file:../../../../../../../files/summer-2020/CISC-191/week-3/recursion.ppt)
-  - [`Java Recursion](https://www.youtube.com/watch?v=neuDuf_i8Sg)
+- [⬇ Recursion](file:../../../../../../../files/summer-2020/CISC-191/week-3/recursion.ppt)
+- [🎬 Java Recursion](https://www.youtube.com/watch?v=neuDuf_i8Sg)
 
 Textbook
 
-  + [Andrew Huang CISC 191: Intermediate Java Programming - zyBooks](https://www.zybooks.com/)
++ [🌎 Andrew Huang CISC 191: Intermediate Java Programming - zyBooks](https://www.zybooks.com/)
     - Chapter 11 Recursion

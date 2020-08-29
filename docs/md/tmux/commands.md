@@ -7,6 +7,8 @@ date: 2020-03-07
 
 # Tmux Commands
 
+- [🌎 Renaming sessions](https://superuser.com/a/428025)
+
 ## Shell Prompt
 
   - `tmux rename-session -t [current-name] [new-name]` = Rename session
@@ -18,7 +20,9 @@ date: 2020-03-07
 
   - `rename-session -t [current-name] [new-name]` = Rename session
 
-References
-=====
+<br>
 
-  - [Renaming sessions](https://superuser.com/a/428025)
+# Resources
+
+- [🌎 Renaming sessions](https://superuser.com/a/428025)
+

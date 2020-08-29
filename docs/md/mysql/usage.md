@@ -8,8 +8,8 @@ summary: MySQL Usage
 
 # MySQL Usage
 
-  - [`MySQL Tutorial](https://www.youtube.com/watch?v=yPu6qV5byu4)
-  - [MySQL Tutorial Transcript](http://www.newthinktank.com/2014/08/mysql-video-tutorial/)
+- [🎬 MySQL Tutorial](https://www.youtube.com/watch?v=yPu6qV5byu4)
+- [🌎 MySQL Tutorial Transcript](https://www.newthinktank.com/2014/08/mysql-video-tutorial/)
 
 
 ## CLI Usage
@@ -83,7 +83,7 @@ CREATE TABLE EMPLOYEE(
 
 > `NOT NULL` means the table field/column will not accept `Null` values.
 
-  - [Connect to MySQL with JDBC driver](https://mkyong.com/jdbc/how-to-connect-to-mysql-with-jdbc-driver-java/)
+- [🌎 Connect to MySQL with JDBC driver](https://mkyong.com/jdbc/how-to-connect-to-mysql-with-jdbc-driver-java/)
 
 **Sample advanced table definition:**
 
@@ -308,7 +308,7 @@ ALTER TABLE student CHANGE event_id test_id INT UNSIGNED NOT NULL;
 
 # Resources
 
-  - [`MySQL Tutorial](https://www.youtube.com/watch?v=yPu6qV5byu4)
-  - [MySQL Tutorial Transcript](http://www.newthinktank.com/2014/08/mysql-video-tutorial/)
-  - [Connect to MySQL with JDBC driver](https://mkyong.com/jdbc/how-to-connect-to-mysql-with-jdbc-driver-java/)
+- [🎬 MySQL Tutorial](https://www.youtube.com/watch?v=yPu6qV5byu4)
+- [🌎 MySQL Tutorial Transcript](https://www.newthinktank.com/2014/08/mysql-video-tutorial/)
+- [🌎 Connect to MySQL with JDBC driver](https://mkyong.com/jdbc/how-to-connect-to-mysql-with-jdbc-driver-java/)
 

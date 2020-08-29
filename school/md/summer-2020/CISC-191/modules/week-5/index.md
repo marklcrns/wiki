@@ -10,15 +10,15 @@ summary: CISC 191 Week 5 notes and activities
 
 ## Notes
 
-  - [+Week 5 Notes](notes/index)
+- [↪ Week 5 Notes](notes/index)
 
 
 ## Graded Discussion
 
-  - [+Week 5 Graded Discussion Entry](graded_discussion)
+- [↪ Week 5 Graded Discussion Entry](graded_discussion)
 
 
 ## Lab
 
-  - [+Threading Lab](lab)
+- [↪ Threading Lab](lab)
 
