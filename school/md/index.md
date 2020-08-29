@@ -1,8 +1,8 @@
 ---
 title: School Index
+subtitle: College notes
 author: Mark Lucernas
-date: 2020-02-05
-summary: College notes
+date: Aug 29, 2020
 ---
 
 

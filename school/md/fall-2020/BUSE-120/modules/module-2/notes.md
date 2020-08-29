@@ -115,10 +115,76 @@ costs; particularly the costs of losing other alternatives. Being aware of these
 opportunity costs can help us make better decisions with our finances and with
 other aspects of life.
 
+[`Opportunity Cost Definition and Real World Examples](https://www.youtube.com/watch?v=NwOYLV-L7pc)
+
+
+### 2.4 Financial Advisors
+
+#### Questions to Ask About Financial Products
+
+One very important thing to remember about financial advisors is that many of
+them are not required to act in the best interests of their clients. In other
+words, many advisors are really more like salespeople, who get paid a commission
+when they sell particular financial products (investments, insurance, etc.) to
+their clients. (That's why in the list above Eric Tyson says that a good
+financial advisor helps you purchase commission-free financial products.)
+
+Some kinds of financial advisors are legally required to act in the best
+interest of their clients. These are called "fiduciaries." We'll cover the
+concept of fiduciaries in a later module. For now, it's just important to know
+that some advisors are really more like salespeople for financial products. To
+screen for this, Jill Schlesinger recommends you ask five questions of anyone
+who is trying to sell you a financial product:
+
+1. How much will this financial product cost me? (For example, this might be an
+   up-front commission or an annual fee.)
+2. What are the alternatives to this financial product? (There might be
+   something less expensive you can do to achieve the financial goal you're
+   seeking by purchasing the product.)
+3. How easy is it to get my money out of this investment, and if I do what fees
+   or penalties would I pay? (This question is to determine how "liquid" the
+   financial product is.)
+4. What tax consequences will this financial product carry for me? (Taxes should
+   be considered part of the "cost" of the product.)
+5. What's the worst-case scenario I face with this financial product? (Many
+   advisors will give you a best-case scenario, so this question is designed to
+   help you see the potential downside.)
+
+
+### 2.5 Occupations and the Labor Market
+
+In the reading for this module we learned that income is money that is earned or
+received in a given period. There are two basic ways of earning income: by
+selling labor or by selling capital. Selling labor means working to earn a wage
+or salary. This is the way that most people earn most of their income over their
+lifespan.
+
+- [Career Interest Assessment](https://www.careeronestop.org/toolkit/careers/interest-assessment.aspx)
+
+### 2.6 Financial Priorities and Mistakes
+
+#### Financial Priorities
+
+- Priority 1: Get rid of consumer (or "bad") debt - the highest-interest debts first
+- Priority 2: Build an emergency fund equal to three to six months of living expenses
+- Priority 3: Reduce expenses (and/or increase income from labor) to create a cash surplus
+- Priority 4: Save and invest the cash surplus to create more income from your capital
+
+#### Common Financial Mistakes
+
+- Not planning
+- Overspending
+- Buying with consumer credit (e.g. credit cards)
+- Delaying saving for retirement
+- Falling prey to financial sales pitches
+- Not doing your homework (for big purchases and for hiring people like financial advisors)
+- Making decisions based on emotion
+- Not separating the wheat from the chaff (e.g., following bad advice)
+- Exposing yourself to catastrophic risk
+- Focusing too much on money
 
 
 ## Chapter 2: Basic Ideas of Finance
-
 
 
 
