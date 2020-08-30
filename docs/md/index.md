@@ -25,6 +25,8 @@ summary: Personal wiki documentations
 
 ## Shell Applications
 
+### Linux
+
 - [↪ Docker](docker)
 - [↪ Git](git/index)
 - [↪ Git-lfs](git-lfs/index)
@@ -32,6 +34,10 @@ summary: Personal wiki documentations
 - [↪ Tmux](tmux/index)
 - [↪ Vim/Neovim](vim/index)
 - [↪ Ydiff](ydiff/index)
+
+### Windows
+
+- [↪ Chocolately](shell-apps/windows/choco/index)
 
 
 ## WSL/WSL2
