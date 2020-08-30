@@ -249,13 +249,16 @@ you want to indicate that a literal value is a hexadecimal number, you must
 place 0x in front of it. (This is zero-x, not oh-x.) Here is how the
 hexadecimal number F4 would be expressed in C++:
 
-    0xF4
+```
+0xF4
+```
 
 Octal numbers must be preceded by a 0 (zero, not oh). For example, the octal 31
 would be written
 
-    031
-
+```
+031
+```
 
 ### 2.8 Floating-Point Data Types
 
@@ -306,26 +309,29 @@ int main()
 
 All of the following floating-point literals are equivalent:
 
-    1.496E8
-    1.496e8
-    1.496E+8
-    1.496e+8
-    149600000.0
-
+```
+1.496E8
+1.496e8
+1.496E+8
+1.496e+8
+149600000.0
+```
 
 Floating-point literals are normally stored in memory as doubles. If you need
 one to be stored as a float, you can append the letter `F` or `f` to the end of
 it.  For example, the following literals would be stored as float numbers:
 
-    1.2F
-    45.907f
-
+```
+1.2F
+45.907f
+```
 
 Lf you want to force a value to be stored as a long double, append an `L` to it,
 as shown here:
 
-    1034.56L
-
+```
+1034.56L
+```
 
 #### Assigning Floating-Point Values to Integer Variables
 
@@ -427,13 +433,7 @@ int main()
 }
 ```
 
-
-
-####### Left at page 59
-
-
-
-
+%% Left at page 59
 
 
 ## Videos
@@ -478,7 +478,6 @@ int main()
 - [🎬 CISC 192 Setion 2.14 Comments](https://www.youtube.com/watch?v=dxsaZJYAkys)
 - [🎬 CISC 192 Section 2.15 Named Constants using const Keyword](https://www.youtube.com/watch?v=IkAc8g5AKaY)
 - [🎬 CISC 192 Section 2.16 Programming Style](https://www.youtube.com/watch?v=8rDCKXbXFeA)
-
 
 Textbook
 
