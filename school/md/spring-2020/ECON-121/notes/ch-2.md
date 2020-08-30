@@ -23,6 +23,7 @@ the benefit of something to its cost.
 <a name="opportunity-cost">**Opportunity cost**</a>
 
   - What you sacrifice to get something.
+  - Evolves from the concept of scarcity.
 
 For every decision we do, the benefits of the decision should exceed the
 opportunity cost of the trade-off.
@@ -56,6 +57,17 @@ open for the additional hour increases the bookstore's profit by $50.
 > When we reach the level where the marginal benefit equals the marginal cost,
 we cannot do any better, and the fine-tuning is done.
 
+- **Output is higher than the efficient level when marginal benefit is less than
+  marginal cost.** When marginal benefit is less than marginal cost, you should
+  reduce output until you reach the point where marginal benefit is equal to
+  marginal cost.
+- **Output is lower than the efficient level when marginal benefit is greater than
+  marginal cost.** At this level of output, you should increase output until you
+  reach the point where marginal benefit is equal to marginal cost.
+- **The point where marginal benefit is equal to marginal cost is the most
+  efficient level of output** since you maximize your overall utility at this
+  point.
+
 ## 2.3 The Principle of Voluntary Exchange
 
 The principle of voluntary exchange is based on the notion that people act in
@@ -82,6 +94,13 @@ effect. Because the farmer is changing just one of the inputs, the output will
 increase, but at a decreasing rate. Eventually, additional fertilizer will
 decrease output as the other nutrients in the soil are overwhelmed by the
 fertilizer.
+
+- **It’s important to emphasize that diminishing returns occurs because one of the
+  inputs to the production process is fixed.** When a firm can vary all its
+  inputs, including the size of the production facility, the principle of
+  diminishing returns is not relevant.
+- **The principle of diminishing returns does not apply when a firm is flexible in
+  choosing all its inputs.**
 
 ## 2.5 The Real-Nominal Principle
 
