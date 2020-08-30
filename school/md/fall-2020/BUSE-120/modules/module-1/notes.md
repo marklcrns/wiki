@@ -196,9 +196,8 @@ investment was expected to return.**
 - [⬇ Your Financial Checklist For Every Stage of Life](file:../../../../../files/fall-2020/BUSE-120/module-1/life_stages_article.pdf)
 - [🌎 Financial Identity Quiz from Smart About Money](https://www.smartaboutmoney.org/Tools/Financial-Identity)
 
-
 Textbook
 
-- [⬇ BUSE 120 Full Textbook](file:../../../../../files/fall-2020/BUSE-120/textbook_full.pdf)
++ [⬇ BUSE 120 Full Textbook](file:../../../../../files/fall-2020/BUSE-120/textbook_full.pdf)
   - Chapter 1
 

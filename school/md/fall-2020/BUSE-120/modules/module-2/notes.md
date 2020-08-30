@@ -159,7 +159,8 @@ selling labor or by selling capital. Selling labor means working to earn a wage
 or salary. This is the way that most people earn most of their income over their
 lifespan.
 
-- [🌎 Career Interest Assessment](https://www.careeronestop.org/toolkit/careers/interest-assessment.aspx)
+- [🌎 CareerOneStop Interest Assessment](https://www.careeronestop.org/toolkit/careers/interest-assessment.aspx)
+- [🌎 CareerOneStop Occupation Profile](https://www.careeronestop.org/Toolkit/Careers/Occupations/occupation-profile.aspx)
 
 ### 2.6 Financial Priorities and Mistakes
 
@@ -192,8 +193,12 @@ lifespan.
 
 # Resources
 
+- [🎬 What is a Sunk Cost?](https://www.youtube.com/watch?v=cdjd--57E9c)
+- [🎬 Julia Galef: The Sunk Costs Fallacy | Big Think](https://www.youtube.com/watch?v=vpnxd31y0Fo)
+- [🌎 Career Interest Assessment](https://www.careeronestop.org/toolkit/careers/interest-assessment.aspx)
+
 Textbook
 
-- [⬇ BUSE 120 Full Textbook](file:../../../../../files/fall-2020/BUSE-120/textbook_full.pdf)
-  - Chapter 1
++ [⬇ BUSE 120 Full Textbook](file:../../../../../files/fall-2020/BUSE-120/textbook_full.pdf)
+  - Chapter 2
 

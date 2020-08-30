@@ -1,14 +1,14 @@
 ---
-title: Chapter 1
-subtitle: Introduction What is Economics?
+title: Chapter 2
+subtitle: The Key Principles of Economics
 author: Mark Lucernas
-date: Aug 20, 2020
+date: Aug 29, 2020
 ---
 
 
-# Chapter 1: Introduction: What is Economics?
+# Chapter 2: The Key Principles of Economics
 
-Exactly the same as [⚓ Chapter 1](../.././../spring-2020/ECON-121/notes/ch-1#chapter-1-introduction-what-is-economics)
+Exactly the same as [⚓ Chapter 2](../.././../spring-2020/ECON-121/notes/ch-2#chapter-2-the-key-principles-of-economics)
 from ECON 121 Microeconomics textbook.
 
 

@@ -2,7 +2,7 @@
 title: ECON 120 Chapters
 subtitle: Notes and activities
 author: Mark Lucernas
-date: 2020-08-20
+date: Aug 20, 2020
 ---
 
 
@@ -11,4 +11,5 @@ date: 2020-08-20
 ## Notes
 
 - [↪ Chapter 1](chapter-1)
+- [↪ Chapter 2](chapter-2)
 

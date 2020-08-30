@@ -7,7 +7,7 @@ date: 2020-08-17
 
 
 # BUSE 120 Principles of Money Management
-> Professor: Duane Short<br>
+> Professor: Dr. Duane Short<br>
 > email: dshort@sdccd.edu<br>
 > Campus: San Diego Miraramar College (online)<br>
 > Units: 3<br>
