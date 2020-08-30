@@ -1,18 +1,14 @@
 ---
-title: Git
+title: Git Wiki
+subtitle: Git installation, usage and configurations wiki
 author: Mark Lucernas
-date: 2020-07-22
-summary: Git wiki
+date: Jul 22, 2020
 ---
 
 
 # Git
 
-## Installation
-
 - [↪ Installation](installation)
-
-## Usage
-
 - [↪ Usage](usage)
+- [↪ Configurations](configs)
 

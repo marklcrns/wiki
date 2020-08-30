@@ -76,27 +76,30 @@ $endif$
 
 <!-- Header -->
         <header>
-          <div style="text-align: center;">
-            <a href="$root_path$index.html">Wiki Root</a> | <a href="../index.html">index</a>
+          <div class="jumbotron">
+            <div class="container">
+              <a href="$root_path$index.html">Wiki Root</a> | <a href="../index.html">index</a>
 $if(title)$
-            <h1 class="title display-1">$title$</h1>
+              <h1 class="title">$title$</h1>
 $endif$
 $if(subtitle)$
-            <h3 class="subtitle display-3">$subtitle$</h3>
+              <p class="subtitle">$subtitle$</p>
 $endif$
+            </div>
           </div>
         </header>
         <div class="h5 text-muted">
 $for(author)$
-          <p class="author">$author$</p>
+          <h5 class="author">$author$</h5>
 $endfor$
 $if(date)$
-          <p class="date">$date$</p>
+          <h5 class="date">$date$</h5>
 $endif$
         </div>
         <hr>
 $if(summary)$
-        <div class="summary" style="text-align: center;">$summary$</div>
+        <h4 class="summary" style="text-align: center;">$summary$</h4>
+        <br>
 $endif$
 
 <!-- Contents -->

@@ -1,8 +1,8 @@
 ---
 title: Docs
+subtitle: Personal wiki documentations
 author: Mark Lucernas
-date: 2020-02-05
-summary: Personal wiki documentations
+date: Feb 05, 2020
 ---
 
 
