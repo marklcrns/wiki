@@ -1,0 +1,191 @@
+---
+title: Java Installation
+subtitle: Java JDK and JRE Installation
+author: Mark Lucernas
+date: Aug 08, 2020
+---
+
+
+# Installation
+
+## OpenJDK
+
+### Linux
+
+#### Ubuntu
+
+Update apt repository
+
+```bash
+sudo apt update
+```
+
+Install default Java JDK and JRE
+
+```bash
+sudo apt install default-jdk
+sudo apt install default-jre
+```
+
+or install specific JDK or JRE version
+
+```bash
+sudo apt install openjdk-11-jdk
+sudo apt install openjdk-11-jre
+```
+
+Setting default Java version
+
+```bash
+sudo update-alternatives --config java
+```
+
+Ref:
+
+- [🌎 How to install Java (JDK and JRE) on Ubuntu 20.04 LTS](https://vitux.com/how-to-install-java-on-ubuntu-20-04/)
+
+
+## Oracle
+
+Oracle Java SE downloads links
+
+- [🌎 Eclipse Java SE Recommended Downloads](https://download.eclipse.org/oomph/jre/?vm=1_1_8_0_64_0&pn=Eclipse%20Installer&pu=http://wiki.eclipse.org/Eclipse_Installer&pi=http://download.eclipse.org/oomph/jre/128x128.png)
+- [🌎 Oracle Java SE Downloads](https://www.oracle.com/java/technologies/javase-downloads.html)
+
+### Windows
+
+Oracle JDK 8 Installation
+
+Ref:
+
+- [🌎 Java JDK 8 Windows Installation](https://www.youtube.com/watch?v=ClcHrcNXP9g)
+
+### Linux
+
+#### Ubuntu
+
+**Oracle JDK 8**
+
+First, download latest Java SE 8 **Linux Debian Package**
+
+- [🌎 Java SE JDK 8 Downloads](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
+
+Then run the following
+
+NOTE:
+
+- The `108` at the end of `update-aternatives --install` is the priority. You
+  can change the value however you like
+
+```bash
+sudo mkdir -p /usr/lib/jvm/
+sudo tar xfv jdk-8u251-linux-x64.tar.gz -C /usr/lib/jvm/
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_251/bin/java 108
+sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_251/bin/javac 108
+```
+
+> To remove the path to change priority, use `--remove` flag then reinstall
+path
+
+Verify Update Alternatives
+
+```bash
+sudo update-alternatives --display java
+```
+
+To change alternative mode
+
+```bash
+sudo update-alternatives --config java
+```
+
+Setup `JAVA_HOME` and `JRE_HOME`
+
+```bash
+sudo  nano /etc/environment
+
+# Then paste the following
+
+JAVA_HOME=/usr/lib/jvm/jdk1.8.0_251
+JRE_HOME=/usr/lib/jvm/jdk1.8.0_251/jre
+
+# Source environment
+source /etc/environment
+
+# Update and delete tar.gz
+sudo apt-get update
+rm jdk-8u251-linux-x64.tar.gz
+```
+
+Ref:
+
+- [🌎 How to Install Oracle JAVA 8 on Ubuntu 20.04 LTS](https://www.fosstechnix.com/install-oracle-java-8-on-ubuntu-20-04/)
+
+**Oracle JDK 11 and Higher**
+
+First, download the latest Java SE **Linux Debian Package**
+
+- [🌎 Java SE Downloads](https://www.oracle.com/java/technologies/javase-downloads.html)
+
+Then run the following command.
+
+NOTE:
+
+- Make sure too set the correct downloaded jdk version and replace `.X.X's`
+  from the command below
+- The `111` at the end of `update-aternatives --install` is the
+  priority. You can change the value however you like
+
+> to remove the path to change priority, use `--remove` flag then reinstall
+path.
+
+```bash
+sudo dpkg -i jdk-11.X.X_linux-x64_bin.deb
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-11.X.X/bin/java 111
+sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-11.X.X/bin/javac 111
+```
+
+Verify Update Alternatives
+
+```bash
+sudo update-alternatives --display java
+```
+
+To change alternative mode
+
+```bash
+sudo update-alternatives --config java
+```
+
+Setup `JAVA_HOME` and `JRE_HOME`
+
+```bash
+sudo  nano /etc/environment
+
+# Then paste the following
+
+JAVA_HOME=/usr/lib/jvm/jdk-11.0.7
+JRE_HOME=/usr/lib/jvm/jdk-11.0.7/jre
+
+# Source environment
+source /etc/environment
+```
+
+Ref:
+
+- [🌎 Oracle Java installation on Ubuntu 20.04 Focal Fossa Linux ](https://linuxconfig.org/oracle-java-installation-on-ubuntu-20-04-focal-fossa-linux)
+
+
+<br>
+
+# Resources
+
+- [🌎 How to install Java (JDK and JRE) on Ubuntu 20.04 LTS](https://vitux.com/how-to-install-java-on-ubuntu-20-04/)
+- [🌎 Eclipse Java SE Recommended Downloads](https://download.eclipse.org/oomph/jre/?vm=1_1_8_0_64_0&pn=Eclipse%20Installer&pu=http://wiki.eclipse.org/Eclipse_Installer&pi=http://download.eclipse.org/oomph/jre/128x128.png)
+- [🌎 Oracle Java SE Downloads](https://www.oracle.com/java/technologies/javase-downloads.html)
+- [🌎 Java JDK 8 Windows Installation](https://www.youtube.com/watch?v=ClcHrcNXP9g)
+- [🌎 Java SE JDK 8 Downloads](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
+- [🌎 How to Install Oracle JAVA 8 on Ubuntu 20.04 LTS](https://www.fosstechnix.com/install-oracle-java-8-on-ubuntu-20-04/)
+- [🌎 Java SE Downloads](https://www.oracle.com/java/technologies/javase-downloads.html)
+- [🌎 Oracle Java installation on Ubuntu 20.04 Focal Fossa Linux ](https://linuxconfig.org/oracle-java-installation-on-ubuntu-20-04-focal-fossa-linux)
+
