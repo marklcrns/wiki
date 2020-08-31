@@ -18,7 +18,7 @@ brew install maven
 
 Ref:
 
-- [🌎 How to install Maven on Windows](https://www.javatpoint.com/how-to-install-maven)
+- [🌎 How to install Maven on Windows](https://mkyong.com/maven/how-to-install-maven-in-windows/)
 
 ### Linux
 
