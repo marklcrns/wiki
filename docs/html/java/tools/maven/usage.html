@@ -160,41 +160,210 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p><strong>NOTE:</strong> As an example, assume <code>WizardGame</code> is the project name with <code>src/edu/sdccd/cisc191/wizardGame/</code> project structure.</p>
 </blockquote>
-<p>then create a <code>pom.xml</code> as the main Maven configuration file. Heres a sample pom file.</p>
-<ul>
-<li><a href="sample_pom.xml">⬇ sample_pom.xml</a></li>
-</ul>
-<p>With the <code>pom.xml</code> repo and Apache Maven already installed in the system, run the following to compile and install all dependencies</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">mvn</span> install</a></code></pre></div>
+<p>then create a <code>pom.xml</code> as the main Maven configuration file. Heres a sample pom file configuration for <code>WizardGame</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb1-1" title="1"><span class="co">&lt;!-- Sample pom.xml --&gt;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="kw">&lt;project</span><span class="ot"> xmlns=</span><span class="st">&quot;http://maven.apache.org/POM/4.0.0&quot;</span><span class="ot"> xmlns:xsi=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="ot"> xsi:schemaLocation=</span><span class="st">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb1-5" title="5">  <span class="kw">&lt;modelVersion&gt;</span>4.0.0<span class="kw">&lt;/modelVersion&gt;</span></a>
+<a class="sourceLine" id="cb1-6" title="6">  <span class="kw">&lt;groupId&gt;</span>edu.sdccd.cisc191.wizardGame<span class="kw">&lt;/groupId&gt;</span></a>
+<a class="sourceLine" id="cb1-7" title="7">  <span class="kw">&lt;artifactId&gt;</span>labs<span class="kw">&lt;/artifactId&gt;</span></a>
+<a class="sourceLine" id="cb1-8" title="8">  <span class="kw">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="kw">&lt;/version&gt;</span></a>
+<a class="sourceLine" id="cb1-9" title="9"></a>
+<a class="sourceLine" id="cb1-10" title="10">  <span class="kw">&lt;properties&gt;</span></a>
+<a class="sourceLine" id="cb1-11" title="11">    <span class="co">&lt;!-- Project Globals --&gt;</span></a>
+<a class="sourceLine" id="cb1-12" title="12">    <span class="kw">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class="kw">&lt;/project.build.sourceEncoding&gt;</span></a>
+<a class="sourceLine" id="cb1-13" title="13">    <span class="kw">&lt;project.reporting.outputEncoding&gt;</span>UTF-8<span class="kw">&lt;/project.reporting.outputEncoding&gt;</span></a>
+<a class="sourceLine" id="cb1-14" title="14"></a>
+<a class="sourceLine" id="cb1-15" title="15">      <span class="co">&lt;!-- Dependency Versions --&gt;</span></a>
+<a class="sourceLine" id="cb1-16" title="16">    <span class="kw">&lt;junit.version&gt;</span>5.6.2<span class="kw">&lt;/junit.version&gt;</span></a>
+<a class="sourceLine" id="cb1-17" title="17"></a>
+<a class="sourceLine" id="cb1-18" title="18">      <span class="co">&lt;!-- Plugin Versions --&gt;</span></a>
+<a class="sourceLine" id="cb1-19" title="19">    <span class="kw">&lt;maven-compiler-plugin.version&gt;</span>3.8.1<span class="kw">&lt;/maven-compiler-plugin.version&gt;</span></a>
+<a class="sourceLine" id="cb1-20" title="20">    <span class="kw">&lt;maven-deploy-plugin.version&gt;</span>3.0.0-M1<span class="kw">&lt;/maven-deploy-plugin.version&gt;</span></a>
+<a class="sourceLine" id="cb1-21" title="21">    <span class="kw">&lt;compile.java.version&gt;</span>1.8<span class="kw">&lt;/compile.java.version&gt;</span></a>
+<a class="sourceLine" id="cb1-22" title="22">    <span class="kw">&lt;maven-surefire-plugin.version&gt;</span>3.0.0-M4<span class="kw">&lt;/maven-surefire-plugin.version&gt;</span></a>
+<a class="sourceLine" id="cb1-23" title="23">    <span class="kw">&lt;maven-source-plugin.version&gt;</span>3.2.1<span class="kw">&lt;/maven-source-plugin.version&gt;</span></a>
+<a class="sourceLine" id="cb1-24" title="24">    <span class="kw">&lt;maven-javadoc-plugin.version&gt;</span>3.2.0<span class="kw">&lt;/maven-javadoc-plugin.version&gt;</span></a>
+<a class="sourceLine" id="cb1-25" title="25">    <span class="kw">&lt;maven-shade-plugin.version&gt;</span>3.2.2<span class="kw">&lt;/maven-shade-plugin.version&gt;</span></a>
+<a class="sourceLine" id="cb1-26" title="26">    <span class="kw">&lt;maven-site-plugin.version&gt;</span>3.9.0<span class="kw">&lt;/maven-site-plugin.version&gt;</span></a>
+<a class="sourceLine" id="cb1-27" title="27">    <span class="kw">&lt;jgitflow-maven-plugin.version&gt;</span>1.0-m5.1<span class="kw">&lt;/jgitflow-maven-plugin.version&gt;</span></a>
+<a class="sourceLine" id="cb1-28" title="28">    <span class="kw">&lt;maven-jar-plugin.version&gt;</span>3.2.0<span class="kw">&lt;/maven-jar-plugin.version&gt;</span></a>
+<a class="sourceLine" id="cb1-29" title="29">  <span class="kw">&lt;/properties&gt;</span></a>
+<a class="sourceLine" id="cb1-30" title="30"></a>
+<a class="sourceLine" id="cb1-31" title="31">  <span class="kw">&lt;dependencies&gt;</span></a>
+<a class="sourceLine" id="cb1-32" title="32">    <span class="kw">&lt;dependency&gt;</span></a>
+<a class="sourceLine" id="cb1-33" title="33">      <span class="kw">&lt;groupId&gt;</span>org.junit.jupiter<span class="kw">&lt;/groupId&gt;</span></a>
+<a class="sourceLine" id="cb1-34" title="34">      <span class="kw">&lt;artifactId&gt;</span>junit-jupiter<span class="kw">&lt;/artifactId&gt;</span></a>
+<a class="sourceLine" id="cb1-35" title="35">      <span class="kw">&lt;version&gt;</span>${junit.version}<span class="kw">&lt;/version&gt;</span></a>
+<a class="sourceLine" id="cb1-36" title="36">      <span class="kw">&lt;scope&gt;</span>test<span class="kw">&lt;/scope&gt;</span></a>
+<a class="sourceLine" id="cb1-37" title="37">    <span class="kw">&lt;/dependency&gt;</span></a>
+<a class="sourceLine" id="cb1-38" title="38">    <span class="kw">&lt;dependency&gt;</span></a>
+<a class="sourceLine" id="cb1-39" title="39">      <span class="kw">&lt;groupId&gt;</span>junit<span class="kw">&lt;/groupId&gt;</span></a>
+<a class="sourceLine" id="cb1-40" title="40">      <span class="kw">&lt;artifactId&gt;</span>junit<span class="kw">&lt;/artifactId&gt;</span></a>
+<a class="sourceLine" id="cb1-41" title="41">      <span class="kw">&lt;version&gt;</span>4.12<span class="kw">&lt;/version&gt;</span></a>
+<a class="sourceLine" id="cb1-42" title="42">      <span class="kw">&lt;scope&gt;</span>test<span class="kw">&lt;/scope&gt;</span></a>
+<a class="sourceLine" id="cb1-43" title="43">    <span class="kw">&lt;/dependency&gt;</span></a>
+<a class="sourceLine" id="cb1-44" title="44">  <span class="kw">&lt;/dependencies&gt;</span></a>
+<a class="sourceLine" id="cb1-45" title="45"></a>
+<a class="sourceLine" id="cb1-46" title="46">  <span class="kw">&lt;build&gt;</span></a>
+<a class="sourceLine" id="cb1-47" title="47">    <span class="kw">&lt;plugins&gt;</span></a>
+<a class="sourceLine" id="cb1-48" title="48">      <span class="kw">&lt;plugin&gt;</span></a>
+<a class="sourceLine" id="cb1-49" title="49">        <span class="kw">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="kw">&lt;/groupId&gt;</span></a>
+<a class="sourceLine" id="cb1-50" title="50">        <span class="kw">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="kw">&lt;/artifactId&gt;</span></a>
+<a class="sourceLine" id="cb1-51" title="51">        <span class="kw">&lt;version&gt;</span>${maven-compiler-plugin.version}<span class="kw">&lt;/version&gt;</span></a>
+<a class="sourceLine" id="cb1-52" title="52">        <span class="kw">&lt;configuration&gt;</span></a>
+<a class="sourceLine" id="cb1-53" title="53">          <span class="kw">&lt;source&gt;</span>${compile.java.version}<span class="kw">&lt;/source&gt;</span></a>
+<a class="sourceLine" id="cb1-54" title="54">          <span class="kw">&lt;target&gt;</span>${compile.java.version}<span class="kw">&lt;/target&gt;</span></a>
+<a class="sourceLine" id="cb1-55" title="55">        <span class="kw">&lt;/configuration&gt;</span></a>
+<a class="sourceLine" id="cb1-56" title="56">      <span class="kw">&lt;/plugin&gt;</span></a>
+<a class="sourceLine" id="cb1-57" title="57">      <span class="kw">&lt;plugin&gt;</span></a>
+<a class="sourceLine" id="cb1-58" title="58">        <span class="kw">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="kw">&lt;/groupId&gt;</span></a>
+<a class="sourceLine" id="cb1-59" title="59">        <span class="kw">&lt;artifactId&gt;</span>maven-deploy-plugin<span class="kw">&lt;/artifactId&gt;</span></a>
+<a class="sourceLine" id="cb1-60" title="60">        <span class="kw">&lt;version&gt;</span>${maven-deploy-plugin.version}<span class="kw">&lt;/version&gt;</span></a>
+<a class="sourceLine" id="cb1-61" title="61">      <span class="kw">&lt;/plugin&gt;</span></a>
+<a class="sourceLine" id="cb1-62" title="62">      <span class="kw">&lt;plugin&gt;</span></a>
+<a class="sourceLine" id="cb1-63" title="63">        <span class="kw">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="kw">&lt;/groupId&gt;</span></a>
+<a class="sourceLine" id="cb1-64" title="64">        <span class="kw">&lt;artifactId&gt;</span>maven-surefire-plugin<span class="kw">&lt;/artifactId&gt;</span></a>
+<a class="sourceLine" id="cb1-65" title="65">        <span class="kw">&lt;version&gt;</span>${maven-surefire-plugin.version}<span class="kw">&lt;/version&gt;</span></a>
+<a class="sourceLine" id="cb1-66" title="66">        <span class="kw">&lt;configuration&gt;</span></a>
+<a class="sourceLine" id="cb1-67" title="67">          <span class="kw">&lt;forkMode&gt;</span>once<span class="kw">&lt;/forkMode&gt;</span></a>
+<a class="sourceLine" id="cb1-68" title="68">          <span class="kw">&lt;reuseForks&gt;</span>false<span class="kw">&lt;/reuseForks&gt;</span></a>
+<a class="sourceLine" id="cb1-69" title="69">          <span class="kw">&lt;forkCount&gt;</span>1<span class="kw">&lt;/forkCount&gt;</span></a>
+<a class="sourceLine" id="cb1-70" title="70">          <span class="kw">&lt;workingDirectory&gt;</span>target<span class="kw">&lt;/workingDirectory&gt;</span></a>
+<a class="sourceLine" id="cb1-71" title="71">        <span class="kw">&lt;/configuration&gt;</span></a>
+<a class="sourceLine" id="cb1-72" title="72">      <span class="kw">&lt;/plugin&gt;</span></a>
+<a class="sourceLine" id="cb1-73" title="73">      <span class="co">&lt;!-- Add source to jar manifest --&gt;</span></a>
+<a class="sourceLine" id="cb1-74" title="74">      <span class="kw">&lt;plugin&gt;</span></a>
+<a class="sourceLine" id="cb1-75" title="75">        <span class="kw">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="kw">&lt;/groupId&gt;</span></a>
+<a class="sourceLine" id="cb1-76" title="76">        <span class="kw">&lt;artifactId&gt;</span>maven-source-plugin<span class="kw">&lt;/artifactId&gt;</span></a>
+<a class="sourceLine" id="cb1-77" title="77">        <span class="kw">&lt;version&gt;</span>${maven-source-plugin.version}<span class="kw">&lt;/version&gt;</span></a>
+<a class="sourceLine" id="cb1-78" title="78">        <span class="kw">&lt;executions&gt;</span></a>
+<a class="sourceLine" id="cb1-79" title="79">          <span class="kw">&lt;execution&gt;</span></a>
+<a class="sourceLine" id="cb1-80" title="80">            <span class="kw">&lt;id&gt;</span>attach-sources<span class="kw">&lt;/id&gt;</span></a>
+<a class="sourceLine" id="cb1-81" title="81">            <span class="kw">&lt;goals&gt;</span></a>
+<a class="sourceLine" id="cb1-82" title="82">              <span class="kw">&lt;goal&gt;</span>jar<span class="kw">&lt;/goal&gt;</span></a>
+<a class="sourceLine" id="cb1-83" title="83">            <span class="kw">&lt;/goals&gt;</span></a>
+<a class="sourceLine" id="cb1-84" title="84">          <span class="kw">&lt;/execution&gt;</span></a>
+<a class="sourceLine" id="cb1-85" title="85">        <span class="kw">&lt;/executions&gt;</span></a>
+<a class="sourceLine" id="cb1-86" title="86">      <span class="kw">&lt;/plugin&gt;</span></a>
+<a class="sourceLine" id="cb1-87" title="87">      <span class="kw">&lt;plugin&gt;</span></a>
+<a class="sourceLine" id="cb1-88" title="88">        <span class="kw">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="kw">&lt;/groupId&gt;</span></a>
+<a class="sourceLine" id="cb1-89" title="89">        <span class="kw">&lt;artifactId&gt;</span>maven-javadoc-plugin<span class="kw">&lt;/artifactId&gt;</span></a>
+<a class="sourceLine" id="cb1-90" title="90">        <span class="kw">&lt;version&gt;</span>${maven-javadoc-plugin.version}<span class="kw">&lt;/version&gt;</span></a>
+<a class="sourceLine" id="cb1-91" title="91">        <span class="kw">&lt;configuration&gt;</span></a>
+<a class="sourceLine" id="cb1-92" title="92">          <span class="kw">&lt;quiet&gt;</span>true<span class="kw">&lt;/quiet&gt;</span></a>
+<a class="sourceLine" id="cb1-93" title="93">        <span class="kw">&lt;/configuration&gt;</span></a>
+<a class="sourceLine" id="cb1-94" title="94">        <span class="kw">&lt;executions&gt;</span></a>
+<a class="sourceLine" id="cb1-95" title="95">          <span class="kw">&lt;execution&gt;</span></a>
+<a class="sourceLine" id="cb1-96" title="96">            <span class="kw">&lt;id&gt;</span>attach-javadocs<span class="kw">&lt;/id&gt;</span></a>
+<a class="sourceLine" id="cb1-97" title="97">            <span class="kw">&lt;goals&gt;</span></a>
+<a class="sourceLine" id="cb1-98" title="98">              <span class="kw">&lt;goal&gt;</span>jar<span class="kw">&lt;/goal&gt;</span></a>
+<a class="sourceLine" id="cb1-99" title="99">            <span class="kw">&lt;/goals&gt;</span></a>
+<a class="sourceLine" id="cb1-100" title="100">          <span class="kw">&lt;/execution&gt;</span></a>
+<a class="sourceLine" id="cb1-101" title="101">        <span class="kw">&lt;/executions&gt;</span></a>
+<a class="sourceLine" id="cb1-102" title="102">      <span class="kw">&lt;/plugin&gt;</span></a>
+<a class="sourceLine" id="cb1-103" title="103">      <span class="co">&lt;!-- Add versioning to jar manifest --&gt;</span></a>
+<a class="sourceLine" id="cb1-104" title="104">      <span class="kw">&lt;plugin&gt;</span></a>
+<a class="sourceLine" id="cb1-105" title="105">        <span class="kw">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="kw">&lt;/groupId&gt;</span></a>
+<a class="sourceLine" id="cb1-106" title="106">        <span class="kw">&lt;artifactId&gt;</span>maven-jar-plugin<span class="kw">&lt;/artifactId&gt;</span></a>
+<a class="sourceLine" id="cb1-107" title="107">        <span class="kw">&lt;version&gt;</span>${maven-jar-plugin.version}<span class="kw">&lt;/version&gt;</span></a>
+<a class="sourceLine" id="cb1-108" title="108">        <span class="kw">&lt;configuration&gt;</span></a>
+<a class="sourceLine" id="cb1-109" title="109">          <span class="kw">&lt;archive&gt;</span></a>
+<a class="sourceLine" id="cb1-110" title="110">            <span class="kw">&lt;manifest&gt;</span></a>
+<a class="sourceLine" id="cb1-111" title="111">              <span class="kw">&lt;addDefaultImplementationEntries&gt;</span>true<span class="kw">&lt;/addDefaultImplementationEntries&gt;</span></a>
+<a class="sourceLine" id="cb1-112" title="112">            <span class="kw">&lt;/manifest&gt;</span></a>
+<a class="sourceLine" id="cb1-113" title="113">          <span class="kw">&lt;/archive&gt;</span></a>
+<a class="sourceLine" id="cb1-114" title="114">        <span class="kw">&lt;/configuration&gt;</span></a>
+<a class="sourceLine" id="cb1-115" title="115">      <span class="kw">&lt;/plugin&gt;</span></a>
+<a class="sourceLine" id="cb1-116" title="116">      <span class="co">&lt;!-- Skip site plugin http://veithen.blogspot.com/2013/05/maven-patterns-skipping-site-generation.html --&gt;</span></a>
+<a class="sourceLine" id="cb1-117" title="117">      <span class="kw">&lt;plugin&gt;</span></a>
+<a class="sourceLine" id="cb1-118" title="118">        <span class="kw">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="kw">&lt;/groupId&gt;</span></a>
+<a class="sourceLine" id="cb1-119" title="119">        <span class="kw">&lt;artifactId&gt;</span>maven-site-plugin<span class="kw">&lt;/artifactId&gt;</span></a>
+<a class="sourceLine" id="cb1-120" title="120">        <span class="kw">&lt;version&gt;</span>${maven-site-plugin.version}<span class="kw">&lt;/version&gt;</span></a>
+<a class="sourceLine" id="cb1-121" title="121">        <span class="kw">&lt;executions&gt;</span></a>
+<a class="sourceLine" id="cb1-122" title="122">          <span class="kw">&lt;execution&gt;</span></a>
+<a class="sourceLine" id="cb1-123" title="123">            <span class="kw">&lt;id&gt;</span>default-site<span class="kw">&lt;/id&gt;</span></a>
+<a class="sourceLine" id="cb1-124" title="124">            <span class="kw">&lt;phase&gt;</span>site<span class="kw">&lt;/phase&gt;</span></a>
+<a class="sourceLine" id="cb1-125" title="125">            <span class="kw">&lt;goals&gt;</span></a>
+<a class="sourceLine" id="cb1-126" title="126">              <span class="kw">&lt;goal&gt;</span>site<span class="kw">&lt;/goal&gt;</span></a>
+<a class="sourceLine" id="cb1-127" title="127">            <span class="kw">&lt;/goals&gt;</span></a>
+<a class="sourceLine" id="cb1-128" title="128">            <span class="kw">&lt;configuration&gt;</span></a>
+<a class="sourceLine" id="cb1-129" title="129">              <span class="kw">&lt;skip&gt;</span>true<span class="kw">&lt;/skip&gt;</span></a>
+<a class="sourceLine" id="cb1-130" title="130">            <span class="kw">&lt;/configuration&gt;</span></a>
+<a class="sourceLine" id="cb1-131" title="131">          <span class="kw">&lt;/execution&gt;</span></a>
+<a class="sourceLine" id="cb1-132" title="132">        <span class="kw">&lt;/executions&gt;</span></a>
+<a class="sourceLine" id="cb1-133" title="133">      <span class="kw">&lt;/plugin&gt;</span></a>
+<a class="sourceLine" id="cb1-134" title="134">      <span class="kw">&lt;plugin&gt;</span></a>
+<a class="sourceLine" id="cb1-135" title="135">        <span class="kw">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="kw">&lt;/groupId&gt;</span></a>
+<a class="sourceLine" id="cb1-136" title="136">        <span class="kw">&lt;artifactId&gt;</span>maven-shade-plugin<span class="kw">&lt;/artifactId&gt;</span></a>
+<a class="sourceLine" id="cb1-137" title="137">        <span class="kw">&lt;version&gt;</span>${maven-shade-plugin.version}<span class="kw">&lt;/version&gt;</span></a>
+<a class="sourceLine" id="cb1-138" title="138">        <span class="kw">&lt;executions&gt;</span></a>
+<a class="sourceLine" id="cb1-139" title="139">          <span class="kw">&lt;execution&gt;</span></a>
+<a class="sourceLine" id="cb1-140" title="140">            <span class="kw">&lt;phase&gt;</span>package<span class="kw">&lt;/phase&gt;</span></a>
+<a class="sourceLine" id="cb1-141" title="141">            <span class="kw">&lt;goals&gt;</span></a>
+<a class="sourceLine" id="cb1-142" title="142">              <span class="kw">&lt;goal&gt;</span>shade<span class="kw">&lt;/goal&gt;</span></a>
+<a class="sourceLine" id="cb1-143" title="143">            <span class="kw">&lt;/goals&gt;</span></a>
+<a class="sourceLine" id="cb1-144" title="144">            <span class="kw">&lt;configuration&gt;</span></a>
+<a class="sourceLine" id="cb1-145" title="145">              <span class="kw">&lt;transformers&gt;</span></a>
+<a class="sourceLine" id="cb1-146" title="146">                <span class="kw">&lt;transformer</span><span class="ot"> implementation=</span><span class="st">&quot;org.apache.maven.plugins.shade.resource.ManifestResourceTransformer&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb1-147" title="147">                  <span class="kw">&lt;mainClass&gt;</span>edu.sdccd.cisc191.Lab1<span class="kw">&lt;/mainClass&gt;</span></a>
+<a class="sourceLine" id="cb1-148" title="148">                <span class="kw">&lt;/transformer&gt;</span></a>
+<a class="sourceLine" id="cb1-149" title="149">              <span class="kw">&lt;/transformers&gt;</span></a>
+<a class="sourceLine" id="cb1-150" title="150">              <span class="kw">&lt;filters&gt;</span></a>
+<a class="sourceLine" id="cb1-151" title="151">                <span class="kw">&lt;filter&gt;</span></a>
+<a class="sourceLine" id="cb1-152" title="152">                  <span class="kw">&lt;artifact&gt;</span>*:*<span class="kw">&lt;/artifact&gt;</span></a>
+<a class="sourceLine" id="cb1-153" title="153">                  <span class="kw">&lt;excludes&gt;</span></a>
+<a class="sourceLine" id="cb1-154" title="154">                    <span class="kw">&lt;exclude&gt;</span>META-INF/*.SF<span class="kw">&lt;/exclude&gt;</span></a>
+<a class="sourceLine" id="cb1-155" title="155">                    <span class="kw">&lt;exclude&gt;</span>META-INF/*.DSA<span class="kw">&lt;/exclude&gt;</span></a>
+<a class="sourceLine" id="cb1-156" title="156">                    <span class="kw">&lt;exclude&gt;</span>META-INF/*.RSA<span class="kw">&lt;/exclude&gt;</span></a>
+<a class="sourceLine" id="cb1-157" title="157">                  <span class="kw">&lt;/excludes&gt;</span></a>
+<a class="sourceLine" id="cb1-158" title="158">                <span class="kw">&lt;/filter&gt;</span></a>
+<a class="sourceLine" id="cb1-159" title="159">              <span class="kw">&lt;/filters&gt;</span></a>
+<a class="sourceLine" id="cb1-160" title="160">            <span class="kw">&lt;/configuration&gt;</span></a>
+<a class="sourceLine" id="cb1-161" title="161">          <span class="kw">&lt;/execution&gt;</span></a>
+<a class="sourceLine" id="cb1-162" title="162">        <span class="kw">&lt;/executions&gt;</span></a>
+<a class="sourceLine" id="cb1-163" title="163">      <span class="kw">&lt;/plugin&gt;</span></a>
+<a class="sourceLine" id="cb1-164" title="164">    <span class="kw">&lt;/plugins&gt;</span></a>
+<a class="sourceLine" id="cb1-165" title="165">  <span class="kw">&lt;/build&gt;</span></a>
+<a class="sourceLine" id="cb1-166" title="166"></a>
+<a class="sourceLine" id="cb1-167" title="167">  <span class="co">&lt;!-- Distribute to internal repo --&gt;</span></a>
+<a class="sourceLine" id="cb1-168" title="168">  <span class="kw">&lt;distributionManagement&gt;</span></a>
+<a class="sourceLine" id="cb1-169" title="169">    <span class="kw">&lt;repository&gt;</span></a>
+<a class="sourceLine" id="cb1-170" title="170">      <span class="kw">&lt;id&gt;</span>cisc191<span class="kw">&lt;/id&gt;</span></a>
+<a class="sourceLine" id="cb1-171" title="171">      <span class="kw">&lt;name&gt;</span>CISC191 Maven Repo<span class="kw">&lt;/name&gt;</span></a>
+<a class="sourceLine" id="cb1-172" title="172">      <span class="kw">&lt;url&gt;</span>https://maven.pkg.github.com/MiramarCISC/CISC191<span class="kw">&lt;/url&gt;</span></a>
+<a class="sourceLine" id="cb1-173" title="173">    <span class="kw">&lt;/repository&gt;</span></a>
+<a class="sourceLine" id="cb1-174" title="174">  <span class="kw">&lt;/distributionManagement&gt;</span></a>
+<a class="sourceLine" id="cb1-175" title="175"><span class="kw">&lt;/project&gt;</span></a></code></pre></div>
+<p>With the <code>pom.xml</code> at the root directory and Apache Maven already installed in the system, run the following to compile and install all dependencies</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">mvn</span> install</a></code></pre></div>
 <p>Executing <code>.jar</code> file to run project</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">java</span> -jar target/WizardGame-0.0.1-SNAPSHOT.jar</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="ex">java</span> -jar target/WizardGame-0.0.1-SNAPSHOT.jar</a></code></pre></div>
 <p>To run specific class. (replace <code>&lt;class&gt;</code> with path to java file starting from <code>edu.sdccd.cisc191.wizardGame</code> directory, using <code>.</code> as path separator).</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># Template</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="ex">mvn</span> exec:java -Dexec.mainClass=<span class="st">&quot;edu.sdccd.cisc191.wizardGame.&lt;class&gt;&quot;</span></a>
-<a class="sourceLine" id="cb3-3" title="3"></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="co"># Running Game class</span></a>
-<a class="sourceLine" id="cb3-5" title="5"><span class="ex">mvn</span> exec:java -Dexec.mainClass=<span class="st">&quot;edu.sdccd.cisc191.wizardGame.Game&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># Template</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="ex">mvn</span> exec:java -Dexec.mainClass=<span class="st">&quot;edu.sdccd.cisc191.wizardGame.&lt;class&gt;&quot;</span></a>
+<a class="sourceLine" id="cb4-3" title="3"></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="co"># Running Game class</span></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="ex">mvn</span> exec:java -Dexec.mainClass=<span class="st">&quot;edu.sdccd.cisc191.wizardGame.Game&quot;</span></a></code></pre></div>
 <p>To recompile project</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="ex">mvn</span> compile</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="ex">mvn</span> compile</a></code></pre></div>
 <p>To package project into a JAR file</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="ex">mvn</span> package</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="ex">mvn</span> package</a></code></pre></div>
 <p>To run test suite</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="ex">mvn</span> clean test</a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="co"># -e to run tests with full stack trace on failures</span></a>
-<a class="sourceLine" id="cb6-3" title="3"><span class="ex">mvn</span> clean test -e</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="ex">mvn</span> clean test</a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="co"># -e to run tests with full stack trace on failures</span></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="ex">mvn</span> clean test -e</a></code></pre></div>
 <p>To clean and remove maven build from project</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="ex">mvn</span> clean</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="ex">mvn</span> clean</a></code></pre></div>
 <blockquote>
 <p><strong>NOTE:</strong> If unit tests fail after new changes that prevents from building the <code>.jar</code> file, although not recommended, simply skip unit testing from build by running</p>
 </blockquote>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="ex">mvn</span> clean install -Dmaven.test.skip</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="ex">mvn</span> clean install -Dmaven.test.skip</a></code></pre></div>
 <p>or to just compile and package into a JAR file without reinstalling dependencies</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="ex">mvn</span> package -Dmaven.test.skip</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" title="1"><span class="ex">mvn</span> package -Dmaven.test.skip</a></code></pre></div>
 <p><br></p>
 <h1 id="resources">Resources</h1>
-<ul>
-<li><a href="pom.xml">⬇ pom.xml</a></li>
-</ul>
         </div>
       </div>
     </div>
