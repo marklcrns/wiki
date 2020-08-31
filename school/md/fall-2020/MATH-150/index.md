@@ -25,3 +25,7 @@ date: 2020-08-17
 
 - [↪ Chapters](chapters/index)
 
+## Quizzes
+
+- [⬇ Quiz 1](file:../../../files/fall-2020/MATH-150/quizzes/quiz-1.png)
+
