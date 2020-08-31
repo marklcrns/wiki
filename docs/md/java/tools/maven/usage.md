@@ -16,7 +16,7 @@ First, Make sure you are in the project root directory.
 then create a `pom.xml` as the main Maven configuration file. Heres a sample pom
 file.
 
-- [⬇ pom.xml](vfile:pom.xml)
+- [⬇ sample_pom.xml](vfile:sample_pom.xml)
 
 With the `pom.xml` repo and Apache Maven already installed in the system, run
 the following to compile and install all dependencies
