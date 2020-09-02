@@ -2,7 +2,7 @@
 title: CISC 192 Chapter 1
 subtitle: Chapter 1 Notes and Activities
 author: Mark Lucernas
-date: 2020-08-17
+date: Aug 17, 2020
 ---
 
 
@@ -10,5 +10,5 @@ date: 2020-08-17
 
 ## Notes
 
-- [↪ Chapter 1 Notes](notes)
+- [↪ Chapter 1: Introduction to Computers and Programming](notes)
 

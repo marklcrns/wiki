@@ -1,12 +1,12 @@
 ---
 title: Chapter 1 Notes
-subtitle: Notes
+subtitle: Introduction to Computers and Programming
 author: Mark Lucernas
 date: 2020-08-17
 ---
 
 
-# Chapter 1
+# Chapter 1: Introduction to Computers and Programming
 
 ## Textbook
 

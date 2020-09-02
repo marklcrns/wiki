@@ -8,7 +8,6 @@
     <meta name="generator" content="pandoc">
     <meta name="description" content="">
     <meta name="author" content="Mark Lucernas">
-    <meta name="dcterms.date" content="2020-08-24">
 
     <title>Chapter 2 Notes</title>
 
@@ -134,16 +133,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
           </ul>
           <ul>
-          <li><a href="#chapter-2">Chapter 2</a><ul>
+          <li><a href="#chapter-2-introduction-to-c">Chapter 2 Introduction to C++</a><ul>
           <li><a href="#textbook">Textbook</a><ul>
           <li><a href="#the-parts-of-a-c-program">2.1 The Parts of a C++ Program</a></li>
           <li><a href="#the-cout-object">2.2 The <code>cout</code> Object</a></li>
           <li><a href="#variables-and-the-assignment-statement">2.4 Variables and the Assignment Statement</a></li>
           <li><a href="#literals">2.5 Literals</a></li>
-          <li><a href="#identifiers">2.6 Identifiers</a></li>
-          <li><a href="#floating-point-data-types">2.8 Floating-Point Data Types</a></li>
-          <li><a href="#the-char-data-type">2.9 The <code>char</code> Data Type</a></li>
-          <li><a href="#the-c-string-class">2.10 The C++ <code>string</code> Class</a></li>
+          <li><a href="#identifiers">2.6 Identifiers</a><ul>
+          <li><a href="#hexadecimal-and-octal-literals-enrichment">Hexadecimal and Octal Literals (enrichment)</a></li>
+          </ul></li>
+          <li><a href="#floating-point-data-types">2.8 Floating-Point Data Types</a><ul>
+          <li><a href="#floating-point-literals">Floating-Point Literals</a></li>
+          <li><a href="#assigning-floating-point-values-to-integer-variables">Assigning Floating-Point Values to Integer Variables</a></li>
+          </ul></li>
+          <li><a href="#the-char-data-type">2.9 The <code>char</code> Data Type</a><ul>
+          <li><a href="#the-difference-between-character-literals-and-string-literals">The Difference Between Character Literals and String Literals</a></li>
+          </ul></li>
+          <li><a href="#the-c-string-class">2.10 The C++ <code>string</code> Class</a><ul>
+          <li><a href="#using-the-string-class">Using the <code>string</code> Class</a></li>
+          </ul></li>
+          <li><a href="#the-bool-data-type">2.11 The <code>bool</code> Data Type</a></li>
+          <li><a href="#determining-the-size-of-a-data-type">2.12 Determining the Size of A Data Type</a></li>
+          <li><a href="#more-on-variable-assignments-and-initialization">2.13 More on Variable Assignments and Initialization</a><ul>
+          <li><a href="#declaring-variables-with-the-auto-key-word">Declaring Variables with the <code>auto</code> Key Word</a></li>
+          </ul></li>
+          <li><a href="#scope">2.14 Scope</a></li>
+          <li><a href="#arithmetic-operators">2.15 Arithmetic Operators</a></li>
+          <li><a href="#comments">2.16 Comments</a><ul>
+          <li><a href="#single-line-comments">Single Line Comments</a></li>
+          <li><a href="#multi-line-comments">Multi-line Comments</a></li>
+          </ul></li>
           </ul></li>
           <li><a href="#videos">Videos</a></li>
           </ul></li>
@@ -158,18 +177,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <div class="container">
               <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
               <h1 class="title">Chapter 2 Notes</h1>
-              <p class="subtitle">Notes</p>
+              <p class="subtitle">Introduction to C++</p>
             </div>
           </div>
         </header>
         <div class="h5 text-muted">
           <h5 class="author">Mark Lucernas</h5>
-          <h5 class="date">2020-08-24</h5>
+          <h5 class="date">Aug 24, 2020</h5>
         </div>
         <hr>
 
 <!-- Contents -->
-<h1 id="chapter-2">Chapter 2</h1>
+<h1 id="chapter-2-introduction-to-c">Chapter 2 Introduction to C++</h1>
 <h2 id="textbook">Textbook</h2>
 <h3 id="the-parts-of-a-c-program">2.1 The Parts of a C++ Program</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb1-1" title="1"><span class="co">// A simple C++ program</span></a>
@@ -244,6 +263,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 </center>
+<blockquote>
+<p><strong>NOTE:</strong> Every C++ program must contain a <code>main</code> function</p>
+</blockquote>
 <h3 id="the-cout-object">2.2 The <code>cout</code> Object</h3>
 <p>The simplest type of screen output that a program can display is <em>console output</em>, which is merely plain text.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb2-1" title="1">cout &lt;&lt; <span class="st">&quot;Programming is great fun!&quot;</span>;</a></code></pre></div>
@@ -730,7 +752,94 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb20-11" title="11">  cout &lt;&lt; <span class="st">&quot;My favorite movie is &quot;</span> &lt;&lt; movieTitle &lt;&lt; endl;</a>
 <a class="sourceLine" id="cb20-12" title="12">  <span class="cf">return</span> <span class="dv">0</span>;</a>
 <a class="sourceLine" id="cb20-13" title="13">}</a></code></pre></div>
-<p>%% Left at page 59</p>
+<h3 id="the-bool-data-type">2.11 The <code>bool</code> Data Type</h3>
+<p>Boolean variables are set to either <code>true</code> or <code>false</code>.</p>
+<h3 id="determining-the-size-of-a-data-type">2.12 Determining the Size of A Data Type</h3>
+<p>The <code>sizeof</code> operator may be used to determine the size of a data type on any system.</p>
+<blockquote>
+<p>Program 2-17</p>
+</blockquote>
+<div class="sourceCode" id="cb21"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb21-1" title="1"><span class="co">// This program displays the size of various data types.</span></a>
+<a class="sourceLine" id="cb21-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb21-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb21-4" title="4"></a>
+<a class="sourceLine" id="cb21-5" title="5"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb21-6" title="6">{</a>
+<a class="sourceLine" id="cb21-7" title="7">  <span class="dt">double</span> apple;</a>
+<a class="sourceLine" id="cb21-8" title="8"></a>
+<a class="sourceLine" id="cb21-9" title="9">  cout &lt;&lt; <span class="st">&quot;The size of a short integer is &quot;</span> &lt;&lt; <span class="kw">sizeof</span>(<span class="dt">short</span>)</a>
+<a class="sourceLine" id="cb21-10" title="10">       &lt;&lt; <span class="st">&quot; bytes.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb21-11" title="11"></a>
+<a class="sourceLine" id="cb21-12" title="12">  cout &lt;&lt; <span class="st">&quot;The size of a long integer is &quot;</span> &lt;&lt; <span class="kw">sizeof</span>(<span class="dt">long</span>)</a>
+<a class="sourceLine" id="cb21-13" title="13">       &lt;&lt; <span class="st">&quot; bytes.</span><span class="sc">\n</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb21-14" title="14"></a>
+<a class="sourceLine" id="cb21-15" title="15">  cout &lt;&lt; <span class="st">&quot;An apple can be eaten in &quot;</span> &lt;&lt; <span class="kw">sizeof</span>(apple)</a>
+<a class="sourceLine" id="cb21-16" title="16">       &lt;&lt; <span class="st">&quot; bytes!</span><span class="sc">\n</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb21-17" title="17">}</a></code></pre></div>
+<h3 id="more-on-variable-assignments-and-initialization">2.13 More on Variable Assignments and Initialization</h3>
+<p>A variable can be assigned a value at the time it is defined. This is called variable initialization.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb22-1" title="1">string month = <span class="st">&quot;February&quot;</span>;</a></code></pre></div>
+<h4 id="declaring-variables-with-the-auto-key-word">Declaring Variables with the <code>auto</code> Key Word</h4>
+<div class="sourceCode" id="cb23"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">auto</span> amount = <span class="dv">100</span>;        <span class="co">// int</span></a>
+<a class="sourceLine" id="cb23-2" title="2"><span class="kw">auto</span> stockCode = <span class="ch">&#39;D&#39;</span>;     <span class="co">// char</span></a>
+<a class="sourceLine" id="cb23-3" title="3"><span class="kw">auto</span> customerNum = <span class="dv">459</span><span class="bu">L</span>;  <span class="co">// long</span></a>
+<a class="sourceLine" id="cb23-4" title="4"><span class="kw">auto</span> interestRate = <span class="fl">12.0</span>; <span class="co">// double</span></a></code></pre></div>
+<h3 id="scope">2.14 Scope</h3>
+<p>A variable’s scope is the part of the program that has access to the variable.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb24-1" title="1"><span class="co">// This program can&#39;t find its variable.</span></a>
+<a class="sourceLine" id="cb24-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb24-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb24-4" title="4"></a>
+<a class="sourceLine" id="cb24-5" title="5"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb24-6" title="6">{</a>
+<a class="sourceLine" id="cb24-7" title="7">  cout &lt;&lt; value;      <span class="co">// ERROR! value has not been defined yet!</span></a>
+<a class="sourceLine" id="cb24-8" title="8"></a>
+<a class="sourceLine" id="cb24-9" title="9">  <span class="dt">int</span> value = <span class="dv">100</span>;</a>
+<a class="sourceLine" id="cb24-10" title="10">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb24-11" title="11">}</a></code></pre></div>
+<h3 id="arithmetic-operators">2.15 Arithmetic Operators</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>+</code></td>
+<td>Addition</td>
+<td><code>total = cost + tax;</code></td>
+</tr>
+<tr class="even">
+<td><code>-</code></td>
+<td>Subtraction</td>
+<td><code>cost = total - tax;</code></td>
+</tr>
+<tr class="odd">
+<td><code>*</code></td>
+<td>Multiplication</td>
+<td><code>tax = cost * rate;</code></td>
+</tr>
+<tr class="even">
+<td><code>/</code></td>
+<td>Division</td>
+<td><code>salePrice = original / 2;</code></td>
+</tr>
+<tr class="odd">
+<td><code>%</code></td>
+<td>Modulus</td>
+<td><code>remainder = value % 3;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="comments">2.16 Comments</h3>
+<h4 id="single-line-comments">Single Line Comments</h4>
+<div class="sourceCode" id="cb25"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb25-1" title="1"><span class="co">// this is a sample of single line comment</span></a></code></pre></div>
+<h4 id="multi-line-comments">Multi-line Comments</h4>
+<div class="sourceCode" id="cb26"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb26-1" title="1"><span class="co">/* This is a sample of a</span></a>
+<a class="sourceLine" id="cb26-2" title="2"><span class="co">   multi-line comment */</span></a></code></pre></div>
 <h2 id="videos">Videos</h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=4aA7KjUv06Y">🎬 CISC 192 Section 2.1 Parts of a C++ Program</a></li>

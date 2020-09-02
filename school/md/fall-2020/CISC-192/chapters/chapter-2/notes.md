@@ -1,14 +1,14 @@
 ---
 title: Chapter 2 Notes
-subtitle: Notes
+subtitle: Introduction to C++
 author: Mark Lucernas
-date: 2020-08-24
+date: Aug 24, 2020
 ---
 
 
-# Chapter 2
+# Chapter 2 Introduction to C++
 
-##  Textbook
+## Textbook
 
 ### 2.1 The Parts of a C++ Program
 
@@ -60,6 +60,8 @@ the namespace.
 | `;`       | Semicolon                           | Marks the end of a complete programming statement.                                      |
 
 </center>
+
+> **NOTE:** Every C++ program must contain a `main` function
 
 ### 2.2 The `cout` Object
 
@@ -154,7 +156,7 @@ number = 5;
 ### 2.6 Identifiers
 
 An _identifier_ is a programmer-defined name that represents some element of a
-program.  Variable names are examples of identifiers. You may choose your own
+program. Variable names are examples of identifiers. You may choose your own
 variable names in C++, as long as you do not use any of the C++ key words.
 
 > Table 2-4 The C++ Key Words
@@ -433,7 +435,97 @@ int main()
 }
 ```
 
-%% Left at page 59
+### 2.11 The `bool` Data Type
+
+Boolean variables are set to either `true` or `false`.
+
+### 2.12 Determining the Size of A Data Type
+
+The `sizeof` operator may be used to determine the size of a data type on any
+system.
+
+> Program 2-17
+
+```cpp
+// This program displays the size of various data types.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  double apple;
+
+  cout << "The size of a short integer is " << sizeof(short)
+       << " bytes.\n";
+
+  cout << "The size of a long integer is " << sizeof(long)
+       << " bytes.\n"
+
+  cout << "An apple can be eaten in " << sizeof(apple)
+       << " bytes!\n"
+}
+```
+
+### 2.13 More on Variable Assignments and Initialization
+
+A variable can be assigned a value at the time it is defined. This is called
+variable initialization.
+
+```cpp
+string month = "February";
+```
+
+#### Declaring Variables with the `auto` Key Word
+
+```cpp
+auto amount = 100;        // int
+auto stockCode = 'D';     // char
+auto customerNum = 459L;  // long
+auto interestRate = 12.0; // double
+```
+
+### 2.14 Scope
+
+A variable's scope is the part of the program that has access to the variable.
+
+```cpp
+// This program can't find its variable.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  cout << value;      // ERROR! value has not been defined yet!
+
+  int value = 100;
+  return 0;
+}
+```
+
+### 2.15 Arithmetic Operators
+
+| Operator | Meaning        | Example                     |
+|----------|----------------|-----------------------------|
+| `+`      | Addition       | `total = cost + tax;`       |
+| `-`      | Subtraction    | `cost = total - tax;`       |
+| `*`      | Multiplication | `tax = cost * rate;`        |
+| `/`      | Division       | `salePrice = original / 2;` |
+| `%`      | Modulus        | `remainder = value % 3;`    |
+
+### 2.16 Comments
+
+#### Single Line Comments
+
+```cpp
+// this is a sample of single line comment
+```
+
+#### Multi-line Comments
+
+```cpp
+/* This is a sample of a
+   multi-line comment */
+```
 
 
 ## Videos
@@ -483,3 +575,4 @@ Textbook
 
 - Starting Out with C++: Early Objects by Tony Gaddis, Judy Walters, Godfrey
   Muganda
+

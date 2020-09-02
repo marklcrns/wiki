@@ -81,7 +81,17 @@
           <li><a href="#infinite-limits">Infinite Limits</a></li>
           </ul></li>
           <li><a href="#calculating-limits-using-the-limit-laws">2.3 Calculating Limits Using the Limit Laws</a></li>
-          <li><a href="#continuity">2.5 Continuity</a></li>
+          <li><a href="#continuity">2.5 Continuity</a><ul>
+          <li><a href="#definition">1 Definition</a></li>
+          <li><a href="#definition-1">2 Definition</a></li>
+          <li><a href="#definition-2">3 Definition</a></li>
+          <li><a href="#theorem">4 Theorem</a></li>
+          <li><a href="#theorem-1">5 Theorem</a></li>
+          <li><a href="#theorem-2">7 Theorem</a></li>
+          <li><a href="#theorem-3">8 Theorem</a></li>
+          <li><a href="#theorem-4">9 Theorem</a></li>
+          <li><a href="#the-intermediate-value-theorem">10 The Intermediate Value Theorem</a></li>
+          </ul></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
           </ul>
@@ -519,7 +529,7 @@ m_{PQ} = \frac{4.9(a + h)^{2} - 4.9a^{2}}{(a + h) + a}
 <p><span class="math display">\[
 \lim_{x \to a} f(x) = \infty
 \]</span></p>
-<p>means that the values of <span class="math inline">\(f(x)\)</span> can be made arbitrarily large (as alrge as we please) by taking <span class="math inline">\(x\)</span> sufficiently close to <span class="math inline">\(a\)</span>, but not equal to <span class="math inline">\(a\)</span>.</p>
+<p>means that the values of <span class="math inline">\(f(x)\)</span> can be made arbitrarily large (as large as we please) by taking <span class="math inline">\(x\)</span> sufficiently close to <span class="math inline">\(a\)</span>, but not equal to <span class="math inline">\(a\)</span>.</p>
 <figure>
 <img src="../../../../files/fall-2020/MATH-150/chapter-2/2.2_infinite_limits.png" alt="The Limit of a Function" /><figcaption>The Limit of a Function</figcaption>
 </figure>
@@ -679,6 +689,80 @@ f(x) = \infty \;\;\; as \;\;\; x \to a
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-6/v/limits-by-rationalizing?modal=1">🎬 Limits by rationalizing</a></li>
 </ul>
 <h2 id="continuity">2.5 Continuity</h2>
+<h3 id="definition">1 Definition</h3>
+<p>A function <span class="math inline">\(f\)</span> is <strong>continuous at a number a</strong> if</p>
+<p><span class="math display">\[
+\lim_{x \to a} f(x) = f(a)
+\]</span></p>
+<p>Three things if <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(a\)</span>:</p>
+<ol type="1">
+<li><span class="math inline">\(f(a)\)</span> is defined (that is, <span class="math inline">\(a\)</span> is in the domain of <span class="math inline">\(f\)</span>)</li>
+<li><span class="math inline">\(\lim_{x \to a} f(x)\)</span> exists</li>
+<li><span class="math inline">\(\lim_{x \to a} f(x) = f(a)\)</span></li>
+</ol>
+<p><img src="../../../../files/fall-2020/MATH-150/chapter-2/2.5_example-1.png" alt="Example 1" /> <img src="../../../../files/fall-2020/MATH-150/chapter-2/2.5_example-2.1.png" alt="Example 2.1" /> <img src="../../../../files/fall-2020/MATH-150/chapter-2/2.5_example-2.2.png" alt="Example 2.2" /> <img src="../../../../files/fall-2020/MATH-150/chapter-2/2.5_figure-3.png" alt="Figure 3" /></p>
+<h3 id="definition-1">2 Definition</h3>
+<p>A function <span class="math inline">\(f\)</span> is <strong>continuous from the right at a number a</strong> if</p>
+<p><span class="math display">\[
+\lim_{x \to a^{+}} f(x) = f(a)
+\]</span></p>
+<p>and <span class="math inline">\(f\)</span> is <strong>continuous from the left at a</strong> if</p>
+<p><span class="math display">\[
+\lim_{x \to a^{-}} f(x) = f(a)
+\]</span></p>
+<p><img src="../../../../files/fall-2020/MATH-150/chapter-2/2.5_example-3.png" alt="Example 3" /> <img src="../../../../files/fall-2020/MATH-150/chapter-2/2.5_example-4.png" alt="Example 4" /> <img src="../../../../files/fall-2020/MATH-150/chapter-2/2.5_figure-4.png" alt="Figure 4" /></p>
+<h3 id="definition-2">3 Definition</h3>
+<p>A function <span class="math inline">\(f\)</span> is <strong>continuous on an interval</strong> if it is continuous at every number in the interval. (if <span class="math inline">\(f\)</span> is defined only on one side of an endpoint of the interval, we understand <em>continuous</em> at the endpoint to mean <em>continuous from the right</em> or <em>continuous from the left</em>)</p>
+<p>Other Resources:</p>
+<h3 id="theorem">4 Theorem</h3>
+<p>If <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are continuous at <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> is a constant, then the following functions are also continuous at a:</p>
+<ol type="1">
+<li><span class="math inline">\(f + g\)</span></li>
+<li><span class="math inline">\(f - g\)</span></li>
+<li><span class="math inline">\(cf\)</span></li>
+<li><span class="math inline">\(fg\)</span></li>
+<li><span class="math inline">\(\frac{f}{g}\)</span> if <span class="math inline">\(g(a) \neq 0\)</span></li>
+</ol>
+<figure>
+<img src="../../../../files/fall-2020/MATH-150/chapter-2/2.5_theorem-4_proof.png" alt="Theorem 4 Proof" /><figcaption>Theorem 4 Proof</figcaption>
+</figure>
+<h3 id="theorem-1">5 Theorem</h3>
+<ol type="a">
+<li><p>Any polynomial is continuous everywhere; that is continuous on <span class="math inline">\(\mathbb{R} = (-\infty, \infty)\)</span>.</p></li>
+<li><p>Any rational function is coninouos whereever it is defined; that is, it is continuous on its domain.</p></li>
+</ol>
+<p><img src="../../../../files/fall-2020/MATH-150/chapter-2/2.5_theorem-5_proof.png" alt="Theorem 5 Proof" /> <img src="../../../../files/fall-2020/MATH-150/chapter-2/2.5_example-5.png" alt="Example 5" /></p>
+<h3 id="theorem-2">7 Theorem</h3>
+<p>The following types of functions are continuous at every number in their domains:</p>
+<ul>
+<li>polynomials</li>
+<li>rational functions</li>
+<li>root functions</li>
+<li>trigonometric functions</li>
+<li>inverse trigonometric functions</li>
+<li>exponential functions</li>
+<li>logarithmic functions</li>
+</ul>
+<figure>
+<img src="../../../../files/fall-2020/MATH-150/chapter-2/2.5_example-6-and-7.png" alt="Example 6 and 7" /><figcaption>Example 6 and 7</figcaption>
+</figure>
+<h3 id="theorem-3">8 Theorem</h3>
+<p>If <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(b\)</span> and <span class="math inline">\(\lim_{x \to a} g(x) = b\)</span>, then <span class="math inline">\(\lim_{x \to a} f(g(x)) = f(b)\)</span>. In other words,</p>
+<p><span class="math display">\[
+\lim_{x \to a} f(g(x)) = f(\lim_{x \to a} g(x))
+\]</span></p>
+<blockquote>
+<p>Note: this theorem says that a limit symbol can be moved through a function symbol if the function is continuous and the limit exists. In other words, the order of these two symbols can be reversed.</p>
+</blockquote>
+<figure>
+<img src="../../../../files/fall-2020/MATH-150/chapter-2/2.5_example-8.png" alt="Example 8" /><figcaption>Example 8</figcaption>
+</figure>
+<h3 id="theorem-4">9 Theorem</h3>
+<p>If <span class="math inline">\(g\)</span> is continuous at <span class="math inline">\(a\)</span> and <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(g(a)\)</span>, then the composite function <span class="math inline">\(f \circ g\)</span> given by <span class="math inline">\(f \circ g)(x) = f(g(x))\)</span> is continuous at <span class="math inline">\(a\)</span>.</p>
+<p><img src="../../../../files/fall-2020/MATH-150/chapter-2/2.5_theorem-9_proof.png" alt="Theorem 9 Proof" /> <img src="../../../../files/fall-2020/MATH-150/chapter-2/2.5_example-9.png" alt="Example 9" /> <img src="../../../../files/fall-2020/MATH-150/chapter-2/2.figure-7.png" alt="Figure 7" /></p>
+<h3 id="the-intermediate-value-theorem">10 The Intermediate Value Theorem</h3>
+<p>Suppose that <span class="math inline">\(f\)</span> is continuous on the closed interval <span class="math inline">\([a, b]\)</span> and let <span class="math inline">\(N\)</span> by any number between <span class="math inline">\(f(a)\)</span> and <span class="math inline">\(f(b)\)</span>, where <span class="math inline">\(f(a) \neq f(b)\)</span>. Then there exists a number <span class="math inline">\(c\)</span> in <span class="math inline">\((a, b)\)</span> such that <span class="math inline">\(f(c) = N\)</span>.</p>
+<p><img src="../../../../files/fall-2020/MATH-150/chapter-2/2.5_example-10.1.png" alt="Example 10.1" /> <img src="../../../../files/fall-2020/MATH-150/chapter-2/2.5_example-10.2.png" alt="Example 10.2" /> <img src="../../../../files/fall-2020/MATH-150/chapter-2/2.5_figure-10-and-11.png" alt="Figure 10 and 11" /></p>
 <p>Other Resources:</p>
 <ul>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-10/v/types-of-discontinuities?modal=1">🎬 Types of discontinuities</a></li>
@@ -686,6 +770,11 @@ f(x) = \infty \;\;\; as \;\;\; x \to a
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-11/v/continuity-at-a-point-graphically">🎬 Worked example: Continuity at a point(graphical)</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-11/v/limit-of-piecewise-function-that-is-defined">🎬 Worked example: point where a function is continuous</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-11/v/limit-of-piecewise-function-that-is-undefined">🎬 Worked example: point where a function isn’t continuous</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-12/v/continuity-over-an-interval">🎬 Continuity over an interval</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-12/v/functions-continuous-on-all-numbers">🎬 Functions continuous on all real numbers</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-12/v/functions-continuous-on-specific-numbers">🎬 Functions continuous at specific x-values</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-13/v/defining-a-function-at-a-point-to-make-it-continuous">🎬 Removing discontinuities (factoring)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-13/v/fancy-algebra-to-find-a-limit-and-make-a-function-continuous">🎬 Removing discontinuities (rationalization)</a></li>
 </ul>
 <p><br></p>
 <h1 id="resources">Resources</h1>
@@ -719,6 +808,11 @@ f(x) = \infty \;\;\; as \;\;\; x \to a
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-11/v/continuity-at-a-point-graphically">🎬 Worked example: Continuity at a point(graphical)</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-11/v/limit-of-piecewise-function-that-is-defined">🎬 Worked example: point where a function is continuous</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-11/v/limit-of-piecewise-function-that-is-undefined">🎬 Worked example: point where a function isn’t continuous</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-12/v/continuity-over-an-interval">🎬 Continuity over an interval</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-12/v/functions-continuous-on-all-numbers">🎬 Functions continuous on all real numbers</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-12/v/functions-continuous-on-specific-numbers">🎬 Functions continuous at specific x-values</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-13/v/defining-a-function-at-a-point-to-make-it-continuous">🎬 Removing discontinuities (factoring)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-13/v/fancy-algebra-to-find-a-limit-and-make-a-function-continuous">🎬 Removing discontinuities (rationalization)</a></li>
 </ul>
 <p>Textbook</p>
 <ul>

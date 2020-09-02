@@ -2,7 +2,7 @@
 title: CISC 192 Chapters
 subtitle: Chapters
 author: Mark Lucernas
-date: 2020-08-17
+date: Aug 17, 2020
 ---
 
 
