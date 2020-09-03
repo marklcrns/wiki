@@ -2,7 +2,7 @@
 title: MATH 150
 subtitle: Calculus/Analytic Geometry I
 author: Mark Lucernas
-date: 2020-08-17
+date: Aug 17, 2020
 ---
 
 

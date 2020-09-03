@@ -22,6 +22,7 @@
 
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   </head>
 
   <body>
@@ -69,7 +70,14 @@
             <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
           </ul>
           <ul>
-          <li><a href="#the-derivative-as-a-function">2.8 The Derivative as a Function</a></li>
+          <li><a href="#the-derivative-as-a-function">2.8 The Derivative as a Function</a><ul>
+          <li><a href="#other-notations">Other Notations</a><ul>
+          <li><a href="#definition">3 Definition</a></li>
+          <li><a href="#theorem">4 Theorem</a></li>
+          </ul></li>
+          <li><a href="#how-can-a-function-fail-to-be-differentiable">How Can a Function Fail to Be Differentiable?</a></li>
+          <li><a href="#higher-derivatives">Higher Derivatives</a></li>
+          </ul></li>
           <li><a href="#resources">Resources</a></li>
           </ul>
         </div>
@@ -93,6 +101,84 @@
 
 <!-- Contents -->
 <h1 id="the-derivative-as-a-function">2.8 The Derivative as a Function</h1>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_intro.png" alt="Intro" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_example-1.1.png" alt="Example 1.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_example-1.2.png" alt="Example 1.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_explore-it_1.png" alt="Explore It 1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_example-2.1.png" alt="Example 2.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_example-2.2.png" alt="Example 2.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_example-3.png" alt="Example 3" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_figure-4.png" alt="Figure 4" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_example-4.png" alt="Example 4" /></p>
+<h2 id="other-notations">Other Notations</h2>
+<p>If we use the traditional notation <span class="math inline">\(y = f(x)\)</span> to indicate that the independent variable is <span class="math inline">\(x\)</span> and the dependent variable is <span class="math inline">\(y\)</span>, then some common alternative notations for the derivative are as follows:</p>
+<p><span class="math display">\[
+f^{\prime}(x) = y^{\prime} = \frac{dy}{dx} = \frac{df}{dx} = \frac{d}{dx} f(x) = Df(x) = D_{x}f(x)
+\]</span></p>
+<p>The symbols <span class="math inline">\(D\)</span> and <span class="math inline">\(d/dx\)</span> are called <strong>differentiation operators</strong> because they indicate the operation of <strong>differentiation</strong>, ,which is the process of calculating a derivative</p>
+<p>The symbol <span class="math inline">\(dy/dx\)</span>, which was introduced by Leibniz, should not be regarded as a ration (for the time being); it is simply a synonym for <span class="math inline">\(f^{\prime}(x)\)</span>. Nonetheless, it is a very useful and suggestive notation, especially when used in conjunction with increment notation. Referring to <a href="ch-2-7.html#instantaneous-rate-of-change">⚓ Equation 2.7.6</a>, we can rewrite the definition of derivative in Leibniz notation in the form</p>
+<p><span class="math display">\[
+\frac{dy}{dx} = \lim_{\Delta{x} \to 0} \frac{\Delta{y}}{\Delta{x}}
+\]</span></p>
+<p>If we want to indicate the value of a derivative <span class="math inline">\(dy/dx\)</span> in Liebniz notation at a specific number <span class="math inline">\(a\)</span>, we use the notation</p>
+<p><span class="math display">\[
+\left.\begin{matrix}
+\frac{dy}{dx}
+\end{matrix}\right|
+_{x = a}
+\]</span></p>
+<p>or</p>
+<p><span class="math display">\[
+\left.\begin{matrix}
+\frac{dy}{dx}
+\end{matrix}\right]
+_{x = a}
+\]</span></p>
+<p>which is a synonym for <span class="math inline">\(f^{\prime}(a)\)</span>. The vertical bar means “evaluate at.”</p>
+<h3 id="definition">3 Definition</h3>
+<p>A function <span class="math inline">\(f\)</span> is <strong>differentiable at <span class="math inline">\(a\)</span></strong> if <span class="math inline">\(f^{\prime}(a)\)</span> exists. It is <strong>differentiable on an open interval <span class="math inline">\((a, b)\)</span></strong> [or <span class="math inline">\((a, \infty)\)</span> or <span class="math inline">\((-\infty, a)\)</span> or <span class="math inline">\((-\infty, \infty)\)</span>] if it is differentiable at every number in the interval.</p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_example-5.1.png" alt="Example 5.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_example-5.2.png" alt="Example 5.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_example-5.3.png" alt="Example 5.3" /></p>
+<h3 id="theorem">4 Theorem</h3>
+<p>If <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(a\)</span>, then <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(a\)</span>.</p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_theorem-4_proof-1.png" alt="Theorem 4 Proof 1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_theorem-4_proof-2.png" alt="Theorem 4 Proof 2" /></p>
+<h2 id="how-can-a-function-fail-to-be-differentiable">How Can a Function Fail to Be Differentiable?</h2>
+<p>A third possibility is that the curve has a <strong>vertical tangent line</strong> when <span class="math inline">\(x = a\)</span>; that is, <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(a\)</span> and</p>
+<p><span class="math display">\[
+\lim_{x \to a} \left | f^{\prime}(x) \right | = \infty
+\]</span></p>
+<p>This means that the tangent lines become steeper and steeper as <span class="math inline">\(x \to a\)</span>. Figure 6 shows one way that this can happen; Figure 7(c) shows another. Figure 7 illustrates the three possibilities that we have discussed</p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_figure-6-and-7.png" alt="Figure 6 and 7" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_figure-8.png" alt="Figure 8" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_figure-9.png" alt="Figure 9" /></p>
+<h2 id="higher-derivatives">Higher Derivatives</h2>
+<p>If <span class="math inline">\(f\)</span>is a differentiable function, then its derivative <span class="math inline">\(f^{\prime}\)</span>is also a function, so <span class="math inline">\(f^{\prime}\)</span> may have a derivative of its own, denoted by <span class="math inline">\((f^{\prime}) = f^{\prime \prime}\)</span>. This new function <span class="math inline">\(f^{\prime \prime}\)</span> is called the <strong>second derivative</strong> of <span class="math inline">\(f\)</span> because it is the derivative of the derivative of <span class="math inline">\(f\)</span>. Using Leibniz notation, we write the second derivative of <span class="math inline">\(y = f(x)\)</span> as</p>
+<p><span class="math display">\[
+\begin{matrix}
+\underbrace{\frac{d}{dx}} &amp; (\underbrace{\frac{dy}{dx}}) &amp;= \underbrace{\frac{d^{2}y}{dx^{2}}} \\
+\text{derivative}         &amp; \text{first}                 &amp; \text{second} \\
+\text{of}                 &amp; \text{derivative}            &amp; \text{derivative}
+\end{matrix}
+\]</span></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_example-6.png" alt="Example 6" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_explore-it_2.png" alt="Explore It 2" /></p>
+<p>In general, we can interpret a second derivative as a rate of change of a rate of change. The most familiar example of this is acceleration, which we define as follows.</p>
+<p>If <span class="math inline">\(s = s(t)\)</span> is the position function of an object that moves in a straight line, we know that its first derivative represents the velocity <span class="math inline">\(v(t)\)</span> of the object as a function of time:</p>
+<p><span class="math display">\[
+v(t) = s^{\prime}(t) = \frac{ds}{dt}
+\]</span></p>
+<p>The instantaneous rate of change with respect to time is called the <strong>acceleration <span class="math inline">\(a(t)\)</span></strong> of the object. Thus the acceleration function is the derivative of the velocity function and therefore the second derivative of the position function:</p>
+<p><span class="math display">\[
+a(t) = v^{\prime}(t) = s^{\prime \prime}(t)
+\]</span></p>
+<p>or, in Leibniz notation,</p>
+<p><span class="math display">\[
+a = \frac{dv}{dt} = \frac{d^{2}s}{dt^{2}}
+\]</span></p>
+<p>Acceleration is the change in velocity you feel when speeding up or slowing down in a car. The <strong>third derivative <span class="math inline">\(f^{\prime \prime \prime}\)</span></strong> is the derivative of the second derivative: <span class="math inline">\(f^{\prime \prime \prime} = (f^{\prime \prime})^{\prime}\)</span>. So <span class="math inline">\(f^{\prime \prime \prime}(x)\)</span> can be interpreted as the slope of the curve <span class="math inline">\(y = f^{\prime \prime}(x)\)</span> or as the rate of change of <span class="math inline">\(f^{\prime \prime}(x)\)</span>. if <span class="math inline">\(y = f(x)\)</span>, then alternative notations for the third derivative are</p>
+<p><span class="math display">\[
+y^{\prime \prime \prime} = f^{\prime \prime \prime} = \frac{d}{dx} \left ( \frac{d^{2}y}{dx^{2}} \right ) = \frac{d^{3}y}{dx^{3}}
+\]</span></p>
+<p>We can also interpret the third derivative physically in the case where the function is the position function <span class="math inline">\(s = s(t)\)</span> of an object that moves along a straight line. Because <span class="math inline">\(s^{\prime \prime \prime} = (s^{\prime \prime})^{\prime} = a^{\prime}\)</span>, the third derivative oof the position function is the derivative of the acceleration function and is called the <strong>jerk:</strong></p>
+<p><span class="math display">\[
+j = \frac{da}{dt} = \frac{d^{3}s}{dt^{3}}
+\]</span></p>
+<p>Thus the jerk <span class="math inline">\(j\)</span> is the rate of change of acceleration. It is aptly named because large jerk means a sudden change in acceleration, which causes an abrupt movement in a vehicle.</p>
+<p>The differentiation process can be continued. The fourth derivative <span class="math inline">\(f^{\prime \prime \prime}\)</span> is usually denoted by <span class="math inline">\(f^{(4)}\)</span>. In general, the <span class="math inline">\(n\)</span>th derivative of <span class="math inline">\(f\)</span> is denoted by <span class="math inline">\(f^{n}\)</span> and is obtained from <span class="math inline">\(f\)</span>by differentiating <span class="math inline">\(n\)</span> times. If <span class="math inline">\(y = f(x)\)</span>, we write</p>
+<p><span class="math display">\[
+y^{(n)} = f^{(n)}(x) = \frac{d^{n}y}{dx^{n}}
+\]</span></p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_example-7.png" alt="Example 7" /><figcaption>Example 7</figcaption>
+</figure>
 <p><br></p>
 <h1 id="resources">Resources</h1>
         </div>
