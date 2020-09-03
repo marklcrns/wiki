@@ -10,7 +10,7 @@ date: 2020-08-18
 
 ## Notes
 
-- [↪ Chapter 2: Limits and Derivatives](chapter-2)
+- [↪ Chapter 2: Limits and Derivatives](chapter-2/index)
 
 
 ## Homeworks

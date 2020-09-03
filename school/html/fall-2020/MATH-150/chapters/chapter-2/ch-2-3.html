@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Lucernas">
+
+    <title>Limits and Derivatives</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
+
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body>
+
+<!-- Nav bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">School Wiki</a>
+        </div>
+        <!-- <div id="navbar" class="navbar-collapse collapse">                                                                                                                 -->
+        <!--   <ul class="nav navbar-nav">                                                                                                                                      -->
+        <!--     <li><a href="#">doc1</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc2</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc3</a></li>                                                                                                                                  -->
+        <!--     <li class="dropdown">                                                                                                                                          -->
+        <!--       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+        <!--       <ul class="dropdown-menu">                                                                                                                                   -->
+        <!--         <li><a href="#">Action</a></li>                                                                                                                            -->
+        <!--         <li><a href="#">Another action</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">Something else here</a></li>                                                                                                               -->
+        <!--         <li role="separator" class="divider"></li>                                                                                                                 -->
+        <!--         <li class="dropdown-header">Nav header</li>                                                                                                                -->
+        <!--         <li><a href="#">Separated link</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">One more separated link</a></li>                                                                                                           -->
+        <!--       </ul>                                                                                                                                                        -->
+        <!--     </li>                                                                                                                                                          -->
+        <!--   </ul>                                                                                                                                                            -->
+        <!-- </div>                                                                                                                                                             -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+<!-- Table of Contents -->
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>
+          <ul>
+          <li><a href="#calculating-limits-using-the-limit-laws">2.3 Calculating Limits Using the Limit Laws</a></li>
+          <li><a href="#resources">Resources</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<!-- Header -->
+        <header>
+          <div class="jumbotron">
+            <div class="container">
+              <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+              <h1 class="title">Limits and Derivatives</h1>
+              <p class="subtitle">2.3 Calculating Limits Using the Limit Laws</p>
+            </div>
+          </div>
+        </header>
+        <div class="h5 text-muted">
+          <h5 class="author">Mark Lucernas</h5>
+          <h5 class="date">Sep 02, 2020</h5>
+        </div>
+        <hr>
+
+<!-- Contents -->
+<h1 id="calculating-limits-using-the-limit-laws">2.3 Calculating Limits Using the Limit Laws</h1>
+<p>Suppose that <span class="math inline">\(c\)</span> is a constant and the limits</p>
+<p><span class="math display">\[
+\lim_{x \to a} f(x)
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\lim_{x \to a} g(x)
+\]</span></p>
+<p>exist. Then…</p>
+<blockquote>
+<p>Limit Laws</p>
+</blockquote>
+<p><span class="math display">\[
+\underline{\boldsymbol{Sum Law}} \\
+1.\; \lim_{x \to a} [f(x) + g(x)] = \lim_{x \to a} f(x) + \lim_{x \to a} g(x) \\
+~\\
+\underline{\boldsymbol{Difference Law}} \\
+2.\; \lim_{x \to a} [f(x) - g(x)] = \lim_{x \to a} f(x) - \lim_{x \to a} g(x) \\
+~\\
+\underline{\boldsymbol{Constant Multiple Law}} \\
+3.\; \lim_{x \to a} [cf(x)] = c \lim_{x \to a} f(x) \\
+~\\
+\underline{\boldsymbol{Product Law}} \\
+4.\; \lim_{x \to a} [f(x)g(x)] = \lim_{x \to a} f(x) \cdot \lim_{x \to a} g(x) \\
+~\\
+\underline{\boldsymbol{Quotient Law}} \\
+5.\; \lim_{x \to a} \frac{f(x)}{g(x)} = \frac{\lim_{x \to a} f(x)}{\lim_{x \to a} g(x)} \text{ if } \lim_{x \to a} g(x) \neq 0 \\
+~\\
+\underline{\boldsymbol{Power Law}} \\
+6.\; \lim_{x \to a} [f(x)]^{n} = [\lim_{x \to a} f(x)]^{n} \; \text{ where } n \text{ is a positive integer } \\
+7.\; \lim_{x \to a} c = c \\
+8.\; \lim_{x \to a} x = a \\
+9.\; \lim_{x \to a} x^{n} = a^{n} \; \text{ where } n \text{ is a positive integer } \\
+10.\; \lim_{x \to a} \sqrt[n]{x} = \sqrt[n]{a} \; \text{ where } n \text{ is a positive integer }
+~\\
+\underline{\boldsymbol{Root Law}} \\
+11.\; \lim_{x \to a} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x \to a} f(x)} \; \text{ where } n \text{ is a positive integer } \\
+[\text{ if  } n \text{ is even, we assume that } \lim_{x \to a} f(x) &gt; 0 \text{. }]
+\]</span></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-1.1.png" alt="Example 1.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-1.2.png" alt="Example 1.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-1.3.png" alt="Example 1.3" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-1.4.png" alt="Example 1.4" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-2.png" alt="Example 2" /></p>
+<blockquote>
+<p>Direct Substitution Property</p>
+</blockquote>
+<p>If <span class="math inline">\(f\)</span> is a polynomial or a rational function and <span class="math inline">\(a\)</span> is in the domain of <span class="math inline">\(f\)</span>, then</p>
+<p><span class="math display">\[
+\lim_{x \to a} f(x) = f(a)
+\]</span></p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-3.png" alt="Example 3" /><figcaption>Example 3</figcaption>
+</figure>
+<blockquote>
+<p><strong>NOTE:</strong> Notice that in Example 3 we do not have an infinite limit even though the denominator approaches <span class="math inline">\(0\)</span> as <span class="math inline">\(x \to 1\)</span>. When both numerator and denominator approach 0 the limit may be infinite or it may be some finite value.</p>
+</blockquote>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-4.png" alt="Example 4" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-5.png" alt="Example 5" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-6.png" alt="Example 6" /></p>
+<p><a href="../../../../spring-2020/MATH-141/notes/ch-7.html#conjugates-term">⚓ Conjugates</a></p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.3_figure-2.png" alt="Figure 2" /><figcaption>Figure 2</figcaption>
+</figure>
+<blockquote>
+<p>Theorem 1</p>
+</blockquote>
+<p><span class="math display">\[
+\lim_{x \to a} f(x) = L
+\]</span></p>
+<p>if and only if</p>
+<p><span class="math display">\[
+\lim_{x \to a^{-}} f(x) = L = \lim_{x \to a^{+}} f(x)
+\]</span></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-7.png" alt="Example 7" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.3_figure-3.png" alt="Figure 3" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-8.png" alt="Example 8" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-9.1.png" alt="Example 9.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-9.2.png" alt="Example 9.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-10.png" alt="Example 10" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.3_figure-6.png" alt="Figure 6" /></p>
+<blockquote>
+<p>Theorem 2</p>
+</blockquote>
+<p>if <span class="math inline">\(f(x) \le g(x)\)</span> when <span class="math inline">\(x\)</span> is near <span class="math inline">\(a\)</span> (except possibly at <span class="math inline">\(a\)</span>) and the limits of <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> both exist as <span class="math inline">\(x\)</span> approaches <span class="math inline">\(a\)</span> then</p>
+<p><span class="math display">\[
+\lim_{x \to a} f(x) \le \lim_{x \to a} g(x)
+\]</span></p>
+<blockquote>
+<p>The Squeeze Theorem</p>
+</blockquote>
+<p>if <span class="math inline">\(f(x) \le g(x) \le h(x)\)</span> when <span class="math inline">\(x\)</span> is near <span class="math inline">\(a\)</span> (except possibly at <span class="math inline">\(x\)</span>) and</p>
+<p><span class="math display">\[
+\lim_{x \to a} f(x) = \lim_{x \to a} h(x) = L
+\]</span></p>
+<p>then</p>
+<p><span class="math display">\[
+\lim_{x \to a} g(x) = L
+\]</span></p>
+<p>The Squeeze Theorem, which is sometimes called the <em>Sandwich Theorem</em> or the <em>Pinching Theorem</em>, is illustrated by Figure 7. It says if <span class="math inline">\(g(x)\)</span> is squeezed between <span class="math inline">\(f(x)\)</span> and <span class="math inline">\(h(x)\)</span> near <span class="math inline">\(a\)</span>, and if <span class="math inline">\(f\)</span> and <span class="math inline">\(h\)</span> have the same limit <span class="math inline">\(L\)</span> at <span class="math inline">\(a\)</span>, then <span class="math inline">\(g\)</span> is forced to have the same limit <span class="math inline">\(L\)</span> at <span class="math inline">\(a\)</span>.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.3_figure-7.png" alt="Figure 7" /><figcaption>Figure 7</figcaption>
+</figure>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-11.1.png" alt="Example 11.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-11.2.png" alt="Example 11.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.3_example-11.3.png" alt="Example 11.3" /></p>
+<p>Other Resources:</p>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5a/v/limit-properties">🎬 Limit properties</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5a/v/limits-of-combined-functions">🎬 Limits of combined functions</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5a/v/limits-of-combined-functions-piecewise">🎬 Limits of combined functions: piecewise functions</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5b/v/limit-by-substitution">🎬 Limits by direct substitution</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5b/v/undefined-limit-by-substitution">🎬 Undefined limits by direct substitution</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5b/v/limits-of-trigonometric-functions">🎬 Limits of trigonometric functions</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5b/v/limits-of-piecewise-functions">🎬 Limits of piecewise functions</a></li>
+<li><a href="https://www.youtube.com/watch?v=n-EgnuaThpE">🎬 How to Graph a Piecewise Function</a></li>
+<li><a href="https://www.youtube.com/watch?v=QIG8LvPNNJQ">🎬 Graphing a Piecewise Function</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5b/v/limit-at-a-point-of-discontinuity">🎬 Limits of piecewise functions: absolute value</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-6/v/limit-example-1?modal=1">🎬 Limits by factoring</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-6/v/limits-by-rationalizing?modal=1">🎬 Limits by rationalizing</a></li>
+</ul>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5a/v/limit-properties">🎬 Limit properties</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5a/v/limits-of-combined-functions">🎬 Limits of combined functions</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5a/v/limits-of-combined-functions-piecewise">🎬 Limits of combined functions: piecewise functions</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5b/v/limit-by-substitution">🎬 Limits by direct substitution</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5b/v/undefined-limit-by-substitution">🎬 Undefined limits by direct substitution</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5b/v/limits-of-trigonometric-functions">🎬 Limits of trigonometric functions</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5b/v/limits-of-piecewise-functions">🎬 Limits of piecewise functions</a></li>
+<li><a href="https://www.youtube.com/watch?v=n-EgnuaThpE">🎬 How to Graph a Piecewise Function</a></li>
+<li><a href="https://www.youtube.com/watch?v=QIG8LvPNNJQ">🎬 Graphing a Piecewise Function</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5b/v/limit-at-a-point-of-discontinuity">🎬 Limits of piecewise functions: absolute value</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-6/v/limit-example-1?modal=1">🎬 Limits by factoring</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-6/v/limits-by-rationalizing?modal=1">🎬 Limits by rationalizing</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../../../templates/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../../../templates/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>
