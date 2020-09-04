@@ -12,7 +12,7 @@ summary: Bash scripting with strings
 
 **Most Commonly Used**
 
-```bash
+```sh
 RED="\e[0;31m"
 GREEN="\e[0;32m"
 BLUE="\e[0;34m"
@@ -40,7 +40,7 @@ Sample
 
 **Regular Colors**
 
-```bash
+```sh
 BLACK="\e[0;30m"
 RED="\e[0;31m"
 GREEN="\e[0;32m"
@@ -53,7 +53,7 @@ WHITE="\e[0;37m"
 
 **Bold**
 
-```bash
+```sh
 BO_BLACK="\e[1;30m"
 BO_RED="\e[1;31m"
 BO_GREEN="\e[1;32m"
@@ -67,7 +67,7 @@ BO_NC="\e[1m" # Bold default color
 
 **Underline**
 
-```bash
+```sh
 UL_BLACK="\e[4;30m"
 UL_RED="\e[4;31m"
 UL_GREEN="\e[4;32m"
@@ -81,7 +81,7 @@ UL_NC="\e[4m" # Underlined default color
 
 **Background**
 
-```bash
+```sh
 BG_BLACK="\e[40m"
 BG_RED="\e[41m"
 BG_GREEN="\e[42m"
@@ -95,7 +95,7 @@ BG_EXPAND="\e[K" # Expand any background color horizontally
 
 **High Intensty**
 
-```bash
+```sh
 HI_BLACK="\e[0;90m"
 HI_RED="\e[0;91m"
 HI_GREEN="\e[0;92m"
@@ -108,7 +108,7 @@ HI_WHITE="\e[0;97m"
 
 **Bold High Intensty**
 
-```bash
+```sh
 BO_HI_BLACK="\e[1;90m"
 BO_HI_RED="\e[1;91m"
 BO_HI_GREEN="\e[1;92m"
@@ -121,7 +121,7 @@ BO_HI_WHITE="\e[1;97m"
 
 **High Intensty backgrounds**
 
-```bash
+```sh
 BG_HI_BLACK="\e[0;100m"
 BG_HI_RED="\e[0;101m"
 BG_HI_GREEN="\e[0;102m"
@@ -134,7 +134,7 @@ BG_HI_WHITE="\e[0;107m"
 
 **Reset to Default**
 
-```bash
+```sh
 NC="\e[0m"
 ```
 
@@ -150,7 +150,7 @@ Ref:
 
 **Comparing two strings if equal**
 
-```bash
+```sh
 if [[ "$STRING1" == "$STRING2" ]]; then
     echo "Strings are equal."
 else
@@ -166,7 +166,7 @@ fi
 
 **Comparing if a string contains a substring**
 
-```bash
+```sh
 VAR='GNU/Linux is an operating system'
 if [[ $VAR == *"Linux"* ]]; then
   echo "It's there."
@@ -184,7 +184,7 @@ double quotes (")
 
 **Check if string is empty**
 
-```bash
+```sh
 VAR=''
 if [[ -z $VAR ]]; then
   echo "String is empty."
@@ -200,7 +200,7 @@ fi
 
 **Check if string is empty, newline or spaces**
 
-```bash
+```sh
 if [[ -n "#(echo "$VARIABLE" | tr -d '\n')" ]]; then
   # Do something if not empty or has new line
 fi
@@ -225,7 +225,7 @@ Ref:
 
 **Strip single trailing backslash**
 
-```bash
+```sh
 VALUE=/looks/like/a/path/
 
 echo ${VALUE%/}
@@ -233,7 +233,7 @@ echo ${VALUE%/}
 
 **Strip all trailing backslashes '/'**
 
-```bash
+```sh
 VALUE=/looks/like/a/path///
 TRIMMED=$(echo $VALUE | sed 's,/*$,,')
 

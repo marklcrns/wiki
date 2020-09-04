@@ -195,11 +195,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <h2 id="branch">Branch</h2>
 <p><strong>Fetching all Git branches</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">for</span> <span class="ex">remote</span> in <span class="kw">`</span><span class="fu">git</span> branch -r<span class="kw">`;</span> <span class="kw">do</span> <span class="fu">git</span> branch --track <span class="va">${remote#</span>origin/<span class="va">}</span> <span class="va">$remote</span><span class="kw">;</span> <span class="kw">done</span></a>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">for</span> <span class="ex">remote</span> in <span class="kw">`</span><span class="fu">git</span> branch -r<span class="kw">`;</span> <span class="kw">do</span> <span class="fu">git</span> branch --track <span class="va">${remote#</span>origin/<span class="va">}</span> <span class="va">$remote</span><span class="kw">;</span> <span class="kw">done</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="fu">git</span> fetch --all</a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="fu">git</span> pull --all</a></code></pre></div>
 <p><strong>Remove tracking branches no longer on remote (Method 1)</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">git</span> checkout master</a>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">git</span> checkout master</a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="fu">git</span> remote prune origin</a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="co"># List all branches merged into the current branch into vim buffer.</span></a>
 <a class="sourceLine" id="cb2-4" title="4"><span class="co"># Once loaded in vim, delete branches you want to exclude from branch deletion.</span></a>
@@ -209,7 +209,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>NOTE:</strong> Both this method only removes merged branch and does not remove unmerged branch that exists in local but not from remote.</p>
 </blockquote>
 <p><strong>Remove tracking branches no longer on remote (Method 2)</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">git</span> fetch -p <span class="kw">&amp;&amp;</span> <span class="kw">for</span> <span class="ex">branch</span> in <span class="va">$(</span><span class="fu">git</span> branch -vv <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&#39;: gone]&#39;</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{print $1}&#39;</span><span class="va">)</span><span class="kw">;</span> <span class="kw">do</span> <span class="fu">git</span> branch -D <span class="va">$branch</span><span class="kw">;</span> <span class="kw">done</span></a>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">git</span> fetch -p <span class="kw">&amp;&amp;</span> <span class="kw">for</span> <span class="ex">branch</span> in <span class="va">$(</span><span class="fu">git</span> branch -vv <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&#39;: gone]&#39;</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{print $1}&#39;</span><span class="va">)</span><span class="kw">;</span> <span class="kw">do</span> <span class="fu">git</span> branch -D <span class="va">$branch</span><span class="kw">;</span> <span class="kw">done</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="co"># Much safer way</span></a>
 <a class="sourceLine" id="cb3-3" title="3"><span class="fu">git</span> fetch -p <span class="kw">&amp;&amp;</span> <span class="kw">for</span> <span class="ex">branch</span> in <span class="va">$(</span><span class="fu">git</span> for-each-ref --format <span class="st">&#39;%(refname) %(upstream:track)&#39;</span> refs/heads <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;$2 == &quot;[gone]&quot; {sub(&quot;refs/heads/&quot;, &quot;&quot;, $1); print $1}&#39;</span><span class="va">)</span><span class="kw">;</span> <span class="kw">do</span> <span class="fu">git</span> branch -D <span class="va">$branch</span><span class="kw">;</span> <span class="kw">done</span></a></code></pre></div>
 <blockquote>
@@ -222,7 +222,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <h2 id="fetch">Fetch</h2>
 <p><strong>Log all new fetched remote changes</strong></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># First make sure to</span></a>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># First make sure to</span></a>
 <a class="sourceLine" id="cb4-2" title="2"><span class="fu">git</span> fetch origin</a>
 <a class="sourceLine" id="cb4-3" title="3"><span class="co"># Then</span></a>
 <a class="sourceLine" id="cb4-4" title="4"><span class="fu">git</span> log origin/master ^master <span class="co"># Replace master with &lt;branch-name&gt; for other branch</span></a></code></pre></div>
@@ -241,7 +241,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>git pull origin master</code></li>
 </ul>
 <p>Solution 2: Set it up so that local master branch tracks github master branch as an upstream:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">git</span> branch --set-upstream-to=origin/master <span class="op">&lt;</span>current-branch<span class="op">&gt;</span></a>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">git</span> branch --set-upstream-to=origin/master <span class="op">&lt;</span>current-branch<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb5-2" title="2"><span class="fu">git</span> pull</a></code></pre></div>
 <p>Ref:</p>
 <ul>

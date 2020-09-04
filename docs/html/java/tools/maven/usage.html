@@ -337,31 +337,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb1-174" title="174">  <span class="kw">&lt;/distributionManagement&gt;</span></a>
 <a class="sourceLine" id="cb1-175" title="175"><span class="kw">&lt;/project&gt;</span></a></code></pre></div>
 <p>With the <code>pom.xml</code> at the root directory and Apache Maven already installed in the system, run the following to compile and install all dependencies</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">mvn</span> install</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">mvn</span> install</a></code></pre></div>
 <p>Executing <code>.jar</code> file to run project</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="ex">java</span> -jar target/WizardGame-0.0.1-SNAPSHOT.jar</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="ex">java</span> -jar target/WizardGame-0.0.1-SNAPSHOT.jar</a></code></pre></div>
 <p>To run specific class. (replace <code>&lt;class&gt;</code> with path to java file starting from <code>edu.sdccd.cisc191.wizardGame</code> directory, using <code>.</code> as path separator).</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># Template</span></a>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># Template</span></a>
 <a class="sourceLine" id="cb4-2" title="2"><span class="ex">mvn</span> exec:java -Dexec.mainClass=<span class="st">&quot;edu.sdccd.cisc191.wizardGame.&lt;class&gt;&quot;</span></a>
 <a class="sourceLine" id="cb4-3" title="3"></a>
 <a class="sourceLine" id="cb4-4" title="4"><span class="co"># Running Game class</span></a>
 <a class="sourceLine" id="cb4-5" title="5"><span class="ex">mvn</span> exec:java -Dexec.mainClass=<span class="st">&quot;edu.sdccd.cisc191.wizardGame.Game&quot;</span></a></code></pre></div>
 <p>To recompile project</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="ex">mvn</span> compile</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="ex">mvn</span> compile</a></code></pre></div>
 <p>To package project into a JAR file</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="ex">mvn</span> package</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="ex">mvn</span> package</a></code></pre></div>
 <p>To run test suite</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="ex">mvn</span> clean test</a>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="ex">mvn</span> clean test</a>
 <a class="sourceLine" id="cb7-2" title="2"><span class="co"># -e to run tests with full stack trace on failures</span></a>
 <a class="sourceLine" id="cb7-3" title="3"><span class="ex">mvn</span> clean test -e</a></code></pre></div>
 <p>To clean and remove maven build from project</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="ex">mvn</span> clean</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="ex">mvn</span> clean</a></code></pre></div>
 <blockquote>
 <p><strong>NOTE:</strong> If unit tests fail after new changes that prevents from building the <code>.jar</code> file, although not recommended, simply skip unit testing from build by running</p>
 </blockquote>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="ex">mvn</span> clean install -Dmaven.test.skip</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="ex">mvn</span> clean install -Dmaven.test.skip</a></code></pre></div>
 <p>or to just compile and package into a JAR file without reinstalling dependencies</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" title="1"><span class="ex">mvn</span> package -Dmaven.test.skip</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" title="1"><span class="ex">mvn</span> package -Dmaven.test.skip</a></code></pre></div>
 <p><br></p>
 <h1 id="resources">Resources</h1>
         </div>

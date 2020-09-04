@@ -163,21 +163,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 id="variable">Variable</h1>
 <h2 id="increment-or-decrement-an-integer-variable">Increment or Decrement an Integer Variable</h2>
 <p><strong>With Arithmetic Expansion</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="va">var=$((</span>var+1<span class="va">))</span></a>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="va">var=$((</span>var+1<span class="va">))</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="kw">((</span>var=var+1<span class="kw">))</span></a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="kw">((</span>var+=1<span class="kw">))</span></a>
 <a class="sourceLine" id="cb1-4" title="4"><span class="kw">((</span>var++<span class="kw">))</span></a></code></pre></div>
 <p><strong>With <code>let</code></strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="bu">let</span> <span class="st">&quot;var=var+1&quot;</span></a>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="bu">let</span> <span class="st">&quot;var=var+1&quot;</span></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="bu">let</span> <span class="st">&quot;var+=1&quot;</span></a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="bu">let</span> <span class="st">&quot;var++&quot;</span></a></code></pre></div>
 <p><strong>Incrementing variable with another variable</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="va">total=$((</span> <span class="va">${var1_count}</span> + <span class="va">${var2_count}</span> <span class="va">))</span></a>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="va">total=$((</span> <span class="va">${var1_count}</span> + <span class="va">${var2_count}</span> <span class="va">))</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="co"># or</span></a>
 <a class="sourceLine" id="cb3-3" title="3"><span class="va">total=$(</span><span class="fu">expr</span> <span class="va">${var1_count}</span> + <span class="va">${var2_count})</span></a></code></pre></div>
 <p><strong>Finding best performing variable increment operation</strong></p>
 <p>Test Code</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># To focus exclusively on the performance of each type of increment</span></a>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># To focus exclusively on the performance of each type of increment</span></a>
 <a class="sourceLine" id="cb4-2" title="2"><span class="co"># statement, we should exclude bash performing while loops from the</span></a>
 <a class="sourceLine" id="cb4-3" title="3"><span class="co"># performance measure. So, let&#39;s time individual scripts that</span></a>
 <a class="sourceLine" id="cb4-4" title="4"><span class="co"># increment $i in their own unique way.</span></a>
@@ -243,7 +243,7 @@ i=0; i=$(expr $i + 1)   user    0m5.464s</code></pre>
 <li><a href="https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash">🌎 Various options to increment by 1, and performance analysis</a></li>
 </ul>
 <h2 id="get-script-paths-and-name">Get Script Paths and Name</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># Script absolute path</span></a>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># Script absolute path</span></a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="va">SCRIPTPATH=</span><span class="st">&quot;</span><span class="va">$(</span><span class="ex">realpath</span> -s <span class="va">$0)</span><span class="st">&quot;</span></a>
 <a class="sourceLine" id="cb6-3" title="3"><span class="co"># Script name</span></a>
 <a class="sourceLine" id="cb6-4" title="4"><span class="va">SCRIPTNAME=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${0})</span><span class="st">&quot;</span></a>

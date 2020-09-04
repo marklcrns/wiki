@@ -135,8 +135,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <ul>
           <li><a href="#docker">Docker</a><ul>
           <li><a href="#installation">Installation</a><ul>
-          <li><a href="#linux">Linux</a></li>
-          <li><a href="#windows">Windows</a></li>
+          <li><a href="#linux">Linux</a><ul>
+          <li><a href="#ubuntu">Ubuntu</a></li>
+          </ul></li>
+          <li><a href="#windows">Windows</a><ul>
+          <li><a href="#wslwsl2">WSL/WSL2</a></li>
+          </ul></li>
           </ul></li>
           <li><a href="#usage">Usage</a></li>
           </ul></li>
@@ -168,10 +172,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 id="linux">Linux</h3>
 <h4 id="ubuntu">Ubuntu</h4>
 <p>Uninstall old versions</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt-get remove docker docker-engine docker.io containerd runc</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt-get remove docker docker-engine docker.io containerd runc</a></code></pre></div>
 <h5 id="install-using-the-repository">Install Using the Repository</h5>
 <p>Set up the repository</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">sudo</span> apt-get update</a>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">sudo</span> apt-get update</a>
 <a class="sourceLine" id="cb2-2" title="2"></a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="fu">sudo</span> apt-get install \</a>
 <a class="sourceLine" id="cb2-4" title="4">  apt-transport-https \</a>
@@ -180,11 +184,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb2-7" title="7">  gnupg-agent \</a>
 <a class="sourceLine" id="cb2-8" title="8">  software-properties-common</a></code></pre></div>
 <p>Add Docker’s official GPG key</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="ex">curl</span> -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="kw">|</span> <span class="fu">sudo</span> apt-key add -</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="ex">curl</span> -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="kw">|</span> <span class="fu">sudo</span> apt-key add -</a></code></pre></div>
 <p>Verify that you now have the key with the fingerprint <code>9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88</code></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">sudo</span> apt-key fingerprint 0EBFCD88</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">sudo</span> apt-key fingerprint 0EBFCD88</a></code></pre></div>
 <p>Add repository</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">sudo</span> add-apt-repository \</a>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">sudo</span> add-apt-repository \</a>
 <a class="sourceLine" id="cb5-2" title="2">  <span class="st">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span></a>
 <a class="sourceLine" id="cb5-3" title="3"><span class="st">  </span><span class="va">$(</span><span class="ex">lsb_release</span> -cs<span class="va">)</span><span class="st"> \</span></a>
 <a class="sourceLine" id="cb5-4" title="4"><span class="st">  stable&quot;</span></a></code></pre></div>

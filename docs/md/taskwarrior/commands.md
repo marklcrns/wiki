@@ -10,7 +10,7 @@ summary: Taskwarrior Commands
 
 Command Line Syntax
 
-```bash
+```sh
 task [<filter>] [<command>] [<modification>] [<miscellaneous>]
 ```
 

@@ -14,7 +14,7 @@ summary: Git-lfs usage
 
 [⚓ Installation](installation#git-lfs-installation)
 
-```bash
+```sh
 # Global initialization
 git lfs install
 
@@ -36,7 +36,7 @@ git lfs install --local
 
 Then just regularly commit and push to GitHub normally
 
-```bash
+```sh
 git add file.psd
 git commit -m "Add design file"
 git push origin master

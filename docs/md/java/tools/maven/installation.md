@@ -8,25 +8,25 @@ date: Aug 08, 2020
 
 # Installation
 
-### MacOS
+## MacOS
 
-```bash
+```sh
 brew install maven
 ```
 
-### Windows
+## Windows
 
 Ref:
 
 - [🌎 How to install Maven on Windows](https://mkyong.com/maven/how-to-install-maven-in-windows/)
 
-### Linux
+## Linux
 
-#### Ubuntu
+### Ubuntu
 
-20.04 Focal Fossa
+#### 20.04 Focal Fossa
 
-```bash
+```sh
 sudo apt update
 sudo apt install maven
 ```

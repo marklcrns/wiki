@@ -16,27 +16,27 @@ date: Aug 08, 2020
 
 Update apt repository
 
-```bash
+```sh
 sudo apt update
 ```
 
 Install default Java JDK and JRE
 
-```bash
+```sh
 sudo apt install default-jdk
 sudo apt install default-jre
 ```
 
 or install specific JDK or JRE version
 
-```bash
+```sh
 sudo apt install openjdk-11-jdk
 sudo apt install openjdk-11-jre
 ```
 
 Setting default Java version
 
-```bash
+```sh
 sudo update-alternatives --config java
 ```
 
@@ -94,7 +94,7 @@ NOTE:
 - The `108` at the end of `update-aternatives --install` is the priority. You
   can change the value however you like
 
-```bash
+```sh
 sudo mkdir -p /usr/lib/jvm/
 sudo tar xfv jdk-8u251-linux-x64.tar.gz -C /usr/lib/jvm/
 sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_251/bin/java 108
@@ -106,19 +106,19 @@ path
 
 Verify Update Alternatives
 
-```bash
+```sh
 sudo update-alternatives --display java
 ```
 
 To change alternative mode
 
-```bash
+```sh
 sudo update-alternatives --config java
 ```
 
 Setup `JAVA_HOME` and `JRE_HOME`
 
-```bash
+```sh
 sudo  nano /etc/environment
 
 # Then paste the following
@@ -156,7 +156,7 @@ NOTE:
 > to remove the path to change priority, use `--remove` flag then reinstall
 path.
 
-```bash
+```sh
 sudo dpkg -i jdk-11.X.X_linux-x64_bin.deb
 sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-11.X.X/bin/java 111
 sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-11.X.X/bin/javac 111
@@ -164,19 +164,19 @@ sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-11.X.X/
 
 Verify Update Alternatives
 
-```bash
+```sh
 sudo update-alternatives --display java
 ```
 
 To change alternative mode
 
-```bash
+```sh
 sudo update-alternatives --config java
 ```
 
 Setup `JAVA_HOME` and `JRE_HOME`
 
-```bash
+```sh
 sudo  nano /etc/environment
 
 # Then paste the following

@@ -162,7 +162,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 id="function">Function</h1>
 <h2 id="returning-values-from-bash-function">Returning Values from Bash Function</h2>
 <p>Method 1: Simplest</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">function</span><span class="fu"> myfunc()</span></a>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">function</span><span class="fu"> myfunc()</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="kw">{</span></a>
 <a class="sourceLine" id="cb1-3" title="3">    <span class="va">myresult=</span><span class="st">&#39;some value&#39;</span></a>
 <a class="sourceLine" id="cb1-4" title="4"><span class="kw">}</span></a>
@@ -170,7 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb1-6" title="6"><span class="ex">myfunc</span></a>
 <a class="sourceLine" id="cb1-7" title="7"><span class="bu">echo</span> <span class="va">$myresult</span></a></code></pre></div>
 <p>Method 2: Better approach</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">function</span><span class="fu"> myfunc()</span></a>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">function</span><span class="fu"> myfunc()</span></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="kw">{</span></a>
 <a class="sourceLine" id="cb2-3" title="3">    <span class="bu">local</span>  <span class="va">myresult=</span><span class="st">&#39;some value&#39;</span></a>
 <a class="sourceLine" id="cb2-4" title="4">    <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$myresult</span><span class="st">&quot;</span></a>
@@ -179,7 +179,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb2-7" title="7"><span class="va">result=$(</span><span class="ex">myfunc</span><span class="va">)</span>   <span class="co"># or result=`myfunc`</span></a>
 <a class="sourceLine" id="cb2-8" title="8"><span class="bu">echo</span> <span class="va">$result</span></a></code></pre></div>
 <p>Method 3: Accepts variable</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">function</span><span class="fu"> myfunc()</span></a>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">function</span><span class="fu"> myfunc()</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="kw">{</span></a>
 <a class="sourceLine" id="cb3-3" title="3">    <span class="bu">local</span>  <span class="va">__resultvar=$1</span></a>
 <a class="sourceLine" id="cb3-4" title="4">    <span class="bu">local</span>  <span class="va">myresult=</span><span class="st">&#39;some value&#39;</span></a>
@@ -192,7 +192,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>NOTE:</strong> Make sure to use variable names inside the function that are not likely to be used as parameter variable. e.g. <code>__resultvar</code>.</p>
 </blockquote>
 <p>Method 4: More flexibility</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">function</span><span class="fu"> myfunc()</span></a>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">function</span><span class="fu"> myfunc()</span></a>
 <a class="sourceLine" id="cb4-2" title="2"><span class="kw">{</span></a>
 <a class="sourceLine" id="cb4-3" title="3">    <span class="bu">local</span>  <span class="va">__resultvar=$1</span></a>
 <a class="sourceLine" id="cb4-4" title="4">    <span class="bu">local</span>  <span class="va">myresult=</span><span class="st">&#39;some value&#39;</span></a>

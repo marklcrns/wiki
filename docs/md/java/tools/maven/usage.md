@@ -197,20 +197,20 @@ file configuration for `WizardGame`.
 With the `pom.xml` at the root directory and Apache Maven already installed in
 the system, run the following to compile and install all dependencies
 
-```bash
+```sh
 mvn install
 ```
 
 Executing `.jar` file to run project
 
-```bash
+```sh
 java -jar target/WizardGame-0.0.1-SNAPSHOT.jar
 ```
 
 To run specific class. (replace `<class>` with path to java file starting from
 `edu.sdccd.cisc191.wizardGame` directory, using `.` as path separator).
 
-```bash
+```sh
 # Template
 mvn exec:java -Dexec.mainClass="edu.sdccd.cisc191.wizardGame.<class>"
 
@@ -220,19 +220,19 @@ mvn exec:java -Dexec.mainClass="edu.sdccd.cisc191.wizardGame.Game"
 
 To recompile project
 
-```bash
+```sh
 mvn compile
 ```
 
 To package project into a JAR file
 
-```bash
+```sh
 mvn package
 ```
 
 To run test suite
 
-```bash
+```sh
 mvn clean test
 # -e to run tests with full stack trace on failures
 mvn clean test -e
@@ -240,7 +240,7 @@ mvn clean test -e
 
 To clean and remove maven build from project
 
-```bash
+```sh
 mvn clean
 ```
 
@@ -248,13 +248,13 @@ mvn clean
 `.jar` file, although not recommended, simply skip unit testing from build by
 running
 
-```bash
+```sh
 mvn clean install -Dmaven.test.skip
 ```
 
 or to just compile and package into a JAR file without reinstalling dependencies
 
-```bash
+```sh
 mvn package -Dmaven.test.skip
 ```
 

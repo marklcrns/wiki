@@ -14,7 +14,7 @@ summary: Git-lfs installation
 
 For Ubuntu 18.04, Debian 10, and newer versions.
 
-```bash
+```sh
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 sudo apt-get install git-lfs
 
@@ -33,7 +33,7 @@ every large file.
 
 ### Uninstall
 
-```bash
+```sh
 # For global uninstall
 git lfs uninstall
 

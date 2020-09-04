@@ -166,7 +166,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 id="linux">Linux</h2>
 <h3 id="debian-and-ubuntu">Debian and Ubuntu</h3>
 <p>For Ubuntu 18.04, Debian 10, and newer versions.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">curl</span> -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh <span class="kw">|</span> <span class="fu">sudo</span> bash</a>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">curl</span> -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh <span class="kw">|</span> <span class="fu">sudo</span> bash</a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="fu">sudo</span> apt-get install git-lfs</a>
 <a class="sourceLine" id="cb1-3" title="3"></a>
 <a class="sourceLine" id="cb1-4" title="4"><span class="co"># For global installation</span></a>
@@ -178,7 +178,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>NOTE:</strong> An additional <code>--skip-smudge</code> can be added to skip automatic downloading of objects on <code>clone</code> or <code>pull</code>. Conversely, it would require a manual <code>git lfs pull</code> every time a new commit is checked out on your repository. This is more useful for cases where you don’t always want to download/checkout every large file.</p>
 </blockquote>
 <h3 id="uninstall">Uninstall</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># For global uninstall</span></a>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># For global uninstall</span></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="fu">git</span> lfs uninstall</a>
 <a class="sourceLine" id="cb2-3" title="3"></a>
 <a class="sourceLine" id="cb2-4" title="4"><span class="co"># For local uninstall</span></a>

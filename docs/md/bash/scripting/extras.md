@@ -12,13 +12,13 @@ summary: Miscellaneous bash scripting techniques
 
 Method 1: Remove file executable property with `chmod`
 
-```bash
+```sh
 chmod -x /path/to/script
 ```
 
 Method 2: With actual script
 
-```bash
+```sh
 if [ ${0##*/} == ${BASH_SOURCE[0]##*/} ]; then
   echo "WARNING"
   echo "This script is not meant to be executed directly!"

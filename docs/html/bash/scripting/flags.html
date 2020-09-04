@@ -163,7 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 id="flags">Flags</h1>
 <h2 id="setting-flag-options">Setting Flag Options</h2>
 <p><strong>Setting flags with <code>case</code> and <code>shift</code></strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">while</span> <span class="bu">test</span> <span class="va">$#</span> -gt 0<span class="kw">;</span> <span class="kw">do</span></a>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">while</span> <span class="bu">test</span> <span class="va">$#</span> -gt 0<span class="kw">;</span> <span class="kw">do</span></a>
 <a class="sourceLine" id="cb1-2" title="2">  <span class="kw">case</span> <span class="st">&quot;</span><span class="va">$1</span><span class="st">&quot;</span><span class="kw"> in</span></a>
 <a class="sourceLine" id="cb1-3" title="3">    -h<span class="kw">|</span>--help<span class="kw">)</span></a>
 <a class="sourceLine" id="cb1-4" title="4">      <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$package</span><span class="st"> - attempt to capture frames&quot;</span></a>
@@ -210,7 +210,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb1-45" title="45">  <span class="kw">esac</span></a>
 <a class="sourceLine" id="cb1-46" title="46"><span class="kw">done</span></a></code></pre></div>
 <p><strong>Setting flags with <code>getopts</code></strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="va">a_flag=</span><span class="st">&#39;&#39;</span></a>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="va">a_flag=</span><span class="st">&#39;&#39;</span></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="va">b_flag=</span><span class="st">&#39;&#39;</span></a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="va">files=</span><span class="st">&#39;&#39;</span></a>
 <a class="sourceLine" id="cb2-4" title="4"><span class="va">verbose=</span><span class="st">&#39;false&#39;</span></a>
@@ -230,7 +230,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb2-18" title="18">  <span class="kw">esac</span></a>
 <a class="sourceLine" id="cb2-19" title="19"><span class="kw">done</span></a></code></pre></div>
 <p>My personal use case…</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">while</span> <span class="bu">getopts</span> <span class="st">&quot;dl:svVyh&quot;</span> opt<span class="kw">;</span> <span class="kw">do</span></a>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">while</span> <span class="bu">getopts</span> <span class="st">&quot;dl:svVyh&quot;</span> opt<span class="kw">;</span> <span class="kw">do</span></a>
 <a class="sourceLine" id="cb3-2" title="2">  <span class="kw">case</span> <span class="st">&quot;</span><span class="va">$opt</span><span class="st">&quot;</span><span class="kw"> in</span></a>
 <a class="sourceLine" id="cb3-3" title="3">    d<span class="kw">) [[</span> <span class="ot">-n</span> <span class="st">&quot;</span><span class="va">$DEBUG</span><span class="st">&quot;</span>           ]] &amp;&amp; unset DEBUG                      || DEBUG=true;;</a>
 <a class="sourceLine" id="cb3-4" title="4">    l) [[ <span class="ot">-n</span> <span class="st">&quot;</span><span class="va">$IS_REPO_LIST</span><span class="st">&quot;</span>    ]] &amp;&amp; unset IS_REPO_LIST               || IS_REPO_LIST=true; REPO_LIST=<span class="va">${OPTARG}</span>;;</a>

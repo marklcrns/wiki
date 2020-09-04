@@ -200,7 +200,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><strong>Redirect stdout and stderr to a bash function</strong></p>
 <p>Method 1:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">LogMsg()</span></a>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">LogMsg()</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="kw">{</span></a>
 <a class="sourceLine" id="cb1-3" title="3">  <span class="bu">read</span> <span class="va">IN</span> <span class="co"># This reads a string from stdin and stores it in a variable called IN</span></a>
 <a class="sourceLine" id="cb1-4" title="4">  <span class="va">DateTime=</span><span class="kw">`</span><span class="fu">date</span> <span class="st">&quot;+%Y/%m/%d %H:%M:%S&quot;</span><span class="kw">`</span></a>
@@ -211,7 +211,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb1-9" title="9"><span class="co"># Use with pipe</span></a>
 <a class="sourceLine" id="cb1-10" title="10"><span class="fu">make</span> <span class="op">2&gt;&amp;1</span> <span class="kw">|</span> <span class="ex">LogMsg</span></a></code></pre></div>
 <p>Method 2:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">LogMsg()</span></a>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">LogMsg()</span></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="kw">{</span></a>
 <a class="sourceLine" id="cb2-3" title="3">  <span class="kw">if</span><span class="bu"> [</span> <span class="ot">-n</span> <span class="st">&quot;</span><span class="va">$1</span><span class="st">&quot;</span><span class="bu"> ]</span></a>
 <a class="sourceLine" id="cb2-4" title="4">  <span class="kw">then</span></a>

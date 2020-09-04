@@ -16,7 +16,7 @@ summary: Docker wiki
 
 Uninstall old versions
 
-```bash
+```sh
 sudo apt-get remove docker docker-engine docker.io containerd runc
 ```
 
@@ -24,7 +24,7 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
 
 Set up the repository
 
-```bash
+```sh
 sudo apt-get update
 
 sudo apt-get install \
@@ -37,20 +37,20 @@ sudo apt-get install \
 
 Add Docker's official GPG key
 
-```bash
+```sh
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
 
 Verify that you now have the key with the fingerprint `9DC8 5822 9FC7 DD38 854A
 E2D8 8D81 803C 0EBF CD88`
 
-```bash
+```sh
 sudo apt-key fingerprint 0EBFCD88
 ```
 
 Add repository
 
-```bash
+```sh
 sudo add-apt-repository \
   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) \

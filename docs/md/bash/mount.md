@@ -10,14 +10,14 @@ summary: Mounting drive and other commands
 
 ## Mounting flash drive
 
-```bash
+```sh
 sudo fdisk -l               # Check for available drive to mount
 sudo mount /dev/sda1 /mnt   # Example: Mount '/dev/sda1' drive into '/mnt'
 ```
 
 ### Unmounting Drive
 
-```bash
+```sh
 sudo unmount <drive>
 ```
 

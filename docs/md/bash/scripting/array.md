@@ -28,7 +28,7 @@ summary: Bash scripting with arrays
 
 **Iterate over the elements of an array**
 
-```bash
+```sh
 for element in "${array[@]}"; do
   echo "$element"
 done
@@ -36,7 +36,7 @@ done
 
 With index and value
 
-```bash
+```sh
 for index in "${!array[@]}"; do
   echo "$index ${array[index]}"
 done
@@ -62,7 +62,7 @@ done
 
 **Appending array element by using shorthand operator**
 
-```bash
+```sh
 # Declare a string array
 arrVar=("element 1" "element 2" "element 3" "element 4")
 
@@ -77,7 +77,7 @@ done
 
 **Appending array element by defining the last index**
 
-```bash
+```sh
 # Declare a string array
 arrVar=("element 1" "element 2" "element 3" "element 4")
 
@@ -92,7 +92,7 @@ done
 
 **Appending array element by using bracket**
 
-```bash
+```sh
 # Declare a string array
 arrVar=("element 1" "element 2" "element 3" "element 4")
 
@@ -107,7 +107,7 @@ done
 
 **Append multiple elements at the end of the array**
 
-```bash
+```sh
 # Declare a string array
 arrVar1=("element 1" "element 2" "element 3")
 arrVar2=("element 4" "element 5" "element 6")
@@ -131,7 +131,7 @@ Ref:
 
 Method 1:
 
-```bash
+```sh
 string="Paris, France, Europe"
 
 # Split string into array delimited by ', '
@@ -145,7 +145,7 @@ done
 
 Method 2: (recommended)
 
-```bash
+```sh
 # 'arr' as the variable for the array
 readarray -td '' arr < <(awk '{ gsub(/, /,"\0"); print; }' <<<"$string, "); unset 'arr[-1]'; declare -p arr;
 ```
@@ -163,7 +163,7 @@ Ref:
 ## Detecting if Variable is an Array
 
 
-```bash
+```sh
 if declare -p ARRAY 2> /dev/null | grep -q '^declare \-a'; then
   echo "$ARRAY is an array"
 else
@@ -178,7 +178,7 @@ Ref:
 
 ## Passing An Array as Function Argument
 
-```bash
+```sh
 #!/bin/bash
 
 my_function() {

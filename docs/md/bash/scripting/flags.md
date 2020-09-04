@@ -12,7 +12,7 @@ summary: Bash scripting with flags
 
 **Setting flags with `case` and `shift`**
 
-```bash
+```sh
 while test $# -gt 0; do
   case "$1" in
     -h|--help)
@@ -63,7 +63,7 @@ done
 
 **Setting flags with `getopts`**
 
-```bash
+```sh
 a_flag=''
 b_flag=''
 files=''
@@ -87,7 +87,7 @@ done
 
 My personal use case...
 
-```bash
+```sh
 while getopts "dl:svVyh" opt; do
   case "$opt" in
     d) [[ -n "$DEBUG"           ]] && unset DEBUG                      || DEBUG=true;;

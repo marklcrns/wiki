@@ -8,18 +8,17 @@
     <meta name="generator" content="pandoc">
     <meta name="description" content="">
     <meta name="author" content="Mark Lucernas">
-    <meta name="dcterms.date" content="2020-08-07">
 
-    <title>Bash Mounting Drive</title>
+    <title>Gradle Installation</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../../../templates/css/dashboard.css" rel="stylesheet">
+    <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
 
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
@@ -133,13 +132,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
           </ul>
           <ul>
-          <li><a href="#mounting-drive">Mounting Drive</a><ul>
-          <li><a href="#mounting-flash-drive">Mounting flash drive</a><ul>
-          <li><a href="#unmounting-drive">Unmounting Drive</a></li>
+          <li><a href="#installation">Installation</a><ul>
+          <li><a href="#linux">Linux</a><ul>
+          <li><a href="#ubuntu">Ubuntu</a><ul>
+          <li><a href="#focal-fossa">20.04 Focal Fossa</a></li>
           </ul></li>
-          <li><a href="#formatting-drive">Formatting Drive</a><ul>
-          <li><a href="#format-to-vfat-filesystem">Format to vFat FileSystem</a></li>
-          <li><a href="#format-to-ext44-filesystem">Format to EXT44 FileSystem</a></li>
           </ul></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
@@ -151,47 +148,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <header>
           <div class="jumbotron">
             <div class="container">
-              <a href="../index.html">Wiki Root</a> | <a href="../index.html">index</a>
-              <h1 class="title">Bash Mounting Drive</h1>
+              <a href="../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+              <h1 class="title">Gradle Installation</h1>
+              <p class="subtitle">How to install Gradle for Java</p>
             </div>
           </div>
         </header>
         <div class="h5 text-muted">
           <h5 class="author">Mark Lucernas</h5>
-          <h5 class="date">2020-08-07</h5>
+          <h5 class="date">Sep 09, 2020</h5>
         </div>
         <hr>
-        <h4 class="summary" style="text-align: center;">Mounting drive and other commands</h4>
-        <br>
 
 <!-- Contents -->
-<h1 id="mounting-drive">Mounting Drive</h1>
-<h2 id="mounting-flash-drive">Mounting flash drive</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> fdisk -l               <span class="co"># Check for available drive to mount</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="fu">sudo</span> mount /dev/sda1 /mnt   <span class="co"># Example: Mount &#39;/dev/sda1&#39; drive into &#39;/mnt&#39;</span></a></code></pre></div>
-<h3 id="unmounting-drive">Unmounting Drive</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">sudo</span> unmount <span class="op">&lt;</span>drive<span class="op">&gt;</span></a></code></pre></div>
+<h1 id="installation">Installation</h1>
+<h2 id="linux">Linux</h2>
+<h3 id="ubuntu">Ubuntu</h3>
+<h4 id="focal-fossa">20.04 Focal Fossa</h4>
+<p>First make sure Java SE 8 or later is installed</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt update</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="fu">sudo</span> apt install openjdk-11-jdk</a></code></pre></div>
+<p>Downloading Gradle</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="va">VERSION=</span>6.6.1</a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="fu">wget</span> <span class="st">&quot;https://services.gradle.org/distributions/gradle-</span><span class="va">${VERSION}</span><span class="st">-bin.zip&quot;</span> -P /tmp</a></code></pre></div>
+<p>Unzip into <code>/opt/gradle</code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">sudo</span> unzip -d /opt/gradle /tmp/gradle-<span class="va">${VERSION}</span>-bin.zip</a></code></pre></div>
+<p>Gradle is regularly updated with security patches and new features. To have more control over versions and updates, we’ll create a symbolic link named latest, which points to the Gradle installation directory:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">sudo</span> ln -s /opt/gradle/gradle-<span class="va">${VERSION}</span> /opt/gradle/latest</a></code></pre></div>
+<p>Later, when upgrading Gradle, unpack the newer version and change the symlink to point to it.</p>
+<p>Setting up the Environment Variables.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="bu">export</span> <span class="va">GRADLE_HOME=</span>/opt/gradle/latest</a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="bu">export</span> <span class="va">PATH=${GRADLE_HOME}</span>/bin:<span class="va">${PATH}</span></a></code></pre></div>
+<p>Check if Gradle is installed</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="ex">gradle</span> -v</a></code></pre></div>
 <p>Ref:</p>
 <ul>
-<li><a href="https://www.tutorialspoint.com/how-to-mount-usb-drive-in-a-linux-system">🌎 How to mount usb drive in a linux system</a></li>
-</ul>
-<h2 id="formatting-drive">Formatting Drive</h2>
-<h3 id="format-to-vfat-filesystem">Format to vFat FileSystem</h3>
-<ul>
-<li><code>sudo mkfs.vfat &lt;drive&gt;</code></li>
-</ul>
-<h3 id="format-to-ext44-filesystem">Format to EXT44 FileSystem</h3>
-<ul>
-<li><code>sudo mkfs.ext4 &lt;drive&gt;</code></li>
-</ul>
-<p>Ref:</p>
-<ul>
-<li><a href="https://www.tutorialspoint.com/how-to-mount-usb-drive-in-a-linux-system">🌎 How to mount usb drive in a linux system</a></li>
+<li><a href="https://linuxize.com/post/how-to-install-gradle-on-ubuntu-20-04/">🌎 How to Install Gradle on Ubuntu 20.04</a></li>
 </ul>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
-<li><a href="https://www.tutorialspoint.com/how-to-mount-usb-drive-in-a-linux-system">🌎 How to mount usb drive in a linux system</a></li>
+<li><a href="https://linuxize.com/post/how-to-install-gradle-on-ubuntu-20-04/">🌎 How to Install Gradle on Ubuntu 20.04</a></li>
 </ul>
         </div>
       </div>
@@ -200,11 +197,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../../templates/js/jquery.min.js"></script>
+    <script src="../../../../../templates/js/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../../templates/js/bootstrap.min.js"></script>
+    <script src="../../../../../templates/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
     <script>
         //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
 

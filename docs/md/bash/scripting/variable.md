@@ -12,7 +12,7 @@ summary: Bash scripting with variables
 
 **With Arithmetic Expansion**
 
-```bash
+```sh
 var=$((var+1))
 ((var=var+1))
 ((var+=1))
@@ -21,7 +21,7 @@ var=$((var+1))
 
 **With `let`**
 
-```bash
+```sh
 let "var=var+1"
 let "var+=1"
 let "var++"
@@ -29,7 +29,7 @@ let "var++"
 
 **Incrementing variable with another variable**
 
-```bash
+```sh
 total=$(( ${var1_count} + ${var2_count} ))
 # or
 total=$(expr ${var1_count} + ${var2_count})
@@ -39,7 +39,7 @@ total=$(expr ${var1_count} + ${var2_count})
 
 Test Code
 
-```bash
+```sh
 # To focus exclusively on the performance of each type of increment
 # statement, we should exclude bash performing while loops from the
 # performance measure. So, let's time individual scripts that
@@ -112,7 +112,7 @@ Ref:
 
 ## Get Script Paths and Name
 
-```bash
+```sh
 # Script absolute path
 SCRIPTPATH="$(realpath -s $0)"
 # Script name

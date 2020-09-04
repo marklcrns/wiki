@@ -10,7 +10,7 @@ summary: Bash scripting with loops
 
 ## Looping Over Lines in a Variable String
 
-```bash
+```sh
 list="One\ntwo\nthree\nfour"
 
 while IFS= read -r line; do
@@ -32,7 +32,7 @@ done
 
 For variables with literal string
 
-```bash
+```sh
 echo -e "$list" | while IFS= read -r line; do
   echo "$line"
 done
@@ -47,7 +47,7 @@ Ref:
 
 Method 1:
 
-```bash
+```sh
 find . -name '*.txt' - print0 |
   while IFS= read -r -d '' file; do
     # do something with "$file"
@@ -60,7 +60,7 @@ change the value of the variables outside.
 
 Method 2: (Recommended)
 
-```bash
+```sh
 while IFS= read -r -d '' file; do
   # do something with "$file"
 done < <(find . -name '*.txt' - print0)

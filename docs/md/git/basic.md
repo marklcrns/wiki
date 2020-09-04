@@ -92,7 +92,7 @@ Fetch new changes from remote branch without applying those changes yet.
 
 **Display new changes from remote branch after fetching**
 
-```bash
+```sh
 git log origin/<branch-name> ^<branch-name>
 
 # or
@@ -113,7 +113,7 @@ git fetch && git diff @{u} --name-only
 
 **Checking out latest commits from remote branch after fetching**
 
-```bash
+```sh
 git fetch
 git checkout <branch-name> origin/<branch-name>
 ```
@@ -221,14 +221,14 @@ Merge changes of one branch to another branch.
 
 **Merging branch to _master_ branch**
 
-```bash
+```sh
 git checkout master
 git merge <branch-name>
 ```
 
 **Merging _master_ branch to another branch**
 
-```bash
+```sh
 git checkout <branch-name>
 git merge master
 ```
@@ -245,14 +245,14 @@ latest changes.
 
 **Rebase a branch against master branch**
 
-```bash
+```sh
 git checkout <branch-name>
 git rebase master
 ```
 
 **Rebase master branch against another branch**
 
-```bash
+```sh
 git checkout master
 git rebase <branch-name>
 ```
@@ -362,7 +362,7 @@ when the pull request was made.
 
 **Updating your Fork**
 
-```bash
+```sh
 # add the original repository as remote repository called "upstream"
 git remote add upstream https://github.com/<original-owner>/<repository>.git
 

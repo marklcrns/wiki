@@ -15,4 +15,5 @@ date: Aug 08, 2020
 ## Management Tools
 
 - [↪ Apache Maven](tools/maven/index)
+- [↪ Gradle](tools/gradle/index)
 

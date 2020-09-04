@@ -12,7 +12,7 @@ date: Aug 08, 2020
 
 Creating global gitignore
 
-```bash
+```sh
 git config --global core.excludesfile ~/.gitignore_global
 ```
 

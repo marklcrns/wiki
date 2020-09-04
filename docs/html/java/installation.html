@@ -172,15 +172,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 id="linux">Linux</h3>
 <h4 id="ubuntu">Ubuntu</h4>
 <p>Update apt repository</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt update</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt update</a></code></pre></div>
 <p>Install default Java JDK and JRE</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">sudo</span> apt install default-jdk</a>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">sudo</span> apt install default-jdk</a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="fu">sudo</span> apt install default-jre</a></code></pre></div>
 <p>or install specific JDK or JRE version</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">sudo</span> apt install openjdk-11-jdk</a>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">sudo</span> apt install openjdk-11-jdk</a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="fu">sudo</span> apt install openjdk-11-jre</a></code></pre></div>
 <p>Setting default Java version</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">sudo</span> update-alternatives --config java</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">sudo</span> update-alternatives --config java</a></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://vitux.com/how-to-install-java-on-ubuntu-20-04/">🌎 How to install Java (JDK and JRE) on Ubuntu 20.04 LTS</a></li>
@@ -225,7 +225,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>The <code>108</code> at the end of <code>update-aternatives --install</code> is the priority. You can change the value however you like</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">sudo</span> mkdir -p /usr/lib/jvm/</a>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">sudo</span> mkdir -p /usr/lib/jvm/</a>
 <a class="sourceLine" id="cb5-2" title="2"><span class="fu">sudo</span> tar xfv jdk-8u251-linux-x64.tar.gz -C /usr/lib/jvm/</a>
 <a class="sourceLine" id="cb5-3" title="3"><span class="fu">sudo</span> update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_251/bin/java 108</a>
 <a class="sourceLine" id="cb5-4" title="4"><span class="fu">sudo</span> update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_251/bin/javac 108</a></code></pre></div>
@@ -233,11 +233,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>To remove the path to change priority, use <code>--remove</code> flag then reinstall path</p>
 </blockquote>
 <p>Verify Update Alternatives</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">sudo</span> update-alternatives --display java</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">sudo</span> update-alternatives --display java</a></code></pre></div>
 <p>To change alternative mode</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="fu">sudo</span> update-alternatives --config java</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="fu">sudo</span> update-alternatives --config java</a></code></pre></div>
 <p>Setup <code>JAVA_HOME</code> and <code>JRE_HOME</code></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="fu">sudo</span>  nano /etc/environment</a>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="fu">sudo</span>  nano /etc/environment</a>
 <a class="sourceLine" id="cb8-2" title="2"></a>
 <a class="sourceLine" id="cb8-3" title="3"><span class="co"># Then paste the following</span></a>
 <a class="sourceLine" id="cb8-4" title="4"></a>
@@ -268,15 +268,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>to remove the path to change priority, use <code>--remove</code> flag then reinstall path.</p>
 </blockquote>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="fu">sudo</span> dpkg -i jdk-11.X.X_linux-x64_bin.deb</a>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="fu">sudo</span> dpkg -i jdk-11.X.X_linux-x64_bin.deb</a>
 <a class="sourceLine" id="cb9-2" title="2"><span class="fu">sudo</span> update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-11.X.X/bin/java 111</a>
 <a class="sourceLine" id="cb9-3" title="3"><span class="fu">sudo</span> update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-11.X.X/bin/javac 111</a></code></pre></div>
 <p>Verify Update Alternatives</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" title="1"><span class="fu">sudo</span> update-alternatives --display java</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" title="1"><span class="fu">sudo</span> update-alternatives --display java</a></code></pre></div>
 <p>To change alternative mode</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" title="1"><span class="fu">sudo</span> update-alternatives --config java</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" title="1"><span class="fu">sudo</span> update-alternatives --config java</a></code></pre></div>
 <p>Setup <code>JAVA_HOME</code> and <code>JRE_HOME</code></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" title="1"><span class="fu">sudo</span>  nano /etc/environment</a>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" title="1"><span class="fu">sudo</span>  nano /etc/environment</a>
 <a class="sourceLine" id="cb12-2" title="2"></a>
 <a class="sourceLine" id="cb12-3" title="3"><span class="co"># Then paste the following</span></a>
 <a class="sourceLine" id="cb12-4" title="4"></a>

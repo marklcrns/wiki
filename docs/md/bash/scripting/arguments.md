@@ -29,7 +29,7 @@ are renamed to variable names from `$1` to `$# - N+1`.
 
 **Check exit if command line argument was passed in**
 
-```bash
+```sh
 if [[ $# -lt 1 ]]; then
   echo "Must provide argument(s)"
   exit 1
@@ -40,7 +40,7 @@ fi
 
 **Looping over all command line arguments**
 
-```bash
+```sh
 while test ${#} -g 0; do
   echo $1
   shift
@@ -62,7 +62,7 @@ done
 
 **Looping over command line arguments except first one**
 
-```bash
+```sh
 shift
 
 while test ${#} -g 0; do

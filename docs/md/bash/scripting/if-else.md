@@ -10,7 +10,7 @@ summary: Bash scripting with if else statements
 
 ## Basics
 
-```bash
+```sh
 if <condition>; then
   # Commands if condition is true
 fi
@@ -47,7 +47,7 @@ if-else conditions.
 
 Samples
 
-```bash
+```sh
 command -v tmux >/dev/null 2>&1
 
 # or
@@ -63,7 +63,7 @@ fi
 
 Using `:` built-in shell command that does nothing.
 
-```bash
+```sh
 if [[ <condition> ]]; then
   echo "Some commands"
 elif [[ <condition> ]]; then

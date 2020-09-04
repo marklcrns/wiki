@@ -162,9 +162,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 id="extras">Extras</h1>
 <h2 id="prevent-bash-script-from-being-executed">Prevent Bash Script From Being Executed</h2>
 <p>Method 1: Remove file executable property with <code>chmod</code></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">chmod</span> -x /path/to/script</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">chmod</span> -x /path/to/script</a></code></pre></div>
 <p>Method 2: With actual script</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">if</span><span class="bu"> [</span> <span class="va">${0##</span>*/<span class="va">}</span> <span class="ot">==</span> <span class="va">${BASH_SOURCE[0]##</span>*/<span class="va">}</span><span class="bu"> ]</span>; <span class="kw">then</span></a>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">if</span><span class="bu"> [</span> <span class="va">${0##</span>*/<span class="va">}</span> <span class="ot">==</span> <span class="va">${BASH_SOURCE[0]##</span>*/<span class="va">}</span><span class="bu"> ]</span>; <span class="kw">then</span></a>
 <a class="sourceLine" id="cb2-2" title="2">  <span class="bu">echo</span> <span class="st">&quot;WARNING&quot;</span></a>
 <a class="sourceLine" id="cb2-3" title="3">  <span class="bu">echo</span> <span class="st">&quot;This script is not meant to be executed directly!&quot;</span></a>
 <a class="sourceLine" id="cb2-4" title="4">  <span class="bu">echo</span> <span class="st">&quot;Use this script only by sourcing it.&quot;</span></a>

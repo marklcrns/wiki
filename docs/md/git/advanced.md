@@ -47,7 +47,7 @@ Ref:
 
 **Fetching all Git branches**
 
-```bash
+```sh
 for remote in `git branch -r`; do git branch --track ${remote#origin/} $remote; done
 git fetch --all
 git pull --all
@@ -55,7 +55,7 @@ git pull --all
 
 **Remove tracking branches no longer on remote (Method 1)**
 
-```bash
+```sh
 git checkout master
 git remote prune origin
 # List all branches merged into the current branch into vim buffer.
@@ -69,7 +69,7 @@ unmerged branch that exists in local but not from remote.
 
 **Remove tracking branches no longer on remote (Method 2)**
 
-```bash
+```sh
 git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done
 # Much safer way
 git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done
@@ -88,7 +88,7 @@ Ref:
 
 **Log all new fetched remote changes**
 
-```bash
+```sh
 # First make sure to
 git fetch origin
 # Then
@@ -117,7 +117,7 @@ Solution 1:
 Solution 2: Set it up so that local master branch tracks github master branch as
 an upstream:
 
-```bash
+```sh
 git branch --set-upstream-to=origin/master <current-branch>
 git pull
 ```

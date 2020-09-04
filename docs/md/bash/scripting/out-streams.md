@@ -59,7 +59,7 @@ Ref:
 
 Method 1:
 
-```bash
+```sh
 LogMsg()
 {
   read IN # This reads a string from stdin and stores it in a variable called IN
@@ -74,7 +74,7 @@ make 2>&1 | LogMsg
 
 Method 2:
 
-```bash
+```sh
 LogMsg()
 {
   if [ -n "$1" ]

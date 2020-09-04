@@ -12,7 +12,7 @@ summary: Bash Scripting with functions
 
 Method 1: Simplest
 
-```bash
+```sh
 function myfunc()
 {
     myresult='some value'
@@ -24,7 +24,7 @@ echo $myresult
 
 Method 2: Better approach
 
-```bash
+```sh
 function myfunc()
 {
     local  myresult='some value'
@@ -37,7 +37,7 @@ echo $result
 
 Method 3: Accepts variable
 
-```bash
+```sh
 function myfunc()
 {
     local  __resultvar=$1
@@ -54,7 +54,7 @@ likely to be used as parameter variable. e.g. `__resultvar`.
 
 Method 4: More flexibility
 
-```bash
+```sh
 function myfunc()
 {
     local  __resultvar=$1

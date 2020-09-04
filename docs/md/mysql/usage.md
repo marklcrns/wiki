@@ -23,7 +23,7 @@ summary: MySQL Usage
 
 Example:
 
-```bash
+```sh
 mysql -u root -p
 # or with sudo privileges
 sudo mysql -u root -p
