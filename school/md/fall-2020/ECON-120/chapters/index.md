@@ -10,6 +10,7 @@ date: Aug 20, 2020
 
 ## Notes
 
-- [↪ Chapter 1](chapter-1)
-- [↪ Chapter 2](chapter-2)
+- [↪ Chapter 1: Introduction What is Economics?](chapter-1)
+- [↪ Chapter 2: The Key Principles of Economics](chapter-2)
+- [↪ Chapter 3: Exchange and Markets](chapter-3)
 

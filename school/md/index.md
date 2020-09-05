@@ -30,7 +30,7 @@ Total Units Enrolled: **7** units
 
 **Start/End Date:** 2020-08-17 - 2020-12-14
 
-Total Units Enrolled: **15** units
+Total Units Enrolled: **19** units
 
 - [↪ Fall 2020](fall-2020/index)
 

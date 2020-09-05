@@ -1,8 +1,8 @@
 ---
 title: CISC 192
+subtitle: C/C++ Programming
 author: Mark Lucernas
 date: 2020-08-17
-summary: CISC 192 C/C++ Programming
 ---
 
 

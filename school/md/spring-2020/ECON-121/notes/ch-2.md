@@ -1,5 +1,6 @@
 ---
 title: ECON 121 Chapter 2 Notes
+subtitle: The Key Principles of Economics
 author: Mark Lucernas
 date: 2020-02-14
 ---
@@ -126,6 +127,7 @@ principle:
     of movies and snacks increase, even though your nominal wage stayed the
     same.
 
+
 <br>
 
 # References
@@ -134,3 +136,4 @@ Text Books
 
   * Microeconomics: _Principles, Applications, and Tools_ 10th ed (eText).
     - Authors: O'Sullivan/Sheffrin/Perez
+
