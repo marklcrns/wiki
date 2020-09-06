@@ -77,20 +77,21 @@ $endif$
 <!-- Header -->
           <header>
             <div class="jumbotron">
-              <div class="container">
+              <div class="page-header">
                 <a href="$root_path$index.html">Wiki Root</a> | <a href="../index.html">index</a>
                 <h1 class="title">
 $if(title)$
                   $title$
 $endif$
-                  <small class="h3 text-muted">
 $if(subtitle)$
+                  <small class="h3 text-muted subtitle">
                     | $subtitle$
-$endif$
                   </small>
+$endif$
                 </h1>
 $if(summary)$
-                <p class="summary">$summary$</p>
+                <hr style="border: 1px solid grey;border-radius: 5px;">
+                <h4 class="summary" style="text-align: center;">$summary$</h4>
 $endif$
               </div>
             </div>

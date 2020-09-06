@@ -139,21 +139,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 <!-- Header -->
-        <header>
-          <div class="jumbotron">
-            <div class="container">
-              <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
-              <h1 class="title">Week 4 Graded Discussion</h1>
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  Week 4 Graded Discussion
+                </h1>
+                <hr style="border: 1px solid grey;border-radius: 5px;">
+                <h4 class="summary" style="text-align: center;">Week 4 Graded Discussion entry</h4>
+              </div>
             </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">2020-07-12</h5>
           </div>
-        </header>
-        <div class="h5 text-muted">
-          <h5 class="author">Mark Lucernas</h5>
-          <h5 class="date">2020-07-12</h5>
-        </div>
-        <hr>
-        <h4 class="summary" style="text-align: center;">Week 4 Graded Discussion entry</h4>
-        <br>
 
 <!-- Contents -->
 <h1 id="week-4-graded-discussion">Week 4 Graded Discussion</h1>
@@ -217,7 +218,7 @@ After sort: [Bruno, Max, Rupert, Son, Vladimir]</code></pre>
 <p>java.io’s first abstract layer are used as a framework to create a more concrete I/O classes tailored to specific purposes. For instance, InputStream is used as a blueprint to create FileInputStream, ObjectInputStream, etc. and OutputStream a blueprint for FileOutputStream, ObjectOutputStream, and more.</p>
 <p>In I/O Stream, byte stream read/write in chunks of 8-bits, or 1 byte. Thus, read() method read the first 8-bit ASCII value from the input stream and writes every 8-bit into the output stream.</p>
 <p>Because reading and writing happens really fast under the hood, reading from an input stream and then writing into an output stream at the same time can couse inefficiency in the program. It’s like InputStream is a guy working with OutputStream, where OutputStream guy is constantly waiting for InputStream guy to finish reading inputs before outputting something. Hence, Buffered streams are invented. Buffered streams takes input or output into an area in the memory called “buffer” that temporarily stores data. Once streams are into the buffer, it will now be read which is much faster than reading directly from the underlying stream because its already in the memory, much like the OutputStream guy constantly outputting stuff without waiting for the InputStream guy to finished because its already there.</p>
-        </div>
+          </div>
       </div>
     </div>
 

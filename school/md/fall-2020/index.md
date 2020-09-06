@@ -1,8 +1,8 @@
 ---
 title: Fall 2020
+subtitle: College notes
 author: Mark Lucernas
 date: 2020-08-17
-summary: Fall 2020 collge notes
 ---
 
 

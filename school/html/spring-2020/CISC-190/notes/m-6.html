@@ -135,14 +135,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <ul>
           <li><a href="#module-6-creating-your-own-classes">Module 6: Creating Your Own Classes</a><ul>
           <li><a href="#chapter-11-creating-classes">Chapter 11: Creating Classes</a><ul>
-          <li><a href="#defining-a-class">11.2 Defining A Class</a></li>
+          <li><a href="#defining-a-class">11.2 Defining A Class</a><ul>
+          <li><a href="#defining-fields">11.2.1 Defining Fields</a></li>
+          <li><a href="#inherited-methods">11.2.2 Inherited Methods</a></li>
+          <li><a href="#overriding-inherited-methods">11.2.3 Overriding Inherited Methods</a></li>
+          <li><a href="#default-field-initialization">11.2.4 Default Field Initialization</a></li>
+          <li><a href="#declaring-constructors">11.2.5 Declaring Constructors</a></li>
+          </ul></li>
           <li><a href="#overloading-constructors">11.3 Overloading Constructors</a></li>
-          <li><a href="#creating-and-initializing-an-array">11.4 Creating And Initializing An Array</a></li>
-          <li><a href="#creating-accessors-getters-and-modifiers-setters">11.5 Creating Accessors (Getters) And Modifiers (Setters)</a></li>
+          <li><a href="#creating-and-initializing-an-array">11.4 Creating And Initializing An Array</a><ul>
+          <li><a href="#calculating-the-grade-average">11.4.1 Calculating the Grade Average</a></li>
+          </ul></li>
+          <li><a href="#creating-accessors-getters-and-modifiers-setters">11.5 Creating Accessors (Getters) And Modifiers (Setters)</a><ul>
+          <li><a href="#creating-accessors-getters">11.5.1 Creating Accessors (Getters)</a></li>
+          <li><a href="#creating-modifiers-setters">11.5.2 Creating Modifiers (Setters)</a></li>
+          </ul></li>
           <li><a href="#creating-a-main-method">11.6 Creating A Main Method</a></li>
-          <li><a href="#javadoc-comments">11.7 Javadoc Comments</a></li>
-          <li><a href="#method-comments">11.7.2 Method Comments</a></li>
-          <li><a href="#creating-another-class">11.8 Creating Another Class</a></li>
+          <li><a href="#javadoc-comments">11.7 Javadoc Comments</a><ul>
+          <li><a href="#class-comment">11.7.1 Class Comment</a></li>
+          </ul></li>
+          <li><a href="#method-comments">11.7.2 Method Comments</a><ul>
+          <li><a href="#constructor-comments">11.7.3 Constructor Comments</a></li>
+          <li><a href="#generating-the-documentation">11.7.4 Generating the Documentation</a></li>
+          </ul></li>
+          <li><a href="#creating-another-class">11.8 Creating Another Class</a><ul>
+          <li><a href="#adding-constructors">11.8.1 Adding Constructors</a></li>
+          <li><a href="#adding-accessors-and-modifiers">11.8.2 Adding Accessors and Modifiers</a></li>
+          </ul></li>
           </ul></li>
           </ul></li>
           <li><a href="#references">References</a></li>
@@ -151,21 +170,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 <!-- Header -->
-        <header>
-          <div class="jumbotron">
-            <div class="container">
-              <a href="../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
-              <h1 class="title">CISC 190 Module 6</h1>
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  CISC 190 Module 6
+                </h1>
+                <hr style="border: 1px solid grey;border-radius: 5px;">
+                <h4 class="summary" style="text-align: center;">Creating classes with Java programming</h4>
+              </div>
             </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">2020-04-20</h5>
           </div>
-        </header>
-        <div class="h5 text-muted">
-          <h5 class="author">Mark Lucernas</h5>
-          <h5 class="date">2020-04-20</h5>
-        </div>
-        <hr>
-        <h4 class="summary" style="text-align: center;">Creating classes with Java programming</h4>
-        <br>
 
 <!-- Contents -->
 <h1 id="module-6-creating-your-own-classes">Module 6: Creating Your Own Classes</h1>
@@ -577,7 +597,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="../../../../files/spring-2020/CISC-190/module-6/java_book_mediaComp_ch-11.pdf">⬇ Chapter 11: Creating Classes</a></li>
 </ul>
-        </div>
+          </div>
       </div>
     </div>
 

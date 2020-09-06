@@ -135,17 +135,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <ul>
           <li><a href="#module-7-advanced-topics">Module 7: Advanced Topics</a><ul>
           <li><a href="#chapter-11-creating-classes">Chapter 11: Creating Classes</a><ul>
-          <li><a href="#reusing-a-class-via-inheritance">11.9 Reusing A Class Via Inheritance</a></li>
+          <li><a href="#reusing-a-class-via-inheritance">11.9 Reusing A Class Via Inheritance</a><ul>
+          <li><a href="#dynamic-runtime-binding">11.9. Dynamic (Runtime) Binding</a></li>
+          </ul></li>
           </ul></li>
           <li><a href="#chapter-13-graphical-user-interfaces">Chapter 13: Graphical User Interfaces</a><ul>
           <li><a href="#introduction">Introduction</a></li>
-          <li><a href="#java-guis-from-awt-to-swing">13.2 Java GUIs: From AWT to Swing</a></li>
+          <li><a href="#java-guis-from-awt-to-swing">13.2 Java GUIs: From AWT to Swing</a><ul>
+          <li><a href="#heavyweight-versus-lightweight-components">13.2.1 Heavyweight Versus Lightweight Components</a></li>
+          </ul></li>
           <li><a href="#the-swing-compoent-set">13.3 The Swing Compoent Set</a></li>
-          <li><a href="#object-oriented-design-model-view-controller-architecture">13.4 Object-Oriented Design: Model-View-Controller Architecture</a></li>
-          <li><a href="#the-java-event-model">13.5 The Java Event Model</a></li>
-          <li><a href="#case-study-designing-a-basic-gui">13.6 CASE STUDY: Designing a Basic GUI</a></li>
-          <li><a href="#containers-and-layout-managers">13.7 Containers and Layout Managers</a></li>
-          <li><a href="#checkboxes-radio-buttons-and-borders">13.8 Checkboxes, Radio Buttons, and Borders</a></li>
+          <li><a href="#object-oriented-design-model-view-controller-architecture">13.4 Object-Oriented Design: Model-View-Controller Architecture</a><ul>
+          <li><a href="#pluggable-look-and-feel">13.4.1 Pluggable Look and Feel</a></li>
+          </ul></li>
+          <li><a href="#the-java-event-model">13.5 The Java Event Model</a><ul>
+          <li><a href="#event-classes">13.5.1 Event Classes</a></li>
+          </ul></li>
+          <li><a href="#case-study-designing-a-basic-gui">13.6 CASE STUDY: Designing a Basic GUI</a><ul>
+          <li><a href="#the-metric-converter-application">13.6.1 The Metric Converter Application</a></li>
+          <li><a href="#inner-classes-and-adapter-classes">13.6.2 Inner Classes and Adapter Classes</a></li>
+          <li><a href="#gui-design-critique">13.6.3 GUI Design Critique</a></li>
+          <li><a href="#extending-the-basic-gui-button-array">13.6.4 Extending the Basic GUI: Button Array</a></li>
+          </ul></li>
+          <li><a href="#containers-and-layout-managers">13.7 Containers and Layout Managers</a><ul>
+          <li><a href="#layout-managers">13.7.1 Layout Managers</a></li>
+          <li><a href="#the-gridlayout-manager">13.7.2 The GridLayout Manager</a></li>
+          <li><a href="#the-borderlayout-manager">13.7.4 The BorderLayout Manager</a></li>
+          </ul></li>
+          <li><a href="#checkboxes-radio-buttons-and-borders">13.8 Checkboxes, Radio Buttons, and Borders</a><ul>
+          <li><a href="#checkbox-and-radio-button-arrays">13.8.1 Checkbox and Radio Button Arrays</a></li>
+          <li><a href="#swing-borders">13.8.2 Swing Borders</a></li>
+          <li><a href="#the-boxlayout-manager">13.8.3 The BoxLayout Manager</a></li>
+          <li><a href="#the-itemlistener-interface">13.8.4 The ItemListener Interface</a></li>
+          <li><a href="#the-orderapplet">13.8.5 The OrderApplet</a></li>
+          </ul></li>
           <li><a href="#menus-and-scroll-panes">13.9 Menus and Scroll Panes</a></li>
           </ul></li>
           <li><a href="#file-input-and-output">File Input and Output</a><ul>
@@ -160,21 +183,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 <!-- Header -->
-        <header>
-          <div class="jumbotron">
-            <div class="container">
-              <a href="../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
-              <h1 class="title">CISC 190 Module 7</h1>
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  CISC 190 Module 7
+                </h1>
+                <hr style="border: 1px solid grey;border-radius: 5px;">
+                <h4 class="summary" style="text-align: center;">Inheritance and Polymorphism</h4>
+              </div>
             </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">2020-05-04</h5>
           </div>
-        </header>
-        <div class="h5 text-muted">
-          <h5 class="author">Mark Lucernas</h5>
-          <h5 class="date">2020-05-04</h5>
-        </div>
-        <hr>
-        <h4 class="summary" style="text-align: center;">Inheritance and Polymorphism</h4>
-        <br>
 
 <!-- Contents -->
 <h1 id="module-7-advanced-topics">Module 7: Advanced Topics</h1>
@@ -1051,7 +1075,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><a href="https://www.cs.utexas.edu/~mitra/csSummer2009/cs303/lectures/fileIO.html">🌎 File I/O</a></li>
 </ul>
-        </div>
+          </div>
       </div>
     </div>
 

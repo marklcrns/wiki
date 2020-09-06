@@ -142,12 +142,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li><a href="#modifier-scope">Modifier Scope</a></li>
           </ul></li>
           <li><a href="#object-oriented-thinking">Object-Oriented Thinking</a><ul>
-          <li><a href="#wrapper-classes">Wrapper Classes</a></li>
-          <li><a href="#the-string-class">The String Class</a></li>
+          <li><a href="#wrapper-classes">Wrapper Classes</a><ul>
+          <li><a href="#numeric-wrapper-class-constructors">Numeric Wrapper Class Constructors</a></li>
+          <li><a href="#conversion-methods">Conversion Methods</a></li>
+          </ul></li>
+          <li><a href="#the-string-class">The String Class</a><ul>
+          <li><a href="#interned-strings">Interned Strings</a></li>
+          <li><a href="#stringbuilder-and-stringbuffer">StringBuilder and StringBuffer</a></li>
+          </ul></li>
           <li><a href="#regular-expressions">Regular Expressions</a></li>
           </ul></li>
           <li><a href="#inheritance-and-polymorphism">Inheritance and Polymorphism</a><ul>
-          <li><a href="#superclasses-and-subclasses">Superclasses and Subclasses</a></li>
+          <li><a href="#superclasses-and-subclasses">Superclasses and Subclasses</a><ul>
+          <li><a href="#are-superclasss-constructor-inherited">Are Superclass’s Constructor Inherited?</a></li>
+          <li><a href="#superclasss-constructor-is-always-invoked">Superclass’s Constructor Is Always Invoked</a></li>
+          <li><a href="#overriding-methods-in-the-superclass">Overriding Methods in the Superclass</a></li>
+          </ul></li>
           <li><a href="#polymorphism">Polymorphism</a></li>
           <li><a href="#dynamic-binding">Dynamic Binding</a></li>
           <li><a href="#method-matching-vs.-binding">Method Matching vs. Binding</a></li>
@@ -155,7 +165,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li><a href="#why-casting-is-necessary">Why Casting Is Necessary?</a></li>
           <li><a href="#the-instanceof-operator">The instanceof Operator</a></li>
           <li><a href="#the-equals-method">The equals Method</a></li>
-          <li><a href="#the-arraylist-class">The ArrayList Class</a></li>
+          <li><a href="#the-arraylist-class">The ArrayList Class</a><ul>
+          <li><a href="#array-lists-fromto-arrays">Array Lists from/to Arrays</a></li>
+          <li><a href="#max-and-min-in-an-array-list">max and min in an Array List</a></li>
+          <li><a href="#shuffling-an-array-list">Shuffling an Array List</a></li>
+          </ul></li>
           <li><a href="#the-protected-modifier">The protected Modifier</a></li>
           <li><a href="#a-subclass-cannot-weaken-the-accessibility">A Subclass Cannot Weaken the Accessibility</a></li>
           <li><a href="#the-final-modifier">The final Modifier</a></li>
@@ -164,7 +178,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li><a href="#system-errors">System Errors</a></li>
           <li><a href="#exceptions">Exceptions</a></li>
           <li><a href="#runtime-exceptions">Runtime Exceptions</a></li>
-          <li><a href="#checked-exceptions-vs.-unchecked-exceptions">Checked Exceptions vs. Unchecked Exceptions</a></li>
+          <li><a href="#checked-exceptions-vs.-unchecked-exceptions">Checked Exceptions vs. Unchecked Exceptions</a><ul>
+          <li><a href="#unchecked-exceptions">Unchecked Exceptions</a></li>
+          </ul></li>
           <li><a href="#declaring-exceptions">Declaring Exceptions</a></li>
           <li><a href="#throwing-exceptions">Throwing Exceptions</a></li>
           <li><a href="#catching-exceptions">Catching Exceptions</a></li>
@@ -175,7 +191,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li><a href="#when-to-throw-exceptions">When to Throw Exceptions</a></li>
           <li><a href="#when-to-use-exceptions">When to Use Exceptions</a></li>
           <li><a href="#defining-custom-exception-classes">Defining Custom Exception Classes</a></li>
-          <li><a href="#assertions">Assertions</a></li>
+          <li><a href="#assertions">Assertions</a><ul>
+          <li><a href="#executing-assertions">Executing Assertions</a></li>
+          <li><a href="#running-programs-with-assertions">Running Programs with Assertions</a></li>
+          <li><a href="#using-exception-handing-or-assertions">Using Exception Handing or Assertions</a></li>
+          </ul></li>
           </ul></li>
           <li><a href="#objects-introduction">7.1 Objects: Introduction</a><ul>
           <li><a href="#abstraction-or-information-hiding">Abstraction or Information hiding</a></li>
@@ -241,21 +261,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 <!-- Header -->
-        <header>
-          <div class="jumbotron">
-            <div class="container">
-              <a href="../../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
-              <h1 class="title">Week 2</h1>
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  Week 2
+                </h1>
+                <hr style="border: 1px solid grey;border-radius: 5px;">
+                <h4 class="summary" style="text-align: center;">Object Oriented Programming</h4>
+              </div>
             </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">2020-06-23</h5>
           </div>
-        </header>
-        <div class="h5 text-muted">
-          <h5 class="author">Mark Lucernas</h5>
-          <h5 class="date">2020-06-23</h5>
-        </div>
-        <hr>
-        <h4 class="summary" style="text-align: center;">Object Oriented Programming</h4>
-        <br>
 
 <!-- Contents -->
 <h1 id="week-2-object-oriented-programming">Week 2: Object Oriented Programming</h1>
@@ -1161,7 +1182,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="../../../../../../files/summer-2020/CISC-191/week-2/inheritance_and_polymorphism.ppt">⬇ Inheritance and Polymorphism</a></li>
 <li><a href="../../../../../../files/summer-2020/CISC-191/week-2/exceptions_handling.ppt">⬇ Exceptions Handling</a></li>
 </ul>
-        </div>
+          </div>
       </div>
     </div>
 
