@@ -185,17 +185,14 @@ lifespan.
 - Focusing too much on money
 
 
-## Chapter 2: Basic Ideas of Finance
-
-
-
 <br>
 
 # Resources
 
 - [🎬 What is a Sunk Cost?](https://www.youtube.com/watch?v=cdjd--57E9c)
 - [🎬 Julia Galef: The Sunk Costs Fallacy | Big Think](https://www.youtube.com/watch?v=vpnxd31y0Fo)
-- [🌎 Career Interest Assessment](https://www.careeronestop.org/toolkit/careers/interest-assessment.aspx)
+- [🌎 CareerOneStop Interest Assessment](https://www.careeronestop.org/toolkit/careers/interest-assessment.aspx)
+- [🌎 CareerOneStop Occupation Profile](https://www.careeronestop.org/Toolkit/Careers/Occupations/occupation-profile.aspx)
 
 Textbook
 
