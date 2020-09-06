@@ -71,40 +71,42 @@ $if(toc)$
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 $else$
-        <div class="col-sm-12 main">
+          <div class="col-sm-12 main">
 $endif$
 
 <!-- Header -->
-        <header>
-          <div class="jumbotron">
-            <div class="container">
-              <a href="$root_path$index.html">Wiki Root</a> | <a href="../index.html">index</a>
+          <header>
+            <div class="jumbotron">
+              <div class="container">
+                <a href="$root_path$index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
 $if(title)$
-              <h1 class="title">$title$</h1>
+                  $title$
 $endif$
+                  <small class="h3 text-muted">
 $if(subtitle)$
-              <p class="subtitle">$subtitle$</p>
+                    | $subtitle$
 $endif$
+                  </small>
+                </h1>
+$if(summary)$
+                <p class="summary">$summary$</p>
+$endif$
+              </div>
             </div>
-          </div>
-        </header>
-        <div class="h5 text-muted">
+          </header>
+          <div class="h5 text-muted">
 $for(author)$
-          <h5 class="author">$author$</h5>
+            <h5 class="author">$author$</h5>
 $endfor$
 $if(date)$
-          <h5 class="date">$date$</h5>
+            <h5 class="date">$date$</h5>
 $endif$
-        </div>
-        <hr>
-$if(summary)$
-        <h4 class="summary" style="text-align: center;">$summary$</h4>
-        <br>
-$endif$
+          </div>
 
 <!-- Contents -->
 $body$
-        </div>
+          </div>
       </div>
     </div>
 

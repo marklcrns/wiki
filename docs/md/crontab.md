@@ -1,6 +1,7 @@
 ---
-title: Crontab Wiki
-subtitle: Crontab
+title: Crontab
+subtitle: Crontab Wiki
+summary: Schedule cron jobs to run on a time interval for the current user.
 author: Mark Lucernas
 date: Sep 09, 2020
 ---

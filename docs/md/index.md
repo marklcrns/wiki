@@ -12,16 +12,9 @@ date: Feb 05, 2020
 
 - [↪ Bash](bash/index)
 
-
-## PowerShell
-
-- [↪ PowerShell](powershell/index)
-
-
 ## Databases
 
 - [↪ MySQL](mysql/index)
-
 
 ## Programming Languages
 
