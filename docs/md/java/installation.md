@@ -82,8 +82,8 @@ Better way of adding default JDK version to Windows system variables
 
 **Oracle JDK 8**
 
-First, download latest Java SE 8 **Linux Debian Package**
-watch this video
+First, download latest Java SE 8 **Linux Debian Package** or Linux x64
+Compressed Archive
 
 - [🌎 Java SE JDK 8 Downloads](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
 
@@ -96,9 +96,9 @@ NOTE:
 
 ```sh
 sudo mkdir -p /usr/lib/jvm/
-sudo tar xfv jdk-8u251-linux-x64.tar.gz -C /usr/lib/jvm/
-sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_251/bin/java 108
-sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_251/bin/javac 108
+sudo tar xfv jdk-8u261-linux-x64.tar.gz -C /usr/lib/jvm/
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_261/bin/java 108
+sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_261/bin/javac 108
 ```
 
 > To remove the path to change priority, use `--remove` flag then reinstall
@@ -140,7 +140,8 @@ Ref:
 
 **Oracle JDK 11 and Higher**
 
-First, download the latest Java SE **Linux Debian Package**
+First, download the latest Java SE **Linux Debian Package** Linux x64 Compressed
+Archive
 
 - [🌎 Java SE Downloads](https://www.oracle.com/java/technologies/javase-downloads.html)
 
