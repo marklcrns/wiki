@@ -22,6 +22,9 @@ summary: Week 5 Concurrency, Threads and Multiprocessing
 - [🎬 Basic Threading](https://www.youtube.com/watch?v=F-CkaU8aQZI)
 - [🎬 Advanced Threading: Locking, ThreadPools](https://www.youtube.com/watch?v=G2Xd5avyk_0)
 - [🎬 Advanced Java: Multi-threading Playlist](https://www.youtube.com/watch?v=YdlnEWC-7Wo&list=PLBB24CFB073F1048E&index=1)
+
+Multi-threading Video Tutorial Series
+
 - [↪ Multi-threading Playlist Source Code](multi-threading-tutorial)
 
 

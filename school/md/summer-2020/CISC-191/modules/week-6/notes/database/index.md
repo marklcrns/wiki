@@ -23,10 +23,9 @@ Most of today's database systems are relational database systems, based on the
 relational data model. A relational data model has three key A relational data
 model has three key components: structure, integrity and languages.
 
-  - _Structure_ defines the representation of the data.
-  - _Integrity_ imposes constraints on the data.
-  - _Language_ provides the means for accessing and manipulating data.
-
+- _Structure_ defines the representation of the data.
+- _Integrity_ imposes constraints on the data.
+- _Language_ provides the means for accessing and manipulating data.
 
 ### Relational Structure
 
@@ -57,7 +56,7 @@ to narrow the ranges. You can also specify whether an attribute can be null.
 
 Domain Constraints Example
 
-```
+```sql
 create table Course (
   courseId char(5),
   subjectId char(4) not null,
@@ -87,7 +86,8 @@ The primary key is one of the candidate keys designated by the database
 designer. The primary key is often used to identify tuples in a relation.
 
 Primary Key Example
-```
+
+```sql
 create table Course(
   subjectCode char(4),
   courseNumber int,
@@ -119,7 +119,7 @@ references relation _T_ if it satisfies the following two rules:
 
 Foreign Key Constraints Example
 
-```
+```sql
 create table Enrollment (
   ssn char(9),
   courseId char(5),

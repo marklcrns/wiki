@@ -23,6 +23,69 @@
 
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+    <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
   </head>
 
   <body>
@@ -131,14 +194,14 @@
 <h3 id="domain-constraints">Domain Constraints</h3>
 <p><em>Domain constraints</em> specify the permissible values for an attribute. Domains can be specified using standard data types such as integers, floating-point numbers, fixed-length strings, and variant-length strings. The standard data type specifies a broad range of values. Additional constraints can be specified to narrow the ranges. You can also specify whether an attribute can be null.</p>
 <p>Domain Constraints Example</p>
-<pre><code>create table Course (
-  courseId char(5),
-  subjectId char(4) not null,
-  courseNumber integer,
-  title varchar(50) not null,
-  numOfCredits integer,
-  constraint greaterThanOne
-       check (numOfCredits &gt;= 1));</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">create</span> <span class="kw">table</span> Course (</a>
+<a class="sourceLine" id="cb1-2" title="2">  courseId <span class="dt">char</span>(<span class="dv">5</span>),</a>
+<a class="sourceLine" id="cb1-3" title="3">  subjectId <span class="dt">char</span>(<span class="dv">4</span>) <span class="kw">not</span> <span class="kw">null</span>,</a>
+<a class="sourceLine" id="cb1-4" title="4">  courseNumber <span class="dt">integer</span>,</a>
+<a class="sourceLine" id="cb1-5" title="5">  title <span class="dt">varchar</span>(<span class="dv">50</span>) <span class="kw">not</span> <span class="kw">null</span>,</a>
+<a class="sourceLine" id="cb1-6" title="6">  numOfCredits <span class="dt">integer</span>,</a>
+<a class="sourceLine" id="cb1-7" title="7">  <span class="kw">constraint</span> greaterThanOne</a>
+<a class="sourceLine" id="cb1-8" title="8">       <span class="kw">check</span> (numOfCredits <span class="op">&gt;=</span> <span class="dv">1</span>));</a></code></pre></div>
 <h3 id="superkey">Superkey</h3>
 <p>A <em>superkey</em> is an attribute or a set of attributes that uniquely identify the relation. That is, no two tuples have the same values on the superkey. By definition, a relation consists of a set of distinct tuples. The set of all attributes in the relation forms a superkey.</p>
 <h3 id="key-and-candidate-key">Key and Candidate Key</h3>
@@ -146,12 +209,12 @@
 <h3 id="primary-key">Primary Key</h3>
 <p>The primary key is one of the candidate keys designated by the database designer. The primary key is often used to identify tuples in a relation.</p>
 <p>Primary Key Example</p>
-<pre><code>create table Course(
-  subjectCode char(4),
-  courseNumber int,
-  title varchar(50), numOfCredits int
-    constraint greaterThanOne check (numOfCredits &gt;= 1),
-  primary key (subjectCode, courseNumber));</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">create</span> <span class="kw">table</span> Course(</a>
+<a class="sourceLine" id="cb2-2" title="2">  subjectCode <span class="dt">char</span>(<span class="dv">4</span>),</a>
+<a class="sourceLine" id="cb2-3" title="3">  courseNumber <span class="dt">int</span>,</a>
+<a class="sourceLine" id="cb2-4" title="4">  title <span class="dt">varchar</span>(<span class="dv">50</span>), numOfCredits <span class="dt">int</span></a>
+<a class="sourceLine" id="cb2-5" title="5">    <span class="kw">constraint</span> greaterThanOne <span class="kw">check</span> (numOfCredits <span class="op">&gt;=</span> <span class="dv">1</span>),</a>
+<a class="sourceLine" id="cb2-6" title="6">  <span class="kw">primary</span> <span class="kw">key</span> (subjectCode, courseNumber));</a></code></pre></div>
 <h3 id="primary-key-constraints">Primary key Constraints</h3>
 <p>The <em>primary</em> key constraint specifies that the primary key value of a tuple cannot be null and no two tuples in the relation can have the same value on the primary key. The DBMS enforces the primary key constraint. For example, if you attempt to insert a record with the same primary key as an existing record in the table, the DBMS would report an error and reject the operation.</p>
 <h3 id="foreign-key-constraints">Foreign Key Constraints</h3>
@@ -162,15 +225,15 @@
 <li>A non-null value on <em>FK</em> in <em>R</em> must match a primary key value in <em>T</em>.</li>
 </ul>
 <p>Foreign Key Constraints Example</p>
-<pre><code>create table Enrollment (
-  ssn char(9),
-  courseId char(5),
-  dateRegistered date,
-  grade char(1),
-  primary key (ssn, courseId),
-  foreign key (ssn) references Student,
-  foreign key (courseId) references Course
-);</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">create</span> <span class="kw">table</span> Enrollment (</a>
+<a class="sourceLine" id="cb3-2" title="2">  ssn <span class="dt">char</span>(<span class="dv">9</span>),</a>
+<a class="sourceLine" id="cb3-3" title="3">  courseId <span class="dt">char</span>(<span class="dv">5</span>),</a>
+<a class="sourceLine" id="cb3-4" title="4">  dateRegistered <span class="dt">date</span>,</a>
+<a class="sourceLine" id="cb3-5" title="5">  grade <span class="dt">char</span>(<span class="dv">1</span>),</a>
+<a class="sourceLine" id="cb3-6" title="6">  <span class="kw">primary</span> <span class="kw">key</span> (ssn, courseId),</a>
+<a class="sourceLine" id="cb3-7" title="7">  <span class="kw">foreign</span> <span class="kw">key</span> (ssn) <span class="kw">references</span> Student,</a>
+<a class="sourceLine" id="cb3-8" title="8">  <span class="kw">foreign</span> <span class="kw">key</span> (courseId) <span class="kw">references</span> Course</a>
+<a class="sourceLine" id="cb3-9" title="9">);</a></code></pre></div>
 <h2 id="sql">SQL</h2>
 <p>Structured Query Language, pronounced S-Q-L, or Sequel</p>
 <p>To access or write applications for database systems, you need to use the Structured Query Language (SQL). SQL is the universal language for accessing relational database systems. Application programs may allow users to access database without directly using SQL, but these applications themselves must use SQL to access the database.</p>
