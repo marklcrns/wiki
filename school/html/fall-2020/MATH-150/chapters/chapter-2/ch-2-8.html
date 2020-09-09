@@ -138,6 +138,8 @@ _{x = a}
 <p>If <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(a\)</span>, then <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(a\)</span>.</p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_theorem-4_proof-1.png" alt="Theorem 4 Proof 1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_theorem-4_proof-2.png" alt="Theorem 4 Proof 2" /></p>
 <h2 id="how-can-a-function-fail-to-be-differentiable">How Can a Function Fail to Be Differentiable?</h2>
+<p>We saw that the function <span class="math inline">\(y = |x|\)</span> in Example 5 is not differentiable at <span class="math inline">\(0\)</span> and Figure 5(a) shows that its graph changes direction abruptly when <span class="math inline">\(x = 0\)</span>. In general, if the graph of a function <span class="math inline">\(f\)</span> has a “corner” or a “kink” in it, then the graph of <span class="math inline">\(f\)</span> has no tangent at this point and <span class="math inline">\(f\)</span> is not differentiable there.</p>
+<p>Theorem 4 gives another way for a function not to have a derivative. It says that if <span class="math inline">\(f\)</span> is not continuous at <span class="math inline">\(a\)</span>, then <span class="math inline">\(f\)</span> is not differentiable at <span class="math inline">\(a\)</span>. So at discontinuity (for instance, a jump discontinuity) <span class="math inline">\(f\)</span> fails to be differentiable.</p>
 <p>A third possibility is that the curve has a <strong>vertical tangent line</strong> when <span class="math inline">\(x = a\)</span>; that is, <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(a\)</span> and</p>
 <p><span class="math display">\[
 \lim_{x \to a} \left | f^{\prime}(x) \right | = \infty
@@ -148,7 +150,7 @@ _{x = a}
 <p>If <span class="math inline">\(f\)</span>is a differentiable function, then its derivative <span class="math inline">\(f^{\prime}\)</span>is also a function, so <span class="math inline">\(f^{\prime}\)</span> may have a derivative of its own, denoted by <span class="math inline">\((f^{\prime}) = f^{\prime \prime}\)</span>. This new function <span class="math inline">\(f^{\prime \prime}\)</span> is called the <strong>second derivative</strong> of <span class="math inline">\(f\)</span> because it is the derivative of the derivative of <span class="math inline">\(f\)</span>. Using Leibniz notation, we write the second derivative of <span class="math inline">\(y = f(x)\)</span> as</p>
 <p><span class="math display">\[
 \begin{matrix}
-\underbrace{\frac{d}{dx}} &amp; (\underbrace{\frac{dy}{dx}}) &amp;= \underbrace{\frac{d^{2}y}{dx^{2}}} \\
+\underbrace{\frac{d}{dx}} &amp; \underbrace{\left ( \frac{dy}{dx} \right )} &amp;= \underbrace{\frac{d^{2}y}{dx^{2}}} \\
 \text{derivative}         &amp; \text{first}                 &amp; \text{second} \\
 \text{of}                 &amp; \text{derivative}            &amp; \text{derivative}
 \end{matrix}
@@ -176,7 +178,7 @@ y^{\prime \prime \prime} = f^{\prime \prime \prime} = \frac{d}{dx} \left ( \frac
 j = \frac{da}{dt} = \frac{d^{3}s}{dt^{3}}
 \]</span></p>
 <p>Thus the jerk <span class="math inline">\(j\)</span> is the rate of change of acceleration. It is aptly named because large jerk means a sudden change in acceleration, which causes an abrupt movement in a vehicle.</p>
-<p>The differentiation process can be continued. The fourth derivative <span class="math inline">\(f^{\prime \prime \prime}\)</span> is usually denoted by <span class="math inline">\(f^{(4)}\)</span>. In general, the <span class="math inline">\(n\)</span>th derivative of <span class="math inline">\(f\)</span> is denoted by <span class="math inline">\(f^{n}\)</span> and is obtained from <span class="math inline">\(f\)</span>by differentiating <span class="math inline">\(n\)</span> times. If <span class="math inline">\(y = f(x)\)</span>, we write</p>
+<p>The differentiation process can be continued. The fourth derivative <span class="math inline">\(f^{\prime \prime \prime \prime}\)</span> is usually denoted by <span class="math inline">\(f^{(4)}\)</span>. In general, the <span class="math inline">\(n\)</span>th derivative of <span class="math inline">\(f\)</span> is denoted by <span class="math inline">\(f^{n}\)</span> and is obtained from <span class="math inline">\(f\)</span> by differentiating <span class="math inline">\(n\)</span> times. If <span class="math inline">\(y = f(x)\)</span>, we write</p>
 <p><span class="math display">\[
 y^{(n)} = f^{(n)}(x) = \frac{d^{n}y}{dx^{n}}
 \]</span></p>
