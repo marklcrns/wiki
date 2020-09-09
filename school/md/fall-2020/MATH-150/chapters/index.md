@@ -15,6 +15,8 @@ date: Aug 18, 2020
 
 ## Homeworks
 
+### Chapter 2
+
 - [⬇ 2.1 Homework Solutions](file:../../../../files/fall-2020/MATH-150/chapter-2/homeworks/2.1_homework.pdf)
 - [⬇ 2.2 Homework Solutions](file:../../../../files/fall-2020/MATH-150/chapter-2/homeworks/2.2_homework.pdf)
 - [⬇ 2.3 Homework Solutions](file:../../../../files/fall-2020/MATH-150/chapter-2/homeworks/2.3_homework.pdf)

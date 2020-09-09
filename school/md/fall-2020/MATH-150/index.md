@@ -29,3 +29,7 @@ date: Aug 17, 2020
 
 - [⬇ Quiz 1](file:../../../files/fall-2020/MATH-150/quizzes/quiz-1.png)
 
+## Tests
+
+- [⬇ Test 1](file:../../../files/fall-2020/MATH-150/tests/test-1.pdf)
+
