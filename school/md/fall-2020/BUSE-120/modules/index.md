@@ -11,4 +11,5 @@ date: 2020-08-17
 - [↪ Module 1: Course Introduction](module-1/index)
 - [↪ Module 2: Basic Ideas of Finance](module-2/index)
 - [↪ Module 3: Financial Statements](module-3/index)
+- [↪ Module 4: Time Value of Money](module-4/index)
 

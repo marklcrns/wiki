@@ -16,6 +16,8 @@ from ECON 121 Microeconomics textbook.
 
 # Resources
 
+- [⚓ Chapter 2](../.././../spring-2020/ECON-121/notes/ch-2#chapter-2-the-key-principles-of-economics)
+
 Textbook
 
 - Macroeconomics: Principles/Applications/Tools, 10e by Arthur O'Sullivan,

@@ -127,7 +127,6 @@ principle:
     of movies and snacks increase, even though your nominal wage stayed the
     same.
 
-
 <br>
 
 # References

@@ -1,6 +1,6 @@
 ---
-title: BUSE 120 Module 1
-subtitle: Notes and activities
+title: Module 1 Notes and Activities
+subtitle: Course Introduction
 author: Mark Lucernas
 date: 2020-08-17
 ---

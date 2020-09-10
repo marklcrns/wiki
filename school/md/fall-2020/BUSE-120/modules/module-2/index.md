@@ -1,6 +1,6 @@
 ---
-title: BUSE 120 Module 2
-subtitle: Notes and activities
+title: Module 2 Notes and Activities
+subtitle: Basic Ideas of Finance
 author: Mark Lucernas
 date: 2020-08-17
 ---

@@ -1,6 +1,6 @@
 ---
-title: BUSE 120 Module 3
-subtitle: Notes and activities
+title: Module 3 Notes and Activities
+subtitle: Financial Statements
 author: Mark Lucernas
 date: 2020-08-17
 ---

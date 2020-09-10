@@ -394,23 +394,25 @@ the cost of the insurance stays low.
 
 
 1. It is sensible for a person to produce the product for which he or she has a
-   [⚓ comparative advantage](#comparative-advantage-term), that is, a lower
+   [comparative advantage](#comparative-advantage-term), that is, a lower
    opportunity cost than another person.
 2. _Specialization_ increases productivity through the division of labor, a
    result of the benefits of repetition, continuity, and innovation.
 3. A system of international specialization and trade is sensible because
    nations have different opportunity costs of producing goods, giving rise to
    comparative advantages.
-4. Under a [⚓ market system](#market-system-term), self-interested people,
+4. Under a [market system](#market-system-term), self-interested people,
    guided by prices, make the decisions about what products to produce, how to
    produce them, and who gets them.
 5. Government roles in a market economy include establishing the rules for
    exchange, reducing economic uncertainty, and responding to market failures.
 
-
 <br>
 
 # Resources
+
+- [⚓ Principle of Opportunity Cost](../../../spring-2020/ECON-121/notes/ch-2#the-principle-of-opportunity-cost)
+- [⚓ Principle of Voluntary Exchange](../../../spring-2020/ECON-121/notes/ch-2#the-principle-of-voluntary-exchange)
 
 Textbook
 

@@ -16,6 +16,8 @@ from ECON 121 Microeconomics textbook.
 
 # Resources
 
+- [⚓ Chapter 1](../.././../spring-2020/ECON-121/notes/ch-1#chapter-1-introduction-what-is-economics)
+
 Textbook
 
 - Macroeconomics: Principles/Applications/Tools, 10e by Arthur O'Sullivan,
