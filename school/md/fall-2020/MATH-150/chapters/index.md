@@ -11,6 +11,7 @@ date: Aug 18, 2020
 ## Notes
 
 - [↪ Chapter 2: Limits and Derivatives](chapter-2/index)
+- [↪ Chapter 3: Differentiation Rules](chapter-3/index)
 
 
 ## Homeworks
