@@ -548,7 +548,6 @@ int main()
 - [🎬 CISC 192 Section 2.15 Named Constants using const Keyword](https://www.youtube.com/watch?v=IkAc8g5AKaY)
 - [🎬 CISC 192 Section 2.16 Programming Style](https://www.youtube.com/watch?v=8rDCKXbXFeA)
 
-
 <br>
 
 # Resources

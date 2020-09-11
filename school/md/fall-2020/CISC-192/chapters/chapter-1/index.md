@@ -10,5 +10,5 @@ date: Aug 17, 2020
 
 ## Notes
 
-- [↪ Chapter 1: Introduction to Computers and Programming](notes)
+- [↪ Chapter 1 Notes](notes)
 

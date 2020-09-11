@@ -10,5 +10,5 @@ date: Aug 17, 2020
 
 ## Notes
 
-- [↪ Chapter 2: Introduction to C++](notes)
+- [↪ Chapter 2 Notes](notes)
 
