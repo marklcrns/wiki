@@ -129,7 +129,7 @@ principle:
 
 <br>
 
-# References
+# Resources
 
 Text Books
 

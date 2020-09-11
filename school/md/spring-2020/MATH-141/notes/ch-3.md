@@ -521,7 +521,7 @@ $$
 
 <br>
 
-# References
+# Resources
 
 - [⬇ Pre-calc Textbook Reference 1](file:../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)
 - [🎬 Learn how to solve a system of equations by graphing](https://www.youtube.com/watch?v=OWS2xr7M6NY)

@@ -93,7 +93,7 @@ The Game of the Generals (GoG) Board Game
 - [⬇ M8_Reflect](file:../../../../files/spring-2020/CISC-190/module-8/m-8_reflect.docx)
 
 
-## References
+## Resources
 
 - [🎬 Java Chess Engine Tutorial](https://www.youtube.com/watch?v=h8fSdSUKttk&list=PLOJzCFLZdG4zk5d-1_ah2B4kqZSeIlWtt)
 - [🎬 Java Tutorial - Creating a Minesweeper](https://www.youtube.com/watch?v=RFpJp62ZoY8&list=PLGxHvpw-PAk6QvPw0fYe8bks31GRKvymK)

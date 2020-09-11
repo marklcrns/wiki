@@ -1,5 +1,5 @@
 ---
-title: ECON 121 Chapter 3 Notes
+title: ECON 121 Chapter 4 Notes
 author: Mark Lucernas
 date: 2020-02-20
 ---
@@ -8,83 +8,160 @@ date: 2020-02-20
 
 **Perfectly competitive market**
 
-  - A market with many sellers and buyers of a homogeneous product and no
-    barriers to entry
-  - No single buyer or seller can affect the market price.
+- A market with many sellers and buyers of a homogeneous product and no barriers
+  to entry
+- No single buyer or seller can affect the market price.
 
 ## 4.1 The Demand Curve
 
-**Law of demand**
+<a name="law-of-demand-term">**Law of demand**</a>
 
-  - The higher the price, the smaller the quantity demanded, everything else
-    being equal.
-  - There is a negative relationship between price and quantity demanded,
-    _ceteris paribus_.
+- The higher the price, the smaller the quantity demanded, everything else being
+  equal.
+- There is a negative relationship between price and quantity demanded, _ceteris
+  paribus_.
 
 **Quantity demanded**
 
-  - The amount of a product that consumers are willing and able to buy.
+- The amount of a product that consumers are willing and able to buy.
 
 **Demand schedule**
 
-  - A table that shows the relationship between the price of a product and the
-    quantity demanded, _ceteris paribus (everything else held fixed)_.
+- A table that shows the relationship between the price of a product and the
+  quantity demanded, _ceteris paribus (everything else held fixed)_.
 
 
 **Individual demand curve**
 
-  - A curve that shows the relationship between the price of a good and quantity
-    demanded by an individual consumer, _ceteris paribus_.
+- A curve that shows the relationship between the price of a good and quantity
+  demanded by an individual consumer, _ceteris paribus_.
+
+![Figure 4.1](../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.1.png)
+
+<center>
+
+| Point | Price | Quantity of Pizzas per Month |
+|-------|-------|------------------------------|
+| a     | $10   | 1                            |
+| b     | 8     | 4                            |
+| c     | 6     | 7                            |
+| d     | 4     | 10                           |
+| e     | 2     | 13                           |
+
+</center>
+
+![Figure 4.2](../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.2.png)
+
+<center>
+
+**QUANTITY OF PIZZA DEMANDED**
+
+| Price | Al + | Bea = | Market Demand |
+|-------|------|-------|---------------|
+| $8    | 4    | 2     | 6             |
+| 6     | 7    | 4     | 11            |
+| 4     | 10   | 6     | 16            |
+| 2     | 13   | 8     | 21            |
+
+</center>
+
 
 **Change in quantity demanded**
 
-  - A change in the quantity consumers are willing and able to buy when the
-    price changes; represented graphically by movement along the demand curve.
+- A change in the quantity consumers are willing and able to buy when the price
+  changes; represented graphically by movement along the demand curve.
 
 **Market demand curve**
 
-  - A curve showing the relationship between price and quantity demanded by
-    _all_ consumers, _ceteris paribus_.
-  - Sum of everyone's individual demand curve
+- A curve showing the relationship between price and quantity demanded by _all_
+  consumers, _ceteris paribus_.
+- Sum of everyone's individual demand curve
 
 ## 4.2 The Supply Curve
 
 <a name="law-of-supply">**Law of supply**</a>
 
-  - There is a positive relationship between price and quantity supplied,
-    ceteris paribus.
+- There is a positive relationship between price and quantity supplied,
+  ceteris paribus.
 
 **Quantity supplied**
 
-  - The amount of a product that firms are willing and able to sell.
+- The amount of a product that firms are willing and able to sell.
 
 **Supply schedule**
 
-  - A table that shows the relationship between the price of a product and
-    quantity supplied, _ceteris paribus_.
-  - Remember that in a supply schedule, a change in quantity results from a
-    change in price alone.
+- A table that shows the relationship between the price of a product and
+  quantity supplied, _ceteris paribus_.
+- Remember that in a supply schedule, a change in quantity results from a
+  change in price alone.
+
+![Figure 4.3](../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.3.png)
+
+<center>
+
+**INDIVIDUAL SUPPLY SCHEDULE FOR PIZZA**
+
+| Point | Price | Quantity of Pizzas per Month |
+|-------|-------|------------------------------|
+| a     | $2    | 0                            |
+| b     | 4     | 100                          |
+| c     | 6     | 200                          |
+| d     | 8     | 300                          |
+| e     | 10    | 400                          |
+
+</center>
+
 
 **Individual supply curve**
 
-  - A curve showing the relationship between price and a quantity supplied by a
-    single firm, ceteris paribus.
+- A curve showing the relationship between price and a quantity supplied by a
+  single firm, ceteris paribus.
 
 **Change in quantity supplied**
 
-  - A change in the quantity firms are willing and able to sell when the price
-    changes.
+- A change in the quantity firms are willing and able to sell when the price
+  changes.
 
 **Minimum supply price**
 
-  - The lowest price at which a product will be supplied.
+- The lowest price at which a product will be supplied.
+
+### 4.2.2 Why Is the Individual Supply Curve Positively Sloped?
+
+A higher price encourages a firm to increase its output by purchasing more
+materials and hiring more workers. To increase her workforce, Lola might be
+forced to pay overtime or hire workers who are more costly or less productive
+than the original workers. But the higher price of pizza makes it worthwhile to
+incur these higher costs.
+
+The supply curve shows the marginal cost of production for different quantities
+produced. We can use the marginal principle to explain this.
+
+- [⚓ Marginal Principle](ch-2#the-marginal-principle)
+
 
 ### 4.2.3 From Individual Supply To Market Supply
 
 **Market supply curve**
 
-  - A curve showing the relationship between the market price and quantity
-    supplied by all firms, ceteris paribus.
+- A curve showing the relationship between the market price and quantity
+  supplied by all firms, ceteris paribus.
+
+![Figure 4.4](../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.4.png)
+
+<center>
+
+**QUANTITY OF PIZZA SUPPLIED**
+
+| Price | Lola + | Hiram = | Market Supply |
+|-------|--------|---------|---------------|
+| 2     | 0      | 0       | 0             |
+| 4     | 100    | 0       | 100           |
+| 6     | 200    | 0       | 200           |
+| 8     | 300    | 100     | 400           |
+| 10    | 400    | 200     | 600           |
+
+</center>
 
 ### 4.2.3 Why Is the Market Supply Curve Positively Sloped?
 
@@ -100,59 +177,59 @@ date: 2020-02-20
 
 **Market equilibrium**
 
-  - A situation in which the quantity demanded equals the quantity supplied at
-    the prevailing market price.
-  - When a market reaches an equilibrium, there is no pressure to change the
-    price.
+- A situation in which the quantity demanded equals the quantity supplied at the
+  prevailing market price.
+- When a market reaches an equilibrium, there is no pressure to change the
+  price.
 
 **Excess demand**
 
-  - A situation in which, at the prevailing price, the quantity demanded exceeds
-    the quantity supplied.
-  - Sometimes called a _shortage_.
+- A situation in which, at the prevailing price, the quantity demanded exceeds
+  the quantity supplied.
+- Sometimes called a _shortage_.
 
 **Excess supply**
 
-  - A situation in which the quantity supplied exceeds the quantity demanded at
-    the prevailing price.
-  - some times called _surplus_.
+- A situation in which the quantity supplied exceeds the quantity demanded at
+  the prevailing price.
+- some times called _surplus_.
 
 **Price ceiling**
 
-  - Maximum price less than the equilibrium price set for a good to create an
-    excess demand.
+- Maximum price less than the equilibrium price set for a good to create an
+  excess demand.
 
 **Price floor**
 
-  - Minimum price greater than the equilibrium price set for a good to create an
-    excess supply.
+- Minimum price greater than the equilibrium price set for a good to create an
+  excess supply.
 
 ## 4.4 Market Effects Of Changes in Demand
 
 **Change in demand**
 
-  - A shift of the demand curve caused by a change in a variable other than the
-    price of the product.
+- A shift of the demand curve caused by a change in a variable other than the
+  price of the product.
 
 ### 4.4.2 Increases in Demand Shift the Demand Curve
 
 **Normal good**
 
-  - A good for which an increase in income increases demand.
+- A good for which an increase in income increases demand.
 
 **Inferior good**
 
-  - A good for which an increase in income decreases demand.
+- A good for which an increase in income decreases demand.
 
 **Substitutes**
 
-  - Two goods for which an increase in the price of one good increases the
-    demand for the other good.
+- Two goods for which an increase in the price of one good increases the demand
+  for the other good.
 
 **Complements**
 
-  - Two goods for which a decrease in the price of one good increases the demand
-    for the other good.
+- Two goods for which a decrease in the price of one good increases the demand
+  for the other good.
 
 Increase in demand can occur for several reasons:
 
@@ -226,13 +303,13 @@ quantity today, meaning the demand for pizza today will decrease.
 
 **Change in quantity supplied**
 
-  - A change in price causes a change in quantity supplied, a movement along a
-    single supply curve.
+- A change in price causes a change in quantity supplied, a movement along a
+  single supply curve.
 
 **Change in supply**
 
-  - A shift of the supply curve caused by a change in a variable other than the
-    price of the product.
+- A shift of the supply curve caused by a change in a variable other than the
+  price of the product.
 
 ### 4.5.2 Increases in Supply Shift the Supply Curve
 
@@ -248,23 +325,23 @@ In other words, the supply curve shifts to the right.
 The supply curve shift downward and rightward (production cost have gotten
 cheaper) when these variables:
 
-  * Wage decreases
-  * Price of materials or capital decreases
-  * Technological advance increases
-  * Government subsidy increases
-  * Expected future price decreases
-  * Number of producers (competitors) increases
+- Wage decreases
+- Price of materials or capital decreases
+- Technological advance increases
+- Government subsidy increases
+- Expected future price decreases
+- Number of producers (competitors) increases
 
 ### 4.5.4 Decreases in Supply Shift the Supply Curve
 
 The supply curve shift upward and leftward (production cost have gotten more
 expensive) when these variables:
 
-  * Wage increases
-  * Price of materials or capital increases
-  * Tax increases
-  * Expected future price increases
-  * Number of producers (competitors) decreases
+- Wage increases
+- Price of materials or capital increases
+- Tax increases
+- Expected future price increases
+- Number of producers (competitors) decreases
 
 ## 4.6 Predicting and Explaining Market Changes
 
@@ -279,9 +356,12 @@ Market effects of changes in demand or supply
 
 <br>
 
-# References
+# Resources
+
+- [⚓ Marginal Principle](ch-2#the-marginal-principle)
 
 Text Books
 
-  * Microeconomics: _Principles, Applications, and Tools_ 10th ed (eText).
-    - Authors: O'Sullivan/Sheffrin/Perez
+- Microeconomics: _Principles, Applications, and Tools_ 10th ed (eText).
+  - Authors: O'Sullivan/Sheffrin/Perez
+

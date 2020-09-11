@@ -605,7 +605,7 @@ Geometric Series
 
 <br>
 
-# References
+# Resources
 
 - [⬇ Pre-calc Textbook Reference 1](file:../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)
     * Chapter 1 pages 8 - 19

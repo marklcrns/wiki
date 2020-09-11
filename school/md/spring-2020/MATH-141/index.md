@@ -146,11 +146,11 @@ date: 2020-02-05
 
 ## Exams
 
+> Exams were moved online due to COVID-19 crisis.
+
 - [⬇ Exam Basic Instructions](file:../../../files/spring-2020/MATH-141/exam-1/exam-1_basicInstructions.pdf)
 
 ### Exam 1
-
-> Exam 1 was moved online due to COVID-19 crisis.
 
 Practice
 

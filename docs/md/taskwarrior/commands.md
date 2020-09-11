@@ -128,7 +128,7 @@ task [<filter>] [<command>] [<modification>] [<miscellaneous>]
 
 <br>
 
-# References
+# Resources
 
   - https://taskwarrior.org/docs/commands/
 

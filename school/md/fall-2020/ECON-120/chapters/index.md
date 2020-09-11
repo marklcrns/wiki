@@ -13,4 +13,5 @@ date: Aug 20, 2020
 - [↪ Chapter 1: Introduction What is Economics?](chapter-1)
 - [↪ Chapter 2: The Key Principles of Economics](chapter-2)
 - [↪ Chapter 3: Exchange and Markets](chapter-3)
+- [↪ Chapter 4: Demand, Supply, and Market Equilibrium](chapter-4)
 

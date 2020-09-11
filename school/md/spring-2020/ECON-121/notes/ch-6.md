@@ -324,7 +324,7 @@ suppliers, so consumers bear the full cost of the tax.
 
 <br>
 
-# References
+# Resources
 
 Text Books
 

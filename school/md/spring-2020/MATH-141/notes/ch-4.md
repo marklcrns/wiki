@@ -211,7 +211,7 @@ the third and final side.
 
 <br>
 
-# References
+# Resources
 
 - [⬇ Handout Trig Notes 1](file:../../../../files/spring-2020/MATH-141/ch-4/m-4_TrigNotes_1.pdf)
 - [🎬 TRIG What is basic trigonometry? what is it supposed to do?](https://www.youtube.com/watch?v=4uV9iO7hEq0)

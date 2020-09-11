@@ -449,7 +449,7 @@ average cost of production. Here are the main points of this chapter:
 
 <br>
 
-# References
+# Resources
 
 Text Books
 

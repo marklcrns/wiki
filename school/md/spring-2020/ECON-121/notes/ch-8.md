@@ -415,7 +415,7 @@ Table 8.5 The Language and Mathematics of Costs
 
 <br>
 
-# References
+# Resources
 
 Text Books
 

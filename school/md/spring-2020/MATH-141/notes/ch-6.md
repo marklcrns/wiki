@@ -259,7 +259,7 @@ Distance formula
 
 <br>
 
-# References
+# Resources
 
 - [🎬 Law of Sines](https://www.youtube.com/watch?v=bDPRWJdVzfs)
 - [🎬 Law of Cosines](https://www.youtube.com/watch?v=ZElOxG7_m3c)

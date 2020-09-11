@@ -35,7 +35,7 @@ Using `:argdo`, replace all files loaded into buffer with `I love vim`
 
 <br>
 
-# References
+# Resources
 
 - [🌎 Search and Replace multiple files at once](https://gabri.me/blog/multiple-files-search-and-replace-in-vim)
 

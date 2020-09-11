@@ -392,7 +392,7 @@ increase in price?
 
 <br>
 
-# References
+# Resources
 
 Text Books
 
