@@ -298,10 +298,57 @@ is the same size as an `int`. In this case, the `unsigned short` is promoted to
 - **Rule 3:** When the final value of an expression is assigned to a variable,
   ti will be converted to the data type of that variable.
 
+#### Type Casting
 
+A _type cast expression_ lets you manually promote to demote a value. Its
+general format is
 
+```cpp
+static_cast<DataType>(Value)
+```
 
-%% STOPPED AT PAGE 96
+where _Value_ is a variable or literal value that you wish to convert and
+_DataType_ is the data type you wish to convert it to.
+
+```cpp
+double number = 3.7;
+int val;
+val = static_cast<int>(number);
+```
+
+Type cast expression are useful in situations where C++ will not perform the
+desired conversion automatically.
+
+> Program 3-7
+
+```cpp
+// This program uses a type cast to avoid an integer division.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  int    books,
+         months;
+  double booksPerMonth;
+
+  // Get user inputs
+  cout << "How many books do you plan to read? ";
+  cin  >> books;
+  cout << "How many months will it take you to read them? ";
+  cin  >> months;
+
+  // Compute and display books read per month
+  booksPerMonth = static_cast<double>(books) / months;
+  cout << "That is " << booksPerMonth << " books per month.\n";
+  return 0;
+}
+```
+
+> **WARNING!** To prevent the integer division from taking place, one of the
+operands should be converted to a double prior to the division operation. This
+forces C++ to automatically convert the value of the other operand to a double.
+
 
 
 

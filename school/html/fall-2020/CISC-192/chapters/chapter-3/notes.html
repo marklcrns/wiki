@@ -144,7 +144,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li><a href="#grouping-with-parentheses">Grouping with parentheses</a></li>
           <li><a href="#converting-algebraic-expression-to-programming-statements">Converting Algebraic Expression to Programming Statements</a></li>
           </ul></li>
-          <li><a href="#data-type-conversion-and-type-casting">3.3 Data Type Conversion and Type Casting</a></li>
+          <li><a href="#data-type-conversion-and-type-casting">3.3 Data Type Conversion and Type Casting</a><ul>
+          <li><a href="#type-casting">Type Casting</a></li>
+          </ul></li>
           </ul></li>
           <li><a href="#videos">Videos</a></li>
           </ul></li>
@@ -503,7 +505,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><strong>Rule 2:</strong> When an operator works with two values of different data types, the lower-ranking value is promoted to the type of the higher-ranking value.</p></li>
 <li><p><strong>Rule 3:</strong> When the final value of an expression is assigned to a variable, ti will be converted to the data type of that variable.</p></li>
 </ul>
-<p>%% STOPPED AT PAGE 96</p>
+<h4 id="type-casting">Type Casting</h4>
+<p>A <em>type cast expression</em> lets you manually promote to demote a value. Its general format is</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">static_cast</span>&lt;DataType&gt;(Value)</a></code></pre></div>
+<p>where <em>Value</em> is a variable or literal value that you wish to convert and <em>DataType</em> is the data type you wish to convert it to.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb9-1" title="1"><span class="dt">double</span> number = <span class="fl">3.7</span>;</a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="dt">int</span> val;</a>
+<a class="sourceLine" id="cb9-3" title="3">val = <span class="kw">static_cast</span>&lt;<span class="dt">int</span>&gt;(number);</a></code></pre></div>
+<p>Type cast expression are useful in situations where C++ will not perform the desired conversion automatically.</p>
+<blockquote>
+<p>Program 3-7</p>
+</blockquote>
+<div class="sourceCode" id="cb10"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb10-1" title="1"><span class="co">// This program uses a type cast to avoid an integer division.</span></a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb10-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb10-4" title="4"></a>
+<a class="sourceLine" id="cb10-5" title="5"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb10-6" title="6">{</a>
+<a class="sourceLine" id="cb10-7" title="7">  <span class="dt">int</span>    books,</a>
+<a class="sourceLine" id="cb10-8" title="8">         months;</a>
+<a class="sourceLine" id="cb10-9" title="9">  <span class="dt">double</span> booksPerMonth;</a>
+<a class="sourceLine" id="cb10-10" title="10"></a>
+<a class="sourceLine" id="cb10-11" title="11">  <span class="co">// Get user inputs</span></a>
+<a class="sourceLine" id="cb10-12" title="12">  cout &lt;&lt; <span class="st">&quot;How many books do you plan to read? &quot;</span>;</a>
+<a class="sourceLine" id="cb10-13" title="13">  cin  &gt;&gt; books;</a>
+<a class="sourceLine" id="cb10-14" title="14">  cout &lt;&lt; <span class="st">&quot;How many months will it take you to read them? &quot;</span>;</a>
+<a class="sourceLine" id="cb10-15" title="15">  cin  &gt;&gt; months;</a>
+<a class="sourceLine" id="cb10-16" title="16"></a>
+<a class="sourceLine" id="cb10-17" title="17">  <span class="co">// Compute and display books read per month</span></a>
+<a class="sourceLine" id="cb10-18" title="18">  booksPerMonth = <span class="kw">static_cast</span>&lt;<span class="dt">double</span>&gt;(books) / months;</a>
+<a class="sourceLine" id="cb10-19" title="19">  cout &lt;&lt; <span class="st">&quot;That is &quot;</span> &lt;&lt; booksPerMonth &lt;&lt; <span class="st">&quot; books per month.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb10-20" title="20">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb10-21" title="21">}</a></code></pre></div>
+<blockquote>
+<p><strong>WARNING!</strong> To prevent the integer division from taking place, one of the operands should be converted to a double prior to the division operation. This forces C++ to automatically convert the value of the other operand to a double.</p>
+</blockquote>
 <h2 id="videos">Videos</h2>
 <p><br></p>
 <h1 id="resources">Resources</h1>

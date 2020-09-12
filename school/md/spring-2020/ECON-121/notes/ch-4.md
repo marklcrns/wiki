@@ -142,7 +142,7 @@ produced. We can use the marginal principle to explain this.
 
 ### 4.2.3 From Individual Supply To Market Supply
 
-**Market supply curve**
+<a name="market-supply-curve-term">**Market supply curve**</a>
 
 - A curve showing the relationship between the market price and quantity
   supplied by all firms, ceteris paribus.
