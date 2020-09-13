@@ -146,8 +146,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </ul></li>
           <li><a href="#data-type-conversion-and-type-casting">3.3 Data Type Conversion and Type Casting</a><ul>
           <li><a href="#type-casting">Type Casting</a></li>
+          <li><a href="#c-style-and-prestandard-c-type-cast-expressions">C-style and Prestandard C++ Type Cast Expressions</a></li>
           </ul></li>
           </ul></li>
+          <li><a href="#overflow-and-underflow">3.4 Overflow and Underflow</a></li>
           <li><a href="#videos">Videos</a></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
@@ -540,6 +542,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p><strong>WARNING!</strong> To prevent the integer division from taking place, one of the operands should be converted to a double prior to the division operation. This forces C++ to automatically convert the value of the other operand to a double.</p>
 </blockquote>
+<blockquote>
+<p>Program 3-8</p>
+</blockquote>
+<div class="sourceCode" id="cb11"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb11-1" title="1"><span class="co">// This program prints a character from its ASCII code.</span></a>
+<a class="sourceLine" id="cb11-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb11-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb11-4" title="4"></a>
+<a class="sourceLine" id="cb11-5" title="5"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb11-6" title="6">{</a>
+<a class="sourceLine" id="cb11-7" title="7">  <span class="dt">int</span> number = <span class="dv">65</span>;</a>
+<a class="sourceLine" id="cb11-8" title="8"></a>
+<a class="sourceLine" id="cb11-9" title="9">  <span class="co">// Display the value of the number variable</span></a>
+<a class="sourceLine" id="cb11-10" title="10">  cout &lt;&lt; number &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb11-11" title="11"></a>
+<a class="sourceLine" id="cb11-12" title="12">  <span class="co">// Use a type cast to display the value of number</span></a>
+<a class="sourceLine" id="cb11-13" title="13">  <span class="co">// converted to the char data type</span></a>
+<a class="sourceLine" id="cb11-14" title="14">  cout &lt;&lt; <span class="kw">static_cast</span>&lt;<span class="dt">char</span>&gt;(number) &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb11-15" title="15">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb11-16" title="16">}</a></code></pre></div>
+<h4 id="c-style-and-prestandard-c-type-cast-expressions">C-style and Prestandard C++ Type Cast Expressions</h4>
+<p>Even though the <code>static_cast</code> is the preferred type cast expression in use today, C++ also supports two older forms that you should know about: The C-style form and the prestandard C++ form.</p>
+<p><strong>C-style form type cast</strong>. This typecast notation is called <em>prefix notation</em>.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb12-1" title="1">booksPerMonth = (<span class="dt">double</span>)books / months;</a></code></pre></div>
+<p><strong>Prestandard C++ form type cast</strong>. This typecast notation is called <em>functional notation</em>.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb13-1" title="1">booksPerMonth = <span class="dt">double</span>(books) / months;</a></code></pre></div>
+<h2 id="overflow-and-underflow">3.4 Overflow and Underflow</h2>
+<p><strong>CONCEPT:</strong> When a value cannot fit in the number of bits provided by a variable’s data type, overflow or underflow occurs.</p>
 <h2 id="videos">Videos</h2>
 <p><br></p>
 <h1 id="resources">Resources</h1>

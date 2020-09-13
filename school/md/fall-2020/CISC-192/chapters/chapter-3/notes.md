@@ -349,8 +349,51 @@ int main()
 operands should be converted to a double prior to the division operation. This
 forces C++ to automatically convert the value of the other operand to a double.
 
+> Program 3-8
+
+```cpp
+// This program prints a character from its ASCII code.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  int number = 65;
+
+  // Display the value of the number variable
+  cout << number << endl;
+
+  // Use a type cast to display the value of number
+  // converted to the char data type
+  cout << static_cast<char>(number) << endl;
+  return 0;
+}
+```
+
+#### C-style and Prestandard C++ Type Cast Expressions
+
+Even though the `static_cast` is the preferred type cast expression in use
+today, C++ also supports two older forms that you should know about: The C-style
+form and the prestandard C++ form.
+
+**C-style form type cast**. This typecast notation is called _prefix notation_.
+
+```cpp
+booksPerMonth = (double)books / months;
+```
+
+**Prestandard C++ form type cast**. This typecast notation is called _functional
+notation_.
+
+```cpp
+booksPerMonth = double(books) / months;
+```
 
 
+## 3.4 Overflow and Underflow
+
+**CONCEPT:** When a value cannot fit in the number of bits provided by a
+variable's data type, overflow or underflow occurs.
 
 
 ## Videos
