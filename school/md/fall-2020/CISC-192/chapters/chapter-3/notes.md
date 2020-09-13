@@ -390,10 +390,649 @@ booksPerMonth = double(books) / months;
 ```
 
 
-## 3.4 Overflow and Underflow
+### 3.4 Overflow and Underflow
 
 **CONCEPT:** When a value cannot fit in the number of bits provided by a
 variable's data type, overflow or underflow occurs.
+
+![Overflow and Underflow](../../../../../files/fall-2020/CISC-192/chapter-3/3.4_overflow_underflow.png)
+
+> Program 3-9
+
+```cpp
+// This program demonstrates overflow and underflow
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Set intVar to the maximum value a short int can hold
+  short intVar = 32767;
+
+  // Set floatVar to a number too small to fit in a float
+  float floatVar = 3.0E-47;
+
+  // Display intVar
+  cout << "Original value of intVar       " << intVar << endl;
+
+  // Add 1 to intVar to make it overflow
+  intVar = intVar + 1;
+  cout << "intVar after overflow          " << intVar << endl;
+
+  // Subtract 1 from intVar to make it overflow again
+  intVar = intVar - 1;
+  cout << "intVar after 2nd overflow      " << intVar << endl;
+
+  // Display floatVar
+  cout << "Value of very tiny floatVar    " << floatVar;
+  return 0;
+}
+```
+
+> Program 3-9 Output
+
+```
+Original value of intVar      32767
+intVar after overflow         -32768
+intVar after 2nd overflow     32767
+Value of very tiny floatVar   0
+```
+
+
+### 3.5 Named Constants
+
+**CONCEPT:** Literals may be given names that symbolically represent them in a
+program.
+
+When a named constant is defined, it must be initialized with a value. It cannot
+be defined and then later assigned a value with an assignment statement.
+
+```cpp
+const double INTEREST_RATE;     // illegal
+INTEREST_RATE = 0.69;           // illegal
+```
+
+An added advantage of using named constants is that they make programs more
+self-documenting. Once the named constant `INTEREST_RATE` has been correctly
+defined, the program statement
+
+```cpp
+newAmount = balance * 0.69;
+```
+
+can be changed to read
+
+```cpp
+newAmount = balance * INTEREST_RATE;
+```
+
+
+### 3.6 Multiple and Combined Assignment
+
+C++ allows you to assign a value to multiple variables at once
+
+```cpp
+a = b = c = d = 12;
+```
+
+#### Combined Assignment Operators
+
+> Table 3-9 Combined Assignment Operators
+
+<center>
+
+| Operator | Example Usage | Equivalent To |
+|----------|---------------|---------------|
+| `+=`     | `x += 5;`     | `x = x + 5;`  |
+| `-=`     | `y -= 2;`     | `y = y - 2;`  |
+| `*=`     | `z *= 10;`    | `z = z *10;`  |
+| `/=`     | `a /= b;`     | `a = a / b;`  |
+| `%=`     | `c %= 3;`     | `c = c % 3;`  |
+
+</center>
+
+> Program 3-11
+
+```cpp
+// This program tracks the inventory of two widget stores.
+// It illustrates the use of multiple and combined assignment.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  int begInv,   // Beginning inventory for both stores
+        sold,   // Number of widgets sold
+      store1,   // Store 1's inventory
+      store2;   // Store 2's inventory
+
+  // Get the beginning inventory for the two stores
+  cout << "One week ago, 2 new widget stores opened\n";
+  cout << "at the same time with the same beginning\n";
+  cout << "inventory. What was the beginning inventory? ";
+  cin  >> begInv;
+
+  // Set each store's inventory
+  store1 = store2 = begInv;
+
+  // Get the number of widgets sold at each store
+  cout << "How many widgets has store 1 sold? ";
+  cin  >> sold;
+  store1 -= sold;     // Adjust store 1's inventory
+
+  cout << "How many widgets has store 2 sold? ";
+  cin  >> sold;
+  store2 -= sold;     // Adjust store 2's inventory
+
+  // Display each store's current inventory
+  cout << "\nThe current inventory of each store:\n";
+  cout << "Store 1: " << store1 << endl;
+  cout << "Store 2: " << store2 << endl;
+  return 0;
+}
+```
+
+
+### 3.7 Formatting Output
+
+**CONCEPT:** `cout` provides ways to format data as it is being displayed. This
+affects the way data appears on the screen.
+
+> Program 3-13
+
+```cpp
+// This program uses setw to display three rows of number so they align.
+#include <iostream>
+#include <iomanip>      // Header file needed to use setw
+using namespace std;
+
+int main()
+{
+  int num1 = 2897,  num2 = 5,     num3 = 837,
+      num4 = 34,    num5 = 7,     num6 = 1623,
+      num7 = 390,   num8 = 3456,  num9 = 12;
+
+  // Display the first row of numbers
+  cout << setw(6) << num1 << setw(6) << num2 << setw(6) << num3 <<endl;
+  // Display the second row of numbers
+  cout << setw(6) << num4 << setw(6) << num5 << setw(6) << num6 <<endl;
+  // Display the third row of numbers
+  cout << setw(6) << num7 << setw(6) << num8 << setw(6) << num9 <<endl;
+
+  return 0;
+}
+```
+
+> Program 3-13 Output
+
+```
+2897    5    837
+  34    7   1623
+ 390  3456    12
+```
+
+A stream manipulator, `setw`, can be used to established print fields of
+specified width.
+
+**NOTE:** `iomanip` #include directive mus be included in any program that uses
+`setw`.
+
+#### The `setprecision` Manipulator
+
+Floating-point values may be rounded to a number of _significant digits_ or
+_precision_, which is the total number of digits that appear before and after
+the decimal point.
+
+> Program 3-15
+
+```cpp
+// This program demonstrates how the setprecision manipulator
+// affects the way a floating-point value is displayed.
+#include <iostream>
+#include <iomanip>        // Header file needed to use setprecision
+using namespace std;
+
+int main()
+{
+  double number1 = 132.364, number2 = 26.91;
+  double quotient = number1 / number2;
+
+  cout << quotient << endl;
+  cout << setprecision(5) << quotient << endl;
+  cout << setprecision(4) << quotient << endl;
+  cout << setprecision(3) << quotient << endl;
+  cout << setprecision(2) << quotient << endl;
+  cout << setprecision(1) << quotient << endl;
+  return 0;
+}
+```
+
+> Program 3-15 Output
+
+```
+4.91877
+4.9188
+4.919
+4.92
+4.9
+5
+```
+
+#### The `fixed` Manipulator
+
+Indicates that floating-point output should be printed in _fixed-point_, or
+decimal, _notation_.
+
+```cpp
+cout << fixed;
+```
+
+With `fixed` and `setprecision` together
+
+```cpp
+cout << fixed << setprecision(2);
+```
+
+#### The `showpoint` Manipulator
+
+By default, floating-point namers are displayed without trailing zeroes, and
+floating-point numbers with no fractional part are displayed without a decimal
+point. `showpoint` allows these defaults to be overridden.
+
+```cpp
+double x = 456.0;
+cout << showpoint << x << endl
+```
+
+`fixed`, `showpoint`, and `setprecision` manipulators together
+
+```cpp
+double x = 456.0
+cout << fixed << showpoint << setprecision(2) << x << endl;
+```
+
+> Program 3-17
+
+```cpp
+// This program illustrates the how the showpoint, setprecision, and
+// fixed manipulators operate both individually and when used together.
+#include <iostream>
+#include <iomanip>      // Header file needed to use stream manipulators
+using namespace std;
+
+int main()
+{
+  double x = 6.0;
+
+  cout << x << endl;
+  cout << showpoint << x << endl;
+  cout << setprecision(2) << x << endl;
+  cout << fixed << x << endl;
+
+  return 0;
+}
+```
+
+> Program 3-17 Output
+
+```
+6
+6.00000
+6.0
+6.00
+```
+
+#### The `left` and `right` Manipulators
+
+These manipulators can be used with any type of value, even a string.
+
+```cpp
+// This program illustrates the use of the left and right manipulators.
+#include <iostream>     // Header file needed to use stream manipulators
+#include <iomanip>      // Header file needed to use string objects
+#include <string>
+using namespace std;
+
+int main()
+{
+  string month1 = "January",
+         month2 = "February",
+         month3 = "March";
+
+  int days1 = 31,
+      days2 = 28,
+      days3 = 31;
+
+  double high1 = 22.6,
+         high2 = 37.4,
+         high3 = 53.9;
+
+  cout << fixed << showpoint << setprecision(1);
+  cout << "Month       Days     Heigh\n";
+
+  cout << left  << setw(12) << month1
+       << right << setw(4)  << days1 << setw(9) << high1 << endl;
+  cout << left  << setw(12) << month2
+       << right << setw(4)  << days2 << setw(9) << high2 << endl;
+  cout << left  << setw(12) << month3
+       << right << setw(4)  << days3 << setw(9) << high3 << endl;
+
+  return 0;
+}
+```
+
+> Program 3-18 Output
+
+```
+Month       Days     Heigh
+January       31     22.6
+February      28     37.4
+March         31     53.9
+```
+
+**Table 3-12** Output Stream Manipulators
+
+<center>
+
+| Stream Manipulator | Description                                                                                                                 |
+|--------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| `setw(n)`          | Sets minimum print field width of size `n` for the next value output.                                                       |
+| `fixed`            | Displays floating-point numbers in fixed point (i.e., decimal) form.                                                        |
+| `showpoint`        | Causes a decimal point and trailing zeroes to be displayed for floating-point numbers, even if there is no fractional part. |
+| `setprecision(n)`  | Sets the precision of floating-point numbers.                                                                               |
+| `left`             | Causes subsequent output to be left-justified.                                                                              |
+| `right`            | Causes subsequent output to be right-justified.                                                                             |
+
+</center>
+
+
+### 3.8 Working with Characters and String
+
+**CONCEPT:** Special functions exist for working with characters and strings.
+
+#### Inputting a String
+
+Although it is possible to use `cin` with the `>>` operator to input strings,
+**it can cause problems you need to be aware of**. When `cin` reads data it
+passes over and ignores any leading _whitespace_ characters (spaces, tabs, or
+line breaks). However, once it comes to first nonblank character and starts
+reading, it stops reading when it gets to the next whitespace character.
+
+```cpp
+int main()
+{
+  string name;
+  string city;
+
+  cout << "Please enter your name: ";
+  cin  << name;
+  cout << "Enter the city you live in: ";
+  cin  >> city;
+  cout << "Hello, " << name << endl;
+  cout << "You live in " << city << endl;
+  return 0;
+}
+```
+
+To solve this problem, you can use C++ function called `getline`. This function
+reads in an entire line, including leading and embedded spaces, and stores it in
+a sting object
+
+> Program 3-20
+
+```cpp
+// This program illustrates using the getline function
+// to read character data into a string object.
+#include <iostream>
+#include <string>       // Header file needed to use string objects
+using namespace std;
+
+int main()
+{
+  string name;
+  string city;
+
+  cout << "Please enter your name: ";
+  getline(cin, name);
+  cout << "Enter the city you live in: ";
+  getline(cin, city);
+
+  cout << "Hello, " << name << endl;
+  cout << "You live in " << city << endl;
+  return 0;
+}
+```
+
+#### Using `cin.get`
+
+Becuase the get function is built into the `cin` object, we say that it is a
+_member function_ of `cin`. The `get` member function reads a single character,
+including any whitespace character. If the program needs to store the character
+being read, the `get` member function can be called in either of the following
+ways
+
+```cpp
+cin.get(ch);
+ch = cin.get();
+```
+
+If the program is using the `get` function simply to pause the screen until the
+[Enter] key is passed, and does not need to store the character
+
+```
+cin.get();
+```
+
+#### Mixing `cin >>` and `cin.get`
+
+![Mixing cin >> and cin.get 1](../../../../../files/fall-2020/CISC-192/chapter-3/3.7_mixing_cin_and_cin.get_1.png)
+![Mixing cin >> and cin.get 2](../../../../../files/fall-2020/CISC-192/chapter-3/3.7_mixing_cin_and_cin.get_2.png)
+
+#### Using `cin.ignore`
+
+The `cin.ignore` function tells the `cin` object to skip one or more characters
+in the keyboard buffer. Here is its general form:
+
+```cpp
+cin.ignore(n, c);
+```
+
+The arguments shown in the parentheses are optional. If they are used, `n` is an
+integer and `c` is a character. They tell `cin` to skip `n` number of
+characters, or until the character `c` is encountered.
+
+```cpp
+cin.ignore(20, '\n');
+```
+
+#### Useful `string` Member Functions and Operators
+
+If you want to know the length of the string that is stored in a string object,
+you can call the object's length member function.
+
+```cpp
+string state = "New Jersey";
+int size = state.length();
+```
+
+Another usefule member function is `assign`. One of the versions of this
+function lets you assign a set of repeated characters to a string without having
+to count the characters.
+
+```cpp
+spaces.assign(22, ' ');
+```
+
+The `string` class also has special operators for working with strings. One of
+them is the `+` operator. This operator is used with string operands to
+`concatenate` them, or join them together.
+
+```cpp
+string greeting1 = "Hello ",
+       greeting2;
+
+string word1     = "World";
+string word2     = "People";
+
+greeting2 = greeting1 + word;  // greeting2 now holds "Hello World"
+greeting1 = greeting1 + word2; // greeting1 now holds "Hello People"
+```
+
+#### Using C-Strings
+
+A group of contiguous 1-byte memory cells was set up to held them, with each
+cell holding just one character of the string. A group of memory like this is
+called an _array_
+
+Here is a statement that defines word to be an array of characters that will
+hold a C-string and initializes it to "Hello".
+
+```cpp
+char word[10] = "Hello";
+```
+
+The data type is specified first and then the variable name is given. The only
+difference is the [10] that follows the name of the variable. This is called a
+_size declarator_. It tells how many memory cells to set up to hold the
+characters in the C-string.
+
+![Figure 3.7](../../../../../files/fall-2020/CISC-192/chapter-3/3.8_figure-3.7.png)
+
+#### Assigning a Value to a C-String
+
+To assign a value to a C-string, use a function called `strcpy` (pronounced
+string _copy_) to copy the contents of one string into another.
+
+> Program 3-25
+
+```cpp
+// This program uses the strcpy function to copy one C-string to another
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  const int SIZE = 12;
+  char name1[SIZE],
+       name2[SIZE];
+
+  strcpy(name1, "Sebastian");
+  cout << "name1 now holds the string " << name1 << endl;
+
+  strcpy(name2, name1);
+  cout << "name2 now also holds the string " << name2 << endl;
+
+  return 0;
+}
+```
+
+#### Keeping Track of How Much a C-String Can Hold
+
+The ones that don't fit will spill over into the following memory cells,
+overwriting whatever was previously stored there. This type of error, known as a
+_buffer overrun_ can lead to serious problems.
+
+One way to prevent this from happening is to use the `setw` stream manipulator.
+This manipulator, which we used earlier to format output, can also be used to
+control the number of characters that `cin >>` inputs on its next read, as
+illustrated here:
+
+```cpp
+char word[5];
+cin >> setw(5) >> word;
+```
+
+Another way to do the same thing is by using the `cin` width function.
+
+```cpp
+char word[5];
+cin.width(5);
+cin >> word;
+```
+
+> Program 3-26
+
+```cpp
+// This program uses setw with the cin object
+#include <iostream>
+#include <iomanip>      // Header file needed to use stream manipulators
+using namespace std;
+
+int main()
+{
+  const int SIZE = 5;
+  char word[SIZE];
+
+  cout << "Enter a word: ";
+  cin  >> setw(SIZE) >> word;
+  cout << "You entered " << word << endl;
+
+  return 0;
+}
+```
+
+> Program 3-27
+
+```cpp
+// This program uses cin's width function.
+#include <iostream>
+#include <iomanip>      // Header file needed to use stream manipulators
+using namespace std;
+
+int main()
+{
+  const int SIZE = 5;
+  char word[SIZE];
+
+  cout << "Enter a word: ";
+  cin.width(SIZE);
+  cin >> word;
+  cout << "You entered " << word << endl;
+
+  return 0;
+}
+```
+
+![Figure 3.8](../../../../../files/fall-2020/CISC-192/chapter-3/3.8_figure-3.8.png)
+
+#### Reading a Line of Input
+
+To read a line of input, for example, you must use `cin.getline` rather than
+`getline`. Like `getline`, `cin.getline` allows you to read in  a string
+containing spaces. It will continue reading until it has read the maximum
+specified number of characters, or until the [Enter] key is pressed.
+
+```cpp
+cin.getline(sentence, 20);
+```
+
+> Program 3-28
+
+```cpp
+// This program demonstrates cin's getline function
+// to read a line of text into a C-string.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  const int SIZE = 81;
+  char sentence[SIZE];
+
+  cout << "Enter a sentence: ";
+  cin.getline(sentence, SIZE);
+  cout << "You entered " << sentence << endl;
+  return 0;
+}
+```
+
+
+### 3.9 More Mathematical Library Functions
+
+
+
+%% STOPPED AT PAGE 132
+
 
 
 ## Videos
