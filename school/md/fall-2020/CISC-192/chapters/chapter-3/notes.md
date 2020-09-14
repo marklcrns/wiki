@@ -1029,16 +1029,253 @@ int main()
 
 ### 3.9 More Mathematical Library Functions
 
+**CONCEPT:** The C++ run-time library provides functions for performing complex
+mathematical operations.
+
+> **Table 3-13** cmath Library Functions
+
+<center>
+
+| Function  | Example          | Description                                                                                                                                                                                                                                                                            |
+|-----------|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| abs       | `y = abs(x);`    | Returns the absolute value of the argument. The argument and the return value are integers.                                                                                                                                                                                            |
+| cos       | `y = cos(x);`    | Returns the cosine of the argument. The argument should be an angle expressed in radians. The return type and the argument are doubles.                                                                                                                                                |
+| exp       | `y = exp(x);`    | Computes the exponential function of the argument, which is x. The return type and the argument are doubles.                                                                                                                                                                           |
+| fmod      | `y = fmod(x, z)` | Returns, as a double, the remainder of the first argument divided by the second argument. Works like the modulus operator, but the arguments are doubles. (The modulus operator only works with integers.) Do not pass zero as the second argument. This would cause division by zero. |
+| log       | `y = log(x);`    | Returns the natural logarithm of the argument. The return type and the argument are doubles.                                                                                                                                                                                           |
+| log10     | `y = log10(x);`  | Returns the base-10 logarithm of the argument. The return type and the argument are doubles                                                                                                                                                                                            |
+| pow       | `y = pow(x, z);` | Returns the first argument raised to the power of the second one.                                                                                                                                                                                                                      |
+| round     | `y = round(x);`  | Returns the floating-point argument passed to it rounded to the nearest whole number. The return value is an integer.                                                                                                                                                                  |
+| sin       | `y = sin(x);`    | Returns the sine of the argument. The argument should be an angle expressed in radians. The return type and the argument are doubles.                                                                                                                                                  |
+| sqrt      | `y = sqrt(x);`   | Returns the square root of the argument. The return type and argument are doubles. The argument must be zero or greater.                                                                                                                                                               |
+| tan       | `y = tan(x);`    | Returns the tangent of the argument. The argument should be an angle expressed in radians. The return type and the argument are doubles.                                                                                                                                               |
+
+</center>
+
+With the exception of the abs and round functions, all of the functions listed
+in Table 3-13 take one or more `double` arguments and return a `double` value.
+However, most C++ compilers allow them to be called with `int` arguments as
+well.
+
+> Program 3-29
+
+```cpp
+// This program inputs the lengths of the two sides of a right
+// triangle, then calculates and displays the length of the hypotenuse.
+#include <iostream>
+#include <cmath> // Header file needed to use the sqrt function
+using namespace std;
+
+int main()
+{
+  double a, b, c;
+  // Get the length of the two sides
+  cout << "Enter the length of side a: ";
+  cin  >> a;
+  cout << "Enter the length of side b: ";
+  cin  >> b;
+
+  // Compute and display the length of the hypotenuse
+  c = sqrt(pow(a, 2.0) + pow(b, 2.0));
+
+  cout << "The length of the hypotenuse is ";
+  cout << c << endl;
+  return 0;
+}
+```
 
 
-%% STOPPED AT PAGE 132
+### 3.10 Random Numbers
 
+**CONCEPT:** C++ offers a set of functions to generate and work with random
+numbers.
+
+> Program 3-31
+
+```cpp
+// This program demonstrates using random numbers when a
+// "seed" is provided for the random number generator.
+#include <iostream>
+#include <cstdlib>        // Header file needed to use srand and rand
+using namespace std;
+
+int main()
+{
+  unsigned seed;          // Random generator seed
+
+  // Get a "seed" value from the user
+  cout << "Enter a seed value: ";
+  cin  >> seed;
+
+  // Set the random generator seed before calling rand()
+  srand(seed);
+
+  // Now generate and print three random numbers
+  cout << rand() << "        " ;
+  cout << rand() << "        " ;
+  cout << rand() << endl;
+
+  return 0;
+}
+```
+
+#### Limiting the Range of a Random Number
+
+The general formula to this is:
+
+```cpp
+number = (rand() % (maxValue - minValue + 1)) + minValue;
+```
+
+
+### 3.11 Focus on Debugging: Hand Tracing a Program
+
+_Hand tracing_ is a debugging process where you pretend that you are the
+computer executing a program. You step through each of the program’s statements
+one by one.  As you look at a statement, you record the contents that each
+variable will have after the statement executes. This process is helpful in
+finding mathematical mistakes and other logic errors.
+
+### 3.12 Green Fields Landscaping Case Study--Part 1
+
+> Program 3-34
+
+```cpp
+// This program is used by Green Fields Landscaping to compute the
+// number of cubic yards of mulch a customer needs and its price.
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+const double PRICE_PER_CUBIC_YD = 22.00;
+
+int main()
+{
+  double squareFeet; // square feet of land to be covered
+  int depth;         // inches deep the mulch is to be spread
+  double cubicFeet,  // number of cubic feet of mulch needed
+  cubicYards,        // number of cubic yards of mulch needed
+  totalPrice;        // total price for all the cubic yards ordered
+
+  // Get inputs
+  cout << "Number of square feet to be covered with mulch: ";
+  cin  >> squareFeet;
+  cout << "Number of inches deep: ";
+  cin  >> depth;
+
+  // Perform calculations
+  cubicFeet = squareFeet * (depth / 12.0);
+  cubicYards = cubicFeet / 27;
+  totalPrice = cubicYards * PRICE_PER_CUBIC_YD;
+
+  // Display outputs
+  cout << "\n Number of cubic yards needed: " << cubicYards << endl;
+  cout << fixed << showpoint << setprecision(2);
+  cout << "Price per cubic yard: $" << setw(7)
+       << PRICE_PER_CUBIC_YD << endl;
+  cout << "Total price:           $" << setw(7)
+       << totalPrice << endl << endl;
+
+  return 0;
+}
+```
+
+### 3.13 Trying It All Together: Word Game
+
+> Program 3-35
+
+```cpp
+// This program uses strings to play a word game.
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{ // Stored strings
+  string s1 = "There once was a person named ",
+         s2 = " who lived in ",
+         s3 = "\nand who loved ",
+         s4 = ". At the age of ",
+         s5 = ", ",
+         s6 = " graduated \nfrom high school and went to work in a ",
+         s7 = " factory.\n",
+         s8 = " got married and had ",
+         s9 = " children and a pet ",
+         s10= " named ",
+         s11= ".\nEvery weekend the family and ",
+         s12= " had fun ",
+         s13= " together.";
+
+  // Values input by the user
+  string name, city, activity, animal, product, petName;
+  int age, kids;
+
+  cout << "Enter the following information and I\'ll "
+  << "tell you a story.\n\n";
+  cout << "Your name: ";
+  getline(cin, name);
+
+  cout << "The name of a city: ";
+  getline(cin, city);
+
+  cout << "A physical activity (e.g. jogging, playing baseball): ";
+  getline(cin, activity);
+
+  cout << "An animal: ";
+  getline(cin, animal);
+
+  cout << "A food or product you can buy: ";
+  getline(cin, product);
+
+  cout << "An adjective noun (e.g. blue car): ";
+  getline(cin, petName);
+
+  cout << "A number between 10 and 50: ";
+  cin  >> age;
+
+  cout << "A number between 0 and 15: ";
+  cin  >> kids;
+
+  cout << endl << s1 << name << s2 << city << s3 << activity;
+  cout << s4 << age << s5 << name << s6 << product << s7;
+  cout << name << s8 << kids << s9 << animal << s10 << petName;
+  cout << s11 << petName << s12 << activity << s13 << endl;
+
+  return 0;
+}
+```
 
 
 ## Videos
 
+- [🎬 CISC 192 Section 3.1 The cin object](https://www.youtube.com/watch?v=gSpzyhbwfyU)
+- [🎬 CISC 192 Section 3.2 Mathematical Functions](https://www.youtube.com/watch?v=Q0VV6PNlWCY)
+- [🎬 CISC 192 Section 3.3 Type Conversion](https://www.youtube.com/watch?v=VwuZMAc1Xwg)
+- [🎬 CISC 192 Section 3.4 Overflow and Underflow](https://www.youtube.com/watch?v=TOfMyXxGfUw)
+- [🎬 CISC 192 Section 3.5 Type Casting](https://www.youtube.com/watch?v=Zmxt5mjT1GU)
+- [🎬 CISC 192 Section 3.6](https://www.youtube.com/watch?v=oMGlVevJ6VM)
+- [🎬 CISC 192 Section 3.7 Formatting Output](https://www.youtube.com/watch?v=xKbuKLIvuFw)
+- [🎬 CISC 192 Section 3.8 Working with Character Strings](https://www.youtube.com/watch?v=YmlitI4oujg)
+- [🎬 CISC 192 Section 3.9 More Mathematical Library Functions](https://www.youtube.com/watch?v=Y2DE00AC9tY)
+- [🎬 CISC 192 Section 3.10 Hand Tracing a Program (Debugging)](https://www.youtube.com/watch?v=ZsI9thpGLT8)
 
 <br>
 
 # Resources
+
+- [🎬 CISC 192 Section 3.1 The cin object](https://www.youtube.com/watch?v=gSpzyhbwfyU)
+- [🎬 CISC 192 Section 3.2 Mathematical Functions](https://www.youtube.com/watch?v=Q0VV6PNlWCY)
+- [🎬 CISC 192 Section 3.3 Type Conversion](https://www.youtube.com/watch?v=VwuZMAc1Xwg)
+- [🎬 CISC 192 Section 3.4 Overflow and Underflow](https://www.youtube.com/watch?v=TOfMyXxGfUw)
+- [🎬 CISC 192 Section 3.5 Type Casting](https://www.youtube.com/watch?v=Zmxt5mjT1GU)
+- [🎬 CISC 192 Section 3.6](https://www.youtube.com/watch?v=oMGlVevJ6VM)
+- [🎬 CISC 192 Section 3.7 Formatting Output](https://www.youtube.com/watch?v=xKbuKLIvuFw)
+- [🎬 CISC 192 Section 3.8 Working with Character Strings](https://www.youtube.com/watch?v=YmlitI4oujg)
+- [🎬 CISC 192 Section 3.9 More Mathematical Library Functions](https://www.youtube.com/watch?v=Y2DE00AC9tY)
+- [🎬 CISC 192 Section 3.10 Hand Tracing a Program (Debugging)](https://www.youtube.com/watch?v=ZsI9thpGLT8)
+
+Textbook
+
+- Starting Out with C++: Early Objects by Tony Gaddis, Judy Walters, Godfrey
+  Muganda
 
