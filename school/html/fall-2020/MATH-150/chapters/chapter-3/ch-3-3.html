@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Lucernas">
+
+    <title>Differentiation Rules</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
+
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body>
+
+<!-- Nav bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">School Wiki</a>
+        </div>
+        <!-- <div id="navbar" class="navbar-collapse collapse">                                                                                                                 -->
+        <!--   <ul class="nav navbar-nav">                                                                                                                                      -->
+        <!--     <li><a href="#">doc1</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc2</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc3</a></li>                                                                                                                                  -->
+        <!--     <li class="dropdown">                                                                                                                                          -->
+        <!--       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+        <!--       <ul class="dropdown-menu">                                                                                                                                   -->
+        <!--         <li><a href="#">Action</a></li>                                                                                                                            -->
+        <!--         <li><a href="#">Another action</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">Something else here</a></li>                                                                                                               -->
+        <!--         <li role="separator" class="divider"></li>                                                                                                                 -->
+        <!--         <li class="dropdown-header">Nav header</li>                                                                                                                -->
+        <!--         <li><a href="#">Separated link</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">One more separated link</a></li>                                                                                                           -->
+        <!--       </ul>                                                                                                                                                        -->
+        <!--     </li>                                                                                                                                                          -->
+        <!--   </ul>                                                                                                                                                            -->
+        <!-- </div>                                                                                                                                                             -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+<!-- Table of Contents -->
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>
+          <ul>
+          <li><a href="#chapter-3.3-derivatives-of-trigonometric-functions">Chapter 3.3: Derivatives of Trigonometric Functions</a><ul>
+          <li><a href="#equation-1">Equation 1</a></li>
+          <li><a href="#equation-2">Equation 2</a></li>
+          <li><a href="#equation-3">Equation 3</a></li>
+          <li><a href="#equation-4">Equation 4</a></li>
+          <li><a href="#equation-5">Equation 5</a></li>
+          <li><a href="#equation-6">Equation 6</a></li>
+          <li><a href="#derivatives-of-trigonometric-functions">Derivatives of Trigonometric Functions</a></li>
+          </ul></li>
+          <li><a href="#video-lectures">Video Lectures</a></li>
+          <li><a href="#resources">Resources</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<!-- Header -->
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  Differentiation Rules
+                  <small class="h3 text-muted subtitle">
+                    | 3.3 Derivatives of Trigonometric Functions
+                  </small>
+                </h1>
+              </div>
+            </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">Sep 14, 2020</h5>
+          </div>
+
+<!-- Contents -->
+<h1 id="chapter-3.3-derivatives-of-trigonometric-functions">Chapter 3.3: Derivatives of Trigonometric Functions</h1>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.3_figure-1.png" alt="Figure 1" /><figcaption>Figure 1</figcaption>
+</figure>
+<p>Let’s try to confirm our guess that if <span class="math inline">\(f(x) = \sin{x}\)</span>, then <span class="math inline">\(f^{\prime}(x) = \cos{x}\)</span>. From the definition of a derivative, we have</p>
+<h2 id="equation-1">Equation 1</h2>
+<p><span class="math display">\[
+\begin{aligned}
+f^{\prime}(x) &amp; = \lim_{h \to 0}\frac{f(x + h) - f(x)}{h} = \lim_{h \to 0}\frac{\sin{(x + h)} - \sin{x}}{h} \\
+              &amp; = \lim_{h \to 0}\frac{\sin{x}\cos{h} + \cos{x}\sin{h} - \sin{x}}{h} \\
+              &amp; = \lim_{h \to 0}\left [ \frac{\sin{x}\cos{h} - \sin{x}}{h} + \frac{\cos{x}\sin{h}}{h} \right ] \\
+              &amp; = \lim_{h \to 0}\left [ \sin{x}\left ( \frac{\cos{h} - 1}{h} \right ) + \cos{x}\left ( \frac{\sin{h}}{h}\right ) \right ] \\
+              &amp; = \lim_{h \to 0}\sin{x} \cdot \lim_{h \to 0}\frac{\cos{h} - 1}{h} + \lim_{h \to 0}\cos{x} \cdot \lim_{h \to 0}\frac{\sin{h}}{h}
+\end{aligned}
+\]</span></p>
+<h2 id="equation-2">Equation 2</h2>
+<p><span class="math display">\[
+\lim_{\theta \to 0}\frac{\sin{\theta}}{\theta} = 1
+\]</span></p>
+<p>We noe use a geometric argument to prove Equation 2. Assume first that <span class="math inline">\(\theta\)</span> lies between <span class="math inline">\(0\)</span> and <span class="math inline">\(\pi/2\)</span>. Figure 2(a) shows a sector of a circle with center <span class="math inline">\(O\)</span>, central angle <span class="math inline">\(\theta\)</span>, and radius <span class="math inline">\(1\)</span>. <span class="math inline">\(BC\)</span> is drawn perpendicular to <span class="math inline">\(OA\)</span>. By the definition of radian measure, we have arc <span class="math inline">\(AB = \theta\)</span>. Also <span class="math inline">\(|BC| = |OB|\sin{\theta} = \sin{\theta}\)</span>. From the diagram we see that</p>
+<p><span class="math display">\[
+|BC| &lt; |AB| &lt; \text{ arc } AB
+\]</span></p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.3_figure-2.png" alt="Figure 2" /><figcaption>Figure 2</figcaption>
+</figure>
+<p>Therefore</p>
+<p><span class="math display">\[
+\sin{\theta} &lt; \theta
+\]</span></p>
+<p>so</p>
+<p><span class="math display">\[
+\frac{\sin{\theta}}{\theta} &lt; 1
+\]</span></p>
+<p>Let the tangent lines at <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> intersect at <span class="math inline">\(E\)</span>. You can see from Figure 2(b) that the circumference of a circle is smaller than the length of a circumscribed polygon, and so arc <span class="math inline">\(AB &lt; |AE| + |EB|\)</span>. Thus</p>
+<p><span class="math display">\[
+\begin{aligned}
+\theta = \text{ arc } AB &amp;&lt; |AE| + |EB| \\
+ &amp;&lt; |AE| + |ED| \\
+ &amp;= |AD| = |OA|\tan{\theta} \\
+ &amp;= \tan{\theta}
+\end{aligned}
+\]</span></p>
+<p>(In Appendix F the inequality <span class="math inline">\(\theta \le \tan{\theta}\)</span> is proved directly from the definition of the length of an arc without resorting to geometric intuition as we did here.) Therefore we have</p>
+<p><span class="math display">\[
+\theta &lt; \frac{\sin{\theta}}{\cos{\theta}}
+\]</span></p>
+<p>so</p>
+<p><span class="math display">\[
+\cos{\theta} &lt; \frac{\sin{\theta}}{\theta} &lt; 1
+\]</span></p>
+<p>We know that <span class="math inline">\(\lim_{\theta \to 0}1 = 1\)</span> and <span class="math inline">\(\lim_{\theta \to 0}\cos{\theta} = 1\)</span>, so by the Squeeze Theorem, we have</p>
+<p><span class="math display">\[
+\lim_{\theta \to 0^{+}}\frac{\sin{\theta}}{\theta} = 1
+\]</span></p>
+<p>But the function <span class="math inline">\((\sin{\theta})/\theta\)</span> is an even function, so its right and left limits must be equal. Hence, we have</p>
+<p><span class="math display">\[
+\lim_{\theta \to 0}\frac{\sin{\theta}}{\theta} = 1
+\]</span></p>
+<p>so we have proved Equation 2.</p>
+<p>We can deduce the value of the remaining limit in (1) as follows:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{\theta \to 0}\frac{\cos{\theta} - 1}{\theta} &amp;= \lim_{\theta \to 0}\left ( \frac{\cos{\theta} - 1}{\theta} \cdot \frac{\cos{\theta} + 1}{\cos{\theta} + 1} = \lim_{\theta \to 0}\frac{\cos^{2}{\theta} - 1}{\theta(\cos{\theta} + 1)} \right ) \\
+ &amp;= \lim_{\theta \to 0}\frac{-\sin^{2}{\theta}}{\theta(\cos{\theta} + 1)} = -\lim_{\theta \to 0}\left ( \frac{\sin{\theta}}{\theta} \cdot \frac{\sin{\theta}}{\cos{\theta} + 1} \right ) \\
+ &amp;= -\lim_{\theta \to 0}\frac{\sin{\theta}}{\theta} \cdot \lim_{\theta \to 0}\frac{\sin{\theta}}{\cos{\theta} + 1} \\
+ &amp;= -1 \cdot \left ( \frac{0}{1 + 1} \right ) = 0 \;\;\; \text{(by Equation 2)}
+\end{aligned}
+\]</span></p>
+<h2 id="equation-3">Equation 3</h2>
+<p><span class="math display">\[
+\lim_{\theta \to 0}\frac{\cos{\theta} - 1}{\theta} = 0
+\]</span></p>
+<blockquote>
+<p><strong>NOTE</strong></p>
+</blockquote>
+<p>If we now put the limit in equation (2) and (3) in (1), we get</p>
+<p><span class="math display">\[
+\begin{aligned}
+f^{\prime} &amp; = \lim_{h \to 0}\sin{x} \cdot \lim_{h \to 0}\frac{\cos{h} - 1}{h} + \lim_{h \to 0}\cos{x} \cdot \lim_{h \to 0}\frac{\sin{h}}{h} \\
+           &amp; = (\sin{x}) \cdot 0 + (\cos{x}) \cdot 1 = \cos{x}
+\end{aligned}
+\]</span></p>
+<p>So we have proved the formula for the derivative of the sine function:</p>
+<h2 id="equation-4">Equation 4</h2>
+<p><span class="math display">\[
+\frac{d}{dx}(\sin{x}) = \cos{x}
+\]</span></p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.3_example-1.png" alt="Example 1" /><figcaption>Example 1</figcaption>
+</figure>
+<h2 id="equation-5">Equation 5</h2>
+<p><span class="math display">\[
+\frac{d}{dx}(\cos{x}) = -\sin{x}
+\]</span></p>
+<p>The tangent function can also be differentiated by using the definition of a derivative, but it is easier to use the Quotient Rule together with Formula 4 and Equation 4 and Equation 5:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{d}{dx}(\tan{x}) &amp;= \frac{d}{dx}(\frac{\sin{x}}{\cos{x}}) \\
+ &amp;= \frac{\cos{x}\frac{d}{dx}(\sin{x})-\sin{x}\frac{d}{dx}(\cos{x})}{\cos^{2}{x}} \\
+ &amp;= \frac{\cos{x} \cdot \cos{x}-\sin{x}(-\sin{x})}{\cos^{2}{x}} \\
+ &amp;= \frac{\cos^{2}{x} + \sin^{2}{x}}{\cos^{2}{x}} \\
+ &amp;= \frac{1}{\cos^{2}{x}} = \sec^{2}{x}
+\end{aligned}
+\]</span></p>
+<h2 id="equation-6">Equation 6</h2>
+<p><span class="math display">\[
+\frac{d}{dx}(\tan{x}) = \sec^{2}{x}
+\]</span></p>
+<h2 id="derivatives-of-trigonometric-functions">Derivatives of Trigonometric Functions</h2>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{d}{dx}(\sin{x}) &amp;= \cos{x} \;\;\;\;\;\;\;\;\;\;\; \frac{d}{dx}(\csc{x}) = -\csc{x}\cot{x} \\
+\frac{d}{dx}(\cos{x}) &amp;= -\sin{x} \;\;\;\;\;\;\;\; \frac{d}{dx}(\sec{x}) = \sec{x}\tan{x} \\
+\frac{d}{dx}(\tan{x}) &amp;= \sec^{2}{x} \;\;\;\;\;\;\;\;\; \frac{d}{dx}(\cot{x}) = -\csc^{2}{x}
+\end{aligned}
+\]</span></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.3_example-2.png" alt="Example 2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.3_figure-4.png" alt="Figure 4" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.3_example-3.1.png" alt="Example 3.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.3_example-3.2.png" alt="Example 3.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.3_example-4.png" alt="Example 4" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.3_example-5.png" alt="Example 5" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.3_example-6.png" alt="Example 6" /></p>
+<h1 id="video-lectures">Video Lectures</h1>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-10/v/derivatives-of-tanx-and-cotx">🎬 Derivatives of <span class="math inline">\(\tan{x}\)</span> and <span class="math inline">\(\cot{x}\)</span></a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-10/v/derivatives-of-secx-and-cscx">🎬 Derivatives of <span class="math inline">\(\sec{x}\)</span> and <span class="math inline">\(\csc{x}\)</span></a></li>
+</ul>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-10/v/derivatives-of-tanx-and-cotx">🎬 Derivatives of <span class="math inline">\(\tan{x}\)</span> and <span class="math inline">\(\cot{x}\)</span></a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-10/v/derivatives-of-secx-and-cscx">🎬 Derivatives of <span class="math inline">\(\sec{x}\)</span> and <span class="math inline">\(\csc{x}\)</span></a></li>
+</ul>
+          </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../../../templates/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../../../templates/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>
