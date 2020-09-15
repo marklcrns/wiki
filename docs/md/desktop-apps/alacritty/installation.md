@@ -13,13 +13,16 @@ date: 2020-08-29
 
 20.04 Focal Fossa
 
-```bash
+```sh
 # Dependencies
 sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3
 
 git clone https://github.com/alacritty/alacritty
 cd alacritty
 cargo build --release
+
+# Clean up
+cd .. && rm -r alacritty
 ```
 
 Ref:
