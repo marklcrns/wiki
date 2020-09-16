@@ -1211,7 +1211,7 @@ int main()
   int age, kids;
 
   cout << "Enter the following information and I\'ll "
-  << "tell you a story.\n\n";
+       << "tell you a story.\n\n";
   cout << "Your name: ";
   getline(cin, name);
 

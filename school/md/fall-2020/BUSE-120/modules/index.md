@@ -12,4 +12,5 @@ date: 2020-08-17
 - [↪ Module 2: Basic Ideas of Finance](module-2/index)
 - [↪ Module 3: Financial Statements](module-3/index)
 - [↪ Module 4: Time Value of Money](module-4/index)
+- [↪ Module 5: Budgets](module-5/index)
 

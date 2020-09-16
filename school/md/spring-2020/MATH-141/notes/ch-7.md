@@ -29,13 +29,6 @@ Polar coordinate system
 
 - [⬇ Handout 30: Converting Equations Polar & Cartesian](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-30.pdf)
 
-``` {.Rplot}
-x <- seq(-pi, pi, 0.1)
-plot(x, sin(x),
-main="The Sine Function",
-ylab="sin(x)")
-```
-
 ### Video Lecture 1
 
 - [🎬 VIDEO 1: Polar graphs intro](https://www.youtube.com/watch?v=u_Y7V5CSCcc)

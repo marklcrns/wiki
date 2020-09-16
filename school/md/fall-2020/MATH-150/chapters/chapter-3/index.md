@@ -11,4 +11,5 @@ date: Sep 09, 2020
 - [↪ 3.1 Derivatives of Polynomials and Exponential Functions](ch-3-1)
 - [↪ 3.2 The Product and Quotient Rules](ch-3-2)
 - [↪ 3.3 Derivatives of Trigonometric Functions](ch-3-3)
+- [↪ 3.4 The Chain Rule](ch-3-4)
 

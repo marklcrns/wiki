@@ -29,6 +29,7 @@ date: Feb 05, 2020
 - [↪ Docker](docker)
 - [↪ Git](git/index)
 - [↪ Git-lfs](git-lfs/index)
+- [↪ Pandoc](pandoc/index)
 - [↪ Taskwarrior](taskwarrior/index)
 - [↪ Tmux](tmux/index)
 - [↪ Vim/Neovim](vim/index)

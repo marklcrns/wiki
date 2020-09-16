@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Lucernas">
+
+    <title>Differentiation Rules</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
+
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body>
+
+<!-- Nav bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">School Wiki</a>
+        </div>
+        <!-- <div id="navbar" class="navbar-collapse collapse">                                                                                                                 -->
+        <!--   <ul class="nav navbar-nav">                                                                                                                                      -->
+        <!--     <li><a href="#">doc1</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc2</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc3</a></li>                                                                                                                                  -->
+        <!--     <li class="dropdown">                                                                                                                                          -->
+        <!--       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+        <!--       <ul class="dropdown-menu">                                                                                                                                   -->
+        <!--         <li><a href="#">Action</a></li>                                                                                                                            -->
+        <!--         <li><a href="#">Another action</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">Something else here</a></li>                                                                                                               -->
+        <!--         <li role="separator" class="divider"></li>                                                                                                                 -->
+        <!--         <li class="dropdown-header">Nav header</li>                                                                                                                -->
+        <!--         <li><a href="#">Separated link</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">One more separated link</a></li>                                                                                                           -->
+        <!--       </ul>                                                                                                                                                        -->
+        <!--     </li>                                                                                                                                                          -->
+        <!--   </ul>                                                                                                                                                            -->
+        <!-- </div>                                                                                                                                                             -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+<!-- Table of Contents -->
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>
+          <ul>
+          <li><a href="#chapter-3.4-the-chain-rule">Chapter 3.4: The Chain Rule</a><ul>
+          <li><a href="#the-chain-rule">The Chain Rule</a></li>
+          <li><a href="#formula-1">Formula 1</a></li>
+          <li><a href="#formula-2">Formula 2</a></li>
+          <li><a href="#formula-3">Formula 3</a></li>
+          <li><a href="#formula-4-the-power-rule-combined-with-the-chain-rule">Formula 4: The Power Rule Combined with the Chain Rule</a></li>
+          <li><a href="#formula-5">Formula 5</a></li>
+          <li><a href="#how-to-prove-the-chain-rule">How to Prove the Chain Rule</a></li>
+          <li><a href="#formula-7">Formula 7</a></li>
+          </ul></li>
+          <li><a href="#video-lectures">Video Lectures</a></li>
+          <li><a href="#resources">Resources</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<!-- Header -->
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  Differentiation Rules
+                  <small class="h3 text-muted subtitle">
+                    | 3.4 The Chain Rule
+                  </small>
+                </h1>
+              </div>
+            </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">Sep 16, 2020</h5>
+          </div>
+
+<!-- Contents -->
+<h1 id="chapter-3.4-the-chain-rule">Chapter 3.4: The Chain Rule</h1>
+<p>Suppose you are asked to differentiate the function</p>
+<p><span class="math display">\[
+F(x) = \sqrt{x^{2} + 1}
+\]</span></p>
+<p>The differentiation formulas you learned in the previous sections of this chapter do not enable you to calculate .</p>
+<p>Observe that <span class="math inline">\(F\)</span> is a composite function. In fact, if we let <span class="math inline">\(y = f(u) = \sqrt{u}\)</span> and let <span class="math inline">\(u = g(x) = x^{2} + 1\)</span>, then we can write <span class="math inline">\(y = F(x) = f(g(x))\)</span>, that is, <span class="math inline">\(F = f \circ g\)</span>. We know how to differentiate both <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span>, so it would be useful to have a rule that tells us how to find the derivative of <span class="math inline">\(F = f \circ g\)</span> in terms of the derivatives of <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span>.</p>
+<p>It turns out that the derivative of the composite function <span class="math inline">\(f \circ g\)</span> is the product of the derivatives of <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span>. This fact is one of the most important of the differentiation rules and is called the Chain Rule. It seems plausible if we interpret derivatives as rates of change. Regard <span class="math inline">\(du/dx\)</span> as the rate of change of <span class="math inline">\(u\)</span> with respect to <span class="math inline">\(x\)</span>, <span class="math inline">\(dy/du\)</span> as the rate of change of <span class="math inline">\(y\)</span> with respect to <span class="math inline">\(u\)</span>, <span class="math inline">\(dy/dx\)</span> and as the rate of change of <span class="math inline">\(y\)</span> with respect to <span class="math inline">\(x\)</span>. If <span class="math inline">\(u\)</span> changes twice as fast as <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> changes three times as fast as <span class="math inline">\(u\)</span>, then it seems reasonable that <span class="math inline">\(y\)</span> changes six times as fast as <span class="math inline">\(x\)</span>, and so we expect that</p>
+<p><span class="math display">\[
+\frac{dy}{dx} = \frac{dy}{du}\frac{du}{dx}
+\]</span></p>
+<h2 id="the-chain-rule">The Chain Rule</h2>
+<p>If <span class="math inline">\(g\)</span> is differentiable at <span class="math inline">\(x\)</span> and <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(g(x)\)</span>, then the composite function <span class="math inline">\(f = f \circ g\)</span> defined by <span class="math inline">\(F(x) = f(g(x))\)</span> is differentiable at <span class="math inline">\(x\)</span> and <span class="math inline">\(F^{\prime}\)</span> is given by the product</p>
+<p><span class="math display">\[
+F^{\prime}(x) = f^{\prime}(g(x)) \cdot g^{\prime}(x)
+\]</span></p>
+<p>In Leibniz notation, if <span class="math inline">\(y = f(u)\)</span> and <span class="math inline">\(u = g(x)\)</span> are both differentiable functions, then</p>
+<p><span class="math display">\[
+\frac{dy}{dx} = \frac{dy}{du}\frac{du}{dx}
+\]</span></p>
+<blockquote>
+<p>Comments on the Proof of the Chain Rule</p>
+</blockquote>
+<p>Let <span class="math inline">\(\Delta{u}\)</span> be the change in <span class="math inline">\(u\)</span> corresponding to a change of <span class="math inline">\(\Delta{x}\)</span> in <span class="math inline">\(x\)</span>, that is,</p>
+<p><span class="math display">\[
+\Delta{u} = g(x + \Delta{x}) - g(x)
+\]</span></p>
+<p>Then the corresponding change in <span class="math inline">\(y\)</span> is</p>
+<p><span class="math display">\[
+\Delta{y} = f(u + \Delta{u}) - f(u)
+\]</span></p>
+<p>It is tempting to write</p>
+<h2 id="formula-1">Formula 1</h2>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{dy}{dx} &amp; = \lim_{x \to 0}\frac{\Delta{y}}{\Delta{x}} \\
+              &amp; = \lim_{x \to 0}\frac{\Delta{y}}{\Delta{u}} \cdot \frac{\Delta{u}}{\Delta{x}} \\
+              &amp; = \lim_{x \to 0}\frac{\Delta{y}}{\Delta{u}} \cdot \lim_{x \to 0}\frac{\Delta{u}}{\Delta{x}} \\
+              &amp; = \lim_{u \to 0}\frac{\Delta{y}}{\Delta{u}} \cdot \lim_{x \to 0}\frac{\Delta{u}}{\Delta{x}} \\
+              &amp; = \frac{dy}{du}\frac{du}{dx}
+\end{aligned}
+\]</span></p>
+<p>The Chain Rule can be written either in the prime notation</p>
+<h2 id="formula-2">Formula 2</h2>
+<p><span class="math display">\[
+(f \circ g)^{\prime}(x) = f^{\prime}(g(x)) \cdot g^{\prime}(x)
+\]</span></p>
+<p>or, if <span class="math inline">\(y = f(u)\)</span> and <span class="math inline">\(u = g(x)\)</span>, in Leibniz notation:</p>
+<h2 id="formula-3">Formula 3</h2>
+<p><span class="math display">\[
+\frac{dy}{dx} = \frac{dy}{du}\frac{du}{dx}
+\]</span></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.4_example-1.png" alt="Example 1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.4_example-2.png" alt="Example 2" /></p>
+<p>In Example 2(a) we combined the Chain Rule with the rule for differentiating sine function. In general, if <span class="math inline">\(y = \sin{u}\)</span>, where <span class="math inline">\(u\)</span> is a differentiable function of <span class="math inline">\(x\)</span>, then, by the Chain Rule,</p>
+<p><span class="math display">\[
+\frac{dy}{dx} = \frac{dy}{du}\frac{du}{dx} = \cos{u}\frac{du}{dx}
+\]</span></p>
+<p>Thus</p>
+<p><span class="math display">\[
+\frac{d}{dx}(\sin{u}) = \cos{u}\frac{du}{dx}
+\]</span></p>
+<p>In a similar fashion, all of the formulas for differentiating trigonometric functions can be combined with the Chain Rule.</p>
+<p>Let’s make explicit the special case of the Chain Rule where the outer function <span class="math inline">\(f\)</span> is a power function. If <span class="math inline">\(y = [g(x)]^{n}\)</span>, then we can write <span class="math inline">\(y = f(u) = u^{n}\)</span> where <span class="math inline">\(u = g(x)\)</span>. By using the Chain Rule and then the Power Rule, we get</p>
+<p><span class="math display">\[
+\frac{dy}{dx} = \frac{dy}{du}\frac{du}{dx} = nu^{n - 1}\frac{du}{dx} = n[g(x)]^{n - 1}g^{\prime}(x)
+\]</span></p>
+<h2 id="formula-4-the-power-rule-combined-with-the-chain-rule">Formula 4: The Power Rule Combined with the Chain Rule</h2>
+<p>If <span class="math inline">\(n\)</span> is any real number and <span class="math inline">\(u = g(x)\)</span> is differentiable, then</p>
+<p><span class="math display">\[
+\frac{d}{dx}(u^{n}) = nu^{n - 1}\frac{du}{dx}
+\]</span></p>
+<p>Alternatively,</p>
+<p><span class="math display">\[
+\frac{d}{dx}[g(x)]^{n} = n[g(x)]^{n - 1} \cdot g^{\prime}(x)
+\]</span></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.4_example-1.png" alt="Example 3" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.4_example-4.png" alt="Example 4" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.4_example-5.png" alt="Example 5" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.4_example-6.png" alt="Example 6" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.4_example-7.png" alt="Example 7" /></p>
+<p>We can use the Chain Rule to differentiate an exponential function with any base <span class="math inline">\(b &gt; 0\)</span>.</p>
+<p><span class="math display">\[
+b^{x} = (e^{\ln{b}})^{} = e^{(\ln{b})x}
+\]</span></p>
+<p>and the Chain Rule gives</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{d}{dx}(b^{x}) &amp; = \frac{d}{dx}(e^{(\ln{b}})x)\frac{d}{dx}(\ln{b})x \\
+                    &amp; = e^{(\ln{b})x} \cdot \ln{b} = b^{x}\ln{b}
+\end{aligned}
+\]</span></p>
+<p>because <span class="math inline">\(\ln{b}\)</span> is a constant. So we have the formula</p>
+<h2 id="formula-5">Formula 5</h2>
+<p><span class="math display">\[
+\frac{d}{dx}(b^{x}) = b^{x}\ln{b}
+\]</span></p>
+<p>In particular, if <span class="math inline">\(b = 2\)</span>, we get</p>
+<p><span class="math display">\[
+\frac{d}{dx}(2^{x}) = 2^{x}\ln{2}
+\]</span></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.4_example-8.png" alt="Example 8" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.4_example-9.png" alt="Example 9" /></p>
+<h2 id="how-to-prove-the-chain-rule">How to Prove the Chain Rule</h2>
+<p>Recall that if <span class="math inline">\(y = f(x)\)</span> and <span class="math inline">\(x\)</span> changes from <span class="math inline">\(a\)</span> to <span class="math inline">\(a + \Delta{x}\)</span>, we define the increment of <span class="math inline">\(y\)</span> as</p>
+<p><span class="math display">\[
+\Delta{y} = f(a + \Delta{x}) - f(a)
+\]</span></p>
+<p>According to the definition of a derivative, we have</p>
+<p><span class="math display">\[
+\lim_{\Delta{x} \to 0}\frac{\Delta{y}}{\Delta{x}} = f^{\prime}(a)
+\]</span></p>
+<p>So if we denote by <span class="math inline">\(\varepsilon\)</span> the difference between the difference quotient and the derivative, we obtain</p>
+<p><span class="math display">\[
+\lim_{\Delta{x} \to 0}\varepsilon = \lim_{x \to 0}\left ( \frac{\Delta{y}}{\Delta{x}} - f^{\prime}(a) \right ) = f^{\prime}(a) - f^{\prime}(a) = 0
+\]</span></p>
+<p>But</p>
+<p><span class="math display">\[
+\varepsilon = \frac{\Delta{y}}{\Delta{x}} - f^{\prime}(a) \implies \Delta{y} = f^{\prime}(a)\Delta{x} + \varepsilon\Delta{x}
+\]</span></p>
+<p>If we define <span class="math inline">\(\varepsilon\)</span> to be <span class="math inline">\(0\)</span> when <span class="math inline">\(\Delta{x} = 0\)</span>, then <span class="math inline">\(\varepsilon\)</span> becomes a continuous function of <span class="math inline">\(\Delta{x}\)</span>. Thus, for a differentiable function <span class="math inline">\(f\)</span>, we can write</p>
+<h2 id="formula-7">Formula 7</h2>
+<p><span class="math display">\[
+\Delta{y} = f^{\prime}(a)\Delta{x} + \varepsilon\Delta{x} \;\;\; \text{where} \;\;\; \varepsilon \to 0 \text{ as } \Delta{x} \to 0
+\]</span></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.4_proof_of_the_chain_rule-1.png" alt="Proof of the Chain Rule 1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.4_proof_of_the_chain_rule-2.png" alt="Proof of the Chain Rule 2" /></p>
+<h1 id="video-lectures">Video Lectures</h1>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-1a/v/chain-rule-introduction">🎬 Chain Rule</a></li>
+</ul>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-1a/v/chain-rule-introduction">🎬 Chain Rule</a></li>
+</ul>
+          </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../../../templates/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../../../templates/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>
