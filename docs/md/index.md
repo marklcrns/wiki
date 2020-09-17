@@ -31,6 +31,7 @@ date: Feb 05, 2020
 - [↪ Git-lfs](git-lfs/index)
 - [↪ Pandoc](pandoc/index)
 - [↪ Taskwarrior](taskwarrior/index)
+- [↪ Timewarrior](timewarrior/index)
 - [↪ Tmux](tmux/index)
 - [↪ Vim/Neovim](vim/index)
 - [↪ Ydiff](ydiff/index)
