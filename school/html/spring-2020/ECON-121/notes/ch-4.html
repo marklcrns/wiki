@@ -1,1 +1,586 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Lucernas">
+    <meta name="dcterms.date" content="2020-02-20">
 
+    <title>ECON 121 Chapter 4 Notes</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
+
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  </head>
+
+  <body>
+
+<!-- Nav bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">School Wiki</a>
+        </div>
+        <!-- <div id="navbar" class="navbar-collapse collapse">                                                                                                                 -->
+        <!--   <ul class="nav navbar-nav">                                                                                                                                      -->
+        <!--     <li><a href="#">doc1</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc2</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc3</a></li>                                                                                                                                  -->
+        <!--     <li class="dropdown">                                                                                                                                          -->
+        <!--       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+        <!--       <ul class="dropdown-menu">                                                                                                                                   -->
+        <!--         <li><a href="#">Action</a></li>                                                                                                                            -->
+        <!--         <li><a href="#">Another action</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">Something else here</a></li>                                                                                                               -->
+        <!--         <li role="separator" class="divider"></li>                                                                                                                 -->
+        <!--         <li class="dropdown-header">Nav header</li>                                                                                                                -->
+        <!--         <li><a href="#">Separated link</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">One more separated link</a></li>                                                                                                           -->
+        <!--       </ul>                                                                                                                                                        -->
+        <!--     </li>                                                                                                                                                          -->
+        <!--   </ul>                                                                                                                                                            -->
+        <!-- </div>                                                                                                                                                             -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+<!-- Table of Contents -->
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>
+          <ul>
+          <li><a href="#chapter-4-demand-supply-and-market-equilibrium">Chapter 4: Demand, Supply, and Market Equilibrium</a><ul>
+          <li><a href="#the-demand-curve">4.1 The Demand Curve</a></li>
+          <li><a href="#the-supply-curve">4.2 The Supply Curve</a><ul>
+          <li><a href="#why-is-the-individual-supply-curve-positively-sloped">4.2.2 Why Is the Individual Supply Curve Positively Sloped?</a></li>
+          <li><a href="#from-individual-supply-to-market-supply">4.2.3 From Individual Supply To Market Supply</a></li>
+          <li><a href="#why-is-the-market-supply-curve-positively-sloped">4.2.4 Why Is the Market Supply Curve Positively Sloped?</a></li>
+          </ul></li>
+          <li><a href="#market-equilibrium-bringing-demand-and-supply-together">4.3 Market Equilibrium: Bringing Demand and Supply Together</a><ul>
+          <li><a href="#excess-demand-causes-the-price-to-rise">4.3.1 Excess Demand Causes the Price to Rise</a></li>
+          <li><a href="#excess-supply-causes-the-price-to-drop">4.3.2 Excess Supply Causes the Price to Drop</a></li>
+          </ul></li>
+          <li><a href="#market-effects-of-changes-in-demand">4.4 Market Effects Of Changes in Demand</a><ul>
+          <li><a href="#change-in-quantity-demanded-versus-change-in-demand">4.4.1 Change in Quantity Demanded versus Change in Demand</a></li>
+          <li><a href="#increases-in-demand-shift-the-demand-curve">4.4.2 Increases in Demand Shift the Demand Curve</a></li>
+          <li><a href="#decreases-in-demand-shift-the-demand-curve">4.4.3 Decreases in Demand Shift the Demand Curve</a></li>
+          <li><a href="#a-decrease-in-demand-decreases-the-equilibrium-price">4.4.4 A Decrease in Demand Decreases the Equilibrium Price</a></li>
+          </ul></li>
+          <li><a href="#market-effects-of-changes-in-supply">4.5 Market Effects of Changes in Supply</a><ul>
+          <li><a href="#change-in-quantity-supplied-versus-change-in-supply">4.5.1 Change in Quantity Supplied versus Change in Supply</a></li>
+          <li><a href="#increases-in-supply-shift-the-supply-curve">4.5.2 Increases in Supply Shift the Supply Curve</a></li>
+          <li><a href="#an-increase-in-supply-decreases-the-equilibrium-price">4.5.3 An Increase in Supply Decreases the Equilibrium Price</a></li>
+          <li><a href="#decreases-in-supply-shift-the-supply-curve">4.5.4 Decreases in Supply Shift the Supply Curve</a></li>
+          <li><a href="#a-decrease-in-supply-increases-the-equilibrium-price">4.5.5 A Decrease in Supply Increases the Equilibrium Price</a></li>
+          <li><a href="#simultaneous-changes-in-demand-and-supply">4.5.6 Simultaneous Changes in Demand and Supply</a></li>
+          </ul></li>
+          <li><a href="#predicting-and-explaining-market-changes">4.6 Predicting and Explaining Market Changes</a></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<!-- Header -->
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  ECON 121 Chapter 4 Notes
+                </h1>
+              </div>
+            </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">2020-02-20</h5>
+          </div>
+
+<!-- Contents -->
+<h1 id="chapter-4-demand-supply-and-market-equilibrium">Chapter 4: Demand, Supply, and Market Equilibrium</h1>
+<p><strong>Perfectly competitive market</strong></p>
+<ul>
+<li>A market with many sellers and buyers of a homogeneous product and no barriers to entry</li>
+<li>No single buyer or seller can affect the market price.</li>
+</ul>
+<h2 id="the-demand-curve">4.1 The Demand Curve</h2>
+<p><a name="law-of-demand-term"><strong>Law of demand</strong></a></p>
+<ul>
+<li>The higher the price, the smaller the quantity demanded, everything else being equal.</li>
+<li>There is a negative relationship between price and quantity demanded, <em>ceteris paribus</em>.</li>
+</ul>
+<p><strong>Quantity demanded</strong></p>
+<ul>
+<li>The amount of a product that consumers are willing and able to buy.</li>
+</ul>
+<p><strong>Demand schedule</strong></p>
+<ul>
+<li>A table that shows the relationship between the price of a product and the quantity demanded, <em>ceteris paribus (everything else held fixed)</em>.</li>
+</ul>
+<p><strong>Individual demand curve</strong></p>
+<ul>
+<li>A curve that shows the relationship between the price of a good and quantity demanded by an individual consumer, <em>ceteris paribus</em>.</li>
+</ul>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.1.png" alt="Figure 4.1" /><figcaption>Figure 4.1</figcaption>
+</figure>
+<center>
+<table>
+<thead>
+<tr class="header">
+<th>Point</th>
+<th>Price</th>
+<th>Quantity of Pizzas per Month</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>a</td>
+<td>$10</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>b</td>
+<td>8</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>c</td>
+<td>6</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>d</td>
+<td>4</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>e</td>
+<td>2</td>
+<td>13</td>
+</tr>
+</tbody>
+</table>
+</center>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.2.png" alt="Figure 4.2" /><figcaption>Figure 4.2</figcaption>
+</figure>
+<center>
+<p><strong>QUANTITY OF PIZZA DEMANDED</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Price</th>
+<th>Al +</th>
+<th>Bea =</th>
+<th>Market Demand</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>$8</td>
+<td>4</td>
+<td>2</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>7</td>
+<td>4</td>
+<td>11</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>10</td>
+<td>6</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>13</td>
+<td>8</td>
+<td>21</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p><strong>Change in quantity demanded</strong></p>
+<ul>
+<li>A change in the quantity consumers are willing and able to buy when the price changes; represented graphically by movement along the demand curve.</li>
+</ul>
+<p><strong>Market demand curve</strong></p>
+<ul>
+<li>A curve showing the relationship between price and quantity demanded by <em>all</em> consumers, <em>ceteris paribus</em>.</li>
+<li>Sum of everyone’s individual demand curve</li>
+</ul>
+<h2 id="the-supply-curve">4.2 The Supply Curve</h2>
+<p><a name="law-of-supply"><strong>Law of supply</strong></a></p>
+<ul>
+<li>There is a positive relationship between price and quantity supplied, ceteris paribus.</li>
+</ul>
+<p><strong>Quantity supplied</strong></p>
+<ul>
+<li>The amount of a product that firms are willing and able to sell.</li>
+</ul>
+<p><strong>Supply schedule</strong></p>
+<ul>
+<li>A table that shows the relationship between the price of a product and quantity supplied, <em>ceteris paribus</em>.</li>
+<li>Remember that in a supply schedule, a change in quantity results from a change in price alone.</li>
+</ul>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.3.png" alt="Figure 4.3" /><figcaption>Figure 4.3</figcaption>
+</figure>
+<center>
+<p><strong>INDIVIDUAL SUPPLY SCHEDULE FOR PIZZA</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Point</th>
+<th>Price</th>
+<th>Quantity of Pizzas per Month</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>a</td>
+<td>$2</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>b</td>
+<td>4</td>
+<td>100</td>
+</tr>
+<tr class="odd">
+<td>c</td>
+<td>6</td>
+<td>200</td>
+</tr>
+<tr class="even">
+<td>d</td>
+<td>8</td>
+<td>300</td>
+</tr>
+<tr class="odd">
+<td>e</td>
+<td>10</td>
+<td>400</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p><strong>Individual supply curve</strong></p>
+<ul>
+<li>A curve showing the relationship between price and a quantity supplied by a single firm, ceteris paribus.</li>
+</ul>
+<p><strong>Change in quantity supplied</strong></p>
+<ul>
+<li>A change in the quantity firms are willing and able to sell when the price changes.</li>
+</ul>
+<p><strong>Minimum supply price</strong></p>
+<ul>
+<li>The lowest price at which a product will be supplied.</li>
+</ul>
+<h3 id="why-is-the-individual-supply-curve-positively-sloped">4.2.2 Why Is the Individual Supply Curve Positively Sloped?</h3>
+<p>A higher price encourages a firm to increase its output by purchasing more materials and hiring more workers. To increase her workforce, Lola might be forced to pay overtime or hire workers who are more costly or less productive than the original workers. But the higher price of pizza makes it worthwhile to incur these higher costs.</p>
+<p>The supply curve shows the marginal cost of production for different quantities produced. We can use the marginal principle to explain this.</p>
+<ul>
+<li><a href="ch-2.html#the-marginal-principle">⚓ Marginal Principle</a></li>
+</ul>
+<h3 id="from-individual-supply-to-market-supply">4.2.3 From Individual Supply To Market Supply</h3>
+<p><a name="market-supply-curve-term"><strong>Market supply curve</strong></a></p>
+<ul>
+<li>A curve showing the relationship between the market price and quantity supplied by all firms, ceteris paribus.</li>
+</ul>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.4.png" alt="Figure 4.4" /><figcaption>Figure 4.4</figcaption>
+</figure>
+<center>
+<p><strong>QUANTITY OF PIZZA SUPPLIED</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Price</th>
+<th>Lola +</th>
+<th>Hiram =</th>
+<th>Market Supply</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>100</td>
+<td>0</td>
+<td>100</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>200</td>
+<td>0</td>
+<td>200</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>300</td>
+<td>100</td>
+<td>400</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>400</td>
+<td>200</td>
+<td>600</td>
+</tr>
+</tbody>
+</table>
+</center>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.5.png" alt="Figure 4.5" /><figcaption>Figure 4.5</figcaption>
+</figure>
+<h3 id="why-is-the-market-supply-curve-positively-sloped">4.2.4 Why Is the Market Supply Curve Positively Sloped?</h3>
+<ul>
+<li><strong>Individual firm.</strong> A higher price encourages a firm to increase its output by purchasing more materials and hiring more workers.</li>
+<li><strong>New firms.</strong> In the long run, new firms can enter the market and existing firms can expand their production facilities to produce more output. The new firms may have higher production costs than the original firms, but the higher output price makes it worthwhile to enter the market, even with higher costs.</li>
+</ul>
+<h2 id="market-equilibrium-bringing-demand-and-supply-together">4.3 Market Equilibrium: Bringing Demand and Supply Together</h2>
+<p><strong>Market equilibrium</strong></p>
+<ul>
+<li>A situation in which the quantity demanded equals the quantity supplied at the prevailing market price.</li>
+<li>When a market reaches an equilibrium, there is no pressure to change the price.</li>
+</ul>
+<h3 id="excess-demand-causes-the-price-to-rise">4.3.1 Excess Demand Causes the Price to Rise</h3>
+<p><strong>Excess demand</strong></p>
+<ul>
+<li>A situation in which, at the prevailing price, the quantity demanded exceeds the quantity supplied.</li>
+<li>Sometimes called a <em>shortage</em>.</li>
+</ul>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.6.png" alt="Figure 4.6" /><figcaption>Figure 4.6</figcaption>
+</figure>
+<p>An increase in price eliminates excess demand by changing both the quantity demanded and the quantity supplied. As the price increases, the excess demand shrinks for two reasons:</p>
+<ul>
+<li>The market moves upward along the demand curve (from point c toward point a), decreasing the quantity demanded.</li>
+<li>The market moves upward along the supply curve (from point b toward point a), increasing the quantity supplied.</li>
+</ul>
+<h3 id="excess-supply-causes-the-price-to-drop">4.3.2 Excess Supply Causes the Price to Drop</h3>
+<p><strong>Excess supply</strong></p>
+<ul>
+<li>A situation in which the quantity supplied exceeds the quantity demanded at the prevailing price.</li>
+<li>some times called <em>surplus</em>.</li>
+</ul>
+<p>In Figure 4.6, at a price of $12, the excess supply is 32,000 pizzas: Producers are willing to sell 50,000 pizzas (point e), but consumers are willing to buy only 18,000 (point d). This mismatch will cause the price of pizzas to fall as firms cut the price to sell them. As the price drops, the excess supply will shrink for two reasons:</p>
+<ul>
+<li>The market moves downward along the demand curve from point d toward point a, increasing the quantity demanded.</li>
+<li>The market moves downward along the supply curve from point e toward point a, decreasing the quantity supplied.</li>
+</ul>
+<p><strong>Price ceiling</strong></p>
+<ul>
+<li>Maximum price less than the equilibrium price set for a good to create an excess demand.</li>
+</ul>
+<p><strong>Price floor</strong></p>
+<ul>
+<li>Minimum price greater than the equilibrium price set for a good to create an excess supply.</li>
+</ul>
+<h2 id="market-effects-of-changes-in-demand">4.4 Market Effects Of Changes in Demand</h2>
+<h3 id="change-in-quantity-demanded-versus-change-in-demand">4.4.1 Change in Quantity Demanded versus Change in Demand</h3>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.7.png" alt="Figure 4.7" /><figcaption>Figure 4.7</figcaption>
+</figure>
+<p><strong>Change in demand</strong></p>
+<ul>
+<li>A shift of the demand curve caused by a change in a variable other than the price of the product.</li>
+</ul>
+<h3 id="increases-in-demand-shift-the-demand-curve">4.4.2 Increases in Demand Shift the Demand Curve</h3>
+<p>What types of changes will increase the demand and shift the demand curve to the right, as shown in Figure 4.7? An increase in demand like the one represented in Figure 4.7 can occur for several reasons, listed in Table 4.1.</p>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_table_4.1.png" alt="Table 4.1" /><figcaption>Table 4.1</figcaption>
+</figure>
+<p><strong>Normal good</strong></p>
+<ul>
+<li>A good for which an increase in income increases demand.</li>
+</ul>
+<p><strong>Inferior good</strong></p>
+<ul>
+<li>A good for which an increase in income decreases demand.</li>
+</ul>
+<p><strong>Substitutes</strong></p>
+<ul>
+<li>Two goods for which an increase in the price of one good increases the demand for the other good.</li>
+</ul>
+<p><strong>Complements</strong></p>
+<ul>
+<li>Two goods for which a decrease in the price of one good increases the demand for the other good.</li>
+</ul>
+<p>Increase in demand can occur for several reasons:</p>
+<ul>
+<li><strong>Increase in income</strong>. Consumers use their income to buy products, and the more money they have, the more money they spend. For a <em>normal good</em>, there is a positive relationship between consumer income and the quantity consumed. When income increases, a consumer buys a larger quantity of a normal good. Most goods fall into this category–including new clothes, movies, and pizza.</li>
+<li><strong>Decrease in income</strong>. An <em>inferior good</em> is the opposite of a normal good. Consumers buy larger quantities of inferior goods when their income decreases. For example, if you lose your job you might make your own coffee instead of buying it in a coffee shop, rent DVDs instead of going to the theater, and eat more macaroni and cheese. In this case, homemade coffee, DVDs, and macaroni and cheese are examples of inferior goods.</li>
+<li><strong>Increase in price of a substitute good</strong>. When two goods are <em>substitutes</em>, an increase in the price of the first good causes some consumers to switch to the second good. Tacos and pizza are substitutes, so an increase in the price of tacos increases the demand for pizza as some consumers substitute pizza for tacos, which are now more expensive relative to pizza.</li>
+<li><strong>Decrease in price of a complementary good</strong>. When two goods are complements, they are consumed together as a package, and a decrease in the price of one good decreases the cost of the entire package. As a result, consumers buy more of both goods. Pizza and lemonade are complementary goods, so a decrease in the price of lemonade decreases the total cost of a lemonade-and-pizza meal, increasing the demand for pizza.</li>
+<li><strong>Increase in population</strong>. An increase in the number of people means there are more potential pizza consumers–more individual demand curves to add up to get the market demand curve–so market demand increases.</li>
+<li><strong>Shift in consumer preferences</strong>. Consumers’ preferences or tastes can change over time. If consumers’ preferences shift in favor of pizza, the demand for pizza increases. One purpose of advertising is to change consumers’ preferences, and a successful pizza advertising campaign will increase demand.</li>
+<li><strong>Expectations of higher future prices</strong>. If consumers think next month’s pizza price will be higher than they had initially expected, they may buy a larger quantity today and a smaller quantity next month. That means the demand for pizza today will increase.</li>
+</ul>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.8.png" alt="Figure 4.8" /><figcaption>Figure 4.8</figcaption>
+</figure>
+<h3 id="decreases-in-demand-shift-the-demand-curve">4.4.3 Decreases in Demand Shift the Demand Curve</h3>
+<p><img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.9.png" alt="Figure 4.9" /> <img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_table_4.2.png" alt="Table 4.2" /></p>
+<ul>
+<li><strong>Decrease in income</strong>. A decrease in income means that consumers have less to spend, so they buy a smaller quantity of each normal good.</li>
+<li><strong>Increase in income</strong>. Consumers buy smaller quantities of an inferior good when their income increases.</li>
+<li><strong>Decrease in the price of a substitute good</strong>. A decrease in the price of a substitute good such as tacos makes pizza more expensive relative to tacos, causing consumers to demand less pizza.</li>
+<li><strong>Increase in the price of a complementary good</strong>. An increase in the price of a complementary good such as lemonade increases the cost of a lemonade-and-pizza meal, decreasing the demand for pizza.</li>
+<li><strong>Decrease in population</strong>. A decrease in the number of people means that there are fewer pizza consumers, so the market demand for pizza decreases.</li>
+<li><strong>Shift in consumer tastes</strong>. When consumers’ preferences shift away from pizza in favor of other products, the demand for pizza decreases.</li>
+<li><strong>Expectations of lower future prices</strong>. If consumers think next month’s pizza price will be lower than they had initially expected, they may buy a smaller quantity today, meaning the demand for pizza today will decrease.</li>
+</ul>
+<h3 id="a-decrease-in-demand-decreases-the-equilibrium-price">4.4.4 A Decrease in Demand Decreases the Equilibrium Price</h3>
+<p>We can use Figure 4.9 to show how a decrease in demand affects the equilibrium price and equilibrium quantity.</p>
+<h2 id="market-effects-of-changes-in-supply">4.5 Market Effects of Changes in Supply</h2>
+<h3 id="change-in-quantity-supplied-versus-change-in-supply">4.5.1 Change in Quantity Supplied versus Change in Supply</h3>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.10.png" alt="Figure 4.10" /><figcaption>Figure 4.10</figcaption>
+</figure>
+<p><strong>Change in quantity supplied</strong></p>
+<ul>
+<li>A change in price causes a change in quantity supplied, a movement along a single supply curve.</li>
+</ul>
+<p><strong>Change in supply</strong></p>
+<ul>
+<li>A shift of the supply curve caused by a change in a variable other than the price of the product.</li>
+</ul>
+<h3 id="increases-in-supply-shift-the-supply-curve">4.5.2 Increases in Supply Shift the Supply Curve</h3>
+<ul>
+<li><strong>Downward shift</strong>. When the cost of production decreases, the price required to generate any given quantity of pizza will decrease. In general, a lower wage means a lower marginal cost of production, so each firm needs a lower price to cover its production cost. In other words, the supply curve shifts downward.</li>
+<li><strong>Rightward shift</strong>. The decrease in production costs makes pizza production more profitable at a given price, so producers will supply more at each price. In other words, the supply curve shifts to the right.</li>
+</ul>
+<p>The supply curve shift downward and rightward (production cost have gotten cheaper) when these variables:</p>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_table_4.3.png" alt="Table 4.3" /><figcaption>Table 4.3</figcaption>
+</figure>
+<h3 id="an-increase-in-supply-decreases-the-equilibrium-price">4.5.3 An Increase in Supply Decreases the Equilibrium Price</h3>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.11.png" alt="Figure 4.11" /><figcaption>Figure 4.11</figcaption>
+</figure>
+<h3 id="decreases-in-supply-shift-the-supply-curve">4.5.4 Decreases in Supply Shift the Supply Curve</h3>
+<p>The supply curve shift upward and leftward (production cost have gotten more expensive) when these variables:</p>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_table_4.4.png" alt="Table 4.4" /><figcaption>Table 4.4</figcaption>
+</figure>
+<h3 id="a-decrease-in-supply-increases-the-equilibrium-price">4.5.5 A Decrease in Supply Increases the Equilibrium Price</h3>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.12.png" alt="Figure 4.12" /><figcaption>Figure 4.12</figcaption>
+</figure>
+<h3 id="simultaneous-changes-in-demand-and-supply">4.5.6 Simultaneous Changes in Demand and Supply</h3>
+<figure>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.13.png" alt="Figure 4.13" /><figcaption>Figure 4.13</figcaption>
+</figure>
+<h2 id="predicting-and-explaining-market-changes">4.6 Predicting and Explaining Market Changes</h2>
+<p>Market effects of changes in demand or supply</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 36%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Change in Demand or Supply</th>
+<th style="text-align: center;">How does the equilibrium price change?</th>
+<th style="text-align: center;">How does the equilibrium quantity change?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Increase in demand</td>
+<td style="text-align: center;">Increase</td>
+<td style="text-align: center;">Increase</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Decrease in demand</td>
+<td style="text-align: center;">Decrease</td>
+<td style="text-align: center;">Decrease</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Increase in supply</td>
+<td style="text-align: center;">Decrease</td>
+<td style="text-align: center;">Increase</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Decrease in supply</td>
+<td style="text-align: center;">Increase</td>
+<td style="text-align: center;">Decreases</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="ch-2.html#the-marginal-principle">⚓ Marginal Principle</a></li>
+</ul>
+<p>Text Books</p>
+<ul>
+<li>Microeconomics: <em>Principles, Applications, and Tools</em> 10th ed (eText).
+<ul>
+<li>Authors: O’Sullivan/Sheffrin/Perez</li>
+</ul></li>
+</ul>
+          </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../../templates/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../../templates/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

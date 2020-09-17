@@ -27,6 +27,12 @@ Polar coordinate system
 
 ## 7.2 Polar Graphs
 
+``` {.Rplot files=sine_function.png}
+x <- seq(-pi, pi, 0.1)
+png(filename = "sine_function.png")
+plot(x, sin(x), main="The Sine Function", ylab="sin(x)")
+```
+
 - [⬇ Handout 30: Converting Equations Polar & Cartesian](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-30.pdf)
 
 ### Video Lecture 1
