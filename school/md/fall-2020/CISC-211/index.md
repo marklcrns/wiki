@@ -12,7 +12,7 @@ date: Sep 09, 2020
 > Campus: San Diego Miraramar College (online)<br>
 > Units: 4<br>
 > Component: Lecture/Lab<br>
-> Start: 2020-09-14 (late start)<br>
+> Start: 2020-10-12 (late start)<br>
 > End: 2020-12-14<br>
 
 ## Course Materials

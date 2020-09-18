@@ -574,8 +574,8 @@ int main()
 A stream manipulator, `setw`, can be used to established print fields of
 specified width.
 
-**NOTE:** `iomanip` #include directive mus be included in any program that uses
-`setw`.
+**NOTE:** `#include <iomanip>` directive mus be included in any program that
+uses `setw`.
 
 #### The `setprecision` Manipulator
 
