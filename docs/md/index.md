@@ -27,6 +27,7 @@ date: Feb 05, 2020
 
 - [↪ Crontab](crontab)
 - [↪ Docker](docker)
+- [↪ Find](find/index)
 - [↪ Git](git/index)
 - [↪ Git-lfs](git-lfs/index)
 - [↪ Pandoc](pandoc/index)
