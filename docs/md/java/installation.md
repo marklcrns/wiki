@@ -123,7 +123,7 @@ sudo  nano /etc/environment
 
 # Then paste the following
 
-JAVA_HOME=/usr/lib/jvm/jdk1.8.0_251
+JAVA_HOME=/usr/lib/jvm/jdk1.8.0_251/bin
 JRE_HOME=/usr/lib/jvm/jdk1.8.0_251/jre
 
 # Source environment
@@ -182,7 +182,7 @@ sudo  nano /etc/environment
 
 # Then paste the following
 
-JAVA_HOME=/usr/lib/jvm/jdk-11.0.7
+JAVA_HOME=/usr/lib/jvm/jdk-11.0.7/bin
 JRE_HOME=/usr/lib/jvm/jdk-11.0.7/jre
 
 # Source environment
