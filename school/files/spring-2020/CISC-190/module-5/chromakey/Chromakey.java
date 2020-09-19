@@ -12,7 +12,7 @@ public class Chromakey
 {
   public static void main(String[] args) {
     // get all the necessary pictures
-    String prof = FileChooser.getMediaPath("prof-frankie-green-screen.JPG");
+    String prof = FileChooser.getMediaPath("prof-frankie-green-screen.jpg");
     String newBg = FileChooser.getMediaPath("moon-surface.jpg");
     String newShirt = FileChooser.getMediaPath("red-flannel-pattern.jpg");
     Picture profPic = new Picture(prof);
