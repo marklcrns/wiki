@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Lucernas">
+
+    <title>Exam 1 Attempt 2</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
+
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+    <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body>
+
+<!-- Nav bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">School Wiki</a>
+        </div>
+        <!-- <div id="navbar" class="navbar-collapse collapse">                                                                                                                 -->
+        <!--   <ul class="nav navbar-nav">                                                                                                                                      -->
+        <!--     <li><a href="#">doc1</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc2</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc3</a></li>                                                                                                                                  -->
+        <!--     <li class="dropdown">                                                                                                                                          -->
+        <!--       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+        <!--       <ul class="dropdown-menu">                                                                                                                                   -->
+        <!--         <li><a href="#">Action</a></li>                                                                                                                            -->
+        <!--         <li><a href="#">Another action</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">Something else here</a></li>                                                                                                               -->
+        <!--         <li role="separator" class="divider"></li>                                                                                                                 -->
+        <!--         <li class="dropdown-header">Nav header</li>                                                                                                                -->
+        <!--         <li><a href="#">Separated link</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">One more separated link</a></li>                                                                                                           -->
+        <!--       </ul>                                                                                                                                                        -->
+        <!--     </li>                                                                                                                                                          -->
+        <!--   </ul>                                                                                                                                                            -->
+        <!-- </div>                                                                                                                                                             -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+<!-- Table of Contents -->
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>
+          <ul>
+          <li><a href="#exam-1-attempt-2">Exam 1 Attempt 2</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<!-- Header -->
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  Exam 1 Attempt 2
+                  <small class="h3 text-muted subtitle">
+                    | For chapter 1 to 4
+                  </small>
+                </h1>
+              </div>
+            </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">Sep 20, 2020</h5>
+          </div>
+
+<!-- Contents -->
+<h1 id="exam-1-attempt-2">Exam 1 Attempt 2</h1>
+<blockquote>
+<p>Score 35.69/40 89.22%</p>
+</blockquote>
+<ol type="1">
+<li><p>Which of the following is an example of the application of economic analysis to real-world job tasks?</p>
+<p><strong>D. All of the above.</strong></p></li>
+<li><p>A taxi company currently has nine cabs in its fleet, and its total daily cost is $4 comma 600. If a taxi company adds a tenth cab, the company’s total daily cost will increase to $4 comma 800 and its total revenue will increase by $250 per day. Should the company add the tenth cab? <strong>Yes</strong></p></li>
+<li><p>Some markets are dominated by a few large firms, leading to</p>
+<p><strong>C. high prices and small quantities</strong></p></li>
+</ol>
+<p>X<br> 4. Your student film society is looking for an auditorium to use for an all day Hitchcock film program and is willing to pay up to $200. Your college has a new auditorium that has a daily rent of $450, an amount that includes $300 to help pay for the cost of building the auditorium, $50 to help pay for insurance, and $100 to cover the extra costs of electricity and janitorial services for a one-day event.</p>
+<p>The college should rent the auditorium for</p>
+<p><strong>A. no less than $200.</strong></p>
+<ol start="5" type="1">
+<li>Compute the percentage changes for the following (enter your responses as integers):</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">def</span> percent_change(init, new):</a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="cf">return</span> <span class="dv">100</span> <span class="op">*</span> (new <span class="op">-</span> init) <span class="op">/</span> init</a>
+<a class="sourceLine" id="cb1-3" title="3"></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="bu">print</span>(<span class="st">&quot;1000, 1180 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(percent_change(<span class="dv">1000</span>, <span class="dv">1180</span>)))</a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="bu">print</span>(<span class="st">&quot;500, 580 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(percent_change(<span class="dv">500</span>, <span class="dv">580</span>)))</a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="bu">print</span>(<span class="st">&quot;100, 125 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(percent_change(<span class="dv">100</span>, <span class="dv">125</span>)))</a></code></pre></div>
+<p>X<br> 6. Why does a production possibilities curve potentially bow outward?</p>
+<p><strong>A. Resources are not perfectly adaptable for the production of both goods.</strong></p>
+<ol start="7" type="1">
+<li><p>A percentage change can be calculated as</p>
+<ol type="A">
+<li></li>
+</ol></li>
+</ol>
+<p><span class="math display">\[
+\frac{\text{New Value - Initial Value}}{\text{Initial Value}} \times 100
+\]</span></p>
+<ol start="8" type="1">
+<li><p>Effect of Weather on Prices. Suppose a freeze in Florida destroys 20% of the orange crop.</p>
+<p>The freeze in florida will shift the market <strong>supply</strong> curve for oranges to the <strong>left</strong>. As a result of the change, the equilibrium price <strong>increased</strong> and the equilibrium quantity of Florida oranges <strong>decreased</strong> .</p></li>
+<li><p>What is an example of an insurance product that is NOT sold by a private insurer?</p>
+<p><strong>A. unemployment insurance</strong></p></li>
+<li><p>The market demand curve for a normal good will shift to the right (decrease) when the price of a substitute good <strong>decrease</strong>, the price of a complementary good <strong>increase</strong>, consumer income <strong>decrease</strong>, and population <strong>decrease</strong>.</p></li>
+<li><p>For a nonlinear curve whose slope increases as we move to the right along the curve, we can say that the slope is increasing at <strong>an increasing</strong> rate.</p></li>
+<li><p>Four social inventions that support markets are <strong>contracts</strong>, which specify the terms of exchange; <strong>insurance</strong>, which reduces the risk of entrepreneurs; <strong>patents</strong>, which increase the profitability of inventions; and <strong>accounting</strong> rules, which provide potential investors with reliable information about the financial performance of firms.</p></li>
+</ol>
+<p>0.67/X<br> 13. Fred and Kate gather coconuts and catch fish on a remote tropical island. Their productivity is given in the following table.</p>
+<pre><code>Calculate the opportunity costs for these two individuals. (Enter all values
+as real numbers rounded to two decimal places.)
+
+For Fred, the opportunity cost of gathering 1 coconut is **5** fish, and the
+opportunity cost of catching 1 fish is $\boldsymbol{\frac{1}{5}}$
+coconut(s).
+
+For Kate, the opportunity cost of gathering 1 coconut is **1** fish, and the
+opportunity cost of catching 1 fish is **1** coconut(s).
+
+Fred has a comparative advantage in **fish**, while Kate has a comparative
+advantage in **coconuts**.</code></pre>
+<ol start="14" type="1">
+<li><p>Given the uncertainty of market economies, most governments</p>
+<p><strong>C. fund a “social safety net” that provides for citizens who fare poorly in markets.</strong></p></li>
+<li><p>A change in one of the variables shown on a two variable graph causes a <strong>movement along the curve</strong>. On a two variable graph, a change in one of the variables that is not shown on the graph causes a <strong>shift of the curve</strong>.</p></li>
+<li><p>A decrease in the demand for a product shifts the demand curve to the <strong>left</strong>. At the initial price, there will be an excess <strong>supply</strong>. Producers are willing to sell <strong>more</strong> than consumers are willing to buy and there is <strong>downward</strong> pressure on the price. The new equilibrium price is <strong>below</strong> the initial price and the new equilibrium quantity is <strong>below</strong> the initial quantity.</p></li>
+<li><p>The government uses antitrust policy to foster competition by</p>
+<p><strong>B. breaking up monopolies (a single seller of a product).</strong></p></li>
+</ol>
+<p>0.33<br> 18. Consider the effects of relaxing a minimum-price policy by allowing the price to decrease and narrow the gap between the controlled price and the equilibrium price.</p>
+<pre><code>The controlled price before relaxing a minimum-price policy is set **below** the
+equilibrium price.
+
+The new price after relaxing a minimum-price policy is set **below** the initial
+controlled price.
+
+Relaxing a minimum-price policy by allowing the price to decrease will
+
+**B. increase the excess supply.**</code></pre>
+<ol start="19" type="1">
+<li>The law of ________ says there is a positive relationship between price and quantity demanded, ceteris paribus.</li>
+</ol>
+<p><strong>A. supply</strong></p>
+<ol start="20" type="1">
+<li><p>Solving a Tree Cutting Problem. Consider a hilly neighborhood where large trees provide shade but also block views. When a resident announces plans to cut down several trees to improve her view, her neighbors object and announce plans to block the tree cutting. One week later, the trees are gone, but everyone is happy. Use the principle of voluntary exchange to explain what could have happened.</p>
+<p><strong>D. All of the above.</strong></p></li>
+<li><p>Diminishing Returns and the Marginal Principle. Molly’s Espresso Shop has become busy, and the more hours Ted works, the more espressos Molly can sell. The price of espressos is $2 and Ted’s hourly wage is $11. Complete the following table. (Enter your responses as integers.)</p>
+<p><strong>Answers: 11, 24, 5</strong></p></li>
+</ol>
+<p>0.80/X<br> 22. Draw and Find the Equilibrium. The following table shows the quantities of corn supplied and demanded at different price levels.</p>
+<pre><code>**A.  The corn demand curve is negatively sloped.**
+**C.  The quantity of corn supplied increases with an increase in price per ton.**
+
+b. The equilibrium price of corn is **$120** and the equilibrium quantity is
+**80** tons. (Enter your responses as an integer.)
+
+c. At a price of $130 , there is excess **supply** equal to **30** tons.
+(Enter your response as an integer.)</code></pre>
+<p>0.50<br> 23. Suppose you have $180 to spend on CDs and downloaded songs. The price of a CD is $15 , and the price of a downloaded song is $1.</p>
+<pre><code>a. The relationship between the number of CDs and the number of downloaded
+songs you can afford to buy is **negative**.
+
+b. The slope of the line is **1** downloaded songs per CD. (Enter your
+response rounded to two decimal places. Use a negative sign if necessary.)</code></pre>
+<ol start="24" type="1">
+<li><p>A change in price causes movement along a demand curve and a change in <strong>the quantity demanded</strong>.</p></li>
+<li><p>The manager of a pizza shop must decide how much pizza he will produce at a given price. Which of the following would NOT be a consideration for the manager?</p>
+<p><strong>B. Consumer income.</strong></p></li>
+<li><p>Should a Heart Surgeon Do Her Own Plumbing? A heart surgeon is skillful at unplugging arteries and rerouting the flow of blood, and these skills also make her a very skillful plumber. She can clear a clogged drain in 6 minutes, about 10 times faster than the most skillful plumber in town. Suppose the surgeon earns $30 per minute in heart surgery and the best plumber in town charges $75 per hour.</p>
+<p>a. Should the surgeon clear her own clogged drains?</p>
+<p><strong>C. No, her opportunity cost is too high.</strong></p>
+<p>b. How much does the surgeon gain by hiring the plumber to clear a clogged drain? $<strong>105</strong>. (Enter your response as an integer.)</p></li>
+<li><p>When the quantity demanded exceeds the quantity supplied, there is excess <strong>demand</strong> causing a <strong>shortage</strong> that will drive <strong>up</strong> the price.</p></li>
+<li><p>Although Latvia had an absolute disadvantage in most products relative to EC countries, trade was mutually beneficial because Latvia had <strong>a comparative</strong> advantage in <strong>saw timber</strong>.</p></li>
+<li><p>In a market system, <strong>prices</strong> provide individuals the information they need to make decisions because they provide signals about the relative <strong>scarcity</strong> of a product and help an economy respond.</p></li>
+</ol>
+<p>0.89/X<br> 30. You manage Gofer Delivery Service. You rent a truck for $50 per day, and each delivery takes an hour of labor time. The hourly wage is $4 .</p>
+<pre><code>a. Use the above information to calculate your total cost. (Enter your
+responses as whole numbers.)</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" title="1"><span class="co"># Truck rent</span></a>
+<a class="sourceLine" id="cb7-2" title="2">init <span class="op">=</span> <span class="dv">50</span></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="co"># per hour</span></a>
+<a class="sourceLine" id="cb7-4" title="4">wage <span class="op">=</span> <span class="dv">4</span></a>
+<a class="sourceLine" id="cb7-5" title="5"></a>
+<a class="sourceLine" id="cb7-6" title="6"><span class="bu">print</span>(<span class="st">&quot;4 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">4</span> <span class="op">*</span> wage <span class="op">+</span> init))    <span class="co"># 66</span></a>
+<a class="sourceLine" id="cb7-7" title="7"><span class="bu">print</span>(<span class="st">&quot;8 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">8</span> <span class="op">*</span> wage <span class="op">+</span> init))    <span class="co"># 82</span></a>
+<a class="sourceLine" id="cb7-8" title="8"><span class="bu">print</span>(<span class="st">&quot;12 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">12</span> <span class="op">*</span> wage <span class="op">+</span> init))  <span class="co"># 98</span></a>
+<a class="sourceLine" id="cb7-9" title="9"><span class="bu">print</span>(<span class="st">&quot;16 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">16</span> <span class="op">*</span> wage <span class="op">+</span> init))  <span class="co"># 114</span></a>
+<a class="sourceLine" id="cb7-10" title="10"><span class="bu">print</span>(<span class="st">&quot;20 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">20</span> <span class="op">*</span> wage <span class="op">+</span> init))  <span class="co"># 130</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" title="1">y1 <span class="op">=</span> <span class="dv">66</span></a>
+<a class="sourceLine" id="cb8-2" title="2">y2 <span class="op">=</span> <span class="dv">82</span></a>
+<a class="sourceLine" id="cb8-3" title="3">x1 <span class="op">=</span> <span class="dv">4</span></a>
+<a class="sourceLine" id="cb8-4" title="4">x2 <span class="op">=</span> <span class="dv">8</span></a>
+<a class="sourceLine" id="cb8-5" title="5"></a>
+<a class="sourceLine" id="cb8-6" title="6"><span class="bu">print</span>(<span class="st">&quot;slope = &quot;</span> <span class="op">+</span> <span class="bu">str</span>((y2 <span class="op">-</span> y1) <span class="op">/</span> (x2 <span class="op">-</span> x1))) <span class="co"># slope = 4</span></a></code></pre></div>
+<ol start="2" type="a">
+<li><p>The slope of your total cost curve is $<strong>4</strong> per delivery.</p></li>
+<li><p>To draw the total cost curve, what variable will be held fixed? <strong>Truck rental rate</strong>.</p></li>
+<li><p>A change in the <strong>number of deliveries</strong> would cause a movement upward along the curve.</p></li>
+<li><p>Changes in the <strong>wage rate</strong> would cause the entire curve to shift upward.</p></li>
+</ol>
+<ol start="31" type="1">
+<li><p>Consider the figure on the right. Between points b and c, the opportunity cost of <strong>10</strong> tons of wheat (enter a positive whole number) is <strong>150</strong> tons of steel (enter a positive whole number).</p></li>
+<li><p>Suppose you graduate with $20,000 in student loans and repay the loans 10 years later. Assuming no interest is paid, which is better for you, inflation (rising prices) or deflation (falling prices)? <strong>Inflation</strong></p></li>
+<li><p>Steve, the manager of a car wash, is more productive at washing cars than any potential workers he could hire. Should he wash all the cars himself? <strong>No</strong></p></li>
+<li><p>When you work 20 hours per week your income is $400, and when you work 40 hours per week your income is $800. If income is on the vertical axis and hours worked is on the horizontal axis, the slope of the relationship would be $<strong>20</strong> per hour. (Enter your response as a whole number.)</p></li>
+<li><p>When to Use the Principle of Diminishing Returns? You are the manager of a firm that produces memory chips for mobile phones.</p>
+<p>a. In your decision about how much output to produce this week, would you use the principle of diminishing returns?</p>
+<p><strong>C. Yes, because in the short run some inputs are fixed.</strong></p>
+<p>b. In your decision about how much output to produce two years from now, would you use the principle of diminishing returns? </p>
+<p><strong>C. No, because in the long run all inputs are variable.</strong></p></li>
+</ol>
+<p>0.50/X<br> 36. The government protects intellectual property rights by enforcing patents on new pharmaceutical drugs. Suppose the government, by enforcing patent laws, prevents a new drug by Merck from being copied by another company and made available at a dramatically reduced price.   If you were a current consumer of this new pharmaceutical drug, you would initially be <strong>worse off</strong> as a result of the government’s action.</p>
+<pre><code>What are the implications for the next generation of pharmaceutical
+drug users?
+
+**B. Fewer pharmaceutical drugs will be available in the future.**</code></pre>
+<ol start="37" type="1">
+<li><p>Public versus Private Colleges. Consider the market for private college education. If tuition at public colleges increases, what will happen in the market for private college education?</p>
+<p>The market <strong>demand</strong> curve of private college education will shift to the right.</p>
+<p>As a result, the equilibrium price of private colleges will <strong>increase</strong> and the equilibrium quantity of private education will <strong>increase</strong>.</p></li>
+<li><p>When there is a nonlinear relationship between two variables, the slope will</p>
+<p><strong>B. change as we move along the curve.</strong></p></li>
+<li><p>If a firm is subject to diminishing marginal returns, an increase in the number of workers decreases the quantity produced. <strong>False</strong></p></li>
+<li><p>What does the Latin expression ceteris paribus mean?</p>
+<p><strong>D. Other things being held fixed.</strong></p></li>
+</ol>
+          </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../../templates/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../../templates/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>
