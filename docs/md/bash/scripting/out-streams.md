@@ -1,8 +1,8 @@
 ---
-title: Bash Scripting Output Stream
+title: Bash Scripting
+subtitle: Output streams
 author: Mark Lucernas
-date: 2020-08-09
-summary: Bash scripting output streams
+date: Aug 09, 2020
 ---
 
 
@@ -12,23 +12,24 @@ summary: Bash scripting output streams
 
 **Redirect stdout replacing existing file***
 
-  - `command > /path/to/file`
+- `command 1> /path/to/file`
+- `command > /path/to/file` -- `1` can be omitted
 
 
 **Redirect stdout appending the output if file exists, else create new**
 
-  - `command >> /path/to/file`
+- `command >> /path/to/file`
 
 
 **Print output normally and redirect to a file**
 
-  - `command | tee /path/to/file`
+- `command | tee /path/to/file`
 
 
 **Print output normally and redirect to a file appending if existing, else
 create new**
 
-  - `command | tee -a /path/to/file`
+- `command | tee -a /path/to/file`
 
 
 Ref:
@@ -40,19 +41,21 @@ Ref:
 
 **Redirect stdout to one file and stderr to another file**
 
-  - `command > out 2>error`
+- `command > out 2>error`
 
 
 > **NOTE:** `out` and `error` are the path to files
 
-**Redirect stdout to a file `>out`, and then redirect stderr to stdout `2>&1`**
+**Redirect stdout to a file `> file`, and then redirect stderr to stdout `2>&1`**
 
-  - `command >out 2>&1`
+- `command > file 2>&1`
+- `command > /dev/null 2>&1` -- redirect to `/dev/null` to silence output
 
 
-**Redirect both to a file:**
+**Redirect both stdout and stderr to a file (shorthand)**
 
-  - `command &> out`
+- `command &> file`
+- `command &> /dev/null` -- redirect to `/dev/null` to silence output
 
 
 **Redirect stdout and stderr to a bash function**
@@ -102,6 +105,7 @@ Ref:
 
 - [🌎 How to redirect stderr to a file](https://askubuntu.com/questions/625224/how-to-redirect-stderr-to-a-file)
 - [🌎 Redirect stdout and stderr to Function](https://stackoverflow.com/questions/11904907/redirect-stdout-and-stderr-to-function)
+- [🌎 Silencing the Output of a Bash Command](https://www.baeldung.com/linux/silencing-bash-output)
 
 
 <br>

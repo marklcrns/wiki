@@ -182,7 +182,8 @@ outsourcing have reached a number of conclusions:
 people specialize and exchange goods and services in markets.
 
 
-Although it appears that markets arose naturally, a number of social and government inventions have made them work better:
+Although it appears that markets arose naturally, a number of social and
+government inventions have made them work better:
 
 1. Contracts specify the terms of exchange, facilitating exchange between
    strangers. If you have a cell phone provider, you expect to have reliable

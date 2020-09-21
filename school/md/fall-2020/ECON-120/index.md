@@ -28,3 +28,7 @@ date: 2020-08-17
 
 - [↪ Chapters](chapters/index)
 
+
+## Exams
+
+- [↪ Exams](exams/index)

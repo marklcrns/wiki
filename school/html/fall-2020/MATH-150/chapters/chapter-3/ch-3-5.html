@@ -9,19 +9,20 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Lucernas">
 
-    <title>MATH 150</title>
+    <title>Differentiation Rules</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../../../../templates/css/dashboard.css" rel="stylesheet">
+    <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
 
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   </head>
 
   <body>
@@ -69,12 +70,12 @@
             <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
           </ul>
           <ul>
-          <li><a href="#math-150-calculusanalytic-geometry-i">MATH 150 Calculus/Analytic Geometry I</a><ul>
-          <li><a href="#course-materials">Course Materials</a></li>
-          <li><a href="#chapters">Chapters</a></li>
-          <li><a href="#quizzes">Quizzes</a></li>
-          <li><a href="#tests">Tests</a></li>
+          <li><a href="#chapter-3.5-implicit-differentiation">Chapter 3.5: Implicit Differentiation</a><ul>
+          <li><a href="#equation-1">Equation 1</a></li>
+          <li><a href="#equation-2">Equation 2</a></li>
+          <li><a href="#video-lectures">Video Lectures</a></li>
           </ul></li>
+          <li><a href="#resources">Resources</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -83,11 +84,11 @@
           <header>
             <div class="jumbotron">
               <div class="page-header">
-                <a href="../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
                 <h1 class="title">
-                  MATH 150
+                  Differentiation Rules
                   <small class="h3 text-muted subtitle">
-                    | Calculus/Analytic Geometry I
+                    | 3.5 Implicit Differentiation
                   </small>
                 </h1>
               </div>
@@ -95,33 +96,38 @@
           </header>
           <div class="h5 text-muted">
             <h5 class="author">Mark Lucernas</h5>
-            <h5 class="date">Aug 17, 2020</h5>
+            <h5 class="date">Sep 21, 2020</h5>
           </div>
 
 <!-- Contents -->
-<h1 id="math-150-calculusanalytic-geometry-i">MATH 150 Calculus/Analytic Geometry I</h1>
-<blockquote>
-<p>Professor: Wayne Sherman<br> email: wsherman@sdccd.edu<br> Campus: San Diego Miraramar College (online)<br> Units: 5<br> Component: Lecture<br> Start: 2020-08-17<br> End: 2020-12-14<br></p>
-</blockquote>
-<h2 id="course-materials">Course Materials</h2>
+<h1 id="chapter-3.5-implicit-differentiation">Chapter 3.5: Implicit Differentiation</h1>
+<p>Some functions are defined implicitly by a relation between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> such as</p>
+<h2 id="equation-1">Equation 1</h2>
+<p><span class="math display">\[
+x^{2} + y^{2} = 25
+\]</span></p>
+<p>or</p>
+<h2 id="equation-2">Equation 2</h2>
+<p><span class="math display">\[
+x^{3} + y^{3} = 6xy
+\]</span></p>
+<p>In some cases it is possible to solve such an equation for <span class="math inline">\(y\)</span> as an explicit function (or serveral functions) of <span class="math inline">\(x\)</span>. For instance, if we solve Equation 1 for <span class="math inline">\(y\)</span>, we get <span class="math inline">\(y \pm\sqrt{25 - x^{2}}\)</span>, so two of the functions determinded by the implicit Equation 1 are <span class="math inline">\(f(x) = \sqrt{25 - x^{2}}\)</span> and <span class="math inline">\(g(x) = -\sqrt{25 - x^{2}}\)</span>. The graphs of <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are the upper and lower semicircles of the circle <span class="math inline">\(x^{2} + y^{2} = 25\)</span>.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.5_figure-1.png" alt="Figure 1" /><figcaption>Figure 1</figcaption>
+</figure>
+<p>It’s not easy to solve Equation 2 for <span class="math inline">\(y\)</span> explicitly as a function of <span class="math inline">\(x\)</span> by hand. Nonetheless, Equation 2 is the equation of a curve called <strong>folium of Descartes</strong> shown in Figure 2 and it implicitly defines <span class="math inline">\(y\)</span> as several functions of <span class="math inline">\(x\)</span>. The graphs of three such functions are shown in Figure 3. When we say that <span class="math inline">\(f\)</span> is a function implicitly by Equation 2, we mean that the equation</p>
+<p><span class="math display">\[
+x^{3} + [f(x)]^{3} = 6xf(x)
+\]</span></p>
+<p>is true for all values of <span class="math inline">\(x\)</span> in the domain of <span class="math inline">\(f\)</span>.</p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.5_figure-2.png" alt="Figure 2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.5_figure-3.png" alt="Figure 3" /></p>
+<p>Fortunately, we don’t need to solve an equation for <span class="math inline">\(y\)</span> in terms of <span class="math inline">\(x\)</span> in order to find the derivative of <span class="math inline">\(y\)</span>. Instead we can use the method of implicit differentiation. This consists of differentiating both sides of the equation with respect to <span class="math inline">\(x\)</span> and then solving the resulting equation for <span class="math inline">\(y^{\prime}\)</span>. In the examples and exercises of this section it is always assumed that the given equation determines <span class="math inline">\(y\)</span> implicitly as a differentiable function of <span class="math inline">\(x\)</span> so that the method of implicit differentiation can be applied.</p>
+<h2 id="video-lectures">Video Lectures</h2>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<p>Textbook</p>
 <ul>
-<li><a href="https://webassign.com/">🌎 Cengage e-Textbook: Calculus Early Transcendentals, Eighth Edition, Stewart</a>
-<ul>
-<li>Cengage account <a href="../../../files/fall-2020/MATH-150/cengage_account.txt">credentials</a></li>
-</ul></li>
-</ul>
-<h2 id="chapters">Chapters</h2>
-<ul>
-<li><a href="chapters/index.html">↪ Chapters</a></li>
-</ul>
-<h2 id="quizzes">Quizzes</h2>
-<ul>
-<li><a href="../../../files/fall-2020/MATH-150/quizzes/quiz-1.png">⬇ Quiz 1</a></li>
-</ul>
-<h2 id="tests">Tests</h2>
-<ul>
-<li><a href="../../../files/fall-2020/MATH-150/tests/test-1.pdf">⬇ Test 1</a></li>
-<li><a href="../../../files/fall-2020/MATH-150/tests/test-2.pdf">⬇ Test 2</a></li>
+<li><a href="https://webassign.com/">🌎 Cengage e-Textbook: Calculus Early Transcendentals, Eighth Edition, Stewart</a></li>
 </ul>
           </div>
       </div>
@@ -130,11 +136,11 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../../../templates/js/jquery.min.js"></script>
+    <script src="../../../../../../templates/js/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../../../templates/js/bootstrap.min.js"></script>
+    <script src="../../../../../../templates/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
     <script>
         //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
 
