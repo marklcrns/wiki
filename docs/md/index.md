@@ -57,4 +57,5 @@ date: Feb 05, 2020
 ## Misc
 
 - [↪ Supported Markdown Emojis by Pandoc](emojis)
+- [🌎 Skype share screen audio fix for Ubuntu](https://askubuntu.com/a/1232903)
 
