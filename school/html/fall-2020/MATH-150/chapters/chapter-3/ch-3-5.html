@@ -73,6 +73,11 @@
           <li><a href="#chapter-3.5-implicit-differentiation">Chapter 3.5: Implicit Differentiation</a><ul>
           <li><a href="#equation-1">Equation 1</a></li>
           <li><a href="#equation-2">Equation 2</a></li>
+          <li><a href="#note-1">Note 1</a></li>
+          <li><a href="#note-2">Note 2</a></li>
+          <li><a href="#derivatives-of-inverse-trigonometric-functions">Derivatives of Inverse Trigonometric Functions</a><ul>
+          <li><a href="#abel-and-galois">Abel and Galois</a></li>
+          </ul></li>
           <li><a href="#video-lectures">Video Lectures</a></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
@@ -122,9 +127,112 @@ x^{3} + [f(x)]^{3} = 6xf(x)
 <p>is true for all values of <span class="math inline">\(x\)</span> in the domain of <span class="math inline">\(f\)</span>.</p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.5_figure-2.png" alt="Figure 2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.5_figure-3.png" alt="Figure 3" /></p>
 <p>Fortunately, we don’t need to solve an equation for <span class="math inline">\(y\)</span> in terms of <span class="math inline">\(x\)</span> in order to find the derivative of <span class="math inline">\(y\)</span>. Instead we can use the method of implicit differentiation. This consists of differentiating both sides of the equation with respect to <span class="math inline">\(x\)</span> and then solving the resulting equation for <span class="math inline">\(y^{\prime}\)</span>. In the examples and exercises of this section it is always assumed that the given equation determines <span class="math inline">\(y\)</span> implicitly as a differentiable function of <span class="math inline">\(x\)</span> so that the method of implicit differentiation can be applied.</p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.5_example-1.1.png" alt="Example 1.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.5_example-1.2.png" alt="Example 1.2" /></p>
+<h2 id="note-1">Note 1</h2>
+<p>The expression <span class="math inline">\(dy/dx = -x/y\)</span> in Solution 1 gives the derivative in terms of both <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. It is correct no matter which function <span class="math inline">\(y\)</span> is determined by the given equation. For instance, for <span class="math inline">\(y = f(x) = \sqrt{25 - x^{2}}\)</span> we have</p>
+<p><span class="math display">\[
+\frac{dy}{dx} = -\frac{x}{y} = -\frac{x}{\sqrt{25 - x^{2}}}
+\]</span></p>
+<p>wheraas for <span class="math inline">\(y = g(x) = -\sqrt{25 - x^{2}}\)</span> we have</p>
+<p><span class="math display">\[
+\frac{dy}{dx} = -\frac{x}{y} = -\frac{x}{-\sqrt{25 - x^{2}}} = \frac{x}{\sqrt{25 x^{2}}}
+\]</span></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.5_example-2.1.png" alt="Example 2.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.5_example-2.2.png" alt="Example 2.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.5_example-2.3.png" alt="Example 2.3" /></p>
+<h2 id="note-2">Note 2</h2>
+<p>There is a formula for the three roots of a cubic equation that is like the quadratic formula but much more complicated. If we use this formula (or a computer algebra system) to solve the equation <span class="math inline">\(x^{3} + y^{3} = 6xy\)</span> for <span class="math inline">\(y\)</span> in terms of <span class="math inline">\(x\)</span>, we get three functions determined by the equation:</p>
+<p><span class="math display">\[
+y = f(x) = \sqrt[3]{-\frac{1}{2}x^{3} + \sqrt{\frac{1}{4}x^{6} - 8x^{3}}} + \sqrt[3]{-\frac{1}{2}x^{3} - \sqrt{\frac{1}{4}x^{6} - 8x^{3}}}
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+y = \frac{1}{2}\left [ -f(x) \pm \sqrt{-3}\left ( \sqrt[3]{-\frac{1}{2}x^{3} + \sqrt{\frac{1}{4}x^{6} - 8x^{3}}} - \sqrt[3]{-\frac{1}{2}x^{3} - \sqrt{\frac{1}{4}x^{6} - 8x^{3}}} \right ) \right ]
+\]</span></p>
+<p>(These are the three functions whose graphs are shown in Figure 3.) You can see that the method of implicit differentiation saves an enormous amount of work in cases such as this. Moreover, implicit differentiation works just as easily for equations such as</p>
+<p><span class="math display">\[
+y^{5} + 3x^{2}y^{2} + 5x^{4} = 12
+\]</span></p>
+<p>for which it is <em>impossible</em> to find a similar expression for <span class="math inline">\(y\)</span> in terms of <span class="math inline">\(x\)</span>.</p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.5_example-3.png" alt="Example 3" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.5_figure-6.png" alt="Figure 6" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.5_figure-7.png" alt="Figure 7" /></p>
+<p>Figures 7, 8, and 9 show three more curves produced by a computer algebra system with an implicit-plotting command. In Exercises 41 and 42 you will have an opportunity to create and examine unusual curves of this nature.</p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.5_figure-8.png" alt="Figure 8" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.5_figure-9.png" alt="Figure 9" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.5_example-4.1.png" alt="Example 4.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.5_example-4.2.png" alt="Example 4.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.5_example-4.3.png" alt="Example 4.3" /></p>
+<h2 id="derivatives-of-inverse-trigonometric-functions">Derivatives of Inverse Trigonometric Functions</h2>
+<p>Recall the definition of the arcsine function:</p>
+<p><span class="math display">\[
+y = 2\sin^{(-1 \cdot 4)}{asdf}
+\]</span></p>
+<p>means</p>
+<p><span class="math display">\[
+sin y = x
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+-\frac{\pi}{2} \le y \le \frac{\pi}{2}
+\]</span></p>
+<p>Differentiating <span class="math inline">\(sin y = x\)</span> implicitly with respect to <span class="math inline">\(x\)</span>, we obtain</p>
+<p><span class="math display">\[
+\cos{y}\frac{dy}{dx} = 1
+\]</span></p>
+<p>or</p>
+<p><span class="math display">\[
+\frac{dy}{dx} = \frac{1}{\cos{y}}
+\]</span></p>
+<p>Now <span class="math inline">\(\cos{y} \ge 0\)</span>, since <span class="math inline">\(-\pi/2 \le y \le \pi/2\)</span>, so</p>
+<p><span class="math display">\[
+\cos{y} = \sqrt{1 - \sin^{2}{y}} = \sqrt{1 - x^{2}}
+\]</span></p>
+<p>Therefore</p>
+<p><span class="math display">\[
+\frac{dy}{dx} = \frac{1}{\cos{y}} = \frac{1}{\sqrt{1 - x^{2}}}
+\]</span></p>
+<blockquote>
+<p><span class="math inline">\(\frac{d}{dx}(\sin^{-1}{x}) = \frac{1}{\sqrt{1 - x^{2}}}\)</span></p>
+</blockquote>
+<p>The formula for the derivative of the arctangent function is derived in a similar way. If <span class="math inline">\(y = \tan^{-1}{x}\)</span>, then <span class="math inline">\(\tan{y} = x\)</span>. Differentiating this latter equation implicitly with respect to <span class="math inline">\(x\)</span>, we have</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sec^{2}{y}\frac{dy}{dx} &amp;= 1 \\
+           \frac{dy}{dx} &amp;= \frac{1}{\sec^{2}{y}} = \frac{1}{1 + \tan^{2}{y}} = \frac{1}{1 x^{2}}
+\end{aligned}
+\]</span></p>
+<blockquote>
+<p><span class="math inline">\(\frac{d}{dx}(\tan^{-1}{x}) = \frac{1}{1 + x^{2}}\)</span></p>
+</blockquote>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.5_figure-11.png" alt="Figure 11" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.5_example-5.png" alt="Example 5" /></p>
+<blockquote>
+<p>Derivatives of Inverse Trigonometric Functions</p>
+</blockquote>
+<p><span class="math display">\[
+\frac{d}{dx}(\sin^{-1}{x}) = \frac{1}{\sqrt{1 - x^{2}}} \;\;\;\;\;\;\; \frac{d}{dx}(\csc^{-1}{x}) = -\frac{1}{x\sqrt{x^{2} - 1}} \\
+\frac{d}{dx}(\cos^{-1}{x}) = -\frac{1}{\sqrt{1 - x^{2}}} \;\;\;\;\;\;\; \frac{d}{dx}(\sec^{-1}{x}) = \frac{1}{x\sqrt{x^{2} - 1}} \\
+\frac{d}{dx}(\tan^{-1}{x}) = \frac{1}{1 + x^{2}} \;\;\;\;\;\;\; \frac{d}{dx}(\cot^{-1}{x}) = -\frac{1}{1 + x^{2}}
+\]</span></p>
+<h3 id="abel-and-galois">Abel and Galois</h3>
+<p>The Norwegian mathematician Niels Abel proved in 1824 that no general formula can be given for the roots of a fifth-degree equation in terms of radicals. Later the French mathematician Evariste Galois proved that it is impossible to find a general formula for the roots of an <span class="math inline">\(n\)</span>th-degree equation (in terms of algebraic operations on the coefficients) if <span class="math inline">\(n\)</span> is any integer larger than <span class="math inline">\(4\)</span>.</p>
 <h2 id="video-lectures">Video Lectures</h2>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-2/v/implicit-differentiation-1">🎬 Implicit Differentiation</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-2/v/implicit-derivative-of-x-y-2-x-y-1">🎬 Worked example: Implicit differentiation</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-2/v/finding-slope-of-tangent-line-with-implicit-differentiation">🎬 Worked example: Evaluation derivative with implicit differentiation</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-2/v/showing-explicit-and-implicit-differentiation-give-same-result">🎬 Showing explicit and implicit differentiation give same result</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-2/a/implicit-differentiation-review">🌎 Implicit differentiation review</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-4/v/derivative-inverse-sine">🎬 Derivative of inverse sine</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-4/v/derivative-inverse-cosine">🎬 Derivative of inverse cosine</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-4/v/derivative-inverse-tangent">🎬 Derivative of inverse tangent</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-4/a/differentiating-inverse-trig-functions-review">🌎 Differentiating inverse trig functions review</a></li>
+</ul>
 <p><br></p>
 <h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-2/v/implicit-differentiation-1">🎬 Implicit Differentiation</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-2/v/implicit-derivative-of-x-y-2-x-y-1">🎬 Worked example: Implicit differentiation</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-2/v/finding-slope-of-tangent-line-with-implicit-differentiation">🎬 Worked example: Evaluation derivative with implicit differentiation</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-2/v/showing-explicit-and-implicit-differentiation-give-same-result">🎬 Showing explicit and implicit differentiation give same result</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-2/a/implicit-differentiation-review">🌎 Implicit differentiation review</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-4/v/derivative-inverse-sine">🎬 Derivative of inverse sine</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-4/v/derivative-inverse-cosine">🎬 Derivative of inverse cosine</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-4/v/derivative-inverse-tangent">🎬 Derivative of inverse tangent</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-4/a/differentiating-inverse-trig-functions-review">🌎 Differentiating inverse trig functions review</a></li>
+</ul>
 <p>Textbook</p>
 <ul>
 <li><a href="https://webassign.com/">🌎 Cengage e-Textbook: Calculus Early Transcendentals, Eighth Edition, Stewart</a></li>
