@@ -13,11 +13,9 @@ date: Sep 22, 2020
 - The study of the nation's economy as a whole; focuses on the issues of
   inflation, unemployment and economic growth.
 
-
 <a name="inflation-term">**Inflation**</a>
 
 - Sustained increase in the average prices of all goods and services.
-
 
 ## 5.1 The Flip Sides of Macroeconomic Activity: Production and Income
 
@@ -343,6 +341,286 @@ residents working in the United States and abroad is called **national income**.
 
 - The total income earned by a nation's residents both domestically and abroad
   in the production of goods and services.
+
+### 5.3.1 Measuring National Income
+
+<a name="gross-national-product-term">**Gross national product (GNP)**</a>
+
+- GDP plus net income earned abroad.
+
+In addition to national income, which measures the income earned in a given year
+by the entire private sector, we are sometimes interested in determining the
+total payments that flow directly into households, a concept known as **personal
+income**. To calculate personal income, we begin with national income and
+subtract any corporate profits that are retained by the corporation and not paid
+out as dividends to households. We also subtract all taxes on production and
+imports and social insurance taxes, which are payments for Social Security and
+Medicare.  We then add any personal interest income received from the government
+and consumers and all transfer payments. The result is the total income
+available to households, or personal income. The amount of personal income that
+households retain after paying income taxes is called **personal disposable
+income**.
+
+<a name="personal-income-term">**Personal income**</a> - Income, including
+transfer payments, received by households.<br> <a
+name="personal-disposable-income-term">**Personal disposable income**</a> -
+Personal income that households retain after paying income taxes.<br>
+
+### 5.3.2 Measuring National Income through Value Added
+
+Another way to measure national income is to look at the **value added** of each
+firm in the economy. For a firm, we can measure its value added by the dollar
+value of the firm's sales minus the dollar value of the goods and services
+purchased from other firms. What remains is the sum of all the income--wages,
+profits, rents, and interest--that the firm generates. By adding up the value
+added for all the firms in the economy (plus nonprofit and governmental
+organizations), we can calculate national income. Let's consider a simple
+example illustrated in Table 5.3.
+
+> **Table 5.3:** Calculating Value Added in a Simple Economy
+
+<center>
+
+|                                                                        | Automobile Firm | Steel Firm | Total Economy |
+|------------------------------------------------------------------------|-----------------|------------|---------------|
+| Total sales                                                            | \$16,000        | \$6,000    | \$22,000      |
+| Less purchases from other firms                                        | 6,000           | 0          | 6,000         |
+| Equals value added: the sum of all wages, interest, profits, and rents | 10,000          | 6,000      | 16,000        |
+
+</center>
+
+### 5.3.3 An Expanded Circular Flow
+
+![Figure 5.4 The Circular Flow with Government and the Foreign Sector](../../../../files/fall-2020/ECON-120/chapter-5/figure-5.4.png)
+
+
+## 5.4 A Closer Examination of Nominal and Real GDP
+
+### 5.4.1 Measuring Real versus Nominal GDP
+
+Now we take a closer look at how real GDP is measured in modern economies. Let's
+start with a simple economy in which there are only two goods--cars and
+computers--produced in the years 2011 and 2012. The data for this economy--the
+prices and quantities produced for each year--are shown in Table 5.4. The
+production of cars and the production of computers increased, but the production
+of computers increased more rapidly. The price of cars rose, while the price of
+computers remained the same.
+
+> **Table 5.4:** GDP Data for a Simple Economy
+
+<center>
+
+|      | Quantity Produced |           | Price    |           |
+|------|-------------------|-----------|----------|-----------|
+| Year | Cars              | Computers | Cars     | Computers |
+| 2011 | 4                 | 1         | \$10,000 | \$5,000   |
+| 2012 | 5                 | 3         | 12,000   | 5,000     |
+
+</center>
+
+Let's first calculate nominal GDP for this economy in each year. Nominal GDP is
+the total market value of goods and services produced in each year. Using the
+data in the table, we can see that nominal GDP for the year 2011 is
+
+$$
+(4 \text{ cars } \times \$10,000) + (1 \text{ computers } \times \$5,000) = \$45,000
+$$
+
+Similarly, nominal GDP for the year 2012 is
+
+$$
+(5 \text{ cars } \times \$12,000) + (3 \text{ computers } \times \$5,000) = \$75,000
+$$
+
+Now we find real GDP. To compute real GDP, we calculate GDP using constant
+prices. What prices should we use? For the moment, let's use the prices for the
+year 2011. Because we are using 2011 prices, real GDP and nominal GDP for 2011
+are both equal to \$45,000. But for 2012, they are different. In 2012, real GDP
+is
+
+$$
+(5 \text{ cars } \times \$10,000) +(3 \text{ computers } \times \$5,000) =
+\$65,000
+$$
+
+Note that real GDP for 2012, which is \$65,000, is less than nominal GDP for
+2012, which is \$75,000. The reason real GDP is less than nominal GDP here is
+that prices of cars rose by \$2,000 between 2011 and 2012, and we are measuring
+GDP using 2011 prices. We can measure real GDP for any other year simply by
+calculating GDP using constant prices.
+
+We now calculate the growth in real GDP for this economy between 2011 and 2012.
+Because real GDP was \$45,000 in 2011 and \$65,000 in 2012, real GDP grew by
+\$20,000. In percentage terms, this is a \$20,000 increase from the initial
+level of \$45,000 or
+
+$$
+\text{ Percentage growth in real GDP } = \frac{\$20,000}{\$45,000} = .444
+$$
+
+which equals 44.4 percent. This percentage is an average of the growth rates for
+both goods--cars and computers.
+
+![Figure 5.5 U.S. Nominal and Real GDP, 1950-2017](../../../../files/fall-2020/ECON-120/chapter-5/figure-5.5.png)
+
+### 5.4.2 How to Use the GDP Deflator
+
+<a name="gdp-deflator-term">**GDP deflator**</a>
+
+- An index that measures how the prices of goods and services included in GDP
+  change over time.
+
+$$
+\text{ GDP Deflator } = \frac{\text{Nominal GDP}}{\text{Real GDP}} \times 100
+$$
+
+Using this formula, we find that the value of the GDP deflator for 2012 is
+
+$$
+\frac{\$75,000}{\$65,000} \times 100 = 1.15 \times 100 = 115
+$$
+
+Because the value of the GDP deflator is 115 in 2012 and was 100 in the base
+year of 2011, this means prices rose by 15 percent between the two years:
+
+$$
+\frac{115 - 100}{100} = \frac{15}{100} = 0.15
+$$
+
+Note that this 15 percent is a weighted average of the price changes for the two
+goods--cars and computers.
+
+Until 1996, the Commerce Department, which produces the GDP figures, used these
+formulas to calculate real GDP and measure changes in prices. Economists at the
+department chose a base year and measured real GDP by using the prices in that
+base year. They also calculated the GDP deflator, just as we did, by taking the
+ratio of nominal GDP to real GDP. Today, the Commerce Department calculates real
+GDP and the price index for real GDP using a more complicated method. In our
+example, we measured real GDP using 2011 prices. But we could have also measured
+real GDP using prices from 2012. If we did, we would have come up with slightly
+different numbers both for the increase in prices between the two years and for
+the increase in real GDP. To avoid this problem, the Commerce Department now
+uses a **chain-weighted index**, which is a method for calculating price changes
+that takes an average of price changes using base years from consecutive years
+(i.e., 2011 and 2012 in our example). If you look online or at the data produced
+by the Commerce Department, you will see real GDP measured in chained dollars
+and a chain-type price index for GDP.
+
+<a name="chain-weighted-index-term">**Chain-weighted index**</a>
+
+- A method for calculating changes in prices that uses an average base years
+from neighboring years.
+
+
+## 5.5 Fluctuations in GDP
+
+As we have discussed, real GDP does not always grow smoothly--sometimes it
+collapses suddenly, and the result is an economic downturn. We call such
+fluctuations business cycles. Let's look at an example of a business cycle from
+the late 1980s and early 1990s. Figure 5.6 plots real GDP for the United States
+from 2007 to 2009. Notice that in mid-1990, real GDP begins to fall. A recession
+is a period when real GDP falls for 6 or more consecutive months. Economists
+talk more in terms of quarters of the year--consecutive 3-month periods--than in
+terms of months. So, they would say that a recession occurs when real GDP falls
+for two consecutive quarters. The date at which the recession starts--that is,
+when output starts to decline--is called the peak. The date at which it
+ends--that is, when output starts to increase again--is called the trough. In
+Figure 5.6, we see the peak and trough of the recession. After a trough, the
+economy enters a recovery period, or period of expansion.
+
+<a name="recession-term">**Recession**</a> - Commonly defined as 6  consecutive
+months of declining real GDP.<br>
+<a name="peak-term">**Peak**</a> - The date at which a recession starts.<br>
+<a name="expansion-term">**Expansion**</a> - The period after a trough in the
+business cycle during which the economy recovers.<br>
+
+![Figure 5.6 The 2007-2009 Recession](../../../../files/fall-2020/ECON-120/chapter-5/figure-5.6.png)
+
+<a name="depression-term">**Depression**</a>
+
+- The common name for a severe recession
+
+
+## 5.6 GDP as a Measure of Welfare
+
+### 5.6.1 Shortcomings of GDP as a Measure of Welfare
+
+There are several recognized flaws in the construction of GDP. We should thus be
+cautious in interpreting GDP as a measure of our economic well-being because it
+does not take into account housework and childcare, leisure, the underground
+economy, or pollution.
+
+#### Housework And Childcare
+
+First, GDP ignores transactions that do not take place in organized markets. The
+most important example is services--such as cleaning, cooking, and providing
+free childcare--that people do for themselves in their own homes. Because these
+services are not transferred through markets, GDP statisticians cannot measure
+them. If we included household production in GDP, measured GDP would be
+considerably higher than currently reported.
+
+#### Leisure
+
+Second, leisure time is not included in GDP because GDP is designed to be a
+measure of the production that occurs in the economy. To the extent that
+households value leisure, increases in leisure time will lead to higher social
+welfare, but not to higher GDP.
+
+#### Underground Economy
+
+Third, GDP ignores the underground economy, where transactions are not reported
+to official authorities. These transactions can be legal, but people don't
+report the income they have generated because they want to avoid paying taxes on
+it. For example, wait staff may not report all their tips and owners of flea
+markets may make under-the-table cash transactions with their customers. Illegal
+transactions, such as profits from the illegal drug trade, also result in
+unreported income. In the United States in 2005, the Internal Revenue Service
+estimated (based on tax returns from 2001) that about \$310 billion in federal
+income taxes from the underground economy was not collected each year. If the
+federal income tax rate that applies to income evaded from taxes was about 20
+percent, approximately \$1.5 trillion ($310/0.20) in income from the underground
+economy escaped the GDP accountants that year, or about 15 percent of GDP at the
+time.
+
+## Chapter Summary
+
+In this chapter, we learned how economists and government statisticians measure
+the income and production for an entire country and what these measures are used
+for. Developing meaningful statistics for an entire economy is difficult. As we
+have seen, statistics can convey useful information--if they are used with care.
+Here are some of the main points to remember in this chapter:
+
+1. The circular flow diagram shows how the production of goods and services
+   generates income for households and how households purchase goods and
+   services by firms. The expanded circular flow diagram includes government and
+   the foreign sector.
+2. _Gross domestic product_ (GDP) is the market value of all final goods and
+   services produced in a given year.
+3. GDP consists of four components: consumption, investment, government
+   purchases, and net exports. The following equation combines these components:
+
+$$
+Y = C + I + G + N + X
+$$
+
+The GDP deflator is an index that measures how the prices of goods and services
+included in GDP change over time. The following equation helps us find the GDP
+deflator:
+
+$$
+\text{ GDP Deflator } = \frac{Nominal GDP}{Real GDP} \times 100
+$$
+
+4. _National income_ is obtained from GDP by adding the net income U.S.
+   individuals and firms earn from abroad, then subtracting depreciation.
+5. _Real GDP_ is calculated by using constant prices. The Commerce Department
+   now uses methods that take an average using base years from neighboring
+   years.
+6. A _recession_ is commonly defined as a 6-month consecutive period of negative
+   growth. However, in the United States, the National Bureau of Economic
+   Research uses a broader definition.
+7. GDP does not include nonmarket transactions, leisure time, the underground
+   economy, or changes to the environment.
 
 
 <br>
