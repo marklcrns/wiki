@@ -20,6 +20,9 @@ date: Feb 05, 2020
 
 - [↪ Java](java/index)
 
+## IDE
+
+- [↪ Eclipse](eclipse/index)
 
 ## Shell Applications
 
