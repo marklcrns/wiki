@@ -8,7 +8,7 @@ date: 2020-08-18
 
 # Notes
 
-## Web Notes
+## BUSE 120 Canvas Notes
 
 ### 1.6 SMART Goals
 
@@ -195,6 +195,10 @@ investment was expected to return.**
 - [🎬 SMART Goals - Quick Overview](https://www.youtube.com/watch?v=1-SvuFIQjK8)
 - [⬇ Your Financial Checklist For Every Stage of Life](file:../../../../../files/fall-2020/BUSE-120/module-1/life_stages_article.pdf)
 - [🌎 Financial Identity Quiz from Smart About Money](https://www.smartaboutmoney.org/Tools/Financial-Identity)
+
+BUSE 120 Canvas Notes
+
+- Dr. Duane Short
 
 Textbook
 

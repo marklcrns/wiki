@@ -13,4 +13,5 @@ date: 2020-08-17
 - [↪ Module 3: Financial Statements](module-3/index)
 - [↪ Module 4: Time Value of Money](module-4/index)
 - [↪ Module 5: Budgets](module-5/index)
+- [↪ Module 6: Taxes](module-6/index)
 

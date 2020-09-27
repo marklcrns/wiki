@@ -8,7 +8,7 @@ date: Sep 09, 2020
 
 # Notes
 
-## Web Notes
+## BUSE 120 Canvas Notes
 
 ### 3.2 Savings vs. Investments
 
@@ -243,6 +243,10 @@ basis.
 # Resources
 
 - [⬇ Records Organization Blueprint](file:../../../../../files/fall-2020/BUSE-120/module-3/records_organization_blueprint.pdf)
+
+BUSE 120 Canvas Notes
+
+- Dr. Duane Short
 
 Textbook
 

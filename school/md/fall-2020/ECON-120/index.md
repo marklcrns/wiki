@@ -33,3 +33,7 @@ date: 2020-08-17
 
 - [↪ Exams](exams/index)
 
+
+## Quizzes and Homeworks
+
+- [↪ Quizzes and homeworks](quizzes-and-homeworks/index)

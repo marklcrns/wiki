@@ -8,7 +8,7 @@ date: Sep 09, 2020
 
 # Notes
 
-## Web Notes
+## BUSE 120 Canvas Notes
 
 ### 4.2 Time Value of Money (TVM)
 
@@ -247,6 +247,10 @@ about how to avoid this situation in the future.
 - [🌎 Payback](https://www.timeforpayback.com/)
 - [🌎 Next Gen Personal Finance](https://www.ngpf.org/)
 - [🌎 Six Steps to Take When You Can't Pay Bills](https://lauradadams.com/6-steps-when-you-cant-pay-bills)
+
+BUSE 120 Canvas Notes
+
+- Dr. Duane Short
 
 Textbook
 

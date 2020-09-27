@@ -8,7 +8,7 @@ date: Sep 15, 2020
 
 # Module 5: Budgets
 
-## Web Notes
+## BUSE 120 Canvas Notes
 
 ### 5.2 Budgeting Basics
 
@@ -215,6 +215,10 @@ when creating your own budget at the end of this module.
 - [🌎 Take a Personal Money Day](https://lauradadams.com/richer-life-lab/7-take-a-personal-money-day)
 - [🎬 Sudden Money: Managing a Windfall](https://www.youtube.com/watch?v=7AJVpiy-9bg)
 - [🌎 Millionaire Next Door by Thomas J. Stanley and William D. Danko](https://www.amazon.com/Millionaire-Next-Door-Surprising-Americas/dp/1589795474/ref=sr_1_1?s=books&ie=UTF8&qid=1485268858&sr=1-1&keywords=the+millionaire+next+door)
+
+BUSE 120 Canvas Notes
+
+- Dr. Duane Short
 
 Textbook
 

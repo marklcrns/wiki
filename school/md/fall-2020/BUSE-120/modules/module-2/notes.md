@@ -8,7 +8,7 @@ date: 2020-08-18
 
 # Notes
 
-## Web Notes
+## BUSE 120 Canvas Notes
 
 ### 2.2 Money Scripts
 
@@ -193,6 +193,10 @@ lifespan.
 - [🎬 Julia Galef: The Sunk Costs Fallacy | Big Think](https://www.youtube.com/watch?v=vpnxd31y0Fo)
 - [🌎 CareerOneStop Interest Assessment](https://www.careeronestop.org/toolkit/careers/interest-assessment.aspx)
 - [🌎 CareerOneStop Occupation Profile](https://www.careeronestop.org/Toolkit/Careers/Occupations/occupation-profile.aspx)
+
+BUSE 120 Canvas Notes
+
+- Dr. Duane Short
 
 Textbook
 
