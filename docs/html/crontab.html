@@ -1,1 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Lucernas">
 
+    <title>Crontab</title>
+
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../templates/css/animated-toc.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../../templates/css/dashboard.css" rel="stylesheet">
+    <style type="text/css">code{white-space: pre;}</style>
+  </head>
+
+  <body>
+
+<!-- Nav bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Docs Wiki</a>
+        </div>
+        <!-- <div id="navbar" class="navbar-collapse collapse">                                                                                                                 -->
+        <!--   <ul class="nav navbar-nav">                                                                                                                                      -->
+        <!--     <li><a href="#">doc1</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc2</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc3</a></li>                                                                                                                                  -->
+        <!--     <li class="dropdown">                                                                                                                                          -->
+        <!--       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+        <!--       <ul class="dropdown-menu">                                                                                                                                   -->
+        <!--         <li><a href="#">Action</a></li>                                                                                                                            -->
+        <!--         <li><a href="#">Another action</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">Something else here</a></li>                                                                                                               -->
+        <!--         <li role="separator" class="divider"></li>                                                                                                                 -->
+        <!--         <li class="dropdown-header">Nav header</li>                                                                                                                -->
+        <!--         <li><a href="#">Separated link</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">One more separated link</a></li>                                                                                                           -->
+        <!--       </ul>                                                                                                                                                        -->
+        <!--     </li>                                                                                                                                                          -->
+        <!--   </ul>                                                                                                                                                            -->
+        <!-- </div>                                                                                                                                                             -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+<!-- Table of Contents -->
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
+          <ul>
+          <li><a href="#crontab">Crontab</a><ul>
+          <li><a href="#usage">Usage</a></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
+          </ul>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<!-- Header -->
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  Crontab
+                  <small class="h3 text-muted subtitle">
+                    | Crontab Wiki
+                  </small>
+                </h1>
+                <hr style="border: 1px solid grey;border-radius: 5px;">
+                <h4 class="summary" style="text-align: center;">Schedule cron jobs to run on a time interval for the current user.</h4>
+              </div>
+            </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">Sep 09, 2020</h5>
+          </div>
+
+<!-- Contents -->
+          <article class="contents">
+<h1 id="crontab">Crontab</h1>
+<h2 id="usage">Usage</h2>
+<ul>
+<li><code>crontab -l</code> – List all cron jobs for current user</li>
+<li><code>crontab -e</code> – Edit cron jobs for current user</li>
+<li><code>crontab -r</code> – Remove all cron jobs for current user</li>
+</ul>
+<pre><code># ┌───────────── minute (0 - 59)
+# │ ┌───────────── hour (0 - 23)
+# │ │ ┌───────────── day of month (1 - 31)
+# │ │ │ ┌───────────── month (1 - 12)
+# │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday;
+# │ │ │ │ │                                       7 is also Sunday on some systems)
+# │ │ │ │ │
+# │ │ │ │ │
+# * * * * *  command_to_execute
+
+
+###### Sample crontab ######
+
+# Empty temp folder every Friday at 5pm
+0 5 * * 5 rm -rf /tmp/*
+
+# Backup images to Google Drive every night at midnight
+0 0 * * * rsync -a ~/Pictures/ ~/Google\ Drive/Pictures/</code></pre>
+<p>Ref:</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=QZJ1drMQz1A">🎬 Linux/Mac Tutorial: Cron Jobs - How to Schedule Commands with crontab</a></li>
+<li><a href="https://github.com/CoreyMSchafer/code_snippets/blob/master/Cron-Tasks/snippets.txt">🌎 Cron-Tasks snippets</a></li>
+</ul>
+<p>Other resources</p>
+<ul>
+<li><a href="https://crontab.guru/">🌎 Crontab.guru</a></li>
+</ul>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=QZJ1drMQz1A">🎬 Linux/Mac Tutorial: Cron Jobs - How to Schedule Commands with crontab</a></li>
+<li><a href="https://github.com/CoreyMSchafer/code_snippets/blob/master/Cron-Tasks/snippets.txt">🌎 Cron-Tasks snippets</a></li>
+<li><a href="https://crontab.guru/">🌎 Crontab.guru</a></li>
+</ul>
+          </article>
+          </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../templates/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../templates/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+    <script src="../../templates/js/animated-toc.js"></script>
+  </body>
+</html>

@@ -1,8 +1,8 @@
 ---
 title: Vim Plugins Wiki
+subtitle: Vim plugins references
 author: Mark Lucernas
 date: 2020-02-24
-summary: Vim plugins references
 ---
 
 # Vim Plugins

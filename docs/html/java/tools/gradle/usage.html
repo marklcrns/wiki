@@ -9,19 +9,18 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Lucernas">
 
-    <title>Eclipse Installation</title>
+    <title>Gradle Usage</title>
 
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
-    <link href="../../../templates/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
+    <link href="../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="../../../templates/css/dashboard.css" rel="stylesheet">
-
+    <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
   </head>
 
   <body>
@@ -64,46 +63,66 @@
       <div class="row">
 
 <!-- Table of Contents -->
-        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-          </ul>
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#installation">Installation</a><ul>
-          <li><a href="#linux">Linux</a><ul>
-          <li><a href="#ubuntu">Ubuntu</a></li>
+          <li><a href="#usage">Usage</a><ul>
+          <li><a href="#build.gradle"><code>build.gradle</code></a></li>
+          <li><a href="#testing">Testing</a><ul>
+          <li><a href="#setting-up-junit-with-gradle">Setting Up JUnit with Gradle</a><ul>
+          <li><a href="#with-libgdx">With libGDX</a></li>
+          </ul></li>
           </ul></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
           </ul>
-        </div>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 <!-- Header -->
           <header>
             <div class="jumbotron">
               <div class="page-header">
-                <a href="../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <a href="../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
                 <h1 class="title">
-                  Eclipse Installation
+                  Gradle Usage
                 </h1>
               </div>
             </div>
           </header>
           <div class="h5 text-muted">
             <h5 class="author">Mark Lucernas</h5>
-            <h5 class="date">Sep 24, 2020</h5>
+            <h5 class="date">Sep 26, 2020</h5>
           </div>
 
 <!-- Contents -->
-<h1 id="installation">Installation</h1>
-<h2 id="linux">Linux</h2>
-<h3 id="ubuntu">Ubuntu</h3>
+          <article class="contents">
+<h1 id="usage">Usage</h1>
 <ul>
-<li><a href="install/ubuntu.html">↪ Ubuntu</a></li>
+<li><a href="https://gradle.org/guides/">🌎 Gradle Guides</a></li>
+</ul>
+<h2 id="build.gradle"><code>build.gradle</code></h2>
+<ul>
+<li><a href="https://stackoverflow.com/a/44493379/11850077">🌎 What’s the difference between implementation and compile in Gradle?</a></li>
+</ul>
+<h2 id="testing">Testing</h2>
+<h3 id="setting-up-junit-with-gradle">Setting Up JUnit with Gradle</h3>
+<ul>
+<li><a href="https://howtodoinjava.com/junit5/junit-5-gradle-dependency-build-gradle-example/">🌎 JUnit 5 with Gradle</a></li>
+<li><a href="https://www.youtube.com/watch?v=_4cfFcsIMdc">🎬 JUnit 5 Gradle Project Configuration</a></li>
+<li><a href="https://www.petrikainulainen.net/programming/testing/junit-5-tutorial-running-unit-tests-with-gradle/">🌎 JUnit 5 Tutorial: Running Unit Tests With Gradle</a></li>
+<li><a href="https://github.com/pkainulainen/junit5-examples/tree/master/unit-tests/running-unit-tests">🌎 GitHub: Running Unit Tests With Maven and Gradle</a></li>
+<li><a href="https://stackoverflow.com/questions/60902974/setup-junit-mockito-in-libgdx-kotlin">🌎 Setup JUnit, Mockito in LibGdx (Kotlin)</a></li>
+</ul>
+<h4 id="with-libgdx">With libGDX</h4>
+<ul>
+<li><a href="http://techduke.io/junit-testing-of-libgdx-game-in-android-studio/">🌎 JUnit testing of libGDX game in Android Studio</a></li>
 </ul>
 <p><br></p>
 <h1 id="resources">Resources</h1>
+          </article>
           </div>
       </div>
     </div>
@@ -111,11 +130,11 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../../templates/js/jquery.min.js"></script>
+    <script src="../../../../../templates/js/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../../templates/js/bootstrap.min.js"></script>
+    <script src="../../../../../templates/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
     <script>
         //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
 
@@ -132,5 +151,6 @@
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
+    <script src="../../../../../templates/js/animated-toc.js"></script>
   </body>
 </html>

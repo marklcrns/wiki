@@ -1,8 +1,8 @@
 ---
 title: Ydiff
+subtitle: Ydiff wiki
 author: Mark Lucernas
 date: 2020-08-09
-summary: Ydiff wiki
 ---
 
 
@@ -11,7 +11,6 @@ summary: Ydiff wiki
 ## Installation
 
 - [↪ Installation](installation)
-
 
 ## Usage
 

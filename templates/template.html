@@ -19,19 +19,18 @@ $endif$
 
     <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
 
+$if(toc)$
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="$root_path$../../templates/css/animated-toc.css" rel="stylesheet">
+$endif$
     <!-- Bootstrap core CSS -->
     <link href="$root_path$../../templates/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="$root_path$../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="$root_path$../../templates/css/dashboard.css" rel="stylesheet">
-
     <style type="text/css">code{white-space: pre;}</style>
-$if(toc)$
-    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
-$endif$
 $if(quotes)$
     <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
 $endif$
@@ -63,12 +62,12 @@ $endfor$
 
 <!-- Table of Contents -->
 $if(toc)$
-        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-          </ul>
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           $toc$
-        </div>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 $else$
           <div class="col-sm-12 main">
@@ -106,7 +105,9 @@ $endif$
           </div>
 
 <!-- Contents -->
+          <article class="contents">
 $body$
+          </article>
           </div>
       </div>
     </div>
@@ -135,6 +136,9 @@ $body$
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
+$if(toc)$
+    <script src="$root_path$../../templates/js/animated-toc.js"></script>
+$endif$
 $for(include-after)$
   $include-after$
 $endfor$

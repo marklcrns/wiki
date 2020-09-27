@@ -11,17 +11,16 @@
 
     <title>2.7 Derivatives and Rates of Change</title>
 
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
-
     <style type="text/css">code{white-space: pre;}</style>
-    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   </head>
 
@@ -65,10 +64,7 @@
       <div class="row">
 
 <!-- Table of Contents -->
-        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-          </ul>
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
           <li><a href="#derivatives-and-rates-of-changes">2.7 Derivatives and Rates of Changes</a><ul>
           <li><a href="#tangents">Tangents</a><ul>
@@ -85,7 +81,10 @@
           </ul></li>
           <li><a href="#resources">Resources</a></li>
           </ul>
-        </div>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 <!-- Header -->
@@ -108,6 +107,7 @@
           </div>
 
 <!-- Contents -->
+          <article class="contents">
 <h1 id="derivatives-and-rates-of-changes">2.7 Derivatives and Rates of Changes</h1>
 <p>The problem of finding the tangent line to a curve and the problem of finding the velocity of an object both involve finding the same type of limit, as we saw in <a href="ch-2-1.html#the-tangent-line-and-velocity-problem">⚓ Section 2.1</a>. This special type of limit is called a <em>derivative</em> and we will see that it can be interpreted as a rate of change in any of the natural or social sciences or engineering.</p>
 <h2 id="tangents">Tangents</h2>
@@ -215,6 +215,7 @@ f^{\prime}(a) = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}
 <ul>
 <li><a href="https://webassign.com/">🌎 Cengage e-Textbook: Calculus Early Transcendentals, Eighth Edition, Stewart</a></li>
 </ul>
+          </article>
           </div>
       </div>
     </div>
@@ -243,5 +244,6 @@ f^{\prime}(a) = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
+    <script src="../../../../../../templates/js/animated-toc.js"></script>
   </body>
 </html>

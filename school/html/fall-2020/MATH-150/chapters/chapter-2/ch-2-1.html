@@ -11,17 +11,16 @@
 
     <title>2.1 The Tangent Line and Velocity Problem</title>
 
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
-
     <style type="text/css">code{white-space: pre;}</style>
-    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   </head>
 
@@ -65,10 +64,7 @@
       <div class="row">
 
 <!-- Table of Contents -->
-        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-          </ul>
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
           <li><a href="#the-tangent-line-and-velocity-problem">2.1 The Tangent Line and Velocity Problem</a><ul>
           <li><a href="#the-tangent-problem">The Tangent Problem</a></li>
@@ -77,7 +73,10 @@
           </ul></li>
           <li><a href="#resources">Resources</a></li>
           </ul>
-        </div>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 <!-- Header -->
@@ -100,6 +99,7 @@
           </div>
 
 <!-- Contents -->
+          <article class="contents">
 <h1 id="the-tangent-line-and-velocity-problem">2.1 The Tangent Line and Velocity Problem</h1>
 <p><a name="tangent-term"><strong>Tangent</strong></a></p>
 <ul>
@@ -380,6 +380,7 @@ m_{PQ} = \frac{4.9(a + h)^{2} - 4.9a^{2}}{(a + h) + a}
 <ul>
 <li><a href="https://webassign.com/">🌎 Cengage e-Textbook: Calculus Early Transcendentals, Eighth Edition, Stewart</a></li>
 </ul>
+          </article>
           </div>
       </div>
     </div>
@@ -408,5 +409,6 @@ m_{PQ} = \frac{4.9(a + h)^{2} - 4.9a^{2}}{(a + h) + a}
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
+    <script src="../../../../../../templates/js/animated-toc.js"></script>
   </body>
 </html>

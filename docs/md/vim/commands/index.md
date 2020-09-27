@@ -1,8 +1,8 @@
 ---
 title: Vim Command Line Commands
+subtitle: Useful Vim command line commands
 author: Mark Lucernas
 date: 2020-03-24
-summary: Useful Vim command line commands
 ---
 
 

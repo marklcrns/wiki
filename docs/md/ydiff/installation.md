@@ -2,7 +2,6 @@
 title: Ydiff Installation
 author: Mark Lucernas
 date: 2020-08-09
-summary: Ydiff installation
 ---
 
 

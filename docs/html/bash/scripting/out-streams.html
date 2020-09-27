@@ -11,17 +11,16 @@
 
     <title>Bash Scripting</title>
 
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../../templates/css/animated-toc.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="../../../../templates/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="../../../../templates/css/dashboard.css" rel="stylesheet">
-
     <style type="text/css">code{white-space: pre;}</style>
-    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
     <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
@@ -127,10 +126,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="row">
 
 <!-- Table of Contents -->
-        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-          </ul>
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
           <li><a href="#output-streams">Output Streams</a><ul>
           <li><a href="#redirecting-standard-output-to-a-file">Redirecting Standard Output to a File</a></li>
@@ -138,7 +134,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </ul></li>
           <li><a href="#resources">Resources</a></li>
           </ul>
-        </div>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 <!-- Header -->
@@ -161,6 +160,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
 
 <!-- Contents -->
+          <article class="contents">
 <h1 id="output-streams">Output Streams</h1>
 <h2 id="redirecting-standard-output-to-a-file">Redirecting Standard Output to a File</h2>
 <p><strong>Redirect stdout replacing existing file</strong>*</p>
@@ -250,6 +250,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://askubuntu.com/questions/625224/how-to-redirect-stderr-to-a-file">🌎 How to redirect stderr to a file</a></li>
 <li><a href="https://stackoverflow.com/questions/11904907/redirect-stdout-and-stderr-to-function">🌎 Redirect stdout and stderr to Function</a></li>
 </ul>
+          </article>
           </div>
       </div>
     </div>
@@ -278,5 +279,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
+    <script src="../../../../templates/js/animated-toc.js"></script>
   </body>
 </html>

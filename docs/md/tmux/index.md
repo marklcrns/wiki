@@ -8,8 +8,7 @@ summary: Tmux wiki
 
 # Tmux Wiki
 
-[Git Repo](https://github.com/tmux/tmux)
-
+- [Git Repo](https://github.com/tmux/tmux)
 - [↪ Commands](commands)
 - [↪ Mappings](mappings)
 

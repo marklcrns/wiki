@@ -12,17 +12,16 @@
 
     <title>The United States of Paranoia Part 2 Ch 2</title>
 
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../../../../../templates/css/animated-toc.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="../../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="../../../../../../../templates/css/dashboard.css" rel="stylesheet">
-
     <style type="text/css">code{white-space: pre;}</style>
-    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
   </head>
 
   <body>
@@ -65,15 +64,15 @@
       <div class="row">
 
 <!-- Table of Contents -->
-        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-          </ul>
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
           <li><a href="#chapter-11-the-demonic-cafeteria">Chapter 11: The Demonic Cafeteria</a></li>
           <li><a href="#resources">Resources</a></li>
           </ul>
-        </div>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 <!-- Header -->
@@ -95,6 +94,7 @@
           </div>
 
 <!-- Contents -->
+          <article class="contents">
 <h1 id="chapter-11-the-demonic-cafeteria">Chapter 11: The Demonic Cafeteria</h1>
 <p>“Meanwhile, the transition from one Rambo to the other took place. The Cold War came to an end, removing a potent Enemy Outside from the country’s psychic landscape and allowing many Americans to shift their fears toward the Enemy Above.” (p. 277).</p>
 <p>“The militias of the 1990s, he argued, were reacting primarily to the rise of paramilitary police tactics. Their causes célèbres- the standoffs in Waco and Ruby Ridge- were only the most visible examples of what could go wrong when policemen regarded themselves as soldiers rather than peace officers. The militias formed and grew, Churchill wrote, as their members”came to the conclusion that the federalization and militarization of law enforcement had created a paramilitary culture of violence."" (p. 279).</p>
@@ -103,6 +103,7 @@
 <ul>
 <li>Walker, Jesse. <em>The United States of Paranoia</em>. Harper. Kindle Edition.</li>
 </ul>
+          </article>
           </div>
       </div>
     </div>
@@ -131,5 +132,6 @@
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
+    <script src="../../../../../../../templates/js/animated-toc.js"></script>
   </body>
 </html>

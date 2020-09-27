@@ -1,1 +1,351 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Lucernas">
+    <meta name="dcterms.date" content="2020-07-29">
 
+    <title>Advanced Git Commands</title>
+
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../templates/css/animated-toc.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../../../templates/css/dashboard.css" rel="stylesheet">
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+  </head>
+
+  <body>
+
+<!-- Nav bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Docs Wiki</a>
+        </div>
+        <!-- <div id="navbar" class="navbar-collapse collapse">                                                                                                                 -->
+        <!--   <ul class="nav navbar-nav">                                                                                                                                      -->
+        <!--     <li><a href="#">doc1</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc2</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc3</a></li>                                                                                                                                  -->
+        <!--     <li class="dropdown">                                                                                                                                          -->
+        <!--       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+        <!--       <ul class="dropdown-menu">                                                                                                                                   -->
+        <!--         <li><a href="#">Action</a></li>                                                                                                                            -->
+        <!--         <li><a href="#">Another action</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">Something else here</a></li>                                                                                                               -->
+        <!--         <li role="separator" class="divider"></li>                                                                                                                 -->
+        <!--         <li class="dropdown-header">Nav header</li>                                                                                                                -->
+        <!--         <li><a href="#">Separated link</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">One more separated link</a></li>                                                                                                           -->
+        <!--       </ul>                                                                                                                                                        -->
+        <!--     </li>                                                                                                                                                          -->
+        <!--   </ul>                                                                                                                                                            -->
+        <!-- </div>                                                                                                                                                             -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+<!-- Table of Contents -->
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
+          <ul>
+          <li><a href="#advanced-git-commands">Advanced Git Commands</a><ul>
+          <li><a href="#reset">Reset</a></li>
+          <li><a href="#branch">Branch</a></li>
+          <li><a href="#fetch">Fetch</a></li>
+          <li><a href="#remoteupstream">Remote/Upstream</a></li>
+          <li><a href="#merge">Merge</a></li>
+          <li><a href="#difftool">Difftool</a></li>
+          <li><a href="#extras">Extras</a></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
+          </ul>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<!-- Header -->
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  Advanced Git Commands
+                </h1>
+                <hr style="border: 1px solid grey;border-radius: 5px;">
+                <h4 class="summary" style="text-align: center;">Advanced Git Commands</h4>
+              </div>
+            </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">2020-07-29</h5>
+          </div>
+
+<!-- Contents -->
+          <article class="contents">
+<h1 id="advanced-git-commands">Advanced Git Commands</h1>
+<h2 id="reset">Reset</h2>
+<p><strong>Discarding recent changes in working tree or in current branch</strong></p>
+<ul>
+<li><code>git reset HEAD</code></li>
+</ul>
+<p><strong>Discarding changes from commit history</strong></p>
+<ul>
+<li><code>git reset --hard HEAD</code> – discard all resent changes</li>
+<li><code>git reset --hard HEAD^</code> – discard all changes up to last commit of local branch</li>
+<li><code>git reset --hard HEAD~2</code> – discard all changes up to last 2 commit of local branch. the <code>2</code> can be changed to how far to remove changes and commits.</li>
+</ul>
+<blockquote>
+<p><strong>NOTE:</strong> <code>--hard</code> reset cannot be reversed and all the changes will be <strong>permanently deleted</strong>.</p>
+</blockquote>
+<p><strong>Uncommitting changes from commit history</strong></p>
+<ul>
+<li><code>git reset --soft HEAD^</code> – uncommit last commit of local repo</li>
+</ul>
+<p><strong>Uncommit and unstage changes from commit history</strong></p>
+<ul>
+<li><code>git reset --mixed HEAD^</code> – uncommit and unstage last commit of local repo</li>
+</ul>
+<p>Ref:</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/3528245/whats-the-difference-between-git-reset-mixed-soft-and-hard">🌎 What’s the difference between git reset –mixed, –soft, and –hard?</a></li>
+<li><a href="https://git-scm.com/docs/git-reset">🌎 Git reset docs</a></li>
+</ul>
+<h2 id="branch">Branch</h2>
+<p><strong>Fetching all Git branches</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">for</span> <span class="ex">remote</span> in <span class="kw">`</span><span class="fu">git</span> branch -r<span class="kw">`;</span> <span class="kw">do</span> <span class="fu">git</span> branch --track <span class="va">${remote#</span>origin/<span class="va">}</span> <span class="va">$remote</span><span class="kw">;</span> <span class="kw">done</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="fu">git</span> fetch --all</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="fu">git</span> pull --all</a></code></pre></div>
+<p><strong>Remove tracking branches no longer on remote (Method 1)</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">git</span> checkout master</a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="fu">git</span> remote prune origin</a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="co"># List all branches merged into the current branch into vim buffer.</span></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="co"># Once loaded in vim, delete branches you want to exclude from branch deletion.</span></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="fu">git</span> branch --merged <span class="op">&gt;</span>/tmp/merged-branches <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb2-6" title="6">  <span class="ex">vim</span> /tmp/merged-branches <span class="kw">&amp;&amp;</span> <span class="fu">xargs</span> git branch -d <span class="op">&lt;</span>/tmp/merged-branches</a></code></pre></div>
+<blockquote>
+<p><strong>NOTE:</strong> Both this method only removes merged branch and does not remove unmerged branch that exists in local but not from remote.</p>
+</blockquote>
+<p><strong>Remove tracking branches no longer on remote (Method 2)</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">git</span> fetch -p <span class="kw">&amp;&amp;</span> <span class="kw">for</span> <span class="ex">branch</span> in <span class="va">$(</span><span class="fu">git</span> branch -vv <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&#39;: gone]&#39;</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{print $1}&#39;</span><span class="va">)</span><span class="kw">;</span> <span class="kw">do</span> <span class="fu">git</span> branch -D <span class="va">$branch</span><span class="kw">;</span> <span class="kw">done</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="co"># Much safer way</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="fu">git</span> fetch -p <span class="kw">&amp;&amp;</span> <span class="kw">for</span> <span class="ex">branch</span> in <span class="va">$(</span><span class="fu">git</span> for-each-ref --format <span class="st">&#39;%(refname) %(upstream:track)&#39;</span> refs/heads <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;$2 == &quot;[gone]&quot; {sub(&quot;refs/heads/&quot;, &quot;&quot;, $1); print $1}&#39;</span><span class="va">)</span><span class="kw">;</span> <span class="kw">do</span> <span class="fu">git</span> branch -D <span class="va">$branch</span><span class="kw">;</span> <span class="kw">done</span></a></code></pre></div>
+<blockquote>
+<p><strong>NOTE:</strong> This removes both merge and unmerged branch. To only remove merged branch, replace <code>git branch -D</code> with <code>git branch -d</code></p>
+</blockquote>
+<p>Ref:</p>
+<ul>
+<li><a href="https://intellipaat.com/community/3649/git-fetch-all-branches-how-to-fetch-all-git-branches">🌎 How to fetch all Git branches</a></li>
+<li><a href="https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote">🌎 Remove tracking branches no longer on remote</a></li>
+</ul>
+<h2 id="fetch">Fetch</h2>
+<p><strong>Log all new fetched remote changes</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># First make sure to</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="fu">git</span> fetch origin</a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="co"># Then</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="fu">git</span> log origin/master ^master <span class="co"># Replace master with &lt;branch-name&gt; for other branch</span></a></code></pre></div>
+<p>Ref:</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch">🌎 Where to find chances due to git fetch</a></li>
+</ul>
+<h2 id="remoteupstream">Remote/Upstream</h2>
+<p><strong>Reconfigure URL of git in local repository</strong></p>
+<ul>
+<li><code>git remote set-url origin https://github.com/&lt;repo-owner&gt;/&lt;repository&gt;.git</code></li>
+</ul>
+<p><strong>There is no tracking information for the current branch</strong></p>
+<p>Solution 1:</p>
+<ul>
+<li><code>git pull origin master</code></li>
+</ul>
+<p>Solution 2: Set it up so that local master branch tracks github master branch as an upstream:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">git</span> branch --set-upstream-to=origin/master <span class="op">&lt;</span>current-branch<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="fu">git</span> pull</a></code></pre></div>
+<p>Ref:</p>
+<ul>
+<li><a href="https://ducmanhphan.github.io/2019-02-17-Common-problems-with-git/">🌎 Common problems with GIT</a></li>
+</ul>
+<h2 id="merge">Merge</h2>
+<p><strong>Manual interactive merging (with <code>git add --interactive</code>)</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1">git merge --no-commit --no-ff &lt;branch-to merge&gt; # Merges with branch without committing</a>
+<a class="sourceLine" id="cb6-2" title="2">git reset HEAD                                  # Unstage all merge changes</a>
+<a class="sourceLine" id="cb6-3" title="3">git add --interactive                           # Add pieces interactively</a></code></pre></div>
+<p><strong>Manual interactive merging (with <code>git mergetool</code>)</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb7-1" title="1">git merge --no-commit --no-ff &lt;branch-to-merge&gt; # Merges with branch without committing</a>
+<a class="sourceLine" id="cb7-2" title="2">git mergetool                                   # Resolve conflict manually with graphics</a></code></pre></div>
+<p><strong>Other very manual way of merging</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb8-1" title="1"># Merges with branch without committing</a>
+<a class="sourceLine" id="cb8-2" title="2">git merge --no-commit --no-ff &lt;branch-to-merge&gt;</a>
+<a class="sourceLine" id="cb8-3" title="3"></a>
+<a class="sourceLine" id="cb8-4" title="4"># Then you&#39;ll ask git <span class="kw">for</span> the file as it appeared in the two branches:</a>
+<a class="sourceLine" id="cb8-5" title="5">git show HEAD:filename &gt;filename.<span class="fu">HEAD</span></a>
+<a class="sourceLine" id="cb8-6" title="6">git show branch-to-merge:filename &gt;filename.<span class="fu">branch</span></a>
+<a class="sourceLine" id="cb8-7" title="7"></a>
+<a class="sourceLine" id="cb8-8" title="8"># and their merge base,</a>
+<a class="sourceLine" id="cb8-9" title="9">git show `git merge-base HEAD &lt;branch-to-merge&gt;`:filename  &gt;filename.<span class="fu">base</span></a>
+<a class="sourceLine" id="cb8-10" title="10"></a>
+<a class="sourceLine" id="cb8-11" title="11"># You&#39;ll merge them using whatever tool you <span class="fu">want</span> (e.<span class="fu">g</span>.)</a>
+<a class="sourceLine" id="cb8-12" title="12">meld filename.{HEAD,branch,base} # meld can be replaced by other diff tools</a></code></pre></div>
+<p>Ref:</p>
+<ul>
+<li><a href="https://stackoverflow.com/a/22392289">🌎 Interactive merging with git add –interactive</a></li>
+<li><a href="https://stackoverflow.com/a/17754621">🌎 Interactive merging with git mergetool</a></li>
+<li><a href="https://stackoverflow.com/a/10935340">🌎 Other very manual way of merging with git show</a></li>
+</ul>
+<h2 id="difftool">Difftool</h2>
+<p><strong>Use difftool to manually merge two branches with default terminal editor (preferably Vim or Neovim)</strong></p>
+<ul>
+<li><code>git difftool &lt;branch-name&gt;</code></li>
+</ul>
+<blockquote>
+<p>While in Vim or Neovim with difftool, use <code>dp</code> for diffput or applying changes from current buffer to the next and <code>do</code> for diffget or getting the changes from the other buffer to the current buffer. <code>]c</code> and <code>[c</code> to jump to next or previous diff conflict.</p>
+</blockquote>
+<p>Ref:</p>
+<ul>
+<li><a href="https://stackoverflow.com/a/20256067">🌎 How do I prevent an automerge using Git?</a></li>
+</ul>
+<h2 id="extras">Extras</h2>
+<p><strong>Refering to previous commit in commit messages</strong></p>
+<p>Examples:</p>
+<ul>
+<li><code>SHA: be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2</code></li>
+<li><code>User@SHA ref: mojombo@be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2</code></li>
+<li><code>User/Project@SHA: mojombo/god@be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2</code></li>
+<li><code>#Num: #1</code></li>
+<li><code>User/#Num: mojombo#1</code></li>
+<li><code>User/Project#Num: mojombo/god#1</code></li>
+</ul>
+<p>Ref:</p>
+<ul>
+<li><a href="https://stackoverflow.com/a/13577344">🌎 How to refer to a previous commit in git commit message</a></li>
+</ul>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://stackoverflow.com/questions/3528245/whats-the-difference-between-git-reset-mixed-soft-and-hard">🌎 What’s the difference between git reset –mixed, –soft, and –hard?</a></li>
+<li><a href="https://git-scm.com/docs/git-reset">🌎 Git reset docs</a></li>
+<li><a href="https://intellipaat.com/community/3649/git-fetch-all-branches-how-to-fetch-all-git-branches">🌎 How to fetch all Git branches</a></li>
+<li><a href="https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote">🌎 Remove tracking branches no longer on remote</a></li>
+<li><a href="https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch">🌎 Where to find chances due to git fetch</a></li>
+<li><a href="https://ducmanhphan.github.io/2019-02-17-Common-problems-with-git/">🌎 Common problems with GIT</a></li>
+<li><a href="https://stackoverflow.com/a/22392289">🌎 Interactive merging with git add –interactive</a></li>
+<li><a href="https://stackoverflow.com/a/17754621">🌎 Interactive merging with git mergetool</a></li>
+<li><a href="https://stackoverflow.com/a/10935340">🌎 Other very manual way of merging with git show</a></li>
+<li><a href="https://stackoverflow.com/a/20256067">🌎 How do I prevent an automerge using Git?</a></li>
+<li><a href="https://stackoverflow.com/a/13577344">🌎 How to refer to a previous commit in git commit message</a></li>
+</ul>
+          </article>
+          </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../templates/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../templates/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+    <script src="../../../templates/js/animated-toc.js"></script>
+  </body>
+</html>

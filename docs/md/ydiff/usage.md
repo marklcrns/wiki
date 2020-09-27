@@ -2,7 +2,6 @@
 title: Ydiff Usage
 author: Mark Lucernas
 date: 2020-08-09
-summary: Ydiff usage
 ---
 
 

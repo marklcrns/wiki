@@ -12,17 +12,16 @@
 
     <title>Week 4 Graded Discussion</title>
 
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
-
     <style type="text/css">code{white-space: pre;}</style>
-    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
     <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
@@ -128,14 +127,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="row">
 
 <!-- Table of Contents -->
-        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-          </ul>
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
           <li><a href="#week-4-graded-discussion">Week 4 Graded Discussion</a></li>
           </ul>
-        </div>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 <!-- Header -->
@@ -157,6 +156,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
 
 <!-- Contents -->
+          <article class="contents">
 <h1 id="week-4-graded-discussion">Week 4 Graded Discussion</h1>
 <ol type="1">
 <li><strong>What are the differences between List, Set, and Map? They are interfaces included with JDK, what are they used for?</strong></li>
@@ -218,6 +218,7 @@ After sort: [Bruno, Max, Rupert, Son, Vladimir]</code></pre>
 <p>java.io’s first abstract layer are used as a framework to create a more concrete I/O classes tailored to specific purposes. For instance, InputStream is used as a blueprint to create FileInputStream, ObjectInputStream, etc. and OutputStream a blueprint for FileOutputStream, ObjectOutputStream, and more.</p>
 <p>In I/O Stream, byte stream read/write in chunks of 8-bits, or 1 byte. Thus, read() method read the first 8-bit ASCII value from the input stream and writes every 8-bit into the output stream.</p>
 <p>Because reading and writing happens really fast under the hood, reading from an input stream and then writing into an output stream at the same time can couse inefficiency in the program. It’s like InputStream is a guy working with OutputStream, where OutputStream guy is constantly waiting for InputStream guy to finish reading inputs before outputting something. Hence, Buffered streams are invented. Buffered streams takes input or output into an area in the memory called “buffer” that temporarily stores data. Once streams are into the buffer, it will now be read which is much faster than reading directly from the underlying stream because its already in the memory, much like the OutputStream guy constantly outputting stuff without waiting for the InputStream guy to finished because its already there.</p>
+          </article>
           </div>
       </div>
     </div>
@@ -246,5 +247,6 @@ After sort: [Bruno, Max, Rupert, Son, Vladimir]</code></pre>
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
+    <script src="../../../../../../templates/js/animated-toc.js"></script>
   </body>
 </html>

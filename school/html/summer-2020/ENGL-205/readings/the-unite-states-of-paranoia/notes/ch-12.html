@@ -12,17 +12,16 @@
 
     <title>The United States of Paranoia Part 2 Ch 12</title>
 
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../../../../../templates/css/animated-toc.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="../../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="../../../../../../../templates/css/dashboard.css" rel="stylesheet">
-
     <style type="text/css">code{white-space: pre;}</style>
-    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
   </head>
 
   <body>
@@ -65,15 +64,15 @@
       <div class="row">
 
 <!-- Table of Contents -->
-        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-          </ul>
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
           <li><a href="#chapter-12-everything-is-a-clue">Chapter 12: Everything is a Clue</a></li>
           <li><a href="#resources">Resources</a></li>
           </ul>
-        </div>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 <!-- Header -->
@@ -95,6 +94,7 @@
           </div>
 
 <!-- Contents -->
+          <article class="contents">
 <h1 id="chapter-12-everything-is-a-clue">Chapter 12: Everything is a Clue</h1>
 <p>“October 7, 2001: less than a month after 9/ 11. Police in Maryland decide that two trucks on Interstate 270 might be carrying explosives. The alert cops block traffic for an hour, searching the vehicles for tools of terror. The cargo turns out to be stage equipment headed to a memorial service for the firefighters killed in the attack. A forgivable mistake, given the circumstances? Perhaps.” (p. 299).</p>
 <p>“It was the same species of fear that had flared during earlier hunts for spies and saboteurs. But now the consequences of failing to spot the conspirators seemed much more catastrophic. Anything might be a weapon; anything might be a clue.” (p. 300).</p>
@@ -136,6 +136,7 @@
 <ul>
 <li>Walker, Jesse. <em>The United States of Paranoia</em>. Harper. Kindle Edition.</li>
 </ul>
+          </article>
           </div>
       </div>
     </div>
@@ -164,5 +165,6 @@
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
+    <script src="../../../../../../../templates/js/animated-toc.js"></script>
   </body>
 </html>

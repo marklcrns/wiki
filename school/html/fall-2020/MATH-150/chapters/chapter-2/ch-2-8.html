@@ -11,17 +11,16 @@
 
     <title>2.8 The Derivative as a Function</title>
 
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
-
     <style type="text/css">code{white-space: pre;}</style>
-    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   </head>
 
@@ -65,10 +64,7 @@
       <div class="row">
 
 <!-- Table of Contents -->
-        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-          </ul>
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
           <li><a href="#the-derivative-as-a-function">2.8 The Derivative as a Function</a><ul>
           <li><a href="#other-notations">Other Notations</a><ul>
@@ -81,7 +77,10 @@
           </ul></li>
           <li><a href="#resources">Resources</a></li>
           </ul>
-        </div>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 <!-- Header -->
@@ -104,6 +103,7 @@
           </div>
 
 <!-- Contents -->
+          <article class="contents">
 <h1 id="the-derivative-as-a-function">2.8 The Derivative as a Function</h1>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_intro.png" alt="Intro" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_example-1.1.png" alt="Example 1.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_example-1.2.png" alt="Example 1.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_explore-it_1.png" alt="Explore It 1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_example-2.1.png" alt="Example 2.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_example-2.2.png" alt="Example 2.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_example-3.png" alt="Example 3" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_figure-4.png" alt="Figure 4" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.8_example-4.png" alt="Example 4" /></p>
 <h2 id="other-notations">Other Notations</h2>
@@ -201,6 +201,7 @@ y^{(n)} = f^{(n)}(x) = \frac{d^{n}y}{dx^{n}}
 <ul>
 <li><a href="https://webassign.com/">🌎 Cengage e-Textbook: Calculus Early Transcendentals, Eighth Edition, Stewart</a></li>
 </ul>
+          </article>
           </div>
       </div>
     </div>
@@ -229,5 +230,6 @@ y^{(n)} = f^{(n)}(x) = \frac{d^{n}y}{dx^{n}}
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
+    <script src="../../../../../../templates/js/animated-toc.js"></script>
   </body>
 </html>
