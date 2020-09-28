@@ -1487,16 +1487,278 @@ int main()
 **CONCEPT:** An enumerated data type in C++ is a programmer-defined data type
 whose legal values are a set of named integer constants.
 
+An enumerated data type is a programmer-defined data type whose only legal
+values are those associated with a set of named integer constants. It is called
+an enumerated type because the named constants are enumerated, or listed, as
+part of the definition of the data type. Here is an example of an
+enumerated-type declaration.
 
-%% STOPPED AT 224
+```cpp
+enum Roster { Tom, Sharon, Bill, Teresa, John };
+```
+
+This creates a data type named Roster. Because the word `enum` is a C++ key
+word, it must be in lowercase. However, notice that the data type name itself
+begins with a capital letter. Although this is not required, most programmers do
+capitalize this name.  The named integer constants associated with the Roster
+data type are called enumerators. A variable of the `Roster` data type may only
+have one of the values associated with these enumerators. But what are their
+values? By default, the compiler sets the first enumerator to 0, the next one to
+1, and so on. In our example then, the value of `Tom` would be 0, the value of
+`Sharon` would be 1, and so forth. The final enumerator, John, would have the
+value 4.
+
+It is important to realize that the example `enum` statement does not actually
+create any variables. It just defines the data type. It says that when we later
+create variables of this data type, this is what they will look like--integers
+whose values are limited to the integers associated with the symbolic names in
+the enumerated set.
+
+The following statement shows how a variable of the Roster data type would be
+defined.
+
+```cpp
+Roster student;
+student = Sharon;
+
+// Now that the student variable has been created, it can be assigned a value,
+// like this:
+if (student == Sharon)
+```
+
+Notice in these two examples that there are no quotation marks around `Sharon`
+because it is a named constant, not a string literal.
+
+Even though the values in an enumerated data type are actually stored as
+integers, you cannot always substitute the integer value for the symbolic name.
+For example, we could not have assigned Sharon as the value of student like
+this:
+
+```cpp
+student = 1; // Error!
+```
+
+You can, however, test an enumerated variable by using an integer value instead
+of a symbolic name. For example, because Bill is stored as 2, the following two
+if statements are equivalent.
+
+```cpp
+if (student == Bill)
+if (student == 2)
+```
+
+You can also use relational operators to compare two enumerated variables.
+
+```cpp
+if (student1 < student2)
+```
+
+As mentioned earlier, the symbols in the enumeration list are assigned the
+integer values 0, 1, 2, and so forth by default. If this is not appropriate, you
+can specify the values to be assigned, as in the following example.
+
+```cpp
+enum Department { factory = 1, sales = 2, warehouse = 4 };
+```
+
+Remember that if you do assign values to the enumerated symbols, they must be
+integers. The following value assignments would produce an error.
+
+```cpp
+enum Department { factory = 1.0, sales = 2.0, warehouse = 4.0 }; // Error!
+```
+
+Although there is no requirement that assigned integer values be placed in
+ascending order, it is generally considered a good idea to do so.
+
+If you leave out the value assignment for one or more of the symbols, they will
+be assigned default values, as illustrated by the following two examples.
+
+```cpp
+enum Colors { red, orange, yellow = 9, green, blue };
+```
+
+In this example, the named constant red will be assigned the value 0, orange
+will be 1, yellow will be 9, green will be 10, and blue will be 11.
+
+One purpose of an enumerated data type is that the symbolic names **help to make
+a program self-documenting**. However, because these names are not strings, they
+are for use inside the program only. Using the `Roster` data type defined at the
+beginning of this section, the following two statements would output a 2, not
+the name Sharon.
+
+```cpp
+Roster topStudent = Sharon;
+cout << topStudent;
+```
+
+> Program 4-28
+
+```cpp
+// This program demonstrates an enumerated data type.
+#include <iostream>
+using namespace std;
+
+// Declare the enumerated type
+enum Roster { Tom = 1, Sharon, Bill, Teresa, John };
+// Sharon – John will be assigned default values 2–5.
+int main()
+{
+  int who;
+
+  cout << "This program will give you a student's birthday.\n";
+  cout << "Whose birthday do you want to know?\n";
+  cout << "1 = Tom\n";
+  cout << "2 = Sharon\n";
+  cout << "3 = Bill\n";
+  cout << "4 = Teresa\n";
+  cout << "5 = John\n";
+  cin  >> who;
+
+  switch (who)
+  {
+    case Tom   : cout << "\nTom's birthday is January 3.\n";
+                 break;
+    case Sharon: cout << "\nSharon's birthday is April 22.\n";
+                 break;
+    case Bill  : cout << "\nBill's birthday is December 19.\n";
+                 break;
+    case Teresa: cout << "\nTeresa's birthday is February 2.\n";
+                 break;
+    case John  : cout << "\nJohn's birthday is June 17.\n";
+                 break;
+    default    : cout << "\nInvalid selection\n";
+  }
+  return 0;
+}
+```
+
+
+#### 4.14 Focus on Testing and Debugging: Validating Output Results
+
+**CONCEPT:** When testing a newly created or modified program, the output it
+produces must be carefully examined to ensure it is correct.
+
+> Program 4-29
+
+```cpp
+// This program determines a client's total buffet luncheon cost
+// when the number of guests and the per person cost are known.
+// It contains a logic error.
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+  const int ADULT_MEAL_COST = 8.25; // Child meal cost = 60% of this
+
+  int numAdults,         // Guests ages 12 and older
+  numChildren;           // Guests ages 2-11
+  double adultMealTotal, // Total for all adult meals
+  childMealTotal,        // Total for all child meals
+  totalMealCost;
+
+  // Get number of adults and children attending
+  cout << "This program calculates total cost "
+       << "for a buffet luncheon.\n";
+  cout << "Enter the number of adult guests (age 12 and over): ";
+  cin  >> numAdults;
+  cout << "Enter the number of child guests (age 2-11): ";
+  cin  >> numChildren;
+
+  // Calculate meal costs
+  adultMealTotal = numAdults * ADULT_MEAL_COST;
+  childMealTotal = numChildren * ADULT_MEAL_COST * .60;
+  totalMealCost = adultMealTotal + childMealTotal;
+
+  // Display total meal cost
+  cout << fixed << showpoint << setprecision(2);
+  cout << "\nTotal buffet cost is $" << totalMealCost << endl;
+  return 0;
+}
+```
+
+At first glance the program may appear to run correctly. The per person charge
+for adults is \$8.25, so if there were 100 adult guests the price would be
+\$825. But there are only 69 guests and four of them are children, making the
+cost about 2/3 of this. \$571.20 sounds "about right."
+
+However, "about right" is not a sufficient test of accuracy. If the program had
+been run with data whose output could have been more easily checked, the
+programmer would have quickly seen that there is an error. Here is the output
+from two more runs of the same program using more carefully selected sample
+data.
+
+**Program Output with Still Different Example Input Shown in Bold**
+
+```
+This program calculates total cost for a buffet luncheon.
+Enter the number of adult guests (age 12 and over): 0[Enter]
+Enter the number of child guests (age 2–11): 1[Enter]
+
+Total buffet cost is $4.80
+```
+
+From this output we can see that the cost of a child meal is correctly being
+calculated as 60 percent of the cost of an adult meal, but the adult meal cost
+is wrong. For one adult, it is coming out as \$8.00, when it should have been
+\$8.25.
+
+To find the problem, the programmer should determine which lines of code are
+most apt to have caused the problem. Most likely, something is wrong either in
+the initialization or storage of `ADULT_MEAL_COST` on line 10, in the
+calculation or storage of `adultMealTotal` or `totalMealCost` on lines 14, 16,
+27, and 29, or in the printing of `totalMealCost` on line 33.  Because the cost
+for one adult meal is erroneously coming out as a whole dollar amount, even
+though it is formatted to appear as a floating-point number, one of the things
+to check is whether all the variables that need to hold floating-point values
+have been defined as type `float` or `double`. Sure enough, although
+`adultMealTotal` and `totalMealCost` have each been defined as a `double`, the
+named constant `ADULT_MEAL_COST` has been defined to be an int. So the 8.25 with
+which it is initialized is truncated to 8 when it is stored. When the definition
+of this named constant is rewritten as
+
+```cpp
+const double ADULT_MEAL_COST = 8.25;
+```
 
 
 ## Video
 
+- [🎬 section 4 1 relational operators cpp i 9 23](https://www.youtube.com/watch?v=MXr8KRtldBE)
+- [🎬 CPP section 4 2 if statement cpp i](https://www.youtube.com/watch?v=j9SgUWV76vg)
+- [🎬 Section 4 3 Expanding if statement i](https://www.youtube.com/watch?v=WlQAb0EQMUU)
+- [🎬 Section 4 4 if else cpp i](https://www.youtube.com/watch?v=qZBNBoMGa5Q)
+- [🎬 CPP Section 4 5 nested if cpp i](https://www.youtube.com/watch?v=hs9yAZ_dk4I)
+- [🎬 section 4 6 if else if](https://www.youtube.com/watch?v=bgFSwx7JrGE)
+- [🎬 section 4 7 flags cpp i 9 24 17](https://www.youtube.com/watch?v=bz1VA2XatKQ)
+- [🎬 Section 4 8 logical operators cpp](https://www.youtube.com/watch?v=Pt8fd3YdUVg)
+- [🎬 Section 4 9 checking numeric ranges with logical operators cpp i](https://www.youtube.com/watch?v=1_rxyzQ1L9I)
+- [🎬 Section 4 10 menus cpp i](https://www.youtube.com/watch?v=W4-1-tWeo9E)
+- [🎬 section 4 11 cpp i](https://www.youtube.com/watch?v=Z4ZhXLNViIA)
+- [🎬 section 4 12 comparing strings and characters cpp i](https://www.youtube.com/watch?v=O__vzQx79q8)
+- [🎬 Section 4.13 The Conditional Operator](https://www.youtube.com/watch?v=P59EHUoCSHo&feature=emb_title)
+- [🎬 Section 4.14 The switch Statement](https://www.youtube.com/watch?v=Tg3K8fatxeQ)
 
 <br>
 
 # Resources
+
+- [🎬 section 4 1 relational operators cpp i 9 23](https://www.youtube.com/watch?v=MXr8KRtldBE)
+- [🎬 CPP section 4 2 if statement cpp i](https://www.youtube.com/watch?v=j9SgUWV76vg)
+- [🎬 Section 4 3 Expanding if statement i](https://www.youtube.com/watch?v=WlQAb0EQMUU)
+- [🎬 Section 4 4 if else cpp i](https://www.youtube.com/watch?v=qZBNBoMGa5Q)
+- [🎬 CPP Section 4 5 nested if cpp i](https://www.youtube.com/watch?v=hs9yAZ_dk4I)
+- [🎬 section 4 6 if else if](https://www.youtube.com/watch?v=bgFSwx7JrGE)
+- [🎬 section 4 7 flags cpp i 9 24 17](https://www.youtube.com/watch?v=bz1VA2XatKQ)
+- [🎬 Section 4 8 logical operators cpp](https://www.youtube.com/watch?v=Pt8fd3YdUVg)
+- [🎬 Section 4 9 checking numeric ranges with logical operators cpp i](https://www.youtube.com/watch?v=1_rxyzQ1L9I)
+- [🎬 Section 4 10 menus cpp i](https://www.youtube.com/watch?v=W4-1-tWeo9E)
+- [🎬 section 4 11 cpp i](https://www.youtube.com/watch?v=Z4ZhXLNViIA)
+- [🎬 section 4 12 comparing strings and characters cpp i](https://www.youtube.com/watch?v=O__vzQx79q8)
+- [🎬 Section 4.13 The Conditional Operator](https://www.youtube.com/watch?v=P59EHUoCSHo&feature=emb_title)
+- [🎬 Section 4.14 The switch Statement](https://www.youtube.com/watch?v=Tg3K8fatxeQ)
 
 Textbook
 

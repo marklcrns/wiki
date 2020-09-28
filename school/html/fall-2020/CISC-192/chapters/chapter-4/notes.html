@@ -165,7 +165,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li><a href="#the-switch-statement">4.12 The <code>switch</code> Statement</a><ul>
           <li><a href="#using-switch-in-menu-driven-systems">Using <code>switch</code> in Menu-Driven Systems</a></li>
           </ul></li>
-          <li><a href="#enumerated-data-types">4.13 Enumerated Data Types</a></li>
+          <li><a href="#enumerated-data-types">4.13 Enumerated Data Types</a><ul>
+          <li><a href="#focus-on-testing-and-debugging-validating-output-results">4.14 Focus on Testing and Debugging: Validating Output Results</a></li>
+          </ul></li>
           </ul></li>
           <li><a href="#video">Video</a></li>
           </ul></li>
@@ -1422,10 +1424,161 @@ falseValue = (y == x);</code></pre>
 <a class="sourceLine" id="cb55-50" title="50">}</a></code></pre></div>
 <h3 id="enumerated-data-types">4.13 Enumerated Data Types</h3>
 <p><strong>CONCEPT:</strong> An enumerated data type in C++ is a programmer-defined data type whose legal values are a set of named integer constants.</p>
-<p>%% STOPPED AT 224</p>
+<p>An enumerated data type is a programmer-defined data type whose only legal values are those associated with a set of named integer constants. It is called an enumerated type because the named constants are enumerated, or listed, as part of the definition of the data type. Here is an example of an enumerated-type declaration.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb56-1" title="1"><span class="kw">enum</span> Roster { Tom, Sharon, Bill, Teresa, John };</a></code></pre></div>
+<p>This creates a data type named Roster. Because the word <code>enum</code> is a C++ key word, it must be in lowercase. However, notice that the data type name itself begins with a capital letter. Although this is not required, most programmers do capitalize this name. The named integer constants associated with the Roster data type are called enumerators. A variable of the <code>Roster</code> data type may only have one of the values associated with these enumerators. But what are their values? By default, the compiler sets the first enumerator to 0, the next one to 1, and so on. In our example then, the value of <code>Tom</code> would be 0, the value of <code>Sharon</code> would be 1, and so forth. The final enumerator, John, would have the value 4.</p>
+<p>It is important to realize that the example <code>enum</code> statement does not actually create any variables. It just defines the data type. It says that when we later create variables of this data type, this is what they will look like–integers whose values are limited to the integers associated with the symbolic names in the enumerated set.</p>
+<p>The following statement shows how a variable of the Roster data type would be defined.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb57-1" title="1">Roster student;</a>
+<a class="sourceLine" id="cb57-2" title="2">student = Sharon;</a>
+<a class="sourceLine" id="cb57-3" title="3"></a>
+<a class="sourceLine" id="cb57-4" title="4"><span class="co">// Now that the student variable has been created, it can be assigned a value,</span></a>
+<a class="sourceLine" id="cb57-5" title="5"><span class="co">// like this:</span></a>
+<a class="sourceLine" id="cb57-6" title="6"><span class="cf">if</span> (student == Sharon)</a></code></pre></div>
+<p>Notice in these two examples that there are no quotation marks around <code>Sharon</code> because it is a named constant, not a string literal.</p>
+<p>Even though the values in an enumerated data type are actually stored as integers, you cannot always substitute the integer value for the symbolic name. For example, we could not have assigned Sharon as the value of student like this:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb58-1" title="1">student = <span class="dv">1</span>; <span class="co">// Error!</span></a></code></pre></div>
+<p>You can, however, test an enumerated variable by using an integer value instead of a symbolic name. For example, because Bill is stored as 2, the following two if statements are equivalent.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb59-1" title="1"><span class="cf">if</span> (student == Bill)</a>
+<a class="sourceLine" id="cb59-2" title="2"><span class="cf">if</span> (student == <span class="dv">2</span>)</a></code></pre></div>
+<p>You can also use relational operators to compare two enumerated variables.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb60-1" title="1"><span class="cf">if</span> (student1 &lt; student2)</a></code></pre></div>
+<p>As mentioned earlier, the symbols in the enumeration list are assigned the integer values 0, 1, 2, and so forth by default. If this is not appropriate, you can specify the values to be assigned, as in the following example.</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb61-1" title="1"><span class="kw">enum</span> Department { factory = <span class="dv">1</span>, sales = <span class="dv">2</span>, warehouse = <span class="dv">4</span> };</a></code></pre></div>
+<p>Remember that if you do assign values to the enumerated symbols, they must be integers. The following value assignments would produce an error.</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb62-1" title="1"><span class="kw">enum</span> Department { factory = <span class="fl">1.0</span>, sales = <span class="fl">2.0</span>, warehouse = <span class="fl">4.0</span> }; <span class="co">// Error!</span></a></code></pre></div>
+<p>Although there is no requirement that assigned integer values be placed in ascending order, it is generally considered a good idea to do so.</p>
+<p>If you leave out the value assignment for one or more of the symbols, they will be assigned default values, as illustrated by the following two examples.</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb63-1" title="1"><span class="kw">enum</span> Colors { red, orange, yellow = <span class="dv">9</span>, green, blue };</a></code></pre></div>
+<p>In this example, the named constant red will be assigned the value 0, orange will be 1, yellow will be 9, green will be 10, and blue will be 11.</p>
+<p>One purpose of an enumerated data type is that the symbolic names <strong>help to make a program self-documenting</strong>. However, because these names are not strings, they are for use inside the program only. Using the <code>Roster</code> data type defined at the beginning of this section, the following two statements would output a 2, not the name Sharon.</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb64-1" title="1">Roster topStudent = Sharon;</a>
+<a class="sourceLine" id="cb64-2" title="2">cout &lt;&lt; topStudent;</a></code></pre></div>
+<blockquote>
+<p>Program 4-28</p>
+</blockquote>
+<div class="sourceCode" id="cb65"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb65-1" title="1"><span class="co">// This program demonstrates an enumerated data type.</span></a>
+<a class="sourceLine" id="cb65-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb65-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb65-4" title="4"></a>
+<a class="sourceLine" id="cb65-5" title="5"><span class="co">// Declare the enumerated type</span></a>
+<a class="sourceLine" id="cb65-6" title="6"><span class="kw">enum</span> Roster { Tom = <span class="dv">1</span>, Sharon, Bill, Teresa, John };</a>
+<a class="sourceLine" id="cb65-7" title="7"><span class="co">// Sharon – John will be assigned default values 2–5.</span></a>
+<a class="sourceLine" id="cb65-8" title="8"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb65-9" title="9">{</a>
+<a class="sourceLine" id="cb65-10" title="10">  <span class="dt">int</span> who;</a>
+<a class="sourceLine" id="cb65-11" title="11"></a>
+<a class="sourceLine" id="cb65-12" title="12">  cout &lt;&lt; <span class="st">&quot;This program will give you a student&#39;s birthday.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb65-13" title="13">  cout &lt;&lt; <span class="st">&quot;Whose birthday do you want to know?</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb65-14" title="14">  cout &lt;&lt; <span class="st">&quot;1 = Tom</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb65-15" title="15">  cout &lt;&lt; <span class="st">&quot;2 = Sharon</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb65-16" title="16">  cout &lt;&lt; <span class="st">&quot;3 = Bill</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb65-17" title="17">  cout &lt;&lt; <span class="st">&quot;4 = Teresa</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb65-18" title="18">  cout &lt;&lt; <span class="st">&quot;5 = John</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb65-19" title="19">  cin  &gt;&gt; who;</a>
+<a class="sourceLine" id="cb65-20" title="20"></a>
+<a class="sourceLine" id="cb65-21" title="21">  <span class="cf">switch</span> (who)</a>
+<a class="sourceLine" id="cb65-22" title="22">  {</a>
+<a class="sourceLine" id="cb65-23" title="23">    <span class="cf">case</span> Tom   : cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Tom&#39;s birthday is January 3.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb65-24" title="24">                 <span class="cf">break</span>;</a>
+<a class="sourceLine" id="cb65-25" title="25">    <span class="cf">case</span> Sharon: cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Sharon&#39;s birthday is April 22.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb65-26" title="26">                 <span class="cf">break</span>;</a>
+<a class="sourceLine" id="cb65-27" title="27">    <span class="cf">case</span> Bill  : cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Bill&#39;s birthday is December 19.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb65-28" title="28">                 <span class="cf">break</span>;</a>
+<a class="sourceLine" id="cb65-29" title="29">    <span class="cf">case</span> Teresa: cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Teresa&#39;s birthday is February 2.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb65-30" title="30">                 <span class="cf">break</span>;</a>
+<a class="sourceLine" id="cb65-31" title="31">    <span class="cf">case</span> John  : cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">John&#39;s birthday is June 17.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb65-32" title="32">                 <span class="cf">break</span>;</a>
+<a class="sourceLine" id="cb65-33" title="33">    <span class="cf">default</span>    : cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Invalid selection</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb65-34" title="34">  }</a>
+<a class="sourceLine" id="cb65-35" title="35">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb65-36" title="36">}</a></code></pre></div>
+<h4 id="focus-on-testing-and-debugging-validating-output-results">4.14 Focus on Testing and Debugging: Validating Output Results</h4>
+<p><strong>CONCEPT:</strong> When testing a newly created or modified program, the output it produces must be carefully examined to ensure it is correct.</p>
+<blockquote>
+<p>Program 4-29</p>
+</blockquote>
+<div class="sourceCode" id="cb66"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb66-1" title="1"><span class="co">// This program determines a client&#39;s total buffet luncheon cost</span></a>
+<a class="sourceLine" id="cb66-2" title="2"><span class="co">// when the number of guests and the per person cost are known.</span></a>
+<a class="sourceLine" id="cb66-3" title="3"><span class="co">// It contains a logic error.</span></a>
+<a class="sourceLine" id="cb66-4" title="4"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb66-5" title="5"><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span></a>
+<a class="sourceLine" id="cb66-6" title="6"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb66-7" title="7"></a>
+<a class="sourceLine" id="cb66-8" title="8"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb66-9" title="9">{</a>
+<a class="sourceLine" id="cb66-10" title="10">  <span class="at">const</span> <span class="dt">int</span> ADULT_MEAL_COST = <span class="fl">8.25</span>; <span class="co">// Child meal cost = 60% of this</span></a>
+<a class="sourceLine" id="cb66-11" title="11"></a>
+<a class="sourceLine" id="cb66-12" title="12">  <span class="dt">int</span> numAdults,         <span class="co">// Guests ages 12 and older</span></a>
+<a class="sourceLine" id="cb66-13" title="13">  numChildren;           <span class="co">// Guests ages 2-11</span></a>
+<a class="sourceLine" id="cb66-14" title="14">  <span class="dt">double</span> adultMealTotal, <span class="co">// Total for all adult meals</span></a>
+<a class="sourceLine" id="cb66-15" title="15">  childMealTotal,        <span class="co">// Total for all child meals</span></a>
+<a class="sourceLine" id="cb66-16" title="16">  totalMealCost;</a>
+<a class="sourceLine" id="cb66-17" title="17"></a>
+<a class="sourceLine" id="cb66-18" title="18">  <span class="co">// Get number of adults and children attending</span></a>
+<a class="sourceLine" id="cb66-19" title="19">  cout &lt;&lt; <span class="st">&quot;This program calculates total cost &quot;</span></a>
+<a class="sourceLine" id="cb66-20" title="20">       &lt;&lt; <span class="st">&quot;for a buffet luncheon.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb66-21" title="21">  cout &lt;&lt; <span class="st">&quot;Enter the number of adult guests (age 12 and over): &quot;</span>;</a>
+<a class="sourceLine" id="cb66-22" title="22">  cin  &gt;&gt; numAdults;</a>
+<a class="sourceLine" id="cb66-23" title="23">  cout &lt;&lt; <span class="st">&quot;Enter the number of child guests (age 2-11): &quot;</span>;</a>
+<a class="sourceLine" id="cb66-24" title="24">  cin  &gt;&gt; numChildren;</a>
+<a class="sourceLine" id="cb66-25" title="25"></a>
+<a class="sourceLine" id="cb66-26" title="26">  <span class="co">// Calculate meal costs</span></a>
+<a class="sourceLine" id="cb66-27" title="27">  adultMealTotal = numAdults * ADULT_MEAL_COST;</a>
+<a class="sourceLine" id="cb66-28" title="28">  childMealTotal = numChildren * ADULT_MEAL_COST * <span class="fl">.60</span>;</a>
+<a class="sourceLine" id="cb66-29" title="29">  totalMealCost = adultMealTotal + childMealTotal;</a>
+<a class="sourceLine" id="cb66-30" title="30"></a>
+<a class="sourceLine" id="cb66-31" title="31">  <span class="co">// Display total meal cost</span></a>
+<a class="sourceLine" id="cb66-32" title="32">  cout &lt;&lt; fixed &lt;&lt; showpoint &lt;&lt; setprecision(<span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb66-33" title="33">  cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Total buffet cost is $&quot;</span> &lt;&lt; totalMealCost &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb66-34" title="34">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb66-35" title="35">}</a></code></pre></div>
+<p>At first glance the program may appear to run correctly. The per person charge for adults is $8.25, so if there were 100 adult guests the price would be $825. But there are only 69 guests and four of them are children, making the cost about 2/3 of this. $571.20 sounds “about right.”</p>
+<p>However, “about right” is not a sufficient test of accuracy. If the program had been run with data whose output could have been more easily checked, the programmer would have quickly seen that there is an error. Here is the output from two more runs of the same program using more carefully selected sample data.</p>
+<p><strong>Program Output with Still Different Example Input Shown in Bold</strong></p>
+<pre><code>This program calculates total cost for a buffet luncheon.
+Enter the number of adult guests (age 12 and over): 0[Enter]
+Enter the number of child guests (age 2–11): 1[Enter]
+
+Total buffet cost is $4.80</code></pre>
+<p>From this output we can see that the cost of a child meal is correctly being calculated as 60 percent of the cost of an adult meal, but the adult meal cost is wrong. For one adult, it is coming out as $8.00, when it should have been $8.25.</p>
+<p>To find the problem, the programmer should determine which lines of code are most apt to have caused the problem. Most likely, something is wrong either in the initialization or storage of <code>ADULT_MEAL_COST</code> on line 10, in the calculation or storage of <code>adultMealTotal</code> or <code>totalMealCost</code> on lines 14, 16, 27, and 29, or in the printing of <code>totalMealCost</code> on line 33. Because the cost for one adult meal is erroneously coming out as a whole dollar amount, even though it is formatted to appear as a floating-point number, one of the things to check is whether all the variables that need to hold floating-point values have been defined as type <code>float</code> or <code>double</code>. Sure enough, although <code>adultMealTotal</code> and <code>totalMealCost</code> have each been defined as a <code>double</code>, the named constant <code>ADULT_MEAL_COST</code> has been defined to be an int. So the 8.25 with which it is initialized is truncated to 8 when it is stored. When the definition of this named constant is rewritten as</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb68-1" title="1"><span class="at">const</span> <span class="dt">double</span> ADULT_MEAL_COST = <span class="fl">8.25</span>;</a></code></pre></div>
 <h2 id="video">Video</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=MXr8KRtldBE">🎬 section 4 1 relational operators cpp i 9 23</a></li>
+<li><a href="https://www.youtube.com/watch?v=j9SgUWV76vg">🎬 CPP section 4 2 if statement cpp i</a></li>
+<li><a href="https://www.youtube.com/watch?v=WlQAb0EQMUU">🎬 Section 4 3 Expanding if statement i</a></li>
+<li><a href="https://www.youtube.com/watch?v=qZBNBoMGa5Q">🎬 Section 4 4 if else cpp i</a></li>
+<li><a href="https://www.youtube.com/watch?v=hs9yAZ_dk4I">🎬 CPP Section 4 5 nested if cpp i</a></li>
+<li><a href="https://www.youtube.com/watch?v=bgFSwx7JrGE">🎬 section 4 6 if else if</a></li>
+<li><a href="https://www.youtube.com/watch?v=bz1VA2XatKQ">🎬 section 4 7 flags cpp i 9 24 17</a></li>
+<li><a href="https://www.youtube.com/watch?v=Pt8fd3YdUVg">🎬 Section 4 8 logical operators cpp</a></li>
+<li><a href="https://www.youtube.com/watch?v=1_rxyzQ1L9I">🎬 Section 4 9 checking numeric ranges with logical operators cpp i</a></li>
+<li><a href="https://www.youtube.com/watch?v=W4-1-tWeo9E">🎬 Section 4 10 menus cpp i</a></li>
+<li><a href="https://www.youtube.com/watch?v=Z4ZhXLNViIA">🎬 section 4 11 cpp i</a></li>
+<li><a href="https://www.youtube.com/watch?v=O__vzQx79q8">🎬 section 4 12 comparing strings and characters cpp i</a></li>
+<li><a href="https://www.youtube.com/watch?v=P59EHUoCSHo&amp;feature=emb_title">🎬 Section 4.13 The Conditional Operator</a></li>
+<li><a href="https://www.youtube.com/watch?v=Tg3K8fatxeQ">🎬 Section 4.14 The switch Statement</a></li>
+</ul>
 <p><br></p>
 <h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=MXr8KRtldBE">🎬 section 4 1 relational operators cpp i 9 23</a></li>
+<li><a href="https://www.youtube.com/watch?v=j9SgUWV76vg">🎬 CPP section 4 2 if statement cpp i</a></li>
+<li><a href="https://www.youtube.com/watch?v=WlQAb0EQMUU">🎬 Section 4 3 Expanding if statement i</a></li>
+<li><a href="https://www.youtube.com/watch?v=qZBNBoMGa5Q">🎬 Section 4 4 if else cpp i</a></li>
+<li><a href="https://www.youtube.com/watch?v=hs9yAZ_dk4I">🎬 CPP Section 4 5 nested if cpp i</a></li>
+<li><a href="https://www.youtube.com/watch?v=bgFSwx7JrGE">🎬 section 4 6 if else if</a></li>
+<li><a href="https://www.youtube.com/watch?v=bz1VA2XatKQ">🎬 section 4 7 flags cpp i 9 24 17</a></li>
+<li><a href="https://www.youtube.com/watch?v=Pt8fd3YdUVg">🎬 Section 4 8 logical operators cpp</a></li>
+<li><a href="https://www.youtube.com/watch?v=1_rxyzQ1L9I">🎬 Section 4 9 checking numeric ranges with logical operators cpp i</a></li>
+<li><a href="https://www.youtube.com/watch?v=W4-1-tWeo9E">🎬 Section 4 10 menus cpp i</a></li>
+<li><a href="https://www.youtube.com/watch?v=Z4ZhXLNViIA">🎬 section 4 11 cpp i</a></li>
+<li><a href="https://www.youtube.com/watch?v=O__vzQx79q8">🎬 section 4 12 comparing strings and characters cpp i</a></li>
+<li><a href="https://www.youtube.com/watch?v=P59EHUoCSHo&amp;feature=emb_title">🎬 Section 4.13 The Conditional Operator</a></li>
+<li><a href="https://www.youtube.com/watch?v=Tg3K8fatxeQ">🎬 Section 4.14 The switch Statement</a></li>
+</ul>
 <p>Textbook</p>
 <ul>
 <li>Starting Out with C++: Early Objects by Tony Gaddis, Judy Walters, Godfrey Muganda</li>
