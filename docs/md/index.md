@@ -56,6 +56,12 @@ date: Feb 05, 2020
 
 - [↪ Alacritty](desktop-apps/alacritty/index)
 
+### Developer Apps
+
+- [↪ Genymotion](desktop-apps/genymotion/index)
+
+
+
 
 ## Misc
 

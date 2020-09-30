@@ -165,13 +165,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 id="eclipse">Eclipse</h1>
 <p>Download latest Eclipse for <strong>Java</strong> tar.gz file <a href="https://www.eclipse.org/downloads/packages/">🌎 Eclipse Downloads</a></p>
 <p>Extract the package into the <code>/opt</code> directory:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> tar xfv eclipse-java-2020-06-R-linux-gtk-x86_64.tar.gz -C /opt</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> tar xfv eclipse-java-2020-06-R-linux-gtk-x86_64.tar.gz -C /opt</a></code></pre></div>
 <p>Create symlink of the executable to <code>/usr/local/bin</code></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">sudo</span> ln -s /opt/eclipse/eclipse /usr/local/bin/</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">sudo</span> ln -s /opt/eclipse/eclipse /usr/local/bin/</a></code></pre></div>
 <p>Create Eclipse Launcher Icon</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">sudo</span> vim /usr/share/applications/eclipse.desktop</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">sudo</span> vim /usr/share/applications/eclipse.desktop</a></code></pre></div>
 <p>Then paste</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1">[<span class="ex">Desktop</span> Entry]</a>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1">[<span class="ex">Desktop</span> Entry]</a>
 <a class="sourceLine" id="cb4-2" title="2"><span class="va">Encoding=</span>UTF-8</a>
 <a class="sourceLine" id="cb4-3" title="3"><span class="va">Name=</span>Eclipse <span class="ex">IDE</span></a>
 <a class="sourceLine" id="cb4-4" title="4"><span class="va">Comment=</span>Eclipse <span class="ex">IDE</span></a>

@@ -95,8 +95,13 @@ NOTE:
   can change the value however you like
 
 ```sh
+# for Debian package
+sudo dpkg -i jdk-8*_linux-x64_bin.deb
+# for Compressed archive
 sudo mkdir -p /usr/lib/jvm/
-sudo tar xfv jdk-8u261-linux-x64.tar.gz -C /usr/lib/jvm/
+sudo tar xfv jdk-8*-linux-x64.tar.gz -C /usr/lib/jvm/
+
+# install java and javac
 sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_261/bin/java 108
 sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_261/bin/javac 108
 ```
@@ -129,9 +134,8 @@ JRE_HOME=/usr/lib/jvm/jdk1.8.0_251/jre
 # Source environment
 source /etc/environment
 
-# Update and delete tar.gz
+# Update
 sudo apt-get update
-rm jdk-8u251-linux-x64.tar.gz
 ```
 
 Ref:
@@ -158,7 +162,13 @@ NOTE:
 path.
 
 ```sh
+# For Debian package
 sudo dpkg -i jdk-11.X.X_linux-x64_bin.deb
+# For Compressed archive
+sudo mkdir -p /usr/lib/jvm/
+sudo tar xfv jdk-11*-linux-x64.tar.gz -C /usr/lib/jvm/
+
+# Insatll java and javac
 sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-11.X.X/bin/java 111
 sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-11.X.X/bin/javac 111
 ```
@@ -187,6 +197,9 @@ JRE_HOME=/usr/lib/jvm/jdk-11.0.7/jre
 
 # Source environment
 source /etc/environment
+
+# Update
+sudo apt-get update
 ```
 
 Ref:

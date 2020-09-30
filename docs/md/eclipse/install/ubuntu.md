@@ -12,25 +12,25 @@ Download latest Eclipse for **Java** tar.gz file [🌎 Eclipse Downloads](https:
 
 Extract the package into the `/opt` directory:
 
-```bash
+```sh
 sudo tar xfv eclipse-java-2020-06-R-linux-gtk-x86_64.tar.gz -C /opt
 ```
 
 Create symlink of the executable to `/usr/local/bin`
 
-```bash
+```sh
 sudo ln -s /opt/eclipse/eclipse /usr/local/bin/
 ```
 
 Create Eclipse Launcher Icon
 
-```bash
+```sh
 sudo vim /usr/share/applications/eclipse.desktop
 ```
 
 Then paste
 
-```bash
+```sh
 [Desktop Entry]
 Encoding=UTF-8
 Name=Eclipse IDE
