@@ -15,4 +15,5 @@ date: Sep 09, 2020
 - [↪ 3.5 Implicit Differentiation](ch-3-5)
 - [↪ 3.6 Derivatives of Logarithmic Functions](ch-3-6)
 - [↪ 3.9 Related Rates](ch-3-9)
+- [↪ 3.10 Linear Approximations and Differentials](ch-3-10)
 

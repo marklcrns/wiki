@@ -28,10 +28,10 @@ date: Aug 17, 2020
 ## Quizzes
 
 - [⬇ Quiz 1](file:../../../files/fall-2020/MATH-150/quizzes/quiz-1.png)
+- [⬇ Quiz 2](file:../../../files/fall-2020/MATH-150/quizzes/quiz-2.pdf)
+- [⬇ Quiz 3](file:../../../files/fall-2020/MATH-150/quizzes/quiz-3.pdf)
 
 ## Tests
 
 - [⬇ Test 1](file:../../../files/fall-2020/MATH-150/tests/test-1.pdf)
-- [⬇ Test 2](file:../../../files/fall-2020/MATH-150/tests/test-2.pdf)
-- [⬇ Test 3](file:../../../files/fall-2020/MATH-150/tests/test-3.pdf)
 

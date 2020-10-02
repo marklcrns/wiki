@@ -209,6 +209,15 @@ the third and final side.
   - From hypotenuse to the equal sides, $\frac{h}{\sqrt{2}} = s$
   - 45-45 Theorem proof [(7:35)](https://www.youtube.com/watch?v=Jg1fwmH-6eA&t=455)
 
+
+## Unit Circle
+
+![Unit Circle](../../../../files/spring-2020/MATH-141/ch-4/unit_circle.png)
+
+- [🎬 Unit Circle](https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:trig/x2ec2f6f830c9fb89:unit-circle/v/unit-circle-definition-of-trig-functions-1)
+- [🎬 How to Remember the Unit Circle (NancyPi)](https://www.youtube.com/watch?v=c819bGfH8FA)
+
+
 <br>
 
 # Resources
@@ -227,4 +236,6 @@ the third and final side.
 - [🎬 VIDEO 1: ratios for 30-60 triangles are easy](https://www.youtube.com/watch?v=1kz7sxySOnU)
 - [🎬 VIDEO 2: TRIGONOMETRY HOW TO MEASURE A TREE FROM FAR AWAY](https://www.youtube.com/watch?v=9-Jg9DRhENs)
 - [🎬 VIDEO 3: Ratios & the 45-45 Theorem](https://www.youtube.com/watch?v=Jg1fwmH-6eA)
+- [🎬 Unit Circle](https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:trig/x2ec2f6f830c9fb89:unit-circle/v/unit-circle-definition-of-trig-functions-1)
+- [🎬 How to Remember the Unit Circle (NancyPi)](https://www.youtube.com/watch?v=c819bGfH8FA)
 

@@ -34,4 +34,5 @@ date: Aug 18, 2020
 - [⬇ 3.4 Homework Solutions](file:../../../../files/fall-2020/MATH-150/homeworks/3.4_homework.pdf)
 - [⬇ 3.5 Homework Solutions](file:../../../../files/fall-2020/MATH-150/homeworks/3.5_homework.pdf)
 - [⬇ 3.6 Homework Solutions](file:../../../../files/fall-2020/MATH-150/homeworks/3.6_homework.pdf)
+- [⬇ 3.9 Homework Solutions](file:../../../../files/fall-2020/MATH-150/homeworks/3.9_homework.pdf)
 

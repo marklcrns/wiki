@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Lucernas">
+
+    <title>3.10 Linear Approximations and Differentials</title>
+
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
+    <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body>
+
+<!-- Nav bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">School Wiki</a>
+        </div>
+        <!-- <div id="navbar" class="navbar-collapse collapse">                                                                                                                 -->
+        <!--   <ul class="nav navbar-nav">                                                                                                                                      -->
+        <!--     <li><a href="#">doc1</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc2</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc3</a></li>                                                                                                                                  -->
+        <!--     <li class="dropdown">                                                                                                                                          -->
+        <!--       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+        <!--       <ul class="dropdown-menu">                                                                                                                                   -->
+        <!--         <li><a href="#">Action</a></li>                                                                                                                            -->
+        <!--         <li><a href="#">Another action</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">Something else here</a></li>                                                                                                               -->
+        <!--         <li role="separator" class="divider"></li>                                                                                                                 -->
+        <!--         <li class="dropdown-header">Nav header</li>                                                                                                                -->
+        <!--         <li><a href="#">Separated link</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">One more separated link</a></li>                                                                                                           -->
+        <!--       </ul>                                                                                                                                                        -->
+        <!--     </li>                                                                                                                                                          -->
+        <!--   </ul>                                                                                                                                                            -->
+        <!-- </div>                                                                                                                                                             -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+<!-- Table of Contents -->
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
+          <ul>
+          <li><a href="#chapter-3.10-linear-approximations-and-differentials">Chapter 3.10: Linear Approximations and Differentials</a><ul>
+          <li><a href="#equation-1">Equation 1</a></li>
+          <li><a href="#equation-2">Equation 2</a></li>
+          <li><a href="#applications-to-physics">Applications to Physics</a></li>
+          <li><a href="#differentials">Differentials</a></li>
+          <li><a href="#equation-3">Equation 3</a></li>
+          <li><a href="#video-lectures">Video Lectures</a></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
+          </ul>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<!-- Header -->
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  3.10 Linear Approximations and Differentials
+                  <small class="h3 text-muted subtitle">
+                    | Differentiation Rules
+                  </small>
+                </h1>
+              </div>
+            </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">Oct 01, 2020</h5>
+          </div>
+
+<!-- Contents -->
+          <article class="contents">
+<h1 id="chapter-3.10-linear-approximations-and-differentials">Chapter 3.10: Linear Approximations and Differentials</h1>
+<p>The idea is that it might be easy to calculate a value of <span class="math inline">\(f(a)\)</span> a function, but difficult (or even impossible) to compute nearby values of <span class="math inline">\(f\)</span>. So we settle for the easily computed values of the linear function <span class="math inline">\(L\)</span> whose graph is the tangent line of <span class="math inline">\(f\)</span> at <span class="math inline">\((a, f(a))\)</span>.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.10_figure-1.png" alt="Figure 1" /><figcaption>Figure 1</figcaption>
+</figure>
+<p>In other words, we use the tangent line at <span class="math inline">\((a, f(a))\)</span> as an approximation to the curve <span class="math inline">\(y = f(x)\)</span> when <span class="math inline">\(x\)</span> is near <span class="math inline">\(a\)</span>. An equation of this tangent line is</p>
+<p><span class="math display">\[
+y = f(a) + f^{\prime}(a)(x - a)
+\]</span></p>
+<p>and the approximation</p>
+<h2 id="equation-1">Equation 1</h2>
+<p><span class="math display">\[
+f() \approx f(a) + f^{\prime}(a)(x - a)
+\]</span></p>
+<p>is called the <strong>linear approximation</strong> or <strong>tangent line approximation</strong> of at. The linear function whose graph is this tangent line, that is,</p>
+<h2 id="equation-2">Equation 2</h2>
+<p><span class="math display">\[
+L(x) = f(a) + f^{\prime}(a)(x - a)
+\]</span></p>
+<p>is called the <strong>linearization</strong> of <span class="math inline">\(f\)</span> at <span class="math inline">\(a\)</span></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.10_example-1.1.png" alt="Example 1.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.10_example-1.2.png" alt="Example 1.2" /></p>
+<p>In the following table we compare the estimates from the linear approximation in Example 1 with the true values. Notice from this table, and also from Figure 2, that the tangent line approximation gives good estimates when <span class="math inline">\(x\)</span> is close <span class="math inline">\(1\)</span> to but the accuracy of the approximation deteriorates when is farther away from <span class="math inline">\(1\)</span>.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="math inline">\(x\)</span></th>
+<th>From</th>
+<th>Actual value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\sqrt{3.9}\)</span></td>
+<td>0.9</td>
+<td>1.975</td>
+<td>1.97484176…</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\sqrt{3.98}\)</span></td>
+<td>0.98</td>
+<td>1.995</td>
+<td>1.99499373…</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\sqrt{4}\)</span></td>
+<td>1</td>
+<td>2</td>
+<td>2.00000000…</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\sqrt{4.05}\)</span></td>
+<td>1.05</td>
+<td>2.0125</td>
+<td>2.01246117…</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\sqrt{4.1}\)</span></td>
+<td>1.1</td>
+<td>2.025</td>
+<td>2.02484567…</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\sqrt{5}\)</span></td>
+<td>2</td>
+<td>2.25</td>
+<td>2.23606797…</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\sqrt{6}\)</span></td>
+<td>3</td>
+<td>2.5</td>
+<td>2.44948974…</td>
+</tr>
+</tbody>
+</table>
+<p>How good is the approximation that we obtained in Example 1? The next example shows that by using a graphing calculator or computer we can determine an interval throughout which a linear approximation provides a specified accuracy.</p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.10_example-2.1.png" alt="Example 2.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.10_example-2.2.png" alt="Example 2.2" /></p>
+<h2 id="applications-to-physics">Applications to Physics</h2>
+<p>Linear approximations are often used in physics. In analyzing the consequences of an equation, a physicist sometimes needs to simplify a function by replacing it with its linear approximation. For instance, in deriving a formula for the period of a pendulum, physics textbooks obtain the expression <span class="math inline">\(a_{T} = -g\sin{\theta}\)</span> for tangential acceleration and then replace <span class="math inline">\(\sin{\theta}\)</span> by <span class="math inline">\(\theta\)</span> with the remark that <span class="math inline">\(\sin{\theta}\)</span> is very close to <span class="math inline">\(\theta\)</span> if <span class="math inline">\(\theta\)</span> is not too large. [See, for example, Physics: Calculus, 2d ed., by Eugene Hecht (Pacific Grove, CA: Brooks/Cole, 2000), p. 431.] You can verify that the linearization of the function <span class="math inline">\(f(x) = \sin{x}\)</span> at <span class="math inline">\(a = 0\)</span> is <span class="math inline">\(L(x) = x\)</span> and so the linear approximation at <span class="math inline">\(0\)</span> is</p>
+<p><span class="math display">\[
+\sin{x} \approx x
+\]</span></p>
+<p>So, in effect, the derivation of the formula for the period of a pendulum uses the tangent line approximation for the sine function.</p>
+<p>Another example occurs in the theory of optics, where light rays that arrive at shallow angles relative to the optical axis are called <em>paraxial rays</em>. In paraxial (or Gaussian) optics, both <span class="math inline">\(\sin{\theta}\)</span> and <span class="math inline">\(\cos{\theta}\)</span> are replaced by their linearizations. In other words, the linear approximations</p>
+<p><span class="math display">\[
+\sin{\theta} \approx \theta
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\cos{\theta} \approx 1
+\]</span></p>
+<p>are used because <span class="math inline">\(\theta\)</span> is close to <span class="math inline">\(0\)</span>. The results of calculations made with these approximations became the basic theoretical tool used to design lenses. [See Optics, 4th ed., by Eugene Hecht (San Francisco, 2002), p. 154.]</p>
+<h2 id="differentials">Differentials</h2>
+<p>The ideas behind linear approximations are sometimes formulated in the terminology and notation of <em>differentials</em>. If <span class="math inline">\(y = f(x)\)</span>, where <span class="math inline">\(f\)</span> is a differentiable function, then the <strong>differential</strong> <span class="math inline">\(dx\)</span> is an independent variable; that is, <span class="math inline">\(dx\)</span> can be given the value of any real number. The <strong>differential</strong> <span class="math inline">\(dy\)</span> is then defined in terms of <span class="math inline">\(dx\)</span> by the equation</p>
+<h2 id="equation-3">Equation 3</h2>
+<p><span class="math display">\[
+dy = f^{\prime}(x)dx
+\]</span></p>
+<blockquote>
+<p><strong>NOTE</strong></p>
+</blockquote>
+<p>If $dx 0$, we can devide both sides of Equation 3 by <span class="math inline">\(dx\)</span> to obtain</p>
+<p><span class="math display">\[
+\frac{dy}{dx} = f^{\prime}(x)
+\]</span></p>
+<p>We have seen similar equations before, but now the left side can genuinely be interpreted as a ratio of differentials.</p>
+<p>So <span class="math inline">\(dy\)</span> is a dependent variable; it depends on the values of <span class="math inline">\(x\)</span> and <span class="math inline">\(dx\)</span>. If <span class="math inline">\(dx\)</span> is given a specific value and <span class="math inline">\(x\)</span> is taken to be some specific number in the domain of <span class="math inline">\(f\)</span>, then the numerical value of <span class="math inline">\(dy\)</span> is determined.</p>
+<p>The geometric meaning of differentials is shown in Figure 5. Let <span class="math inline">\(P(x, f(x))\)</span> and <span class="math inline">\(Q(x + \Delta{x}, f(x + \Delta{x}))\)</span> be points on the graph of <span class="math inline">\(f\)</span> and let <span class="math inline">\(dx = \Delta{x}\)</span>. The corresponding change in <span class="math inline">\(y\)</span> is</p>
+<p><span class="math display">\[
+\Delta{y} = f(x + \Delta{x}) - f(x)
+\]</span></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.10_figure-5.png" alt="Figure 5" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.10_example-3.1.png" alt="Example 3.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.10_example-3.2.png" alt="Example 3.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.10_example-4.png" alt="Example 4" /></p>
+<blockquote>
+<p><strong>NOTE</strong></p>
+</blockquote>
+<p>Although the possible error in Example 4 may appear to be rather large, a better picture of the error is given by the relative error, which is computed by dividing the error by the total volume:</p>
+<p><span class="math display">\[
+\frac{\Delta{V}}{V} \approx \frac{dV}{V} = \frac{4 \pi r^{2}dr}{\frac{4}{3} \pi r^{3}} = 3\frac{dr}{r}
+\]</span></p>
+<p>Thus the relative error in the volume is about three times the relative error in the radius. In Example 4 the relative error in the radius is approximately <span class="math inline">\(dr/r = 0.51/21 \approx 0.0024\)</span> and it produces a relative error of about <span class="math inline">\(0.007\)</span> in the volume. The errors could also be expressed as <strong>percentage errors</strong> of <span class="math inline">\(0.24%\)</span> in the radius and <span class="math inline">\(0.7%\)</span> in the volume.</p>
+<h2 id="video-lectures">Video Lectures</h2>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-contextual-applications-new/ab-4-6/v/local-linearization-intro">🎬 Local linearity</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-contextual-applications-new/ab-4-6/v/local-linearity-and-differentiability">🎬 Local linearity and differentiability</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-contextual-applications-new/ab-4-6/v/approximation-with-local-linearity">🎬 Worked example: Approximation with local linearity</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-contextual-applications-new/ab-4-6/v/linear-approximation-example">🎬 Linear approximation of a rational function</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differential-equations-new/ab-7-6/v/addressing-treating-differentials-algebraically">🎬 Addressing treating differentials algebraically</a></li>
+</ul>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-contextual-applications-new/ab-4-6/v/local-linearization-intro">🎬 Local linearity</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-contextual-applications-new/ab-4-6/v/local-linearity-and-differentiability">🎬 Local linearity and differentiability</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-contextual-applications-new/ab-4-6/v/approximation-with-local-linearity">🎬 Worked example: Approximation with local linearity</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-contextual-applications-new/ab-4-6/v/linear-approximation-example">🎬 Linear approximation of a rational function</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differential-equations-new/ab-7-6/v/addressing-treating-differentials-algebraically">🎬 Addressing treating differentials algebraically</a></li>
+</ul>
+<p>Textbook</p>
+<ul>
+<li><a href="https://webassign.com/">🌎 Cengage e-Textbook: Calculus Early Transcendentals, Eighth Edition, Stewart</a></li>
+</ul>
+          </article>
+          </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../../../templates/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../../../templates/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+    <script src="../../../../../../templates/js/animated-toc.js"></script>
+  </body>
+</html>
