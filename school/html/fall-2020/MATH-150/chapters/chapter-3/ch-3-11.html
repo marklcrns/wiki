@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Lucernas">
+
+    <title>3.11 Hyperbolic Functions</title>
+
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
+    <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body>
+
+<!-- Nav bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">School Wiki</a>
+        </div>
+        <!-- <div id="navbar" class="navbar-collapse collapse">                                                                                                                 -->
+        <!--   <ul class="nav navbar-nav">                                                                                                                                      -->
+        <!--     <li><a href="#">doc1</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc2</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc3</a></li>                                                                                                                                  -->
+        <!--     <li class="dropdown">                                                                                                                                          -->
+        <!--       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+        <!--       <ul class="dropdown-menu">                                                                                                                                   -->
+        <!--         <li><a href="#">Action</a></li>                                                                                                                            -->
+        <!--         <li><a href="#">Another action</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">Something else here</a></li>                                                                                                               -->
+        <!--         <li role="separator" class="divider"></li>                                                                                                                 -->
+        <!--         <li class="dropdown-header">Nav header</li>                                                                                                                -->
+        <!--         <li><a href="#">Separated link</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">One more separated link</a></li>                                                                                                           -->
+        <!--       </ul>                                                                                                                                                        -->
+        <!--     </li>                                                                                                                                                          -->
+        <!--   </ul>                                                                                                                                                            -->
+        <!-- </div>                                                                                                                                                             -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+<!-- Table of Contents -->
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
+          <ul>
+          <li><a href="#chapter-3.11-hyperbolic-functions">Chapter 3.11: Hyperbolic Functions</a><ul>
+          <li><a href="#hyperbolic-identities">Hyperbolic Identities</a></li>
+          <li><a href="#derivatives-of-hyperbolic-functions-1">Derivatives of Hyperbolic Functions 1</a></li>
+          <li><a href="#inverse-hyperbolic-functions-2">Inverse Hyperbolic Functions 2</a></li>
+          <li><a href="#equation-3">Equation 3</a></li>
+          <li><a href="#equation-4">Equation 4</a></li>
+          <li><a href="#equation-5">Equation 5</a></li>
+          <li><a href="#derivatives-of-inverse-hyperbolic-functions-6">Derivatives of Inverse Hyperbolic Functions 6</a></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
+          </ul>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<!-- Header -->
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  3.11 Hyperbolic Functions
+                  <small class="h3 text-muted subtitle">
+                    | Differentiation Rules
+                  </small>
+                </h1>
+              </div>
+            </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">Oct 01, 2020</h5>
+          </div>
+
+<!-- Contents -->
+          <article class="contents">
+<h1 id="chapter-3.11-hyperbolic-functions">Chapter 3.11: Hyperbolic Functions</h1>
+<p>Certain even and odd combinations of the exponential functions <span class="math inline">\(e^{x}\)</span> and <span class="math inline">\(e^{-x}\)</span> arise so frequently in mathematics and its applications that they deserve to be given special names. In many ways they are analogous to the trigonometric functions, and they have the same relationship to the hyperbola that the trigonometric functions have to the circle. For this reason they are collectively called hyperbolic functions and individually called hyperbolic sine, hyperbolic cosine, and so on.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sinh{x} &amp;= \frac{e^{x} - e^{-x}}{2} \;\;\;\;\;\;\;\;\;\;\; \operatorname{csch}{x} = \frac{1}{\sinh{x}} \\
+\cosh{x} &amp;= \frac{e^{x} + e^{-x}}{2} \;\;\;\;\;\;\;\;\;\;\; \operatorname{sech}{x} = \frac{1}{\cosh{x}} \\
+\tanh{x} &amp;= \frac{\sinh{x}}{\cosh{x}} \;\;\;\;\;\;\;\;\;\;\;\;\;\; \coth{x} = \frac{\cosh{x}}{\sinh{x}}
+\end{aligned}
+\]</span></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-1.png" alt="Figure 1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-2.png" alt="Figure 2" /></p>
+<p>Note that sinh has domain <span class="math inline">\(\mathbb{R}\)</span> and range <span class="math inline">\(\mathbb{R}\)</span>, while cosh has domain <span class="math inline">\(\mathbb{R}\)</span> and range <span class="math inline">\([1, \infty)\)</span>. The graph of tanh is shown in Figure 3. It has the horizontal asymptotes <span class="math inline">\(y = \pm 1\)</span>.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-3.png" alt="Figure 3" /><figcaption>Figure 3</figcaption>
+</figure>
+<p>Some of the mathematical uses of hyperbolic functions will be seen in Chapter 7. Applications to science and engineering occur whenever an entity such as light, velocity, electricity, or radioactivity is gradually absorbed or extinguished, for the decay can be represented by hyperbolic functions. The most famous application is the use of hyperbolic cosine to describe the shape of a hanging wire. It can be proved that if a heavy flexible cable (such as a telephone or power line) is suspended between two points at the same height, then it takes the shape of a curve with equation <span class="math inline">\(y = c + a \cosh{(x/a)}\)</span> called a catenary. (The Latin word catena means “chain.”)</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-4.png" alt="Figure 4" /><figcaption>Figure 4</figcaption>
+</figure>
+<p>Another application of hyperbolic functions occurs in the description of ocean waves: The velocity of a water wave with length <span class="math inline">\(L\)</span> moving across a body of water with depth <span class="math inline">\(d\)</span> is modeled by the function</p>
+<p><span class="math display">\[
+v = \sqrt{\frac{gL}{2\pi} \tanh{\frac{2 \pi d}{L}}}
+\]</span></p>
+<p>where <span class="math inline">\(g\)</span> is the acceleration due to gravity.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-5.png" alt="Figure 5" /><figcaption>Figure 5</figcaption>
+</figure>
+<h2 id="hyperbolic-identities">Hyperbolic Identities</h2>
+<p><span class="math display">\[
+\sinh{(-x)} = -\sinh{h} \\
+\cosh{(-x)} = \cosh{x} \\
+\cosh^{2}{x} - \sinh^{2}{x} = 1 \\
+1 - \tanh^{2}{x} = \operatorname{sech}^{2}{x} \\
+\sinh{(x + y)} = \sinh{x} \cosh{y} + \cosh{x} \sinh{y} \\
+\cosh{(x + y)} = \cosh{x} \cosh{y} + \sinh{x} \sinh{y}
+\]</span></p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_example-1.png" alt="Example 1" /><figcaption>Example 1</figcaption>
+</figure>
+<p>The identity proved in Example 1(a) gives a clue to the reason for the name “hyperbolic” functions:</p>
+<p>If <span class="math inline">\(t\)</span> is any real number, then the point <span class="math inline">\(P(\cos{t}, \sin{t})\)</span> lies on the unit circle <span class="math inline">\(x^{2} + y^{2} = 1\)</span> because <span class="math inline">\(\cos^{2}{t + \sin^{2}{t} = 1}\)</span>. In fact, <span class="math inline">\(t\)</span> can be interpreted as the radian measure of <span class="math inline">\(\angle{POQ}\)</span> in Figure 6. For this reason the trigonometric functions are sometimes called <em>circular</em> functions.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-6.png" alt="Figure 6" /><figcaption>Figure 6</figcaption>
+</figure>
+<p>Likewise, if <span class="math inline">\(t\)</span> is any real number, then the point <span class="math inline">\(P(\cosh{t}, \sinh{t})\)</span> lies on the right branch of the hyperbola <span class="math inline">\(x^{2} - y^{2} = 1\)</span> because $ ^{2}{t} - ^{2}{t} = 1$ and <span class="math inline">\(\cosh{t} \ge 1\)</span>. This time, <span class="math inline">\(t\)</span> does not represent the measure of an angle. However, it turns out that <span class="math inline">\(t\)</span> represents twice the area of the shaded hyperbolic sector in Figure 7, just as in the trigonometric case <span class="math inline">\(t\)</span> represents twice the area of the shaded circular sector in Figure 6.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-7.png" alt="Figure 7" /><figcaption>Figure 7</figcaption>
+</figure>
+<p>The derivatives of the hyperbolic functions are easily computed. For example,</p>
+<p><span class="math display">\[
+\frac{d}{dx}(\sinh{x}) = \frac{d}{dx}(\frac{e^{x} - e^{-x}}{2}) = \frac{e^{x} + e^{-x}}{2} = \cosh{x}
+\]</span></p>
+<h2 id="derivatives-of-hyperbolic-functions-1">Derivatives of Hyperbolic Functions 1</h2>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{d}{dx}(\sinh{x}) &amp;= \cosh{x} \;\;\;\;\;\;\;\;\;\;\; \frac{d}{dx}(\operatorname{csch}{x}) = -\operatorname{csch}{x}\coth{x} \\
+\frac{d}{dx}(\cosh{x}) &amp;= \sinh{x} \;\;\;\;\;\;\;\;\;\;\; \frac{d}{dx}(\operatorname{sech}{x}) = -\operatorname{sech}{x}\tanh{x} \\
+\frac{d}{dx}(\tanh{x}) &amp;= \operatorname{sech}^{2}{x} \;\;\;\;\;\;\;\;\; \frac{d}{dx}(\coth{x}) = -\operatorname{csch}^{2}{x}
+\end{aligned}
+\]</span></p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_example-2.png" alt="Example 2" /><figcaption>Example 2</figcaption>
+</figure>
+<h2 id="inverse-hyperbolic-functions-2">Inverse Hyperbolic Functions 2</h2>
+<p><span class="math display">\[
+\begin{aligned}
+y = \sinh^{-1}{x} \; &amp;\Leftrightarrow \; \sinh{y} = x \\
+y = \cosh^{-1}{x} \; &amp;\Leftrightarrow \; \cosh{y} = x \text{ and } y \ge 0 \\
+y = \tanh^{-1}{x} \; &amp;\Leftrightarrow \; \tanh{y} = x
+\end{aligned}
+\]</span></p>
+<p>We can sketch the graphs of $^{-1}$, <span class="math inline">\(\cosh^{-1}\)</span>, <span class="math inline">\(\tanh^{-1}\)</span> and in Figures 8, 9, and 10 by using Figures 1, 2, and 3.</p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-8.png" alt="Figure 8" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-9.png" alt="Figure 9" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-10.png" alt="Figure 10" /></p>
+<p>Since the hyperbolic functions are defined in terms of exponential functions, it’s not surprising to learn that the inverse hyperbolic functions can be expressed in terms of logarithms. In particular, we have:</p>
+<h2 id="equation-3">Equation 3</h2>
+<p><span class="math display">\[
+\sinh^{-1}{x} = \ln{(x + \sqrt{x^{2} + 1})} \;\;\; x \in \mathbb{R}
+\]</span></p>
+<h2 id="equation-4">Equation 4</h2>
+<p><span class="math display">\[
+\cosh^{-1}{x} = \ln{(x + \sqrt{x^{2} - 1})} \;\;\; x \ge 1
+\]</span></p>
+<h2 id="equation-5">Equation 5</h2>
+<p><span class="math display">\[
+\tanh^{-1}{x} = \frac{1}{2}\ln{(\frac{1 + x}{1 - x})} \;\;\; -1 &lt; x &lt; 1
+\]</span></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_example-3.1.png" alt="Example 3.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_example-3.2.png" alt="Example 3.2" /></p>
+<h2 id="derivatives-of-inverse-hyperbolic-functions-6">Derivatives of Inverse Hyperbolic Functions 6</h2>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{d}{dx}(\sinh^{-1}{x}) &amp;= \frac{1}{\sqrt{1 + x^{2}}} \;\;\;\;\;\;\;\;\;\;\; \frac{d}{dx}(\operatorname{csch}^{-1}{x}) = -\frac{1}{\left | x \right |\sqrt{x^{2} + 1}} \\
+\frac{d}{dx}(\cosh^{-1}{x}) &amp;= \frac{1}{\sqrt{x^{2} - 1}} \;\;\;\;\;\;\;\;\;\;\; \frac{d}{dx}(\operatorname{sech}^{-1}{x}) = -\frac{1}{x\sqrt{1 - x^{2}}} \\
+\frac{d}{dx}(\tanh^{-1}{x}) &amp;= \frac{1}{1 - x^{2}} \;\;\;\;\;\;\;\;\;\;\;\;\;\; \frac{d}{dx}(\coth^{-1}{x}) = \frac{1}{1 - x^{2}}
+\end{aligned}
+\]</span></p>
+<blockquote>
+<p><strong>NOTE</strong></p>
+</blockquote>
+<p>Notice that the formulas for the derivatives of <span class="math inline">\(\tanh^{-1}{x}\)</span> and <span class="math inline">\(\coth^{-1}{x}\)</span> appear to be identical. But the domains of these functions have no numbers in common: <span class="math inline">\(\tanh^{-1}{x}\)</span> is defined for <span class="math inline">\(\left | x \right | &lt; 1\)</span>, <span class="math inline">\(\coth^{-1}{x}\)</span> whereas is defined for <span class="math inline">\(\left | x \right | &gt; 1\)</span>.</p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_example-4.png" alt="Example 4" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_example-5.png" alt="Example 5" /></p>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<p>Textbook</p>
+<ul>
+<li><a href="https://webassign.com/">🌎 Cengage e-Textbook: Calculus Early Transcendentals, Eighth Edition, Stewart</a></li>
+</ul>
+          </article>
+          </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../../../templates/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../../../templates/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+    <script src="../../../../../../templates/js/animated-toc.js"></script>
+  </body>
+</html>
