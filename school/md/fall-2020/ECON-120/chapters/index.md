@@ -15,4 +15,5 @@ date: Aug 20, 2020
 - [↪ Chapter 3: Exchange and Markets](chapter-3)
 - [↪ Chapter 4: Demand, Supply, and Market Equilibrium](chapter-4)
 - [↪ Chapter 5: Measuring a Nation's Production and Income](chapter-5)
+- [↪ Chapter 6: Unemployment and Inflation](chapter-6)
 
