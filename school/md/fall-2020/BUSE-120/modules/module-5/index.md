@@ -1,6 +1,6 @@
 ---
-title: Module 5 Notes and Activities
-subtitle: Budgets
+title: Module 5 Budgets
+subtitle: Notes and Activities
 author: Mark Lucernas
 date: Sep 15, 2020
 ---

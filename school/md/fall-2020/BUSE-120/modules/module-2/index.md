@@ -1,6 +1,6 @@
 ---
-title: Module 2 Notes and Activities
-subtitle: Basic Ideas of Finance
+title: Module 2 Basic Ideas of Finance
+subtitle: Notes and Activities
 author: Mark Lucernas
 date: 2020-08-17
 ---

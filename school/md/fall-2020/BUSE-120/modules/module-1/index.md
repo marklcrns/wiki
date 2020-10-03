@@ -1,6 +1,6 @@
 ---
-title: Module 1 Notes and Activities
-subtitle: Course Introduction
+title: Module 1 Course Introduction
+subtitle: Notes and Activities
 author: Mark Lucernas
 date: 2020-08-17
 ---

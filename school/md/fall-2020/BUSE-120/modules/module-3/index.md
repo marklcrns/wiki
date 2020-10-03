@@ -1,6 +1,6 @@
 ---
-title: Module 3 Notes and Activities
-subtitle: Financial Statements
+title: Module 3 Financial Statements
+subtitle: Notes and Activities
 author: Mark Lucernas
 date: 2020-08-17
 ---

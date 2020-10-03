@@ -1,6 +1,6 @@
 ---
-title: Module 6 Notes and Activities
-subtitle: Taxes
+title: Module 6 Taxes
+subtitle: Notes and Activities
 author: Mark Lucernas
 date: Sep 25, 2020
 ---
