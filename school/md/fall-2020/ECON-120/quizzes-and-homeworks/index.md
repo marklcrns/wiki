@@ -9,4 +9,5 @@ date: Sep 26, 2020
 # Quizzes and Homeworks
 
 - [↪ Chapter 5](ch-5)
+- [↪ Chapter 6](ch-6)
 

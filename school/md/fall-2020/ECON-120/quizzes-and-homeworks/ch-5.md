@@ -8,6 +8,8 @@ date: Sep 26, 2020
 
 # Chapter 5
 
+## Homework
+
 Sales versus Value Added. In comparing a small country's GDP to a major
 corporation, why is it best to use the value added of the corporation rather
 than its total sales?
@@ -112,6 +114,9 @@ $$
 
 > To get the price change, calculate the difference in the GDP deflator between
 > 2011 and 2012 and divide by the GDP deflator in 2011.
+
+
+## Quiz
 
 1. Does Spending Measure Welfare? Suppose a community spends \$1 million on
    salaries and equipment for its police department. Because it believes that
