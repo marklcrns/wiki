@@ -6,7 +6,7 @@ date: 2020-08-17
 ---
 
 
-# Module 2: Financial Statements
+# Module 3: Financial Statements
 
 ## Notes
 
