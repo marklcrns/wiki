@@ -60,9 +60,6 @@ date: Feb 05, 2020
 
 - [↪ Genymotion](desktop-apps/genymotion/index)
 
-
-
-
 ## Misc
 
 - [↪ Supported Markdown Emojis by Pandoc](emojis)

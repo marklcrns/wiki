@@ -61,9 +61,36 @@ remarkable changes in our economy and society as women dramatically increased
 their presence in the workforce. In 2018, the participation rate for women had
 fallen to approximately 57 percent.
 
+Figure 6.2 contains international data on unemployment for 2017 for developed
+countries. Despite the fact these countries all have modern, industrial
+economies, notice the sharp differences in unemployment. **For example, Spain
+had a 16.7 percent unemployment rate, whereas Japan had an unemployment rate of
+2.7 percent. These sharp differences reflect a number of factors, including how
+much government support is provided to unemployed workers. In countries in which
+support is the most generous, there is less incentive to work and unemployment
+will tend to be higher.**
+
 ![Figure 6.2 Unemployment Rates in Developewd Countries](../../../../files/fall-2020/ECON-120/chapter-6/figure-6.2.png)
 
 ### 6.1.2 Alternative Measures of Unemployment and Why They Are Important
+
+It is relatively straightforward in principle to determine who is employed: Just
+count the people who are working. What is more difficult is to distinguish
+between those who are unemployed and those who are not in the labor force. How
+are these two groups distinguished? The Bureau of Labor Statistics (BLS), which
+is part of the Department of Labor, interviews a large sample of households each
+month. The BLS asks about the employment situation of all household members 16
+years of age and older. If someone in a household is not working, the
+interviewer asks whether the person is actively looking for work. If the answer
+is "yes," he or she is classified as unemployed. If the answer is "no"--he or
+she is not actively looking for work--that person is classified as not being in
+the labor force.
+
+Individuals who want to work and have searched for work in the prior year, but
+are not currently looking for work because they believe they won't be able to
+find a job are called **discouraged workers**. Note that these individuals are
+not included in the official statistics because they are not currently looking
+for work.
 
 <a name="discouraged-workers-term">**Discouraged workers**</a>
 
@@ -77,11 +104,30 @@ workers_. Marginally attached workers consist of two groups: discouraged workers
 not looking for jobs for other reasons, including lack of transportation or
 childcare.
 
+$$
+\text{ unemployment rate } = \frac{\text{ unemployed } + \text{ discouraged workers }}{\text{ labor force } + \text{ discouraged workers }} \times 100
+$$
+
 Finally, there are those workers who would like to be employed full time but
 hold part-time jobs. These individuals are counted as employed in the BLS
 statistics because they have a job. However, they would like to be working more
 hours. They are known as _individuals working part time for economic reasons_.
 We do not include in this category individuals who prefer part-time employment.
+
+How important are these alternative measures? Figure 6.3 puts them into
+perspective. In January 2018, 6.68 million individuals were officially
+classified as unemployed. The number of discouraged workers was 0.45 million.
+Including the discouraged workers, there were 1.64 million marginally attached
+workers. If we add the marginally attached individuals to those who were
+involuntarily working part time, the total is 6.57 million. Thus, depending on
+the statistic you want to emphasize, there were anywhere between 6.68 million
+unemployed (the official number) and 13.25 million unemployed (the official
+number plus all those seeking full-time employment who did not have it). If we
+count those 13.25 million as unemployed and include the marginally attached in
+the labor force, the unemployment rate in 2018 would be 8.1
+percent--substantially higher than the official rate of 4.1 percent. As we have
+seen, the official statistics for unemployment do not include the full range of
+individuals who would like to participate fully in the labor market.
 
 ![Figure 6.3 Alternative Measures of Unemployment, January 2018](../../../../files/fall-2020/ECON-120/chapter-6/figure-6.3.png)
 
@@ -655,6 +701,8 @@ $$
 <br>
 
 # Resources
+
+- [⚓ Real-Nominal Principle](chapter-5#real-nominal-principle-term)
 
 Textbook
 

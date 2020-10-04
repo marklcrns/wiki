@@ -125,10 +125,15 @@ task [<filter>] [<command>] [<modification>] [<miscellaneous>]
   - `_zshids`        = Zsh formatted ID list
   - `_zshuuids`      = Zsh formatted UUID list
 
+Ref:
+
+- [🌎 Taskwarrior Commands](https://taskwarrior.org/docs/commands/)
+- [🌎 Taskwarrior Tags & Virtual tags](https://taskwarrior.org/docs/tags.html)
 
 <br>
 
 # Resources
 
-  - https://taskwarrior.org/docs/commands/
+- [🌎 Taskwarrior Commands](https://taskwarrior.org/docs/commands/)
+- [🌎 Taskwarrior Tags & Virtual tags](https://taskwarrior.org/docs/tags.html)
 
