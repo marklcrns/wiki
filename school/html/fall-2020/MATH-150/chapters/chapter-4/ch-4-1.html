@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Lucernas">
+
+    <title>4.1 Maximum and Minimum Values</title>
+
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
+    <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body>
+
+<!-- Nav bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">School Wiki</a>
+        </div>
+        <!-- <div id="navbar" class="navbar-collapse collapse">                                                                                                                 -->
+        <!--   <ul class="nav navbar-nav">                                                                                                                                      -->
+        <!--     <li><a href="#">doc1</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc2</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc3</a></li>                                                                                                                                  -->
+        <!--     <li class="dropdown">                                                                                                                                          -->
+        <!--       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+        <!--       <ul class="dropdown-menu">                                                                                                                                   -->
+        <!--         <li><a href="#">Action</a></li>                                                                                                                            -->
+        <!--         <li><a href="#">Another action</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">Something else here</a></li>                                                                                                               -->
+        <!--         <li role="separator" class="divider"></li>                                                                                                                 -->
+        <!--         <li class="dropdown-header">Nav header</li>                                                                                                                -->
+        <!--         <li><a href="#">Separated link</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">One more separated link</a></li>                                                                                                           -->
+        <!--       </ul>                                                                                                                                                        -->
+        <!--     </li>                                                                                                                                                          -->
+        <!--   </ul>                                                                                                                                                            -->
+        <!-- </div>                                                                                                                                                             -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+<!-- Table of Contents -->
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
+          <ul>
+          <li><a href="#chapter-4.1-maximum-and-minimum-values">Chapter 4.1: Maximum and Minimum Values</a><ul>
+          <li><a href="#definition-1">Definition 1</a></li>
+          <li><a href="#definition-2">Definition 2</a></li>
+          <li><a href="#the-extreme-value-theorem-3">The Extreme Value Theorem 3</a></li>
+          <li><a href="#fermats-theorem">Fermat’s Theorem</a></li>
+          <li><a href="#definition-6">Definition 6</a></li>
+          <li><a href="#definition-7">Definition 7</a></li>
+          <li><a href="#the-closed-interval-method">The Closed Interval Method</a></li>
+          <li><a href="#fermat">Fermat</a></li>
+          <li><a href="#video-lectures">Video Lectures</a></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
+          </ul>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<!-- Header -->
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  4.1 Maximum and Minimum Values
+                  <small class="h3 text-muted subtitle">
+                    | Application of Differentiation
+                  </small>
+                </h1>
+              </div>
+            </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">Oct 06, 2020</h5>
+          </div>
+
+<!-- Contents -->
+          <article class="contents">
+<h1 id="chapter-4.1-maximum-and-minimum-values">Chapter 4.1: Maximum and Minimum Values</h1>
+<p>Some of the most important applications of differential calculus are optimization problems, in which we are required to find the optimal (best) way of doing something. Here are examples of such problems that we will solve in this chapter:</p>
+<ul>
+<li>What is the shape of a can that minimizes manufacturing costs?</li>
+<li>What is the maximum acceleration of a space shuttle? (This is an important question to the astronauts who have to withstand the effects of acceleration.)</li>
+<li>What is the radius of a contracted windpipe that expels air most rapidly during a cough?</li>
+<li>At what angle should blood vessels branch so as to minimize the energy expended by the heart in pumping blood?</li>
+</ul>
+<p>These problems can be reduced to finding the maximum or minimum values of a function. Let’s first explain exactly what we mean by maximum and minimum values.</p>
+<p>We see that the highest point on the graph of the function <span class="math inline">\(f\)</span> shown in Figure 1 is the point <span class="math inline">\((3, 5)\)</span>. In other words, the largest value of <span class="math inline">\(f\)</span> is <span class="math inline">\(f(3) = 5\)</span>. Likewise, the smallest value is <span class="math inline">\(f(6) = 2\)</span>. We say that <span class="math inline">\(f(3) = 5\)</span> is the absolute maximum of <span class="math inline">\(f\)</span> and <span class="math inline">\(f(6) = 2\)</span> is the <em>absolute minimum</em>. In general, we use the following definition.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_figure-1.png" alt="Figure 1" /><figcaption>Figure 1</figcaption>
+</figure>
+<h2 id="definition-1">Definition 1</h2>
+<p>Let <span class="math inline">\(c\)</span> be a number in the domain <span class="math inline">\(D\)</span> of a function <span class="math inline">\(f\)</span>. Then <span class="math inline">\(f(c)\)</span> is the</p>
+<ul>
+<li><strong>absolute maximum</strong> value of <span class="math inline">\(f\)</span> on <span class="math inline">\(D\)</span> if <span class="math inline">\(f(c) \ge f(x)\)</span> for all <span class="math inline">\(x\)</span> in <span class="math inline">\(D\)</span></li>
+<li><strong>absolute minimum</strong> value of <span class="math inline">\(f\)</span> on <span class="math inline">\(D\)</span> if <span class="math inline">\(f(c) \le f(x)\)</span> for all <span class="math inline">\(x\)</span> in <span class="math inline">\(D\)</span></li>
+</ul>
+<p>An absolute maximum or minimum is sometimes called a global maximum or minimum. The maximum and minimum values of <span class="math inline">\(f\)</span> are called extreme values of <span class="math inline">\(f\)</span>.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_figure-2.png" alt="Figure 2" /><figcaption>Figure 2</figcaption>
+</figure>
+<h2 id="definition-2">Definition 2</h2>
+<p>The number <span class="math inline">\(f(c)\)</span> is a</p>
+<ul>
+<li><strong>local maximum</strong> value of <span class="math inline">\(f\)</span> if <span class="math inline">\(f(c) \ge f(x)\)</span> when <span class="math inline">\(x\)</span> is near <span class="math inline">\(c\)</span></li>
+<li><strong>local minimum</strong> value of <span class="math inline">\(f\)</span> if <span class="math inline">\(f(c) \le f(x)\)</span> when <span class="math inline">\(x\)</span> is near <span class="math inline">\(c\)</span></li>
+</ul>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_figure-3.png" alt="Figure 3" /><figcaption>Figure 3</figcaption>
+</figure>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_example-1.png" alt="Example 1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_example-2.png" alt="Example 2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_example-3.png" alt="Example 3" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_example-4.png" alt="Example 4" /></p>
+<h2 id="the-extreme-value-theorem-3">The Extreme Value Theorem 3</h2>
+<p>If <span class="math inline">\(f\)</span> is continuous on a closed interval <span class="math inline">\([a, b]\)</span>, then <span class="math inline">\(f\)</span> attains an absolute maximum value <span class="math inline">\(f(c)\)</span> and an absolute minimum value <span class="math inline">\(f(d)\)</span> at some numbers <span class="math inline">\(c\)</span> and <span class="math inline">\(d\)</span> in <span class="math inline">\([a, b]\)</span>.</p>
+<p>The Extreme Value Theorem is illustrated in Figure 8. Note that an extreme value can be taken on more than once. Although the Extreme Value Theorem is intuitively very plausible, it is difficult to prove and so we omit the proof.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_figure-8.png" alt="Figure 8" /><figcaption>Figure 8</figcaption>
+</figure>
+<p>Figures 9 and 10 show that a function need not possess extreme values if either hypothesis (continuity or closed interval) is omitted from the Extreme Value Theorem.</p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_figure-9.png" alt="Figure 9" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_figure-10.png" alt="Figure 10" /></p>
+<p>The function <span class="math inline">\(f\)</span> whose graph is shown in Figure 9 is defined on the closed interval <span class="math inline">\([0, 2]\)</span> but has no maximum value. (Notice that the range of <span class="math inline">\(f\)</span> is <span class="math inline">\([0, 3)\)</span>. The function takes on values arbitrarily close to <span class="math inline">\(3\)</span>, but never actually attains the value 3.) This does not contradict the Extreme Value Theorem because <span class="math inline">\(f\)</span> is not continuous.</p>
+<p>The function <span class="math inline">\(g\)</span> shown in Figure 10 is continuous on the open interval <span class="math inline">\((0, 2)\)</span> but has neither a maximum nor a minimum value. [The range of <span class="math inline">\(g\)</span> is <span class="math inline">\((1, \infty)\)</span>. The function takes on arbitrarily large values.] This does not contradict the Extreme Value Theorem because the interval <span class="math inline">\((0, 2)\)</span> is not closed.</p>
+<p>The Extreme Value Theorem says that a continuous function on a closed interval has a maximum value and a minimum value, but it does not tell us how to find these extreme values. Notice in Figure 8 that the absolute maximum and minimum values that are <em>between</em> <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> occur at local maximum or minimum values, so we start by looking for local extreme values.</p>
+<p>Figure 11 shows the graph of a function <span class="math inline">\(f\)</span> with a local maximum at <span class="math inline">\(c\)</span> and a local minimum at <span class="math inline">\(d\)</span>. It appears that at the maximum and minimum points the tangent lines are horizontal and therefore each has slope <span class="math inline">\(0\)</span>. We know that the derivative is the slope of the tangent line, so it appears that <span class="math inline">\(f^{\prime}(c) = 0\)</span> and <span class="math inline">\(f^{\prime}(d)\)</span>. The following theorem says that this is always true for differentiable functions.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_figure-11.png" alt="Figure 11" /><figcaption>Figure 11</figcaption>
+</figure>
+<h2 id="fermats-theorem">Fermat’s Theorem</h2>
+<p>If <span class="math inline">\(f\)</span> has a local maximum or minimum at <span class="math inline">\(c\)</span>, and if <span class="math inline">\(f^{\prime}(c)\)</span> exists, then <span class="math inline">\(f^{\prime}(c) = 0\)</span>.</p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_fermats_theorem_proof-1.png" alt="Proof 1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_fermats_theorem_proof-2.png" alt="Proof 2" /></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_example-5.png" alt="Example 5" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_example-6.png" alt="Example 6" /></p>
+<blockquote>
+<p><strong>Warning</strong> Examples 5 and 6 show that we must be careful when using Fermat’s Theorem. Example 5 demonstrates that even when <span class="math inline">\(f^{\prime}(c) = 0\)</span> there need not be a maximum or minimum at <span class="math inline">\(c\)</span>. (In other words, the converse of Fermat’s Theorem is false in general.) Furthermore, there may be an extreme value even when <span class="math inline">\(f^{\prime}(c)\)</span> does not exist (as in Example 6).</p>
+</blockquote>
+<p>Fermat’s Theorem does suggest that we should at least start looking for extreme values of <span class="math inline">\(f\)</span> at the numbers <span class="math inline">\(c\)</span> where <span class="math inline">\(f^{\prime}(c) = 0\)</span> or where <span class="math inline">\(f^{\prime}(c)\)</span> does not exist. Such numbers are given a special name.</p>
+<h2 id="definition-6">Definition 6</h2>
+<p>A <strong>critical number</strong> of a function <span class="math inline">\(f\)</span> is a number <span class="math inline">\(c\)</span> in the domain of <span class="math inline">\(f\)</span> such that either <span class="math inline">\(f^{\prime}(c) = 0\)</span> or <span class="math inline">\(f^{\prime}(c)\)</span> does not exist.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_example-7.png" alt="Example 7" /><figcaption>Example 7</figcaption>
+</figure>
+<h2 id="definition-7">Definition 7</h2>
+<p>If <span class="math inline">\(f\)</span> has a local maximum or minimum at <span class="math inline">\(c\)</span>, then <span class="math inline">\(c\)</span> is a critical number of <span class="math inline">\(f\)</span>.</p>
+<p>To find an absolute maximum or minimum of a continuous function on a closed interval, we note that either it is local [in which case it occurs at a critical number by (7)] or it occurs at an endpoint of the interval, as we see from the examples in Figure 8. Thus the following three-step procedure always works.</p>
+<h2 id="the-closed-interval-method">The Closed Interval Method</h2>
+<p>To find the <em>absolute</em> maximum and minimum values of a continuous function <span class="math inline">\(f\)</span> on a closed interval <span class="math inline">\([a, b]\)</span>:</p>
+<ol type="1">
+<li>Find the values of <span class="math inline">\(f\)</span> at the critical numbers of <span class="math inline">\(f\)</span> in <span class="math inline">\((a, b)\)</span>.</li>
+<li>Find the values of <span class="math inline">\(f\)</span> at the endpoints of the interval.</li>
+<li>The largest of the values from Steps 1 and 2 is the absolute maximum value; the smallest of these values is the absolute minimum value.</li>
+</ol>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_example-8.1.png" alt="Example 8.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_example-8.2.png" alt="Example 8.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_example-9.1.png" alt="Example 9.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_example-9.2.png" alt="Example 9.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_example-10.1.png" alt="Example 10.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.1_example-10.2.png" alt="Example 10.2" /></p>
+<h2 id="fermat">Fermat</h2>
+<p>Fermat’s Theorem is named after Pierre Fermat (1601–1665), a French lawyer who took up mathematics as a hobby. Despite his amateur status, Fermat was one of the two inventors of analytic geometry (Descartes was the other). His methods for finding tangents to curves and maximum and minimum values (before the invention of limits and derivatives) made him a forerunner of Newton in the creation of differential calculus.</p>
+<h2 id="video-lectures">Video Lectures</h2>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-2/v/extreme-value-theorem">🎬 Extreme value theorem</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-2/v/minima-maxima-and-critical-points">🎬 Critical points introduction</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-2/v/finding-critical-numbers">🎬 Finding critical points</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-4/v/relative-minima-maxima">🎬 Introduction to minimum and maximum points</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-4/v/testing-critical-points-for-local-extrema">🎬 Finding relative extrema (first derivative test)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-4/v/finding-relative-maximum-example">🎬 Worked example: finding relative extrema</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-4/v/analyzing-mistakes-when-finding-extrema-1">🎬 Analyzing mistakes when finding extrema (example 1)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-4/v/analyzing-mistakes-when-finding-extrema-2">🎬 Analyzing mistakes when finding extrema (example 2)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-4/a/relative-minima-and-maxima-review">🌎 Relative minima &amp; maxima review</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-5/v/using-extreme-value-theorem">🎬 Finding absolute extrema on a closed interval</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-5/v/absolute-extrema-on-entire-domain">🎬 Absolute minima &amp; maxima (entire domain)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-5/a/absolute-minima-and-maxima-review">🌎 Absolute minima &amp; maxima review</a></li>
+</ul>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-2/v/extreme-value-theorem">🎬 Extreme value theorem</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-2/v/minima-maxima-and-critical-points">🎬 Critical points introduction</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-2/v/finding-critical-numbers">🎬 Finding critical points</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-4/v/relative-minima-maxima">🎬 Introduction to minimum and maximum points</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-4/v/testing-critical-points-for-local-extrema">🎬 Finding relative extrema (first derivative test)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-4/v/finding-relative-maximum-example">🎬 Worked example: finding relative extrema</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-4/v/analyzing-mistakes-when-finding-extrema-1">🎬 Analyzing mistakes when finding extrema (example 1)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-4/v/analyzing-mistakes-when-finding-extrema-2">🎬 Analyzing mistakes when finding extrema (example 2)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-4/a/relative-minima-and-maxima-review">🌎 Relative minima &amp; maxima review</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-5/v/using-extreme-value-theorem">🎬 Finding absolute extrema on a closed interval</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-5/v/absolute-extrema-on-entire-domain">🎬 Absolute minima &amp; maxima (entire domain)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-5/a/absolute-minima-and-maxima-review">🌎 Absolute minima &amp; maxima review</a></li>
+</ul>
+<p>Textbook</p>
+<ul>
+<li><a href="https://webassign.com/">🌎 Cengage e-Textbook: Calculus Early Transcendentals, Eighth Edition, Stewart</a></li>
+</ul>
+          </article>
+          </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../../../templates/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../../../templates/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+    <script src="../../../../../../templates/js/animated-toc.js"></script>
+  </body>
+</html>
