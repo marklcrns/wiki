@@ -34,4 +34,5 @@ date: Aug 17, 2020
 ## Tests
 
 - [⬇ Test 1](file:../../../files/fall-2020/MATH-150/tests/test-1.pdf)
+- [⬇ Test 2](file:../../../files/fall-2020/MATH-150/tests/test-2.pdf)
 
