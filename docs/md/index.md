@@ -23,6 +23,7 @@ date: Feb 05, 2020
 ## IDE
 
 - [↪ Eclipse](eclipse/index)
+- [↪ Android Studio](android_studio/index)
 
 ## Shell Applications
 
