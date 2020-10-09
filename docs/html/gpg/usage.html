@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Lucernas">
+
+    <title>GNUpg Usage</title>
+
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../templates/css/animated-toc.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../../../templates/css/dashboard.css" rel="stylesheet">
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+  </head>
+
+  <body>
+
+<!-- Nav bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Docs Wiki</a>
+        </div>
+        <!-- <div id="navbar" class="navbar-collapse collapse">                                                                                                                 -->
+        <!--   <ul class="nav navbar-nav">                                                                                                                                      -->
+        <!--     <li><a href="#">doc1</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc2</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc3</a></li>                                                                                                                                  -->
+        <!--     <li class="dropdown">                                                                                                                                          -->
+        <!--       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+        <!--       <ul class="dropdown-menu">                                                                                                                                   -->
+        <!--         <li><a href="#">Action</a></li>                                                                                                                            -->
+        <!--         <li><a href="#">Another action</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">Something else here</a></li>                                                                                                               -->
+        <!--         <li role="separator" class="divider"></li>                                                                                                                 -->
+        <!--         <li class="dropdown-header">Nav header</li>                                                                                                                -->
+        <!--         <li><a href="#">Separated link</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">One more separated link</a></li>                                                                                                           -->
+        <!--       </ul>                                                                                                                                                        -->
+        <!--     </li>                                                                                                                                                          -->
+        <!--   </ul>                                                                                                                                                            -->
+        <!-- </div>                                                                                                                                                             -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+<!-- Table of Contents -->
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
+          <ul>
+          <li><a href="#usage">Usage</a><ul>
+          <li><a href="#help">Help</a></li>
+          <li><a href="#generating-new-private-key">Generating New Private Key</a></li>
+          <li><a href="#key-management">Key Management</a><ul>
+          <li><a href="#list-all-keys">List all keys</a></li>
+          <li><a href="#editing-existing-key">Editing existing key</a></li>
+          <li><a href="#exporting-private-keys">Exporting Private Keys</a></li>
+          <li><a href="#importing-a-key">Importing a Key</a></li>
+          <li><a href="#push-public-key-to-key-server">Push Public Key to Key Server</a></li>
+          <li><a href="#deleting-a-key">Deleting a Key</a></li>
+          </ul></li>
+          <li><a href="#encryption">Encryption</a><ul>
+          <li><a href="#encrypt-with-a-passphrase-symmetric">Encrypt with a Passphrase (Symmetric)</a></li>
+          <li><a href="#encrypt-for-a-single-recipient-assymetric">Encrypt for a Single Recipient (Assymetric)</a></li>
+          <li><a href="#decrypt-a-message">Decrypt a Message</a></li>
+          </ul></li>
+          <li><a href="#signatures">Signatures</a><ul>
+          <li><a href="#sign-a-message">Sign a Message</a></li>
+          <li><a href="#encrypt-and-signk">Encrypt and Signk</a></li>
+          <li><a href="#verify-signatures">Verify Signatures</a></li>
+          <li><a href="#detached-signatures">Detached Signatures</a></li>
+          </ul></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
+          </ul>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<!-- Header -->
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  GNUpg Usage
+                </h1>
+              </div>
+            </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">Oct 09, 2020</h5>
+          </div>
+
+<!-- Contents -->
+          <article class="contents">
+<h1 id="usage">Usage</h1>
+<h2 id="help">Help</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">gpg</span> --help</a></code></pre></div>
+<h2 id="generating-new-private-key">Generating New Private Key</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">gpg</span> --gen-key</a></code></pre></div>
+<p>Then enter your name, email and passphrase. First time creation will be your ultimate USER_ID</p>
+<h2 id="key-management">Key Management</h2>
+<h3 id="list-all-keys">List all keys</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># List public keys you have stored (yours and other people&#39;s keys)</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="ex">gpg</span> --list-keys</a>
+<a class="sourceLine" id="cb3-3" title="3"></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="co"># List private keys (generally only your own)</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="ex">gpg</span> --list-secret-keys</a></code></pre></div>
+<h3 id="editing-existing-key">Editing existing key</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="ex">gpg</span> --edit-key <span class="op">&lt;</span>USER_ID<span class="op">&gt;</span></a></code></pre></div>
+<blockquote>
+<p>Type <code>help</code> when gpg interactive prompt appears to view basic commands</p>
+</blockquote>
+<h3 id="exporting-private-keys">Exporting Private Keys</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># Find the ID of your key first</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="co"># The ID is the hexadecimal number</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="ex">gpg</span> --list-secret-keys</a>
+<a class="sourceLine" id="cb5-4" title="4"></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="co"># This is your private key keep it secret!</span></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="co"># Replace XXXXXXXX with your hexadecimal key ID</span></a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="ex">gpg</span> --export-secret-keys --armor XXXXXXXX <span class="op">&gt;</span> ./my-priv-gpg-key.asc</a>
+<a class="sourceLine" id="cb5-8" title="8"></a>
+<a class="sourceLine" id="cb5-9" title="9"><span class="co"># Omitting the --armor flag will give you binary output instead of ASCII</span></a>
+<a class="sourceLine" id="cb5-10" title="10"><span class="co"># which would result in a slightly smaller file but the ASCII</span></a>
+<a class="sourceLine" id="cb5-11" title="11"><span class="co"># formatted (armored) can be printed physically, is human readable,</span></a>
+<a class="sourceLine" id="cb5-12" title="12"><span class="co"># and transfered digitally easier.</span></a>
+<a class="sourceLine" id="cb5-13" title="13"><span class="co"># Both formats can be imported back in to GPG later</span></a></code></pre></div>
+<h3 id="importing-a-key">Importing a Key</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># This works the same for binary or ASCII (armored) versions of keys</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="co"># This is also the same for private and public keys</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="ex">gpg</span> --import ./my-priv-gpg-key.asc</a>
+<a class="sourceLine" id="cb6-4" title="4"></a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="co"># You can also directly import a key from a server</span></a>
+<a class="sourceLine" id="cb6-6" title="6"><span class="co"># For example, import the DevDungeon/NanoDano public GPG key from MIT</span></a>
+<a class="sourceLine" id="cb6-7" title="7"><span class="ex">gpg</span> --keyserver pgp.mit.edu  --recv C104CDF0EDA54C82</a></code></pre></div>
+<h3 id="push-public-key-to-key-server">Push Public Key to Key Server</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="co"># There are many public key servers out there, not just MIT</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="co"># Replace XXXXXXXX with your key id from --list-keys</span></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="ex">gpg</span> --keyserver hkp://pgp.mit.edu --send-keys XXXXXXXX</a></code></pre></div>
+<h3 id="deleting-a-key">Deleting a Key</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="co"># Private keys</span></a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="co"># Use the ID listed with --list-secret-keys</span></a>
+<a class="sourceLine" id="cb8-3" title="3"><span class="ex">gpg</span> --delete-secret-keys XXXXXXXX</a>
+<a class="sourceLine" id="cb8-4" title="4"></a>
+<a class="sourceLine" id="cb8-5" title="5"><span class="co"># Public keys</span></a>
+<a class="sourceLine" id="cb8-6" title="6"><span class="co"># Use the ID listed with --list-keys</span></a>
+<a class="sourceLine" id="cb8-7" title="7"><span class="ex">gpg</span> --delete-keys XXXXXXXX</a></code></pre></div>
+<h2 id="encryption">Encryption</h2>
+<h3 id="encrypt-with-a-passphrase-symmetric">Encrypt with a Passphrase (Symmetric)</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="ex">gpg</span> --symmetric message.txt</a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="co"># Prompts you for a passphrase</span></a>
+<a class="sourceLine" id="cb9-3" title="3"><span class="co"># Creates message.txt.gpg (binary)</span></a>
+<a class="sourceLine" id="cb9-4" title="4"></a>
+<a class="sourceLine" id="cb9-5" title="5"><span class="ex">gpg</span> --armor --symmetric message.txt</a>
+<a class="sourceLine" id="cb9-6" title="6"><span class="co"># Same, but ASCII format output instead of binary</span></a>
+<a class="sourceLine" id="cb9-7" title="7"><span class="co"># Creates message.txt.asc (ASCII)</span></a>
+<a class="sourceLine" id="cb9-8" title="8"></a>
+<a class="sourceLine" id="cb9-9" title="9"><span class="co"># Specify the encryption algorithm</span></a>
+<a class="sourceLine" id="cb9-10" title="10"><span class="ex">gpg</span> --symmetric --cipher-algo AES256</a>
+<a class="sourceLine" id="cb9-11" title="11"></a>
+<a class="sourceLine" id="cb9-12" title="12"><span class="co"># Get the list of cipher algorithms</span></a>
+<a class="sourceLine" id="cb9-13" title="13"><span class="ex">gpg</span> --version</a>
+<a class="sourceLine" id="cb9-14" title="14"><span class="co"># E.g. 3DES, BLOWFISH, AES256, TWOFISH</span></a>
+<a class="sourceLine" id="cb9-15" title="15"></a>
+<a class="sourceLine" id="cb9-16" title="16"><span class="co"># Specify output file</span></a>
+<a class="sourceLine" id="cb9-17" title="17"><span class="ex">gpg</span> --output message.txt.gpg --symmeteric message.txt</a>
+<a class="sourceLine" id="cb9-18" title="18"></a>
+<a class="sourceLine" id="cb9-19" title="19"><span class="co"># Encrypt and sign (all in the single output file)</span></a>
+<a class="sourceLine" id="cb9-20" title="20"><span class="ex">gpg</span> --sign --symmetric message.txt</a></code></pre></div>
+<h3 id="encrypt-for-a-single-recipient-assymetric">Encrypt for a Single Recipient (Assymetric)</h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" title="1"><span class="co"># This will prompt and ask the recipient&#39;s email address</span></a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="co"># and you will have to enter the ID or email</span></a>
+<a class="sourceLine" id="cb10-3" title="3"><span class="ex">gpg</span> --encrypt message.txt</a>
+<a class="sourceLine" id="cb10-4" title="4"></a>
+<a class="sourceLine" id="cb10-5" title="5"><span class="co"># or specify the recipient as the -r argument</span></a>
+<a class="sourceLine" id="cb10-6" title="6"><span class="ex">gpg</span>  --recipient nanodano@devdungeon.com --encrypt message.txt</a>
+<a class="sourceLine" id="cb10-7" title="7"><span class="co"># Encrypted output will be in message.txt.gpg</span></a>
+<a class="sourceLine" id="cb10-8" title="8"></a>
+<a class="sourceLine" id="cb10-9" title="9"><span class="co"># Encrypt and store in ASCII format (message.txt.asc)</span></a>
+<a class="sourceLine" id="cb10-10" title="10"><span class="co"># Both binary and ASCII versions decrypt the same</span></a>
+<a class="sourceLine" id="cb10-11" title="11"><span class="ex">gpg</span>  --armor --recipient nanodano@devdungeon.com --encrypt message.txt</a>
+<a class="sourceLine" id="cb10-12" title="12"></a>
+<a class="sourceLine" id="cb10-13" title="13"><span class="co"># Encrypt and sign at the same time</span></a>
+<a class="sourceLine" id="cb10-14" title="14"><span class="ex">gpg</span> --encrypt --sign --recipient nanodano@devdungeon.com message.txt</a>
+<a class="sourceLine" id="cb10-15" title="15"></a>
+<a class="sourceLine" id="cb10-16" title="16"><span class="co"># Specify output file</span></a>
+<a class="sourceLine" id="cb10-17" title="17"><span class="ex">gpg</span> --output message.txt.gpg </a></code></pre></div>
+<h3 id="decrypt-a-message">Decrypt a Message</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" title="1"><span class="co"># Decrypt and print message to screen</span></a>
+<a class="sourceLine" id="cb11-2" title="2"><span class="co"># Will automatically verify signature if there was one</span></a>
+<a class="sourceLine" id="cb11-3" title="3"><span class="co"># Will automatically detect if symmetric or asymmetric</span></a>
+<a class="sourceLine" id="cb11-4" title="4"><span class="co"># Will automatically use the appropriate private key if available</span></a>
+<a class="sourceLine" id="cb11-5" title="5"><span class="co"># Will automatically prompt for passphrase if symmetric</span></a>
+<a class="sourceLine" id="cb11-6" title="6"><span class="ex">gpg</span> -d message.txt.gpg</a>
+<a class="sourceLine" id="cb11-7" title="7"></a>
+<a class="sourceLine" id="cb11-8" title="8"><span class="co"># Decrypt and put output in decrypted.txt</span></a>
+<a class="sourceLine" id="cb11-9" title="9"><span class="ex">gpg</span> --decrypt message.txt.gpg <span class="op">&gt;</span> decrypted.txt</a></code></pre></div>
+<h2 id="signatures">Signatures</h2>
+<p>You can sign files that were encrypted using asymmetric or symmetric methods. The benefit of providing a signature is to let everyone prove that you were the author of the file, or at least, you confirmed the contents of the file at the time of your signature. You can also just sign files without encrypting them at all.</p>
+<h3 id="sign-a-message">Sign a Message</h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" title="1"><span class="ex">gpg</span> --clearsign message.txt</a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="co"># Outputs message.txt.asc in plain text, suitable</span></a>
+<a class="sourceLine" id="cb12-3" title="3"><span class="co"># for pasting in an email or posting online</span></a>
+<a class="sourceLine" id="cb12-4" title="4"></a>
+<a class="sourceLine" id="cb12-5" title="5"><span class="ex">gpg</span> --sign message.txt</a>
+<a class="sourceLine" id="cb12-6" title="6"><span class="co"># Outputs message.txt.gpg a binary file</span></a>
+<a class="sourceLine" id="cb12-7" title="7"></a>
+<a class="sourceLine" id="cb12-8" title="8"><span class="co"># Both of these can be verified with --decrypt</span></a>
+<a class="sourceLine" id="cb12-9" title="9"><span class="co"># but they are not _actually_ encrypted.</span></a>
+<a class="sourceLine" id="cb12-10" title="10"><span class="ex">gpg</span> --decrypt message.txt.gpg</a>
+<a class="sourceLine" id="cb12-11" title="11"><span class="ex">gpg</span> --decrypt message.txt.asc</a>
+<a class="sourceLine" id="cb12-12" title="12"><span class="co"># This will print out the message along with the signature info</span></a></code></pre></div>
+<h3 id="encrypt-and-signk">Encrypt and Signk</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" title="1"><span class="co"># Symmetric encrypt with signature</span></a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="ex">gpg</span> --sign --symmetric message.txt</a>
+<a class="sourceLine" id="cb13-3" title="3"></a>
+<a class="sourceLine" id="cb13-4" title="4"><span class="co"># Asymmetric encrypt with signature</span></a>
+<a class="sourceLine" id="cb13-5" title="5"><span class="ex">gpg</span> --sign --encrypt --recipient nanodano@devdungeon.com message.txt</a></code></pre></div>
+<h3 id="verify-signatures">Verify Signatures</h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb14-1" title="1"><span class="co"># When you decrypt the message it will verify the signature</span></a>
+<a class="sourceLine" id="cb14-2" title="2"><span class="ex">gpg</span> --decrypt message.txt.asc</a>
+<a class="sourceLine" id="cb14-3" title="3"></a>
+<a class="sourceLine" id="cb14-4" title="4"><span class="co"># Verify a signed message that included a signature</span></a>
+<a class="sourceLine" id="cb14-5" title="5"><span class="ex">gpg</span> --verify message.txt.asc</a>
+<a class="sourceLine" id="cb14-6" title="6"><span class="co"># Verify and extract original document</span></a>
+<a class="sourceLine" id="cb14-7" title="7"><span class="ex">gpg</span> --output message.txt message.txt.asc</a></code></pre></div>
+<h3 id="detached-signatures">Detached Signatures</h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" title="1"><span class="co"># Create a separate signature file</span></a>
+<a class="sourceLine" id="cb15-2" title="2"><span class="ex">gpg</span> --detach-sign message.txt</a>
+<a class="sourceLine" id="cb15-3" title="3"><span class="co"># Will create message.txt.sig</span></a>
+<a class="sourceLine" id="cb15-4" title="4"></a>
+<a class="sourceLine" id="cb15-5" title="5"><span class="co"># This verify will automatically check the signature</span></a>
+<a class="sourceLine" id="cb15-6" title="6"><span class="co"># against a file named &quot;message.txt&quot;</span></a>
+<a class="sourceLine" id="cb15-7" title="7"><span class="ex">gpg</span> --verify message.txt.sig</a>
+<a class="sourceLine" id="cb15-8" title="8"></a>
+<a class="sourceLine" id="cb15-9" title="9"><span class="co"># Specify the file to check it against</span></a>
+<a class="sourceLine" id="cb15-10" title="10"><span class="ex">gpg</span> --verify some_signature.sig ./message.txt</a></code></pre></div>
+<p>Ref:</p>
+<ul>
+<li><a href="https://www.devdungeon.com/content/gpg-tutorial">🌎 GPG Tutorial</a></li>
+</ul>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://www.devdungeon.com/content/gpg-tutorial">🌎 GPG Tutorial</a></li>
+</ul>
+          </article>
+          </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../templates/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../templates/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+    <script src="../../../templates/js/animated-toc.js"></script>
+  </body>
+</html>
