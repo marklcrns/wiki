@@ -9,4 +9,5 @@ date: Oct 06, 2020
 # Chapter 4: Application of Differentiation
 
 - [↪ 4.1 Maximum and Minimum Values](ch-4-1)
+- [↪ 4.2 The Mean Value Theorem](ch-4-2)
 

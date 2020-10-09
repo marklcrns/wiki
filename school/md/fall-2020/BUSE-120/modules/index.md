@@ -15,4 +15,5 @@ date: 2020-08-17
 - [↪ Module 5: Budgets](module-5/index)
 - [↪ Module 6: Taxes](module-6/index)
 - [↪ Module 7: Financial Management](module-7/index)
+- [↪ Module 8: Spending](module-8/index)
 
