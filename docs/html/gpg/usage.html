@@ -182,7 +182,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">gpg</span> --help</a></code></pre></div>
 <h2 id="generating-new-private-key">Generating New Private Key</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">gpg</span> --gen-key</a></code></pre></div>
-<p>Then enter your name, email and passphrase. First time creation will be your ultimate USER_ID</p>
 <h2 id="key-management">Key Management</h2>
 <h3 id="list-all-keys">List all keys</h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># List public keys you have stored (yours and other people&#39;s keys)</span></a>
@@ -198,25 +197,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 id="exporting-private-keys">Exporting Private Keys</h3>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># Find the ID of your key first</span></a>
 <a class="sourceLine" id="cb5-2" title="2"><span class="co"># The ID is the hexadecimal number</span></a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="ex">gpg</span> --list-secret-keys</a>
-<a class="sourceLine" id="cb5-4" title="4"></a>
-<a class="sourceLine" id="cb5-5" title="5"><span class="co"># This is your private key keep it secret!</span></a>
-<a class="sourceLine" id="cb5-6" title="6"><span class="co"># Replace XXXXXXXX with your hexadecimal key ID</span></a>
-<a class="sourceLine" id="cb5-7" title="7"><span class="ex">gpg</span> --export-secret-keys --armor XXXXXXXX <span class="op">&gt;</span> ./my-priv-gpg-key.asc</a>
-<a class="sourceLine" id="cb5-8" title="8"></a>
-<a class="sourceLine" id="cb5-9" title="9"><span class="co"># Omitting the --armor flag will give you binary output instead of ASCII</span></a>
-<a class="sourceLine" id="cb5-10" title="10"><span class="co"># which would result in a slightly smaller file but the ASCII</span></a>
-<a class="sourceLine" id="cb5-11" title="11"><span class="co"># formatted (armored) can be printed physically, is human readable,</span></a>
-<a class="sourceLine" id="cb5-12" title="12"><span class="co"># and transfered digitally easier.</span></a>
-<a class="sourceLine" id="cb5-13" title="13"><span class="co"># Both formats can be imported back in to GPG later</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-3" title="3"><span class="co"># Second column, after the slash, e.g. &quot;ABC12345&quot;</span></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="co"># If you have a &quot;sub&quot; entry, you can ignore it</span></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="ex">gpg</span> --list-secret-keys</a>
+<a class="sourceLine" id="cb5-6" title="6"></a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="co"># This is your private key keep it secret!</span></a>
+<a class="sourceLine" id="cb5-8" title="8"><span class="co"># Replace XXXXXXXX with your hexadecimal key ID</span></a>
+<a class="sourceLine" id="cb5-9" title="9"><span class="ex">gpg</span> --export-secret-keys --armor XXXXXXXX <span class="op">&gt;</span> ./my-priv-gpg-key.asc</a>
+<a class="sourceLine" id="cb5-10" title="10"><span class="co"># or</span></a>
+<a class="sourceLine" id="cb5-11" title="11"><span class="ex">gpg</span> --export-secret-keys XXXXXXXX <span class="op">&gt;</span> ./private.key</a>
+<a class="sourceLine" id="cb5-12" title="12"></a>
+<a class="sourceLine" id="cb5-13" title="13"><span class="co"># Omitting the --armor flag will give you binary output instead of ASCII</span></a>
+<a class="sourceLine" id="cb5-14" title="14"><span class="co"># which would result in a slightly smaller file but the ASCII</span></a>
+<a class="sourceLine" id="cb5-15" title="15"><span class="co"># formatted (armored) can be printed physically, is human readable,</span></a>
+<a class="sourceLine" id="cb5-16" title="16"><span class="co"># and transfered digitally easier.</span></a>
+<a class="sourceLine" id="cb5-17" title="17"><span class="co"># Both formats can be imported back in to GPG later</span></a></code></pre></div>
 <h3 id="importing-a-key">Importing a Key</h3>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># This works the same for binary or ASCII (armored) versions of keys</span></a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="co"># This is also the same for private and public keys</span></a>
 <a class="sourceLine" id="cb6-3" title="3"><span class="ex">gpg</span> --import ./my-priv-gpg-key.asc</a>
-<a class="sourceLine" id="cb6-4" title="4"></a>
-<a class="sourceLine" id="cb6-5" title="5"><span class="co"># You can also directly import a key from a server</span></a>
-<a class="sourceLine" id="cb6-6" title="6"><span class="co"># For example, import the DevDungeon/NanoDano public GPG key from MIT</span></a>
-<a class="sourceLine" id="cb6-7" title="7"><span class="ex">gpg</span> --keyserver pgp.mit.edu  --recv C104CDF0EDA54C82</a></code></pre></div>
+<a class="sourceLine" id="cb6-4" title="4"><span class="co"># or</span></a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="ex">gpg</span> --import ./private.key</a>
+<a class="sourceLine" id="cb6-6" title="6"></a>
+<a class="sourceLine" id="cb6-7" title="7"><span class="co"># You can also directly import a key from a server</span></a>
+<a class="sourceLine" id="cb6-8" title="8"><span class="co"># For example, import the DevDungeon/NanoDano public GPG key from MIT</span></a>
+<a class="sourceLine" id="cb6-9" title="9"><span class="ex">gpg</span> --keyserver pgp.mit.edu  --recv C104CDF0EDA54C82</a></code></pre></div>
 <h3 id="push-public-key-to-key-server">Push Public Key to Key Server</h3>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="co"># There are many public key servers out there, not just MIT</span></a>
 <a class="sourceLine" id="cb7-2" title="2"><span class="co"># Replace XXXXXXXX with your key id from --list-keys</span></a>

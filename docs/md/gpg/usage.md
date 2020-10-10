@@ -19,9 +19,6 @@ gpg --help
 gpg --gen-key
 ```
 
-Then enter your name, email and passphrase. First time creation will be your
-ultimate USER_ID
-
 ## Key Management
 
 ### List all keys
@@ -47,11 +44,15 @@ gpg --edit-key <USER_ID>
 ```bash
 # Find the ID of your key first
 # The ID is the hexadecimal number
+# Second column, after the slash, e.g. "ABC12345"
+# If you have a "sub" entry, you can ignore it
 gpg --list-secret-keys
 
 # This is your private key keep it secret!
 # Replace XXXXXXXX with your hexadecimal key ID
 gpg --export-secret-keys --armor XXXXXXXX > ./my-priv-gpg-key.asc
+# or
+gpg --export-secret-keys XXXXXXXX > ./private.key
 
 # Omitting the --armor flag will give you binary output instead of ASCII
 # which would result in a slightly smaller file but the ASCII
@@ -66,6 +67,8 @@ gpg --export-secret-keys --armor XXXXXXXX > ./my-priv-gpg-key.asc
 # This works the same for binary or ASCII (armored) versions of keys
 # This is also the same for private and public keys
 gpg --import ./my-priv-gpg-key.asc
+# or
+gpg --import ./private.key
 
 # You can also directly import a key from a server
 # For example, import the DevDungeon/NanoDano public GPG key from MIT
