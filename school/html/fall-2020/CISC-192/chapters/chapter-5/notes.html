@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Lucernas">
+
+    <title>Chapter 5 Notes</title>
+
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+  </head>
+
+  <body>
+
+<!-- Nav bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">School Wiki</a>
+        </div>
+        <!-- <div id="navbar" class="navbar-collapse collapse">                                                                                                                 -->
+        <!--   <ul class="nav navbar-nav">                                                                                                                                      -->
+        <!--     <li><a href="#">doc1</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc2</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc3</a></li>                                                                                                                                  -->
+        <!--     <li class="dropdown">                                                                                                                                          -->
+        <!--       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+        <!--       <ul class="dropdown-menu">                                                                                                                                   -->
+        <!--         <li><a href="#">Action</a></li>                                                                                                                            -->
+        <!--         <li><a href="#">Another action</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">Something else here</a></li>                                                                                                               -->
+        <!--         <li role="separator" class="divider"></li>                                                                                                                 -->
+        <!--         <li class="dropdown-header">Nav header</li>                                                                                                                -->
+        <!--         <li><a href="#">Separated link</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">One more separated link</a></li>                                                                                                           -->
+        <!--       </ul>                                                                                                                                                        -->
+        <!--     </li>                                                                                                                                                          -->
+        <!--   </ul>                                                                                                                                                            -->
+        <!-- </div>                                                                                                                                                             -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+<!-- Table of Contents -->
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
+          <ul>
+          <li><a href="#chapter-5-looping">Chapter 5: Looping</a><ul>
+          <li><a href="#introduction-to-loops-the-while-loop">5.1 Introduction to Loops: The <code>while</code> Loop</a><ul>
+          <li><a href="#the-while-loop">The <code>while</code> Loop</a></li>
+          <li><a href="#while-is-a-pretest-loop"><code>while</code> Is a Pretest Loop</a></li>
+          <li><a href="#infinite-loops">Infinite Loops</a></li>
+          <li><a href="#be-careful-with-semicolons">Be Careful with Semicolons</a></li>
+          <li><a href="#dont-forget-the-braces">Don’t Forget the Braces</a></li>
+          <li><a href="#dont-confuse-with">Don’t Confuse <code>=</code> with <code>==</code></a></li>
+          <li><a href="#programming-style-and-the-while-loop">Programming Style and the <code>while</code> Loop</a></li>
+          </ul></li>
+          <li><a href="#using-the-while-loop-for-input-validation">Using the <code>while</code> Loop for Input Validation</a></li>
+          <li><a href="#the-increment-and-decrement-operators">5.3 The Increment and Decrement Operators</a><ul>
+          <li><a href="#postfix-and-prefix-modes">Postfix and Prefix Modes</a></li>
+          <li><a href="#using-and----in-mathematical-expressions">Using <code>++</code> and <code>--</code> in Mathematical Expressions</a></li>
+          <li><a href="#using-and----in-relational-expressions">Using <code>++</code> and <code>--</code> in Relational Expressions</a></li>
+          </ul></li>
+          <li><a href="#counters">5.4 Counters</a><ul>
+          <li><a href="#letting-the-user-control-the-loop">Letting the User Control the Loop</a></li>
+          </ul></li>
+          <li><a href="#keeping-a-running-total">5.5 Keeping a Running Total</a></li>
+          <li><a href="#sentinels">5.6 Sentinels</a></li>
+          <li><a href="#do-while-loop">5.7 <code>do-while</code> Loop</a><ul>
+          <li><a href="#the-toupper-function">The <code>toupper</code> Function</a></li>
+          <li><a href="#using-do-while-with-menus">Using <code>do-while</code> with Menus</a></li>
+          </ul></li>
+          <li><a href="#the-for-loop">5.8 The <code>for</code> Loop</a></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
+          </ul>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<!-- Header -->
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  Chapter 5 Notes
+                  <small class="h3 text-muted subtitle">
+                    | Looping
+                  </small>
+                </h1>
+              </div>
+            </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">Oct 12, 2020</h5>
+          </div>
+
+<!-- Contents -->
+          <article class="contents">
+<h1 id="chapter-5-looping">Chapter 5: Looping</h1>
+<h2 id="introduction-to-loops-the-while-loop">5.1 Introduction to Loops: The <code>while</code> Loop</h2>
+<p><strong>CONCEPT:</strong> A loop is part of a program that repeats.</p>
+<p>A loop is a control structure that causes a statement or group of statements to repeat. C++ has three looping control structures: the <code>while</code> loop, the <code>do-while</code> loop, and the <code>for</code> loop.</p>
+<h3 id="the-while-loop">The <code>while</code> Loop</h3>
+<p>The while loop has two important parts: (1) an expression that is tested for a true or false value and (2) a statement or block that is repeated as long as the expression is true.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb1-1" title="1"><span class="cf">while</span> (condition)</a>
+<a class="sourceLine" id="cb1-2" title="2">{</a>
+<a class="sourceLine" id="cb1-3" title="3">  statement;</a>
+<a class="sourceLine" id="cb1-4" title="4">  statement;</a>
+<a class="sourceLine" id="cb1-5" title="5">  <span class="co">// Place as many statements</span></a>
+<a class="sourceLine" id="cb1-6" title="6">  <span class="co">// here as necessary</span></a>
+<a class="sourceLine" id="cb1-7" title="7">}</a></code></pre></div>
+<p>The first line, sometimes called the <em>loop header</em>, consists of the key word <code>while</code> followed by a <em>condition</em> to be tested enclosed in parentheses. The condition is expressed by any expression that can be evaluated as true or false. Next comes the <em>body</em> of the loop. This contains one or more C++ <em>statements</em>.</p>
+<blockquote>
+<p>Program 5-1</p>
+</blockquote>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb2-1" title="1"><span class="co">// This program demonstrates a simple while loop.</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb2-4" title="4"></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb2-6" title="6">{</a>
+<a class="sourceLine" id="cb2-7" title="7">  <span class="dt">int</span> count = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb2-8" title="8"></a>
+<a class="sourceLine" id="cb2-9" title="9">  <span class="cf">while</span> (count &lt;= <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb2-10" title="10">  {</a>
+<a class="sourceLine" id="cb2-11" title="11">    cout &lt;&lt; <span class="st">&quot;Hello &quot;</span>;</a>
+<a class="sourceLine" id="cb2-12" title="12">    count = count + <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb2-13" title="13">  }</a>
+<a class="sourceLine" id="cb2-14" title="14">  cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">That&#39;s all!</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb2-15" title="15">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb2-16" title="16">}</a></code></pre></div>
+<blockquote>
+<p>Program 5-1 Output</p>
+</blockquote>
+<pre><code>Hello Hello Hello Hello Hello
+That&#39;s all!</code></pre>
+<h3 id="while-is-a-pretest-loop"><code>while</code> Is a Pretest Loop</h3>
+<p>The <code>while</code> loop is a <em>pretest</em> loop. This means it tests its condition before each iteration. If the test expression is false to start with, the loop will never iterate. So if you want to be sure a <code>while</code> loop executes at least once, you must initialize the relevant data in such a way that the test expression starts out as true.</p>
+<h3 id="infinite-loops">Infinite Loops</h3>
+<p>If a loop does not have a way of stopping, it is called an infinite loop. Infinite loops keep repeating until the program is interrupted. Here is an example:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb4-1" title="1"><span class="dt">int</span> count = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="cf">while</span> (count &lt;= <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb4-3" title="3">{</a>
+<a class="sourceLine" id="cb4-4" title="4">  cout &lt;&lt; <span class="st">&quot;Hello &quot;</span>;</a>
+<a class="sourceLine" id="cb4-5" title="5">}</a></code></pre></div>
+<h3 id="be-careful-with-semicolons">Be Careful with Semicolons</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb5-1" title="1"><span class="dt">int</span> count = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="cf">while</span> (count &lt;= <span class="dv">5</span>); <span class="co">// This semicolon is an ERROR!</span></a>
+<a class="sourceLine" id="cb5-3" title="3">{</a>
+<a class="sourceLine" id="cb5-4" title="4">  cout &lt;&lt; <span class="st">&quot;Hello &quot;</span>;</a>
+<a class="sourceLine" id="cb5-5" title="5">  count = count + <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb5-6" title="6">}</a></code></pre></div>
+<h3 id="dont-forget-the-braces">Don’t Forget the Braces</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb6-1" title="1"><span class="dt">int</span> count = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="co">// This loop is missing its braces!</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="cf">while</span> (count &lt;= <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb6-4" title="4">  cout &lt;&lt; <span class="st">&quot;Hello &quot;</span>;</a>
+<a class="sourceLine" id="cb6-5" title="5">  count = count + <span class="dv">1</span>;</a></code></pre></div>
+<h3 id="dont-confuse-with">Don’t Confuse <code>=</code> with <code>==</code></h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb7-1" title="1"><span class="cf">while</span> (remainder = <span class="dv">1</span>) <span class="co">// Error: Notice the assignment.</span></a>
+<a class="sourceLine" id="cb7-2" title="2">{</a>
+<a class="sourceLine" id="cb7-3" title="3">  cout &lt;&lt; <span class="st">&quot;Enter a number: &quot;</span>;</a>
+<a class="sourceLine" id="cb7-4" title="4">  cin &gt;&gt; num;</a>
+<a class="sourceLine" id="cb7-5" title="5">  remainder = num % <span class="dv">2</span>;</a>
+<a class="sourceLine" id="cb7-6" title="6">}</a></code></pre></div>
+<h3 id="programming-style-and-the-while-loop">Programming Style and the <code>while</code> Loop</h3>
+<p>It’s possible to create loops that look like this:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb8-1" title="1"><span class="cf">while</span> (count &lt;= <span class="dv">5</span>) { cout &lt;&lt; <span class="st">&quot;Hello &quot;</span>; count = count + <span class="dv">1</span>; }</a></code></pre></div>
+<p><strong>Avoid this style</strong> of programming, however. The programming layout style you should use with the <code>while</code> loop is similar to that of the <code>if</code> statement:</p>
+<ul>
+<li>If there is only one statement repeated by the loop, it should appear on the line after the <code>while</code> statement and be indented one level.</li>
+<li>If the loop repeats a block of statements, the block should begin on the line after the <code>while</code> statement, and each line inside the braces should be indented.</li>
+</ul>
+<blockquote>
+<p>Program 5-2</p>
+</blockquote>
+<div class="sourceCode" id="cb9"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb9-1" title="1"><span class="co">// This program uses a loop to compute letter grades for multiple students.</span></a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb9-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb9-4" title="4"></a>
+<a class="sourceLine" id="cb9-5" title="5"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb9-6" title="6">{</a>
+<a class="sourceLine" id="cb9-7" title="7">  <span class="co">// Create named constants to hold minimum scores for each letter grade</span></a>
+<a class="sourceLine" id="cb9-8" title="8">  <span class="at">const</span> <span class="dt">int</span> MIN_A_SCORE = <span class="dv">90</span>,</a>
+<a class="sourceLine" id="cb9-9" title="9">  MIN_B_SCORE = <span class="dv">80</span>,</a>
+<a class="sourceLine" id="cb9-10" title="10">  MIN_C_SCORE = <span class="dv">70</span>,</a>
+<a class="sourceLine" id="cb9-11" title="11">  MIN_D_SCORE = <span class="dv">60</span>,</a>
+<a class="sourceLine" id="cb9-12" title="12">  MIN_POSSIBLE_SCORE = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb9-13" title="13"></a>
+<a class="sourceLine" id="cb9-14" title="14">  <span class="dt">int</span> numStudents, <span class="co">// The total number of students</span></a>
+<a class="sourceLine" id="cb9-15" title="15">  student, <span class="co">// The current student being processed</span></a>
+<a class="sourceLine" id="cb9-16" title="16">  testScore; <span class="co">// Current student&#39;s numeric test score</span></a>
+<a class="sourceLine" id="cb9-17" title="17">  <span class="dt">char</span> grade; <span class="co">// Current student&#39;s letter grade</span></a>
+<a class="sourceLine" id="cb9-18" title="18">  <span class="dt">bool</span> goodScore = <span class="kw">true</span>;</a>
+<a class="sourceLine" id="cb9-19" title="19"></a>
+<a class="sourceLine" id="cb9-20" title="20">  <span class="co">// Get the number of students</span></a>
+<a class="sourceLine" id="cb9-21" title="21">  cout &lt;&lt; <span class="st">&quot;How many students do you have grades for? &quot;</span>;</a>
+<a class="sourceLine" id="cb9-22" title="22">  cin  &gt;&gt; numStudents;</a>
+<a class="sourceLine" id="cb9-23" title="23"></a>
+<a class="sourceLine" id="cb9-24" title="24">  <span class="co">// Initialize the loop control variable</span></a>
+<a class="sourceLine" id="cb9-25" title="25">  student = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb9-26" title="26"></a>
+<a class="sourceLine" id="cb9-27" title="27">  <span class="co">// Loop once for each student</span></a>
+<a class="sourceLine" id="cb9-28" title="28">  <span class="cf">while</span> (student &lt;= numStudents)</a>
+<a class="sourceLine" id="cb9-29" title="29">  {</a>
+<a class="sourceLine" id="cb9-30" title="30">    <span class="co">// Get this student&#39;s numeric score</span></a>
+<a class="sourceLine" id="cb9-31" title="31">    cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Enter the numeric test score for student #&quot;</span></a>
+<a class="sourceLine" id="cb9-32" title="32">        &lt;&lt; student &lt;&lt; <span class="st">&quot;: &quot;</span>,</a>
+<a class="sourceLine" id="cb9-33" title="33">    cin  &gt;&gt; testScore;</a>
+<a class="sourceLine" id="cb9-34" title="34"></a>
+<a class="sourceLine" id="cb9-35" title="35">    <span class="co">// Determine the letter grade</span></a>
+<a class="sourceLine" id="cb9-36" title="36">    <span class="cf">if</span> (testScore &gt;= MIN_A_SCORE)</a>
+<a class="sourceLine" id="cb9-37" title="37">      grade = <span class="ch">&#39;A&#39;</span>;</a>
+<a class="sourceLine" id="cb9-38" title="38">    <span class="cf">else</span> <span class="cf">if</span> (testScore &gt;= MIN_B_SCORE)</a>
+<a class="sourceLine" id="cb9-39" title="39">      grade = <span class="ch">&#39;B&#39;</span>;</a>
+<a class="sourceLine" id="cb9-40" title="40">    <span class="cf">else</span> <span class="cf">if</span> (testScore &gt;= MIN_C_SCORE)</a>
+<a class="sourceLine" id="cb9-41" title="41">      grade = <span class="ch">&#39;C&#39;</span>;</a>
+<a class="sourceLine" id="cb9-42" title="42">    <span class="cf">else</span> <span class="cf">if</span> (testScore &gt;= MIN_D_SCORE)</a>
+<a class="sourceLine" id="cb9-43" title="43">      grade = <span class="ch">&#39;D&#39;</span>;</a>
+<a class="sourceLine" id="cb9-44" title="44">    <span class="cf">else</span> <span class="cf">if</span> (testScore &gt;= MIN_POSSIBLE_SCORE)</a>
+<a class="sourceLine" id="cb9-45" title="45">      grade = <span class="ch">&#39;F&#39;</span>;</a>
+<a class="sourceLine" id="cb9-46" title="46">    <span class="cf">else</span></a>
+<a class="sourceLine" id="cb9-47" title="47">      goodScore = <span class="kw">false</span>; <span class="co">// The score was below 0</span></a>
+<a class="sourceLine" id="cb9-48" title="48"></a>
+<a class="sourceLine" id="cb9-49" title="49">    <span class="co">// Display the letter grade</span></a>
+<a class="sourceLine" id="cb9-50" title="50">    <span class="cf">if</span> (goodScore)</a>
+<a class="sourceLine" id="cb9-51" title="51">      cout &lt;&lt; <span class="st">&quot;The letter grade is &quot;</span> &lt;&lt; grade &lt;&lt; <span class="st">&quot;.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb9-52" title="52">    <span class="cf">else</span></a>
+<a class="sourceLine" id="cb9-53" title="53">      cout &lt;&lt; <span class="st">&quot;The score cannot be below zero. </span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb9-54" title="54"></a>
+<a class="sourceLine" id="cb9-55" title="55">    <span class="co">// Set student to the next student</span></a>
+<a class="sourceLine" id="cb9-56" title="56">    student = student + <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb9-57" title="57">  }</a>
+<a class="sourceLine" id="cb9-58" title="58">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb9-59" title="59">}</a></code></pre></div>
+<h2 id="using-the-while-loop-for-input-validation">Using the <code>while</code> Loop for Input Validation</h2>
+<p><strong>CONCEPT:</strong> The while loop can be used to create input routines that repeat until acceptable data is entered.</p>
+<blockquote>
+<p>Program 5-3</p>
+</blockquote>
+<div class="sourceCode" id="cb10"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb10-1" title="1"><span class="co">// This program calculates the number of soccer teams a</span></a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="co">// youth league can create from the number of available</span></a>
+<a class="sourceLine" id="cb10-3" title="3"><span class="co">// players. It performs input validation using while loops.</span></a>
+<a class="sourceLine" id="cb10-4" title="4"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb10-5" title="5"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb10-6" title="6"></a>
+<a class="sourceLine" id="cb10-7" title="7"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb10-8" title="8">{</a>
+<a class="sourceLine" id="cb10-9" title="9">  <span class="co">// Constants for minimum and maximum players per team</span></a>
+<a class="sourceLine" id="cb10-10" title="10">  <span class="at">const</span> <span class="dt">int</span> MIN_PLAYERS = <span class="dv">9</span>,</a>
+<a class="sourceLine" id="cb10-11" title="11">  MAX_PLAYERS = <span class="dv">15</span>;</a>
+<a class="sourceLine" id="cb10-12" title="12"></a>
+<a class="sourceLine" id="cb10-13" title="13">  <span class="co">// Variables</span></a>
+<a class="sourceLine" id="cb10-14" title="14">  <span class="dt">int</span> players, <span class="co">// Number of available players</span></a>
+<a class="sourceLine" id="cb10-15" title="15">  teamSize, <span class="co">// Number of desired players per team</span></a>
+<a class="sourceLine" id="cb10-16" title="16">  numTeams, <span class="co">// Number of teams</span></a>
+<a class="sourceLine" id="cb10-17" title="17">  leftOver; <span class="co">// Number of players left over</span></a>
+<a class="sourceLine" id="cb10-18" title="18"></a>
+<a class="sourceLine" id="cb10-19" title="19">  <span class="co">// Get the number of players per team</span></a>
+<a class="sourceLine" id="cb10-20" title="20">  cout &lt;&lt; <span class="st">&quot;How many players do you wish per team?</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb10-21" title="21">  cout &lt;&lt; <span class="st">&quot;(Enter a value in the range &quot;</span></a>
+<a class="sourceLine" id="cb10-22" title="22">       &lt;&lt; MIN_PLAYERS &lt;&lt; <span class="st">&quot; − &quot;</span> &lt;&lt; MAX_PLAYERS &lt;&lt; <span class="st">&quot;): &quot;</span>;</a>
+<a class="sourceLine" id="cb10-23" title="23">  cin  &gt;&gt; teamSize;</a>
+<a class="sourceLine" id="cb10-24" title="24"></a>
+<a class="sourceLine" id="cb10-25" title="25">  <span class="co">// Validate the input</span></a>
+<a class="sourceLine" id="cb10-26" title="26">  <span class="cf">while</span> (teamSize &lt; MIN_PLAYERS || teamSize &gt; MAX_PLAYERS)</a>
+<a class="sourceLine" id="cb10-27" title="27">  {</a>
+<a class="sourceLine" id="cb10-28" title="28">    cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Team size should be &quot;</span></a>
+<a class="sourceLine" id="cb10-29" title="29">         &lt;&lt; MIN_PLAYERS &lt;&lt; <span class="st">&quot; to &quot;</span> &lt;&lt; MAX_PLAYERS &lt;&lt; <span class="st">&quot; players.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb10-30" title="30">    cout &lt;&lt; <span class="st">&quot;How many players do you wish per team? &quot;</span>;</a>
+<a class="sourceLine" id="cb10-31" title="31">    cin  &gt;&gt; teamSize;</a>
+<a class="sourceLine" id="cb10-32" title="32">  }</a>
+<a class="sourceLine" id="cb10-33" title="33">  <span class="co">// Get and validate the number of players available</span></a>
+<a class="sourceLine" id="cb10-34" title="34">  cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">How many players are available? &quot;</span>;</a>
+<a class="sourceLine" id="cb10-35" title="35">  cin  &gt;&gt; players;</a>
+<a class="sourceLine" id="cb10-36" title="36"></a>
+<a class="sourceLine" id="cb10-37" title="37">  <span class="cf">while</span> (players &lt;= <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb10-38" title="38">  {</a>
+<a class="sourceLine" id="cb10-39" title="39">    cout &lt;&lt; <span class="st">&quot;Please enter a positive number: &quot;</span>;</a>
+<a class="sourceLine" id="cb10-40" title="40">    cin  &gt;&gt; players;</a>
+<a class="sourceLine" id="cb10-41" title="41">  }</a>
+<a class="sourceLine" id="cb10-42" title="42">  <span class="co">// Calculate the number of teams and number of leftover players</span></a>
+<a class="sourceLine" id="cb10-43" title="43">  numTeams = players / teamSize;</a>
+<a class="sourceLine" id="cb10-44" title="44">  leftOver = players % teamSize;</a>
+<a class="sourceLine" id="cb10-45" title="45"></a>
+<a class="sourceLine" id="cb10-46" title="46">  <span class="co">// Display the results</span></a>
+<a class="sourceLine" id="cb10-47" title="47">  cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">There will be &quot;</span> &lt;&lt; numTeams &lt;&lt; <span class="st">&quot; teams with &quot;</span>;</a>
+<a class="sourceLine" id="cb10-48" title="48">  cout &lt;&lt; leftOver &lt;&lt; <span class="st">&quot; players left over.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb10-49" title="49">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb10-50" title="50">}</a></code></pre></div>
+<h2 id="the-increment-and-decrement-operators">5.3 The Increment and Decrement Operators</h2>
+<p><strong>CONCEPT:</strong> C++ provides a pair of operators for incrementing and decrementing variables.</p>
+<p>To <em>increment</em> a value means to increase it, and to <em>decrement</em> a value means to decrease it. In the example below, <code>qtyOrdered</code> is incremented by 10 and <code>numSold</code> is decremented by 3.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb11-1" title="1">qtyOrdered = qtyOrdered + <span class="dv">10</span>;</a>
+<a class="sourceLine" id="cb11-2" title="2">numSold = numSold − <span class="dv">3</span>;</a></code></pre></div>
+<blockquote>
+<p>Program 5-4</p>
+</blockquote>
+<div class="sourceCode" id="cb12"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb12-1" title="1"><span class="co">// This program has two loops. The first displays the numbers</span></a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="co">// from 1 up to 5. The second displays the numbers from 5 down to 1.</span></a>
+<a class="sourceLine" id="cb12-3" title="3"><span class="co">// The program uses the ++ and −− operators to change the value</span></a>
+<a class="sourceLine" id="cb12-4" title="4"><span class="co">// of the loop control variable.</span></a>
+<a class="sourceLine" id="cb12-5" title="5"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb12-6" title="6"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb12-7" title="7"></a>
+<a class="sourceLine" id="cb12-8" title="8"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb12-9" title="9">{</a>
+<a class="sourceLine" id="cb12-10" title="10">  <span class="dt">int</span> count = <span class="dv">1</span>; <span class="co">// Initialize the loop control variable to 1</span></a>
+<a class="sourceLine" id="cb12-11" title="11">  <span class="cf">while</span> (count &lt; <span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb12-12" title="12">  {</a>
+<a class="sourceLine" id="cb12-13" title="13">    cout &lt;&lt; count &lt;&lt; <span class="st">&quot; &quot;</span>;</a>
+<a class="sourceLine" id="cb12-14" title="14">    count++;     <span class="co">// The ++ operator increments count</span></a>
+<a class="sourceLine" id="cb12-15" title="15">  }</a>
+<a class="sourceLine" id="cb12-16" title="16">  cout &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb12-17" title="17"></a>
+<a class="sourceLine" id="cb12-18" title="18">  count = <span class="dv">5</span>;     <span class="co">// Re-initialize the loop control variable to 5</span></a>
+<a class="sourceLine" id="cb12-19" title="19">  <span class="cf">while</span> (count &gt; <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb12-20" title="20">  {</a>
+<a class="sourceLine" id="cb12-21" title="21">    cout &lt;&lt; count &lt;&lt; <span class="st">&quot; &quot;</span>;</a>
+<a class="sourceLine" id="cb12-22" title="22">    count--;     <span class="co">// The -- operator decrements count</span></a>
+<a class="sourceLine" id="cb12-23" title="23">  }</a>
+<a class="sourceLine" id="cb12-24" title="24">  cout &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb12-25" title="25">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb12-26" title="26">}</a></code></pre></div>
+<h3 id="postfix-and-prefix-modes">Postfix and Prefix Modes</h3>
+<p>Our examples so far show the increment and decrement operators used in <em>postfix mode</em>, which means the operator is placed after the variable. The operators also work in <em>prefix mode</em>, where the operator is placed before the variable name. The statements on lines 14 and 22 of Program 5-4 could have been written like this:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb13-1" title="1">++countUp;</a>
+<a class="sourceLine" id="cb13-2" title="2">--countDown;</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb14-1" title="1"><span class="co">// This program demonstrates the postfix and prefix</span></a>
+<a class="sourceLine" id="cb14-2" title="2"><span class="co">// modes of the increment and decrement operators.</span></a>
+<a class="sourceLine" id="cb14-3" title="3"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb14-4" title="4"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb14-5" title="5"></a>
+<a class="sourceLine" id="cb14-6" title="6"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb14-7" title="7">{</a>
+<a class="sourceLine" id="cb14-8" title="8">  <span class="dt">int</span> num = <span class="dv">4</span>;</a>
+<a class="sourceLine" id="cb14-9" title="9"></a>
+<a class="sourceLine" id="cb14-10" title="10">  <span class="co">// Illustrate postfix and prefix ++ operator</span></a>
+<a class="sourceLine" id="cb14-11" title="11">  cout &lt;&lt; num &lt;&lt; <span class="st">&quot; &quot;</span>;    <span class="co">// Displays 4</span></a>
+<a class="sourceLine" id="cb14-12" title="12">  cout &lt;&lt; num++ &lt;&lt; <span class="st">&quot; &quot;</span>;  <span class="co">// Displays 4, then adds 1 to num</span></a>
+<a class="sourceLine" id="cb14-13" title="13">  cout &lt;&lt; num &lt;&lt; <span class="st">&quot; &quot;</span>;    <span class="co">// Displays 5</span></a>
+<a class="sourceLine" id="cb14-14" title="14">  cout &lt;&lt; ++num &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>; <span class="co">// Adds 1 to num, then displays 6</span></a>
+<a class="sourceLine" id="cb14-15" title="15"></a>
+<a class="sourceLine" id="cb14-16" title="16">                         <span class="co">// Illustrate postfix and prefix -- operator</span></a>
+<a class="sourceLine" id="cb14-17" title="17">  cout &lt;&lt; num &lt;&lt; <span class="st">&quot; &quot;</span>;    <span class="co">// Displays 6</span></a>
+<a class="sourceLine" id="cb14-18" title="18">  cout &lt;&lt; num-- &lt;&lt; <span class="st">&quot; &quot;</span>;  <span class="co">// Displays 6, then subtracts 1 from num</span></a>
+<a class="sourceLine" id="cb14-19" title="19">  cout &lt;&lt; num &lt;&lt; <span class="st">&quot; &quot;</span>;    <span class="co">// Displays 5</span></a>
+<a class="sourceLine" id="cb14-20" title="20">  cout &lt;&lt; --num &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>; <span class="co">// Subtracts 1 from num, then displays 4</span></a>
+<a class="sourceLine" id="cb14-21" title="21"></a>
+<a class="sourceLine" id="cb14-22" title="22">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb14-23" title="23">}</a></code></pre></div>
+<h3 id="using-and----in-mathematical-expressions">Using <code>++</code> and <code>--</code> in Mathematical Expressions</h3>
+<p>The increment and decrement operators can also be used on variables in mathematical expressions. Consider the following program segment:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb15-1" title="1">a = <span class="dv">2</span>;</a>
+<a class="sourceLine" id="cb15-2" title="2">b = <span class="dv">5</span>;</a>
+<a class="sourceLine" id="cb15-3" title="3">c = a * b++;</a>
+<a class="sourceLine" id="cb15-4" title="4">cout &lt;&lt; a &lt;&lt; <span class="st">&quot; &quot;</span> &lt;&lt; b &lt;&lt; <span class="st">&quot; &quot;</span> &lt;&lt; c;</a></code></pre></div>
+<p>variable <code>b</code> would be incremented before it was multiplied by <code>a</code></p>
+<p>You can pack a lot of action into a single statement using the increment and decrement operators, but don’t get too tricky with them. You might be tempted to try something like the following, thinking that c will be assigned 11:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb16-1" title="1">a = <span class="dv">2</span>;</a>
+<a class="sourceLine" id="cb16-2" title="2">b = <span class="dv">5</span>;</a>
+<a class="sourceLine" id="cb16-3" title="3">c = ++(a * b); <span class="co">// Error!</span></a></code></pre></div>
+<h3 id="using-and----in-relational-expressions">Using <code>++</code> and <code>--</code> in Relational Expressions</h3>
+<p>The ++ and −− operators may also be used in relational expressions. Just as in arithmetic expressions, the difference between postfix and prefix mode is critical. Consider the following program segment:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb17-1" title="1">x = <span class="dv">10</span>;</a>
+<a class="sourceLine" id="cb17-2" title="2"><span class="cf">if</span> (x++ &gt; <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb17-3" title="3">  cout &lt;&lt; <span class="st">&quot;x is greater than 10.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a></code></pre></div>
+<h2 id="counters">5.4 Counters</h2>
+<p><strong>CONCEPT:</strong> A counter is a variable that is regularly incremented or decremented each time a loop iterates.</p>
+<blockquote>
+<p>Program 5-6</p>
+</blockquote>
+<div class="sourceCode" id="cb18"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb18-1" title="1"><span class="co">// This program uses a while loop to display</span></a>
+<a class="sourceLine" id="cb18-2" title="2"><span class="co">// the numbers 1–5 and their squares.</span></a>
+<a class="sourceLine" id="cb18-3" title="3"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb18-4" title="4"><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span></a>
+<a class="sourceLine" id="cb18-5" title="5"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb18-6" title="6"></a>
+<a class="sourceLine" id="cb18-7" title="7"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb18-8" title="8">{ <span class="dt">int</span> num = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb18-9" title="9"></a>
+<a class="sourceLine" id="cb18-10" title="10">  cout &lt;&lt; <span class="st">&quot;Number Square</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb18-11" title="11">  cout &lt;&lt; <span class="st">&quot;--------------</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb18-12" title="12">  <span class="cf">while</span> (num &lt;= <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb18-13" title="13">  {</a>
+<a class="sourceLine" id="cb18-14" title="14">    cout &lt;&lt; setw(<span class="dv">4</span>) &lt;&lt; num &lt;&lt; setw(<span class="dv">7</span>) &lt;&lt; (num * num) &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb18-15" title="15">    num++; <span class="co">// Increment counter</span></a>
+<a class="sourceLine" id="cb18-16" title="16">  }</a>
+<a class="sourceLine" id="cb18-17" title="17">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb18-18" title="18">}</a></code></pre></div>
+<h3 id="letting-the-user-control-the-loop">Letting the User Control the Loop</h3>
+<div class="sourceCode" id="cb19"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb19-1" title="1"><span class="co">// This program displays integer numbers and their squares, beginning</span></a>
+<a class="sourceLine" id="cb19-2" title="2"><span class="co">// with one and ending with whatever number the user requests.</span></a>
+<a class="sourceLine" id="cb19-3" title="3"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb19-4" title="4"><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span></a>
+<a class="sourceLine" id="cb19-5" title="5"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb19-6" title="6"></a>
+<a class="sourceLine" id="cb19-7" title="7"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb19-8" title="8">{</a>
+<a class="sourceLine" id="cb19-9" title="9">  <span class="dt">int</span> num, <span class="co">// Counter telling what number to square</span></a>
+<a class="sourceLine" id="cb19-10" title="10">  lastNum; <span class="co">// The final integer value to be squared</span></a>
+<a class="sourceLine" id="cb19-11" title="11"></a>
+<a class="sourceLine" id="cb19-12" title="12">  <span class="co">// Get and validate the last number in the table</span></a>
+<a class="sourceLine" id="cb19-13" title="13">  cout &lt;&lt; <span class="st">&quot;This program will display a table of integer</span><span class="sc">\n</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb19-14" title="14">       &lt;&lt; <span class="st">&quot;numbers and their squares, starting with 1.</span><span class="sc">\n</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb19-15" title="15">       &lt;&lt; <span class="st">&quot;What should the last number be?</span><span class="sc">\n</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb19-16" title="16">       &lt;&lt; <span class="st">&quot;Enter an integer between 2 and 10: &quot;</span>;</a>
+<a class="sourceLine" id="cb19-17" title="17">  cin  &gt;&gt; lastNum;</a>
+<a class="sourceLine" id="cb19-18" title="18"></a>
+<a class="sourceLine" id="cb19-19" title="19">  <span class="cf">while</span> ((lastNum &lt; <span class="dv">2</span>) || (lastNum &gt; <span class="dv">10</span>))</a>
+<a class="sourceLine" id="cb19-20" title="20">  {</a>
+<a class="sourceLine" id="cb19-21" title="21">    cout &lt;&lt; <span class="st">&quot;Please enter an integer between 2 and 10: &quot;</span>;</a>
+<a class="sourceLine" id="cb19-22" title="22">    cin &gt;&gt; lastNum;</a>
+<a class="sourceLine" id="cb19-23" title="23">  }</a>
+<a class="sourceLine" id="cb19-24" title="24">  <span class="co">// Display the table</span></a>
+<a class="sourceLine" id="cb19-25" title="25">  cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Number Square</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb19-26" title="26">  cout &lt;&lt; <span class="st">&quot;--------------</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb19-27" title="27"></a>
+<a class="sourceLine" id="cb19-28" title="28">  num = <span class="dv">1</span>; <span class="co">// Set the counter to the starting value</span></a>
+<a class="sourceLine" id="cb19-29" title="29">  <span class="cf">while</span> (num &lt;= lastNum)</a>
+<a class="sourceLine" id="cb19-30" title="30">  {</a>
+<a class="sourceLine" id="cb19-31" title="31">    cout &lt;&lt; setw(<span class="dv">4</span>) &lt;&lt; num &lt;&lt; setw(<span class="dv">7</span>) &lt;&lt; (num * num) &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb19-32" title="32">    num++; <span class="co">// Increment the counter</span></a>
+<a class="sourceLine" id="cb19-33" title="33">  }</a>
+<a class="sourceLine" id="cb19-34" title="34">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb19-35" title="35">}</a></code></pre></div>
+<h2 id="keeping-a-running-total">5.5 Keeping a Running Total</h2>
+<p><strong>CONCEPT:</strong> A running total is a sum of numbers that accumulates with each iteration of a loop. The variable used to keep the running total is called an accumulator.</p>
+<blockquote>
+<p>Program 5-8</p>
+</blockquote>
+<div class="sourceCode" id="cb20"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb20-1" title="1"><span class="co">// This program takes daily sales figures for</span></a>
+<a class="sourceLine" id="cb20-2" title="2"><span class="co">// a 5-day sales week and calculates their total.</span></a>
+<a class="sourceLine" id="cb20-3" title="3"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb20-4" title="4"><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span></a>
+<a class="sourceLine" id="cb20-5" title="5"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb20-6" title="6"></a>
+<a class="sourceLine" id="cb20-7" title="7"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb20-8" title="8">{</a>
+<a class="sourceLine" id="cb20-9" title="9">  <span class="at">const</span> <span class="dt">int</span> NUM_DAYS = <span class="dv">5</span>;</a>
+<a class="sourceLine" id="cb20-10" title="10">  <span class="dt">int</span> day;           <span class="co">// The day being processed</span></a>
+<a class="sourceLine" id="cb20-11" title="11">  <span class="dt">double</span> dailySales, <span class="co">// The sales amount for a single day</span></a>
+<a class="sourceLine" id="cb20-12" title="12">  totalSales = <span class="fl">0.0</span>;  <span class="co">// Accumulator, initialized with 0</span></a>
+<a class="sourceLine" id="cb20-13" title="13"></a>
+<a class="sourceLine" id="cb20-14" title="14">  <span class="co">// Get the sales for each day and accumulate a total</span></a>
+<a class="sourceLine" id="cb20-15" title="15">  <span class="co">// The loop control variable, day, is a counter</span></a>
+<a class="sourceLine" id="cb20-16" title="16">  day = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb20-17" title="17">  <span class="cf">while</span> (day &lt;= NUM_DAYS)</a>
+<a class="sourceLine" id="cb20-18" title="18">  {</a>
+<a class="sourceLine" id="cb20-19" title="19">    cout &lt;&lt; <span class="st">&quot;Enter the sales for day &quot;</span> &lt;&lt; day &lt;&lt; <span class="st">&quot;: &quot;</span>;</a>
+<a class="sourceLine" id="cb20-20" title="20">    cin  &gt;&gt; dailySales;</a>
+<a class="sourceLine" id="cb20-21" title="21">    totalSales = totalSales + dailySales; <span class="co">// Accumulate the total</span></a>
+<a class="sourceLine" id="cb20-22" title="22">    day++;                                <span class="co">// Increment the counter</span></a>
+<a class="sourceLine" id="cb20-23" title="23">  }</a>
+<a class="sourceLine" id="cb20-24" title="24">  <span class="co">// Display the total sales</span></a>
+<a class="sourceLine" id="cb20-25" title="25">  cout &lt;&lt; fixed &lt;&lt; showpoint &lt;&lt; setprecision(<span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb20-26" title="26">  cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Total sales: $&quot;</span> &lt;&lt; totalSales &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb20-27" title="27"></a>
+<a class="sourceLine" id="cb20-28" title="28">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb20-29" title="29">}</a></code></pre></div>
+<h2 id="sentinels">5.6 Sentinels</h2>
+<p><strong>CONCEPT:</strong> A sentinel is a special value that marks the end of a list of values.</p>
+<p>A <em>sentinel</em> is a special value that cannot be mistaken for a member of the list and that signals that there are no more values to be entered. The loop that allows the data to be input continues iterating until the user enters the sentinel. Then the loop terminates. This type of loop is called a <em>sentinel-controlled loop</em>.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb21-1" title="1"><span class="co">// This program uses a sentinel-controlled loop. It calculates the total</span></a>
+<a class="sourceLine" id="cb21-2" title="2"><span class="co">// number of points a soccer team has earned so far this season. The user</span></a>
+<a class="sourceLine" id="cb21-3" title="3"><span class="co">// enters the points earned for each game, then enters −1 when finished.</span></a>
+<a class="sourceLine" id="cb21-4" title="4"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb21-5" title="5"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb21-6" title="6"></a>
+<a class="sourceLine" id="cb21-7" title="7"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb21-8" title="8">{</a>
+<a class="sourceLine" id="cb21-9" title="9">  <span class="dt">int</span> game = <span class="dv">1</span>, <span class="co">// Game counter</span></a>
+<a class="sourceLine" id="cb21-10" title="10">  points,       <span class="co">// Holds number of points for a specific game</span></a>
+<a class="sourceLine" id="cb21-11" title="11">  total = <span class="dv">0</span>;    <span class="co">// Accumulates total points for all games</span></a>
+<a class="sourceLine" id="cb21-12" title="12"></a>
+<a class="sourceLine" id="cb21-13" title="13">  <span class="co">// Read in the points for game 1</span></a>
+<a class="sourceLine" id="cb21-14" title="14">  cout &lt;&lt; <span class="st">&quot;Enter the number of points your team earned for each</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb21-15" title="15">  cout &lt;&lt; <span class="st">&quot;game so far this season. Then enter −1 when finished.</span><span class="sc">\n\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb21-16" title="16">  cout &lt;&lt; <span class="st">&quot;Enter the points for game &quot;</span> &lt;&lt; game &lt;&lt; <span class="st">&quot;: &quot;</span>;</a>
+<a class="sourceLine" id="cb21-17" title="17">  cin  &gt;&gt; points;</a>
+<a class="sourceLine" id="cb21-18" title="18"></a>
+<a class="sourceLine" id="cb21-19" title="19">  <span class="co">// Loop as long as the end sentinel has not yet been entered</span></a>
+<a class="sourceLine" id="cb21-20" title="20">  <span class="cf">while</span> (points != −<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb21-21" title="21">  { <span class="co">// Add point just read in to the accumulator</span></a>
+<a class="sourceLine" id="cb21-22" title="22">    total += points;</a>
+<a class="sourceLine" id="cb21-23" title="23"></a>
+<a class="sourceLine" id="cb21-24" title="24">    <span class="co">// Enter the points for the next game</span></a>
+<a class="sourceLine" id="cb21-25" title="25">    game++;</a>
+<a class="sourceLine" id="cb21-26" title="26">    cout &lt;&lt; <span class="st">&quot;Enter the points for game &quot;</span> &lt;&lt; game &lt;&lt; <span class="st">&quot;: &quot;</span>;</a>
+<a class="sourceLine" id="cb21-27" title="27">    cin  &gt;&gt; points;</a>
+<a class="sourceLine" id="cb21-28" title="28">  }</a>
+<a class="sourceLine" id="cb21-29" title="29">  <span class="co">// Display the total points</span></a>
+<a class="sourceLine" id="cb21-30" title="30">  cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">The team has earned &quot;</span> &lt;&lt; total &lt;&lt; <span class="st">&quot;points so far. </span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb21-31" title="31">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb21-32" title="32">}</a></code></pre></div>
+<h2 id="do-while-loop">5.7 <code>do-while</code> Loop</h2>
+<p><strong>CONCEPT:</strong> The <code>do-while</code> loop is a post-test loop, which means its expression is tested after each iteration.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb22-1" title="1"><span class="cf">do</span></a>
+<a class="sourceLine" id="cb22-2" title="2">{ statement;</a>
+<a class="sourceLine" id="cb22-3" title="3">  statement;</a>
+<a class="sourceLine" id="cb22-4" title="4">  <span class="co">// Place as many statements</span></a>
+<a class="sourceLine" id="cb22-5" title="5">  <span class="co">// here as necessary.</span></a>
+<a class="sourceLine" id="cb22-6" title="6">} <span class="cf">while</span> (condition);</a></code></pre></div>
+<p>Besides the way it looks, the difference between the <code>do-while</code> loop and the <code>while</code> loop is that <code>do-while</code> is a post-test loop. This means it tests its expression at the end of the loop, after each iteration is complete. Therefore a <code>do-while</code> always performs at least one iteration, even if the test expression is false at the start.</p>
+<blockquote>
+<p>Program 5-10</p>
+</blockquote>
+<div class="sourceCode" id="cb23"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb23-1" title="1"><span class="co">// This program averages 3 test scores. It uses a do-while loop</span></a>
+<a class="sourceLine" id="cb23-2" title="2"><span class="co">// that allows the code to repeat as many times as the user wishes.</span></a>
+<a class="sourceLine" id="cb23-3" title="3"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb23-4" title="4"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb23-5" title="5"></a>
+<a class="sourceLine" id="cb23-6" title="6"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb23-7" title="7">{</a>
+<a class="sourceLine" id="cb23-8" title="8">  <span class="dt">int</span> score1, score2, score3; <span class="co">// Three test scores</span></a>
+<a class="sourceLine" id="cb23-9" title="9">  <span class="dt">double</span> average;             <span class="co">// Average test score</span></a>
+<a class="sourceLine" id="cb23-10" title="10">  <span class="dt">char</span> again;                 <span class="co">// Loop again? Y or N</span></a>
+<a class="sourceLine" id="cb23-11" title="11"></a>
+<a class="sourceLine" id="cb23-12" title="12">  <span class="cf">do</span></a>
+<a class="sourceLine" id="cb23-13" title="13">  { <span class="co">// Get three test scores</span></a>
+<a class="sourceLine" id="cb23-14" title="14">    cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Enter 3 scores and I will average them: &quot;</span>;</a>
+<a class="sourceLine" id="cb23-15" title="15">    cin &gt;&gt; score1 &gt;&gt; score2 &gt;&gt; score3;</a>
+<a class="sourceLine" id="cb23-16" title="16"></a>
+<a class="sourceLine" id="cb23-17" title="17">    <span class="co">// Calculate and display the average</span></a>
+<a class="sourceLine" id="cb23-18" title="18">    average = (score1 + score2 + score3) / <span class="fl">3.0</span>;</a>
+<a class="sourceLine" id="cb23-19" title="19">    cout &lt;&lt; <span class="st">&quot;The average is &quot;</span> &lt;&lt; average &lt;&lt; <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb23-20" title="20"></a>
+<a class="sourceLine" id="cb23-21" title="21">    <span class="co">// Does the user want to average another set?</span></a>
+<a class="sourceLine" id="cb23-22" title="22">    cout &lt;&lt; <span class="st">&quot;Do you want to average another set? (Y/N) &quot;</span>;</a>
+<a class="sourceLine" id="cb23-23" title="23">    cin  &gt;&gt; again;</a>
+<a class="sourceLine" id="cb23-24" title="24">  } <span class="cf">while</span> (again == <span class="ch">&#39;Y&#39;</span> || again == <span class="ch">&#39;y&#39;</span>);</a>
+<a class="sourceLine" id="cb23-25" title="25">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb23-26" title="26">}</a></code></pre></div>
+<h3 id="the-toupper-function">The <code>toupper</code> Function</h3>
+<p>This function is passed a character and returns the integer ASCII code of a character. If the character it receives is a lowercase letter, it returns the ASCII code of its uppercase equivalent. If the character it receives is not a lowercase letter, it returns the ASCII code for the same character it was passed.</p>
+<p>If the value returned by <code>toupper</code> were printed, it is the ASCII code that would print. However, if it is assigned to a <code>char</code> variable, which is then printed, the character itself will print. The following examples illustrate this.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb24-1" title="1"><span class="dt">char</span> letter1, letter2, letter3;</a>
+<a class="sourceLine" id="cb24-2" title="2">letter1 = toupper(<span class="ch">&#39;?&#39;</span>);</a>
+<a class="sourceLine" id="cb24-3" title="3">cout &lt;&lt; letter1;      <span class="co">// This displays ?</span></a>
+<a class="sourceLine" id="cb24-4" title="4">letter2 = toupper(<span class="ch">&#39;A&#39;</span>);</a>
+<a class="sourceLine" id="cb24-5" title="5">cout &lt;&lt; letter2;      <span class="co">// This displays A</span></a>
+<a class="sourceLine" id="cb24-6" title="6">letter3 = toupper(<span class="ch">&#39;b&#39;</span>);</a>
+<a class="sourceLine" id="cb24-7" title="7">cout &lt;&lt; letter3;      <span class="co">// This displays B</span></a>
+<a class="sourceLine" id="cb24-8" title="8">cout &lt;&lt; toupper(<span class="ch">&#39;c&#39;</span>); <span class="co">// This displays 67, the ASCII code for C</span></a></code></pre></div>
+<h3 id="using-do-while-with-menus">Using <code>do-while</code> with Menus</h3>
+<blockquote>
+<p>Program 5-11</p>
+</blockquote>
+<div class="sourceCode" id="cb25"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb25-1" title="1"><span class="co">// This menu-driven Health Club membership program carries out the</span></a>
+<a class="sourceLine" id="cb25-2" title="2"><span class="co">// appropriate actions based on the menu choice entered. A do-while loop</span></a>
+<a class="sourceLine" id="cb25-3" title="3"><span class="co">// allows the program to repeat until the user selects menu choice 4.</span></a>
+<a class="sourceLine" id="cb25-4" title="4"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb25-5" title="5"><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span></a>
+<a class="sourceLine" id="cb25-6" title="6"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb25-7" title="7"></a>
+<a class="sourceLine" id="cb25-8" title="8"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb25-9" title="9">{</a>
+<a class="sourceLine" id="cb25-10" title="10">  <span class="co">// Constants for membership rates</span></a>
+<a class="sourceLine" id="cb25-11" title="11">  <span class="at">const</span> <span class="dt">double</span> ADULT_RATE = <span class="fl">120.0</span>;</a>
+<a class="sourceLine" id="cb25-12" title="12">  <span class="at">const</span> <span class="dt">double</span> CHILD_RATE = <span class="fl">60.0</span>;</a>
+<a class="sourceLine" id="cb25-13" title="13">  <span class="at">const</span> <span class="dt">double</span> SENIOR_RATE = <span class="fl">100.0</span>;</a>
+<a class="sourceLine" id="cb25-14" title="14"></a>
+<a class="sourceLine" id="cb25-15" title="15">  <span class="dt">int</span> choice; <span class="co">// Menu choice</span></a>
+<a class="sourceLine" id="cb25-16" title="16">  <span class="dt">int</span> months; <span class="co">// Number of months</span></a>
+<a class="sourceLine" id="cb25-17" title="17">  <span class="dt">double</span> charges; <span class="co">// Monthly charges</span></a>
+<a class="sourceLine" id="cb25-18" title="18"></a>
+<a class="sourceLine" id="cb25-19" title="19">  <span class="cf">do</span></a>
+<a class="sourceLine" id="cb25-20" title="20">  { <span class="co">// Display the menu and get the user&#39;s choice</span></a>
+<a class="sourceLine" id="cb25-21" title="21">    cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st"> Health Club Membership Menu</span><span class="sc">\n\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb25-22" title="22">    cout &lt;&lt; <span class="st">&quot;1. Standard Adult Membership</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb25-23" title="23">    cout &lt;&lt; <span class="st">&quot;2. Child Membership</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb25-24" title="24">    cout &lt;&lt; <span class="st">&quot;3. Senior Citizen Membership</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb25-25" title="25">    cout &lt;&lt; <span class="st">&quot;4. Quit the Program</span><span class="sc">\n\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb25-26" title="26">    cout &lt;&lt; <span class="st">&quot;Enter your choice: &quot;</span>;</a>
+<a class="sourceLine" id="cb25-27" title="27">    cin  &gt;&gt; choice;</a>
+<a class="sourceLine" id="cb25-28" title="28"></a>
+<a class="sourceLine" id="cb25-29" title="29">    <span class="co">// Validate the menu selection</span></a>
+<a class="sourceLine" id="cb25-30" title="30">    <span class="cf">while</span> ((choice &lt; <span class="dv">1</span>) || (choice &gt; <span class="dv">4</span>))</a>
+<a class="sourceLine" id="cb25-31" title="31">    {</a>
+<a class="sourceLine" id="cb25-32" title="32">      cout &lt;&lt; <span class="st">&quot;Please enter 1, 2, 3, or 4: &quot;</span>;</a>
+<a class="sourceLine" id="cb25-33" title="33">      cin &gt;&gt; choice;</a>
+<a class="sourceLine" id="cb25-34" title="34">    }</a>
+<a class="sourceLine" id="cb25-35" title="35">    <span class="co">// Process the user&#39;s choice</span></a>
+<a class="sourceLine" id="cb25-36" title="36">    <span class="cf">if</span> (choice != <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb25-37" title="37">    { cout &lt;&lt; <span class="st">&quot;For how many months? &quot;</span>;</a>
+<a class="sourceLine" id="cb25-38" title="38">      cin &gt;&gt; months;</a>
+<a class="sourceLine" id="cb25-39" title="39"></a>
+<a class="sourceLine" id="cb25-40" title="40">      <span class="co">// Compute charges based on user input</span></a>
+<a class="sourceLine" id="cb25-41" title="41">      <span class="cf">switch</span> (choice)</a>
+<a class="sourceLine" id="cb25-42" title="42">      {</a>
+<a class="sourceLine" id="cb25-43" title="43">        <span class="cf">case</span> <span class="dv">1</span>: charges = months * ADULT_RATE;</a>
+<a class="sourceLine" id="cb25-44" title="44">        <span class="cf">break</span>;</a>
+<a class="sourceLine" id="cb25-45" title="45">        <span class="cf">case</span> <span class="dv">2</span>: charges = months * CHILD_RATE;</a>
+<a class="sourceLine" id="cb25-46" title="46">        <span class="cf">break</span>;</a>
+<a class="sourceLine" id="cb25-47" title="47">        <span class="cf">case</span> <span class="dv">3</span>: charges = months * SENIOR_RATE;</a>
+<a class="sourceLine" id="cb25-48" title="48">      }</a>
+<a class="sourceLine" id="cb25-49" title="49">      <span class="co">// Display the monthly charges</span></a>
+<a class="sourceLine" id="cb25-50" title="50">      cout &lt;&lt; fixed &lt;&lt; showpoint &lt;&lt; setprecision(<span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb25-51" title="51">      cout &lt;&lt; <span class="st">&quot;The total charges are $&quot;</span> &lt;&lt; charges &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb25-52" title="52">    }</a>
+<a class="sourceLine" id="cb25-53" title="53">  } <span class="cf">while</span> (choice != <span class="dv">4</span>); <span class="co">// Loop again if the user did not</span></a>
+<a class="sourceLine" id="cb25-54" title="54">  <span class="co">// select choice 4 to quit</span></a>
+<a class="sourceLine" id="cb25-55" title="55">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb25-56" title="56">}</a></code></pre></div>
+<h2 id="the-for-loop">5.8 The <code>for</code> Loop</h2>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<p>Textbook</p>
+<ul>
+<li>Starting Out with C++: Early Objects by Tony Gaddis, Judy Walters, Godfrey Muganda</li>
+</ul>
+          </article>
+          </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../../../templates/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../../../templates/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+    <script src="../../../../../../templates/js/animated-toc.js"></script>
+  </body>
+</html>

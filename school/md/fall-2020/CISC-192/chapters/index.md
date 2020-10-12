@@ -12,4 +12,5 @@ date: Aug 17, 2020
 - [↪ Chapter 2: Introduction to C++](chapter-2/index)
 - [↪ Chapter 3: Expression and Interactivity](chapter-3/index)
 - [↪ Chapter 4: Making Decisions](chapter-4/index)
+- [↪ Chapter 5: Looping](chapter-5/index)
 
