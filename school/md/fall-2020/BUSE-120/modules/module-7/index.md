@@ -14,5 +14,5 @@ date: Oct 02, 2020
 
 ## Excercises
 
-- [⬇ Module 7 Exercise](file:../../../../../files/fall-2020/BUSE-120/module-7/module-3_exercise.docx)
+- [⬇ Module 7 Exercise](file:../../../../../files/fall-2020/BUSE-120/module-7/module-7_exercise.docx)
 
