@@ -153,7 +153,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li><a href="#the-toupper-function">The <code>toupper</code> Function</a></li>
           <li><a href="#using-do-while-with-menus">Using <code>do-while</code> with Menus</a></li>
           </ul></li>
-          <li><a href="#the-for-loop">5.8 The <code>for</code> Loop</a></li>
+          <li><a href="#the-for-loop">5.8 The <code>for</code> Loop</a><ul>
+          <li><a href="#the-for-loop-is-a-pretest-loop">The <code>for</code> Loop Is a Pretest Loop</a></li>
+          <li><a href="#avoid-modifying-the-counter-variable-in-the-body-of-the-for-loop">Avoid Modifying the Counter Variable in the Body of the <code>for</code> Loop</a></li>
+          <li><a href="#other-forms-of-the-update-expression">Other Forms of the Update Expression</a></li>
+          <li><a href="#defining-a-variable-in-the-for-loops-initialization-expression">Defining a Variable in the for Loop’s Initialization Expression</a></li>
+          <li><a href="#creating-a-user-controlled-for-loop">Creating a User-Controlled for Loop</a></li>
+          <li><a href="#using-multiple-statements-in-the-initialization-and-update-expressions">Using Multiple Statements in the Initialization and Update Expressions</a></li>
+          <li><a href="#omitting-the-for-loops-expressions-or-loop-body">Omitting the <code>for</code> Loop’s Expressions or Loop Body</a></li>
+          </ul></li>
+          <li><a href="#deciding-which-loop-to-use">5.9 Deciding Which Loop to Use</a><ul>
+          <li><a href="#the-while-loop-1">The <code>while</code> Loop</a></li>
+          <li><a href="#the-do-while-loop">The <code>do-while</code> Loop</a></li>
+          <li><a href="#the-for-loop-1">The <code>for</code> Loop</a></li>
+          </ul></li>
+          <li><a href="#nested-loops">5.10 Nested Loops</a></li>
+          <li><a href="#breaking-out-of-a-loop">5.11 Breaking Out of a Loop</a><ul>
+          <li><a href="#using-break-in-a-nested-loop">Using <code>break</code> in a Nested Loop</a></li>
+          <li><a href="#the-continue-statement">The <code>continue</code> Statement</a></li>
+          </ul></li>
+          <li><a href="#using-files-for-data-storage">Using Files for Data Storage</a><ul>
+          <li><a href="#types-of-files">Types of Files</a></li>
+          <li><a href="#file-access-methods">File Access Methods</a></li>
+          <li><a href="#filenames-and-file-stream-objects">Filenames and File Stream Objects</a></li>
+          <li><a href="#setting-up-a-program-for-file-inputoutput">Setting Up a Program for File Input/Output</a></li>
+          <li><a href="#creating-a-file-stream-object-and-opening-a-file">Creating a File Stream Object and Opening a File</a></li>
+          <li><a href="#closing-a-file">Closing a File</a></li>
+          <li><a href="#writing-data-to-a-file">Writing Data to a File</a></li>
+          <li><a href="#reading-data-from-a-file">Reading Data from a File</a></li>
+          <li><a href="#the-read-position">The Read Position</a></li>
+          <li><a href="#letting-the-user-specify-a-filename">Letting the User Specify a Filename</a></li>
+          <li><a href="#using-the-c_str-member-function-in-older-versions-of-c">Using the <code>c_str</code> Member Function in Older Versions of C++</a></li>
+          <li><a href="#detecting-the-end-of-the-file">Detecting the End of the File</a></li>
+          <li><a href="#testing-for-file-open-errors">Testing for File Open Errors</a></li>
+          </ul></li>
+          <li><a href="#focus-on-testing-and-debugging-creating-good-test-data">5.13 Focus on Testing and Debugging: Creating Good Test Data</a></li>
+          <li><a href="#central-mountain-credit-union-case-study">5.14 Central Mountain Credit Union Case Study</a></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
           </ul>
@@ -691,6 +726,711 @@ That&#39;s all!</code></pre>
 <a class="sourceLine" id="cb25-55" title="55">  <span class="cf">return</span> <span class="dv">0</span>;</a>
 <a class="sourceLine" id="cb25-56" title="56">}</a></code></pre></div>
 <h2 id="the-for-loop">5.8 The <code>for</code> Loop</h2>
+<p>In general, there are two categories of loops: conditional loops and count-controlled loops. A <em>conditional loop</em> executes as long as a particular condition exists. For example, an input validation loop executes as long as the input value is invalid. When you write a conditional loop, you have no way of knowing the number of times it will iterate.</p>
+<p>Sometimes you know the exact number of iterations that a loop must perform. A loop that repeats a specific number of times is known as a <em>count-controlled loop</em>. For example, if a loop asks the user to enter the sales amounts for each month in the year, it will iterate twelve times. In essence, the loop counts to twelve and asks the user to enter a sales amount each time it makes a count. A count-controlled loop must possess three elements:</p>
+<ol type="1">
+<li>It must initialize a counter variable to a starting value.</li>
+<li>It must test the counter variable by comparing it to a final value. When the counter variable reaches its final value, the loop terminates.</li>
+<li>It must update the counter variable during each iteration. This is usually done by incrementing the variable.</li>
+</ol>
+<p>Here is the format of the for loop.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb26-1" title="1"><span class="cf">for</span> (initialization; test; update)</a>
+<a class="sourceLine" id="cb26-2" title="2">{</a>
+<a class="sourceLine" id="cb26-3" title="3">  statement;</a>
+<a class="sourceLine" id="cb26-4" title="4">  statement;</a>
+<a class="sourceLine" id="cb26-5" title="5">  <span class="co">// Place as many statements</span></a>
+<a class="sourceLine" id="cb26-6" title="6">  <span class="co">// here as necessary.</span></a>
+<a class="sourceLine" id="cb26-7" title="7">}</a></code></pre></div>
+<p>The first line of the <code>for</code> loop is the <em>loop header</em>. After the key word for, there are three expressions inside the parentheses, separated by semicolons. (Notice that there is no semicolon after the third expression.) The first expression is the <em>initialization expression</em>. It is typically used to initialize a counter to its starting value. This is the first action performed by the loop, and it is only done once.</p>
+<p>The second expression is the test expression. It tests a condition in the same way the test expression in the <code>while</code> and <code>do-while</code> loops do, and controls the execution of the loop. As long as this condition is true, the body of the <code>for</code> loop will repeat. Like the while loop, the <code>for</code> loop is a pretest loop, so it evaluates the test expression before each iteration.</p>
+<p>The third expression is the <em>update</em> expression. It executes at the end of each iteration, before the test expression is tested again. Typically, this is a statement that increments the loop’s counter variable.</p>
+<p>Here is an example of a simple for loop that prints “Hello” five times:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb27-1" title="1"><span class="cf">for</span> (count = <span class="dv">1</span>; count &lt;= <span class="dv">5</span>; count++)</a>
+<a class="sourceLine" id="cb27-2" title="2">  cout &lt;&lt; <span class="st">&quot;Hello&quot;</span> &lt;&lt; endl;</a></code></pre></div>
+<blockquote>
+<p>Program 5-12</p>
+</blockquote>
+<div class="sourceCode" id="cb28"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb28-1" title="1"><span class="co">// This program uses a for loop to display the numbers 1–5</span></a>
+<a class="sourceLine" id="cb28-2" title="2"><span class="co">// and their squares.</span></a>
+<a class="sourceLine" id="cb28-3" title="3"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb28-4" title="4"><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span></a>
+<a class="sourceLine" id="cb28-5" title="5"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb28-6" title="6"></a>
+<a class="sourceLine" id="cb28-7" title="7"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb28-8" title="8">{ <span class="dt">int</span> num;</a>
+<a class="sourceLine" id="cb28-9" title="9"></a>
+<a class="sourceLine" id="cb28-10" title="10">  cout &lt;&lt; <span class="st">&quot;Number Square</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb28-11" title="11">  cout &lt;&lt; <span class="st">&quot;--------------</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb28-12" title="12"></a>
+<a class="sourceLine" id="cb28-13" title="13">  <span class="cf">for</span> (num = <span class="dv">1</span>; num &lt;= <span class="dv">5</span>; num++)</a>
+<a class="sourceLine" id="cb28-14" title="14">    cout &lt;&lt; setw(<span class="dv">4</span>) &lt;&lt; num &lt;&lt; setw(<span class="dv">7</span>) &lt;&lt; (num * num) &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb28-15" title="15">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb28-16" title="16">}</a></code></pre></div>
+<h3 id="the-for-loop-is-a-pretest-loop">The <code>for</code> Loop Is a Pretest Loop</h3>
+<p>Because the <code>for</code> loop tests its test expression before it performs an iteration, it is possible to write a <code>for</code> loop in such a way that it will never iterate. Here is an example:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb29-1" title="1"><span class="cf">for</span> (count = <span class="dv">11</span>; count &lt;= <span class="dv">10</span>; count++)</a>
+<a class="sourceLine" id="cb29-2" title="2">  cout &lt;&lt; <span class="st">&quot;Hello&quot;</span> &lt;&lt; endl;</a></code></pre></div>
+<h3 id="avoid-modifying-the-counter-variable-in-the-body-of-the-for-loop">Avoid Modifying the Counter Variable in the Body of the <code>for</code> Loop</h3>
+<p>Although it is okay to use the counter variable inside the body of the loop, as we did in Program 5-12, be careful not to place a statement there that modifies it. Modifications of the counter variable should only take place in the update expression, which is automatically executed at the end of each iteration. If a statement in the body of the loop also modifies the counter variable, the loop will probably not terminate when you expect it to. The following loop, for example, increments x twice for each iteration:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb30-1" title="1"><span class="cf">for</span> (x = <span class="dv">1</span>; x &lt;= <span class="dv">10</span>; x++)</a>
+<a class="sourceLine" id="cb30-2" title="2">{</a>
+<a class="sourceLine" id="cb30-3" title="3">  cout &lt;&lt; x &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb30-4" title="4">  x++; <span class="co">// Wrong!</span></a>
+<a class="sourceLine" id="cb30-5" title="5">}</a></code></pre></div>
+<h3 id="other-forms-of-the-update-expression">Other Forms of the Update Expression</h3>
+<p>You are not limited to incrementing the loop control variable by just 1 in the update expression. Here is a loop that displays all the even numbers from 2 through 100 by adding 2 to its counter:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb31-1" title="1"><span class="cf">for</span> (num = <span class="dv">2</span>; num &lt;= <span class="dv">100</span>; num += <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb31-2" title="2">  cout &lt;&lt; num &lt;&lt; endl;</a></code></pre></div>
+<p>And here is a loop that counts backward from 10 down to 0:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb32-1" title="1"><span class="cf">for</span> (num = <span class="dv">10</span>; num &gt;= <span class="dv">0</span>; num––)</a>
+<a class="sourceLine" id="cb32-2" title="2">  cout &lt;&lt; num &lt;&lt; endl;</a></code></pre></div>
+<h3 id="defining-a-variable-in-the-for-loops-initialization-expression">Defining a Variable in the for Loop’s Initialization Expression</h3>
+<p>Not only may the counter variable be initialized in the initialization expression, it may be defined there as well. The following code shows an example. This is a modified version of the loop in Program 5-12.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb33-1" title="1"><span class="cf">for</span> (<span class="dt">int</span> num = <span class="dv">1</span>; num &lt;= <span class="dv">5</span>; num++)</a>
+<a class="sourceLine" id="cb33-2" title="2">  cout &lt;&lt; setw(<span class="dv">4</span>) &lt;&lt; num &lt;&lt; setw(<span class="dv">7</span>) &lt;&lt; (num * num) &lt;&lt; endl;</a></code></pre></div>
+<p><strong>If the counter variable is used only in the loop, it is considered good programming practice to define it in the loop header</strong>. This makes the variable’s purpose clearer. However, when a variable is defined in the initialization expression of a <code>for</code> loop, the scope of the variable is limited to the loop. This means you cannot access the variable in statements outside the loop. For example, the following program segment will not compile because the last <code>cout</code> statement cannot access the variable count.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb34-1" title="1"><span class="cf">for</span> (<span class="dt">int</span> count = <span class="dv">1</span>; count &lt;= <span class="dv">10</span>; count++)</a>
+<a class="sourceLine" id="cb34-2" title="2">  cout &lt;&lt; count &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb34-3" title="3"></a>
+<a class="sourceLine" id="cb34-4" title="4">cout &lt;&lt; <span class="st">&quot;count is now &quot;</span> &lt;&lt; count &lt;&lt; endl; <span class="co">// ERROR!</span></a></code></pre></div>
+<h3 id="creating-a-user-controlled-for-loop">Creating a User-Controlled for Loop</h3>
+<p>In Program 5-7 we allowed the user to control how many times a while loop should iterate. This can also be done with a <code>for</code> loop by having the user enter the final value for the counter variable, as illustrated in the following program segment.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb35-1" title="1"><span class="co">// Get the final counter value</span></a>
+<a class="sourceLine" id="cb35-2" title="2">cout &lt;&lt; <span class="st">&quot;How many times should the loop execute? &quot;</span>;</a>
+<a class="sourceLine" id="cb35-3" title="3">cin &gt;&gt; finalValue;</a>
+<a class="sourceLine" id="cb35-4" title="4"></a>
+<a class="sourceLine" id="cb35-5" title="5"><span class="cf">for</span> (<span class="dt">int</span> num = <span class="dv">1</span>; num &lt;= finalValue; num++)</a>
+<a class="sourceLine" id="cb35-6" title="6">{</a>
+<a class="sourceLine" id="cb35-7" title="7">  <span class="co">// Statements in the loop body go here.</span></a>
+<a class="sourceLine" id="cb35-8" title="8">}</a></code></pre></div>
+<h3 id="using-multiple-statements-in-the-initialization-and-update-expressions">Using Multiple Statements in the Initialization and Update Expressions</h3>
+<p>It is possible to execute more than one statement in the initialization expression and the update expression. When using multiple statements in either of these expressions, simply separate the statements with commas.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb36-1" title="1"><span class="cf">for</span> (<span class="dt">int</span> x = <span class="dv">1</span>, y = <span class="dv">1</span>; x &lt;= <span class="dv">5</span>; x++)</a>
+<a class="sourceLine" id="cb36-2" title="2">{</a>
+<a class="sourceLine" id="cb36-3" title="3">  cout &lt;&lt; x &lt;&lt; <span class="st">&quot; plus &quot;</span> &lt;&lt; y &lt;&lt; <span class="st">&quot; equals &quot;</span> &lt;&lt; (x + y) &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb36-4" title="4">}</a></code></pre></div>
+<p>The loop’s initialization expression is <code>int x = 1, y = 1</code></p>
+<p>We can further modify the loop to execute two statements in the update expression. Here is an example:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb37-1" title="1"><span class="cf">for</span> (<span class="dt">int</span> x = <span class="dv">1</span>, y = <span class="dv">1</span>; x &lt;= <span class="dv">5</span>; x++, y++)</a>
+<a class="sourceLine" id="cb37-2" title="2">{</a>
+<a class="sourceLine" id="cb37-3" title="3">  cout &lt;&lt; x &lt;&lt; <span class="st">&quot; plus &quot;</span> &lt;&lt; y &lt;&lt; <span class="st">&quot; equals &quot;</span> &lt;&lt; (x + y) &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb37-4" title="4">}</a></code></pre></div>
+<h3 id="omitting-the-for-loops-expressions-or-loop-body">Omitting the <code>for</code> Loop’s Expressions or Loop Body</h3>
+<p>Although it is generally considered bad programming style to do so, one or more of the for loop’s expressions, or even its loop body, may be omitted.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb38-1" title="1"><span class="dt">int</span> num = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb38-2" title="2"><span class="cf">for</span> ( ; num &lt;= maxValue; num++)</a>
+<a class="sourceLine" id="cb38-3" title="3">  cout &lt;&lt; num &lt;&lt; <span class="st">&quot; &quot;</span> &lt;&lt; (num * num) &lt;&lt; endl;</a></code></pre></div>
+<p>The update expression may be omitted if it is being performed elsewhere in the loop or if none is needed. Although this type of code is not recommended, the following <code>for</code> loop works just like a <code>while</code> loop:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb39-1" title="1"><span class="dt">int</span> num = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb39-2" title="2"><span class="cf">for</span> ( ; num &lt;= maxValue; )</a>
+<a class="sourceLine" id="cb39-3" title="3">{ cout &lt;&lt; num &lt;&lt; <span class="st">&quot; &quot;</span> &lt;&lt; (num * num) &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb39-4" title="4">  num++;</a>
+<a class="sourceLine" id="cb39-5" title="5">}</a></code></pre></div>
+<p>It is also possible, though not recommended, to write a <code>for</code> loop that has no formal body. In this case, all the work of the loop is done by statements in the loop header. Here is an example that displays the numbers from 1 to 10. The combined increment operation and <code>cout</code> statement in the update expression perform the work of each iteration.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb40-1" title="1"><span class="cf">for</span> (number = <span class="dv">1</span>; number &lt;= <span class="dv">10</span>; cout &lt;&lt; number++);</a></code></pre></div>
+<h2 id="deciding-which-loop-to-use">5.9 Deciding Which Loop to Use</h2>
+<p><strong>CONCEP:</strong> Although most repetitive algorithms can be written with any of the three types of loops, each works best in different situations.</p>
+<p>Each of C++’s three loops is ideal to use in specific situations. Here’s a short summary of when each loop should be used.</p>
+<h3 id="the-while-loop-1">The <code>while</code> Loop</h3>
+<p>The while loop is a pretest loop. It is ideal in situations where you do not want the loop to iterate if the test condition is false from the beginning. For example, validating input that has been read and reading lists of data terminated by a sentinel value are good applications of the while loop.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb41-1" title="1">cout &lt;&lt; <span class="st">&quot;This program finds the square of any integer.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb41-2" title="2">cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Enter an integer, or −99 to quit: &quot;</span>;</a>
+<a class="sourceLine" id="cb41-3" title="3">cin  &gt;&gt; num;</a>
+<a class="sourceLine" id="cb41-4" title="4"><span class="cf">while</span> (num != −<span class="dv">99</span>)</a>
+<a class="sourceLine" id="cb41-5" title="5">{ cout &lt;&lt; num &lt;&lt; <span class="st">&quot; squared is &quot;</span> &lt;&lt; pow(num, <span class="fl">2.0</span>) &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb41-6" title="6">  cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Enter an integer, or −99 to quit &quot;</span>;</a>
+<a class="sourceLine" id="cb41-7" title="7">  cin  &gt;&gt; num;</a>
+<a class="sourceLine" id="cb41-8" title="8">}</a></code></pre></div>
+<h3 id="the-do-while-loop">The <code>do-while</code> Loop</h3>
+<p>The do-while loop is a post-test loop. It is ideal in situations where you always want the loop to iterate at least once. The do-while loop is a good choice for repeating a menu or for asking users if they want to repeat a set of actions.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb42-1" title="1">cout &lt;&lt; <span class="st">&quot;This program finds the square of any integer.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb42-2" title="2"><span class="cf">do</span></a>
+<a class="sourceLine" id="cb42-3" title="3">{ cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Enter an integer: &quot;</span>;</a>
+<a class="sourceLine" id="cb42-4" title="4">  cin  &gt;&gt; num;</a>
+<a class="sourceLine" id="cb42-5" title="5">  cout &lt;&lt; num &lt;&lt; <span class="st">&quot; squared is &quot;</span> &lt;&lt; pow(num, <span class="fl">2.0</span>) &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb42-6" title="6">  cout &lt;&lt; <span class="st">&quot;Do you want to square another number? (Y/N) &quot;</span>;</a>
+<a class="sourceLine" id="cb42-7" title="7">  cin  &gt;&gt; doAgain;</a>
+<a class="sourceLine" id="cb42-8" title="8">} <span class="cf">while</span> (doAgain == <span class="ch">&#39;Y&#39;</span> || doAgain == <span class="ch">&#39;y&#39;</span>);</a></code></pre></div>
+<h3 id="the-for-loop-1">The <code>for</code> Loop</h3>
+<p>The for loop is a pretest loop with built-in expressions for initializing, testing, and updating a counter variable. The for loop is ideal in situations where the exact number of iterations is known.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb43-1" title="1">cout &lt;&lt; <span class="st">&quot;This program finds the squares of the integers &quot;</span></a>
+<a class="sourceLine" id="cb43-2" title="2">     &lt;&lt; <span class="st">&quot;from 1 to 8.</span><span class="sc">\n\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb43-3" title="3"><span class="cf">for</span> (num = <span class="dv">1</span>; num &lt;= <span class="dv">8</span>; num++)</a>
+<a class="sourceLine" id="cb43-4" title="4">{</a>
+<a class="sourceLine" id="cb43-5" title="5">  cout &lt;&lt; num &lt;&lt; <span class="st">&quot; squared is &quot;</span> &lt;&lt; pow(num, <span class="fl">2.0</span>) &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb43-6" title="6">}</a></code></pre></div>
+<h2 id="nested-loops">5.10 Nested Loops</h2>
+<p><strong>CONCEPT:</strong> A loop that is inside another loop is called <em>nested loop</em></p>
+<p>It is also possible to nest one loop inside another loop. The first loop is called the <em>outer loop</em>. The one nested inside it is called the <em>inner loop</em>. This is illustrated by the following two while loops. Notice how the inner loop must be completely contained within the outer one.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb44-1" title="1"><span class="cf">while</span> (condition1)   <span class="co">// Beginning of the outer loop</span></a>
+<a class="sourceLine" id="cb44-2" title="2">{ ---</a>
+<a class="sourceLine" id="cb44-3" title="3">  <span class="cf">while</span> (condition2) <span class="co">// Beginning of the inner loop</span></a>
+<a class="sourceLine" id="cb44-4" title="4">  { ---</a>
+<a class="sourceLine" id="cb44-5" title="5">    ---</a>
+<a class="sourceLine" id="cb44-6" title="6">  }                  <span class="co">// End of the inner loop</span></a>
+<a class="sourceLine" id="cb44-7" title="7">}                    <span class="co">// End of the outer loop</span></a></code></pre></div>
+<blockquote>
+<p>Program 5-13</p>
+</blockquote>
+<div class="sourceCode" id="cb45"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb45-1" title="1"><span class="co">// This program averages test scores. It asks the user for the</span></a>
+<a class="sourceLine" id="cb45-2" title="2"><span class="co">// number of students and the number of test scores per student.</span></a>
+<a class="sourceLine" id="cb45-3" title="3"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb45-4" title="4"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb45-5" title="5"></a>
+<a class="sourceLine" id="cb45-6" title="6"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb45-7" title="7">{</a>
+<a class="sourceLine" id="cb45-8" title="8">  <span class="dt">int</span> numStudents, <span class="co">// Number of students</span></a>
+<a class="sourceLine" id="cb45-9" title="9">  numTests; <span class="co">// Number of tests per student</span></a>
+<a class="sourceLine" id="cb45-10" title="10">  <span class="dt">double</span> average; <span class="co">// Average test score for a student</span></a>
+<a class="sourceLine" id="cb45-11" title="11"></a>
+<a class="sourceLine" id="cb45-12" title="12">  <span class="co">// Get the number of students</span></a>
+<a class="sourceLine" id="cb45-13" title="13">  cout &lt;&lt; <span class="st">&quot;This program averages test scores.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb45-14" title="14">  cout &lt;&lt; <span class="st">&quot;How many students are there? &quot;</span>;</a>
+<a class="sourceLine" id="cb45-15" title="15">  cin  &gt;&gt; numStudents;</a>
+<a class="sourceLine" id="cb45-16" title="16"></a>
+<a class="sourceLine" id="cb45-17" title="17">  <span class="co">// Get the number of test scores per student</span></a>
+<a class="sourceLine" id="cb45-18" title="18">  cout &lt;&lt; <span class="st">&quot;How many test scores does each student have? &quot;</span>;</a>
+<a class="sourceLine" id="cb45-19" title="19">  cin  &gt;&gt; numTests;</a>
+<a class="sourceLine" id="cb45-20" title="20">  cout &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb45-21" title="21"></a>
+<a class="sourceLine" id="cb45-22" title="22">  <span class="co">// Read each student&#39;s scores and compute their average</span></a>
+<a class="sourceLine" id="cb45-23" title="23">  <span class="cf">for</span> (<span class="dt">int</span> snum = <span class="dv">1</span>; snum &lt;= numStudents; snum++) <span class="co">// Outer loop</span></a>
+<a class="sourceLine" id="cb45-24" title="24">  { <span class="dt">double</span> total = <span class="fl">0.0</span>; <span class="co">// Initialize accumulator</span></a>
+<a class="sourceLine" id="cb45-25" title="25"></a>
+<a class="sourceLine" id="cb45-26" title="26">    <span class="cf">for</span> (<span class="dt">int</span> test = <span class="dv">1</span>; test &lt;= numTests; test++) <span class="co">// Inner loop</span></a>
+<a class="sourceLine" id="cb45-27" title="27">    { <span class="dt">int</span> score;</a>
+<a class="sourceLine" id="cb45-28" title="28"></a>
+<a class="sourceLine" id="cb45-29" title="29">      <span class="co">// Read a score and add it to the accumulator</span></a>
+<a class="sourceLine" id="cb45-30" title="30">      cout &lt;&lt; <span class="st">&quot;Enter score &quot;</span> &lt;&lt; test &lt;&lt; <span class="st">&quot; for &quot;</span>;</a>
+<a class="sourceLine" id="cb45-31" title="31">      cout &lt;&lt; <span class="st">&quot;student &quot;</span> &lt;&lt; snum &lt;&lt; <span class="st">&quot;: &quot;</span>;</a>
+<a class="sourceLine" id="cb45-32" title="32">      cin &gt;&gt; score;</a>
+<a class="sourceLine" id="cb45-33" title="33">      total += score;</a>
+<a class="sourceLine" id="cb45-34" title="34">    }                                           <span class="co">// End inner loop</span></a>
+<a class="sourceLine" id="cb45-35" title="35">    <span class="co">// Compute and display the student&#39;s average</span></a>
+<a class="sourceLine" id="cb45-36" title="36">    average = total / numTests;</a>
+<a class="sourceLine" id="cb45-37" title="37">    cout &lt;&lt; <span class="st">&quot;The average score for student &quot;</span> &lt;&lt; snum;</a>
+<a class="sourceLine" id="cb45-38" title="38">    cout &lt;&lt; <span class="st">&quot; is &quot;</span> &lt;&lt; average &lt;&lt; <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb45-39" title="39">  }                                             <span class="co">// End outer loop</span></a>
+<a class="sourceLine" id="cb45-40" title="40">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb45-41" title="41">}</a></code></pre></div>
+<h2 id="breaking-out-of-a-loop">5.11 Breaking Out of a Loop</h2>
+<p><strong>CONCEPT:</strong> C++ provides ways to break out of a loop or out of a loop iteration early.</p>
+<p>Here is an example of a loop with a <code>break</code> statement. The <code>while</code> loop in the following program segment appears to execute 10 times, but the <code>break</code> statement causes it to stop after the fifth iteration.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb46-1" title="1"><span class="dt">int</span> count = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb46-2" title="2"><span class="cf">while</span> (count &lt;= <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb46-3" title="3">{</a>
+<a class="sourceLine" id="cb46-4" title="4">  cout &lt;&lt; count &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb46-5" title="5">  count++;</a>
+<a class="sourceLine" id="cb46-6" title="6">  <span class="cf">if</span> (count == <span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb46-7" title="7">  <span class="cf">break</span>;</a>
+<a class="sourceLine" id="cb46-8" title="8">}</a></code></pre></div>
+<blockquote>
+<p>Program 5-14</p>
+</blockquote>
+<div class="sourceCode" id="cb47"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb47-1" title="1"><span class="co">// This program is supposed to find the square root of 5 numbers</span></a>
+<a class="sourceLine" id="cb47-2" title="2"><span class="co">// entered by the user. However, if a negative number is entered</span></a>
+<a class="sourceLine" id="cb47-3" title="3"><span class="co">// an error message displays and a break statement is used to</span></a>
+<a class="sourceLine" id="cb47-4" title="4"><span class="co">// stop the loop early.</span></a>
+<a class="sourceLine" id="cb47-5" title="5"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb47-6" title="6"><span class="pp">#include </span><span class="im">&lt;cmath&gt;</span></a>
+<a class="sourceLine" id="cb47-7" title="7"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb47-8" title="8"></a>
+<a class="sourceLine" id="cb47-9" title="9"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb47-10" title="10">{</a>
+<a class="sourceLine" id="cb47-11" title="11">  <span class="dt">double</span> number;</a>
+<a class="sourceLine" id="cb47-12" title="12"></a>
+<a class="sourceLine" id="cb47-13" title="13">  cout &lt;&lt; <span class="st">&quot;Enter 5 positive numbers separated by spaces and </span><span class="sc">\n</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb47-14" title="14">       &lt;&lt; <span class="st">&quot;I will find their square roots: &quot;</span>;</a>
+<a class="sourceLine" id="cb47-15" title="15"></a>
+<a class="sourceLine" id="cb47-16" title="16">  <span class="cf">for</span> (<span class="dt">int</span> count = <span class="dv">1</span>; count &lt;= <span class="dv">5</span>; count++)</a>
+<a class="sourceLine" id="cb47-17" title="17">  {</a>
+<a class="sourceLine" id="cb47-18" title="18">    cin &gt;&gt; number;</a>
+<a class="sourceLine" id="cb47-19" title="19">    <span class="cf">if</span> (number &gt;= <span class="fl">0.0</span>)</a>
+<a class="sourceLine" id="cb47-20" title="20">    { cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">The square root of &quot;</span> &lt;&lt; number &lt;&lt; <span class="st">&quot; is &quot;</span></a>
+<a class="sourceLine" id="cb47-21" title="21">      &lt;&lt; sqrt(number);</a>
+<a class="sourceLine" id="cb47-22" title="22">    }</a>
+<a class="sourceLine" id="cb47-23" title="23">    <span class="cf">else</span></a>
+<a class="sourceLine" id="cb47-24" title="24">    { cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span> &lt;&lt; number &lt;&lt; <span class="st">&quot; is negative. &quot;</span></a>
+<a class="sourceLine" id="cb47-25" title="25">      &lt;&lt; <span class="st">&quot;I cannot find the square root </span><span class="sc">\n</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb47-26" title="26">      &lt;&lt; <span class="st">&quot;of a negative number. The program is terminating.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb47-27" title="27">      <span class="cf">break</span>;</a>
+<a class="sourceLine" id="cb47-28" title="28">    }</a>
+<a class="sourceLine" id="cb47-29" title="29">  }</a>
+<a class="sourceLine" id="cb47-30" title="30">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb47-31" title="31">}</a></code></pre></div>
+<h3 id="using-break-in-a-nested-loop">Using <code>break</code> in a Nested Loop</h3>
+<p>In a nested loop, the <code>break</code> statement only interrupts the loop it is placed in. The following program segment displays three rows of asterisks on the screen. The outer loop controls the number of rows, and the inner loop controls the number of asterisks in each row. The inner loop is designed to display twenty asterisks, but the <code>break</code> statement stops it during the eleventh iteration.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb48-1" title="1"><span class="cf">for</span> (row = <span class="dv">0</span>; row &lt; <span class="dv">3</span>; row++)</a>
+<a class="sourceLine" id="cb48-2" title="2">{ <span class="cf">for</span> (star = <span class="dv">0</span>; star &lt; <span class="dv">20</span>; star++)</a>
+<a class="sourceLine" id="cb48-3" title="3">  { cout &lt;&lt; <span class="ch">&#39;*&#39;</span>;</a>
+<a class="sourceLine" id="cb48-4" title="4">    <span class="cf">if</span> (star == <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb48-5" title="5">      <span class="cf">break</span>;</a>
+<a class="sourceLine" id="cb48-6" title="6">  }</a>
+<a class="sourceLine" id="cb48-7" title="7">  cout &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb48-8" title="8">}</a></code></pre></div>
+<h3 id="the-continue-statement">The <code>continue</code> Statement</h3>
+<p>When continue is encountered, all the statements in the body of the loop that appear after it are ignored, and the loop prepares for the next iteration. In a <code>while</code> loop, this means the program jumps to the test expression at the top of the loop. If the expression is still true, the next iteration begins. Otherwise, the loop is exited. In a <code>do-while</code> loop, the program jumps to the test expression at the bottom of the loop, which determines if the next iteration will begin. In a <code>for</code> loop, <code>continue</code> causes the update expression to be executed, and then the test expression to be evaluated. The following program segment demonstrates the use of <code>continue</code> in a <code>while</code> loop:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb49-1" title="1"><span class="dt">int</span> testVal = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb49-2" title="2"><span class="cf">while</span> (testVal &lt; <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb49-3" title="3">{</a>
+<a class="sourceLine" id="cb49-4" title="4">  testVal++;</a>
+<a class="sourceLine" id="cb49-5" title="5">  <span class="cf">if</span> (testVal) == <span class="dv">4</span></a>
+<a class="sourceLine" id="cb49-6" title="6">    <span class="cf">continue</span>; <span class="co">// Terminate this iteration of the loop</span></a>
+<a class="sourceLine" id="cb49-7" title="7">  cout &lt;&lt; testVal &lt;&lt; <span class="st">&quot; &quot;</span>;</a>
+<a class="sourceLine" id="cb49-8" title="8">}</a></code></pre></div>
+<h2 id="using-files-for-data-storage">Using Files for Data Storage</h2>
+<p><strong>CONCEPT:</strong> When a program needs to save data for later use, it writes the data in a file. The data can be read from the file at a later time.</p>
+<p>The programs you have written so far require the user to reenter data each time the program runs because data kept in variables is stored in RAM and disappears once the program stops running. If a program is to retain data between the times it runs, it must have a way of saving it. Data written into a file, which is usually stored on a computer’s disk, will remain there after the program stops running. That data can then be retrieved and used at a later time.</p>
+<ul>
+<li><strong>Word processors</strong>: Word processing programs are used to write letters, memos, reports, and other documents. The documents are then saved in files so they can be viewed, edited, and printed at a later time.</li>
+<li><strong>Spreadsheets</strong>: Spreadsheet programs are used to work with numerical data. Numbers and mathematical formulas can be inserted into the rows and columns of the spreadsheet. The spreadsheet can then be saved in a file for later use.</li>
+<li><strong>Image editors</strong>: Image editing programs are used to draw graphics and edit images, such as the ones that you take with a digital camera. The images that you create or edit with an image editor are saved in files.</li>
+<li><strong>Business operations software</strong>: Programs used in daily business operations rely extensively on files. Payroll programs keep employee data in files, inventory programs keep data about a company’s products in files, accounting systems keep data about a company’s financial operations in files, and so on.</li>
+<li><strong>Web browsers</strong>: Sometimes when you visit a Web page, the browser stores a small file known as a <em>cookie</em> on your computer. Cookies typically contain information about the browsing session, such as the contents of a shopping cart.</li>
+<li><strong>Games</strong>: Many computer games keep data stored in files. For example, some games keep a list of player names with their scores stored in a file. These games typically display the players’ names in the order of their scores, from highest to lowest. Some games also allow you to save your current game status in a file so you can quit the game and then resume playing it later without having to start from the beginning.</li>
+</ul>
+<p>Programmers usually refer to the process of saving data in a file as <em>writing data</em> to the file. When a piece of data is written to a file, it is copied from a variable in RAM to the file. This is illustrated in Figure 5-8. The term <em>output file</em> is used to describe a file that data is written to. It is called an output file because the program stores output in it.</p>
+<p>The process of retrieving data from a file is known as <em>reading data</em> from the file. When a piece of data is read from a file, it is copied from the file into a variable in RAM. See Figure 5-9 for an illustration. The term <em>input</em> file is used to describe a file that data is read from. It is called an input file because the program gets input from the file.</p>
+<h3 id="types-of-files">Types of Files</h3>
+<p>In general, there are two types of files: text and binary. A <em>text file</em> contains data that has been encoded as text, using a scheme such ASCII or Unicode. Even if the file contains numbers, those numbers are stored in the file as a series of characters. As a result, the file may be opened and viewed in a text editor such as Notepad. A <em>binary file</em> contains data that has not been converted to text. As a consequence, you cannot view the contents of a binary file with a text editor.</p>
+<h3 id="file-access-methods">File Access Methods</h3>
+<p>There are two general ways to access data stored in a  sequential access and direct access. When you work with a <em>sequential access file</em>, you access data from the beginning of the file to the end of the file. If you want to first read a piece of data that is stored at the very end of the file, you have to first read all of the data that comes before it. You cannot jump directly to the desired data. This is similar to the way cassette tape players work. If you want to listen to the last song on a cassette tape, you have to either fastforward over all of the songs that come before it or listen to them. There is no way to jump directly to a specific song.</p>
+<p>When you work with a <em>random access file</em> (which is also known as a <em>direct access file</em>), you can directly access any piece of data in the file without reading the data that comes before it. This is similar to the way a CD player or an MP3 player works. You can jump directly to any song that you want to listen to.</p>
+<h3 id="filenames-and-file-stream-objects">Filenames and File Stream Objects</h3>
+<p>Files on a disk are identified by a <em>filename</em>. For example, when you create a document with a word processor and then save the document in a file, you have to specify a filename. When you use a utility such as Windows Explorer to examine the contents of your disk, you see a list of filenames.</p>
+<p>Each operating system has its own rules for naming files. Many systems, including Windows, support the use of <em>filename extensions</em>, which are short sequences of characters that appear at the end of a filename preceded by a period. e.g, <code>.jpg</code>, <code>.txt</code>, and <code>.doc</code>.</p>
+<p>In order for a program to work with a file on the computer’s disk, the program must create a file stream object in memory. A <em>file stream</em> object is an object that is associated with a specific file and provides a way for the program to work with that file. It is called a “stream” object because it enables streams of data to be copied from memory to a file and from a file to memory.</p>
+<h3 id="setting-up-a-program-for-file-inputoutput">Setting Up a Program for File Input/Output</h3>
+<p>Five steps must be taken when a file is used by a program:</p>
+<ol type="1">
+<li>Include the header file needed to perform file input/output.</li>
+<li>Define a file stream object.</li>
+<li>Open the file.</li>
+<li>Use the file.</li>
+<li>Close the file.</li>
+</ol>
+<p>Just as you need to include the iostream file in your program to use cin and cout, you need another header file to use files. The <code>fstream</code> file contains all the declarations necessary for file operations. You can include it with the following statement:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb50-1" title="1"><span class="pp">#include </span><span class="im">&lt;fstream&gt;</span></a></code></pre></div>
+<p>The <code>fstream</code> header file defines the data types <code>ofstream</code>, <code>ifstream</code>, and <code>fstream</code>. Before a C++ program can work with a file, it must define an object of one of these data types. The object will be “linked” with an actual file on the computer’s disk, and the operations that may be performed on the file depend on which of these three data types you pick for the file stream object.</p>
+<center>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 87%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>File Stream Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>ofstream</code></td>
+<td>This stands for output file stream and is pronounced ‘o’ ‘f’ stream. An object of this data type can be used to create a file and write data to it.</td>
+</tr>
+<tr class="even">
+<td><code>ifstream</code></td>
+<td>This stands for input file stream and is pronounced ‘i’ ‘f’ stream. An object of this data type can be used to open an existing file and read data from it.</td>
+</tr>
+<tr class="odd">
+<td><code>fstream</code></td>
+<td>This stands for file stream and is pronounced ‘f’ stream. An object of this data type can be used to open files for reading, writing, or both.</td>
+</tr>
+</tbody>
+</table>
+</center>
+<h3 id="creating-a-file-stream-object-and-opening-a-file">Creating a File Stream Object and Opening a File</h3>
+<p>Before data can be written to or read from a file, two things must happen:</p>
+<ul>
+<li>A file stream object must be created.</li>
+<li>The file must be opened and linked to the file stream object.</li>
+</ul>
+<p>The following code shows an example of opening a file for input (reading).</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb51-1" title="1">ifstream inputFile;</a>
+<a class="sourceLine" id="cb51-2" title="2">inputFile.open(<span class="st">&quot;customers.txt&quot;</span>);</a></code></pre></div>
+<p>The following code shows an example of opening a file for output (writing).</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb52-1" title="1">ofstream outputFile;</a>
+<a class="sourceLine" id="cb52-2" title="2">outputFile.open(<span class="st">&quot;employees.txt&quot;</span>);</a></code></pre></div>
+<p>Sometimes, when opening a file, you will need to specify its full path as well as its name. For example, on a Windows system the following statement opens the file <code>C:\data\inventory.txt</code> and links it with <code>inputFile</code></p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb53-1" title="1">inputFile.open(<span class="st">&quot;C:</span><span class="sc">\\</span><span class="st">data</span><span class="sc">\\</span><span class="st">inventory.txt&quot;</span>);</a></code></pre></div>
+<p>It is possible to define a file stream object and open a file all in one statement. Here is an example that defines an <code>ifstream</code> object named inputFile, opens the <code>customers.txt</code> file, and associates <code>inputFile</code> with it:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb54-1" title="1">ifstream inputFile(<span class="st">&quot;customers.txt&quot;</span>);</a></code></pre></div>
+<p>And here is an example that defines an <code>ofstream</code> object named outputFile, opens the <code>employees.txt</code> file, and associates <code>outputFile</code> with it:</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb55-1" title="1">ofstream outputFile(<span class="st">&quot;employees.txt&quot;</span>);</a></code></pre></div>
+<h3 id="closing-a-file">Closing a File</h3>
+<p>The opposite of opening a file is closing it. Although a program’s files are automatically closed when the program shuts down, it is a good programming practice to write statements that explicitly close them. Here are two reasons a program should close files when it is finished using them:</p>
+<ul>
+<li>Most operating systems temporarily store data in a <em>file buffer</em> before it is written to a file. A file buffer is a small “holding section” of memory that file-bound data is first written to. The data is not actually written to the file until the buffer is full. This is done to improve the system’s performance because doing file I/O is much slower than processing data in memory. Closing a file causes any unsaved data still in a buffer to be written out to its file. This ensures that all the data the program intended to write to the file is actually in it if you need to read it back in later in the same program.</li>
+<li>Some operating systems limit the number of files that may be open at one time. When a program closes files that are no longer being used, it will not deplete more of the operating system’s resources than necessary.</li>
+</ul>
+<p>Calling the file stream object’s <code>close</code> member function closes the file associated with it. Here is an example:</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb56-1" title="1">inputFile.close();</a></code></pre></div>
+<h3 id="writing-data-to-a-file">Writing Data to a File</h3>
+<p>Assuming <code>outputFile</code> is an <code>ofstream</code> object, the following statement demonstrates using the <code>&lt;&lt;</code> operator to write a string literal to a </p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb57-1" title="1">outputFile &lt;&lt; <span class="st">&quot;I love C++ programming</span><span class="sc">\n</span><span class="st">&quot;</span>;</a></code></pre></div>
+<p>Program 5-15 demonstrates opening a file, writing data to the file, and closing the file. After this code has executed, we can open the <code>demofile.txt</code> file using a text editor, look at its contents, and print it if we wish.</p>
+<blockquote>
+<p>Program 5-15</p>
+</blockquote>
+<div class="sourceCode" id="cb58"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb58-1" title="1"><span class="co">// This program writes data to a file.</span></a>
+<a class="sourceLine" id="cb58-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb58-3" title="3"><span class="pp">#include </span><span class="im">&lt;fstream&gt;</span><span class="pp"> </span><span class="co">// Needed to use files</span></a>
+<a class="sourceLine" id="cb58-4" title="4"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb58-5" title="5"></a>
+<a class="sourceLine" id="cb58-6" title="6"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb58-7" title="7">{</a>
+<a class="sourceLine" id="cb58-8" title="8">  ofstream outputFile;</a>
+<a class="sourceLine" id="cb58-9" title="9"></a>
+<a class="sourceLine" id="cb58-10" title="10">  <span class="co">// Open the output file</span></a>
+<a class="sourceLine" id="cb58-11" title="11">  outputFile.open(<span class="st">&quot;demofile.txt&quot;</span>);</a>
+<a class="sourceLine" id="cb58-12" title="12"></a>
+<a class="sourceLine" id="cb58-13" title="13">  cout &lt;&lt; <span class="st">&quot;Now writing data to the file.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb58-14" title="14"></a>
+<a class="sourceLine" id="cb58-15" title="15">  <span class="co">// Write four names to the file</span></a>
+<a class="sourceLine" id="cb58-16" title="16">  outputFile &lt;&lt; <span class="st">&quot;Bach</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb58-17" title="17">  outputFile &lt;&lt; <span class="st">&quot;Beethoven</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb58-18" title="18">  outputFile &lt;&lt; <span class="st">&quot;Mozart</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb58-19" title="19">  outputFile &lt;&lt; <span class="st">&quot;Schubert</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb58-20" title="20"></a>
+<a class="sourceLine" id="cb58-21" title="21">  <span class="co">// Close the file</span></a>
+<a class="sourceLine" id="cb58-22" title="22">  outputFile.close();</a>
+<a class="sourceLine" id="cb58-23" title="23"></a>
+<a class="sourceLine" id="cb58-24" title="24">  cout &lt;&lt; <span class="st">&quot;Done.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb58-25" title="25">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb58-26" title="26">}</a></code></pre></div>
+<blockquote>
+<p>Program 5-16</p>
+</blockquote>
+<div class="sourceCode" id="cb59"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb59-1" title="1"><span class="co">// This program writes user input to a file.</span></a>
+<a class="sourceLine" id="cb59-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb59-3" title="3"><span class="pp">#include </span><span class="im">&lt;fstream&gt;</span><span class="pp"> </span><span class="co">// Needed to use files</span></a>
+<a class="sourceLine" id="cb59-4" title="4"><span class="pp">#include </span><span class="im">&lt;string&gt;</span></a>
+<a class="sourceLine" id="cb59-5" title="5"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb59-6" title="6"></a>
+<a class="sourceLine" id="cb59-7" title="7"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb59-8" title="8">{</a>
+<a class="sourceLine" id="cb59-9" title="9">  ofstream outputFile;</a>
+<a class="sourceLine" id="cb59-10" title="10">  string name;</a>
+<a class="sourceLine" id="cb59-11" title="11"></a>
+<a class="sourceLine" id="cb59-12" title="12">  <span class="co">// Open the output file</span></a>
+<a class="sourceLine" id="cb59-13" title="13">  outputFile.open(<span class="st">&quot;friends.txt&quot;</span>);</a>
+<a class="sourceLine" id="cb59-14" title="14"></a>
+<a class="sourceLine" id="cb59-15" title="15">  <span class="co">// Use a loop to get the names of three friends</span></a>
+<a class="sourceLine" id="cb59-16" title="16">  <span class="co">// and write each name in the output file</span></a>
+<a class="sourceLine" id="cb59-17" title="17">  cout &lt;&lt; <span class="st">&quot;Enter the names of three friends.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb59-18" title="18"></a>
+<a class="sourceLine" id="cb59-19" title="19">  <span class="cf">for</span> (<span class="dt">int</span> count = <span class="dv">1</span>; count &lt;= <span class="dv">3</span>; count++)</a>
+<a class="sourceLine" id="cb59-20" title="20">  {</a>
+<a class="sourceLine" id="cb59-21" title="21">    cout &lt;&lt; <span class="st">&quot;Friend #&quot;</span> &lt;&lt; count &lt;&lt; <span class="st">&quot;: &quot;</span>;</a>
+<a class="sourceLine" id="cb59-22" title="22">    cin  &gt;&gt; name;</a>
+<a class="sourceLine" id="cb59-23" title="23">    outputFile &lt;&lt; name &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb59-24" title="24">  }</a>
+<a class="sourceLine" id="cb59-25" title="25"></a>
+<a class="sourceLine" id="cb59-26" title="26">  <span class="co">// Close the file</span></a>
+<a class="sourceLine" id="cb59-27" title="27">  outputFile.close();</a>
+<a class="sourceLine" id="cb59-28" title="28"></a>
+<a class="sourceLine" id="cb59-29" title="29">  cout &lt;&lt; <span class="st">&quot;The names were saved to a file.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb59-30" title="30">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb59-31" title="31">}</a></code></pre></div>
+<h3 id="reading-data-from-a-file">Reading Data from a File</h3>
+<p>Assuming <code>inputFile</code> is an <code>fstream</code> or <code>ifstream</code> object, the following statement will read a string from the file and store it in the string variable name.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb60-1" title="1">inputFile &gt;&gt; name;</a></code></pre></div>
+<blockquote>
+<p>Program 5-17</p>
+</blockquote>
+<div class="sourceCode" id="cb61"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb61-1" title="1"><span class="co">// This program reads data from a file.</span></a>
+<a class="sourceLine" id="cb61-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb61-3" title="3"><span class="pp">#include </span><span class="im">&lt;fstream&gt;</span><span class="pp"> </span><span class="co">// Needed to use files</span></a>
+<a class="sourceLine" id="cb61-4" title="4"><span class="pp">#include </span><span class="im">&lt;string&gt;</span></a>
+<a class="sourceLine" id="cb61-5" title="5"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb61-6" title="6"></a>
+<a class="sourceLine" id="cb61-7" title="7"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb61-8" title="8">{</a>
+<a class="sourceLine" id="cb61-9" title="9">  ifstream inputFile;</a>
+<a class="sourceLine" id="cb61-10" title="10">  string name;</a>
+<a class="sourceLine" id="cb61-11" title="11"></a>
+<a class="sourceLine" id="cb61-12" title="12">  <span class="co">// Open the input file</span></a>
+<a class="sourceLine" id="cb61-13" title="13">  inputFile.open(<span class="st">&quot;friends.txt&quot;</span>);</a>
+<a class="sourceLine" id="cb61-14" title="14"></a>
+<a class="sourceLine" id="cb61-15" title="15">  cout &lt;&lt; <span class="st">&quot;Here are the names stored in the friends.txt file.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb61-16" title="16"></a>
+<a class="sourceLine" id="cb61-17" title="17">  <span class="cf">for</span> (<span class="dt">int</span> count = <span class="dv">1</span>; count &lt;= <span class="dv">3</span>; count++)</a>
+<a class="sourceLine" id="cb61-18" title="18">  {</a>
+<a class="sourceLine" id="cb61-19" title="19">    inputFile &gt;&gt; name; <span class="co">// Read the next name from the file</span></a>
+<a class="sourceLine" id="cb61-20" title="20">    cout &lt;&lt; name &lt;&lt; endl; <span class="co">// and display it</span></a>
+<a class="sourceLine" id="cb61-21" title="21">  }</a>
+<a class="sourceLine" id="cb61-22" title="22"></a>
+<a class="sourceLine" id="cb61-23" title="23">  inputFile.close(); <span class="co">// Close the file</span></a>
+<a class="sourceLine" id="cb61-24" title="24">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb61-25" title="25">}</a></code></pre></div>
+<h3 id="the-read-position">The Read Position</h3>
+<p>When a file has been opened for input, the file stream object internally maintains a special value known as a read position. A file’s read position marks the location of the next byte that will be read from the file. When an input file is opened, its read position is initially set to the first byte in the file. So the first read operation extracts data starting at the first byte. As data is read from the file, the read position moves forward, toward the end of the file.</p>
+<h3 id="letting-the-user-specify-a-filename">Letting the User Specify a Filename</h3>
+<div class="sourceCode" id="cb62"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb62-1" title="1"><span class="co">// This program sums the numeric values stored in a file.</span></a>
+<a class="sourceLine" id="cb62-2" title="2"><span class="co">// It lets the user specify the name of the file, as well as</span></a>
+<a class="sourceLine" id="cb62-3" title="3"><span class="co">// the number of values to read from it.</span></a>
+<a class="sourceLine" id="cb62-4" title="4"><span class="pp">#include </span><span class="im">&lt;string&gt;</span></a>
+<a class="sourceLine" id="cb62-5" title="5"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb62-6" title="6"><span class="pp">#include </span><span class="im">&lt;fstream&gt;</span><span class="pp"> </span><span class="co">// Needed to use files</span></a>
+<a class="sourceLine" id="cb62-7" title="7"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb62-8" title="8"></a>
+<a class="sourceLine" id="cb62-9" title="9"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb62-10" title="10">{</a>
+<a class="sourceLine" id="cb62-11" title="11">  ifstream inputFile; <span class="co">// File stream object</span></a>
+<a class="sourceLine" id="cb62-12" title="12">  string fileName; <span class="co">// Holds the user entered file name</span></a>
+<a class="sourceLine" id="cb62-13" title="13">  <span class="dt">int</span> numValues; <span class="co">// Number of values to read</span></a>
+<a class="sourceLine" id="cb62-14" title="14">  <span class="dt">double</span> value, <span class="co">// A single value read</span></a>
+<a class="sourceLine" id="cb62-15" title="15">  total = <span class="fl">0.0</span>; <span class="co">// Accumulator</span></a>
+<a class="sourceLine" id="cb62-16" title="16"></a>
+<a class="sourceLine" id="cb62-17" title="17">  <span class="co">// Prompt the user to enter the data file name</span></a>
+<a class="sourceLine" id="cb62-18" title="18">  cout &lt;&lt; <span class="st">&quot;This program reads and sums the values in a data file.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb62-19" title="19">  cout &lt;&lt; <span class="st">&quot;Enter the name of the file to read from: &quot;</span>;</a>
+<a class="sourceLine" id="cb62-20" title="20">  cin  &gt;&gt; fileName;</a>
+<a class="sourceLine" id="cb62-21" title="21"></a>
+<a class="sourceLine" id="cb62-22" title="22">  <span class="co">// Get the number values to read</span></a>
+<a class="sourceLine" id="cb62-23" title="23">  cout &lt;&lt; <span class="st">&quot;How many values are stored in your file? &quot;</span>;</a>
+<a class="sourceLine" id="cb62-24" title="24">  cin  &gt;&gt; numValues;</a>
+<a class="sourceLine" id="cb62-25" title="25"></a>
+<a class="sourceLine" id="cb62-26" title="26">  <span class="co">// Open the input file</span></a>
+<a class="sourceLine" id="cb62-27" title="27">  inputFile.open(fileName);</a>
+<a class="sourceLine" id="cb62-28" title="28"></a>
+<a class="sourceLine" id="cb62-29" title="29">  <span class="co">// Loop once for each piece of data to read</span></a>
+<a class="sourceLine" id="cb62-30" title="30">  <span class="cf">for</span> (<span class="dt">int</span> count = <span class="dv">1</span>; count &lt;= numValues; count++)</a>
+<a class="sourceLine" id="cb62-31" title="31">  {</a>
+<a class="sourceLine" id="cb62-32" title="32">    <span class="co">// Read a value from the file and add it to the sum</span></a>
+<a class="sourceLine" id="cb62-33" title="33">    inputFile &gt;&gt; value;</a>
+<a class="sourceLine" id="cb62-34" title="34">    total += value;</a>
+<a class="sourceLine" id="cb62-35" title="35">  }</a>
+<a class="sourceLine" id="cb62-36" title="36">  cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">The total of the &quot;</span> &lt;&lt; numValues &lt;&lt; <span class="st">&quot; values is &quot;</span></a>
+<a class="sourceLine" id="cb62-37" title="37">       &lt;&lt; total &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb62-38" title="38"></a>
+<a class="sourceLine" id="cb62-39" title="39">  <span class="co">// Close the file</span></a>
+<a class="sourceLine" id="cb62-40" title="40">  inputFile.close();</a>
+<a class="sourceLine" id="cb62-41" title="41">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb62-42" title="42">}</a></code></pre></div>
+<h3 id="using-the-c_str-member-function-in-older-versions-of-c">Using the <code>c_str</code> Member Function in Older Versions of C++</h3>
+<p>In older versions of the C++ language (prior to C++ 11), a file stream object’s open member function will not accept a <code>string</code> object as an argument.</p>
+<p>Fortunately, <code>string</code> objects have a member function named <code>c_str</code> that returns the contents of the object formatted as a null-terminated C-string. Here is the general format of how you call the function:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb63-1" title="1">stringObject.c_str()</a></code></pre></div>
+<p>In the general format, <code>stringObject</code> is the name of a string object. The <code>c_str</code> function returns a copy of the string stored in <code>stringObject</code> as a null-terminated C-string.</p>
+<h3 id="detecting-the-end-of-the-file">Detecting the End of the File</h3>
+<p>Program 5-18 asked the user how many values were in the file, and that is how many data items it read in. However, when reading data from a file, it is not necessary for the user to specify how many data values there are or where the data ends. This is because files have an end of file (EOF) mark at their end. You cannot see it, but it is there, and a program can test to see whether or not it has been reached. This test is important because an error will occur if the program attempts to read beyond the end of the file.</p>
+<p>The easiest way to test if the end of the file has been reached is with the &gt;&gt; operator. This operator not only can read data from a file, but it also returns a true or false value indicating whether or not the data was successfully read. If the operator returns true, then a value was successfully read. If the operator returns false, it means that no value was read from the file. The EOF has been reached.</p>
+<blockquote>
+<p>Program 5-19</p>
+</blockquote>
+<div class="sourceCode" id="cb64"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb64-1" title="1"><span class="co">// This program reads and sums the numeric values stored in a file.</span></a>
+<a class="sourceLine" id="cb64-2" title="2"><span class="co">// It reads until the end of the file (EOF) is reached.</span></a>
+<a class="sourceLine" id="cb64-3" title="3"><span class="pp">#include </span><span class="im">&lt;string&gt;</span></a>
+<a class="sourceLine" id="cb64-4" title="4"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb64-5" title="5"><span class="pp">#include </span><span class="im">&lt;fstream&gt;</span><span class="pp"> </span><span class="co">// Needed to use files</span></a>
+<a class="sourceLine" id="cb64-6" title="6"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb64-7" title="7"></a>
+<a class="sourceLine" id="cb64-8" title="8"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb64-9" title="9">{</a>
+<a class="sourceLine" id="cb64-10" title="10">  ifstream inputFile; <span class="co">// File stream object</span></a>
+<a class="sourceLine" id="cb64-11" title="11">  string fileName;    <span class="co">// Holds the user entered file name</span></a>
+<a class="sourceLine" id="cb64-12" title="12">  <span class="dt">int</span> numValues = <span class="dv">0</span>;  <span class="co">// Counts the number of values read</span></a>
+<a class="sourceLine" id="cb64-13" title="13">  <span class="dt">double</span> value,       <span class="co">// A single value read</span></a>
+<a class="sourceLine" id="cb64-14" title="14">  total = <span class="fl">0.0</span>;        <span class="co">// Accumulator</span></a>
+<a class="sourceLine" id="cb64-15" title="15"></a>
+<a class="sourceLine" id="cb64-16" title="16">  <span class="co">// Prompt the user to enter the data file name</span></a>
+<a class="sourceLine" id="cb64-17" title="17">  cout &lt;&lt; <span class="st">&quot;This program reads and sums the values in a data file.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb64-18" title="18">  cout &lt;&lt; <span class="st">&quot;Enter the name of the file to read from: &quot;</span>;</a>
+<a class="sourceLine" id="cb64-19" title="19">  cin  &gt;&gt; fileName;</a>
+<a class="sourceLine" id="cb64-20" title="20"></a>
+<a class="sourceLine" id="cb64-21" title="21">  <span class="co">// Open the input file</span></a>
+<a class="sourceLine" id="cb64-22" title="22">  inputFile.open(fileName);</a>
+<a class="sourceLine" id="cb64-23" title="23"></a>
+<a class="sourceLine" id="cb64-24" title="24">  <span class="co">// Loop until the EOF is reached</span></a>
+<a class="sourceLine" id="cb64-25" title="25">  <span class="cf">while</span> (inputFile &gt;&gt; value) <span class="co">// If a value was read, execute the</span></a>
+<a class="sourceLine" id="cb64-26" title="26">  { numValues++;             <span class="co">// loop again to count the value and</span></a>
+<a class="sourceLine" id="cb64-27" title="27">    total += value;          <span class="co">// add it to the total</span></a>
+<a class="sourceLine" id="cb64-28" title="28">  }</a>
+<a class="sourceLine" id="cb64-29" title="29">  cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">The total of the &quot;</span> &lt;&lt; numValues &lt;&lt; <span class="st">&quot; values is &quot;</span></a>
+<a class="sourceLine" id="cb64-30" title="30">       &lt;&lt; total &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb64-31" title="31"></a>
+<a class="sourceLine" id="cb64-32" title="32">  <span class="co">// Close the file</span></a>
+<a class="sourceLine" id="cb64-33" title="33">  inputFile.close();</a>
+<a class="sourceLine" id="cb64-34" title="34">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb64-35" title="35">}</a></code></pre></div>
+<h3 id="testing-for-file-open-errors">Testing for File Open Errors</h3>
+<p>Under certain circumstances, the <code>open</code> member function will not work.</p>
+<p>Fortunately, there is a way to determine whether the <code>open</code> member function successfully opened the file. After you call the <code>open</code> member function, you can test the file stream object as if it were a Boolean expression. Program 5-20 shows how to do this.</p>
+<blockquote>
+<p>Program 5-20</p>
+</blockquote>
+<div class="sourceCode" id="cb65"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb65-1" title="1"><span class="co">// This program tests for file open errors.</span></a>
+<a class="sourceLine" id="cb65-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb65-3" title="3"><span class="pp">#include </span><span class="im">&lt;fstream&gt;</span><span class="pp"> </span><span class="co">// Needed to use files</span></a>
+<a class="sourceLine" id="cb65-4" title="4"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb65-5" title="5"></a>
+<a class="sourceLine" id="cb65-6" title="6"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb65-7" title="7">{</a>
+<a class="sourceLine" id="cb65-8" title="8">  ifstream inputFile;</a>
+<a class="sourceLine" id="cb65-9" title="9">  <span class="dt">int</span> number;</a>
+<a class="sourceLine" id="cb65-10" title="10"></a>
+<a class="sourceLine" id="cb65-11" title="11">  <span class="co">// Attempt to open the input file</span></a>
+<a class="sourceLine" id="cb65-12" title="12">  inputFile.open(<span class="st">&quot;list_of_numbers.txt&quot;</span>);</a>
+<a class="sourceLine" id="cb65-13" title="13"></a>
+<a class="sourceLine" id="cb65-14" title="14">  <span class="co">// If the file successfully opened, process it</span></a>
+<a class="sourceLine" id="cb65-15" title="15">  <span class="cf">if</span> (inputFile)</a>
+<a class="sourceLine" id="cb65-16" title="16">  {</a>
+<a class="sourceLine" id="cb65-17" title="17">    <span class="co">// Read the numbers from the file and display them</span></a>
+<a class="sourceLine" id="cb65-18" title="18">    <span class="cf">while</span> (inputFile &gt;&gt; number)</a>
+<a class="sourceLine" id="cb65-19" title="19">    cout &lt;&lt; number &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb65-20" title="20"></a>
+<a class="sourceLine" id="cb65-21" title="21">    <span class="co">// Close the file</span></a>
+<a class="sourceLine" id="cb65-22" title="22">    inputFile.close();</a>
+<a class="sourceLine" id="cb65-23" title="23">  }</a>
+<a class="sourceLine" id="cb65-24" title="24">  <span class="cf">else</span> <span class="co">// The file could not be found and opened</span></a>
+<a class="sourceLine" id="cb65-25" title="25">  {</a>
+<a class="sourceLine" id="cb65-26" title="26">    <span class="co">// Display an error message</span></a>
+<a class="sourceLine" id="cb65-27" title="27">    cout &lt;&lt; <span class="st">&quot;Error opening the file.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb65-28" title="28">  }</a>
+<a class="sourceLine" id="cb65-29" title="29">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb65-30" title="30">}</a></code></pre></div>
+<p>Another way to detect a failed attempt to open a file is with an <code>ifstream</code> class member function named fail, as shown in the following code:</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb66-1" title="1">ifstream inputFile;</a>
+<a class="sourceLine" id="cb66-2" title="2">inputFile.open(<span class="st">&quot;customers.txt&quot;</span>);</a>
+<a class="sourceLine" id="cb66-3" title="3"><span class="cf">if</span> (inputFile.fail())</a>
+<a class="sourceLine" id="cb66-4" title="4">  cout &lt;&lt; <span class="st">&quot;Error opening file.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb66-5" title="5"><span class="cf">else</span></a>
+<a class="sourceLine" id="cb66-6" title="6">{</a>
+<a class="sourceLine" id="cb66-7" title="7">  <span class="co">// Process the file</span></a>
+<a class="sourceLine" id="cb66-8" title="8">}</a></code></pre></div>
+<p>The <code>fail</code> member function returns true when an attempted file operation fails (i.e., is unsuccessful) and returns false otherwise. When using file I/O, it is a good idea to always test the file stream object to make sure the file was opened successfully before attempting to use it. If the file could not be opened, the user should be informed and the program should handle the situation in an appropriate manner.</p>
+<h2 id="focus-on-testing-and-debugging-creating-good-test-data">5.13 Focus on Testing and Debugging: Creating Good Test Data</h2>
+<p><strong>CONCEPT:</strong> Thorough testing of a program requires good test data.</p>
+<blockquote>
+<p>Program 5-21</p>
+</blockquote>
+<div class="sourceCode" id="cb67"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb67-1" title="1"><span class="co">// This program attempts to average 2 test scores for each</span></a>
+<a class="sourceLine" id="cb67-2" title="2"><span class="co">// student in a class. However, it contains logic errors.</span></a>
+<a class="sourceLine" id="cb67-3" title="3"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb67-4" title="4"><span class="pp">#include </span><span class="im">&lt;string&gt;</span></a>
+<a class="sourceLine" id="cb67-5" title="5"><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span></a>
+<a class="sourceLine" id="cb67-6" title="6"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb67-7" title="7"></a>
+<a class="sourceLine" id="cb67-8" title="8"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb67-9" title="9">{</a>
+<a class="sourceLine" id="cb67-10" title="10">  string name;    <span class="co">// Student first name</span></a>
+<a class="sourceLine" id="cb67-11" title="11"></a>
+<a class="sourceLine" id="cb67-12" title="12">  <span class="dt">int</span> count = <span class="dv">1</span>,  <span class="co">// Student counter</span></a>
+<a class="sourceLine" id="cb67-13" title="13">  score,          <span class="co">// An individual score read in</span></a>
+<a class="sourceLine" id="cb67-14" title="14">  totalScore = <span class="dv">0</span>; <span class="co">// Total of a student&#39;s 2 scores</span></a>
+<a class="sourceLine" id="cb67-15" title="15">  <span class="dt">double</span> average; <span class="co">// Average of a student&#39;s 2 scores</span></a>
+<a class="sourceLine" id="cb67-16" title="16"></a>
+<a class="sourceLine" id="cb67-17" title="17">  cout &lt;&lt; fixed &lt;&lt; showpoint &lt;&lt; setprecision(<span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb67-18" title="18">  cout &lt;&lt; <span class="st">&quot;Enter the first name of student &quot;</span> &lt;&lt; count</a>
+<a class="sourceLine" id="cb67-19" title="19">       &lt;&lt; <span class="st">&quot; (or Q to quit): &quot;</span>;</a>
+<a class="sourceLine" id="cb67-20" title="20">  cin  &gt;&gt; name;</a>
+<a class="sourceLine" id="cb67-21" title="21"></a>
+<a class="sourceLine" id="cb67-22" title="22">  <span class="cf">while</span> (name != <span class="st">&quot;Q&quot;</span> &amp;&amp; name != <span class="st">&quot;q&quot;</span>)</a>
+<a class="sourceLine" id="cb67-23" title="23">  {</a>
+<a class="sourceLine" id="cb67-24" title="24">    <span class="co">// Get and validate the first score</span></a>
+<a class="sourceLine" id="cb67-25" title="25">    cout &lt;&lt; <span class="st">&quot;Enter score 1: &quot;</span>;</a>
+<a class="sourceLine" id="cb67-26" title="26">    cin  &gt;&gt; score;</a>
+<a class="sourceLine" id="cb67-27" title="27">    <span class="cf">if</span> (score &lt;= <span class="dv">0</span> || score &gt;= <span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb67-28" title="28">    { cout &lt;&lt; <span class="st">&quot;Score must be between 0 and 100. Please reenter: &quot;</span>;</a>
+<a class="sourceLine" id="cb67-29" title="29">      cin  &gt;&gt; score;</a>
+<a class="sourceLine" id="cb67-30" title="30">    }</a>
+<a class="sourceLine" id="cb67-31" title="31">    totalScore += score; <span class="co">// Add the first score onto the total</span></a>
+<a class="sourceLine" id="cb67-32" title="32"></a>
+<a class="sourceLine" id="cb67-33" title="33">    <span class="co">// Get and validate the second score</span></a>
+<a class="sourceLine" id="cb67-34" title="34">    cout &lt;&lt; <span class="st">&quot;Enter score 2: &quot;</span>;</a>
+<a class="sourceLine" id="cb67-35" title="35">    cin  &gt;&gt; score;</a>
+<a class="sourceLine" id="cb67-36" title="36">    <span class="cf">if</span> (score &lt;= <span class="dv">0</span> || score &gt;= <span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb67-37" title="37">    { cout &lt;&lt; <span class="st">&quot;Score must be between 0 and 100. Please reenter: &quot;</span>;</a>
+<a class="sourceLine" id="cb67-38" title="38">      cin  &gt;&gt; score;</a>
+<a class="sourceLine" id="cb67-39" title="39">    }</a>
+<a class="sourceLine" id="cb67-40" title="40">    totalScore += score; <span class="co">// Add the second score onto the total</span></a>
+<a class="sourceLine" id="cb67-41" title="41"></a>
+<a class="sourceLine" id="cb67-42" title="42">    <span class="co">// Calculate and print average</span></a>
+<a class="sourceLine" id="cb67-43" title="43">    average = totalScore / <span class="dv">2</span>;</a>
+<a class="sourceLine" id="cb67-44" title="44">    cout &lt;&lt; name &lt;&lt; setw(<span class="dv">6</span>) &lt;&lt; average &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb67-45" title="45"></a>
+<a class="sourceLine" id="cb67-46" title="46">    <span class="co">// Get the next student name</span></a>
+<a class="sourceLine" id="cb67-47" title="47">    cout &lt;&lt; <span class="st">&quot;Enter the first name of student &quot;</span> &lt;&lt; count++</a>
+<a class="sourceLine" id="cb67-48" title="48">         &lt;&lt; <span class="st">&quot; (or Q to quit): &quot;</span>;</a>
+<a class="sourceLine" id="cb67-49" title="49">    cin  &gt;&gt; name;</a>
+<a class="sourceLine" id="cb67-50" title="50">  }</a>
+<a class="sourceLine" id="cb67-51" title="51">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb67-52" title="52">}</a></code></pre></div>
+<h2 id="central-mountain-credit-union-case-study">5.14 Central Mountain Credit Union Case Study</h2>
+<blockquote>
+<p>Program 5-22</p>
+</blockquote>
+<div class="sourceCode" id="cb68"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb68-1" title="1"><span class="co">// This program produces a loan amortization table</span></a>
+<a class="sourceLine" id="cb68-2" title="2"><span class="co">// for the Central Mountain Credit Union.</span></a>
+<a class="sourceLine" id="cb68-3" title="3"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb68-4" title="4"><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span></a>
+<a class="sourceLine" id="cb68-5" title="5"><span class="pp">#include </span><span class="im">&lt;cmath&gt;</span><span class="pp"> </span><span class="co">// Needed for the pow function</span></a>
+<a class="sourceLine" id="cb68-6" title="6"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb68-7" title="7"></a>
+<a class="sourceLine" id="cb68-8" title="8"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb68-9" title="9">{</a>
+<a class="sourceLine" id="cb68-10" title="10">  <span class="dt">double</span> loan,     <span class="co">// Loan amount</span></a>
+<a class="sourceLine" id="cb68-11" title="11">  rate,            <span class="co">// Annual interest rate</span></a>
+<a class="sourceLine" id="cb68-12" title="12">  moInterestRate,  <span class="co">// Monthly interest rate</span></a>
+<a class="sourceLine" id="cb68-13" title="13">  years,           <span class="co">// Years of loan</span></a>
+<a class="sourceLine" id="cb68-14" title="14">  balance,         <span class="co">// Monthly balance</span></a>
+<a class="sourceLine" id="cb68-15" title="15">  term,            <span class="co">// Used to calculate payment</span></a>
+<a class="sourceLine" id="cb68-16" title="16">  payment;         <span class="co">// Monthly payment</span></a>
+<a class="sourceLine" id="cb68-17" title="17">  <span class="dt">int</span> numPayments; <span class="co">// Number of payments</span></a>
+<a class="sourceLine" id="cb68-18" title="18"></a>
+<a class="sourceLine" id="cb68-19" title="19">  <span class="co">// Get loan information</span></a>
+<a class="sourceLine" id="cb68-20" title="20">  cout &lt;&lt; <span class="st">&quot;Loan amount: $&quot;</span>;</a>
+<a class="sourceLine" id="cb68-21" title="21">  cin  &gt;&gt; loan;</a>
+<a class="sourceLine" id="cb68-22" title="22">  cout &lt;&lt; <span class="st">&quot;Annual interest rate (entered as a decimal): &quot;</span>;</a>
+<a class="sourceLine" id="cb68-23" title="23">  cin  &gt;&gt; rate;</a>
+<a class="sourceLine" id="cb68-24" title="24">  cout &lt;&lt; <span class="st">&quot;Years of loan: &quot;</span>;</a>
+<a class="sourceLine" id="cb68-25" title="25">  cin  &gt;&gt; years;</a>
+<a class="sourceLine" id="cb68-26" title="26"></a>
+<a class="sourceLine" id="cb68-27" title="27">  <span class="co">// Calculate monthly payment</span></a>
+<a class="sourceLine" id="cb68-28" title="28">  numPayments = <span class="kw">static_cast</span>&lt;<span class="dt">int</span>&gt;(<span class="dv">12</span> * years);</a>
+<a class="sourceLine" id="cb68-29" title="29">  moInterestRate = rate / <span class="fl">12.0</span>;</a>
+<a class="sourceLine" id="cb68-30" title="30">  term = pow((<span class="dv">1</span> + moInterestRate), numPayments);</a>
+<a class="sourceLine" id="cb68-31" title="31">  payment = (loan * moInterestRate * term) / (term − <span class="fl">1.0</span>);</a>
+<a class="sourceLine" id="cb68-32" title="32"></a>
+<a class="sourceLine" id="cb68-33" title="33">  <span class="co">// Display monthly payment</span></a>
+<a class="sourceLine" id="cb68-34" title="34">  cout &lt;&lt; fixed &lt;&lt; showpoint &lt;&lt; setprecision(<span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb68-35" title="35">  cout &lt;&lt; <span class="st">&quot;Monthly payment: $&quot;</span> &lt;&lt; payment &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb68-36" title="36"></a>
+<a class="sourceLine" id="cb68-37" title="37">  <span class="co">// Display report header</span></a>
+<a class="sourceLine" id="cb68-38" title="38">  cout &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb68-39" title="39">  cout &lt;&lt; setw(<span class="dv">5</span>) &lt;&lt; <span class="st">&quot;Month&quot;</span> &lt;&lt; setw(<span class="dv">10</span>) &lt;&lt; <span class="st">&quot;Interest&quot;</span>;</a>
+<a class="sourceLine" id="cb68-40" title="40">  cout &lt;&lt; setw(<span class="dv">10</span>) &lt;&lt; <span class="st">&quot;Principal&quot;</span> &lt;&lt; setw(<span class="dv">9</span>) &lt;&lt; <span class="st">&quot;Balance&quot;</span> &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb68-41" title="41">  cout &lt;&lt; <span class="st">&quot;----------------------------------</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb68-42" title="42"></a>
+<a class="sourceLine" id="cb68-43" title="43">  balance = loan; <span class="co">// Remaining balance starts out as full loan amount</span></a>
+<a class="sourceLine" id="cb68-44" title="44"></a>
+<a class="sourceLine" id="cb68-45" title="45">  <span class="co">// Produce a listing for each month</span></a>
+<a class="sourceLine" id="cb68-46" title="46">  <span class="cf">for</span> (<span class="dt">int</span> month = <span class="dv">1</span>; month &lt;= numPayments; month++)</a>
+<a class="sourceLine" id="cb68-47" title="47">  {</a>
+<a class="sourceLine" id="cb68-48" title="48">    <span class="dt">double</span> moInterest, <span class="co">// Amount of pmt that pays interest</span></a>
+<a class="sourceLine" id="cb68-49" title="49">    principal;         <span class="co">// Amount of pmt that lowers the balance</span></a>
+<a class="sourceLine" id="cb68-50" title="50"></a>
+<a class="sourceLine" id="cb68-51" title="51">    <span class="co">// Calculate amount paid for this month&#39;s interest and principal</span></a>
+<a class="sourceLine" id="cb68-52" title="52">    moInterest = moInterestRate * balance; <span class="co">// Calculate interest first</span></a>
+<a class="sourceLine" id="cb68-53" title="53">    <span class="cf">if</span> (month != numPayments)              <span class="co">// If not the final month</span></a>
+<a class="sourceLine" id="cb68-54" title="54">      principal = payment − moInterest;    <span class="co">// rest of pmt goes</span></a>
+<a class="sourceLine" id="cb68-55" title="55">                                           <span class="co">// to principal</span></a>
+<a class="sourceLine" id="cb68-56" title="56"></a>
+<a class="sourceLine" id="cb68-57" title="57">    <span class="cf">else</span>                                   <span class="co">// It&#39;s the last month so</span></a>
+<a class="sourceLine" id="cb68-58" title="58">    { principal = balance;                 <span class="co">// pay exact final balance</span></a>
+<a class="sourceLine" id="cb68-59" title="59">      payment = balance + moInterest;</a>
+<a class="sourceLine" id="cb68-60" title="60">    }</a>
+<a class="sourceLine" id="cb68-61" title="61">    <span class="co">// Calculate new loan balance          // Only principal reduces the</span></a>
+<a class="sourceLine" id="cb68-62" title="62">    balance −= principal;                  <span class="co">// balance, not the whole pmt</span></a>
+<a class="sourceLine" id="cb68-63" title="63"></a>
+<a class="sourceLine" id="cb68-64" title="64">    <span class="co">// Display this month&#39;s payment figures</span></a>
+<a class="sourceLine" id="cb68-65" title="65">    cout &lt;&lt; setw(<span class="dv">4</span>) &lt;&lt; month &lt;&lt; setw(<span class="dv">10</span>) &lt;&lt; moInterest;</a>
+<a class="sourceLine" id="cb68-66" title="66">    cout &lt;&lt; setw(<span class="dv">10</span>) &lt;&lt; principal &lt;&lt; setw(<span class="dv">10</span>) &lt;&lt; balance &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb68-67" title="67">  }</a>
+<a class="sourceLine" id="cb68-68" title="68">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb68-69" title="69">}</a></code></pre></div>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <p>Textbook</p>
