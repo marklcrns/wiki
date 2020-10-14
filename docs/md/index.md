@@ -43,6 +43,7 @@ date: Feb 05, 2020
 - [↪ Tmux](tmux/index)
 - [↪ Vim/Neovim](vim/index)
 - [↪ Ydiff](ydiff/index)
+- [↪ Rust](rust/index)
 
 ### Windows
 
