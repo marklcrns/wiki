@@ -1120,7 +1120,7 @@ while (testVal < 10)
 }
 ```
 
-## Using Files for Data Storage
+## 5.12 Using Files for Data Storage
 
 **CONCEPT:** When a program needs to save data for later use, it writes the data
 in a file. The data can be read from the file at a later time.

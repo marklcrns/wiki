@@ -36,7 +36,7 @@ int main()
   // Calculate the pay.
   pay = hours * rate;
 
-  // Displaly the pay.
+  // Display the pay.
   cout << "You have earned $" << pay << end1;
   return 0;
 }
