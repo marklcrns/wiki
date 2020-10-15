@@ -304,5 +304,6 @@ BUSE 120 Canvas Notes
 Textbook
 
 + [⬇ BUSE 120 Full Textbook](file:../../../../../files/fall-2020/BUSE-120/textbook_full.pdf)
-- Chapter 8
+  - Chapter 8
+  - Chapter 9
 
