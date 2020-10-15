@@ -7,7 +7,7 @@ date: Sep 09, 2020
 
 
 # CISC 211 Computer Org and Assembly Lang
-> Professor: Staff<br>
+> Professor: Saied Moezzi<br>
 > email: <br>
 > Campus: San Diego Miraramar College (online)<br>
 > Units: 4<br>

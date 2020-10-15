@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Lucernas">
+
+    <title>Chapter 4.3 How Derivatives Affect the Shape of the Graph</title>
+
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
+    <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body>
+
+<!-- Nav bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">School Wiki</a>
+        </div>
+        <!-- <div id="navbar" class="navbar-collapse collapse">                                                                                                                 -->
+        <!--   <ul class="nav navbar-nav">                                                                                                                                      -->
+        <!--     <li><a href="#">doc1</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc2</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc3</a></li>                                                                                                                                  -->
+        <!--     <li class="dropdown">                                                                                                                                          -->
+        <!--       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+        <!--       <ul class="dropdown-menu">                                                                                                                                   -->
+        <!--         <li><a href="#">Action</a></li>                                                                                                                            -->
+        <!--         <li><a href="#">Another action</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">Something else here</a></li>                                                                                                               -->
+        <!--         <li role="separator" class="divider"></li>                                                                                                                 -->
+        <!--         <li class="dropdown-header">Nav header</li>                                                                                                                -->
+        <!--         <li><a href="#">Separated link</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">One more separated link</a></li>                                                                                                           -->
+        <!--       </ul>                                                                                                                                                        -->
+        <!--     </li>                                                                                                                                                          -->
+        <!--   </ul>                                                                                                                                                            -->
+        <!-- </div>                                                                                                                                                             -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+<!-- Table of Contents -->
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
+          <ul>
+          <li><a href="#chapter-4.3-how-derivatives-affect-the-shape-of-the-graph">Chapter 4.3: How Derivatives Affect the Shape of the Graph</a><ul>
+          <li><a href="#what-does-fprime-say-about-f">What Does <span class="math inline">\(f^{\prime}\)</span> Say about <span class="math inline">\(f\)</span>?</a><ul>
+          <li><a href="#increasingdecreasing-test">Increasing/Decreasing Test</a></li>
+          </ul></li>
+          <li><a href="#local-extreme-values">Local Extreme Values</a><ul>
+          <li><a href="#the-first-derivative-test">The First Derivative Test</a></li>
+          </ul></li>
+          <li><a href="#what-does-fprime-prime-say-about-f">What Does <span class="math inline">\(f^{\prime \prime}\)</span> Say about <span class="math inline">\(f\)</span>?</a><ul>
+          <li><a href="#concave-upward-and-downward-definition">Concave Upward and Downward Definition</a></li>
+          <li><a href="#concavity-test">Concavity Test</a></li>
+          <li><a href="#inflection-point-definition">Inflection Point Definition</a></li>
+          <li><a href="#the-second-derivative-test">The Second Derivative Test</a></li>
+          </ul></li>
+          <li><a href="#video-lectures">Video Lectures</a></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
+          </ul>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<!-- Header -->
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  Chapter 4.3 How Derivatives Affect the Shape of the Graph
+                  <small class="h3 text-muted subtitle">
+                    | Application of Differentiation
+                  </small>
+                </h1>
+              </div>
+            </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">Oct 15, 2020</h5>
+          </div>
+
+<!-- Contents -->
+          <article class="contents">
+<h1 id="chapter-4.3-how-derivatives-affect-the-shape-of-the-graph">Chapter 4.3: How Derivatives Affect the Shape of the Graph</h1>
+<p>Many of the applications of calculus depend on our ability to deduce facts about a function <span class="math inline">\(f\)</span> from information concerning its derivatives. Because <span class="math inline">\(f^{\prime}(x)\)</span> represents the slope of the curve <span class="math inline">\(y = f(x)\)</span> at the point <span class="math inline">\((x, f(x))\)</span>, it tells us the direction in which the curve proceeds at each point. So it is reasonable to expect that information about <span class="math inline">\(f^{\prime}(x)\)</span> will provide us with information about <span class="math inline">\(f(x)\)</span>.</p>
+<h2 id="what-does-fprime-say-about-f">What Does <span class="math inline">\(f^{\prime}\)</span> Say about <span class="math inline">\(f\)</span>?</h2>
+<p>To see how the derivative of <span class="math inline">\(f\)</span> can tell us where a function is increasing or decreasing, look at Figure 1. (Increasing functions and decreasing functions were defined in Section 1.1.) Between <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> and between <span class="math inline">\(C\)</span> and <span class="math inline">\(D\)</span>, the tangent lines have positive slope and so <span class="math inline">\(f^{\prime}(x)\)</span>. Between <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span>, the tangent lines have negative slope and so <span class="math inline">\(f^{\prime}(x) &lt; 0\)</span>. Thus it appears that <span class="math inline">\(f\)</span> increases when <span class="math inline">\(f^{\prime}(x)\)</span> is positive and decreases when <span class="math inline">\(f^{\prime}(x)\)</span> is negative. To prove that this is always the case, we use the Mean Value Theorem.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.3_figure-1.png" alt="Figure 1" /><figcaption>Figure 1</figcaption>
+</figure>
+<h3 id="increasingdecreasing-test">Increasing/Decreasing Test</h3>
+<ol type="a">
+<li><p>If <span class="math inline">\(f^{\prime}(x) &gt; 0\)</span> on an interval, then <span class="math inline">\(f\)</span> is increasing on that interval.</p></li>
+<li><p>If <span class="math inline">\(f^{\prime}(x) &lt; 0\)</span>on an interval, then <span class="math inline">\(f\)</span> is decreasing on that interval.</p></li>
+</ol>
+<blockquote>
+<p><strong>NOTE:</strong> Let’s abbreviate the name of this test to the I/D Test.</p>
+</blockquote>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.3_increasing_decreasing_test_proof.png" alt="Increasing/Decreasing Test Proof" /><figcaption>Increasing/Decreasing Test Proof</figcaption>
+</figure>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.3_example-1.1.png" alt="Example 1.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.3_example-1.2.png" alt="Example 1.2" /></p>
+<h2 id="local-extreme-values">Local Extreme Values</h2>
+<p>Recall from Section 4.1 that if <span class="math inline">\(f\)</span> has a local maximum or minimum at <span class="math inline">\(c\)</span>, <span class="math inline">\(c\)</span> then must be a critical number of <span class="math inline">\(f\)</span> (by Fermat’s Theorem), but not every critical number gives rise to a maximum or a minimum. We therefore need a test that will tell us whether or not <span class="math inline">\(f\)</span> has a local maximum or minimum at a critical number.</p>
+<p>You can see from Figure 2 that <span class="math inline">\(f(0) = 5\)</span> is a local maximum value of <span class="math inline">\(f\)</span> because <span class="math inline">\(f\)</span> increases on <span class="math inline">\((-1, 0)\)</span> and decreases on <span class="math inline">\((0, 2)\)</span>. Or, in terms of derivatives, <span class="math inline">\(f^{\prime}(x) &gt; 0\)</span> for <span class="math inline">\(-1 &lt; x &lt; 0\)</span> and <span class="math inline">\(f^{\prime}(x) &lt; 0\)</span> for <span class="math inline">\(0 &lt; x &lt; 2\)</span>. In other words, the sign of <span class="math inline">\(f^{\prime}(x)\)</span> changes from positive to negative at <span class="math inline">\(0\)</span>. This observation is the basis of the following test.</p>
+<h3 id="the-first-derivative-test">The First Derivative Test</h3>
+<p>Suppose that <span class="math inline">\(c\)</span> is a critical number of a continuous function <span class="math inline">\(f\)</span>.</p>
+<ol type="a">
+<li><p>If <span class="math inline">\(f^{\prime}\)</span> changes from positive to negative at <span class="math inline">\(c\)</span>, then <span class="math inline">\(f\)</span> has a local maximum at <span class="math inline">\(c\)</span>.</p></li>
+<li><p>If <span class="math inline">\(f^{\prime}\)</span> changes from negative to positive at <span class="math inline">\(c\)</span>, then <span class="math inline">\(f\)</span> has a local minimum at <span class="math inline">\(c\)</span>.</p></li>
+<li><p>If <span class="math inline">\(f^{\prime}\)</span> is positive to the left and right of <span class="math inline">\(c\)</span>, or negative to the left and right of <span class="math inline">\(c\)</span>, then <span class="math inline">\(f\)</span> has no local maximum or minimum at <span class="math inline">\(c\)</span>.</p></li>
+</ol>
+<p>The First Derivative Test is a consequence of the I/D Test. In part (a), for instance, since the sign of <span class="math inline">\(f^{\prime}(x)\)</span> changes from positive to negative at <span class="math inline">\(c\)</span>, <span class="math inline">\(f\)</span> is increasing to the left of <span class="math inline">\(c\)</span> and decreasing to the right of <span class="math inline">\(c\)</span>. It follows that <span class="math inline">\(f\)</span> has a local maximum at <span class="math inline">\(c\)</span>.</p>
+<p>It is easy to remember the First Derivative Test by visualizing diagrams such as those in Figure 3.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.3_figure-3.png" alt="Figure 3" /><figcaption>Figure 3</figcaption>
+</figure>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.3_example-3.1.png" alt="Example 3.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.3_example-3.2.png" alt="Example 3.2" /></p>
+<h2 id="what-does-fprime-prime-say-about-f">What Does <span class="math inline">\(f^{\prime \prime}\)</span> Say about <span class="math inline">\(f\)</span>?</h2>
+<p>Figure 5 shows the graphs of two increasing functions on <span class="math inline">\((a, b)\)</span>. Both graphs join point <span class="math inline">\(A\)</span> to point <span class="math inline">\(B\)</span> but they look different because they bend in different directions. How can we distinguish between these two types of behavior?</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.3_figure-5.png" alt="Figure 5" /><figcaption>Figure 5</figcaption>
+</figure>
+<p>In Figure 6 tangents to these curves have been drawn at several points. In (a) the curve lies above the tangents and <span class="math inline">\(f\)</span> is called <em>concave upward</em> on <span class="math inline">\((a, b)\)</span>. In (b) the curve lies below the tangents and <span class="math inline">\(g\)</span> is called <em>concave downward</em> on <span class="math inline">\((a, b)\)</span>.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.3_figure-6.png" alt="Figure 6" /><figcaption>Figure 6</figcaption>
+</figure>
+<h3 id="concave-upward-and-downward-definition">Concave Upward and Downward Definition</h3>
+<p>If the graph of <span class="math inline">\(f\)</span> lies above all of its tangents on an interval <span class="math inline">\(I\)</span>, then it is called <strong>concave upward</strong> on <span class="math inline">\(I\)</span>. If the graph of <span class="math inline">\(f\)</span> lies below all of its tangents on <span class="math inline">\(I\)</span>, it is called <strong>concave downward</strong> on <span class="math inline">\(I\)</span>.</p>
+<p>Figure 7 shows the graph of a function that is concave upward (abbreviated CU) on the intervals <span class="math inline">\((b, c)\)</span>, <span class="math inline">\((d, e)\)</span>, and <span class="math inline">\((e, p)\)</span> and concave downward (CD) on the intervals <span class="math inline">\((a, b)\)</span>, <span class="math inline">\((c, d)\)</span>, and <span class="math inline">\((p, q)\)</span>.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.3_figure-7.png" alt="Figure 7" /><figcaption>Figure 7</figcaption>
+</figure>
+<h3 id="concavity-test">Concavity Test</h3>
+<ol type="a">
+<li><p>If <span class="math inline">\(f^{\prime \prime}\)</span> for all <span class="math inline">\(x\)</span> in <span class="math inline">\(I\)</span>, then the graph of <span class="math inline">\(f\)</span> is concave upward on <span class="math inline">\(I\)</span>.</p></li>
+<li><p>If <span class="math inline">\(f^{\prime \prime}\)</span> for all <span class="math inline">\(x\)</span> in <span class="math inline">\(I\)</span>, then the graph of <span class="math inline">\(f\)</span> is concave downward on <span class="math inline">\(I\)</span>.</p></li>
+</ol>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.3_example-4.png" alt="Example 4" /><figcaption>Example 4</figcaption>
+</figure>
+<h3 id="inflection-point-definition">Inflection Point Definition</h3>
+<p>A point <span class="math inline">\(P\)</span> on a curve <span class="math inline">\(y = f(x)\)</span> is called an inflection point if <span class="math inline">\(f\)</span> is continuous there and the curve changes from concave upward to concave downward or from concave downward to concave upward at <span class="math inline">\(P\)</span>.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.3_example-5.png" alt="Example 5" /><figcaption>Example 5</figcaption>
+</figure>
+<h3 id="the-second-derivative-test">The Second Derivative Test</h3>
+<p>Suppose <span class="math inline">\(f^{\prime \prime}\)</span> is continuous near <span class="math inline">\(c\)</span>.</p>
+<ol type="a">
+<li><p>If <span class="math inline">\(f^{\prime}(c) = 0\)</span> and <span class="math inline">\(f^{\prime \prime}(c) &gt; 0\)</span>, then <span class="math inline">\(f\)</span> has a local minimum at <span class="math inline">\(c\)</span>.</p></li>
+<li><p>If <span class="math inline">\(f^{\prime}(c) = 0\)</span> and <span class="math inline">\(f^{\prime \prime}(c) &lt; 0\)</span>, then <span class="math inline">\(f\)</span> has a local maximum at <span class="math inline">\(c\)</span>.</p></li>
+</ol>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.3_figure-10.png" alt="Figure 10" /><figcaption>Figure 10</figcaption>
+</figure>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.3_example-6.1.png" alt="Example 6.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.3_example-6.2.png" alt="Example 6.2" /></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.3_example-7.1.png" alt="Example 7.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.3_example-7.2.png" alt="Example 7.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.3_example-7.3.png" alt="Example 7.3" /></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.3_example-8.1.png" alt="Example 8.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.3_example-8.2.png" alt="Example 8.2" /></p>
+<h2 id="video-lectures">Video Lectures</h2>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-3/v/increasing-decreasing-intervals-given-the-function">🎬 Finding decreasing interval given the function</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-3/v/finding-increasing-interval-given-derivative">🎬 Finding increasing interval given the derivative</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-3/a/increasing-and-decreasing-intervals-review">🌎 Increasing &amp; decreasing intervals review</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-6a/v/concavity-concave-upwards-and-concave-downwards-intervals">🎬 Concavity introduction</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-6a/v/recognizing-concavity-exercise">🎬 Analyzing concavity (graphical)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-6a/v/inflection-points">🎬 Inflection points introduction</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-6a/v/inflection-points-graphically-given-function">🎬 Inflection points (graphical)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-6b/v/analyzing-concavity-algebraically">🎬 Analyzing concavity (algebraic)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-6b/v/inflection-points-algebraically">🎬 Inflection points (algebraic)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-6b/v/mistakes-when-finding-inflection-points-second-derivative-undefined">🎬 Mistakes when finding inflection points: second derivative undefined</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-6b/v/mistakes-when-finding-inflection-points-not-checking-candidates">🎬 Mistakes when finding inflection points: not checking candidates</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-6b/a/concavity-review">🌎 Concavity review</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-6b/a/inflection-points-review">🌎 Inflection points review</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-7/v/second-derivative-test">🎬 Second derivative test</a></li>
+</ul>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-3/v/increasing-decreasing-intervals-given-the-function">🎬 Finding decreasing interval given the function</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-3/v/finding-increasing-interval-given-derivative">🎬 Finding increasing interval given the derivative</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-3/a/increasing-and-decreasing-intervals-review">🌎 Increasing &amp; decreasing intervals review</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-6a/v/concavity-concave-upwards-and-concave-downwards-intervals">🎬 Concavity introduction</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-6a/v/recognizing-concavity-exercise">🎬 Analyzing concavity (graphical)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-6a/v/inflection-points">🎬 Inflection points introduction</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-6a/v/inflection-points-graphically-given-function">🎬 Inflection points (graphical)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-6b/v/analyzing-concavity-algebraically">🎬 Analyzing concavity (algebraic)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-6b/v/inflection-points-algebraically">🎬 Inflection points (algebraic)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-6b/v/mistakes-when-finding-inflection-points-second-derivative-undefined">🎬 Mistakes when finding inflection points: second derivative undefined</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-6b/v/mistakes-when-finding-inflection-points-not-checking-candidates">🎬 Mistakes when finding inflection points: not checking candidates</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-6b/a/concavity-review">🌎 Concavity review</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-6b/a/inflection-points-review">🌎 Inflection points review</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-7/v/second-derivative-test">🎬 Second derivative test</a></li>
+</ul>
+<p>Textbook</p>
+<ul>
+<li><a href="https://webassign.com/">🌎 Cengage e-Textbook: Calculus Early Transcendentals, Eighth Edition, Stewart</a></li>
+</ul>
+          </article>
+          </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../../../templates/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../../../templates/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+    <script src="../../../../../../templates/js/animated-toc.js"></script>
+  </body>
+</html>

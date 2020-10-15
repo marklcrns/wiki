@@ -10,4 +10,5 @@ date: Oct 06, 2020
 
 - [↪ 4.1 Maximum and Minimum Values](ch-4-1)
 - [↪ 4.2 The Mean Value Theorem](ch-4-2)
+- [↪ 4.3 How Derivatives Affect the Shape of the Graph](ch-4-3)
 
