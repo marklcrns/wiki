@@ -17,4 +17,5 @@ date: Aug 20, 2020
 - [↪ Chapter 5: Measuring a Nation's Production and Income](chapter-5)
 - [↪ Chapter 6: Unemployment and Inflation](chapter-6)
 - [↪ Chapter 8: Why Do Economies Grow?](chapter-8)
+- [↪ Chapter 9: Aggregate Demand and Aggregate Supply](chapter-9)
 
