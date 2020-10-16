@@ -12,7 +12,3 @@ date: Oct 12, 2020
 
 - [↪ Chapter 5 Notes](notes)
 
-## Discussion
-
-- [↪ Chapter 5 Discussion](discussion)
-
