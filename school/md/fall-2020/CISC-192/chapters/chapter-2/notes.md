@@ -528,7 +528,7 @@ int main()
 ```
 
 
-## Videos
+## Video Lectures
 
 - [🎬 CISC 192 Section 2.1 Parts of a C++ Program](https://www.youtube.com/watch?v=4aA7KjUv06Y)
 - [🎬 CISC 192 Section 2.2 The cout Object Part 1](https://www.youtube.com/watch?v=1kR48PDLK9M)

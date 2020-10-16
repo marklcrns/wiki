@@ -1246,7 +1246,7 @@ int main()
 ```
 
 
-## Videos
+## Video Lectures
 
 - [🎬 CISC 192 Section 3.1 The cin object](https://www.youtube.com/watch?v=gSpzyhbwfyU)
 - [🎬 CISC 192 Section 3.2 Mathematical Functions](https://www.youtube.com/watch?v=Q0VV6PNlWCY)

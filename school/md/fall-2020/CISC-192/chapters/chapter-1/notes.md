@@ -132,7 +132,7 @@ some action.
 11. Validate the results of the program.
 
 
-## Videos
+## Video Lectures
 
 - [🎬 CISC 192 CPP Sections 1.1 - 1.3](https://www.youtube.com/watch?v=A0J3kgf-TLw)
 - [🎬 CISC 192 CPP Section 1.4 What is a Program Made Of](https://www.youtube.com/watch?v=SsNzFXgggIg)

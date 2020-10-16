@@ -169,7 +169,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li><a href="#focus-on-testing-and-debugging-validating-output-results">4.14 Focus on Testing and Debugging: Validating Output Results</a></li>
           </ul></li>
           </ul></li>
-          <li><a href="#video">Video</a></li>
+          <li><a href="#video-lectures">Video Lectures</a></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
           </ul>
@@ -1544,7 +1544,7 @@ Total buffet cost is $4.80</code></pre>
 <p>From this output we can see that the cost of a child meal is correctly being calculated as 60 percent of the cost of an adult meal, but the adult meal cost is wrong. For one adult, it is coming out as $8.00, when it should have been $8.25.</p>
 <p>To find the problem, the programmer should determine which lines of code are most apt to have caused the problem. Most likely, something is wrong either in the initialization or storage of <code>ADULT_MEAL_COST</code> on line 10, in the calculation or storage of <code>adultMealTotal</code> or <code>totalMealCost</code> on lines 14, 16, 27, and 29, or in the printing of <code>totalMealCost</code> on line 33. Because the cost for one adult meal is erroneously coming out as a whole dollar amount, even though it is formatted to appear as a floating-point number, one of the things to check is whether all the variables that need to hold floating-point values have been defined as type <code>float</code> or <code>double</code>. Sure enough, although <code>adultMealTotal</code> and <code>totalMealCost</code> have each been defined as a <code>double</code>, the named constant <code>ADULT_MEAL_COST</code> has been defined to be an int. So the 8.25 with which it is initialized is truncated to 8 when it is stored. When the definition of this named constant is rewritten as</p>
 <div class="sourceCode" id="cb68"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb68-1" title="1"><span class="at">const</span> <span class="dt">double</span> ADULT_MEAL_COST = <span class="fl">8.25</span>;</a></code></pre></div>
-<h2 id="video">Video</h2>
+<h2 id="video-lectures">Video Lectures</h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=MXr8KRtldBE">🎬 section 4 1 relational operators cpp i 9 23</a></li>
 <li><a href="https://www.youtube.com/watch?v=j9SgUWV76vg">🎬 CPP section 4 2 if statement cpp i</a></li>

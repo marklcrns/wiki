@@ -1724,7 +1724,7 @@ const double ADULT_MEAL_COST = 8.25;
 ```
 
 
-## Video
+## Video Lectures
 
 - [🎬 section 4 1 relational operators cpp i 9 23](https://www.youtube.com/watch?v=MXr8KRtldBE)
 - [🎬 CPP section 4 2 if statement cpp i](https://www.youtube.com/watch?v=j9SgUWV76vg)
