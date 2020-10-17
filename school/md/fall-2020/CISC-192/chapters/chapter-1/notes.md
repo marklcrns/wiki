@@ -71,6 +71,39 @@ systems.
 
 #### Source Code, Object Code, and Executable Code
 
+When a C++ program is written, it must be typed into the computer and saved to a
+file.  A _text editor_, which is similar to a word processing program, is used
+for this task. The statements written by the programmer are called _source
+code_, and the file they are saved in is called the _source file_.
+
+After the source code is saved to a file, the process of translating it to
+machine language can begin.  During the first phase of this process, a program
+called the _preprocessor_ reads the source code. The preprocessor searches for
+special lines that begin with the `#` symbol. These lines contain commands, or
+_directives_, that cause the preprocessor to amend or process the source code in
+some way. During the next phase the _compiler_ steps through the preprocessed
+source code, translating each source code instruction into the appropriate
+machine language instruction. This process will uncover any _syntax errors_ that
+may be in the program. Syntax errors are illegal uses of key words, operators,
+punctuation, and other language elements. If the program is free of syntax
+errors, the compiler stores the translated machine language instructions, which
+are called _object code_, in an _object file_.
+
+Although an object file contains machine language instructions, it is not a
+complete program. Here is why. C++ is conveniently equipped with a library of
+prewritten code for performing common operations or sometimes-difficult tasks.
+For example, the library contains hardware-specific code for displaying messages
+on the screen and reading input from the keyboard.  It also provides routines
+for mathematical functions, such as calculating the square root of a number.
+This collection of code, called the _run-time library_, is extensive.  Programs
+almost always use some part of it.  When the compiler generates an object file,
+however, it does not include machine code for any run-time library routines the
+programmer might have used. During the last phase of the translation process,
+another program called the _linker_ combines the object file with the necessary
+library routines. Once the linker has finished with this step, an executable
+file is created. The _executable file_ contains machine language instructions,
+or _executable code_, and is ready to run on the computer.
+
 ![Figure 1-6](../../../../../files/fall-2020/CISC-192/chapter-1/figure_1-6.png)
 
 <a name="integrated-development-environments-term">**Integrated Development Environments (IDE)**</a>

@@ -908,10 +908,10 @@ summary of when each loop should be used.
 
 ### The `while` Loop
 
-The while loop is a pretest loop. It is ideal in situations where you do not want the
-loop to iterate if the test condition is false from the beginning. For example, validating
-input that has been read and reading lists of data terminated by a sentinel value are
-good applications of the while loop.
+The while loop is a pretest loop. It is ideal in situations where you do not
+want the loop to iterate if the test condition is false from the beginning. For
+example, validating input that has been read and reading lists of data
+terminated by a sentinel value are good applications of the while loop.
 
 ```cpp
 cout << "This program finds the square of any integer.\n";
