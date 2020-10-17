@@ -135,7 +135,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </ul></li>
           </ul></li>
           <li><a href="#oracle">Oracle</a><ul>
-          <li><a href="#windows">Windows</a></li>
+          <li><a href="#windows">Windows</a><ul>
+          <li><a href="#switching-java_home-in-windows">Switching <code>JAVA_HOME</code> in Windows</a></li>
+          </ul></li>
           <li><a href="#linux-1">Linux</a><ul>
           <li><a href="#ubuntu-1">Ubuntu</a></li>
           </ul></li>
@@ -217,6 +219,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="https://www.happycoders.eu/java/how-to-switch-multiple-java-versions-windows/">🌎 How to switch Java versions in Windows</a></li>
 </ul>
+<h4 id="switching-java_home-in-windows">Switching <code>JAVA_HOME</code> in Windows</h4>
+<p>Sample code to switch <code>JAVA_HOME</code> to jdk 8</p>
+<pre><code>set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_261
+set PATH=%JAVA_HOME%\bin;%PATH%</code></pre>
 <h3 id="linux-1">Linux</h3>
 <h4 id="ubuntu-1">Ubuntu</h4>
 <p><strong>Oracle JDK 8</strong></p>
@@ -229,35 +235,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>The <code>108</code> at the end of <code>update-aternatives --install</code> is the priority. You can change the value however you like</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># for Debian package</span></a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="fu">sudo</span> dpkg -i jdk-8*_linux-x64_bin.deb</a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="co"># for Compressed archive</span></a>
-<a class="sourceLine" id="cb5-4" title="4"><span class="fu">sudo</span> mkdir -p /usr/lib/jvm/</a>
-<a class="sourceLine" id="cb5-5" title="5"><span class="fu">sudo</span> tar xfv jdk-8*-linux-x64.tar.gz -C /usr/lib/jvm/</a>
-<a class="sourceLine" id="cb5-6" title="6"></a>
-<a class="sourceLine" id="cb5-7" title="7"><span class="co"># install java and javac</span></a>
-<a class="sourceLine" id="cb5-8" title="8"><span class="fu">sudo</span> update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_261/bin/java 108</a>
-<a class="sourceLine" id="cb5-9" title="9"><span class="fu">sudo</span> update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_261/bin/javac 108</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># for Debian package</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="fu">sudo</span> dpkg -i jdk-8*_linux-x64_bin.deb</a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="co"># for Compressed archive</span></a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="fu">sudo</span> mkdir -p /usr/lib/jvm/</a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="fu">sudo</span> tar xfv jdk-8*-linux-x64.tar.gz -C /usr/lib/jvm/</a>
+<a class="sourceLine" id="cb6-6" title="6"></a>
+<a class="sourceLine" id="cb6-7" title="7"><span class="co"># install java and javac</span></a>
+<a class="sourceLine" id="cb6-8" title="8"><span class="fu">sudo</span> update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_261/bin/java 108</a>
+<a class="sourceLine" id="cb6-9" title="9"><span class="fu">sudo</span> update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_261/bin/javac 108</a></code></pre></div>
 <blockquote>
 <p>To remove the path to change priority, use <code>--remove</code> flag then reinstall path</p>
 </blockquote>
 <p>Verify Update Alternatives</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">sudo</span> update-alternatives --display java</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="fu">sudo</span> update-alternatives --display java</a></code></pre></div>
 <p>To change alternative mode</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="fu">sudo</span> update-alternatives --config java</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="fu">sudo</span> update-alternatives --config java</a></code></pre></div>
 <p>Setup <code>JAVA_HOME</code> and <code>JRE_HOME</code></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="fu">sudo</span>  nano /etc/environment</a>
-<a class="sourceLine" id="cb8-2" title="2"></a>
-<a class="sourceLine" id="cb8-3" title="3"><span class="co"># Then paste the following</span></a>
-<a class="sourceLine" id="cb8-4" title="4"></a>
-<a class="sourceLine" id="cb8-5" title="5"><span class="va">JAVA_HOME=</span>/usr/lib/jvm/jdk1.8.0_251/bin</a>
-<a class="sourceLine" id="cb8-6" title="6"><span class="va">JRE_HOME=</span>/usr/lib/jvm/jdk1.8.0_251/jre</a>
-<a class="sourceLine" id="cb8-7" title="7"></a>
-<a class="sourceLine" id="cb8-8" title="8"><span class="co"># Source environment</span></a>
-<a class="sourceLine" id="cb8-9" title="9"><span class="bu">source</span> /etc/environment</a>
-<a class="sourceLine" id="cb8-10" title="10"></a>
-<a class="sourceLine" id="cb8-11" title="11"><span class="co"># Update</span></a>
-<a class="sourceLine" id="cb8-12" title="12"><span class="fu">sudo</span> apt-get update</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="fu">sudo</span>  nano /etc/environment</a>
+<a class="sourceLine" id="cb9-2" title="2"></a>
+<a class="sourceLine" id="cb9-3" title="3"><span class="co"># Then paste the following</span></a>
+<a class="sourceLine" id="cb9-4" title="4"></a>
+<a class="sourceLine" id="cb9-5" title="5"><span class="va">JAVA_HOME=</span>/usr/lib/jvm/jdk1.8.0_251/bin</a>
+<a class="sourceLine" id="cb9-6" title="6"><span class="va">JRE_HOME=</span>/usr/lib/jvm/jdk1.8.0_251/jre</a>
+<a class="sourceLine" id="cb9-7" title="7"></a>
+<a class="sourceLine" id="cb9-8" title="8"><span class="co"># Source environment</span></a>
+<a class="sourceLine" id="cb9-9" title="9"><span class="bu">source</span> /etc/environment</a>
+<a class="sourceLine" id="cb9-10" title="10"></a>
+<a class="sourceLine" id="cb9-11" title="11"><span class="co"># Update</span></a>
+<a class="sourceLine" id="cb9-12" title="12"><span class="fu">sudo</span> apt-get update</a></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://www.fosstechnix.com/install-oracle-java-8-on-ubuntu-20-04/">🌎 How to Install Oracle JAVA 8 on Ubuntu 20.04 LTS</a></li>
@@ -276,32 +282,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>to remove the path to change priority, use <code>--remove</code> flag then reinstall path.</p>
 </blockquote>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="co"># For Debian package</span></a>
-<a class="sourceLine" id="cb9-2" title="2"><span class="fu">sudo</span> dpkg -i jdk-11.X.X_linux-x64_bin.deb</a>
-<a class="sourceLine" id="cb9-3" title="3"><span class="co"># For Compressed archive</span></a>
-<a class="sourceLine" id="cb9-4" title="4"><span class="fu">sudo</span> mkdir -p /usr/lib/jvm/</a>
-<a class="sourceLine" id="cb9-5" title="5"><span class="fu">sudo</span> tar xfv jdk-11*-linux-x64.tar.gz -C /usr/lib/jvm/</a>
-<a class="sourceLine" id="cb9-6" title="6"></a>
-<a class="sourceLine" id="cb9-7" title="7"><span class="co"># Insatll java and javac</span></a>
-<a class="sourceLine" id="cb9-8" title="8"><span class="fu">sudo</span> update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-11.X.X/bin/java 111</a>
-<a class="sourceLine" id="cb9-9" title="9"><span class="fu">sudo</span> update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-11.X.X/bin/javac 111</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" title="1"><span class="co"># For Debian package</span></a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="fu">sudo</span> dpkg -i jdk-11.X.X_linux-x64_bin.deb</a>
+<a class="sourceLine" id="cb10-3" title="3"><span class="co"># For Compressed archive</span></a>
+<a class="sourceLine" id="cb10-4" title="4"><span class="fu">sudo</span> mkdir -p /usr/lib/jvm/</a>
+<a class="sourceLine" id="cb10-5" title="5"><span class="fu">sudo</span> tar xfv jdk-11*-linux-x64.tar.gz -C /usr/lib/jvm/</a>
+<a class="sourceLine" id="cb10-6" title="6"></a>
+<a class="sourceLine" id="cb10-7" title="7"><span class="co"># Insatll java and javac</span></a>
+<a class="sourceLine" id="cb10-8" title="8"><span class="fu">sudo</span> update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-11.X.X/bin/java 111</a>
+<a class="sourceLine" id="cb10-9" title="9"><span class="fu">sudo</span> update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-11.X.X/bin/javac 111</a></code></pre></div>
 <p>Verify Update Alternatives</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" title="1"><span class="fu">sudo</span> update-alternatives --display java</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" title="1"><span class="fu">sudo</span> update-alternatives --display java</a></code></pre></div>
 <p>To change alternative mode</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" title="1"><span class="fu">sudo</span> update-alternatives --config java</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" title="1"><span class="fu">sudo</span> update-alternatives --config java</a></code></pre></div>
 <p>Setup <code>JAVA_HOME</code> and <code>JRE_HOME</code></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" title="1"><span class="fu">sudo</span>  nano /etc/environment</a>
-<a class="sourceLine" id="cb12-2" title="2"></a>
-<a class="sourceLine" id="cb12-3" title="3"><span class="co"># Then paste the following</span></a>
-<a class="sourceLine" id="cb12-4" title="4"></a>
-<a class="sourceLine" id="cb12-5" title="5"><span class="va">JAVA_HOME=</span>/usr/lib/jvm/jdk-11.0.7/bin</a>
-<a class="sourceLine" id="cb12-6" title="6"><span class="va">JRE_HOME=</span>/usr/lib/jvm/jdk-11.0.7/jre</a>
-<a class="sourceLine" id="cb12-7" title="7"></a>
-<a class="sourceLine" id="cb12-8" title="8"><span class="co"># Source environment</span></a>
-<a class="sourceLine" id="cb12-9" title="9"><span class="bu">source</span> /etc/environment</a>
-<a class="sourceLine" id="cb12-10" title="10"></a>
-<a class="sourceLine" id="cb12-11" title="11"><span class="co"># Update</span></a>
-<a class="sourceLine" id="cb12-12" title="12"><span class="fu">sudo</span> apt-get update</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" title="1"><span class="fu">sudo</span>  nano /etc/environment</a>
+<a class="sourceLine" id="cb13-2" title="2"></a>
+<a class="sourceLine" id="cb13-3" title="3"><span class="co"># Then paste the following</span></a>
+<a class="sourceLine" id="cb13-4" title="4"></a>
+<a class="sourceLine" id="cb13-5" title="5"><span class="va">JAVA_HOME=</span>/usr/lib/jvm/jdk-11.0.7/bin</a>
+<a class="sourceLine" id="cb13-6" title="6"><span class="va">JRE_HOME=</span>/usr/lib/jvm/jdk-11.0.7/jre</a>
+<a class="sourceLine" id="cb13-7" title="7"></a>
+<a class="sourceLine" id="cb13-8" title="8"><span class="co"># Source environment</span></a>
+<a class="sourceLine" id="cb13-9" title="9"><span class="bu">source</span> /etc/environment</a>
+<a class="sourceLine" id="cb13-10" title="10"></a>
+<a class="sourceLine" id="cb13-11" title="11"><span class="co"># Update</span></a>
+<a class="sourceLine" id="cb13-12" title="12"><span class="fu">sudo</span> apt-get update</a></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://linuxconfig.org/oracle-java-installation-on-ubuntu-20-04-focal-fossa-linux">🌎 Oracle Java installation on Ubuntu 20.04 Focal Fossa Linux</a></li>

@@ -27,6 +27,8 @@ Run this command in `~/.android` directory
 keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000
 ```
 
+> This method works for Windows, Mac and Linux
+
 Ref:
 
 - [🌎 libGDX Projects not Running on Android Studio?](https://www.reddit.com/r/libgdx/comments/85pjwt/libgdx_projects_not_running_on_android_studio/?utm_source=share&utm_medium=web2x&context=3)

@@ -77,6 +77,15 @@ Better way of adding default JDK version to Windows system variables
 
 - [🌎 How to switch Java versions in Windows](https://www.happycoders.eu/java/how-to-switch-multiple-java-versions-windows/)
 
+#### Switching `JAVA_HOME` in Windows
+
+Sample code to switch `JAVA_HOME` to jdk 8
+
+```
+set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_261
+set PATH=%JAVA_HOME%\bin;%PATH%
+```
+
 ### Linux
 
 #### Ubuntu

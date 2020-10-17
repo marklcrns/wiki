@@ -111,6 +111,9 @@
 <h3 id="solved-errorexecution-failed-for-task-androidvalidatesigningdebug.">[SOLVED] <code>Error:Execution failed for task ':android:validateSigningDebug'.</code></h3>
 <p>Run this command in <code>~/.android</code> directory</p>
 <pre><code>keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000</code></pre>
+<blockquote>
+<p>This method works for Windows, Mac and Linux</p>
+</blockquote>
 <p>Ref:</p>
 <ul>
 <li><a href="https://www.reddit.com/r/libgdx/comments/85pjwt/libgdx_projects_not_running_on_android_studio/?utm_source=share&amp;utm_medium=web2x&amp;context=3">🌎 libGDX Projects not Running on Android Studio?</a></li>
