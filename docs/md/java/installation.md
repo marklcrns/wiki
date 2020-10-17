@@ -51,6 +51,7 @@ Oracle Java SE downloads links
 
 - [🌎 Eclipse Java SE Recommended Downloads](https://download.eclipse.org/oomph/jre/?vm=1_1_8_0_64_0&pn=Eclipse%20Installer&pu=http://wiki.eclipse.org/Eclipse_Installer&pi=http://download.eclipse.org/oomph/jre/128x128.png)
 - [🌎 Oracle Java SE Downloads](https://www.oracle.com/java/technologies/javase-downloads.html)
+- [🌎 Oracle Java Archive](https://www.oracle.com/java/technologies/oracle-java-archive-downloads.html)
 
 ### Windows
 

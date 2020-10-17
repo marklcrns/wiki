@@ -9,17 +9,17 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Lucernas">
 
-    <title>Java Programming Language</title>
+    <title>LibGDX Installation Setup</title>
 
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
-    <link href="../../../templates/css/animated-toc.css" rel="stylesheet">
+    <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
-    <link href="../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="../../../templates/css/dashboard.css" rel="stylesheet">
+    <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
   </head>
 
@@ -65,11 +65,12 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#java">Java</a><ul>
-          <li><a href="#installation">Installation</a></li>
-          <li><a href="#management-tools">Management Tools</a></li>
-          <li><a href="#frameworks">Frameworks</a></li>
+          <li><a href="#installation">Installation</a><ul>
+          <li><a href="#android">Android</a><ul>
+          <li><a href="#solved-errorexecution-failed-for-task-androidvalidatesigningdebug.">[SOLVED] <code>Error:Execution failed for task ':android:validateSigningDebug'.</code></a></li>
           </ul></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
           </ul>
           <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
             <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
@@ -81,36 +82,50 @@
           <header>
             <div class="jumbotron">
               <div class="page-header">
-                <a href="../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <a href="../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
                 <h1 class="title">
-                  Java Programming Language
-                  <small class="h3 text-muted subtitle">
-                    | Java Wiki
-                  </small>
+                  LibGDX Installation Setup
                 </h1>
               </div>
             </div>
           </header>
           <div class="h5 text-muted">
             <h5 class="author">Mark Lucernas</h5>
-            <h5 class="date">Aug 08, 2020</h5>
+            <h5 class="date">Oct 17, 2020</h5>
           </div>
 
 <!-- Contents -->
           <article class="contents">
-<h1 id="java">Java</h1>
-<h2 id="installation">Installation</h2>
+<h1 id="installation">Installation</h1>
+<p>Download <a href="https://libgdx.badlogicgames.com/download.html">🌎 <code>gdx-setup.java</code></a></p>
+<p>LibGDX set up tutorials:</p>
 <ul>
-<li><a href="installation.html">↪ Installation</a></li>
+<li><a href="https://www.youtube.com/watch?v=uIPAaDslhPM&amp;t=284s">🎬 Creating Multiplayer Games with LibGDX and NodeJS - Part 1</a></li>
+<li><a href="http://techduke.io/set-up-libgdx-game-in-android-studio/">🌎 Set up libGDX game in Android Studio</a></li>
+<li><a href="https://github.com/libgdx/libgdx/wiki/Improving-workflow-with-Gradle.html#how-to-remove-gradle-ide-integration-from-your-project">🌎 Improving workflow with Gradle</a></li>
 </ul>
-<h2 id="management-tools">Management Tools</h2>
+<h2 id="android">Android</h2>
 <ul>
-<li><a href="tools/maven/index.html">↪ Apache Maven</a></li>
-<li><a href="tools/gradle/index.html">↪ Gradle</a></li>
+<li><a href="https://www.youtube.com/watch?v=LFs3GiP2Zkc">🌎 LibGDX Tutorial - Run Project as Desktop Application in Android Studio</a></li>
 </ul>
-<h2 id="frameworks">Frameworks</h2>
+<h3 id="solved-errorexecution-failed-for-task-androidvalidatesigningdebug.">[SOLVED] <code>Error:Execution failed for task ':android:validateSigningDebug'.</code></h3>
+<p>Run this command in <code>~/.android</code> directory</p>
+<pre><code>keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000</code></pre>
+<p>Ref:</p>
 <ul>
-<li><a href="frameworks/libgdx/index.html">↪ LibGDX</a></li>
+<li><a href="https://www.reddit.com/r/libgdx/comments/85pjwt/libgdx_projects_not_running_on_android_studio/?utm_source=share&amp;utm_medium=web2x&amp;context=3">🌎 libGDX Projects not Running on Android Studio?</a></li>
+<li><a href="https://coderwall.com/p/r09hoq/android-generate-release-debug-keystores">🌎 Android: Generate Release/Debug Keystores</a></li>
+</ul>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://libgdx.badlogicgames.com/download.html">🌎 <code>gdx-setup.java</code></a></li>
+<li><a href="https://www.youtube.com/watch?v=uIPAaDslhPM&amp;t=284s">🎬 Creating Multiplayer Games with LibGDX and NodeJS - Part 1</a></li>
+<li><a href="http://techduke.io/set-up-libgdx-game-in-android-studio/">🌎 Set up libGDX game in Android Studio</a></li>
+<li><a href="https://github.com/libgdx/libgdx/wiki/Improving-workflow-with-Gradle.html#how-to-remove-gradle-ide-integration-from-your-project">🌎 Improving workflow with Gradle</a></li>
+<li><a href="https://www.youtube.com/watch?v=LFs3GiP2Zkc">🌎 LibGDX Tutorial - Run Project as Desktop Application in Android Studio</a></li>
+<li><a href="https://www.reddit.com/r/libgdx/comments/85pjwt/libgdx_projects_not_running_on_android_studio/?utm_source=share&amp;utm_medium=web2x&amp;context=3">🌎 libGDX Projects not Running on Android Studio?</a></li>
+<li><a href="https://coderwall.com/p/r09hoq/android-generate-release-debug-keystores">🌎 Android: Generate Release/Debug Keystores</a></li>
 </ul>
           </article>
           </div>
@@ -120,11 +135,11 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../../templates/js/jquery.min.js"></script>
+    <script src="../../../../../templates/js/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../../templates/js/bootstrap.min.js"></script>
+    <script src="../../../../../templates/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
     <script>
         //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
 
@@ -141,6 +156,6 @@
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
-    <script src="../../../templates/js/animated-toc.js"></script>
+    <script src="../../../../../templates/js/animated-toc.js"></script>
   </body>
 </html>
