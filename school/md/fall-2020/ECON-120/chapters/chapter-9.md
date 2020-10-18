@@ -305,7 +305,7 @@ known as the **multiplier**.
 
 <a name="multiplier-term">**Multiplier**</a>
 
-- The ratio of the total shift in aggregate demant to the shift in aggregate
+- The ratio of the total shift in aggregate demand to the shift in aggregate
   demand.
 
 ![Figure 9.3](../../../../files/fall-2020/ECON-120/chapter-9/figure-9.3.png)
@@ -414,7 +414,7 @@ by another \$6 million in addition to the original \$10 million, for a total of
 But the process does not end there. As aggregate demand increases by \$6
 million, income will also increase by \$6 million. Consumers will then wish to
 increase their spending by the $\text{ MPC } \times \$6 \text{ million }$ or, in
-our example, by \$3.6 million $(0.6 \times \$6 \text{ million })\$. The
+our example, by \$3.6 million $(0.6 \times \$6 \text{ million })$. The
 aggregate demand curve will continue to shift to the right, now by _another_
 \$3.6 million. Adding \$3.6 million to \$16 million gives us a new aggregate
 demand total of \$19.6 million. As you can see, this process will continue, as

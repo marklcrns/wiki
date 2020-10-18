@@ -6,7 +6,7 @@ date: Oct 11, 2020
 ---
 
 
-# Chapter 6
+# Chapter 8
 
 ## Homework
 

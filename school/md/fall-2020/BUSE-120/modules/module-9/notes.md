@@ -145,7 +145,7 @@ your own day-to-day life. After you're done, please click on the "Mark as Done"
 button at the top of the page to indicate you have completed the quiz and
 visited the HHS website.
 
-- [🌎 Healthy Lifestyle Test ](https://www.psychologytoday.com/us/tests/health/healthy-lifestyle-test)
+- [🌎 Healthy Lifestyle Test](https://www.psychologytoday.com/us/tests/health/healthy-lifestyle-test)
 - [🌎 HHS Prevention and Wellness Website](https://www.hhs.gov/programs/prevention-and-wellness/index.html)
 
 ### 9.5 Life Insurance
@@ -193,7 +193,7 @@ button at the top of the page to indicate that you've finished it.
 - [🌎 Henry J. Kaiser Foundation](https://www.kff.org/)
 - [🌎 Glossary of Health Care Terms](https://www.healthcare.gov/glossary/)
 - [🌎 Health Insurance Quiz](https://www.kff.org/quiz/health-insurance-quiz/)
-- [🌎 Healthy Lifestyle Test ](https://www.psychologytoday.com/us/tests/health/healthy-lifestyle-test)
+- [🌎 Healthy Lifestyle Test](https://www.psychologytoday.com/us/tests/health/healthy-lifestyle-test)
 - [🌎 HHS Prevention and Wellness Website](https://www.hhs.gov/programs/prevention-and-wellness/index.html)
 - [🎬 Is Whole Life Insurance Right for You?](https://www.consumerreports.org/cro/news/2015/04/is-whole-life-insurance-right-for-you/index.htm)
 
