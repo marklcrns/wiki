@@ -31,4 +31,5 @@ date: Sep 09, 2020
 ## Notes
 
 - [↪ Unit 1](unit-1/index)
+- [↪ Unit 2](unit-2/index)
 

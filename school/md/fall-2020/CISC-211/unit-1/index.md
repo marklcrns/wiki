@@ -1,12 +1,11 @@
 ---
-title: Unit 1
-subtitle: Notes
+title: Unit 1 Notes
 author: Mark Lucernas
 date: Oct 13, 2020
 ---
 
 
-# Reading
+# Reading Assignment
 
 1. [⬇ Digital Design and Computer Architecture: ARM Edition](file:../../../../files/fall-2020/CISC-211/DDCAarm.pdf)
 
@@ -21,7 +20,8 @@ date: Oct 13, 2020
 - [🌎 Bits and Groups of Bits](https://bob.cs.sonoma.edu/IntroCompOrg-RPi/sec-bits.html)
 - [🌎 Chapter 5, Sections 5.1 - 5.2](https://bob.cs.sonoma.edu/IntroCompOrg-RPi/chp-logic.html)
 
-## Slides
+
+# Slides
 
 - [⬇ Chapter 1 Slides](file:../../../../files/fall-2020/CISC-211/slides/DDCAarm_Ch1.pptx)
 
