@@ -23,6 +23,7 @@ date: Sep 09, 2020
   * [🌎 Companion Materials](https://booksite.elsevier.com/9780128000564/?ISBN=9780128000564)
   * [↪ Lab Materials](lab_materials)
   * [⬇ DDCAarm_Solutions to Odd-Numbered Exercises](file:../../../files/fall-2020/CISC-211/DDCAarm_solutions_odd.pdf)
+  * [⬇ DDCAarm_Solutions to all Exercises](file:../../../files/fall-2020/CISC-211/DDCAarm_solutions_all.pdf)
 - [🌎 Introduction to Computer Organization: ARM Assembly Language Using the Raspberry Pi](https://bob.cs.sonoma.edu/IntroCompOrg-RPi/intro-co-rpi.html)
 - [🌎 Quartus II Web Edition 13sp1](https://fpgasoftware.intel.com/13.0sp1/?edition=web&platform=windows&download_manager=dlm3)
   * Download Combined Files - `Quartus-web-13.0.1.232-windows.tar`

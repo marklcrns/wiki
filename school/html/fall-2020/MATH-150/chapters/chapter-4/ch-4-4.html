@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Lucernas">
+
+    <title>Chapter 4 Indeterminate Forms and l’Hospital’s Rule</title>
+
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
+    <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body>
+
+<!-- Nav bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">School Wiki</a>
+        </div>
+        <!-- <div id="navbar" class="navbar-collapse collapse">                                                                                                                 -->
+        <!--   <ul class="nav navbar-nav">                                                                                                                                      -->
+        <!--     <li><a href="#">doc1</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc2</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc3</a></li>                                                                                                                                  -->
+        <!--     <li class="dropdown">                                                                                                                                          -->
+        <!--       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+        <!--       <ul class="dropdown-menu">                                                                                                                                   -->
+        <!--         <li><a href="#">Action</a></li>                                                                                                                            -->
+        <!--         <li><a href="#">Another action</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">Something else here</a></li>                                                                                                               -->
+        <!--         <li role="separator" class="divider"></li>                                                                                                                 -->
+        <!--         <li class="dropdown-header">Nav header</li>                                                                                                                -->
+        <!--         <li><a href="#">Separated link</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">One more separated link</a></li>                                                                                                           -->
+        <!--       </ul>                                                                                                                                                        -->
+        <!--     </li>                                                                                                                                                          -->
+        <!--   </ul>                                                                                                                                                            -->
+        <!-- </div>                                                                                                                                                             -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+<!-- Table of Contents -->
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
+          <ul>
+          <li><a href="#chapter-4-indeterminate-forms-and-lhospitals-rule">Chapter 4: Indeterminate Forms and l’Hospital’s Rule</a><ul>
+          <li><a href="#indeterminate-forms-and-lhospitals-rule">Indeterminate Forms and l’Hospital’s Rule</a><ul>
+          <li><a href="#definition-1">Definition 1</a></li>
+          <li><a href="#definition-2">Definition 2</a></li>
+          <li><a href="#lhospitals-rule">L’Hospital’s Rule</a></li>
+          </ul></li>
+          <li><a href="#indeterminate-products">Indeterminate Products</a><ul>
+          <li><a href="#lhospital">L’Hospital</a></li>
+          </ul></li>
+          <li><a href="#indeterminate-differences">Indeterminate Differences</a></li>
+          <li><a href="#indeterminate-powers">Indeterminate Powers</a></li>
+          <li><a href="#video-lectures">Video Lectures</a></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
+          </ul>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<!-- Header -->
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  Chapter 4 Indeterminate Forms and l’Hospital’s Rule
+                  <small class="h3 text-muted subtitle">
+                    | Application of Differentiation
+                  </small>
+                </h1>
+              </div>
+            </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">Oct 19, 2020</h5>
+          </div>
+
+<!-- Contents -->
+          <article class="contents">
+<h1 id="chapter-4-indeterminate-forms-and-lhospitals-rule">Chapter 4: Indeterminate Forms and l’Hospital’s Rule</h1>
+<h2 id="indeterminate-forms-and-lhospitals-rule">Indeterminate Forms and l’Hospital’s Rule</h2>
+<p>Suppose we are trying to analyze the behavior of the function</p>
+<p><span class="math display">\[
+F(x) = \frac{\ln{x}}{x - 1}
+\]</span></p>
+<p>Although <span class="math inline">\(F\)</span> is not defined when <span class="math inline">\(x = 1\)</span>, we need to know how <span class="math inline">\(F\)</span> behaves near <span class="math inline">\(1\)</span>. In particular, we would like to know the value of the limit</p>
+<h3 id="definition-1">Definition 1</h3>
+<p><span class="math display">\[
+\lim_{x \to 1}\frac{\ln{x}}{x - 1}
+\]</span></p>
+<p>In computing this limit we can’t apply Law 5 of limits (the limit of a quotient is the quotient of the limits, see Section 2.3) because the limit of the denominator is. In fact, although the limit in (1) exists, its value is not obvious because both numerator and denominator approach and is not defined.</p>
+<p>In general, if we have a limit of the form</p>
+<p><span class="math display">\[
+\lim_{x \to a}\frac{f(x)}{g(x)}
+\]</span></p>
+<p>where both <span class="math inline">\(f(x) \to 0\)</span> and <span class="math inline">\(g(x) \to 0\)</span> as <span class="math inline">\(x \to a\)</span>, then this limit may or may not exist and is called an <strong>indeterminate form of type</strong> <span class="math inline">\(\frac{0}{0}\)</span>. We met some limits of this type in Chapter 2. For rational functions, we can cancel common factors:</p>
+<p><span class="math display">\[
+\lim_{x \to 1}\frac{x^{2} - x}{x^{2} - 1} = \lim_{x \to 1}\frac{x(x - 1)}{(x + 1)(x - 1)} = \lim_{x \to 1}\frac{x}{x + 1} = \frac{1}{2}
+\]</span></p>
+<p>We used a geometric argument to show that</p>
+<p><span class="math display">\[
+\lim_{x \to 0}\frac{\sin{x}}{x} = 1
+\]</span></p>
+<p>But these methods do not work for limits such as (1), so in this section we introduce a systematic method, known as <em>l’Hospital’s Rule</em>, for the evaluation of indeterminate forms.</p>
+<p>Another situation in which a limit is not obvious occurs when we look for a horizontal asymptote <span class="math inline">\(F\)</span> of and need to evaluate the limit</p>
+<h3 id="definition-2">Definition 2</h3>
+<p><span class="math display">\[
+\lim_{x \to \infty}\frac{\ln{x}}{x - 1}
+\]</span></p>
+<p>It isn’t obvious how to evaluate this limit because both numerator and denominator become large as <span class="math inline">\(x \to \infty\)</span>. There is a struggle between numerator and denominator. If the numerator wins, the limit will be <span class="math inline">\(\infty\)</span> (the numerator was increasing significantly faster than the denominator); if the denominator wins, the answer will be. Or there may be some compromise, in which case the answer will be some finite positive number.</p>
+<p>In general, if we have a limit of the form</p>
+<p><span class="math display">\[
+\lim_{x \to a}\frac{f(x)}{g(x)}
+\]</span></p>
+<p>where both <span class="math inline">\(f(x) \to \infty\)</span> (or <span class="math inline">\(-\infty\)</span>) and <span class="math inline">\(g(x) \to \infty\)</span> (or <span class="math inline">\(-\infty\)</span>), then the limit may or may not exist and is called an <strong>indeterminate form of type</strong> <span class="math inline">\(\infty/\infty\)</span>. We saw in Section 2.6 that this type of limit can be evaluated for certain functions, including rational functions, by dividing numerator and denominator by the highest power of that occurs in the denominator. For instance,</p>
+<p><span class="math display">\[
+\lim_{x \to \infty}\frac{x^{2} - 1}{2x^{2} + 1} = \lim_{x \to \infty}\frac{1 - \frac{1}{x^{2}}}{2 + \frac{1}{x^{2}}} = \frac{1 - 0}{2 + 0} = \frac{1}{2}
+\]</span></p>
+<p>This method does not work for limits such as (2), but l’Hospital’s Rule also applies to this type of indeterminate form.</p>
+<h3 id="lhospitals-rule">L’Hospital’s Rule</h3>
+<p>Suppose <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are differentiable and <span class="math inline">\(g^{\prime}(x) \neq 0\)</span> on an open interval <span class="math inline">\(I\)</span> that contains <span class="math inline">\(a\)</span> (except possibly at <span class="math inline">\(a\)</span>). Suppose that</p>
+<p><span class="math display">\[
+\lim_{x \to a}f(x) = 0
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\lim_{x \to a}g(x) = 0
+\]</span></p>
+<p>or that</p>
+<p><span class="math display">\[
+\lim_{x \to a}f(x) = \pm \infty
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\lim_{x \to a}g(x) = \pm \infty
+\]</span></p>
+<p>(In other words, we have an indeterminate form of type <span class="math inline">\(\frac{0}{0}\)</span> or <span class="math inline">\(\infty/\infty\)</span>.) Then</p>
+<p><span class="math display">\[
+\lim_{x \to a}\frac{f(x)}{g(x)} = \lim_{x \to a}\frac{f^{\prime}(x)}{g^{\prime}(x)}
+\]</span></p>
+<p>if the limit on the right side exists (or is <span class="math inline">\(\infty\)</span> or <span class="math inline">\(-\infty\)</span>).</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_figure-1.png" alt="Figure 1" /><figcaption>Figure 1</figcaption>
+</figure>
+<blockquote>
+<p><strong>Note 1</strong> L’Hospital’s Rule says that the limit of a quotient of functions is equal to the limit of the quotient of their derivatives, provided that the given conditions are satisfied. It is especially important to verify the conditions regarding the limits of <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> before using l’Hospital’s Rule.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note 2</strong> L’Hospital’s Rule is also valid for one-sided limits and for limits at infinity or negative infinity; that is, “<span class="math inline">\(x \to a\)</span>” can be replaced by any of the symbols <span class="math inline">\(x \to a^{+}\)</span>, <span class="math inline">\(x \to a^{-}\)</span>, <span class="math inline">\(x \to \infty\)</span>, or <span class="math inline">\(x \to -\infty\)</span>.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note 3</strong> For the special case in which <span class="math inline">\(f(a) = g(a) = 0\)</span>, <span class="math inline">\(f^{\prime}\)</span> and <span class="math inline">\(g^{\prime}\)</span> are continuous, and <span class="math inline">\(g^{\prime}(a) \neq 0\)</span>, it is easy to see why l’Hospital’s Rule is true. In fact, using the alternative form of the definition of a derivative, we have</p>
+</blockquote>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{x \to a}\frac{f^{\prime}(x)}{g^{\prime}(x)} &amp;= \frac{f^{\prime}(a)}{g^{\prime}(a)} = \frac{\lim_{x \to a}\frac{f(x) - f(a)}{x - a}}{\lim_{x \to a}\frac{g(x) - g(a)}{x - a}} = \lim_{x \to a}\frac{\frac{f(x) - f(a)}{x - a}}{\frac{g(x) - g(a)}{x - a}} \\
+                                                  &amp;= \lim_{x \to a}\frac{f(x) - f(a)}{g(x) - g(a)} = \lim_{x \to a}\frac{f(x)}{g(x)} \;\;\;\;\; {\color{#ff0000}{[\text{ since } f(a) = g(a) = 0}]} \end{aligned}
+\]</span></p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-1.png" alt="Example 1" /><figcaption>Example 1</figcaption>
+</figure>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-2.1.png" alt="Example 2.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-2.2.png" alt="Example 2.2" /></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-3.1.png" alt="Example 3.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-3.2.png" alt="Example 3.2" /></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-4.1.png" alt="Example 4.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-4.2.png" alt="Example 4.2" /></p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-5.png" alt="Example 5" /><figcaption>Example 5</figcaption>
+</figure>
+<h2 id="indeterminate-products">Indeterminate Products</h2>
+<p>If <span class="math inline">\(\lim_{x \to a}f(x) = 0\)</span> and <span class="math inline">\(\lim_{x \to a}g(x) = \infty\)</span> (or <span class="math inline">\(-\infty\)</span>), then it isn’t clear what the value of <span class="math inline">\(\lim_{x \to a}[f(x)g(x)]\)</span>, if any, will be. There is a struggle between <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span>. If <span class="math inline">\(f\)</span> wins, the answer will be <span class="math inline">\(0\)</span>; if <span class="math inline">\(g\)</span> wins, the answer will be <span class="math inline">\(\infty\)</span> (or <span class="math inline">\(-\infty\)</span>). Or there may be a compromise where the answer is a finite nonzero number. This kind of limit is called an <strong>indeterminate form of type</strong> $0 $ We can deal with it by writing the product <span class="math inline">\(fg\)</span> as a quotient:</p>
+<p><span class="math display">\[
+fg = \frac{f}{1/g}
+\]</span></p>
+<p>or</p>
+<p><span class="math display">\[
+fg = \frac{g}{1/f}
+\]</span></p>
+<p>This converts the given limit into an indeterminate form of type <span class="math inline">\(\frac{0}{0}\)</span> or <span class="math inline">\(\infty/\infty\)</span> so that we can use l’Hospital’s Rule.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-6.png" alt="Example 6" /><figcaption>Example 6</figcaption>
+</figure>
+<h3 id="lhospital">L’Hospital</h3>
+<p>L’Hospital’s Rule is named after a French nobleman, the Marquis de l’Hospital (1661–1704), but was discovered by a Swiss mathematician, John Bernoulli (1667–1748). You might sometimes see l’Hospital spelled as l’Hôpital, but he spelled his own name l’Hospital, as was common in the 17th century. See Exercise 83 for the example that the Marquis used to illustrate his rule. See the project for further historical details.</p>
+<h2 id="indeterminate-differences">Indeterminate Differences</h2>
+<p>If <span class="math inline">\(\lim_{x \to a}f(x) = \infty\)</span> and <span class="math inline">\(\lim_{x \to a}g(x) = \infty\)</span>, then the limit</p>
+<p><span class="math display">\[
+\lim_{x \to a}[f(x) - g(x)]
+\]</span></p>
+<p>is called an <strong>indeterminate form of type</strong> <span class="math inline">\(\infty - \infty\)</span>. Again there is a contest between <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span>. Will the answer be <span class="math inline">\(\infty\)</span> (<span class="math inline">\(f\)</span> wins) or will it be <span class="math inline">\(-\infty\)</span> (<span class="math inline">\(g\)</span> wins) or will they compromise on a finite number? To find out, we try to convert the difference into a quotient (for instance, by using a common denominator, or rationalization, or factoring out a common factor) so that we have an indeterminate form of type <span class="math inline">\(\frac{0}{0}\)</span> or <span class="math inline">\(\infty/\infty\)</span>.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-7.png" alt="Example 7" /><figcaption>Example 7</figcaption>
+</figure>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-8.png" alt="Example 8" /><figcaption>Example 8</figcaption>
+</figure>
+<h2 id="indeterminate-powers">Indeterminate Powers</h2>
+<p>Several indeterminate forms arise from the limit</p>
+<p><span class="math display">\[
+\lim_{x \to a} = [f(x)]^{g(x)}
+\]</span></p>
+<ol type="1">
+<li><span class="math inline">\(\lim_{x \to a}f(x) = 0 \;\;\;\;\; \text{ and } \;\;\;\;\;\; \lim_{x \to a}g(x) = 0 \;\;\;\;\; \text{ type } 0^{0}\)</span></li>
+<li><span class="math inline">\(\lim_{x \to a}f(x) = \infty \;\;\;\;\; \text{ and } \;\;\;\;\; \lim_{x \to a}g(x) = 0 \;\;\;\;\; \text{ type } \infty^{0}\)</span></li>
+<li><span class="math inline">\(\lim_{x \to a}f(x) = 1 \;\;\;\;\; \text{ and } \;\;\;\;\; \lim_{x \to a}g(x) = \pm \infty \;\;\;\;\; \text{ type } 1^{\infty}\)</span></li>
+</ol>
+<p>Each of these three cases can be treated either by taking the natural logarithm:</p>
+<p><span class="math display">\[
+\text{ let } y = [f(x)]^{g(x)}, \;\;\; \text{ then } \;\;\; \ln{y} = g(x)\ln{f(x)}
+\]</span></p>
+<p>or by writing the function as an exponential:</p>
+<p><span class="math display">\[
+[f(x)]^{g(x)} = e^{g(x)\ln{f(x)}}
+\]</span></p>
+<p>(Recall that both of these methods were used in differentiating such functions.) In either method we are led to the indeterminate product <span class="math inline">\(g(x)\ln{f(x)}\)</span>, which is of type <span class="math inline">\(0 \cdot \infty\)</span>.</p>
+<blockquote>
+<p><strong>Note</strong> Although forms of the type $0^{0}$, <span class="math inline">\(\infty^{0}\)</span>, <span class="math inline">\(1^{\infty}\)</span> and are indeterminate, the form <span class="math inline">\(0^{\infty}\)</span> is not indeterminate.</p>
+</blockquote>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-9.png" alt="Example 9" /><figcaption>Example 9</figcaption>
+</figure>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-10.1.png" alt="Example 10.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-10.2.png" alt="Example 10.2" /></p>
+<h2 id="video-lectures">Video Lectures</h2>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-contextual-applications-new/ab-4-7/v/introduction-to-l-hopital-s-rule">🌎 L’Hôpital’s rule introduction</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-contextual-applications-new/ab-4-7/v/l-hopital-s-rule-example-1">🌎 L’Hôpital’s rule: limit at 0 example</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-contextual-applications-new/ab-4-7/v/l-hopital-s-rule-example-2">🌎 L’Hôpital’s rule: limit at infinity example</a></li>
+</ul>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<p>Textbook</p>
+<ul>
+<li><a href="https://webassign.com/">🌎 Cengage e-Textbook: Calculus Early Transcendentals, Eighth Edition, Stewart</a></li>
+</ul>
+          </article>
+          </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../../../templates/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../../../templates/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+    <script src="../../../../../../templates/js/animated-toc.js"></script>
+  </body>
+</html>
