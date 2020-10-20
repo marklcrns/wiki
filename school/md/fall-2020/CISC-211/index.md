@@ -28,7 +28,7 @@ date: Sep 09, 2020
 - [🌎 Quartus II Web Edition 13sp1](https://fpgasoftware.intel.com/13.0sp1/?edition=web&platform=windows&download_manager=dlm3)
   * Download Combined Files - `Quartus-web-13.0.1.232-windows.tar`
 
-## Notes
+## Units
 
 - [↪ Unit 1](unit-1/index)
 - [↪ Unit 2](unit-2/index)
