@@ -17,4 +17,5 @@ date: 2020-08-17
 - [↪ Module 7: Financial Management](module-7/index)
 - [↪ Module 8: Spending](module-8/index)
 - [↪ Module 9: Insurance](module-9/index)
+- [↪ Module 10: Retirement and Estate Planning](module-10/index)
 
