@@ -11,5 +11,5 @@ date: Aug 17, 2020
 ## Notes
 
 - [↪ Chapter 2 Notes](notes)
-- [⬇ Chapter 2 Canvas Notes](file:../../../../../files/fall-2020/CISC-192/chapter-2/chapter-2.pdf)
+- [⬇ Chapter 2 Canvas Notes](file:../../../../../files/fall-2020/CISC-192/chapter-2/chapter-2_notes.pdf)
 

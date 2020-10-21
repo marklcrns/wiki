@@ -40,6 +40,25 @@ Video Tutorials by Derek Banas (15 videos):
 - [🌎 Boolean Logic](https://www.youtube.com/watch?v=Noi-lpSSEcE&list=PLrDd_kMiAuNmSb-CKWQqq9oBFN_KNMTaI&index=6)
 - [🌎 CRASH COURSE COMPUTER SCIENCE - Season 1](https://www.pbs.org/show/crash-course-computer-science/episodes/?page=2)
 
+# Web Resources
+
+From [🌎 CRASH COURSE COMPUTER SCIENCE - Season
+1](https://www.pbs.org/show/crash-course-computer-science/episodes/?page=2)
+
+- [🎬 Boolean Logic & Logic Gates: Crash Course Computer Science](https://www.pbs.org/video/boolean-logic-logic-gates-crash-course-computer-science-nobmpt/)
+- [🎬 Representing Numbers and Letters with Binary: Crash Course C](https://www.pbs.org/video/representing-numbers-and-letters-with-binary-crash-course-c-pgrlei/)
+
+From Kevin Drumm
+
+- [🎬 Introduction to Logic Gates](https://www.youtube.com/watch?v=fw-N9P38mi4&feature=youtu.be&list=PLTd6ceoshprfc_VVJYunO1BN9peCTMQgr)
+- [🎬 Logic Gate Combinations](https://www.youtube.com/watch?v=BnB2m1nXZ84&list=PLTd6ceoshprfc_VVJYunO1BN9peCTMQgr&index=3) 
+
+From Derek Johnson
+
+- [🎬 Lesson 9: Binary Logic](https://www.youtube.com/watch?v=XsCSoyjcafY)
+- [🎬 Lesson 10: Logic Gates](https://www.youtube.com/watch?v=MLbDS3fwh_A)
+- [🎬 Lesson 11: Boolean Equations](https://www.youtube.com/watch?v=mPMMkRs91ZE)
+
 <br>
 
 # Resources
@@ -53,4 +72,11 @@ Video Tutorials by Derek Banas (15 videos):
 - [🎬 Playlist: C Video Tutorial](https://www.youtube.com/watch?v=8Ib7nwc33uA&list=PLGLfVvz_LVvSaXCpKS395wbCcmsmgRea7)
 - [🌎 Boolean Logic](https://www.youtube.com/watch?v=Noi-lpSSEcE&list=PLrDd_kMiAuNmSb-CKWQqq9oBFN_KNMTaI&index=6)
 - [🌎 CRASH COURSE COMPUTER SCIENCE - Season 1](https://www.pbs.org/show/crash-course-computer-science/episodes/?page=2)
+- [🎬 Boolean Logic & Logic Gates: Crash Course Computer Science](https://www.pbs.org/video/boolean-logic-logic-gates-crash-course-computer-science-nobmpt/)
+- [🎬 Representing Numbers and Letters with Binary: Crash Course C](https://www.pbs.org/video/representing-numbers-and-letters-with-binary-crash-course-c-pgrlei/)
+- [🎬 Introduction to Logic Gates](https://www.youtube.com/watch?v=fw-N9P38mi4&feature=youtu.be&list=PLTd6ceoshprfc_VVJYunO1BN9peCTMQgr)
+- [🎬 Logic Gate Combinations](https://www.youtube.com/watch?v=BnB2m1nXZ84&list=PLTd6ceoshprfc_VVJYunO1BN9peCTMQgr&index=3)
+- [🎬 Lesson 9: Binary Logic](https://www.youtube.com/watch?v=XsCSoyjcafY)
+- [🎬 Lesson 10: Logic Gates](https://www.youtube.com/watch?v=MLbDS3fwh_A)
+- [🎬 Lesson 11: Boolean Equations](https://www.youtube.com/watch?v=mPMMkRs91ZE)
 
