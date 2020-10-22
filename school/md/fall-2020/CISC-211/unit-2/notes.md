@@ -13,7 +13,7 @@ date: Oct 19, 2020
 - 2.1 Introduction
 - 2.2 Boolean Equations
 
-1. Robert G. Plantz: Introduction to Computer Organization: ARM Assembly
+2. Robert G. Plantz: Introduction to Computer Organization: ARM Assembly
    Language Using the Raspberry Pi
 
 - [🌎 Chapter 5, Sections 5.1 - 5.2](https://bob.cs.sonoma.edu/IntroCompOrg-RPi/chp-logic.html)
@@ -42,8 +42,7 @@ Video Tutorials by Derek Banas (15 videos):
 
 # Web Resources
 
-From [🌎 CRASH COURSE COMPUTER SCIENCE - Season
-1](https://www.pbs.org/show/crash-course-computer-science/episodes/?page=2)
+From [🌎 CRASH COURSE COMPUTER SCIENCE - Season 1](https://www.pbs.org/show/crash-course-computer-science/episodes/?page=2)
 
 - [🎬 Boolean Logic & Logic Gates: Crash Course Computer Science](https://www.pbs.org/video/boolean-logic-logic-gates-crash-course-computer-science-nobmpt/)
 - [🎬 Representing Numbers and Letters with Binary: Crash Course C](https://www.pbs.org/video/representing-numbers-and-letters-with-binary-crash-course-c-pgrlei/)

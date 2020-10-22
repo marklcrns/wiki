@@ -16,7 +16,7 @@ date: Oct 19, 2020
 - 1.3 The Digital Abstraction
 - 1.4 Number Systems
 
-1. Robert G. Plantz: Introduction to Computer Organization: ARM Assembly
+2. Robert G. Plantz: Introduction to Computer Organization: ARM Assembly
    Language Using the Raspberry Pi
 
 - [🌎 Bits and Groups of Bits](https://bob.cs.sonoma.edu/IntroCompOrg-RPi/sec-bits.html)
