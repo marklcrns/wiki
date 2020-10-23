@@ -12,5 +12,5 @@ date: Sep 25, 2020
 
 - [↪ Module 6 Notes](notes)
 
-## Excercises
+## Exercises
 
