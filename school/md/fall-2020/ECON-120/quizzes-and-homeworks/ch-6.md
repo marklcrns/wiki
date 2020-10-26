@@ -38,6 +38,14 @@ measure of the unemployment rate is **5.51** percent.
 The best alternative measure that takes into account discouraged workers is an
 unemployment rate of **9.09** percent.
 
+$$
+\text{ Conventional Unemployment Rate } = \frac{\text{ Unemployed }}{\text{ Labor Force + Unemployed }} \times 100
+$$
+
+$$
+\text{ Best Alternative Unemployment Rate } = \frac{\text{ Unemployed + Discouraged workers }}{\text{ Labor Force + Discouraged workers }} \times 100
+$$
+
 <hr>
 
 

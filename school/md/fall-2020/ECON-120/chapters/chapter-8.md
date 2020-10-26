@@ -386,7 +386,7 @@ $$
 \text{ Y } = \text{ F(K, L) }
 $$
 
-where output (Y  ) is produced from capital (K ) and labor (L), which are linked
+where output (Y) is produced from capital (K) and labor (L), which are linked
 through the production function (F). What Solow did was include in the
 production function some measure of technological progress, A:
 

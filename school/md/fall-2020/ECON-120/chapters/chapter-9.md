@@ -142,7 +142,7 @@ curve.
 ### 9.2.2 The Components of Aggregate Demand
 
 In our study of GDP accounting, we divided GDP into four components: consumption
-spending (C), investment spending (I), government purchases (G), and net exports
+spending \(C\), investment spending (I), government purchases (G), and net exports
 (NX). These four components are also the four parts of aggregate demand because
 the aggregate demand curve really just describes the demand for total GDP at
 different price levels. As we will see, changes in demand coming from any of

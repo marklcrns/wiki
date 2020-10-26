@@ -67,7 +67,7 @@ products to pay for the factors of production (land, labor, and capital).
   in a given year.
 - GDP is also the most common measure of an economy's total output.
 
-All the owrds in the GDP definition are important, so let's analyze them
+All the words in the GDP definition are important, so let's analyze them
 
 _Total market_ value means we take the quantity of goods produced, multiply them
 by their respective prices, and then add up the totals. If an economy produced

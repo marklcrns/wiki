@@ -13,4 +13,5 @@ date: Oct 06, 2020
 - [↪ 4.3 How Derivatives Affect the Shape of the Graph](ch-4-3)
 - [↪ 4.4 Indeterminate Forms and l'Hospital's Rule](ch-4-4)
 - [↪ 4.5 Summary of Curve Sketching](ch-4-5)
+- [↪ 4.7 Optimization Problems](ch-4-7)
 
