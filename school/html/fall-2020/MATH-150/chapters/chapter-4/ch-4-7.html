@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Lucernas">
+
+    <title>4.7 Optimization Problems</title>
+
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
+    <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body>
+
+<!-- Nav bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">School Wiki</a>
+        </div>
+        <!-- <div id="navbar" class="navbar-collapse collapse">                                                                                                                 -->
+        <!--   <ul class="nav navbar-nav">                                                                                                                                      -->
+        <!--     <li><a href="#">doc1</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc2</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc3</a></li>                                                                                                                                  -->
+        <!--     <li class="dropdown">                                                                                                                                          -->
+        <!--       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+        <!--       <ul class="dropdown-menu">                                                                                                                                   -->
+        <!--         <li><a href="#">Action</a></li>                                                                                                                            -->
+        <!--         <li><a href="#">Another action</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">Something else here</a></li>                                                                                                               -->
+        <!--         <li role="separator" class="divider"></li>                                                                                                                 -->
+        <!--         <li class="dropdown-header">Nav header</li>                                                                                                                -->
+        <!--         <li><a href="#">Separated link</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">One more separated link</a></li>                                                                                                           -->
+        <!--       </ul>                                                                                                                                                        -->
+        <!--     </li>                                                                                                                                                          -->
+        <!--   </ul>                                                                                                                                                            -->
+        <!-- </div>                                                                                                                                                             -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+<!-- Table of Contents -->
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
+          <ul>
+          <li><a href="#chapter-4.7-optimization-problems">Chapter 4.7: Optimization Problems</a><ul>
+          <li><a href="#optimization-problems">Optimization Problems</a><ul>
+          <li><a href="#first-derivative-test-for-absolute-extreme-values">First Derivative Test for Absolute Extreme Values</a></li>
+          </ul></li>
+          <li><a href="#applications-to-business-and-economics">Applications to Business and Economics</a></li>
+          <li><a href="#video-lectures">Video Lectures</a></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
+          </ul>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<!-- Header -->
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  4.7 Optimization Problems
+                  <small class="h3 text-muted subtitle">
+                    | Applications of Differentiation
+                  </small>
+                </h1>
+              </div>
+            </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">Oct 26, 2020</h5>
+          </div>
+
+<!-- Contents -->
+          <article class="contents">
+<h1 id="chapter-4.7-optimization-problems">Chapter 4.7: Optimization Problems</h1>
+<h2 id="optimization-problems">Optimization Problems</h2>
+<blockquote>
+<p>Steps in Solving Optimization Problems</p>
+</blockquote>
+<ol type="1">
+<li><strong>Understand the Problem</strong> The first step is to read the problem carefully until it is clearly understood. Ask yourself: What is the unknown? What are the given quantities? What are the given conditions?</li>
+<li><strong>Draw a Diagram</strong> In most problems it is useful to draw a diagram and identify the given and required quantities on the diagram.</li>
+<li><strong>Introduce Notation</strong> Assign a symbol to the quantity that is to be maximized or minimized (let’s call it <span class="math inline">\(Q\)</span> for now). Also select symbols <span class="math inline">\((a, b, c, ..., x, y)\)</span> for other unknown quantities and label the diagram with these symbols. It may help to use initials as suggestive symbols–for example, <span class="math inline">\(A\)</span> for area, <span class="math inline">\(h\)</span> for height, <span class="math inline">\(t\)</span> for time.</li>
+<li>Express <span class="math inline">\(Q\)</span> in terms of some of the other symbols from Step 3.</li>
+<li>If <span class="math inline">\(Q\)</span> has been expressed as a function of more than one variable in Step 4, use the given information to find relationships (in the form of equations) among these variables. Then use these equations to eliminate all but one of the variables in the expression for <span class="math inline">\(Q\)</span>. Thus <span class="math inline">\(Q\)</span> will be expressed as a function of one variable <span class="math inline">\(x\)</span>, say, <span class="math inline">\(Q = f(x)\)</span>. Write the domain of this function in the given context.</li>
+<li>Use the methods of Sections 4.1 and Sections 4.3 to find the <em>absolute maximum</em> or <em>minimum value</em> of <span class="math inline">\(f\)</span>. In particular, if the domain of <span class="math inline">\(f\)</span> is a closed interval, then the Closed Interval Method in Section 4.1 can be used.</li>
+</ol>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.7_example-1.1.png" alt="Example 1.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.7_example-1.2.png" alt="Example 1.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.7_example-1.3.png" alt="Example 1.3" /></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.7_example-2.1.png" alt="Example 2.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.7_example-2.2.png" alt="Example 2.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.7_example-2.3.png" alt="Example 2.3" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.7_example-2.4.png" alt="Example 2.4" /></p>
+<h3 id="first-derivative-test-for-absolute-extreme-values">First Derivative Test for Absolute Extreme Values</h3>
+<p>Suppose that <span class="math inline">\(c\)</span> is a critical number of a continuous function <span class="math inline">\(f\)</span> defined on an interval.</p>
+<ol type="a">
+<li><p>If <span class="math inline">\(f^{\prime}(x) &gt; 0\)</span> for all <span class="math inline">\(x &lt; c\)</span> and <span class="math inline">\(f^{\prime}(x) &lt; 0\)</span> for all <span class="math inline">\(x &gt; c\)</span>, then <span class="math inline">\(f(c)\)</span> is the absolute maximum value of <span class="math inline">\(f\)</span>.</p></li>
+<li><p>If <span class="math inline">\(f^{\prime}(x) &gt; 0\)</span> for all <span class="math inline">\(x &lt; c\)</span> and <span class="math inline">\(f^{\prime}(x) &gt; 0\)</span> for all <span class="math inline">\(x &gt; c\)</span>, then <span class="math inline">\(f(c)\)</span> is the absolute minimum value of <span class="math inline">\(f\)</span>.</p></li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> An alternative method for solving optimization problems is to use implicit differentiation. Let’s look at Example 2 again to illustrate the method. We work with the same equations</p>
+</blockquote>
+<p><span class="math display">\[
+A = 2 \pi r^{2} + 2 \pi rh \;\;\;\;\; \pi r^{2}h = 1000
+\]</span></p>
+<p>but instead of eliminating <span class="math inline">\(h\)</span>, we differentiate both equations implicitly with respect to <span class="math inline">\(r\)</span>:</p>
+<p><span class="math display">\[
+A^{\prime} = 4 \pi r + 2 \pi rh^{\prime} + 2 \pi h \;\;\;\;\; \pi r^{2}h^{\prime} + 2 \pi rh = 0
+\]</span></p>
+<p>The minimum occurs at a critical number, so we set <span class="math inline">\(A^{\prime} = 0\)</span>, simplify, and arrive at the equations</p>
+<p><span class="math display">\[
+2r + rh^{\prime} + h = 0 \;\;\;\;\; rh^{\prime} + 2h = 0
+\]</span></p>
+<p>and subtraction gives <span class="math inline">\(2r - h = 0\)</span>, or <span class="math inline">\(h = 2r\)</span>.</p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.7_example-3.1.png" alt="Example 3.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.7_example-3.2.png" alt="Example 3.2" /></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.7_example-4.1.png" alt="Example 4.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.7_example-4.2.png" alt="Example 4.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.7_example-4.3.png" alt="Example 4.3" /></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.7_example-5.1.png" alt="Example 5.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.7_example-5.2.png" alt="Example 5.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.7_example-5.3.png" alt="Example 5.3" /></p>
+<h2 id="applications-to-business-and-economics">Applications to Business and Economics</h2>
+<p>In Section 3.7 we introduced the idea of marginal cost. Recall that if <span class="math inline">\(C(x)\)</span>, the cost function, is the cost of producing <span class="math inline">\(x\)</span> units of a certain product, then the <strong>marginal cost</strong> is the rate of change of <span class="math inline">\(C\)</span> with respect to <span class="math inline">\(x\)</span>. In other words, the marginal cost function is the derivative, <span class="math inline">\(C^{\prime}(x)\)</span>, of the cost function.</p>
+<p>Now let’s consider marketing. Let <span class="math inline">\(p(x)\)</span> be the price per unit that the company can charge if it sells <span class="math inline">\(x\)</span> units. Then <span class="math inline">\(p\)</span> is called the <strong>demand function</strong> (or <strong>price function</strong>) and we would expect it to be a decreasing function of <span class="math inline">\(x\)</span>. (More units sold corresponds to a lower price.) If <span class="math inline">\(x\)</span> units are sold and the price per unit is <span class="math inline">\(p(x)\)</span>, then the total revenue is</p>
+<p><span class="math display">\[
+R(x) = \text{ quantity } \times \text{ price } = xp(x)
+\]</span></p>
+<p>and <span class="math inline">\(R\)</span> is called the <strong>revenue function</strong>. The derivative <span class="math inline">\(R^{\prime}\)</span> of the revenue function is called the <strong>marginal revenue function</strong> and is the rate of change of revenue with respect to the number of units sold.</p>
+<p>If <span class="math inline">\(x\)</span> units are sold, then the total profit is</p>
+<p><span class="math display">\[
+P(x) = R(x) - C(x)
+\]</span></p>
+<p>and <span class="math inline">\(P\)</span> is called the <strong>profit function</strong>. The <strong>marginal profit function</strong> is <span class="math inline">\(P^{\prime}\)</span>, the derivative of the profit function.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.7_example-6.png" alt="Example 6" /><figcaption>Example 6</figcaption>
+</figure>
+<h2 id="video-lectures">Video Lectures</h2>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-11/v/minimizing-sum-of-squares">🎬 Optimization: sum of squares</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-11/v/optimizing-box-volume-graphically">🎬 Optimization: box volume (Part 1)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-11/v/optimizing-box-volume-analytically">🎬 Optimization: box volume (Part 2)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-11/v/optimizing-profit-at-a-shoe-factory">🎬 Optimization: profit</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-11/v/minimizing-the-cost-of-a-storage-container">🎬 Optimization: cost of materials</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-11/v/expression-for-combined-area-of-triangle-and-square">🎬 Optimization: area of triangle &amp; square (Part 1)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-11/v/minimizing-combined-area">🎬 Optimization: area of triangle &amp; square (Part 2)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-11/v/rectilinear-motion-example-maximum-acceleration">🎬 Motion problems: finding the maximum acceleration</a></li>
+</ul>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-11/v/minimizing-sum-of-squares">🎬 Optimization: sum of squares</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-11/v/optimizing-box-volume-graphically">🎬 Optimization: box volume (Part 1)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-11/v/optimizing-box-volume-analytically">🎬 Optimization: box volume (Part 2)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-11/v/optimizing-profit-at-a-shoe-factory">🎬 Optimization: profit</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-11/v/minimizing-the-cost-of-a-storage-container">🎬 Optimization: cost of materials</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-11/v/expression-for-combined-area-of-triangle-and-square">🎬 Optimization: area of triangle &amp; square (Part 1)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-11/v/minimizing-combined-area">🎬 Optimization: area of triangle &amp; square (Part 2)</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-11/v/rectilinear-motion-example-maximum-acceleration">🎬 Motion problems: finding the maximum acceleration</a></li>
+</ul>
+<p>Textbook</p>
+<ul>
+<li><a href="https://webassign.com/">🌎 Cengage e-Textbook: Calculus Early Transcendentals, Eighth Edition, Stewart</a></li>
+</ul>
+          </article>
+          </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../../../templates/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../../../templates/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+    <script src="../../../../../../templates/js/animated-toc.js"></script>
+  </body>
+</html>
