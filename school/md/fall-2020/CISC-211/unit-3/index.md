@@ -16,3 +16,5 @@ date: Oct 26, 2020
 
 ## Lab
 
+- [⬇ Lab 1: Full Adder](file:../../../../files/fall-2020/CISC-211/unit-3/DDCAarm-Lab1.pdf)
+
