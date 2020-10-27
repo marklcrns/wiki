@@ -18,4 +18,5 @@ date: 2020-08-17
 - [↪ Module 8: Spending](module-8/index)
 - [↪ Module 9: Insurance](module-9/index)
 - [↪ Module 10: Retirement and Estate Planning](module-10/index)
+- [↪ Module 11: Investing Basics](module-11/index)
 
