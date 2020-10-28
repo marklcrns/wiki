@@ -40,7 +40,7 @@ done
 
 Ref:
 
-- [🌎 Bash: Iterating over lines in a variable](https://superuser.com/a/284226)
+- [📄 Bash: Iterating over lines in a variable](https://superuser.com/a/284226)
 
 
 ## Looping Over Filtered File Path Returned by Find
@@ -71,16 +71,16 @@ substitution_.
 
 Ref:
 
-- [🌎 How to loop through file names returned by find?: Method 1 reference](https://stackoverflow.com/a/9612232/11850077)
-- [🌎 How to loop through file names returned by find?: Method 2 reference](https://stackoverflow.com/a/37210472/11850077)
-- [🌎 Variables disappearing after loop in a pipeline terminates](https://mywiki.wooledge.org/BashFAQ/024)
+- [📄 How to loop through file names returned by find?: Method 1 reference](https://stackoverflow.com/a/9612232/11850077)
+- [📄 How to loop through file names returned by find?: Method 2 reference](https://stackoverflow.com/a/37210472/11850077)
+- [📄 Variables disappearing after loop in a pipeline terminates](https://mywiki.wooledge.org/BashFAQ/024)
 
 <br>
 
 # Resources
 
-- [🌎 Bash: Iterating over lines in a variable](https://superuser.com/a/284226)
-- [🌎 How to loop through file names returned by find?: Method 1 reference](https://stackoverflow.com/a/9612232/11850077)
-- [🌎 How to loop through file names returned by find?: Method 2 reference](https://stackoverflow.com/a/37210472/11850077)
-- [🌎 Variables disappearing after loop in a pipeline terminates](https://mywiki.wooledge.org/BashFAQ/024)
+- [📄 Bash: Iterating over lines in a variable](https://superuser.com/a/284226)
+- [📄 How to loop through file names returned by find?: Method 1 reference](https://stackoverflow.com/a/9612232/11850077)
+- [📄 How to loop through file names returned by find?: Method 2 reference](https://stackoverflow.com/a/37210472/11850077)
+- [📄 Variables disappearing after loop in a pipeline terminates](https://mywiki.wooledge.org/BashFAQ/024)
 

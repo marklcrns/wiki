@@ -18,7 +18,7 @@ sudo apt update
 sudo apt install virtualbox
 ```
 
-Then sign up and download the [🌎 Genymotion](https://www.genymotion.com/) app.
+Then sign up and download the [📄 Genymotion](https://www.genymotion.com/) app.
 Once downloaded go to the download directory and run the following:
 
 ```sh
@@ -33,7 +33,7 @@ sudo ./genymotion-*-linux_x64.bin
 
 Ref:
 
-- [🌎 How to Install Genymotion Android Emulator on Ubuntu](https://linuxhint.com/install_genymotion_android_emuator_ubuntu/)
+- [📄 How to Install Genymotion Android Emulator on Ubuntu](https://linuxhint.com/install_genymotion_android_emuator_ubuntu/)
 
 
 # Gaaps or OpenGaaps Installation
@@ -42,19 +42,19 @@ Gapps or Google Apps installation
 
 ## Gaaps
 
-- [🌎 Installing Google Play Services in Genymotion Emulator](https://dzone.com/articles/installing-google-play-services-in-genymotion-emul)
+- [📄 Installing Google Play Services in Genymotion Emulator](https://dzone.com/articles/installing-google-play-services-in-genymotion-emul)
 
 ## OpenGaaps For Genymotion 2.11+
 
-- [🌎 OpenGaaps Installation](https://stackoverflow.com/a/49617457)
+- [📄 OpenGaaps Installation](https://stackoverflow.com/a/49617457)
 
 
 <br>
 
 # Resources
 
-- [🌎 Genymotion](https://www.genymotion.com/)
-- [🌎 How to Install Genymotion Android Emulator on Ubuntu](https://linuxhint.com/install_genymotion_android_emuator_ubuntu/)
-- [🌎 Installing Google Play Services in Genymotion Emulator](https://dzone.com/articles/installing-google-play-services-in-genymotion-emul)
-- [🌎 OpenGaaps Installation](https://stackoverflow.com/a/49617457)
+- [📄 Genymotion](https://www.genymotion.com/)
+- [📄 How to Install Genymotion Android Emulator on Ubuntu](https://linuxhint.com/install_genymotion_android_emuator_ubuntu/)
+- [📄 Installing Google Play Services in Genymotion Emulator](https://dzone.com/articles/installing-google-play-services-in-genymotion-emul)
+- [📄 OpenGaaps Installation](https://stackoverflow.com/a/49617457)
 

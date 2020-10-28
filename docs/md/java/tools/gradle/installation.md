@@ -60,12 +60,12 @@ gradle -v
 
 Ref:
 
-- [🌎 How to Install Gradle on Ubuntu 20.04](https://linuxize.com/post/how-to-install-gradle-on-ubuntu-20-04/)
+- [📄 How to Install Gradle on Ubuntu 20.04](https://linuxize.com/post/how-to-install-gradle-on-ubuntu-20-04/)
 
 
 <br>
 
 # Resources
 
-- [🌎 How to Install Gradle on Ubuntu 20.04](https://linuxize.com/post/how-to-install-gradle-on-ubuntu-20-04/)
+- [📄 How to Install Gradle on Ubuntu 20.04](https://linuxize.com/post/how-to-install-gradle-on-ubuntu-20-04/)
 

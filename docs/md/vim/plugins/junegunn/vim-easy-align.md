@@ -6,7 +6,7 @@ date: 2020-02-26
 
 # Vim Plugin: junegunn/vim-easy-align
 
-- [🌎 Git Repo](https://github.com/junegunn/vim-easy-align)
+- [📄 Git Repo](https://github.com/junegunn/vim-easy-align)
 
 ## Default Mappings
 
@@ -29,5 +29,5 @@ With visual map   | Description                        | Equivalent command ~
 
 # Resources
 
-- [🌎 Git Repo](https://github.com/junegunn/vim-easy-align)
+- [📄 Git Repo](https://github.com/junegunn/vim-easy-align)
 

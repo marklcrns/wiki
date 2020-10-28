@@ -12,7 +12,7 @@ summary: Git-lfs usage
 
 **Initialize git lfs (provided its already installed)**
 
-[⚓ Installation](installation#git-lfs-installation)
+[📑 Installation](installation#git-lfs-installation)
 
 ```sh
 # Global initialization
@@ -44,12 +44,12 @@ git push origin master
 
 Ref:
 
-- [🌎 Git-lfs official docs](https://git-lfs.github.com/)
+- [📄 Git-lfs official docs](https://git-lfs.github.com/)
 
 
 <br>
 
 # Resources
 
-- [🌎 Git-lfs official docs](https://git-lfs.github.com/)
+- [📄 Git-lfs official docs](https://git-lfs.github.com/)
 

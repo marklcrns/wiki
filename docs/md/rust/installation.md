@@ -20,11 +20,11 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 Ref:
 
-- [🌎 Rust Installation](https://www.rust-lang.org/tools/install)
+- [📄 Rust Installation](https://www.rust-lang.org/tools/install)
 
 
 <br>
 
 # Resources
 
-- [🌎 Rust Installation](https://www.rust-lang.org/tools/install)
+- [📄 Rust Installation](https://www.rust-lang.org/tools/install)

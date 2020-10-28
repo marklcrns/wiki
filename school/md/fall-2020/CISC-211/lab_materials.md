@@ -29,7 +29,7 @@ date: Oct 17, 2020
 
 Ref:
 
-- [🌎 Harris, Harris: Digital Design and Computer Architecture - Lab Materials](https://booksite.elsevier.com/9780128000564/lab_materials.php)
+- [📄 Harris, Harris: Digital Design and Computer Architecture - Lab Materials](https://booksite.elsevier.com/9780128000564/lab_materials.php)
 
 <br>
 
@@ -54,5 +54,5 @@ Ref:
 - [⬇ Lab10.docx](file:../../../files/fall-2020/CISC-211/Labs_Companion/Lab10.docx)
 - [⬇ Lab11.docx](file:../../../files/fall-2020/CISC-211/Labs_Companion/Lab11.docx)
 - [⬇ LinuxIntro.pdf](file:../../../files/fall-2020/CISC-211/Labs_Companion/LinuxIntro.pdf)
-- [🌎 Harris, Harris: Digital Design and Computer Architecture - Lab Materials](https://booksite.elsevier.com/9780128000564/lab_materials.php)
+- [📄 Harris, Harris: Digital Design and Computer Architecture - Lab Materials](https://booksite.elsevier.com/9780128000564/lab_materials.php)
 

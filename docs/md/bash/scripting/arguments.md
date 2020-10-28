@@ -22,7 +22,7 @@ This command takes one argument, a number. The positional parameters are shifted
 to the left by this number, _N_. The positional parameters from `N+1` to `$#`
 are renamed to variable names from `$1` to `$# - N+1`.
 
-- [🌎 The shift built-in](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_07.html)
+- [📄 The shift built-in](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_07.html)
 
 
 ## Check For Arguments
@@ -77,14 +77,14 @@ for i in "${@:2}"; do
 done
 ```
 
-- [🌎 Iterate through parameters skipping the first](https://stackoverflow.com/questions/3575793/iterate-through-parameters-skipping-the-first)
-- [🌎 The shift built-in](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_07.html)
+- [📄 Iterate through parameters skipping the first](https://stackoverflow.com/questions/3575793/iterate-through-parameters-skipping-the-first)
+- [📄 The shift built-in](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_07.html)
 
 
 <br>
 
 # Resources
 
-- [🌎 Iterate through parameters skipping the first](https://stackoverflow.com/questions/3575793/iterate-through-parameters-skipping-the-first)
-- [🌎 The shift built-in](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_07.html)
+- [📄 Iterate through parameters skipping the first](https://stackoverflow.com/questions/3575793/iterate-through-parameters-skipping-the-first)
+- [📄 The shift built-in](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_07.html)
 

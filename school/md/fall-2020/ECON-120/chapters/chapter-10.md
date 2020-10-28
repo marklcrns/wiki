@@ -549,7 +549,7 @@ consume the rest. However, because output is fixed at full employment, some
 other component of output must be reduced, or crowded out. Crowding out is an
 example of the principle of opportunity cost.
 
-> [⚓ Principle of Opportunity Cost](../../../spring-2020/ECON-121/notes/ch-2#the-principle-of-opportunity-cost)
+> [📑 Principle of Opportunity Cost](../../../spring-2020/ECON-121/notes/ch-2#the-principle-of-opportunity-cost)
 
 In this case, we normally expect that the increased consumption spending will
 come at the sacrifice of reduced investment spending. As we have seen, with
@@ -794,7 +794,7 @@ States has changed over time. Here are the key points:
 
 # Resources
 
-- [⚓ Principle of Opportunity Cost](../../../spring-2020/ECON-121/notes/ch-2#the-principle-of-opportunity-cost)
+- [📑 Principle of Opportunity Cost](../../../spring-2020/ECON-121/notes/ch-2#the-principle-of-opportunity-cost)
 
 Textbook
 

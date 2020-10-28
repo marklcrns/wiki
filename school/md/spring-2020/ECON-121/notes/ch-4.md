@@ -137,7 +137,7 @@ incur these higher costs.
 The supply curve shows the marginal cost of production for different quantities
 produced. We can use the marginal principle to explain this.
 
-- [⚓ Marginal Principle](ch-2#the-marginal-principle)
+- [📑 Marginal Principle](ch-2#the-marginal-principle)
 
 
 ### 4.2.3 From Individual Supply To Market Supply
@@ -403,7 +403,7 @@ Market effects of changes in demand or supply
 
 # Resources
 
-- [⚓ Marginal Principle](ch-2#the-marginal-principle)
+- [📑 Marginal Principle](ch-2#the-marginal-principle)
 
 Text Books
 

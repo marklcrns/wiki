@@ -320,12 +320,12 @@ Symbols
 
 Ref:
 
-- [🌎 gistfile.md](https://gist.github.com/rxaviers/7360908)
+- [📄 gistfile.md](https://gist.github.com/rxaviers/7360908)
 
 
 <br>
 
 # Resources
 
-- [🌎 gistfile.md](https://gist.github.com/rxaviers/7360908)
+- [📄 gistfile.md](https://gist.github.com/rxaviers/7360908)
 

@@ -34,7 +34,7 @@ create new**
 
 Ref:
 
-- [🌎 How to Save the Output of a Command to a File in Bash](https://www.howtogeek.com/299219/how-to-save-the-output-of-a-command-to-a-file-in-bash-aka-the-linux-and-macos-terminal/)
+- [📄 How to Save the Output of a Command to a File in Bash](https://www.howtogeek.com/299219/how-to-save-the-output-of-a-command-to-a-file-in-bash-aka-the-linux-and-macos-terminal/)
 
 
 ## Redirecting Standard Output and Standard Error to a File
@@ -103,16 +103,16 @@ LogMsg "Message"
 
 Ref:
 
-- [🌎 How to redirect stderr to a file](https://askubuntu.com/questions/625224/how-to-redirect-stderr-to-a-file)
-- [🌎 Redirect stdout and stderr to Function](https://stackoverflow.com/questions/11904907/redirect-stdout-and-stderr-to-function)
-- [🌎 Silencing the Output of a Bash Command](https://www.baeldung.com/linux/silencing-bash-output)
+- [📄 How to redirect stderr to a file](https://askubuntu.com/questions/625224/how-to-redirect-stderr-to-a-file)
+- [📄 Redirect stdout and stderr to Function](https://stackoverflow.com/questions/11904907/redirect-stdout-and-stderr-to-function)
+- [📄 Silencing the Output of a Bash Command](https://www.baeldung.com/linux/silencing-bash-output)
 
 
 <br>
 
 # Resources
 
-- [🌎 How to Save the Output of a Command to a File in Bash](https://www.howtogeek.com/299219/how-to-save-the-output-of-a-command-to-a-file-in-bash-aka-the-linux-and-macos-terminal/)
-- [🌎 How to redirect stderr to a file](https://askubuntu.com/questions/625224/how-to-redirect-stderr-to-a-file)
-- [🌎 Redirect stdout and stderr to Function](https://stackoverflow.com/questions/11904907/redirect-stdout-and-stderr-to-function)
+- [📄 How to Save the Output of a Command to a File in Bash](https://www.howtogeek.com/299219/how-to-save-the-output-of-a-command-to-a-file-in-bash-aka-the-linux-and-macos-terminal/)
+- [📄 How to redirect stderr to a file](https://askubuntu.com/questions/625224/how-to-redirect-stderr-to-a-file)
+- [📄 Redirect stdout and stderr to Function](https://stackoverflow.com/questions/11904907/redirect-stdout-and-stderr-to-function)
 

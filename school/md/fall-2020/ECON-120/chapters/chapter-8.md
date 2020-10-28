@@ -294,7 +294,7 @@ less. With less capital per worker, output per worker will also be less because
 each worker has fewer machines to use. This is an illustration of the principle
 of diminishing returns.
 
-- [⚓ The Principle of diminishing returns](../../../spring-2020/ECON-121/notes/ch-2.md#the-principle-of-diminishing-returns)
+- [📑 The Principle of diminishing returns](../../../spring-2020/ECON-121/notes/ch-2.md#the-principle-of-diminishing-returns)
 
 Consider India, the world's second most populous country, with over a billion
 people. Although India has a large labor force, its amount of capital per worker

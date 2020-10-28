@@ -39,8 +39,8 @@ summary: Advanced Git Commands
 
 Ref:
 
-- [🌎 What's the difference between git reset --mixed, --soft, and --hard?](https://stackoverflow.com/questions/3528245/whats-the-difference-between-git-reset-mixed-soft-and-hard)
-- [🌎 Git reset docs](https://git-scm.com/docs/git-reset)
+- [📄 What's the difference between git reset --mixed, --soft, and --hard?](https://stackoverflow.com/questions/3528245/whats-the-difference-between-git-reset-mixed-soft-and-hard)
+- [📄 Git reset docs](https://git-scm.com/docs/git-reset)
 
 
 ## Branch
@@ -80,8 +80,8 @@ branch, replace `git branch -D` with `git branch -d`
 
 Ref:
 
-- [🌎 How to fetch all Git branches](https://intellipaat.com/community/3649/git-fetch-all-branches-how-to-fetch-all-git-branches)
-- [🌎 Remove tracking branches no longer on remote](https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote)
+- [📄 How to fetch all Git branches](https://intellipaat.com/community/3649/git-fetch-all-branches-how-to-fetch-all-git-branches)
+- [📄 Remove tracking branches no longer on remote](https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote)
 
 
 ## Fetch
@@ -97,7 +97,7 @@ git log origin/master ^master # Replace master with <branch-name> for other bran
 
 Ref:
 
-- [🌎 Where to find chances due to git fetch](https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch)
+- [📄 Where to find chances due to git fetch](https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch)
 
 
 ## Remote/Upstream
@@ -124,7 +124,7 @@ git pull
 
 Ref:
 
-- [🌎 Common problems with GIT](https://ducmanhphan.github.io/2019-02-17-Common-problems-with-git/)
+- [📄 Common problems with GIT](https://ducmanhphan.github.io/2019-02-17-Common-problems-with-git/)
 
 
 ## Merge
@@ -163,9 +163,9 @@ meld filename.{HEAD,branch,base} # meld can be replaced by other diff tools
 
 Ref:
 
-- [🌎 Interactive merging with git add --interactive](https://stackoverflow.com/a/22392289)
-- [🌎 Interactive merging with git mergetool](https://stackoverflow.com/a/17754621)
-- [🌎 Other very manual way of merging with git show](https://stackoverflow.com/a/10935340)
+- [📄 Interactive merging with git add --interactive](https://stackoverflow.com/a/22392289)
+- [📄 Interactive merging with git mergetool](https://stackoverflow.com/a/17754621)
+- [📄 Other very manual way of merging with git show](https://stackoverflow.com/a/10935340)
 
 
 ## Difftool
@@ -183,7 +183,7 @@ previous diff conflict.
 
 Ref:
 
-- [🌎 How do I prevent an automerge using Git?](https://stackoverflow.com/a/20256067)
+- [📄 How do I prevent an automerge using Git?](https://stackoverflow.com/a/20256067)
 
 
 ## Extras
@@ -201,22 +201,22 @@ Examples:
 
 Ref:
 
-- [🌎 How to refer to a previous commit in git commit message](https://stackoverflow.com/a/13577344)
+- [📄 How to refer to a previous commit in git commit message](https://stackoverflow.com/a/13577344)
 
 
 <br>
 
 # Resources
 
-- [🌎 What's the difference between git reset --mixed, --soft, and --hard?](https://stackoverflow.com/questions/3528245/whats-the-difference-between-git-reset-mixed-soft-and-hard)
-- [🌎 Git reset docs](https://git-scm.com/docs/git-reset)
-- [🌎 How to fetch all Git branches](https://intellipaat.com/community/3649/git-fetch-all-branches-how-to-fetch-all-git-branches)
-- [🌎 Remove tracking branches no longer on remote](https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote)
-- [🌎 Where to find chances due to git fetch](https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch)
-- [🌎 Common problems with GIT](https://ducmanhphan.github.io/2019-02-17-Common-problems-with-git/)
-- [🌎 Interactive merging with git add --interactive](https://stackoverflow.com/a/22392289)
-- [🌎 Interactive merging with git mergetool](https://stackoverflow.com/a/17754621)
-- [🌎 Other very manual way of merging with git show](https://stackoverflow.com/a/10935340)
-- [🌎 How do I prevent an automerge using Git?](https://stackoverflow.com/a/20256067)
-- [🌎 How to refer to a previous commit in git commit message](https://stackoverflow.com/a/13577344)
+- [📄 What's the difference between git reset --mixed, --soft, and --hard?](https://stackoverflow.com/questions/3528245/whats-the-difference-between-git-reset-mixed-soft-and-hard)
+- [📄 Git reset docs](https://git-scm.com/docs/git-reset)
+- [📄 How to fetch all Git branches](https://intellipaat.com/community/3649/git-fetch-all-branches-how-to-fetch-all-git-branches)
+- [📄 Remove tracking branches no longer on remote](https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote)
+- [📄 Where to find chances due to git fetch](https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch)
+- [📄 Common problems with GIT](https://ducmanhphan.github.io/2019-02-17-Common-problems-with-git/)
+- [📄 Interactive merging with git add --interactive](https://stackoverflow.com/a/22392289)
+- [📄 Interactive merging with git mergetool](https://stackoverflow.com/a/17754621)
+- [📄 Other very manual way of merging with git show](https://stackoverflow.com/a/10935340)
+- [📄 How do I prevent an automerge using Git?](https://stackoverflow.com/a/20256067)
+- [📄 How to refer to a previous commit in git commit message](https://stackoverflow.com/a/13577344)
 

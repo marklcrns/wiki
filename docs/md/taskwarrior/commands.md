@@ -127,13 +127,13 @@ task [<filter>] [<command>] [<modification>] [<miscellaneous>]
 
 Ref:
 
-- [🌎 Taskwarrior Commands](https://taskwarrior.org/docs/commands/)
-- [🌎 Taskwarrior Tags & Virtual tags](https://taskwarrior.org/docs/tags.html)
+- [📄 Taskwarrior Commands](https://taskwarrior.org/docs/commands/)
+- [📄 Taskwarrior Tags & Virtual tags](https://taskwarrior.org/docs/tags.html)
 
 <br>
 
 # Resources
 
-- [🌎 Taskwarrior Commands](https://taskwarrior.org/docs/commands/)
-- [🌎 Taskwarrior Tags & Virtual tags](https://taskwarrior.org/docs/tags.html)
+- [📄 Taskwarrior Commands](https://taskwarrior.org/docs/commands/)
+- [📄 Taskwarrior Tags & Virtual tags](https://taskwarrior.org/docs/tags.html)
 

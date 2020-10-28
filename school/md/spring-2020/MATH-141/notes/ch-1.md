@@ -70,8 +70,8 @@ No lecture...
 
 ## 1.3 Solving: Polynomial Degree 1
 
-- [🎬 Dividing polynomials using long division](https://www.youtube.com/watch?v=-q-vjfXrLqA)
-- [🎬 Basic operations of complex/imaginary numbers](https://www.youtube.com/watch?v=fPtyZKuDUV4)
+- [📺 Dividing polynomials using long division](https://www.youtube.com/watch?v=-q-vjfXrLqA)
+- [📺 Basic operations of complex/imaginary numbers](https://www.youtube.com/watch?v=fPtyZKuDUV4)
 
 ### Solving Linear Equations Intro
 
@@ -88,7 +88,7 @@ Samples of Linear Equations:
 
 #### Step 4: Kill the coefficient
 
-- [🎬 VIDEO Lecture](https://www.youtube.com/embed/BSIXtFkNvzk)
+- [📺 VIDEO Lecture](https://www.youtube.com/embed/BSIXtFkNvzk)
 
 **Example 1:**
 
@@ -116,7 +116,7 @@ Solution:
 
 #### Step 3: Collect x's
 
-- [🎬 VIDEO Lecture](https://www.youtube.com/embed/e6w0VbPYXKg)
+- [📺 VIDEO Lecture](https://www.youtube.com/embed/e6w0VbPYXKg)
 
 **Example 1:**
 
@@ -191,7 +191,7 @@ Solution:
 
 #### Step 2: Move x's
 
-- [🎬 VIDEO Lecture](https://www.youtube.com/embed/001YOoma3B0)
+- [📺 VIDEO Lecture](https://www.youtube.com/embed/001YOoma3B0)
 
 We CAN'T gather the x's if they are NOT all on one side
 
@@ -271,7 +271,7 @@ Solution:
 
 #### Step 1: Free x's
 
-- [🎬 VIDEO Lecture](https://www.youtube.com/embed/sA9W32Wx5Hw)
+- [📺 VIDEO Lecture](https://www.youtube.com/embed/sA9W32Wx5Hw)
 
 We CAN'T MOVE the x's if they are trapped inside ()'s or fractions
 
@@ -325,12 +325,12 @@ Solution:
 
 ### Synthetic Division
 
-- [🎬 Synthetic Division part 1](https://www.youtube.com/watch?v=1byR9UEQJN0)
-- [🎬 Synthetic Division part 2](https://www.youtube.com/watch?v=3Ee_huKclEQ)
+- [📺 Synthetic Division part 1](https://www.youtube.com/watch?v=1byR9UEQJN0)
+- [📺 Synthetic Division part 2](https://www.youtube.com/watch?v=3Ee_huKclEQ)
 
 ### Rational Zero Theorem
 
-- [🎬 Finding all Zeros of a Polynomial Function: Rational Zero Theorem](https://www.youtube.com/watch?v=Iaq7z7reznM)
+- [📺 Finding all Zeros of a Polynomial Function: Rational Zero Theorem](https://www.youtube.com/watch?v=Iaq7z7reznM)
 
 Video Lecture Notes:
 
@@ -391,12 +391,12 @@ Therefore there are 2 (or 0) negative real zeros.
 
 Video Explanations
 
-- [🎬 VIDEO Lecture Playlist](https://www.youtube.com/watch?v=vefTFpdG4zM&list=PLk9w1T-d9etEqZazMp-axuRvRpvF83bxu&index=1)
-- [🎬 Descartes' Rule of Signs Alternative Video](https://www.youtube.com/watch?v=nTjnon4W8Sg)
+- [💽 VIDEO Lecture Playlist](https://www.youtube.com/watch?v=vefTFpdG4zM&list=PLk9w1T-d9etEqZazMp-axuRvRpvF83bxu&index=1)
+- [📺 Descartes' Rule of Signs Alternative Video](https://www.youtube.com/watch?v=nTjnon4W8Sg)
 
 ## 1.6 Solving Rational Equations
 
-- [🎬 VIDEO Lecture](https://www.youtube.com/watch?v=BHEEoiqGC1Y)
+- [📺 VIDEO Lecture](https://www.youtube.com/watch?v=BHEEoiqGC1Y)
 
 Timestamps
 
@@ -430,8 +430,8 @@ Video Lecture Notes:
 
 ##### Factoring Quadratic Trinomials
 
-- [🎬 Factoring Quadratic Trinomials part 1](https://www.youtube.com/watch?v=q6_pWifXKcQ)
-- [🎬 Factoring Quadratic Trinomials part 2](https://www.youtube.com/watch?v=S3GNmhI0-sU)
+- [📺 Factoring Quadratic Trinomials part 1](https://www.youtube.com/watch?v=q6_pWifXKcQ)
+- [📺 Factoring Quadratic Trinomials part 2](https://www.youtube.com/watch?v=S3GNmhI0-sU)
 
 Video Lecture Notes:
 
@@ -472,7 +472,7 @@ Extras
 
 > TIP: $\sqrt{x} * \sqrt{x} = x$ or $\sqrt{x - 3 } * \sqrt{x - 3} = x - 3$
 
-- [🎬 Factoring Trinomials Shortcut](https://www.youtube.com/watch?v=KkJGUvCIrNI)
+- [📺 Factoring Trinomials Shortcut](https://www.youtube.com/watch?v=KkJGUvCIrNI)
 
 Binomial factorization
 
@@ -495,7 +495,7 @@ personally made
 
 ##### Finding The Domain of a Function
 
-- [🎬 Finding the Domain of a Function](https://www.youtube.com/watch?v=yU3Yu9jIjbM)
+- [📺 Finding the Domain of a Function](https://www.youtube.com/watch?v=yU3Yu9jIjbM)
 
 Domain Restrictions:
 
@@ -506,7 +506,7 @@ Domain Restrictions:
 
 ## 1.7 Solving Rational Inequalities
 
-- [🎬 VIDEO Lecture](https://www.youtube.com/watch?v=YC43-wy2kCo)
+- [📺 VIDEO Lecture](https://www.youtube.com/watch?v=YC43-wy2kCo)
 
 Timestamps
 
@@ -555,7 +555,7 @@ Standard form
   - Add $p^{2} /4$ to both sides to form $x^{2}+ px + p^{2}/4 = q + p^{2}/4$.
   - The left side is now a perfect square. Write $(x + p/2)^{2} = q + p^{2}/4$ and
     apply the square root property.
-- [🎬 Youtube: Completing the Square Lecture](https://www.youtube.com/watch?v=prx_Bf2hakw)
+- [📺 Youtube: Completing the Square Lecture](https://www.youtube.com/watch?v=prx_Bf2hakw)
 4. **Quadratic Formula**. The solutions of $ax^{2} + bx + c = 0$, $(a ≠ 0)$ can always
    be written as:
 
@@ -598,10 +598,10 @@ Geometric Series
 
 ### Radical Expressions
 
-- [🎬 Adding and subtracting radical expressions](https://www.youtube.com/watch?v=o9onBMWckDc)
-- [🎬 Rationalizing the denominator with a binomial and radical](https://www.youtube.com/watch?v=iXswh-So308)
-- [🎬 Rationalizing the denominator with two radicals in the denominator](https://www.youtube.com/watch?v=hthLZbH7mkU&list=PL0G-Nd0V5ZMpS8k9YvdRY8FWjuyW0SSf6)
-- [🎬 Dividing two binomial radical expression](https://www.youtube.com/watch?v=PoOrBlf53mk)
+- [📺 Adding and subtracting radical expressions](https://www.youtube.com/watch?v=o9onBMWckDc)
+- [📺 Rationalizing the denominator with a binomial and radical](https://www.youtube.com/watch?v=iXswh-So308)
+- [📺 Rationalizing the denominator with two radicals in the denominator](https://www.youtube.com/watch?v=hthLZbH7mkU&list=PL0G-Nd0V5ZMpS8k9YvdRY8FWjuyW0SSf6)
+- [📺 Dividing two binomial radical expression](https://www.youtube.com/watch?v=PoOrBlf53mk)
 
 <br>
 
@@ -610,27 +610,27 @@ Geometric Series
 - [⬇ Pre-calc Textbook Reference 1](file:../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)
     * Chapter 1 pages 8 - 19
     * Chapter 2 pages 20 - 33
-- [🎬 Dividing polynomials using long division](https://www.youtube.com/watch?v=-q-vjfXrLqA)
-- [🎬 Basic operations of complex/imaginary numbers](https://www.youtube.com/watch?v=fPtyZKuDUV4)
-- [🎬 VIDEO Lecture](https://www.youtube.com/embed/BSIXtFkNvzk)
-- [🎬 VIDEO Lecture](https://www.youtube.com/embed/e6w0VbPYXKg)
-- [🎬 VIDEO Lecture](https://www.youtube.com/embed/001YOoma3B0)
-- [🎬 VIDEO Lecture](https://www.youtube.com/embed/sA9W32Wx5Hw)
-- [🎬 Synthetic Division part 1](https://www.youtube.com/watch?v=1byR9UEQJN0)
-- [🎬 Synthetic Division part 2](https://www.youtube.com/watch?v=3Ee_huKclEQ)
-- [🎬 Finding all Zeros of a Polynomial Function: Rational Zero Theorem](https://www.youtube.com/watch?v=Iaq7z7reznM)
-- [🎬 VIDEO Lecture Playlist](https://www.youtube.com/watch?v=vefTFpdG4zM&list=PLk9w1T-d9etEqZazMp-axuRvRpvF83bxu&index=1)
-- [🎬 Descartes' Rule of Signs Alternative Video](https://www.youtube.com/watch?v=nTjnon4W8Sg)
-- [🎬 VIDEO Lecture](https://www.youtube.com/watch?v=BHEEoiqGC1Y)
-- [🎬 Factoring Quadratic Trinomials part 1](https://www.youtube.com/watch?v=q6_pWifXKcQ)
-- [🎬 Factoring Quadratic Trinomials part 2](https://www.youtube.com/watch?v=S3GNmhI0-sU)
-- [🎬 Factoring Trinomials Shortcut](https://www.youtube.com/watch?v=KkJGUvCIrNI)
-- [🎬 Finding the Domain of a Function](https://www.youtube.com/watch?v=yU3Yu9jIjbM)
-- [🎬 VIDEO Lecture](https://www.youtube.com/watch?v=YC43-wy2kCo)
-- [🎬 Youtube: Completing the Square Lecture](https://www.youtube.com/watch?v=prx_Bf2hakw)
+- [📺 Dividing polynomials using long division](https://www.youtube.com/watch?v=-q-vjfXrLqA)
+- [📺 Basic operations of complex/imaginary numbers](https://www.youtube.com/watch?v=fPtyZKuDUV4)
+- [📺 VIDEO Lecture](https://www.youtube.com/embed/BSIXtFkNvzk)
+- [📺 VIDEO Lecture](https://www.youtube.com/embed/e6w0VbPYXKg)
+- [📺 VIDEO Lecture](https://www.youtube.com/embed/001YOoma3B0)
+- [📺 VIDEO Lecture](https://www.youtube.com/embed/sA9W32Wx5Hw)
+- [📺 Synthetic Division part 1](https://www.youtube.com/watch?v=1byR9UEQJN0)
+- [📺 Synthetic Division part 2](https://www.youtube.com/watch?v=3Ee_huKclEQ)
+- [📺 Finding all Zeros of a Polynomial Function: Rational Zero Theorem](https://www.youtube.com/watch?v=Iaq7z7reznM)
+- [📺 VIDEO Lecture Playlist](https://www.youtube.com/watch?v=vefTFpdG4zM&list=PLk9w1T-d9etEqZazMp-axuRvRpvF83bxu&index=1)
+- [📺 Descartes' Rule of Signs Alternative Video](https://www.youtube.com/watch?v=nTjnon4W8Sg)
+- [📺 VIDEO Lecture](https://www.youtube.com/watch?v=BHEEoiqGC1Y)
+- [📺 Factoring Quadratic Trinomials part 1](https://www.youtube.com/watch?v=q6_pWifXKcQ)
+- [📺 Factoring Quadratic Trinomials part 2](https://www.youtube.com/watch?v=S3GNmhI0-sU)
+- [📺 Factoring Trinomials Shortcut](https://www.youtube.com/watch?v=KkJGUvCIrNI)
+- [📺 Finding the Domain of a Function](https://www.youtube.com/watch?v=yU3Yu9jIjbM)
+- [📺 VIDEO Lecture](https://www.youtube.com/watch?v=YC43-wy2kCo)
+- [📺 Youtube: Completing the Square Lecture](https://www.youtube.com/watch?v=prx_Bf2hakw)
 - [⬇ Algebra Review](file:../../../../files/spring-2020/MATH-141/algebra_review.pdf)
-- [🎬 Adding and subtracting radical expressions](https://www.youtube.com/watch?v=o9onBMWckDc)
-- [🎬 Rationalizing the denominator with a binomial and radical](https://www.youtube.com/watch?v=iXswh-So308)
-- [🎬 Rationalizing the denominator with two radicals in the denominator](https://www.youtube.com/watch?v=hthLZbH7mkU&list=PL0G-Nd0V5ZMpS8k9YvdRY8FWjuyW0SSf6)
-- [🎬 Dividing two binomial radical expression](https://www.youtube.com/watch?v=PoOrBlf53mk)
+- [📺 Adding and subtracting radical expressions](https://www.youtube.com/watch?v=o9onBMWckDc)
+- [📺 Rationalizing the denominator with a binomial and radical](https://www.youtube.com/watch?v=iXswh-So308)
+- [📺 Rationalizing the denominator with two radicals in the denominator](https://www.youtube.com/watch?v=hthLZbH7mkU&list=PL0G-Nd0V5ZMpS8k9YvdRY8FWjuyW0SSf6)
+- [📺 Dividing two binomial radical expression](https://www.youtube.com/watch?v=PoOrBlf53mk)
 - [⬇ Pre-calc Textbook Reference 1](file:../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)

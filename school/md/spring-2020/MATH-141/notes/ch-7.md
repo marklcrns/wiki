@@ -15,7 +15,7 @@ summary: Misc Topics
 
 ### Video Lecture
 
-- [🎬 TRIGONOMETRY intro to POLAR COORDINATES](https://www.youtube.com/watch?v=6RmC_k4xBSk)
+- [📺 TRIGONOMETRY intro to POLAR COORDINATES](https://www.youtube.com/watch?v=6RmC_k4xBSk)
 
 #### Video Lecture Notes
 
@@ -37,7 +37,7 @@ plot(x, sin(x), main="The Sine Function", ylab="sin(x)")
 
 ### Video Lecture 1
 
-- [🎬 VIDEO 1: Polar graphs intro](https://www.youtube.com/watch?v=u_Y7V5CSCcc)
+- [📺 VIDEO 1: Polar graphs intro](https://www.youtube.com/watch?v=u_Y7V5CSCcc)
 
 #### Video Lecture 1 Notes
 
@@ -51,7 +51,7 @@ plot(x, sin(x), main="The Sine Function", ylab="sin(x)")
 
 ### Video Lecture 2
 
-- [🎬 VIDEO 2: TRIGONOMETRY intro to POLAR equations converting](https://www.youtube.com/watch?v=eWFJo--R8w4)
+- [📺 VIDEO 2: TRIGONOMETRY intro to POLAR equations converting](https://www.youtube.com/watch?v=eWFJo--R8w4)
 
 #### Video Lecture 2 Notes
 
@@ -86,7 +86,7 @@ Examples of Polar to Cartesian
 
 ### Video Lecture
 
-- [🎬 INTRODUCTION To complex numbers](https://www.youtube.com/watch?v=rShl_0B72To)
+- [📺 INTRODUCTION To complex numbers](https://www.youtube.com/watch?v=rShl_0B72To)
 
 #### Video Lecture Notes
 
@@ -134,7 +134,7 @@ Using Conjugates
 
 ### Video Lecture
 
-- [🎬 Converting to Euler form of complex number](https://www.youtube.com/watch?v=IoOKpGrL0RQ)
+- [📺 Converting to Euler form of complex number](https://www.youtube.com/watch?v=IoOKpGrL0RQ)
 
 #### Video Lecture Notes
 
@@ -166,7 +166,7 @@ Converting numbers to complex numbers
 
 ### Video Lecture
 
-- [🎬 Euler's Identity Part 2 Introduction](https://www.youtube.com/watch?v=mrADnifzTy0)
+- [📺 Euler's Identity Part 2 Introduction](https://www.youtube.com/watch?v=mrADnifzTy0)
 
 #### Video Lecture Notes
 
@@ -233,7 +233,7 @@ Roots of unity [(20:00)](https://www.youtube.com/watch?v=mrADnifzTy0&t=1200)
 
 ### Video Lecture
 
-- [🎬 Introduction to Vectors](https://www.youtube.com/watch?v=PObj5z__5yQ)
+- [📺 Introduction to Vectors](https://www.youtube.com/watch?v=PObj5z__5yQ)
 
 
 #### Video Lecture Notes
@@ -272,7 +272,7 @@ Some famous Dot Product properties
 
 ### Video Lecture
 
-- [🎬 Intro to Dot Product Full Lecture](https://www.youtube.com/watch?v=VvoUzq6NLr8)
+- [📺 Intro to Dot Product Full Lecture](https://www.youtube.com/watch?v=VvoUzq6NLr8)
 
 #### Video Lecture Notes
 
@@ -345,20 +345,20 @@ Projections by Dot [(28:30)](https://www.youtube.com/watch?v=vvoUzq6NLr8&t=1710)
 - [⬇ Handout 27: Intro to Polar Coordinates](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-27.pdf)
 - [⬇ Handout 28: Chapter 7 Review](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-28.pdf)
 - [⬇ Handout 29: Euler's Identity: Solutions to some exercises](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-29.pdf)
-- [🎬 TRIGONOMETRY intro to POLAR COORDINATES](https://www.youtube.com/watch?v=6RmC_k4xBSk)
+- [📺 TRIGONOMETRY intro to POLAR COORDINATES](https://www.youtube.com/watch?v=6RmC_k4xBSk)
 - [⬇ Handout 30: Converting Equations Polar & Cartesian](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-30.pdf)
-- [🎬 VIDEO 1: Polar graphs intro](https://www.youtube.com/watch?v=u_Y7V5CSCcc)
-- [🎬 VIDEO 2: TRIGONOMETRY intro to POLAR equations converting](https://www.youtube.com/watch?v=eWFJo--R8w4)
+- [📺 VIDEO 1: Polar graphs intro](https://www.youtube.com/watch?v=u_Y7V5CSCcc)
+- [📺 VIDEO 2: TRIGONOMETRY intro to POLAR equations converting](https://www.youtube.com/watch?v=eWFJo--R8w4)
 - [⬇ Handout 31: Intro to Complex Numbers exercises v1](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-31.pdf)
 - [⬇ Handout 32: Intro to Complex Numbers exercises v2](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-32.pdf)
-- [🎬 INTRODUCTION To complex numbers](https://www.youtube.com/watch?v=rShl_0B72To)
+- [📺 INTRODUCTION To complex numbers](https://www.youtube.com/watch?v=rShl_0B72To)
 - [⬇ Handout 33: More on Complex Numbers exercises v1](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-33.pdf)
 - [⬇ Handout 34: More on Complex Numbers exercises v2](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-34.pdf)
-- [🎬 Converting to Euler form of complex number](https://www.youtube.com/watch?v=IoOKpGrL0RQ)
+- [📺 Converting to Euler form of complex number](https://www.youtube.com/watch?v=IoOKpGrL0RQ)
 - [⬇ Handout 35: Converting Complex numbers From and To EULER FORM](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-35.pdf)
 - [⬇ Handout 36: Euler's Identity](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-36.pdf)
-- [🎬 Euler's Identity Part 2 Introduction](https://www.youtube.com/watch?v=mrADnifzTy0)
+- [📺 Euler's Identity Part 2 Introduction](https://www.youtube.com/watch?v=mrADnifzTy0)
 - [⬇ Handout 37: Vectors Introduction](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-37.pdf)
-- [🎬 Introduction to Vectors](https://www.youtube.com/watch?v=PObj5z__5yQ)
+- [📺 Introduction to Vectors](https://www.youtube.com/watch?v=PObj5z__5yQ)
 - [⬇ Handout 38: Introduction to the Dot Product](file:../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-38.pdf)
-- [🎬 Intro to Dot product Full Lecture](https://www.youtube.com/watch?v=VvoUzq6NLr8)
+- [📺 Intro to Dot product Full Lecture](https://www.youtube.com/watch?v=VvoUzq6NLr8)

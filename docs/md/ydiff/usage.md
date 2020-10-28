@@ -11,7 +11,7 @@ Type `ydiff -h` to show usage
 
 More usage on:
 
-- [🌎 Ydiff Official Repository Usage](https://github.com/ymattw/ydiff#usage)
+- [📄 Ydiff Official Repository Usage](https://github.com/ymattw/ydiff#usage)
 
 
 ## Git Integration
@@ -38,7 +38,7 @@ More usage on:
 
 Ref:
 
-- [🌎 How to colorize diff on the command line?](https://stackoverflow.com/a/41770560/11850077)
+- [📄 How to colorize diff on the command line?](https://stackoverflow.com/a/41770560/11850077)
 
 
 
@@ -46,6 +46,6 @@ Ref:
 
 # Resources
 
-- [🌎 Ydiff Official Repository Usage](https://github.com/ymattw/ydiff#usage)
-- [🌎 How to colorize diff on the command line?](https://stackoverflow.com/a/41770560/11850077)
+- [📄 Ydiff Official Repository Usage](https://github.com/ymattw/ydiff#usage)
+- [📄 How to colorize diff on the command line?](https://stackoverflow.com/a/41770560/11850077)
 

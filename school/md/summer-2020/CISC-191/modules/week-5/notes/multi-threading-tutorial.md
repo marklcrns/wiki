@@ -8,7 +8,7 @@ summary: Week 5 Multi-threading tutorial source codes
 
 # Multi-threading Tutorial Series
 
-- [🎬 Advaned Java: Multi-threading Tutorial Series](https://www.youtube.com/watch?v=YdlnEWC-7Wo&list=PLBB24CFB073F1048E&index=1)
+- [📺 Advaned Java: Multi-threading Tutorial Series](https://www.youtube.com/watch?v=YdlnEWC-7Wo&list=PLBB24CFB073F1048E&index=1)
 
 ## Part 2 -- Basic Thread Synchronization
 
@@ -85,7 +85,7 @@ summary: Week 5 Multi-threading tutorial source codes
 
 # Resources
 
-- [🎬 Advaned Java: Multi-threading Tutorial Series](https://www.youtube.com/watch?v=YdlnEWC-7Wo&list=PLBB24CFB073F1048E&index=1)
+- [📺 Advaned Java: Multi-threading Tutorial Series](https://www.youtube.com/watch?v=YdlnEWC-7Wo&list=PLBB24CFB073F1048E&index=1)
 - [⬇ App.java - Part 2](vfile:../../../../../../files/summer-2020/CISC-191/week-5/multi-threading-tutorial/src/multiThreading2/App.java)
 - [⬇ App.java - Part 3](vfile:../../../../../../files/summer-2020/CISC-191/week-5/multi-threading-tutorial/src/multiThreading3/App.java)
 - [⬇ App.java - Part 4](vfile:../../../../../../files/summer-2020/CISC-191/week-5/multi-threading-tutorial/src/multiThreading4/App.java)

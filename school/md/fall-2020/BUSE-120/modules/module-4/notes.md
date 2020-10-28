@@ -37,7 +37,7 @@ money for our investment.
 Below is a short video that explains this concept in a different way. Please
 watch the video and then come back and continue reading the rest of this page.
 
-- [🎬 What is the Time Value of Money](https://www.youtube.com/watch?v=BTMfLUhjb3Q)
+- [📺 What is the Time Value of Money](https://www.youtube.com/watch?v=BTMfLUhjb3Q)
 
 **Calculating the Time Value of Money**
 
@@ -60,7 +60,7 @@ If you know any four of these four things, then you can calculate the other
 missing one. Let's see how this works by watching the video below. When you're
 done watching, please continue on to the next page in this module.
 
-- [🎬 Time Value of Money - Macroeconomics](https://www.youtube.com/watch?v=nfkqCv3Rd_g)
+- [📺 Time Value of Money - Macroeconomics](https://www.youtube.com/watch?v=nfkqCv3Rd_g)
 
 $$
 \text{Future Value of \$100 in } t \text{ years } = \$100(1 + r)^{t}
@@ -83,7 +83,7 @@ mean? Compound interest is a way to make your money grow exponentially faster by
 letting the interest you earn continue to earn interest over time. It's a
 powerful application of the time value of money.
 
-- [🎬 Compount Interest Concept Video](https://vimeo.com/248776504)
+- [📺 Compount Interest Concept Video](https://vimeo.com/248776504)
 
 #### 4.2.2 TVM Calculators
 
@@ -141,7 +141,7 @@ will be for you to make financial decisions about things like loans and
 investments and the easier it will be for you to complete the exercise at the
 end of this module.
 
-- [🌎 Finance Calculator from Calculator.net](https://www.calculator.net/finance-calculator.html?ctype=endamount&ctargetamountv=500000&cyearsv=40&cstartingprinciplev=0&cinterestratev=5&ccontributeamountv=2400&ciadditionat1=end&printit=0)
+- [📄 Finance Calculator from Calculator.net](https://www.calculator.net/finance-calculator.html?ctype=endamount&ctargetamountv=500000&cyearsv=40&cstartingprinciplev=0&cinterestratev=5&ccontributeamountv=2400&ciadditionat1=end&printit=0)
 
 **Other TVM Calculators**
 
@@ -155,7 +155,7 @@ the National Endowment for Financial Education. Please follow the link and take
 a look at any that interest you. A quick search of the Internet will bring up
 many more.
 
-- [🌎 Financial Calculators from Smart About Money](https://www.smartaboutmoney.org/Tools/Calculators)
+- [📄 Financial Calculators from Smart About Money](https://www.smartaboutmoney.org/Tools/Calculators)
 
 ### 4.3 Saving for College
 
@@ -172,7 +172,7 @@ extra interest to your investment.
 
 The link below will bring you to some information and resources on college savings provided by the Financial Industry Regulatory Authority (FINRA). Please read through the descriptions of each of the resources and click on at least one item that interests you to get more information about that topic. Once you've done that, click on the "Mark as Done" button on the top right-had corner of the page to indicate you've finished exploring the college savings information.
 
-- [🌎 Saving for College by FINRA](http://www.finra.org/investors/saving-college)
+- [📄 Saving for College by FINRA](http://www.finra.org/investors/saving-college)
 
 
 A Word About College Loans
@@ -183,17 +183,17 @@ when they graduate, many students find themselves in a large amount of debt at
 the same time they're trying to start new careers. There are several reasons for
 this:
 
-- [🌎 Overall, college has gotten more expensive](https://trends.collegeboard.org/college-pricing/figures-tables/average-rates-growth-published-charges-decade)
-- [🌎 Many states (like California) are devoting fewer resources to funding higher eduction](https://www.ppic.org/publication/higher-education-funding-in-california/)
-- [🌎 Colleges are adding more expensive services and amenities on campus in order to compete for students](https://www.usnews.com/news/college-of-tomorrow/articles/2014/09/22/how-do-schools-market-themselves-to-attract-students)
-- [🌎 Students are increasingly attending private colleges, including private for-profit colleges](https://nces.ed.gov/programs/coe/indicator_cha.asp)
+- [📄 Overall, college has gotten more expensive](https://trends.collegeboard.org/college-pricing/figures-tables/average-rates-growth-published-charges-decade)
+- [📄 Many states (like California) are devoting fewer resources to funding higher eduction](https://www.ppic.org/publication/higher-education-funding-in-california/)
+- [📄 Colleges are adding more expensive services and amenities on campus in order to compete for students](https://www.usnews.com/news/college-of-tomorrow/articles/2014/09/22/how-do-schools-market-themselves-to-attract-students)
+- [📄 Students are increasingly attending private colleges, including private for-profit colleges](https://nces.ed.gov/programs/coe/indicator_cha.asp)
 - [⬇ Many students don't understand the impact of taking on college loans (some don't even know they are borrowing money)](https://www.brookings.edu/wp-content/uploads/2016/06/Are-College-Students-Borrowing-Blindly_Dec-2014.pdf)
 
 Research seems to indicate that for the vast majority of students, it is not
 cost effective to take on college debt in order to attend a more "prestigious"
 college. This is because the expected increase in earnings is not worth the
 added cost of the student loans to pay for the college. In fact,
-[🌎 research indicates that a student's major has a much bigger effect on earnings](https://cew.georgetown.edu/cew-reports/valueofcollegemajors/)
+[📄 research indicates that a student's major has a much bigger effect on earnings](https://cew.georgetown.edu/cew-reports/valueofcollegemajors/)
 (at least earnings immediately after college graduation) than the choice of
 college does.  (The only exception to this is very prestigious colleges that are
 known around the world like Stanford or Harvard, in which case the increase in
@@ -204,11 +204,11 @@ best "return on investment" for students.
 
 To learn more about the basics of college loans, please visit the link below:
 
-- [🌎 College Loans: The Basics from the College Board](https://bigfuture.collegeboard.org/pay-for-college/loans/college-loans-the-basics)
+- [📄 College Loans: The Basics from the College Board](https://bigfuture.collegeboard.org/pay-for-college/loans/college-loans-the-basics)
 
 If you'd like to explore more about ways to succeed in college without taking on
-too much debt, try playing [🌎 Payback](https://www.timeforpayback.com/). This
-is a web-based game created by [🌎 Next Gen Personal Finance](https://www.ngpf.org/),
+too much debt, try playing [📄 Payback](https://www.timeforpayback.com/). This
+is a web-based game created by [📄 Next Gen Personal Finance](https://www.ngpf.org/),
 a nonprofit whose mission is to ensure all students leave high school with the
 financial skills to thrive in the future.
 
@@ -222,7 +222,7 @@ bills in a logical progression and to work your way back to financial solvency.
 Laura D. Adams has some suggestions for people who are in this situation. If
 you'd like to learn more
 
-[🌎 Six Steps to Take When You Can't Pay Bills](https://lauradadams.com/6-steps-when-you-cant-pay-bills)
+[📄 Six Steps to Take When You Can't Pay Bills](https://lauradadams.com/6-steps-when-you-cant-pay-bills)
 
 Also be sure to click on the "safety net" link on the bottom for some ideas
 about how to avoid this situation in the future.
@@ -231,22 +231,22 @@ about how to avoid this situation in the future.
 
 # Resources
 
-- [🎬 What is the Time Value of Money](https://www.youtube.com/watch?v=BTMfLUhjb3Q)
-- [🎬 Time Value of Money - Macroeconomics](https://www.youtube.com/watch?v=nfkqCv3Rd_g)
-- [🎬 Compount Interest Concept Video](https://vimeo.com/248776504)
-- [🌎 Finance Calculator from Calculator.net](https://www.calculator.net/finance-calculator.html?ctype=endamount&ctargetamountv=500000&cyearsv=40&cstartingprinciplev=0&cinterestratev=5&ccontributeamountv=2400&ciadditionat1=end&printit=0)
-- [🌎 Financial Calculators from Smart About Money](https://www.smartaboutmoney.org/Tools/Calculators)
-- [🌎 Saving for College by FINRA](http://www.finra.org/investors/saving-college)
-- [🌎 Overall, college has gotten more expensive](https://trends.collegeboard.org/college-pricing/figures-tables/average-rates-growth-published-charges-decade)
-- [🌎 Many states (like California) are devoting fewer resources to funding higher eduction](https://www.ppic.org/publication/higher-education-funding-in-california/)
-- [🌎 Colleges are adding more expensive services and amenities on campus in order to compete for students](https://www.usnews.com/news/college-of-tomorrow/articles/2014/09/22/how-do-schools-market-themselves-to-attract-students)
-- [🌎 Students are increasingly attending private colleges, including private for-profit colleges](https://nces.ed.gov/programs/coe/indicator_cha.asp)
+- [📺 What is the Time Value of Money](https://www.youtube.com/watch?v=BTMfLUhjb3Q)
+- [📺 Time Value of Money - Macroeconomics](https://www.youtube.com/watch?v=nfkqCv3Rd_g)
+- [📺 Compount Interest Concept Video](https://vimeo.com/248776504)
+- [📄 Finance Calculator from Calculator.net](https://www.calculator.net/finance-calculator.html?ctype=endamount&ctargetamountv=500000&cyearsv=40&cstartingprinciplev=0&cinterestratev=5&ccontributeamountv=2400&ciadditionat1=end&printit=0)
+- [📄 Financial Calculators from Smart About Money](https://www.smartaboutmoney.org/Tools/Calculators)
+- [📄 Saving for College by FINRA](http://www.finra.org/investors/saving-college)
+- [📄 Overall, college has gotten more expensive](https://trends.collegeboard.org/college-pricing/figures-tables/average-rates-growth-published-charges-decade)
+- [📄 Many states (like California) are devoting fewer resources to funding higher eduction](https://www.ppic.org/publication/higher-education-funding-in-california/)
+- [📄 Colleges are adding more expensive services and amenities on campus in order to compete for students](https://www.usnews.com/news/college-of-tomorrow/articles/2014/09/22/how-do-schools-market-themselves-to-attract-students)
+- [📄 Students are increasingly attending private colleges, including private for-profit colleges](https://nces.ed.gov/programs/coe/indicator_cha.asp)
 - [⬇ Many students don't understand the impact of taking on college loans (some don't even know they are borrowing money)](https://www.brookings.edu/wp-content/uploads/2016/06/Are-College-Students-Borrowing-Blindly_Dec-2014.pdf)
-- [🌎 research indicates that a student's major has a much bigger effect on earnings](https://cew.georgetown.edu/cew-reports/valueofcollegemajors/)
-- [🌎 College Loans: The Basics from the College Board](https://bigfuture.collegeboard.org/pay-for-college/loans/college-loans-the-basics)
-- [🌎 Payback](https://www.timeforpayback.com/)
-- [🌎 Next Gen Personal Finance](https://www.ngpf.org/)
-- [🌎 Six Steps to Take When You Can't Pay Bills](https://lauradadams.com/6-steps-when-you-cant-pay-bills)
+- [📄 research indicates that a student's major has a much bigger effect on earnings](https://cew.georgetown.edu/cew-reports/valueofcollegemajors/)
+- [📄 College Loans: The Basics from the College Board](https://bigfuture.collegeboard.org/pay-for-college/loans/college-loans-the-basics)
+- [📄 Payback](https://www.timeforpayback.com/)
+- [📄 Next Gen Personal Finance](https://www.ngpf.org/)
+- [📄 Six Steps to Take When You Can't Pay Bills](https://lauradadams.com/6-steps-when-you-cant-pay-bills)
 
 BUSE 120 Canvas Notes
 

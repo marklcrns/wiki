@@ -11,7 +11,7 @@ date: Oct 09, 2020
 
 First, create an _App Password_ for Mutt.
 
-- [🌎 Create a Gmail App Password](https://support.google.com/accounts/answer/185833?hl=en)
+- [📄 Create a Gmail App Password](https://support.google.com/accounts/answer/185833?hl=en)
 
 Then edit your `.muttrc` with these basic configurations
 
@@ -38,14 +38,14 @@ set move = no
 set imap_keepalive = 900
 ```
 
-- [🌎 Neomutt sample_neomuttrc](https://git.mobley.ne02ptzero.me/~louis/neomutt/tree/master/contrib/sample.neomuttrc)
-- [🌎 Mutt-wizard](https://github.com/LukeSmithxyz/mutt-wizard)
+- [📄 Neomutt sample_neomuttrc](https://git.mobley.ne02ptzero.me/~louis/neomutt/tree/master/contrib/sample.neomuttrc)
+- [📄 Mutt-wizard](https://github.com/LukeSmithxyz/mutt-wizard)
 
 Ref:
 
-- [🌎 Check Gmail through other email platforms](https://support.google.com/mail/answer/7126229?hl=en)
-- [🌎 How to install/setup mutt with Gmail on CentOS and Ubuntu?](https://unix.stackexchange.com/a/525948)
-- [🎬 Email on the terminal with mutt](https://www.youtube.com/watch?v=2jMInHnpNfQ)
+- [📄 Check Gmail through other email platforms](https://support.google.com/mail/answer/7126229?hl=en)
+- [📄 How to install/setup mutt with Gmail on CentOS and Ubuntu?](https://unix.stackexchange.com/a/525948)
+- [📺 Email on the terminal with mutt](https://www.youtube.com/watch?v=2jMInHnpNfQ)
 
 ## Encrypting Passwords
 
@@ -90,23 +90,23 @@ rm ~/.mutt/.pass
 Done!
 
 - [↪ More on gpg encryption](../gpg/usage)
-- [🌎 Another way of encrypting IMAP/SMPT Passwords](https://pthree.org/2012/01/07/encrypted-mutt-imap-smtp-passwords/)
+- [📄 Another way of encrypting IMAP/SMPT Passwords](https://pthree.org/2012/01/07/encrypted-mutt-imap-smtp-passwords/)
 
 Ref:
 
-- [🌎 MUTT - encrypting password with GNUpg](https://vigasdeep.com/2012/06/08/mutt-encrypting-password-with-gnupg/)
+- [📄 MUTT - encrypting password with GNUpg](https://vigasdeep.com/2012/06/08/mutt-encrypting-password-with-gnupg/)
 
 
 <br>
 
 # Resources
 
-- [🌎 Create a Gmail App Password](https://support.google.com/accounts/answer/185833?hl=en)
-- [🌎 Neomutt sample_neomuttrc](https://git.mobley.ne02ptzero.me/~louis/neomutt/tree/master/contrib/sample.neomuttrc)
-- [🌎 Mutt-wizard](https://github.com/LukeSmithxyz/mutt-wizard)
-- [🌎 Check Gmail through other email platforms](https://support.google.com/mail/answer/7126229?hl=en)
-- [🌎 How to install/setup mutt with Gmail on CentOS and Ubuntu?](https://unix.stackexchange.com/a/525948)
-- [🎬 Email on the terminal with mutt](https://www.youtube.com/watch?v=2jMInHnpNfQ)
-- [🌎 Another way of encrypting IMAP/SMPT Passwords](https://pthree.org/2012/01/07/encrypted-mutt-imap-smtp-passwords/)
-- [🌎 MUTT - encrypting password with GNUpg](https://vigasdeep.com/2012/06/08/mutt-encrypting-password-with-gnupg/)
+- [📄 Create a Gmail App Password](https://support.google.com/accounts/answer/185833?hl=en)
+- [📄 Neomutt sample_neomuttrc](https://git.mobley.ne02ptzero.me/~louis/neomutt/tree/master/contrib/sample.neomuttrc)
+- [📄 Mutt-wizard](https://github.com/LukeSmithxyz/mutt-wizard)
+- [📄 Check Gmail through other email platforms](https://support.google.com/mail/answer/7126229?hl=en)
+- [📄 How to install/setup mutt with Gmail on CentOS and Ubuntu?](https://unix.stackexchange.com/a/525948)
+- [📺 Email on the terminal with mutt](https://www.youtube.com/watch?v=2jMInHnpNfQ)
+- [📄 Another way of encrypting IMAP/SMPT Passwords](https://pthree.org/2012/01/07/encrypted-mutt-imap-smtp-passwords/)
+- [📄 MUTT - encrypting password with GNUpg](https://vigasdeep.com/2012/06/08/mutt-encrypting-password-with-gnupg/)
 

@@ -21,7 +21,7 @@ date: 2020-08-17
 
 Textbook
 
-- [🌎 MyLab with eText](https://portal.mypearson.com/course-home) Starting Out with
+- [📄 MyLab with eText](https://portal.mypearson.com/course-home) Starting Out with
   C++: Early Objects by Tony Gaddis, Judy Walters, Godfrey Muganda
   * My Pearson account [credentials](vfile:../../../files/fall-2020/CISC-192/pearson_account.txt)
 

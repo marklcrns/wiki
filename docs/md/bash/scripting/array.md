@@ -123,8 +123,8 @@ done
 
 Ref:
 
-- [🌎 Bash Array – Declare, Initialize and Access – Examples](https://www.tutorialkart.com/bash-shell-scripting/bash-array/)
-- [🌎 Bash append to array](https://linuxhint.com/bash_append_array/)
+- [📄 Bash Array – Declare, Initialize and Access – Examples](https://www.tutorialkart.com/bash-shell-scripting/bash-array/)
+- [📄 Bash append to array](https://linuxhint.com/bash_append_array/)
 
 
 ## Split String Into Array
@@ -156,8 +156,8 @@ into array.
 
 Ref:
 
-- [🌎 Split string into an array in Bash: Method 1](https://stackoverflow.com/a/10586169/11850077)
-- [🌎 Split string into an array in Bash: Method 2](https://stackoverflow.com/a/45201229/11850077)
+- [📄 Split string into an array in Bash: Method 1](https://stackoverflow.com/a/10586169/11850077)
+- [📄 Split string into an array in Bash: Method 2](https://stackoverflow.com/a/45201229/11850077)
 
 
 ## Detecting if Variable is an Array
@@ -173,7 +173,7 @@ fi
 
 Ref:
 
-- [🌎 How do I check if variable is an array?](https://stackoverflow.com/a/14525326/11850077)
+- [📄 How do I check if variable is an array?](https://stackoverflow.com/a/14525326/11850077)
 
 
 ## Passing An Array as Function Argument
@@ -196,17 +196,17 @@ my_function "${array[@]}"
 
 Ref:
 
-- [🌎 How to pass an array as function argument?](https://askubuntu.com/a/674347)
+- [📄 How to pass an array as function argument?](https://askubuntu.com/a/674347)
 
 
 <br>
 
 # Resources
 
-- [🌎 Bash Array – Declare, Initialize and Access – Examples](https://www.tutorialkart.com/bash-shell-scripting/bash-array/)
-- [🌎 Bash append to array](https://linuxhint.com/bash_append_array/)
-- [🌎 Split string into an array in Bash: Method 1](https://stackoverflow.com/a/10586169/11850077)
-- [🌎 Split string into an array in Bash: Method 2](https://stackoverflow.com/a/45201229/11850077)
-- [🌎 How do I check if variable is an array?](https://stackoverflow.com/a/14525326/11850077)
-- [🌎 How to pass an array as function argument?](https://askubuntu.com/a/674347)
+- [📄 Bash Array – Declare, Initialize and Access – Examples](https://www.tutorialkart.com/bash-shell-scripting/bash-array/)
+- [📄 Bash append to array](https://linuxhint.com/bash_append_array/)
+- [📄 Split string into an array in Bash: Method 1](https://stackoverflow.com/a/10586169/11850077)
+- [📄 Split string into an array in Bash: Method 2](https://stackoverflow.com/a/45201229/11850077)
+- [📄 How do I check if variable is an array?](https://stackoverflow.com/a/14525326/11850077)
+- [📄 How to pass an array as function argument?](https://askubuntu.com/a/674347)
 

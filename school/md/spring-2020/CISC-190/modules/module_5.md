@@ -50,7 +50,7 @@ summary: Module 5 notes and exercises
 
 ### Explain
 
-- [🎬 CISC 190 M5 Explain: Conditional Execution](https://www.youtube.com/watch?v=_tSQClAafcM)
+- [📺 CISC 190 M5 Explain: Conditional Execution](https://www.youtube.com/watch?v=_tSQClAafcM)
 
 ### Reflect
 

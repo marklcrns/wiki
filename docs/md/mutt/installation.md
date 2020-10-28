@@ -34,15 +34,15 @@ set certificate_file = "~/.mutt/certificates"
 
 Ref:
 
-- [🌎 Mutt – A Command Line Email Client to Send Mails from Terminal](https://www.tecmint.com/send-mail-from-command-line-using-mutt-command/)
-- [🌎 How to Use the Fast and Powerful Mutt Email Client with Gmail](https://lifehacker.com/how-to-use-the-fast-and-powerful-mutt-email-client-with-5574557)
-- [🌎 jtdaugherty/mutt-tutorial](https://github.com/jtdaugherty/mutt-tutorial)
+- [📄 Mutt – A Command Line Email Client to Send Mails from Terminal](https://www.tecmint.com/send-mail-from-command-line-using-mutt-command/)
+- [📄 How to Use the Fast and Powerful Mutt Email Client with Gmail](https://lifehacker.com/how-to-use-the-fast-and-powerful-mutt-email-client-with-5574557)
+- [📄 jtdaugherty/mutt-tutorial](https://github.com/jtdaugherty/mutt-tutorial)
 
 <br>
 
 # Resources
 
-- [🌎 Mutt – A Command Line Email Client to Send Mails from Terminal](https://www.tecmint.com/send-mail-from-command-line-using-mutt-command/)
-- [🌎 How to Use the Fast and Powerful Mutt Email Client with Gmail](https://lifehacker.com/how-to-use-the-fast-and-powerful-mutt-email-client-with-5574557)
-- [🌎 jtdaugherty/mutt-tutorial](https://github.com/jtdaugherty/mutt-tutorial)
+- [📄 Mutt – A Command Line Email Client to Send Mails from Terminal](https://www.tecmint.com/send-mail-from-command-line-using-mutt-command/)
+- [📄 How to Use the Fast and Powerful Mutt Email Client with Gmail](https://lifehacker.com/how-to-use-the-fast-and-powerful-mutt-email-client-with-5574557)
+- [📄 jtdaugherty/mutt-tutorial](https://github.com/jtdaugherty/mutt-tutorial)
 

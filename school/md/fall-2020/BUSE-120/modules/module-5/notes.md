@@ -29,14 +29,14 @@ well. However, it's a little academic and it probably doesn't feel natural or
 comfortable for everyone. Another way to think about the process is to follow
 some sequential steps instead of a cycle.
 
-[🌎 The Smart About Money (SAM) website](https://www.smartaboutmoney.org/),
-sponsored by the [🌎 National Endowment for Financial Education](https://www.nefe.org/)
+[📄 The Smart About Money (SAM) website](https://www.smartaboutmoney.org/),
+sponsored by the [📄 National Endowment for Financial Education](https://www.nefe.org/)
 is a good place to learn more about this approach to managing your money. Please
 follow the link below to look through the SAM "10 Basic Steps" webpage and then
 click on any steps that interest you to learn more. You may also want to search
 through the rest of the website for more information.
 
-- [🌎 SAM 10 Basic Steps Webpage](https://www.smartaboutmoney.org/Tools/10-Basic-Steps)
+- [📄 SAM 10 Basic Steps Webpage](https://www.smartaboutmoney.org/Tools/10-Basic-Steps)
 
 #### Things to Avoid in Budgeting
 
@@ -49,7 +49,7 @@ how to make sure you don't make these mistakes). I think it's a good
 introduction to some important budgeting concepts. Please watch the video and
 then continue reading the rest of this page.
 
-- [🎬 6 Budget Mistakes to Avoid | Budgeting Tips for Beginners](https://www.youtube.com/watch?v=e_5IdwMRclA)
+- [📺 6 Budget Mistakes to Avoid | Budgeting Tips for Beginners](https://www.youtube.com/watch?v=e_5IdwMRclA)
 
 #### Updating Your Budget
 
@@ -70,7 +70,7 @@ every year to update your financial statements and also review important
 financial documents and services. Please view the link if you're interested and
 then move on to the next page in this module.
 
-- [🌎 Take a Personal Money Day](https://lauradadams.com/richer-life-lab/7-take-a-personal-money-day)
+- [📄 Take a Personal Money Day](https://lauradadams.com/richer-life-lab/7-take-a-personal-money-day)
 
 ### 5.3 Windfalls and Budgeting
 
@@ -103,7 +103,7 @@ The short video below provides some suggestions on smart ways to spend a
 windfall. Please watch the video and then continue on to the next page in the
 module.
 
-- [🎬 Sudden Money: Managing a Windfall](https://www.youtube.com/watch?v=7AJVpiy-9bg)
+- [📺 Sudden Money: Managing a Windfall](https://www.youtube.com/watch?v=7AJVpiy-9bg)
 
 ### 5.4 Ways to Reduce Spending
 
@@ -193,7 +193,7 @@ I think it's very interesting that more than twice as many millionaires cited
 saving as more important than earning. If you're interested in learning more
 about real millionaires (as opposed to our often incorrect assumptions), you
 might enjoy reading The
-[🌎 Millionaire Next Door by Thomas J. Stanley and William D. Danko](https://www.amazon.com/Millionaire-Next-Door-Surprising-Americas/dp/1589795474/ref=sr_1_1?s=books&ie=UTF8&qid=1485268858&sr=1-1&keywords=the+millionaire+next+door).
+[📄 Millionaire Next Door by Thomas J. Stanley and William D. Danko](https://www.amazon.com/Millionaire-Next-Door-Surprising-Americas/dp/1589795474/ref=sr_1_1?s=books&ie=UTF8&qid=1485268858&sr=1-1&keywords=the+millionaire+next+door).
 It's a research-based book about the characteristics and behaviors that helped
 millionaires achieve their wealth. I found it really eye-opening.
 
@@ -208,13 +208,13 @@ when creating your own budget at the end of this module.
 
 # Resources
 
-- [🌎 The Smart About Money (SAM) website](https://www.smartaboutmoney.org/)
-- [🌎 National Endowment for Financial Education](https://www.nefe.org/)
-- [🌎 SAM 10 Basic Steps Webpage](https://www.smartaboutmoney.org/Tools/10-Basic-Steps)
-- [🎬 6 Budget Mistakes to Avoid | Budgeting Tips for Beginners](https://www.youtube.com/watch?v=e_5IdwMRclA)
-- [🌎 Take a Personal Money Day](https://lauradadams.com/richer-life-lab/7-take-a-personal-money-day)
-- [🎬 Sudden Money: Managing a Windfall](https://www.youtube.com/watch?v=7AJVpiy-9bg)
-- [🌎 Millionaire Next Door by Thomas J. Stanley and William D. Danko](https://www.amazon.com/Millionaire-Next-Door-Surprising-Americas/dp/1589795474/ref=sr_1_1?s=books&ie=UTF8&qid=1485268858&sr=1-1&keywords=the+millionaire+next+door)
+- [📄 The Smart About Money (SAM) website](https://www.smartaboutmoney.org/)
+- [📄 National Endowment for Financial Education](https://www.nefe.org/)
+- [📄 SAM 10 Basic Steps Webpage](https://www.smartaboutmoney.org/Tools/10-Basic-Steps)
+- [📺 6 Budget Mistakes to Avoid | Budgeting Tips for Beginners](https://www.youtube.com/watch?v=e_5IdwMRclA)
+- [📄 Take a Personal Money Day](https://lauradadams.com/richer-life-lab/7-take-a-personal-money-day)
+- [📺 Sudden Money: Managing a Windfall](https://www.youtube.com/watch?v=7AJVpiy-9bg)
+- [📄 Millionaire Next Door by Thomas J. Stanley and William D. Danko](https://www.amazon.com/Millionaire-Next-Door-Surprising-Americas/dp/1589795474/ref=sr_1_1?s=books&ie=UTF8&qid=1485268858&sr=1-1&keywords=the+millionaire+next+door)
 
 BUSE 120 Canvas Notes
 

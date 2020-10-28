@@ -17,21 +17,21 @@ summary: CISC 190 Java Programming class
 
 Install the following programs
 
-- [🌎 JDK 8](https:/adoptopenjdk.net/)
+- [📄 JDK 8](https:/adoptopenjdk.net/)
     * Version: OpenJDK 8 (LTS)
     * Choose a JVM: HotSpot
 - [⬇ Installation Guide](file:../../../files/spring-2020/CISC-190/openJDKInstallationGuide.pdf)
-- [🌎 JRE 8](https:/www.java.com/en/download/)
+- [📄 JRE 8](https:/www.java.com/en/download/)
 
 ## Course Materials
 
 - [⬇ Syllabus](file:../../../files/spring-2020/CISC-190/cisc-190_syllabus.pdf)
-- [🌎 Dr. Java](https:/www.drjava.org/)
+- [📄 Dr. Java](https:/www.drjava.org/)
     * NOTE: Make sure to download `.jar` file instead of the executable
-- [🌎 Net Beans 8.2](https:/netbeans.org/downloads/8.2/) IDE
-- [🌎 CISC 190 bookClasses.zip](https:/sdccd.instructure.com/courses/2376907/modules/items/39304903)
-- [🌎 CISC 190 mediasources.zip](https:/sdccd.instructure.com/courses/2376907/modules/items/39304904)
-- [🎬 Tutorial on how to set up class paths with Dr. Java](https:/www.youtube.com/watch?v=AxRCoRMpPy4)
+- [📄 Net Beans 8.2](https:/netbeans.org/downloads/8.2/) IDE
+- [📄 CISC 190 bookClasses.zip](https:/sdccd.instructure.com/courses/2376907/modules/items/39304903)
+- [📄 CISC 190 mediasources.zip](https:/sdccd.instructure.com/courses/2376907/modules/items/39304904)
+- [📺 Tutorial on how to set up class paths with Dr. Java](https:/www.youtube.com/watch?v=AxRCoRMpPy4)
 
 Text books
 

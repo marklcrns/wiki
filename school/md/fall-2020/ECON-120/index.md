@@ -20,7 +20,7 @@ date: 2020-08-17
 - [⬇ Syllabus](file:../../../files/fall-2020/ECON-120/syllabus.pdf)
 - Macroeconomics: Principles/Applications/Tools, 10e by Arthur O'Sullivan,
   Steven Sheffrin, Stepehn Perez
-- [🌎 MyLab & Mastering](https://portal.mypearson.com/course-home)
+- [📄 MyLab & Mastering](https://portal.mypearson.com/course-home)
   * My Pearson account [credentials](vfile:../../../files/fall-2020/ECON-120/pearson_account.txt)
 
 

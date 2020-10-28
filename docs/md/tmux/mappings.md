@@ -7,7 +7,7 @@ date: 2020-03-06
 
 # Tmux Mappings
 
-- [🌎 Renaming sessions](https://superuser.com/a/428025)
+- [📄 Renaming sessions](https://superuser.com/a/428025)
 
 ## General
 
@@ -34,5 +34,5 @@ date: 2020-03-06
 
 # Resources
 
-- [🌎 Renaming sessions](https://superuser.com/a/428025)
+- [📄 Renaming sessions](https://superuser.com/a/428025)
 

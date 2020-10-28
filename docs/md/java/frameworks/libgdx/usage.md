@@ -9,7 +9,7 @@ date: Oct 17, 2020
 
 ## Using `gradlew` or `gradle`
 
-More on [⚓ gradle usage](../../tools/gradle/usage.md#usage)
+More on [📑 gradle usage](../../tools/gradle/usage.md#usage)
 
 ### Basic Usage
 
@@ -20,7 +20,7 @@ More on [⚓ gradle usage](../../tools/gradle/usage.md#usage)
 
 ## Adding Libraries Manually
 
-- [🌎 LibGDX - Adding Libraries Manually (Gradle)](https://www.youtube.com/watch?v=3qKb11EYlU4)
+- [📄 LibGDX - Adding Libraries Manually (Gradle)](https://www.youtube.com/watch?v=3qKb11EYlU4)
 
 
 ## Adding JUnit 5 for Testing
@@ -97,16 +97,16 @@ gradlew test
 
 Ref:
 
-- [🌎 Setting up Kotlin, JUnit, Mockito, and Gitlab CI for Libgdx Projects](https://blog.noynoy.org/setting-up-kotlin-junit-mockito-gitlab-ci-for-libgdx-projects/)
-- [🌎 Adding JUnit to your Libgdx Project](https://neutroniogames.wordpress.com/2017/05/18/adding-junit-to-your-libgdx-project/)
-- [🌎 JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
+- [📄 Setting up Kotlin, JUnit, Mockito, and Gitlab CI for Libgdx Projects](https://blog.noynoy.org/setting-up-kotlin-junit-mockito-gitlab-ci-for-libgdx-projects/)
+- [📄 Adding JUnit to your Libgdx Project](https://neutroniogames.wordpress.com/2017/05/18/adding-junit-to-your-libgdx-project/)
+- [📄 JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
 
 <br>
 
 # Resources
 
-- [🌎 LibGDX - Adding Libraries Manually (Gradle)](https://www.youtube.com/watch?v=3qKb11EYlU4)
-- [🌎 Setting up Kotlin, JUnit, Mockito, and Gitlab CI for Libgdx Projects](https://blog.noynoy.org/setting-up-kotlin-junit-mockito-gitlab-ci-for-libgdx-projects/)
-- [🌎 Adding JUnit to your Libgdx Project](https://neutroniogames.wordpress.com/2017/05/18/adding-junit-to-your-libgdx-project/)
-- [🌎 JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
+- [📄 LibGDX - Adding Libraries Manually (Gradle)](https://www.youtube.com/watch?v=3qKb11EYlU4)
+- [📄 Setting up Kotlin, JUnit, Mockito, and Gitlab CI for Libgdx Projects](https://blog.noynoy.org/setting-up-kotlin-junit-mockito-gitlab-ci-for-libgdx-projects/)
+- [📄 Adding JUnit to your Libgdx Project](https://neutroniogames.wordpress.com/2017/05/18/adding-junit-to-your-libgdx-project/)
+- [📄 JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
 

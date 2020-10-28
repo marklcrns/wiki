@@ -29,7 +29,7 @@ continue with this page. Note: You do not need to provide your email address to
 get your life expectancy. Just close that window when you come to it and the
 website will display your results.
 
-- [🌎 How Long Will I Live?](https://www.blueprintincome.com/tools/life-expectancy-calculator-how-long-will-i-live/)
+- [📄 How Long Will I Live?](https://www.blueprintincome.com/tools/life-expectancy-calculator-how-long-will-i-live/)
 
 #### Your Retirement Savings
 
@@ -42,7 +42,7 @@ parameters (such as the percentage of income required after retirement) to see
 what happens with the result. When you're finished with the calculator, please
 click on the "Mark as Done" button at the top of the page and then continue on.
 
-- [🌎 Retirement Calculator from Calculator.net](https://www.calculator.net/retirement-calculator.html)
+- [📄 Retirement Calculator from Calculator.net](https://www.calculator.net/retirement-calculator.html)
 
 Hopefully you found the information from the retirement calculator to be useful.
 However, some people have trouble with estimating all the specific information
@@ -98,7 +98,7 @@ it grows at an increasing rate.
 This concept is particularly important when it comes to retirement savings
 because ideally we save for retirement over a long period of time.
 
-Take a look at the chart below from [🌎 J.P. Morgan Asset
+Take a look at the chart below from [📄 J.P. Morgan Asset
 Management](https://am.jpmorgan.com/us/en/asset-management/gim/adv/home). In
 particular, notice the three scenarios and how much of an impact time has on the
 results in retirement.
@@ -163,7 +163,7 @@ keep the chart, but be aware that some of the information may change because the
 tax code changes each year. After you're done, please return and continue on to
 the next page in this module.
 
-- [🌎 Employer Retirement Plan Options](https://www.rbcwm-usa.com/resources/file-687843.pdf)
+- [📄 Employer Retirement Plan Options](https://www.rbcwm-usa.com/resources/file-687843.pdf)
 
 
 ### 10.4 Individual Retirement Accounts
@@ -188,18 +188,18 @@ aware that some of the information may change because the tax code changes each
 year. After you're done, please return and continue on to the next page in this
 module.
 
-- [🌎 Roth vs. Traditional IRAs: A comparison](https://investor.vanguard.com/ira/roth-vs-traditional-ira)
+- [📄 Roth vs. Traditional IRAs: A comparison](https://investor.vanguard.com/ira/roth-vs-traditional-ira)
 
 ### 10.5 Social Security and Other Retirement Info
 
 In the reading for this module we learned a little about Social Security, which can be thought of as the federal government's retirement plan for individuals. You can get personalized information about your own expected Social Security benefits as well as other information about saving and investing for retirement at the links below:
 
-- [🌎 My Social Security Account](https://www.ssa.gov/myaccount/)
+- [📄 My Social Security Account](https://www.ssa.gov/myaccount/)
   * A free account to get personalized estimates of future benefits based on
     your real earnings as well as other information
-- [🌎 Social Security Homepage](https://www.ssa.gov/)
+- [📄 Social Security Homepage](https://www.ssa.gov/)
   * Other general information about Social Security.
-- [🌎 FINRA Retirement Webpage](http://www.finra.org/investors/retirement)
+- [📄 FINRA Retirement Webpage](http://www.finra.org/investors/retirement)
   * More information about saving and investing for retirement, including
     information about various kinds of retirement accounts and managing income
     during retirement.
@@ -213,7 +213,7 @@ the two. (Feel free to skip over the part at the end about the services offered
 by LegalZoom). When you're finished viewing the video, please continue on to the
 next page in this module.
 
-- [🎬 Last Will vs. Living Trust: What's the Difference?](https://www.youtube.com/watch?v=6Cy191vAnI8)
+- [📺 Last Will vs. Living Trust: What's the Difference?](https://www.youtube.com/watch?v=6Cy191vAnI8)
 
 ### 10.7 Finances and Aging
 
@@ -221,10 +221,10 @@ The last topic I'd like to touch on in this module is the importance of financia
 
 The links below will bring you to some additional information about managing someone else's finances if they have experienced diminished financial capacity as well as managing your own finances in a caregiver role. Please look over the links, copy or write down any information that would be helpful for you, and then continue on to the "activities" portion of this module.
 
-- [🌎 Planning for Diminished Capacity and Illness](https://www.sec.gov/oiea/investor-alerts-bulletins/ib_illness.html)
+- [📄 Planning for Diminished Capacity and Illness](https://www.sec.gov/oiea/investor-alerts-bulletins/ib_illness.html)
   * A bulletin from the U.S. Securities and Exchange Commission about diminished
     financial capacity and steps to prepare for it.
-- [🌎 Managing Your Finances as a Caregiver](https://www.smartaboutmoney.org/Topics/Retirement-and-Aging/Aging-and-Money/7-Tips-to-Managing-Your-Finances-as-a-Caregiver?utm_source=newsletter&utm_medium=email&utm_content=http%3A//d31hzlhk6di2h5.cloudfront.net/20170525/b7/d5/88/37/4ebd2e251b089788fa2ae3c7_278x118.png&utm_campaign=nefeanalytics%40gmail.com)
+- [📄 Managing Your Finances as a Caregiver](https://www.smartaboutmoney.org/Topics/Retirement-and-Aging/Aging-and-Money/7-Tips-to-Managing-Your-Finances-as-a-Caregiver?utm_source=newsletter&utm_medium=email&utm_content=http%3A//d31hzlhk6di2h5.cloudfront.net/20170525/b7/d5/88/37/4ebd2e251b089788fa2ae3c7_278x118.png&utm_campaign=nefeanalytics%40gmail.com)
   * Tips from Smart About Money to manage your own finances if you find yourself
     in a caregiver role; something that you may have already experienced or will
     experience in the future if you have to provide care for a loved one.
@@ -234,17 +234,17 @@ The links below will bring you to some additional information about managing som
 
 # Resources
 
-- [🌎 How Long Will I Live?](https://www.blueprintincome.com/tools/life-expectancy-calculator-how-long-will-i-live/)
-- [🌎 Retirement Calculator from Calculator.net](https://www.calculator.net/retirement-calculator.html)
-- [🌎 J.P. Morgan Asset Management](https://am.jpmorgan.com/us/en/asset-management/gim/adv/home)
-- [🌎 Employer Retirement Plan Options](https://www.rbcwm-usa.com/resources/file-687843.pdf)
-- [🌎 Roth vs. Traditional IRAs: A comparison](https://investor.vanguard.com/ira/roth-vs-traditional-ira)
-- [🌎 My Social Security Account](https://www.ssa.gov/myaccount/)
-- [🌎 Social Security Homepage](https://www.ssa.gov/)
-- [🌎 FINRA Retirement Webpage](http://www.finra.org/investors/retirement)
-- [🎬 Last Will vs. Living Trust: What's the Difference?](https://www.youtube.com/watch?v=6Cy191vAnI8)
-- [🌎 Planning for Diminished Capacity and Illness](https://www.sec.gov/oiea/investor-alerts-bulletins/ib_illness.html)
-- [🌎 Managing Your Finances as a Caregiver](https://www.smartaboutmoney.org/Topics/Retirement-and-Aging/Aging-and-Money/7-Tips-to-Managing-Your-Finances-as-a-Caregiver?utm_source=newsletter&utm_medium=email&utm_content=http%3A//d31hzlhk6di2h5.cloudfront.net/20170525/b7/d5/88/37/4ebd2e251b089788fa2ae3c7_278x118.png&utm_campaign=nefeanalytics%40gmail.com)
+- [📄 How Long Will I Live?](https://www.blueprintincome.com/tools/life-expectancy-calculator-how-long-will-i-live/)
+- [📄 Retirement Calculator from Calculator.net](https://www.calculator.net/retirement-calculator.html)
+- [📄 J.P. Morgan Asset Management](https://am.jpmorgan.com/us/en/asset-management/gim/adv/home)
+- [📄 Employer Retirement Plan Options](https://www.rbcwm-usa.com/resources/file-687843.pdf)
+- [📄 Roth vs. Traditional IRAs: A comparison](https://investor.vanguard.com/ira/roth-vs-traditional-ira)
+- [📄 My Social Security Account](https://www.ssa.gov/myaccount/)
+- [📄 Social Security Homepage](https://www.ssa.gov/)
+- [📄 FINRA Retirement Webpage](http://www.finra.org/investors/retirement)
+- [📺 Last Will vs. Living Trust: What's the Difference?](https://www.youtube.com/watch?v=6Cy191vAnI8)
+- [📄 Planning for Diminished Capacity and Illness](https://www.sec.gov/oiea/investor-alerts-bulletins/ib_illness.html)
+- [📄 Managing Your Finances as a Caregiver](https://www.smartaboutmoney.org/Topics/Retirement-and-Aging/Aging-and-Money/7-Tips-to-Managing-Your-Finances-as-a-Caregiver?utm_source=newsletter&utm_medium=email&utm_content=http%3A//d31hzlhk6di2h5.cloudfront.net/20170525/b7/d5/88/37/4ebd2e251b089788fa2ae3c7_278x118.png&utm_campaign=nefeanalytics%40gmail.com)
 
 BUSE 120 Canvas Notes
 

@@ -85,7 +85,7 @@ The Game of the Generals (GoG) Board Game
 
 ### Explain
 
-- [🎬 CISC 190 M-8 Explain: Final Project - Game of the Generals Board Game](https://www.youtube.com/watch?v=O1iplL8vho8)
+- [📺 CISC 190 M-8 Explain: Final Project - Game of the Generals Board Game](https://www.youtube.com/watch?v=O1iplL8vho8)
 
 
 ### Reflect
@@ -95,21 +95,21 @@ The Game of the Generals (GoG) Board Game
 
 ## Resources
 
-- [🎬 Java Chess Engine Tutorial](https://www.youtube.com/watch?v=h8fSdSUKttk&list=PLOJzCFLZdG4zk5d-1_ah2B4kqZSeIlWtt)
-- [🎬 Java Tutorial - Creating a Minesweeper](https://www.youtube.com/watch?v=RFpJp62ZoY8&list=PLGxHvpw-PAk6QvPw0fYe8bks31GRKvymK)
-- [🎬 JLayeredPane demo tutorial](https://www.youtube.com/watch?v=KNGbmsq3huQ)
-- [🌎 Stackoverflow - Adding JLayeredPanl to Panel](https://stackoverflow.com/questions/1764115/adding-jlayeredpane-to-jpanel)
-- [🌎 Stackoverflow - Adding integers to int array](https://stackoverflow.com/questions/29172164/adding-integers-to-an-int-array/29172210#29172210)
-- [🌎 Stackoverflow - Add padding to JTextArea](https://stackoverflow.com/questions/37381593/how-to-put-padding-around-jtextarea)
-- [🌎 GeeksforGeeks - Adding an element to int Array](https://www.geeksforgeeks.org/how-to-add-an-element-to-an-array-in-java/)
-- [🌎 GeeksforGeeks - JPopupMenu Docs](https://www.geeksforgeeks.org/java-swing-jpopupmenu/)
-- [🌎 GeeksforGeeks - JSeparator Docs](https://www.geeksforgeeks.org/java-swing-jseparator-with-examples/)
-- [🌎 How to get current timestamp in Java](https://tecadmin.net/get-current-timestamp-in-java/)
-- [🌎 JTextField docs and examples](https://www.codejava.net/java-se/swing/jtextfield-basic-tutorial-and-examples)
-- [🌎 Java Convert String to Int examples](https://beginnersbook.com/2013/12/how-to-convert-string-to-int-in-java/)
-- [🌎 Stackoverflow - About ComboBox in JOptionsPane](https://stackoverflow.com/questions/14353302/displaying-image-in-java)
-- [🎬 YouTube - How to get the JComboBox value in java Swing getSelectedItem](https://www.youtube.com/watch?v=hSghISXr7b8)
+- [📺 Java Chess Engine Tutorial](https://www.youtube.com/watch?v=h8fSdSUKttk&list=PLOJzCFLZdG4zk5d-1_ah2B4kqZSeIlWtt)
+- [📺 Java Tutorial - Creating a Minesweeper](https://www.youtube.com/watch?v=RFpJp62ZoY8&list=PLGxHvpw-PAk6QvPw0fYe8bks31GRKvymK)
+- [📺 JLayeredPane demo tutorial](https://www.youtube.com/watch?v=KNGbmsq3huQ)
+- [📄 Stackoverflow - Adding JLayeredPanl to Panel](https://stackoverflow.com/questions/1764115/adding-jlayeredpane-to-jpanel)
+- [📄 Stackoverflow - Adding integers to int array](https://stackoverflow.com/questions/29172164/adding-integers-to-an-int-array/29172210#29172210)
+- [📄 Stackoverflow - Add padding to JTextArea](https://stackoverflow.com/questions/37381593/how-to-put-padding-around-jtextarea)
+- [📄 GeeksforGeeks - Adding an element to int Array](https://www.geeksforgeeks.org/how-to-add-an-element-to-an-array-in-java/)
+- [📄 GeeksforGeeks - JPopupMenu Docs](https://www.geeksforgeeks.org/java-swing-jpopupmenu/)
+- [📄 GeeksforGeeks - JSeparator Docs](https://www.geeksforgeeks.org/java-swing-jseparator-with-examples/)
+- [📄 How to get current timestamp in Java](https://tecadmin.net/get-current-timestamp-in-java/)
+- [📄 JTextField docs and examples](https://www.codejava.net/java-se/swing/jtextfield-basic-tutorial-and-examples)
+- [📄 Java Convert String to Int examples](https://beginnersbook.com/2013/12/how-to-convert-string-to-int-in-java/)
+- [📄 Stackoverflow - About ComboBox in JOptionsPane](https://stackoverflow.com/questions/14353302/displaying-image-in-java)
+- [📺 YouTube - How to get the JComboBox value in java Swing getSelectedItem](https://www.youtube.com/watch?v=hSghISXr7b8)
 
 Main menu background image
 
-- [🌎 Unsplash.com](https://unsplash.com/photos/quCgY3UFC9E)
+- [📄 Unsplash.com](https://unsplash.com/photos/quCgY3UFC9E)

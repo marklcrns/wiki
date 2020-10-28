@@ -40,7 +40,7 @@ health insurance. If you don't already have it through your employer or through
 other means, you should look into buying your own insurance. You can visit the
 link below to learn more about individual coverage.
 
-- [🌎 Healthcare.gov website](https://www.healthcare.gov/)
+- [📄 Healthcare.gov website](https://www.healthcare.gov/)
 
 **Life and disability insurance**
 
@@ -58,14 +58,14 @@ you should probably look into buying life insurance.
 If you answered "yes" to the first of these questions but "no" to the rest of
 them, then you probably need disability insurance. This provides income for you
 or your family if you become unable to work due to an accident or illness.
-According to the Social Security Administration, [🌎 about 25% of people in
+According to the Social Security Administration, [📄 about 25% of people in
 their 20's will become disabled before they
 retire](http://www.disabilitycanhappen.org/chances_disability/disability_stats.asp)
 (a much higher number than those who will die before retirement). Many people
 are eligible for disability insurance through their employer.
 
-The link below will bring you to a webpage in the [🌎 Smart About
-Money](https://www.smartaboutmoney.org/) website, sponsored by the [🌎 National
+The link below will bring you to a webpage in the [📄 Smart About
+Money](https://www.smartaboutmoney.org/) website, sponsored by the [📄 National
 Endowment for Financial Education](https://www.nefe.org/). Read through the
 information on this page and be sure to click on the link at the bottom that
 reflects your life stage to learn more about the types of insurance people your
@@ -73,7 +73,7 @@ age typically need.  Once you're done, please click on the "Mark as Done" button
 at the top of the page indicating that you've read the page at the link below.
 Then move on to the next page in the module.
 
-- [🌎 What Insurance Do I Need?](https://www.smartaboutmoney.org/Topics/Insurance-and-Taxes/Insurance/What-Insurance-Do-I-Need)
+- [📄 What Insurance Do I Need?](https://www.smartaboutmoney.org/Topics/Insurance-and-Taxes/Insurance/What-Insurance-Do-I-Need)
 
 ### 9.3 Car Insurance
 
@@ -83,7 +83,7 @@ on what damage has happened and by whom. The video below explains these terms
 and some reasons why you might want or not want certain types of auto insurance.
 Please view the video and then move on to the next page of this module
 
-- [🎬 Basic Automotive Insurance Coverage Explained](https://www.youtube.com/watch?v=z94_foSJmkA)
+- [📺 Basic Automotive Insurance Coverage Explained](https://www.youtube.com/watch?v=z94_foSJmkA)
 
 ### 9.4 Health Insurance
 
@@ -100,7 +100,7 @@ The ACA includes a number of different components that affect individuals,
 employers, health care providers, public programs, and other groups. The most
 important aspect of the law for purposes of this class is that individuals are
 required to have health insurance. If you don't have health insurance, or if
-you're thinking of changing the insurance you have, please consider visiting [🌎
+you're thinking of changing the insurance you have, please consider visiting [📄
 www.healthcare.gov](https://www.healthcare.gov/) to learn more about your
 options.
 
@@ -110,13 +110,13 @@ The terms used in the field of health insurance can be very confusing. Many of
 us don't really pay attention to them until we actually need health care, and
 then we're often not in good enough shape to truly understand them. The links
 below will bring you to a glossary of health care terms and an online quiz about
-health insurance from the [🌎 Henry J. Kaiser Foundation](https://www.kff.org/).
+health insurance from the [📄 Henry J. Kaiser Foundation](https://www.kff.org/).
 Please complete the quiz to learn more about your understanding of health care
 terms. You can use the glossary link as a reference while working on the quiz.
 Once you're finished please return and continue with this page.
 
-- [🌎 Glossary of Health Care Terms](https://www.healthcare.gov/glossary/)
-- [🌎 Health Insurance Quiz](https://www.kff.org/quiz/health-insurance-quiz/)
+- [📄 Glossary of Health Care Terms](https://www.healthcare.gov/glossary/)
+- [📄 Health Insurance Quiz](https://www.kff.org/quiz/health-insurance-quiz/)
 
 #### Healthy Lifestyle Choices
 
@@ -145,8 +145,8 @@ your own day-to-day life. After you're done, please click on the "Mark as Done"
 button at the top of the page to indicate you have completed the quiz and
 visited the HHS website.
 
-- [🌎 Healthy Lifestyle Test](https://www.psychologytoday.com/us/tests/health/healthy-lifestyle-test)
-- [🌎 HHS Prevention and Wellness Website](https://www.hhs.gov/programs/prevention-and-wellness/index.html)
+- [📄 Healthy Lifestyle Test](https://www.psychologytoday.com/us/tests/health/healthy-lifestyle-test)
+- [📄 HHS Prevention and Wellness Website](https://www.hhs.gov/programs/prevention-and-wellness/index.html)
 
 ### 9.5 Life Insurance
 
@@ -177,25 +177,25 @@ consumers and does not take money from companies for advertising or other
 purposes. Please read through the article and then click on the "Mark as Done"
 button at the top of the page to indicate that you've finished it.
 
-- [🎬 Is Whole Life Insurance Right for You?](https://www.consumerreports.org/cro/news/2015/04/is-whole-life-insurance-right-for-you/index.htm)
+- [📺 Is Whole Life Insurance Right for You?](https://www.consumerreports.org/cro/news/2015/04/is-whole-life-insurance-right-for-you/index.htm)
 
 <br>
 
 # Resources
 
-- [🌎 Healthcare.gov website](https://www.healthcare.gov/)
-- [🌎 about 25% of people in their 20's will become disabled before they retire](http://www.disabilitycanhappen.org/chances_disability/disability_stats.asp)
-- [🌎 Smart About Money](https://www.smartaboutmoney.org/)
-- [🌎 National Endowment for Financial Education](https://www.nefe.org/)
-- [🌎 What Insurance Do I Need?](https://www.smartaboutmoney.org/Topics/Insurance-and-Taxes/Insurance/What-Insurance-Do-I-Need)
-- [🎬 Basic Automotive Insurance Coverage Explained](https://www.youtube.com/watch?v=z94_foSJmkA)
-- [🌎 www.healthcare.gov](https://www.healthcare.gov/)
-- [🌎 Henry J. Kaiser Foundation](https://www.kff.org/)
-- [🌎 Glossary of Health Care Terms](https://www.healthcare.gov/glossary/)
-- [🌎 Health Insurance Quiz](https://www.kff.org/quiz/health-insurance-quiz/)
-- [🌎 Healthy Lifestyle Test](https://www.psychologytoday.com/us/tests/health/healthy-lifestyle-test)
-- [🌎 HHS Prevention and Wellness Website](https://www.hhs.gov/programs/prevention-and-wellness/index.html)
-- [🎬 Is Whole Life Insurance Right for You?](https://www.consumerreports.org/cro/news/2015/04/is-whole-life-insurance-right-for-you/index.htm)
+- [📄 Healthcare.gov website](https://www.healthcare.gov/)
+- [📄 about 25% of people in their 20's will become disabled before they retire](http://www.disabilitycanhappen.org/chances_disability/disability_stats.asp)
+- [📄 Smart About Money](https://www.smartaboutmoney.org/)
+- [📄 National Endowment for Financial Education](https://www.nefe.org/)
+- [📄 What Insurance Do I Need?](https://www.smartaboutmoney.org/Topics/Insurance-and-Taxes/Insurance/What-Insurance-Do-I-Need)
+- [📺 Basic Automotive Insurance Coverage Explained](https://www.youtube.com/watch?v=z94_foSJmkA)
+- [📄 www.healthcare.gov](https://www.healthcare.gov/)
+- [📄 Henry J. Kaiser Foundation](https://www.kff.org/)
+- [📄 Glossary of Health Care Terms](https://www.healthcare.gov/glossary/)
+- [📄 Health Insurance Quiz](https://www.kff.org/quiz/health-insurance-quiz/)
+- [📄 Healthy Lifestyle Test](https://www.psychologytoday.com/us/tests/health/healthy-lifestyle-test)
+- [📄 HHS Prevention and Wellness Website](https://www.hhs.gov/programs/prevention-and-wellness/index.html)
+- [📺 Is Whole Life Insurance Right for You?](https://www.consumerreports.org/cro/news/2015/04/is-whole-life-insurance-right-for-you/index.htm)
 
 BUSE 120 Canvas Notes
 

@@ -46,7 +46,7 @@ stack install
 
 Ref:
 
-- [🌎 Hackage R-pandoc](https://hackage.haskell.org/package/R-pandoc)
+- [📄 Hackage R-pandoc](https://hackage.haskell.org/package/R-pandoc)
 
 ## Diagrams-Pandoc
 
@@ -66,4 +66,4 @@ cabal install diagrams-pandoc
 
 # Resources
 
-- [🌎 Hackage R-pandoc](https://hackage.haskell.org/package/R-pandoc)
+- [📄 Hackage R-pandoc](https://hackage.haskell.org/package/R-pandoc)

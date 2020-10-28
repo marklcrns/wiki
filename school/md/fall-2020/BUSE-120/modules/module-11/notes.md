@@ -21,18 +21,18 @@ remaining modules and also the information you'll find elsewhere about
 investing. In fact, you've probably already heard a lot of investment terms used
 in the news and elsewhere and you may not be sure what all of them mean.
 
-The link below will bring you to a short article from the [🌎
+The link below will bring you to a short article from the [📄
 Investorjunkie](https://investorjunkie.com/) website that defines common
 investment terms (including some that were not covered in the reading for this
 module). Please read the article and then return and continue with this page.
 
-- [🌎 25 Most Common Investing Terms and Definitions](https://investorjunkie.com/37463/common-investing-terms-definitions/)
+- [📄 25 Most Common Investing Terms and Definitions](https://investorjunkie.com/37463/common-investing-terms-definitions/)
 
 #### Investment Types
 
 In the reading for this chapter we learned about some of the basic
 characteristics of different kinds of investments, such as stocks, bonds, and
-commodities. The link below will bring you to a page on the [🌎 Financial
+commodities. The link below will bring you to a page on the [📄 Financial
 Industry Regulatory Authority (FINRA)](http://www.finra.org/) website that
 provides descriptions about these and other types of investments. Please look
 over the page and then follow at least one of the links to learn more about an
@@ -40,7 +40,7 @@ investment category that interests you. When you're done, please click on the
 "Mark as Done" button at the top of the page to indicate you've read through at
 least one investment category. Then move on to the next page in this module.
 
-- [🌎 Types of Investments](http://www.finra.org/investors/types-investments)
+- [📄 Types of Investments](http://www.finra.org/investors/types-investments)
 
 ### 11.3 Risk, Return, and Diversification
 
@@ -55,7 +55,7 @@ expected or potential return (on average over time), and vice-versa.
 The short video below explains this relationship in more detail and provides
 some examples. Please watch the video and then continue with this page.
 
-- [🎬 Introduction to Resk and Return](https://www.youtube.com/watch?v=xAWxKk9tUME)
+- [📺 Introduction to Resk and Return](https://www.youtube.com/watch?v=xAWxKk9tUME)
 
 Wouldn't it be nice if there was some way to lower the risk and still get a high
 return? It turns out that there is! It's called "diversification."
@@ -71,7 +71,7 @@ It's a neat trick.
 The short video below explains diversification in a little more detail. Please
 watch the video and then continue on to the next page in the module.
 
-- [🎬 What's Diversification? | Fidelity](https://www.youtube.com/watch?v=LU8tubkz_Fg)
+- [📺 What's Diversification? | Fidelity](https://www.youtube.com/watch?v=LU8tubkz_Fg)
 
 ### 11.4 Derivatives and Margin Trading
 
@@ -94,7 +94,7 @@ complicated than the example presented in the textbook.
 The short video below explains derivatives in a little more detail. Please watch
 the video, then continue on to the next topic on this page.
 
-- [🎬 Derivatives Explained in One Minute](https://www.youtube.com/watch?v=gCHiLLgO55o)
+- [📺 Derivatives Explained in One Minute](https://www.youtube.com/watch?v=gCHiLLgO55o)
 
 #### Margin Trading
 
@@ -110,7 +110,7 @@ it's a way to magnify the percentage gained or lost in an investment.
 The short video below provides an explanation of buying on margin. Please watch
 the video and then continue on to the next page in this module.
 
-- [🎬 Margin Buying Basics | by Wall Street Survivor](https://www.youtube.com/watch?v=0SGGSqOZhps)
+- [📺 Margin Buying Basics | by Wall Street Survivor](https://www.youtube.com/watch?v=0SGGSqOZhps)
 
 ### 11.5 Investment Strategies
 
@@ -133,14 +133,14 @@ so please be sure to read that section of the textbook (12.4) carefully.
 
 # Resources
 
-- [🌎 Investorjunkie](https://investorjunkie.com/)
-- [🌎 25 Most Common Investing Terms and Definitions](https://investorjunkie.com/37463/common-investing-terms-definitions/)
-- [🌎 Financial Industry Regulatory Authority (FINRA)](http://www.finra.org/)
-- [🌎 Types of Investments](http://www.finra.org/investors/types-investments)
-- [🎬 Introduction to Resk and Return](https://www.youtube.com/watch?v=xAWxKk9tUME)
-- [🎬 What's Diversification? | Fidelity](https://www.youtube.com/watch?v=LU8tubkz_Fg)
-- [🎬 Derivatives Explained in One Minute](https://www.youtube.com/watch?v=gCHiLLgO55o)
-- [🎬 Margin Buying Basics | by Wall Street Survivor](https://www.youtube.com/watch?v=0SGGSqOZhps)
+- [📄 Investorjunkie](https://investorjunkie.com/)
+- [📄 25 Most Common Investing Terms and Definitions](https://investorjunkie.com/37463/common-investing-terms-definitions/)
+- [📄 Financial Industry Regulatory Authority (FINRA)](http://www.finra.org/)
+- [📄 Types of Investments](http://www.finra.org/investors/types-investments)
+- [📺 Introduction to Resk and Return](https://www.youtube.com/watch?v=xAWxKk9tUME)
+- [📺 What's Diversification? | Fidelity](https://www.youtube.com/watch?v=LU8tubkz_Fg)
+- [📺 Derivatives Explained in One Minute](https://www.youtube.com/watch?v=gCHiLLgO55o)
+- [📺 Margin Buying Basics | by Wall Street Survivor](https://www.youtube.com/watch?v=0SGGSqOZhps)
 
 BUSE 120 Canvas Notes
 

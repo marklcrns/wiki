@@ -40,7 +40,7 @@ need immediate access to your cash. Another way to say this is that savings are
 more "liquid" than investments.
 
 If you're interested in learning more about the role of saving vs. investing in
-building wealth, [🌎 here's a link to an article by Joshua Kennnon](https://www.thebalance.com/saving-money-vs-investing-money-358062)
+building wealth, [📄 here's a link to an article by Joshua Kennnon](https://www.thebalance.com/saving-money-vs-investing-money-358062)
 explaining the different roles these play in managing our personal finances.
 
 The chart below is a concise description of the differences between saving and
@@ -210,7 +210,7 @@ how it works for you.
 
 Laura D. Adams, a financial educator and creator of the "Moneygirl" podcast has
 created a page of recommended personal finance software tools.
-[🌎 Click here if you'd like to see the list](https://lauradadams.com/tools).
+[📄 Click here if you'd like to see the list](https://lauradadams.com/tools).
 
 ### 3.7 Avoid Wasting Time
 

@@ -20,12 +20,12 @@ summary: Generics, Collections, Streams, and IOStreams
 
 ## Extras
 
-- [🎬 Java 8 Best Practices](https://www.youtube.com/watch?v=wOks4LW6I24)
+- [📺 Java 8 Best Practices](https://www.youtube.com/watch?v=wOks4LW6I24)
 
 
 <br>
 
 # Resources
 
-- [🎬 Java 8 Best Practices](https://www.youtube.com/watch?v=wOks4LW6I24)
+- [📺 Java 8 Best Practices](https://www.youtube.com/watch?v=wOks4LW6I24)
 

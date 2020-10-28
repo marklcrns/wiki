@@ -9,7 +9,7 @@ summary: CISC 191 Week 3 Big O Notation Notes
 # Big O Notation
 
 - [↪ Big O Performance of Some Common Functions of Java Collections](big_o_notation_java_collections.md)
-- [🎬 Big-O Notation in 5 Minutes](https://www.youtube.com/watch?v=__vX2sjlpXU)
+- [📺 Big-O Notation in 5 Minutes](https://www.youtube.com/watch?v=__vX2sjlpXU)
 
 
 Big O notation is a mathematical way of describing how a function (running time
@@ -316,10 +316,10 @@ and $O$ for the worst case scenario.
 
 # Resources
 
-- [🎬 Big-O Notation in 5 Minutes](https://www.youtube.com/watch?v=__vX2sjlpXU)
+- [📺 Big-O Notation in 5 Minutes](https://www.youtube.com/watch?v=__vX2sjlpXU)
 
 Textbook
 
-+ [🌎 Andrew Huang CISC 191: Intermediate Java Programming - zyBooks](https://www.zybooks.com/)
++ [📄 Andrew Huang CISC 191: Intermediate Java Programming - zyBooks](https://www.zybooks.com/)
     - Chapter 17 Searching and algorithms
 

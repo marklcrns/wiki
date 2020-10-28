@@ -159,7 +159,7 @@ value of all deposits in savings and checking accounts. As the price level or
 average level of prices in the economy changes, so does the purchasing power of
 your money. This is an example of the real-nominal principle.
 
-- [⚓ Real-Nominal Principle](./chapter-5.md#real-nominal-principle-term)
+- [📑 Real-Nominal Principle](./chapter-5.md#real-nominal-principle-term)
 
 As the purchasing power of money changes, the aggregate demand curve is affected
 in three different ways:

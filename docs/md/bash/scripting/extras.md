@@ -28,12 +28,12 @@ if [ ${0##*/} == ${BASH_SOURCE[0]##*/} ]; then
 fi
 ```
 
-- [🌎 How to prevent direct bash script execution and allow only usage from other script?](https://stackoverflow.com/questions/22962591/how-to-prevent-direct-bash-script-execution-and-allow-only-usage-from-other-scri)
+- [📄 How to prevent direct bash script execution and allow only usage from other script?](https://stackoverflow.com/questions/22962591/how-to-prevent-direct-bash-script-execution-and-allow-only-usage-from-other-scri)
 
 
 <br>
 
 # Resources
 
-- [🌎 How to prevent direct bash script execution and allow only usage from other script?](https://stackoverflow.com/questions/22962591/how-to-prevent-direct-bash-script-execution-and-allow-only-usage-from-other-scri)
+- [📄 How to prevent direct bash script execution and allow only usage from other script?](https://stackoverflow.com/questions/22962591/how-to-prevent-direct-bash-script-execution-and-allow-only-usage-from-other-scri)
 

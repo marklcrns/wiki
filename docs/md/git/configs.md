@@ -18,12 +18,12 @@ git config --global core.excludesfile ~/.gitignore_global
 
 Ref:
 
-- [🌎 Ignoring files](https://docs.github.com/en/github/using-git/ignoring-files)
+- [📄 Ignoring files](https://docs.github.com/en/github/using-git/ignoring-files)
 
 
 <br>
 
 # Resources
 
-- [🌎 Ignoring files](https://docs.github.com/en/github/using-git/ignoring-files)
+- [📄 Ignoring files](https://docs.github.com/en/github/using-git/ignoring-files)
 

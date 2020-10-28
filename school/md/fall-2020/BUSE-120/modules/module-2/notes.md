@@ -101,8 +101,8 @@ exercise for this module.
   make the best possible future decisions in our personal finances (and in other
   areas of life).
 
-- [🎬 What is a Sunk Cost?](https://www.youtube.com/watch?v=cdjd--57E9c)
-- [🎬 Julia Galef: The Sunk Costs Fallacy | Big Think](https://www.youtube.com/watch?v=vpnxd31y0Fo)
+- [📺 What is a Sunk Cost?](https://www.youtube.com/watch?v=cdjd--57E9c)
+- [📺 Julia Galef: The Sunk Costs Fallacy | Big Think](https://www.youtube.com/watch?v=vpnxd31y0Fo)
 
 <a name="opportunity-cost-term">**Opportunity cost**</a>
 
@@ -159,8 +159,8 @@ selling labor or by selling capital. Selling labor means working to earn a wage
 or salary. This is the way that most people earn most of their income over their
 lifespan.
 
-- [🌎 CareerOneStop Interest Assessment](https://www.careeronestop.org/toolkit/careers/interest-assessment.aspx)
-- [🌎 CareerOneStop Occupation Profile](https://www.careeronestop.org/Toolkit/Careers/Occupations/occupation-profile.aspx)
+- [📄 CareerOneStop Interest Assessment](https://www.careeronestop.org/toolkit/careers/interest-assessment.aspx)
+- [📄 CareerOneStop Occupation Profile](https://www.careeronestop.org/Toolkit/Careers/Occupations/occupation-profile.aspx)
 
 ### 2.6 Financial Priorities and Mistakes
 
@@ -189,10 +189,10 @@ lifespan.
 
 # Resources
 
-- [🎬 What is a Sunk Cost?](https://www.youtube.com/watch?v=cdjd--57E9c)
-- [🎬 Julia Galef: The Sunk Costs Fallacy | Big Think](https://www.youtube.com/watch?v=vpnxd31y0Fo)
-- [🌎 CareerOneStop Interest Assessment](https://www.careeronestop.org/toolkit/careers/interest-assessment.aspx)
-- [🌎 CareerOneStop Occupation Profile](https://www.careeronestop.org/Toolkit/Careers/Occupations/occupation-profile.aspx)
+- [📺 What is a Sunk Cost?](https://www.youtube.com/watch?v=cdjd--57E9c)
+- [📺 Julia Galef: The Sunk Costs Fallacy | Big Think](https://www.youtube.com/watch?v=vpnxd31y0Fo)
+- [📄 CareerOneStop Interest Assessment](https://www.careeronestop.org/toolkit/careers/interest-assessment.aspx)
+- [📄 CareerOneStop Occupation Profile](https://www.careeronestop.org/Toolkit/Careers/Occupations/occupation-profile.aspx)
 
 BUSE 120 Canvas Notes
 

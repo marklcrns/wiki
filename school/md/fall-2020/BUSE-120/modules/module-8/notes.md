@@ -31,7 +31,7 @@ used for any decision - not just decisions about products to buy - so the video
 is more of a general overview. Once you're done watching the video (if you
 choose to) please move on to the next page in this module.
 
-- [🎬 CDM - Decision Making Model](https://www.youtube.com/watch?v=XT0Awg-Fpxw)
+- [📺 CDM - Decision Making Model](https://www.youtube.com/watch?v=XT0Awg-Fpxw)
 
 ### 8.3 Buying or Leasing a Car
 
@@ -54,7 +54,7 @@ valuable to visit the Consumer Reports car buying guide. It is available via the
 link below. When you're done looking at the website (if you choose to), please
 return and continue with this page.
 
-- [🌎 Consumer Reports New & Used Car Buying Guide](https://www.consumerreports.org/buying-a-car/used-car-buying-guide/)
+- [📄 Consumer Reports New & Used Car Buying Guide](https://www.consumerreports.org/buying-a-car/used-car-buying-guide/)
 
 #### Leasing vs. Buying a Car
 
@@ -70,20 +70,20 @@ it may be best to lease.
 
 You can also calculate the best financial choice between leasing and buying a
 car. If you're interested in learning more about this topic, click on the link
-below to visit the "Lease or Purchase" calculator at the [🌎 Smart About
-Money](https://www.smartaboutmoney.org/) website, sponsored by the [🌎 National
+below to visit the "Lease or Purchase" calculator at the [📄 Smart About
+Money](https://www.smartaboutmoney.org/) website, sponsored by the [📄 National
 Endowment for Financial Education](https://www.nefe.org/). Please feel free to
 plug in some numbers to see which option makes the most financial sense if this
 interests you, then return and continue on with the next page in this module.
 
-- [🌎 Lease or Purchase an Auto Calculator](https://www.smartaboutmoney.org/Tools/Calculators/Lease-or-Purchase-an-Auto)
+- [📄 Lease or Purchase an Auto Calculator](https://www.smartaboutmoney.org/Tools/Calculators/Lease-or-Purchase-an-Auto)
 
 ### 8.4 Buying or Renting a Home
 
 In the reading assignment for this module we learned about housing costs and
 decisions, including information about renting and buying a home. There are a
 lot of tools available on the Internet to help you learn more about housing
-costs and options. One of them - a mortgage shopping checklist from the [🌎
+costs and options. One of them - a mortgage shopping checklist from the [📄
 Federal Reserve Board](https://www.federalreserve.gov/) - is attached below.
 Please feel free to download and use it when shopping for a home mortgage. I
 think it's particularly helpful in comparing different home mortgage options
@@ -93,14 +93,14 @@ addition to the basic loan information.
 - [⬇ Mortgage Shopping Worksheet](file:../../../../../files/fall-2020/BUSE-120/module-8/mortgage_shopping_worksheet.pdf)
 
 The link below will bring you to a list of other resources about buying or
-renting a home from the [🌎 Smart About Money](https://www.smartaboutmoney.org/)
-website, sponsored by the [🌎 National Endowment for Financial
+renting a home from the [📄 Smart About Money](https://www.smartaboutmoney.org/)
+website, sponsored by the [📄 National Endowment for Financial
 Education](https://www.nefe.org/). Please take a look at the resources on this
 page and then follow and read through at least one resource that interests you
 (but more than one if you would like - they're all great sources of
 information).
 
-- [🌎 Manage Housing Costs](https://www.smartaboutmoney.org/Topics/Housing-and-Transportation/Manage-Housing-Costs)
+- [📄 Manage Housing Costs](https://www.smartaboutmoney.org/Topics/Housing-and-Transportation/Manage-Housing-Costs)
 
 #### 8.4.1 Fixed vs. Adjustable Rate Mortgages
 
@@ -114,7 +114,7 @@ Below is a short video from the Bank of America describing the basic difference
 between fixed rate and adjustable rate mortgages. Please view the video and then
 return and continue on with the next page in this module.
 
-- [🎬 Adjustable Rate Mortgages vs. Fixed Rate Mortgages](https://www.youtube.com/watch?v=rJgNbVTYgwM)
+- [📺 Adjustable Rate Mortgages vs. Fixed Rate Mortgages](https://www.youtube.com/watch?v=rJgNbVTYgwM)
 
 #### 8.4.2 Mortgage Calculator
 
@@ -142,7 +142,7 @@ loan, the monthly payment may change over the life of the loan.
 
 Please open the Mortgage Calculator webpage at the link below:
 
-- [🌎 Mortgage Calculator from calculator.net](https://www.calculator.net/mortgage-calculator.html)
+- [📄 Mortgage Calculator from calculator.net](https://www.calculator.net/mortgage-calculator.html)
 
 Once you have the calculator open, please follow the steps below to learn more
 about how to use it:
@@ -207,7 +207,7 @@ proportion of your monthly payment declines.
    monthly payment that you can afford in your budget. (Remember to be
    conservative in your budget estimates.) You can also experiment with
    different interest rates. Current and historical home mortgage interest rates
-   can be found at [🌎
+   can be found at [📄
    www.bankrate.com](http://www.bankrate.com/finance/mortgages/current-interest-rates.aspx)
    or other sources on the Internet.
 
@@ -260,16 +260,16 @@ This course covers only the very basics of consumer information. Many people
 have specific questions or issues that they want more information and help with.
 Here are some additional resources you might be interested in:
 
-- [🌎 Federal Reserve Board's Consumer Help
+- [📄 Federal Reserve Board's Consumer Help
   website](https://www.federalreserveconsumerhelp.gov/?sc_lang=en). Information
   about a variety of consumer topics, including credit cards, banking,
   foreclosure and debt collection, and identity theft. 
-- [🌎 Consumer Financial Protection Bureau](https://www.consumerfinance.gov/).
+- [📄 Consumer Financial Protection Bureau](https://www.consumerfinance.gov/).
   The government agency responsible for ensuring that financial institutions
   treat their customers fairly. Their "Consumer Tools" page has links to
   information about loans, credit cards, debt collection, mortgages, and other
   helpful information.
-- [🌎 Smart About Money topics page](https://www.smartaboutmoney.org/Topics). A
+- [📄 Smart About Money topics page](https://www.smartaboutmoney.org/Topics). A
   broad range of consumer financial topics such as financial fraud; career
   planning; family issues in financial planning; the holidays and money; housing
   and transportation; insurance; taxes; retirement; saving and investing;
@@ -282,20 +282,20 @@ Please browse through these links if you're interested, or perhaps save them to 
 # Resources
 
 - [⬇ Decision Making Tool](file:../../../../../files/fall-2020/BUSE-120/module-8/decision_making_tool.xls)
-- [🎬 CDM - Decision Making Model](https://www.youtube.com/watch?v=XT0Awg-Fpxw)
-- [🌎 Consumer Reports New & Used Car Buying Guide](https://www.consumerreports.org/buying-a-car/used-car-buying-guide/)
-- [🌎 Lease or Purchase an Auto Calculator](https://www.smartaboutmoney.org/Tools/Calculators/Lease-or-Purchase-an-Auto)
-- [🌎 Federal Reserve Board](https://www.federalreserve.gov/)
+- [📺 CDM - Decision Making Model](https://www.youtube.com/watch?v=XT0Awg-Fpxw)
+- [📄 Consumer Reports New & Used Car Buying Guide](https://www.consumerreports.org/buying-a-car/used-car-buying-guide/)
+- [📄 Lease or Purchase an Auto Calculator](https://www.smartaboutmoney.org/Tools/Calculators/Lease-or-Purchase-an-Auto)
+- [📄 Federal Reserve Board](https://www.federalreserve.gov/)
 - [⬇ Mortgage Shopping Worksheet](file:../../../../../files/fall-2020/BUSE-120/module-8/mortgage_shopping_worksheet.pdf)
-- [🌎 Smart About Money](https://www.smartaboutmoney.org/)
-- [🌎 National Endowment for Financial Education](https://www.nefe.org/)
-- [🌎 Manage Housing Costs](https://www.smartaboutmoney.org/Topics/Housing-and-Transportation/Manage-Housing-Costs)
-- [🎬 Adjustable Rate Mortgages vs. Fixed Rate Mortgages](https://www.youtube.com/watch?v=rJgNbVTYgwM)
-- [🌎 Mortgage Calculator from calculator.net](https://www.calculator.net/mortgage-calculator.html)
-- [🌎 www.bankrate.com](http://www.bankrate.com/finance/mortgages/current-interest-rates.aspx)
-- [🌎 Federal Reserve Board's Consumer Help website](https://www.federalreserveconsumerhelp.gov/?sc_lang=en)
-- [🌎 Consumer Financial Protection Bureau](https://www.consumerfinance.gov/)
-- [🌎 Smart About Money topics page](https://www.smartaboutmoney.org/Topics)
+- [📄 Smart About Money](https://www.smartaboutmoney.org/)
+- [📄 National Endowment for Financial Education](https://www.nefe.org/)
+- [📄 Manage Housing Costs](https://www.smartaboutmoney.org/Topics/Housing-and-Transportation/Manage-Housing-Costs)
+- [📺 Adjustable Rate Mortgages vs. Fixed Rate Mortgages](https://www.youtube.com/watch?v=rJgNbVTYgwM)
+- [📄 Mortgage Calculator from calculator.net](https://www.calculator.net/mortgage-calculator.html)
+- [📄 www.bankrate.com](http://www.bankrate.com/finance/mortgages/current-interest-rates.aspx)
+- [📄 Federal Reserve Board's Consumer Help website](https://www.federalreserveconsumerhelp.gov/?sc_lang=en)
+- [📄 Consumer Financial Protection Bureau](https://www.consumerfinance.gov/)
+- [📄 Smart About Money topics page](https://www.smartaboutmoney.org/Topics)
 
 BUSE 120 Canvas Notes
 

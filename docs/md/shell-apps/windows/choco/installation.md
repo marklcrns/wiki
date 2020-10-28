@@ -17,12 +17,12 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; `
 
 Ref:
 
-- [🌎 How to install chocolatey/choco on Windows 10](https://jcutrer.com/windows/install-chocolatey-choco-windows10)
+- [📄 How to install chocolatey/choco on Windows 10](https://jcutrer.com/windows/install-chocolatey-choco-windows10)
 
 
 <br>
 
 # Resources
 
-- [🌎 How to install chocolatey/choco on Windows 10](https://jcutrer.com/windows/install-chocolatey-choco-windows10)
+- [📄 How to install chocolatey/choco on Windows 10](https://jcutrer.com/windows/install-chocolatey-choco-windows10)
 

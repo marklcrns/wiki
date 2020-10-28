@@ -28,7 +28,7 @@ the higher rate.
 The video below provides a more complete explanation of how this works. Please
 view the video and then continue on with this page.
 
-- [🎬 Basics of US income tax rate schedule | Taxes | Finance & Capital Markets | Khan Academy](https://www.youtube.com/watch?v=OGVJfcSckUs)
+- [📺 Basics of US income tax rate schedule | Taxes | Finance & Capital Markets | Khan Academy](https://www.youtube.com/watch?v=OGVJfcSckUs)
 
 #### Three Options for Doing Your Taxes
 
@@ -38,7 +38,7 @@ file taxes. The link below will bring you to an electronic tool that will help
 you determine whether or not you need to file taxes. Please try out the tool if
 you would like (it's optional).
 
-- [🎬 Do You Need to File a Tax Return?](https://www.efile.com/tax/do-i-need-to-file-a-tax-return/)
+- [📺 Do You Need to File a Tax Return?](https://www.efile.com/tax/do-i-need-to-file-a-tax-return/)
 
 If you do need to file a tax return, there are basically three ways to do it.
 You can:
@@ -51,7 +51,7 @@ There are advantages and disadvantages to each option, but you (the taxpayer)
 are ultimately responsible for the accuracy and details of the tax return.
 
 If you decide to prepare your taxes yourself, it can be helpful to use the
-resources available on the [🌎 IRS website](www.irs.gov/individuals). There are
+resources available on the [📄 IRS website](www.irs.gov/individuals). There are
 a variety of tax preparation software products available for purchase as well.
 And you can hire a variety of professionals - from tax preparers to Certified
 Public Accountants to tax lawyers - to do your taxes for you. This may be more
@@ -65,7 +65,7 @@ Financial Education. Please follow the link and read through the webpage. Once
 you're done please click on the "Mark as Done" button to indicate that you've
 reviewed the information, and then continue on with this page.
 
-- [🌎 Need Help with Your Taxes?](https://www.smartaboutmoney.org/Topics/Insurance-and-Taxes/Tips-for-Filing-Taxes/Need-Help-With-Your-Taxes)
+- [📄 Need Help with Your Taxes?](https://www.smartaboutmoney.org/Topics/Insurance-and-Taxes/Tips-for-Filing-Taxes/Need-Help-With-Your-Taxes)
 
 #### Tips for Filing Taxes
 
@@ -75,7 +75,7 @@ National Endowment for Financial Education. Please visit the website, check out
 any of the links that you might find useful and then return and move on to the
 next page in this module.
 
-- [🌎 Tips for Filing Taxes](https://www.smartaboutmoney.org/Topics/Insurance-and-Taxes/Tips-for-Filing-Taxes)
+- [📄 Tips for Filing Taxes](https://www.smartaboutmoney.org/Topics/Insurance-and-Taxes/Tips-for-Filing-Taxes)
 
 ### 6.3 Education Tax Credits
 
@@ -118,10 +118,10 @@ directly reduces the tax itself. Here is two of them for you to consider:
 
 If this topic interests you, please visit the following links to learn more:
 
-- [🌎 Tax Benefits for Education (IRS Publication 970)](https://www.irs.gov/forms-pubs/about-publication-970)
-- [🌎 Education Tax Credits](https://www.irs.gov/uac/am-i-eligible-to-claim-an-education-credit)
-- [🌎 Scholarship Information on Tax Returns](https://www.irs.gov/help/ita/do-i-include-my-scholarship-fellowship-or-education-grant-as-income-on-my-tax-return)
-- [🌎 Deductions for Student Loan Interest Payments](https://www.irs.gov/help/ita/can-i-claim-a-deduction-for-student-loan-interest)
+- [📄 Tax Benefits for Education (IRS Publication 970)](https://www.irs.gov/forms-pubs/about-publication-970)
+- [📄 Education Tax Credits](https://www.irs.gov/uac/am-i-eligible-to-claim-an-education-credit)
+- [📄 Scholarship Information on Tax Returns](https://www.irs.gov/help/ita/do-i-include-my-scholarship-fellowship-or-education-grant-as-income-on-my-tax-return)
+- [📄 Deductions for Student Loan Interest Payments](https://www.irs.gov/help/ita/can-i-claim-a-deduction-for-student-loan-interest)
 
 ### 6.4 Tax Strategies and Personal Financial Planning
 
@@ -129,7 +129,7 @@ In the reading for this module we learned a little about some strategies for
 reducing taxes by making particular choices with our personal finances. There
 are two big ones that I think are worth emphasizing:
 
-The first is the [🌎 mortgage interest deduction](https://www.irs.gov/forms-pubs/about-publication-936).
+The first is the [📄 mortgage interest deduction](https://www.irs.gov/forms-pubs/about-publication-936).
 This rule allows people with a mortgage to deduct the interest they pay on that
 mortgage from their taxable income, which makes home ownership more affordable.
 In essence, this means that the taxpayers are helping to pay for all the home
@@ -150,9 +150,9 @@ that decision you need to recognize the tax benefits of the mortgage interest
 deduction.
 
 The other tax strategy is investing in tax advantaged savings accounts. These
-consist of [🌎 retirement plans](https://www.irs.gov/retirement-plans) like
+consist of [📄 retirement plans](https://www.irs.gov/retirement-plans) like
 Individual Retirement Accounts (IRAs) and 401(k) accounts as well as some other
-kinds of savings accounts such as [🌎 "flex" health care savings accounts](https://www.irs.gov/forms-pubs/about-publication-969).
+kinds of savings accounts such as [📄 "flex" health care savings accounts](https://www.irs.gov/forms-pubs/about-publication-969).
 The deposits made to these kinds of accounts can be used to reduce taxable
 income (although there are limits depending on income levels and other factors).
 We'll learn a little more about these kinds of investment accounts in a later
@@ -164,18 +164,18 @@ particular goals such as retirement.
 
 # Resources
 
-- [🎬 Basics of US income tax rate schedule | Taxes | Finance & Capital Markets | Khan Academy](https://www.youtube.com/watch?v=OGVJfcSckUs)
-- [🎬 Do You Need to File a Tax Return?](https://www.efile.com/tax/do-i-need-to-file-a-tax-return/)
-- [🌎 IRS website](www.irs.gov/individuals)
-- [🌎 Need Help with Your Taxes?](https://www.smartaboutmoney.org/Topics/Insurance-and-Taxes/Tips-for-Filing-Taxes/Need-Help-With-Your-Taxes)
-- [🌎 Tips for Filing Taxes](https://www.smartaboutmoney.org/Topics/Insurance-and-Taxes/Tips-for-Filing-Taxes)
-- [🌎 Tax Benefits for Education (IRS Publication 970)](https://www.irs.gov/forms-pubs/about-publication-970)
-- [🌎 Education Tax Credits](https://www.irs.gov/uac/am-i-eligible-to-claim-an-education-credit)
-- [🌎 Scholarship Information on Tax Returns](https://www.irs.gov/help/ita/do-i-include-my-scholarship-fellowship-or-education-grant-as-income-on-my-tax-return)
-- [🌎 Deductions for Student Loan Interest Payments](https://www.irs.gov/help/ita/can-i-claim-a-deduction-for-student-loan-interest)
-- [🌎 mortgage interest deduction](https://www.irs.gov/forms-pubs/about-publication-936)
-- [🌎 retirement plans](https://www.irs.gov/retirement-plans)
-- [🌎 "flex" health care savings accounts](https://www.irs.gov/forms-pubs/about-publication-969)
+- [📺 Basics of US income tax rate schedule | Taxes | Finance & Capital Markets | Khan Academy](https://www.youtube.com/watch?v=OGVJfcSckUs)
+- [📺 Do You Need to File a Tax Return?](https://www.efile.com/tax/do-i-need-to-file-a-tax-return/)
+- [📄 IRS website](www.irs.gov/individuals)
+- [📄 Need Help with Your Taxes?](https://www.smartaboutmoney.org/Topics/Insurance-and-Taxes/Tips-for-Filing-Taxes/Need-Help-With-Your-Taxes)
+- [📄 Tips for Filing Taxes](https://www.smartaboutmoney.org/Topics/Insurance-and-Taxes/Tips-for-Filing-Taxes)
+- [📄 Tax Benefits for Education (IRS Publication 970)](https://www.irs.gov/forms-pubs/about-publication-970)
+- [📄 Education Tax Credits](https://www.irs.gov/uac/am-i-eligible-to-claim-an-education-credit)
+- [📄 Scholarship Information on Tax Returns](https://www.irs.gov/help/ita/do-i-include-my-scholarship-fellowship-or-education-grant-as-income-on-my-tax-return)
+- [📄 Deductions for Student Loan Interest Payments](https://www.irs.gov/help/ita/can-i-claim-a-deduction-for-student-loan-interest)
+- [📄 mortgage interest deduction](https://www.irs.gov/forms-pubs/about-publication-936)
+- [📄 retirement plans](https://www.irs.gov/retirement-plans)
+- [📄 "flex" health care savings accounts](https://www.irs.gov/forms-pubs/about-publication-969)
 
 BUSE 120 Canvas Notes
 

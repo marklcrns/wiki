@@ -35,7 +35,7 @@ summary: Module 6 notes and exercises
 
 ### Explain
 
-- [🎬 CISC 190 M-6 Explain: User-Defined Classes](https://www.youtube.com/watch?v=DZdthG9onrw)
+- [📺 CISC 190 M-6 Explain: User-Defined Classes](https://www.youtube.com/watch?v=DZdthG9onrw)
 
 ### Reflect
 

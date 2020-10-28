@@ -42,4 +42,8 @@ date: Aug 18, 2020
 ### Chapter 4 Homeworks
 
 - [⬇ 4.1 Homework Solutions](file:../../../../files/fall-2020/MATH-150/homeworks/4.1_homework.pdf)
+- [⬇ 4.2 Homework Solutions](file:../../../../files/fall-2020/MATH-150/homeworks/4.2_homework.pdf)
+- [⬇ 4.3 Homework Solutions](file:../../../../files/fall-2020/MATH-150/homeworks/4.3_homework.pdf)
+- [⬇ 4.4 Homework Solutions](file:../../../../files/fall-2020/MATH-150/homeworks/4.4_homework.pdf)
+- [⬇ 4.5 Homework Solutions](file:../../../../files/fall-2020/MATH-150/homeworks/4.5_homework.pdf)
 

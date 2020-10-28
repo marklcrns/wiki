@@ -24,16 +24,16 @@ Textbook
 - [⬇ Syllabus](file:../../../files/spring-2020/ECON-121/econ-121_syllabus.pdf)
   * To prevent technical problems, **quiz** and **exams** doubled the amount
     of time for completion and increased from 3 to 5 attempts each.
-- [🌎 MyLab & Mastering](https://portal.mypearson.com/course-home)
+- [📄 MyLab & Mastering](https://portal.mypearson.com/course-home)
   * My Pearson account [credentials](vfile:../../../files/spring-2020/ECON-121/pearson_account.txt)
 - [⬇ Course Calendar](file:../../../files/spring-2020/ECON-121/calendar.pdf)
 
 ### Recommended Readings
 
-- [🌎 The Wall Street Journal](https://www.wsj.com/)
-- [🌎 Los Angeles Times](https://www.latimes.com/)
-- [🌎 The New Your Times](https://www.nytimes.com/)
-- [🌎 TV News](https://www.msn.com/)
+- [📄 The Wall Street Journal](https://www.wsj.com/)
+- [📄 Los Angeles Times](https://www.latimes.com/)
+- [📄 The New Your Times](https://www.nytimes.com/)
+- [📄 TV News](https://www.msn.com/)
 
 ## Notes
 

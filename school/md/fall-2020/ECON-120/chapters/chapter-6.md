@@ -354,7 +354,7 @@ salaries. Which starting professor had the better deal?
 These examples are illustrations of one of our five principles of economics, the
 real-nominal principle.
 
-- [⚓ Real-Nominal Principle](chapter-5#real-nominal-principle-term)
+- [📑 Real-Nominal Principle](chapter-5#real-nominal-principle-term)
 
 <a name="consumer-price-index-term">**Consumer Price Index (CPI)**</a>
 
@@ -702,7 +702,7 @@ $$
 
 # Resources
 
-- [⚓ Real-Nominal Principle](chapter-5#real-nominal-principle-term)
+- [📑 Real-Nominal Principle](chapter-5#real-nominal-principle-term)
 
 Textbook
 

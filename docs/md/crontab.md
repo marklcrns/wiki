@@ -38,19 +38,19 @@ date: Sep 09, 2020
 
 Ref:
 
-- [🎬 Linux/Mac Tutorial: Cron Jobs - How to Schedule Commands with crontab](https://www.youtube.com/watch?v=QZJ1drMQz1A)
-- [🌎 Cron-Tasks snippets](https://github.com/CoreyMSchafer/code_snippets/blob/master/Cron-Tasks/snippets.txt)
+- [📺 Linux/Mac Tutorial: Cron Jobs - How to Schedule Commands with crontab](https://www.youtube.com/watch?v=QZJ1drMQz1A)
+- [📄 Cron-Tasks snippets](https://github.com/CoreyMSchafer/code_snippets/blob/master/Cron-Tasks/snippets.txt)
 
 Other resources
 
-- [🌎 Crontab.guru](https://crontab.guru/)
+- [📄 Crontab.guru](https://crontab.guru/)
 
 
 <br>
 
 # Resources
 
-- [🎬 Linux/Mac Tutorial: Cron Jobs - How to Schedule Commands with crontab](https://www.youtube.com/watch?v=QZJ1drMQz1A)
-- [🌎 Cron-Tasks snippets](https://github.com/CoreyMSchafer/code_snippets/blob/master/Cron-Tasks/snippets.txt)
-- [🌎 Crontab.guru](https://crontab.guru/)
+- [📺 Linux/Mac Tutorial: Cron Jobs - How to Schedule Commands with crontab](https://www.youtube.com/watch?v=QZJ1drMQz1A)
+- [📄 Cron-Tasks snippets](https://github.com/CoreyMSchafer/code_snippets/blob/master/Cron-Tasks/snippets.txt)
+- [📄 Crontab.guru](https://crontab.guru/)
 

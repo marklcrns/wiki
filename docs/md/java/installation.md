@@ -42,16 +42,16 @@ sudo update-alternatives --config java
 
 Ref:
 
-- [🌎 How to install Java (JDK and JRE) on Ubuntu 20.04 LTS](https://vitux.com/how-to-install-java-on-ubuntu-20-04/)
+- [📄 How to install Java (JDK and JRE) on Ubuntu 20.04 LTS](https://vitux.com/how-to-install-java-on-ubuntu-20-04/)
 
 
 ## Oracle
 
 Oracle Java SE downloads links
 
-- [🌎 Eclipse Java SE Recommended Downloads](https://download.eclipse.org/oomph/jre/?vm=1_1_8_0_64_0&pn=Eclipse%20Installer&pu=http://wiki.eclipse.org/Eclipse_Installer&pi=http://download.eclipse.org/oomph/jre/128x128.png)
-- [🌎 Oracle Java SE Downloads](https://www.oracle.com/java/technologies/javase-downloads.html)
-- [🌎 Oracle Java Archive](https://www.oracle.com/java/technologies/oracle-java-archive-downloads.html)
+- [📄 Eclipse Java SE Recommended Downloads](https://download.eclipse.org/oomph/jre/?vm=1_1_8_0_64_0&pn=Eclipse%20Installer&pu=http://wiki.eclipse.org/Eclipse_Installer&pi=http://download.eclipse.org/oomph/jre/128x128.png)
+- [📄 Oracle Java SE Downloads](https://www.oracle.com/java/technologies/javase-downloads.html)
+- [📄 Oracle Java Archive](https://www.oracle.com/java/technologies/oracle-java-archive-downloads.html)
 
 ### Windows
 
@@ -61,21 +61,21 @@ Downloads both Java SE 8 JDK and JRE for Windows (make sure to download `.exe`)
 
 > **NOTE:** Java SE JDK 8 automatically installs JRE along with it.
 
-- [🌎 Java SE JDK 8 Downloads](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
-- [🌎 Java SE JRE 8 Downloads](https://www.oracle.com/java/technologies/javase-jre8-downloads.html)
+- [📄 Java SE JDK 8 Downloads](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
+- [📄 Java SE JRE 8 Downloads](https://www.oracle.com/java/technologies/javase-jre8-downloads.html)
 
 Then watch this video for installation. **Skip the path variable configuration for
 a better way of adding default Java JDK version below**.
 
-- [🎬 Java JDK 8 Windows Installation](https://www.youtube.com/watch?v=ClcHrcNXP9g)
+- [📺 Java JDK 8 Windows Installation](https://www.youtube.com/watch?v=ClcHrcNXP9g)
 
 Finally, set the JAVA_HOME and JRE_HOME system environment variables
 
-- [🌎 Setting the JAVA_HOME Variable in Windows](https://confluence.atlassian.com/conf59/setting-the-java_home-variable-in-windows-792499849.html)
+- [📄 Setting the JAVA_HOME Variable in Windows](https://confluence.atlassian.com/conf59/setting-the-java_home-variable-in-windows-792499849.html)
 
 Better way of adding default JDK version to Windows system variables
 
-- [🌎 How to switch Java versions in Windows](https://www.happycoders.eu/java/how-to-switch-multiple-java-versions-windows/)
+- [📄 How to switch Java versions in Windows](https://www.happycoders.eu/java/how-to-switch-multiple-java-versions-windows/)
 
 #### Switching `JAVA_HOME` in Windows
 
@@ -95,7 +95,7 @@ set PATH=%JAVA_HOME%\bin;%PATH%
 First, download latest Java SE 8 **Linux Debian Package** or Linux x64
 Compressed Archive
 
-- [🌎 Java SE JDK 8 Downloads](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
+- [📄 Java SE JDK 8 Downloads](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
 
 Then run the following
 
@@ -150,14 +150,14 @@ sudo apt-get update
 
 Ref:
 
-- [🌎 How to Install Oracle JAVA 8 on Ubuntu 20.04 LTS](https://www.fosstechnix.com/install-oracle-java-8-on-ubuntu-20-04/)
+- [📄 How to Install Oracle JAVA 8 on Ubuntu 20.04 LTS](https://www.fosstechnix.com/install-oracle-java-8-on-ubuntu-20-04/)
 
 **Oracle JDK 11 and Higher**
 
 First, download the latest Java SE **Linux Debian Package** Linux x64 Compressed
 Archive
 
-- [🌎 Java SE Downloads](https://www.oracle.com/java/technologies/javase-downloads.html)
+- [📄 Java SE Downloads](https://www.oracle.com/java/technologies/javase-downloads.html)
 
 Then run the following command.
 
@@ -214,21 +214,21 @@ sudo apt-get update
 
 Ref:
 
-- [🌎 Oracle Java installation on Ubuntu 20.04 Focal Fossa Linux ](https://linuxconfig.org/oracle-java-installation-on-ubuntu-20-04-focal-fossa-linux)
+- [📄 Oracle Java installation on Ubuntu 20.04 Focal Fossa Linux ](https://linuxconfig.org/oracle-java-installation-on-ubuntu-20-04-focal-fossa-linux)
 
 
 <br>
 
 # Resources
 
-- [🌎 How to install Java (JDK and JRE) on Ubuntu 20.04 LTS](https://vitux.com/how-to-install-java-on-ubuntu-20-04/)
-- [🌎 Eclipse Java SE Recommended Downloads](https://download.eclipse.org/oomph/jre/?vm=1_1_8_0_64_0&pn=Eclipse%20Installer&pu=http://wiki.eclipse.org/Eclipse_Installer&pi=http://download.eclipse.org/oomph/jre/128x128.png)
-- [🌎 Oracle Java SE Downloads](https://www.oracle.com/java/technologies/javase-downloads.html)
-- [🌎 Java SE JRE 8 Downloads](https://www.oracle.com/java/technologies/javase-jre8-downloads.html)
-- [🎬 Java JDK 8 Windows Installation](https://www.youtube.com/watch?v=ClcHrcNXP9g)
-- [🌎 Setting the JAVA_HOME Variable in Windows](https://confluence.atlassian.com/conf59/setting-the-java_home-variable-in-windows-792499849.html)
-- [🌎 Java SE JDK 8 Downloads](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
-- [🌎 How to Install Oracle JAVA 8 on Ubuntu 20.04 LTS](https://www.fosstechnix.com/install-oracle-java-8-on-ubuntu-20-04/)
-- [🌎 Java SE Downloads](https://www.oracle.com/java/technologies/javase-downloads.html)
-- [🌎 Oracle Java installation on Ubuntu 20.04 Focal Fossa Linux ](https://linuxconfig.org/oracle-java-installation-on-ubuntu-20-04-focal-fossa-linux)
+- [📄 How to install Java (JDK and JRE) on Ubuntu 20.04 LTS](https://vitux.com/how-to-install-java-on-ubuntu-20-04/)
+- [📄 Eclipse Java SE Recommended Downloads](https://download.eclipse.org/oomph/jre/?vm=1_1_8_0_64_0&pn=Eclipse%20Installer&pu=http://wiki.eclipse.org/Eclipse_Installer&pi=http://download.eclipse.org/oomph/jre/128x128.png)
+- [📄 Oracle Java SE Downloads](https://www.oracle.com/java/technologies/javase-downloads.html)
+- [📄 Java SE JRE 8 Downloads](https://www.oracle.com/java/technologies/javase-jre8-downloads.html)
+- [📺 Java JDK 8 Windows Installation](https://www.youtube.com/watch?v=ClcHrcNXP9g)
+- [📄 Setting the JAVA_HOME Variable in Windows](https://confluence.atlassian.com/conf59/setting-the-java_home-variable-in-windows-792499849.html)
+- [📄 Java SE JDK 8 Downloads](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
+- [📄 How to Install Oracle JAVA 8 on Ubuntu 20.04 LTS](https://www.fosstechnix.com/install-oracle-java-8-on-ubuntu-20-04/)
+- [📄 Java SE Downloads](https://www.oracle.com/java/technologies/javase-downloads.html)
+- [📄 Oracle Java installation on Ubuntu 20.04 Focal Fossa Linux ](https://linuxconfig.org/oracle-java-installation-on-ubuntu-20-04-focal-fossa-linux)
 

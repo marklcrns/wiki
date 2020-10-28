@@ -17,7 +17,7 @@ date: Aug 17, 2020
 
 ## Course Materials
 
-- [🌎 Cengage e-Textbook: Calculus Early Transcendentals, Eighth Edition, Stewart](https://webassign.com/)
+- [📄 Cengage e-Textbook: Calculus Early Transcendentals, Eighth Edition, Stewart](https://webassign.com/)
   * Cengage account [credentials](vfile:../../../files/fall-2020/MATH-150/cengage_account.txt)
 
 
@@ -31,6 +31,7 @@ date: Aug 17, 2020
 - [⬇ Quiz 2](file:../../../files/fall-2020/MATH-150/quizzes/quiz-2.pdf)
 - [⬇ Quiz 3](file:../../../files/fall-2020/MATH-150/quizzes/quiz-3.pdf)
 - [⬇ Quiz 4](file:../../../files/fall-2020/MATH-150/quizzes/quiz-4.pdf)
+- [⬇ Quiz 5](file:../../../files/fall-2020/MATH-150/quizzes/quiz-5.pdf)
 
 ## Tests
 

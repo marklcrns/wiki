@@ -19,12 +19,12 @@ date: 2020-08-09
 
 Ref:
 
-- [🌎 Ydiff Official Repository](https://github.com/ymattw/ydiff)
+- [📄 Ydiff Official Repository](https://github.com/ymattw/ydiff)
 
 
 <br>
 
 # Resources
 
-- [🌎 Ydiff Official Repository](https://github.com/ymattw/ydiff)
+- [📄 Ydiff Official Repository](https://github.com/ymattw/ydiff)
 

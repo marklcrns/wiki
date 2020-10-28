@@ -194,8 +194,8 @@ Manual Solution
 
 ### Additional
 
-- [🎬 Solving Exponential Equations - Some Basic Examples](https://www.youtube.com/watch?v=M6f6dANVyxA)
-- [🎬 How to solve an exponential equation with two different bases](https://www.youtube.com/watch?v=oM25leefVRQ)
+- [📺 Solving Exponential Equations - Some Basic Examples](https://www.youtube.com/watch?v=M6f6dANVyxA)
+- [📺 How to solve an exponential equation with two different bases](https://www.youtube.com/watch?v=oM25leefVRQ)
 
 ### Factorials
 
@@ -358,8 +358,8 @@ $\ln$ is a natural log and always has a base of $e$, $\ln_{e}$
 
 ### Additional
 
-- [🎬 (Hard) Log/Exponential Equations Example](https://www.youtube.com/watch?v=HgJF4gSVGfA)
-- [🎬 Solving (Challenging) Log Equations Different Bases](https://www.youtube.com/watch?v=xx80CyHZfLQ)
+- [📺 (Hard) Log/Exponential Equations Example](https://www.youtube.com/watch?v=HgJF4gSVGfA)
+- [📺 Solving (Challenging) Log Equations Different Bases](https://www.youtube.com/watch?v=xx80CyHZfLQ)
 
 
 <br>
@@ -369,15 +369,15 @@ $\ln$ is a natural log and always has a base of $e$, $\ln_{e}$
 - [⬇ Pre-calc Textbook Reference 1](file:../../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)
     * Chapter 5 pages 61 - 77
     * Chapter 6 page 80
-- [🎬 What are functions?](https://www.youtube.com/watch?v=52tpYl2tTqk)
-- [🎬 VIDEO 1: Surjective and Injective functions](https://www.youtube.com/watch?v=xKNX8BUWR0g)
-- [🎬 VIDEO 2: How To Find The Inverse of a Function](https://www.youtube.com/watch?v=2zeYEx4eTdc)
-- [🎬 Solving Exponential Equations With Different Bases Using Logarithms](https://www.youtube.com/watch?v=oVUJMVR1JpA)
-- [🎬 Solving Exponential Equations - Some Basic Examples](https://www.youtube.com/watch?v=M6f6dANVyxA)
-- [🎬 Factorials](https://www.youtube.com/watch?v=pxh__ugRKz8)
-- [🎬 VIDEO 1: Logarithms... How? (NancyPi)](https://www.youtube.com/watch?v=Zw5t6BTQYRU)
-- [🎬 VIDEO 2: Solving Logarithmic Equations | Khan Academy](https://www.youtube.com/watch?v=Kv2iHde7Xgw)
-- [🎬 VIDEO 3: Solving Logarithmic Equations... How? (NancyPi)](https://www.youtube.com/watch?v=rBnQiLa2TYo)
-- [🎬 Solving Logarithmic Equations With Logs on Both Sides ...](https://www.youtube.com/watch?v=G_kHwdrxyeU)
-- [🎬 (Hard) Log/Exponential Equations Example](https://www.youtube.com/watch?v=HgJF4gSVGfA)
-- [🎬 Solving (Challenging) Log Equations Different Bases](https://www.youtube.com/watch?v=xx80CyHZfLQ)
+- [📺 What are functions?](https://www.youtube.com/watch?v=52tpYl2tTqk)
+- [📺 VIDEO 1: Surjective and Injective functions](https://www.youtube.com/watch?v=xKNX8BUWR0g)
+- [📺 VIDEO 2: How To Find The Inverse of a Function](https://www.youtube.com/watch?v=2zeYEx4eTdc)
+- [📺 Solving Exponential Equations With Different Bases Using Logarithms](https://www.youtube.com/watch?v=oVUJMVR1JpA)
+- [📺 Solving Exponential Equations - Some Basic Examples](https://www.youtube.com/watch?v=M6f6dANVyxA)
+- [📺 Factorials](https://www.youtube.com/watch?v=pxh__ugRKz8)
+- [📺 VIDEO 1: Logarithms... How? (NancyPi)](https://www.youtube.com/watch?v=Zw5t6BTQYRU)
+- [📺 VIDEO 2: Solving Logarithmic Equations | Khan Academy](https://www.youtube.com/watch?v=Kv2iHde7Xgw)
+- [📺 VIDEO 3: Solving Logarithmic Equations... How? (NancyPi)](https://www.youtube.com/watch?v=rBnQiLa2TYo)
+- [📺 Solving Logarithmic Equations With Logs on Both Sides ...](https://www.youtube.com/watch?v=G_kHwdrxyeU)
+- [📺 (Hard) Log/Exponential Equations Example](https://www.youtube.com/watch?v=HgJF4gSVGfA)
+- [📺 Solving (Challenging) Log Equations Different Bases](https://www.youtube.com/watch?v=xx80CyHZfLQ)

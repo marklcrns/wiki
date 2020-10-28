@@ -30,16 +30,16 @@ set certificate_file = "~/.mutt/certificates"
 
 Ref:
 
-- [🌎 Command Line Email with Neomutt and Gmail](https://medium.com/@villeheilala/command-line-email-with-neomutt-and-gmail-d558864ac3c8)
-- [🌎 Mutt – A Command Line Email Client to Send Mails from Terminal](https://www.tecmint.com/send-mail-from-command-line-using-mutt-command/)
-- [🌎 How to Use the Fast and Powerful Mutt Email Client with Gmail](https://lifehacker.com/how-to-use-the-fast-and-powerful-mutt-email-client-with-5574557)
-- [🌎 jtdaugherty/mutt-tutorial](https://github.com/jtdaugherty/mutt-tutorial)
+- [📄 Command Line Email with Neomutt and Gmail](https://medium.com/@villeheilala/command-line-email-with-neomutt-and-gmail-d558864ac3c8)
+- [📄 Mutt – A Command Line Email Client to Send Mails from Terminal](https://www.tecmint.com/send-mail-from-command-line-using-mutt-command/)
+- [📄 How to Use the Fast and Powerful Mutt Email Client with Gmail](https://lifehacker.com/how-to-use-the-fast-and-powerful-mutt-email-client-with-5574557)
+- [📄 jtdaugherty/mutt-tutorial](https://github.com/jtdaugherty/mutt-tutorial)
 
 <br>
 
 # Resources
 
-- [🌎 Command Line Email with Neomutt and Gmail](https://medium.com/@villeheilala/command-line-email-with-neomutt-and-gmail-d558864ac3c8)
-- [🌎 Mutt – A Command Line Email Client to Send Mails from Terminal](https://www.tecmint.com/send-mail-from-command-line-using-mutt-command/)
-- [🌎 How to Use the Fast and Powerful Mutt Email Client with Gmail](https://lifehacker.com/how-to-use-the-fast-and-powerful-mutt-email-client-with-5574557)
-- [🌎 jtdaugherty/mutt-tutorial](https://github.com/jtdaugherty/mutt-tutorial)
+- [📄 Command Line Email with Neomutt and Gmail](https://medium.com/@villeheilala/command-line-email-with-neomutt-and-gmail-d558864ac3c8)
+- [📄 Mutt – A Command Line Email Client to Send Mails from Terminal](https://www.tecmint.com/send-mail-from-command-line-using-mutt-command/)
+- [📄 How to Use the Fast and Powerful Mutt Email Client with Gmail](https://lifehacker.com/how-to-use-the-fast-and-powerful-mutt-email-client-with-5574557)
+- [📄 jtdaugherty/mutt-tutorial](https://github.com/jtdaugherty/mutt-tutorial)

@@ -16,12 +16,12 @@ summary: Git Usage
 
 ## Git Alias
 
-- [🌎 Predefined git alias commands](https://github.com/GitAlias/gitalias)
+- [📄 Predefined git alias commands](https://github.com/GitAlias/gitalias)
 
 
 <br>
 
 # Resources
 
-- [🌎 Predefined git alias commands](https://github.com/GitAlias/gitalias)
+- [📄 Predefined git alias commands](https://github.com/GitAlias/gitalias)
 

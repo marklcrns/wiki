@@ -24,8 +24,8 @@ date: 2020-02-05
 
 - [⬇ Syllabus](file:../../../files/spring-2020/ECON-120/econ120_syllabus.pdf)
   * Textbook
-- [🌎 ECON Macro 6th Edition](https://ereader.chegg.com/#/books/9781337671804/cfi/3!/4/2@100:0.00) -- eTextbook
-- [🌎 Chegg](https://www.chegg.com/my/orders) -- My eTextbooks
+- [📄 ECON Macro 6th Edition](https://ereader.chegg.com/#/books/9781337671804/cfi/3!/4/2@100:0.00) -- eTextbook
+- [📄 Chegg](https://www.chegg.com/my/orders) -- My eTextbooks
       * Sign-in with Google
     - Purchased 2020-02-09
     - Good for 120 Days
@@ -46,11 +46,11 @@ date: 2020-02-05
 
 Source
 
-- [🌎 Unit ONE - Readings](https://sdccd.instructure.com/courses/2381435/pages/unit-one-readings?module_item_id=39185504)
+- [📄 Unit ONE - Readings](https://sdccd.instructure.com/courses/2381435/pages/unit-one-readings?module_item_id=39185504)
 
 Textbook
 
-- [🌎 ECON Macro 6th Edition](https://ereader.chegg.com/#/books/9781337671804/cfi/3!/4/2@100:0.00) -- eTextbook
+- [📄 ECON Macro 6th Edition](https://ereader.chegg.com/#/books/9781337671804/cfi/3!/4/2@100:0.00) -- eTextbook
   * Part 1: The Art and Science of Economic Analysis Economic Systems
 
 Files
@@ -67,7 +67,7 @@ Session Notes
 
 Recordings
 
-- [🌎 Unite 1 Recordings 2016-09-06](https://youtu.be/k_AorQJBx1E)
+- [📄 Unite 1 Recordings 2016-09-06](https://youtu.be/k_AorQJBx1E)
 
 Personal Notes
 

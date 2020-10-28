@@ -38,12 +38,12 @@ Display `timew` commands
 
 Ref:
 
-- [🌎 Timewarrior Tutorial](https://timewarrior.net/docs/tutorial.html)
+- [📄 Timewarrior Tutorial](https://timewarrior.net/docs/tutorial.html)
 
 
 <br>
 
 # Resources
 
-- [🌎 Timewarrior Tutorial](https://timewarrior.net/docs/tutorial.html)
+- [📄 Timewarrior Tutorial](https://timewarrior.net/docs/tutorial.html)
 

@@ -8,7 +8,7 @@ date: 2020-08-29
 
 # Chocolately
 
-- [🌎 Official Repository](https://github.com/chocolatey/choco)
+- [📄 Official Repository](https://github.com/chocolatey/choco)
 
 ## Installation
 
@@ -19,5 +19,5 @@ date: 2020-08-29
 
 # Resources
 
-- [🌎 Official Repository](https://github.com/chocolatey/choco)
+- [📄 Official Repository](https://github.com/chocolatey/choco)
 

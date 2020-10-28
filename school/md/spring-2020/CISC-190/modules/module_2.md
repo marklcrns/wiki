@@ -32,7 +32,7 @@ summary: Module 2 notes and exercises
 
 ### Explain
 
-- [🎬 CISC 190 M-2 Explain: Creating Canvas Grid](https://www.youtube.com/watch?v=dL-Q_4gOqeQ)
+- [📺 CISC 190 M-2 Explain: Creating Canvas Grid](https://www.youtube.com/watch?v=dL-Q_4gOqeQ)
 
 ### Reflect
 

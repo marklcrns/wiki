@@ -6,7 +6,7 @@ date: 2020-02-24
 
 # Vim Plugin: itchyny/calendar.vim
 
-- [🌎 Git Repo](https://github.com/itchyny/calendar.vim)
+- [📄 Git Repo](https://github.com/itchyny/calendar.vim)
 
 ## Default Mappings
 
@@ -98,5 +98,5 @@ While inside Calendar buffer:
 
 # Resources
 
-- [🌎 Git Repo](https://github.com/itchyny/calendar.vim)
+- [📄 Git Repo](https://github.com/itchyny/calendar.vim)
 

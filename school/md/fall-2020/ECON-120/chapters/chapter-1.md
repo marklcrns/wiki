@@ -8,7 +8,7 @@ date: Aug 20, 2020
 
 # Chapter 1: Introduction: What is Economics?
 
-Exactly the same as [⚓ Chapter 1](../.././../spring-2020/ECON-121/notes/ch-1#chapter-1-introduction-what-is-economics)
+Exactly the same as [📑 Chapter 1](../.././../spring-2020/ECON-121/notes/ch-1#chapter-1-introduction-what-is-economics)
 from ECON 121 Microeconomics textbook.
 
 
@@ -16,7 +16,7 @@ from ECON 121 Microeconomics textbook.
 
 # Resources
 
-- [⚓ Chapter 1](../.././../spring-2020/ECON-121/notes/ch-1#chapter-1-introduction-what-is-economics)
+- [📑 Chapter 1](../.././../spring-2020/ECON-121/notes/ch-1#chapter-1-introduction-what-is-economics)
 
 Textbook
 

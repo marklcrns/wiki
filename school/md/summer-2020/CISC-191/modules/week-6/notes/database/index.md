@@ -9,10 +9,10 @@ summary: Java Database Programming
 # Java Database Programming
 
 - [⬇ Database Programming](file:../../../../../../../files/summer-2020/CISC-191/week-6/database.ppt)
-- [🌎 SimpleJdbc.java](https://liveexample.pearsoncmg.com/html/SimpleJdbc.html)
-- [🌎 FindGrade.java](https://liveexample.pearsoncmg.com/html/FindGrade.html)
-- [🌎 FindGradeUsingPreparedStatement.java](https://liveexample.pearsoncmg.com/html/FindGradeUsingPreparedStatement.html)
-- [🎬 MySQL Database and Connection Pooling](https://www.youtube.com/watch?v=756JDbYaVzE)
+- [📄 SimpleJdbc.java](https://liveexample.pearsoncmg.com/html/SimpleJdbc.html)
+- [📄 FindGrade.java](https://liveexample.pearsoncmg.com/html/FindGrade.html)
+- [📄 FindGradeUsingPreparedStatement.java](https://liveexample.pearsoncmg.com/html/FindGradeUsingPreparedStatement.html)
+- [📺 MySQL Database and Connection Pooling](https://www.youtube.com/watch?v=756JDbYaVzE)
 
 
 ## Database System
@@ -148,8 +148,8 @@ SQL to access the database.
 # Resources
 
 - [⬇ Database Programming](file:../../../../../../../files/summer-2020/CISC-191/week-6/database.ppt)
-- [🌎 SimpleJdbc.java](https://liveexample.pearsoncmg.com/html/SimpleJdbc.html)
-- [🌎 FindGrade.java](https://liveexample.pearsoncmg.com/html/FindGrade.html)
-- [🌎 FindGradeUsingPreparedStatement.java](https://liveexample.pearsoncmg.com/html/FindGradeUsingPreparedStatement.html)
-- [🎬 MySQL Database and Connection Pooling](https://www.youtube.com/watch?v=756JDbYaVzE)
+- [📄 SimpleJdbc.java](https://liveexample.pearsoncmg.com/html/SimpleJdbc.html)
+- [📄 FindGrade.java](https://liveexample.pearsoncmg.com/html/FindGrade.html)
+- [📄 FindGradeUsingPreparedStatement.java](https://liveexample.pearsoncmg.com/html/FindGradeUsingPreparedStatement.html)
+- [📺 MySQL Database and Connection Pooling](https://www.youtube.com/watch?v=756JDbYaVzE)
 

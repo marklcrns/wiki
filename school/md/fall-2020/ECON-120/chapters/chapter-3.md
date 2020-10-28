@@ -33,7 +33,7 @@ six fish, while Kate can either gather one coconut or catch one fish.
 
 </center>
 
-> [⚓ Principle of Opportunity Cost](../../../spring-2020/ECON-121/notes/ch-2#the-principle-of-opportunity-cost)
+> [📑 Principle of Opportunity Cost](../../../spring-2020/ECON-121/notes/ch-2#the-principle-of-opportunity-cost)
 
 Fred's opportunity cost of one coconut is three fish--that's how many fish he
 could catch in the time required to gather one coconut. Similarly, his
@@ -62,7 +62,7 @@ another person or nation.
   opportunity cost of coconuts is one fish per coconut, compared to three fish
   per coconut for Fred.
 
-> [⚓ Principle of Voluntary Exchange](../../../spring-2020/ECON-121/notes/ch-2#the-principle-of-voluntary-exchange)
+> [📑 Principle of Voluntary Exchange](../../../spring-2020/ECON-121/notes/ch-2#the-principle-of-voluntary-exchange)
 
 ### 3.1.2 Comparative Advantage versus Absolute Advantage
 
@@ -412,8 +412,8 @@ the cost of the insurance stays low.
 
 # Resources
 
-- [⚓ Principle of Opportunity Cost](../../../spring-2020/ECON-121/notes/ch-2#the-principle-of-opportunity-cost)
-- [⚓ Principle of Voluntary Exchange](../../../spring-2020/ECON-121/notes/ch-2#the-principle-of-voluntary-exchange)
+- [📑 Principle of Opportunity Cost](../../../spring-2020/ECON-121/notes/ch-2#the-principle-of-opportunity-cost)
+- [📑 Principle of Voluntary Exchange](../../../spring-2020/ECON-121/notes/ch-2#the-principle-of-voluntary-exchange)
 
 Textbook
 

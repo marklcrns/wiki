@@ -222,12 +222,12 @@ gpg --verify some_signature.sig ./message.txt
 
 Ref:
 
-- [🌎 GPG Tutorial](https://www.devdungeon.com/content/gpg-tutorial)
+- [📄 GPG Tutorial](https://www.devdungeon.com/content/gpg-tutorial)
 
 
 <br>
 
 # Resources
 
-- [🌎 GPG Tutorial](https://www.devdungeon.com/content/gpg-tutorial)
+- [📄 GPG Tutorial](https://www.devdungeon.com/content/gpg-tutorial)
 

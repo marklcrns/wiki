@@ -1248,31 +1248,31 @@ int main()
 
 ## Video Lectures
 
-- [🎬 CISC 192 Section 3.1 The cin object](https://www.youtube.com/watch?v=gSpzyhbwfyU)
-- [🎬 CISC 192 Section 3.2 Mathematical Functions](https://www.youtube.com/watch?v=Q0VV6PNlWCY)
-- [🎬 CISC 192 Section 3.3 Type Conversion](https://www.youtube.com/watch?v=VwuZMAc1Xwg)
-- [🎬 CISC 192 Section 3.4 Overflow and Underflow](https://www.youtube.com/watch?v=TOfMyXxGfUw)
-- [🎬 CISC 192 Section 3.5 Type Casting](https://www.youtube.com/watch?v=Zmxt5mjT1GU)
-- [🎬 CISC 192 Section 3.6](https://www.youtube.com/watch?v=oMGlVevJ6VM)
-- [🎬 CISC 192 Section 3.7 Formatting Output](https://www.youtube.com/watch?v=xKbuKLIvuFw)
-- [🎬 CISC 192 Section 3.8 Working with Character Strings](https://www.youtube.com/watch?v=YmlitI4oujg)
-- [🎬 CISC 192 Section 3.9 More Mathematical Library Functions](https://www.youtube.com/watch?v=Y2DE00AC9tY)
-- [🎬 CISC 192 Section 3.10 Hand Tracing a Program (Debugging)](https://www.youtube.com/watch?v=ZsI9thpGLT8)
+- [📺 CISC 192 Section 3.1 The cin object](https://www.youtube.com/watch?v=gSpzyhbwfyU)
+- [📺 CISC 192 Section 3.2 Mathematical Functions](https://www.youtube.com/watch?v=Q0VV6PNlWCY)
+- [📺 CISC 192 Section 3.3 Type Conversion](https://www.youtube.com/watch?v=VwuZMAc1Xwg)
+- [📺 CISC 192 Section 3.4 Overflow and Underflow](https://www.youtube.com/watch?v=TOfMyXxGfUw)
+- [📺 CISC 192 Section 3.5 Type Casting](https://www.youtube.com/watch?v=Zmxt5mjT1GU)
+- [📺 CISC 192 Section 3.6](https://www.youtube.com/watch?v=oMGlVevJ6VM)
+- [📺 CISC 192 Section 3.7 Formatting Output](https://www.youtube.com/watch?v=xKbuKLIvuFw)
+- [📺 CISC 192 Section 3.8 Working with Character Strings](https://www.youtube.com/watch?v=YmlitI4oujg)
+- [📺 CISC 192 Section 3.9 More Mathematical Library Functions](https://www.youtube.com/watch?v=Y2DE00AC9tY)
+- [📺 CISC 192 Section 3.10 Hand Tracing a Program (Debugging)](https://www.youtube.com/watch?v=ZsI9thpGLT8)
 
 <br>
 
 # Resources
 
-- [🎬 CISC 192 Section 3.1 The cin object](https://www.youtube.com/watch?v=gSpzyhbwfyU)
-- [🎬 CISC 192 Section 3.2 Mathematical Functions](https://www.youtube.com/watch?v=Q0VV6PNlWCY)
-- [🎬 CISC 192 Section 3.3 Type Conversion](https://www.youtube.com/watch?v=VwuZMAc1Xwg)
-- [🎬 CISC 192 Section 3.4 Overflow and Underflow](https://www.youtube.com/watch?v=TOfMyXxGfUw)
-- [🎬 CISC 192 Section 3.5 Type Casting](https://www.youtube.com/watch?v=Zmxt5mjT1GU)
-- [🎬 CISC 192 Section 3.6](https://www.youtube.com/watch?v=oMGlVevJ6VM)
-- [🎬 CISC 192 Section 3.7 Formatting Output](https://www.youtube.com/watch?v=xKbuKLIvuFw)
-- [🎬 CISC 192 Section 3.8 Working with Character Strings](https://www.youtube.com/watch?v=YmlitI4oujg)
-- [🎬 CISC 192 Section 3.9 More Mathematical Library Functions](https://www.youtube.com/watch?v=Y2DE00AC9tY)
-- [🎬 CISC 192 Section 3.10 Hand Tracing a Program (Debugging)](https://www.youtube.com/watch?v=ZsI9thpGLT8)
+- [📺 CISC 192 Section 3.1 The cin object](https://www.youtube.com/watch?v=gSpzyhbwfyU)
+- [📺 CISC 192 Section 3.2 Mathematical Functions](https://www.youtube.com/watch?v=Q0VV6PNlWCY)
+- [📺 CISC 192 Section 3.3 Type Conversion](https://www.youtube.com/watch?v=VwuZMAc1Xwg)
+- [📺 CISC 192 Section 3.4 Overflow and Underflow](https://www.youtube.com/watch?v=TOfMyXxGfUw)
+- [📺 CISC 192 Section 3.5 Type Casting](https://www.youtube.com/watch?v=Zmxt5mjT1GU)
+- [📺 CISC 192 Section 3.6](https://www.youtube.com/watch?v=oMGlVevJ6VM)
+- [📺 CISC 192 Section 3.7 Formatting Output](https://www.youtube.com/watch?v=xKbuKLIvuFw)
+- [📺 CISC 192 Section 3.8 Working with Character Strings](https://www.youtube.com/watch?v=YmlitI4oujg)
+- [📺 CISC 192 Section 3.9 More Mathematical Library Functions](https://www.youtube.com/watch?v=Y2DE00AC9tY)
+- [📺 CISC 192 Section 3.10 Hand Tracing a Program (Debugging)](https://www.youtube.com/watch?v=ZsI9thpGLT8)
 
 Textbook
 

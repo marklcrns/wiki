@@ -21,7 +21,7 @@ summary: Research Essay
 
 ## Multimodal Project Presentation
 
-- [🎬 ENGL 205 Multimodal Project Presentation](https://www.youtube.com/watch?v=gc_WoTsD7O4)
+- [📺 ENGL 205 Multimodal Project Presentation](https://www.youtube.com/watch?v=gc_WoTsD7O4)
 - [⬇ Multimodal Project Presentation PowerPoint slides](file:../../../../../files/summer-2020/ENGL-205/multimodal-presentation/multimodal_project_presentation.pptx)
 - [⬇ Multimodal Project Presentation transcript](vfile:../../../../../files/summer-2020/ENGL-205/multimodal-presentation/multimodal_project_script.md)
 
@@ -36,7 +36,7 @@ summary: Research Essay
 
 # Resources
 
-- [🌎 40 Best Topics for Cause and Effect Essay](https://essayinfo.com/essays/cause-and-effect-essay/topics/)
-- [🌎 Essay Topics - List of 500+ Essay Writing Topics and Ideas](https://www.toppr.com/guides/essays/)
-- [🌎 100 Argumentative Essay Topics with Samples](https://justbuyessay.com/blog/argumentative-essay-topics)
+- [📄 40 Best Topics for Cause and Effect Essay](https://essayinfo.com/essays/cause-and-effect-essay/topics/)
+- [📄 Essay Topics - List of 500+ Essay Writing Topics and Ideas](https://www.toppr.com/guides/essays/)
+- [📄 100 Argumentative Essay Topics with Samples](https://justbuyessay.com/blog/argumentative-essay-topics)
 

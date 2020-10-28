@@ -8,7 +8,7 @@ date: Sep 10, 2020
 
 # Chapter 4: Demand, Supply, and Market Equilibrium
 
-Exactly the same as [⚓ Chapter 4](../.././../spring-2020/ECON-121/notes/ch-4#chapter-4-demand-supply-and-market-equilibrium)
+Exactly the same as [📑 Chapter 4](../.././../spring-2020/ECON-121/notes/ch-4#chapter-4-demand-supply-and-market-equilibrium)
 from ECON 121 Microeconomics textbook.
 
 
@@ -16,7 +16,7 @@ from ECON 121 Microeconomics textbook.
 
 # Resources
 
-- [⚓ Chapter 4](../.././../spring-2020/ECON-121/notes/ch-4#chapter-4-demand-supply-and-market-equilibrium)
+- [📑 Chapter 4](../.././../spring-2020/ECON-121/notes/ch-4#chapter-4-demand-supply-and-market-equilibrium)
 
 Textbook
 

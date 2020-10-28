@@ -8,7 +8,7 @@ date: Aug 29, 2020
 
 # Chapter 2: The Key Principles of Economics
 
-Exactly the same as [⚓ Chapter 2](../.././../spring-2020/ECON-121/notes/ch-2#chapter-2-the-key-principles-of-economics)
+Exactly the same as [📑 Chapter 2](../.././../spring-2020/ECON-121/notes/ch-2#chapter-2-the-key-principles-of-economics)
 from ECON 121 Microeconomics textbook.
 
 
@@ -16,7 +16,7 @@ from ECON 121 Microeconomics textbook.
 
 # Resources
 
-- [⚓ Chapter 2](../.././../spring-2020/ECON-121/notes/ch-2#chapter-2-the-key-principles-of-economics)
+- [📑 Chapter 2](../.././../spring-2020/ECON-121/notes/ch-2#chapter-2-the-key-principles-of-economics)
 
 Textbook
 

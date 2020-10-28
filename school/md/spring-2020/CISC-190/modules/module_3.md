@@ -50,7 +50,7 @@ summary: Module 3 notes and exercises
 
 ### Explain
 
-- [🎬 CISC 190 M-3 Explain: Arrays](https://www.youtube.com/watch?v=8k7w-m7S5R8)
+- [📺 CISC 190 M-3 Explain: Arrays](https://www.youtube.com/watch?v=8k7w-m7S5R8)
 
 ### Reflect
 

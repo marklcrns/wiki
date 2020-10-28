@@ -38,11 +38,11 @@ summary: Right triangle ratios and angles
 
 ### Video Lecture 1
 
-- [🎬 VIDEO 1: Ratio nirvana 1](https://www.youtube.com/watch?v=mh1nzhymVbc)
+- [📺 VIDEO 1: Ratio nirvana 1](https://www.youtube.com/watch?v=mh1nzhymVbc)
 
 ### Video Lecture 2
 
-- [🎬 VIDEO 2: Ratio nirvana 2](https://www.youtube.com/watch?v=ltT78ePg9pw)
+- [📺 VIDEO 2: Ratio nirvana 2](https://www.youtube.com/watch?v=ltT78ePg9pw)
 
 Timestamps
 
@@ -50,7 +50,7 @@ Timestamps
 
 ### Video Lecture 3
 
-- [🎬 VIDEO 3: Inverse functions](https://www.youtube.com/watch?v=mKhTE82mECI)
+- [📺 VIDEO 3: Inverse functions](https://www.youtube.com/watch?v=mKhTE82mECI)
 
 Timestamps
 
@@ -71,7 +71,7 @@ Timestamps
 
 ### Video Lecture
 
-- [🎬 Mission Accomplished](https://www.youtube.com/watch?v=nSNTkZ52gl8)
+- [📺 Mission Accomplished](https://www.youtube.com/watch?v=nSNTkZ52gl8)
 
 Timestamps
 
@@ -104,7 +104,7 @@ Cosecant, Secant and Cotangent
 
 ### Video Lecture
 
-- [🎬 The rest of the inverse functions](https://www.youtube.com/watch?v=7zBjTAs1DSA)
+- [📺 The rest of the inverse functions](https://www.youtube.com/watch?v=7zBjTAs1DSA)
 
 <br>
 
@@ -114,9 +114,9 @@ Cosecant, Secant and Cotangent
 - [⬇ Handout 14: Inverses intro](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-14.pdf)
 - [⬇ Handout 15: Ratios nirvana v2](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-15.pdf)
 - [⬇ Handout 16: Soh-Cah-Toa formula guide](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-16.pdf)
-- [🎬 VIDEO 1: Ratio nirvana 1](https://www.youtube.com/watch?v=mh1nzhymVbc)
-- [🎬 VIDEO 2: Ratio nirvana 2](https://www.youtube.com/watch?v=ltT78ePg9pw)
-- [🎬 VIDEO 3: Inverse functions](https://www.youtube.com/watch?v=mKhTE82mECI)
+- [📺 VIDEO 1: Ratio nirvana 1](https://www.youtube.com/watch?v=mh1nzhymVbc)
+- [📺 VIDEO 2: Ratio nirvana 2](https://www.youtube.com/watch?v=ltT78ePg9pw)
+- [📺 VIDEO 3: Inverse functions](https://www.youtube.com/watch?v=mKhTE82mECI)
 - [⬇ Handout 17: The promise mission accomplished](file:../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-17.pdf)
-- [🎬 Mission Accomplished](https://www.youtube.com/watch?v=nSNTkZ52gl8)
+- [📺 Mission Accomplished](https://www.youtube.com/watch?v=nSNTkZ52gl8)
 

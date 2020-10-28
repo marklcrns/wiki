@@ -18,7 +18,7 @@ date: Oct 19, 2020
 
 Resources:
 
-- [🌎 The 16 Boolean Logic Functions of Two-Input Systems](https://www.allaboutcircuits.com/technical-articles/16-boolean-logic-functions-of-2-input-system/)
+- [📄 The 16 Boolean Logic Functions of Two-Input Systems](https://www.allaboutcircuits.com/technical-articles/16-boolean-logic-functions-of-2-input-system/)
 
 ## Lab
 

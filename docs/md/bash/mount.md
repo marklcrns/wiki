@@ -23,7 +23,7 @@ sudo unmount <drive>
 
 Ref:
 
-- [🌎 How to mount usb drive in a linux system](https://www.tutorialspoint.com/how-to-mount-usb-drive-in-a-linux-system)
+- [📄 How to mount usb drive in a linux system](https://www.tutorialspoint.com/how-to-mount-usb-drive-in-a-linux-system)
 
 
 ## Formatting Drive
@@ -40,11 +40,11 @@ Ref:
 
 Ref:
 
-- [🌎 How to mount usb drive in a linux system](https://www.tutorialspoint.com/how-to-mount-usb-drive-in-a-linux-system)
+- [📄 How to mount usb drive in a linux system](https://www.tutorialspoint.com/how-to-mount-usb-drive-in-a-linux-system)
 
 <br>
 
 # Resources
 
-- [🌎 How to mount usb drive in a linux system](https://www.tutorialspoint.com/how-to-mount-usb-drive-in-a-linux-system)
+- [📄 How to mount usb drive in a linux system](https://www.tutorialspoint.com/how-to-mount-usb-drive-in-a-linux-system)
 

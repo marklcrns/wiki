@@ -18,7 +18,7 @@ brew install maven
 
 Ref:
 
-- [🌎 How to install Maven on Windows](https://mkyong.com/maven/how-to-install-maven-in-windows/)
+- [📄 How to install Maven on Windows](https://mkyong.com/maven/how-to-install-maven-in-windows/)
 
 ## Linux
 
@@ -33,13 +33,13 @@ sudo apt install maven
 
 Ref:
 
-- [🌎 How to Install Apache Maven on Ubuntu 20.04](https://linuxize.com/post/how-to-install-apache-maven-on-ubuntu-20-04/)
+- [📄 How to Install Apache Maven on Ubuntu 20.04](https://linuxize.com/post/how-to-install-apache-maven-on-ubuntu-20-04/)
 
 
 <br>
 
 # Resources
 
-- [🌎 How to install Maven on Windows](https://www.javatpoint.com/how-to-install-maven)
-- [🌎 How to Install Apache Maven on Ubuntu 20.04](https://linuxize.com/post/how-to-install-apache-maven-on-ubuntu-20-04/)
+- [📄 How to install Maven on Windows](https://www.javatpoint.com/how-to-install-maven)
+- [📄 How to Install Apache Maven on Ubuntu 20.04](https://linuxize.com/post/how-to-install-apache-maven-on-ubuntu-20-04/)
 

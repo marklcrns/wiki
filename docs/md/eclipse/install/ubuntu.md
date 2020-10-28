@@ -8,7 +8,7 @@ date: Sep 24, 2020
 
 # Eclipse
 
-Download latest Eclipse for **Java** tar.gz file [🌎 Eclipse Downloads](https://www.eclipse.org/downloads/packages/)
+Download latest Eclipse for **Java** tar.gz file [📄 Eclipse Downloads](https://www.eclipse.org/downloads/packages/)
 
 Extract the package into the `/opt` directory:
 
@@ -44,8 +44,8 @@ StartupNotify=false
 
 Ref:
 
-- [🌎 Eclipse IDE for C/C++ Developers installation on Ubuntu 20.04 ](https://linuxconfig.org/eclipse-ide-for-c-c-developers-installation-on-ubuntu-20-04)
-- [🌎 How To Install Eclipse IDE on Ubuntu 20.04](https://www.itzgeek.com/post/how-to-install-eclipse-ide-on-ubuntu-20-04/)
+- [📄 Eclipse IDE for C/C++ Developers installation on Ubuntu 20.04 ](https://linuxconfig.org/eclipse-ide-for-c-c-developers-installation-on-ubuntu-20-04)
+- [📄 How To Install Eclipse IDE on Ubuntu 20.04](https://www.itzgeek.com/post/how-to-install-eclipse-ide-on-ubuntu-20-04/)
 
 
 ## Issues
@@ -57,7 +57,7 @@ library jfxrt.jar)
 
 Solution:
 
-- [🌎 Access restriction: The type 'Application' is not API (restriction on required library rt.jar)](https://stackoverflow.com/a/46513651/11850077)
+- [📄 Access restriction: The type 'Application' is not API (restriction on required library rt.jar)](https://stackoverflow.com/a/46513651/11850077)
 
 
 ## e(fx)clipse JavaFX
@@ -76,7 +76,7 @@ environment has properly been setup.
 
 Ref:
 
-- [🌎 JavaFX Tutorial for Beginners - Setting up Eclipse Tooling and Runtime for JavaFX](https://www.youtube.com/watch?v=Y9ykVgSZ7kA)
+- [📄 JavaFX Tutorial for Beginners - Setting up Eclipse Tooling and Runtime for JavaFX](https://www.youtube.com/watch?v=Y9ykVgSZ7kA)
 
 
 ## Maven JavaFX
@@ -100,16 +100,16 @@ match your desired jdk version.
 
 Ref:
 
-- [🌎 Getting Started with JavaFX](https://openjfx.io/openjfx-docs)
+- [📄 Getting Started with JavaFX](https://openjfx.io/openjfx-docs)
 
 <br>
 
 # Resources
 
-- [🌎 Eclipse Downloads](https://www.eclipse.org/downloads/packages/)
-- [🌎 Eclipse IDE for C/C++ Developers installation on Ubuntu 20.04 ](https://linuxconfig.org/eclipse-ide-for-c-c-developers-installation-on-ubuntu-20-04)
-- [🌎 How To Install Eclipse IDE on Ubuntu 20.04](https://www.itzgeek.com/post/how-to-install-eclipse-ide-on-ubuntu-20-04/)
-- [🌎 Access restriction: The type 'Application' is not API (restriction on required library rt.jar)](https://stackoverflow.com/a/46513651/11850077)
-- [🌎 JavaFX Tutorial for Beginners - Setting up Eclipse Tooling and Runtime for JavaFX](https://www.youtube.com/watch?v=Y9ykVgSZ7kA)
-- [🌎 Getting Started with JavaFX](https://openjfx.io/openjfx-docs)
+- [📄 Eclipse Downloads](https://www.eclipse.org/downloads/packages/)
+- [📄 Eclipse IDE for C/C++ Developers installation on Ubuntu 20.04 ](https://linuxconfig.org/eclipse-ide-for-c-c-developers-installation-on-ubuntu-20-04)
+- [📄 How To Install Eclipse IDE on Ubuntu 20.04](https://www.itzgeek.com/post/how-to-install-eclipse-ide-on-ubuntu-20-04/)
+- [📄 Access restriction: The type 'Application' is not API (restriction on required library rt.jar)](https://stackoverflow.com/a/46513651/11850077)
+- [📄 JavaFX Tutorial for Beginners - Setting up Eclipse Tooling and Runtime for JavaFX](https://www.youtube.com/watch?v=Y9ykVgSZ7kA)
+- [📄 Getting Started with JavaFX](https://openjfx.io/openjfx-docs)
 

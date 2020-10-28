@@ -104,10 +104,10 @@ i=0; i=$(expr $i + 1)   user    0m5.464s
 
 Ref:
 
-- [🌎 How to Increment and Decrement Variable in Bash (Counter)](https://linuxize.com/post/bash-increment-decrement-variable/)
-- [🌎 Shell Script to Add Two Integers](https://tecadmin.net/tutorial/bash/examples/add-to-numbers/)
-- [🌎 How to increment a variable in bash?](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
-- [🌎 Various options to increment by 1, and performance analysis](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
+- [📄 How to Increment and Decrement Variable in Bash (Counter)](https://linuxize.com/post/bash-increment-decrement-variable/)
+- [📄 Shell Script to Add Two Integers](https://tecadmin.net/tutorial/bash/examples/add-to-numbers/)
+- [📄 How to increment a variable in bash?](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
+- [📄 Various options to increment by 1, and performance analysis](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
 
 
 ## Get Script Paths and Name
@@ -125,20 +125,20 @@ SCRIPTDIR="$( cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 ; pwd -P )"
 
 Ref:
 
-- [🌎 Reliable way for a Bash script to get the full path to itself](https://stackoverflow.com/a/4774063/11850077)
-- [🌎 How to get the source directory of a Bash script from within the script itself?](https://stackoverflow.com/a/246128/11850077)
-- [🌎 Get script name in shell script](https://www.golinuxcloud.com/get-script-name-get-script-path-shell-script/)
+- [📄 Reliable way for a Bash script to get the full path to itself](https://stackoverflow.com/a/4774063/11850077)
+- [📄 How to get the source directory of a Bash script from within the script itself?](https://stackoverflow.com/a/246128/11850077)
+- [📄 Get script name in shell script](https://www.golinuxcloud.com/get-script-name-get-script-path-shell-script/)
 
 
 <br>
 
 # Resources
 
-- [🌎 How to Increment and Decrement Variable in Bash (Counter)](https://linuxize.com/post/bash-increment-decrement-variable/)
-- [🌎 Shell Script to Add Two Integers](https://tecadmin.net/tutorial/bash/examples/add-to-numbers/)
-- [🌎 How to increment a variable in bash?](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
-- [🌎 Various options to increment by 1, and performance analysis](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
-- [🌎 Reliable way for a Bash script to get the full path to itself](https://stackoverflow.com/a/4774063/11850077)
-- [🌎 How to get the source directory of a Bash script from within the script itself?](https://stackoverflow.com/a/246128/11850077)
-- [🌎 Get script name in shell script](https://www.golinuxcloud.com/get-script-name-get-script-path-shell-script/)
+- [📄 How to Increment and Decrement Variable in Bash (Counter)](https://linuxize.com/post/bash-increment-decrement-variable/)
+- [📄 Shell Script to Add Two Integers](https://tecadmin.net/tutorial/bash/examples/add-to-numbers/)
+- [📄 How to increment a variable in bash?](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
+- [📄 Various options to increment by 1, and performance analysis](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
+- [📄 Reliable way for a Bash script to get the full path to itself](https://stackoverflow.com/a/4774063/11850077)
+- [📄 How to get the source directory of a Bash script from within the script itself?](https://stackoverflow.com/a/246128/11850077)
+- [📄 Get script name in shell script](https://www.golinuxcloud.com/get-script-name-get-script-path-shell-script/)
 

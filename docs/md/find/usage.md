@@ -71,15 +71,15 @@ find . \( -type d -name ".git" -prune \) -o -type f -print0 | xargs -0 chmod 644
 
 Ref:
 
-- [🌎 How to exclude a directory in find . command](https://stackoverflow.com/a/4210072/11850077)
-- [🌎 If prune doesn't work](https://stackoverflow.com/a/15736463/11850077)
-- [🌎 How to pipe list of files returned by find command to cat to view all the files](https://stackoverflow.com/a/864330/11850077)
+- [📄 How to exclude a directory in find . command](https://stackoverflow.com/a/4210072/11850077)
+- [📄 If prune doesn't work](https://stackoverflow.com/a/15736463/11850077)
+- [📄 How to pipe list of files returned by find command to cat to view all the files](https://stackoverflow.com/a/864330/11850077)
 
 <br>
 
 # Resources
 
-- [🌎 How to exclude a directory in find . command](https://stackoverflow.com/a/4210072/11850077)
-- [🌎 If prune doesn't work](https://stackoverflow.com/a/15736463/11850077)
-- [🌎 How to pipe list of files returned by find command to cat to view all the files](https://stackoverflow.com/a/864330/11850077)
+- [📄 How to exclude a directory in find . command](https://stackoverflow.com/a/4210072/11850077)
+- [📄 If prune doesn't work](https://stackoverflow.com/a/15736463/11850077)
+- [📄 How to pipe list of files returned by find command to cat to view all the files](https://stackoverflow.com/a/864330/11850077)
 

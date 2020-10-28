@@ -7,11 +7,11 @@ date: 2020-03-12
 
 # Vim Plugin: junegunn/fzf
 
-- [🌎 Git Repo](https://github.com/junegunn/fzf)
+- [📄 Git Repo](https://github.com/junegunn/fzf)
 
 ## Usage
 
-- [🌎 Search Syntax](https://github.com/junegunn/fzf#search-syntax)
+- [📄 Search Syntax](https://github.com/junegunn/fzf#search-syntax)
 
 | Token     | Match type                 | Description                        |
 |-----------|----------------------------|------------------------------------|
@@ -28,6 +28,6 @@ date: 2020-03-12
 
 # Resources
 
-- [🌎 Git Repo](https://github.com/junegunn/fzf)
-- [🌎 Search Syntax](https://github.com/junegunn/fzf#search-syntax)
+- [📄 Git Repo](https://github.com/junegunn/fzf)
+- [📄 Search Syntax](https://github.com/junegunn/fzf#search-syntax)
 

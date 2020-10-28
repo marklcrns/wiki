@@ -56,7 +56,7 @@ $$
 
 ### Video Lecture
 
-- [🎬 TRIG What is basic trigonometry? what is it supposed to do?](https://www.youtube.com/watch?v=4uV9iO7hEq0)
+- [📺 TRIG What is basic trigonometry? what is it supposed to do?](https://www.youtube.com/watch?v=4uV9iO7hEq0)
 
 #### Video Lecture Notes
 
@@ -71,7 +71,7 @@ $$
 
 ### Video Lecture 1
 
-- [🎬 VIDEO 1: Trigonometry Introduction to Circles Areas of and Circumference](https://www.youtube.com/watch?v=czgTI0IUFgw)
+- [📺 VIDEO 1: Trigonometry Introduction to Circles Areas of and Circumference](https://www.youtube.com/watch?v=czgTI0IUFgw)
 
 #### Video Lecture 1 Notes
 
@@ -100,7 +100,7 @@ Formulas
 
 ### Video Lecture 2
 
-- [🎬 VIDEO 2: area of a circle is pi r squared proof](https://www.youtube.com/watch?v=fmAvZjMyMgw)
+- [📺 VIDEO 2: area of a circle is pi r squared proof](https://www.youtube.com/watch?v=fmAvZjMyMgw)
 
 ### Daabz Questions
 
@@ -118,7 +118,7 @@ Formulas
 
 ### Video Lecture 1
 
-- [🎬 VIDEO 1: Introduction to volumes, cones, cylinders spheres](https://www.youtube.com/watch?v=Me0Isx2FO9I)
+- [📺 VIDEO 1: Introduction to volumes, cones, cylinders spheres](https://www.youtube.com/watch?v=Me0Isx2FO9I)
 
 #### Video Lecture 1 Notes
 
@@ -149,7 +149,7 @@ Formulas
 
 ### Video Lecture 2
 
-- [🎬 VIDEO 2: introduction to pythagorean theorem also classic proof of](https://www.youtube.com/watch?v=X6THazimvmI)
+- [📺 VIDEO 2: introduction to pythagorean theorem also classic proof of](https://www.youtube.com/watch?v=X6THazimvmI)
 
 #### Video Lecture 2 Notes
 
@@ -165,7 +165,7 @@ the third and final side.
 
 ### Video Lecture
 
-- [🎬 Fundamental Theorem of Trigonometry Secret to solving right triangles](https://www.youtube.com/watch?v=BdVyEB-0FCw)
+- [📺 Fundamental Theorem of Trigonometry Secret to solving right triangles](https://www.youtube.com/watch?v=BdVyEB-0FCw)
 
 #### Video Lecture Notes
 
@@ -177,7 +177,7 @@ the third and final side.
 
 ### Video Lecture 1
 
-- [🎬 VIDEO 1: ratios for 30-60 triangles are easy](https://www.youtube.com/watch?v=1kz7sxySOnU)
+- [📺 VIDEO 1: ratios for 30-60 triangles are easy](https://www.youtube.com/watch?v=1kz7sxySOnU)
 
 #### Video Lecture 1 Notes
 
@@ -195,11 +195,11 @@ the third and final side.
 
 ### Video Lecture 2
 
-- [🎬 VIDEO 2: TRIGONOMETRY HOW TO MEASURE A TREE FROM FAR AWAY](https://www.youtube.com/watch?v=9-Jg9DRhENs)
+- [📺 VIDEO 2: TRIGONOMETRY HOW TO MEASURE A TREE FROM FAR AWAY](https://www.youtube.com/watch?v=9-Jg9DRhENs)
 
 ### Video Lecture 3
 
-- [🎬 VIDEO 3: Ratios & the 45-45 Theorem](https://www.youtube.com/watch?v=Jg1fwmH-6eA)
+- [📺 VIDEO 3: Ratios & the 45-45 Theorem](https://www.youtube.com/watch?v=Jg1fwmH-6eA)
 
 #### Video Lecture 3 Notes
 
@@ -214,8 +214,8 @@ the third and final side.
 
 ![Unit Circle](../../../../files/spring-2020/MATH-141/ch-4/unit_circle.png)
 
-- [🎬 Unit Circle](https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:trig/x2ec2f6f830c9fb89:unit-circle/v/unit-circle-definition-of-trig-functions-1)
-- [🎬 How to Remember the Unit Circle (NancyPi)](https://www.youtube.com/watch?v=c819bGfH8FA)
+- [📺 Unit Circle](https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:trig/x2ec2f6f830c9fb89:unit-circle/v/unit-circle-definition-of-trig-functions-1)
+- [📺 How to Remember the Unit Circle (NancyPi)](https://www.youtube.com/watch?v=c819bGfH8FA)
 
 
 <br>
@@ -223,19 +223,19 @@ the third and final side.
 # Resources
 
 - [⬇ Handout Trig Notes 1](file:../../../../files/spring-2020/MATH-141/ch-4/m-4_TrigNotes_1.pdf)
-- [🎬 TRIG What is basic trigonometry? what is it supposed to do?](https://www.youtube.com/watch?v=4uV9iO7hEq0)
+- [📺 TRIG What is basic trigonometry? what is it supposed to do?](https://www.youtube.com/watch?v=4uV9iO7hEq0)
 - [⬇ Handout Trig Notes 2](file:../../../../files/spring-2020/MATH-141/ch-4/m-4_TrigNotes_2.pdf)
-- [🎬 VIDEO 1: Trigonometry Introduction to Circles Areas of and Circumference](https://www.youtube.com/watch?v=czgTI0IUFgw)
-- [🎬 VIDEO 2: area of a circle is pi r squared proof](https://www.youtube.com/watch?v=fmAvZjMyMgw)
+- [📺 VIDEO 1: Trigonometry Introduction to Circles Areas of and Circumference](https://www.youtube.com/watch?v=czgTI0IUFgw)
+- [📺 VIDEO 2: area of a circle is pi r squared proof](https://www.youtube.com/watch?v=fmAvZjMyMgw)
 - [⬇ Handout Trig Notes 3](file:../../../../files/spring-2020/MATH-141/ch-4/m-4_TrigNotes_3.pdf)
 - [⬇ Handout Trig Notes 4](file:../../../../files/spring-2020/MATH-141/ch-4/m-4_TrigNotes_4.pdf)
-- [🎬 VIDEO 1: Introduction to volumes, cones, cylinders spheres](https://www.youtube.com/watch?v=Me0Isx2FO9I)
-- [🎬 VIDEO 2: introduction to pythagorean theorem also classic proof of](https://www.youtube.com/watch?v=X6THazimvmI)
+- [📺 VIDEO 1: Introduction to volumes, cones, cylinders spheres](https://www.youtube.com/watch?v=Me0Isx2FO9I)
+- [📺 VIDEO 2: introduction to pythagorean theorem also classic proof of](https://www.youtube.com/watch?v=X6THazimvmI)
 - [⬇ Handout Trig Notes 5](file:../../../../files/spring-2020/MATH-141/ch-4/m-4_TrigNotes_5.pdf)
-- [🎬 Fundamental Theorem of Trigonometry Secret to solving right triangles](https://www.youtube.com/watch?v=BdVyEB-0FCw)
-- [🎬 VIDEO 1: ratios for 30-60 triangles are easy](https://www.youtube.com/watch?v=1kz7sxySOnU)
-- [🎬 VIDEO 2: TRIGONOMETRY HOW TO MEASURE A TREE FROM FAR AWAY](https://www.youtube.com/watch?v=9-Jg9DRhENs)
-- [🎬 VIDEO 3: Ratios & the 45-45 Theorem](https://www.youtube.com/watch?v=Jg1fwmH-6eA)
-- [🎬 Unit Circle](https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:trig/x2ec2f6f830c9fb89:unit-circle/v/unit-circle-definition-of-trig-functions-1)
-- [🎬 How to Remember the Unit Circle (NancyPi)](https://www.youtube.com/watch?v=c819bGfH8FA)
+- [📺 Fundamental Theorem of Trigonometry Secret to solving right triangles](https://www.youtube.com/watch?v=BdVyEB-0FCw)
+- [📺 VIDEO 1: ratios for 30-60 triangles are easy](https://www.youtube.com/watch?v=1kz7sxySOnU)
+- [📺 VIDEO 2: TRIGONOMETRY HOW TO MEASURE A TREE FROM FAR AWAY](https://www.youtube.com/watch?v=9-Jg9DRhENs)
+- [📺 VIDEO 3: Ratios & the 45-45 Theorem](https://www.youtube.com/watch?v=Jg1fwmH-6eA)
+- [📺 Unit Circle](https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:trig/x2ec2f6f830c9fb89:unit-circle/v/unit-circle-definition-of-trig-functions-1)
+- [📺 How to Remember the Unit Circle (NancyPi)](https://www.youtube.com/watch?v=c819bGfH8FA)
 

@@ -17,7 +17,7 @@ Thematic elements used
     * Employee rating system
     * Donkey and the carrot
     * Resources:
-- [🌎 Approval Seeking](https://www.psychologytoday.com/us/blog/working-through-shame/201906/why-do-we-constantly-seek-the-approval-others)
+- [📄 Approval Seeking](https://www.psychologytoday.com/us/blog/working-through-shame/201906/why-do-we-constantly-seek-the-approval-others)
   - Learned helplessness
     * Young elephant story
     * Slowly draining hope
@@ -30,7 +30,7 @@ Thematic elements used
 
 Additional Resources
 
-- [🌎 Conversation with Rob Hart](https://therealbookspy.com/2019/08/27/the-warehouse-a-conversation-with-rob-hart/)
+- [📄 Conversation with Rob Hart](https://therealbookspy.com/2019/08/27/the-warehouse-a-conversation-with-rob-hart/)
 
 
 Scraps

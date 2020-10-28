@@ -21,7 +21,7 @@ date: 2020-02-05
 - [⬇ Algebra Review](file:../../../files/spring-2020/MATH-141/algebra_review.pdf)
 - [⬇ Pre-calc Textbook Reference 1](file:../../../files/spring-2020/MATH-141/pre-calc_textbookRef.pdf)
 - [⬇ Pre-calc Textbook Reference 2](file:../../../files/spring-2020/MATH-141/pre-calc_textbookRef2.pdf)
-- [🌎 Daabz.com](https://daabz.com/)
+- [📄 Daabz.com](https://daabz.com/)
 - [⬇ Daabz Introduction](file:../../../files/spring-2020/MATH-141/daabz_intro.pdf)
     - My Dabs account [credentials](vfile:../../../files/spring-2020/MATH-141/daabz_account.txt)
 

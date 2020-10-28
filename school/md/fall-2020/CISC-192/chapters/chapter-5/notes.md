@@ -1777,10 +1777,10 @@ int main()
 
 ## Video Lectures
 
-- [🎬 cpp sections 5-1 to 5-4](https://www.youtube.com/watch?v=FeGUmf5iKXs)
-- [🎬 CISC 192 5.5 - 5.8](https://www.youtube.com/watch?v=Lj2CVTR9Ux0)
-- [🎬 CISC 192 Sections 5.8 - 5.10](https://www.youtube.com/watch?v=XSVAdVa5VDg&feature=emb_title)
-- [🎬 CISC 192 Section 5.11 Example 1](https://www.youtube.com/watch?v=vQb8SQNB6io)
+- [📺 cpp sections 5-1 to 5-4](https://www.youtube.com/watch?v=FeGUmf5iKXs)
+- [📺 CISC 192 5.5 - 5.8](https://www.youtube.com/watch?v=Lj2CVTR9Ux0)
+- [📺 CISC 192 Sections 5.8 - 5.10](https://www.youtube.com/watch?v=XSVAdVa5VDg&feature=emb_title)
+- [📺 CISC 192 Section 5.11 Example 1](https://www.youtube.com/watch?v=vQb8SQNB6io)
 
 <br>
 

@@ -33,7 +33,7 @@ summary: Module 1 notes and exercises
 
 ### Explain
 
-- [🎬 CISC 190 M-1 Explain: Making Circles With Turtle Method](https://www.youtube.com/watch?v=sA4Zvt4v5xY)
+- [📺 CISC 190 M-1 Explain: Making Circles With Turtle Method](https://www.youtube.com/watch?v=sA4Zvt4v5xY)
 
 ### Reflect
 

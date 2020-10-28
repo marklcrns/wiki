@@ -31,8 +31,8 @@ summary: Linked Data Structures and Recursion
 ## AVL Trees
 
 - [⬇ AVL Trees](file:../../../../../../files/summer-2020/CISC-191/week-3/avl-trees.ppt)
-- [🎬 Data Structures: Trees](https://www.youtube.com/watch?v=oSWTXtMglKE)
-- [🎬 Tree Sort (EASY EXPLANATION)](https://www.youtube.com/watch?v=Qg_a1jrIhoc)
+- [📺 Data Structures: Trees](https://www.youtube.com/watch?v=oSWTXtMglKE)
+- [📺 Tree Sort (EASY EXPLANATION)](https://www.youtube.com/watch?v=Qg_a1jrIhoc)
 
 
 ## Big O Notation
@@ -45,13 +45,13 @@ summary: Linked Data Structures and Recursion
 # Resources
 
 - [⬇ AVL Trees](file:../../../../../../files/summer-2020/CISC-191/week-3/avl-trees.ppt)
-- [🎬 Data Structures: Trees](https://www.youtube.com/watch?v=oSWTXtMglKE)
-- [🎬 Tree Sort (EASY EXPLANATION)](https://www.youtube.com/watch?v=Qg_a1jrIhoc)
+- [📺 Data Structures: Trees](https://www.youtube.com/watch?v=oSWTXtMglKE)
+- [📺 Tree Sort (EASY EXPLANATION)](https://www.youtube.com/watch?v=Qg_a1jrIhoc)
 
 
 Textbook
 
-+ [🌎 Andrew Huang CISC 191: Intermediate Java Programming - zyBooks](https://www.zybooks.com/)
++ [📄 Andrew Huang CISC 191: Intermediate Java Programming - zyBooks](https://www.zybooks.com/)
     - Chapter 11 Recursion
     - Chapter 17 Searching and algorithms
 

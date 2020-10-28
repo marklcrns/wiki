@@ -27,8 +27,8 @@ cd .. && rm -r alacritty
 
 Ref:
 
-- [🌎 Alacritty Installation Guide](https://github.com/alacritty/alacritty/blob/master/INSTALL.md#linux--windows)
-- [🌎 install-alacritty-ubuntu.sh](https://gist.github.com/Aaronmacaron/8a4e82ed0033290cb2e12d9df4e77efe)
+- [📄 Alacritty Installation Guide](https://github.com/alacritty/alacritty/blob/master/INSTALL.md#linux--windows)
+- [📄 install-alacritty-ubuntu.sh](https://gist.github.com/Aaronmacaron/8a4e82ed0033290cb2e12d9df4e77efe)
 
 ## WSL/WSL2
 
@@ -48,14 +48,14 @@ shell:
 
 Ref:
 
-- [🌎 Alaritty Windows Installation](https://gist.github.com/AjkayAlan/39a8e53319410b2280667c0f37e0b830#install-and-configure-a-terminal)
+- [📄 Alaritty Windows Installation](https://gist.github.com/AjkayAlan/39a8e53319410b2280667c0f37e0b830#install-and-configure-a-terminal)
 
 
 <br>
 
 # Resources
 
-- [🌎 Alacritty Installation Guide](https://github.com/alacritty/alacritty/blob/master/INSTALL.md#linux--windows)
-- [🌎 install-alacritty-ubuntu.sh](https://gist.github.com/Aaronmacaron/8a4e82ed0033290cb2e12d9df4e77efe)
-- [🌎 Alaritty Windows Installation](https://gist.github.com/AjkayAlan/39a8e53319410b2280667c0f37e0b830#install-and-configure-a-terminal)
+- [📄 Alacritty Installation Guide](https://github.com/alacritty/alacritty/blob/master/INSTALL.md#linux--windows)
+- [📄 install-alacritty-ubuntu.sh](https://gist.github.com/Aaronmacaron/8a4e82ed0033290cb2e12d9df4e77efe)
+- [📄 Alaritty Windows Installation](https://gist.github.com/AjkayAlan/39a8e53319410b2280667c0f37e0b830#install-and-configure-a-terminal)
 

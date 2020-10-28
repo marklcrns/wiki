@@ -16,7 +16,7 @@ In the reading for this week we learned a little about different kinds of
 accounts such as checking and savings accounts. The short video below provides a
 little more explanation about the differences between the two.
 
-- [🎬 What's the Difference Between Checking & Savings? Kal Penn Explains | Mashable](https://www.youtube.com/watch?v=7K8pDRX3oaM)
+- [📺 What's the Difference Between Checking & Savings? Kal Penn Explains | Mashable](https://www.youtube.com/watch?v=7K8pDRX3oaM)
 
 ### 7.3 Good Debt vs. Bad Debt
 
@@ -95,7 +95,7 @@ Do you have a credit card? If so, do you pay the balance every month? Credit
 cards are often considered "bad debt" because they're used to finance consumer
 spending and also because they can easily lead to growing levels of debt.
 
-According to [🌎 an article by Hillary Hoffower published in Business
+According to [📄 an article by Hillary Hoffower published in Business
 Insider](https://www.businessinsider.com/average-credit-card-debt-in-every-state-ranked-2018-8),
 American households that don't pay off their credit card balances each month
 have more than \$9,000 of credit card debt on average. Since this is an average,
@@ -110,7 +110,7 @@ itself instead of wealth.)
 Below is a video explaining how credit cards (and other lines of credit loans)
 work. Please watch the video and then continue on with this page.
 
-- [🎬 Credit Card Debt Explained | KQED News](https://www.youtube.com/watch?v=L5qlbISOAGA)
+- [📺 Credit Card Debt Explained | KQED News](https://www.youtube.com/watch?v=L5qlbISOAGA)
 
 #### Payday Loans
 
@@ -132,8 +132,8 @@ Below are two short videos from the Pew Charitable Trusts explaining more about
 payday loans. Please watch both videos and then continue on to the next page in
 the module.
 
-- [🎬 Payday Loans Explained | Pew](https://www.youtube.com/watch?v=3rOVmUnUM7A)
-- [🎬 Payday Loans: Who Uses Them and Why? | Pew](https://www.youtube.com/watch?v=vyFlz0XpbTc)
+- [📺 Payday Loans Explained | Pew](https://www.youtube.com/watch?v=3rOVmUnUM7A)
+- [📺 Payday Loans: Who Uses Them and Why? | Pew](https://www.youtube.com/watch?v=vyFlz0XpbTc)
 
 <br>
 
@@ -148,7 +148,7 @@ more than 15 to 20 percent of your income should be used to finance all of your
 combined debt (other than a home mortgage). Are you over this amount? If so, one
 of your top financial priorities should be to reduce your level of debt.
 
-Cary Siegel, a retired executive and author of [🌎 Why Didn't They Teach Me This
+Cary Siegel, a retired executive and author of [📄 Why Didn't They Teach Me This
 in
 School?](https://www.amazon.com/Didnt-They-Teach-This-School/dp/1481027565/ref=sr_1_1?ie=UTF8&qid=1548459926&sr=8-1&keywords=why+didn%27t+they+teach+me+this+in+school)
 suggests following these steps to work your way out of debt:
@@ -166,7 +166,7 @@ If you're interested in learning more about how to get out of debt, please visit
 the link below, which will bring you to a Smart About Money (SAM) webpage about
 how to pay off debt.
 
-- [🌎 Smart Ways to Pay off Debt](https://www.smartaboutmoney.org/Topics/Spending-and-Borrowing/Deal-With-Debt)
+- [📄 Smart Ways to Pay off Debt](https://www.smartaboutmoney.org/Topics/Spending-and-Borrowing/Deal-With-Debt)
 
 When you're done visiting the webpage (if you choose to), please continue on to
 the next page in this module.
@@ -214,7 +214,7 @@ As we've learned, your credit score, as well as the information on your credit
 report, are important for determining whether you'll be able to get a mortgage,
 credit card, auto loan, or other credit product, and the rate you'll pay. So
 it's very helpful to have a good credit score. Building good credit takes time.
-Here are some things you can do to improve your credit rating (from the [🌎
+Here are some things you can do to improve your credit rating (from the [📄
 Consumer Financial Protection Bureau](https://www.consumerfinance.gov/)):
 
     Pay your loans on time, every time. One way to make sure your payments are
@@ -249,17 +249,17 @@ in the San Diego Union-Tribune that covers some other tips for improving your
 credit score and for using credit cards in a smart way. Please download and read
 the article.
 
-- [🌎 Using Credit Wisely, U-TPreview the document](https://sdccd.instructure.com/courses/2395430/files/133175006/download?wrap=1)
+- [📄 Using Credit Wisely, U-TPreview the document](https://sdccd.instructure.com/courses/2395430/files/133175006/download?wrap=1)
 
 As indicated in the article, you are entitled to a free copy of your credit
 reports every year (not the scores themselves but the information that goes into
 calculating the scores). Please visit the link below to find out more.
 
-- [🌎 How Do I Get a Copy of My Credit Reports?](https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-a-copy-of-my-credit-reports-en-5/)
+- [📄 How Do I Get a Copy of My Credit Reports?](https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-a-copy-of-my-credit-reports-en-5/)
 
 ### 7.7 Identity Theft
 
-Identity theft is an increasing problem in the U.S. According to [🌎 a report by
+Identity theft is an increasing problem in the U.S. According to [📄 a report by
 Javelin Strategy &
 Research](https://www.javelinstrategy.com/press-release/identity-fraud-hits-record-high-154-million-us-victims-2016-16-percent-according-new),
 over 15 million people were victims of identity theft in 2017. I've had my own
@@ -267,9 +267,9 @@ personal information stolen from or lost by three different companies and
 government agencies.  Although none of those has resulted in identity theft,
 it's definitely a possibility.
 
-Laura Adams, author of the [🌎 MoneyGirl podcast and
+Laura Adams, author of the [📄 MoneyGirl podcast and
 website](http://www.quickanddirtytips.com/money-girl), lists the following eight
-warning signs of identity theft ([🌎 click here if you want to read the full
+warning signs of identity theft ([📄 click here if you want to read the full
 article](http://www.quickanddirtytips.com/money-finance/credit/8-warning-signs-of-identity-theft-and-how-to-fight-back))):
 
 - Incorrect information on your credit reports.
@@ -282,8 +282,8 @@ article](http://www.quickanddirtytips.com/money-finance/credit/8-warning-signs-o
 - Your income tax refund never arrives.
 
 If you think you may have been a victim of identity theft, or to learn more
-about what to do if this happens to you, visit the [🌎 Federal Trade
-Commission's Identity Theft Website](https://www.identitytheft.gov/) at [🌎
+about what to do if this happens to you, visit the [📄 Federal Trade
+Commission's Identity Theft Website](https://www.identitytheft.gov/) at [📄
 www.identitytheft.gov](https://www.identitytheft.gov/). The site provides
 streamlined checklists and sample letters to guide you through the recovery
 process.
@@ -308,13 +308,13 @@ might feel comfortable with a smaller emergency fund; perhaps only three months'
 worth of living expenses.
 
 Another way to think about an emergency fund is as an "uncertainty fund,"
-because it's there to deal with uncertain financial events in your life. [🌎
+because it's there to deal with uncertain financial events in your life. [📄
 Carl Richards](https://www.nytimes.com/by/carl-richards), author of the "sketch
 guy" series of financial articles, has some advice about how big your
 "uncertainty fund" should be. It's a short but interesting article. You can read
 it at the link below:
 
-- [🌎 Call it an Uncertainty Fund, Not an Emergency Fund](https://bucks.blogs.nytimes.com/2012/10/22/call-it-an-uncertainty-fund-not-an-emergency-fund/)
+- [📄 Call it an Uncertainty Fund, Not an Emergency Fund](https://bucks.blogs.nytimes.com/2012/10/22/call-it-an-uncertainty-fund-not-an-emergency-fund/)
 
 If you don't already have an emergency fund, this is something you should look
 into building. Consider adding a line item to your cash flow statement and
@@ -324,23 +324,23 @@ budget in order to start saving money to build up this fund.
 
 # Resources
 
-- [🎬 What's the Difference Between Checking & Savings? Kal Penn Explains | Mashable](https://www.youtube.com/watch?v=7K8pDRX3oaM)
-- [🌎 an article by Hillary Hoffower published in Business Insider](https://www.businessinsider.com/average-credit-card-debt-in-every-state-ranked-2018-8)
-- [🎬 Credit Card Debt Explained | KQED News](https://www.youtube.com/watch?v=L5qlbISOAGA)
-- [🎬 Payday Loans Explained | Pew](https://www.youtube.com/watch?v=3rOVmUnUM7A)
-- [🎬 Payday Loans: Who Uses Them and Why? | Pew](https://www.youtube.com/watch?v=vyFlz0XpbTc)
-- [🌎 Why Didn't They Teach Me This in School?](https://www.amazon.com/Didnt-They-Teach-This-School/dp/1481027565/ref=sr_1_1?ie=UTF8&qid=1548459926&sr=8-1&keywords=why+didn%27t+they+teach+me+this+in+school)
-- [🌎 Smart Ways to Pay off Debt](https://www.smartaboutmoney.org/Topics/Spending-and-Borrowing/Deal-With-Debt)
-- [🌎 Consumer Financial Protection Bureau](https://www.consumerfinance.gov/)
-- [🌎 Using Credit Wisely, U-TPreview the document](https://sdccd.instructure.com/courses/2395430/files/133175006/download?wrap=1)
-- [🌎 How Do I Get a Copy of My Credit Reports?](https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-a-copy-of-my-credit-reports-en-5/)
-- [🌎 a report by Javelin Strategy & Research](https://www.javelinstrategy.com/press-release/identity-fraud-hits-record-high-154-million-us-victims-2016-16-percent-according-new)
-- [🌎 MoneyGirl podcast and website](http://www.quickanddirtytips.com/money-girl)
-- [🌎 click here if you want to read the full article](http://www.quickanddirtytips.com/money-finance/credit/8-warning-signs-of-identity-theft-and-how-to-fight-back)
-- [🌎 Federal Trade Commission's Identity Theft Website](https://www.identitytheft.gov/)
-- [🌎 www.identitytheft.gov](https://www.identitytheft.gov/)
-- [🌎 Carl Richards](https://www.nytimes.com/by/carl-richards)
-- [🌎 Call it an Uncertainty Fund, Not an Emergency Fund](https://bucks.blogs.nytimes.com/2012/10/22/call-it-an-uncertainty-fund-not-an-emergency-fund/)
+- [📺 What's the Difference Between Checking & Savings? Kal Penn Explains | Mashable](https://www.youtube.com/watch?v=7K8pDRX3oaM)
+- [📄 an article by Hillary Hoffower published in Business Insider](https://www.businessinsider.com/average-credit-card-debt-in-every-state-ranked-2018-8)
+- [📺 Credit Card Debt Explained | KQED News](https://www.youtube.com/watch?v=L5qlbISOAGA)
+- [📺 Payday Loans Explained | Pew](https://www.youtube.com/watch?v=3rOVmUnUM7A)
+- [📺 Payday Loans: Who Uses Them and Why? | Pew](https://www.youtube.com/watch?v=vyFlz0XpbTc)
+- [📄 Why Didn't They Teach Me This in School?](https://www.amazon.com/Didnt-They-Teach-This-School/dp/1481027565/ref=sr_1_1?ie=UTF8&qid=1548459926&sr=8-1&keywords=why+didn%27t+they+teach+me+this+in+school)
+- [📄 Smart Ways to Pay off Debt](https://www.smartaboutmoney.org/Topics/Spending-and-Borrowing/Deal-With-Debt)
+- [📄 Consumer Financial Protection Bureau](https://www.consumerfinance.gov/)
+- [📄 Using Credit Wisely, U-TPreview the document](https://sdccd.instructure.com/courses/2395430/files/133175006/download?wrap=1)
+- [📄 How Do I Get a Copy of My Credit Reports?](https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-a-copy-of-my-credit-reports-en-5/)
+- [📄 a report by Javelin Strategy & Research](https://www.javelinstrategy.com/press-release/identity-fraud-hits-record-high-154-million-us-victims-2016-16-percent-according-new)
+- [📄 MoneyGirl podcast and website](http://www.quickanddirtytips.com/money-girl)
+- [📄 click here if you want to read the full article](http://www.quickanddirtytips.com/money-finance/credit/8-warning-signs-of-identity-theft-and-how-to-fight-back)
+- [📄 Federal Trade Commission's Identity Theft Website](https://www.identitytheft.gov/)
+- [📄 www.identitytheft.gov](https://www.identitytheft.gov/)
+- [📄 Carl Richards](https://www.nytimes.com/by/carl-richards)
+- [📄 Call it an Uncertainty Fund, Not an Emergency Fund](https://bucks.blogs.nytimes.com/2012/10/22/call-it-an-uncertainty-fund-not-an-emergency-fund/)
 
 BUSE 120 Canvas Notes
 

@@ -8,7 +8,7 @@ summary: Taskwarrior wiki
 
 # TaskWarrior
 
-- [🌎 Taskwarrior.org](https://taskwarrior.org/)
+- [📄 Taskwarrior.org](https://taskwarrior.org/)
 
 ## Commands
 
