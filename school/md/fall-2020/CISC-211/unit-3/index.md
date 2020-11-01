@@ -14,8 +14,12 @@ date: Oct 26, 2020
 
 ## Assignment
 
+- [⬇ Unit 3 Assignment](file:../../../../files/fall-2020/CISC-211/unit-3/unit-3_assignment.pdf)
+
 ## Lab
 
 - [⬇ Lab 1: Full Adder](file:../../../../files/fall-2020/CISC-211/unit-3/DDCAarm-Lab1.pdf)
 - [⬇ Lab 1: Creating new project](file:../../../../files/fall-2020/CISC-211/unit-3/DDCAarm-Lab1.pptx)
+- [⬇ Unit 3 Lab](file:../../../../files/fall-2020/CISC-211/unit-3/unit-3_lab.pdf)
+- [⬇ DDCA_lab1.bdf](vfile:../../../../files/fall-2020/CISC-211/unit-3/DDCA_lab1.bdf)
 
