@@ -19,4 +19,5 @@ date: 2020-08-17
 - [↪ Module 9: Insurance](module-9/index)
 - [↪ Module 10: Retirement and Estate Planning](module-10/index)
 - [↪ Module 11: Investing Basics](module-11/index)
+- [↪ Module 12: Inverstor and Market Behavior](module-12/index)
 

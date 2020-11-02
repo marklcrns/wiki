@@ -12,6 +12,3 @@ date: Oct 26, 2020
 
 - [↪ Module 11 Notes](notes)
 
-## Exercises
-
-
