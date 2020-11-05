@@ -17,7 +17,7 @@ date: Oct 26, 2020
 - 2.8 Combinational Building Blocks
 - 2.9 Timing
 
-1. Robert G. Plantz: Introduction to Computer Organization: ARM Assembly
+2. Robert G. Plantz: Introduction to Computer Organization: ARM Assembly
    Language Using the Raspberry Pi
 
 - [📄 Chapter 6: 6.1-6.3](https://bob.cs.sonoma.edu/IntroCompOrg-RPi/chp-hardware.html)
