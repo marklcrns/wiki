@@ -13,4 +13,5 @@ date: Sep 26, 2020
 - [↪ Chapter 8](ch-8)
 - [↪ Chapter 9](ch-9)
 - [↪ Chapter 10](ch-10)
+- [↪ Chapter 12](ch-12)
 

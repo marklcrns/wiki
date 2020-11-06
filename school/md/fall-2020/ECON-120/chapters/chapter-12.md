@@ -157,10 +157,10 @@ Here is another useful way to think of present value. Suppose you want to buy a
 new car in 5 years for \$20,000. You want to know how much you need to have in
 your bank account today, so that after 5 years you have the \$20,000 to make the
 payment for the car. A simple formula can answer this and similar questions. If
-$K$ is an amount of money at some point in the future; $t$ is the amount of time, or
-years, in the future until you need the money; and i is the interest rate you
-earn on your account, then the amount you need today is just the present value
-of the $K$ dollars, which is
+$K$ is an amount of money at some point in the future; $t$ is the amount of
+time, or years, in the future until you need the money; and i is the interest
+rate you earn on your account, then the amount you need today is just the
+present value of the $K$ dollars, which is
 
 $$
 \text{ present value } = \frac{K}{(1 + i)^{t}}
