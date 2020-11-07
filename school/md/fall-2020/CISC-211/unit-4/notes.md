@@ -32,6 +32,10 @@ date: Nov 04, 2020
 - [📺 Counters](https://www.youtube.com/watch?v=AEh0F2CXWHs&list=PLrDd_kMiAuNmSb-CKWQqq9oBFN_KNMTaI&index=23)
 - [📺 Flip Flops](https://www.youtube.com/watch?v=lFf5RjTPwC8&list=PLrDd_kMiAuNmSb-CKWQqq9oBFN_KNMTaI&index=21)
 
+## Personal Additions
+
+- [💽 Latches and Flip Flops](https://www.youtube.com/watch?v=-aQH0ybMd3U&list=PLTd6ceoshpreKyY55hA4vpzAUv9hSut1H)
+
 <br>
 
 # Resources
@@ -45,4 +49,5 @@ date: Nov 04, 2020
 - [📺 Memory Units](https://www.youtube.com/watch?v=YmBIJ-4Mzv4&list=PLrDd_kMiAuNmSb-CKWQqq9oBFN_KNMTaI&index=22)
 - [📺 Counters](https://www.youtube.com/watch?v=AEh0F2CXWHs&list=PLrDd_kMiAuNmSb-CKWQqq9oBFN_KNMTaI&index=23)
 - [📺 Flip Flops](https://www.youtube.com/watch?v=lFf5RjTPwC8&list=PLrDd_kMiAuNmSb-CKWQqq9oBFN_KNMTaI&index=21)
+- [💽 Latches and Flip Flops](https://www.youtube.com/watch?v=-aQH0ybMd3U&list=PLTd6ceoshpreKyY55hA4vpzAUv9hSut1H)
 
