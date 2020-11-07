@@ -8,18 +8,25 @@ date: Aug 08, 2020
 
 # `.gitignore`
 
+## Ignoring Committed Files
+
+From the root directory
+
+```bash
+git rm -r --cached . &&  git add .
+```
+
 ## Global
 
 Creating global gitignore
 
-```sh
+```bash
 git config --global core.excludesfile ~/.gitignore_global
 ```
 
 Ref:
 
 - [📄 Ignoring files](https://docs.github.com/en/github/using-git/ignoring-files)
-
 
 <br>
 
