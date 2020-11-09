@@ -25,3 +25,7 @@ date: 2020-08-17
 
 - [↪ Modules](modules/index)
 
+## Projects
+
+- [⬇ Personal Budget Project](file:../../../files/fall-2020/BUSE-120/projects/personal_budget_project.pdf)
+
