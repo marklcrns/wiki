@@ -35,6 +35,7 @@ date: Nov 04, 2020
 ## Personal Additions
 
 - [💽 Latches and Flip Flops](https://www.youtube.com/watch?v=-aQH0ybMd3U&list=PLTd6ceoshpreKyY55hA4vpzAUv9hSut1H)
+- [💽 Digital Electronis: Introduction to Sequential Circuits](https://www.youtube.com/watch?v=AaN72s5WfOM&list=PLBlnK6fEyqRjMH3mWf6kwqiTbT798eAOm&index=144)
 
 <br>
 
@@ -50,4 +51,5 @@ date: Nov 04, 2020
 - [📺 Counters](https://www.youtube.com/watch?v=AEh0F2CXWHs&list=PLrDd_kMiAuNmSb-CKWQqq9oBFN_KNMTaI&index=23)
 - [📺 Flip Flops](https://www.youtube.com/watch?v=lFf5RjTPwC8&list=PLrDd_kMiAuNmSb-CKWQqq9oBFN_KNMTaI&index=21)
 - [💽 Latches and Flip Flops](https://www.youtube.com/watch?v=-aQH0ybMd3U&list=PLTd6ceoshpreKyY55hA4vpzAUv9hSut1H)
+- [💽 Digital Electronis: Introduction to Sequential Circuits](https://www.youtube.com/watch?v=AaN72s5WfOM&list=PLBlnK6fEyqRjMH3mWf6kwqiTbT798eAOm&index=144)
 
