@@ -9,4 +9,5 @@ date: Nov 05, 2020
 # Chapter 5: Integrals
 
 - [↪ 5.1 Areas and Distances](ch-5-1)
+- [↪ 5.2 The Definite Integral](ch-5-2)
 

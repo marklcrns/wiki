@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Lucernas">
+
+    <title>5.2 The Definite Integral</title>
+
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
+    <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body>
+
+<!-- Nav bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">School Wiki</a>
+        </div>
+        <!-- <div id="navbar" class="navbar-collapse collapse">                                                                                                                 -->
+        <!--   <ul class="nav navbar-nav">                                                                                                                                      -->
+        <!--     <li><a href="#">doc1</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc2</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc3</a></li>                                                                                                                                  -->
+        <!--     <li class="dropdown">                                                                                                                                          -->
+        <!--       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+        <!--       <ul class="dropdown-menu">                                                                                                                                   -->
+        <!--         <li><a href="#">Action</a></li>                                                                                                                            -->
+        <!--         <li><a href="#">Another action</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">Something else here</a></li>                                                                                                               -->
+        <!--         <li role="separator" class="divider"></li>                                                                                                                 -->
+        <!--         <li class="dropdown-header">Nav header</li>                                                                                                                -->
+        <!--         <li><a href="#">Separated link</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">One more separated link</a></li>                                                                                                           -->
+        <!--       </ul>                                                                                                                                                        -->
+        <!--     </li>                                                                                                                                                          -->
+        <!--   </ul>                                                                                                                                                            -->
+        <!-- </div>                                                                                                                                                             -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+<!-- Table of Contents -->
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
+          <ul>
+          <li><a href="#chapter-5.2-the-definite-integral">Chapter 5.2: The Definite Integral</a><ul>
+          <li><a href="#the-definite-integral">The Definite Integral</a><ul>
+          <li><a href="#definition-1">Definition 1</a></li>
+          <li><a href="#definition-of-a-definite-integral-2">Definition of a Definite Integral 2</a></li>
+          <li><a href="#theorem-3">Theorem 3</a></li>
+          <li><a href="#theorem-4">Theorem 4</a></li>
+          </ul></li>
+          <li><a href="#evaluating-integrals">Evaluating Integrals</a><ul>
+          <li><a href="#definition-5">Definition 5</a></li>
+          <li><a href="#definition-6">Definition 6</a></li>
+          <li><a href="#definition-7">Definition 7</a></li>
+          <li><a href="#definition-8">Definition 8</a></li>
+          <li><a href="#definition-9">Definition 9</a></li>
+          <li><a href="#definition-10">Definition 10</a></li>
+          <li><a href="#definition-11">Definition 11</a></li>
+          <li><a href="#reimann">Reimann</a></li>
+          </ul></li>
+          <li><a href="#the-midpoint-rule">The Midpoint Rule</a><ul>
+          <li><a href="#midpoint-rule">Midpoint Rule</a></li>
+          </ul></li>
+          <li><a href="#properties-of-the-definite-integral">Properties of the Definite Integral</a><ul>
+          <li><a href="#properties-of-the-integral">Properties of the Integral</a></li>
+          <li><a href="#comparison-properties-of-the-integral">Comparison Properties of the Integral</a></li>
+          </ul></li>
+          <li><a href="#video-lectures">Video Lectures</a></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
+          </ul>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<!-- Header -->
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  5.2 The Definite Integral
+                  <small class="h3 text-muted subtitle">
+                    | Integrals
+                  </small>
+                </h1>
+              </div>
+            </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">Nov 09, 2020</h5>
+          </div>
+
+<!-- Contents -->
+          <article class="contents">
+<h1 id="chapter-5.2-the-definite-integral">Chapter 5.2: The Definite Integral</h1>
+<h2 id="the-definite-integral">The Definite Integral</h2>
+<p>We saw in Section 5.1 that a limit of the form</p>
+<h3 id="definition-1">Definition 1</h3>
+<p><span class="math display">\[
+\lim_{n \to \infty} \sum_{i = 1}^{n} f(x^{*}_{i})\Delta{x} = \lim_{n \to \infty} [f(x_{1}^{*})\Delta{x} + f(x_{2}^{*})\Delta{x} + \cdots + f(x_{n}^{*})\Delta{x}]
+\]</span></p>
+<h3 id="definition-of-a-definite-integral-2">Definition of a Definite Integral 2</h3>
+<p>If <span class="math inline">\(f\)</span> is a function defined for <span class="math inline">\(a \le x \le b\)</span>, we divide the interval <span class="math inline">\([a, b]\)</span> into <span class="math inline">\(n\)</span> subintervals of equal width <span class="math inline">\(\Delta{x} = (b - a)/n\)</span>. We let <span class="math inline">\(x_{0}(= a), x_{1}, x_{2}, \cdots, x_{n}(= b)\)</span> be the endpoints of these subintervals and we let <span class="math inline">\(x_{1}^{*}, x_{2}^{*}, \cdots, x_{n}^{*}\)</span> be any <strong>sample points</strong> in these subintervals, so <span class="math inline">\(x_{i}^{*}\)</span> lies in the <span class="math inline">\(i\)</span>th subinterval <span class="math inline">\([x_{i - 1}, x_{i}\)</span>. Then the <strong>definite integral of <span class="math inline">\(f\)</span> from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span></strong> is</p>
+<p><span class="math display">\[
+\int_{a}^{b} f(x)dx = \lim_{n \to \infty} \sum_{i = 1}^{n} f(x_{i}^{*})\Delta{x}
+\]</span></p>
+<p>provided that this limit exists and gives the same value for all possible choices of sample points. If it does exist, we say that <span class="math inline">\(f\)</span> is <strong>integrable on</strong> <span class="math inline">\([a, b]\)</span>.</p>
+<p>The precise meaning of the limit that defines the integral is as follows:</p>
+<p>For every number <span class="math inline">\(\varepsilon &gt; 0\)</span> there is an integer <span class="math inline">\(N\)</span> such that</p>
+<p><span class="math display">\[
+\left | \int_{a}^{b} f(x)dx - \sum_{i = 1}^{n} f(x_{i}^{*})\Delta{x} \right | &lt; \varepsilon
+\]</span></p>
+<p>for every integer <span class="math inline">\(n &gt; N\)</span> and for every choice of <span class="math inline">\(x_{i}^{*}\)</span> in <span class="math inline">\([x_{i - 1}, x_{i}\)</span>.</p>
+<blockquote>
+<p><strong>Note 1</strong></p>
+</blockquote>
+<p>The symbol <span class="math inline">\(\int\)</span> was introduced by Leibniz and is called an <strong>integral sign</strong>. It is an elongated and was chosen because an integral is a limit of sums. In the notation <span class="math inline">\(\int_{a}^{b} f(x)dx\)</span>, <span class="math inline">\(f(x)\)</span> is called the <strong>integrand</strong> and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are called the <strong>limits of integration</strong>; <span class="math inline">\(a\)</span> is the <strong>lower limit</strong> and <span class="math inline">\(b\)</span> is the <strong>upper limit</strong>. For now, the symbol <span class="math inline">\(dx\)</span> has no meaning by itself; <span class="math inline">\(\int_{a}^{b} f(x)dx\)</span> is all one symbol. The <span class="math inline">\(dx\)</span> simply indicates that the independent variable is <span class="math inline">\(x\)</span>. The procedure of calculating an integral is called <strong>integration</strong>.</p>
+<blockquote>
+<p><strong>Note 2</strong></p>
+</blockquote>
+<p>The definite integral <span class="math inline">\(\int_{a}^{b} f(x)dx\)</span> is a number; it does not depend on <span class="math inline">\(x\)</span>. In fact, we could use any letter in place of <span class="math inline">\(x\)</span> without changing the value of the integral:</p>
+<p><span class="math display">\[
+\int_{a}^{b} f(x)dx = \int_{a}^{b} f(t)dt = \int_{a}^{b} f(r)dr
+\]</span></p>
+<blockquote>
+<p><strong>Note 3</strong> The sum</p>
+</blockquote>
+<p><span class="math display">\[
+\sum_{i = 1}^{n} f(x_{i}^{*})\Delta{x}
+\]</span></p>
+<p>that occurs in Definition 2 is called a Riemann sum after the German mathematician Bernhard Riemann (1826–1866). So Definition 2 says that the definite integral of an integrable function can be approximated to within any desired degree of accuracy by a Riemann sum.</p>
+<p>We know that if <span class="math inline">\(f\)</span> happens to be positive, then the Riemann sum can be interpreted as a sum of areas of approximating rectangles (see Figure 1). By comparing Definition 2 with the definition of area in Section 5.1, we see that the definite integral <span class="math inline">\(\int_{a}^{b} f(x)dx\)</span> can be interpreted as the area under the curve <span class="math inline">\(y = f(x)\)</span> from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>. (See Figure 2.)</p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_figure-1.png" alt="Figure 1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_figure-2.png" alt="Figure 2" /></p>
+<p>If <span class="math inline">\(f\)</span> takes on both positive and negative values, as in Figure 3, then the Riemann sum is the sum of the areas of the rectangles that lie above the <span class="math inline">\(x\)</span>-axis and the negatives of the areas of the rectangles that lie below the <span class="math inline">\(x\)</span>-axis (the areas of the blue rectangles minus the areas of the gold rectangles). When we take the limit of such Riemann sums, we get the situation illustrated in Figure 4. A definite integral can be interpreted as a net area, that is, a difference of areas:</p>
+<p><span class="math display">\[
+\int_{a}^{b} f(x)dx = A_{1} - A_{1}
+\]</span></p>
+<p>where <span class="math inline">\(A_{1}\)</span> is the area of the region above the <span class="math inline">\(x\)</span>-axis and below the graph of <span class="math inline">\(f\)</span>, and <span class="math inline">\(A_{2}\)</span> is the area of the region below the <span class="math inline">\(x\)</span>-axis and above the graph of <span class="math inline">\(f\)</span>.</p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_figure-3.png" alt="Figure 3" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_figure-4.png" alt="Figure 4" /></p>
+<blockquote>
+<p><strong>Note 4</strong></p>
+</blockquote>
+<p>Although we have defined <span class="math inline">\(\int_{a}^{b} f(x)dx\)</span> by dividing <span class="math inline">\([a, b]\)</span> into subintervals of equal width, there are situations in which it is advantageous to work with subintervals of unequal width. For instance, in Exercise 5.1.16, NASA provided velocity data at times that were not equally spaced, but we were still able to estimate the distance traveled. And there are methods for numerical integration that take advantage of unequal subintervals.</p>
+<p>If the subinterval widths are <span class="math inline">\(\Delta{x_{1}}, \Delta{x_{2}}, \cdots, \Delta{x_{n}}\)</span>, we have to ensure that all these widths approach <span class="math inline">\(0\)</span> in the limiting process. This happens if the largest width, <span class="math inline">\(max\Delta{x_{i}}\)</span>, approaches <span class="math inline">\(0\)</span>. So in this case the definition of a definite integral becomes</p>
+<p><span class="math display">\[
+\int_{a}^{b} f(x)dx = \lim_{max\Delta{x_{i}} \to 0} \sum_{i = 1}^{n} f(x_{i}^{*})\Delta{x_{i}}
+\]</span></p>
+<blockquote>
+<p><strong>Note 5</strong></p>
+</blockquote>
+<p>We have defined the definite integral for an integrable function, but not all functions are integrable (see Exercises 71 and 72). The following theorem shows that the most commonly occurring functions are in fact integrable. The theorem is proved in more advanced courses.</p>
+<h3 id="theorem-3">Theorem 3</h3>
+<p>If <span class="math inline">\(f\)</span> is continuous on <span class="math inline">\([a, b]\)</span>, or if <span class="math inline">\(f\)</span> has only a finite number of jump discontinuities, then <span class="math inline">\(f\)</span> is integrable on <span class="math inline">\([a, b]\)</span>; that is, the definite integral <span class="math inline">\(\int_{a}^{b} f(x)dx\)</span> exists.</p>
+<p>If <span class="math inline">\(f\)</span> is integrable on <span class="math inline">\([a, b]\)</span>, then the limit in Definition 2 exists and gives the same value no matter how we choose the sample points <span class="math inline">\(x_{i}^{*}\)</span>. To simplify the calculation of the integral we often take the sample points to be right endpoints. Then <span class="math inline">\(x_{i}^{*} = x_{i}\)</span> and the definition of an integral simplifies as follows.</p>
+<h3 id="theorem-4">Theorem 4</h3>
+<p>If <span class="math inline">\(f\)</span> is integrable on <span class="math inline">\([a, b]\)</span>, then</p>
+<p><span class="math display">\[
+\int_{a}^{b} f(x)dx = \lim_{n \to \infty} \sum_{i = 1}^{n} f(x_{i})\Delta{x}
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[
+\Delta{x} = \frac{b - a}{n}
+\]</span></p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_example-1.png" alt="Example 1" /><figcaption>Example 1</figcaption>
+</figure>
+<p>Later, when we apply the definite integral to physical situations, it will be important to recognize limits of sums as integrals, as we did in Example 1. When Leibniz chose the notation for an integral, he chose the ingredients as reminders of the limiting process. In general, when we write</p>
+<p><span class="math display">\[
+\lim_{n \to \infty} \sum_{i = 1}^{n} f(x_{i}^{*})\Delta{x} = \int_{a}^{b} f(x)dx
+\]</span></p>
+<p>we replace <span class="math inline">\(\lim \sum\)</span> by <span class="math inline">\(\int\)</span>, <span class="math inline">\(x_{i}^{*}\)</span> by <span class="math inline">\(x\)</span>, and <span class="math inline">\(\Delta{x}\)</span> by <span class="math inline">\(dx\)</span>.</p>
+<h2 id="evaluating-integrals">Evaluating Integrals</h2>
+<p>When we use a limit to evaluate a definite integral, we need to know how to work with sums. The following three equations give formulas for sums of powers of positive integers. Equation 5 may be familiar to you from a course in algebra. Equations 6 and 7 were discussed in Section 5.1 and are proved in Appendix E.</p>
+<h3 id="definition-5">Definition 5</h3>
+<p><span class="math display">\[
+\sum_{i = 1}^{n} f(x_{i})\Delta{x}
+\]</span></p>
+<h3 id="definition-6">Definition 6</h3>
+<p><span class="math display">\[
+\sum_{i = 1}^{n} i^{2} = \frac{n(n + 1)(2n + 1)}{6}
+\]</span></p>
+<h3 id="definition-7">Definition 7</h3>
+<p><span class="math display">\[
+\sum_{i = 1}^{n} i^{3} = \left [ \frac{n(n + 1)}{2} \right ]^{2}
+\]</span></p>
+<p>The remaining formulas are simple rules for working with sigma notation:</p>
+<h3 id="definition-8">Definition 8</h3>
+<p><span class="math display">\[
+\sum_{i = 1}^{n} c = nc
+\]</span></p>
+<h3 id="definition-9">Definition 9</h3>
+<p><span class="math display">\[
+\sum_{i = 1}^{n} ca_{i} = c \sum_{i = 1}^{n} a_{1}
+\]</span></p>
+<h3 id="definition-10">Definition 10</h3>
+<p><span class="math display">\[
+\sum_{i = 1}^{n} (a_{1} + b_{1}) = \sum_{i = 1}^{n} a_{i} + \sum_{i = 1}^{n} b_{i}
+\]</span></p>
+<h3 id="definition-11">Definition 11</h3>
+<p><span class="math display">\[
+\sum_{i = 1}^{n} (a_{i} - b_{i}) = \sum_{i = 1}^{n} a_{i} - \sum_{i = 1}^{n} b_{i}
+\]</span></p>
+<blockquote>
+<p><strong>Note</strong></p>
+</blockquote>
+<p>Formulas 8, 9, 10 and 11 are proved by writing out each side in expanded form. The left side of Equation 9 is</p>
+<p><span class="math display">\[
+ca_{1} + ca_{2} + \cdots + ca_{n}
+\]</span></p>
+<p>The right side is</p>
+<p><span class="math display">\[
+c(a_{1} + a_{2} + \cdots + a_{n})
+\]</span></p>
+<p>These are equal by the distributive property. The other formulas are discussed in Appendix E.</p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_example-2.1.png" alt="Example 2.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_example-2.2.png" alt="Example 2.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_example-2.3.png" alt="Example 2.3" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_example-2.4.png" alt="Example 2.4" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_example-2.5.png" alt="Example 2.5" /></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_example-3.1.png" alt="Example 3.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_example-3.2.png" alt="Example 3.2" /></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_example-4.1.png" alt="Example 4.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_example-4.2.png" alt="Example 4.2" /></p>
+<h3 id="reimann">Reimann</h3>
+<p>Bernhard Riemann received his Ph.D. under the direction of the legendary Gauss at the University of Göttingen and remained there to teach. Gauss, who was not in the habit of praising other mathematicians, spoke of Riemann’s “creative, active, truly mathematical mind and gloriously fertile originality.” The definition (2) of an integral that we use is due to Riemann. He also made major contributions to the theory of functions of a complex variable, mathematical physics, number theory, and the foundations of geometry. Riemann’s broad concept of space and geometry turned out to be the right setting, 50 years later, for Einstein’s general relativity theory. Riemann’s health was poor throughout his life, and he died of tuberculosis at the age of 39.</p>
+<h2 id="the-midpoint-rule">The Midpoint Rule</h2>
+<p>We often choose the sample point <span class="math inline">\(x_{i}^{*}\)</span> to be the right endpoint of the <span class="math inline">\(i\)</span>th subinterval because it is convenient for computing the limit. But if the purpose is to find an approximation to an integral, it is usually better to choose <span class="math inline">\(x_{i}^{*}\)</span> to be the midpoint of the interval, which we denote by <span class="math inline">\(\overline{x}_{i}\)</span>. Any Riemann sum is an approximation to an integral, but if we use midpoints we get the following approximation.</p>
+<h3 id="midpoint-rule">Midpoint Rule</h3>
+<p><span class="math display">\[
+\int_{a}^{b} f(x)dx \approx \sum_{i = 1}^{n} f(\overline{x}_{i})\Delta{x} = \Delta{x}[f(\overline{x}_{1}) + \cdots + f(\overline{x}_{n})]
+\]</span></p>
+<p>Where</p>
+<p><span class="math display">\[
+\Delta{x} = \frac{b - a}{n}
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\overline{x_{i}} = \frac{1}{2}(x_{i - 1} + x_{i}) = \text{midpoint} of [x_{i - 1}, x_{i}]
+\]</span></p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_explore_it.png" alt="Explore It: Estimating Areas Under Curves" /><figcaption>Explore It: Estimating Areas Under Curves</figcaption>
+</figure>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_example-5.png" alt="Example 5" /><figcaption>Example 5</figcaption>
+</figure>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_explore_it_2.png" alt="Explore It: Integral with Riemann Sums" /><figcaption>Explore It: Integral with Riemann Sums</figcaption>
+</figure>
+<p>At the moment we don’t know how accurate the approximation in Example 5 is, but in Section 7.7 we will learn a method for estimating the error involved in using the Midpoint Rule. At that time we will discuss other methods for approximating definite integrals.</p>
+<p>If we apply the Midpoint Rule to the integral in Example 2, we get the picture in Figure 12. The approximation <span class="math inline">\(M_{40} \approx -6.7563\)</span> is much closer to the true value <span class="math inline">\(-6.75\)</span> than the right endpoint approximation, <span class="math inline">\(R_{40} \approx -6.3998\)</span>, shown in Figure 7.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_figure-12.png" alt="Figure 12" /><figcaption>Figure 12</figcaption>
+</figure>
+<h2 id="properties-of-the-definite-integral">Properties of the Definite Integral</h2>
+<p>When we defined the definite integral <span class="math inline">\(\int_{a}^{b} f(x)dx\)</span>, we implicitly assumed that <span class="math inline">\(a &lt; b\)</span>. But the definition as a limit of Riemann sums makes sense even if <span class="math inline">\(a &gt; b\)</span>. Notice that if we reverse <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, then <span class="math inline">\(\Delta{x}\)</span> changes from <span class="math inline">\((b - a)/n\)</span> to <span class="math inline">\((a - b)/n\)</span>. Therefore</p>
+<p><span class="math display">\[
+\int_{b}^{a} f(x)dx = - \int_{a}^{b} f(x)dx
+\]</span></p>
+<p>If <span class="math inline">\(a = b\)</span>, then <span class="math inline">\(\Delta{x} = 0\)</span> and so</p>
+<p><span class="math display">\[
+\int_{a}^{a} f(x)dx = 0
+\]</span></p>
+<p>We now develop some basic properties of integrals that will help us to evaluate integrals in a simple manner. We assume that <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are continuous functions.</p>
+<h3 id="properties-of-the-integral">Properties of the Integral</h3>
+<ol type="1">
+<li><span class="math inline">\(\int_{a}^{b} c\;dx = c(b - a)\)</span>, where <span class="math inline">\(c\)</span> is any constant</li>
+<li><span class="math inline">\(\int_{a}^{b} [f(x) + g(x)]dx = \int_{a}^{b} f(x)dx + \int_{a}^{b} g(x)dx\)</span></li>
+<li><span class="math inline">\(\int_{a}^{b} cf(x)dx = c \int_{a}^{b} f(x)dx\)</span>, where <span class="math inline">\(c\)</span> is any constant</li>
+<li><span class="math inline">\(\int_{a}^{b} [f(x) - g(x)]dx = \int_{a}^{b} f(x)dx - \int_{a}^{b} g(x)dx\)</span></li>
+</ol>
+<p>Property 1 says that the integral of a constant function <span class="math inline">\(f(x) = c\)</span> is the constant times the length of the interval. If <span class="math inline">\(c &gt; 0\)</span> and <span class="math inline">\(a &lt; b\)</span>, this is to be expected because <span class="math inline">\(c(b - a)\)</span> is the area of the shaded rectangle in Figure 13.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_figure-13.png" alt="Figure 13" /><figcaption>Figure 13</figcaption>
+</figure>
+<p>Property 2 says that the integral of a sum is the sum of the integrals. For positive functions it says that the area under <span class="math inline">\(f + g\)</span> is the area under <span class="math inline">\(f\)</span> plus the area under <span class="math inline">\(g\)</span>. Figure 14 helps us understand why this is true: In view of how graphical addition works, the corresponding vertical line segments have equal height.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_figure-14.png" alt="Figure 14" /><figcaption>Figure 14</figcaption>
+</figure>
+<p>In general, Property 2 follows from Theorem 4 and the fact that the limit of a sum is the sum of the limits:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\int_{a}^{b} [f(x) + g(x)]dx &amp;= \lim_{n \to \infty} \sum_{i = 1}^{n} [f(x_{i}) + g(x_{i})]\Delta{x} \\
+                             &amp;= \lim_{n \to \infty} \left [ \sum_{i = 1}^{n} f(x_{i})\Delta{x} + \lim_{n \to \infty} \sum_{i = 1}^{n} g(x_{i})\Delta{x} \right ] \\
+                             &amp;= \lim_{n \to \infty} \sum_{i = 1}^{n} f(x_{i})\Delta{x} + \lim_{n \to \infty} \sum_{i = 1}^{n} g(x_{i})\Delta{x} \\
+                             &amp;= \int_{a}^{b} f(x)dx + \int_{a}^{b} g(x)dx
+\end{aligned}
+\]</span></p>
+<p>Property 3 can be proved in a similar manner and says that the integral of a constant times a function is the constant times the integral of the function. In other words, a constant (but only a constant) can be taken in front of an integral sign. Property 4 is proved by writing <span class="math inline">\(f - g = f + (-g)\)</span> and using Properties 2 and 3 with <span class="math inline">\(c = -1\)</span>.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_example-6.png" alt="Example 6" /><figcaption>Example 6</figcaption>
+</figure>
+<p>The next property tells us how to combine integrals of the same function over adjacent intervals.</p>
+<ol start="5" type="1">
+<li><span class="math inline">\(\int_{a}^{c} f(x)dx + \int_{c}^{b} f(x)dx = \int_{a}^{b} f(x)dx\)</span></li>
+</ol>
+<p>This is not easy to prove in general, but for the case where <span class="math inline">\(f(x) \ge 0\)</span> and <span class="math inline">\(a &lt; c &lt; b\)</span> Property 5 can be seen from the geometric interpretation in Figure 15: the area under <span class="math inline">\(y = f(x)\)</span> from <span class="math inline">\(a\)</span> to <span class="math inline">\(c\)</span> plus the area from <span class="math inline">\(c\)</span> to <span class="math inline">\(b\)</span> is equal to the total area from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_figure-15.png" alt="Figure 15" /><figcaption>Figure 15</figcaption>
+</figure>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_example-7.png" alt="Example 7" /><figcaption>Example 7</figcaption>
+</figure>
+<p>Property 1, Property 2, Property 3, Property 4 and Property 5 are true whether <span class="math inline">\(a &lt; b\)</span>, <span class="math inline">\(a = b\)</span>, or <span class="math inline">\(a &gt; b\)</span>. The following properties, in which we compare sizes of functions and sizes of integrals, are true only if <span class="math inline">\(a \le b\)</span>.</p>
+<h3 id="comparison-properties-of-the-integral">Comparison Properties of the Integral</h3>
+<ol start="6" type="1">
+<li>If <span class="math inline">\(f(x) \ge 0\)</span> for a <span class="math inline">\(a \le x \le b\)</span>, then <span class="math inline">\(\int_{a}^{b} f(x)dx \ge 0\)</span></li>
+<li>If <span class="math inline">\(f(x) \ge g(x)\)</span> for <span class="math inline">\(a \le x \le b\)</span>, then <span class="math inline">\(\int_{a}^{b} f(x)dx \ge \int_{a}^{b} g(x)dx\)</span></li>
+<li>If <span class="math inline">\(m \le f(x) \le M\)</span> for <span class="math inline">\(a \le x \le b\)</span> then</li>
+</ol>
+<p><span class="math display">\[
+m(b - a) \le \int_{a}^{b} f(x)dx \le M(b - a)
+\]</span></p>
+<p>If <span class="math inline">\(f(x) \ge 0\)</span>, then <span class="math inline">\(\int_{a}^{b} f(x)dx\)</span> represents the area under the graph of <span class="math inline">\(f\)</span>, so the geometric interpretation of Property 6 is simply that areas are positive. (It also follows directly from the definition because all the quantities involved are positive.) Property 7 says that a bigger function has a bigger integral. It follows from Properties 6 and 4 because <span class="math inline">\(f - g \ge 0\)</span>.</p>
+<p>Property 8 is illustrated by Figure 16 for the case where <span class="math inline">\(f(x) \ge 0\)</span>. If <span class="math inline">\(f\)</span> is continuous, we could take <span class="math inline">\(m\)</span> and <span class="math inline">\(M\)</span> to be the absolute minimum and maximum values of <span class="math inline">\(f\)</span> on the interval <span class="math inline">\([a, b]\)</span>. In this case Property 8 says that the area under the graph of <span class="math inline">\(f\)</span> is greater than the area of the rectangle with height <span class="math inline">\(m\)</span> and less than the area of the rectangle with height <span class="math inline">\(M\)</span>.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_figure-16.png" alt="Figure 16" /><figcaption>Figure 16</figcaption>
+</figure>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_proof_of_property_8.png" alt="Proof of Property 8" /><figcaption>Proof of Property 8</figcaption>
+</figure>
+<p>Property 8 is useful when all we want is a rough estimate of the size of an integral without going to the bother of using the Midpoint Rule.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_example-8.png" alt="Example 8" /><figcaption>Example 8</figcaption>
+</figure>
+<p>The result of Example 8 is illustrated in Figure 17. The integral is greater than the area of the lower rectangle and less than the area of the square.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_figure-17.png" alt="Figure 17" /><figcaption>Figure 17</figcaption>
+</figure>
+<h2 id="video-lectures">Video Lectures</h2>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-3/v/sigma-notation-sum">📺 Summation notation</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-3/a/review-summation-notation">📄 Summation notation</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-3/v/summation-notation-worked-examples">📺 Worked examples: Summation notation</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-3/v/generalizing-a-left-riemann-sum-with-equally-spaced-rectangles">📺 Riemann sums in summation notation</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-3/a/riemann-sums-with-summation-notation">📄 Riemann sums in summation notation</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-3/v/practice-approximating-area-under-curve">📺 Worked example: Riemann sums in summation notation</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-3/v/riemann-sums-and-integrals">📺 Definite integral as the limit of a Riemann sum</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-3/a/definite-integral-as-the-limit-of-a-riemann-sum">📄 Definite integral as the limit of a Riemann sum</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-3/v/rewriting-definite-integral-as-limit-of-riemann-sum">📺 Worked example: Rewriting definite integral as limit of Riemann sum</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-3/v/writing-riemann-sum-limit-as-definite-integral">📺 Worked example: Rewriting limit of Riemann sum as definite integral</a></li>
+</ul>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-3/v/sigma-notation-sum">📺 Summation notation</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-3/a/review-summation-notation">📄 Summation notation</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-3/v/summation-notation-worked-examples">📺 Worked examples: Summation notation</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-3/v/generalizing-a-left-riemann-sum-with-equally-spaced-rectangles">📺 Riemann sums in summation notation</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-3/a/riemann-sums-with-summation-notation">📄 Riemann sums in summation notation</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-3/v/practice-approximating-area-under-curve">📺 Worked example: Riemann sums in summation notation</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-3/v/riemann-sums-and-integrals">📺 Definite integral as the limit of a Riemann sum</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-3/a/definite-integral-as-the-limit-of-a-riemann-sum">📄 Definite integral as the limit of a Riemann sum</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-3/v/rewriting-definite-integral-as-limit-of-riemann-sum">📺 Worked example: Rewriting definite integral as limit of Riemann sum</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-3/v/writing-riemann-sum-limit-as-definite-integral">📺 Worked example: Rewriting limit of Riemann sum as definite integral</a></li>
+</ul>
+          </article>
+          </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../../../templates/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../../../templates/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+    <script src="../../../../../../templates/js/animated-toc.js"></script>
+  </body>
+</html>
