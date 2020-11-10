@@ -14,7 +14,7 @@ date: Nov 04, 2020
 - 3.3 Synchronous Logic Design
 - 3.4 Finite State Machine
 
-1. Robert G. Plantz: Introduction to Computer Organization: ARM Assembly
+2. Robert G. Plantz: Introduction to Computer Organization: ARM Assembly
    Language Using the Raspberry Pi
 
 - [📄 7.3 Sequential Logic Circuits](https://bob.cs.sonoma.edu/IntroCompOrg-RPi/sec-slogic.html)
