@@ -22,3 +22,7 @@ date: Oct 12, 2020
 - [📺 CISC 192 cpp Structures](https://www.youtube.com/watch?v=qAUInPhd_LM)
 - [📺 CISC 192 cpp Solving the Car Class Problem](https://www.youtube.com/watch?v=VWFgisYsloQ)
 
+## Discussion
+
+- [↪ Chapter 7 Discussion](discussion)
+

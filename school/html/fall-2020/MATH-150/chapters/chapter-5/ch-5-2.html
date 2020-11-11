@@ -126,10 +126,10 @@
 <p>We saw in Section 5.1 that a limit of the form</p>
 <h3 id="definition-1">Definition 1</h3>
 <p><span class="math display">\[
-\lim_{n \to \infty} \sum_{i = 1}^{n} f(x^{*}_{i})\Delta{x} = \lim_{n \to \infty} [f(x_{1}^{*})\Delta{x} + f(x_{2}^{*})\Delta{x} + \cdots + f(x_{n}^{*})\Delta{x}]
+\lim_{n \to \infty} \sum_{i = 1}^{n} f(x^{*}_{i})\Delta{x} = \lim_{n \to \infty} [f(x_{1}^{*})\Delta{x} + f(x_{2}^{*})\Delta{x} + \ldots + f(x_{n}^{*})\Delta{x}]
 \]</span></p>
 <h3 id="definition-of-a-definite-integral-2">Definition of a Definite Integral 2</h3>
-<p>If <span class="math inline">\(f\)</span> is a function defined for <span class="math inline">\(a \le x \le b\)</span>, we divide the interval <span class="math inline">\([a, b]\)</span> into <span class="math inline">\(n\)</span> subintervals of equal width <span class="math inline">\(\Delta{x} = (b - a)/n\)</span>. We let <span class="math inline">\(x_{0}(= a), x_{1}, x_{2}, \cdots, x_{n}(= b)\)</span> be the endpoints of these subintervals and we let <span class="math inline">\(x_{1}^{*}, x_{2}^{*}, \cdots, x_{n}^{*}\)</span> be any <strong>sample points</strong> in these subintervals, so <span class="math inline">\(x_{i}^{*}\)</span> lies in the <span class="math inline">\(i\)</span>th subinterval <span class="math inline">\([x_{i - 1}, x_{i}\)</span>. Then the <strong>definite integral of <span class="math inline">\(f\)</span> from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span></strong> is</p>
+<p>If <span class="math inline">\(f\)</span> is a function defined for <span class="math inline">\(a \le x \le b\)</span>, we divide the interval <span class="math inline">\([a, b]\)</span> into <span class="math inline">\(n\)</span> subintervals of equal width <span class="math inline">\(\Delta{x} = (b - a)/n\)</span>. We let <span class="math inline">\(x_{0}(= a), x_{1}, x_{2}, \ldots, x_{n}(= b)\)</span> be the endpoints of these subintervals and we let <span class="math inline">\(x_{1}^{*}, x_{2}^{*}, \ldots, x_{n}^{*}\)</span> be any <strong>sample points</strong> in these subintervals, so <span class="math inline">\(x_{i}^{*}\)</span> lies in the <span class="math inline">\(i\)</span>th subinterval <span class="math inline">\([x_{i - 1}, x_{i}\)</span>. Then the <strong>definite integral of <span class="math inline">\(f\)</span> from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span></strong> is</p>
 <p><span class="math display">\[
 \int_{a}^{b} f(x)dx = \lim_{n \to \infty} \sum_{i = 1}^{n} f(x_{i}^{*})\Delta{x}
 \]</span></p>
@@ -170,7 +170,7 @@
 <p><strong>Note 4</strong></p>
 </blockquote>
 <p>Although we have defined <span class="math inline">\(\int_{a}^{b} f(x)dx\)</span> by dividing <span class="math inline">\([a, b]\)</span> into subintervals of equal width, there are situations in which it is advantageous to work with subintervals of unequal width. For instance, in Exercise 5.1.16, NASA provided velocity data at times that were not equally spaced, but we were still able to estimate the distance traveled. And there are methods for numerical integration that take advantage of unequal subintervals.</p>
-<p>If the subinterval widths are <span class="math inline">\(\Delta{x_{1}}, \Delta{x_{2}}, \cdots, \Delta{x_{n}}\)</span>, we have to ensure that all these widths approach <span class="math inline">\(0\)</span> in the limiting process. This happens if the largest width, <span class="math inline">\(max\Delta{x_{i}}\)</span>, approaches <span class="math inline">\(0\)</span>. So in this case the definition of a definite integral becomes</p>
+<p>If the subinterval widths are <span class="math inline">\(\Delta{x_{1}}, \Delta{x_{2}}, \ldots, \Delta{x_{n}}\)</span>, we have to ensure that all these widths approach <span class="math inline">\(0\)</span> in the limiting process. This happens if the largest width, <span class="math inline">\(max\Delta{x_{i}}\)</span>, approaches <span class="math inline">\(0\)</span>. So in this case the definition of a definite integral becomes</p>
 <p><span class="math display">\[
 \int_{a}^{b} f(x)dx = \lim_{max\Delta{x_{i}} \to 0} \sum_{i = 1}^{n} f(x_{i}^{*})\Delta{x_{i}}
 \]</span></p>
@@ -234,11 +234,11 @@
 </blockquote>
 <p>Formulas 8, 9, 10 and 11 are proved by writing out each side in expanded form. The left side of Equation 9 is</p>
 <p><span class="math display">\[
-ca_{1} + ca_{2} + \cdots + ca_{n}
+ca_{1} + ca_{2} + \ldots + ca_{n}
 \]</span></p>
 <p>The right side is</p>
 <p><span class="math display">\[
-c(a_{1} + a_{2} + \cdots + a_{n})
+c(a_{1} + a_{2} + \ldots + a_{n})
 \]</span></p>
 <p>These are equal by the distributive property. The other formulas are discussed in Appendix E.</p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_example-2.1.png" alt="Example 2.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_example-2.2.png" alt="Example 2.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_example-2.3.png" alt="Example 2.3" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_example-2.4.png" alt="Example 2.4" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.2_example-2.5.png" alt="Example 2.5" /></p>
@@ -250,7 +250,7 @@ c(a_{1} + a_{2} + \cdots + a_{n})
 <p>We often choose the sample point <span class="math inline">\(x_{i}^{*}\)</span> to be the right endpoint of the <span class="math inline">\(i\)</span>th subinterval because it is convenient for computing the limit. But if the purpose is to find an approximation to an integral, it is usually better to choose <span class="math inline">\(x_{i}^{*}\)</span> to be the midpoint of the interval, which we denote by <span class="math inline">\(\overline{x}_{i}\)</span>. Any Riemann sum is an approximation to an integral, but if we use midpoints we get the following approximation.</p>
 <h3 id="midpoint-rule">Midpoint Rule</h3>
 <p><span class="math display">\[
-\int_{a}^{b} f(x)dx \approx \sum_{i = 1}^{n} f(\overline{x}_{i})\Delta{x} = \Delta{x}[f(\overline{x}_{1}) + \cdots + f(\overline{x}_{n})]
+\int_{a}^{b} f(x)dx \approx \sum_{i = 1}^{n} f(\overline{x}_{i})\Delta{x} = \Delta{x}[f(\overline{x}_{1}) + \ldots + f(\overline{x}_{n})]
 \]</span></p>
 <p>Where</p>
 <p><span class="math display">\[

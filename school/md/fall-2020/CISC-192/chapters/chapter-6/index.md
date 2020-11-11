@@ -22,3 +22,7 @@ date: Oct 12, 2020
 - [📺 CISC 192 Sections 6.11](https://www.youtube.com/watch?v=XN_uXptzPSU)
 - [📺 CISC 192 Sections 6.12](https://www.youtube.com/watch?v=GTjbqgUWFok)
 
+## Discussion
+
+[↪ Chapter 6 Discussion](discussion)
+
