@@ -22,3 +22,5 @@ date: Nov 09, 2020
 
 ## Discussion
 
+- [↪ Chapter 8 Discussion](discussion)
+

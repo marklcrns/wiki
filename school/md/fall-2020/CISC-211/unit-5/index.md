@@ -14,9 +14,8 @@ date: Nov 09, 2020
 - 6.3 Programming
 - Only 6.3.1 Data-processing Instructions (Logical Instructions, Shift Instructions, Multiply Instructions)
 
-1. Robert G. Plantz: Introduction to Computer Organization: ARM Assembly
+2. Robert G. Plantz: Introduction to Computer Organization: ARM Assembly
    Language Using the Raspberry Pi
-
 
 - Chapter 1
   * [📄 1.3 How the Subsystems Interact](https://bob.cs.sonoma.edu/IntroCompOrg-RPi/sec-subsystems.html)

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Lucernas">
+
+    <title>Chapter 6 Discussion</title>
+
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+  </head>
+
+  <body>
+
+<!-- Nav bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">School Wiki</a>
+        </div>
+        <!-- <div id="navbar" class="navbar-collapse collapse">                                                                                                                 -->
+        <!--   <ul class="nav navbar-nav">                                                                                                                                      -->
+        <!--     <li><a href="#">doc1</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc2</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc3</a></li>                                                                                                                                  -->
+        <!--     <li class="dropdown">                                                                                                                                          -->
+        <!--       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+        <!--       <ul class="dropdown-menu">                                                                                                                                   -->
+        <!--         <li><a href="#">Action</a></li>                                                                                                                            -->
+        <!--         <li><a href="#">Another action</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">Something else here</a></li>                                                                                                               -->
+        <!--         <li role="separator" class="divider"></li>                                                                                                                 -->
+        <!--         <li class="dropdown-header">Nav header</li>                                                                                                                -->
+        <!--         <li><a href="#">Separated link</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">One more separated link</a></li>                                                                                                           -->
+        <!--       </ul>                                                                                                                                                        -->
+        <!--     </li>                                                                                                                                                          -->
+        <!--   </ul>                                                                                                                                                            -->
+        <!-- </div>                                                                                                                                                             -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+<!-- Table of Contents -->
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
+          <ul>
+          <li><a href="#discussion">Discussion</a></li>
+          </ul>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<!-- Header -->
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  Chapter 6 Discussion
+                </h1>
+              </div>
+            </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">Nov 11, 2020</h5>
+          </div>
+
+<!-- Contents -->
+          <article class="contents">
+<h1 id="discussion">Discussion</h1>
+<ol type="1">
+<li>What happens when you reference an array index that is out of bounds? For example,</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb1-1" title="1"><span class="dt">int</span> score[<span class="dv">5</span>] = {<span class="dv">90</span>,<span class="dv">80</span>,<span class="dv">88</span>,<span class="dv">76</span>,<span class="dv">58</span>};</a>
+<a class="sourceLine" id="cb1-2" title="2">cout &lt;&lt; score[<span class="dv">5</span>];</a></code></pre></div>
+<ul>
+<li>The program will still compile and run but the out of bounds array reference would access unexpected value, given that array values are contiguous, array reference greater than the array size would likely access value next to the array in memory or garbage value.</li>
+</ul>
+<ol start="2" type="1">
+<li>What happens when you assign an array to a new variable? Explain what are the contents of both variables after the assignment.</li>
+</ol>
+<p>int oldScores[5] = {90,80,88,76,58}; int newScores[5]; newScores = oldScores;</p>
+<ul>
+<li>The program would produce an error since you CAN’T assign array variables into another array because array variables are just mere reference to a specific address in memory and does not contain the value(s) assigned to it. Therefore, the example above <code>newScores = oldScores</code> does not assign <code>oldScores</code> to <code>newScores</code> the values of <code>oldScores</code>, but rather its memory address which is invalid variable assignment operation and would produce compilation error.</li>
+</ul>
+<ol start="3" type="1">
+<li>What are ways you could pass arrays to functions? Please provide use cases for each way, justifying why the method is better.</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb2-1" title="1"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb2-3" title="3"></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="co">// Prototypes</span></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="dt">void</span> foo(<span class="dt">int</span>* arr);        <span class="co">// Reference to a memory address containing int value</span></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="dt">void</span> bar(<span class="dt">int</span> arr[]);       <span class="co">// Reference to array variable</span></a>
+<a class="sourceLine" id="cb2-7" title="7"><span class="dt">void</span> baz(<span class="dt">int</span> arr[<span class="dv">5</span>]);      <span class="co">// Reference to array variable with fixed size</span></a>
+<a class="sourceLine" id="cb2-8" title="8"><span class="dt">void</span> qux(<span class="at">const</span> <span class="dt">int</span> arr[]); <span class="co">// Reference to array variable with immutable param</span></a>
+<a class="sourceLine" id="cb2-9" title="9"></a>
+<a class="sourceLine" id="cb2-10" title="10"><span class="dt">void</span> printArrayValues(<span class="dt">int</span> [], <span class="dt">unsigned</span> <span class="dt">int</span>);</a>
+<a class="sourceLine" id="cb2-11" title="11"></a>
+<a class="sourceLine" id="cb2-12" title="12"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb2-13" title="13">{</a>
+<a class="sourceLine" id="cb2-14" title="14">  <span class="dt">int</span> numArr1[] = {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>};</a>
+<a class="sourceLine" id="cb2-15" title="15">  <span class="dt">int</span> numArr2[] = {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>};</a>
+<a class="sourceLine" id="cb2-16" title="16">  <span class="dt">int</span> numArrSized1[<span class="dv">5</span>] = {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>};</a>
+<a class="sourceLine" id="cb2-17" title="17">  <span class="dt">int</span> numArrSized2[<span class="dv">5</span>] = {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>};</a>
+<a class="sourceLine" id="cb2-18" title="18"></a>
+<a class="sourceLine" id="cb2-19" title="19">  cout &lt;&lt; <span class="st">&quot;Pass by pointer&quot;</span> &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb2-20" title="20">  foo(numArr1);</a>
+<a class="sourceLine" id="cb2-21" title="21">  printArrayValues(numArr1, <span class="dv">5</span>);</a>
+<a class="sourceLine" id="cb2-22" title="22"></a>
+<a class="sourceLine" id="cb2-23" title="23">  cout &lt;&lt; <span class="st">&quot;Pass by unsized array&quot;</span> &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb2-24" title="24">  bar(numArr2);</a>
+<a class="sourceLine" id="cb2-25" title="25">  printArrayValues(numArr2, <span class="dv">5</span>);</a>
+<a class="sourceLine" id="cb2-26" title="26"></a>
+<a class="sourceLine" id="cb2-27" title="27">  cout &lt;&lt; <span class="st">&quot;Pass by sized array&quot;</span> &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb2-28" title="28">  baz(numArrSized1);</a>
+<a class="sourceLine" id="cb2-29" title="29">  printArrayValues(numArrSized1, <span class="dv">5</span>);</a>
+<a class="sourceLine" id="cb2-30" title="30"></a>
+<a class="sourceLine" id="cb2-31" title="31">  cout &lt;&lt; <span class="st">&quot;Pass by const array&quot;</span> &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb2-32" title="32">  qux(numArrSized2);</a>
+<a class="sourceLine" id="cb2-33" title="33">  printArrayValues(numArrSized2, <span class="dv">5</span>);</a>
+<a class="sourceLine" id="cb2-34" title="34">}</a>
+<a class="sourceLine" id="cb2-35" title="35"></a>
+<a class="sourceLine" id="cb2-36" title="36"><span class="co">// They don&#39;t make much difference since array params all turn into a pointers.</span></a>
+<a class="sourceLine" id="cb2-37" title="37"><span class="co">// So `int arr[]` will transform into `int* arr`.</span></a>
+<a class="sourceLine" id="cb2-38" title="38"><span class="co">// Pass by array or array pointers can be used to modify the original value of</span></a>
+<a class="sourceLine" id="cb2-39" title="39"><span class="co">// the array.</span></a>
+<a class="sourceLine" id="cb2-40" title="40"><span class="dt">void</span> foo(<span class="dt">int</span>* arr)    { arr[<span class="dv">0</span>] = <span class="dv">99</span>; }  <span class="co">// Pass by pointer</span></a>
+<a class="sourceLine" id="cb2-41" title="41"><span class="dt">void</span> bar(<span class="dt">int</span> arr[])   { arr[<span class="dv">0</span>] = <span class="dv">99</span>; }  <span class="co">// Pass by unsized array. Turns into a pointer</span></a>
+<a class="sourceLine" id="cb2-42" title="42"><span class="dt">void</span> baz(<span class="dt">int</span> arr[<span class="dv">5</span>])  { arr[<span class="dv">0</span>] = <span class="dv">99</span>; }  <span class="co">// Pass by fixed size array. Turns into a pointer</span></a>
+<a class="sourceLine" id="cb2-43" title="43"></a>
+<a class="sourceLine" id="cb2-44" title="44"><span class="co">// However, const arrays, while still decay into a pointer, the value(s) its</span></a>
+<a class="sourceLine" id="cb2-45" title="45"><span class="co">// pointing to cannot be reassigned. This is great if you don&#39;t want your array</span></a>
+<a class="sourceLine" id="cb2-46" title="46"><span class="co">// to be modified inside a function.</span></a>
+<a class="sourceLine" id="cb2-47" title="47"><span class="dt">void</span> qux(<span class="at">const</span> <span class="dt">int</span> arr[]) {</a>
+<a class="sourceLine" id="cb2-48" title="48">  <span class="co">// arr[0] = 99;     // ERROR! const param cannot be mutated</span></a>
+<a class="sourceLine" id="cb2-49" title="49"></a>
+<a class="sourceLine" id="cb2-50" title="50">  <span class="dt">int</span> temp = arr[<span class="dv">0</span>];  <span class="co">// Alternative way to access and modify</span></a>
+<a class="sourceLine" id="cb2-51" title="51">  temp = <span class="dv">99</span>;</a>
+<a class="sourceLine" id="cb2-52" title="52">}</a>
+<a class="sourceLine" id="cb2-53" title="53"></a>
+<a class="sourceLine" id="cb2-54" title="54"><span class="co">///////////////////////////////// IGNORE ///////////////////////////////////////</span></a>
+<a class="sourceLine" id="cb2-55" title="55"></a>
+<a class="sourceLine" id="cb2-56" title="56"><span class="co">// Neatly prints array values</span></a>
+<a class="sourceLine" id="cb2-57" title="57"><span class="dt">void</span> printArrayValues(<span class="dt">int</span> arr[], <span class="dt">unsigned</span> <span class="dt">int</span> arrSize) {</a>
+<a class="sourceLine" id="cb2-58" title="58">  cout &lt;&lt; <span class="st">&quot;Array Values: &quot;</span>;</a>
+<a class="sourceLine" id="cb2-59" title="59">  <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; arrSize; i++)</a>
+<a class="sourceLine" id="cb2-60" title="60">    cout &lt;&lt; arr[i] &lt;&lt; <span class="st">&quot; &quot;</span>;</a>
+<a class="sourceLine" id="cb2-61" title="61">  cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb2-62" title="62">}</a></code></pre></div>
+<ol start="4" type="1">
+<li>What are 3 differences and similarities between arrays and vectors? Provide one use case for each and justify why the data structure fits better than the other. Please use code to illustrate.</li>
+</ol>
+<p>Similarities</p>
+<ul>
+<li>Both array and vector holds a sequence of values, or elements</li>
+<li>Stores elements in a continuous (side by side) memory locations.</li>
+<li>Both use <code>[]</code> operator to index an element in an array or vector.</li>
+</ul>
+<p>Differences</p>
+<ul>
+<li>Vectors do not have to declare the number of elements that a vector will have. While arrays also do not require the array size when being declared, arrays automatically set the size when initialized which cannot be resized.</li>
+<li>Vectors can increase its size automatically when adding elements using its member functions such as <code>push_back()</code>. Arrays size are fixed.</li>
+<li>Vectors can report the number of elements they contain with <code>capacity()</code> member function.</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb3-1" title="1"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="pp">#include </span><span class="im">&lt;vector&gt;</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb3-4" title="4"></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb3-6" title="6">{</a>
+<a class="sourceLine" id="cb3-7" title="7">  <span class="co">/** Use case #1</span></a>
+<a class="sourceLine" id="cb3-8" title="8"><span class="co">   * Vectors are usefull if you are having an arbitrary amount of elements to</span></a>
+<a class="sourceLine" id="cb3-9" title="9"><span class="co">   * store in a data structure. e.g. Online shopping cart.</span></a>
+<a class="sourceLine" id="cb3-10" title="10"><span class="co">   *</span></a>
+<a class="sourceLine" id="cb3-11" title="11"><span class="co">   * Arrays, however fixed in size, is also useful if you know how many elements</span></a>
+<a class="sourceLine" id="cb3-12" title="12"><span class="co">   * to store and would not want to add additional elemnts. e.g. Chess pieces.</span></a>
+<a class="sourceLine" id="cb3-13" title="13"><span class="co">   */</span></a>
+<a class="sourceLine" id="cb3-14" title="14"></a>
+<a class="sourceLine" id="cb3-15" title="15">  vector&lt;<span class="dt">int</span>&gt; vec1; <span class="co">// Does not require size when declaring</span></a>
+<a class="sourceLine" id="cb3-16" title="16">  <span class="dt">int</span> arr1[<span class="dv">5</span>];      <span class="co">// Requires to declare array size</span></a>
+<a class="sourceLine" id="cb3-17" title="17"></a>
+<a class="sourceLine" id="cb3-18" title="18">  <span class="co">//////////////////////////////////////////////////////////////////////////////</span></a>
+<a class="sourceLine" id="cb3-19" title="19"></a>
+<a class="sourceLine" id="cb3-20" title="20">  <span class="co">/** Use case #2</span></a>
+<a class="sourceLine" id="cb3-21" title="21"><span class="co">   * Vectors can add (push) and remove (pop) any elements stored in a vector.</span></a>
+<a class="sourceLine" id="cb3-22" title="22"><span class="co">   * e.g. Add to cart functionality.</span></a>
+<a class="sourceLine" id="cb3-23" title="23"><span class="co">   *</span></a>
+<a class="sourceLine" id="cb3-24" title="24"><span class="co">   * Arrays cannot add or remove an element once initialized. In order to add</span></a>
+<a class="sourceLine" id="cb3-25" title="25"><span class="co">   * another element, you need to copy all elements of an array into another a</span></a>
+<a class="sourceLine" id="cb3-26" title="26"><span class="co">   * new array with size of the old array plus new elements (or minus the</span></a>
+<a class="sourceLine" id="cb3-27" title="27"><span class="co">   * elements to remove).</span></a>
+<a class="sourceLine" id="cb3-28" title="28"><span class="co">   */</span></a>
+<a class="sourceLine" id="cb3-29" title="29">  vector&lt;<span class="dt">char</span>&gt; vec2 {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>};</a>
+<a class="sourceLine" id="cb3-30" title="30">  <span class="dt">int</span> arr2[<span class="dv">5</span>] = {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>};</a>
+<a class="sourceLine" id="cb3-31" title="31"></a>
+<a class="sourceLine" id="cb3-32" title="32">  vec2 = {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>};</a>
+<a class="sourceLine" id="cb3-33" title="33">  vec2.push_back(<span class="dv">6</span>); <span class="co">// Appends 6 into vec2 elements</span></a>
+<a class="sourceLine" id="cb3-34" title="34"></a>
+<a class="sourceLine" id="cb3-35" title="35">  arr2[<span class="dv">0</span>] = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb3-36" title="36">  arr2[<span class="dv">1</span>] = <span class="dv">2</span>;</a>
+<a class="sourceLine" id="cb3-37" title="37">  arr2[<span class="dv">2</span>] = <span class="dv">3</span>;</a>
+<a class="sourceLine" id="cb3-38" title="38">  arr2[<span class="dv">3</span>] = <span class="dv">4</span>;</a>
+<a class="sourceLine" id="cb3-39" title="39">  arr2[<span class="dv">4</span>] = <span class="dv">5</span>;</a>
+<a class="sourceLine" id="cb3-40" title="40">  arr2[<span class="dv">5</span>] = <span class="dv">6</span>; <span class="co">// OUT OF BOUNDS!</span></a>
+<a class="sourceLine" id="cb3-41" title="41"></a>
+<a class="sourceLine" id="cb3-42" title="42">  <span class="co">//////////////////////////////////////////////////////////////////////////////</span></a>
+<a class="sourceLine" id="cb3-43" title="43"></a>
+<a class="sourceLine" id="cb3-44" title="44">  <span class="co">/** Use case #3</span></a>
+<a class="sourceLine" id="cb3-45" title="45"><span class="co">   * Vectors has various useful member functions that reports or modify elements</span></a>
+<a class="sourceLine" id="cb3-46" title="46"><span class="co">   * stored in a vector such as capacity(), push_back(), pop_back(), etc.</span></a>
+<a class="sourceLine" id="cb3-47" title="47"><span class="co">   *</span></a>
+<a class="sourceLine" id="cb3-48" title="48"><span class="co">   * Arrays do not have the functionality vectors therefore arrays are more</span></a>
+<a class="sourceLine" id="cb3-49" title="49"><span class="co">   * lightweight. Additionally, there are workarounds that programmers can</span></a>
+<a class="sourceLine" id="cb3-50" title="50"><span class="co">   * implement to have the same functionality as vectors have.</span></a>
+<a class="sourceLine" id="cb3-51" title="51"><span class="co">   */</span></a>
+<a class="sourceLine" id="cb3-52" title="52">  vector&lt;<span class="dt">char</span>&gt; vec3 {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>};</a>
+<a class="sourceLine" id="cb3-53" title="53">  <span class="dt">int</span> arr3[<span class="dv">5</span>] = {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>};</a>
+<a class="sourceLine" id="cb3-54" title="54"></a>
+<a class="sourceLine" id="cb3-55" title="55">  <span class="dt">int</span> vectorSize = vec3.capacity(); <span class="co">// Returns number of elements in vec3;</span></a>
+<a class="sourceLine" id="cb3-56" title="56">  cout &lt;&lt; <span class="st">&quot;Vector size: &quot;</span> + to_string(vectorSize) &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb3-57" title="57"></a>
+<a class="sourceLine" id="cb3-58" title="58">  <span class="co">// total size of arr3 elements divided by</span></a>
+<a class="sourceLine" id="cb3-59" title="59">  <span class="co">// the size of arr3 first element</span></a>
+<a class="sourceLine" id="cb3-60" title="60">  <span class="co">// = number of array elements</span></a>
+<a class="sourceLine" id="cb3-61" title="61">  <span class="dt">int</span> arrSize = <span class="kw">sizeof</span>(arr3) / <span class="kw">sizeof</span>(arr3[<span class="dv">0</span>]); <span class="co">// Workaround to get the size of an array</span></a>
+<a class="sourceLine" id="cb3-62" title="62">  cout &lt;&lt; <span class="st">&quot;Array Size: &quot;</span> + to_string(arrSize) &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb3-63" title="63">}</a></code></pre></div>
+<p>OUTPUT</p>
+<pre><code>Vector size: 5
+Array Size: 5</code></pre>
+<ol start="5" type="1">
+<li>Lets say you have an array with integers 0-9, and you want to remove items greater than 5. What is a good way to do this? Please use code to illustrate.</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb5-1" title="1"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb5-3" title="3"></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="dt">void</span> printArrayValues(<span class="dt">int</span> [], <span class="dt">unsigned</span> <span class="dt">int</span>);</a>
+<a class="sourceLine" id="cb5-5" title="5"></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb5-7" title="7">{</a>
+<a class="sourceLine" id="cb5-8" title="8">  <span class="dt">int</span> arr1[<span class="dv">10</span>] = {<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>}; <span class="co">// Test 1: Array sorted</span></a>
+<a class="sourceLine" id="cb5-9" title="9">  <span class="dt">int</span> arr2[<span class="dv">10</span>] = {<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">0</span>}; <span class="co">// Test 2: Array unsorted</span></a>
+<a class="sourceLine" id="cb5-10" title="10">  <span class="dt">int</span> arr3[<span class="dv">10</span>] = {<span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">0</span>}; <span class="co">// Test 3: Array unsorted with duplicates</span></a>
+<a class="sourceLine" id="cb5-11" title="11">  <span class="dt">int</span> j; <span class="co">// Counter for elements greater than 5</span></a>
+<a class="sourceLine" id="cb5-12" title="12">  <span class="dt">int</span> k; <span class="co">// Counter for new array elements</span></a>
+<a class="sourceLine" id="cb5-13" title="13"></a>
+<a class="sourceLine" id="cb5-14" title="14">  <span class="co">// Size of elements</span></a>
+<a class="sourceLine" id="cb5-15" title="15">  <span class="co">// divided by</span></a>
+<a class="sourceLine" id="cb5-16" title="16">  <span class="co">// the size of an element</span></a>
+<a class="sourceLine" id="cb5-17" title="17">  <span class="co">// = Total number of elements</span></a>
+<a class="sourceLine" id="cb5-18" title="18">  <span class="dt">int</span> arr1Size = <span class="kw">sizeof</span>(arr1) / <span class="kw">sizeof</span>(arr1[<span class="dv">0</span>]);</a>
+<a class="sourceLine" id="cb5-19" title="19">  <span class="dt">int</span> arr2Size = <span class="kw">sizeof</span>(arr2) / <span class="kw">sizeof</span>(arr2[<span class="dv">0</span>]);</a>
+<a class="sourceLine" id="cb5-20" title="20">  <span class="dt">int</span> arr3Size = <span class="kw">sizeof</span>(arr3) / <span class="kw">sizeof</span>(arr3[<span class="dv">0</span>]);</a>
+<a class="sourceLine" id="cb5-21" title="21"></a>
+<a class="sourceLine" id="cb5-22" title="22">  <span class="co">/////////////////////// </span><span class="al">TEST</span><span class="co"> 1</span></a>
+<a class="sourceLine" id="cb5-23" title="23">  cout &lt;&lt; <span class="st">&quot;TEST 1&quot;</span> &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb5-24" title="24"></a>
+<a class="sourceLine" id="cb5-25" title="25">  <span class="co">// Count all elements greater than 5</span></a>
+<a class="sourceLine" id="cb5-26" title="26">  <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; arr1Size; i++)</a>
+<a class="sourceLine" id="cb5-27" title="27">    <span class="cf">if</span> (arr1[i] &gt; <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb5-28" title="28">      j++;</a>
+<a class="sourceLine" id="cb5-29" title="29"></a>
+<a class="sourceLine" id="cb5-30" title="30">  <span class="co">// Initialize new array</span></a>
+<a class="sourceLine" id="cb5-31" title="31">  <span class="dt">int</span> newArr1[arr1Size - j];</a>
+<a class="sourceLine" id="cb5-32" title="32">  <span class="dt">int</span> newArr1Size = <span class="kw">sizeof</span>(newArr1) / <span class="kw">sizeof</span>(newArr1[<span class="dv">0</span>]);</a>
+<a class="sourceLine" id="cb5-33" title="33">  <span class="co">// Assign elements less than or equal to 5 into new array</span></a>
+<a class="sourceLine" id="cb5-34" title="34">  <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; arr1Size; i++) {</a>
+<a class="sourceLine" id="cb5-35" title="35">    <span class="cf">if</span> (arr1[i] &lt;= <span class="dv">5</span>) {</a>
+<a class="sourceLine" id="cb5-36" title="36">      newArr1[k] = arr1[i];</a>
+<a class="sourceLine" id="cb5-37" title="37">      k++;</a>
+<a class="sourceLine" id="cb5-38" title="38">    }</a>
+<a class="sourceLine" id="cb5-39" title="39">  }</a>
+<a class="sourceLine" id="cb5-40" title="40">  cout &lt;&lt; <span class="st">&quot;Old array 1 Values: &quot;</span>;</a>
+<a class="sourceLine" id="cb5-41" title="41">  printArrayValues(arr1, arr1Size);</a>
+<a class="sourceLine" id="cb5-42" title="42">  cout &lt;&lt; <span class="st">&quot;New array 1 Values: &quot;</span>;</a>
+<a class="sourceLine" id="cb5-43" title="43">  printArrayValues(newArr1, newArr1Size);</a>
+<a class="sourceLine" id="cb5-44" title="44"></a>
+<a class="sourceLine" id="cb5-45" title="45">  cout &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb5-46" title="46"></a>
+<a class="sourceLine" id="cb5-47" title="47">  <span class="co">/////////////////////// </span><span class="al">TEST</span><span class="co"> 2</span></a>
+<a class="sourceLine" id="cb5-48" title="48">  j = <span class="dv">0</span>; k = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb5-49" title="49">  cout &lt;&lt; <span class="st">&quot;TEST 2&quot;</span> &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb5-50" title="50"></a>
+<a class="sourceLine" id="cb5-51" title="51">  <span class="co">// Count all elements greater than 5</span></a>
+<a class="sourceLine" id="cb5-52" title="52">  <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; arr2Size; i++)</a>
+<a class="sourceLine" id="cb5-53" title="53">    <span class="cf">if</span> (arr2[i] &gt; <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb5-54" title="54">      j++;</a>
+<a class="sourceLine" id="cb5-55" title="55"></a>
+<a class="sourceLine" id="cb5-56" title="56">  <span class="co">// Initialize new array</span></a>
+<a class="sourceLine" id="cb5-57" title="57">  <span class="dt">int</span> newArr2[arr2Size - j];</a>
+<a class="sourceLine" id="cb5-58" title="58">  <span class="dt">int</span> newArr2Size = <span class="kw">sizeof</span>(newArr2) / <span class="kw">sizeof</span>(newArr2[<span class="dv">0</span>]);</a>
+<a class="sourceLine" id="cb5-59" title="59">  <span class="co">// Assign elements less than or equal to 5 into new array</span></a>
+<a class="sourceLine" id="cb5-60" title="60">  <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; arr2Size; i++) {</a>
+<a class="sourceLine" id="cb5-61" title="61">    <span class="cf">if</span> (arr2[i] &lt;= <span class="dv">5</span>) {</a>
+<a class="sourceLine" id="cb5-62" title="62">      newArr2[k] = arr2[i];</a>
+<a class="sourceLine" id="cb5-63" title="63">      k++;</a>
+<a class="sourceLine" id="cb5-64" title="64">    }</a>
+<a class="sourceLine" id="cb5-65" title="65">  }</a>
+<a class="sourceLine" id="cb5-66" title="66">  cout &lt;&lt; <span class="st">&quot;Old array 2 Values: &quot;</span>;</a>
+<a class="sourceLine" id="cb5-67" title="67">  printArrayValues(arr2, arr2Size);</a>
+<a class="sourceLine" id="cb5-68" title="68">  cout &lt;&lt; <span class="st">&quot;New array 2 Values: &quot;</span>;</a>
+<a class="sourceLine" id="cb5-69" title="69">  printArrayValues(newArr2, newArr2Size);</a>
+<a class="sourceLine" id="cb5-70" title="70"></a>
+<a class="sourceLine" id="cb5-71" title="71">  cout &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb5-72" title="72"></a>
+<a class="sourceLine" id="cb5-73" title="73">  <span class="co">/////////////////////// </span><span class="al">TEST</span><span class="co"> 3</span></a>
+<a class="sourceLine" id="cb5-74" title="74">  j = <span class="dv">0</span>; k = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb5-75" title="75">  cout &lt;&lt; <span class="st">&quot;TEST 3&quot;</span> &lt;&lt; endl;</a>
+<a class="sourceLine" id="cb5-76" title="76"></a>
+<a class="sourceLine" id="cb5-77" title="77">  <span class="co">// Count all elements greater than 5</span></a>
+<a class="sourceLine" id="cb5-78" title="78">  <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; arr3Size; i++)</a>
+<a class="sourceLine" id="cb5-79" title="79">    <span class="cf">if</span> (arr3[i] &gt; <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb5-80" title="80">      j++;</a>
+<a class="sourceLine" id="cb5-81" title="81"></a>
+<a class="sourceLine" id="cb5-82" title="82">  <span class="co">// Initialize new array</span></a>
+<a class="sourceLine" id="cb5-83" title="83">  <span class="dt">int</span> newArr3[arr3Size - j];</a>
+<a class="sourceLine" id="cb5-84" title="84">  <span class="dt">int</span> newArr3Size = <span class="kw">sizeof</span>(newArr3) / <span class="kw">sizeof</span>(newArr3[<span class="dv">0</span>]);</a>
+<a class="sourceLine" id="cb5-85" title="85">  <span class="co">// Assign elements less than or equal to 5 into new array</span></a>
+<a class="sourceLine" id="cb5-86" title="86">  <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; arr3Size; i++) {</a>
+<a class="sourceLine" id="cb5-87" title="87">    <span class="cf">if</span> (arr3[i] &lt;= <span class="dv">5</span>) {</a>
+<a class="sourceLine" id="cb5-88" title="88">      newArr3[k] = arr3[i];</a>
+<a class="sourceLine" id="cb5-89" title="89">      k++;</a>
+<a class="sourceLine" id="cb5-90" title="90">    }</a>
+<a class="sourceLine" id="cb5-91" title="91">  }</a>
+<a class="sourceLine" id="cb5-92" title="92">  cout &lt;&lt; <span class="st">&quot;Old array 3 Values: &quot;</span>;</a>
+<a class="sourceLine" id="cb5-93" title="93">  printArrayValues(arr3, arr3Size);</a>
+<a class="sourceLine" id="cb5-94" title="94">  cout &lt;&lt; <span class="st">&quot;New array 3 Values: &quot;</span>;</a>
+<a class="sourceLine" id="cb5-95" title="95">  printArrayValues(newArr3, newArr3Size);</a>
+<a class="sourceLine" id="cb5-96" title="96">}</a>
+<a class="sourceLine" id="cb5-97" title="97"></a>
+<a class="sourceLine" id="cb5-98" title="98"><span class="co">// Prints all array elements in array param</span></a>
+<a class="sourceLine" id="cb5-99" title="99"><span class="dt">void</span> printArrayValues(<span class="dt">int</span> arr[], <span class="dt">unsigned</span> <span class="dt">int</span> arrSize) {</a>
+<a class="sourceLine" id="cb5-100" title="100">  <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; arrSize; i++)</a>
+<a class="sourceLine" id="cb5-101" title="101">    cout &lt;&lt; arr[i] &lt;&lt; <span class="st">&quot; &quot;</span>;</a>
+<a class="sourceLine" id="cb5-102" title="102">  cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb5-103" title="103">}</a></code></pre></div>
+<p>OUTPUT</p>
+<pre><code>TEST 1
+Old array 1 Values: 0 1 2 3 4 5 6 7 8 9
+New array 1 Values: 0 1 2 3 4 5
+
+TEST 2
+Old array 2 Values: 0 5 1 6 4 7 9 1 8 0
+New array 2 Values: 0 5 1 4 1 0
+
+TEST 3
+Old array 3 Values: 0 3 2 3 4 5 5 1 8 0
+New array 3 Values: 0 3 2 3 4 5 5 1 0</code></pre>
+          </article>
+          </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../../../templates/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../../../templates/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+    <script src="../../../../../../templates/js/animated-toc.js"></script>
+  </body>
+</html>
