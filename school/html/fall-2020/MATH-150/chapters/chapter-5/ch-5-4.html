@@ -67,6 +67,15 @@
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
           <li><a href="#chapter-5.4-indefinite-integrals-and-the-net-change-theorem">Chapter 5.4: Indefinite Integrals and the Net Change Theorem</a><ul>
+          <li><a href="#indefinite-integrals">Indefinite Integrals</a><ul>
+          <li><a href="#table-of-indefinite-integrals-1">Table of Indefinite Integrals 1</a></li>
+          </ul></li>
+          <li><a href="#applications">Applications</a><ul>
+          <li><a href="#net-change-theorem">Net change Theorem</a></li>
+          <li><a href="#definition-2">Definition 2</a></li>
+          <li><a href="#definition-3">Definition 3</a></li>
+          <li><a href="#a-note-on-units">A Note on Units</a></li>
+          </ul></li>
           <li><a href="#video-lectures">Video Lectures</a></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
@@ -99,6 +108,138 @@
 <!-- Contents -->
           <article class="contents">
 <h1 id="chapter-5.4-indefinite-integrals-and-the-net-change-theorem">Chapter 5.4: Indefinite Integrals and the Net Change Theorem</h1>
+<h2 id="indefinite-integrals">Indefinite Integrals</h2>
+<p>Both parts of the Fundamental Theorem establish connections between antiderivatives and definite integrals. Part 1 says that if <span class="math inline">\(f\)</span> is continuous, then <span class="math inline">\(\int_{a}^{x} f(t)dt\)</span> is an antiderivative of. Part 2 says that <span class="math inline">\(\int_{a}^{b} f(x)dx\)</span> can be found by evaluating <span class="math inline">\(F(b) - F(a)\)</span>, where <span class="math inline">\(F\)</span> is an antiderivative of <span class="math inline">\(f\)</span>.</p>
+<p>We need a convenient notation for antiderivatives that makes them easy to work with. Because of the relation between antiderivatives and integrals given by the Fundamental Theorem, the notation <span class="math inline">\(\int f(x)dx\)</span> is traditionally used for an antiderivative of <span class="math inline">\(f\)</span> and is called an indefinite integral. Thus</p>
+<p><span class="math display">\[
+\int f(x)dx = F(x)
+\]</span></p>
+<p>means</p>
+<p><span class="math display">\[
+F^{\prime}(x) = f(x)
+\]</span></p>
+<p>For example, we can write</p>
+<p><span class="math display">\[
+\int x^{2}dx = \frac{x^{3}}{3} + C
+\]</span></p>
+<p>because</p>
+<p><span class="math display">\[
+\frac{d}{dx}\left ( \frac{x^{3}}{3} + C \right ) = x^{2}
+\]</span></p>
+<p>So we can regard an indefinite integral as representing an entire family of functions (one antiderivative for each value of the constant <span class="math inline">\(C\)</span>).</p>
+<p><strong>You should distinguish carefully between definite and indefinite integrals. A definite integral <span class="math inline">\(\int_{a}^{b} f(x)dx\)</span> is a number, whereas an indefinite integral <span class="math inline">\(\int f(x)dx\)</span> is a <em>function</em> (or family of functions).</strong> The connection between them is given by Part 2 of the Fundamental Theorem: If <span class="math inline">\(f\)</span> is continuous on <span class="math inline">\([a, b]\)</span>, then</p>
+<p><span class="math display">\[
+\int_{a}^{b} f(x)dx = \int f(x)dx]_{a}^{b}
+\]</span></p>
+<p>The effectiveness of the Fundamental Theorem depends on having a supply of antiderivatives of functions. We therefore restate the Table of Antidifferentiation Formulas from Section 4.9, together with a few others, in the notation of indefinite integrals. Any formula can be verified by differentiating the function on the right side and obtaining the integrand. For instance,</p>
+<p><span class="math display">\[
+\int \sec^{2}(x)\;dx = \tan(x) + C
+\]</span></p>
+<p>because</p>
+<p><span class="math display">\[
+\frac{d}{dx}(\tan(x) + C) = \sec^{2}(x)
+\]</span></p>
+<h3 id="table-of-indefinite-integrals-1">Table of Indefinite Integrals 1</h3>
+<p><span class="math display">\[
+\begin{array}{ll}
+  \int cf(x)dx = c \int f(x)dx &amp; \int [f(x) + g(x)]dx = \int f(x)dx + \int g(x)dx \\
+  \int k\;dx = kx + C \\
+  \int x^{n}dx = \frac{x^{n + 1}}{n + 1} + C(n \neq - 1) &amp; \int \frac{1}{x}dx = \ln |x| + C\\
+  \int e^{x}dx = e^{x} + C &amp; \int b^{x}dx = \frac{b^{x}}{\ln(b)} + C \\
+  \int \sin(x)\;dx = -\cos(x) + C &amp; \int \cos(x)dx = \sin(x) + C \\
+  \int \sec^{2}(x)dx = \tan(x) + C &amp; \int \csc^{2}(x)dx = -\cot(x) + C \\
+  \int \sec(x)\tan(x)dx = \sec(x) + C &amp; \int \csc(x)\cot(x)dx = - \csc(x) + C \\
+  \int \frac{1}{x^{2} + 1}dx = \tan^{-1}(x) + C &amp; \int \frac{1}{\sqrt{1 - x^{2}}}dx = \sin^{-1}(x) + C \\
+  \int \sinh(x)dx = \cosh(x) + C &amp; \int \cosh(x)dx = \sinh(x) + C
+\end{array}
+\]</span></p>
+<p>Recall from Theorem 4.9.1 that the most general antiderivative on a given interval is obtained by adding a constant to a particular antiderivative. <strong>We adopt the convention that when a formula for a general indefinite integral is given, it is valid only on an interval.</strong> Thus we write</p>
+<p><span class="math display">\[
+\int \frac{1}{x^{2}}dx = -\frac{1}{x} + C
+\]</span></p>
+<p>with the understanding that it is valid on the interval <span class="math inline">\((0, \infty)\)</span> or on the interval <span class="math inline">\((-\infty, 0)\)</span>. This is true despite the fact that the general antiderivative of the function $f(x) = 1/x^{2}$, <span class="math inline">\(x \neq 0\)</span>, is</p>
+<p><span class="math display">\[
+F(x) =
+\left\{\begin{matrix}
+  -\frac{1}{x} + C_{1} \;\;\; if x &lt; 0 \\
+  -\frac{1}{x} + C_{2} \;\;\; if x &gt; 0 \\
+\end{matrix}\right.
+\]</span></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.4_example-1.1.png" alt="Example 1.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.4_example-1.2.png" alt="Example 1.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.4_example-2.png" alt="Example 2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.4_example-3.png" alt="Example 3" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.4_example-4.1.png" alt="Example 4.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.4_example-4.2.png" alt="Example 4.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.4_example-5.png" alt="Example 5" /></p>
+<h2 id="applications">Applications</h2>
+<p>Part 2 of the Fundamental Theorem says that if <span class="math inline">\(f\)</span> is continuous on <span class="math inline">\([a, b]\)</span>, then</p>
+<p><span class="math display">\[
+\int_{a}^{b} f(x)dx = F(b) - F(a)
+\]</span></p>
+<p>where <span class="math inline">\(F\)</span> is any antiderivative of <span class="math inline">\(f\)</span>. This means that <span class="math inline">\(F^{\prime} = f\)</span>, so the equation can be rewritten as</p>
+<p><span class="math display">\[
+\int_{a}^{b} F^{\prime}(x)dx = F(b) - F(a)
+\]</span></p>
+<p>We know that <span class="math inline">\(F^{\prime}(x)\)</span> represents the rate of change of <span class="math inline">\(y = F(x)\)</span> with respect to <span class="math inline">\(x\)</span> and <span class="math inline">\(F(b) - F(a)\)</span> is the change in <span class="math inline">\(y\)</span> when <span class="math inline">\(x\)</span> changes from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>. [Note that <span class="math inline">\(y\)</span> could, for instance, increase, then decrease, then increase again. Although might change in both directions, <span class="math inline">\(F(b) - F(a)\)</span> represents the net change in <span class="math inline">\(y\)</span>.] So we can reformulate FTC2 in words as follows.</p>
+<h3 id="net-change-theorem">Net change Theorem</h3>
+<p>The integral of a rate of change is the net change:</p>
+<p><span class="math display">\[
+\int_{a}^{b} F^{\prime}(x)dx = F(b) - F(a)
+\]</span></p>
+<p>This principle can be applied to all of the rates of change in the natural and social sciences that we discussed in Section 3.7. Here are a few instances of this idea:</p>
+<ul>
+<li><p>If <span class="math inline">\(V(t)\)</span> is the volume of water in a reservoir at time <span class="math inline">\(t\)</span>, then its derivative <span class="math inline">\(v^{\prime}(t)\)</span> is the rate at which water flows into the reservoir at time <span class="math inline">\(t\)</span>. So</p>
+<p><span class="math display">\[
+\int_{t_{1}}^{t_{2}} V^{\prime}(t)dt = V(t_{2}) - V(t_{1})
+\]</span></p>
+<p>is the change in the amount of water in the reservoir between time <span class="math inline">\(t_{1}\)</span> and time <span class="math inline">\(t_{2}\)</span>.</p></li>
+<li><p>If <span class="math inline">\([C](t.html)\)</span> is the concentration of the product of a chemical reaction at time <span class="math inline">\(t\)</span>, then the rate of reaction is the derivative <span class="math inline">\(d[C]/dt\)</span>. So</p>
+<p><span class="math display">\[
+\int_{t_{1}}^{t_{2}} \frac{d[C]}{dt}dt = [C](t_{2}) - [C](t_{1}.html)
+\]</span></p>
+<p>is the change in the concentration of <span class="math inline">\(C\)</span> from time <span class="math inline">\(t_{1}\)</span> to time <span class="math inline">\(t_{2}\)</span>.</p></li>
+<li><p>If the mass of a rod measured from the left end to a point <span class="math inline">\(x\)</span> is <span class="math inline">\(m(x)\)</span>, then the linear density is <span class="math inline">\(\rho(x) = m^{\prime}(x)\)</span>. So</p>
+<p><span class="math display">\[
+\int_{a}^{b} \rho(x)dx = m(b) - m(a)
+\]</span></p>
+<p>is the mass of the segment of the rod that lies between <span class="math inline">\(x = a\)</span> and <span class="math inline">\(x = b\)</span>.</p></li>
+<li><p>If the rate of growth of a population is <span class="math inline">\(dn/dt\)</span>, then</p>
+<p><span class="math display">\[
+\int_{t_{1}}^{t_{2}} \frac{dn}{dt}dt = n(t_{2}) - n(t_{1})
+\]</span></p>
+<p>is the net change in population during the time period from <span class="math inline">\(t_{1}\)</span> to <span class="math inline">\(t_{2}\)</span>. (The population increases when births happen and decreases when deaths occur. The net change takes into account both births and deaths.)</p></li>
+<li><p>If <span class="math inline">\(C(x)\)</span> is the cost of producing <span class="math inline">\(x\)</span> units of a commodity, then the marginal cost is the derivative <span class="math inline">\(C^{\prime}(x)\)</span>. So</p>
+<p><span class="math display">\[
+\int_{x_{1}}^{x_{2}} C^{\prime}(x)dx = C(x_{2}) - C(x_{1})
+\]</span></p>
+<p>is the increase in cost when production is increased from <span class="math inline">\(x_{1}\)</span> units to <span class="math inline">\(x_{2}\)</span> units.</p></li>
+<li><p>If an object moves along a straight line with position function <span class="math inline">\(s(t)\)</span>, then its velocity is <span class="math inline">\(v(t) = s^{\prime}(t)\)</span>, so</p></li>
+</ul>
+<h3 id="definition-2">Definition 2</h3>
+<p><span class="math display">\[
+\int_{t_{1}}^{t_{2}} v(t)dt = s(t_{2}) - s(t_{1})
+\]</span></p>
+<p>is the net change of position, or displacement, of the particle during the time period from <span class="math inline">\(t_{1}\)</span> to <span class="math inline">\(t_{2}\)</span>. In Section 5.1 we guessed that this was true for the case where the object moves in the positive direction, but now we have proved that it is always true.</p>
+<ul>
+<li>If we want to calculate the distance the object travels during the time interval, we have to consider the intervals when <span class="math inline">\(v(t) \ge 0\)</span> (the particle moves to the right) and also the intervals when <span class="math inline">\(v(t) \le 0\)</span> (the particle moves to the left). In both cases the distance is computed by integrating <span class="math inline">\(|v(t)|\)</span>, the speed. Therefore</li>
+</ul>
+<h3 id="definition-3">Definition 3</h3>
+<p><span class="math display">\[
+\int_{t^{1}}^{t^{2}} |v(t)|dt = \text{ total distance traveled }
+\]</span></p>
+<p>Figure 3 shows how both displacement and distance traveled can be interpreted in terms of areas under a velocity curve.</p>
+<p><span class="math display">\[
+\text{ displacement } = \int_{t_{1}}^{t_{2}} v(t)dt = A_{1} - A_{2} + A_{3} \\
+\text{ distance } = \int_{t_{1}}^{t_{2}} |v(t)|dt = A_{1} + A_{2} + A_{3}
+\]</span></p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.4_figure-3.png" alt="Figure 3" /><figcaption>Figure 3</figcaption>
+</figure>
+<ul>
+<li><p>The acceleration of the object is <span class="math inline">\(a(t) = v^{\prime}(t)\)</span>, so</p>
+<p><span class="math display">\[
+\int_{t_{1}}^{t_{2}} a(t)dt = v(t_{2}) - v(t_{1})
+\]</span></p>
+<p>is the change in velocity from time <span class="math inline">\(t_{1}\)</span> to time <span class="math inline">\(t_{2}\)</span>.</p></li>
+</ul>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.4_example-6.1.png" alt="Example 6.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.4_example-6.2.png" alt="Example 6.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.4_example-7.1.png" alt="Example 7.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.4_example-7.2.png" alt="Example 7.2" /></p>
+<h3 id="a-note-on-units">A Note on Units</h3>
+<p>How did we know what units to use for energy in Example 7? The integral <span class="math inline">\(\int_{0}^{24} P(t)dt\)</span> is defined as the limit of sums of terms of the form <span class="math inline">\(P(t_{i}^{*}\Delta{t}\)</span>. Now <span class="math inline">\(P(t_{i}^{*})\)</span> is measured in megawatts and <span class="math inline">\(\Delta{t}\)</span> is measured in hours, so their product is measured in megawatt-hours. The same is true of the limit. In general, the unit of measurement for <span class="math inline">\(\int_{a}^{b} f(x)dx\)</span> is the product of the unit for <span class="math inline">\(f(x)\)</span> and the unit for <span class="math inline">\(x\)</span>.</p>
 <h2 id="video-lectures">Video Lectures</h2>
 <ul>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-7/v/connecting-the-first-and-second-fundamental-theorems-of-calculus">📺 The fundamental theorem of calculus and definite integrals</a></li>
