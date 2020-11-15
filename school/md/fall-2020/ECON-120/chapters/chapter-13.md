@@ -386,7 +386,7 @@ held by the public. Notice that we referred to "change," meaning an increase or
 decrease. Here's why: In our example, the public, represented by the person who
 initially made the \$1,000 deposit at the First Bank of Hollywood, holds \$1,000
 less in currency. However, deposits increased by \$10,000. Therefore, the money
-supply, M1, increased by $\$9,000(\$10,000−\$1,000)\$. No single bank lent out
+supply, M1, increased by $\$9,000(\$10,000−\$1,000)$. No single bank lent out
 more than it had in deposits. Yet, for the banking system as a whole, the money
 supply expanded by a multiple of the initial cash deposit.
 
@@ -478,8 +478,8 @@ to ensure the financial system is safe.
 #### The Fed Conducts Monetary Policy
 
 One of the important responsibilities of the Federal Reserve is to conduct
-**monetary policy**, the range of actions that influences the level of real GDP or
-inflation.
+**monetary policy**, the range of actions that influences the level of real GDP
+or inflation.
 
 <a name="monetary-policy-term">**Monetary policy**</a>
 
@@ -582,7 +582,6 @@ the Fed's actions in the midst of the 2008 financial crisis.
 
 
 ## Chapter Summary
-
 
 We began this chapter by examining the role money plays in the economy and how
 economists define money. We then looked at the flow of money in and out of banks
