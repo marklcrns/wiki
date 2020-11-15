@@ -50,8 +50,7 @@ this module.
 
 ### More Information About Stocks
 
-#### 
-Internet Resources
+#### Internet Resources
 
 There are lots of resources on the Internet to help you learn more about stocks.
 Here are a few links that you might be interested in:
