@@ -52,4 +52,7 @@ date: Aug 18, 2020
 ### Chapter 5 Homeworks
 
 - [⬇ 5.1 Homework Solutions](file:../../../../files/fall-2020/MATH-150/homeworks/5.1_homework.pdf)
+- [⬇ 5.2 Homework Solutions](file:../../../../files/fall-2020/MATH-150/homeworks/5.2_homework.pdf)
+- [⬇ 5.3 Homework Solutions](file:../../../../files/fall-2020/MATH-150/homeworks/5.3_homework.pdf)
+- [⬇ 5.4 Homework Solutions](file:../../../../files/fall-2020/MATH-150/homeworks/5.4_homework.pdf)
 
