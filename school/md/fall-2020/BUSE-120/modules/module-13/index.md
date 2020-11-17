@@ -14,3 +14,5 @@ date: Nov 02, 2020
 
 ## Exercises
 
+- [⬇ Module 13 Exercise](file:../../../../../files/fall-2020/BUSE-120/module-13/module-13_exercise.docx)
+

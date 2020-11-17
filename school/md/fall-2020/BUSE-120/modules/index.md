@@ -21,4 +21,5 @@ date: 2020-08-17
 - [↪ Module 11: Investing Basics](module-11/index)
 - [↪ Module 12: Inverstor and Market Behavior](module-12/index)
 - [↪ Module 13: Stocks](module-13/index)
+- [↪ Module 14: Bonds](module-14/index)
 
