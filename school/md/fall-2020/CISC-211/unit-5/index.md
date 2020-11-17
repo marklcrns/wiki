@@ -1,13 +1,16 @@
 ---
-title: Unit 5 Notes
+title: Unit 5
+subtitle: Notes and activities
 author: Mark Lucernas
 date: Nov 09, 2020
 ---
 
 
+# Unit 5
+
 ## Notes
 
-- [↪ Unit 5 Assignment](notes)
+- [↪ Unit 5 Notes](notes)
 
 ## Assignment
 

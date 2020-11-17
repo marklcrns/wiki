@@ -1,5 +1,5 @@
 ---
-title: Unit 2 Notes
+title: Unit 2
 subtitle: Notes and activities
 author: Mark Lucernas
 date: Oct 19, 2020
