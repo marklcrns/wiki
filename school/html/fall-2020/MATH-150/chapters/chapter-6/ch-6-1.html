@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Lucernas">
+
+    <title>Chapter 6.1 Areas Between Curves</title>
+
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
+    <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body>
+
+<!-- Nav bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">School Wiki</a>
+        </div>
+        <!-- <div id="navbar" class="navbar-collapse collapse">                                                                                                                 -->
+        <!--   <ul class="nav navbar-nav">                                                                                                                                      -->
+        <!--     <li><a href="#">doc1</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc2</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc3</a></li>                                                                                                                                  -->
+        <!--     <li class="dropdown">                                                                                                                                          -->
+        <!--       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+        <!--       <ul class="dropdown-menu">                                                                                                                                   -->
+        <!--         <li><a href="#">Action</a></li>                                                                                                                            -->
+        <!--         <li><a href="#">Another action</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">Something else here</a></li>                                                                                                               -->
+        <!--         <li role="separator" class="divider"></li>                                                                                                                 -->
+        <!--         <li class="dropdown-header">Nav header</li>                                                                                                                -->
+        <!--         <li><a href="#">Separated link</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">One more separated link</a></li>                                                                                                           -->
+        <!--       </ul>                                                                                                                                                        -->
+        <!--     </li>                                                                                                                                                          -->
+        <!--   </ul>                                                                                                                                                            -->
+        <!-- </div>                                                                                                                                                             -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+<!-- Table of Contents -->
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
+          <ul>
+          <li><a href="#chapter-6.1-areas-between-curves">Chapter 6.1: Areas Between Curves</a><ul>
+          <li><a href="#areas-between-curves">Areas Between Curves</a><ul>
+          <li><a href="#definition-1">Definition 1</a></li>
+          <li><a href="#definition-2">Definition 2</a></li>
+          <li><a href="#definition-3">Definition 3</a></li>
+          </ul></li>
+          <li><a href="#video-lectures">Video Lectures</a></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
+          </ul>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<!-- Header -->
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  Chapter 6.1 Areas Between Curves
+                  <small class="h3 text-muted subtitle">
+                    | Applications of Integration
+                  </small>
+                </h1>
+              </div>
+            </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">Nov 18, 2020</h5>
+          </div>
+
+<!-- Contents -->
+          <article class="contents">
+<h1 id="chapter-6.1-areas-between-curves">Chapter 6.1: Areas Between Curves</h1>
+<h2 id="areas-between-curves">Areas Between Curves</h2>
+<p>In Chapter 5 we defined and calculated areas of regions that lie under the graphs of functions. Here we use integrals to find areas of regions that lie between the graphs of two functions.</p>
+<p>Consider the region <span class="math inline">\(S\)</span> that lies between two curves <span class="math inline">\(y = f(x)\)</span> and <span class="math inline">\(y = g(x)\)</span> and between the vertical lines <span class="math inline">\(x = a\)</span> and <span class="math inline">\(x = b\)</span>, where <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are continuous functions and <span class="math inline">\(f(x) \ge g(x)\)</span> for all <span class="math inline">\(x\)</span> in <span class="math inline">\([a, b]\)</span>. (See Figure 1.)</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_figure-1.png" alt="Figure 1" /><figcaption>Figure 1</figcaption>
+</figure>
+<p>Just as we did for areas under curves in Section 5.1, we divide <span class="math inline">\(S\)</span> into <span class="math inline">\(n\)</span> strips of equal width and then we approximate the <span class="math inline">\(i\)</span>th strip by a rectangle with base <span class="math inline">\(\Delta{x}\)</span> and height <span class="math inline">\(f(x_{i}^{*})\)</span>. (See Figure 2. If we like, we could take all of the sample points to be right endpoints, in which case <span class="math inline">\(x_{i}^{*} = x_{i}\)</span>.) The Riemann sum</p>
+<p><span class="math display">\[
+\sum_{i = 1}^{n} [f(x_{i}^{*}) - g(x_{i}^{*})]\;\Delta{x}
+\]</span></p>
+<p>is therefore an approximation to what we intuitively think of as the area of <span class="math inline">\(S\)</span>.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_figure-2.png" alt="Figure 2" /><figcaption>Figure 2</figcaption>
+</figure>
+<p>This approximation appears to become better and better as <span class="math inline">\(n \to \infty\)</span>. Therefore we define the <strong>area</strong> <span class="math inline">\(A\)</span> of the region <span class="math inline">\(S\)</span> as the limiting value of the sum of the areas of these approximating rectangles.</p>
+<h3 id="definition-1">Definition 1</h3>
+<p><span class="math display">\[
+A = \lim_{n \to \infty} \sum_{i = 1}^{n} [f(x_{i}^{*}) - g(x_{i}^{*})]\;\Delta{x}
+\]</span></p>
+<p>We recognize the limit in (1) as the definite integral of <span class="math inline">\(f - g\)</span>. Therefore we have the following formula for area.</p>
+<h3 id="definition-2">Definition 2</h3>
+<p>The area <span class="math inline">\(A\)</span> of the region bounded by the curves <span class="math inline">\(y = f(x)\)</span>, <span class="math inline">\(y = g(x)\)</span>, and the lines <span class="math inline">\(x = a\)</span>, <span class="math inline">\(x = b\)</span>, where <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are continuous and <span class="math inline">\(f(x) \ge g(x)\)</span> for all <span class="math inline">\(x\)</span> in <span class="math inline">\([a, b]\)</span>, is</p>
+<p><span class="math display">\[
+A = \int_{a}^{b} [f(x) - g(x)]\;dx
+\]</span></p>
+<p>Notice that in the special case where <span class="math inline">\(g(x) = 0\)</span>, <span class="math inline">\(S\)</span> is the region under the graph of <span class="math inline">\(f\)</span> and our general definition of area (1) reduces to our previous definition (Definition 5.1.2).</p>
+<p>In the case where both <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are positive, you can see from Figure 3 why (2) is true:</p>
+<p><span class="math display">\[
+\begin{aligned}
+  A &amp;= [\text{ area under } y = f(x)] - [\text{ area under } y = g(x)] \\
+    &amp;= \int_{a}^{b} f(x)\;dx - \int_{a}^{b} g(x)\;dx = \int_{a}^{b} [f(x) - g(x)]\;dx \\
+\end{aligned}
+\]</span></p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_figure-3.png" alt="Figure 3" /><figcaption>Figure 3</figcaption>
+</figure>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_explore_it_the_area_between_two_curves.png" alt="Explore It: The Area between Two Curves" /><figcaption>Explore It: The Area between Two Curves</figcaption>
+</figure>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_example-1.png" alt="Example 1" /><figcaption>Example 1</figcaption>
+</figure>
+<p>In Figure 4 we drew a typical approximating rectangle with width <span class="math inline">\(\Delta{x}\)</span> as a reminder of the procedure by which the area is defined in (1). In general, when we set up an integral for an area, it’s helpful to sketch the region to identify the top curve <span class="math inline">\(y_{T}\)</span>, the bottom curve <span class="math inline">\(y_{B}\)</span>, and a typical approximating rectangle as in Figure 5. Then the area of a typical rectangle is <span class="math inline">\((y_{T} - y_{B})\Delta{x}\)</span>and the equation</p>
+<p><span class="math display">\[
+A = \lim_{n \to \infty} \sum_{i = 1}^{n} (y_{T} - y_{B})\;\Delta{x} = \int_{a}^{b} (y_{T} - y_{B})\;dx
+\]</span></p>
+<p>summarizes the procedure of adding (in a limiting sense) the areas of all the typical rectangles.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_figure-5.png" alt="Figure 5" /><figcaption>Figure 5</figcaption>
+</figure>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_example-2.1.png" alt="Example 2.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_example-2.2.png" alt="Example 2.2" /></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_example-3.1.png" alt="Example 3.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_example-3.2.png" alt="Example 3.2" /></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_example-4.1.png" alt="Example 4.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_example-4.2.png" alt="Example 4.2" /></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_example-5.1.png" alt="Example 5.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_example-5.2.png" alt="Example 5.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_example-5.3.png" alt="Example 5.3" /></p>
+<p>If we are asked to find the area between the curves <span class="math inline">\(y = f(x)\)</span> and <span class="math inline">\(y = g(x)\)</span> where <span class="math inline">\(f(x) \ge g(x)\)</span> for some values of <span class="math inline">\(x\)</span> but <span class="math inline">\(g(x) \ge f(x)\)</span> for other values of <span class="math inline">\(x\)</span>, then we split the given region <span class="math inline">\(s\)</span> into several regions <span class="math inline">\(S_{1}, S_{2}, \cdots\)</span> with areas <span class="math inline">\(A_{1}, A_{2}, \cdots\)</span> as shown in Figure 11. We then define the area of the region <span class="math inline">\(S\)</span> to be the sum of the areas of the smaller regions <span class="math inline">\(S_{1}, S_{2}, \cdots\)</span>, that is, <span class="math inline">\(A = A_{1} + A_{2} + \cdots\)</span>. Since</p>
+<p><span class="math display">\[
+|f(x) - g(x)| =
+\left\{\begin{matrix}
+  f(x) - g(x) \;\;\; \text{ when } \ge g(x) \\
+  g(x) - f(x) \;\;\; \text{ when } \ge f(x) \\
+\end{matrix}\right.
+\]</span></p>
+<p>we have the following expression for <span class="math inline">\(A\)</span>.</p>
+<h3 id="definition-3">Definition 3</h3>
+<p>The area between the curves <span class="math inline">\(y = f(x)\)</span> and <span class="math inline">\(y = g(x)\)</span> and between <span class="math inline">\(x = a\)</span> and <span class="math inline">\(x = b\)</span> is</p>
+<p><span class="math display">\[
+A = \int_{a}^{b} |f(x) - g(X)|\;dx
+\]</span></p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_figure-11.png" alt="Figure 11" /><figcaption>Figure 11</figcaption>
+</figure>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_example-6.1.png" alt="Example 6.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_example-6.2.png" alt="Example 6.2" /></p>
+<p>Some regions are best treated by regarding <span class="math inline">\(x\)</span> as a function of <span class="math inline">\(y\)</span>. If a region is bounded by curves with equations <span class="math inline">\(x = f(y)\)</span>, <span class="math inline">\(x = g(y)\)</span>, <span class="math inline">\(y = c\)</span>, and <span class="math inline">\(y = d\)</span>, where <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are continuous and <span class="math inline">\(f(y) \ge g(y)\)</span> for <span class="math inline">\(c \le y \le d\)</span> (See Figure 13), then its area is</p>
+<p><span class="math display">\[
+A = \int_{c}^{d} [f(y) - g(y)]\;dy
+\]</span></p>
+<p>If we write <span class="math inline">\(x_{R}\)</span> for the right boundary and <span class="math inline">\(x_{L}\)</span> for the left boundary, then, as Figure 14 illustrates, we have</p>
+<p><span class="math display">\[
+A = \int_{c}^{d} (x_{R} - x_{L})\;dy
+\]</span></p>
+<p>Here a typical approximating rectangle has dimensions <span class="math inline">\(x_{R} - x_{L}\)</span> and <span class="math inline">\(\Delta{y}\)</span>.</p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_figure-13.png" alt="Figure 13" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_figure-14.png" alt="Figure 14" /></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_example-7.1.png" alt="Example 7.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_example-7.2.png" alt="Example 7.2" /></p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.1_figure-16.png" alt="Figure 16" /><figcaption>Figure 16</figcaption>
+</figure>
+<h2 id="video-lectures">Video Lectures</h2>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-4/v/evaluating-simple-definite-integral">📺 Area between a curve and the x-axis</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-4/v/definite-integrals-and-negative-area">📺 Area between a curve and the x-axis: negative area</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-4/v/area-between-curves">📺 Area between curves</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-4/v/area-between-curves-example">📺 Worked example: area between curves</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-4/v/area-between-curves-with-multiple-boundaries">📺 Composite area between curves</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-5/v/area-between-curve-and-y-axis">📺 Area between a curve and the y-axis</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-5/v/area-between-two-functions-of-y">📺 Horizontal area between curves</a></li>
+</ul>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-4/v/evaluating-simple-definite-integral">📺 Area between a curve and the x-axis</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-4/v/definite-integrals-and-negative-area">📺 Area between a curve and the x-axis: negative area</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-4/v/area-between-curves">📺 Area between curves</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-4/v/area-between-curves-example">📺 Worked example: area between curves</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-4/v/area-between-curves-with-multiple-boundaries">📺 Composite area between curves</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-5/v/area-between-curve-and-y-axis">📺 Area between a curve and the y-axis</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-5/v/area-between-two-functions-of-y">📺 Horizontal area between curves</a></li>
+</ul>
+<p>Textbook</p>
+<ul>
+<li><a href="https://webassign.com/">📄 Cengage e-Textbook: Calculus Early Transcendentals, Eighth Edition, Stewart</a></li>
+</ul>
+          </article>
+          </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../../../templates/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../../../templates/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+    <script src="../../../../../../templates/js/animated-toc.js"></script>
+  </body>
+</html>
