@@ -7,7 +7,7 @@ summary: CISC 191 Intermediate Java Programming class
 
 # CISC 191 Intermediate Java Programming
 > Professor: Andrew Huang<br>
-> email: ahuag@sdccd.edu
+> email: ahuang@sdccd.edu
 > Campus: San Diego Miraramar College (online)<br>
 > Units: 4<br>
 > Component: Lecture/Lab<br>
