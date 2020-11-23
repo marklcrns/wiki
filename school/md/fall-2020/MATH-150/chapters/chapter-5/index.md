@@ -22,4 +22,5 @@ date: Nov 05, 2020
 - [⬇ 5.2 Homework Solutions](file:../../../../../files/fall-2020/MATH-150/homeworks/5.2_homework.pdf)
 - [⬇ 5.3 Homework Solutions](file:../../../../../files/fall-2020/MATH-150/homeworks/5.3_homework.pdf)
 - [⬇ 5.4 Homework Solutions](file:../../../../../files/fall-2020/MATH-150/homeworks/5.4_homework.pdf)
+- [⬇ 5.5 Homework Solutions](file:../../../../../files/fall-2020/MATH-150/homeworks/5.5_homework.pdf)
 
