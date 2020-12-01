@@ -11,6 +11,7 @@ date: Nov 18, 2020
 ## Notes
 
 - [↪ 6.1 Areas Between Curves](ch-6-1)
+- [↪ 6.2 Volumes](ch-6-2)
 
 ## Homeworks
 

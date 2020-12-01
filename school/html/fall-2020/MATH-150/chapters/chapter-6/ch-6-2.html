@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Lucernas">
+
+    <title>Chapter 6.2 Volumes</title>
+
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
+    <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body>
+
+<!-- Nav bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">School Wiki</a>
+        </div>
+        <!-- <div id="navbar" class="navbar-collapse collapse">                                                                                                                 -->
+        <!--   <ul class="nav navbar-nav">                                                                                                                                      -->
+        <!--     <li><a href="#">doc1</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc2</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc3</a></li>                                                                                                                                  -->
+        <!--     <li class="dropdown">                                                                                                                                          -->
+        <!--       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+        <!--       <ul class="dropdown-menu">                                                                                                                                   -->
+        <!--         <li><a href="#">Action</a></li>                                                                                                                            -->
+        <!--         <li><a href="#">Another action</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">Something else here</a></li>                                                                                                               -->
+        <!--         <li role="separator" class="divider"></li>                                                                                                                 -->
+        <!--         <li class="dropdown-header">Nav header</li>                                                                                                                -->
+        <!--         <li><a href="#">Separated link</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">One more separated link</a></li>                                                                                                           -->
+        <!--       </ul>                                                                                                                                                        -->
+        <!--     </li>                                                                                                                                                          -->
+        <!--   </ul>                                                                                                                                                            -->
+        <!-- </div>                                                                                                                                                             -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+<!-- Table of Contents -->
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
+          <ul>
+          <li><a href="#chapter-6.2-volumes">Chapter 6.2: Volumes</a><ul>
+          <li><a href="#volumes">Volumes</a></li>
+          <li><a href="#definition-of-volume">Definition of Volume</a></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
+          </ul>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<!-- Header -->
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  Chapter 6.2 Volumes
+                  <small class="h3 text-muted subtitle">
+                    | Application of Integreation
+                  </small>
+                </h1>
+              </div>
+            </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">Nov 30, 2020</h5>
+          </div>
+
+<!-- Contents -->
+          <article class="contents">
+<h1 id="chapter-6.2-volumes">Chapter 6.2: Volumes</h1>
+<h2 id="volumes">Volumes</h2>
+<p>In trying to find the volume of a solid we face the same type of problem as in finding areas. We have an intuitive idea of what volume means, but we must make this idea precise by using calculus to give an exact definition of volume.</p>
+<p>We start with a simple type of solid called a cylinder (or, more precisely, a <em>right cylinder</em>). As illustrated in Figure 1a, a cylinder is bounded by a plane region <span class="math inline">\(B_{1}\)</span>, called the <strong>base</strong>, and a congruent region <span class="math inline">\(B_{2}\)</span> in a parallel plane. The cylinder consists of all points on line segments that are perpendicular to the base and join <span class="math inline">\(B_{1}\)</span> to <span class="math inline">\(B_{2}\)</span>. If the area of the base is <span class="math inline">\(A\)</span> and the height of the cylinder (the distance from <span class="math inline">\(B_{1}\)</span> to <span class="math inline">\(B_{2}\)</span>) is <span class="math inline">\(h\)</span>, then the volume <span class="math inline">\(V\)</span> of the cylinder is defined as</p>
+<p><span class="math display">\[
+V = Ah
+\]</span></p>
+<p>In particular, if the base is a circle with radius, then the cylinder is a circular cylinder with volume <span class="math inline">\(V = \pi r^{2}h\)</span> [see Figure 1(b)], and if the base is a rectangle with length <span class="math inline">\(l\)</span> and width <span class="math inline">\(w\)</span>, then the cylinder is a rectangular box (also called a rectangular parallelepiped) with volume <span class="math inline">\(V = lwh\)</span> [see Figure 1(c)].</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_figure-1.png" alt="Figure 1" /><figcaption>Figure 1</figcaption>
+</figure>
+<p>For a solid <span class="math inline">\(S\)</span> that isn’t a cylinder we first “cut” <span class="math inline">\(S\)</span> into pieces and approximate each piece by a cylinder. We estimate the volume <span class="math inline">\(S\)</span> of by adding the volumes of the cylinders. We arrive at the exact volume of <span class="math inline">\(S\)</span> through a limiting process in which the number of pieces becomes large.</p>
+<p>We start by intersecting <span class="math inline">\(S\)</span> with a plane and obtaining a plane region that is called a <strong>cross-section</strong> of <span class="math inline">\(S\)</span>. Let <span class="math inline">\(A(x)\)</span> be the area of the cross-section of <span class="math inline">\(S\)</span> in a plane <span class="math inline">\(P_{x}\)</span> perpendicular to the <span class="math inline">\(x\)</span>-axis and passing through the point <span class="math inline">\(x\)</span>, where <span class="math inline">\(a \le x \le b\)</span>. (See Figure 2. Think of slicing <span class="math inline">\(S\)</span> with a knife through <span class="math inline">\(x\)</span> and computing the area of this slice.) The cross-sectional area <span class="math inline">\(A(x)\)</span> will vary as <span class="math inline">\(x\)</span> increases from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_figure-2.png" alt="Figure 2" /><figcaption>Figure 2</figcaption>
+</figure>
+<p>Let’s divide <span class="math inline">\(S\)</span> into <span class="math inline">\(n\)</span> “slabs” of equal width <span class="math inline">\(\Delta{x}\)</span> by using the planes <span class="math inline">\(P_{x_{1}}, P_{x_{2}}, \cdots\)</span> to slice the solid. (Think of slicing a loaf of bread.) If we choose sample points <span class="math inline">\(x_{i}^{*}\)</span> in <span class="math inline">\([x_{i - 1}, x_{i}\)</span>, we can approximate the <span class="math inline">\(i\)</span>th slab <span class="math inline">\(S_{i}\)</span> (the part of <span class="math inline">\(S\)</span> that lies between the planes <span class="math inline">\(P_{x - 1}\)</span> and <span class="math inline">\(P_{xi}\)</span>) by a cylinder with base area <span class="math inline">\(A(x_{i}^{*}\)</span> and “height” <span class="math inline">\(\Delta{x}\)</span>. (See Figure 3.)</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_figure-3.png" alt="Figure 3" /><figcaption>Figure 3</figcaption>
+</figure>
+<p>The volume of this cylinder is <span class="math inline">\(A(x_{i}^{*})\Delta{x}\)</span>, so an approximation to our intuitive conception of the volume of the <span class="math inline">\(i\)</span>th slab <span class="math inline">\(S\)</span> is</p>
+<p><span class="math display">\[
+V(S_{i}) \approx A(x_{i}^{*})\;\Delta{x}
+\]</span></p>
+<p>Adding the volumes of these slabs, we get an approximation to the total volume (that is, what we think of intuitively as the volume):</p>
+<p><span class="math display">\[
+V \approx \sum_{i = 1}^{n} A(x_{i}^{*})\;\Delta{x}
+\]</span></p>
+<p>This approximation appears to become better and better as <span class="math inline">\(n \to \infty\)</span>. (Think of the slices as becoming thinner and thinner.) Therefore we define the volume as the limit of these sums as <span class="math inline">\(n \to \infty\)</span>. But we recognize the limit of Riemann sums as a definite integral and so we have the following definition.</p>
+<h2 id="definition-of-volume">Definition of Volume</h2>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_definition_of_volume.png" alt="Definition of Volume" /><figcaption>Definition of Volume</figcaption>
+</figure>
+<p>When we use the volume formula <span class="math inline">\(V = \int_{a}^{b} A(x)\;dx\)</span>, it is important to remember that <span class="math inline">\(A(x)\)</span> is the area of a moving cross-section obtained by slicing through <span class="math inline">\(x\)</span> perpendicular to the <span class="math inline">\(x\)</span>-axis.</p>
+<p>Notice that, for a cylinder, the cross-sectional area is constant: <span class="math inline">\(A(x) = A\)</span> for all <span class="math inline">\(x\)</span>. So our definition of volume gives <span class="math inline">\(V = \int_{a}^{b} A\;dx = A(b - a)\)</span>; this agrees with the formula <span class="math inline">\(V = Ah\)</span>.</p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_example-1.1.png" alt="Example 1.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_example-1.2.png" alt="Example 1.2" /></p>
+<p>Figure 5 illustrates the definition of volume when the solid is a sphere with radius <span class="math inline">\(r = 1\)</span>. From the result of Example 1, we know that the volume of the sphere is <span class="math inline">\(\frac{4}{3}\pi\)</span> , which is approximately <span class="math inline">\(4.18879\)</span>. Here the slabs are circular cylinders, or disks, and the three parts of Figure 5 show the geometric interpretations of the Riemann sums</p>
+<p><span class="math display">\[
+\sum_{i = 1}^{n} A(\overline{x}_{i})\;\Delta{x} = \sum_{i = 1}^{n} \pi(1^{2} - \overline{x}_{i}^{2})\;\Delta{x}
+\]</span></p>
+<p>when <span class="math inline">\(n = 5\)</span>, <span class="math inline">\(10\)</span>, and <span class="math inline">\(20\)</span> if we choose the sample points <span class="math inline">\(x_{i}^{*}\)</span> to be the midpoints <span class="math inline">\(\overline{x}_{i}\)</span>. Notice that as we increase the number of approximating cylinders, the corresponding Riemann sums become closer to the true volume.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_figure-5.png" alt="Figure 5" /><figcaption>Figure 5</figcaption>
+</figure>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_example-2.1.png" alt="Example 2.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_example-2.2.png" alt="Example 2.2" /></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_example-3.1.png" alt="Example 3.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_example-3.2.png" alt="Example 3.2" /></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_example-4.1.png" alt="Example 4.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_example-4.2.png" alt="Example 4.2" /></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_example-5.1.png" alt="Example 5.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_example-5.2.png" alt="Example 5.2" /></p>
+<p>The solids in Examples 1, 2, 3, 4, and 5 are all called solids of revolution because they are obtained by revolving a region about a line. In general, we calculate the volume of a solid of revolution by using the basic defining formula</p>
+<p><span class="math display">\[
+V = \int_{a}^{b} A(x)\;dx
+\]</span></p>
+<p>or</p>
+<p><span class="math display">\[
+V = \int_{c}^{d} A(y)\;dy
+\]</span></p>
+<p>and we find the cross-sectional area <span class="math inline">\(A(x)\)</span> or <span class="math inline">\(A(y)\)</span> in one of the following ways:</p>
+<ul>
+<li><p>If the cross-section is a disk (as in Examples 1, 2, and 3), we find the radius of the disk (in terms of <span class="math inline">\(x\)</span> or <span class="math inline">\(y\)</span>) and use</p>
+<p><span class="math display">\[
+A =\pi(radius)^{2}
+\]</span></p></li>
+<li><p>If the cross-section is a washer (as in Examples 4 and 5), we find the inner radius <span class="math inline">\(r_{in}\)</span> and outer radius <span class="math inline">\(r_{out}\)</span> from a sketch (as in Figures 8, 9, and 10) and compute the area of the washer by subtracting the area of the inner disk from the area of the outer disk:</p>
+<p><span class="math display">\[
+A = \pi(\text{outer radious})^{2} - \pi(\text{inner radius})^{2}
+\]</span></p></li>
+</ul>
+<p>The next example gives a further illustration of the procedure.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_figure-10.png" alt="Figure 10" /><figcaption>Figure 10</figcaption>
+</figure>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_example-6.1.png" alt="Example 6.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_example-6.2.png" alt="Example 6.2" /></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_example-7.1.png" alt="Example 7.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_example-7.2.png" alt="Example 7.2" /></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_example-8.1.png" alt="Example 8.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_example-8.2.png" alt="Example 8.2" /></p>
+<p>Note We didn’t need to place the vertex of the pyramid at the origin in Example 8. We did so merely to make the equations simple. If, instead, we had placed the center of the base at the origin and the vertex on the positive <span class="math inline">\(y\)</span>-axis, as in Figure 16, you can verify that we would have obtained the integral</p>
+<p><span class="math display">\[
+V = \int_{0}^{h} \frac{L^{2}}{h^{2}}(h - y)^{2}\;dy = \frac{L^{2}h}{3}
+\]</span></p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_figure-16.png" alt="Figure 16" /><figcaption>Figure 16</figcaption>
+</figure>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_example-9.1.png" alt="Example 9.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.2_example-9.2.png" alt="Example 9.2" /></p>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<p>Textbook</p>
+<ul>
+<li><a href="https://webassign.com/">📄 Cengage e-Textbook: Calculus Early Transcendentals, Eighth Edition, Stewart</a></li>
+</ul>
+          </article>
+          </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../../../templates/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../../../templates/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+    <script src="../../../../../../templates/js/animated-toc.js"></script>
+  </body>
+</html>
