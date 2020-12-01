@@ -37,4 +37,5 @@ date: Sep 09, 2020
 - [↪ Unit 4](unit-4/index)
 - [↪ Unit 5](unit-5/index)
 - [↪ Unit 6](unit-6/index)
+- [↪ Unit 7](unit-7/index)
 
