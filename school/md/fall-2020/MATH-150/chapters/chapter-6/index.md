@@ -12,6 +12,7 @@ date: Nov 18, 2020
 
 - [↪ 6.1 Areas Between Curves](ch-6-1)
 - [↪ 6.2 Volumes](ch-6-2)
+- [↪ 6.3 Volumes by Cylindrical Shells](ch-6-3)
 
 ## Homeworks
 

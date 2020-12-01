@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Lucernas">
+
+    <title>Chapter 6.3 Volumes by Cylindrical Shells</title>
+
+    <!-- For animated toc sidebar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
+    <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body>
+
+<!-- Nav bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">School Wiki</a>
+        </div>
+        <!-- <div id="navbar" class="navbar-collapse collapse">                                                                                                                 -->
+        <!--   <ul class="nav navbar-nav">                                                                                                                                      -->
+        <!--     <li><a href="#">doc1</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc2</a></li>                                                                                                                                  -->
+        <!--     <li><a href="#">doc3</a></li>                                                                                                                                  -->
+        <!--     <li class="dropdown">                                                                                                                                          -->
+        <!--       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+        <!--       <ul class="dropdown-menu">                                                                                                                                   -->
+        <!--         <li><a href="#">Action</a></li>                                                                                                                            -->
+        <!--         <li><a href="#">Another action</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">Something else here</a></li>                                                                                                               -->
+        <!--         <li role="separator" class="divider"></li>                                                                                                                 -->
+        <!--         <li class="dropdown-header">Nav header</li>                                                                                                                -->
+        <!--         <li><a href="#">Separated link</a></li>                                                                                                                    -->
+        <!--         <li><a href="#">One more separated link</a></li>                                                                                                           -->
+        <!--       </ul>                                                                                                                                                        -->
+        <!--     </li>                                                                                                                                                          -->
+        <!--   </ul>                                                                                                                                                            -->
+        <!-- </div>                                                                                                                                                             -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+<!-- Table of Contents -->
+        <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
+          <ul>
+          <li><a href="#chapter-6.3-volumes-by-cylindrical-shells">Chapter 6.3: Volumes by Cylindrical Shells</a><ul>
+          <li><a href="#volumes-by-cylindrical-shells">Volumes by Cylindrical Shells</a></li>
+          <li><a href="#formula-1">Formula 1</a></li>
+          <li><a href="#formula-2">Formula 2</a></li>
+          <li><a href="#disks-and-washers-versus-cylindrical-shells">Disks and Washers versus Cylindrical Shells</a></li>
+          <li><a href="#video-lectures">Video Lectures</a></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
+          </ul>
+          <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<!-- Header -->
+          <header>
+            <div class="jumbotron">
+              <div class="page-header">
+                <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <h1 class="title">
+                  Chapter 6.3 Volumes by Cylindrical Shells
+                  <small class="h3 text-muted subtitle">
+                    | Application of Integration
+                  </small>
+                </h1>
+              </div>
+            </div>
+          </header>
+          <div class="h5 text-muted">
+            <h5 class="author">Mark Lucernas</h5>
+            <h5 class="date">Nov 30, 2020</h5>
+          </div>
+
+<!-- Contents -->
+          <article class="contents">
+<h1 id="chapter-6.3-volumes-by-cylindrical-shells">Chapter 6.3: Volumes by Cylindrical Shells</h1>
+<h2 id="volumes-by-cylindrical-shells">Volumes by Cylindrical Shells</h2>
+<p>Some volume problems are very difficult to handle by the methods of the preceding section. For instance, let’s consider the problem of finding the volume of the solid obtained by rotating about the <span class="math inline">\(y\)</span>-axis the region bounded by <span class="math inline">\(y = 2x^{2} - x^{3}\)</span> and <span class="math inline">\(y = 0\)</span>. (See Figure 1.) If we slice perpendicular to the <span class="math inline">\(y\)</span>-axis, we get a washer. But to compute the inner radius and the outer radius of the washer, we’d have to solve the cubic equation <span class="math inline">\(y = 2x^{2} - x^{3}\)</span> for <span class="math inline">\(x\)</span> in terms of <span class="math inline">\(y\)</span>; that’s not easy.</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_figure-1.png" alt="Figure 1" /><figcaption>Figure 1</figcaption>
+</figure>
+<p>Fortunately, there is a method, called the method of cylindrical shells, that is easier to use in such a case. Figure 2 shows a cylindrical shell with inner radius <span class="math inline">\(r_{1}\)</span>, outer radius <span class="math inline">\(r_{2}\)</span>, and height <span class="math inline">\(h\)</span>. Its volume <span class="math inline">\(V\)</span> is calculated by subtracting the volume <span class="math inline">\(V_{1}\)</span> of the inner cylinder from the volume <span class="math inline">\(V_{2}\)</span> of the outer cylinder:</p>
+<p><span class="math display">\[
+\begin{aligned}
+  V &amp;= V_{2} - V_{1} \\
+   &amp;= \pi r_{2}^{2}h - \pi r_{1}^{2} = \pi(r_{2}^{2} - r_{1}^{2})h \\
+   &amp;= \pi(r_{2} + r_{1})h \\
+   &amp;= 2 \pi \frac{r_{2} + r_{1}}{2}h(r_{2} - r_{1}) \\
+\end{aligned}
+\]</span></p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_figure-2.png" alt="Figure 2" /><figcaption>Figure 2</figcaption>
+</figure>
+<p>If we let <span class="math inline">\(\Delta{r} = r_{2} - r_{1}\)</span> (the thickness of the shell) and <span class="math inline">\(r = \frac{1}{2}(r_{2} + r_{1})\)</span> (the average radius of the shell), then this formula for the volume of a cylindrical shell becomes</p>
+<h2 id="formula-1">Formula 1</h2>
+<p><span class="math display">\[
+V = 2 \pi rh \Delta{r}
+\]</span></p>
+<p>and it can be remembered as</p>
+<p><span class="math display">\[
+V = [\text{circumference}][\text{height}][\text{thickness}]
+\]</span></p>
+<p>Now let <span class="math inline">\(S\)</span> be the solid obtained by rotating about the <span class="math inline">\(y\)</span>-axis the region bounded by <span class="math inline">\(y = f(X)\)</span> [where <span class="math inline">\(f(x) \ge 0\)</span>], <span class="math inline">\(y = 0\)</span>, <span class="math inline">\(x = a\)</span>, and <span class="math inline">\(b &gt; a \ge 0\)</span>, where. (See Figure 3.)</p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_figure-3.png" alt="Figure 3" /><figcaption>Figure 3</figcaption>
+</figure>
+<p>We divide the interval <span class="math inline">\([a, b]\)</span> into <span class="math inline">\(n\)</span> subintervals <span class="math inline">\([x_{i - 1}, x_{i}]\)</span> of equal width <span class="math inline">\(\Delta{x}\)</span> and let be the midpoint of the <span class="math inline">\(i\)</span>th subinterval. If the rectangle with base <span class="math inline">\([x_{i - 1}, x_{i}]\)</span> and height <span class="math inline">\(f(\overline{x}_{i})\)</span> is rotated about the <span class="math inline">\(y\)</span>-axis, then the result is a cylindrical shell with average radius <span class="math inline">\(\overline{x}_{i}\)</span>, height <span class="math inline">\(f(\overline{x}_{i})\)</span>, and thickness <span class="math inline">\(\Delta{x}\)</span> (See Figure 4). So by Formula 1 its volume is</p>
+<p><span class="math display">\[
+V_{i} = (2 \pi \overline{x}_{i})[f(\overline{x}_{i})]\Delta{x}
+\]</span></p>
+<figure>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_figure-4.png" alt="Figure 4" /><figcaption>Figure 4</figcaption>
+</figure>
+<p>Therefore an approximation to the volume <span class="math inline">\(V\)</span> of <span class="math inline">\(S\)</span> is given by the sum of the volumes of these shells:</p>
+<p><span class="math display">\[
+V \approx \sum_{i = 1}^{n} V_{i} = \sum_{i = 1}^{n} 2 \pi \overline{x}_{i}f(\overline{x}_{i})\;\Delta{x}
+\]</span></p>
+<p>This approximation appears to become better as <span class="math inline">\(n \to \infty\)</span>. But, from the definition of an integral, we know that</p>
+<p><span class="math display">\[
+\lim_{n \to \infty} \sum_{i = 1}^{n} 2 \pi \overline{x}_{i}f(\overline{x}_{i})\;\Delta{x} = \int_{a}^{b} 2 \pi xf(x)\;dx
+\]</span></p>
+<p>Thus the following appears plausible:</p>
+<h2 id="formula-2">Formula 2</h2>
+<p>The volume of the solid in Figure 3, obtained by rotating about the <span class="math inline">\(y\)</span>-axis the region under the curve <span class="math inline">\(y = f(x)\)</span> from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>, is</p>
+<p><span class="math display">\[
+V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\;\;\; \text{ where } 0 \le a &lt; b
+\]</span></p>
+<p>The argument using cylindrical shells makes Formula 2 seem reasonable, but later we will be able to prove it (See Exercise 7.1.73).</p>
+<p>The best way to remember Formula 2 is to think of a typical shell, cut and flattened as in Figure 5, with radius <span class="math inline">\(x\)</span>, circumference <span class="math inline">\(2 \pi x\)</span>, height <span class="math inline">\(f(x)\)</span>, and thickness <span class="math inline">\(\Delta{x}\)</span> or <span class="math inline">\(dx\)</span>:</p>
+<p><span class="math display">\[
+\begin{array}{cccc}
+  \int_{a}^{b} &amp; \underbrace{2 \pi x} &amp; \underbrace{[f(x)]} &amp; \underbrace{dx} \\
+   &amp; \text{circumference} &amp; \text{height} &amp; \text{thickness} \\
+\end{array}
+\]</span></p>
+<p><img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_figure-5.png" alt="Figure 5" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_example-1.png" alt="Example 1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_figure-7.png" alt="Figure 7" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_example-2.png" alt="Example 2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_example-3.png" alt="Example 3" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_example-4.png" alt="Example 4" /></p>
+<h2 id="disks-and-washers-versus-cylindrical-shells">Disks and Washers versus Cylindrical Shells</h2>
+<p>When computing the volume of a solid of revolution, how do we know whether to use disks (or washers) or cylindrical shells? There are several considerations to take into account: Is the region more easily described by top and bottom boundary curves of the form <span class="math inline">\(y = f(x)\)</span>, or by left and right boundaries <span class="math inline">\(x = g(y)\)</span>? Which choice is easier to work with? Are the limits of integration easier to find for one variable versus the other? Does the region require two separate integrals when using <span class="math inline">\(x\)</span> as the variable but only one integral in <span class="math inline">\(y\)</span>? Are we able to evaluate the integral we set up with our choice of variable?</p>
+<p>If we decide that one variable is easier to work with than the other, then this dictates which method to use. Draw a sample rectangle in the region, corresponding to a cross-section of the solid. The thickness of the rectangle, either <span class="math inline">\(\Delta{x}\)</span> or <span class="math inline">\(\Delta{y}\)</span>, corresponds to the integration variable. If you imagine the rectangle revolving, it becomes either a disk (washer) or a shell.</p>
+<h2 id="video-lectures">Video Lectures</h2>
+<ul>
+<li><a href="https://www.khanacademy.org/math/old-ap-calculus-ab/ab-applications-definite-integrals/ab-shell-method/v/shell-method-for-rotating-around-vertical-line">📺 Shell method for rotating around vertical line</a></li>
+<li><a href="https://www.khanacademy.org/math/old-ap-calculus-ab/ab-applications-definite-integrals/ab-shell-method/v/evaluating-integral-for-shell-method-example">📺 Evaluating integral for shell method example</a></li>
+<li><a href="https://www.khanacademy.org/math/old-ap-calculus-ab/ab-applications-definite-integrals/ab-shell-method/v/shell-method-for-rotating-around-horizontal-line">📺 Shell method for rotating around horizontal line</a></li>
+<li><a href="https://www.khanacademy.org/math/old-ap-calculus-ab/ab-applications-definite-integrals/ab-shell-method/v/shell-method-with-two-functions-of-x">📺 Shell method with two functions of x</a></li>
+<li><a href="https://www.khanacademy.org/math/old-ap-calculus-ab/ab-applications-definite-integrals/ab-shell-method/v/calculating-integral-with-shell-method">📺 Calculating integral with shell method</a></li>
+<li><a href="https://www.khanacademy.org/math/old-ap-calculus-ab/ab-applications-definite-integrals/ab-shell-method/v/shell-method-with-two-functions-of-y">📺 Shell method with two functions of y</a></li>
+<li><a href="https://www.khanacademy.org/math/old-ap-calculus-ab/ab-applications-definite-integrals/ab-shell-method/v/part-2-of-shell-method-with-2-functions-of-y">📺 Part 2 of shell method with 2 functions of y</a></li>
+<li><a href="https://www.khanacademy.org/math/old-ap-calculus-ab/ab-applications-definite-integrals/ab-shell-method/a/stacy-scaling-3">📄 Shell method worksheet</a></li>
+</ul>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://www.khanacademy.org/math/old-ap-calculus-ab/ab-applications-definite-integrals/ab-shell-method/v/shell-method-for-rotating-around-vertical-line">📺 Shell method for rotating around vertical line</a></li>
+<li><a href="https://www.khanacademy.org/math/old-ap-calculus-ab/ab-applications-definite-integrals/ab-shell-method/v/evaluating-integral-for-shell-method-example">📺 Evaluating integral for shell method example</a></li>
+<li><a href="https://www.khanacademy.org/math/old-ap-calculus-ab/ab-applications-definite-integrals/ab-shell-method/v/shell-method-for-rotating-around-horizontal-line">📺 Shell method for rotating around horizontal line</a></li>
+<li><a href="https://www.khanacademy.org/math/old-ap-calculus-ab/ab-applications-definite-integrals/ab-shell-method/v/shell-method-with-two-functions-of-x">📺 Shell method with two functions of x</a></li>
+<li><a href="https://www.khanacademy.org/math/old-ap-calculus-ab/ab-applications-definite-integrals/ab-shell-method/v/calculating-integral-with-shell-method">📺 Calculating integral with shell method</a></li>
+<li><a href="https://www.khanacademy.org/math/old-ap-calculus-ab/ab-applications-definite-integrals/ab-shell-method/v/shell-method-with-two-functions-of-y">📺 Shell method with two functions of y</a></li>
+<li><a href="https://www.khanacademy.org/math/old-ap-calculus-ab/ab-applications-definite-integrals/ab-shell-method/v/part-2-of-shell-method-with-2-functions-of-y">📺 Part 2 of shell method with 2 functions of y</a></li>
+<li><a href="https://www.khanacademy.org/math/old-ap-calculus-ab/ab-applications-definite-integrals/ab-shell-method/a/stacy-scaling-3">📄 Shell method worksheet</a></li>
+</ul>
+<p>Textbook</p>
+<ul>
+<li><a href="https://webassign.com/">📄 Cengage e-Textbook: Calculus Early Transcendentals, Eighth Edition, Stewart</a></li>
+</ul>
+          </article>
+          </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../../../templates/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../../../templates/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+    <script src="../../../../../../templates/js/animated-toc.js"></script>
+  </body>
+</html>
