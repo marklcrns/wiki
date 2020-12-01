@@ -15,6 +15,7 @@ date: Aug 17, 2020
 - [↪ Chapter 5: Looping](chapter-5/index)
 - [↪ Chapter 6: Functions](chapter-6/index)
 - [↪ Chapter 7: Introduction to Classes and Objects](chapter-7/index)
- [↪ Chapter 8: Arrays](chapter-8/index)
- [↪ Chapter 9: Searching and Sorting](chapter-9/index)
+- [↪ Chapter 8: Arrays](chapter-8/index)
+- [↪ Chapter 9: Searching and Sorting](chapter-9/index)
+- [↪ Chapter 10: Pointers](chapter-10/index)
 
