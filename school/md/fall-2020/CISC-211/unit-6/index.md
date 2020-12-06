@@ -26,5 +26,5 @@ ssh cisc-211-13@76.88.116.15 # password 'P(PW Template 4)N'
 
 ## Lab
 
-[⬇ Unit 6 Lab](file:../../../../files/fall-2020/CISC-211/unit-6/unit-6_lab.pdf)
+- [⬇ Unit 6 Lab](file:../../../../files/fall-2020/CISC-211/unit-6/unit-6_lab.pdf)
 

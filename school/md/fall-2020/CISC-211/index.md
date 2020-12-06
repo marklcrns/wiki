@@ -29,6 +29,10 @@ date: Sep 09, 2020
   * Download Combined Files - `Quartus-web-13.0.1.232-windows.tar`
 - [📄 MDK-Keil Microcontroller Development Kit](http://www2.keil.com/mdk5/install)
 
+### Personal Course Materials
+
+- [⬇ Raspberry Pi Assembler](file:../../../files/fall-2020/CISC-211/RPiA.pdf)
+
 ## Units
 
 - [↪ Unit 1](unit-1/index)
