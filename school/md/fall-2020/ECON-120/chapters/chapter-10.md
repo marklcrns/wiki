@@ -82,7 +82,7 @@ This multiplier effect occurs because an initial change in output will affect
 the income of households and thus change consumer spending. For example, an
 increase in government spending of \$10 billion will initially raise household
 incomes by \$10 billion and lead to increases in consumer spending. As we
-discussed in the last chapter, theprecise amount of the increase will depend on
+discussed in the last chapter, the precise amount of the increase will depend on
 the marginal propensity to consume and other factors. In turn, the increase in
 consumer spending will raise output and income further, leading to further
 increases in consumer spending. The multiplier takes all these effects into
@@ -395,10 +395,10 @@ late 1970s that there was a strong possibility we could do this in the U.S.
 economy. Laffer's views influenced many politicians at the time and became the
 basis for supply-side economics. **Supply-side economics** is a school of
 thought that emphasizes the role taxes play in the supply of output in the
-economy.  Supply-side economists look at the effects of taxes not just on
+economy. Supply-side economists look at the effects of taxes not just on
 aggregate demand, as we did earlier in this chapter, but also on aggregate
 supply. A decrease in tax rates will typically tend to increase labor supply and
-output.  Thus, changes in taxes can also shift the aggregate supply curve.
+output. Thus, changes in taxes can also shift the aggregate supply curve.
 
 <a name="supply-side-economics-term">**Supply-side economics**</a>
 

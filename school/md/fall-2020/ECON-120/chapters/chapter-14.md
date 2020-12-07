@@ -628,7 +628,7 @@ long-term interest rate--not a short-term rate. For example, a household might
 take out a 30-year mortgage to purchase a home. If the rate is too high, it
 might not take out the loan. So, for the Fed to control investment spending, it
 must also somehow influence long-term rates. It can do this indirectly by
-influencing short-term rates.  Here's how.
+influencing short-term rates. Here's how.
 
 Long-term interest rates can be thought of as averages of current and expected
 future short-term interest rates. To see why future short-term interest rates

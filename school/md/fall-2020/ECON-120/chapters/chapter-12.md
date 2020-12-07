@@ -439,7 +439,7 @@ companies lend the premiums received to earn returns from investments so they
 can pay off the insurance claims of individuals. Figure 12.6 shows how financial
 intermediaries create a valuable link between savers and investors. Pooling the
 funds of savers to make loans to individual borrowers reduces the costs of
-negotiation.  Financial institutions also have more expertise to evaluate and
+negotiation. Financial institutions also have more expertise to evaluate and
 monitor investments than most individual investors.
 
 <a name="financial-intermediaries-term">**Financial intermediaries**</a>

@@ -13,8 +13,13 @@ date: Sep 20, 2020
 - [↪ Exam 1 Attempt 1](exam-1-1)
 - [↪ Exam 1 Attempt 2](exam-1-2)
 
-## Exam 1
+## Exam 2
 
 - [↪ Exam 2 Attempt 1](exam-2-1)
 - [↪ Exam 2 Attempt 2](exam-2-2)
+
+## Exam 3
+
+- [↪ Exam 3 Attempt 1](exam-3-1)
+
 
