@@ -20,6 +20,7 @@ date: 2020-08-17
 - [⬇ Syllabus](file:../../../files/fall-2020/BUSE-120/syllabus.pdf)
 - [⬇ BUSE 120 Full Textbook](file:../../../files/fall-2020/BUSE-120/textbook_full.pdf)
 - [⬇ Financial Worksheet](file:../../../files/fall-2020/BUSE-120/financial_worksheets.xlsx)
+- [⬇ Quarterly Financial Worksheet](file:../../../files/fall-2020/BUSE-120/quarterly_financial_worksheets.xlsx)
 
 ## Modules
 

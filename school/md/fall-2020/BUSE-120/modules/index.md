@@ -23,4 +23,5 @@ date: 2020-08-17
 - [↪ Module 13: Stocks](module-13/index)
 - [↪ Module 14: Bonds](module-14/index)
 - [↪ Module 15: Mutual Funds and Other Investments](module-15/index)
+- [↪ Module 16: A Quarterly Version of the Financial Workbook](module-16/index)
 

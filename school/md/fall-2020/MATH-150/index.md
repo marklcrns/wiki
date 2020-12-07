@@ -20,7 +20,6 @@ date: Aug 17, 2020
 - [📄 Cengage e-Textbook: Calculus Early Transcendentals, Eighth Edition, Stewart](https://webassign.com/)
   * Cengage account [credentials](vfile:../../../files/fall-2020/MATH-150/cengage_account.txt)
 
-
 ## Chapters
 
 - [↪ Chapters](chapters/index)
