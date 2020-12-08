@@ -17,4 +17,5 @@ date: Nov 18, 2020
 ## Homeworks
 
 - [⬇ 6.1 Homework Solutions](file:../../../../../files/fall-2020/MATH-150/homeworks/6.1_homework.pdf)
+- [⬇ 6.2 Homework Solutions](file:../../../../../files/fall-2020/MATH-150/homeworks/6.2_homework.pdf)
 
