@@ -1,5 +1,5 @@
 ---
-title: Unit 6 Notes
+title: Unit 6
 subtitle: Notes and activities
 author: Mark Lucernas
 date: Nov 16, 2020

@@ -1,5 +1,5 @@
 ---
-title: Unit 7 Notes
+title: Unit 7
 subtitle: Notes and activities
 author: Mark Lucernas
 date: Dec 01, 2020

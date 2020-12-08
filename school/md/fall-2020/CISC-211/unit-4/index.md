@@ -10,7 +10,7 @@ date: Nov 04, 2020
 
 ## Notes
 
-- [↪ Unit 4 Assignment](notes)
+- [↪ Unit 4 Notes](notes)
 
 ## Assignment
 
