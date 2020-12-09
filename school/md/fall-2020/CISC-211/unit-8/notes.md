@@ -11,7 +11,7 @@ date: Dec 07, 2020
 
 - 6.3 Programming
   * 6.3.7 Function Calls
-- Microarchitecture
+- 7 Microarchitecture
   * 7.1 Introduction
   * 7.2 Performance Analysis
   * 7.3 Single-Cycle Processor

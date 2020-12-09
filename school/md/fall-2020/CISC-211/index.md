@@ -32,6 +32,9 @@ date: Sep 09, 2020
 ### Personal Course Materials
 
 - [⬇ Raspberry Pi Assembler](file:../../../files/fall-2020/CISC-211/RPiA.pdf)
+- [📄 ARM Assembly Basics](https://azeria-labs.com/writing-arm-assembly-part-1/)
+
+![ARM 32-bit Cheat Sheet](../../../files/fall-2020/CISC-211/ARM_32-bit_CheatSheet.png)
 
 ## Units
 
