@@ -22,6 +22,7 @@ date: Dec 07, 2020
 Ref:
 
 - [📄 String concatenation](https://rosettacode.org/wiki/String_concatenation)
+- [📄 How to implement a program for String concatenation in ARM Assembly](https://titanwolf.org/Network/Articles/Article?AID=3dc57524-890f-45f1-9e7e-025fe2ed458c#gsc.tab=0)
 - [📺 Raspberry Pi Assembly Programming: intro to functions](https://www.youtube.com/watch?v=1VAcZr2wQzo)
 - [📄 Stack and Functions](https://azeria-labs.com/functions-and-the-stack-part-7/)
 
