@@ -1,0 +1,27 @@
+The single-cycle microarchitecture executes an entire instruction in one cycle.
+It is easy to explain and has a simple control unit. Because it completes the
+operation in one cycle, it does not require any nonarchitec- tural state.
+However, the cycle time is limited by the slowest instruction.  Moreover, the
+processor requires separate instruction and data memories, which is generally
+unrealistic.
+
+The multicycle microarchitecture executes instructions in a series of shorter
+cycles. Simpler instructions execute in fewer cycles than complicated ones.
+Moreover, the multicycle microarchitecture reduces the hardware cost by reusing
+expensive hardware blocks such as adders and memories.  For example, the adder
+may be used on different cycles for several purposes while carrying out a
+single instruction. The multicycle microprocessor accomplishes this by adding
+several nonarchitectural registers to hold inter- mediate results. The
+multicycle processor executes only one instruction at a time, but each
+instruction takes multiple clock cycles. The multicycle pro- cessor requires
+only a single memory, accessing it on one cycle to fetch the instruction and on
+another to read or write data. Therefore, multicycle processors were the
+historical choice for inexpensive systems.
+
+The pipelined microarchitecture applies pipelining to the single-cycle
+microarchitecture. It therefore can execute several instructions simulta-
+neously, improving the throughput significantly. Pipelining must add logic to
+handle dependencies between simultaneously executing instruc- tions. It also
+requires nonarchitectural pipeline registers. Pipelined proces- sors must
+access instructions and data in the same cycle; they generally use separate
+instruction and data caches for this purpose, as discussed

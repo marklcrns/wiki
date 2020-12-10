@@ -1,3 +1,5 @@
+set -e
+
 echo
 echo "[ COMPILE ] Compiling 'lucernas_assignment_8.s' and 'LucernasAssignment8.java'..."
 
