@@ -14,19 +14,7 @@ public class LucernasAssignment8 {
 
 	concat(string1, string2, stringConcat);
 
-	for (int i = 0; i < string1.length; i++) {
-	  System.out.print(string1[i]);
-	}
-	System.out.print(", ");
-
-	for (int i = 0; i < string2.length; i++) {
-	  System.out.print(string2[i]);
-	}
-	System.out.print(", ");
-
-	for (int i = 0; i < stringConcat.length; i++) {
-	  System.out.print(stringConcat[i]);
-	}
+	System.out.format("%s, %s, %s", new String(string1), new String(string2), new String(stringConcat));
   }
 
   static void concat(char[] string1, char[] string2, char[] stringConcat) {

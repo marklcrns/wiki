@@ -47,7 +47,7 @@ exit:	pop {ip, lr}			@ Pop the values from stack into ip and pc register
 @ Functions
 @ --------------------------------------
 
-@ Concatinate string from r1 and r2 and store it in r3
+@ Concatenate string from r1 and r2 and store it in r3
 
 concat: push {r1, r2, r3, r4, r5, lr}	@ Save registers
 
