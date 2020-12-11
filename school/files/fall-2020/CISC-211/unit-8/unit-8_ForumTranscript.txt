@@ -1,27 +1,13 @@
-The single-cycle microarchitecture executes an entire instruction in one cycle.
-It is easy to explain and has a simple control unit. Because it completes the
-operation in one cycle, it does not require any nonarchitec- tural state.
-However, the cycle time is limited by the slowest instruction.  Moreover, the
-processor requires separate instruction and data memories, which is generally
-unrealistic.
+What is a single-cycle microarchitecture?
 
-The multicycle microarchitecture executes instructions in a series of shorter
-cycles. Simpler instructions execute in fewer cycles than complicated ones.
-Moreover, the multicycle microarchitecture reduces the hardware cost by reusing
-expensive hardware blocks such as adders and memories.  For example, the adder
-may be used on different cycles for several purposes while carrying out a
-single instruction. The multicycle microprocessor accomplishes this by adding
-several nonarchitectural registers to hold inter- mediate results. The
-multicycle processor executes only one instruction at a time, but each
-instruction takes multiple clock cycles. The multicycle pro- cessor requires
-only a single memory, accessing it on one cycle to fetch the instruction and on
-another to read or write data. Therefore, multicycle processors were the
-historical choice for inexpensive systems.
+A "single-cycle microarchitecture" is one of the three microarchitectures for the ARM architecture that executes an entire instruction in one cycle. Hence, it is called "single-cycle". Because it completes the operation in one cycle it does not require any nonarchitectural state, as opposed to the other two microarchitectures which are the "multicycle" and "pipelined" microarchitectures that requires nonarchitectural pipline registers. Its advantage is that it is the simplest of the the three ARM microarchitecture and has a single control unit.
 
-The pipelined microarchitecture applies pipelining to the single-cycle
-microarchitecture. It therefore can execute several instructions simulta-
-neously, improving the throughput significantly. Pipelining must add logic to
-handle dependencies between simultaneously executing instruc- tions. It also
-requires nonarchitectural pipeline registers. Pipelined proces- sors must
-access instructions and data in the same cycle; they generally use separate
-instruction and data caches for this purpose, as discussed
+However, executing an entire instruction in one cycle could be problematic because the cycle time is limited by the slowest instruction. Its just like driving a Ferrari in a heavy traffic. Also, this architecture could be costly: you cannot reuse parts of the expensive hardware blocks such as adders and memories just like a multicycle microarchitecture becuase everything works as a single unit. Moreover, the processor requires separate instruction and data memories, which is generally unrealistic for single-cycle microarchitecture.
+
+ZERO EXTENDED
+
+	- simply means prepending leading zeros
+
+ARITHMETICH LOGICAL UNIT (ALU)
+
+	- Combines a variety of mathematical and logical operations into a single unit.
