@@ -8,7 +8,7 @@ make
 echo
 echo "[ RUN ] Running 'lucernas_assignment_8'..."
 
-./lucernas_assignment_8
+./lucernas_assignment8
 
 echo
 echo "[ RUN ] Running 'LucernasAssginment8.class'..."

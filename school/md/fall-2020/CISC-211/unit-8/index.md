@@ -15,7 +15,7 @@ date: Dec 07, 2020
 ## Assignment
 
 - [⬇ Unit 8 Assignment](file:../../../../files/fall-2020/CISC-211/unit-8/unit-8_assignment/unit-8_assignment.pdf)
-- [⬇ Assembly Code](vfile:../../../../files/fall-2020/CISC-211/unit-8/unit-8_assignment/lucernas_assignment_8.s)
+- [⬇ Assembly Code](vfile:../../../../files/fall-2020/CISC-211/unit-8/unit-8_assignment/lucernas_assignment8.s)
 - [⬇ High-level Language Code: Java](vfile:../../../../files/fall-2020/CISC-211/unit-8/unit-8_assignment/LucernasAssignment8.java)
 - [⬇ makefile](vfile:../../../../files/fall-2020/CISC-211/unit-8/unit-8_assignment/makefile)
 
