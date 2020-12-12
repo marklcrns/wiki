@@ -47,3 +47,7 @@ date: Sep 09, 2020
 - [↪ Unit 7](unit-7/index)
 - [↪ Unit 8](unit-8/index)
 
+## Final Exam
+
+- [⬇ Final Exam](file:../../../files/fall-2020/CISC-211/cisc-211_FinalExamSolutions.pdf)
+
