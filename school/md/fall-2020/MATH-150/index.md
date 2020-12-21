@@ -40,4 +40,5 @@ date: Aug 17, 2020
 - [⬇ Test 2](file:../../../files/fall-2020/MATH-150/tests/test-2.pdf)
 - [⬇ Test 3](file:../../../files/fall-2020/MATH-150/tests/test-3.pdf)
 - [⬇ Test 4](file:../../../files/fall-2020/MATH-150/tests/test-4.pdf)
+- [⬇ Final Exam](file:../../../files/fall-2020/MATH-150/tests/finals.pdf)
 
