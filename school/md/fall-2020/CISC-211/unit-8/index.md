@@ -29,4 +29,5 @@ Ref:
 ## Forum
 
 - [📺 Unit 8 Forum: ARM Single-Cycle Microarchitecture Video Presentation](https://www.youtube.com/watch?v=p0hrqSKGiP4)
+- [⬇ Unit 8 Forum: PowerPoint Presentation](file:../../../../files/fall-2020/CISC-211/unit-8/unit-8_forum_presentation.pptx)
 
