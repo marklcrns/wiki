@@ -118,10 +118,6 @@ git fetch
 git checkout <branch-name> origin/<branch-name>
 ```
 
-
-
-
-
 Ref:
 
 - [📄 Where to find changes due to `git fetch`](https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch)
