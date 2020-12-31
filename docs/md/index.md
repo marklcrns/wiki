@@ -49,6 +49,10 @@ date: Feb 05, 2020
 
 - [↪ Chocolately](shell-apps/windows/choco/index)
 
+## Package Managers
+
+- [↪ Node.js and npm](nodejs-npm/index)
+
 
 ## WSL/WSL2
 
