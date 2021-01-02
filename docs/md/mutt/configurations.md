@@ -56,7 +56,7 @@ For RPM based : `sudo yum install gnupg gnupg-agent`
 
 Generate encryption key. Enter name, email and passphrase.
 
-```bash
+```sh
 gpg --gen-key
 ```
 
@@ -68,7 +68,7 @@ GMail: <password_goes_here>
 
 Encrypt `.pass`
 
-```bash
+```sh
 cd ~/.mutt
 gpg --encrypt .pass
 ```
@@ -82,7 +82,7 @@ set smpt_pass = `gpg -d ~/.mutt/.pass.gpg | awk '/GMail:/ {print $2}'`
 
 Delete your password footprint
 
-```bash
+```sh
 shred ~/.mutt/.pass
 rm ~/.mutt/.pass
 ```

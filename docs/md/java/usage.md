@@ -15,7 +15,7 @@ Dependencies:
 
 ## Tl;dr
 
-```bash
+```sh
 mkdir -p build
 alias javarun='javac -Xlint -sourcepath src -d build src/main/**/*.java; find .  -name "*.java" -not -path "*/test/*" > source.txt; java -cp build path.to.main.driver.Class'
 javarun
@@ -25,32 +25,32 @@ javarun
 
 From root project directory. Create `build` directory.
 
-```bash
+```sh
 mkdir -p build
 ```
 
 Then run the following to compile `.java` into `build` directory as classpath
 
-```bash
+```sh
 javac -Xlint -sourcepath src -d build src/main/**/*.java
 find . -name "*.java" -not -path "*/test/*" > source.txt
 ```
 
 Then copy all resource files into `build` directory
 
-```bash
+```sh
 cp src/main/resources/*.png src/main/resources/*.jpg build
 ```
 
 Then run main driver class
 
-```bash
+```sh
 java -cp build path.to.main.driver.Class
 ```
 
 #### Recompiling
 
-```bash
+```sh
 javac -Xlint -sourcepath src -d build src/main/**/*.java
 find . -name "*.java" -not -path "*/test/*" > source.txt
 java -cp build path.to.main.driver.Class
@@ -60,19 +60,19 @@ java -cp build path.to.main.driver.Class
 
 Assign an alias to recompile with just one command
 
-```bash
+```sh
 alias javarun='javac -Xlint -sourcepath src -d build src/main/**/*.java; find . -name "*.java" -not -path "*/test/*" > source.txt; java -cp build path.to.main.driver.Class'
 ```
 
 Then simply run
 
-```bash
+```sh
 javarun
 ```
 
 #### Cleaning Up
 
-```bash
+```sh
 rm -r build source.txt
 ```
 

@@ -91,7 +91,7 @@ sourceSets.test.resources.srcDirs = [ "src/test/res/" ]
 
 Running unit tests from root directory with
 
-```bash
+```sh
 gradlew test
 ```
 

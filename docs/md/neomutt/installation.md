@@ -7,14 +7,14 @@ date: Oct 09, 2020
 
 # Installation
 
-```bash
+```sh
 sudo apt update -y
 sudo apt install neomutt -y
 ```
 
 Then create Mutt directories:
 
-```bash
+```sh
 mkdir -p ~/.mutt/cache/headers mkdir ~/.mutt/cache/bodies touch ~/.mutt/certificates
 ```
 

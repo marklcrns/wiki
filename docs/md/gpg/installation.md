@@ -11,13 +11,13 @@ date: Oct 09, 2020
 
 ### Ubuntu or Debian Based System
 
-```bash
+```sh
 sudo apt install gnupg gnupg-agent
 ```
 
 ### RPM Based System
 
-```bash
+```sh
 sudo yum install gnupg gnupg-agent
 ```
 

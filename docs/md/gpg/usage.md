@@ -9,13 +9,13 @@ date: Oct 09, 2020
 
 ## Help
 
-```bash
+```sh
 gpg --help
 ```
 
 ## Generating New Private Key
 
-```bash
+```sh
 gpg --gen-key
 ```
 
@@ -23,7 +23,7 @@ gpg --gen-key
 
 ### List all keys
 
-```bash
+```sh
 # List public keys you have stored (yours and other people's keys)
 gpg --list-keys
 
@@ -33,7 +33,7 @@ gpg --list-secret-keys
 
 ### Editing existing key
 
-```bash
+```sh
 gpg --edit-key <USER_ID>
 ```
 
@@ -41,7 +41,7 @@ gpg --edit-key <USER_ID>
 
 ### Exporting Private Keys
 
-```bash
+```sh
 # Find the ID of your key first
 # The ID is the hexadecimal number
 # Second column, after the slash, e.g. "ABC12345"
@@ -63,7 +63,7 @@ gpg --export-secret-keys XXXXXXXX > ./private.key
 
 ### Importing a Key
 
-```bash
+```sh
 # This works the same for binary or ASCII (armored) versions of keys
 # This is also the same for private and public keys
 gpg --import ./my-priv-gpg-key.asc
@@ -77,7 +77,7 @@ gpg --keyserver pgp.mit.edu  --recv C104CDF0EDA54C82
 
 ### Push Public Key to Key Server
 
-```bash
+```sh
 # There are many public key servers out there, not just MIT
 # Replace XXXXXXXX with your key id from --list-keys
 gpg --keyserver hkp://pgp.mit.edu --send-keys XXXXXXXX
@@ -85,7 +85,7 @@ gpg --keyserver hkp://pgp.mit.edu --send-keys XXXXXXXX
 
 ### Deleting a Key
 
-```bash
+```sh
 # Private keys
 # Use the ID listed with --list-secret-keys
 gpg --delete-secret-keys XXXXXXXX
@@ -99,7 +99,7 @@ gpg --delete-keys XXXXXXXX
 
 ### Encrypt with a Passphrase (Symmetric)
 
-```bash
+```sh
 gpg --symmetric message.txt
 # Prompts you for a passphrase
 # Creates message.txt.gpg (binary)
@@ -124,7 +124,7 @@ gpg --sign --symmetric message.txt
 
 ### Encrypt for a Single Recipient (Assymetric)
 
-```bash
+```sh
 # This will prompt and ask the recipient's email address
 # and you will have to enter the ID or email
 gpg --encrypt message.txt
@@ -146,7 +146,7 @@ gpg --output message.txt.gpg
 
 ### Decrypt a Message
 
-```bash
+```sh
 # Decrypt and print message to screen
 # Will automatically verify signature if there was one
 # Will automatically detect if symmetric or asymmetric
@@ -168,7 +168,7 @@ all.
 
 ### Sign a Message
 
-```bash
+```sh
 gpg --clearsign message.txt
 # Outputs message.txt.asc in plain text, suitable
 # for pasting in an email or posting online
@@ -185,7 +185,7 @@ gpg --decrypt message.txt.asc
 
 ### Encrypt and Signk
 
-```bash
+```sh
 # Symmetric encrypt with signature
 gpg --sign --symmetric message.txt
 
@@ -195,7 +195,7 @@ gpg --sign --encrypt --recipient nanodano@devdungeon.com message.txt
 
 ### Verify Signatures
 
-```bash
+```sh
 # When you decrypt the message it will verify the signature
 gpg --decrypt message.txt.asc
 
@@ -207,7 +207,7 @@ gpg --output message.txt message.txt.asc
 
 ### Detached Signatures
 
-```bash
+```sh
 # Create a separate signature file
 gpg --detach-sign message.txt
 # Will create message.txt.sig

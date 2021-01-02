@@ -12,7 +12,7 @@ date: Aug 08, 2020
 
 From the root directory
 
-```bash
+```sh
 git rm -r --cached . &&  git add .
 ```
 
@@ -20,7 +20,7 @@ git rm -r --cached . &&  git add .
 
 Creating global gitignore
 
-```bash
+```sh
 git config --global core.excludesfile ~/.gitignore_global
 ```
 

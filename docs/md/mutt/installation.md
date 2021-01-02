@@ -11,14 +11,14 @@ date: Oct 09, 2020
 
 ### Ubuntu or Debian Based System 
 
-```bash
+```sh
 sudo apt update -y
 sudo apt install mutt -y
 ```
 
 Then create Mutt directories:
 
-```bash
+```sh
 mkdir -p ~/.mutt/cache/headers mkdir ~/.mutt/cache/bodies touch ~/.mutt/certificates
 ```
 

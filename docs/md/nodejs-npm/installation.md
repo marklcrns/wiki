@@ -26,7 +26,7 @@ permissions errors when you run npm packages globally.
 
 #### Using NVM (Recommended)
 
-```bash
+```sh
 # NVM/NodeJS
 if curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash; then
   # source bashrc or zshrc
@@ -53,7 +53,7 @@ fi
 
 ##### Uninstall
 
-```bash
+```sh
 nvm uninstall <version>
 nvm uninstall node  # Uninstall latest
 nvm uninstall --lts # Uninstall LTS
@@ -61,7 +61,7 @@ nvm uninstall --lts # Uninstall LTS
 
 #### Without NVM
 
-```bash
+```sh
 # Automatically installes npm
 sudo apt install nodejs
 
@@ -76,7 +76,7 @@ manager.
 
 - [📄 Workaround for 'Missing write access to /usr/local/lib error'](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally)
 
-```bash
+```sh
 mkdir ${HOME}/.npm-global
 npm config set prefix "${HOME}/.npm-global"
 ```
@@ -85,7 +85,7 @@ npm config set prefix "${HOME}/.npm-global"
 
 ##### Uninstall
 
-```bash
+```sh
 sudo apt remove nodejs npm
 ```
 

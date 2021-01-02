@@ -16,7 +16,7 @@ date: Nov 16, 2020
 
 Using RaspberryPi 4 Computer via `ssh` or [PuTTY](https://putty.org/)
 
-```bash
+```sh
 ssh cisc-211-13@76.88.116.15 # password 'P(PW Template 4)N'
 ```
 

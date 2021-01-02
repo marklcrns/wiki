@@ -38,13 +38,13 @@ Using `gcc-arm-linux-gnueabi`
 
 Installation
 
-```bash
+```sh
 sudo apt install -y gcc-arm-linux-gnueabi
 ```
 
 Usage 
 
-```bash
+```sh
 arm-linux-gnueabi-gcc -mtune=cortex-a53 prog.c -S
 ```
 
@@ -54,14 +54,14 @@ Using `arm-none-eabi-gcc`
 
 Installation
 
-```bash
+```sh
 xcode-select --install
 brew install arm-none-eabi-gcc
 ```
 
 Usage
 
-```bash
+```sh
 arm-none-eabi-gcc -mtune=cortex-a53 prog.c -S
 ```
 

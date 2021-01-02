@@ -131,7 +131,7 @@ Ref:
 
 **Manual interactive merging (with `git add --interactive`)**
 
-```java
+```sh
 git merge --no-commit --no-ff <branch-to merge> # Merges with branch without committing
 git reset HEAD                                  # Unstage all merge changes
 git add --interactive                           # Add pieces interactively
@@ -139,14 +139,14 @@ git add --interactive                           # Add pieces interactively
 
 **Manual interactive merging (with `git mergetool`)**
 
-```java
+```sh
 git merge --no-commit --no-ff <branch-to-merge> # Merges with branch without committing
 git mergetool                                   # Resolve conflict manually with graphics
 ```
 
 **Other very manual way of merging**
 
-```java
+```sh
 # Merges with branch without committing
 git merge --no-commit --no-ff <branch-to-merge>
 
