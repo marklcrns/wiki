@@ -11,7 +11,8 @@ date: Aug 08, 2020
 
 Store Git username and password (will never ask for credentials again)
 
-- `git config --global credential.helper store`
+- `git config --global credential.helper store` -- Stores credentials in
+  `~/.git-credentials` (not secure)
 
 Cache credentials for a session
 
@@ -22,13 +23,18 @@ Cache credentials with timeout
 - `git config --global credential.helper 'cache --timeout=28800` -- timeout
   takes in integer as seconds, 28800 = 8hrs
 
-Alternative: Update the URL of origin remote using SSH instead of HTTPS
+Alternative, more secure setup. Update the URL of origin remote using SSH
+instead of HTTPS
 
 - `git remote set-url origin git@github.com:username/repo.git`
+
+More on [Connecting to Github with
+SSH](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)
 
 Ref:
 
 - [📄 How to fix Git always asking for user credentials](https://www.freecodecamp.org/news/how-to-fix-git-always-asking-for-user-credentials/)
+- [📄 Connecting to Github with SSH](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)
 
 ## `.gitignore`
 
@@ -57,5 +63,6 @@ Ref:
 # Resources
 
 - [📄 How to fix Git always asking for user credentials](https://www.freecodecamp.org/news/how-to-fix-git-always-asking-for-user-credentials/)
+- [📄 Connecting to Github with SSH](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)
 - [📄 Ignoring files](https://docs.github.com/en/github/using-git/ignoring-files)
 
