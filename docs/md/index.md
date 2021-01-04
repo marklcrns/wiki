@@ -35,6 +35,7 @@ date: Feb 05, 2020
 - [↪ Git-lfs](git-lfs/index)
 - [↪ Git](git/index)
 - [↪ Gpg](gpg/index)
+- [↪ leetcode-cli](leetcode-cli/index)
 - [↪ Mutt](mutt/index)
 - [↪ Neomutt](neomutt/index)
 - [↪ Pandoc](pandoc/index)
