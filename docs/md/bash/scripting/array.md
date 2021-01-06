@@ -176,6 +176,34 @@ Ref:
 - [📄 How do I check if variable is an array?](https://stackoverflow.com/a/14525326/11850077)
 
 
+## Check Array Contains a Value
+
+```sh
+if [[ " ${array[@]} " =~ " ${value} " ]]; then
+    # whatever you want to do when array contains value
+fi
+
+if [[ ! " ${array[@]} " =~ " ${value} " ]]; then
+    # whatever you want to do when array doesn't contain value
+fi
+```
+
+Small function with looping
+
+```sh
+containsElement () {
+  local arr match="$1"
+  shift
+  for arr; do [[ "$arr" == "$match" ]] && return 0; done
+  return 1
+}
+```
+
+Ref:
+
+- [📄 Check if a Bash array contains a value](https://stackoverflow.com/a/15394738/11850077)
+
+
 ## Passing An Array as Function Argument
 
 ```sh
@@ -208,5 +236,6 @@ Ref:
 - [📄 Split string into an array in Bash: Method 1](https://stackoverflow.com/a/10586169/11850077)
 - [📄 Split string into an array in Bash: Method 2](https://stackoverflow.com/a/45201229/11850077)
 - [📄 How do I check if variable is an array?](https://stackoverflow.com/a/14525326/11850077)
+- [📄 Check if a Bash array contains a value](https://stackoverflow.com/a/15394738/11850077)
 - [📄 How to pass an array as function argument?](https://askubuntu.com/a/674347)
 
