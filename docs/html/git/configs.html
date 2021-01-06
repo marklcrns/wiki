@@ -128,9 +128,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
+          <li><a href="#git-configurations">Git Configurations</a><ul>
+          <li><a href="#credential-helper">Credential Helper</a></li>
           <li><a href="#gitignore"><code>.gitignore</code></a><ul>
           <li><a href="#ignoring-committed-files">Ignoring Committed Files</a></li>
           <li><a href="#global">Global</a></li>
+          </ul></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
           </ul>
@@ -161,13 +164,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <!-- Contents -->
           <article class="contents">
-<h1 id="gitignore"><code>.gitignore</code></h1>
-<h2 id="ignoring-committed-files">Ignoring Committed Files</h2>
+<h1 id="git-configurations">Git Configurations</h1>
+<h2 id="credential-helper">Credential Helper</h2>
+<p>Store Git username and password (will never ask for credentials again)</p>
+<ul>
+<li><code>git config --global credential.helper store</code> – Stores credentials in <code>~/.git-credentials</code> (not secure)</li>
+</ul>
+<p>Cache credentials for a session</p>
+<ul>
+<li><code>git config --global credential.helper cache</code></li>
+</ul>
+<p>Cache credentials with timeout</p>
+<ul>
+<li><code>git config --global credential.helper 'cache --timeout=28800</code> – timeout takes in integer as seconds, 28800 = 8hrs</li>
+</ul>
+<p>Alternative, more secure setup. Update the URL of origin remote using SSH instead of HTTPS</p>
+<ul>
+<li><code>git remote set-url origin git@github.com:username/repo.git</code></li>
+</ul>
+<p>More on <a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh">Connecting to Github with SSH</a></p>
+<p>Ref:</p>
+<ul>
+<li><a href="https://www.freecodecamp.org/news/how-to-fix-git-always-asking-for-user-credentials/">📄 How to fix Git always asking for user credentials</a></li>
+<li><a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh">📄 Connecting to Github with SSH</a></li>
+</ul>
+<h2 id="gitignore"><code>.gitignore</code></h2>
+<h3 id="ignoring-committed-files">Ignoring Committed Files</h3>
 <p>From the root directory</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">git</span> rm -r --cached . <span class="kw">&amp;&amp;</span>  <span class="fu">git</span> add .</a></code></pre></div>
-<h2 id="global">Global</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">git</span> rm -r --cached . <span class="kw">&amp;&amp;</span>  <span class="fu">git</span> add .</a></code></pre></div>
+<h3 id="global">Global</h3>
 <p>Creating global gitignore</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">git</span> config --global core.excludesfile ~/.gitignore_global</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">git</span> config --global core.excludesfile ~/.gitignore_global</a></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://docs.github.com/en/github/using-git/ignoring-files">📄 Ignoring files</a></li>
@@ -175,6 +202,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
+<li><a href="https://www.freecodecamp.org/news/how-to-fix-git-always-asking-for-user-credentials/">📄 How to fix Git always asking for user credentials</a></li>
+<li><a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh">📄 Connecting to Github with SSH</a></li>
 <li><a href="https://docs.github.com/en/github/using-git/ignoring-files">📄 Ignoring files</a></li>
 </ul>
           </article>

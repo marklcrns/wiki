@@ -162,10 +162,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 id="installation">Installation</h1>
 <h2 id="linux">Linux</h2>
 <h3 id="ubuntu-or-debian-based-system">Ubuntu or Debian Based System</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt update -y</a>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt update -y</a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="fu">sudo</span> apt install mutt -y</a></code></pre></div>
 <p>Then create Mutt directories:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">mkdir</span> -p ~/.mutt/cache/headers mkdir ~/.mutt/cache/bodies touch ~/.mutt/certificates</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">mkdir</span> -p ~/.mutt/cache/headers mkdir ~/.mutt/cache/bodies touch ~/.mutt/certificates</a></code></pre></div>
 <p>Finally, add these to your <code>.muttrc</code></p>
 <pre class="muttrc"><code>set header_cache = &quot;~/.mutt/cache/headers&quot;
 set message_cachedir = &quot;~/.mutt/cache/bodies&quot;

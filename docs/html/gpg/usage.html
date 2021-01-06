@@ -179,23 +179,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <article class="contents">
 <h1 id="usage">Usage</h1>
 <h2 id="help">Help</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">gpg</span> --help</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">gpg</span> --help</a></code></pre></div>
 <h2 id="generating-new-private-key">Generating New Private Key</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">gpg</span> --gen-key</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">gpg</span> --gen-key</a></code></pre></div>
 <h2 id="key-management">Key Management</h2>
 <h3 id="list-all-keys">List all keys</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># List public keys you have stored (yours and other people&#39;s keys)</span></a>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># List public keys you have stored (yours and other people&#39;s keys)</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="ex">gpg</span> --list-keys</a>
 <a class="sourceLine" id="cb3-3" title="3"></a>
 <a class="sourceLine" id="cb3-4" title="4"><span class="co"># List private keys (generally only your own)</span></a>
 <a class="sourceLine" id="cb3-5" title="5"><span class="ex">gpg</span> --list-secret-keys</a></code></pre></div>
 <h3 id="editing-existing-key">Editing existing key</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="ex">gpg</span> --edit-key <span class="op">&lt;</span>USER_ID<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="ex">gpg</span> --edit-key <span class="op">&lt;</span>USER_ID<span class="op">&gt;</span></a></code></pre></div>
 <blockquote>
 <p>Type <code>help</code> when gpg interactive prompt appears to view basic commands</p>
 </blockquote>
 <h3 id="exporting-private-keys">Exporting Private Keys</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># Find the ID of your key first</span></a>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># Find the ID of your key first</span></a>
 <a class="sourceLine" id="cb5-2" title="2"><span class="co"># The ID is the hexadecimal number</span></a>
 <a class="sourceLine" id="cb5-3" title="3"><span class="co"># Second column, after the slash, e.g. &quot;ABC12345&quot;</span></a>
 <a class="sourceLine" id="cb5-4" title="4"><span class="co"># If you have a &quot;sub&quot; entry, you can ignore it</span></a>
@@ -213,7 +213,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb5-16" title="16"><span class="co"># and transfered digitally easier.</span></a>
 <a class="sourceLine" id="cb5-17" title="17"><span class="co"># Both formats can be imported back in to GPG later</span></a></code></pre></div>
 <h3 id="importing-a-key">Importing a Key</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># This works the same for binary or ASCII (armored) versions of keys</span></a>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># This works the same for binary or ASCII (armored) versions of keys</span></a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="co"># This is also the same for private and public keys</span></a>
 <a class="sourceLine" id="cb6-3" title="3"><span class="ex">gpg</span> --import ./my-priv-gpg-key.asc</a>
 <a class="sourceLine" id="cb6-4" title="4"><span class="co"># or</span></a>
@@ -223,11 +223,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb6-8" title="8"><span class="co"># For example, import the DevDungeon/NanoDano public GPG key from MIT</span></a>
 <a class="sourceLine" id="cb6-9" title="9"><span class="ex">gpg</span> --keyserver pgp.mit.edu  --recv C104CDF0EDA54C82</a></code></pre></div>
 <h3 id="push-public-key-to-key-server">Push Public Key to Key Server</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="co"># There are many public key servers out there, not just MIT</span></a>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="co"># There are many public key servers out there, not just MIT</span></a>
 <a class="sourceLine" id="cb7-2" title="2"><span class="co"># Replace XXXXXXXX with your key id from --list-keys</span></a>
 <a class="sourceLine" id="cb7-3" title="3"><span class="ex">gpg</span> --keyserver hkp://pgp.mit.edu --send-keys XXXXXXXX</a></code></pre></div>
 <h3 id="deleting-a-key">Deleting a Key</h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="co"># Private keys</span></a>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="co"># Private keys</span></a>
 <a class="sourceLine" id="cb8-2" title="2"><span class="co"># Use the ID listed with --list-secret-keys</span></a>
 <a class="sourceLine" id="cb8-3" title="3"><span class="ex">gpg</span> --delete-secret-keys XXXXXXXX</a>
 <a class="sourceLine" id="cb8-4" title="4"></a>
@@ -236,7 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb8-7" title="7"><span class="ex">gpg</span> --delete-keys XXXXXXXX</a></code></pre></div>
 <h2 id="encryption">Encryption</h2>
 <h3 id="encrypt-with-a-passphrase-symmetric">Encrypt with a Passphrase (Symmetric)</h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="ex">gpg</span> --symmetric message.txt</a>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="ex">gpg</span> --symmetric message.txt</a>
 <a class="sourceLine" id="cb9-2" title="2"><span class="co"># Prompts you for a passphrase</span></a>
 <a class="sourceLine" id="cb9-3" title="3"><span class="co"># Creates message.txt.gpg (binary)</span></a>
 <a class="sourceLine" id="cb9-4" title="4"></a>
@@ -257,7 +257,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb9-19" title="19"><span class="co"># Encrypt and sign (all in the single output file)</span></a>
 <a class="sourceLine" id="cb9-20" title="20"><span class="ex">gpg</span> --sign --symmetric message.txt</a></code></pre></div>
 <h3 id="encrypt-for-a-single-recipient-assymetric">Encrypt for a Single Recipient (Assymetric)</h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" title="1"><span class="co"># This will prompt and ask the recipient&#39;s email address</span></a>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" title="1"><span class="co"># This will prompt and ask the recipient&#39;s email address</span></a>
 <a class="sourceLine" id="cb10-2" title="2"><span class="co"># and you will have to enter the ID or email</span></a>
 <a class="sourceLine" id="cb10-3" title="3"><span class="ex">gpg</span> --encrypt message.txt</a>
 <a class="sourceLine" id="cb10-4" title="4"></a>
@@ -275,7 +275,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb10-16" title="16"><span class="co"># Specify output file</span></a>
 <a class="sourceLine" id="cb10-17" title="17"><span class="ex">gpg</span> --output message.txt.gpg </a></code></pre></div>
 <h3 id="decrypt-a-message">Decrypt a Message</h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" title="1"><span class="co"># Decrypt and print message to screen</span></a>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" title="1"><span class="co"># Decrypt and print message to screen</span></a>
 <a class="sourceLine" id="cb11-2" title="2"><span class="co"># Will automatically verify signature if there was one</span></a>
 <a class="sourceLine" id="cb11-3" title="3"><span class="co"># Will automatically detect if symmetric or asymmetric</span></a>
 <a class="sourceLine" id="cb11-4" title="4"><span class="co"># Will automatically use the appropriate private key if available</span></a>
@@ -287,7 +287,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 id="signatures">Signatures</h2>
 <p>You can sign files that were encrypted using asymmetric or symmetric methods. The benefit of providing a signature is to let everyone prove that you were the author of the file, or at least, you confirmed the contents of the file at the time of your signature. You can also just sign files without encrypting them at all.</p>
 <h3 id="sign-a-message">Sign a Message</h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" title="1"><span class="ex">gpg</span> --clearsign message.txt</a>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" title="1"><span class="ex">gpg</span> --clearsign message.txt</a>
 <a class="sourceLine" id="cb12-2" title="2"><span class="co"># Outputs message.txt.asc in plain text, suitable</span></a>
 <a class="sourceLine" id="cb12-3" title="3"><span class="co"># for pasting in an email or posting online</span></a>
 <a class="sourceLine" id="cb12-4" title="4"></a>
@@ -300,13 +300,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb12-11" title="11"><span class="ex">gpg</span> --decrypt message.txt.asc</a>
 <a class="sourceLine" id="cb12-12" title="12"><span class="co"># This will print out the message along with the signature info</span></a></code></pre></div>
 <h3 id="encrypt-and-signk">Encrypt and Signk</h3>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" title="1"><span class="co"># Symmetric encrypt with signature</span></a>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" title="1"><span class="co"># Symmetric encrypt with signature</span></a>
 <a class="sourceLine" id="cb13-2" title="2"><span class="ex">gpg</span> --sign --symmetric message.txt</a>
 <a class="sourceLine" id="cb13-3" title="3"></a>
 <a class="sourceLine" id="cb13-4" title="4"><span class="co"># Asymmetric encrypt with signature</span></a>
 <a class="sourceLine" id="cb13-5" title="5"><span class="ex">gpg</span> --sign --encrypt --recipient nanodano@devdungeon.com message.txt</a></code></pre></div>
 <h3 id="verify-signatures">Verify Signatures</h3>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb14-1" title="1"><span class="co"># When you decrypt the message it will verify the signature</span></a>
+<div class="sourceCode" id="cb14"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb14-1" title="1"><span class="co"># When you decrypt the message it will verify the signature</span></a>
 <a class="sourceLine" id="cb14-2" title="2"><span class="ex">gpg</span> --decrypt message.txt.asc</a>
 <a class="sourceLine" id="cb14-3" title="3"></a>
 <a class="sourceLine" id="cb14-4" title="4"><span class="co"># Verify a signed message that included a signature</span></a>
@@ -314,7 +314,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb14-6" title="6"><span class="co"># Verify and extract original document</span></a>
 <a class="sourceLine" id="cb14-7" title="7"><span class="ex">gpg</span> --output message.txt message.txt.asc</a></code></pre></div>
 <h3 id="detached-signatures">Detached Signatures</h3>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" title="1"><span class="co"># Create a separate signature file</span></a>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" title="1"><span class="co"># Create a separate signature file</span></a>
 <a class="sourceLine" id="cb15-2" title="2"><span class="ex">gpg</span> --detach-sign message.txt</a>
 <a class="sourceLine" id="cb15-3" title="3"><span class="co"># Will create message.txt.sig</span></a>
 <a class="sourceLine" id="cb15-4" title="4"></a>

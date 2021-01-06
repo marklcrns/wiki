@@ -9,17 +9,17 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Lucernas">
 
-    <title>Unit 6</title>
+    <title>leetcode-cli Usage</title>
 
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
-    <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
+    <link href="../../../templates/css/animated-toc.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
-    <link href="../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../templates/css/bootstrap.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
+    <link href="../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
@@ -98,7 +98,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">School Wiki</a>
+          <a class="navbar-brand" href="#">Docs Wiki</a>
         </div>
         <!-- <div id="navbar" class="navbar-collapse collapse">                                                                                                                 -->
         <!--   <ul class="nav navbar-nav">                                                                                                                                      -->
@@ -128,11 +128,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#unit-6">Unit 6</a><ul>
-          <li><a href="#notes">Notes</a></li>
-          <li><a href="#assignment">Assignment</a></li>
-          <li><a href="#lab">Lab</a></li>
+          <li><a href="#usage">Usage</a><ul>
+          <li><a href="#quick-start">Quick Start</a><ul>
+          <li><a href="#issues">Issues</a></li>
           </ul></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
           </ul>
           <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
             <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
@@ -144,39 +145,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <header>
             <div class="jumbotron">
               <div class="page-header">
-                <a href="../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <a href="../index.html">Wiki Root</a> | <a href="../index.html">index</a>
                 <h1 class="title">
-                  Unit 6
-                  <small class="h3 text-muted subtitle">
-                    | Notes and activities
-                  </small>
+                  leetcode-cli Usage
                 </h1>
               </div>
             </div>
           </header>
           <div class="h5 text-muted">
             <h5 class="author">Mark Lucernas</h5>
-            <h5 class="date">Nov 16, 2020</h5>
+            <h5 class="date">Jan 03, 2021</h5>
           </div>
 
 <!-- Contents -->
           <article class="contents">
-<h1 id="unit-6">Unit 6</h1>
-<h2 id="notes">Notes</h2>
+<h1 id="usage">Usage</h1>
+<h2 id="quick-start">Quick Start</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># Basics</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="ex">leetcode</span> help                               <span class="co"># Read help first</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="ex">leetcode</span> user -l                            <span class="co"># Login with your leetcode account</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="ex">leetcode</span> list                               <span class="co"># Browse all questions</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="ex">leetcode</span> show 1 -g -l cpp                   <span class="co"># Choose one question</span></a>
+<a class="sourceLine" id="cb1-6" title="6"></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="co"># Coding</span></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="ex">leetcode</span> test ./two-sum.cpp -t <span class="st">&#39;[3,2,4]\n7&#39;</span> <span class="co"># Run test(s) with test inputs</span></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="ex">leetcode</span> submit ./two-sum.cpp               <span class="co"># Submit final solution!</span></a></code></pre></div>
+<p>Ref:</p>
 <ul>
-<li><a href="notes.html">↪ Unit 6 Notes</a></li>
+<li><a href="https://skygragon.github.io/leetcode-cli/commands">📄 leetcode-cli Commands</a></li>
 </ul>
-<h2 id="assignment">Assignment</h2>
-<p>Using RaspberryPi 4 Computer via <code>ssh</code> or <a href="https://putty.org/">PuTTY</a></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">ssh</span> cisc-211-13@76.88.116.15 <span class="co"># password &#39;P(PW Template 4)N&#39;</span></a></code></pre></div>
+<h3 id="issues">Issues</h3>
 <ul>
-<li><a href="../../../../files/fall-2020/CISC-211/unit-6/hello.s">⬇ hello.s</a></li>
-<li><a href="../../../../files/fall-2020/CISC-211/unit-6/makefile">⬇ makefile</a></li>
-<li><a href="../../../../files/fall-2020/CISC-211/unit-6/unit-6_assignment.pdf">⬇ Unit 6 Assignment</a></li>
+<li><a href="https://github.com/skygragon/leetcode-cli/issues/153.html#issuecomment-590818198">📄 [ERROR] invalid password? #153</a></li>
 </ul>
-<h2 id="lab">Lab</h2>
+<blockquote>
+<p><strong>NOTE:</strong> Install <code>cookie.firefox</code> plugin if having problems installing <code>cookie.chrome</code></p>
+</blockquote>
+<p><br></p>
+<h1 id="resources">Resources</h1>
 <ul>
-<li><a href="../../../../files/fall-2020/CISC-211/unit-6/unit-6_lab.pdf">⬇ Unit 6 Lab</a></li>
+<li><a href="https://skygragon.github.io/leetcode-cli/commands">📄 leetcode-cli Commands</a></li>
+<li><a href="https://github.com/skygragon/leetcode-cli/issues/153.html#issuecomment-590818198">📄 [ERROR] invalid password? #153</a></li>
 </ul>
           </article>
           </div>
@@ -186,11 +195,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../../../../templates/js/jquery.min.js"></script>
+    <script src="../../../templates/js/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../../../../templates/js/bootstrap.min.js"></script>
+    <script src="../../../templates/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../../../templates/js/ie10-viewport-bug-workaround.js"></script>
     <script>
         //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
 
@@ -207,6 +216,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
-    <script src="../../../../../templates/js/animated-toc.js"></script>
+    <script src="../../../templates/js/animated-toc.js"></script>
   </body>
 </html>

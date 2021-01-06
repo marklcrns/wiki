@@ -169,30 +169,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>javac</code> matching the version as <code>java</code> installed.</li>
 </ul>
 <h2 id="tldr">Tl;dr</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">mkdir</span> -p build</a>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">mkdir</span> -p build</a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="bu">alias</span> javarun=<span class="st">&#39;javac -Xlint -sourcepath src -d build src/main/**/*.java; find .  -name &quot;*.java&quot; -not -path &quot;*/test/*&quot; &gt; source.txt; java -cp build path.to.main.driver.Class&#39;</span></a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="ex">javarun</span></a></code></pre></div>
 <h2 id="building-and-running">Building and Running</h2>
 <p>From root project directory. Create <code>build</code> directory.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">mkdir</span> -p build</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">mkdir</span> -p build</a></code></pre></div>
 <p>Then run the following to compile <code>.java</code> into <code>build</code> directory as classpath</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="ex">javac</span> -Xlint -sourcepath src -d build src/main/**/*.java</a>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="ex">javac</span> -Xlint -sourcepath src -d build src/main/**/*.java</a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="fu">find</span> . -name <span class="st">&quot;*.java&quot;</span> -not -path <span class="st">&quot;*/test/*&quot;</span> <span class="op">&gt;</span> source.txt</a></code></pre></div>
 <p>Then copy all resource files into <code>build</code> directory</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">cp</span> src/main/resources/*.png src/main/resources/*.jpg build</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">cp</span> src/main/resources/*.png src/main/resources/*.jpg build</a></code></pre></div>
 <p>Then run main driver class</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="ex">java</span> -cp build path.to.main.driver.Class</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="ex">java</span> -cp build path.to.main.driver.Class</a></code></pre></div>
 <h4 id="recompiling">Recompiling</h4>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="ex">javac</span> -Xlint -sourcepath src -d build src/main/**/*.java</a>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="ex">javac</span> -Xlint -sourcepath src -d build src/main/**/*.java</a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="fu">find</span> . -name <span class="st">&quot;*.java&quot;</span> -not -path <span class="st">&quot;*/test/*&quot;</span> <span class="op">&gt;</span> source.txt</a>
 <a class="sourceLine" id="cb6-3" title="3"><span class="ex">java</span> -cp build path.to.main.driver.Class</a></code></pre></div>
 <h4 id="simple-shortcut">Simple Shortcut</h4>
 <p>Assign an alias to recompile with just one command</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="bu">alias</span> javarun=<span class="st">&#39;javac -Xlint -sourcepath src -d build src/main/**/*.java; find . -name &quot;*.java&quot; -not -path &quot;*/test/*&quot; &gt; source.txt; java -cp build path.to.main.driver.Class&#39;</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="bu">alias</span> javarun=<span class="st">&#39;javac -Xlint -sourcepath src -d build src/main/**/*.java; find . -name &quot;*.java&quot; -not -path &quot;*/test/*&quot; &gt; source.txt; java -cp build path.to.main.driver.Class&#39;</span></a></code></pre></div>
 <p>Then simply run</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="ex">javarun</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="ex">javarun</span></a></code></pre></div>
 <h4 id="cleaning-up">Cleaning Up</h4>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="fu">rm</span> -r build source.txt</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="fu">rm</span> -r build source.txt</a></code></pre></div>
           </article>
           </div>
       </div>

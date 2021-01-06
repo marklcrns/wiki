@@ -250,25 +250,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <h2 id="merge">Merge</h2>
 <p><strong>Manual interactive merging (with <code>git add --interactive</code>)</strong></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1">git merge --no-commit --no-ff &lt;branch-to merge&gt; # Merges with branch without committing</a>
-<a class="sourceLine" id="cb6-2" title="2">git reset HEAD                                  # Unstage all merge changes</a>
-<a class="sourceLine" id="cb6-3" title="3">git add --interactive                           # Add pieces interactively</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">git</span> merge --no-commit --no-ff <span class="op">&lt;</span>branch-to merge<span class="op">&gt;</span> <span class="co"># Merges with branch without committing</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="fu">git</span> reset HEAD                                  <span class="co"># Unstage all merge changes</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="fu">git</span> add --interactive                           <span class="co"># Add pieces interactively</span></a></code></pre></div>
 <p><strong>Manual interactive merging (with <code>git mergetool</code>)</strong></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb7-1" title="1">git merge --no-commit --no-ff &lt;branch-to-merge&gt; # Merges with branch without committing</a>
-<a class="sourceLine" id="cb7-2" title="2">git mergetool                                   # Resolve conflict manually with graphics</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="fu">git</span> merge --no-commit --no-ff <span class="op">&lt;</span>branch-to-merge<span class="op">&gt;</span> <span class="co"># Merges with branch without committing</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="fu">git</span> mergetool                                   <span class="co"># Resolve conflict manually with graphics</span></a></code></pre></div>
 <p><strong>Other very manual way of merging</strong></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb8-1" title="1"># Merges with branch without committing</a>
-<a class="sourceLine" id="cb8-2" title="2">git merge --no-commit --no-ff &lt;branch-to-merge&gt;</a>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="co"># Merges with branch without committing</span></a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="fu">git</span> merge --no-commit --no-ff <span class="op">&lt;</span>branch-to-merge<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb8-3" title="3"></a>
-<a class="sourceLine" id="cb8-4" title="4"># Then you&#39;ll ask git <span class="kw">for</span> the file as it appeared in the two branches:</a>
-<a class="sourceLine" id="cb8-5" title="5">git show HEAD:filename &gt;filename.<span class="fu">HEAD</span></a>
-<a class="sourceLine" id="cb8-6" title="6">git show branch-to-merge:filename &gt;filename.<span class="fu">branch</span></a>
+<a class="sourceLine" id="cb8-4" title="4"><span class="co"># Then you&#39;ll ask git for the file as it appeared in the two branches:</span></a>
+<a class="sourceLine" id="cb8-5" title="5"><span class="fu">git</span> show HEAD:filename <span class="op">&gt;</span>filename.HEAD</a>
+<a class="sourceLine" id="cb8-6" title="6"><span class="fu">git</span> show branch-to-merge:filename <span class="op">&gt;</span>filename.branch</a>
 <a class="sourceLine" id="cb8-7" title="7"></a>
-<a class="sourceLine" id="cb8-8" title="8"># and their merge base,</a>
-<a class="sourceLine" id="cb8-9" title="9">git show `git merge-base HEAD &lt;branch-to-merge&gt;`:filename  &gt;filename.<span class="fu">base</span></a>
+<a class="sourceLine" id="cb8-8" title="8"><span class="co"># and their merge base,</span></a>
+<a class="sourceLine" id="cb8-9" title="9"><span class="fu">git</span> show <span class="kw">`</span><span class="fu">git</span> merge-base HEAD <span class="op">&lt;</span>branch-to-merge<span class="op">&gt;</span><span class="kw">`</span>:filename  <span class="op">&gt;</span>filename.base</a>
 <a class="sourceLine" id="cb8-10" title="10"></a>
-<a class="sourceLine" id="cb8-11" title="11"># You&#39;ll merge them using whatever tool you <span class="fu">want</span> (e.<span class="fu">g</span>.)</a>
-<a class="sourceLine" id="cb8-12" title="12">meld filename.{HEAD,branch,base} # meld can be replaced by other diff tools</a></code></pre></div>
+<a class="sourceLine" id="cb8-11" title="11"><span class="co"># You&#39;ll merge them using whatever tool you want (e.g.)</span></a>
+<a class="sourceLine" id="cb8-12" title="12"><span class="ex">meld</span> filename.<span class="dt">{HEAD,branch,base}</span> <span class="co"># meld can be replaced by other diff tools</span></a></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://stackoverflow.com/a/22392289">📄 Interactive merging with git add –interactive</a></li>

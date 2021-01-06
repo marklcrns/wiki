@@ -201,17 +201,17 @@ set imap_keepalive = 900</code></pre>
 <h3 id="gnupg">GNUpg</h3>
 <p>For Debian based: <code>sudo apt-get install gnupg gnupg-agent</code> For RPM based : <code>sudo yum install gnupg gnupg-agent</code></p>
 <p>Generate encryption key. Enter name, email and passphrase.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">gpg</span> --gen-key</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">gpg</span> --gen-key</a></code></pre></div>
 <p>Create a new file <code>~/.mutt/.pass</code> containing the password(s) in this format:</p>
 <pre><code>GMail: &lt;password_goes_here&gt;</code></pre>
 <p>Encrypt <code>.pass</code></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="bu">cd</span> ~/.mutt</a>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="bu">cd</span> ~/.mutt</a>
 <a class="sourceLine" id="cb4-2" title="2"><span class="ex">gpg</span> --encrypt .pass</a></code></pre></div>
 <p>Then set imap and smtp password in your <code>muttrc</code></p>
 <pre class="muttrc"><code>set imap_pass = `gpg -d ~/.mutt/.pass.gpg | awk &#39;/GMail:/ {print $2}&#39;`
 set smpt_pass = `gpg -d ~/.mutt/.pass.gpg | awk &#39;/GMail:/ {print $2}&#39;`</code></pre>
 <p>Delete your password footprint</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">shred</span> ~/.mutt/.pass</a>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">shred</span> ~/.mutt/.pass</a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="fu">rm</span> ~/.mutt/.pass</a></code></pre></div>
 <p>Done!</p>
 <ul>
