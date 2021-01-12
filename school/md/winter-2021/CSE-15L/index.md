@@ -17,15 +17,13 @@ date: Jan 06, 2021
 
 ## Course Materials
 
+- [📄 Syllabus](http://ieng6.ucsd.edu/~cs15x/)
 - [📄 Course website](http://ieng6.ucsd.edu/~cs15x/)
 - [⬇ A Practical Guide to Linux Commands, Editors, and Shell Programming](file:../../../files/winter-2021/CSE-15L/A-Practical-Guide-to-Linux-Commands-Editors-and-Shell-Programming-2nd-Edition.pdf)
 - [⬇ GDB Cheat Sheet](file:../../../files/winter-2021/CSE-15L/GDB Cheat Sheet.pdf)
-
-> Course syllabus covered in [⬇ Lecture 1](file:../../../files/winter-2021/CSE-15L/lectures/Lecture01-CSE15L-SectB-Winter2021-4Jan2021.pdf)
 
 ### Lectures
 
 - [⬇ Lecture 1](file:../../../files/winter-2021/CSE-15L/lectures/Lecture01-CSE15L-SectB-Winter2021-4Jan2021.pdf)
 - [⬇ Lecture 2](file:../../../files/winter-2021/CSE-15L/lectures/Lecture02-CSE15L-SectB-Winter2021-6Jan2021.pdf)
-
 
