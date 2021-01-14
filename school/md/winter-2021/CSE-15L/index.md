@@ -26,4 +26,6 @@ date: Jan 06, 2021
 
 - [⬇ Lecture 1](file:../../../files/winter-2021/CSE-15L/lectures/Lecture01-CSE15L-SectB-Winter2021-4Jan2021.pdf)
 - [⬇ Lecture 2](file:../../../files/winter-2021/CSE-15L/lectures/Lecture02-CSE15L-SectB-Winter2021-6Jan2021.pdf)
+- [⬇ Lecture 3](file:../../../files/winter-2021/CSE-15L/lectures/Lecture03-CSE15L-SectB-Winter2021-11Jan2021.pdf)
+- [⬇ Lecture 4](file:../../../files/winter-2021/CSE-15L/lectures/Lecture04-CSE15L-SectB-Winter2021-13Jan2021.pdf)
 
