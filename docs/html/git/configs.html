@@ -131,6 +131,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li><a href="#git-configurations">Git Configurations</a><ul>
           <li><a href="#credential-helper">Credential Helper</a></li>
           <li><a href="#gitignore"><code>.gitignore</code></a><ul>
+          <li><a href="#examples">Examples</a></li>
           <li><a href="#ignoring-committed-files">Ignoring Committed Files</a></li>
           <li><a href="#global">Global</a></li>
           </ul></li>
@@ -189,15 +190,93 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh">📄 Connecting to Github with SSH</a></li>
 </ul>
 <h2 id="gitignore"><code>.gitignore</code></h2>
+<h3 id="examples">Examples</h3>
+<pre class=".gitignore"><code># Lines starting with `#` are comments.
+
+# Ignore files called &#39;file.ext&#39;
+file.ext
+
+# Comments can&#39;t be on the same line as rules!
+# The following line ignores files called &#39;file.ext # not a comment&#39;
+file.ext # not a comment 
+
+# Ignoring files with full path.
+# This matches files in the root directory and subdirectories too.
+# i.e. otherfile.ext will be ignored anywhere on the tree.
+dir/otherdir/file.ext
+otherfile.ext
+
+# Ignoring directories
+# Both the directory itself and its contents will be ignored.
+bin/
+gen/
+
+# Glob pattern can also be used here to ignore paths with certain characters.
+# For example, the below rule will match both build/ and Build/
+[bB]uild/
+
+# Without the trailing slash, the rule will match a file and/or
+# a directory, so the following would ignore both a file named `gen`
+# and a directory named `gen`, as well as any contents of that directory
+bin
+gen
+
+# Ignoring files by extension
+# All files with these extensions will be ignored in
+# this directory and all its sub-directories.
+*.apk
+*.class
+
+# It&#39;s possible to combine both forms to ignore files with certain
+# extensions in certain directories. The following rules would be
+# redundant with generic rules defined above.
+java/*.apk
+gen/*.class
+
+# To ignore files only at the top level directory, but not in its
+# subdirectories, prefix the rule with a `/`
+/*.apk
+/*.class
+
+# To ignore any directories named DirectoryA 
+# in any depth use ** before DirectoryA
+# Do not forget the last /, 
+# Otherwise it will ignore all files named DirectoryA, rather than directories
+**/DirectoryA/
+# This would ignore 
+# DirectoryA/
+# DirectoryB/DirectoryA/ 
+# DirectoryC/DirectoryB/DirectoryA/
+# It would not ignore a file named DirectoryA, at any level
+
+# To ignore any directory named DirectoryB within a 
+# directory named DirectoryA with any number of 
+# directories in between, use ** between the directories
+DirectoryA/**/DirectoryB/
+# This would ignore 
+# DirectoryA/DirectoryB/ 
+# DirectoryA/DirectoryQ/DirectoryB/ 
+# DirectoryA/DirectoryQ/DirectoryW/DirectoryB/
+
+# To ignore a set of files, wildcards can be used, as can be seen above.
+# A sole &#39;*&#39; will ignore everything in your folder, including your .gitignore file.
+# To exclude specific files when using wildcards, negate them.
+# So they are excluded from the ignore list:
+!.gitignore 
+
+# Use the backslash as escape character to ignore files with a hash (#)
+# (supported since 1.6.2.1)
+\#*#</code></pre>
 <h3 id="ignoring-committed-files">Ignoring Committed Files</h3>
 <p>From the root directory</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">git</span> rm -r --cached . <span class="kw">&amp;&amp;</span>  <span class="fu">git</span> add .</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">git</span> rm -r --cached . <span class="kw">&amp;&amp;</span>  <span class="fu">git</span> add .</a></code></pre></div>
 <h3 id="global">Global</h3>
 <p>Creating global gitignore</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">git</span> config --global core.excludesfile ~/.gitignore_global</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">git</span> config --global core.excludesfile ~/.gitignore_global</a></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://docs.github.com/en/github/using-git/ignoring-files">📄 Ignoring files</a></li>
+<li><a href="https://riptutorial.com/git/example/885/ignoring-files-and-directories-with-a--gitignore-file">📄 Ignoring files nad directories with a.gitignore file</a></li>
 </ul>
 <p><br></p>
 <h1 id="resources">Resources</h1>
