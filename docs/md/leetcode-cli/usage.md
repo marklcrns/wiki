@@ -25,16 +25,31 @@ Ref:
 
 - [📄 leetcode-cli Commands](https://skygragon.github.io/leetcode-cli/commands)
 
-### Issues
+## Plugins
 
-- [📄 [ERROR] invalid password? #153](https://github.com/skygragon/leetcode-cli/issues/153#issuecomment-590818198)
+Plugins installation
+
+```sh
+# Install plugin
+leetcode plugin -i <plugin-name>
+# Remove plugin
+leetcode plugin -D <plugin-name>
+```
+
+- [📄 leetcode-cli-plugins](https://github.com/skygragon/leetcode-cli-plugins)
+
+## Issues
+
+- [📄 ERROR invalid password? #153](https://github.com/skygragon/leetcode-cli/issues/153#issuecomment-590818198)
 
 > **NOTE:** Install `cookie.firefox` plugin if having problems installing
 `cookie.chrome`
+
 
 <br>
 
 # Resources
 
 - [📄 leetcode-cli Commands](https://skygragon.github.io/leetcode-cli/commands)
-- [📄 [ERROR] invalid password? #153](https://github.com/skygragon/leetcode-cli/issues/153#issuecomment-590818198)
+- [📄 leetcode-cli-plugins](https://github.com/skygragon/leetcode-cli-plugins)
+- [📄 ERROR invalid password? #153](https://github.com/skygragon/leetcode-cli/issues/153#issuecomment-590818198)
