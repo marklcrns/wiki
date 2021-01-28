@@ -24,11 +24,11 @@ date: Jan 06, 2021
 
 ### Lectures
 
-- [⬇ Lecture 1](file:../../../files/winter-2021/CSE-15L/lectures/Lecture01-CSE15L-SectA-Winter2021-4Jan2021.pdf)
-- [⬇ Lecture 2](file:../../../files/winter-2021/CSE-15L/lectures/Lecture02-CSE15L-SectB-Winter2021-6Jan2021.pdf)
-- [⬇ Lecture 3](file:../../../files/winter-2021/CSE-15L/lectures/Lecture03-CSE15L-SectB-Winter2021-11Jan2021.pdf)
-- [⬇ Lecture 4](file:../../../files/winter-2021/CSE-15L/lectures/Lecture04-CSE15L-SectB-Winter2021-13Jan2021.pdf)
-- [⬇ Lecture 5](file:../../../files/winter-2021/CSE-15L/lectures/Lecture05-CSE15L-SectB-Winter2021-20Jan2021.pdf)
-- [⬇ Lecture 6](file:../../../files/winter-2021/CSE-15L/lectures/Lecture06-CSE15L-SectB-Winter2021-25Jan2021.pdf)
-- [⬇ Lecture 7](file:../../../files/winter-2021/CSE-15L/lectures/Lecture07-CSE15L-SectB-Winter2021-27Jan2021.pdf)
+- [⬇ Lecture 1: Introduction to vi/vim](file:../../../files/winter-2021/CSE-15L/lectures/Lecture01-CSE15L-SectB-Winter2021-4Jan2021.pdf)
+- [⬇ Lecture 2: Introduction to Unix](file:../../../files/winter-2021/CSE-15L/lectures/Lecture02-CSE15L-SectB-Winter2021-6Jan2021.pdf)
+- [⬇ Lecture 3: Introduction to Debugging, Unix Standard IO](file:../../../files/winter-2021/CSE-15L/lectures/Lecture03-CSE15L-SectB-Winter2021-11Jan2021.pdf)
+- [⬇ Lecture 4: Memory Management, Valgrind, Unix Piping](file:../../../files/winter-2021/CSE-15L/lectures/Lecture04-CSE15L-SectB-Winter2021-13Jan2021.pdf)
+- [⬇ Lecture 5: IDEs, More Unix](file:../../../files/winter-2021/CSE-15L/lectures/Lecture05-CSE15L-SectB-Winter2021-20Jan2021.pdf)
+- [⬇ Lecture 6: More Unix, Shell Script, File Permissions](file:../../../files/winter-2021/CSE-15L/lectures/Lecture06-CSE15L-SectB-Winter2021-25Jan2021.pdf)
+- [⬇ Lecture 7: More Shell Scripts, Build Automation, Makefile](file:../../../files/winter-2021/CSE-15L/lectures/Lecture07-CSE15L-SectB-Winter2021-27Jan2021.pdf)
 
