@@ -6,7 +6,7 @@ date: Jan 06, 2021
 ---
 
 
-# CSE 15L
+# CSE 15L Software Tools and Techniques Laboratory
 > Professor: Gary Gillespie<br>
 > email: ggillespie@ucsd.edu<br>
 > Campus: UC San Diego (remote)<br>
