@@ -10,10 +10,10 @@ date: Jan 06, 2021
 
 ## UCSD Cross-Enrollment
 
-- [↪ CSE 15L](CSE-15L/index) -- Software Tools and Techniques Laboratory
+- [↪ CSE 15L](CSE-15L/index) -- Software Tools and Techniques Laboratory (A12 - online)
 
 ## SDCCD
 
-- [↪ MATH 151](MATH-151/index) -- Calculus/Analytic Geometry II
-- [↪ PHYS 195](PHYS-195/index) -- Mechanics
+- [↪ MATH 151](MATH-151/index) -- Calculus/Analytic Geometry II (50494 - online)
+- [↪ PHYS 195](PHYS-195/index) -- Mechanics (53305 - online)
 
