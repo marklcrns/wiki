@@ -14,6 +14,7 @@ date: Jan 06, 2021
 
 ## SDCCD
 
+- [↪ CISC 187](CISC-187/index) -- Data Structures in C++ (53799 - online)
 - [↪ MATH 151](MATH-151/index) -- Calculus/Analytic Geometry II (50494 - online)
 - [↪ PHYS 195](PHYS-195/index) -- Mechanics (53305 - online)
 

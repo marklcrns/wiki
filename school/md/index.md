@@ -39,7 +39,7 @@ Total Units Enrolled: **19** units
 
 **Start/End Date:** 2021-01-04 - 2021-03-20
 
-Total Units Enrolled: **2** units
+Total Units Enrolled: **15** units
 
 - [↪ Winter 2021](winter-2021/index)
 

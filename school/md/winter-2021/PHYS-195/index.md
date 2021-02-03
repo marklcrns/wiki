@@ -17,8 +17,14 @@ date: Jan 31, 2021
 
 ## Course Materials
 
-- [⬇ Syllabus](file:../../../files/winter-2021/MATH-151/syllabus.pdf)
+- [⬇ Syllabus](file:../../../files/winter-2021/PHYS-195/syllabus.pdf)
 - [⬇ Fundamentals of Physics 9th Edition](file:../../../files/winter-2021/PHYS-195/FundamentalsOfPhysics_9thEdition.pdf)
 - [⬇ Fundamentals of Physics 9th Edition: Instructor's Solution Manual](file:../../../files/winter-2021/PHYS-195/FundamentalsOfPhysics_9thEdition_InstructorSolutionManual.pdf)
 - [⬇ Fundamentals of Physics 10th Edition](file:../../../files/winter-2021/PHYS-195/FundamentalsOfPhysics_10thEdition.pdf)
+
+## Lecture Notes
+
+- [↪ Lecture 1](lectures/lecture-1)
+- [↪ Lecture 2](lectures/lecture-2)
+- [↪ Lecture 3](lectures/lecture-3)
 
