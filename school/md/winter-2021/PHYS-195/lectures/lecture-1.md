@@ -27,3 +27,7 @@ date: Feb 02, 2021
 
 - [⬇ Lecture 1](file:../../../../files/winter-2021/PHYS-195/lectures/lecture1.pdf)
 - [⬇ Lecture 1 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture1_clean.pdf)
+
+Textbook
+
++ [⬇ Fundamentals of Physics 10th Edition](file:../../../../files/winter-2021/PHYS-195/FundamentalsOfPhysics_10thEdition.pdf)

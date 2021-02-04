@@ -31,3 +31,7 @@ then we can cancel out the $ft^{3}$.
 
 - [⬇ Lecture 2](file:../../../../files/winter-2021/PHYS-195/lectures/lecture2.pdf)
 - [⬇ Lecture 2 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture2_clean.pdf)
+
+Textbook
+
++ [⬇ Fundamentals of Physics 10th Edition](file:../../../../files/winter-2021/PHYS-195/FundamentalsOfPhysics_10thEdition.pdf)

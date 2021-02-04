@@ -18,7 +18,7 @@ date: Feb 02, 2021
 <a name="scalar-term">**Scalar**</a>
 
 - a quantity that has only magnitude (size, amount, #), **but no direction**.
-- Ex: volume, lenght, distance, mass, time, speed
+- Ex: volume, length, distance, mass, time, speed
 
 <a name="vector-term">**vector**</a>
 
@@ -54,9 +54,35 @@ $$
 
 **Method 1: Head-to-tail**
 
+Calculating displacement is like calculating for the hypotenuse: $\vec{R}
+= \sqrt{\vec{A}^{2} + \vec{B}^{2}}$
+
+> A negative vector $-\vec{A}$ is the same as a positive vector $\vec{A}$ but in
+the opposite direction
+
+**Method 2: Tail-to-tail**
+
+Make a parallelogram and $\vec{A} + \vec{B}$ is the body diagonal or the
+resultant $\vec{R}$
+
+#### Vector Subtraction
+
+**Method 1**
+
+$$
+\vec{R} = \vec{A} - \vec{B} \\
+\text{or} \\
+\vec{R} = \vec{A} + (-\vec{B})
+$$
+
+
 <br>
 
 # Resources
 
 - [⬇ Lecture 3](file:../../../../files/winter-2021/PHYS-195/lectures/lecture3.pdf)
 - [⬇ Lecture 3 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture3_clean.pdf)
+
+Textbook
+
++ [⬇ Fundamentals of Physics 10th Edition](file:../../../../files/winter-2021/PHYS-195/FundamentalsOfPhysics_10thEdition.pdf)
