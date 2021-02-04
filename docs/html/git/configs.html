@@ -129,6 +129,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
           <li><a href="#git-configurations">Git Configurations</a><ul>
+          <li><a href="#setting-global-git-username-and-password">Setting Global Git Username and Password</a></li>
           <li><a href="#credential-helper">Credential Helper</a></li>
           <li><a href="#gitignore"><code>.gitignore</code></a><ul>
           <li><a href="#examples">Examples</a></li>
@@ -166,6 +167,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Contents -->
           <article class="contents">
 <h1 id="git-configurations">Git Configurations</h1>
+<h2 id="setting-global-git-username-and-password">Setting Global Git Username and Password</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">git</span> config --global user.name <span class="st">&quot;Your Name&quot;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="fu">git</span> config --global user.email <span class="st">&quot;youremail@yourdomain.com&quot;</span></a></code></pre></div>
+<p>Ref:</p>
+<ul>
+<li><a href="https://linuxize.com/post/how-to-configure-git-username-and-email/">📄 How to Configure Git Username and Email Address</a></li>
+</ul>
 <h2 id="credential-helper">Credential Helper</h2>
 <p>Store Git username and password (will never ask for credentials again)</p>
 <ul>
@@ -269,10 +277,10 @@ DirectoryA/**/DirectoryB/
 \#*#</code></pre>
 <h3 id="ignoring-committed-files">Ignoring Committed Files</h3>
 <p>From the root directory</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">git</span> rm -r --cached . <span class="kw">&amp;&amp;</span>  <span class="fu">git</span> add .</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">git</span> rm -r --cached . <span class="kw">&amp;&amp;</span>  <span class="fu">git</span> add .</a></code></pre></div>
 <h3 id="global">Global</h3>
 <p>Creating global gitignore</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">git</span> config --global core.excludesfile ~/.gitignore_global</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">git</span> config --global core.excludesfile ~/.gitignore_global</a></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://docs.github.com/en/github/using-git/ignoring-files">📄 Ignoring files</a></li>
@@ -281,9 +289,11 @@ DirectoryA/**/DirectoryB/
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
+<li><a href="https://linuxize.com/post/how-to-configure-git-username-and-email/">📄 How to Configure Git Username and Email Address</a></li>
 <li><a href="https://www.freecodecamp.org/news/how-to-fix-git-always-asking-for-user-credentials/">📄 How to fix Git always asking for user credentials</a></li>
 <li><a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh">📄 Connecting to Github with SSH</a></li>
 <li><a href="https://docs.github.com/en/github/using-git/ignoring-files">📄 Ignoring files</a></li>
+<li><a href="https://riptutorial.com/git/example/885/ignoring-files-and-directories-with-a--gitignore-file">📄 Ignoring files nad directories with a.gitignore file</a></li>
 </ul>
           </article>
           </div>

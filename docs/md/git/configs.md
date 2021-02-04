@@ -7,6 +7,17 @@ date: Aug 08, 2020
 
 # Git Configurations
 
+## Setting Global Git Username and Password
+
+```sh
+git config --global user.name "Your Name"
+git config --global user.email "youremail@yourdomain.com"
+```
+
+Ref:
+
+- [📄 How to Configure Git Username and Email Address](https://linuxize.com/post/how-to-configure-git-username-and-email/)
+
 ## Credential Helper
 
 Store Git username and password (will never ask for credentials again)
@@ -144,7 +155,9 @@ Ref:
 
 # Resources
 
+- [📄 How to Configure Git Username and Email Address](https://linuxize.com/post/how-to-configure-git-username-and-email/)
 - [📄 How to fix Git always asking for user credentials](https://www.freecodecamp.org/news/how-to-fix-git-always-asking-for-user-credentials/)
 - [📄 Connecting to Github with SSH](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)
 - [📄 Ignoring files](https://docs.github.com/en/github/using-git/ignoring-files)
+- [📄 Ignoring files nad directories with a.gitignore file](https://riptutorial.com/git/example/885/ignoring-files-and-directories-with-a--gitignore-file)
 
