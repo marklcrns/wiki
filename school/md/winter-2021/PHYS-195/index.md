@@ -28,3 +28,7 @@ date: Jan 31, 2021
 - [↪ Lecture 2](lectures/lecture-2)
 - [↪ Lecture 3](lectures/lecture-3)
 
+## Homeworks
+
+- [⬇ Homework 1](file:../../../files/winter-2021/PHYS-195/homeworks/homework_1.pdf)
+

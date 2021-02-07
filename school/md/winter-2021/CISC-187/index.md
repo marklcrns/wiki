@@ -19,4 +19,5 @@ date: Feb 01, 2021
 
 - [⬇ Syllabus](file:../../../files/winter-2021/CISC-187/syllabus.pdf)
 - [📄 Course Reader Textbook](https://daveparillo.github.io/cisc187-reader/)
+- [📄 Quadratic Formula for TI-83/84 Calculators](https://brownmath.com/ti83/quadrat.htm)
 
