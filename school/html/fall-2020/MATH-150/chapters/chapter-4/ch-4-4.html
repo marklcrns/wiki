@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Lucernas">
 
-    <title>Chapter 4 Indeterminate Forms and l’Hospital’s Rule</title>
+    <title>Chapter 4 Indeterminate Forms and l’Hopital’s Rule</title>
 
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
@@ -66,14 +66,14 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-4-indeterminate-forms-and-lhospitals-rule">Chapter 4: Indeterminate Forms and l’Hospital’s Rule</a><ul>
-          <li><a href="#indeterminate-forms-and-lhospitals-rule">Indeterminate Forms and l’Hospital’s Rule</a><ul>
+          <li><a href="#chapter-4-indeterminate-forms-and-lhopitals-rule">Chapter 4: Indeterminate Forms and l’Hopital’s Rule</a><ul>
+          <li><a href="#indeterminate-forms-and-lhopitals-rule">Indeterminate Forms and l’Hopital’s Rule</a><ul>
           <li><a href="#definition-1">Definition 1</a></li>
           <li><a href="#definition-2">Definition 2</a></li>
-          <li><a href="#lhospitals-rule">L’Hospital’s Rule</a></li>
+          <li><a href="#lhopitals-rule">L’Hopital’s Rule</a></li>
           </ul></li>
           <li><a href="#indeterminate-products">Indeterminate Products</a><ul>
-          <li><a href="#lhospital">L’Hospital</a></li>
+          <li><a href="#lhopital">L’Hopital</a></li>
           </ul></li>
           <li><a href="#indeterminate-differences">Indeterminate Differences</a></li>
           <li><a href="#indeterminate-powers">Indeterminate Powers</a></li>
@@ -93,7 +93,7 @@
               <div class="page-header">
                 <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
                 <h1 class="title">
-                  Chapter 4 Indeterminate Forms and l’Hospital’s Rule
+                  Chapter 4 Indeterminate Forms and l’Hopital’s Rule
                   <small class="h3 text-muted subtitle">
                     | Application of Differentiation
                   </small>
@@ -108,8 +108,8 @@
 
 <!-- Contents -->
           <article class="contents">
-<h1 id="chapter-4-indeterminate-forms-and-lhospitals-rule">Chapter 4: Indeterminate Forms and l’Hospital’s Rule</h1>
-<h2 id="indeterminate-forms-and-lhospitals-rule">Indeterminate Forms and l’Hospital’s Rule</h2>
+<h1 id="chapter-4-indeterminate-forms-and-lhopitals-rule">Chapter 4: Indeterminate Forms and l’Hopital’s Rule</h1>
+<h2 id="indeterminate-forms-and-lhopitals-rule">Indeterminate Forms and l’Hopital’s Rule</h2>
 <p>Suppose we are trying to analyze the behavior of the function</p>
 <p><span class="math display">\[
 F(x) = \frac{\ln{x}}{x - 1}
@@ -132,7 +132,7 @@ F(x) = \frac{\ln{x}}{x - 1}
 <p><span class="math display">\[
 \lim_{x \to 0}\frac{\sin{x}}{x} = 1
 \]</span></p>
-<p>But these methods do not work for limits such as (1), so in this section we introduce a systematic method, known as <em>l’Hospital’s Rule</em>, for the evaluation of indeterminate forms.</p>
+<p>But these methods do not work for limits such as (1), so in this section we introduce a systematic method, known as <em>l’Hopital’s Rule</em>, for the evaluation of indeterminate forms.</p>
 <p>Another situation in which a limit is not obvious occurs when we look for a horizontal asymptote <span class="math inline">\(F\)</span> of and need to evaluate the limit</p>
 <h3 id="definition-2">Definition 2</h3>
 <p><span class="math display">\[
@@ -148,7 +148,7 @@ F(x) = \frac{\ln{x}}{x - 1}
 \lim_{x \to \infty}\frac{x^{2} - 1}{2x^{2} + 1} = \lim_{x \to \infty}\frac{1 - \frac{1}{x^{2}}}{2 + \frac{1}{x^{2}}} = \frac{1 - 0}{2 + 0} = \frac{1}{2}
 \]</span></p>
 <p>This method does not work for limits such as (2), but l’Hospital’s Rule also applies to this type of indeterminate form.</p>
-<h3 id="lhospitals-rule">L’Hospital’s Rule</h3>
+<h3 id="lhopitals-rule">L’Hopital’s Rule</h3>
 <p>Suppose <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are differentiable and <span class="math inline">\(g^{\prime}(x) \neq 0\)</span> on an open interval <span class="math inline">\(I\)</span> that contains <span class="math inline">\(a\)</span> (except possibly at <span class="math inline">\(a\)</span>). Suppose that</p>
 <p><span class="math display">\[
 \lim_{x \to a}f(x) = 0
@@ -174,13 +174,13 @@ F(x) = \frac{\ln{x}}{x - 1}
 <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_figure-1.png" alt="Figure 1" /><figcaption>Figure 1</figcaption>
 </figure>
 <blockquote>
-<p><strong>Note 1</strong> L’Hospital’s Rule says that the limit of a quotient of functions is equal to the limit of the quotient of their derivatives, provided that the given conditions are satisfied. It is especially important to verify the conditions regarding the limits of <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> before using l’Hospital’s Rule.</p>
+<p><strong>Note 1</strong> L’Hopital’s Rule says that the limit of a quotient of functions is equal to the limit of the quotient of their derivatives, provided that the given conditions are satisfied. It is especially important to verify the conditions regarding the limits of <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> before using l’Hopital’s Rule.</p>
 </blockquote>
 <blockquote>
-<p><strong>Note 2</strong> L’Hospital’s Rule is also valid for one-sided limits and for limits at infinity or negative infinity; that is, “<span class="math inline">\(x \to a\)</span>” can be replaced by any of the symbols <span class="math inline">\(x \to a^{+}\)</span>, <span class="math inline">\(x \to a^{-}\)</span>, <span class="math inline">\(x \to \infty\)</span>, or <span class="math inline">\(x \to -\infty\)</span>.</p>
+<p><strong>Note 2</strong> L’Hopital’s Rule is also valid for one-sided limits and for limits at infinity or negative infinity; that is, “<span class="math inline">\(x \to a\)</span>” can be replaced by any of the symbols <span class="math inline">\(x \to a^{+}\)</span>, <span class="math inline">\(x \to a^{-}\)</span>, <span class="math inline">\(x \to \infty\)</span>, or <span class="math inline">\(x \to -\infty\)</span>.</p>
 </blockquote>
 <blockquote>
-<p><strong>Note 3</strong> For the special case in which <span class="math inline">\(f(a) = g(a) = 0\)</span>, <span class="math inline">\(f^{\prime}\)</span> and <span class="math inline">\(g^{\prime}\)</span> are continuous, and <span class="math inline">\(g^{\prime}(a) \neq 0\)</span>, it is easy to see why l’Hospital’s Rule is true. In fact, using the alternative form of the definition of a derivative, we have</p>
+<p><strong>Note 3</strong> For the special case in which <span class="math inline">\(f(a) = g(a) = 0\)</span>, <span class="math inline">\(f^{\prime}\)</span> and <span class="math inline">\(g^{\prime}\)</span> are continuous, and <span class="math inline">\(g^{\prime}(a) \neq 0\)</span>, it is easy to see why l’hopital’s Rule is true. In fact, using the alternative form of the definition of a derivative, we have</p>
 </blockquote>
 <p><span class="math display">\[
 \begin{aligned}
@@ -205,12 +205,12 @@ fg = \frac{f}{1/g}
 <p><span class="math display">\[
 fg = \frac{g}{1/f}
 \]</span></p>
-<p>This converts the given limit into an indeterminate form of type <span class="math inline">\(\frac{0}{0}\)</span> or <span class="math inline">\(\infty/\infty\)</span> so that we can use l’Hospital’s Rule.</p>
+<p>This converts the given limit into an indeterminate form of type <span class="math inline">\(\frac{0}{0}\)</span> or <span class="math inline">\(\infty/\infty\)</span> so that we can use l’hopital’s Rule.</p>
 <figure>
 <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-6.png" alt="Example 6" /><figcaption>Example 6</figcaption>
 </figure>
-<h3 id="lhospital">L’Hospital</h3>
-<p>L’Hospital’s Rule is named after a French nobleman, the Marquis de l’Hospital (1661–1704), but was discovered by a Swiss mathematician, John Bernoulli (1667–1748). You might sometimes see l’Hospital spelled as l’Hôpital, but he spelled his own name l’Hospital, as was common in the 17th century. See Exercise 83 for the example that the Marquis used to illustrate his rule. See the project for further historical details.</p>
+<h3 id="lhopital">L’Hopital</h3>
+<p>L’Hopital’s Rule is named after a French nobleman, the Marquis de l’hopital (1661–1704), but was discovered by a Swiss mathematician, John Bernoulli (1667–1748). You might sometimes see l’hopital spelled as l’Hôpital, but he spelled his own name l’hopital, as was common in the 17th century. See Exercise 83 for the example that the Marquis used to illustrate his rule. See the project for further historical details.</p>
 <h2 id="indeterminate-differences">Indeterminate Differences</h2>
 <p>If <span class="math inline">\(\lim_{x \to a}f(x) = \infty\)</span> and <span class="math inline">\(\lim_{x \to a}g(x) = \infty\)</span>, then the limit</p>
 <p><span class="math display">\[
