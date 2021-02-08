@@ -19,3 +19,7 @@ date: Jan 31, 2021
 
 - [⬇ Syllabus](file:../../../files/winter-2021/MATH-151/syllabus.pdf)
 
+## Homework Solutions
+
+- [⬇ Homework 1](file:../../../files/winter-2021/MATH-151/homeworks/homework1.pdf)
+
