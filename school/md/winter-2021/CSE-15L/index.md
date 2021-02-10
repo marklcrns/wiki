@@ -33,4 +33,6 @@ date: Jan 06, 2021
 - [⬇ Lecture 7: More Shell Scripts, Build Automation, Makefile](file:../../../files/winter-2021/CSE-15L/lectures/Lecture07-CSE15L-SectB-Winter2021-27Jan2021.pdf)
 - [⬇ Lecture 8: Makefiles, Stack tracing, Shell Scripts - Variables](file:../../../files/winter-2021/CSE-15L/lectures/Lecture08-CSE15L-SectB-Winter2021-01Feb2021.pdf)
 - [⬇ Lecture 9: Software Version Control, `git`](file:../../../files/winter-2021/CSE-15L/lectures/Lecture09-CSE15L-SectB-Winter2021-03Feb2021.pdf)
+- [⬇ Lecture 10: Shell Programming](file:../../../files/winter-2021/CSE-15L/lectures/Lecture10-CSE15L-SectB-Winter2021-08Feb2021.pdf)
+- [⬇ Lecture 11: More Shell Programming](file:../../../files/winter-2021/CSE-15L/lectures/Lecture11-CSE15L-SectB-Winter2021-10Feb2021.pdf)
 
