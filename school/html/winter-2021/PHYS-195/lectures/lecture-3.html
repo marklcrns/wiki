@@ -73,6 +73,7 @@
           <li><a href="#vector-subtraction">Vector Subtraction</a></li>
           <li><a href="#components-of-vectors">Components of Vectors</a></li>
           <li><a href="#unit-vectors">Unit Vectors</a></li>
+          <li><a href="#vector-multiplication">Vector Multiplication</a></li>
           </ul></li>
           </ul></li>
           </ul></li>
@@ -109,6 +110,10 @@
 <ul>
 <li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture3.pdf">⬇ Lecture 3</a></li>
 <li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture3_clean.pdf">⬇ Lecture 3 Clean</a></li>
+<li><a href="https://drive.google.com/file/d/1Kbng4zR8iJw5Rt1GwBcjI-N9TI5dCVag/view?usp=sharing">📺 Lecture 3 Part 1</a></li>
+<li><a href="https://drive.google.com/file/d/1jLlcpN0YcOU2cKDcK9UO1AYY0uKz5tv7/view?usp=sharing">📺 Lecture 3 Part 2</a></li>
+<li><a href="https://drive.google.com/file/d/1eJ-BYS1UKg3_I5HmcL1KFD4grT4YTQcr/view?usp=sharing">📺 Lecture 3 Part 3</a></li>
+<li><a href="https://drive.google.com/file/d/1gC5FKiTO5FtSgzqxWcQpswEP958LkRZS/view?usp=sharing">📺 Lecture 3 Part 4</a></li>
 </ul>
 <h2 id="my-notes">My Notes</h2>
 <h3 id="scalars-and-vectors">Scalars and Vectors</h3>
@@ -212,11 +217,75 @@
 \vec{a} = a_{x}\hat{i} + a_{y}\hat{j} \\
 \vec{b} = b_{x}\hat{i} + b_{y}\hat{j}
 \]</span></p>
+<h4 id="vector-multiplication">Vector Multiplication</h4>
+<h5 id="multiply-a-vector-by-a-scalar">Multiply a Vector by a Scalar</h5>
+<p>Multiplying a Vector by a Scalar If we multiply a vector <span class="math inline">\(\vec{a}\)</span> by a scalar <span class="math inline">\(s\)</span>, we get a new vector. Its magnitude is the product of the magnitude of <span class="math inline">\(\vec{a}\)</span> and the absolute value of <span class="math inline">\(s\)</span>. Its direction is the direction of <span class="math inline">\(\vec{a}\)</span> if <span class="math inline">\(s\)</span> is positive but the opposite direction if <span class="math inline">\(s\)</span> is negative. To divide <span class="math inline">\(\vec{a}\)</span> by <span class="math inline">\(s\)</span>, we multiply <span class="math inline">\(\vec{a}\)</span> by <span class="math inline">\(1/s\)</span>.</p>
+<h5 id="multiplying-a-vector-by-a-vector">Multiplying a Vector by a Vector</h5>
+<p>There are two ways to multiply a vector by a vector: one way produces a scalar (called the <em>scalar</em> product), and the other produces a new vector (called the <em>vector</em> product).</p>
+<p><a name="scalar-product-term"><strong>Scalar product</strong></a></p>
+<p><span class="math display">\[
+\vec{a} \cdot \vec{b} = ab\cos(\phi)
+\]</span></p>
+<p>where a is the magnitude of <span class="math inline">\(\vec{a}\)</span>, b is the magnitude of <span class="math inline">\(\vec{b}\)</span>, and <span class="math inline">\(\phi\)</span> is the angle between <span class="math inline">\(\vec{a}\)</span> and <span class="math inline">\(\vec{b}\)</span> (or, more properly, between the directions of <span class="math inline">\(\vec{a}\)</span> and <span class="math inline">\(\vec{b}\)</span> ). There are actually two such angles: <span class="math inline">\(\phi\)</span> and <span class="math inline">\(360^{\circ} - \phi\)</span>.</p>
+<p>Note that there are only scalars on the right side. Thus <span class="math inline">\(\vec{a} \cdot \vec{b}\)</span> on the left side represents a <em>scalar</em> quantity. Because of the notation, <span class="math inline">\(\vec{a} \cdot \vec{b}\)</span> is also known as the <strong>dot product</strong> and is spoken as “a dot b.”</p>
+<blockquote>
+<p>If the angle <span class="math inline">\(\phi\)</span> between two vectors is <span class="math inline">\(0^{\circ}\)</span>, the component of one vector along the other maximum, and so also is the dot product of the vectors. If, instead, <span class="math inline">\(\phi\)</span> is <span class="math inline">\(90^{\circ}\)</span>, the component of one vector along the other is zero, and so is the dot product.</p>
+</blockquote>
+<p>The equation can be rewritten as follows:</p>
+<p><span class="math display">\[
+\vec{a} \cdot \vec{b} = (a\cos(\phi)(b)) = (a)(b\cos(\phi))
+\]</span></p>
+<p>Commutative law applies to a scalar product:</p>
+<p><span class="math display">\[
+\vec{a} \cdot \vec{b} = \vec{b} \cdot \vec{c}
+\]</span></p>
+<p>When two vectors are in unit-vector notation, we write their dot product as:</p>
+<p><span class="math display">\[
+\vec{a} \cdot \vec{b} = (a_{x}\hat{i} + a_{y}\hat{j} + a_{z}\hat{k}) \cdot (b_{x}\hat{i} + b_{y}\hat{j} + b_{z}\hat{k})
+\]</span></p>
+<p>which we can expand according to distributive law:</p>
+<p><span class="math display">\[
+\vec{a} \cdot \vec{b} = a_{x}b_{x} + a_{y}b_{y} + a_{z}b_{z}
+\]</span></p>
+<p><a name="vector-product-term"><strong>Vector product</strong></a></p>
+<p><span class="math display">\[
+c = ab\sin(\phi)
+\]</span></p>
+<p>where <span class="math inline">\(\phi\)</span> is the smaller of the two angles between <span class="math inline">\(\vec{a}\)</span> and <span class="math inline">\(\vec{b}\)</span>. (You must use the smaller of the two angles between the vectors because <span class="math inline">\(\sin(\phi)\)</span> and <span class="math inline">\(sin(360^{\circ} - \phi)\)</span> differ in algegraic sign.) Because of the notation, <span class="math inline">\(\vec{a} \times \vec{b}\)</span> is also known as the <strong>cross product</strong>, and in speech it is “a cross b”.</p>
+<blockquote>
+<p>If <span class="math inline">\(\vec{a}\)</span> and <span class="math inline">\(\vec{b}\)</span> are parallel or antiparallel, <span class="math inline">\(\vec{a} \times \vec{b} = 0\)</span>. The magnitude of <span class="math inline">\(\vec{a} \times \vec{b}\)</span>, which can be written as <span class="math inline">\(\left | \vec{a} \times \vec{b} \right |\)</span>, is maximum when <span class="math inline">\(\vec{a}\)</span> and <span class="math inline">\(\vec{b}\)</span> are perpendicular to each other.</p>
+</blockquote>
+<p>Commutative law does not apply to a vector product.</p>
+<p>In unit-vector notation, we write:</p>
+<p><span class="math display">\[
+\vec{a} \times \vec{b} = (a_{x}\hat{i} + a_{y}\hat{j} + a_{z}\hat{k}) \times
+(b_{x}\hat{i} + b_{y}\hat{j} + b_{z}\hat{k})
+\]</span></p>
+<p>which can be expanded according to the distributive law:</p>
+<p><span class="math display">\[
+a_{x}\hat{i} \times b_{x}\hat{i} = a_{x}b_{x}(\hat{i} \times \hat{i}) = 0,
+\]</span></p>
+<p>because the two unit vectors <span class="math inline">\(\hat{i}\)</span> and <span class="math inline">\(\hat{i}\)</span> are parallel and thus have a zero cross product. Similarly, we have</p>
+<p><span class="math display">\[
+a_{x}\hat{i} \times b_{y}\hat{j} = a_{x}b_{y}(\hat{i} \times \hat{j}) = a_{x}b_{y}\hat{k}
+\]</span></p>
+<p>Continuing to expand:</p>
+<p><span class="math display">\[
+\vec{a} \times \vec{b} = (a_{y}b_{z} - b_{y}a_{z})\hat{i} + (a_{z}b_{x} - b_{z}a_{x})\hat{j} + (a_{x}b_{y} - b_{x}a_{y})\hat{k}
+\]</span></p>
+<ul>
+<li><a href="https://www.khanacademy.org/science/physics/magnetic-forces-and-magnetic-fields/electric-motors/v/calculating-dot-and-cross-products-with-unit-vector-notation">📺 Calculating dot and cross products with unit vector notation</a></li>
+</ul>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
 <li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture3.pdf">⬇ Lecture 3</a></li>
 <li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture3_clean.pdf">⬇ Lecture 3 Clean</a></li>
+<li><a href="https://drive.google.com/file/d/1Kbng4zR8iJw5Rt1GwBcjI-N9TI5dCVag/view?usp=sharing">📺 Lecture 3 Part 1</a></li>
+<li><a href="https://drive.google.com/file/d/1jLlcpN0YcOU2cKDcK9UO1AYY0uKz5tv7/view?usp=sharing">📺 Lecture 3 Part 2</a></li>
+<li><a href="https://drive.google.com/file/d/1eJ-BYS1UKg3_I5HmcL1KFD4grT4YTQcr/view?usp=sharing">📺 Lecture 3 Part 3</a></li>
+<li><a href="https://drive.google.com/file/d/1gC5FKiTO5FtSgzqxWcQpswEP958LkRZS/view?usp=sharing">📺 Lecture 3 Part 4</a></li>
+<li><a href="https://www.khanacademy.org/science/physics/magnetic-forces-and-magnetic-fields/electric-motors/v/calculating-dot-and-cross-products-with-unit-vector-notation">📺 Calculating dot and cross products with unit vector notation</a></li>
 </ul>
 <p>Textbook</p>
 <ul>

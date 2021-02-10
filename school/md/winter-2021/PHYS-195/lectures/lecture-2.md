@@ -10,6 +10,7 @@ date: Feb 02, 2021
 
 - [⬇ Lecture 2](file:../../../../files/winter-2021/PHYS-195/lectures/lecture2.pdf)
 - [⬇ Lecture 2 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture2_clean.pdf)
+- [📺 Lecture 2](https://drive.google.com/file/d/1YuA0hTCMVh2kOZDUPQHTSXMNELb-Qgo8/view?usp=sharing)
 
 ## My Notes
 

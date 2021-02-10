@@ -10,6 +10,10 @@ date: Feb 02, 2021
 
 - [⬇ Lecture 3](file:../../../../files/winter-2021/PHYS-195/lectures/lecture3.pdf)
 - [⬇ Lecture 3 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture3_clean.pdf)
+- [📺 Lecture 3 Part 1](https://drive.google.com/file/d/1Kbng4zR8iJw5Rt1GwBcjI-N9TI5dCVag/view?usp=sharing)
+- [📺 Lecture 3 Part 2](https://drive.google.com/file/d/1jLlcpN0YcOU2cKDcK9UO1AYY0uKz5tv7/view?usp=sharing)
+- [📺 Lecture 3 Part 3](https://drive.google.com/file/d/1eJ-BYS1UKg3_I5HmcL1KFD4grT4YTQcr/view?usp=sharing)
+- [📺 Lecture 3 Part 4](https://drive.google.com/file/d/1gC5FKiTO5FtSgzqxWcQpswEP958LkRZS/view?usp=sharing)
 
 ## My Notes
 
@@ -127,8 +131,113 @@ $$
 \vec{b} = b_{x}\hat{i} + b_{y}\hat{j}
 $$
 
+#### Vector Multiplication
 
+##### Multiply a Vector by a Scalar
 
+Multiplying a Vector by a Scalar If we multiply a vector $\vec{a}$ by a scalar
+$s$, we get a new vector. Its magnitude is the product of the magnitude of
+$\vec{a}$ and the absolute value of $s$. Its direction is the direction of
+$\vec{a}$ if $s$ is positive but the opposite direction if $s$ is negative. To
+divide $\vec{a}$ by $s$, we multiply $\vec{a}$ by $1/s$.
+
+##### Multiplying a Vector by a Vector
+
+There are two ways to multiply a vector by a vector: one way produces a scalar
+(called the _scalar_ product), and the other produces a new vector (called the
+_vector_ product).
+
+<a name="scalar-product-term">**Scalar product**</a>
+
+$$
+\vec{a} \cdot \vec{b} = ab\cos(\phi)
+$$
+
+where a is the magnitude of $\vec{a}$, b is the magnitude of $\vec{b}$, and
+$\phi$ is the angle between $\vec{a}$ and $\vec{b}$ (or, more properly, between
+the directions of $\vec{a}$ and $\vec{b}$ ). There are actually two such angles:
+$\phi$ and $360^{\circ}	- \phi$.
+
+Note that there are only scalars on the right side. Thus $\vec{a} \cdot \vec{b}$
+on the left side represents a _scalar_ quantity. Because of the notation,
+$\vec{a} \cdot \vec{b}$ is also known as the **dot product** and is spoken as "a
+dot b."
+
+> If the angle $\phi$ between two vectors is $0^{\circ}$, the component of one
+vector along the other maximum, and so also is the dot product of the vectors.
+If, instead, $\phi$ is $90^{\circ}$, the component of one vector along the other
+is zero, and so is the dot product.
+
+The equation can be rewritten as follows:
+
+$$
+\vec{a} \cdot \vec{b} = (a\cos(\phi)(b)) = (a)(b\cos(\phi))
+$$
+
+Commutative law applies to a scalar product:
+
+$$
+\vec{a} \cdot \vec{b} = \vec{b} \cdot \vec{c}
+$$
+
+When two vectors are in unit-vector notation, we write their dot product as:
+
+$$
+\vec{a} \cdot \vec{b} = (a_{x}\hat{i} + a_{y}\hat{j} + a_{z}\hat{k}) \cdot (b_{x}\hat{i} + b_{y}\hat{j} + b_{z}\hat{k})
+$$
+
+which we can expand according to distributive law:
+
+$$
+\vec{a} \cdot \vec{b} = a_{x}b_{x} + a_{y}b_{y} + a_{z}b_{z}
+$$
+
+<a name="vector-product-term">**Vector product**</a>
+
+$$
+c = ab\sin(\phi)
+$$
+
+where $\phi$ is the smaller of the two angles between $\vec{a}$ and $\vec{b}$.
+(You must use the smaller of the two angles between the vectors because
+$\sin(\phi)$ and $sin(360^{\circ} - \phi)$ differ in algegraic sign.) Because of
+the notation, $\vec{a} \times \vec{b}$ is also known as the **cross product**,
+and in speech it is "a cross b".
+
+> If $\vec{a}$ and $\vec{b}$ are parallel or antiparallel, $\vec{a} \times
+\vec{b} = 0$. The magnitude of $\vec{a} \times \vec{b}$, which can be written as
+$\left | \vec{a} \times \vec{b} \right |$, is maximum when $\vec{a}$ and
+$\vec{b}$ are perpendicular to each other.
+
+Commutative law does not apply to a vector product.
+
+In unit-vector notation, we write:
+
+$$
+\vec{a} \times \vec{b} = (a_{x}\hat{i} + a_{y}\hat{j} + a_{z}\hat{k}) \times
+(b_{x}\hat{i} + b_{y}\hat{j} + b_{z}\hat{k})
+$$
+
+which can be expanded according to the distributive law:
+
+$$
+a_{x}\hat{i} \times b_{x}\hat{i} = a_{x}b_{x}(\hat{i} \times \hat{i}) = 0,
+$$
+
+because the two unit vectors $\hat{i}$ and $\hat{i}$ are parallel and thus have
+a zero cross product. Similarly, we have
+
+$$
+a_{x}\hat{i} \times b_{y}\hat{j} = a_{x}b_{y}(\hat{i} \times \hat{j}) = a_{x}b_{y}\hat{k}
+$$
+
+Continuing to expand:
+
+$$
+\vec{a} \times \vec{b} = (a_{y}b_{z} - b_{y}a_{z})\hat{i} + (a_{z}b_{x} - b_{z}a_{x})\hat{j} + (a_{x}b_{y} - b_{x}a_{y})\hat{k}
+$$
+
+- [📺 Calculating dot and cross products with unit vector notation](https://www.khanacademy.org/science/physics/magnetic-forces-and-magnetic-fields/electric-motors/v/calculating-dot-and-cross-products-with-unit-vector-notation)
 
 <br>
 
@@ -136,6 +245,11 @@ $$
 
 - [⬇ Lecture 3](file:../../../../files/winter-2021/PHYS-195/lectures/lecture3.pdf)
 - [⬇ Lecture 3 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture3_clean.pdf)
+- [📺 Lecture 3 Part 1](https://drive.google.com/file/d/1Kbng4zR8iJw5Rt1GwBcjI-N9TI5dCVag/view?usp=sharing)
+- [📺 Lecture 3 Part 2](https://drive.google.com/file/d/1jLlcpN0YcOU2cKDcK9UO1AYY0uKz5tv7/view?usp=sharing)
+- [📺 Lecture 3 Part 3](https://drive.google.com/file/d/1eJ-BYS1UKg3_I5HmcL1KFD4grT4YTQcr/view?usp=sharing)
+- [📺 Lecture 3 Part 4](https://drive.google.com/file/d/1gC5FKiTO5FtSgzqxWcQpswEP958LkRZS/view?usp=sharing)
+- [📺 Calculating dot and cross products with unit vector notation](https://www.khanacademy.org/science/physics/magnetic-forces-and-magnetic-fields/electric-motors/v/calculating-dot-and-cross-products-with-unit-vector-notation)
 
 Textbook
 
