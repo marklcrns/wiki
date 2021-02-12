@@ -171,7 +171,7 @@ is zero, and so is the dot product.
 The equation can be rewritten as follows:
 
 $$
-\vec{a} \cdot \vec{b} = (a\cos(\phi)(b)) = (a)(b\cos(\phi))
+\vec{a} \cdot \vec{b} = (a\cos(\phi))(b) = (a)(b\cos(\phi))
 $$
 
 Commutative law applies to a scalar product:
@@ -237,6 +237,8 @@ $$
 \vec{a} \times \vec{b} = (a_{y}b_{z} - b_{y}a_{z})\hat{i} + (a_{z}b_{x} - b_{z}a_{x})\hat{j} + (a_{x}b_{y} - b_{x}a_{y})\hat{k}
 $$
 
+- [📺 The dot product]()
+- [📺 Dot vs. cross product](https://www.khanacademy.org/science/physics/magnetic-forces-and-magnetic-fields/electric-motors/v/dot-vs-cross-product)
 - [📺 Calculating dot and cross products with unit vector notation](https://www.khanacademy.org/science/physics/magnetic-forces-and-magnetic-fields/electric-motors/v/calculating-dot-and-cross-products-with-unit-vector-notation)
 
 <br>
