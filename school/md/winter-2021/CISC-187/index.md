@@ -1,12 +1,12 @@
 ---
 title: CISC 187
-subtitle: Mechanics
+subtitle: Data Structures in C++
 author: Mark Lucernas
 date: Feb 01, 2021
 ---
 
 
-# PHYS 196 Mechanics
+# CISC 187 Data Structures in C++
 > Professor: David Parillo<br>
 > email: dparillo@sdccd.edu<br>
 > Campus: San Diego Mesa College (online)<br>

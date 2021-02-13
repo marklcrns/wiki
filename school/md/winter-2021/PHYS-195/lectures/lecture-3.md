@@ -8,13 +8,6 @@ date: Feb 02, 2021
 
 # Lecture 3: Vectors
 
-- [⬇ Lecture 3](file:../../../../files/winter-2021/PHYS-195/lectures/lecture3.pdf)
-- [⬇ Lecture 3 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture3_clean.pdf)
-- [📺 Lecture 3 Part 1](https://drive.google.com/file/d/1Kbng4zR8iJw5Rt1GwBcjI-N9TI5dCVag/view?usp=sharing)
-- [📺 Lecture 3 Part 2](https://drive.google.com/file/d/1jLlcpN0YcOU2cKDcK9UO1AYY0uKz5tv7/view?usp=sharing)
-- [📺 Lecture 3 Part 3](https://drive.google.com/file/d/1eJ-BYS1UKg3_I5HmcL1KFD4grT4YTQcr/view?usp=sharing)
-- [📺 Lecture 3 Part 4](https://drive.google.com/file/d/1gC5FKiTO5FtSgzqxWcQpswEP958LkRZS/view?usp=sharing)
-
 ## My Notes
 
 ### Scalars and Vectors
@@ -241,9 +234,8 @@ $$
 - [📺 Dot vs. cross product](https://www.khanacademy.org/science/physics/magnetic-forces-and-magnetic-fields/electric-motors/v/dot-vs-cross-product)
 - [📺 Calculating dot and cross products with unit vector notation](https://www.khanacademy.org/science/physics/magnetic-forces-and-magnetic-fields/electric-motors/v/calculating-dot-and-cross-products-with-unit-vector-notation)
 
-<br>
 
-# Resources
+## Video Lectures
 
 - [⬇ Lecture 3](file:../../../../files/winter-2021/PHYS-195/lectures/lecture3.pdf)
 - [⬇ Lecture 3 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture3_clean.pdf)
@@ -251,7 +243,20 @@ $$
 - [📺 Lecture 3 Part 2](https://drive.google.com/file/d/1jLlcpN0YcOU2cKDcK9UO1AYY0uKz5tv7/view?usp=sharing)
 - [📺 Lecture 3 Part 3](https://drive.google.com/file/d/1eJ-BYS1UKg3_I5HmcL1KFD4grT4YTQcr/view?usp=sharing)
 - [📺 Lecture 3 Part 4](https://drive.google.com/file/d/1gC5FKiTO5FtSgzqxWcQpswEP958LkRZS/view?usp=sharing)
+
+<br>
+
+# Resources
+
+- [📺 The dot product]()
+- [📺 Dot vs. cross product](https://www.khanacademy.org/science/physics/magnetic-forces-and-magnetic-fields/electric-motors/v/dot-vs-cross-product)
 - [📺 Calculating dot and cross products with unit vector notation](https://www.khanacademy.org/science/physics/magnetic-forces-and-magnetic-fields/electric-motors/v/calculating-dot-and-cross-products-with-unit-vector-notation)
+- [⬇ Lecture 3](file:../../../../files/winter-2021/PHYS-195/lectures/lecture3.pdf)
+- [⬇ Lecture 3 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture3_clean.pdf)
+- [📺 Lecture 3 Part 1](https://drive.google.com/file/d/1Kbng4zR8iJw5Rt1GwBcjI-N9TI5dCVag/view?usp=sharing)
+- [📺 Lecture 3 Part 2](https://drive.google.com/file/d/1jLlcpN0YcOU2cKDcK9UO1AYY0uKz5tv7/view?usp=sharing)
+- [📺 Lecture 3 Part 3](https://drive.google.com/file/d/1eJ-BYS1UKg3_I5HmcL1KFD4grT4YTQcr/view?usp=sharing)
+- [📺 Lecture 3 Part 4](https://drive.google.com/file/d/1gC5FKiTO5FtSgzqxWcQpswEP958LkRZS/view?usp=sharing)
 
 Textbook
 

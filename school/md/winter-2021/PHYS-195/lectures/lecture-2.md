@@ -1,16 +1,12 @@
 ---
 title: Lecture 2
-subtitle: Units
+subtitle: Measurements
 author: Mark Lucernas
 date: Feb 02, 2021
 ---
 
 
-# Lecture 2: Units
-
-- [⬇ Lecture 2](file:../../../../files/winter-2021/PHYS-195/lectures/lecture2.pdf)
-- [⬇ Lecture 2 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture2_clean.pdf)
-- [📺 Lecture 2](https://drive.google.com/file/d/1YuA0hTCMVh2kOZDUPQHTSXMNELb-Qgo8/view?usp=sharing)
+# Lecture 2: Measurements
 
 ## My Notes
 
@@ -26,12 +22,19 @@ $$
 
 then we can cancel out the $ft^{3}$.
 
+## Video Lectures
+
+- [⬇ Lecture 2](file:../../../../files/winter-2021/PHYS-195/lectures/lecture2.pdf)
+- [⬇ Lecture 2 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture2_clean.pdf)
+- [📺 Lecture 2](https://drive.google.com/file/d/1YuA0hTCMVh2kOZDUPQHTSXMNELb-Qgo8/view?usp=sharing)
+
 <br>
 
 # Resources
 
 - [⬇ Lecture 2](file:../../../../files/winter-2021/PHYS-195/lectures/lecture2.pdf)
 - [⬇ Lecture 2 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture2_clean.pdf)
+- [📺 Lecture 2](https://drive.google.com/file/d/1YuA0hTCMVh2kOZDUPQHTSXMNELb-Qgo8/view?usp=sharing)
 
 Textbook
 

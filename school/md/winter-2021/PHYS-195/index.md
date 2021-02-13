@@ -24,9 +24,10 @@ date: Jan 31, 2021
 
 ## Lecture Notes
 
-- [↪ Lecture 1](lectures/lecture-1)
-- [↪ Lecture 2](lectures/lecture-2)
-- [↪ Lecture 3](lectures/lecture-3)
+- [↪ Lecture 1: Intro](lectures/lecture-1)
+- [↪ Lecture 2: Measurements](lectures/lecture-2)
+- [↪ Lecture 3: Vectors](lectures/lecture-3)
+- [↪ Lecture 4: Kinematics](lectures/lecture-4)
 
 ## Homeworks
 

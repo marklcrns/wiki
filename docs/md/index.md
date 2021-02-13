@@ -74,4 +74,5 @@ date: Feb 05, 2020
 
 - [↪ Supported Markdown Emojis by Pandoc](emojis)
 - [📄 Skype share screen audio fix for Ubuntu](https://askubuntu.com/a/1232903)
+-	[📄 Remapping Caps Lock to Escape](https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_Windows)
 
