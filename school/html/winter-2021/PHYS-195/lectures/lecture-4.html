@@ -81,7 +81,13 @@
           <li><a href="#constant-acceleration">2.4 Constant Acceleration</a></li>
           <li><a href="#free-fall-acceleration">2.5 Free-Fall Acceleration</a></li>
           <li><a href="#graphical-integration-in-motion-analysis">Graphical Integration in Motion Analysis</a></li>
-          <li><a href="#video-lectures">Video Lectures</a></li>
+          <li><a href="#video-lectures">Video Lectures</a><ul>
+          <li><a href="#kinematics">Kinematics</a></li>
+          <li><a href="#cop-motorcycle">Cop &amp; Motorcycle</a></li>
+          <li><a href="#when-is-the-instantaneous-velocity-equal-to-the-average-velocity">When is the Instantaneous Velocity Equal to the Average Velocity</a></li>
+          <li><a href="#gravity-freefall">Gravity &amp; Freefall</a></li>
+          </ul></li>
+          <li><a href="#other-resources">Other Resources</a></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
           </ul>
@@ -176,37 +182,58 @@ a = \frac{dv}{dt} = \frac{d^{2}x}{dt^{2}}
 1g = 9.8m/s^{2}
 \]</span></p>
 <h2 id="constant-acceleration">2.4 Constant Acceleration</h2>
-<p>The following five equations describe the motion of a particle with constant acceleration:</p>
+<p>The following five Kinematic equations describe the motion of a particle with constant acceleration:</p>
 <table>
+<colgroup>
+<col style="width: 2%" />
+<col style="width: 42%" />
+<col style="width: 13%" />
+<col style="width: 41%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th>Equation</th>
-<th>Missing Quantity</th>
+<th style="text-align: center;">#</th>
+<th style="text-align: center;">Equation</th>
+<th style="text-align: center;">Missing Quantity</th>
+<th>Usage</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(v = v_{0} + a\)</span></td>
-<td><span class="math inline">\(x - x_{0}\)</span></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="math inline">\(v_{f} = v_{0} + a\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta{x}\)</span></td>
+<td>Will tell how fast an object is going at any given time</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(x - x_{0} = v_{0}t + \frac{1}{2}at^{2}\)</span></td>
-<td><span class="math inline">\(v\)</span></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><span class="math inline">\(\Delta{x} = v_{0}t + \frac{1}{2}at^{2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(v_{f}\)</span></td>
+<td>Will tell where an object is at any given time</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(v^{2} = v_{0}^{2} + 2a(x - x_{0}\)</span></td>
-<td><span class="math inline">\(t\)</span></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><span class="math inline">\(\Delta{x} = (\frac{v_{f} + v_{0}}{2})t\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a\)</span></td>
+<td>Will tell how fast an object is going at a certain place</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(x - x_{0} = \frac{1}{2}(v_{0} + v)t\)</span></td>
-<td><span class="math inline">\(a\)</span></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><span class="math inline">\(v_{f}^{2} = v_{0}^{2} + 2a\Delta{x}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(t\)</span></td>
+<td></td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(x - x_{0} = vt - \frac{1}{2}at^{2}\)</span></td>
-<td><span class="math inline">\(v_{0}\)</span></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><span class="math inline">\(\Delta{x} = v_{f}t - \frac{1}{2}at^{2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(v_{0}\)</span></td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p><span class="math inline">\(\Delta{x} = x - x_{0}\)</span>, <span class="math inline">\(v_{0} = \text{original/initial velocity}\)</span>, <span class="math inline">\(v_{f} = \text{final velocity}\)</span></p>
+</blockquote>
 <p>These are <em>note</em> valid when the acceleration is not constant.</p>
 <p>Another equation for constant acceleration through Integration</p>
 <p><span class="math display">\[
@@ -228,31 +255,82 @@ v_{1} - v_{0} = \int_{t_{0}}^{t_{1}} a\;dt
 x_{1} - x_{0} = \int_{t_{0}}^{t_{1}} v\;dt
 \]</span></p>
 <h2 id="video-lectures">Video Lectures</h2>
+<h3 id="kinematics">Kinematics</h3>
 <ul>
 <li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.1.pdf">⬇ Lecture 4.1</a></li>
 <li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.1_clean.pdf">⬇ Lecture 4.1 Clean</a></li>
-<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.2.pdf">⬇ Lecture 4.2</a></li>
-<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.2_clean.pdf">⬇ Lecture 4.2 Clean</a></li>
 <li><a href="https://drive.google.com/file/d/1APFYIbEFyxzcmFMqljqQMYBRQWaX2Nyc/view?usp=sharing">📺 Lecture 4.1 Part 1</a></li>
 <li><a href="https://drive.google.com/file/d/14ZJyfvN2-f-S0frohQLHNER3ym0Ah08t/view?usp=sharing">📺 Lecture 4.1 Part 2</a></li>
 <li><a href="https://drive.google.com/file/d/1C0Ubm41nujzieApezR9ZEiyjJMo-j5XN/view?usp=sharing">📺 Lecture 4.1 Part 3</a></li>
+<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.2.pdf">⬇ Lecture 4.2</a></li>
+<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.2_clean.pdf">⬇ Lecture 4.2 Clean</a></li>
 <li><a href="https://drive.google.com/file/d/1Ls9oy7qtmKCXqdpX6XF-7CKsn3OG_NfZ/view?usp=sharing">📺 Lecture 4.2 Part 1</a></li>
 <li><a href="https://drive.google.com/file/d/1qYT5847woAA6vW7mMXEB7Hxcqe4DfW8w/view?usp=sharing">📺 Lecture 4.2 Part 2</a></li>
 <li><a href="https://drive.google.com/file/d/1GhnGQwtfn9lCnSxUYzlFy194_39SpFoH/view?usp=sharing">📺 Lecture 4.2 Part 3</a></li>
+</ul>
+<h3 id="cop-motorcycle">Cop &amp; Motorcycle</h3>
+<ul>
+<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.3.pdf">⬇ Lecture 4.3</a></li>
+<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.3_clean.pdf">⬇ Lecture 4.3 Clean</a></li>
+<li><a href="https://drive.google.com/file/d/1pYWBm5WugLp-Fl9uQdNXKQMGuI7M9aL2/view?usp=sharing">📺 Lecture 4.3</a></li>
+</ul>
+<h3 id="when-is-the-instantaneous-velocity-equal-to-the-average-velocity">When is the Instantaneous Velocity Equal to the Average Velocity</h3>
+<ul>
+<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.4.pdf">⬇ Lecture 4.4</a></li>
+<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.4_clean.pdf">⬇ Lecture 4.4 Clean</a></li>
+<li><a href="https://drive.google.com/file/d/1xN0IYvSKS8udW7Xi460cGktrpPPYH1Ze/view?usp=sharing">📺 Lecture 4.4</a></li>
+</ul>
+<h3 id="gravity-freefall">Gravity &amp; Freefall</h3>
+<ul>
+<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.5.pdf">⬇ Lecture 4.5</a></li>
+<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.5_clean.pdf">⬇ Lecture 4.5 Clean</a></li>
+<li><a href="https://drive.google.com/file/d/1kR91pQmprjHhf9Y0htGWMDq3CzepAnIV/view?usp=sharing">📺 Lecture 4.5 Part 1</a></li>
+<li><a href="https://drive.google.com/file/d/119LOAzX9gOP-IMpUssrGOh-9O6QTVTuq/view?usp=sharing">📺 Lecture 4.5 Part 2</a></li>
+<li><a href="https://drive.google.com/file/d/1NTtrxBI0LEQKAWmN26UzOtRAhMkchAgx/view?usp=sharing">📺 Lecture 4.5 Part 3</a></li>
+<li><a href="https://drive.google.com/file/d/1U2u80HuFS6al5jFkXVjkRSlzgJytMaKZ/view?usp=sharing">📺 Lecture 4.5 Part 4</a></li>
+<li><a href="https://drive.google.com/file/d/1v7Xd13MwBZs_M549uO5yFfOimgEpbKy1/view?usp=sharing">📺 Lecture 4.5 Part 5</a></li>
+<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.6.pdf">⬇ Lecture 4.6</a></li>
+<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.6_clean.pdf">⬇ Lecture 4.6 Clean</a></li>
+<li><a href="https://drive.google.com/file/d/1DDR_Icrz8Bt8qz24he2gIcVv8JZmZIL5/view?usp=sharing">📺 Lecture 4.6 Part 1</a></li>
+<li><a href="https://drive.google.com/file/d/1ht8yn-rrwPvJAvTlZrRDp0etUke0SErN/view?usp=sharing">📺 Lecture 4.6 Part 2</a></li>
+<li><a href="https://drive.google.com/file/d/1fwa1w9CqMnwVohpwtXcONGO7fwbprYSz/view?usp=sharing">📺 Lecture 4.6 Part 3</a></li>
+</ul>
+<h2 id="other-resources">Other Resources</h2>
+<ul>
+<li><a href="https://www.khanacademy.org/science/physics">📄 Physics Library</a></li>
 </ul>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
 <li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.1.pdf">⬇ Lecture 4.1</a></li>
 <li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.1_clean.pdf">⬇ Lecture 4.1 Clean</a></li>
-<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.2.pdf">⬇ Lecture 4.2</a></li>
-<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.2_clean.pdf">⬇ Lecture 4.2 Clean</a></li>
 <li><a href="https://drive.google.com/file/d/1APFYIbEFyxzcmFMqljqQMYBRQWaX2Nyc/view?usp=sharing">📺 Lecture 4.1 Part 1</a></li>
 <li><a href="https://drive.google.com/file/d/14ZJyfvN2-f-S0frohQLHNER3ym0Ah08t/view?usp=sharing">📺 Lecture 4.1 Part 2</a></li>
 <li><a href="https://drive.google.com/file/d/1C0Ubm41nujzieApezR9ZEiyjJMo-j5XN/view?usp=sharing">📺 Lecture 4.1 Part 3</a></li>
+<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.2.pdf">⬇ Lecture 4.2</a></li>
+<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.2_clean.pdf">⬇ Lecture 4.2 Clean</a></li>
 <li><a href="https://drive.google.com/file/d/1Ls9oy7qtmKCXqdpX6XF-7CKsn3OG_NfZ/view?usp=sharing">📺 Lecture 4.2 Part 1</a></li>
 <li><a href="https://drive.google.com/file/d/1qYT5847woAA6vW7mMXEB7Hxcqe4DfW8w/view?usp=sharing">📺 Lecture 4.2 Part 2</a></li>
 <li><a href="https://drive.google.com/file/d/1GhnGQwtfn9lCnSxUYzlFy194_39SpFoH/view?usp=sharing">📺 Lecture 4.2 Part 3</a></li>
+<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.3.pdf">⬇ Lecture 4.3</a></li>
+<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.3_clean.pdf">⬇ Lecture 4.3 Clean</a></li>
+<li><a href="https://drive.google.com/file/d/1pYWBm5WugLp-Fl9uQdNXKQMGuI7M9aL2/view?usp=sharing">📺 Lecture 4.3</a></li>
+<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.4.pdf">⬇ Lecture 4.4</a></li>
+<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.4_clean.pdf">⬇ Lecture 4.4 Clean</a></li>
+<li><a href="https://drive.google.com/file/d/1xN0IYvSKS8udW7Xi460cGktrpPPYH1Ze/view?usp=sharing">📺 Lecture 4.4</a></li>
+<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.5.pdf">⬇ Lecture 4.5</a></li>
+<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.5_clean.pdf">⬇ Lecture 4.5 Clean</a></li>
+<li><a href="https://drive.google.com/file/d/1kR91pQmprjHhf9Y0htGWMDq3CzepAnIV/view?usp=sharing">📺 Lecture 4.5 Part 1</a></li>
+<li><a href="https://drive.google.com/file/d/119LOAzX9gOP-IMpUssrGOh-9O6QTVTuq/view?usp=sharing">📺 Lecture 4.5 Part 2</a></li>
+<li><a href="https://drive.google.com/file/d/1NTtrxBI0LEQKAWmN26UzOtRAhMkchAgx/view?usp=sharing">📺 Lecture 4.5 Part 3</a></li>
+<li><a href="https://drive.google.com/file/d/1U2u80HuFS6al5jFkXVjkRSlzgJytMaKZ/view?usp=sharing">📺 Lecture 4.5 Part 4</a></li>
+<li><a href="https://drive.google.com/file/d/1v7Xd13MwBZs_M549uO5yFfOimgEpbKy1/view?usp=sharing">📺 Lecture 4.5 Part 5</a></li>
+<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.6.pdf">⬇ Lecture 4.6</a></li>
+<li><a href="../../../../files/winter-2021/PHYS-195/lectures/lecture4.6_clean.pdf">⬇ Lecture 4.6 Clean</a></li>
+<li><a href="https://drive.google.com/file/d/1DDR_Icrz8Bt8qz24he2gIcVv8JZmZIL5/view?usp=sharing">📺 Lecture 4.6 Part 1</a></li>
+<li><a href="https://drive.google.com/file/d/1ht8yn-rrwPvJAvTlZrRDp0etUke0SErN/view?usp=sharing">📺 Lecture 4.6 Part 2</a></li>
+<li><a href="https://drive.google.com/file/d/1fwa1w9CqMnwVohpwtXcONGO7fwbprYSz/view?usp=sharing">📺 Lecture 4.6 Part 3</a></li>
+<li><a href="https://www.khanacademy.org/science/physics">📄 Physics Library</a></li>
 </ul>
 <p>Textbook</p>
 <ul>

@@ -113,15 +113,18 @@ $$
 
 ## 2.4 Constant Acceleration
 
-The following five equations describe the motion of a particle with constant acceleration:
+The following five Kinematic equations describe the motion of a particle with
+constant acceleration:
 
-| Equation                                 | Missing Quantity |
-|------------------------------------------|------------------|
-| $v = v_{0} + a$                          | $x - x_{0}$      |
-| $x - x_{0} = v_{0}t + \frac{1}{2}at^{2}$ | $v$              |
-| $v^{2} = v_{0}^{2} + 2a(x - x_{0}$       | $t$              |
-| $x - x_{0} = \frac{1}{2}(v_{0} + v)t$    | $a$              |
-| $x - x_{0} = vt - \frac{1}{2}at^{2}$     | $v_{0}$          |
+| #    | Equation                                                   | Missing Quantity   | Usage                                                    |
+| :--: | :--------------------------------------------------------: | :----------------: | -------------------------------------------------------- |
+| 1    | $v_{f} = v_{0} + a$                                        | $\Delta{x}$        | Will tell how fast an object is going at any given time  |
+| 2    | $\Delta{x} = v_{0}t + \frac{1}{2}at^{2}$                   | $v_{f}$            | Will tell where an object is at any given time           |
+| 3    | $\Delta{x} = (\frac{v_{f} + v_{0}}{2})t$                   | $a$                | Will tell how fast an object is going at a certain place |
+| 4    | $v_{f}^{2} = v_{0}^{2} + 2a\Delta{x}$                      | $t$                |                                                          |
+| 5    | $\Delta{x} = v_{f}t - \frac{1}{2}at^{2}$                   | $v_{0}$            |                                                          |
+
+> $\Delta{x} = x - x_{0}$, $v_{0} = \text{original/initial velocity}$, $v_{f} = \text{final velocity}$
 
 These are _note_ valid when the acceleration is not constant.
 
@@ -161,16 +164,51 @@ $$
 
 ## Video Lectures
 
+### Kinematics
+
 - [⬇ Lecture 4.1](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.1.pdf)
 - [⬇ Lecture 4.1 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.1_clean.pdf)
-- [⬇ Lecture 4.2](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.2.pdf)
-- [⬇ Lecture 4.2 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.2_clean.pdf)
 - [📺 Lecture 4.1 Part 1](https://drive.google.com/file/d/1APFYIbEFyxzcmFMqljqQMYBRQWaX2Nyc/view?usp=sharing)
 - [📺 Lecture 4.1 Part 2](https://drive.google.com/file/d/14ZJyfvN2-f-S0frohQLHNER3ym0Ah08t/view?usp=sharing)
 - [📺 Lecture 4.1 Part 3](https://drive.google.com/file/d/1C0Ubm41nujzieApezR9ZEiyjJMo-j5XN/view?usp=sharing)
+- [⬇ Lecture 4.2](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.2.pdf)
+- [⬇ Lecture 4.2 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.2_clean.pdf)
 - [📺 Lecture 4.2 Part 1](https://drive.google.com/file/d/1Ls9oy7qtmKCXqdpX6XF-7CKsn3OG_NfZ/view?usp=sharing)
 - [📺 Lecture 4.2 Part 2](https://drive.google.com/file/d/1qYT5847woAA6vW7mMXEB7Hxcqe4DfW8w/view?usp=sharing)
 - [📺 Lecture 4.2 Part 3](https://drive.google.com/file/d/1GhnGQwtfn9lCnSxUYzlFy194_39SpFoH/view?usp=sharing)
+
+### Cop & Motorcycle
+
+- [⬇ Lecture 4.3](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.3.pdf)
+- [⬇ Lecture 4.3 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.3_clean.pdf)
+- [📺 Lecture 4.3](https://drive.google.com/file/d/1pYWBm5WugLp-Fl9uQdNXKQMGuI7M9aL2/view?usp=sharing)
+
+### When is the Instantaneous Velocity Equal to the Average Velocity
+
+- [⬇ Lecture 4.4](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.4.pdf)
+- [⬇ Lecture 4.4 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.4_clean.pdf)
+- [📺 Lecture 4.4](https://drive.google.com/file/d/1xN0IYvSKS8udW7Xi460cGktrpPPYH1Ze/view?usp=sharing)
+
+### Gravity & Freefall
+
+- [⬇ Lecture 4.5](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.5.pdf)
+- [⬇ Lecture 4.5 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.5_clean.pdf)
+- [📺 Lecture 4.5 Part 1](https://drive.google.com/file/d/1kR91pQmprjHhf9Y0htGWMDq3CzepAnIV/view?usp=sharing)
+- [📺 Lecture 4.5 Part 2](https://drive.google.com/file/d/119LOAzX9gOP-IMpUssrGOh-9O6QTVTuq/view?usp=sharing)
+- [📺 Lecture 4.5 Part 3](https://drive.google.com/file/d/1NTtrxBI0LEQKAWmN26UzOtRAhMkchAgx/view?usp=sharing)
+- [📺 Lecture 4.5 Part 4](https://drive.google.com/file/d/1U2u80HuFS6al5jFkXVjkRSlzgJytMaKZ/view?usp=sharing)
+- [📺 Lecture 4.5 Part 5](https://drive.google.com/file/d/1v7Xd13MwBZs_M549uO5yFfOimgEpbKy1/view?usp=sharing)
+- [⬇ Lecture 4.6](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.6.pdf)
+- [⬇ Lecture 4.6 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.6_clean.pdf)
+- [📺 Lecture 4.6 Part 1](https://drive.google.com/file/d/1DDR_Icrz8Bt8qz24he2gIcVv8JZmZIL5/view?usp=sharing)
+- [📺 Lecture 4.6 Part 2](https://drive.google.com/file/d/1ht8yn-rrwPvJAvTlZrRDp0etUke0SErN/view?usp=sharing)
+- [📺 Lecture 4.6 Part 3](https://drive.google.com/file/d/1fwa1w9CqMnwVohpwtXcONGO7fwbprYSz/view?usp=sharing)
+
+
+## Other Resources
+
+- [📄 Physics Library](https://www.khanacademy.org/science/physics)
+
 
 <br>
 
@@ -178,14 +216,33 @@ $$
 
 - [⬇ Lecture 4.1](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.1.pdf)
 - [⬇ Lecture 4.1 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.1_clean.pdf)
-- [⬇ Lecture 4.2](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.2.pdf)
-- [⬇ Lecture 4.2 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.2_clean.pdf)
 - [📺 Lecture 4.1 Part 1](https://drive.google.com/file/d/1APFYIbEFyxzcmFMqljqQMYBRQWaX2Nyc/view?usp=sharing)
 - [📺 Lecture 4.1 Part 2](https://drive.google.com/file/d/14ZJyfvN2-f-S0frohQLHNER3ym0Ah08t/view?usp=sharing)
 - [📺 Lecture 4.1 Part 3](https://drive.google.com/file/d/1C0Ubm41nujzieApezR9ZEiyjJMo-j5XN/view?usp=sharing)
+- [⬇ Lecture 4.2](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.2.pdf)
+- [⬇ Lecture 4.2 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.2_clean.pdf)
 - [📺 Lecture 4.2 Part 1](https://drive.google.com/file/d/1Ls9oy7qtmKCXqdpX6XF-7CKsn3OG_NfZ/view?usp=sharing)
 - [📺 Lecture 4.2 Part 2](https://drive.google.com/file/d/1qYT5847woAA6vW7mMXEB7Hxcqe4DfW8w/view?usp=sharing)
 - [📺 Lecture 4.2 Part 3](https://drive.google.com/file/d/1GhnGQwtfn9lCnSxUYzlFy194_39SpFoH/view?usp=sharing)
+- [⬇ Lecture 4.3](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.3.pdf)
+- [⬇ Lecture 4.3 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.3_clean.pdf)
+- [📺 Lecture 4.3](https://drive.google.com/file/d/1pYWBm5WugLp-Fl9uQdNXKQMGuI7M9aL2/view?usp=sharing)
+- [⬇ Lecture 4.4](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.4.pdf)
+- [⬇ Lecture 4.4 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.4_clean.pdf)
+- [📺 Lecture 4.4](https://drive.google.com/file/d/1xN0IYvSKS8udW7Xi460cGktrpPPYH1Ze/view?usp=sharing)
+- [⬇ Lecture 4.5](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.5.pdf)
+- [⬇ Lecture 4.5 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.5_clean.pdf)
+- [📺 Lecture 4.5 Part 1](https://drive.google.com/file/d/1kR91pQmprjHhf9Y0htGWMDq3CzepAnIV/view?usp=sharing)
+- [📺 Lecture 4.5 Part 2](https://drive.google.com/file/d/119LOAzX9gOP-IMpUssrGOh-9O6QTVTuq/view?usp=sharing)
+- [📺 Lecture 4.5 Part 3](https://drive.google.com/file/d/1NTtrxBI0LEQKAWmN26UzOtRAhMkchAgx/view?usp=sharing)
+- [📺 Lecture 4.5 Part 4](https://drive.google.com/file/d/1U2u80HuFS6al5jFkXVjkRSlzgJytMaKZ/view?usp=sharing)
+- [📺 Lecture 4.5 Part 5](https://drive.google.com/file/d/1v7Xd13MwBZs_M549uO5yFfOimgEpbKy1/view?usp=sharing)
+- [⬇ Lecture 4.6](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.6.pdf)
+- [⬇ Lecture 4.6 Clean](file:../../../../files/winter-2021/PHYS-195/lectures/lecture4.6_clean.pdf)
+- [📺 Lecture 4.6 Part 1](https://drive.google.com/file/d/1DDR_Icrz8Bt8qz24he2gIcVv8JZmZIL5/view?usp=sharing)
+- [📺 Lecture 4.6 Part 2](https://drive.google.com/file/d/1ht8yn-rrwPvJAvTlZrRDp0etUke0SErN/view?usp=sharing)
+- [📺 Lecture 4.6 Part 3](https://drive.google.com/file/d/1fwa1w9CqMnwVohpwtXcONGO7fwbprYSz/view?usp=sharing)
+- [📄 Physics Library](https://www.khanacademy.org/science/physics)
 
 Textbook
 
