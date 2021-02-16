@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Lucernas">
 
-    <title>Chapter 6</title>
+    <title>Section 6.6</title>
 
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
@@ -21,6 +21,7 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   </head>
 
   <body>
@@ -65,7 +66,12 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-6-application-of-integration">Chapter 6: Application of Integration</a></li>
+          <li><a href="#section-6.6-surface-area">Section 6.6: Surface Area</a><ul>
+          <li><a href="#surface-area-of-frustum">Surface Area of Frustum</a></li>
+          <li><a href="#definition-area-of-a-surface-of-revolution">Definition: Area of a Surface of Revolution</a></li>
+          <li><a href="#other-resources">Other Resources</a></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
           </ul>
           <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
             <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
@@ -79,9 +85,9 @@
               <div class="page-header">
                 <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
                 <h1 class="title">
-                  Chapter 6
+                  Section 6.6
                   <small class="h3 text-muted subtitle">
-                    | Application of Integration
+                    | Surface Area
                   </small>
                 </h1>
               </div>
@@ -89,16 +95,37 @@
           </header>
           <div class="h5 text-muted">
             <h5 class="author">Mark Lucernas</h5>
-            <h5 class="date">Feb 10, 2021</h5>
+            <h5 class="date">Feb 15, 2021</h5>
           </div>
 
 <!-- Contents -->
           <article class="contents">
-<h1 id="chapter-6-application-of-integration">Chapter 6: Application of Integration</h1>
+<h1 id="section-6.6-surface-area">Section 6.6: Surface Area</h1>
+<h2 id="surface-area-of-frustum">Surface Area of Frustum</h2>
+<p><span class="math display">\[
+S = \pi (r_{2} + r_{1})l
+\]</span></p>
+<figure>
+<img src="../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-6_frustum.png" alt="Surface area of frustum" /><figcaption>Surface area of frustum</figcaption>
+</figure>
+<h2 id="definition-area-of-a-surface-of-revolution">Definition: Area of a Surface of Revolution</h2>
+<p>Let <span class="math inline">\(f\)</span> be a nonnegative function with a continuous first derivative on the interval <span class="math inline">\([a, b]\)</span>. The area of the surface generated when the graph of <span class="math inline">\(f\)</span> on the interval <span class="math inline">\([a, b]\)</span> is revolved about the <span class="math inline">\(x\)</span>-axis is</p>
+<p><span class="math display">\[
+S = \int_{a}^{b} 2 \pi f(x) \sqrt{1 + f^{\prime}(x)^{2}}\;dx
+\]</span></p>
+<p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-6_example-1.png" alt="Example 1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-6_example-2.1.png" alt="Example 2.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-6_example-2.2.png" alt="Example 2.2" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-6_example-3.1.png" alt="Example 3.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-6_example-3.2.png" alt="Example 3.2" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-6_example-4.png" alt="Example 4" /></p>
+<h2 id="other-resources">Other Resources</h2>
+<p>Application of Integration notes from MATH 150</p>
 <ul>
-<li><a href="sec_6-5.html">↪ Section 6.5 Length of Curves</a></li>
-<li><a href="sec_6-6.html">↪ Section 6.6 Surface Area</a></li>
-<li><a href="sec_6-7.html">↪ Section 6.7 Physical Applications</a></li>
+<li><a href="../../../../fall-2020/MATH-150/chapters/chapter-6/ch-6-1.md">↪ Areas Between Curves</a></li>
+<li><a href="../../../../fall-2020/MATH-150/chapters/chapter-6/ch-6-2.md">↪ Volumes</a></li>
+<li><a href="../../../../fall-2020/MATH-150/chapters/chapter-6/ch-6-3.md">↪ Volumes by Cylindrical Shells</a></li>
+</ul>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<p>Textbook</p>
+<ul>
+<li>Calculus, Early Transcendentals 3rd Edition - Briggs, Cochran, and Gillet</li>
 </ul>
           </article>
           </div>
