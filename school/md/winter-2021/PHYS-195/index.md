@@ -33,4 +33,5 @@ date: Jan 31, 2021
 
 - [⬇ Homework 1](file:../../../files/winter-2021/PHYS-195/homeworks/homework_1.pdf)
 - [⬇ Homework 2](file:../../../files/winter-2021/PHYS-195/homeworks/homework_2.pdf)
+- [⬇ Homework 3](file:../../../files/winter-2021/PHYS-195/homeworks/homework_3.pdf)
 
