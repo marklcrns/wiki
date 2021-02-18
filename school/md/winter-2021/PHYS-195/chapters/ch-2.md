@@ -205,9 +205,9 @@ $$
 - [📺 Lecture 5.2 Part 3](https://drive.google.com/file/d/1fwa1w9CqMnwVohpwtXcONGO7fwbprYSz/view?usp=sharing)
 
 
-## Other Resources
+## External Resources
 
-- [📄 Physics Library](https://www.khanacademy.org/science/physics)
+- [📄 One-dimensional Motion](https://www.khanacademy.org/science/physics/one-dimensional-motion)
 
 
 <br>

@@ -28,6 +28,7 @@ date: Jan 31, 2021
 - [↪ Chapter 1: Measurements](chapters/ch-1)
 - [↪ Chapter 2: Kinematics](chapters/ch-2)
 - [↪ Chapter 3: Vectors](chapters/ch-3)
+- [↪ Chapter 4: Motion in Two and Three Dimensions](chapters/ch-4)
 
 ## Homeworks
 
