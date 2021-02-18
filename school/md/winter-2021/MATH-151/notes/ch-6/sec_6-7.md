@@ -53,10 +53,29 @@ $$
 W = \int_{a}^{b} F(x)\;dx
 $$
 
+#### Compressing a Spring
+
+According to **Hooke's law**, the force required to keep the spring in
+a compressed or stretched position $x$ units from the equilibrium position is
+$F(x) kx$, where the positive spring constant $k$ measures the stiffness of the
+spring.
+
 ![Example 2](../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-7_example-2.png)
+
+#### Lifting a Chain and Bucket
+
 ![Example 3](../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-7_example-3.png)
+
+#### Pumping Water
+
 ![Example 4](../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-7_example-4.png)
+
+#### Pumping Gasoline
+
 ![Example 5](../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-7_example-5.png)
+
+#### Force on a Dam
+
 ![Example 6.1](../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-7_example-6.1.png)
 ![Example 6.2](../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-7_example-6.2.png)
 

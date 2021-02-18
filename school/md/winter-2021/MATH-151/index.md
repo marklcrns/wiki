@@ -33,4 +33,6 @@ Textbook
 - [⬇ Homework 1](file:../../../files/winter-2021/MATH-151/homeworks/homework1.pdf)
 - [⬇ Homework 2](file:../../../files/winter-2021/MATH-151/homeworks/homework2.pdf)
 - [⬇ Homework 3](file:../../../files/winter-2021/MATH-151/homeworks/homework3.pdf)
+- [⬇ Homework 4](file:../../../files/winter-2021/MATH-151/homeworks/homework4.pdf)
+- [⬇ Homework 5](file:../../../files/winter-2021/MATH-151/homeworks/homework5.pdf)
 
