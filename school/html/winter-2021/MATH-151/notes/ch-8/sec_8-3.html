@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Lucernas">
 
-    <title>Section 6.5</title>
+    <title>Section 8.3</title>
 
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
@@ -66,9 +66,11 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#section-6.5-length-of-curves">Section 6.5: Length of Curves</a><ul>
-          <li><a href="#definition-arc-length-for-y-fx">Definition: Arc Length for <span class="math inline">\(y = f(x)\)</span></a></li>
-          <li><a href="#definition-arc-length-for-x-gx">Definition: Arc Length for <span class="math inline">\(x = g(x)\)</span></a></li>
+          <li><a href="#section-8.3-trigonometric-integrals">Section 8.3: Trigonometric Integrals</a><ul>
+          <li><a href="#integrating-powers-of-sinx-or-cosx">Integrating Powers of <span class="math inline">\(\sin(x)\)</span> or <span class="math inline">\(\cos(x)\)</span></a></li>
+          <li><a href="#integrating-products-of-powers-of-sinx-and-cosx">Integrating Products of Powers of <span class="math inline">\(\sin(x)\)</span> and <span class="math inline">\(\cos(x)\)</span></a></li>
+          <li><a href="#reduction-formulas">Reduction Formulas</a></li>
+          <li><a href="#integrating-producsts-of-powers-of-tanx-and-secx">Integrating Producsts of Powers of <span class="math inline">\(\tan(x)\)</span> and <span class="math inline">\(\sec(x)\)</span></a></li>
           <li><a href="#external-video-lectures">External Video Lectures</a></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
@@ -85,9 +87,9 @@
               <div class="page-header">
                 <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
                 <h1 class="title">
-                  Section 6.5
+                  Section 8.3
                   <small class="h3 text-muted subtitle">
-                    | Length of Curves
+                    | Trigonometric Integrals
                   </small>
                 </h1>
               </div>
@@ -95,35 +97,33 @@
           </header>
           <div class="h5 text-muted">
             <h5 class="author">Mark Lucernas</h5>
-            <h5 class="date">Feb 10, 2021</h5>
+            <h5 class="date">Feb 22, 2021</h5>
           </div>
 
 <!-- Contents -->
           <article class="contents">
-<h1 id="section-6.5-length-of-curves">Section 6.5: Length of Curves</h1>
-<h2 id="definition-arc-length-for-y-fx">Definition: Arc Length for <span class="math inline">\(y = f(x)\)</span></h2>
-<p>Let <span class="math inline">\(f\)</span> have a continuous first derivative on the interval [a, b]. The length of the curve from (a, f(a)) to (b, f(b)) is</p>
-<p><span class="math display">\[
-L = \int_{a}^{b} \sqrt{1 + f^{\prime}(x)^{2}}dx
-\]</span></p>
-<p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-5_example-1.png" alt="Example 1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-5_example-2.png" alt="Example 2" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-5_example-3.1.png" alt="Example 3.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-5_example-3.2.png" alt="Example 3.2" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-5_example-4.png" alt="Example 4" /></p>
-<h2 id="definition-arc-length-for-x-gx">Definition: Arc Length for <span class="math inline">\(x = g(x)\)</span></h2>
-<p>Let <span class="math inline">\(x = g(y)\)</span> have a continuous first derivative on the interval <span class="math inline">\([c, d]\)</span>. The length of the curve from <span class="math inline">\((g(c), c)\)</span> to <span class="math inline">\((g(d), d)\)</span> is</p>
-<p><span class="math display">\[
-L = \int_{c}^{d} \sqrt{1 + g^{\prime}(y)^{2}}dy
-\]</span></p>
-<p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-5_example-5.png" alt="Example 5" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-5_example-6.png" alt="Example 6" /></p>
+<h1 id="section-8.3-trigonometric-integrals">Section 8.3: Trigonometric Integrals</h1>
+<h2 id="integrating-powers-of-sinx-or-cosx">Integrating Powers of <span class="math inline">\(\sin(x)\)</span> or <span class="math inline">\(\cos(x)\)</span></h2>
+<p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-3_example-1.1.png" alt="Example 1.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-3_example-1.2.png" alt="Example 1.2" /></p>
+<h2 id="integrating-products-of-powers-of-sinx-and-cosx">Integrating Products of Powers of <span class="math inline">\(\sin(x)\)</span> and <span class="math inline">\(\cos(x)\)</span></h2>
+<p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-3_example-2.1.png" alt="Example 2.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-3_example-2.2.png" alt="Example 2.2" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-3_table-8.2.png" alt="Table 8.2" /></p>
+<h2 id="reduction-formulas">Reduction Formulas</h2>
+<p>Assume <span class="math inline">\(n\)</span> is a positive integer.</p>
+<ol type="1">
+<li><p><span class="math inline">\(\int \sin^{n}(x)\;dx = \frac{\sin^{n - 1}(x)\cos(x) }{n} + \frac{n - 1}{n}\int \sin^{n - 2}(x)\;dx\)</span></p></li>
+<li><p><span class="math inline">\(\int \cos^{n}(x)\;dx = \frac{\cos^{n - 1}(x)\sin(x) }{n} + \frac{n - 1}{n}\int \cos^{n - 2}(x)\;dx\)</span></p></li>
+<li><p><span class="math inline">\(\int \tan^{n}(x)\;dx = \frac{\tan^{n - 1}(x)}{n - 1} - \int \tan^{n - 2}(x)\;dx, n \neq 1\)</span></p></li>
+<li><p><span class="math inline">\(\int \sec^{n}(x)\;dx = \frac{\sec^{n - 2}(x)\tan(x)}{n - 1} + \frac{n - 2}{n - 1}\int \sec^{n - 2}(x)\;dx, n \neq 1\)</span></p></li>
+</ol>
+<figure>
+<img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-3_example-3.png" alt="Example 3" /><figcaption>Example 3</figcaption>
+</figure>
+<h2 id="integrating-producsts-of-powers-of-tanx-and-secx">Integrating Producsts of Powers of <span class="math inline">\(\tan(x)\)</span> and <span class="math inline">\(\sec(x)\)</span></h2>
+<p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-3_example-4.1.png" alt="Example 4.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-3_example-4.2.png" alt="Example 4.2" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-3_table-8.3.png" alt="Table 8.3" /></p>
 <h2 id="external-video-lectures">External Video Lectures</h2>
-<ul>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-bc/bc-applications-of-integration-new/bc-8-13/v/arc-length-formula">📺 Arc length intro</a></li>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-bc/bc-applications-of-integration-new/bc-8-13/v/arc-length-example">📺 Worked example: arc length</a></li>
-</ul>
+<p><a href="https://www.youtube.com/watch?v=flvhNBoOsiA">📺 Trigonometric Integrals</a></p>
 <p><br></p>
 <h1 id="resources">Resources</h1>
-<ul>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-bc/bc-applications-of-integration-new/bc-8-13/v/arc-length-formula">📺 Arc length intro</a></li>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-bc/bc-applications-of-integration-new/bc-8-13/v/arc-length-example">📺 Worked example: arc length</a></li>
-</ul>
 <p>Textbook</p>
 <ul>
 <li>Calculus, Early Transcendentals 3rd Edition - Briggs, Cochran, and Gillet</li>

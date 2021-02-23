@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Lucernas">
 
-    <title>Section 6.5</title>
+    <title>Section 8.2</title>
 
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
@@ -66,9 +66,11 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#section-6.5-length-of-curves">Section 6.5: Length of Curves</a><ul>
-          <li><a href="#definition-arc-length-for-y-fx">Definition: Arc Length for <span class="math inline">\(y = f(x)\)</span></a></li>
-          <li><a href="#definition-arc-length-for-x-gx">Definition: Arc Length for <span class="math inline">\(x = g(x)\)</span></a></li>
+          <li><a href="#section-8.2-integration-by-parts">Section 8.2: Integration by Parts</a><ul>
+          <li><a href="#integration-by-parts-for-indefinite-integrals">Integration by Parts for Indefinite Integrals</a></li>
+          <li><a href="#integration-by-parts-for-definite-integrals">Integration by Parts for Definite Integrals</a><ul>
+          <li><a href="#integral-of-lnx">Integral of <span class="math inline">\(\ln(x)\)</span></a></li>
+          </ul></li>
           <li><a href="#external-video-lectures">External Video Lectures</a></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
@@ -85,9 +87,9 @@
               <div class="page-header">
                 <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
                 <h1 class="title">
-                  Section 6.5
+                  Section 8.2
                   <small class="h3 text-muted subtitle">
-                    | Length of Curves
+                    | Integration by Parts
                   </small>
                 </h1>
               </div>
@@ -95,34 +97,37 @@
           </header>
           <div class="h5 text-muted">
             <h5 class="author">Mark Lucernas</h5>
-            <h5 class="date">Feb 10, 2021</h5>
+            <h5 class="date">Feb 22, 2021</h5>
           </div>
 
 <!-- Contents -->
           <article class="contents">
-<h1 id="section-6.5-length-of-curves">Section 6.5: Length of Curves</h1>
-<h2 id="definition-arc-length-for-y-fx">Definition: Arc Length for <span class="math inline">\(y = f(x)\)</span></h2>
-<p>Let <span class="math inline">\(f\)</span> have a continuous first derivative on the interval [a, b]. The length of the curve from (a, f(a)) to (b, f(b)) is</p>
+<h1 id="section-8.2-integration-by-parts">Section 8.2: Integration by Parts</h1>
+<h2 id="integration-by-parts-for-indefinite-integrals">Integration by Parts for Indefinite Integrals</h2>
+<p>Suppose <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> are differentiable functions. Then</p>
 <p><span class="math display">\[
-L = \int_{a}^{b} \sqrt{1 + f^{\prime}(x)^{2}}dx
+\int u\;dv = uv - \int v\;du
 \]</span></p>
-<p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-5_example-1.png" alt="Example 1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-5_example-2.png" alt="Example 2" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-5_example-3.1.png" alt="Example 3.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-5_example-3.2.png" alt="Example 3.2" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-5_example-4.png" alt="Example 4" /></p>
-<h2 id="definition-arc-length-for-x-gx">Definition: Arc Length for <span class="math inline">\(x = g(x)\)</span></h2>
-<p>Let <span class="math inline">\(x = g(y)\)</span> have a continuous first derivative on the interval <span class="math inline">\([c, d]\)</span>. The length of the curve from <span class="math inline">\((g(c), c)\)</span> to <span class="math inline">\((g(d), d)\)</span> is</p>
+<p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-2_example-1.png" alt="Example 1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-2_example-2.png" alt="Example 2" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-2_example-3.1.png" alt="Example 3.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-2_example-3.2.png" alt="Example 3.2" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-2_example-4.png" alt="Example 4" /></p>
+<h2 id="integration-by-parts-for-definite-integrals">Integration by Parts for Definite Integrals</h2>
+<p>Let <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> be differentiable. Then</p>
 <p><span class="math display">\[
-L = \int_{c}^{d} \sqrt{1 + g^{\prime}(y)^{2}}dy
+\int_{a}^{b} u(x)v^{\prime}(dx)\;dx = \left . u(x)v(x) \right |_{a}^{b} - \int_{a}^{b} v(x)u^{\prime}(x)\;dx
 \]</span></p>
-<p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-5_example-5.png" alt="Example 5" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-6/sec_6-5_example-6.png" alt="Example 6" /></p>
+<figure>
+<img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-2_example-5.png" alt="Example 5" /><figcaption>Example 5</figcaption>
+</figure>
+<h3 id="integral-of-lnx">Integral of <span class="math inline">\(\ln(x)\)</span></h3>
+<p><span class="math display">\[
+\ln(x)\;dx = x\ln(x) - x + C
+\]</span></p>
+<p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-2_example-6.1.png" alt="Example 6.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-2_example-6.2.png" alt="Example 6.2" /></p>
 <h2 id="external-video-lectures">External Video Lectures</h2>
-<ul>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-bc/bc-applications-of-integration-new/bc-8-13/v/arc-length-formula">📺 Arc length intro</a></li>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-bc/bc-applications-of-integration-new/bc-8-13/v/arc-length-example">📺 Worked example: arc length</a></li>
-</ul>
+<p><a href="https://www.khanacademy.org/math/ap-calculus-bc/bc-integration-new/bc-6-11/v/deriving-integration-by-parts-formula">📺 Using integration by parts</a></p>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-bc/bc-applications-of-integration-new/bc-8-13/v/arc-length-formula">📺 Arc length intro</a></li>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-bc/bc-applications-of-integration-new/bc-8-13/v/arc-length-example">📺 Worked example: arc length</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-bc/bc-integration-new/bc-6-11/v/deriving-integration-by-parts-formula">📺 Using integration by parts</a></li>
 </ul>
 <p>Textbook</p>
 <ul>
