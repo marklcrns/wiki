@@ -22,6 +22,19 @@ $$
 ![Example 3.2](../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-2_example-3.2.png)
 ![Example 4](../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-2_example-4.png)
 
+### Tips for Choosing $u$ When Integrating by Parts
+
+Use the acronym "LIPET" to help choosing the value when substituting for $u$.
+
+- **L**ogarithmic -- e.g. $\ln(x)$
+- **I**nverse Trigonometric -- e.g. $\tan^{-1}(x)$
+- **P**olynomial -- e.g. $x^{2}$
+- **E**xponential -- e.g. $e^{x}$
+- **T**rigonometric -- e.g. $\cos(x)$
+
+to prioritize choosing $u$ in the order of **LIPET**, **L** being the first
+priority and **T** being the last.
+
 
 ## Integration by Parts for Definite Integrals
 
