@@ -25,6 +25,8 @@ Textbook
 
 ## Notes
 
+- [↪ CheatSheet](notes/cheatsheet)
+
 - [↪ Chapter 6](notes/ch-6/index)
 - [↪ Chapter 8](notes/ch-8/index)
 
