@@ -36,3 +36,6 @@ date: Jan 06, 2021
 - [⬇ Lecture 10: Shell Programming](file:../../../files/winter-2021/CSE-15L/lectures/Lecture10-CSE15L-SectB-Winter2021-08Feb2021.pdf)
 - [⬇ Lecture 11: More Shell Programming](file:../../../files/winter-2021/CSE-15L/lectures/Lecture11-CSE15L-SectB-Winter2021-10Feb2021.pdf)
 - [⬇ Lecture 12: XML and Ant](file:../../../files/winter-2021/CSE-15L/lectures/Lecture12-CSE15L-SectB-Winter2021-17Feb2021.pdf)
+- [⬇ Lecture 13: Unix Processes](file:../../../files/winter-2021/CSE-15L/lectures/Lecture13-CSE15L-SectB-Winter2021-22Feb2021.pdf)
+- [⬇ Lecture 14: Diagnostic Output, Java Logging Framework](file:../../../files/winter-2021/CSE-15L/lectures/Lecture14-CSE15L-SectB-Winter2021-24Feb2021.pdf)
+
