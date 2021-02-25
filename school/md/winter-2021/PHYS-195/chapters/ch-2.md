@@ -116,17 +116,19 @@ $$
 The following five Kinematic equations describe the motion of a particle with
 constant acceleration:
 
-| #    | Equation                                                   | Missing Quantity   | Usage                                                    |
-| :--: | :--------------------------------------------------------: | :----------------: | -------------------------------------------------------- |
-| 1    | $v_{f} = v_{0} + a$                                        | $\Delta{x}$        | Will tell how fast an object is going at any given time  |
-| 2    | $\Delta{x} = v_{0}t + \frac{1}{2}at^{2}$                   | $v_{f}$            | Will tell where an object is at any given time           |
-| 3    | $\Delta{x} = (\frac{v_{f} + v_{0}}{2})t$                   | $a$                | Will tell how fast an object is going at a certain place |
-| 4    | $v_{f}^{2} = v_{0}^{2} + 2a\Delta{x}$                      | $t$                |                                                          |
-| 5    | $\Delta{x} = v_{f}t - \frac{1}{2}at^{2}$                   | $v_{0}$            |                                                          |
+> The $x$ variable can be replaced by $y$ and would still be true.
 
-> $\Delta{x} = x - x_{0}$, $v_{0} = \text{original/initial velocity}$, $v_{f} = \text{final velocity}$
+| Equation                                                   | Missing Quantity           |
+| :--------------------------------------------------------: | :------------------------: |
+| $v_{f} = v_{0} + at$                                       | $x - x_{0}$ or $\Delta{x}$ |
+| $x - x_{0} = v_{0}t + \frac{1}{2}at^{2}$                   | $v_{f}$                    |
+| $x - x_{0} = v_{f}t - \frac{1}{2}at^{2}$                   | $v_{0}$                    |
+| $x - x_{0} = \frac{1}{2}(v_{f} + v_{0})t$                  | $a$                        |
+| $v_{f}^{2} = v_{0}^{2} + 2a(x - x_{0})$                    | $t$                        |
 
-These are _note_ valid when the acceleration is not constant.
+> $\Delta{x} = x - x_{0}$, $v_{0} = \text{initial velocity}$, and $v = \text{final velocity}$
+
+These are _not_ valid when the acceleration is not constant.
 
 Another equation for constant acceleration through Integration
 
@@ -137,8 +139,8 @@ $$
 
 ## 2.5 Free-Fall Acceleration
 
-**Free-fall acceleration** is the downward acceleration at a certain constant
 rate, and its magnitude is represented by $g$ (gravity), $9.8 m/s^{2}$.
+**Free-fall acceleration** is the downward acceleration at a certain constant
 
 - The directions of the motion is along a vertical $y$ axis instead of the $x$ axis,
 	with the positive direction of $y$ upward.

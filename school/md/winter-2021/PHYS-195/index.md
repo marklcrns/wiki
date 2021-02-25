@@ -25,6 +25,8 @@ date: Jan 31, 2021
 
 ## Lecture Notes
 
+- [↪ Cheatsheet](chapters/cheatsheet)
+
 - [↪ Chapter 0: Intro](chapters/ch-0)
 - [↪ Chapter 1: Measurements](chapters/ch-1)
 - [↪ Chapter 2: Kinematics](chapters/ch-2)

@@ -14,11 +14,11 @@ date: Feb 24, 2021
 
 $$
 \begin{array}{ll}
-	ln(x) &=& \log_{e}(x) \\
+	\ln(x) &=& \log_{e}(x) \\
 	~\\
 	\log(x) &=& \log_{10}(x) \\
 	~\\
-	\log_{b}(x) &=& \dfrac{ln(x)}{ln(b)} \\
+	\log_{b}(x) &=& \dfrac{\ln(x)}{\ln(b)} \\
 \end{array}
 $$
 
@@ -119,15 +119,17 @@ $$
 
 $$
 \begin{array}{ll}
-	\int x\;dx &=& \dfrac{x^{2}}{2} \\
+	\int x\;dx &=& \dfrac{x^{2}}{2} + C \\
 	~\\
-	\int \sqrt{x}\;dx &=& \dfrac{2}{3}x^{\frac{3}{2}} \\
+	\int \sqrt{x}\;dx &=& \dfrac{2}{3}x^{\frac{3}{2}} + C \\
 	~\\
-	\int x^{n}\;dx &=& \dfrac{x^{n + 1}}{n + 1} \\
+	\int x^{n}\;dx &=& \dfrac{x^{n + 1}}{n + 1} + C \\
 	~\\
-	\int x^{\frac{m}{n}}\;dx &=& \dfrac{x^{\frac{m}{n} + 1}}{\frac{m}{n} + 1} = \dfrac{nx\frac{m + n}{n}}{m + n} \\
+	\int x^{\frac{m}{n}}\;dx &=& \dfrac{x^{\frac{m}{n} + 1}}{\frac{m}{n} + 1} + C = \dfrac{nx\frac{m + n}{n}}{m + n} + C \\
 	~\\
-	\int mx^{n}\;dx &=& m\dfrac{x^{n + 1}}{n + 1} \\
+	\int mx^{n}\;dx &=& m\dfrac{x^{n + 1}}{n + 1} + C \\
+	~\\
+	\int \frac{1}{x}\;dx &=& \ln|x| + C \\
 \end{array}
 $$
 
