@@ -66,13 +66,22 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#formulas">Formulas</a></li>
+          <li><a href="#formulas">Formulas</a><ul>
+          <li><a href="#integration">Integration</a><ul>
+          <li><a href="#length-of-a-curve">Length of a Curve</a></li>
+          <li><a href="#area-between-curves">Area Between Curves</a></li>
+          <li><a href="#volume">Volume</a><ul>
+          <li><a href="#disk-method-about-x-axis">Disk Method (about <span class="math inline">\(x\)</span>-axis)</a></li>
+          <li><a href="#shell-method-about-y-axis">Shell Method (about <span class="math inline">\(y\)</span>-axis)</a></li>
+          </ul></li>
+          <li><a href="#reduction-formulas">Reduction Formulas</a></li>
+          </ul></li>
+          </ul></li>
           <li><a href="#general">General</a><ul>
           <li><a href="#logarithmic">Logarithmic</a></li>
           </ul></li>
           <li><a href="#common-identities">Common Identities</a><ul>
           <li><a href="#trigonometric">Trigonometric</a></li>
-          <li><a href="#unit-circle">Unit Circle</a></li>
           </ul></li>
           <li><a href="#derivatives">Derivatives</a><ul>
           <li><a href="#polynomial">Polynomial</a></li>
@@ -90,7 +99,6 @@
           <li><a href="#common-integration-formulas">Common Integration Formulas</a></li>
           <li><a href="#common-indefinite-integrals">Common Indefinite Integrals</a></li>
           <li><a href="#integral-by-parts-formula">Integral by Parts Formula</a></li>
-          <li><a href="#reduction-formulas">Reduction Formulas</a></li>
           </ul></li>
           </ul>
           <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
@@ -121,6 +129,44 @@
 <!-- Contents -->
           <article class="contents">
 <h1 id="formulas">Formulas</h1>
+<h2 id="integration">Integration</h2>
+<h3 id="length-of-a-curve">Length of a Curve</h3>
+<p><span class="math display">\[
+L = \int_{a}^{b} \sqrt{1 + f^{\prime}(x)^{2}}\;dx
+\]</span></p>
+<h3 id="area-between-curves">Area Between Curves</h3>
+<p><span class="math display">\[
+A = \int_{a}^{b} \left | f(x) - g(x) \right |\;dx
+\]</span></p>
+<h3 id="volume">Volume</h3>
+<h4 id="disk-method-about-x-axis">Disk Method (about <span class="math inline">\(x\)</span>-axis)</h4>
+<p><span class="math display">\[
+V \int_{a}^{b} \pi f(y)^{2}\;dx
+\]</span></p>
+<h4 id="shell-method-about-y-axis">Shell Method (about <span class="math inline">\(y\)</span>-axis)</h4>
+<p><span class="math display">\[
+V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\; \text{ where } 0 \le a \le b
+\]</span></p>
+<h3 id="reduction-formulas">Reduction Formulas</h3>
+<p><span class="math display">\[
+\begin{array}{ll}
+    {\displaystyle \int x^{n}e^{ax}dx} = \dfrac{x^{n}e^{ax}}{a} - \dfrac{n}{a}{\displaystyle \int x^{n - 1}e^{ax}dx} &amp; \text{ for } a \neq 0 \\
+    ~\\
+    {\displaystyle \int \ln^{n}(x)dx} = x\ln^{n}(x) - n {\displaystyle \int \ln^{n - 1}(x)dx} \\
+\end{array}
+\]</span></p>
+<p>Assume <span class="math inline">\(n\)</span> is a positive integer.</p>
+<p><span class="math display">\[
+\begin{array}{ll}
+    {\displaystyle \int x^{n}\cos(ax)dx} = \dfrac{x^{n}\sin(ax)}{a} - \dfrac{n}{a}{\displaystyle \int x^{n - 1}\sin(ax)d} &amp; \text{ for } a \neq 0 \\
+    ~\\
+    {\displaystyle \int x^{n}\sin(ax)dx} = -\dfrac{x^{n}\cos(ax)}{a} + \dfrac{n}{a}{\displaystyle \int x^{n - 1}\cos(ax)d} &amp; \text{ for } a \neq 0 \\
+    ~\\
+    {\displaystyle \int \tan^{n}(x)\;dx} = \frac{\tan^{n - 1}(x)}{n - 1} - {\displaystyle \int \tan^{n - 2}(x)\;dx} &amp; \text{ for } n \neq 1 \\
+    ~\\
+    {\displaystyle \int \sec^{n}(x)\;dx} = \frac{\sec^{n - 2}(x)\tan(x)}{n - 1} + \frac{n - 2}{n - 1}{\displaystyle \int \sec^{n - 2}(x)\;dx} &amp; \text{ for } n \neq 1 \\
+\end{array}
+\]</span></p>
 <h1 id="general">General</h1>
 <h2 id="logarithmic">Logarithmic</h2>
 <p><span class="math display">\[
@@ -136,17 +182,128 @@
 <h2 id="trigonometric">Trigonometric</h2>
 <ul>
 <li><a href="../../../../files/spring-2020/MATH-141/ch-6/ch-6_handout-24.pdf">⬇ Famous Trig Identities</a></li>
+<li><a href="../../../../files/winter-2021/MATH-151/notes/trig_cheatsheet.pdf">⬇ Trig Cheatsheet</a></li>
 </ul>
-<p><span class="math display">\[
-\begin{array}{ll}
-    \sin(0) = 0 &amp; \cos(0) = 1 \\
-    \sin(\pi) = 0 &amp; \cos(\pi) = -1 \\
-\end{array}
-\]</span></p>
-<h2 id="unit-circle">Unit Circle</h2>
+<p><span class="math inline">\(\theta = (cos(x), sin(x))\)</span></p>
 <figure>
 <img src="../../../../files/spring-2020/MATH-141/ch-4/unit_circle.png" alt="Unit Circle" /><figcaption>Unit Circle</figcaption>
 </figure>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 8%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 10%" />
+<col style="width: 9%" />
+<col style="width: 12%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Angle</th>
+<th style="text-align: center;"><span class="math inline">\(0^{\circ}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(30^{\circ}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(45^{\circ}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(60^{\circ}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(90^{\circ}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(180^{\circ}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(270^{\circ}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(360^{\circ}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>Radian</strong></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{\pi}{6}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{\pi}{4}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{\pi}{3}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{\pi}{2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pi\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{3 \pi}{2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2 \pi\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\sin\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{\sqrt{2}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{\sqrt{3}}{2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\cos\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{\sqrt{3}}{2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{\sqrt{2}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\tan\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{\sqrt{3}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sqrt{3}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\infty\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\infty\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\cot\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\infty\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sqrt{3}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{\sqrt{3}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\infty\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\infty\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\sec\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{2}{\sqrt{3}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sqrt{2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\infty\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\infty\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\csc\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\infty\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sqrt{2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{2}{\sqrt{3}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\infty\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\infty\)</span></td>
+</tr>
+</tbody>
+</table>
 <h1 id="derivatives">Derivatives</h1>
 <h2 id="polynomial">Polynomial</h2>
 <p><span class="math display">\[
@@ -228,9 +385,9 @@
 <h2 id="trigonometric-1">Trigonometric</h2>
 <p><span class="math display">\[
 \begin{array}{ll}
-    \int \sin(x) = -\cos(x) + C &amp; \int \cos(x) = \sin(x) + C \\
+    {\displaystyle \int \sin(x)} = -\cos(x) + C &amp; {\displaystyle \int \cos(x)} = \sin(x) + C \\
     ~\\
-    \int sin(2x) = -\dfrac{1}{2}cos(2x) + C &amp; \int \cos(2x) = \dfrac{1}{2}\sin(2x) + C \\
+    {\displaystyle \int \sin(2x)} = -\dfrac{1}{2}cos(2x) + C &amp; {\displaystyle \int \cos(2x)} = \dfrac{1}{2}\sin(2x) + C \\
 \end{array}
 \]</span></p>
 <h2 id="logarithmic-2">Logarithmic</h2>
@@ -297,18 +454,6 @@
 <p><strong>Integral by Parts for Definite Integrals</strong></p>
 <p><span class="math display">\[
 \int_{a}^{b} u(x)v^{\prime} (dx)dx = \left . u(x)v(x) \right |_{a}^{b} - \int_{a}^{b} v(x)u^{\prime}(x)dx
-\]</span></p>
-<h2 id="reduction-formulas">Reduction Formulas</h2>
-<p><span class="math display">\[
-\begin{array}{ll}
-    \int x^{n}e^{ax}dx = \dfrac{x^{n}e^{ax}}{a} - \dfrac{n}{a}\int x^{n - 1}e^{ax}dx &amp; \text{ for } a \neq 0 \\
-    ~\\ 
-    \int x^{n}\cos(ax)dx = \dfrac{x^{n}\sin(ax)}{a} - \dfrac{n}{a} \int x^{n - 1}\sin(ax)d &amp; \text{ for } a \neq 0 \\
-    ~\\
-    \int x^{n}\sin(ax)dx = -\dfrac{x^{n}\cos(ax)}{a} + \dfrac{n}{a} \int x^{n - 1}\cos(ax)d &amp; \text{ for } a \neq 0 \\
-    ~\\
-    \int \ln^{n}(x)dx = x\ln^{n}(x) - n \int \ln^{n - 1}(x)dx \\
-\end{array}
 \]</span></p>
           </article>
           </div>

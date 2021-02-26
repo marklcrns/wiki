@@ -8,6 +8,59 @@ date: Feb 24, 2021
 
 # Formulas
 
+## Integration
+
+### Length of a Curve
+
+$$
+L = \int_{a}^{b} \sqrt{1 + f^{\prime}(x)^{2}}\;dx
+$$
+
+### Area Between Curves
+
+$$
+A = \int_{a}^{b} \left | f(x) - g(x) \right |\;dx
+$$
+
+### Volume
+
+#### Disk Method (about $x$-axis)
+
+$$
+V \int_{a}^{b} \pi f(y)^{2}\;dx
+$$
+
+#### Shell Method (about $y$-axis)
+
+$$
+V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\; \text{ where } 0 \le a \le b
+$$
+
+### Reduction Formulas
+
+$$
+\begin{array}{ll}
+	{\displaystyle \int x^{n}e^{ax}dx} = \dfrac{x^{n}e^{ax}}{a} - \dfrac{n}{a}{\displaystyle \int x^{n - 1}e^{ax}dx} & \text{ for } a \neq 0 \\
+	~\\
+	{\displaystyle \int \ln^{n}(x)dx} = x\ln^{n}(x) - n {\displaystyle \int \ln^{n - 1}(x)dx} \\
+\end{array}
+$$
+
+Assume $n$ is a positive integer.
+
+$$
+\begin{array}{ll}
+	{\displaystyle \int x^{n}\cos(ax)dx} = \dfrac{x^{n}\sin(ax)}{a} - \dfrac{n}{a}{\displaystyle \int x^{n - 1}\sin(ax)d} & \text{ for } a \neq 0 \\
+	~\\
+	{\displaystyle \int x^{n}\sin(ax)dx} = -\dfrac{x^{n}\cos(ax)}{a} + \dfrac{n}{a}{\displaystyle \int x^{n - 1}\cos(ax)d} & \text{ for } a \neq 0 \\
+	~\\
+	{\displaystyle \int \tan^{n}(x)\;dx} = \frac{\tan^{n - 1}(x)}{n - 1} - {\displaystyle \int \tan^{n - 2}(x)\;dx} & \text{ for } n \neq 1 \\
+	~\\
+	{\displaystyle \int \sec^{n}(x)\;dx} = \frac{\sec^{n - 2}(x)\tan(x)}{n - 1} + \frac{n - 2}{n - 1}{\displaystyle \int \sec^{n - 2}(x)\;dx} & \text{ for } n \neq 1 \\
+\end{array}
+$$
+
+
 # General
 
 ## Logarithmic
@@ -27,17 +80,22 @@ $$
 ## Trigonometric
 
 - [⬇ Famous Trig Identities](file:../../../../files/spring-2020/MATH-141/ch-6/ch-6_handout-24.pdf)
+- [⬇ Trig Cheatsheet](file:../../../../files/winter-2021/MATH-151/notes/trig_cheatsheet.pdf)
 
-$$
-\begin{array}{ll}
-	\sin(0) = 0 & \cos(0) = 1 \\
-	\sin(\pi) = 0 & \cos(\pi) = -1 \\
-\end{array}
-$$
-
-## Unit Circle
+$\theta = (cos(x), sin(x))$
 
 ![Unit Circle](../../../../files/spring-2020/MATH-141/ch-4/unit_circle.png)
+
+| Angle      | $0^{\circ}$ | $30^{\circ}$         | $45^{\circ}$         | $60^{\circ}$         | $90^{\circ}$    | $180^{\circ}$ | $270^{\circ}$     | $360^{\circ}$ |
+|:----------:|:-----------:|:--------------------:|:--------------------:|:--------------------:|:---------------:|:-------------:|:-----------------:|:-------------:|
+| **Radian** | $0$         | $\frac{\pi}{6}$      | $\frac{\pi}{4}$      | $\frac{\pi}{3}$      | $\frac{\pi}{2}$ | $\pi$         | $\frac{3 \pi}{2}$ | $2 \pi$       |
+|            |             |                      |                      |                      |                 |               |                   |               |
+| $\sin$     | $0$         | $\frac{1}{2}$        | $\frac{1}{\sqrt{2}}$ | $\frac{\sqrt{3}}{2}$ | $1$             | $0$           | $-1$              | $0$           |
+| $\cos$     | $1$         | $\frac{\sqrt{3}}{2}$ | $\frac{1}{\sqrt{2}}$ | $\frac{1}{2}$        | $0$             | $-1$          | $0$               | $1$           |
+| $\tan$     | $0$         | $\frac{1}{\sqrt{3}}$ | $1$                  | $\sqrt{3}$           | $\infty$        | $0$           | $\infty$          | $0$           |
+| $\cot$     | $\infty$    | $\sqrt{3}$           | $1$                  | $\frac{1}{\sqrt{3}}$ | $0$             | $\infty$      | $0$               | $\infty$      |
+| $\sec$     | $1$         | $\frac{2}{\sqrt{3}}$ | $\sqrt{2}$           | $2$                  | $\infty$        | $-1$          | $\infty$          | $1$           |
+| $\csc$     | $\infty$    | $2$                  | $\sqrt{2}$           | $\frac{2}{\sqrt{3}}$ | $1$             | $\infty$      | $-1$              | $\infty$      |
 
 
 # Derivatives
@@ -137,9 +195,9 @@ $$
 
 $$
 \begin{array}{ll}
-	\int \sin(x) = -\cos(x) + C & \int \cos(x) = \sin(x) + C \\
+	{\displaystyle \int \sin(x)} = -\cos(x) + C & {\displaystyle \int \cos(x)} = \sin(x) + C \\
 	~\\
-	\int sin(2x) = -\dfrac{1}{2}cos(2x) + C & \int \cos(2x) = \dfrac{1}{2}\sin(2x) + C \\
+	{\displaystyle \int \sin(2x)} = -\dfrac{1}{2}cos(2x) + C & {\displaystyle \int \cos(2x)} = \dfrac{1}{2}\sin(2x) + C \\
 \end{array}
 $$
 
@@ -222,18 +280,4 @@ $$
 \int_{a}^{b} u(x)v^{\prime} (dx)dx = \left . u(x)v(x) \right |_{a}^{b} - \int_{a}^{b} v(x)u^{\prime}(x)dx
 $$
 
-
-## Reduction Formulas
-
-$$
-\begin{array}{ll}
-	\int x^{n}e^{ax}dx = \dfrac{x^{n}e^{ax}}{a} - \dfrac{n}{a}\int x^{n - 1}e^{ax}dx & \text{ for } a \neq 0 \\
-	~\\	
-	\int x^{n}\cos(ax)dx = \dfrac{x^{n}\sin(ax)}{a} - \dfrac{n}{a} \int x^{n - 1}\sin(ax)d & \text{ for } a \neq 0 \\
-	~\\
-	\int x^{n}\sin(ax)dx = -\dfrac{x^{n}\cos(ax)}{a} + \dfrac{n}{a} \int x^{n - 1}\cos(ax)d & \text{ for } a \neq 0 \\
-	~\\
-	\int \ln^{n}(x)dx = x\ln^{n}(x) - n \int \ln^{n - 1}(x)dx \\
-\end{array}
-$$
 
