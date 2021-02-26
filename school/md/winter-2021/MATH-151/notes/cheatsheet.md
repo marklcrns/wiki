@@ -61,20 +61,6 @@ $$
 $$
 
 
-# General
-
-## Logarithmic
-
-$$
-\begin{array}{ll}
-	\ln(x) &=& \log_{e}(x) \\
-	~\\
-	\log(x) &=& \log_{10}(x) \\
-	~\\
-	\log_{b}(x) &=& \dfrac{\ln(x)}{\ln(b)} \\
-\end{array}
-$$
-
 # Common Identities
 
 ## Trigonometric
@@ -96,6 +82,40 @@ $\theta = (cos(x), sin(x))$
 | $\cot$     | $\infty$    | $\sqrt{3}$           | $1$                  | $\frac{1}{\sqrt{3}}$ | $0$             | $\infty$      | $0$               | $\infty$      |
 | $\sec$     | $1$         | $\frac{2}{\sqrt{3}}$ | $\sqrt{2}$           | $2$                  | $\infty$        | $-1$          | $\infty$          | $1$           |
 | $\csc$     | $\infty$    | $2$                  | $\sqrt{2}$           | $\frac{2}{\sqrt{3}}$ | $1$             | $\infty$      | $-1$              | $\infty$      |
+
+
+## Logarithmic Identities
+
+$$
+\begin{array}{ll}
+	\ln(1) &=& 0 \\
+	~\\
+	\ln(e) &=& 1 \\
+	~\\
+	\ln(x) &=& \log_{e}(x) \\
+	~\\
+	\log(x) &=& \log_{10}(x) \\
+	~\\
+	\log_{b}(1) &=& 0 \\
+	~\\
+	\log_{b}(b) &=& 1 \\
+	~\\
+	\log_{b}(x^{e}) &=& e\log_{b}(x) \\
+	~\\
+	\log_{b}(xy) &=& \log_{b}(x) + \log_{b}(y)  \\
+	~\\
+	\log_{b}(x) &=& \dfrac{1}{\log_{x}(b)} \\
+	~\\
+	x^{\log_{b}(y)} &=& y^{\log_{b}(x)} \\
+	~\\
+	\log_{b}(0) &=& \text{undefined} \\
+	~\\
+	\log_{b}(-x) &=& \text{undefined} \\
+	~\\
+	\log_{b}(x) &=& \dfrac{\ln(x)}{\ln(b)}
+\end{array}
+$$
+
 
 
 # Derivatives
@@ -279,5 +299,4 @@ $$
 $$
 \int_{a}^{b} u(x)v^{\prime} (dx)dx = \left . u(x)v(x) \right |_{a}^{b} - \int_{a}^{b} v(x)u^{\prime}(x)dx
 $$
-
 

@@ -77,23 +77,21 @@
           <li><a href="#reduction-formulas">Reduction Formulas</a></li>
           </ul></li>
           </ul></li>
-          <li><a href="#general">General</a><ul>
-          <li><a href="#logarithmic">Logarithmic</a></li>
-          </ul></li>
           <li><a href="#common-identities">Common Identities</a><ul>
           <li><a href="#trigonometric">Trigonometric</a></li>
+          <li><a href="#logarithmic-identities">Logarithmic Identities</a></li>
           </ul></li>
           <li><a href="#derivatives">Derivatives</a><ul>
           <li><a href="#polynomial">Polynomial</a></li>
           <li><a href="#trigonometric-functions">Trigonometric Functions</a></li>
           <li><a href="#inverse-hyperbolic-functions">Inverse Hyperbolic Functions</a></li>
-          <li><a href="#logarithmic-1">Logarithmic</a></li>
+          <li><a href="#logarithmic">Logarithmic</a></li>
           <li><a href="#eulers">Euler’s</a></li>
           </ul></li>
           <li><a href="#antiderivatives">Antiderivatives</a><ul>
           <li><a href="#polynomial-1">Polynomial</a></li>
           <li><a href="#trigonometric-1">Trigonometric</a></li>
-          <li><a href="#logarithmic-2">Logarithmic</a></li>
+          <li><a href="#logarithmic-1">Logarithmic</a></li>
           </ul></li>
           <li><a href="#integrals">Integrals</a><ul>
           <li><a href="#common-integration-formulas">Common Integration Formulas</a></li>
@@ -165,17 +163,6 @@ V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\; \text{ where } 0 \le a \le b
     {\displaystyle \int \tan^{n}(x)\;dx} = \frac{\tan^{n - 1}(x)}{n - 1} - {\displaystyle \int \tan^{n - 2}(x)\;dx} &amp; \text{ for } n \neq 1 \\
     ~\\
     {\displaystyle \int \sec^{n}(x)\;dx} = \frac{\sec^{n - 2}(x)\tan(x)}{n - 1} + \frac{n - 2}{n - 1}{\displaystyle \int \sec^{n - 2}(x)\;dx} &amp; \text{ for } n \neq 1 \\
-\end{array}
-\]</span></p>
-<h1 id="general">General</h1>
-<h2 id="logarithmic">Logarithmic</h2>
-<p><span class="math display">\[
-\begin{array}{ll}
-    \ln(x) &amp;=&amp; \log_{e}(x) \\
-    ~\\
-    \log(x) &amp;=&amp; \log_{10}(x) \\
-    ~\\
-    \log_{b}(x) &amp;=&amp; \dfrac{\ln(x)}{\ln(b)} \\
 \end{array}
 \]</span></p>
 <h1 id="common-identities">Common Identities</h1>
@@ -304,6 +291,36 @@ V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\; \text{ where } 0 \le a \le b
 </tr>
 </tbody>
 </table>
+<h2 id="logarithmic-identities">Logarithmic Identities</h2>
+<p><span class="math display">\[
+\begin{array}{ll}
+    \ln(1) &amp;=&amp; 0 \\
+    ~\\
+    \ln(e) &amp;=&amp; 1 \\
+    ~\\
+    \ln(x) &amp;=&amp; \log_{e}(x) \\
+    ~\\
+    \log(x) &amp;=&amp; \log_{10}(x) \\
+    ~\\
+    \log_{b}(1) &amp;=&amp; 0 \\
+    ~\\
+    \log_{b}(b) &amp;=&amp; 1 \\
+    ~\\
+    \log_{b}(x^{e}) &amp;=&amp; e\log_{b}(x) \\
+    ~\\
+    \log_{b}(xy) &amp;=&amp; \log_{b}(x) + \log_{b}(y)  \\
+    ~\\
+    \log_{b}(x) &amp;=&amp; \dfrac{1}{\log_{x}(b)} \\
+    ~\\
+    x^{\log_{b}(y)} &amp;=&amp; y^{\log_{b}(x)} \\
+    ~\\
+    \log_{b}(0) &amp;=&amp; \text{undefined} \\
+    ~\\
+    \log_{b}(-x) &amp;=&amp; \text{undefined} \\
+    ~\\
+    \log_{b}(x) &amp;=&amp; \dfrac{\ln(x)}{\ln(b)}
+\end{array}
+\]</span></p>
 <h1 id="derivatives">Derivatives</h1>
 <h2 id="polynomial">Polynomial</h2>
 <p><span class="math display">\[
@@ -337,7 +354,7 @@ V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\; \text{ where } 0 \le a \le b
     \dfrac{d}{dx}(\tanh^{-1}{x}) = \dfrac{1}{1 - x^{2}} &amp; \dfrac{d}{dx}(\coth^{-1}{x}) = \dfrac{1}{1 - x^{2}}
 \end{array}
 \]</span></p>
-<h2 id="logarithmic-1">Logarithmic</h2>
+<h2 id="logarithmic">Logarithmic</h2>
 <p><span class="math display">\[
 \begin{array}{ll}
     \dfrac{d}{dx}(\ln(x)) &amp;=&amp; \dfrac{1}{x} \\
@@ -390,7 +407,7 @@ V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\; \text{ where } 0 \le a \le b
     {\displaystyle \int \sin(2x)} = -\dfrac{1}{2}cos(2x) + C &amp; {\displaystyle \int \cos(2x)} = \dfrac{1}{2}\sin(2x) + C \\
 \end{array}
 \]</span></p>
-<h2 id="logarithmic-2">Logarithmic</h2>
+<h2 id="logarithmic-1">Logarithmic</h2>
 <p><span class="math display">\[
 \begin{array}{ll}
     \int \ln(x)\;dx &amp;=&amp; x\ln(x) - x + C \\
