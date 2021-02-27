@@ -32,12 +32,21 @@ Textbook
 
 ## Homework Solutions
 
-- [⬇ Homework 1](file:../../../files/winter-2021/MATH-151/homeworks/homework1.pdf)
-- [⬇ Homework 2](file:../../../files/winter-2021/MATH-151/homeworks/homework2.pdf)
-- [⬇ Homework 3](file:../../../files/winter-2021/MATH-151/homeworks/homework3.pdf)
-- [⬇ Homework 4](file:../../../files/winter-2021/MATH-151/homeworks/homework4.pdf)
-- [⬇ Homework 5](file:../../../files/winter-2021/MATH-151/homeworks/homework5.pdf)
-- [⬇ Homework 6](file:../../../files/winter-2021/MATH-151/homeworks/homework6.pdf)
-- [⬇ Homework 7](file:../../../files/winter-2021/MATH-151/homeworks/homework7.pdf)
-- [⬇ Homework 8](file:../../../files/winter-2021/MATH-151/homeworks/homework8.pdf)
+- [⬇ Homework 1: Calculus 1 Review](file:../../../files/winter-2021/MATH-151/homeworks/homework1.pdf)
+
+### Chapter 4
+
+- [⬇ Homework 2: L'Hopital's Rule](file:../../../files/winter-2021/MATH-151/homeworks/homework2.pdf)
+
+### Chapter 6
+
+- [⬇ Homework 3: Length of Curves](file:../../../files/winter-2021/MATH-151/homeworks/homework3.pdf)
+- [⬇ Homework 4: Surface Area](file:../../../files/winter-2021/MATH-151/homeworks/homework4.pdf)
+- [⬇ Homework 5: Physical Applications](file:../../../files/winter-2021/MATH-151/homeworks/homework5.pdf)
+
+### Chapter 8
+
+- [⬇ Homework 6: Basic Approaches](file:../../../files/winter-2021/MATH-151/homeworks/homework6.pdf)
+- [⬇ Homework 7: Integration by Parts](file:../../../files/winter-2021/MATH-151/homeworks/homework7.pdf)
+- [⬇ Homework 8: Trigonometric Integrals](file:../../../files/winter-2021/MATH-151/homeworks/homework8.pdf)
 
