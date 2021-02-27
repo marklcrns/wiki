@@ -67,9 +67,15 @@
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
           <li><a href="#formulas">Formulas</a><ul>
+          <li><a href="#derivatives">Derivatives</a><ul>
+          <li><a href="#product-rule">Product Rule</a></li>
+          <li><a href="#quotient-rule">Quotient Rule</a></li>
+          <li><a href="#chain-rule">Chain Rule</a></li>
+          </ul></li>
           <li><a href="#integration">Integration</a><ul>
           <li><a href="#length-of-a-curve">Length of a Curve</a></li>
           <li><a href="#area-between-curves">Area Between Curves</a></li>
+          <li><a href="#area-of-a-surface-of-revolution">Area of a Surface of Revolution</a></li>
           <li><a href="#volume">Volume</a><ul>
           <li><a href="#disk-method-about-x-axis">Disk Method (about <span class="math inline">\(x\)</span>-axis)</a></li>
           <li><a href="#shell-method-about-y-axis">Shell Method (about <span class="math inline">\(y\)</span>-axis)</a></li>
@@ -82,7 +88,19 @@
           <li><a href="#trigonometric">Trigonometric</a></li>
           <li><a href="#logarithmic-identities">Logarithmic Identities</a></li>
           </ul></li>
-          <li><a href="#derivatives">Derivatives</a><ul>
+          <li><a href="#common-rules">Common Rules</a><ul>
+          <li><a href="#product-rules">Product Rules</a></li>
+          <li><a href="#quotient-rules">Quotient Rules</a></li>
+          <li><a href="#exponent-rules">Exponent Rules</a></li>
+          <li><a href="#logarithm-rules">Logarithm Rules</a></li>
+          <li><a href="#zero-rules">Zero Rules</a></li>
+          <li><a href="#derivative-rule">Derivative Rule</a></li>
+          <li><a href="#integral-rule">Integral Rule</a></li>
+          <li><a href="#limit-laws">Limit Laws</a><ul>
+          <li><a href="#limit-chain-rule">Limit Chain Rule</a></li>
+          </ul></li>
+          </ul></li>
+          <li><a href="#derivatives-1">Derivatives</a><ul>
           <li><a href="#polynomial">Polynomial</a></li>
           <li><a href="#trigonometric-functions">Trigonometric Functions</a></li>
           <li><a href="#inverse-hyperbolic-functions">Inverse Hyperbolic Functions</a></li>
@@ -125,6 +143,19 @@
 <!-- Contents -->
           <article class="contents">
 <h1 id="formulas">Formulas</h1>
+<h2 id="derivatives">Derivatives</h2>
+<h3 id="product-rule">Product Rule</h3>
+<p><span class="math display">\[
+\frac{d}{dx}[f(x)g(x)] = f(x)\frac{d}{dx}[g(x)] + g(x)\frac{d}{dx}[f(x)]
+\]</span></p>
+<h3 id="quotient-rule">Quotient Rule</h3>
+<p><span class="math display">\[
+\frac{d}{dx}\left [ \frac{f(x)}{g(x)} \right ] = \frac{g(x)\dfrac{d}{dx}[f(x)] - f(x)\dfrac{d}{dx}[g(x)]}{[g(x)]^{2}}
+\]</span></p>
+<h3 id="chain-rule">Chain Rule</h3>
+<p><span class="math display">\[
+F^{\prime}(x) = f^{\prime}(g(x)) \cdot g^{\prime}(x)
+\]</span></p>
 <h2 id="integration">Integration</h2>
 <h3 id="length-of-a-curve">Length of a Curve</h3>
 <p><span class="math display">\[
@@ -133,6 +164,10 @@ L = \int_{a}^{b} \sqrt{1 + f^{\prime}(x)^{2}}\;dx
 <h3 id="area-between-curves">Area Between Curves</h3>
 <p><span class="math display">\[
 A = \int_{a}^{b} \left | f(x) - g(x) \right |\;dx
+\]</span></p>
+<h3 id="area-of-a-surface-of-revolution">Area of a Surface of Revolution</h3>
+<p><span class="math display">\[
+S = \int_{a}^{b} 2 \pi f(x)\sqrt{1 + f^{\prime}(x)^{2}}\;dx
 \]</span></p>
 <h3 id="volume">Volume</h3>
 <h4 id="disk-method-about-x-axis">Disk Method (about <span class="math inline">\(x\)</span>-axis)</h4>
@@ -188,7 +223,7 @@ V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\; \text{ where } 0 \le a \le b
 <li><a href="../../../../files/winter-2021/MATH-151/notes/trig_cheatsheet.pdf">⬇ Trig Cheatsheet</a></li>
 </ul>
 <p><span class="math inline">\(\theta = (cos(x), sin(x))\)</span></p>
-<p><img src="../../../../files/spring-2020/MATH-141/ch-4/unit_circle.png" alt="Unit Circle" /> <img src="../../../../files/winter-2021/MATH-151/notes/trig_table.png" alt="Trigonometric Table" /></p>
+<p><img src="../../../../files/spring-2020/MATH-141/ch-4/unit_circle.png" alt="Unit Circle" /> <img src="../../../../files/winter-2021/MATH-151/notes/trig_table_half.png" alt="Trigonometric Functions Table Half" /> <img src="../../../../files/winter-2021/MATH-151/notes/trig_table.png" alt="Trigonometric Functions Table" /></p>
 <h2 id="logarithmic-identities">Logarithmic Identities</h2>
 <p><span class="math display">\[
 \begin{array}{ll}
@@ -219,7 +254,116 @@ V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\; \text{ where } 0 \le a \le b
     \log_{b}(x) &amp;=&amp; \dfrac{\ln(x)}{\ln(b)}
 \end{array}
 \]</span></p>
-<h1 id="derivatives">Derivatives</h1>
+<h1 id="common-rules">Common Rules</h1>
+<h2 id="product-rules">Product Rules</h2>
+<p><span class="math display">\[
+\begin{array}{ll}
+    a^{x} \cdot a^{y} = a^{x + y} &amp; a^{x} \cdot b^{x} = (a \cdot b)^{x} \\
+\end{array}
+\]</span></p>
+<h2 id="quotient-rules">Quotient Rules</h2>
+<p><span class="math display">\[
+\begin{array}{ll}
+    \dfrac{a^{x}}{a^{y}} = a^{x - y} &amp; \dfrac{a^{x}}{a^{x}} = \left ( \dfrac{a}{b} \right )^{x} \\
+\end{array}
+\]</span></p>
+<h2 id="exponent-rules">Exponent Rules</h2>
+<p><span class="math display">\[
+\begin{array}{ll}
+    \left ( b^{x} \right )^{y} = b^{x \cdot y} &amp; b^{x^{y}} = b^{(3^{2})} &amp;  \\
+    ~\\
+    \sqrt[y]{b^{x}} = b^{\frac{x}{y}} &amp; b^{\frac{1}{x}} = \sqrt[x]{b} \\
+    ~\\
+    b^{x} = e^{\ln(b^{x})} &amp; b^{-x} = \dfrac{1}{b^{x}} \\
+\end{array}
+\]</span></p>
+<h2 id="logarithm-rules">Logarithm Rules</h2>
+<p><span class="math display">\[
+\begin{array}{ll}
+    \ln(x) = \log_{e}(x) \\
+    ~\\
+    \log_{b}(x \cdot y) = \log_{b}(x) + \log_{b}(y) &amp; \log_{b}(\frac{x}{y}) = \log_{b}(x) - \log_{b}(y) \\
+    ~\\
+    \log_{b}(x^{y}) = y \cdot \log_{b}(x) &amp; \ln(x^{y}) = y\ln(x) \\
+    ~\\
+    \log_{b}(c) = \dfrac{1}{\log_{c}(b)} &amp; \log_{b}(\sqrt[y]{x}) = \dfrac{\log_{b}(x)}{y} \\
+    ~\\
+    c\log_{b}(x) + d\log_{b}(y) = \log_{b}(x^{c}y^{d}) \\
+    ~\\
+    \log_{b}(1) = 0 &amp; \log_{b}(b) = 1 \\
+    ~\\
+    \lim_{x \to 0^{+}} \log_{b}(x) = -\infty &amp; \lim_{x \to \infty} \log_{b}(x) = \infty \\
+    ~\\
+    \log_{b}(x) \text{ is undefined when } x \le 0 \\
+    ~\\
+    \dfrac{d}{dx}\left [ \log_{b}(x) \right ] = \dfrac{1}{x\ln(b)}&amp; {\displaystyle \int \log_{b}(x)\;dx} = x\log_{b}(x) - \dfrac{x}{\ln(b)} + C \\
+\end{array}
+\]</span></p>
+<h2 id="zero-rules">Zero Rules</h2>
+<p><span class="math display">\[
+\begin{array}{ll}
+    b^{0} = 1 &amp; 0^{x} = 0, \text{ for } n &gt; 0 \\
+\end{array}
+\]</span></p>
+<h2 id="derivative-rule">Derivative Rule</h2>
+<p><span class="math display">\[
+\frac{d}{dx}(x^{n}) = n \cdot x^{n - 1}
+\]</span></p>
+<h2 id="integral-rule">Integral Rule</h2>
+<p><span class="math display">\[
+\int x^{n}\;dx = \frac{x^{n + 1}}{n + 1} + C
+\]</span></p>
+<h2 id="limit-laws">Limit Laws</h2>
+<p><span class="math display">\[
+\underline{\textbf{Sum Law}} \\
+~\\
+1.\; \lim_{x \to a} [f(x) + g(x)] = \lim_{x \to a} f(x) + \lim_{x \to a} g(x) \\
+~\\
+\underline{\textbf{Difference Law}} \\
+~\\
+2.\; \lim_{x \to a} [f(x) - g(x)] = \lim_{x \to a} f(x) - \lim_{x \to a} g(x) \\
+~\\
+\underline{\textbf{Constant Multiple Law}} \\
+~\\
+3.\; \lim_{x \to a} [cf(x)] = c \lim_{x \to a} f(x) \\
+~\\
+\underline{\textbf{Product Law}} \\
+~\\
+4.\; \lim_{x \to a} [f(x)g(x)] = \lim_{x \to a} f(x) \cdot \lim_{x \to a} g(x) \\
+~\\
+\underline{\textbf{Quotient Law}} \\
+~\\
+5.\; \lim_{x \to a} \frac{f(x)}{g(x)} = \frac{\lim_{x \to a} f(x)}{\lim_{x \to a} g(x)} \text{ if } \lim_{x \to a} g(x) \neq 0 \\
+~\\
+\underline{\textbf{Power Law}} \\
+~\\
+6.\; \lim_{x \to a} [f(x)]^{n} = [\lim_{x \to a} f(x)]^{n} \; \text{ where } n \text{ is a positive integer } \\
+~\\
+7.\; \lim_{x \to a} c = c \\
+~\\
+8.\; \lim_{x \to a} x = a \\
+~\\
+9.\; \lim_{x \to a} x^{n} = a^{n} \; \text{ where } n \text{ is a positive integer } \\
+~\\
+10.\; \lim_{x \to a} \sqrt[n]{x} = \sqrt[n]{a} \; \text{ where } n \text{ is a positive integer }
+~\\
+\underline{\textbf{Root Law}} \\
+~\\
+11.\; \lim_{x \to a} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x \to a} f(x)} \; \text{ where } n \text{ is a positive integer } \\
+~\\
+[\text{ if  } n \text{ is even, we assume that } \lim_{x \to a} f(x) &gt; 0 \text{. }]
+\]</span></p>
+<h3 id="limit-chain-rule">Limit Chain Rule</h3>
+<p>First take the limit of <span class="math inline">\(g(x)\)</span>, then substitute the limit of <span class="math inline">\(g(x)\)</span> for <span class="math inline">\(u\)</span> into the original limit and update the limit bounds with <span class="math inline">\(u\)</span>.</p>
+<p><span class="math display">\[
+\lim_{x \to a} f(g(x)) = L
+\]</span></p>
+<p><span class="math display">\[
+\begin{array}{ll}
+    \lim_{x \to a} g(x) = b &amp; \lim_{u \to b} f(u) = L \\
+\end{array}
+\]</span></p>
+<h1 id="derivatives-1">Derivatives</h1>
 <h2 id="polynomial">Polynomial</h2>
 <p><span class="math display">\[
 \begin{array}{ll}

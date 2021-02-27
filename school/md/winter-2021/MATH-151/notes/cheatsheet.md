@@ -8,6 +8,26 @@ date: Feb 24, 2021
 
 # Formulas
 
+## Derivatives
+
+### Product Rule
+
+$$
+\frac{d}{dx}[f(x)g(x)] = f(x)\frac{d}{dx}[g(x)] + g(x)\frac{d}{dx}[f(x)]
+$$
+
+### Quotient Rule
+
+$$
+\frac{d}{dx}\left [ \frac{f(x)}{g(x)} \right ] = \frac{g(x)\dfrac{d}{dx}[f(x)] - f(x)\dfrac{d}{dx}[g(x)]}{[g(x)]^{2}}
+$$
+
+### Chain Rule
+
+$$
+F^{\prime}(x) = f^{\prime}(g(x)) \cdot g^{\prime}(x)
+$$
+
 ## Integration
 
 ### Length of a Curve
@@ -20,6 +40,12 @@ $$
 
 $$
 A = \int_{a}^{b} \left | f(x) - g(x) \right |\;dx
+$$
+
+### Area of a Surface of Revolution
+
+$$
+S = \int_{a}^{b} 2 \pi f(x)\sqrt{1 + f^{\prime}(x)^{2}}\;dx
 $$
 
 ### Volume
@@ -97,7 +123,8 @@ $$
 $\theta = (cos(x), sin(x))$
 
 ![Unit Circle](../../../../files/spring-2020/MATH-141/ch-4/unit_circle.png)
-![Trigonometric Table](../../../../files/winter-2021/MATH-151/notes/trig_table.png)
+![Trigonometric Functions Table Half](../../../../files/winter-2021/MATH-151/notes/trig_table_half.png)
+![Trigonometric Functions Table](../../../../files/winter-2021/MATH-151/notes/trig_table.png)
 
 ## Logarithmic Identities
 
@@ -131,6 +158,136 @@ $$
 \end{array}
 $$
 
+# Common Rules
+
+## Product Rules
+
+$$
+\begin{array}{ll}
+	a^{x} \cdot a^{y} = a^{x + y} & a^{x} \cdot b^{x} = (a \cdot b)^{x} \\
+\end{array}
+$$
+
+## Quotient Rules
+
+$$
+\begin{array}{ll}
+	\dfrac{a^{x}}{a^{y}} = a^{x - y} & \dfrac{a^{x}}{a^{x}} = \left ( \dfrac{a}{b} \right )^{x} \\
+\end{array}
+$$
+
+## Exponent Rules
+
+$$
+\begin{array}{ll}
+	\left ( b^{x} \right )^{y} = b^{x \cdot y} & b^{x^{y}} = b^{(3^{2})} &  \\
+	~\\
+	\sqrt[y]{b^{x}} = b^{\frac{x}{y}} & b^{\frac{1}{x}} = \sqrt[x]{b} \\
+	~\\
+	b^{x} = e^{\ln(b^{x})} & b^{-x} = \dfrac{1}{b^{x}} \\
+\end{array}
+$$
+
+## Logarithm Rules
+
+$$
+\begin{array}{ll}
+	\ln(x) = \log_{e}(x) \\
+	~\\
+	\log_{b}(x \cdot y) = \log_{b}(x) + \log_{b}(y) & \log_{b}(\frac{x}{y}) = \log_{b}(x) - \log_{b}(y) \\
+	~\\
+	\log_{b}(x^{y}) = y \cdot \log_{b}(x) & \ln(x^{y}) = y\ln(x) \\
+	~\\
+	\log_{b}(c) = \dfrac{1}{\log_{c}(b)} & \log_{b}(\sqrt[y]{x}) = \dfrac{\log_{b}(x)}{y} \\
+	~\\
+	c\log_{b}(x) + d\log_{b}(y) = \log_{b}(x^{c}y^{d}) \\
+	~\\
+	\log_{b}(1) = 0 & \log_{b}(b) = 1 \\
+	~\\
+	\lim_{x \to 0^{+}} \log_{b}(x) = -\infty & \lim_{x \to \infty} \log_{b}(x) = \infty \\
+	~\\
+	\log_{b}(x) \text{ is undefined when } x \le 0 \\
+	~\\
+	\dfrac{d}{dx}\left [ \log_{b}(x) \right ] = \dfrac{1}{x\ln(b)}& {\displaystyle \int \log_{b}(x)\;dx} = x\log_{b}(x) - \dfrac{x}{\ln(b)} + C \\
+\end{array}
+$$
+
+## Zero Rules
+
+$$
+\begin{array}{ll}
+	b^{0} = 1 & 0^{x} = 0, \text{ for } n > 0 \\
+\end{array}
+$$
+
+## Derivative Rule
+
+$$
+\frac{d}{dx}(x^{n}) = n \cdot x^{n - 1}
+$$
+
+## Integral Rule
+
+$$
+\int x^{n}\;dx = \frac{x^{n + 1}}{n + 1} + C
+$$
+
+## Limit Laws
+
+$$
+\underline{\textbf{Sum Law}} \\
+~\\
+1.\; \lim_{x \to a} [f(x) + g(x)] = \lim_{x \to a} f(x) + \lim_{x \to a} g(x) \\
+~\\
+\underline{\textbf{Difference Law}} \\
+~\\
+2.\; \lim_{x \to a} [f(x) - g(x)] = \lim_{x \to a} f(x) - \lim_{x \to a} g(x) \\
+~\\
+\underline{\textbf{Constant Multiple Law}} \\
+~\\
+3.\; \lim_{x \to a} [cf(x)] = c \lim_{x \to a} f(x) \\
+~\\
+\underline{\textbf{Product Law}} \\
+~\\
+4.\; \lim_{x \to a} [f(x)g(x)] = \lim_{x \to a} f(x) \cdot \lim_{x \to a} g(x) \\
+~\\
+\underline{\textbf{Quotient Law}} \\
+~\\
+5.\; \lim_{x \to a} \frac{f(x)}{g(x)} = \frac{\lim_{x \to a} f(x)}{\lim_{x \to a} g(x)} \text{ if } \lim_{x \to a} g(x) \neq 0 \\
+~\\
+\underline{\textbf{Power Law}} \\
+~\\
+6.\; \lim_{x \to a} [f(x)]^{n} = [\lim_{x \to a} f(x)]^{n} \; \text{ where } n \text{ is a positive integer } \\
+~\\
+7.\; \lim_{x \to a} c = c \\
+~\\
+8.\; \lim_{x \to a} x = a \\
+~\\
+9.\; \lim_{x \to a} x^{n} = a^{n} \; \text{ where } n \text{ is a positive integer } \\
+~\\
+10.\; \lim_{x \to a} \sqrt[n]{x} = \sqrt[n]{a} \; \text{ where } n \text{ is a positive integer }
+~\\
+\underline{\textbf{Root Law}} \\
+~\\
+11.\; \lim_{x \to a} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x \to a} f(x)} \; \text{ where } n \text{ is a positive integer } \\
+~\\
+[\text{ if  } n \text{ is even, we assume that } \lim_{x \to a} f(x) > 0 \text{. }]
+$$
+
+### Limit Chain Rule
+
+First take the limit of $g(x)$, then substitute the limit of $g(x)$ for $u$ into
+the original limit and update the limit bounds with $u$.
+
+$$
+\lim_{x \to a} f(g(x)) = L
+$$
+
+$$
+\begin{array}{ll}
+	\lim_{x \to a} g(x) = b & \lim_{u \to b} f(u) = L \\
+\end{array}
+$$
 
 
 # Derivatives
