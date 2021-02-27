@@ -71,18 +71,7 @@ $$
 $\theta = (cos(x), sin(x))$
 
 ![Unit Circle](../../../../files/spring-2020/MATH-141/ch-4/unit_circle.png)
-
-| Angle      | $0^{\circ}$ | $30^{\circ}$         | $45^{\circ}$         | $60^{\circ}$         | $90^{\circ}$    | $180^{\circ}$ | $270^{\circ}$     | $360^{\circ}$ |
-|:----------:|:-----------:|:--------------------:|:--------------------:|:--------------------:|:---------------:|:-------------:|:-----------------:|:-------------:|
-| **Radian** | $0$         | $\frac{\pi}{6}$      | $\frac{\pi}{4}$      | $\frac{\pi}{3}$      | $\frac{\pi}{2}$ | $\pi$         | $\frac{3 \pi}{2}$ | $2 \pi$       |
-|            |             |                      |                      |                      |                 |               |                   |               |
-| $\sin$     | $0$         | $\frac{1}{2}$        | $\frac{1}{\sqrt{2}}$ | $\frac{\sqrt{3}}{2}$ | $1$             | $0$           | $-1$              | $0$           |
-| $\cos$     | $1$         | $\frac{\sqrt{3}}{2}$ | $\frac{1}{\sqrt{2}}$ | $\frac{1}{2}$        | $0$             | $-1$          | $0$               | $1$           |
-| $\tan$     | $0$         | $\frac{1}{\sqrt{3}}$ | $1$                  | $\sqrt{3}$           | $\infty$        | $0$           | $\infty$          | $0$           |
-| $\cot$     | $\infty$    | $\sqrt{3}$           | $1$                  | $\frac{1}{\sqrt{3}}$ | $0$             | $\infty$      | $0$               | $\infty$      |
-| $\sec$     | $1$         | $\frac{2}{\sqrt{3}}$ | $\sqrt{2}$           | $2$                  | $\infty$        | $-1$          | $\infty$          | $1$           |
-| $\csc$     | $\infty$    | $2$                  | $\sqrt{2}$           | $\frac{2}{\sqrt{3}}$ | $1$             | $\infty$      | $-1$              | $\infty$      |
-
+![Trigonometric Table](../../../../files/winter-2021/MATH-151/notes/trig_table.png)
 
 ## Logarithmic Identities
 
@@ -214,10 +203,18 @@ $$
 ## Trigonometric
 
 $$
-\begin{array}{ll}
+\begin{array}{lll}
 	{\displaystyle \int \sin(x)} = -\cos(x) + C & {\displaystyle \int \cos(x)} = \sin(x) + C \\
 	~\\
-	{\displaystyle \int \sin(2x)} = -\dfrac{1}{2}cos(2x) + C & {\displaystyle \int \cos(2x)} = \dfrac{1}{2}\sin(2x) + C \\
+	{\displaystyle \int \sin(mx)} = -\dfrac{1}{m}\cos(mx) + C & {\displaystyle \int \cos(mx)} = \dfrac{1}{m}\sin(mx) + C \\
+	~\\
+	{\displaystyle \int csc(x)} = \ln \left | \tan(\frac{x}{2}) \right | + C & {\displaystyle \int sec(x)} = \ln \left | \tan(x) + \sec(x) \right | + C \\
+	~\\
+	{\displaystyle \int csc(mx)} = \frac{1}{m}\ln \left | \tan(\frac{mx}{2}) \right | + C & {\displaystyle \int sec(mx)} = \frac{1}{m}\ln \left | \tan(mx)	+\sec(mx) \right | + C \\
+	~\\
+	{\displaystyle \int tan(x)} = -\ln \left | \cos(x) \right | + C & {\displaystyle \int cot(x)} = \ln \left | \sin(x) \right | + C \\
+	~\\
+	{\displaystyle \int tan(mx)} = -\frac{1}{m}\ln \left | \cos(mx) \right | + C & {\displaystyle \int cot(mx)} = \frac{1}{m}\ln \left | \sin(mx) \right | + C \\
 \end{array}
 $$
 
