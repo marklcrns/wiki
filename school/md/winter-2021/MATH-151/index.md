@@ -38,4 +38,6 @@ Textbook
 - [⬇ Homework 4](file:../../../files/winter-2021/MATH-151/homeworks/homework4.pdf)
 - [⬇ Homework 5](file:../../../files/winter-2021/MATH-151/homeworks/homework5.pdf)
 - [⬇ Homework 6](file:../../../files/winter-2021/MATH-151/homeworks/homework6.pdf)
+- [⬇ Homework 7](file:../../../files/winter-2021/MATH-151/homeworks/homework7.pdf)
+- [⬇ Homework 8](file:../../../files/winter-2021/MATH-151/homeworks/homework8.pdf)
 

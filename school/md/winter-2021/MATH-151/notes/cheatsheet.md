@@ -262,17 +262,17 @@ $$
 	~\\
 	{\displaystyle \int \sin(mx)} = -\dfrac{1}{m}\cos(mx) + C & {\displaystyle \int \cos(mx)} = \dfrac{1}{m}\sin(mx) + C \\
 	~\\
-	{\displaystyle \int csc(x)} = -\ln \left | \csc(x) + cot(x) \right | + C & {\displaystyle \int sec(x)} = \ln \left | \tan(x) + \sec(x) \right | + C \\
+	{\displaystyle \int \csc(x)} = -\ln \left | \csc(x) + \cot(x) \right | + C & {\displaystyle \int sec(x)} = \ln \left | \tan(x) + \sec(x) \right | + C \\
 	~\\
-	{\displaystyle \int csc(x)} = \ln \left | \tan(\frac{x}{2}) \right | + C \\
+	{\displaystyle \int \csc(x)} = \ln \left | \tan(\frac{x}{2}) \right | + C \\
 	~\\
-	{\displaystyle \int csc(mx)} = -\frac{1}{m}\ln \left | \csc(mx) + cot(mx) \right | + C & {\displaystyle \int sec(mx)} = \frac{1}{m}\ln \left | \tan(mx)	+\sec(mx) \right | + C \\
+	{\displaystyle \int \csc(mx)} = -\frac{1}{m}\ln \left | \csc(mx) + \cot(mx) \right | + C & {\displaystyle \int sec(mx)} = \frac{1}{m}\ln \left | \tan(mx) +\sec(mx) \right | + C \\
 	~\\
-	{\displaystyle \int csc(mx)} = \frac{1}{m}\ln \left | \tan(\frac{mx}{2}) \right | + C \\
+	{\displaystyle \int \csc(mx)} = \frac{1}{m}\ln \left | \tan(\frac{mx}{2}) \right | + C \\
 	~\\
-	{\displaystyle \int tan(x)} = -\ln \left | \cos(x) \right | + C & {\displaystyle \int cot(x)} = \ln \left | \sin(x) \right | + C \\
+	{\displaystyle \int \tan(x)} = -\ln \left | \cos(x) \right | + C & {\displaystyle \int cot(x)} = \ln \left | \sin(x) \right | + C \\
 	~\\
-	{\displaystyle \int tan(mx)} = -\frac{1}{m}\ln \left | \cos(mx) \right | + C & {\displaystyle \int cot(mx)} = \frac{1}{m}\ln \left | \sin(mx) \right | + C \\
+	{\displaystyle \int \tan(mx)} = -\frac{1}{m}\ln \left | \cos(mx) \right | + C & {\displaystyle \int cot(mx)} = \frac{1}{m}\ln \left | \sin(mx) \right | + C \\
 \end{array}
 $$
 
@@ -286,15 +286,15 @@ $$
 	~\\
 	\int \ln(mx)\;dx &=& x\ln(mx) - x + C \\
 	~\\
-	\int ln(mx^{n})\;dx &=& x\ln(m) + nx\ln(x) - nx + C \\
+	\int \ln(mx^{n})\;dx &=& x\ln(m) + nx\ln(x) - nx + C \\
 	~\\
-	\int log_{b}(x)\;dx &=& {\displaystyle \int \frac{\ln(x)}{ln(b)}} = x\log_{b}(x) - \dfrac{x}{\ln(b)} + C \\
+	\int \log_{b}(x)\;dx &=& {\displaystyle \int \frac{\ln(x)}{ln(b)}} = x\log_{b}(x) - \dfrac{x}{\ln(b)} + C \\
 	~\\
 	\int \log_{b}(x^{n})\;dx &=& n\left ( x\log_{b}(x) - \dfrac{x}{\ln(b)} \right ) + C \\
 	~\\
-	\int log_{b}(mx)\;dx &=& x\log_{b}(mx) - \dfrac{x}{\ln(b)} + C \\
+	\int \log_{b}(mx)\;dx &=& x\log_{b}(mx) - \dfrac{x}{\ln(b)} + C \\
 	~\\
-	\int log_{b}(mx^{n})\;dx &=& x\log_{b}(m) + n\left ( xlog_{b}(x) - \dfrac{x}{\ln(b)} \right ) + C \\
+	\int \log_{b}(mx^{n})\;dx &=& x\log_{b}(m) + n\left ( x\log_{b}(x) - \dfrac{x}{\ln(b)} \right ) + C \\
 \end{array}
 $$
 
