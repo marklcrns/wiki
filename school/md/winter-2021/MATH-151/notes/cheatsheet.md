@@ -60,6 +60,32 @@ $$
 \end{array}
 $$
 
+### Integral by Parts Formula
+
+Use the acronym "LIPET" to help choosing the value when substituting for $u$.
+
+- **L**ogarithmic -- e.g. $\ln(x)$
+- **I**nverse Trigonometric -- e.g. $\tan^{-1}(x)$
+- **P**olynomial -- e.g. $x^{2}$
+- **E**xponential -- e.g. $e^{x}$
+- **T**rigonometric -- e.g. $\cos(x)$
+
+to prioritize choosing $u$ in the order of **LIPET**, **L** being the first
+priority and **T** being the last.
+
+
+**Integral by Parts for Indefinite Integrals**
+
+$$
+\int u\;dv = uv - \int v\;du
+$$
+
+**Integral by Parts for Definite Integrals**
+
+$$
+\int_{a}^{b} u(x)v^{\prime} (dx)dx = \left . u(x)v(x) \right |_{a}^{b} - \int_{a}^{b} v(x)u^{\prime}(x)dx
+$$
+
 
 # Common Identities
 
@@ -182,67 +208,6 @@ $$
 
 # Antiderivatives
 
-## Polynomial
-
-$$
-\begin{array}{ll}
-	\int x\;dx &=& \dfrac{x^{2}}{2} + C \\
-	~\\
-	\int \sqrt{x}\;dx &=& \dfrac{2}{3}x^{\frac{3}{2}} + C \\
-	~\\
-	\int x^{n}\;dx &=& \dfrac{x^{n + 1}}{n + 1} + C \\
-	~\\
-	\int x^{\frac{m}{n}}\;dx &=& \dfrac{x^{\frac{m}{n} + 1}}{\frac{m}{n} + 1} + C = \dfrac{nx\frac{m + n}{n}}{m + n} + C \\
-	~\\
-	\int mx^{n}\;dx &=& m\dfrac{x^{n + 1}}{n + 1} + C \\
-	~\\
-	\int \frac{1}{x}\;dx &=& \ln|x| + C \\
-\end{array}
-$$
-
-## Trigonometric
-
-$$
-\begin{array}{lll}
-	{\displaystyle \int \sin(x)} = -\cos(x) + C & {\displaystyle \int \cos(x)} = \sin(x) + C \\
-	~\\
-	{\displaystyle \int \sin(mx)} = -\dfrac{1}{m}\cos(mx) + C & {\displaystyle \int \cos(mx)} = \dfrac{1}{m}\sin(mx) + C \\
-	~\\
-	{\displaystyle \int csc(x)} = \ln \left | \tan(\frac{x}{2}) \right | + C & {\displaystyle \int sec(x)} = \ln \left | \tan(x) + \sec(x) \right | + C \\
-	~\\
-	{\displaystyle \int csc(mx)} = \frac{1}{m}\ln \left | \tan(\frac{mx}{2}) \right | + C & {\displaystyle \int sec(mx)} = \frac{1}{m}\ln \left | \tan(mx)	+\sec(mx) \right | + C \\
-	~\\
-	{\displaystyle \int tan(x)} = -\ln \left | \cos(x) \right | + C & {\displaystyle \int cot(x)} = \ln \left | \sin(x) \right | + C \\
-	~\\
-	{\displaystyle \int tan(mx)} = -\frac{1}{m}\ln \left | \cos(mx) \right | + C & {\displaystyle \int cot(mx)} = \frac{1}{m}\ln \left | \sin(mx) \right | + C \\
-\end{array}
-$$
-
-## Logarithmic
-
-$$
-\begin{array}{ll}
-	\int \ln(x)\;dx &=& x\ln(x) - x + C \\
-	~\\
-	\int \ln(x^{n})\;dx &=& nx\ln(nx) - nx + C \\
-	~\\
-	\int \ln(mx)\;dx &=& x\ln(mx) - x + C \\
-	~\\
-	\int ln(mx^{n})\;dx &=& x\ln(m) + nx\ln(x) - nx + C \\
-	~\\
-	\int log_{b}(x)\;dx &=& {\displaystyle \int \frac{\ln(x)}{ln(b)}} = x\log_{b}(x) - \dfrac{x}{\ln(b)} + C \\
-	~\\
-	\int \log_{b}(x^{n})\;dx &=& n\left ( x\log_{b}(x) - \dfrac{x}{\ln(b)} \right ) + C \\
-	~\\
-	\int log_{b}(mx)\;dx &=& x\log_{b}(mx) - \dfrac{x}{\ln(b)} + C \\
-	~\\
-	\int log_{b}(mx^{n})\;dx &=& x\log_{b}(m) + n\left ( xlog_{b}(x) - \dfrac{x}{\ln(b)} \right ) + C \\
-\end{array}
-$$
-
-
-# Integrals
-
 ## Common Integration Formulas
 
 ![Table 8.1](../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-1_table-1.png)
@@ -271,29 +236,65 @@ $$
 \end{array}
 $$
 
-## Integral by Parts Formula
-
-Use the acronym "LIPET" to help choosing the value when substituting for $u$.
-
-- **L**ogarithmic -- e.g. $\ln(x)$
-- **I**nverse Trigonometric -- e.g. $\tan^{-1}(x)$
-- **P**olynomial -- e.g. $x^{2}$
-- **E**xponential -- e.g. $e^{x}$
-- **T**rigonometric -- e.g. $\cos(x)$
-
-to prioritize choosing $u$ in the order of **LIPET**, **L** being the first
-priority and **T** being the last.
-
-
-**Integral by Parts for Indefinite Integrals**
+## Polynomial
 
 $$
-\int u\;dv = uv - \int v\;du
+\begin{array}{ll}
+	\int x\;dx &=& \dfrac{x^{2}}{2} + C \\
+	~\\
+	\int \sqrt{x}\;dx &=& \dfrac{2}{3}x^{\frac{3}{2}} + C \\
+	~\\
+	\int x^{n}\;dx &=& \dfrac{x^{n + 1}}{n + 1} + C \\
+	~\\
+	\int x^{\frac{m}{n}}\;dx &=& \dfrac{x^{\frac{m}{n} + 1}}{\frac{m}{n} + 1} + C = \dfrac{nx\frac{m + n}{n}}{m + n} + C \\
+	~\\
+	\int mx^{n}\;dx &=& m\dfrac{x^{n + 1}}{n + 1} + C \\
+	~\\
+	\int \frac{1}{x}\;dx &=& \ln|x| + C \\
+\end{array}
 $$
 
-**Integral by Parts for Definite Integrals**
+## Trigonometric
 
 $$
-\int_{a}^{b} u(x)v^{\prime} (dx)dx = \left . u(x)v(x) \right |_{a}^{b} - \int_{a}^{b} v(x)u^{\prime}(x)dx
+\begin{array}{lll}
+	{\displaystyle \int \sin(x)} = -\cos(x) + C & {\displaystyle \int \cos(x)} = \sin(x) + C \\
+	~\\
+	{\displaystyle \int \sin(mx)} = -\dfrac{1}{m}\cos(mx) + C & {\displaystyle \int \cos(mx)} = \dfrac{1}{m}\sin(mx) + C \\
+	~\\
+	{\displaystyle \int csc(x)} = -\ln \left | \csc(x) + cot(x) \right | + C & {\displaystyle \int sec(x)} = \ln \left | \tan(x) + \sec(x) \right | + C \\
+	~\\
+	{\displaystyle \int csc(x)} = \ln \left | \tan(\frac{x}{2}) \right | + C \\
+	~\\
+	{\displaystyle \int csc(mx)} = -\frac{1}{m}\ln \left | \csc(mx) + cot(mx) \right | + C & {\displaystyle \int sec(mx)} = \frac{1}{m}\ln \left | \tan(mx)	+\sec(mx) \right | + C \\
+	~\\
+	{\displaystyle \int csc(mx)} = \frac{1}{m}\ln \left | \tan(\frac{mx}{2}) \right | + C \\
+	~\\
+	{\displaystyle \int tan(x)} = -\ln \left | \cos(x) \right | + C & {\displaystyle \int cot(x)} = \ln \left | \sin(x) \right | + C \\
+	~\\
+	{\displaystyle \int tan(mx)} = -\frac{1}{m}\ln \left | \cos(mx) \right | + C & {\displaystyle \int cot(mx)} = \frac{1}{m}\ln \left | \sin(mx) \right | + C \\
+\end{array}
+$$
+
+## Logarithmic
+
+$$
+\begin{array}{ll}
+	\int \ln(x)\;dx &=& x\ln(x) - x + C \\
+	~\\
+	\int \ln(x^{n})\;dx &=& nx\ln(nx) - nx + C \\
+	~\\
+	\int \ln(mx)\;dx &=& x\ln(mx) - x + C \\
+	~\\
+	\int ln(mx^{n})\;dx &=& x\ln(m) + nx\ln(x) - nx + C \\
+	~\\
+	\int log_{b}(x)\;dx &=& {\displaystyle \int \frac{\ln(x)}{ln(b)}} = x\log_{b}(x) - \dfrac{x}{\ln(b)} + C \\
+	~\\
+	\int \log_{b}(x^{n})\;dx &=& n\left ( x\log_{b}(x) - \dfrac{x}{\ln(b)} \right ) + C \\
+	~\\
+	\int log_{b}(mx)\;dx &=& x\log_{b}(mx) - \dfrac{x}{\ln(b)} + C \\
+	~\\
+	\int log_{b}(mx^{n})\;dx &=& x\log_{b}(m) + n\left ( xlog_{b}(x) - \dfrac{x}{\ln(b)} \right ) + C \\
+\end{array}
 $$
 

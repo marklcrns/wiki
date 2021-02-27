@@ -75,6 +75,7 @@
           <li><a href="#shell-method-about-y-axis">Shell Method (about <span class="math inline">\(y\)</span>-axis)</a></li>
           </ul></li>
           <li><a href="#reduction-formulas">Reduction Formulas</a></li>
+          <li><a href="#integral-by-parts-formula">Integral by Parts Formula</a></li>
           </ul></li>
           </ul></li>
           <li><a href="#common-identities">Common Identities</a><ul>
@@ -89,14 +90,11 @@
           <li><a href="#eulers">Euler’s</a></li>
           </ul></li>
           <li><a href="#antiderivatives">Antiderivatives</a><ul>
+          <li><a href="#common-integration-formulas">Common Integration Formulas</a></li>
+          <li><a href="#common-indefinite-integrals">Common Indefinite Integrals</a></li>
           <li><a href="#polynomial-1">Polynomial</a></li>
           <li><a href="#trigonometric-1">Trigonometric</a></li>
           <li><a href="#logarithmic-1">Logarithmic</a></li>
-          </ul></li>
-          <li><a href="#integrals">Integrals</a><ul>
-          <li><a href="#common-integration-formulas">Common Integration Formulas</a></li>
-          <li><a href="#common-indefinite-integrals">Common Indefinite Integrals</a></li>
-          <li><a href="#integral-by-parts-formula">Integral by Parts Formula</a></li>
           </ul></li>
           </ul>
           <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
@@ -164,6 +162,24 @@ V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\; \text{ where } 0 \le a \le b
     ~\\
     {\displaystyle \int \sec^{n}(x)\;dx} = \frac{\sec^{n - 2}(x)\tan(x)}{n - 1} + \frac{n - 2}{n - 1}{\displaystyle \int \sec^{n - 2}(x)\;dx} &amp; \text{ for } n \neq 1 \\
 \end{array}
+\]</span></p>
+<h3 id="integral-by-parts-formula">Integral by Parts Formula</h3>
+<p>Use the acronym “LIPET” to help choosing the value when substituting for <span class="math inline">\(u\)</span>.</p>
+<ul>
+<li><strong>L</strong>ogarithmic – e.g. <span class="math inline">\(\ln(x)\)</span></li>
+<li><strong>I</strong>nverse Trigonometric – e.g. <span class="math inline">\(\tan^{-1}(x)\)</span></li>
+<li><strong>P</strong>olynomial – e.g. <span class="math inline">\(x^{2}\)</span></li>
+<li><strong>E</strong>xponential – e.g. <span class="math inline">\(e^{x}\)</span></li>
+<li><strong>T</strong>rigonometric – e.g. <span class="math inline">\(\cos(x)\)</span></li>
+</ul>
+<p>to prioritize choosing <span class="math inline">\(u\)</span> in the order of <strong>LIPET</strong>, <strong>L</strong> being the first priority and <strong>T</strong> being the last.</p>
+<p><strong>Integral by Parts for Indefinite Integrals</strong></p>
+<p><span class="math display">\[
+\int u\;dv = uv - \int v\;du
+\]</span></p>
+<p><strong>Integral by Parts for Definite Integrals</strong></p>
+<p><span class="math display">\[
+\int_{a}^{b} u(x)v^{\prime} (dx)dx = \left . u(x)v(x) \right |_{a}^{b} - \int_{a}^{b} v(x)u^{\prime}(x)dx
 \]</span></p>
 <h1 id="common-identities">Common Identities</h1>
 <h2 id="trigonometric">Trigonometric</h2>
@@ -265,59 +281,6 @@ V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\; \text{ where } 0 \le a \le b
 \end{array}
 \]</span></p>
 <h1 id="antiderivatives">Antiderivatives</h1>
-<h2 id="polynomial-1">Polynomial</h2>
-<p><span class="math display">\[
-\begin{array}{ll}
-    \int x\;dx &amp;=&amp; \dfrac{x^{2}}{2} + C \\
-    ~\\
-    \int \sqrt{x}\;dx &amp;=&amp; \dfrac{2}{3}x^{\frac{3}{2}} + C \\
-    ~\\
-    \int x^{n}\;dx &amp;=&amp; \dfrac{x^{n + 1}}{n + 1} + C \\
-    ~\\
-    \int x^{\frac{m}{n}}\;dx &amp;=&amp; \dfrac{x^{\frac{m}{n} + 1}}{\frac{m}{n} + 1} + C = \dfrac{nx\frac{m + n}{n}}{m + n} + C \\
-    ~\\
-    \int mx^{n}\;dx &amp;=&amp; m\dfrac{x^{n + 1}}{n + 1} + C \\
-    ~\\
-    \int \frac{1}{x}\;dx &amp;=&amp; \ln|x| + C \\
-\end{array}
-\]</span></p>
-<h2 id="trigonometric-1">Trigonometric</h2>
-<p><span class="math display">\[
-\begin{array}{lll}
-    {\displaystyle \int \sin(x)} = -\cos(x) + C &amp; {\displaystyle \int \cos(x)} = \sin(x) + C \\
-    ~\\
-    {\displaystyle \int \sin(mx)} = -\dfrac{1}{m}\cos(mx) + C &amp; {\displaystyle \int \cos(mx)} = \dfrac{1}{m}\sin(mx) + C \\
-    ~\\
-    {\displaystyle \int csc(x)} = \ln \left | \tan(\frac{x}{2}) \right | + C &amp; {\displaystyle \int sec(x)} = \ln \left | \tan(x) + \sec(x) \right | + C \\
-    ~\\
-    {\displaystyle \int csc(mx)} = \frac{1}{m}\ln \left | \tan(\frac{mx}{2}) \right | + C &amp; {\displaystyle \int sec(mx)} = \frac{1}{m}\ln \left | \tan(mx)  +\sec(mx) \right | + C \\
-    ~\\
-    {\displaystyle \int tan(x)} = -\ln \left | \cos(x) \right | + C &amp; {\displaystyle \int cot(x)} = \ln \left | \sin(x) \right | + C \\
-    ~\\
-    {\displaystyle \int tan(mx)} = -\frac{1}{m}\ln \left | \cos(mx) \right | + C &amp; {\displaystyle \int cot(mx)} = \frac{1}{m}\ln \left | \sin(mx) \right | + C \\
-\end{array}
-\]</span></p>
-<h2 id="logarithmic-1">Logarithmic</h2>
-<p><span class="math display">\[
-\begin{array}{ll}
-    \int \ln(x)\;dx &amp;=&amp; x\ln(x) - x + C \\
-    ~\\
-    \int \ln(x^{n})\;dx &amp;=&amp; nx\ln(nx) - nx + C \\
-    ~\\
-    \int \ln(mx)\;dx &amp;=&amp; x\ln(mx) - x + C \\
-    ~\\
-    \int ln(mx^{n})\;dx &amp;=&amp; x\ln(m) + nx\ln(x) - nx + C \\
-    ~\\
-    \int log_{b}(x)\;dx &amp;=&amp; {\displaystyle \int \frac{\ln(x)}{ln(b)}} = x\log_{b}(x) - \dfrac{x}{\ln(b)} + C \\
-    ~\\
-    \int \log_{b}(x^{n})\;dx &amp;=&amp; n\left ( x\log_{b}(x) - \dfrac{x}{\ln(b)} \right ) + C \\
-    ~\\
-    \int log_{b}(mx)\;dx &amp;=&amp; x\log_{b}(mx) - \dfrac{x}{\ln(b)} + C \\
-    ~\\
-    \int log_{b}(mx^{n})\;dx &amp;=&amp; x\log_{b}(m) + n\left ( xlog_{b}(x) - \dfrac{x}{\ln(b)} \right ) + C \\
-\end{array}
-\]</span></p>
-<h1 id="integrals">Integrals</h1>
 <h2 id="common-integration-formulas">Common Integration Formulas</h2>
 <figure>
 <img src="../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-1_table-1.png" alt="Table 8.1" /><figcaption>Table 8.1</figcaption>
@@ -344,23 +307,61 @@ V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\; \text{ where } 0 \le a \le b
   \int \sinh(x)dx = \cosh(x) + C &amp; \int \cosh(x)dx = \sinh(x) + C
 \end{array}
 \]</span></p>
-<h2 id="integral-by-parts-formula">Integral by Parts Formula</h2>
-<p>Use the acronym “LIPET” to help choosing the value when substituting for <span class="math inline">\(u\)</span>.</p>
-<ul>
-<li><strong>L</strong>ogarithmic – e.g. <span class="math inline">\(\ln(x)\)</span></li>
-<li><strong>I</strong>nverse Trigonometric – e.g. <span class="math inline">\(\tan^{-1}(x)\)</span></li>
-<li><strong>P</strong>olynomial – e.g. <span class="math inline">\(x^{2}\)</span></li>
-<li><strong>E</strong>xponential – e.g. <span class="math inline">\(e^{x}\)</span></li>
-<li><strong>T</strong>rigonometric – e.g. <span class="math inline">\(\cos(x)\)</span></li>
-</ul>
-<p>to prioritize choosing <span class="math inline">\(u\)</span> in the order of <strong>LIPET</strong>, <strong>L</strong> being the first priority and <strong>T</strong> being the last.</p>
-<p><strong>Integral by Parts for Indefinite Integrals</strong></p>
+<h2 id="polynomial-1">Polynomial</h2>
 <p><span class="math display">\[
-\int u\;dv = uv - \int v\;du
+\begin{array}{ll}
+    \int x\;dx &amp;=&amp; \dfrac{x^{2}}{2} + C \\
+    ~\\
+    \int \sqrt{x}\;dx &amp;=&amp; \dfrac{2}{3}x^{\frac{3}{2}} + C \\
+    ~\\
+    \int x^{n}\;dx &amp;=&amp; \dfrac{x^{n + 1}}{n + 1} + C \\
+    ~\\
+    \int x^{\frac{m}{n}}\;dx &amp;=&amp; \dfrac{x^{\frac{m}{n} + 1}}{\frac{m}{n} + 1} + C = \dfrac{nx\frac{m + n}{n}}{m + n} + C \\
+    ~\\
+    \int mx^{n}\;dx &amp;=&amp; m\dfrac{x^{n + 1}}{n + 1} + C \\
+    ~\\
+    \int \frac{1}{x}\;dx &amp;=&amp; \ln|x| + C \\
+\end{array}
 \]</span></p>
-<p><strong>Integral by Parts for Definite Integrals</strong></p>
+<h2 id="trigonometric-1">Trigonometric</h2>
 <p><span class="math display">\[
-\int_{a}^{b} u(x)v^{\prime} (dx)dx = \left . u(x)v(x) \right |_{a}^{b} - \int_{a}^{b} v(x)u^{\prime}(x)dx
+\begin{array}{lll}
+    {\displaystyle \int \sin(x)} = -\cos(x) + C &amp; {\displaystyle \int \cos(x)} = \sin(x) + C \\
+    ~\\
+    {\displaystyle \int \sin(mx)} = -\dfrac{1}{m}\cos(mx) + C &amp; {\displaystyle \int \cos(mx)} = \dfrac{1}{m}\sin(mx) + C \\
+    ~\\
+    {\displaystyle \int csc(x)} = -\ln \left | \csc(x) + cot(x) \right | + C &amp; {\displaystyle \int sec(x)} = \ln \left | \tan(x) + \sec(x) \right | + C \\
+    ~\\
+    {\displaystyle \int csc(x)} = \ln \left | \tan(\frac{x}{2}) \right | + C \\
+    ~\\
+    {\displaystyle \int csc(mx)} = -\frac{1}{m}\ln \left | \csc(mx) + cot(mx) \right | + C &amp; {\displaystyle \int sec(mx)} = \frac{1}{m}\ln \left | \tan(mx) +\sec(mx) \right | + C \\
+    ~\\
+    {\displaystyle \int csc(mx)} = \frac{1}{m}\ln \left | \tan(\frac{mx}{2}) \right | + C \\
+    ~\\
+    {\displaystyle \int tan(x)} = -\ln \left | \cos(x) \right | + C &amp; {\displaystyle \int cot(x)} = \ln \left | \sin(x) \right | + C \\
+    ~\\
+    {\displaystyle \int tan(mx)} = -\frac{1}{m}\ln \left | \cos(mx) \right | + C &amp; {\displaystyle \int cot(mx)} = \frac{1}{m}\ln \left | \sin(mx) \right | + C \\
+\end{array}
+\]</span></p>
+<h2 id="logarithmic-1">Logarithmic</h2>
+<p><span class="math display">\[
+\begin{array}{ll}
+    \int \ln(x)\;dx &amp;=&amp; x\ln(x) - x + C \\
+    ~\\
+    \int \ln(x^{n})\;dx &amp;=&amp; nx\ln(nx) - nx + C \\
+    ~\\
+    \int \ln(mx)\;dx &amp;=&amp; x\ln(mx) - x + C \\
+    ~\\
+    \int ln(mx^{n})\;dx &amp;=&amp; x\ln(m) + nx\ln(x) - nx + C \\
+    ~\\
+    \int log_{b}(x)\;dx &amp;=&amp; {\displaystyle \int \frac{\ln(x)}{ln(b)}} = x\log_{b}(x) - \dfrac{x}{\ln(b)} + C \\
+    ~\\
+    \int \log_{b}(x^{n})\;dx &amp;=&amp; n\left ( x\log_{b}(x) - \dfrac{x}{\ln(b)} \right ) + C \\
+    ~\\
+    \int log_{b}(mx)\;dx &amp;=&amp; x\log_{b}(mx) - \dfrac{x}{\ln(b)} + C \\
+    ~\\
+    \int log_{b}(mx^{n})\;dx &amp;=&amp; x\log_{b}(m) + n\left ( xlog_{b}(x) - \dfrac{x}{\ln(b)} \right ) + C \\
+\end{array}
 \]</span></p>
           </article>
           </div>
