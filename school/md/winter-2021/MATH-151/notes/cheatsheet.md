@@ -302,6 +302,8 @@ $$
 	~\\
 	\dfrac{d}{dx}(x^{n}) &=& nx^{n - 1} \\
 	~\\
+	\dfrac{d}{dx}(x^{\frac{1}{n}}) &=& \dfrac{1}{nx^{\frac{1}{n} - 1}} \\
+	~\\
 	\dfrac{d}{dx}(mx^{n}) &=& mnx^{n - 1} \\
 \end{array}
 $$
