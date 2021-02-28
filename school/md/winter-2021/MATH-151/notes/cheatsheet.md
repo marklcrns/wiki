@@ -141,6 +141,10 @@ $$
 
 # Common Identities
 
+## Polynomial
+
+![Polynomial Identities](../../../../files/winter-2021/MATH-151/notes/polynomial_identities.png)
+
 ## Trigonometric
 
 - [⬇ Famous Trig Identities](file:../../../../files/spring-2020/MATH-141/ch-6/ch-6_handout-24.pdf)
