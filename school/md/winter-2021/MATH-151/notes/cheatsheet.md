@@ -401,9 +401,9 @@ $$
 \begin{array}{ll}
 	\int x\;dx &=& \dfrac{x^{2}}{2} + C \\
 	~\\
-	\int \sqrt{x}\;dx &=& \dfrac{2}{3}x^{\frac{3}{2}} + C \\
-	~\\
 	\int x^{n}\;dx &=& \dfrac{x^{n + 1}}{n + 1} + C \\
+	~\\
+	\int \sqrt[y]{x}\;dx &=& \dfrac{x^{\frac{1}{y} + 1}}{\frac{1}{y} + 1} + C \\
 	~\\
 	\int x^{\frac{m}{n}}\;dx &=& \dfrac{x^{\frac{m}{n} + 1}}{\frac{m}{n} + 1} + C = \dfrac{nx\frac{m + n}{n}}{m + n} + C \\
 	~\\
