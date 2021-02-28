@@ -112,6 +112,32 @@ $$
 \int_{a}^{b} u(x)v^{\prime} (dx)dx = \left . u(x)v(x) \right |_{a}^{b} - \int_{a}^{b} v(x)u^{\prime}(x)dx
 $$
 
+## Physical Applications
+
+### Mass of a One-Dimensional Object
+
+$$
+m = \int_{a}^{b} \rho(x)\;dx
+$$
+
+### Work
+
+$$
+W = \int_{a}^{b} F(x)\;dx
+$$
+
+### Pumping Water
+
+$$
+W = \int_{a}^{b} \rho gA(y)D(y)\;dy
+$$
+
+### Force on a Dam
+
+$$
+F = \int_{0}^{a} \rho g(a - y)w(y)\;dy
+$$
+
 
 # Common Identities
 
@@ -317,6 +343,18 @@ $$
 	\dfrac{d}{dx}(\cos{x}) = -\sin{x} & \dfrac{d}{dx}(\sec{x}) = \sec{x}\tan{x} \\
 	~\\
 	\dfrac{d}{dx}(\tan{x}) = \sec^{2}{x} & \dfrac{d}{dx}(\cot{x}) = -\csc^{2}{x} \\
+\end{array}
+$$
+
+## Inverse Trigonometric Functions
+
+$$
+\begin{array}{ll}
+	\dfrac{d}{dx}(\sin^{-1}{x}) = \dfrac{1}{\sqrt{1 - x^{2}}} & \dfrac{d}{dx}(\csc^{-1}{x}) = -\dfrac{1}{x\sqrt{x^{2} - 1}} \\
+	~\\
+	\dfrac{d}{dx}(\cos^{-1}{x}) = -\dfrac{1}{\sqrt{1 - x^{2}}} & \dfrac{d}{dx}(\sec^{-1}{x}) = \dfrac{1}{x\sqrt{x^{2} - 1}} \\
+	~\\
+	\dfrac{d}{dx}(\tan^{-1}{x}) = \dfrac{1}{1 + x^{2}} & \dfrac{d}{dx}(\cot^{-1}{x}) = -\dfrac{1}{1 + x^{2}}
 \end{array}
 $$
 

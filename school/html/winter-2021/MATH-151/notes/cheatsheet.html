@@ -83,6 +83,12 @@
           <li><a href="#reduction-formulas">Reduction Formulas</a></li>
           <li><a href="#integral-by-parts-formula">Integral by Parts Formula</a></li>
           </ul></li>
+          <li><a href="#physical-applications">Physical Applications</a><ul>
+          <li><a href="#mass-of-a-one-dimensional-object">Mass of a One-Dimensional Object</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#pumping-water">Pumping Water</a></li>
+          <li><a href="#force-on-a-dam">Force on a Dam</a></li>
+          </ul></li>
           </ul></li>
           <li><a href="#common-identities">Common Identities</a><ul>
           <li><a href="#trigonometric">Trigonometric</a></li>
@@ -103,6 +109,7 @@
           <li><a href="#derivatives-1">Derivatives</a><ul>
           <li><a href="#polynomial">Polynomial</a></li>
           <li><a href="#trigonometric-functions">Trigonometric Functions</a></li>
+          <li><a href="#inverse-trigonometric-functions">Inverse Trigonometric Functions</a></li>
           <li><a href="#inverse-hyperbolic-functions">Inverse Hyperbolic Functions</a></li>
           <li><a href="#logarithmic">Logarithmic</a></li>
           <li><a href="#eulers">Euler’s</a></li>
@@ -215,6 +222,23 @@ V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\; \text{ where } 0 \le a \le b
 <p><strong>Integral by Parts for Definite Integrals</strong></p>
 <p><span class="math display">\[
 \int_{a}^{b} u(x)v^{\prime} (dx)dx = \left . u(x)v(x) \right |_{a}^{b} - \int_{a}^{b} v(x)u^{\prime}(x)dx
+\]</span></p>
+<h2 id="physical-applications">Physical Applications</h2>
+<h3 id="mass-of-a-one-dimensional-object">Mass of a One-Dimensional Object</h3>
+<p><span class="math display">\[
+m = \int_{a}^{b} \rho(x)\;dx
+\]</span></p>
+<h3 id="work">Work</h3>
+<p><span class="math display">\[
+W = \int_{a}^{b} F(x)\;dx
+\]</span></p>
+<h3 id="pumping-water">Pumping Water</h3>
+<p><span class="math display">\[
+W = \int_{a}^{b} \rho gA(y)D(y)\;dy
+\]</span></p>
+<h3 id="force-on-a-dam">Force on a Dam</h3>
+<p><span class="math display">\[
+F = \int_{0}^{a} \rho g(a - y)w(y)\;dy
 \]</span></p>
 <h1 id="common-identities">Common Identities</h1>
 <h2 id="trigonometric">Trigonometric</h2>
@@ -386,6 +410,16 @@ V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\; \text{ where } 0 \le a \le b
     \dfrac{d}{dx}(\cos{x}) = -\sin{x} &amp; \dfrac{d}{dx}(\sec{x}) = \sec{x}\tan{x} \\
     ~\\
     \dfrac{d}{dx}(\tan{x}) = \sec^{2}{x} &amp; \dfrac{d}{dx}(\cot{x}) = -\csc^{2}{x} \\
+\end{array}
+\]</span></p>
+<h2 id="inverse-trigonometric-functions">Inverse Trigonometric Functions</h2>
+<p><span class="math display">\[
+\begin{array}{ll}
+    \dfrac{d}{dx}(\sin^{-1}{x}) = \dfrac{1}{\sqrt{1 - x^{2}}} &amp; \dfrac{d}{dx}(\csc^{-1}{x}) = -\dfrac{1}{x\sqrt{x^{2} - 1}} \\
+    ~\\
+    \dfrac{d}{dx}(\cos^{-1}{x}) = -\dfrac{1}{\sqrt{1 - x^{2}}} &amp; \dfrac{d}{dx}(\sec^{-1}{x}) = \dfrac{1}{x\sqrt{x^{2} - 1}} \\
+    ~\\
+    \dfrac{d}{dx}(\tan^{-1}{x}) = \dfrac{1}{1 + x^{2}} &amp; \dfrac{d}{dx}(\cot^{-1}{x}) = -\dfrac{1}{1 + x^{2}}
 \end{array}
 \]</span></p>
 <h2 id="inverse-hyperbolic-functions">Inverse Hyperbolic Functions</h2>
