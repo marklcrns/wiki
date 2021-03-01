@@ -50,3 +50,9 @@ Textbook
 - [⬇ Homework 7: Integration by Parts](file:../../../files/winter-2021/MATH-151/homeworks/homework7.pdf)
 - [⬇ Homework 8: Trigonometric Integrals](file:../../../files/winter-2021/MATH-151/homeworks/homework8.pdf)
 
+## Exams
+
+### Midterm
+
+- [⬇ Midterm Practice Exam 1](file:../../../files/winter-2021/MATH-151/exams/midterm_exam_practice.pdf)
+

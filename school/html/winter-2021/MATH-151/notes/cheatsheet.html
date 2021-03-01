@@ -81,7 +81,7 @@
           <li><a href="#shell-method-about-y-axis">Shell Method (about <span class="math inline">\(y\)</span>-axis)</a></li>
           </ul></li>
           <li><a href="#reduction-formulas">Reduction Formulas</a></li>
-          <li><a href="#integral-by-parts-formula">Integral by Parts Formula</a></li>
+          <li><a href="#integration-by-parts-formula">Integration by Parts Formula</a></li>
           </ul></li>
           <li><a href="#physical-applications">Physical Applications</a><ul>
           <li><a href="#mass-of-a-one-dimensional-object">Mass of a One-Dimensional Object</a></li>
@@ -121,6 +121,7 @@
           <li><a href="#polynomial-2">Polynomial</a></li>
           <li><a href="#trigonometric-1">Trigonometric</a></li>
           <li><a href="#logarithmic-1">Logarithmic</a></li>
+          <li><a href="#eulers-1">Euler’s</a></li>
           </ul></li>
           </ul>
           <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
@@ -206,7 +207,7 @@ V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\; \text{ where } 0 \le a \le b
     {\displaystyle \int \sec^{n}(x)\;dx} = \frac{\sec^{n - 2}(x)\tan(x)}{n - 1} + \frac{n - 2}{n - 1}{\displaystyle \int \sec^{n - 2}(x)\;dx} &amp; \text{ for } n \neq 1 \\
 \end{array}
 \]</span></p>
-<h3 id="integral-by-parts-formula">Integral by Parts Formula</h3>
+<h3 id="integration-by-parts-formula">Integration by Parts Formula</h3>
 <p>Use the acronym “LIPET” to help choosing the value when substituting for <span class="math inline">\(u\)</span>.</p>
 <ul>
 <li><strong>L</strong>ogarithmic – e.g. <span class="math inline">\(\ln(x)\)</span></li>
@@ -216,11 +217,11 @@ V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\; \text{ where } 0 \le a \le b
 <li><strong>T</strong>rigonometric – e.g. <span class="math inline">\(\cos(x)\)</span></li>
 </ul>
 <p>to prioritize choosing <span class="math inline">\(u\)</span> in the order of <strong>LIPET</strong>, <strong>L</strong> being the first priority and <strong>T</strong> being the last.</p>
-<p><strong>Integral by Parts for Indefinite Integrals</strong></p>
+<p><strong>Integration by Parts for Indefinite Integrals</strong></p>
 <p><span class="math display">\[
 \int u\;dv = uv - \int v\;du
 \]</span></p>
-<p><strong>Integral by Parts for Definite Integrals</strong></p>
+<p><strong>Integration by Parts for Definite Integrals</strong></p>
 <p><span class="math display">\[
 \int_{a}^{b} u(x)v^{\prime} (dx)dx = \left . u(x)v(x) \right |_{a}^{b} - \int_{a}^{b} v(x)u^{\prime}(x)dx
 \]</span></p>
@@ -546,6 +547,14 @@ F = \int_{0}^{a} \rho g(a - y)w(y)\;dy
     \int \log_{b}(mx)\;dx &amp;=&amp; x\log_{b}(mx) - \dfrac{x}{\ln(b)} + C \\
     ~\\
     \int \log_{b}(mx^{n})\;dx &amp;=&amp; x\log_{b}(m) + n\left ( x\log_{b}(x) - \dfrac{x}{\ln(b)} \right ) + C \\
+\end{array}
+\]</span></p>
+<h2 id="eulers-1">Euler’s</h2>
+<p><span class="math display">\[
+\begin{array}{ll}
+    \int e^{x}\;dx = e^{x} + C \\
+    ~\\
+    \int e^{mx}\;dx = \dfrac{1}{m}e^{mx} + C \\
 \end{array}
 \]</span></p>
           </article>

@@ -86,7 +86,7 @@ $$
 \end{array}
 $$
 
-### Integral by Parts Formula
+### Integration by Parts Formula
 
 Use the acronym "LIPET" to help choosing the value when substituting for $u$.
 
@@ -100,17 +100,18 @@ to prioritize choosing $u$ in the order of **LIPET**, **L** being the first
 priority and **T** being the last.
 
 
-**Integral by Parts for Indefinite Integrals**
+**Integration by Parts for Indefinite Integrals**
 
 $$
 \int u\;dv = uv - \int v\;du
 $$
 
-**Integral by Parts for Definite Integrals**
+**Integration by Parts for Definite Integrals**
 
 $$
 \int_{a}^{b} u(x)v^{\prime} (dx)dx = \left . u(x)v(x) \right |_{a}^{b} - \int_{a}^{b} v(x)u^{\prime}(x)dx
 $$
+
 
 ## Physical Applications
 
@@ -496,6 +497,16 @@ $$
 	\int \log_{b}(mx)\;dx &=& x\log_{b}(mx) - \dfrac{x}{\ln(b)} + C \\
 	~\\
 	\int \log_{b}(mx^{n})\;dx &=& x\log_{b}(m) + n\left ( x\log_{b}(x) - \dfrac{x}{\ln(b)} \right ) + C \\
+\end{array}
+$$
+
+## Euler's
+
+$$
+\begin{array}{ll}
+	\int e^{x}\;dx = e^{x} + C \\
+	~\\
+	\int e^{mx}\;dx = \dfrac{1}{m}e^{mx} + C \\
 \end{array}
 $$
 
