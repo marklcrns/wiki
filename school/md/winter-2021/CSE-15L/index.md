@@ -38,4 +38,6 @@ date: Jan 06, 2021
 - [⬇ Lecture 12: XML and Ant](file:../../../files/winter-2021/CSE-15L/lectures/Lecture12-CSE15L-SectB-Winter2021-17Feb2021.pdf)
 - [⬇ Lecture 13: Unix Processes](file:../../../files/winter-2021/CSE-15L/lectures/Lecture13-CSE15L-SectB-Winter2021-22Feb2021.pdf)
 - [⬇ Lecture 14: Diagnostic Output, Java Logging Framework](file:../../../files/winter-2021/CSE-15L/lectures/Lecture14-CSE15L-SectB-Winter2021-24Feb2021.pdf)
+- [⬇ Lecture 15: Software Correctness and Efficiency, Cost of Logging](file:../../../files/winter-2021/CSE-15L/lectures/Lecture15-CSE15L-SectB-Winter2021-01Mar2021.pdf)
+- [⬇ Lecture 16: Virtualization, Bug Reporting](file:../../../files/winter-2021/CSE-15L/lectures/Lecture16-CSE15L-SectB-Winter2021-03Mar2021.pdf)
 
