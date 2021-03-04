@@ -8,6 +8,10 @@ date: Feb 02, 2021
 
 # Chapter 1: Measurements
 
+## SI Units
+
+![SI Units](../../../../files/winter-2021/PHYS-195/lectures/ch-1/si_units.png)
+
 ## My Notes
 
 When cancelling out units with different powers, match the smaller unit to the
