@@ -46,3 +46,7 @@ date: Jan 31, 2021
 - [⬇ Lab 2](file:../../../files/winter-2021/PHYS-195/labs/lab02.pdf)
 - [⬇ Lab 2 with Catapult Question](file:../../../files/winter-2021/PHYS-195/labs/lab02_with_catapult.pdf)
 
+## Exam Solutions
+
+- [⬇ Exam 1 Solutions](file:../../../files/winter-2021/PHYS-195/exam/exam-1_solutions.pdf)
+
