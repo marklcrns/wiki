@@ -49,6 +49,8 @@ If the integral involves $x^{2} - a^{2}$ (where $a > 0$) then substitute $x
 < \frac{\pi}{2}$ when $x \ge a$ and for $\frac{\pi}{2} < \theta \le \pi$ when $x
 \le -a$.
 
+![Trig Substitutions](../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-4_trig_substitutions.png)
+
 ![Figure 8.5](../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-4_figure-8.5.png)
 ![Example 3](../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-4_example-3.png)
 ![Example 4.1](../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-4_example-4.1.png)

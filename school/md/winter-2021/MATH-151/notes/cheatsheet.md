@@ -114,13 +114,7 @@ $$
 
 ### Trigonometric Substitution
 
-where $a > 0$
-
-|    Involves     |      Substitute      |                                               Defined for                                               |
-|:---------------:|:--------------------:|:-------------------------------------------------------------------------------------------------------:|
-| $a^{2} - x^{2}$ | $x = a \sin(\theta)$ |                              $-\frac{\pi}{2} \le \theta \le \frac{\pi}{2}$                              |
-| $a^{2} + x^{2}$ | $x = a \tan(\theta)$ |                                $-\frac{\pi}{2} < \theta < \frac{\pi}{2}$                                |
-| $x^{2} - a^{2}$ | $x = a \sec(\theta)$ | $0 \le \theta < \frac{\pi}{2}$, $x \ge a \; \text{ and } \; \frac{\pi}{2} < \theta \le \pi$, $x \le -a$ |
+![Trig Substitutions](../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-4_trig_substitutions.png)
 
 
 ## Physical Applications
