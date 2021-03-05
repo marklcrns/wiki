@@ -38,4 +38,11 @@ date: Jan 31, 2021
 - [⬇ Homework 1: Measurements](file:../../../files/winter-2021/PHYS-195/homeworks/homework_1.pdf)
 - [⬇ Homework 2: Vectors](file:../../../files/winter-2021/PHYS-195/homeworks/homework_2.pdf)
 - [⬇ Homework 3: Kinematics](file:../../../files/winter-2021/PHYS-195/homeworks/homework_3.pdf)
+- [⬇ Homework 4: Motion in Two and Three Dimensions](file:../../../files/winter-2021/PHYS-195/homeworks/homework_4.pdf)
+
+## Labs
+
+- [⬇ Lab 1](file:../../../files/winter-2021/PHYS-195/labs/lab01.pdf)
+- [⬇ Lab 2](file:../../../files/winter-2021/PHYS-195/labs/lab02.pdf)
+- [⬇ Lab 2 with Catapult Question](file:../../../files/winter-2021/PHYS-195/labs/lab02_with_catapult.pdf)
 
