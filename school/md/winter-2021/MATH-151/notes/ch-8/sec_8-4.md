@@ -28,6 +28,27 @@ From the Pythagorean Theorem: $a^{2} + b^{2} = c^{2} = \sqrt{a^{2} + b^{2}}$
 
 ## Integrals Involving $a^{2} + x^{2}$ or $x^{2} - a^{2}$
 
+### Trigonometric Substitution
+
+#### $a^{2} - x^{2}$ with sine
+
+If the integral involves $a^{2} - x^{2}$ (where $a > 0$) then substitute $x
+= a \sin(\theta)$. The substitution is well defined for $-\frac{\pi}{2} \le
+\theta \le \frac{\pi}{2}$.
+
+#### $a^{2} + x^{2}$ with tangent
+
+If the integral involves $a^{2} + x^{2}$ (where $a > 0$) then substitute $x
+= a \tan(\theta)$. The substitution is well defined for $-\frac{\pi}{2} < \theta
+< \frac{\pi}{2}$.
+
+#### $x^{2} - a^{2}$ with secant
+
+If the integral involves $x^{2} - a^{2}$ (where $a > 0$) then substitute $x
+= a \sec(\theta)$. The substitution is well defined for $0 \le \theta
+< \frac{\pi}{2}$ when $x \ge a$ and for $\frac{\pi}{2} < \theta \le \pi$ when $x
+\le -a$.
+
 ![Figure 8.5](../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-4_figure-8.5.png)
 ![Example 3](../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-4_example-3.png)
 ![Example 4.1](../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-4_example-4.1.png)

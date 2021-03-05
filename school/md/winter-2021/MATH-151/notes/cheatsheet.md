@@ -112,6 +112,16 @@ $$
 \int_{a}^{b} u(x)v^{\prime} (dx)dx = \left . u(x)v(x) \right |_{a}^{b} - \int_{a}^{b} v(x)u^{\prime}(x)dx
 $$
 
+### Trigonometric Substitution
+
+where $a > 0$
+
+|    Involves     |      Substitute      |                                               Defined for                                               |
+|:---------------:|:--------------------:|:-------------------------------------------------------------------------------------------------------:|
+| $a^{2} - x^{2}$ | $x = a \sin(\theta)$ |                              $-\frac{\pi}{2} \le \theta \le \frac{\pi}{2}$                              |
+| $a^{2} + x^{2}$ | $x = a \tan(\theta)$ |                                $-\frac{\pi}{2} < \theta < \frac{\pi}{2}$                                |
+| $x^{2} - a^{2}$ | $x = a \sec(\theta)$ | $0 \le \theta < \frac{\pi}{2}$, $x \ge a \; \text{ and } \; \frac{\pi}{2} < \theta \le \pi$, $x \le -a$ |
+
 
 ## Physical Applications
 
