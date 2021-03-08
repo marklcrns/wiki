@@ -414,10 +414,23 @@ $$
 
 # Antiderivatives (Integral)
 
+## Table of Integrals
+
+![Table of Integrals 1](../../../../files/winter-2021/MATH-151/notes/table_of_integrals-1.png)
+![Table of Integrals 2.1](../../../../files/winter-2021/MATH-151/notes/table_of_integrals-2.1.png)
+![Table of Integrals 2.2](../../../../files/winter-2021/MATH-151/notes/table_of_integrals-2.2.png)
+![Table of Integrals 3](../../../../files/winter-2021/MATH-151/notes/table_of_integrals-3.png)
+![Table of Integrals 4](../../../../files/winter-2021/MATH-151/notes/table_of_integrals-4.png)
+![Table of Integrals 5](../../../../files/winter-2021/MATH-151/notes/table_of_integrals-5.png)
+![Table of Integrals 6](../../../../files/winter-2021/MATH-151/notes/table_of_integrals-6.png)
+![Table of Integrals 7](../../../../files/winter-2021/MATH-151/notes/table_of_integrals-7.png)
+![Table of Integrals 8](../../../../files/winter-2021/MATH-151/notes/table_of_integrals-8.png)
+![Table of Integrals 9](../../../../files/winter-2021/MATH-151/notes/table_of_integrals-9.png)
+![Table of Integrals 10](../../../../files/winter-2021/MATH-151/notes/table_of_integrals-10.png)
+
 ## Common Integration Formulas
 
 ![Table 8.1](../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-1_table-1.png)
-![Table of Integrals](../../../../files/winter-2021/MATH-151/notes/table_of_integrals.png)
 
 ## Common Indefinite Integrals
 
