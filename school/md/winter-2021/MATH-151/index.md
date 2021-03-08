@@ -49,6 +49,9 @@ Textbook
 - [⬇ Homework 6: Basic Approaches](file:../../../files/winter-2021/MATH-151/homeworks/homework6.pdf)
 - [⬇ Homework 7: Integration by Parts](file:../../../files/winter-2021/MATH-151/homeworks/homework7.pdf)
 - [⬇ Homework 8: Trigonometric Integrals](file:../../../files/winter-2021/MATH-151/homeworks/homework8.pdf)
+- [⬇ Homework 9: Trigonometric Substitutions](file:../../../files/winter-2021/MATH-151/homeworks/homework9.pdf)
+- [⬇ Homework 10: Partial Fractions](file:../../../files/winter-2021/MATH-151/homeworks/homework10.pdf)
+- [⬇ Homework 11: Integration Strategies](file:../../../files/winter-2021/MATH-151/homeworks/homework11.pdf)
 
 ## Exams
 

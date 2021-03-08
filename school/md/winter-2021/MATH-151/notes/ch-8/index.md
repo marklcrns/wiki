@@ -14,4 +14,5 @@ date: Feb 15, 2021
 - [↪ Section 8.4: Trigonometric Substitutions](sec_8-4)
 - [↪ Section 8.5: Partial Fractions](sec_8-5)
 - [↪ Section 8.6: Integration Strategies](sec_8-6)
+- [↪ Section 8.7: Other Methods of Integration](sec_8-7)
 
