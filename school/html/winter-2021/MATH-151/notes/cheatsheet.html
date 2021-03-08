@@ -182,11 +182,11 @@ S = \int_{a}^{b} 2 \pi f(x)\sqrt{1 + f^{\prime}(x)^{2}}\;dx
 <h3 id="volume">Volume</h3>
 <h4 id="disk-method-about-x-axis">Disk Method (about <span class="math inline">\(x\)</span>-axis)</h4>
 <p><span class="math display">\[
-V \int_{a}^{b} \pi f(y)^{2}\;dx
+V = \int_{a}^{b} \pi f(x)^{2}\;dx
 \]</span></p>
 <h4 id="shell-method-about-y-axis">Shell Method (about <span class="math inline">\(y\)</span>-axis)</h4>
 <p><span class="math display">\[
-V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\; \text{ where } 0 \le a \le b
+V = \int_{a}^{b} 2 \pi yf(y)\;dy \;\;\; \text{ where } 0 \le a \le b
 \]</span></p>
 <h3 id="reduction-formulas">Reduction Formulas</h3>
 <p><span class="math display">\[
@@ -488,6 +488,8 @@ F = \int_{0}^{a} \rho g(a - y)w(y)\;dy
   \int e^{x}dx = e^{x} + C &amp; \int b^{x}dx = \dfrac{b^{x}}{\ln(b)} + C \\
     ~\\
   \int \sin(x)\;dx = -\cos(x) + C &amp; \int \cos(x)dx = \sin(x) + C \\
+    ~\\
+  \int \sin^{2}(x)\;dx = \frac{1}{2} \left ( x - \frac{1}{2}\sin(2x) \right ) + C &amp; \int \cos^{2}(x)dx = \frac{1}{2} \left ( x + \frac{1}{2}\sin(2x) \right ) + C \\
     ~\\
   \int \sec^{2}(x)dx = \tan(x) + C &amp; \int \csc^{2}(x)dx = -\cot(x) + C \\
     ~\\

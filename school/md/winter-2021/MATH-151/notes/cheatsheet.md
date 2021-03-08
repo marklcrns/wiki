@@ -53,13 +53,13 @@ $$
 #### Disk Method (about $x$-axis)
 
 $$
-V \int_{a}^{b} \pi f(y)^{2}\;dx
+V = \int_{a}^{b} \pi f(x)^{2}\;dx
 $$
 
 #### Shell Method (about $y$-axis)
 
 $$
-V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\; \text{ where } 0 \le a \le b
+V = \int_{a}^{b} 2 \pi yf(y)\;dy \;\;\; \text{ where } 0 \le a \le b
 $$
 
 ### Reduction Formulas
@@ -431,6 +431,8 @@ $$
   \int e^{x}dx = e^{x} + C & \int b^{x}dx = \dfrac{b^{x}}{\ln(b)} + C \\
 	~\\
   \int \sin(x)\;dx = -\cos(x) + C & \int \cos(x)dx = \sin(x) + C \\
+	~\\
+  \int \sin^{2}(x)\;dx = \frac{1}{2} \left ( x - \frac{1}{2}\sin(2x) \right ) + C & \int \cos^{2}(x)dx = \frac{1}{2} \left ( x + \frac{1}{2}\sin(2x) \right ) + C \\
 	~\\
   \int \sec^{2}(x)dx = \tan(x) + C & \int \csc^{2}(x)dx = -\cot(x) + C \\
 	~\\
