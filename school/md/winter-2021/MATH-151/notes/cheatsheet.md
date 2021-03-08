@@ -412,11 +412,12 @@ $$
 $$
 
 
-# Antiderivatives
+# Antiderivatives (Integral)
 
 ## Common Integration Formulas
 
 ![Table 8.1](../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-1_table-1.png)
+![Table of Integrals](../../../../files/winter-2021/MATH-151/notes/table_of_integrals.png)
 
 ## Common Indefinite Integrals
 
