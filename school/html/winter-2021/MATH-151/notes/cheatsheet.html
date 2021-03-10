@@ -74,6 +74,7 @@
           </ul></li>
           <li><a href="#integration">Integration</a><ul>
           <li><a href="#length-of-a-curve">Length of a Curve</a></li>
+          <li><a href="#area">Area</a></li>
           <li><a href="#area-between-curves">Area Between Curves</a></li>
           <li><a href="#area-of-a-surface-of-revolution">Area of a Surface of Revolution</a></li>
           <li><a href="#volume">Volume</a><ul>
@@ -83,6 +84,12 @@
           <li><a href="#reduction-formulas">Reduction Formulas</a></li>
           <li><a href="#integration-by-parts-formula">Integration by Parts Formula</a></li>
           <li><a href="#trigonometric-substitution">Trigonometric Substitution</a></li>
+          <li><a href="#numerical-integration">Numerical Integration</a><ul>
+          <li><a href="#absolute-and-relative-error">Absolute and Relative Error</a></li>
+          <li><a href="#midpoint-rule">Midpoint Rule</a></li>
+          <li><a href="#trapezoid-rule">Trapezoid Rule</a></li>
+          <li><a href="#simpsons-rule">Simpson’s Rule</a></li>
+          </ul></li>
           </ul></li>
           <li><a href="#physical-applications">Physical Applications</a><ul>
           <li><a href="#mass-of-a-one-dimensional-object">Mass of a One-Dimensional Object</a></li>
@@ -172,6 +179,10 @@ F^{\prime}(x) = f^{\prime}(g(x)) \cdot g^{\prime}(x)
 <p><span class="math display">\[
 L = \int_{a}^{b} \sqrt{1 + f^{\prime}(x)^{2}}\;dx
 \]</span></p>
+<h3 id="area">Area</h3>
+<p><span class="math display">\[
+A = \int_{a}^{b} f(x)\;dx
+\]</span></p>
 <h3 id="area-between-curves">Area Between Curves</h3>
 <p><span class="math display">\[
 A = \int_{a}^{b} \left | f(x) - g(x) \right |\;dx
@@ -231,6 +242,40 @@ V = \int_{a}^{b} 2 \pi yf(y)\;dy \;\;\; \text{ where } 0 \le a \le b
 <figure>
 <img src="../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-4_trig_substitutions.png" alt="Trig Substitutions" /><figcaption>Trig Substitutions</figcaption>
 </figure>
+<h3 id="numerical-integration">Numerical Integration</h3>
+<h4 id="absolute-and-relative-error">Absolute and Relative Error</h4>
+<p><span class="math display">\[
+\textbf{absolute error} = \left | c - x \right | \\
+~\\
+\textbf{relative error} = \frac{\left | c - x \right |}{\left [ x \right ]} \;\;\; (\text{if } x \neq 0).
+\]</span></p>
+<h4 id="midpoint-rule">Midpoint Rule</h4>
+<p><span class="math display">\[
+\begin{aligned}
+ M(n) &amp;= f(m_{1})\Delta{x} + f(m_{2})\Delta{x} + \cdots + f(m_{n})\Delta{x} \\
+   &amp;= \sum_{k = 1}^{n} f(\frac{x_{k - 1} + x_{k}}{2})\;\Delta{x} \\
+\end{aligned}
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[
+\Delta{x} = \frac{b - a}{n}, \;\;\; x_{0} = a, \;\;\; x_{k} = a + k\Delta{x}, \;\;\; m_{k} = \frac{x_{k - 1} + x_{k}}{2}
+\]</span></p>
+<h4 id="trapezoid-rule">Trapezoid Rule</h4>
+<p><span class="math display">\[
+T(n) = \left ( \frac{1}{2}f(x_{0}) + \sum_{k = 1}^{n - 1} f(x_{k}) + \frac{1}{2}f(x_{n}) \right )\Delta{x}
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[
+\Delta{x} = \frac{b - a}{n}, \;\;\; x_{k} = a + k\Delta{x}
+\]</span></p>
+<h4 id="simpsons-rule">Simpson’s Rule</h4>
+<p><span class="math display">\[
+S(n) = \left ( f(x_{0}) + 4f(x_{1}) + 2f(x_{2}) + 4f(x_{3}) + \cdots + 4f(x_{n - 1}) + f(x_{n}) \right )\frac{\Delta{x}}{3}
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[
+\Delta{x} = \frac{b - a}{n}, \;\;\; x_{k} = a + k\Delta{x}
+\]</span></p>
 <h2 id="physical-applications">Physical Applications</h2>
 <h3 id="mass-of-a-one-dimensional-object">Mass of a One-Dimensional Object</h3>
 <p><span class="math display">\[

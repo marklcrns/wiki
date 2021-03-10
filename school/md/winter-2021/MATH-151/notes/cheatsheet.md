@@ -36,6 +36,12 @@ $$
 L = \int_{a}^{b} \sqrt{1 + f^{\prime}(x)^{2}}\;dx
 $$
 
+### Area
+
+$$
+A = \int_{a}^{b} f(x)\;dx
+$$
+
 ### Area Between Curves
 
 $$
@@ -115,6 +121,55 @@ $$
 ### Trigonometric Substitution
 
 ![Trig Substitutions](../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-4_trig_substitutions.png)
+
+### Numerical Integration
+
+#### Absolute and Relative Error
+
+$$
+\textbf{absolute error} = \left | c - x \right | \\
+~\\
+\textbf{relative error} = \frac{\left | c - x \right |}{\left [ x \right ]} \;\;\; (\text{if } x \neq 0).
+$$
+
+#### Midpoint Rule
+
+$$
+\begin{aligned}
+ M(n) &= f(m_{1})\Delta{x} + f(m_{2})\Delta{x} + \cdots + f(m_{n})\Delta{x} \\
+   &= \sum_{k = 1}^{n} f(\frac{x_{k - 1} + x_{k}}{2})\;\Delta{x} \\
+\end{aligned}
+$$
+
+where
+
+$$
+\Delta{x} = \frac{b - a}{n}, \;\;\; x_{0} = a, \;\;\; x_{k} = a + k\Delta{x}, \;\;\; m_{k} = \frac{x_{k - 1} + x_{k}}{2}
+$$
+
+#### Trapezoid Rule
+
+$$
+T(n) = \left ( \frac{1}{2}f(x_{0}) + \sum_{k = 1}^{n - 1} f(x_{k}) + \frac{1}{2}f(x_{n}) \right )\Delta{x}
+$$
+
+where
+
+$$
+\Delta{x} = \frac{b - a}{n}, \;\;\; x_{k} = a + k\Delta{x}
+$$
+
+#### Simpson's Rule
+
+$$
+S(n) = \left ( f(x_{0}) + 4f(x_{1}) + 2f(x_{2}) + 4f(x_{3}) + \cdots + 4f(x_{n - 1}) + f(x_{n}) \right )\frac{\Delta{x}}{3}
+$$
+
+where
+
+$$
+\Delta{x} = \frac{b - a}{n}, \;\;\; x_{k} = a + k\Delta{x}
+$$
 
 
 ## Physical Applications
