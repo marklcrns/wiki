@@ -40,4 +40,6 @@ date: Jan 06, 2021
 - [⬇ Lecture 14: Diagnostic Output, Java Logging Framework](file:../../../files/winter-2021/CSE-15L/lectures/Lecture14-CSE15L-SectB-Winter2021-24Feb2021.pdf)
 - [⬇ Lecture 15: Software Correctness and Efficiency, Cost of Logging](file:../../../files/winter-2021/CSE-15L/lectures/Lecture15-CSE15L-SectB-Winter2021-01Mar2021.pdf)
 - [⬇ Lecture 16: Virtualization, Bug Reporting](file:../../../files/winter-2021/CSE-15L/lectures/Lecture16-CSE15L-SectB-Winter2021-03Mar2021.pdf)
+- [⬇ Lecture 17: Final Exam Review 1](file:../../../files/winter-2021/CSE-15L/lectures/Lecture17-CSE15L-SectB-Winter2021-08Mar2021.pdf)
+- [⬇ Lecture 18: Final Exam Review 2](file:../../../files/winter-2021/CSE-15L/lectures/Lecture18-CSE15L-SectB-Winter2021-10Mar2021.pdf)
 
