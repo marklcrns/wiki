@@ -15,6 +15,7 @@ date: Jan 31, 2021
 > Start: 2021-02-01<br>
 > end: 2021-05-29<br>
 
+
 ## Course Materials
 
 - [⬇ Syllabus](file:../../../files/winter-2021/MATH-151/syllabus.pdf)
@@ -23,12 +24,14 @@ Textbook
 
 - Calculus, Early Transcendentals 3rd Edition - Briggs, Cochran, and Gillet
 
+
 ## Notes
 
 - [↪ CheatSheet](notes/cheatsheet)
 
 - [↪ Chapter 6](notes/ch-6/index)
 - [↪ Chapter 8](notes/ch-8/index)
+
 
 ## Homework Solutions
 
@@ -52,10 +55,14 @@ Textbook
 - [⬇ Homework 9: Trigonometric Substitutions](file:../../../files/winter-2021/MATH-151/homeworks/homework9.pdf)
 - [⬇ Homework 10: Partial Fractions](file:../../../files/winter-2021/MATH-151/homeworks/homework10.pdf)
 - [⬇ Homework 11: Integration Strategies](file:../../../files/winter-2021/MATH-151/homeworks/homework11.pdf)
+- [⬇ Homework 12: Other Methods of Integration](file:../../../files/winter-2021/MATH-151/homeworks/homework12.pdf)
+- [⬇ Homework 13: Numerical Integration](file:../../../files/winter-2021/MATH-151/homeworks/homework13.pdf)
+
 
 ## Exams
 
 ### Midterm
 
-- [⬇ Midterm Practice Exam 1](file:../../../files/winter-2021/MATH-151/exams/midterm_exam_practice.pdf)
+- [⬇ Midterm Practice Exam 1 Solutions](file:../../../files/winter-2021/MATH-151/exams/midterm_exam-1_practice.pdf)
+- [⬇ Midterm Exam 1 Solutions](file:../../../files/winter-2021/MATH-151/exams/midterm_exam-1.pdf)
 

@@ -162,7 +162,7 @@ $$
 #### Simpson's Rule
 
 $$
-S(n) = \left ( f(x_{0}) + 4f(x_{1}) + 2f(x_{2}) + 4f(x_{3}) + \cdots + 4f(x_{n - 1}) + f(x_{n}) \right )\frac{\Delta{x}}{3}
+S(n) = \left ( f(x_{0}) + 4f(x_{1}) + 2f(x_{2}) + 4f(x_{3}) + \cdots + 2f(x_{n - 2}) + 4f(x_{n - 1}) + f(x_{n}) \right )\frac{\Delta{x}}{3}
 $$
 
 where
