@@ -31,6 +31,7 @@ Textbook
 
 - [↪ Chapter 6](notes/ch-6/index)
 - [↪ Chapter 8](notes/ch-8/index)
+- [↪ Chapter 9](notes/ch-9/index)
 
 
 ## Homework Solutions

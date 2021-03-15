@@ -16,4 +16,5 @@ date: Feb 15, 2021
 - [↪ Section 8.6: Integration Strategies](sec_8-6)
 - [↪ Section 8.7: Other Methods of Integration](sec_8-7)
 - [↪ Section 8.8: Numerical Integration](sec_8-8)
+- [↪ Section 8.9: Improper Integrals](sec_8-9)
 
