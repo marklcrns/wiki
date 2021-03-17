@@ -65,7 +65,7 @@ $$
 #### Shell Method (about $y$-axis)
 
 $$
-V = \int_{a}^{b} 2 \pi yf(y)\;dy \;\;\; \text{ where } 0 \le a \le b
+V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\; \text{ where } 0 \le a \le b
 $$
 
 ### Reduction Formulas
