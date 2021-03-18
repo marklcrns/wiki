@@ -410,6 +410,24 @@ $$
 \end{array}
 $$
 
+## Hyperbolic Functions
+
+$$
+\begin{array}{ll}
+	\dfrac{d}{dx}(\sinh{x}) = \cosh{x} & \dfrac{d}{dx}(\operatorname{csch}{x}) = -\operatorname{csch}{x}\coth{x} \\
+	~\\
+	\dfrac{d}{dx}(\cosh{x}) = \sinh{x} & \dfrac{d}{dx}(\operatorname{sech}{x}) = -\operatorname{sech}{x}\tanh{x} \\
+	~\\
+	\dfrac{d}{dx}(\tanh{x}) = \operatorname{sech}^{2}{x} & \dfrac{d}{dx}(\coth{x}) = -\operatorname{csch}^{2}{x} \\
+	~\\
+	\dfrac{d}{dx}(\sinh{ax}) = a\cosh{ax} & \dfrac{d}{dx}(\operatorname{csch}ax) = -a\operatorname{csch}{ax}\coth{ax} \\
+	~\\
+	\dfrac{d}{dx}(\cosh{ax}) = a\sinh{ax} & \dfrac{d}{dx}(\operatorname{sech}ax) = -a\operatorname{sech}{ax}\tanh{ax} \\
+	~\\
+	\dfrac{d}{dx}(\tanh{ax}) = a\operatorname{sech}^{2}ax & \dfrac{d}{dx}(\coth{ax}) = -a\operatorname{csch}^{2}{ax} \\
+\end{array}
+$$
+
 ## Inverse Trigonometric Functions
 
 $$
@@ -531,7 +549,7 @@ $$
 \end{array}
 $$
 
-## Trigonometric
+## Trigonometric Functions
 
 $$
 \begin{array}{lll}
