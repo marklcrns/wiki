@@ -58,6 +58,8 @@ Textbook
 - [⬇ Homework 11: Integration Strategies](file:../../../files/winter-2021/MATH-151/homeworks/homework11.pdf)
 - [⬇ Homework 12: Other Methods of Integration](file:../../../files/winter-2021/MATH-151/homeworks/homework12.pdf)
 - [⬇ Homework 13: Numerical Integration](file:../../../files/winter-2021/MATH-151/homeworks/homework13.pdf)
+- [⬇ Homework 14: Improper Integrals](file:../../../files/winter-2021/MATH-151/homeworks/homework14.pdf)
+- [⬇ Homework 15: Basic Ideas](file:../../../files/winter-2021/MATH-151/homeworks/homework15.pdf)
 
 
 ## Exams
