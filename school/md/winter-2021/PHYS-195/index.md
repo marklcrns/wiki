@@ -32,6 +32,8 @@ date: Jan 31, 2021
 - [↪ Chapter 2: Kinematics](chapters/ch-2)
 - [↪ Chapter 3: Vectors](chapters/ch-3)
 - [↪ Chapter 4: Motion in Two and Three Dimensions](chapters/ch-4)
+- [↪ Chapter 5: Force and Motion I](chapters/ch-5)
+- [↪ Chapter 6: Force and Motion II](chapters/ch-6)
 
 ## Homeworks
 

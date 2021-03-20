@@ -9,18 +9,19 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Lucernas">
 
-    <title>PHYS 195</title>
+    <title>Chapter 6</title>
 
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
-    <link href="../../../../templates/css/animated-toc.css" rel="stylesheet">
+    <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
-    <link href="../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="../../../../templates/css/dashboard.css" rel="stylesheet">
+    <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   </head>
 
   <body>
@@ -65,13 +66,17 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#phys-196-mechanics">PHYS 196 Mechanics</a><ul>
-          <li><a href="#course-materials">Course Materials</a></li>
-          <li><a href="#lecture-notes">Lecture Notes</a></li>
-          <li><a href="#homeworks">Homeworks</a></li>
-          <li><a href="#labs">Labs</a></li>
-          <li><a href="#exam-solutions">Exam Solutions</a></li>
+          <li><a href="#chapter-6-force-and-motion-ii">Chapter 6: Force and Motion II</a><ul>
+          <li><a href="#friction">6.1 Friction</a><ul>
+          <li><a href="#static-friction">Static Friction</a></li>
+          <li><a href="#kinetic-friction">Kinetic Friction</a></li>
           </ul></li>
+          <li><a href="#uniform-circular-motion">6.3 Uniform Circular Motion</a><ul>
+          <li><a href="#centripetal-acceleration">Centripetal Acceleration</a></li>
+          <li><a href="#magnitude-of-centripetal-force">Magnitude of Centripetal Force</a></li>
+          </ul></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
           </ul>
           <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
             <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
@@ -83,11 +88,11 @@
           <header>
             <div class="jumbotron">
               <div class="page-header">
-                <a href="../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <a href="../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
                 <h1 class="title">
-                  PHYS 195
+                  Chapter 6
                   <small class="h3 text-muted subtitle">
-                    | Mechanics
+                    | Force and Motion II
                   </small>
                 </h1>
               </div>
@@ -95,50 +100,43 @@
           </header>
           <div class="h5 text-muted">
             <h5 class="author">Mark Lucernas</h5>
-            <h5 class="date">Jan 31, 2021</h5>
+            <h5 class="date">Mar 18, 2021</h5>
           </div>
 
 <!-- Contents -->
           <article class="contents">
-<h1 id="phys-196-mechanics">PHYS 196 Mechanics</h1>
-<blockquote>
-<p>Professor: Michael Crivello<br> email: mcrivell@sdccd.edu<br> Campus: San Diego Mesa College (online)<br> Units: 5<br> Component: Lecture/Lab<br> Start: 2021-02-01<br> end: 2021-05-29<br></p>
-</blockquote>
-<h2 id="course-materials">Course Materials</h2>
+<h1 id="chapter-6-force-and-motion-ii">Chapter 6: Force and Motion II</h1>
+<h2 id="friction">6.1 Friction</h2>
+<h3 id="static-friction">Static Friction</h3>
 <ul>
-<li><a href="../../../files/winter-2021/PHYS-195/syllabus.pdf">⬇ Syllabus</a></li>
-<li><a href="../../../files/winter-2021/PHYS-195/FundamentalsOfPhysics_9thEdition.pdf">⬇ Fundamentals of Physics 9th Edition</a></li>
-<li><a href="../../../files/winter-2021/PHYS-195/FundamentalsOfPhysics_9thEdition_InstructorSolutionManual.pdf">⬇ Fundamentals of Physics 9th Edition: Instructor’s Solution Manual</a></li>
-<li><a href="../../../files/winter-2021/PHYS-195/FundamentalsOfPhysics_10thEdition.pdf">⬇ Fundamentals of Physics 10th Edition</a></li>
-<li><a href="https://brownmath.com/ti83/quadrat.htm">📄 Quadratic Formula for TI-83/84 Calculators</a></li>
+<li>The force <span class="math inline">\(\vec{f_{s}}\)</span> that balances the net force acting on a body that prevents it from moving.</li>
 </ul>
-<h2 id="lecture-notes">Lecture Notes</h2>
+<p><span class="math display">\[
+f_{s,\text{max}} = \mu_{s}F_{N}
+\]</span></p>
+<p>where <span class="math inline">\(\mu_{s}\)</span> is the <strong>coefficient of static friction</strong> and <span class="math inline">\(F_{N}\)</span> is the magnitude of the normal force on the body from the surface.</p>
+<h3 id="kinetic-friction">Kinetic Friction</h3>
 <ul>
-<li><p><a href="chapters/cheatsheet.html">↪ Cheatsheet</a></p></li>
-<li><a href="chapters/ch-0.html">↪ Chapter 0: Intro</a></li>
-<li><a href="chapters/ch-1.html">↪ Chapter 1: Measurements</a></li>
-<li><a href="chapters/ch-2.html">↪ Chapter 2: Kinematics</a></li>
-<li><a href="chapters/ch-3.html">↪ Chapter 3: Vectors</a></li>
-<li><a href="chapters/ch-4.html">↪ Chapter 4: Motion in Two and Three Dimensions</a></li>
-<li><a href="chapters/ch-5.html">↪ Chapter 5: Force and Motion I</a></li>
-<li><p><a href="chapters/ch-6.html">↪ Chapter 6: Force and Motion II</a></p></li>
+<li>The frictional force <span class="math inline">\(\vec{f_{k}}\)</span> that opposes a motion in the opposite direction once it starts moving from rest.</li>
 </ul>
-<h2 id="homeworks">Homeworks</h2>
+<p><span class="math display">\[
+f_{k} = \mu_{k}F_{N}
+\]</span></p>
+<h2 id="uniform-circular-motion">6.3 Uniform Circular Motion</h2>
+<h3 id="centripetal-acceleration">Centripetal Acceleration</h3>
+<p><span class="math display">\[
+a = \frac{v^{2}}{R}
+\]</span></p>
+<p>where <span class="math inline">\(R\)</span> is the radius of the circle</p>
+<h3 id="magnitude-of-centripetal-force">Magnitude of Centripetal Force</h3>
+<p><span class="math display">\[
+F = \frac{mv^{2}}{R}
+\]</span></p>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<p>Textbook</p>
 <ul>
-<li><a href="../../../files/winter-2021/PHYS-195/homeworks/homework_1.pdf">⬇ Homework 1: Measurements</a></li>
-<li><a href="../../../files/winter-2021/PHYS-195/homeworks/homework_2.pdf">⬇ Homework 2: Vectors</a></li>
-<li><a href="../../../files/winter-2021/PHYS-195/homeworks/homework_3.pdf">⬇ Homework 3: Kinematics</a></li>
-<li><a href="../../../files/winter-2021/PHYS-195/homeworks/homework_4.pdf">⬇ Homework 4: Motion in Two and Three Dimensions</a></li>
-</ul>
-<h2 id="labs">Labs</h2>
-<ul>
-<li><a href="../../../files/winter-2021/PHYS-195/labs/lab01.pdf">⬇ Lab 1</a></li>
-<li><a href="../../../files/winter-2021/PHYS-195/labs/lab02.pdf">⬇ Lab 2</a></li>
-<li><a href="../../../files/winter-2021/PHYS-195/labs/lab02_with_catapult.pdf">⬇ Lab 2 with Catapult Question</a></li>
-</ul>
-<h2 id="exam-solutions">Exam Solutions</h2>
-<ul>
-<li><a href="../../../files/winter-2021/PHYS-195/exam/exam-1_solutions.pdf">⬇ Exam 1 Solutions</a></li>
+<li><a href="../../../../files/winter-2021/PHYS-195/FundamentalsOfPhysics_10thEdition.pdf">⬇ Fundamentals of Physics 10th Edition</a></li>
 </ul>
           </article>
           </div>
@@ -148,11 +146,11 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../../../templates/js/jquery.min.js"></script>
+    <script src="../../../../../templates/js/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../../../templates/js/bootstrap.min.js"></script>
+    <script src="../../../../../templates/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
     <script>
         //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
 
@@ -169,6 +167,6 @@
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
-    <script src="../../../../templates/js/animated-toc.js"></script>
+    <script src="../../../../../templates/js/animated-toc.js"></script>
   </body>
 </html>

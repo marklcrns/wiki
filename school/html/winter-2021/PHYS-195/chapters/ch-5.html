@@ -9,18 +9,19 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Lucernas">
 
-    <title>PHYS 195</title>
+    <title>Chapter 5</title>
 
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
-    <link href="../../../../templates/css/animated-toc.css" rel="stylesheet">
+    <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
-    <link href="../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="../../../../templates/css/dashboard.css" rel="stylesheet">
+    <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   </head>
 
   <body>
@@ -65,13 +66,11 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#phys-196-mechanics">PHYS 196 Mechanics</a><ul>
-          <li><a href="#course-materials">Course Materials</a></li>
-          <li><a href="#lecture-notes">Lecture Notes</a></li>
-          <li><a href="#homeworks">Homeworks</a></li>
-          <li><a href="#labs">Labs</a></li>
-          <li><a href="#exam-solutions">Exam Solutions</a></li>
+          <li><a href="#chapter-5-force-and-motion-i">Chapter 5: Force and Motion I</a><ul>
+          <li><a href="#newtons-first-and-second-laws-of-motion">5.1 Newton’s First and Second Laws of Motion</a></li>
+          <li><a href="#applying-newtons-laws">5.3 Applying Newton’s Laws</a></li>
           </ul></li>
+          <li><a href="#resources">Resources</a></li>
           </ul>
           <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
             <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
@@ -83,11 +82,11 @@
           <header>
             <div class="jumbotron">
               <div class="page-header">
-                <a href="../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <a href="../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
                 <h1 class="title">
-                  PHYS 195
+                  Chapter 5
                   <small class="h3 text-muted subtitle">
-                    | Mechanics
+                    | Force and Motion I
                   </small>
                 </h1>
               </div>
@@ -95,50 +94,79 @@
           </header>
           <div class="h5 text-muted">
             <h5 class="author">Mark Lucernas</h5>
-            <h5 class="date">Jan 31, 2021</h5>
+            <h5 class="date">Mar 09, 2021</h5>
           </div>
 
 <!-- Contents -->
           <article class="contents">
-<h1 id="phys-196-mechanics">PHYS 196 Mechanics</h1>
+<h1 id="chapter-5-force-and-motion-i">Chapter 5: Force and Motion I</h1>
+<h2 id="newtons-first-and-second-laws-of-motion">5.1 Newton’s First and Second Laws of Motion</h2>
+<p><a name="newtons-first-law-term"><strong>Newton’s First Law</strong></a></p>
+<ul>
+<li>If no force acts on a body, the body’s velocity cannot change; that is, the body cannot accelerate.</li>
+<li>If no <em>net</em> force acts on a body (<span class="math inline">\(\vec{F}_{net} = 0\)</span>), the body’s velocity cannot change; that is, the body cannot accelerate.</li>
+</ul>
+<p><a name="inertial-reference-frame-term"><strong>Inertial Reference Frame</strong></a></p>
+<ul>
+<li>simply <strong>inertial frames</strong>, is one in which Newton’s laws hold.</li>
+</ul>
+<p><a name="newtons-second-law-term"><strong>Newton’s Second Law</strong></a></p>
+<ul>
+<li>The net force on a body is equal to the product of the body’s mass and its acceleration.</li>
+</ul>
+<p><span class="math display">\[
+\sum \vec{F}_{ext} = m\vec{a}
+\]</span></p>
 <blockquote>
-<p>Professor: Michael Crivello<br> email: mcrivell@sdccd.edu<br> Campus: San Diego Mesa College (online)<br> Units: 5<br> Component: Lecture/Lab<br> Start: 2021-02-01<br> end: 2021-05-29<br></p>
+<p>The acceleration component along a given axis is caused <em>only</em> by the sum of the force components along the <em>same</em> axis, and not by force components along any other axis.</p>
 </blockquote>
-<h2 id="course-materials">Course Materials</h2>
+<table>
+<thead>
+<tr class="header">
+<th>System</th>
+<th>Force</th>
+<th>Mass</th>
+<th>Acceleration</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SI</td>
+<td>newton (N)</td>
+<td>kilogram (kg)</td>
+<td>m/s<span class="math inline">\(^{2}\)</span></td>
+</tr>
+<tr class="even">
+<td>CGS<span class="math inline">\(^{a}\)</span></td>
+<td>dyne</td>
+<td>gram (g)</td>
+<td>cm/s<span class="math inline">\(^{2}\)</span></td>
+</tr>
+<tr class="odd">
+<td>British<span class="math inline">\(^{b}\)</span></td>
+<td>pound (lb)</td>
+<td>slug</td>
+<td>ft/s<span class="math inline">\(^{2}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Weight is the downward force with which the Earth’s gravity exerts on it.</p>
+<p><span class="math display">\[
+W = mg = \text{ mass } \cdot \text{ gravity }
+\]</span></p>
+<p><span class="math display">\[
+g = 9.8\frac{N}{kg}
+\]</span></p>
+<h2 id="applying-newtons-laws">5.3 Applying Newton’s Laws</h2>
+<p><a name="newtons-third-law-term"><strong>Newton’s Third Law</strong></a></p>
 <ul>
-<li><a href="../../../files/winter-2021/PHYS-195/syllabus.pdf">⬇ Syllabus</a></li>
-<li><a href="../../../files/winter-2021/PHYS-195/FundamentalsOfPhysics_9thEdition.pdf">⬇ Fundamentals of Physics 9th Edition</a></li>
-<li><a href="../../../files/winter-2021/PHYS-195/FundamentalsOfPhysics_9thEdition_InstructorSolutionManual.pdf">⬇ Fundamentals of Physics 9th Edition: Instructor’s Solution Manual</a></li>
-<li><a href="../../../files/winter-2021/PHYS-195/FundamentalsOfPhysics_10thEdition.pdf">⬇ Fundamentals of Physics 10th Edition</a></li>
-<li><a href="https://brownmath.com/ti83/quadrat.htm">📄 Quadratic Formula for TI-83/84 Calculators</a></li>
+<li>When two bodies interact, the forces on the bodies from each other are always equal in magnitude and opposite in direction.</li>
 </ul>
-<h2 id="lecture-notes">Lecture Notes</h2>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<p>Textbook</p>
 <ul>
-<li><p><a href="chapters/cheatsheet.html">↪ Cheatsheet</a></p></li>
-<li><a href="chapters/ch-0.html">↪ Chapter 0: Intro</a></li>
-<li><a href="chapters/ch-1.html">↪ Chapter 1: Measurements</a></li>
-<li><a href="chapters/ch-2.html">↪ Chapter 2: Kinematics</a></li>
-<li><a href="chapters/ch-3.html">↪ Chapter 3: Vectors</a></li>
-<li><a href="chapters/ch-4.html">↪ Chapter 4: Motion in Two and Three Dimensions</a></li>
-<li><a href="chapters/ch-5.html">↪ Chapter 5: Force and Motion I</a></li>
-<li><p><a href="chapters/ch-6.html">↪ Chapter 6: Force and Motion II</a></p></li>
-</ul>
-<h2 id="homeworks">Homeworks</h2>
-<ul>
-<li><a href="../../../files/winter-2021/PHYS-195/homeworks/homework_1.pdf">⬇ Homework 1: Measurements</a></li>
-<li><a href="../../../files/winter-2021/PHYS-195/homeworks/homework_2.pdf">⬇ Homework 2: Vectors</a></li>
-<li><a href="../../../files/winter-2021/PHYS-195/homeworks/homework_3.pdf">⬇ Homework 3: Kinematics</a></li>
-<li><a href="../../../files/winter-2021/PHYS-195/homeworks/homework_4.pdf">⬇ Homework 4: Motion in Two and Three Dimensions</a></li>
-</ul>
-<h2 id="labs">Labs</h2>
-<ul>
-<li><a href="../../../files/winter-2021/PHYS-195/labs/lab01.pdf">⬇ Lab 1</a></li>
-<li><a href="../../../files/winter-2021/PHYS-195/labs/lab02.pdf">⬇ Lab 2</a></li>
-<li><a href="../../../files/winter-2021/PHYS-195/labs/lab02_with_catapult.pdf">⬇ Lab 2 with Catapult Question</a></li>
-</ul>
-<h2 id="exam-solutions">Exam Solutions</h2>
-<ul>
-<li><a href="../../../files/winter-2021/PHYS-195/exam/exam-1_solutions.pdf">⬇ Exam 1 Solutions</a></li>
+<li><a href="../../../../files/winter-2021/PHYS-195/FundamentalsOfPhysics_10thEdition.pdf">⬇ Fundamentals of Physics 10th Edition</a></li>
 </ul>
           </article>
           </div>
@@ -148,11 +176,11 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../../../templates/js/jquery.min.js"></script>
+    <script src="../../../../../templates/js/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../../../templates/js/bootstrap.min.js"></script>
+    <script src="../../../../../templates/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
     <script>
         //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
 
@@ -169,6 +197,6 @@
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
-    <script src="../../../../templates/js/animated-toc.js"></script>
+    <script src="../../../../../templates/js/animated-toc.js"></script>
   </body>
 </html>
