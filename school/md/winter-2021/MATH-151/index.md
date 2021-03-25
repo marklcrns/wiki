@@ -61,7 +61,8 @@ Textbook
 - [⬇ Homework 13: Numerical Integration](file:../../../files/winter-2021/MATH-151/homeworks/homework13.pdf)
 - [⬇ Homework 14: Improper Integrals](file:../../../files/winter-2021/MATH-151/homeworks/homework14.pdf)
 - [⬇ Homework 15: Basic Ideas](file:../../../files/winter-2021/MATH-151/homeworks/homework15.pdf)
-
+- [↪ Homework 16: Separable Differential Equations](file:../../../files/winter-2021/MATH-151/homeworks/homework16.pdf)
+- [↪ Homework 17: An Overview](file:../../../files/winter-2021/MATH-151/homeworks/homework17.pdf)
 
 ## Exams
 
