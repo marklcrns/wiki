@@ -37,10 +37,11 @@ date: Jan 31, 2021
 
 ## Homeworks
 
-- [⬇ Homework 1: Measurements](file:../../../files/winter-2021/PHYS-195/homeworks/homework_1.pdf)
-- [⬇ Homework 2: Vectors](file:../../../files/winter-2021/PHYS-195/homeworks/homework_2.pdf)
-- [⬇ Homework 3: Kinematics](file:../../../files/winter-2021/PHYS-195/homeworks/homework_3.pdf)
-- [⬇ Homework 4: Motion in Two and Three Dimensions](file:../../../files/winter-2021/PHYS-195/homeworks/homework_4.pdf)
+- [⬇ Homework 1: Measurements](file:../../../files/winter-2021/PHYS-195/homeworks/homework1.pdf)
+- [⬇ Homework 2: Vectors](file:../../../files/winter-2021/PHYS-195/homeworks/homework2.pdf)
+- [⬇ Homework 3: Kinematics](file:../../../files/winter-2021/PHYS-195/homeworks/homework3.pdf)
+- [⬇ Homework 5: Force and Motion I](file:../../../files/winter-2021/PHYS-195/homeworks/homework5.pdf)
+- [⬇ Homework 6: Force and Motion II](file:../../../files/winter-2021/PHYS-195/homeworks/homework6.pdf)
 
 ## Labs
 
