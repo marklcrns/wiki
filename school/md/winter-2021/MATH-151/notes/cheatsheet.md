@@ -171,6 +171,9 @@ $$
 \Delta{x} = \frac{b - a}{n}, \;\;\; x_{k} = a + k\Delta{x}
 $$
 
+## Partial Fraction Decomposition
+
+![Partial Fraction Decomposition](../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-5_summary.png)
 
 ## Physical Applications
 
