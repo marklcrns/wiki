@@ -14,7 +14,7 @@ date: Mar 01, 2021
 ## Recognize A Common Pattern Present in the Integrand
 
 1. Integrating the product of two functions often calls for integration by parts
-	 (Section 8.2), particularly if the factors of the product are a polynomial
+	 [📑 Section 8.2](./sec_8-2.md#section-8.2-integration-by-parts), particularly if the factors of the product are a polynomial
 	 and a transcendental function (a logarithmic, exponential, trigonometric, or
 	 inverse trigonometric function). In some cases, integegration by parts is
 	 successful when the integrand is a single function (for example, $\int
