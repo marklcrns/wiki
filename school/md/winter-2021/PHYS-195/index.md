@@ -45,9 +45,11 @@ date: Jan 31, 2021
 
 ## Labs
 
-- [⬇ Lab 1](file:../../../files/winter-2021/PHYS-195/labs/lab01.pdf)
-- [⬇ Lab 2](file:../../../files/winter-2021/PHYS-195/labs/lab02.pdf)
-- [⬇ Lab 2 with Catapult Question](file:../../../files/winter-2021/PHYS-195/labs/lab02_with_catapult.pdf)
+- [⬇ Lab 1: Straight-line Kinematics](file:../../../files/winter-2021/PHYS-195/labs/lab01.pdf)
+- [⬇ Lab 2: Projectile Motion](file:../../../files/winter-2021/PHYS-195/labs/lab02.pdf)
+- [⬇ Lab 2: Projectile Motion (with Catapult Question)](file:../../../files/winter-2021/PHYS-195/labs/lab02_with_catapult.pdf)
+- [⬇ Lab 3: Newton's 2nd Law on Air-Track](file:../../../files/winter-2021/PHYS-195/labs/lab03.pdf)
+- [⬇ Lab 4: Centripetal Force and Newton's 2nd Law](file:../../../files/winter-2021/PHYS-195/labs/lab04.pdf)
 
 ## Exam Solutions
 
