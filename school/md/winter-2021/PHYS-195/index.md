@@ -54,4 +54,5 @@ date: Jan 31, 2021
 ## Exam Solutions
 
 - [⬇ Exam 1 Solutions](file:../../../files/winter-2021/PHYS-195/exam/exam-1_solutions.pdf)
+- [⬇ Exam 2 Solutions](file:../../../files/winter-2021/PHYS-195/exam/exam-2_solutions.pdf)
 
