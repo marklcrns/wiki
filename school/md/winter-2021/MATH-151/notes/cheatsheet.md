@@ -238,6 +238,17 @@ $$
 \sum_{k = 0}^{\infty} ar^{k} = \frac{a}{1 - r}
 $$
 
+where $a$ as the first term in the sequence and not equals to $0$, and $r$ as
+the common ration.
+
+e.g.
+
+$$
+\sum_{m = 2}^{\infty} \frac{8}{9^{m}}
+$$
+
+$a = \dfrac{8}{9^{2}}$, $r = \dfrac{1}{9}$
+
 ### Telescoping Series
 
 $$
