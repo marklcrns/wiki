@@ -98,6 +98,14 @@
           <li><a href="#pumping-water">Pumping Water</a></li>
           <li><a href="#force-on-a-dam">Force on a Dam</a></li>
           </ul></li>
+          <li><a href="#sequences-and-infinite-series">Sequences and Infinite Series</a><ul>
+          <li><a href="#terminology-for-sequences">Terminology for Sequences</a></li>
+          <li><a href="#geometric-series">Geometric Series</a><ul>
+          <li><a href="#the-limit-of-a-geometric-series">The Limit of a Geometric series</a></li>
+          </ul></li>
+          <li><a href="#telescoping-series">Telescoping Series</a></li>
+          <li><a href="#growth-rates-of-sequences">Growth Rates of Sequences</a></li>
+          </ul></li>
           </ul></li>
           <li><a href="#common-identities">Common Identities</a><ul>
           <li><a href="#polynomial">Polynomial</a></li>
@@ -299,6 +307,42 @@ W = \int_{a}^{b} \rho gA(y)D(y)\;dy
 <p><span class="math display">\[
 F = \int_{0}^{a} \rho g(a - y)w(y)\;dy
 \]</span></p>
+<h2 id="sequences-and-infinite-series">Sequences and Infinite Series</h2>
+<h3 id="terminology-for-sequences">Terminology for Sequences</h3>
+<figure>
+<img src="../../../../files/winter-2021/MATH-151/notes/ch-10/sec_10-2_terminology_for_sequences.png" alt="Terminology for Sequences" /><figcaption>Terminology for Sequences</figcaption>
+</figure>
+<h3 id="geometric-series">Geometric Series</h3>
+<p>Sum of geometric series <span class="math inline">\(\sum_{k = 0}^{n - 1} ar^{k}\)</span></p>
+<p><span class="math display">\[
+S_{n} = \frac{a(1 - r^{n})}{1 - r}, r \neq 1
+\]</span></p>
+<p>Geometric sum with <span class="math inline">\(n\)</span> terms has the form <span class="math inline">\(S_{n} = a + ar + ar^{2} + \cdots ar^{n - 1} = \sum_{k = 0}^{n - 1} ar^{k}\)</span>, where <span class="math inline">\(a \neq 0\)</span> and <span class="math inline">\(r\)</span> are real numbers, <span class="math inline">\(r\)</span> is called the ration of the sum and <span class="math inline">\(a\)</span> is its first term</p>
+<p><span class="math display">\[
+S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
+\]</span></p>
+<h4 id="the-limit-of-a-geometric-series">The Limit of a Geometric series</h4>
+<p>The limiting behavior of a geometric series <span class="math inline">\(\sum_{k = 0}^{\infty} ar^{k}\)</span> is governed by the value of <span class="math inline">\(r\)</span>.</p>
+<ul>
+<li>if <span class="math inline">\(|r| \ge 1\)</span> then the series diverges</li>
+<li>if <span class="math inline">\(|r| &lt; 1\)</span> then the series converges to <span class="math inline">\(\frac{a}{1 -r}\)</span>.</li>
+</ul>
+<p>for <span class="math inline">\(|r| &lt; 1\)</span>,</p>
+<p><span class="math display">\[
+\sum_{k = 0}^{\infty} ar^{k} = \frac{a}{1 - r}
+\]</span></p>
+<h3 id="telescoping-series">Telescoping Series</h3>
+<p><span class="math display">\[
+\sum_{k = 1}^{\infty}(b_{k} - b_{k + 1}) = b_{1}
+\]</span></p>
+<p>where <span class="math inline">\({\displaystyle \lim_{n \to \infty} b_{n} = 0}\)</span>.</p>
+<h3 id="growth-rates-of-sequences">Growth Rates of Sequences</h3>
+<p><span class="math display">\[
+\left \{ \ln_{q}(n) \right \} &lt;&lt; \left \{ n^{p} \right \} &lt;&lt; \left \{ n^{p}\ln_{r}(n) \right \} &lt;&lt; \left \{ n^{p + s} \right \} &lt;&lt; \left \{ b^{n} \right \} &lt;&lt; \left \{ n! \right \} &lt;&lt; \left \{ n^{n} \right \}
+\]</span></p>
+<blockquote>
+<p>The ordering applies for positive real numbers <span class="math inline">\(p\)</span>, <span class="math inline">\(q\)</span>, <span class="math inline">\(r\)</span>, <span class="math inline">\(s\)</span>, and <span class="math inline">\(b &gt; 1\)</span></p>
+</blockquote>
 <h1 id="common-identities">Common Identities</h1>
 <h2 id="polynomial">Polynomial</h2>
 <figure>

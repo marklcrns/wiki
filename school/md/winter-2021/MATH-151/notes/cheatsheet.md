@@ -201,6 +201,61 @@ $$
 F = \int_{0}^{a} \rho g(a - y)w(y)\;dy
 $$
 
+## Sequences and Infinite Series
+
+### Terminology for Sequences
+
+![Terminology for Sequences](../../../../files/winter-2021/MATH-151/notes/ch-10/sec_10-2_terminology_for_sequences.png)
+
+### Geometric Series
+
+Sum of geometric series $\sum_{k = 0}^{n - 1} ar^{k}$
+
+$$
+S_{n} = \frac{a(1 - r^{n})}{1 - r}, r \neq 1
+$$
+
+Geometric sum with $n$ terms has the form
+$S_{n} = a + ar + ar^{2} + \cdots ar^{n - 1} = \sum_{k = 0}^{n - 1} ar^{k}$,
+where $a \neq 0$ and $r$ are real numbers, $r$ is called the ration of the sum
+and $a$ is its first term
+
+$$
+S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
+$$
+
+#### The Limit of a Geometric series
+
+The limiting behavior of a geometric series $\sum_{k = 0}^{\infty} ar^{k}$ is
+governed by the value of $r$.
+
+- if $|r| \ge 1$ then the series diverges
+- if $|r| < 1$ then the series converges to $\frac{a}{1 -r}$.
+
+for $|r| < 1$,
+
+$$
+\sum_{k = 0}^{\infty} ar^{k} = \frac{a}{1 - r}
+$$
+
+### Telescoping Series
+
+$$
+\sum_{k = 1}^{\infty}(b_{k} - b_{k + 1}) = b_{1}
+$$
+
+where ${\displaystyle \lim_{n \to \infty} b_{n} = 0}$.
+
+
+### Growth Rates of Sequences
+
+$$
+\left \{ \ln_{q}(n) \right \} << \left \{ n^{p} \right \} << \left \{ n^{p}\ln_{r}(n) \right \} << \left \{ n^{p + s} \right \} << \left \{ b^{n} \right \} << \left \{ n! \right \} << \left \{ n^{n} \right \}
+$$
+
+> The ordering applies for positive real numbers $p$, $q$, $r$, $s$, and $b > 1$
+
+
 
 # Common Identities
 
