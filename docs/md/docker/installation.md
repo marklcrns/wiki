@@ -1,18 +1,16 @@
 ---
 title: Docker
+subtitle: Installation
 author: Mark Lucernas
 date: 2020-08-15
-summary: Docker wiki
 ---
 
 
-# Docker
+# Docker: Installation
 
-## Installation
+## Linux
 
-### Linux
-
-#### Ubuntu
+### Ubuntu
 
 Uninstall old versions
 
@@ -20,7 +18,7 @@ Uninstall old versions
 sudo apt-get remove docker docker-engine docker.io containerd runc
 ```
 
-##### Install Using the Repository
+#### Install Using the Repository
 
 Set up the repository
 
@@ -62,16 +60,11 @@ Ref:
 - [📄 Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 
 
-### Windows
+## Windows
 
-#### WSL/WSL2
+### WSL/WSL2
 
 - [↪ WSL 2 Docker](wsl/docker)
-
-
-## Usage
-
-- [📺 Docker For Beginners: From Docker Desktop to Deployment](https://www.youtube.com/watch?v=i7ABlHngi1Q)
 
 
 <br>
@@ -79,5 +72,4 @@ Ref:
 # Resources
 
 - [📄 Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
-- [📺 Docker For Beginners: From Docker Desktop to Deployment](https://www.youtube.com/watch?v=i7ABlHngi1Q)
 
