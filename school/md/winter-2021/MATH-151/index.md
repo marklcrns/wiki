@@ -27,8 +27,8 @@ Textbook
 
 ## Notes
 
-- [↪ CheatSheet](notes/cheatsheet)
 - [↪ Chapters Notes](notes/index)
+- [↪ CheatSheet](notes/cheatsheet)
 
 ## Homework Solutions
 
@@ -58,6 +58,8 @@ Textbook
 - [⬇ Homework 15: Basic Ideas](file:../../../files/winter-2021/MATH-151/homeworks/homework15.pdf)
 - [↪ Homework 16: Separable Differential Equations](file:../../../files/winter-2021/MATH-151/homeworks/homework16.pdf)
 - [↪ Homework 17: An Overview](file:../../../files/winter-2021/MATH-151/homeworks/homework17.pdf)
+- [↪ Homework 18: Sequences](file:../../../files/winter-2021/MATH-151/homeworks/homework18.pdf)
+- [↪ Homework 19: Infinite Series](file:../../../files/winter-2021/MATH-151/homeworks/homework19.pdf)
 
 ## Exams
 
