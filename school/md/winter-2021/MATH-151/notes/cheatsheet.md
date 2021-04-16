@@ -543,10 +543,14 @@ $$
 \end{array}
 $$
 
-## Euler's
+## Exponential
 
 $$
 \begin{array}{ll}
+	\dfrac{d}{dx}(a^{x}) &=& \dfrac{d}{dx}\left [ (e^{\ln(a)})^{x} \right ] &=& a^{x}\ln(a) \\
+	~\\
+	\dfrac{d}{dx}(a^{nx}) &=& \dfrac{d}{dx}\left [ (e^{\ln(a)})^{nx} \right ] &=& na^{nx}\ln(a) \\
+	~\\
 	\dfrac{d}{dx}(e^{x}) &=& e^{x} \\
 	~\\
 	\dfrac{d}{dx}(e^{nx}) &=& ne^{nx} \\
@@ -662,10 +666,18 @@ $$
 \end{array}
 $$
 
-## Euler's
+## Exponential
 
 $$
 \begin{array}{ll}
+	\int a^{x}\;dx = \dfrac{a^{x}}{\ln(a)} + C \\
+	~\\
+	\int a^{nx}\;dx = \dfrac{a^{nx}}{n\ln(a)} + C \\
+	~\\
+	\int \dfrac{1}{a^{x}}\;dx = \dfrac{a^{-x}}{\ln(a)} + C \\
+	~\\
+	\int \dfrac{1}{a^{nx}}\;dx = \dfrac{a^{-nx}}{n\ln(a)} + C \\
+	~\\
 	\int e^{x}\;dx = e^{x} + C \\
 	~\\
 	\int e^{mx}\;dx = \dfrac{1}{m}e^{mx} + C \\

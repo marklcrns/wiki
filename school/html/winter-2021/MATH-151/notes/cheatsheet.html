@@ -131,7 +131,7 @@
           <li><a href="#inverse-trigonometric-functions">Inverse Trigonometric Functions</a></li>
           <li><a href="#inverse-hyperbolic-functions">Inverse Hyperbolic Functions</a></li>
           <li><a href="#logarithmic">Logarithmic</a></li>
-          <li><a href="#eulers">Euler’s</a></li>
+          <li><a href="#exponential">Exponential</a></li>
           </ul></li>
           <li><a href="#antiderivatives-integral">Antiderivatives (Integral)</a><ul>
           <li><a href="#table-of-integrals">Table of Integrals</a></li>
@@ -140,7 +140,7 @@
           <li><a href="#polynomial-2">Polynomial</a></li>
           <li><a href="#trigonometric-functions-1">Trigonometric Functions</a></li>
           <li><a href="#logarithmic-1">Logarithmic</a></li>
-          <li><a href="#eulers-1">Euler’s</a></li>
+          <li><a href="#exponential-1">Exponential</a></li>
           </ul></li>
           </ul>
           <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
@@ -581,9 +581,13 @@ S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
     \dfrac{d}{dx}(\log_{b}(mx^{n})) &amp;=&amp; \dfrac{n}{x\ln(b)} \\
 \end{array}
 \]</span></p>
-<h2 id="eulers">Euler’s</h2>
+<h2 id="exponential">Exponential</h2>
 <p><span class="math display">\[
 \begin{array}{ll}
+    \dfrac{d}{dx}(a^{x}) &amp;=&amp; \dfrac{d}{dx}\left [ (e^{\ln(a)})^{x} \right ] &amp;=&amp; a^{x}\ln(a) \\
+    ~\\
+    \dfrac{d}{dx}(a^{nx}) &amp;=&amp; \dfrac{d}{dx}\left [ (e^{\ln(a)})^{nx} \right ] &amp;=&amp; na^{nx}\ln(a) \\
+    ~\\
     \dfrac{d}{dx}(e^{x}) &amp;=&amp; e^{x} \\
     ~\\
     \dfrac{d}{dx}(e^{nx}) &amp;=&amp; ne^{nx} \\
@@ -676,9 +680,17 @@ S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
     \int \log_{b}(mx^{n})\;dx &amp;=&amp; x\log_{b}(m) + n\left ( x\log_{b}(x) - \dfrac{x}{\ln(b)} \right ) + C \\
 \end{array}
 \]</span></p>
-<h2 id="eulers-1">Euler’s</h2>
+<h2 id="exponential-1">Exponential</h2>
 <p><span class="math display">\[
 \begin{array}{ll}
+    \int a^{x}\;dx = \dfrac{a^{x}}{\ln(a)} + C \\
+    ~\\
+    \int a^{nx}\;dx = \dfrac{a^{nx}}{n\ln(a)} + C \\
+    ~\\
+    \int \dfrac{1}{a^{x}}\;dx = \dfrac{a^{-x}}{\ln(a)} + C \\
+    ~\\
+    \int \dfrac{1}{a^{nx}}\;dx = \dfrac{a^{-nx}}{n\ln(a)} + C \\
+    ~\\
     \int e^{x}\;dx = e^{x} + C \\
     ~\\
     \int e^{mx}\;dx = \dfrac{1}{m}e^{mx} + C \\
