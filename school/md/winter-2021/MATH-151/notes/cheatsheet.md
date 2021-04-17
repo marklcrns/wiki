@@ -674,9 +674,9 @@ $$
 	~\\
 	\int a^{nx}\;dx = \dfrac{a^{nx}}{n\ln(a)} + C \\
 	~\\
-	\int \dfrac{1}{a^{x}}\;dx = \dfrac{a^{-x}}{\ln(a)} + C \\
+	\int \dfrac{1}{a^{x}}\;dx = -\dfrac{a^{-x}}{\ln(a)} + C \\
 	~\\
-	\int \dfrac{1}{a^{nx}}\;dx = \dfrac{a^{-nx}}{n\ln(a)} + C \\
+	\int \dfrac{1}{a^{nx}}\;dx = -\dfrac{a^{-nx}}{n\ln(a)} + C \\
 	~\\
 	\int e^{x}\;dx = e^{x} + C \\
 	~\\
