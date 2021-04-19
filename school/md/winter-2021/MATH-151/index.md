@@ -24,7 +24,6 @@ Textbook
 
 - Calculus, Early Transcendentals 3rd Edition - Briggs, Cochran, and Gillet
 
-
 ## Notes
 
 - [↪ Chapters Notes](notes/index)
