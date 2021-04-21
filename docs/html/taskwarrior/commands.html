@@ -130,7 +130,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
           <li><a href="#task-commands">Task Commands</a><ul>
-          <li><a href="#my-most-used-commands">My Most Used Commands</a></li>
+          <li><a href="#adding-tasks">Adding Tasks</a></li>
+          <li><a href="#finishing-tasks">Finishing Tasks</a></li>
+          <li><a href="#deleting-tasks">Deleting Tasks</a></li>
+          <li><a href="#recurring-tasks">Recurring Tasks</a><ul>
+          <li><a href="#adding-recurring-tasks">Adding Recurring Tasks</a></li>
+          <li><a href="#ending-recurring-tasks">Ending Recurring Tasks</a></li>
+          </ul></li>
           <li><a href="#all-commands">All Commands</a></li>
           <li><a href="#customizable-reports">Customizable Reports</a></li>
           <li><a href="#fixed-reports">Fixed Reports</a></li>
@@ -167,7 +173,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 id="task-commands">Task Commands</h1>
 <p>Command Line Syntax</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">task</span> [<span class="op">&lt;</span>filter<span class="op">&gt;</span>] [<span class="op">&lt;</span>command<span class="op">&gt;</span>] [<span class="op">&lt;</span>modification<span class="op">&gt;</span>] [<span class="op">&lt;</span>miscellaneous<span class="op">&gt;</span>]</a></code></pre></div>
-<h2 id="my-most-used-commands">My Most Used Commands</h2>
+<h2 id="adding-tasks">Adding Tasks</h2>
 <ul>
 <li><code>task add &lt;task-description&gt; proj:&lt;prof name or task group&gt;</code>
 <ul>
@@ -175,8 +181,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><code>task add &lt;task-description&gt; proj:&lt;prof name or task group&gt; wait:someday</code>
 <ul>
-<li>Adds a task and put off far into the future.</li>
+<li>Adds a task and put off far into the future. Adds a task and put off far into the future.</li>
+<li><code>later</code> can also be used in place of <code>someday</code></li>
 </ul></li>
+</ul>
+<h2 id="finishing-tasks">Finishing Tasks</h2>
+<ul>
+<li><code>task done &lt;ID&gt;</code></li>
+</ul>
+<h2 id="deleting-tasks">Deleting Tasks</h2>
+<ul>
+<li><code>task delete &lt;ID&gt;</code></li>
+<li><code>task $(task uuid completed) delete</code>
+<ul>
+<li>delete all completed tasks</li>
+</ul></li>
+</ul>
+<h2 id="recurring-tasks">Recurring Tasks</h2>
+<h3 id="adding-recurring-tasks">Adding Recurring Tasks</h3>
+<ul>
+<li><code>task add &lt;description&gt; proj:&lt;project-name&gt; recur:&lt;duration&gt;</code></li>
+</ul>
+<h3 id="ending-recurring-tasks">Ending Recurring Tasks</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">task</span> recurring</a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="co"># Select the ID of recurring task</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="ex">task</span> <span class="op">&lt;</span>ID<span class="op">&gt;</span> modify until:now</a></code></pre></div>
+<p>Ref:</p>
+<ul>
+<li><a href="https://taskwarrior.org/docs/design/recurrence.html">📄 Taskwarrior Recurrence</a></li>
+<li><a href="https://taskwarrior.org/docs/durations.html">📄 Taskwarrior Durations</a></li>
+<li><a href="https://github.com/GothenburgBitFactory/taskwarrior/issues/2150.html#issuecomment-488920517">📄 Ending recurring task</a></li>
 </ul>
 <h2 id="all-commands">All Commands</h2>
 <ul>
@@ -287,6 +321,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
+<li><a href="https://taskwarrior.org/docs/design/recurrence.html">📄 Taskwarrior Recurrence</a></li>
+<li><a href="https://taskwarrior.org/docs/durations.html">📄 Taskwarrior Durations</a></li>
+<li><a href="https://github.com/GothenburgBitFactory/taskwarrior/issues/2150.html#issuecomment-488920517">📄 Ending recurring task</a></li>
 <li><a href="https://taskwarrior.org/docs/commands/">📄 Taskwarrior Commands</a></li>
 <li><a href="https://taskwarrior.org/docs/tags.html">📄 Taskwarrior Tags &amp; Virtual tags</a></li>
 </ul>
