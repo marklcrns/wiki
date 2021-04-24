@@ -67,6 +67,7 @@
           <ul>
           <li><a href="#usage">Usage</a><ul>
           <li><a href="#basics">Basics</a></li>
+          <li><a href="#corrections">Corrections</a></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
           </ul>
@@ -127,10 +128,48 @@
 <ul>
 <li><a href="https://timewarrior.net/docs/tutorial.html">📄 Timewarrior Tutorial</a></li>
 </ul>
+<h2 id="corrections">Corrections</h2>
+<p>Get summary report with ID</p>
+<ul>
+<li><code>timew summary :ids</code></li>
+</ul>
+<p>Remove extra tags</p>
+<ul>
+<li><code>timew untag @1 Prepare Talk</code></li>
+</ul>
+<p>Add missing tag</p>
+<ul>
+<li><code>timew tag @1 'Prepare Talk'</code></li>
+</ul>
+<p>Add time to a closed interval</p>
+<ul>
+<li><code>timew lengthen @1 20mins</code></li>
+</ul>
+<p>Remove time from a closed interval</p>
+<ul>
+<li><code>timew shorten @1 PT5M30S</code></li>
+</ul>
+<p>Move any interval to a new start time</p>
+<ul>
+<li><code>timew move @1 8:30am</code></li>
+</ul>
+<p>Split an interval in two</p>
+<ul>
+<li><code>timew split @1</code></li>
+</ul>
+<p>Join two intervals together</p>
+<ul>
+<li><code>timew join @1 @2</code></li>
+</ul>
+<p>Ref:</p>
+<ul>
+<li><a href="https://timewarrior.net/docs/corrections/">📄 Timewarrior Corrections</a></li>
+</ul>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
 <li><a href="https://timewarrior.net/docs/tutorial.html">📄 Timewarrior Tutorial</a></li>
+<li><a href="https://timewarrior.net/docs/corrections/">📄 Timewarrior Corrections</a></li>
 </ul>
           </article>
           </div>
