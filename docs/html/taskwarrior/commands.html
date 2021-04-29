@@ -202,6 +202,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><code>task add &lt;description&gt; proj:&lt;project-name&gt; recur:&lt;duration&gt;</code></li>
 </ul>
+<p>Adding task every monday with <code>weekly</code> tag</p>
+<ul>
+<li><code>task add "Do Monday chores @ 4pm" proj:Chores recur:weekly sched:monday+16h due:sched+2h +weekly</code></li>
+</ul>
 <h3 id="ending-recurring-tasks">Ending Recurring Tasks</h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">task</span> recurring</a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="co"># Select the ID of recurring task</span></a>
