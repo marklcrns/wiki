@@ -9,17 +9,17 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Lucernas">
 
-    <title>MATH 151</title>
+    <title>Section 11.1</title>
 
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
-    <link href="../../../../templates/css/animated-toc.css" rel="stylesheet">
+    <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
-    <link href="../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="../../../../templates/css/dashboard.css" rel="stylesheet">
+    <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
   </head>
 
@@ -65,20 +65,17 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#math-151-calculusanalytic-geometry-ii">MATH 151 Calculus/Analytic Geometry II</a><ul>
-          <li><a href="#course-materials">Course Materials</a></li>
-          <li><a href="#notes">Notes</a></li>
-          <li><a href="#homework-solutions">Homework Solutions</a><ul>
-          <li><a href="#chapter-4">Chapter 4</a></li>
-          <li><a href="#chapter-6">Chapter 6</a></li>
-          <li><a href="#chapter-8">Chapter 8</a></li>
-          <li><a href="#chapter-9">Chapter 9</a></li>
-          <li><a href="#chapter-10">Chapter 10</a></li>
-          </ul></li>
-          <li><a href="#exams">Exams</a><ul>
-          <li><a href="#midterm">Midterm</a></li>
+          <li><a href="#section-11.1-approximating-functions-with-polynomials">Section 11.1: Approximating Functions with Polynomials</a><ul>
+          <li><a href="#what-is-a-power-series">What Is a Power Series?</a></li>
+          <li><a href="#linear-and-quadratic-approximation">Linear and Quadratic Approximation</a></li>
+          <li><a href="#taylor-polynomials">Taylor Polynomials</a><ul>
+          <li><a href="#approximations-with-taylor-polynomials">Approximations with Taylor Polynomials</a></li>
+          <li><a href="#remainder-in-a-taylor-polynomial">Remainder in a Taylor Polynomial</a><ul>
+          <li><a href="#estimating-the-remainder">Estimating the Remainder</a></li>
           </ul></li>
           </ul></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
           </ul>
           <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
             <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
@@ -90,11 +87,11 @@
           <header>
             <div class="jumbotron">
               <div class="page-header">
-                <a href="../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
                 <h1 class="title">
-                  MATH 151
+                  Section 11.1
                   <small class="h3 text-muted subtitle">
-                    | Calculus/Analytic Geometry II
+                    | Approximating Functions with Polynomials
                   </small>
                 </h1>
               </div>
@@ -102,75 +99,41 @@
           </header>
           <div class="h5 text-muted">
             <h5 class="author">Mark Lucernas</h5>
-            <h5 class="date">Jan 31, 2021</h5>
+            <h5 class="date">Apr 28, 2021</h5>
           </div>
 
 <!-- Contents -->
           <article class="contents">
-<h1 id="math-151-calculusanalytic-geometry-ii">MATH 151 Calculus/Analytic Geometry II</h1>
-<blockquote>
-<p>Professor: Lan Hong<br> email: lhong@sdccd.edu<br> Campus: San Diego City College (online)<br> Units: 4<br> Component: Lecture<br> Start: 2021-02-01<br> end: 2021-05-29<br></p>
-</blockquote>
-<h2 id="course-materials">Course Materials</h2>
-<ul>
-<li><a href="../../../files/winter-2021/MATH-151/syllabus.pdf">⬇ Syllabus</a></li>
-</ul>
+<h1 id="section-11.1-approximating-functions-with-polynomials">Section 11.1: Approximating Functions with Polynomials</h1>
+<h2 id="what-is-a-power-series">What Is a Power Series?</h2>
+<p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_what_is_a_power_series-1.png" alt="What Is a Power Series 1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_what_is_a_power_series-2.png" alt="What Is a Power Series 2" /></p>
+<h2 id="linear-and-quadratic-approximation">Linear and Quadratic Approximation</h2>
+<figure>
+<img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-1.png" alt="Example 1" /><figcaption>Example 1</figcaption>
+</figure>
+<h2 id="taylor-polynomials">Taylor Polynomials</h2>
+<p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_taylor_polynomials-1.png" alt="Taylor Polynomials 1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_taylor_polynomials-2.png" alt="Taylor Polynomials 2" /></p>
+<p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-2.1.png" alt="Example 2.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-2.2.png" alt="Example 2.2" /></p>
+<h3 id="approximations-with-taylor-polynomials">Approximations with Taylor Polynomials</h3>
+<p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-3.1.png" alt="Example 3.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-3.2.png" alt="Example 3.2" /></p>
+<p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-4.1.png" alt="Example 4.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-4.2.png" alt="Example 4.2" /></p>
+<h3 id="remainder-in-a-taylor-polynomial">Remainder in a Taylor Polynomial</h3>
+<p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_remainder_in_taylor_polynomial-1.png" alt="Remainder in a Taylor Polynomial 1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_remainder_in_taylor_polynomial-2.png" alt="Remainder in a Taylor Polynomial 2" /></p>
+<h4 id="estimating-the-remainder">Estimating the Remainder</h4>
+<p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_estimating_the_remainder-1.png" alt="Estimating the Remainder 1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_estimating_the_remainder-2.png" alt="Estimating the Remainder 2" /></p>
+<figure>
+<img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-5.png" alt="Example 5" /><figcaption>Example 5</figcaption>
+</figure>
+<p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-6.1.png" alt="Example 6.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-6.2.png" alt="Example 6.2" /></p>
+<figure>
+<img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-7.png" alt="Example 7" /><figcaption>Example 7</figcaption>
+</figure>
+<p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-8.1.png" alt="Example 8.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-8.2.png" alt="Example 8.2" /></p>
+<p><br></p>
+<h1 id="resources">Resources</h1>
 <p>Textbook</p>
 <ul>
 <li>Calculus, Early Transcendentals 3rd Edition - Briggs, Cochran, and Gillet</li>
-</ul>
-<h2 id="notes">Notes</h2>
-<ul>
-<li><a href="notes/index.html">↪ Chapters Notes</a></li>
-<li><a href="notes/cheatsheet.html">↪ CheatSheet</a></li>
-</ul>
-<h2 id="homework-solutions">Homework Solutions</h2>
-<ul>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework1.pdf">⬇ Homework 1: Calculus 1 Review</a></li>
-</ul>
-<h3 id="chapter-4">Chapter 4</h3>
-<ul>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework2.pdf">⬇ Homework 2: L’Hopital’s Rule</a></li>
-</ul>
-<h3 id="chapter-6">Chapter 6</h3>
-<ul>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework3.pdf">⬇ Homework 3: Length of Curves</a></li>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework4.pdf">⬇ Homework 4: Surface Area</a></li>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework5.pdf">⬇ Homework 5: Physical Applications</a></li>
-</ul>
-<h3 id="chapter-8">Chapter 8</h3>
-<ul>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework6.pdf">⬇ Homework 6: Basic Approaches</a></li>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework7.pdf">⬇ Homework 7: Integration by Parts</a></li>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework8.pdf">⬇ Homework 8: Trigonometric Integrals</a></li>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework9.pdf">⬇ Homework 9: Trigonometric Substitutions</a></li>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework10.pdf">⬇ Homework 10: Partial Fractions</a></li>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework11.pdf">⬇ Homework 11: Integration Strategies</a></li>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework12.pdf">⬇ Homework 12: Other Methods of Integration</a></li>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework13.pdf">⬇ Homework 13: Numerical Integration</a></li>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework14.pdf">⬇ Homework 14: Improper Integrals</a></li>
-</ul>
-<h3 id="chapter-9">Chapter 9</h3>
-<ul>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework15.pdf">⬇ Homework 15: Basic Ideas</a></li>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework16.pdf">⬇ Homework 16: Separable Differential Equations</a></li>
-</ul>
-<h3 id="chapter-10">Chapter 10</h3>
-<ul>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework17.pdf">⬇ Homework 17: An Overview</a></li>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework18.pdf">⬇ Homework 18: Sequences</a></li>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework19.pdf">⬇ Homework 19: Infinite Series</a></li>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework20.pdf">⬇ Homework 20: The Divergence and Integral Tests</a></li>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework21.pdf">⬇ Homework 21: Comparison Tests</a></li>
-<li><a href="../../../files/winter-2021/MATH-151/homeworks/homework22.pdf">⬇ Homework 22: Alternating Series</a></li>
-</ul>
-<h2 id="exams">Exams</h2>
-<h3 id="midterm">Midterm</h3>
-<ul>
-<li><a href="../../../files/winter-2021/MATH-151/exams/midterm_exam-1_practice.pdf">⬇ Midterm Practice Exam 1</a></li>
-<li><p><a href="../../../files/winter-2021/MATH-151/exams/midterm_exam-2_practice.pdf">⬇ Midterm Practice Exam 2</a></p></li>
-<li><a href="../../../files/winter-2021/MATH-151/exams/midterm_exam-1.pdf">⬇ Midterm Exam 1</a></li>
-<li><p><a href="../../../files/winter-2021/MATH-151/exams/midterm_exam-2.pdf">⬇ Midterm Exam 2</a></p></li>
 </ul>
           </article>
           </div>
@@ -180,11 +143,11 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../../../templates/js/jquery.min.js"></script>
+    <script src="../../../../../../templates/js/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../../../templates/js/bootstrap.min.js"></script>
+    <script src="../../../../../../templates/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
     <script>
         //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
 
@@ -201,6 +164,6 @@
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
-    <script src="../../../../templates/js/animated-toc.js"></script>
+    <script src="../../../../../../templates/js/animated-toc.js"></script>
   </body>
 </html>

@@ -67,6 +67,7 @@ Textbook
 - [⬇ Homework 19: Infinite Series](file:../../../files/winter-2021/MATH-151/homeworks/homework19.pdf)
 - [⬇ Homework 20: The Divergence and Integral Tests](file:../../../files/winter-2021/MATH-151/homeworks/homework20.pdf)
 - [⬇ Homework 21: Comparison Tests](file:../../../files/winter-2021/MATH-151/homeworks/homework21.pdf)
+- [⬇ Homework 22: Alternating Series](file:../../../files/winter-2021/MATH-151/homeworks/homework22.pdf)
 
 ## Exams
 

@@ -15,4 +15,5 @@ date: Mar 22, 2021
 - [↪ Section 10.5: Comparison Tests](sec_10-5)
 - [↪ Section 10.6: Alternating Series](sec_10-6)
 - [↪ Section 10.7: The Ratio and Root Tests](sec_10-7)
+- [↪ Section 10.8: Choosing a Convergence Test](sec_10-8)
 
