@@ -68,6 +68,7 @@ Textbook
 - [⬇ Homework 20: The Divergence and Integral Tests](file:../../../files/winter-2021/MATH-151/homeworks/homework20.pdf)
 - [⬇ Homework 21: Comparison Tests](file:../../../files/winter-2021/MATH-151/homeworks/homework21.pdf)
 - [⬇ Homework 22: Alternating Series](file:../../../files/winter-2021/MATH-151/homeworks/homework22.pdf)
+- [⬇ Homework 23: The Ratio and Root Tests](file:../../../files/winter-2021/MATH-151/homeworks/homework23.pdf)
 
 ## Exams
 

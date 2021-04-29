@@ -203,6 +203,8 @@ $$
 
 ## Sequences and Infinite Series
 
+![Special Series and Convergence Tests](../../../../files/winter-2021/MATH-151/notes/ch-10/sec_10-8_table-10.4.png)
+
 ### Terminology for Sequences
 
 ![Terminology for Sequences](../../../../files/winter-2021/MATH-151/notes/ch-10/sec_10-2_terminology_for_sequences.png)
@@ -265,7 +267,6 @@ $$
 $$
 
 > The ordering applies for positive real numbers $p$, $q$, $r$, $s$, and $b > 1$
-
 
 
 # Common Identities
