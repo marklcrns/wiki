@@ -69,6 +69,8 @@ Textbook
 - [⬇ Homework 21: Comparison Tests](file:../../../files/winter-2021/MATH-151/homeworks/homework21.pdf)
 - [⬇ Homework 22: Alternating Series](file:../../../files/winter-2021/MATH-151/homeworks/homework22.pdf)
 - [⬇ Homework 23: The Ratio and Root Tests](file:../../../files/winter-2021/MATH-151/homeworks/homework23.pdf)
+- [⬇ Homework 24: Choosing a Convergence Test](file:../../../files/winter-2021/MATH-151/homeworks/homework24.pdf)
+- [⬇ Homework 25: Approximating Functions with Polynomials](file:../../../files/winter-2021/MATH-151/homeworks/homework25.pdf)
 
 ## Exams
 
