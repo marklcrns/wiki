@@ -10,5 +10,10 @@ summary: WSL 2 wiki
 
 ## Applications
 
-[+Docker](docker)
+- [↪ Docker](docker)
+
+## Workarounds
+
+- [↪ Workarounds](workarounds)
+
 
