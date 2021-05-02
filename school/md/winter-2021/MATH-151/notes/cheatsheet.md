@@ -72,9 +72,9 @@ $$
 
 $$
 \begin{array}{ll}
-	{\displaystyle \int x^{n}e^{ax}dx} = \dfrac{x^{n}e^{ax}}{a} - \dfrac{n}{a}{\displaystyle \int x^{n - 1}e^{ax}dx} & \text{ for } a \neq 0 \\
-	~\\
-	{\displaystyle \int \ln^{n}(x)dx} = x\ln^{n}(x) - n {\displaystyle \int \ln^{n - 1}(x)dx} \\
+  {\displaystyle \int x^{n}e^{ax}dx} = \dfrac{x^{n}e^{ax}}{a} - \dfrac{n}{a}{\displaystyle \int x^{n - 1}e^{ax}dx} & \text{ for } a \neq 0 \\
+  ~\\
+  {\displaystyle \int \ln^{n}(x)dx} = x\ln^{n}(x) - n {\displaystyle \int \ln^{n - 1}(x)dx} \\
 \end{array}
 $$
 
@@ -82,13 +82,13 @@ Assume $n$ is a positive integer.
 
 $$
 \begin{array}{ll}
-	{\displaystyle \int x^{n}\cos(ax)dx} = \dfrac{x^{n}\sin(ax)}{a} - \dfrac{n}{a}{\displaystyle \int x^{n - 1}\sin(ax)d} & \text{ for } a \neq 0 \\
-	~\\
-	{\displaystyle \int x^{n}\sin(ax)dx} = -\dfrac{x^{n}\cos(ax)}{a} + \dfrac{n}{a}{\displaystyle \int x^{n - 1}\cos(ax)d} & \text{ for } a \neq 0 \\
-	~\\
-	{\displaystyle \int \tan^{n}(x)\;dx} = \frac{\tan^{n - 1}(x)}{n - 1} - {\displaystyle \int \tan^{n - 2}(x)\;dx} & \text{ for } n \neq 1 \\
-	~\\
-	{\displaystyle \int \sec^{n}(x)\;dx} = \frac{\sec^{n - 2}(x)\tan(x)}{n - 1} + \frac{n - 2}{n - 1}{\displaystyle \int \sec^{n - 2}(x)\;dx} & \text{ for } n \neq 1 \\
+  {\displaystyle \int x^{n}\cos(ax)dx} = \dfrac{x^{n}\sin(ax)}{a} - \dfrac{n}{a}{\displaystyle \int x^{n - 1}\sin(ax)d} & \text{ for } a \neq 0 \\
+  ~\\
+  {\displaystyle \int x^{n}\sin(ax)dx} = -\dfrac{x^{n}\cos(ax)}{a} + \dfrac{n}{a}{\displaystyle \int x^{n - 1}\cos(ax)d} & \text{ for } a \neq 0 \\
+  ~\\
+  {\displaystyle \int \tan^{n}(x)\;dx} = \frac{\tan^{n - 1}(x)}{n - 1} - {\displaystyle \int \tan^{n - 2}(x)\;dx} & \text{ for } n \neq 1 \\
+  ~\\
+  {\displaystyle \int \sec^{n}(x)\;dx} = \frac{\sec^{n - 2}(x)\tan(x)}{n - 1} + \frac{n - 2}{n - 1}{\displaystyle \int \sec^{n - 2}(x)\;dx} & \text{ for } n \neq 1 \\
 \end{array}
 $$
 
@@ -286,37 +286,55 @@ $\theta = (cos(x), sin(x))$
 ![Trigonometric Functions Table Half](../../../../files/winter-2021/MATH-151/notes/trig_table_half.png)
 ![Trigonometric Functions Table](../../../../files/winter-2021/MATH-151/notes/trig_table.png)
 
+Ref:
+
+- [📄 Unit Circle](https://en.wikipedia.org/wiki/Unit_circle)
+- [📄 Table of Trigonometric Functions](https://www.livingston.org/cms/lib9/NJ01000562/Centricity/Domain/742/calc/Trig%20functions%20chart%20-%20answers.pdf)
+- [📄 Trigonometric Functions](https://en.wikipedia.org/wiki/Trigonometric_functions)
+
 ## Logarithmic Identities
 
 $$
 \begin{array}{ll}
-	\ln(1) &=& 0 \\
-	~\\
-	\ln(e) &=& 1 \\
-	~\\
-	\ln(x) &=& \log_{e}(x) \\
-	~\\
-	\log(x) &=& \log_{10}(x) \\
-	~\\
-	\log_{b}(1) &=& 0 \\
-	~\\
-	\log_{b}(b) &=& 1 \\
-	~\\
-	\log_{b}(x^{e}) &=& e\log_{b}(x) \\
-	~\\
-	\log_{b}(xy) &=& \log_{b}(x) + \log_{b}(y)  \\
-	~\\
-	\log_{b}(x) &=& \dfrac{1}{\log_{x}(b)} \\
-	~\\
-	x^{\log_{b}(y)} &=& y^{\log_{b}(x)} \\
-	~\\
-	\log_{b}(0) &=& \text{undefined} \\
-	~\\
-	\log_{b}(-x) &=& \text{undefined} \\
-	~\\
-	\log_{b}(x) &=& \dfrac{\ln(x)}{\ln(b)}
+  \ln(1) &=& 0 \\
+  ~\\
+  \ln(e) &=& 1 \\
+  ~\\
+  \ln(x) &=& \log_{e}(x) \\
+  ~\\
+  \log(x) &=& \log_{10}(x) \\
+  ~\\
+  \log_{b}(1) &=& 0 \\
+  ~\\
+  \log_{b}(b) &=& 1 \\
+  ~\\
+  \log_{b}(x^{e}) &=& e\log_{b}(x) \\
+  ~\\
+  \log_{b}(xy) &=& \log_{b}(x) + \log_{b}(y)  \\
+  ~\\
+  \log_{b}(x) &=& \dfrac{1}{\log_{x}(b)} \\
+  ~\\
+  x^{\log_{b}(y)} &=& y^{\log_{b}(x)} \\
+  ~\\
+  \log_{b}(0) &=& \text{undefined} \\
+  ~\\
+  \log_{b}(-x) &=& \text{undefined} \\
+  ~\\
+  \log_{b}(x) &=& \dfrac{\ln(x)}{\ln(b)}
 \end{array}
 $$
+
+## Limits
+
+- [📄 List of Limits](https://en.wikipedia.org/wiki/List_of_limits)
+
+![Some important limits 1](../../../../files/winter-2021/MATH-151/notes/some_important_limits-1.gif)
+![Some important limits 2](../../../../files/winter-2021/MATH-151/notes/some_important_limits-2.gif)
+![Some important limits 3](../../../../files/winter-2021/MATH-151/notes/some_important_limits-3.gif)
+
+Ref:
+
+- [📄 Some Important Limits](https://www.pioneermathematics.com/some-important-limits-formula.html)
 
 # Common Rules
 
@@ -324,7 +342,7 @@ $$
 
 $$
 \begin{array}{ll}
-	a^{x} \cdot a^{y} = a^{x + y} & a^{x} \cdot b^{x} = (a \cdot b)^{x} \\
+  a^{x} \cdot a^{y} = a^{x + y} & a^{x} \cdot b^{x} = (a \cdot b)^{x} \\
 \end{array}
 $$
 
@@ -332,7 +350,7 @@ $$
 
 $$
 \begin{array}{ll}
-	\dfrac{a^{x}}{a^{y}} = a^{x - y} & \dfrac{a^{x}}{a^{x}} = \left ( \dfrac{a}{b} \right )^{x} \\
+  \dfrac{a^{x}}{a^{y}} = a^{x - y} & \dfrac{a^{x}}{a^{x}} = \left ( \dfrac{a}{b} \right )^{x} \\
 \end{array}
 $$
 
@@ -340,11 +358,11 @@ $$
 
 $$
 \begin{array}{ll}
-	\left ( b^{x} \right )^{y} = b^{x \cdot y} & b^{x^{y}} = b^{(3^{2})} &  \\
-	~\\
-	\sqrt[y]{b^{x}} = b^{\frac{x}{y}} & b^{\frac{1}{x}} = \sqrt[x]{b} \\
-	~\\
-	b^{x} = e^{\ln(b^{x})} & b^{-x} = \dfrac{1}{b^{x}} \\
+  \left ( b^{x} \right )^{y} = b^{x \cdot y} & b^{x^{y}} = b^{(3^{2})} &  \\
+  ~\\
+  \sqrt[y]{b^{x}} = b^{\frac{x}{y}} & b^{\frac{1}{x}} = \sqrt[x]{b} \\
+  ~\\
+  b^{x} = e^{\ln(b^{x})} & b^{-x} = \dfrac{1}{b^{x}} \\
 \end{array}
 $$
 
@@ -352,23 +370,23 @@ $$
 
 $$
 \begin{array}{ll}
-	\ln(x) = \log_{e}(x) \\
-	~\\
-	\log_{b}(x \cdot y) = \log_{b}(x) + \log_{b}(y) & \log_{b}(\frac{x}{y}) = \log_{b}(x) - \log_{b}(y) \\
-	~\\
-	\log_{b}(x^{y}) = y \cdot \log_{b}(x) & \ln(x^{y}) = y\ln(x) \\
-	~\\
-	\log_{b}(c) = \dfrac{1}{\log_{c}(b)} & \log_{b}(\sqrt[y]{x}) = \dfrac{\log_{b}(x)}{y} \\
-	~\\
-	c\log_{b}(x) + d\log_{b}(y) = \log_{b}(x^{c}y^{d}) \\
-	~\\
-	\log_{b}(1) = 0 & \log_{b}(b) = 1 \\
-	~\\
-	\lim_{x \to 0^{+}} \log_{b}(x) = -\infty & \lim_{x \to \infty} \log_{b}(x) = \infty \\
-	~\\
-	\log_{b}(x) \text{ is undefined when } x \le 0 \\
-	~\\
-	\dfrac{d}{dx}\left [ \log_{b}(x) \right ] = \dfrac{1}{x\ln(b)}& {\displaystyle \int \log_{b}(x)\;dx} = x\log_{b}(x) - \dfrac{x}{\ln(b)} + C \\
+  \ln(x) = \log_{e}(x) \\
+  ~\\
+  \log_{b}(x \cdot y) = \log_{b}(x) + \log_{b}(y) & \log_{b}(\frac{x}{y}) = \log_{b}(x) - \log_{b}(y) \\
+  ~\\
+  \log_{b}(x^{y}) = y \cdot \log_{b}(x) & \ln(x^{y}) = y\ln(x) \\
+  ~\\
+  \log_{b}(c) = \dfrac{1}{\log_{c}(b)} & \log_{b}(\sqrt[y]{x}) = \dfrac{\log_{b}(x)}{y} \\
+  ~\\
+  c\log_{b}(x) + d\log_{b}(y) = \log_{b}(x^{c}y^{d}) \\
+  ~\\
+  \log_{b}(1) = 0 & \log_{b}(b) = 1 \\
+  ~\\
+  \lim_{x \to 0^{+}} \log_{b}(x) = -\infty & \lim_{x \to \infty} \log_{b}(x) = \infty \\
+  ~\\
+  \log_{b}(x) \text{ is undefined when } x \le 0 \\
+  ~\\
+  \dfrac{d}{dx}\left [ \log_{b}(x) \right ] = \dfrac{1}{x\ln(b)}& {\displaystyle \int \log_{b}(x)\;dx} = x\log_{b}(x) - \dfrac{x}{\ln(b)} + C \\
 \end{array}
 $$
 
@@ -376,7 +394,7 @@ $$
 
 $$
 \begin{array}{ll}
-	b^{0} = 1 & 0^{x} = 0, \text{ for } n > 0 \\
+  b^{0} = 1 & 0^{x} = 0, \text{ for } n > 0 \\
 \end{array}
 $$
 
@@ -445,7 +463,7 @@ $$
 
 $$
 \begin{array}{ll}
-	\lim_{x \to a} g(x) = b & \lim_{u \to b} f(u) = L \\
+  \lim_{x \to a} g(x) = b & \lim_{u \to b} f(u) = L \\
 \end{array}
 $$
 
@@ -456,15 +474,15 @@ $$
 
 $$
 \begin{array}{ll}
-	\dfrac{d}{dx}(x) &=& 1 \\
-	~\\
-	\dfrac{d}{dx}(x^{2}) &=& 2x \\
-	~\\
-	\dfrac{d}{dx}(x^{n}) &=& nx^{n - 1} \\
-	~\\
-	\dfrac{d}{dx}(x^{\frac{1}{n}}) &=& \dfrac{1}{nx^{\frac{1}{n} - 1}} \\
-	~\\
-	\dfrac{d}{dx}(mx^{n}) &=& mnx^{n - 1} \\
+  \dfrac{d}{dx}(x) &=& 1 \\
+  ~\\
+  \dfrac{d}{dx}(x^{2}) &=& 2x \\
+  ~\\
+  \dfrac{d}{dx}(x^{n}) &=& nx^{n - 1} \\
+  ~\\
+  \dfrac{d}{dx}(x^{\frac{1}{n}}) &=& \dfrac{1}{nx^{\frac{1}{n} - 1}} \\
+  ~\\
+  \dfrac{d}{dx}(mx^{n}) &=& mnx^{n - 1} \\
 \end{array}
 $$
 
@@ -472,11 +490,11 @@ $$
 
 $$
 \begin{array}{ll}
-	\dfrac{d}{dx}(\sin{x}) = \cos{x} & \dfrac{d}{dx}(\csc{x}) = -\csc{x}\cot{x} \\
-	~\\
-	\dfrac{d}{dx}(\cos{x}) = -\sin{x} & \dfrac{d}{dx}(\sec{x}) = \sec{x}\tan{x} \\
-	~\\
-	\dfrac{d}{dx}(\tan{x}) = \sec^{2}{x} & \dfrac{d}{dx}(\cot{x}) = -\csc^{2}{x} \\
+  \dfrac{d}{dx}(\sin{x}) = \cos{x} & \dfrac{d}{dx}(\csc{x}) = -\csc{x}\cot{x} \\
+  ~\\
+  \dfrac{d}{dx}(\cos{x}) = -\sin{x} & \dfrac{d}{dx}(\sec{x}) = \sec{x}\tan{x} \\
+  ~\\
+  \dfrac{d}{dx}(\tan{x}) = \sec^{2}{x} & \dfrac{d}{dx}(\cot{x}) = -\csc^{2}{x} \\
 \end{array}
 $$
 
@@ -484,17 +502,17 @@ $$
 
 $$
 \begin{array}{ll}
-	\dfrac{d}{dx}(\sinh{x}) = \cosh{x} & \dfrac{d}{dx}(\operatorname{csch}{x}) = -\operatorname{csch}{x}\coth{x} \\
-	~\\
-	\dfrac{d}{dx}(\cosh{x}) = \sinh{x} & \dfrac{d}{dx}(\operatorname{sech}{x}) = -\operatorname{sech}{x}\tanh{x} \\
-	~\\
-	\dfrac{d}{dx}(\tanh{x}) = \operatorname{sech}^{2}{x} & \dfrac{d}{dx}(\coth{x}) = -\operatorname{csch}^{2}{x} \\
-	~\\
-	\dfrac{d}{dx}(\sinh{ax}) = a\cosh{ax} & \dfrac{d}{dx}(\operatorname{csch}ax) = -a\operatorname{csch}{ax}\coth{ax} \\
-	~\\
-	\dfrac{d}{dx}(\cosh{ax}) = a\sinh{ax} & \dfrac{d}{dx}(\operatorname{sech}ax) = -a\operatorname{sech}{ax}\tanh{ax} \\
-	~\\
-	\dfrac{d}{dx}(\tanh{ax}) = a\operatorname{sech}^{2}ax & \dfrac{d}{dx}(\coth{ax}) = -a\operatorname{csch}^{2}{ax} \\
+  \dfrac{d}{dx}(\sinh{x}) = \cosh{x} & \dfrac{d}{dx}(\operatorname{csch}{x}) = -\operatorname{csch}{x}\coth{x} \\
+  ~\\
+  \dfrac{d}{dx}(\cosh{x}) = \sinh{x} & \dfrac{d}{dx}(\operatorname{sech}{x}) = -\operatorname{sech}{x}\tanh{x} \\
+  ~\\
+  \dfrac{d}{dx}(\tanh{x}) = \operatorname{sech}^{2}{x} & \dfrac{d}{dx}(\coth{x}) = -\operatorname{csch}^{2}{x} \\
+  ~\\
+  \dfrac{d}{dx}(\sinh{ax}) = a\cosh{ax} & \dfrac{d}{dx}(\operatorname{csch}ax) = -a\operatorname{csch}{ax}\coth{ax} \\
+  ~\\
+  \dfrac{d}{dx}(\cosh{ax}) = a\sinh{ax} & \dfrac{d}{dx}(\operatorname{sech}ax) = -a\operatorname{sech}{ax}\tanh{ax} \\
+  ~\\
+  \dfrac{d}{dx}(\tanh{ax}) = a\operatorname{sech}^{2}ax & \dfrac{d}{dx}(\coth{ax}) = -a\operatorname{csch}^{2}{ax} \\
 \end{array}
 $$
 
@@ -502,11 +520,11 @@ $$
 
 $$
 \begin{array}{ll}
-	\dfrac{d}{dx}(\sin^{-1}{x}) = \dfrac{1}{\sqrt{1 - x^{2}}} & \dfrac{d}{dx}(\csc^{-1}{x}) = -\dfrac{1}{x\sqrt{x^{2} - 1}} \\
-	~\\
-	\dfrac{d}{dx}(\cos^{-1}{x}) = -\dfrac{1}{\sqrt{1 - x^{2}}} & \dfrac{d}{dx}(\sec^{-1}{x}) = \dfrac{1}{x\sqrt{x^{2} - 1}} \\
-	~\\
-	\dfrac{d}{dx}(\tan^{-1}{x}) = \dfrac{1}{1 + x^{2}} & \dfrac{d}{dx}(\cot^{-1}{x}) = -\dfrac{1}{1 + x^{2}}
+  \dfrac{d}{dx}(\sin^{-1}{x}) = \dfrac{1}{\sqrt{1 - x^{2}}} & \dfrac{d}{dx}(\csc^{-1}{x}) = -\dfrac{1}{x\sqrt{x^{2} - 1}} \\
+  ~\\
+  \dfrac{d}{dx}(\cos^{-1}{x}) = -\dfrac{1}{\sqrt{1 - x^{2}}} & \dfrac{d}{dx}(\sec^{-1}{x}) = \dfrac{1}{x\sqrt{x^{2} - 1}} \\
+  ~\\
+  \dfrac{d}{dx}(\tan^{-1}{x}) = \dfrac{1}{1 + x^{2}} & \dfrac{d}{dx}(\cot^{-1}{x}) = -\dfrac{1}{1 + x^{2}}
 \end{array}
 $$
 
@@ -514,11 +532,11 @@ $$
 
 $$
 \begin{array}{ll}
-	\dfrac{d}{dx}(\sinh^{-1}{x}) = \dfrac{1}{\sqrt{1 + x^{2}}} & \dfrac{d}{dx}(\operatorname{csch}^{-1}{x}) = -\dfrac{1}{\left | x \right |\sqrt{x^{2} + 1}} \\
-	~\\
-	\dfrac{d}{dx}(\cosh^{-1}{x}) = \dfrac{1}{\sqrt{x^{2} - 1}} & \dfrac{d}{dx}(\operatorname{sech}^{-1}{x}) = -\dfrac{1}{x\sqrt{1 - x^{2}}} \\
-	~\\
-	\dfrac{d}{dx}(\tanh^{-1}{x}) = \dfrac{1}{1 - x^{2}} & \dfrac{d}{dx}(\coth^{-1}{x}) = \dfrac{1}{1 - x^{2}}
+  \dfrac{d}{dx}(\sinh^{-1}{x}) = \dfrac{1}{\sqrt{1 + x^{2}}} & \dfrac{d}{dx}(\operatorname{csch}^{-1}{x}) = -\dfrac{1}{\left | x \right |\sqrt{x^{2} + 1}} \\
+  ~\\
+  \dfrac{d}{dx}(\cosh^{-1}{x}) = \dfrac{1}{\sqrt{x^{2} - 1}} & \dfrac{d}{dx}(\operatorname{sech}^{-1}{x}) = -\dfrac{1}{x\sqrt{1 - x^{2}}} \\
+  ~\\
+  \dfrac{d}{dx}(\tanh^{-1}{x}) = \dfrac{1}{1 - x^{2}} & \dfrac{d}{dx}(\coth^{-1}{x}) = \dfrac{1}{1 - x^{2}}
 \end{array}
 $$
 
@@ -526,21 +544,21 @@ $$
 
 $$
 \begin{array}{ll}
-	\dfrac{d}{dx}(\ln(x)) &=& \dfrac{1}{x} \\
-	~\\
-	\dfrac{d}{dx}(\ln(mx)) &=& \dfrac{1}{x} \\
-	~\\
-	\dfrac{d}{dx}(\ln(x^{n})) &=& \dfrac{n}{x} \\
-	~\\
-	\dfrac{d}{dx}(\ln(mx^{n})) &=& \dfrac{n}{x} \\
-	~\\
-	\dfrac{d}{dx}(\log_{b}(x)) &=& \dfrac{1}{x\ln(b)} \\
-	~\\
-	\dfrac{d}{dx}(\log_{b}(mx)) &=& \dfrac{1}{x\ln(b)} \\
-	~\\
-	\dfrac{d}{dx}(\log_{b}(x^{n})) &=& \dfrac{n}{x\ln(b)} \\
-	~\\
-	\dfrac{d}{dx}(\log_{b}(mx^{n})) &=& \dfrac{n}{x\ln(b)} \\
+  \dfrac{d}{dx}(\ln(x)) &=& \dfrac{1}{x} \\
+  ~\\
+  \dfrac{d}{dx}(\ln(mx)) &=& \dfrac{1}{x} \\
+  ~\\
+  \dfrac{d}{dx}(\ln(x^{n})) &=& \dfrac{n}{x} \\
+  ~\\
+  \dfrac{d}{dx}(\ln(mx^{n})) &=& \dfrac{n}{x} \\
+  ~\\
+  \dfrac{d}{dx}(\log_{b}(x)) &=& \dfrac{1}{x\ln(b)} \\
+  ~\\
+  \dfrac{d}{dx}(\log_{b}(mx)) &=& \dfrac{1}{x\ln(b)} \\
+  ~\\
+  \dfrac{d}{dx}(\log_{b}(x^{n})) &=& \dfrac{n}{x\ln(b)} \\
+  ~\\
+  \dfrac{d}{dx}(\log_{b}(mx^{n})) &=& \dfrac{n}{x\ln(b)} \\
 \end{array}
 $$
 
@@ -548,13 +566,13 @@ $$
 
 $$
 \begin{array}{ll}
-	\dfrac{d}{dx}(a^{x}) &=& \dfrac{d}{dx}\left [ (e^{\ln(a)})^{x} \right ] &=& a^{x}\ln(a) \\
-	~\\
-	\dfrac{d}{dx}(a^{nx}) &=& \dfrac{d}{dx}\left [ (e^{\ln(a)})^{nx} \right ] &=& na^{nx}\ln(a) \\
-	~\\
-	\dfrac{d}{dx}(e^{x}) &=& e^{x} \\
-	~\\
-	\dfrac{d}{dx}(e^{nx}) &=& ne^{nx} \\
+  \dfrac{d}{dx}(a^{x}) &=& \dfrac{d}{dx}\left [ (e^{\ln(a)})^{x} \right ] &=& a^{x}\ln(a) \\
+  ~\\
+  \dfrac{d}{dx}(a^{nx}) &=& \dfrac{d}{dx}\left [ (e^{\ln(a)})^{nx} \right ] &=& na^{nx}\ln(a) \\
+  ~\\
+  \dfrac{d}{dx}(e^{x}) &=& e^{x} \\
+  ~\\
+  \dfrac{d}{dx}(e^{nx}) &=& ne^{nx} \\
 \end{array}
 $$
 
@@ -584,23 +602,23 @@ $$
 $$
 \begin{array}{ll}
   \int cf(x)dx = c \int f(x)dx & \int [f(x) + g(x)]dx = \int f(x)dx + \int g(x)dx \\
-	~\\
+  ~\\
   \int k\;dx = kx + C \\
-	~\\
+  ~\\
   \int x^{n}dx = \dfrac{x^{n + 1}}{n + 1} + C(n \neq - 1) & \int \dfrac{1}{x}dx = \ln |x| + C\\
-	~\\
+  ~\\
   \int e^{x}dx = e^{x} + C & \int b^{x}dx = \dfrac{b^{x}}{\ln(b)} + C \\
-	~\\
+  ~\\
   \int \sin(x)\;dx = -\cos(x) + C & \int \cos(x)dx = \sin(x) + C \\
-	~\\
+  ~\\
   \int \sin^{2}(x)\;dx = \frac{1}{2} \left ( x - \frac{1}{2}\sin(2x) \right ) + C & \int \cos^{2}(x)dx = \frac{1}{2} \left ( x + \frac{1}{2}\sin(2x) \right ) + C \\
-	~\\
+  ~\\
   \int \sec^{2}(x)dx = \tan(x) + C & \int \csc^{2}(x)dx = -\cot(x) + C \\
-	~\\
+  ~\\
   \int \sec(x)\tan(x)dx = \sec(x) + C & \int \csc(x)\cot(x)dx = - \csc(x) + C \\
-	~\\
+  ~\\
   \int \dfrac{1}{x^{2} + 1}dx = \tan^{-1}(x) + C & \int \dfrac{1}{\sqrt{1 - x^{2}}}dx = \sin^{-1}(x) + C \\
-	~\\
+  ~\\
   \int \sinh(x)dx = \cosh(x) + C & \int \cosh(x)dx = \sinh(x) + C
 \end{array}
 $$
@@ -609,17 +627,17 @@ $$
 
 $$
 \begin{array}{ll}
-	\int x\;dx &=& \dfrac{x^{2}}{2} + C \\
-	~\\
-	\int x^{n}\;dx &=& \dfrac{x^{n + 1}}{n + 1} + C \\
-	~\\
-	\int \sqrt[y]{x}\;dx &=& \dfrac{x^{\frac{1}{y} + 1}}{\frac{1}{y} + 1} + C \\
-	~\\
-	\int x^{\frac{m}{n}}\;dx &=& \dfrac{x^{\frac{m}{n} + 1}}{\frac{m}{n} + 1} + C = \dfrac{nx\frac{m + n}{n}}{m + n} + C \\
-	~\\
-	\int mx^{n}\;dx &=& m\dfrac{x^{n + 1}}{n + 1} + C \\
-	~\\
-	\int \frac{1}{x}\;dx &=& \ln|x| + C \\
+  \int x\;dx &=& \dfrac{x^{2}}{2} + C \\
+  ~\\
+  \int x^{n}\;dx &=& \dfrac{x^{n + 1}}{n + 1} + C \\
+  ~\\
+  \int \sqrt[y]{x}\;dx &=& \dfrac{x^{\frac{1}{y} + 1}}{\frac{1}{y} + 1} + C \\
+  ~\\
+  \int x^{\frac{m}{n}}\;dx &=& \dfrac{x^{\frac{m}{n} + 1}}{\frac{m}{n} + 1} + C = \dfrac{nx\frac{m + n}{n}}{m + n} + C \\
+  ~\\
+  \int mx^{n}\;dx &=& m\dfrac{x^{n + 1}}{n + 1} + C \\
+  ~\\
+  \int \frac{1}{x}\;dx &=& \ln|x| + C \\
 \end{array}
 $$
 
@@ -627,21 +645,21 @@ $$
 
 $$
 \begin{array}{lll}
-	{\displaystyle \int \sin(x)} = -\cos(x) + C & {\displaystyle \int \cos(x)} = \sin(x) + C \\
-	~\\
-	{\displaystyle \int \sin(mx)} = -\dfrac{1}{m}\cos(mx) + C & {\displaystyle \int \cos(mx)} = \dfrac{1}{m}\sin(mx) + C \\
-	~\\
-	{\displaystyle \int \csc(x)} = -\ln \left | \csc(x) + \cot(x) \right | + C & {\displaystyle \int sec(x)} = \ln \left | \tan(x) + \sec(x) \right | + C \\
-	~\\
-	{\displaystyle \int \csc(x)} = \ln \left | \tan(\frac{x}{2}) \right | + C \\
-	~\\
-	{\displaystyle \int \csc(mx)} = -\frac{1}{m}\ln \left | \csc(mx) + \cot(mx) \right | + C & {\displaystyle \int sec(mx)} = \frac{1}{m}\ln \left | \tan(mx) +\sec(mx) \right | + C \\
-	~\\
-	{\displaystyle \int \csc(mx)} = \frac{1}{m}\ln \left | \tan(\frac{mx}{2}) \right | + C \\
-	~\\
-	{\displaystyle \int \tan(x)} = -\ln \left | \cos(x) \right | + C & {\displaystyle \int cot(x)} = \ln \left | \sin(x) \right | + C \\
-	~\\
-	{\displaystyle \int \tan(mx)} = -\frac{1}{m}\ln \left | \cos(mx) \right | + C & {\displaystyle \int cot(mx)} = \frac{1}{m}\ln \left | \sin(mx) \right | + C \\
+  {\displaystyle \int \sin(x)} = -\cos(x) + C & {\displaystyle \int \cos(x)} = \sin(x) + C \\
+  ~\\
+  {\displaystyle \int \sin(mx)} = -\dfrac{1}{m}\cos(mx) + C & {\displaystyle \int \cos(mx)} = \dfrac{1}{m}\sin(mx) + C \\
+  ~\\
+  {\displaystyle \int \csc(x)} = -\ln \left | \csc(x) + \cot(x) \right | + C & {\displaystyle \int sec(x)} = \ln \left | \tan(x) + \sec(x) \right | + C \\
+  ~\\
+  {\displaystyle \int \csc(x)} = \ln \left | \tan(\frac{x}{2}) \right | + C \\
+  ~\\
+  {\displaystyle \int \csc(mx)} = -\frac{1}{m}\ln \left | \csc(mx) + \cot(mx) \right | + C & {\displaystyle \int sec(mx)} = \frac{1}{m}\ln \left | \tan(mx) +\sec(mx) \right | + C \\
+  ~\\
+  {\displaystyle \int \csc(mx)} = \frac{1}{m}\ln \left | \tan(\frac{mx}{2}) \right | + C \\
+  ~\\
+  {\displaystyle \int \tan(x)} = -\ln \left | \cos(x) \right | + C & {\displaystyle \int cot(x)} = \ln \left | \sin(x) \right | + C \\
+  ~\\
+  {\displaystyle \int \tan(mx)} = -\frac{1}{m}\ln \left | \cos(mx) \right | + C & {\displaystyle \int cot(mx)} = \frac{1}{m}\ln \left | \sin(mx) \right | + C \\
 \end{array}
 $$
 
@@ -649,21 +667,21 @@ $$
 
 $$
 \begin{array}{ll}
-	\int \ln(x)\;dx &=& x\ln(x) - x + C \\
-	~\\
-	\int \ln(x^{n})\;dx &=& nx\ln(nx) - nx + C \\
-	~\\
-	\int \ln(mx)\;dx &=& x\ln(mx) - x + C \\
-	~\\
-	\int \ln(mx^{n})\;dx &=& x\ln(m) + nx\ln(x) - nx + C \\
-	~\\
-	\int \log_{b}(x)\;dx &=& {\displaystyle \int \frac{\ln(x)}{ln(b)}} = x\log_{b}(x) - \dfrac{x}{\ln(b)} + C \\
-	~\\
-	\int \log_{b}(x^{n})\;dx &=& n\left ( x\log_{b}(x) - \dfrac{x}{\ln(b)} \right ) + C \\
-	~\\
-	\int \log_{b}(mx)\;dx &=& x\log_{b}(mx) - \dfrac{x}{\ln(b)} + C \\
-	~\\
-	\int \log_{b}(mx^{n})\;dx &=& x\log_{b}(m) + n\left ( x\log_{b}(x) - \dfrac{x}{\ln(b)} \right ) + C \\
+  \int \ln(x)\;dx &=& x\ln(x) - x + C \\
+  ~\\
+  \int \ln(x^{n})\;dx &=& nx\ln(nx) - nx + C \\
+  ~\\
+  \int \ln(mx)\;dx &=& x\ln(mx) - x + C \\
+  ~\\
+  \int \ln(mx^{n})\;dx &=& x\ln(m) + nx\ln(x) - nx + C \\
+  ~\\
+  \int \log_{b}(x)\;dx &=& {\displaystyle \int \frac{\ln(x)}{ln(b)}} = x\log_{b}(x) - \dfrac{x}{\ln(b)} + C \\
+  ~\\
+  \int \log_{b}(x^{n})\;dx &=& n\left ( x\log_{b}(x) - \dfrac{x}{\ln(b)} \right ) + C \\
+  ~\\
+  \int \log_{b}(mx)\;dx &=& x\log_{b}(mx) - \dfrac{x}{\ln(b)} + C \\
+  ~\\
+  \int \log_{b}(mx^{n})\;dx &=& x\log_{b}(m) + n\left ( x\log_{b}(x) - \dfrac{x}{\ln(b)} \right ) + C \\
 \end{array}
 $$
 
@@ -671,17 +689,31 @@ $$
 
 $$
 \begin{array}{ll}
-	\int a^{x}\;dx = \dfrac{a^{x}}{\ln(a)} + C \\
-	~\\
-	\int a^{nx}\;dx = \dfrac{a^{nx}}{n\ln(a)} + C \\
-	~\\
-	\int \dfrac{1}{a^{x}}\;dx = -\dfrac{a^{-x}}{\ln(a)} + C \\
-	~\\
-	\int \dfrac{1}{a^{nx}}\;dx = -\dfrac{a^{-nx}}{n\ln(a)} + C \\
-	~\\
-	\int e^{x}\;dx = e^{x} + C \\
-	~\\
-	\int e^{mx}\;dx = \dfrac{1}{m}e^{mx} + C \\
+  \int a^{x}\;dx = \dfrac{a^{x}}{\ln(a)} + C \\
+  ~\\
+  \int a^{nx}\;dx = \dfrac{a^{nx}}{n\ln(a)} + C \\
+  ~\\
+  \int \dfrac{1}{a^{x}}\;dx = -\dfrac{a^{-x}}{\ln(a)} + C \\
+  ~\\
+  \int \dfrac{1}{a^{nx}}\;dx = -\dfrac{a^{-nx}}{n\ln(a)} + C \\
+  ~\\
+  \int e^{x}\;dx = e^{x} + C \\
+  ~\\
+  \int e^{mx}\;dx = \dfrac{1}{m}e^{mx} + C \\
 \end{array}
 $$
 
+
+<br>
+
+# Resources
+
+- [⬇ Famous Trig Identities](file:../../../../files/spring-2020/MATH-141/ch-6/ch-6_handout-24.pdf)
+- [⬇ Trig Cheatsheet](file:../../../../files/winter-2021/MATH-151/notes/trig_cheatsheet.pdf)
+- [📄 Unit Circle](https://en.wikipedia.org/wiki/Unit_circle)
+- [📄 Table of Trigonometric Functions](https://www.livingston.org/cms/lib9/NJ01000562/Centricity/Domain/742/calc/Trig%20functions%20chart%20-%20answers.pdf)
+- [📄 Trigonometric Functions](https://en.wikipedia.org/wiki/Trigonometric_functions)
+- [📄 List of Limits](https://en.wikipedia.org/wiki/List_of_limits)
+- [📄 Some Important Limits](https://www.pioneermathematics.com/some-important-limits-formula.html)
+
++ Calculus, Early Transcendentals 3rd Edition - Briggs, Cochran, and Gillet
