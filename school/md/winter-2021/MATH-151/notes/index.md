@@ -12,4 +12,5 @@ date: Apr 14, 2021
 - [↪ Chapter 9: Differential Equations](ch-9/index)
 - [↪ Chapter 10: Sequences and Infinite Series](ch-10/index)
 - [↪ Chapter 11: Power Series](ch-11/index)
+- [↪ Chapter 12: Parametric and Polar Curves](ch-12/index)
 
