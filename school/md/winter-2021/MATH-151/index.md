@@ -75,6 +75,7 @@ Textbook
 
 - [⬇ Homework 25: Approximating Functions with Polynomials](file:../../../files/winter-2021/MATH-151/homeworks/homework25.pdf)
 - [⬇ Homework 26: Properties of Power Series](file:../../../files/winter-2021/MATH-151/homeworks/homework26.pdf)
+- [⬇ Homework 27: Taylor Series](file:../../../files/winter-2021/MATH-151/homeworks/homework27.pdf)
 
 ## Exams
 
