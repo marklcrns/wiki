@@ -102,7 +102,7 @@ Use the acronym "LIPET" to help choosing the value when substituting for $u$.
 - **E**xponential -- e.g. $e^{x}$
 - **T**rigonometric -- e.g. $\cos(x)$
 
-to prioritize choosing $u$ in the order of **LIPET**, **L** being the first
+to prioritize choosing $u$ in the order of **LICET**, **L** being the first
 priority and **T** being the last.
 
 
@@ -267,6 +267,11 @@ $$
 $$
 
 > The ordering applies for positive real numbers $p$, $q$, $r$, $s$, and $b > 1$
+
+
+### Taylor Series
+
+![Taylor Series](../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-3_table-11.5.png)
 
 
 # Common Identities
