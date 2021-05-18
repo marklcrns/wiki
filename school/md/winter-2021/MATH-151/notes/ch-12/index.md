@@ -9,4 +9,5 @@ date: May 12, 2021
 # Chapter 12: Parametric and Polar Curves
 
 - [↪ Section 12.1: Parametric Equations](sec_12-1)
+- [↪ Section 12.2: Polar Coordinates](sec_12-2)
 
