@@ -78,6 +78,8 @@ Textbook
 - [⬇ Homework 27: Taylor Series](file:../../../files/winter-2021/MATH-151/homeworks/homework27.pdf)
 - [⬇ Homework 28: Working with Taylor Series](file:../../../files/winter-2021/MATH-151/homeworks/homework28.pdf)
 - [⬇ Homework 29: Parametric Equations](file:../../../files/winter-2021/MATH-151/homeworks/homework29.pdf)
+- [⬇ Homework 30: Polar Coordinates](file:../../../files/winter-2021/MATH-151/homeworks/homework30.pdf)
+- [⬇ Homework 31: Calculus in Polar Coordinates](file:../../../files/winter-2021/MATH-151/homeworks/homework31.pdf)
 
 ## Exams
 
