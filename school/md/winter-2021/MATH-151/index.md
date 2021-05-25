@@ -80,6 +80,7 @@ Textbook
 - [⬇ Homework 29: Parametric Equations](file:../../../files/winter-2021/MATH-151/homeworks/homework29.pdf)
 - [⬇ Homework 30: Polar Coordinates](file:../../../files/winter-2021/MATH-151/homeworks/homework30.pdf)
 - [⬇ Homework 31: Calculus in Polar Coordinates](file:../../../files/winter-2021/MATH-151/homeworks/homework31.pdf)
+- [⬇ Homework 32: Conic Sections](file:../../../files/winter-2021/MATH-151/homeworks/homework32.pdf)
 
 ## Exams
 
