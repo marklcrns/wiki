@@ -51,17 +51,3 @@ Text books
 - [↪ Module 7](modules/module_7) -- Advanced Topics
 - [↪ Module 8](modules/module_8) -- Final Project
 
-## Skills Applicable to Resumes
-
-  - Critical thinking
-  - Problem solving
-  - Analytical skills
-  - Troubleshooting
-  - Research
-  - Planning
-  - Creativity
-  - Written communication
-  - Teamwork/collaboration
-  - Resilience/perseverance
-  - Lifelong learning
-
