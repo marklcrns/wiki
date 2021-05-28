@@ -6,10 +6,6 @@ summary: Spring 2020 college notes
 ---
 
 
-# Spring 2020 College Courses
-
-- [⬇ Daily Schedule](file:../../files/spring-2020/spring-2020_dailySchedule_v2.png)
-
 ## Spring 2020
 
 - [↪ CISC 190](CISC-190/index) -- Java Programming (23337 - online)
