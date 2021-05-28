@@ -1,12 +1,12 @@
 ---
-title: Winter 2021
+title: Winter and Spring 2021
 subtitle: College notes
 author: Mark Lucernas
 date: Jan 06, 2021
 ---
 
 
-# Winter 2021
+# Winter and Spring 2021
 
 ## UCSD Cross-Enrollment
 

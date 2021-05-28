@@ -35,11 +35,11 @@ Total Units Enrolled: **19** units
 - [↪ Fall 2020](fall-2020/index)
 
 
-## Winter 2021 (UCSD Cross-Enrollment)
+## Winter 2021 (UCSD Cross-Enrollment) and Spring 2021
 
 **Start/End Date:** 2021-01-04 - 2021-03-20
 
-Total Units Enrolled: **15** units
+Total Units Enrolled: 15 - 5 = **10** units
 
 - [↪ Winter 2021](winter-2021/index)
 
