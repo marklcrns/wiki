@@ -131,6 +131,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <ul>
           <li><a href="#extras">Extras</a><ul>
           <li><a href="#prevent-bash-script-from-being-executed">Prevent Bash Script From Being Executed</a></li>
+          <li><a href="#get-script-paths-and-name">Get Script Paths and Name</a></li>
+          <li><a href="#best-practices">Best Practices</a></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
           </ul>
@@ -172,13 +174,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb2-5" title="5">  <span class="bu">echo</span></a>
 <a class="sourceLine" id="cb2-6" title="6">  <span class="bu">exit</span> 1</a>
 <a class="sourceLine" id="cb2-7" title="7"><span class="kw">fi</span></a></code></pre></div>
+<p>Ref:</p>
 <ul>
 <li><a href="https://stackoverflow.com/questions/22962591/how-to-prevent-direct-bash-script-execution-and-allow-only-usage-from-other-scri">📄 How to prevent direct bash script execution and allow only usage from other script?</a></li>
+</ul>
+<h2 id="get-script-paths-and-name">Get Script Paths and Name</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># Script absolute path</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="va">SCRIPTPATH=</span><span class="st">&quot;</span><span class="va">$(</span><span class="ex">realpath</span> -s <span class="va">$0)</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="co"># Script name</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="va">SCRIPTNAME=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${0})</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="co"># Script directory</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="va">SCRIPTDIR=</span><span class="st">&quot;</span><span class="va">$(</span> <span class="bu">cd</span> <span class="st">&quot;</span><span class="va">$(</span> <span class="fu">dirname</span> <span class="st">&quot;</span><span class="va">$0</span><span class="st">&quot;</span> <span class="va">)</span><span class="st">&quot;</span> <span class="kw">&amp;&amp;</span> <span class="bu">pwd</span> <span class="va">)</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="va">SCRIPTDIR=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">dirname</span> <span class="va">${SCRIPTPATH})</span><span class="st">&quot;</span></a></code></pre></div>
+<p>Better solution. Also resolves when script is symlink.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="va">SCRIPTPATH=</span><span class="st">&quot;</span><span class="va">${BASH_SOURCE[0]}</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">while</span><span class="bu"> [</span> <span class="ot">-h</span> <span class="st">&quot;</span><span class="va">$SCRIPTPATH</span><span class="st">&quot;</span><span class="bu"> ]</span>; <span class="kw">do</span> <span class="co"># resolve $SOURCE until the file is no longer a symlink</span></a>
+<a class="sourceLine" id="cb4-3" title="3">  <span class="va">SCRIPTDIR=</span><span class="st">&quot;</span><span class="va">$(</span> <span class="bu">cd</span> -P <span class="st">&quot;</span><span class="va">$(</span> <span class="fu">dirname</span> <span class="st">&quot;</span><span class="va">$SCRIPTPATH</span><span class="st">&quot;</span> <span class="va">)</span><span class="st">&quot;</span> <span class="op">&gt;</span>/dev/null <span class="op">2&gt;&amp;1</span> <span class="kw">&amp;&amp;</span> <span class="bu">pwd</span> <span class="va">)</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb4-4" title="4">  <span class="va">SCRIPTPATH=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">readlink</span> <span class="st">&quot;</span><span class="va">$SCRIPTPATH</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb4-5" title="5">  [[ <span class="va">$SCRIPTPATH</span> != <span class="ex">/*</span> ]] <span class="kw">&amp;&amp;</span> <span class="va">SCRIPTPATH=</span><span class="st">&quot;</span><span class="va">$SCRIPTDIR</span><span class="st">/</span><span class="va">$SCRIPTPATH</span><span class="st">&quot;</span> <span class="co"># if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located</span></a>
+<a class="sourceLine" id="cb4-6" title="6"><span class="kw">done</span></a>
+<a class="sourceLine" id="cb4-7" title="7"></a>
+<a class="sourceLine" id="cb4-8" title="8"><span class="va">SCRIPTDIR=</span><span class="st">&quot;</span><span class="va">$(</span> <span class="bu">cd</span> -P <span class="st">&quot;</span><span class="va">$(</span> <span class="fu">dirname</span> <span class="st">&quot;</span><span class="va">$SCRIPTPATH</span><span class="st">&quot;</span> <span class="va">)</span><span class="st">&quot;</span> <span class="op">&gt;</span>/dev/null <span class="op">2&gt;&amp;1</span> <span class="kw">&amp;&amp;</span> <span class="bu">pwd</span> <span class="va">)</span><span class="st">&quot;</span></a></code></pre></div>
+<p>Ref:</p>
+<ul>
+<li><a href="https://stackoverflow.com/a/246128">📄 How can I get the source directory of a Bash script from within the script itself?</a></li>
+</ul>
+<h2 id="best-practices">Best Practices</h2>
+<ul>
+<li><a href="https://kfirlavi.herokuapp.com/blog/2012/11/14/defensive-bash-programming/">📄 Defensive BASH Programming</a></li>
+<li><a href="https://www.tecmint.com/useful-tips-for-writing-bash-scripts-in-linux/">📄 10 Useful Tips for Writing Effective Bash Scripts in Linux</a></li>
 </ul>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
 <li><a href="https://stackoverflow.com/questions/22962591/how-to-prevent-direct-bash-script-execution-and-allow-only-usage-from-other-scri">📄 How to prevent direct bash script execution and allow only usage from other script?</a></li>
+<li><a href="https://stackoverflow.com/a/246128">📄 How can I get the source directory of a Bash script from within the script itself?</a></li>
+<li><a href="https://kfirlavi.herokuapp.com/blog/2012/11/14/defensive-bash-programming/">📄 Defensive BASH Programming</a></li>
+<li><a href="https://www.tecmint.com/useful-tips-for-writing-bash-scripts-in-linux/">📄 10 Useful Tips for Writing Effective Bash Scripts in Linux</a></li>
 </ul>
           </article>
           </div>

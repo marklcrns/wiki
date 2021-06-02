@@ -110,26 +110,6 @@ Ref:
 - [📄 Various options to increment by 1, and performance analysis](https://askubuntu.com/questions/385528/how-to-increment-a-variable-in-bash)
 
 
-## Get Script Paths and Name
-
-```sh
-# Script absolute path
-SCRIPTPATH="$(realpath -s $0)"
-# Script name
-SCRIPTNAME="$(basename ${0})"
-# Script directory
-SCRIPTDIR="$(dirname ${SCRIPTPATH})"
-SCRIPTDIR="$( cd "$( dirname "$0" )" && pwd )"
-SCRIPTDIR="$( cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 ; pwd -P )"
-```
-
-Ref:
-
-- [📄 Reliable way for a Bash script to get the full path to itself](https://stackoverflow.com/a/4774063/11850077)
-- [📄 How to get the source directory of a Bash script from within the script itself?](https://stackoverflow.com/a/246128/11850077)
-- [📄 Get script name in shell script](https://www.golinuxcloud.com/get-script-name-get-script-path-shell-script/)
-
-
 <br>
 
 # Resources
