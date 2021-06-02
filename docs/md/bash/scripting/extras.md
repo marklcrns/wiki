@@ -67,6 +67,7 @@ Ref:
 
 - [📄 Defensive BASH Programming](https://kfirlavi.herokuapp.com/blog/2012/11/14/defensive-bash-programming/)
 - [📄 10 Useful Tips for Writing Effective Bash Scripts in Linux](https://www.tecmint.com/useful-tips-for-writing-bash-scripts-in-linux/)
+- [📄 Shell Style Guide](https://google.github.io/styleguide/shellguide.html)
 
 
 <br>
@@ -77,4 +78,5 @@ Ref:
 - [📄 How can I get the source directory of a Bash script from within the script itself?](https://stackoverflow.com/a/246128)
 - [📄 Defensive BASH Programming](https://kfirlavi.herokuapp.com/blog/2012/11/14/defensive-bash-programming/)
 - [📄 10 Useful Tips for Writing Effective Bash Scripts in Linux](https://www.tecmint.com/useful-tips-for-writing-bash-scripts-in-linux/)
+- [📄 Shell Style Guide](https://google.github.io/styleguide/shellguide.html)
 
