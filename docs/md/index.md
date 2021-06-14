@@ -51,16 +51,13 @@ date: Feb 05, 2020
 - [↪ Chocolately](shell-apps/windows/choco/index)
 - [↪ Mingw-w64](mingw-w64/index)
 
-
 ## Package Managers
 
 - [↪ Node.js and npm](nodejs-npm/index)
 
-
 ## WSL/WSL2
 
 - [↪ WSL/WSL2](wsl/index)
-
 
 ## Desktop Applications
 

@@ -172,24 +172,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 id="debian-based">Debian Based</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt install mingw-w64</a></code></pre></div>
 <h2 id="usage">Usage</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># 64-bit</span></a>
+<p>For 64-bit system</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># compile and link</span></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="ex">x86_64-w64-mingw32-g++</span> -static-libgcc -static-libstdc++ main.cpp -o target.exe</a>
-<a class="sourceLine" id="cb2-3" title="3"></a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="co"># 32-bit</span></a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="ex">i686-w64-mingw32-g++</span> -static-libgcc -static-libstdc++ main.cpp -o target.exe</a></code></pre></div>
+<a class="sourceLine" id="cb2-3" title="3"><span class="co"># compile and link separately</span></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="ex">x86_64-w64-mingw32-g++</span> -c main.cpp</a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="ex">x86_64-w64-mingw32-g++</span> -static-libgcc -static-libstdc++ -g main.o -o target.exe</a></code></pre></div>
+<p>For 32-bit system</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># compile and link</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="ex">i686-w64-mingw32-g++</span> -static-libgcc -static-libstdc++ main.cpp -o target.exe</a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="co"># compile and link separately</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="ex">i686-w64-mingw32-g++</span> -c main.cpp</a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="ex">i686-w64-mingw32-g++</span> -static-libgcc -static-libstdc++ -g main.o -o target.exe</a></code></pre></div>
 <blockquote>
-<p>NOTE: <code>-static-libgcc -static-libstdc++</code> compiler options to link <code>libgcc</code> and <code>libstdc++</code> shared library. Fixes missing library errors.</p>
+<p>NOTE: <code>-static-libgcc -static-libstdc++</code> compiler options to link the C and C++ standard libraries statically. Fixes missing library errors.</p>
 </blockquote>
 <p>Ref:</p>
 <ul>
+<li><a href="https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html">📄 Compiling, Linking and Building C/C++ Applications</a></li>
 <li><a href="https://stackoverflow.com/a/47061145">📄 How to compile for Windows on Linux with gcc/g++?</a></li>
+<li><a href="https://stackoverflow.com/a/21077837">📄 libstdc++-6.dll not found</a></li>
 <li><a href="https://stackoverflow.com/a/4703059">📄 The program can’t start because libgcc_s_dw2-1.dll is missing</a></li>
 </ul>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
 <li><a href="http://mingw-w64.org/doku.php/start">📄 mingw-w64</a></li>
+<li><a href="https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html">📄 Compiling, Linking and Building C/C++ Applications</a></li>
 <li><a href="https://stackoverflow.com/a/47061145">📄 How to compile for Windows on Linux with gcc/g++?</a></li>
+<li><a href="https://stackoverflow.com/a/21077837">📄 libstdc++-6.dll not found</a></li>
 <li><a href="https://stackoverflow.com/a/4703059">📄 The program can’t start because libgcc_s_dw2-1.dll is missing</a></li>
 </ul>
           </article>
