@@ -7,7 +7,7 @@ date: 2020-08-29
 
 # Alacritty Installation
 
-## Linus
+## Linux
 
 ### Ubuntu
 
