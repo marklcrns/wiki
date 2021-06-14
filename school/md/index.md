@@ -43,3 +43,12 @@ Total Units Enrolled: 15 - 5 = **10** units
 
 - [↪ Winter 2021](winter-2021/index)
 
+
+## Summer 2021 (SDCCD)
+
+**Start/End Date:** 2021-06-14 - 2020-08-07
+
+Total Units Enrolled: **6** units
+
+- [↪ Summer 2021](summer-2021/index)
+
