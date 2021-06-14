@@ -37,25 +37,27 @@ Ref:
 
 ```sh
 # Script absolute path
-SCRIPTPATH="$(realpath -s $0)"
+SCRIPT_PATH="$(realpath -s $0)"
 # Script name
-SCRIPTNAME="$(basename ${0})"
+SCRIPT_NAME="$(basename ${0})"
 # Script directory
-SCRIPTDIR="$( cd "$( dirname "$0" )" && pwd )"
-SCRIPTDIR="$(dirname ${SCRIPTPATH})"
+SCRIPT_DIR="$( cd "$( dirname "$0" )" && pwd )"
+SCRIPT_DIR="$(dirname ${SCRIPT_PATH})"
 ```
 
 Better solution. Also resolves when script is symlink.
 
 ```sh
-SCRIPTPATH="${BASH_SOURCE[0]}"
-while [ -h "$SCRIPTPATH" ]; do # resolve $SOURCE until the file is no longer a symlink
-  SCRIPTDIR="$( cd -P "$( dirname "$SCRIPTPATH" )" >/dev/null 2>&1 && pwd )"
-  SCRIPTPATH="$(readlink "$SCRIPTPATH")"
-  [[ $SCRIPTPATH != /* ]] && SCRIPTPATH="$SCRIPTDIR/$SCRIPTPATH" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+SCRIPT_PATH="${BASH_SOURCE[0]}"
+while [ -h "$SCRIPT_PATH" ]; do
+  SCRIPT_DIR="$(cd -P "$(dirname "$SCRIPT_PATH")" >/dev/null 2>&1 && pwd)"
+  SCRIPT_PATH="$(readlink "$SCRIPT_PATH")"
+  [[ $SCRIPT_PATH != /* ]] && SCRIPT_PATH="$SCRIPT_DIR/$SCRIPT_PATH"
 done
+SCRIPT_DIR="$(cd -P "$(dirname "$SCRIPT_PATH")" >/dev/null 2>&1 && pwd)"
 
-SCRIPTDIR="$( cd -P "$( dirname "$SCRIPTPATH" )" >/dev/null 2>&1 && pwd )"
+readonly SCRIPT_PATH
+readonly SCRIPT_DIR
 ```
 
 Ref:

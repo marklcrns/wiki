@@ -17,6 +17,7 @@ summary: Bash scripting wiki index
 - [↪ Output Streams](out-streams)
 - [↪ String](string)
 - [↪ Variable](variable)
+- [↪ Set options](set)
 
 ## Misc
 
