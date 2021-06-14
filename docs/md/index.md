@@ -49,6 +49,8 @@ date: Feb 05, 2020
 ### Windows
 
 - [↪ Chocolately](shell-apps/windows/choco/index)
+- [↪ Mingw-w64](mingw-w64/index)
+
 
 ## Package Managers
 
