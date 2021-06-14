@@ -12,7 +12,7 @@ date: Aug 29, 2020
 
 **Start/End Date:** 2020-02-03 - 2020-06-01
 
-Total Units Enrolled: 15 - 3 = **12** units
+Total Units Enrolled: ~~15~~ **12** units
 
 - [↪ Spring 2020 Classes](spring-2020/index)
 
@@ -39,7 +39,7 @@ Total Units Enrolled: **19** units
 
 **Start/End Date:** 2021-01-04 - 2021-03-20
 
-Total Units Enrolled: 15 - 5 = **10** units
+Total Units Enrolled: ~~15~~ **10** units
 
 - [↪ Winter 2021](winter-2021/index)
 
