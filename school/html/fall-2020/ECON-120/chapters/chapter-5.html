@@ -11,6 +11,13 @@
 
     <title>Chapter 5</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,12 +88,16 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-5-measuring-a-nations-production-and-income">Chapter 5: Measuring a Nation’s Production and Income</a><ul>
-          <li><a href="#the-flip-sides-of-macroeconomic-activity-production-and-income">5.1 The Flip Sides of Macroeconomic Activity: Production and Income</a><ul>
+          <li><a href="#chapter-5-measuring-a-nations-production-and-income">Chapter 5: Measuring a Nation’s Production and Income</a>
+          <ul>
+          <li><a href="#the-flip-sides-of-macroeconomic-activity-production-and-income">5.1 The Flip Sides of Macroeconomic Activity: Production and Income</a>
+          <ul>
           <li><a href="#the-circular-flow-of-production-and-income">The Circular Flow of Production and Income</a></li>
           </ul></li>
-          <li><a href="#the-production-approach-measuring-a-nations-macroeconomic-activity-using-gross-domestic-product">5.2 The Production Approach: Measuring a Nation’s Macroeconomic Activity Using Gross Domestic Product</a><ul>
-          <li><a href="#the-components-of-gdp">5.2.1 The Components of GDP</a><ul>
+          <li><a href="#the-production-approach-measuring-a-nations-macroeconomic-activity-using-gross-domestic-product">5.2 The Production Approach: Measuring a Nation’s Macroeconomic Activity Using Gross Domestic Product</a>
+          <ul>
+          <li><a href="#the-components-of-gdp">5.2.1 The Components of GDP</a>
+          <ul>
           <li><a href="#consumption-expenditures">Consumption Expenditures</a></li>
           <li><a href="#private-investment-expenditures">Private Investment Expenditures</a></li>
           <li><a href="#government-purchases">Government Purchases</a></li>
@@ -79,18 +105,22 @@
           </ul></li>
           <li><a href="#putting-it-all-together-the-gdp-equation">5.2.2 Putting It All Together: The GDP Equation</a></li>
           </ul></li>
-          <li><a href="#the-income-approach-measuring-a-nations-macroeconomic-activity-using-national-income">5.3 The Income Approach: Measuring a Nation’s Macroeconomic Activity Using National Income</a><ul>
+          <li><a href="#the-income-approach-measuring-a-nations-macroeconomic-activity-using-national-income">5.3 The Income Approach: Measuring a Nation’s Macroeconomic Activity Using National Income</a>
+          <ul>
           <li><a href="#measuring-national-income">5.3.1 Measuring National Income</a></li>
           <li><a href="#measuring-national-income-through-value-added">5.3.2 Measuring National Income through Value Added</a></li>
           <li><a href="#an-expanded-circular-flow">5.3.3 An Expanded Circular Flow</a></li>
           </ul></li>
-          <li><a href="#a-closer-examination-of-nominal-and-real-gdp">5.4 A Closer Examination of Nominal and Real GDP</a><ul>
+          <li><a href="#a-closer-examination-of-nominal-and-real-gdp">5.4 A Closer Examination of Nominal and Real GDP</a>
+          <ul>
           <li><a href="#measuring-real-versus-nominal-gdp">5.4.1 Measuring Real versus Nominal GDP</a></li>
           <li><a href="#how-to-use-the-gdp-deflator">5.4.2 How to Use the GDP Deflator</a></li>
           </ul></li>
           <li><a href="#fluctuations-in-gdp">5.5 Fluctuations in GDP</a></li>
-          <li><a href="#gdp-as-a-measure-of-welfare">5.6 GDP as a Measure of Welfare</a><ul>
-          <li><a href="#shortcomings-of-gdp-as-a-measure-of-welfare">5.6.1 Shortcomings of GDP as a Measure of Welfare</a><ul>
+          <li><a href="#gdp-as-a-measure-of-welfare">5.6 GDP as a Measure of Welfare</a>
+          <ul>
+          <li><a href="#shortcomings-of-gdp-as-a-measure-of-welfare">5.6.1 Shortcomings of GDP as a Measure of Welfare</a>
+          <ul>
           <li><a href="#housework-and-childcare">Housework And Childcare</a></li>
           <li><a href="#leisure">Leisure</a></li>
           <li><a href="#underground-economy">Underground Economy</a></li>
@@ -142,7 +172,7 @@
 <h3 id="the-circular-flow-of-production-and-income">The Circular Flow of Production and Income</h3>
 <p>Let’s begin with a simple diagram known as the <em>circular flow</em>, shown in Figure 5.1. We start with a very simple economy that does not have a government or a foreign sector. Households and firms make transactions in two markets known as <em>factor markets</em> and <em>product markets</em>. In factor, or input, markets, households supply labor to firms. Households are also the ultimate owners of firms, as well as of all the resources firms use in their production, which we call <em>capital</em>. Consequently, we can think of households as providing capital to firms–land, buildings, and equipment–to produce output. Product, or output, markets are markets in which firms sell goods and services to consumers.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-5/figure-5.1.png" alt="Figure 5.1 The Circulatr Flow of Production and Income" /><figcaption>Figure 5.1 The Circulatr Flow of Production and Income</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-5/figure-5.1.png" alt="Figure 5.1 The Circulatr Flow of Production and Income" /><figcaption aria-hidden="true">Figure 5.1 The Circulatr Flow of Production and Income</figcaption>
 </figure>
 <p>The point of the circular flow diagram is simple and fundamental: Production generates income. In factor markets, when households supply labor and capital to firms, they are compensated by the firms. They earn wages for their work, and they earn interest, dividends, and rents on the capital they supply to the firms. The households then use their income to purchase goods and services in the product markets. The firm uses the revenues it receives from the sale of its products to pay for the factors of production (land, labor, and capital).</p>
 <h2 id="the-production-approach-measuring-a-nations-macroeconomic-activity-using-gross-domestic-product">5.2 The Production Approach: Measuring a Nation’s Macroeconomic Activity Using Gross Domestic Product</h2>
@@ -153,13 +183,13 @@
 </ul>
 <p>All the words in the GDP definition are important, so let’s analyze them</p>
 <p><em>Total market</em> value means we take the quantity of goods produced, multiply them by their respective prices, and then add up the totals. If an economy produced two cars at $25,000 per car and three computers at $2,000 per computer, the total value of these goods will be</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 2 \text{ cars } \times \$25,000 \text{ per car }          &amp; = \$50,000 \\
 3 \text{ computers } \times \$2,000 \text{ per computer } &amp; = \$\:\:6,000 \\
                                                           &amp; = \$56,000
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>Final goods and services in the GDP definition means those goods and services that are sold to ultimate, or final, purchasers. For example, the two cars that were produced would be final goods if they were sold to households or to a business. However, to produce the cars the automobile manufacturer bought steel that went into the body of the cars, and we do not count this steel as a final good or service in GDP. Steel is an example of an intermediate good, one that is used in the production process. An <strong>intermediate good</strong> is not considered a final good or service.</p>
 <p><a name="intermediate-good-term"><strong>Intermediate good</strong></a></p>
 <ul>
@@ -168,14 +198,14 @@
 <p>The reason we do not count intermediate goods as final goods is to avoid double-counting. The price of the car already reflects the price of the steel contained in it. We do not want to count the steel twice.</p>
 <p>The final words in our GDP definition are in <em>a given year</em>. GDP is expressed as a rate of production–that is, as “X” amount of dollars per year. In 2014, for example, GDP in the United States was $17,420 billion. Goods produced in prior years, such as cars or houses, are not included in GDP for a given year, even if one consumer sells a house or car to another in that year. Only newly produced products are included in GDP.</p>
 <p>Because we measure GDP using the current prices for goods and services, GDP will increase if prices increase, even if the physical amount of goods that are produced remains the same. Suppose that next year the economy again produces two cars and three computers, but all the prices in the economy double: The price of cars is $50,000, and the price of computers is $4,000. GDP will also be twice as high, or $112,000, even though the quantity produced is the same as during the prior year:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 2 \text{ cars } \times \$50,000 \text{ per car } &amp;= \$100,000  \\
 + \\
 3 \text{ computers } \times \$4,000 \text{ per computer } &amp;= \$\:\:12,000  \\
  &amp;= \$112,000
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>But to say that GDP has doubled would be misleading because exactly the same goods were produced. To avoid this problem, let’s apply the real-nominal principle, one of our five basic principles of economics.</p>
 <p><a name="real-nominal-principle-term"><strong>Real-nominal principle</strong></a></p>
 <ul>
@@ -185,18 +215,18 @@
 <p><a name="real-gdp-term"><strong>Real GDP</strong></a> - A measure of GDP that controls for changes in price.<br> <a name="nominal-gdp-term"><strong>Nominal GDP</strong></a> - The value of GDP in current dollars.<br></p>
 <p>To explain the concept of real GDP, we first need to look at a simple example. Suppose an economy produces a single good: computers. In year 1, 10 computers were produced, and each sold for $2,000. In year 2, 12 computers were produced, and each sold for $2,100. Nominal GDP is $20,000 in year 1 and $25,200 in year 2; it has increased by a factor of 1.26 or 26 percent. However, we can also measure real GDP by using year 1 prices as a measure of what was produced in year 1 and what was produced in year 2.</p>
 <p>In year 1, real GDP is</p>
-<p><span class="math display">\[
+<p><span class="math display">
 10 \text{ computers } \times \$2,000 \text{ per computer } = \$20,000
-\]</span></p>
+</span></p>
 <p>In year 2, real GDP (in year 1 terms) is</p>
-<p><span class="math display">\[
+<p><span class="math display">
 12 \text{ computers } \times \$2,000 \text{ per computer } = \$24,000
-\]</span></p>
+</span></p>
 <p>Real GDP in year 2 is still greater than real GDP in year 1, now by a factor of 1.2, or 20 percent. The key idea is that we construct a measure using the same prices for both years and thereby take price changes into account.</p>
 <p>Figure 5.2 plots real GDP for the U.S. economy for the years 1947 through 2013. The graph shows that real GDP has grown substantially over this period. This is what economists call <strong>economic growth</strong>–sustained increases in the real GDP of an economy over a long period of time.</p>
 <p><a name="economic-growth-term"><strong>Economic growth</strong></a> - Sustained increase in the real GDP of an economy over a long period of time.<br></p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-5/figure-5.2.png" alt="Figure 5.2 U.S. Real GDP, 1947-2017" /><figcaption>Figure 5.2 U.S. Real GDP, 1947-2017</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-5/figure-5.2.png" alt="Figure 5.2 U.S. Real GDP, 1947-2017" /><figcaption aria-hidden="true">Figure 5.2 U.S. Real GDP, 1947-2017</figcaption>
 </figure>
 <h3 id="the-components-of-gdp">5.2.1 The Components of GDP</h3>
 <p>Economists divide GDP into four broad categories, each corresponding to different types of purchases represented in GDP:</p>
@@ -245,15 +275,15 @@
 <p>When we buy more goods from abroad than we sell, we have a <strong>trade deficit</strong>. A trade surplus occurs when our exports exceed our imports. Figure 5.3 shows the U.S. <strong>trade surplus</strong> as a share of GDP from 1960 to 2017. Although at times the United States has had a small trade surplus, it has generally run a trade deficit. In recent years, the trade deficit has increased and has fluctuated between 2 and 6 percent of GDP.</p>
 <p><a name="trade-deficit-term"><strong>Trade deficit</strong></a> - the excess of imports over exports<br> <a name="trade-surplus-term"><strong>Trade surplus</strong></a> - The excess of exports over imports<br></p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-5/figure-5.3.png" alt="Figure 5.3 U.S. Trade Balance as a Share of GDP, 1960-2017" /><figcaption>Figure 5.3 U.S. Trade Balance as a Share of GDP, 1960-2017</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-5/figure-5.3.png" alt="Figure 5.3 U.S. Trade Balance as a Share of GDP, 1960-2017" /><figcaption aria-hidden="true">Figure 5.3 U.S. Trade Balance as a Share of GDP, 1960-2017</figcaption>
 </figure>
 <h3 id="putting-it-all-together-the-gdp-equation">5.2.2 Putting It All Together: The GDP Equation</h3>
 <p>We can summarize our discussion of who purchases GDP with a simple equation that combines the four components of GDP:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 Y = C + I + G + NX
-\]</span></p>
+</span></p>
 <p>where</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 Y  &amp;= \text{GDP} \\
 C  &amp;= \text{Consumption} \\
@@ -261,7 +291,7 @@ I  &amp;= \text{Investment} \\
 G  &amp;= \text{Government purchases} \\
 NX &amp;= \text{Net exports}
 \end{aligned}
-\]</span></p>
+</span></p>
 <h2 id="the-income-approach-measuring-a-nations-macroeconomic-activity-using-national-income">5.3 The Income Approach: Measuring a Nation’s Macroeconomic Activity Using National Income</h2>
 <p>Recall from the circular flow that one person’s production ends up being another person’s income. Income is the flip side of our macroeconomic coin. As a result, in addition to measuring a nation’s activity by measuring production, we can also gauge it by measuring a nation’s income. The total income earned by U.S. residents working in the United States and abroad is called <strong>national income</strong>.</p>
 <p><a name="national-income-term"><strong>National income</strong></a></p>
@@ -321,7 +351,7 @@ name="personal-disposable-income-term"><strong>Personal disposable income</stron
 </center>
 <h3 id="an-expanded-circular-flow">5.3.3 An Expanded Circular Flow</h3>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-5/figure-5.4.png" alt="Figure 5.4 The Circular Flow with Government and the Foreign Sector" /><figcaption>Figure 5.4 The Circular Flow with Government and the Foreign Sector</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-5/figure-5.4.png" alt="Figure 5.4 The Circular Flow with Government and the Foreign Sector" /><figcaption aria-hidden="true">Figure 5.4 The Circular Flow with Government and the Foreign Sector</figcaption>
 </figure>
 <h2 id="a-closer-examination-of-nominal-and-real-gdp">5.4 A Closer Examination of Nominal and Real GDP</h2>
 <h3 id="measuring-real-versus-nominal-gdp">5.4.1 Measuring Real versus Nominal GDP</h3>
@@ -366,43 +396,43 @@ name="personal-disposable-income-term"><strong>Personal disposable income</stron
 </table>
 </center>
 <p>Let’s first calculate nominal GDP for this economy in each year. Nominal GDP is the total market value of goods and services produced in each year. Using the data in the table, we can see that nominal GDP for the year 2011 is</p>
-<p><span class="math display">\[
+<p><span class="math display">
 (4 \text{ cars } \times \$10,000) + (1 \text{ computers } \times \$5,000) = \$45,000
-\]</span></p>
+</span></p>
 <p>Similarly, nominal GDP for the year 2012 is</p>
-<p><span class="math display">\[
+<p><span class="math display">
 (5 \text{ cars } \times \$12,000) + (3 \text{ computers } \times \$5,000) = \$75,000
-\]</span></p>
+</span></p>
 <p>Now we find real GDP. To compute real GDP, we calculate GDP using constant prices. What prices should we use? For the moment, let’s use the prices for the year 2011. Because we are using 2011 prices, real GDP and nominal GDP for 2011 are both equal to $45,000. But for 2012, they are different. In 2012, real GDP is</p>
-<p><span class="math display">\[
+<p><span class="math display">
 (5 \text{ cars } \times \$10,000) +(3 \text{ computers } \times \$5,000) =
 \$65,000
-\]</span></p>
+</span></p>
 <p>Note that real GDP for 2012, which is $65,000, is less than nominal GDP for 2012, which is $75,000. The reason real GDP is less than nominal GDP here is that prices of cars rose by $2,000 between 2011 and 2012, and we are measuring GDP using 2011 prices. We can measure real GDP for any other year simply by calculating GDP using constant prices.</p>
 <p>We now calculate the growth in real GDP for this economy between 2011 and 2012. Because real GDP was $45,000 in 2011 and $65,000 in 2012, real GDP grew by $20,000. In percentage terms, this is a $20,000 increase from the initial level of $45,000 or</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ Percentage growth in real GDP } = \frac{\$20,000}{\$45,000} = .444
-\]</span></p>
+</span></p>
 <p>which equals 44.4 percent. This percentage is an average of the growth rates for both goods–cars and computers.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-5/figure-5.5.png" alt="Figure 5.5 U.S. Nominal and Real GDP, 1950-2017" /><figcaption>Figure 5.5 U.S. Nominal and Real GDP, 1950-2017</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-5/figure-5.5.png" alt="Figure 5.5 U.S. Nominal and Real GDP, 1950-2017" /><figcaption aria-hidden="true">Figure 5.5 U.S. Nominal and Real GDP, 1950-2017</figcaption>
 </figure>
 <h3 id="how-to-use-the-gdp-deflator">5.4.2 How to Use the GDP Deflator</h3>
 <p><a name="gdp-deflator-term"><strong>GDP deflator</strong></a></p>
 <ul>
 <li>An index that measures how the prices of goods and services included in GDP change over time.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ GDP Deflator } = \frac{\text{Nominal GDP}}{\text{Real GDP}} \times 100
-\]</span></p>
+</span></p>
 <p>Using this formula, we find that the value of the GDP deflator for 2012 is</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{\$75,000}{\$65,000} \times 100 = 1.15 \times 100 = 115
-\]</span></p>
+</span></p>
 <p>Because the value of the GDP deflator is 115 in 2012 and was 100 in the base year of 2011, this means prices rose by 15 percent between the two years:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{115 - 100}{100} = \frac{15}{100} = 0.15
-\]</span></p>
+</span></p>
 <p>Note that this 15 percent is a weighted average of the price changes for the two goods–cars and computers.</p>
 <p>Until 1996, the Commerce Department, which produces the GDP figures, used these formulas to calculate real GDP and measure changes in prices. Economists at the department chose a base year and measured real GDP by using the prices in that base year. They also calculated the GDP deflator, just as we did, by taking the ratio of nominal GDP to real GDP. Today, the Commerce Department calculates real GDP and the price index for real GDP using a more complicated method. In our example, we measured real GDP using 2011 prices. But we could have also measured real GDP using prices from 2012. If we did, we would have come up with slightly different numbers both for the increase in prices between the two years and for the increase in real GDP. To avoid this problem, the Commerce Department now uses a <strong>chain-weighted index</strong>, which is a method for calculating price changes that takes an average of price changes using base years from consecutive years (i.e., 2011 and 2012 in our example). If you look online or at the data produced by the Commerce Department, you will see real GDP measured in chained dollars and a chain-type price index for GDP.</p>
 <p><a name="chain-weighted-index-term"><strong>Chain-weighted index</strong></a></p>
@@ -413,7 +443,7 @@ name="personal-disposable-income-term"><strong>Personal disposable income</stron
 <p>As we have discussed, real GDP does not always grow smoothly–sometimes it collapses suddenly, and the result is an economic downturn. We call such fluctuations business cycles. Let’s look at an example of a business cycle from the late 1980s and early 1990s. Figure 5.6 plots real GDP for the United States from 2007 to 2009. Notice that in mid-1990, real GDP begins to fall. A recession is a period when real GDP falls for 6 or more consecutive months. Economists talk more in terms of quarters of the year–consecutive 3-month periods–than in terms of months. So, they would say that a recession occurs when real GDP falls for two consecutive quarters. The date at which the recession starts–that is, when output starts to decline–is called the peak. The date at which it ends–that is, when output starts to increase again–is called the trough. In Figure 5.6, we see the peak and trough of the recession. After a trough, the economy enters a recovery period, or period of expansion.</p>
 <p><a name="recession-term"><strong>Recession</strong></a> - Commonly defined as 6 consecutive months of declining real GDP.<br> <a name="peak-term"><strong>Peak</strong></a> - The date at which a recession starts.<br> <a name="expansion-term"><strong>Expansion</strong></a> - The period after a trough in the business cycle during which the economy recovers.<br></p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-5/figure-5.6.png" alt="Figure 5.6 The 2007-2009 Recession" /><figcaption>Figure 5.6 The 2007-2009 Recession</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-5/figure-5.6.png" alt="Figure 5.6 The 2007-2009 Recession" /><figcaption aria-hidden="true">Figure 5.6 The 2007-2009 Recession</figcaption>
 </figure>
 <p><a name="depression-term"><strong>Depression</strong></a></p>
 <ul>
@@ -435,13 +465,13 @@ name="personal-disposable-income-term"><strong>Personal disposable income</stron
 <li><em>Gross domestic product</em> (GDP) is the market value of all final goods and services produced in a given year.</li>
 <li>GDP consists of four components: consumption, investment, government purchases, and net exports. The following equation combines these components:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 Y = C + I + G + N + X
-\]</span></p>
+</span></p>
 <p>The GDP deflator is an index that measures how the prices of goods and services included in GDP change over time. The following equation helps us find the GDP deflator:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ GDP Deflator } = \frac{Nominal GDP}{Real GDP} \times 100
-\]</span></p>
+</span></p>
 <ol start="4" type="1">
 <li><em>National income</em> is obtained from GDP by adding the net income U.S. individuals and firms earn from abroad, then subtracting depreciation.</li>
 <li><em>Real GDP</em> is calculated by using constant prices. The Commerce Department now uses methods that take an average using base years from neighboring years.</li>

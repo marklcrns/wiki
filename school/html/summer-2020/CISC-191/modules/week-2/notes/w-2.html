@@ -12,6 +12,13 @@
 
     <title>Week 2</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -23,26 +30,28 @@
     <link href="../../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -51,9 +60,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -85,7 +94,22 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
     </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -130,26 +154,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#week-2-object-oriented-programming">Week 2: Object Oriented Programming</a><ul>
-          <li><a href="#uml">UML</a><ul>
+          <li><a href="#week-2-object-oriented-programming">Week 2: Object Oriented Programming</a>
+          <ul>
+          <li><a href="#uml">UML</a>
+          <ul>
           <li><a href="#sign-indicators">Sign Indicators</a></li>
           </ul></li>
-          <li><a href="#objects-and-classes">Objects and Classes</a><ul>
+          <li><a href="#objects-and-classes">Objects and Classes</a>
+          <ul>
           <li><a href="#modifier-scope">Modifier Scope</a></li>
           </ul></li>
-          <li><a href="#object-oriented-thinking">Object-Oriented Thinking</a><ul>
-          <li><a href="#wrapper-classes">Wrapper Classes</a><ul>
+          <li><a href="#object-oriented-thinking">Object-Oriented Thinking</a>
+          <ul>
+          <li><a href="#wrapper-classes">Wrapper Classes</a>
+          <ul>
           <li><a href="#numeric-wrapper-class-constructors">Numeric Wrapper Class Constructors</a></li>
           <li><a href="#conversion-methods">Conversion Methods</a></li>
           </ul></li>
-          <li><a href="#the-string-class">The String Class</a><ul>
+          <li><a href="#the-string-class">The String Class</a>
+          <ul>
           <li><a href="#interned-strings">Interned Strings</a></li>
           <li><a href="#stringbuilder-and-stringbuffer">StringBuilder and StringBuffer</a></li>
           </ul></li>
           <li><a href="#regular-expressions">Regular Expressions</a></li>
           </ul></li>
-          <li><a href="#inheritance-and-polymorphism">Inheritance and Polymorphism</a><ul>
-          <li><a href="#superclasses-and-subclasses">Superclasses and Subclasses</a><ul>
+          <li><a href="#inheritance-and-polymorphism">Inheritance and Polymorphism</a>
+          <ul>
+          <li><a href="#superclasses-and-subclasses">Superclasses and Subclasses</a>
+          <ul>
           <li><a href="#are-superclasss-constructor-inherited">Are Superclass’s Constructor Inherited?</a></li>
           <li><a href="#superclasss-constructor-is-always-invoked">Superclass’s Constructor Is Always Invoked</a></li>
           <li><a href="#overriding-methods-in-the-superclass">Overriding Methods in the Superclass</a></li>
@@ -161,7 +193,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li><a href="#why-casting-is-necessary">Why Casting Is Necessary?</a></li>
           <li><a href="#the-instanceof-operator">The instanceof Operator</a></li>
           <li><a href="#the-equals-method">The equals Method</a></li>
-          <li><a href="#the-arraylist-class">The ArrayList Class</a><ul>
+          <li><a href="#the-arraylist-class">The ArrayList Class</a>
+          <ul>
           <li><a href="#array-lists-fromto-arrays">Array Lists from/to Arrays</a></li>
           <li><a href="#max-and-min-in-an-array-list">max and min in an Array List</a></li>
           <li><a href="#shuffling-an-array-list">Shuffling an Array List</a></li>
@@ -170,11 +203,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li><a href="#a-subclass-cannot-weaken-the-accessibility">A Subclass Cannot Weaken the Accessibility</a></li>
           <li><a href="#the-final-modifier">The final Modifier</a></li>
           </ul></li>
-          <li><a href="#exceptions-handling-and-text-io">Exceptions Handling and Text IO</a><ul>
+          <li><a href="#exceptions-handling-and-text-io">Exceptions Handling and Text IO</a>
+          <ul>
           <li><a href="#system-errors">System Errors</a></li>
           <li><a href="#exceptions">Exceptions</a></li>
           <li><a href="#runtime-exceptions">Runtime Exceptions</a></li>
-          <li><a href="#checked-exceptions-vs.-unchecked-exceptions">Checked Exceptions vs. Unchecked Exceptions</a><ul>
+          <li><a href="#checked-exceptions-vs.-unchecked-exceptions">Checked Exceptions vs. Unchecked Exceptions</a>
+          <ul>
           <li><a href="#unchecked-exceptions">Unchecked Exceptions</a></li>
           </ul></li>
           <li><a href="#declaring-exceptions">Declaring Exceptions</a></li>
@@ -187,65 +222,79 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li><a href="#when-to-throw-exceptions">When to Throw Exceptions</a></li>
           <li><a href="#when-to-use-exceptions">When to Use Exceptions</a></li>
           <li><a href="#defining-custom-exception-classes">Defining Custom Exception Classes</a></li>
-          <li><a href="#assertions">Assertions</a><ul>
+          <li><a href="#assertions">Assertions</a>
+          <ul>
           <li><a href="#executing-assertions">Executing Assertions</a></li>
           <li><a href="#running-programs-with-assertions">Running Programs with Assertions</a></li>
           <li><a href="#using-exception-handing-or-assertions">Using Exception Handing or Assertions</a></li>
           </ul></li>
           </ul></li>
-          <li><a href="#objects-introduction">7.1 Objects: Introduction</a><ul>
+          <li><a href="#objects-introduction">7.1 Objects: Introduction</a>
+          <ul>
           <li><a href="#abstraction-or-information-hiding">Abstraction or Information hiding</a></li>
           </ul></li>
           <li><a href="#defining-a-class">7.3 Defining a class</a></li>
-          <li><a href="#mutators-accessors-and-private-helpers">7.4 Mutators, Accessors, and Private Helpers</a><ul>
+          <li><a href="#mutators-accessors-and-private-helpers">7.4 Mutators, Accessors, and Private Helpers</a>
+          <ul>
           <li><a href="#mutators-and-accessors">Mutators and accessors</a></li>
           </ul></li>
           <li><a href="#initialization-and-constructors">7.5 Initialization and Constructors</a></li>
-          <li><a href="#choosing-classes-to-create">7.6 Choosing Classes to Create</a><ul>
+          <li><a href="#choosing-classes-to-create">7.6 Choosing Classes to Create</a>
+          <ul>
           <li><a href="#decomposing-into-classes">Decomposing Into Classes</a></li>
           </ul></li>
           <li><a href="#defining-main-in-a-programmer-defined-class">7.7 Defining main() in a Programmer-Defined Class</a></li>
-          <li><a href="#unit-testing-classes">Unit testing (classes)</a><ul>
+          <li><a href="#unit-testing-classes">Unit testing (classes)</a>
+          <ul>
           <li><a href="#testbenches">Testbenches</a></li>
           <li><a href="#regression-testing">Regression Testing</a></li>
           <li><a href="#erroneous-unit-tests">Erroneous Unit Tests</a></li>
           </ul></li>
-          <li><a href="#objects-and-references">7.10 Objects and References</a><ul>
+          <li><a href="#objects-and-references">7.10 Objects and References</a>
+          <ul>
           <li><a href="#references">References</a></li>
           </ul></li>
           <li><a href="#the-this-implicit-parameter">7.11 The ‘this’ Implicit Parameter</a></li>
-          <li><a href="#primitive-and-reference-types">7.12 Primitive and Reference Types</a><ul>
+          <li><a href="#primitive-and-reference-types">7.12 Primitive and Reference Types</a>
+          <ul>
           <li><a href="#wrapper-classes-1">Wrapper classes</a></li>
           <li><a href="#limits-on-initialization-values">Limits on Initialization Values</a></li>
           <li><a href="#comparing-wrapper-class-objects">Comparing Wrapper Class Objects</a></li>
           </ul></li>
-          <li><a href="#java-documentation-for-classes">7.17 Java Documentation for Classes</a><ul>
+          <li><a href="#java-documentation-for-classes">7.17 Java Documentation for Classes</a>
+          <ul>
           <li><a href="#common-block-tags-used-in-javadoc-comments">Common Block Tags Used in Javadoc Comments</a></li>
           </ul></li>
           <li><a href="#parameters-of-reference-types">7.18 Parameters of Reference Types</a></li>
-          <li><a href="#static-fields-and-methods">7.19 Static fields and methods</a><ul>
+          <li><a href="#static-fields-and-methods">7.19 Static fields and methods</a>
+          <ul>
           <li><a href="#static-fields">Static fields</a></li>
           <li><a href="#static-member-methods">Static Member Methods</a></li>
           </ul></li>
-          <li><a href="#using-packages">7.20 Using Packages</a><ul>
+          <li><a href="#using-packages">7.20 Using Packages</a>
+          <ul>
           <li><a href="#built-in-java-packages">Built-in Java Packages</a></li>
           <li><a href="#using-package-members-in-a-program">Using Package Members in a Program</a></li>
           </ul></li>
-          <li><a href="#access-by-members-of-derived-classes">10.2 Access by Members of Derived Classes</a><ul>
+          <li><a href="#access-by-members-of-derived-classes">10.2 Access by Members of Derived Classes</a>
+          <ul>
           <li><a href="#class-definitions">Class definitions</a></li>
           </ul></li>
-          <li><a href="#overriding-member-methods">10.3 Overriding Member Methods</a><ul>
+          <li><a href="#overriding-member-methods">10.3 Overriding Member Methods</a>
+          <ul>
           <li><a href="#overriding">Overriding</a></li>
           <li><a href="#calling-a-base-class-method">Calling a base class method</a></li>
           </ul></li>
           <li><a href="#polymorphism-1">10.5 Polymorphism</a></li>
           <li><a href="#arraylists-of-objects">ArrayLists of Objects</a></li>
           <li><a href="#abstract-classes-introduction-generic">10.7 Abstract classes: Introduction (generic)</a></li>
-          <li><a href="#abstract-classes">10.8 Abstract classes</a><ul>
+          <li><a href="#abstract-classes">10.8 Abstract classes</a>
+          <ul>
           <li><a href="#abstract-and-concrete-classes">Abstract and concrete classes</a></li>
           </ul></li>
           <li><a href="#is-a-versus-has-a-relationships">10.9 Is-a versus has-a relationships</a></li>
-          <li><a href="#uml-1">10.10 UML</a><ul>
+          <li><a href="#uml-1">10.10 UML</a>
+          <ul>
           <li><a href="#uml-class-diagrams">UML class diagrams</a></li>
           <li><a href="#uml-for-inheritance">UML for inheritance</a></li>
           </ul></li>
@@ -347,10 +396,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <h4 id="numeric-wrapper-class-constructors">Numeric Wrapper Class Constructors</h4>
 <p>You can construct a wrapper object either from a primitive data type value or from a string representing the numeric value. The constructors for Integer and Double are:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">public</span> <span class="bu">Integer</span>(<span class="dt">int</span> value)</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">public</span> <span class="bu">Integer</span>(<span class="bu">String</span> s)</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="kw">public</span> <span class="bu">Double</span>(<span class="dt">double</span> value)</a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="kw">public</span> <span class="bu">Double</span>(<span class="bu">String</span> s)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="bu">Integer</span><span class="op">(</span><span class="dt">int</span> value<span class="op">)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="bu">Integer</span><span class="op">(</span><span class="bu">String</span> s<span class="op">)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="bu">Double</span><span class="op">(</span><span class="dt">double</span> value<span class="op">)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="bu">Double</span><span class="op">(</span><span class="bu">String</span> s<span class="op">)</span></span></code></pre></div>
 <p>Each numerical wrapper class has the constants MAX_VALUE and MIN_VALUE. MAX_VALUE represents the maximum value of the corresponding primitive data type. For Byte, Short, Integer, and Long, MIN_VALUE represents the minimum byte, short, int, and long values. For Float and Double, MIN_VALUE represents the minimum positive float and double values. The following statements display the maximum integer (2,147,483,647), the minimum positive float (1.4E-45), and the maximum double floating-point number (1.79769313486231570e+308d).</p>
 <h4 id="conversion-methods">Conversion Methods</h4>
 <p>Each numeric wrapper class implements the abstract methods doubleValue, floatValue, intValue, longValue, and shortValue, which are defined in the Number class. These methods “convert” objects into primitive type values.</p>
@@ -385,14 +434,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A constructor may invoke an overloaded constructor or its superclass’s constructor. If none of them is invoked explicitly, the compiler puts super() as the first statement in the constructor.</p>
 <h4 id="overriding-methods-in-the-superclass">Overriding Methods in the Superclass</h4>
 <p>A subclass inherits methods from a superclass. Sometimes it is necessary for the subclass to modify the implementation of a method defined in the superclass. This is referred to as method overriding.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Circle <span class="kw">extends</span> GeometricObject {</a>
-<a class="sourceLine" id="cb2-2" title="2">  <span class="co">// Other methods are omitted</span></a>
-<a class="sourceLine" id="cb2-3" title="3"></a>
-<a class="sourceLine" id="cb2-4" title="4">  <span class="co">/**</span> Override the toString method defined in GeometricObject <span class="co">*/</span></a>
-<a class="sourceLine" id="cb2-5" title="5">  <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span>() {</a>
-<a class="sourceLine" id="cb2-6" title="6">    <span class="kw">return</span> <span class="kw">super</span>.<span class="fu">toString</span>() + <span class="st">&quot;</span><span class="sc">\n</span><span class="st">radius is &quot;</span> + radius;</a>
-<a class="sourceLine" id="cb2-7" title="7">  }</a>
-<a class="sourceLine" id="cb2-8" title="8">}</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Circle <span class="kw">extends</span> GeometricObject <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Other methods are omitted</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">/**</span> Override the toString method defined in GeometricObject <span class="co">*/</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="kw">super</span><span class="op">.</span><span class="fu">toString</span><span class="op">()</span> <span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">radius is &quot;</span> <span class="op">+</span> radius<span class="op">;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <blockquote>
 <p>An instance method can be overridden only if it is accessible. Thus a private method cannot be overridden, because it is not accessible outside its own class. If a method defined in a subclass is private in its superclass, the two methods are completely unrelated.</p>
 </blockquote>
@@ -402,74 +451,74 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 id="polymorphism">Polymorphism</h3>
 <p><em>Polymorphism</em> means that a variable of a supertype can refer to a subtype object.</p>
 <p>A class defines a type. A type defined by a subclass is called a subtype, and a type defined by its superclass is called a supertype. Therefore, you can say that Circle is a subtype of GeometricObject and GeometricObject is a supertype for Circle.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">public</span> <span class="kw">class</span> PolymorphismDemo {</a>
-<a class="sourceLine" id="cb3-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
-<a class="sourceLine" id="cb3-3" title="3">    <span class="fu">m</span>(<span class="kw">new</span> <span class="fu">GraduateStudent</span>());</a>
-<a class="sourceLine" id="cb3-4" title="4">    <span class="fu">m</span>(<span class="kw">new</span> <span class="fu">Student</span>());</a>
-<a class="sourceLine" id="cb3-5" title="5">    <span class="fu">m</span>(<span class="kw">new</span> <span class="fu">Person</span>());</a>
-<a class="sourceLine" id="cb3-6" title="6">    <span class="fu">m</span>(<span class="kw">new</span> <span class="bu">Object</span>());</a>
-<a class="sourceLine" id="cb3-7" title="7">  }</a>
-<a class="sourceLine" id="cb3-8" title="8"> </a>
-<a class="sourceLine" id="cb3-9" title="9">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">m</span>(<span class="bu">Object</span> x) {</a>
-<a class="sourceLine" id="cb3-10" title="10">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(x.<span class="fu">toString</span>());</a>
-<a class="sourceLine" id="cb3-11" title="11">  }</a>
-<a class="sourceLine" id="cb3-12" title="12">}</a>
-<a class="sourceLine" id="cb3-13" title="13"> </a>
-<a class="sourceLine" id="cb3-14" title="14"><span class="kw">class</span> GraduateStudent <span class="kw">extends</span> Student {</a>
-<a class="sourceLine" id="cb3-15" title="15">}</a>
-<a class="sourceLine" id="cb3-16" title="16"> </a>
-<a class="sourceLine" id="cb3-17" title="17"><span class="kw">class</span> Student <span class="kw">extends</span> Person {</a>
-<a class="sourceLine" id="cb3-18" title="18">  <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span>() {</a>
-<a class="sourceLine" id="cb3-19" title="19">    <span class="kw">return</span> <span class="st">&quot;Student&quot;</span>;</a>
-<a class="sourceLine" id="cb3-20" title="20">  }</a>
-<a class="sourceLine" id="cb3-21" title="21">}</a>
-<a class="sourceLine" id="cb3-22" title="22"> </a>
-<a class="sourceLine" id="cb3-23" title="23"><span class="kw">class</span> Person <span class="kw">extends</span> <span class="bu">Object</span> {</a>
-<a class="sourceLine" id="cb3-24" title="24">  <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span>() {</a>
-<a class="sourceLine" id="cb3-25" title="25">    <span class="kw">return</span> <span class="st">&quot;Person&quot;</span>;</a>
-<a class="sourceLine" id="cb3-26" title="26">  }</a>
-<a class="sourceLine" id="cb3-27" title="27">}</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> PolymorphismDemo <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">m</span><span class="op">(</span><span class="kw">new</span> <span class="fu">GraduateStudent</span><span class="op">());</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">m</span><span class="op">(</span><span class="kw">new</span> <span class="fu">Student</span><span class="op">());</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">m</span><span class="op">(</span><span class="kw">new</span> <span class="fu">Person</span><span class="op">());</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">m</span><span class="op">(</span><span class="kw">new</span> <span class="bu">Object</span><span class="op">());</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">m</span><span class="op">(</span><span class="bu">Object</span> x<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>x<span class="op">.</span><span class="fu">toString</span><span class="op">());</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> GraduateStudent <span class="kw">extends</span> Student <span class="op">{</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Student <span class="kw">extends</span> Person <span class="op">{</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;Student&quot;</span><span class="op">;</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Person <span class="kw">extends</span> <span class="bu">Object</span> <span class="op">{</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;Person&quot;</span><span class="op">;</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>An object of a subtype can be used wherever its supertype value is required. This feature is known as <em>polymorphism</em>.</p>
 <p>When the method m(Object x) is executed, the argument x’s toString method is invoked. x may be an instance of GraduateStudent, Student, Person, or Object. Classes GraduateStudent, Student, Person, and Object have their own implementation of the toString method. Which implementation is used will be determined dynamically by the Java Virtual Machine at runtime. This capability is known as dynamic binding.</p>
 <p>Polymorphism allows methods to be used generically for a wide range of object arguments. This is known as <strong>generic programming</strong>. If a method’s parameter type is a superclass (e.g., Object), you may pass an object to this method of any of the parameter’s subclasses (e.g., Student or String). When an object (e.g., a Student object or a String object) is used in the method, the particular implementation of the method of the object that is invoked (e.g., toString) is determined dynamically.</p>
 <h3 id="dynamic-binding">Dynamic Binding</h3>
-<p>Dynamic binding works as follows: Suppose an object <code>o</code> is an instance of classes <span class="math inline">\(C_{1}\)</span>, <span class="math inline">\(C_{2}\)</span>, …, <span class="math inline">\(C_{n-1}\)</span>, and <span class="math inline">\(C_{n}\)</span>, where <span class="math inline">\(C_{1}\)</span> is a subclass of <span class="math inline">\(C_{2}\)</span>, <span class="math inline">\(C_{2}\)</span> is a subclass of <span class="math inline">\(C_{3}\)</span>, …, and <span class="math inline">\(C_{n-1}\)</span> is a subclass of <span class="math inline">\(C_{n}\)</span>. That is, <span class="math inline">\(C_{n}\)</span> is the most general class, and <span class="math inline">\(C_{1}\)</span> is the most specific class. In Java, <span class="math inline">\(C_{n}\)</span> is the Object class. If <code>o</code> invokes a method <code>p</code>, the JVM searches the implementation for the method <code>p</code> in <span class="math inline">\(C_{1}\)</span>, <span class="math inline">\(C_{2}\)</span>, …, <span class="math inline">\(C_{n-1}\)</span> and <span class="math inline">\(C_{n}\)</span>, in this order, until it is found. Once an implementation is found, the search stops and the first-found implementation is invoked.</p>
+<p>Dynamic binding works as follows: Suppose an object <code>o</code> is an instance of classes <span class="math inline">C_{1}</span>, <span class="math inline">C_{2}</span>, …, <span class="math inline">C_{n-1}</span>, and <span class="math inline">C_{n}</span>, where <span class="math inline">C_{1}</span> is a subclass of <span class="math inline">C_{2}</span>, <span class="math inline">C_{2}</span> is a subclass of <span class="math inline">C_{3}</span>, …, and <span class="math inline">C_{n-1}</span> is a subclass of <span class="math inline">C_{n}</span>. That is, <span class="math inline">C_{n}</span> is the most general class, and <span class="math inline">C_{1}</span> is the most specific class. In Java, <span class="math inline">C_{n}</span> is the Object class. If <code>o</code> invokes a method <code>p</code>, the JVM searches the implementation for the method <code>p</code> in <span class="math inline">C_{1}</span>, <span class="math inline">C_{2}</span>, …, <span class="math inline">C_{n-1}</span> and <span class="math inline">C_{n}</span>, in this order, until it is found. Once an implementation is found, the search stops and the first-found implementation is invoked.</p>
 <h3 id="method-matching-vs.-binding">Method Matching vs. Binding</h3>
 <p>Matching a method signature and binding a method implementation are two issues. The compiler finds a matching method according to parameter type, number of parameters, and order of the parameters at compilation time. A method may be implemented in several subclasses. The Java Virtual Machine dynamically binds the implementation of the method at runtime.</p>
 <h3 id="casting-objects">Casting Objects</h3>
 <p>You have already used the casting operator to convert variables of one primitive type to another. Casting can also be used to convert an object of one class type to another within an inheritance hierarchy. In the preceding section, the statement</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">m</span>(<span class="kw">new</span> <span class="fu">Student</span>());</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">m</span><span class="op">(</span><span class="kw">new</span> <span class="fu">Student</span><span class="op">());</span></span></code></pre></div>
 <p>assigns the object new Student() to a parameter of the Object type. This statement is equivalent to:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1"><span class="bu">Object</span> o = <span class="kw">new</span> <span class="fu">Student</span>(); <span class="co">// Implicit casting</span></a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="fu">m</span>(o);</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Object</span> o <span class="op">=</span> <span class="kw">new</span> <span class="fu">Student</span><span class="op">();</span> <span class="co">// Implicit casting</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">m</span><span class="op">(</span>o<span class="op">);</span></span></code></pre></div>
 <p>The statement Object o = new Student(), known as implicit casting, is legal because an instance of Student is automatically an instance of Object.</p>
 <h3 id="why-casting-is-necessary">Why Casting Is Necessary?</h3>
 <p>Suppose you want to assign the object reference o to a variable of the Student type using the following statement:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1">Student b = o;</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Student b <span class="op">=</span> o<span class="op">;</span></span></code></pre></div>
 <p>A compile error would occur. Why does the statement Object o = new Student() work and the statement Student b = o doesn’t? This is because a Student object is always an instance of Object, but an Object is not necessarily an instance of Student. Even though you can see that o is really a Student object, the compiler is not so clever to know it. To tell the compiler that o is a Student object, use an explicit casting. The syntax is similar to the one used for casting among primitive data types. Enclose the target object type in parentheses and place it before the object to be cast, as follows:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb7-1" title="1">Student b = (Student)o; <span class="co">// Explicit casting</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Student b <span class="op">=</span> <span class="op">(</span>Student<span class="op">)</span>o<span class="op">;</span> <span class="co">// Explicit casting</span></span></code></pre></div>
 <blockquote>
 <p>Explicit casting must be used when casting an object from a superclass to a subclass. This type of casting may not always succeed.</p>
 </blockquote>
 <h3 id="the-instanceof-operator">The instanceof Operator</h3>
 <p>Use the <code>instanceof</code> operator to test whether an object is an instance of a class:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb8-1" title="1"><span class="bu">Object</span> myObject = <span class="kw">new</span> <span class="fu">Circle</span>();</a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="kw">... </span><span class="co">// Some lines of code</span></a>
-<a class="sourceLine" id="cb8-3" title="3"><span class="co">/**</span> Perform casting if myObject is an instance of Circle <span class="co">*/</span></a>
-<a class="sourceLine" id="cb8-4" title="4"><span class="kw">if</span> (myObject <span class="kw">instanceof</span> Circle) {</a>
-<a class="sourceLine" id="cb8-5" title="5">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;The circle diameter is &quot;</span> +</a>
-<a class="sourceLine" id="cb8-6" title="6">    ((Circle)myObject).<span class="fu">getDiameter</span>());</a>
-<a class="sourceLine" id="cb8-7" title="7">  ...</a>
-<a class="sourceLine" id="cb8-8" title="8">}</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Object</span> myObject <span class="op">=</span> <span class="kw">new</span> <span class="fu">Circle</span><span class="op">();</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">...</span> <span class="co">// Some lines of code</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span> Perform casting if myObject is an instance of Circle <span class="co">*/</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>myObject <span class="kw">instanceof</span> Circle<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;The circle diameter is &quot;</span> <span class="op">+</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">((</span>Circle<span class="op">)</span>myObject<span class="op">).</span><span class="fu">getDiameter</span><span class="op">());</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">...</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="the-equals-method">The equals Method</h3>
 <p>The <code>equals()</code> method compares the contents of two objects. The default implementation of the equals method in the Object class is as follows:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">equals</span>(<span class="bu">Object</span> o) {</a>
-<a class="sourceLine" id="cb9-2" title="2">  <span class="kw">if</span> (o <span class="kw">instanceof</span> Circle) {</a>
-<a class="sourceLine" id="cb9-3" title="3">    <span class="kw">return</span> radius == ((Circle)o).<span class="fu">radius</span>;</a>
-<a class="sourceLine" id="cb9-4" title="4">  }</a>
-<a class="sourceLine" id="cb9-5" title="5">  <span class="kw">else</span></a>
-<a class="sourceLine" id="cb9-6" title="6">    <span class="kw">return</span> <span class="kw">false</span>;</a>
-<a class="sourceLine" id="cb9-7" title="7">}</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">equals</span><span class="op">(</span><span class="bu">Object</span> o<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="op">(</span>o <span class="kw">instanceof</span> Circle<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> radius <span class="op">==</span> <span class="op">((</span>Circle<span class="op">)</span>o<span class="op">).</span><span class="fu">radius</span><span class="op">;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <blockquote>
 <p>The == comparison operator is used for comparing two primitive data type values or for determining whether two objects have the same references. The equals method is intended to test whether two objects have the same contents, provided that the method is modified in the defining class of the objects. The == operator is stronger than the equals method, in that the == operator checks whether the two reference variables refer to the same object.</p>
 </blockquote>
@@ -477,32 +526,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>You can create an array to store objects. But the array’s size is fixed once the array is created. Java provides the ArrayList class that can be used to store an unlimited number of objects.</p>
 <p><code>java.util.ArralyList&lt;E&gt;</code></p>
 <p>ArrayList is known as a generic class with a generic type <code>E</code>. You can specify a concrete type to replace <code>E</code> when creating an <code>ArrayList</code>. For example, the following statement creates an <code>ArrayList</code> and assigns its reference to variable <code>cities</code>. This <code>ArrayList</code> object can be used to store strings.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb10-1" title="1"><span class="bu">ArrayList</span>&lt;<span class="bu">String</span>&gt; cities = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;<span class="bu">String</span>&gt;();</a>
-<a class="sourceLine" id="cb10-2" title="2"><span class="bu">ArrayList</span>&lt;<span class="bu">String</span>&gt; cities = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> cities <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;();</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> cities <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;&gt;();</span></span></code></pre></div>
 <h4 id="array-lists-fromto-arrays">Array Lists from/to Arrays</h4>
 <p>Creating an ArrayList from an array of objects:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb11-1" title="1"><span class="bu">String</span>[] array = {<span class="st">&quot;red&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;blue&quot;</span>};</a>
-<a class="sourceLine" id="cb11-2" title="2"><span class="bu">ArrayList</span>&lt;<span class="bu">String</span>&gt; list = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;(<span class="bu">Arrays</span>.<span class="fu">asList</span>(array));</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span><span class="op">[]</span> array <span class="op">=</span> <span class="op">{</span><span class="st">&quot;red&quot;</span><span class="op">,</span> <span class="st">&quot;green&quot;</span><span class="op">,</span> <span class="st">&quot;blue&quot;</span><span class="op">};</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> list <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;&gt;(</span><span class="bu">Arrays</span><span class="op">.</span><span class="fu">asList</span><span class="op">(</span>array<span class="op">));</span></span></code></pre></div>
 <p>Creating an array of objects from an ArrayList:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb12-1" title="1"><span class="bu">String</span>[] array1 = <span class="kw">new</span> <span class="bu">String</span>[list.<span class="fu">size</span>()];</a>
-<a class="sourceLine" id="cb12-2" title="2">list.<span class="fu">toArray</span>(array1);</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span><span class="op">[]</span> array1 <span class="op">=</span> <span class="kw">new</span> <span class="bu">String</span><span class="op">[</span>list<span class="op">.</span><span class="fu">size</span><span class="op">()];</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>list<span class="op">.</span><span class="fu">toArray</span><span class="op">(</span>array1<span class="op">);</span></span></code></pre></div>
 <h4 id="max-and-min-in-an-array-list">max and min in an Array List</h4>
-<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb13-1" title="1"><span class="bu">String</span>[] array = {<span class="st">&quot;red&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;blue&quot;</span>};</a>
-<a class="sourceLine" id="cb13-2" title="2"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">pritnln</span>(java.<span class="fu">util</span>.<span class="fu">Collections</span>.<span class="fu">max</span>(</a>
-<a class="sourceLine" id="cb13-3" title="3">   <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;<span class="bu">String</span>&gt;(<span class="bu">Arrays</span>.<span class="fu">asList</span>(array)));</a></code></pre></div>
-<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb14-1" title="1"><span class="bu">String</span>[] array = {<span class="st">&quot;red&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;blue&quot;</span>};</a>
-<a class="sourceLine" id="cb14-2" title="2"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">pritnln</span>(java.<span class="fu">util</span>.<span class="fu">Collections</span>.<span class="fu">min</span>(</a>
-<a class="sourceLine" id="cb14-3" title="3">  <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;<span class="bu">String</span>&gt;(<span class="bu">Arrays</span>.<span class="fu">asList</span>(array)));</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span><span class="op">[]</span> array <span class="op">=</span> <span class="op">{</span><span class="st">&quot;red&quot;</span><span class="op">,</span> <span class="st">&quot;green&quot;</span><span class="op">,</span> <span class="st">&quot;blue&quot;</span><span class="op">};</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">pritnln</span><span class="op">(</span>java<span class="op">.</span><span class="fu">util</span><span class="op">.</span><span class="fu">Collections</span><span class="op">.</span><span class="fu">max</span><span class="op">(</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;(</span><span class="bu">Arrays</span><span class="op">.</span><span class="fu">asList</span><span class="op">(</span>array<span class="op">)));</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span><span class="op">[]</span> array <span class="op">=</span> <span class="op">{</span><span class="st">&quot;red&quot;</span><span class="op">,</span> <span class="st">&quot;green&quot;</span><span class="op">,</span> <span class="st">&quot;blue&quot;</span><span class="op">};</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">pritnln</span><span class="op">(</span>java<span class="op">.</span><span class="fu">util</span><span class="op">.</span><span class="fu">Collections</span><span class="op">.</span><span class="fu">min</span><span class="op">(</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;(</span><span class="bu">Arrays</span><span class="op">.</span><span class="fu">asList</span><span class="op">(</span>array<span class="op">)));</span></span></code></pre></div>
 <h4 id="shuffling-an-array-list">Shuffling an Array List</h4>
-<div class="sourceCode" id="cb15"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb15-1" title="1"><span class="bu">Integer</span>[] array = {<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">95</span>, <span class="dv">4</span>, <span class="dv">15</span>, <span class="dv">34</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">5</span>};</a>
-<a class="sourceLine" id="cb15-2" title="2"><span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; list = <span class="kw">new</span></a>
-<a class="sourceLine" id="cb15-3" title="3">  <span class="bu">ArrayList</span>&lt;&gt;(<span class="bu">Arrays</span>.<span class="fu">asList</span>(array));</a>
-<a class="sourceLine" id="cb15-4" title="4">java.<span class="fu">util</span>.<span class="fu">Collections</span>.<span class="fu">shuffle</span>(list);</a>
-<a class="sourceLine" id="cb15-5" title="5"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(list);</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Integer</span><span class="op">[]</span> array <span class="op">=</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">95</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">15</span><span class="op">,</span> <span class="dv">34</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">6</span><span class="op">,</span> <span class="dv">5</span><span class="op">};</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> list <span class="op">=</span> <span class="kw">new</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">ArrayList</span><span class="op">&lt;&gt;(</span><span class="bu">Arrays</span><span class="op">.</span><span class="fu">asList</span><span class="op">(</span>array<span class="op">));</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>java<span class="op">.</span><span class="fu">util</span><span class="op">.</span><span class="fu">Collections</span><span class="op">.</span><span class="fu">shuffle</span><span class="op">(</span>list<span class="op">);</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>list<span class="op">);</span></span></code></pre></div>
 <h3 id="the-protected-modifier">The protected Modifier</h3>
 <ul>
 <li><p>The <code>protected</code> modifier can be applied on data and methods in a class. A protected data or a <code>protected</code> method in a public class can be accessed by any class in the same package or its subclasses, <strong>even if the subclasses are in a different package</strong>.</p></li>
-<li>Visibility increases in this order:
+<li><p>Visibility increases in this order:</p>
 <ul>
 <li>private, default, protected, public</li>
 </ul></li>
@@ -516,13 +565,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>The final class cannot be extended:</li>
 </ul>
-<div class="sourceCode" id="cb16"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb16-1" title="1"><span class="dt">final</span> <span class="kw">class</span> <span class="bu">Math</span> {</a>
-<a class="sourceLine" id="cb16-2" title="2">  ...</a>
-<a class="sourceLine" id="cb16-3" title="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="dt">final</span> <span class="kw">class</span> <span class="bu">Math</span> <span class="op">{</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">...</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <ul>
 <li>The final variable is a constant:</li>
 </ul>
-<div class="sourceCode" id="cb17"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb17-1" title="1"><span class="dt">final</span> <span class="dt">static</span> <span class="dt">double</span> PI = <span class="fl">3.</span><span class="dv">14159</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="dt">final</span> <span class="dt">static</span> <span class="dt">double</span> PI <span class="op">=</span> <span class="fl">3.14159</span><span class="op">;</span></span></code></pre></div>
 <ul>
 <li>The final method cannot be overridden by its subclasses.</li>
 </ul>
@@ -542,66 +591,66 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In most cases, unchecked exceptions reflect programming logic errors that are not recoverable. For example, a <code>NullPointerException</code> is thrown if you access an object through a reference variable before an object is assigned to it; an <code>IndexOutOfBoundsException</code> is thrown if you access an element in an array outside the bounds of the array. These are the logic errors that should be corrected in the program. Unchecked exceptions can occur anywhere in the program. To avoid cumbersome overuse of try-catch blocks, Java does not mandate you to write code to catch unchecked exceptions.</p>
 <h3 id="declaring-exceptions">Declaring Exceptions</h3>
 <p>Every method must state the types of checked exceptions it might throw. This is known as <em>declaring exceptions</em>.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">myMethod</span>() <span class="kw">throws</span> <span class="bu">IOException</span></a>
-<a class="sourceLine" id="cb18-2" title="2"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">myMethod</span>() <span class="kw">throws</span> <span class="bu">IOException</span>, OtherException</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">myMethod</span><span class="op">()</span> <span class="kw">throws</span> <span class="bu">IOException</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">myMethod</span><span class="op">()</span> <span class="kw">throws</span> <span class="bu">IOException</span><span class="op">,</span> OtherException</span></code></pre></div>
 <h3 id="throwing-exceptions">Throwing Exceptions</h3>
 <p>When the program detects an error, the program can create an instance of an appropriate exception type and throw it. This is known as throwing an exception. Here is an example,</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">throw</span> <span class="kw">new</span> <span class="fu">TheException</span>();</a>
-<a class="sourceLine" id="cb19-2" title="2">TheException ex = <span class="kw">new</span> <span class="fu">TheException</span>();</a>
-<a class="sourceLine" id="cb19-3" title="3"><span class="kw">throw</span> ex;</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">throw</span> <span class="kw">new</span> <span class="fu">TheException</span><span class="op">();</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>TheException ex <span class="op">=</span> <span class="kw">new</span> <span class="fu">TheException</span><span class="op">();</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="cf">throw</span> ex<span class="op">;</span></span></code></pre></div>
 <p>Example</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb20-1" title="1"><span class="co">/**</span> Set a new radius <span class="co">*/</span></a>
-<a class="sourceLine" id="cb20-2" title="2"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">setRadius</span>(<span class="dt">double</span> newRadius) <span class="kw">throws</span> <span class="bu">IllegalArgumentException</span> {</a>
-<a class="sourceLine" id="cb20-3" title="3">  <span class="kw">if</span> (newRadius &gt;= <span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb20-4" title="4">    radius =  newRadius;</a>
-<a class="sourceLine" id="cb20-5" title="5">  <span class="kw">else</span></a>
-<a class="sourceLine" id="cb20-6" title="6">    <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">IllegalArgumentException</span>(<span class="st">&quot;Radius cannot be negative&quot;</span>);</a>
-<a class="sourceLine" id="cb20-7" title="7">}</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span> Set a new radius <span class="co">*/</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">setRadius</span><span class="op">(</span><span class="dt">double</span> newRadius<span class="op">)</span> <span class="kw">throws</span> <span class="bu">IllegalArgumentException</span> <span class="op">{</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="op">(</span>newRadius <span class="op">&gt;=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    radius <span class="op">=</span>  newRadius<span class="op">;</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">throw</span> <span class="kw">new</span> <span class="bu">IllegalArgumentException</span><span class="op">(</span><span class="st">&quot;Radius cannot be negative&quot;</span><span class="op">);</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="catching-exceptions">Catching Exceptions</h3>
-<div class="sourceCode" id="cb21"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">try</span> {</a>
-<a class="sourceLine" id="cb21-2" title="2">  statements;  <span class="co">// Statements that may throw exceptions</span></a>
-<a class="sourceLine" id="cb21-3" title="3">}</a>
-<a class="sourceLine" id="cb21-4" title="4"><span class="kw">catch</span> (Exception1 exVar1) {</a>
-<a class="sourceLine" id="cb21-5" title="5">  handler <span class="kw">for</span> exception1;</a>
-<a class="sourceLine" id="cb21-6" title="6">}</a>
-<a class="sourceLine" id="cb21-7" title="7"><span class="kw">catch</span> (Exception2 exVar2) {</a>
-<a class="sourceLine" id="cb21-8" title="8">  handler <span class="kw">for</span> exception2;</a>
-<a class="sourceLine" id="cb21-9" title="9">}</a>
-<a class="sourceLine" id="cb21-10" title="10">...</a>
-<a class="sourceLine" id="cb21-11" title="11"><span class="kw">catch</span> (ExceptionN exVar3) {</a>
-<a class="sourceLine" id="cb21-12" title="12">  handler <span class="kw">for</span> exceptionN;</a>
-<a class="sourceLine" id="cb21-13" title="13">}</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span> <span class="op">{</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  statements<span class="op">;</span>  <span class="co">// Statements that may throw exceptions</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="cf">catch</span> <span class="op">(</span>Exception1 exVar1<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  handler <span class="cf">for</span> exception1<span class="op">;</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="cf">catch</span> <span class="op">(</span>Exception2 exVar2<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  handler <span class="cf">for</span> exception2<span class="op">;</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="kw">...</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="cf">catch</span> <span class="op">(</span>ExceptionN exVar3<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  handler <span class="cf">for</span> exceptionN<span class="op">;</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="catch-or-declare-checked-exceptions">Catch or Declare Checked Exceptions</h3>
 <p>Java forces you to deal with checked exceptions. If a method declares a checked exception (i.e., an exception other than <code>Error</code> or <code>RuntimeException</code>), you must invoke it in a try-catch block or declare to throw the exception in the calling method.</p>
 <h3 id="rethrowing-exceptions">Rethrowing Exceptions</h3>
 <p>try { statements; } catch(TheException ex) { perform operations before exits; throw ex; }</p>
 <h3 id="the-finally-clause">The finally Clause</h3>
-<div class="sourceCode" id="cb22"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">try</span> {</a>
-<a class="sourceLine" id="cb22-2" title="2">  statements;</a>
-<a class="sourceLine" id="cb22-3" title="3">}</a>
-<a class="sourceLine" id="cb22-4" title="4"><span class="kw">catch</span>(TheException ex) {</a>
-<a class="sourceLine" id="cb22-5" title="5">  handling ex;</a>
-<a class="sourceLine" id="cb22-6" title="6">}</a>
-<a class="sourceLine" id="cb22-7" title="7"><span class="kw">finally</span> {</a>
-<a class="sourceLine" id="cb22-8" title="8">  finalStatements;</a>
-<a class="sourceLine" id="cb22-9" title="9">}</a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span> <span class="op">{</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  statements<span class="op">;</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="cf">catch</span><span class="op">(</span>TheException ex<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  handling ex<span class="op">;</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="cf">finally</span> <span class="op">{</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  finalStatements<span class="op">;</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="cautions-when-using-exceptions">Cautions When Using Exceptions</h3>
 <p>Exception handling separates error-handling code from normal programming tasks, thus making programs easier to read and to modify. Be aware, however, that exception handling usually requires more time and resources because it requires instantiating a new exception object, rolling back the call stack, and propagating the errors to the calling methods.</p>
 <h3 id="when-to-throw-exceptions">When to Throw Exceptions</h3>
 <p>An exception occurs in a method. If you want the exception to be processed by its caller, you should create an exception object and throw it. If you can handle the exception in the method where it occurs, there is no need to throw it.</p>
 <h3 id="when-to-use-exceptions">When to Use Exceptions</h3>
 <p>When should you use the try-catch block in the code? You should use it to deal with unexpected error conditions. Do not use it to deal with simple, expected situations. For example, the following code</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">try</span> {</a>
-<a class="sourceLine" id="cb23-2" title="2">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(refVar.<span class="fu">toString</span>());</a>
-<a class="sourceLine" id="cb23-3" title="3">}</a>
-<a class="sourceLine" id="cb23-4" title="4"><span class="kw">catch</span> (<span class="bu">NullPointerException</span> ex) {</a>
-<a class="sourceLine" id="cb23-5" title="5">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;refVar is null&quot;</span>);</a>
-<a class="sourceLine" id="cb23-6" title="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span> <span class="op">{</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>refVar<span class="op">.</span><span class="fu">toString</span><span class="op">());</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="cf">catch</span> <span class="op">(</span><span class="bu">NullPointerException</span> ex<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;refVar is null&quot;</span><span class="op">);</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>is better to be replaced by</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb24-1" title="1"><span class="kw">if</span> (refVar != <span class="kw">null</span>)</a>
-<a class="sourceLine" id="cb24-2" title="2">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(refVar.<span class="fu">toString</span>());</a>
-<a class="sourceLine" id="cb24-3" title="3"><span class="kw">else</span></a>
-<a class="sourceLine" id="cb24-4" title="4">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;refVar is null&quot;</span>);</a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>refVar <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>refVar<span class="op">.</span><span class="fu">toString</span><span class="op">());</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;refVar is null&quot;</span><span class="op">);</span></span></code></pre></div>
 <h3 id="defining-custom-exception-classes">Defining Custom Exception Classes</h3>
 <ul>
 <li>Use the exception classes in the API whenever possible.</li>
@@ -609,124 +658,124 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Define custom exception classes by extending Exception or a subclass of Exception.</li>
 </ul>
 <p>Examples:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">public</span> <span class="kw">class</span> InvalidRadiusException <span class="kw">extends</span> <span class="bu">Exception</span> {</a>
-<a class="sourceLine" id="cb25-2" title="2">  <span class="kw">private</span> <span class="dt">double</span> radius;</a>
-<a class="sourceLine" id="cb25-3" title="3"></a>
-<a class="sourceLine" id="cb25-4" title="4">  <span class="co">/**</span> Construct an exception <span class="co">*/</span></a>
-<a class="sourceLine" id="cb25-5" title="5">  <span class="kw">public</span> <span class="fu">InvalidRadiusException</span>(<span class="dt">double</span> radius) {</a>
-<a class="sourceLine" id="cb25-6" title="6">    <span class="kw">super</span>(<span class="st">&quot;Invalid radius &quot;</span> + radius);</a>
-<a class="sourceLine" id="cb25-7" title="7">    <span class="kw">this</span>.<span class="fu">radius</span> = radius;</a>
-<a class="sourceLine" id="cb25-8" title="8">  }</a>
-<a class="sourceLine" id="cb25-9" title="9"></a>
-<a class="sourceLine" id="cb25-10" title="10">  <span class="co">/**</span> Return the radius <span class="co">*/</span></a>
-<a class="sourceLine" id="cb25-11" title="11">  <span class="kw">public</span> <span class="dt">double</span> <span class="fu">getRadius</span>() {</a>
-<a class="sourceLine" id="cb25-12" title="12">    <span class="kw">return</span> radius;</a>
-<a class="sourceLine" id="cb25-13" title="13">  }</a>
-<a class="sourceLine" id="cb25-14" title="14">}</a></code></pre></div>
-<div class="sourceCode" id="cb26"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb26-1" title="1"><span class="kw">public</span> <span class="kw">class</span> CircleWithRadiusException {</a>
-<a class="sourceLine" id="cb26-2" title="2">  <span class="co">/**</span> The radius of the circle <span class="co">*/</span></a>
-<a class="sourceLine" id="cb26-3" title="3">  <span class="kw">private</span> <span class="dt">double</span> radius;</a>
-<a class="sourceLine" id="cb26-4" title="4"></a>
-<a class="sourceLine" id="cb26-5" title="5">  <span class="co">/**</span> The number of the objects created <span class="co">*/</span></a>
-<a class="sourceLine" id="cb26-6" title="6">  <span class="kw">private</span> <span class="dt">static</span> <span class="dt">int</span> numberOfObjects = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb26-7" title="7"></a>
-<a class="sourceLine" id="cb26-8" title="8">  <span class="co">/**</span> Construct a circle with radius <span class="co">1</span> <span class="co">*/</span></a>
-<a class="sourceLine" id="cb26-9" title="9">  <span class="kw">public</span> <span class="fu">CircleWithRadiusException</span>() {</a>
-<a class="sourceLine" id="cb26-10" title="10">    <span class="kw">this</span>(<span class="fl">1.</span><span class="dv">0</span>);</a>
-<a class="sourceLine" id="cb26-11" title="11">  }</a>
-<a class="sourceLine" id="cb26-12" title="12"></a>
-<a class="sourceLine" id="cb26-13" title="13">  <span class="co">/**</span> Construct a circle with a specified radius <span class="co">*/</span></a>
-<a class="sourceLine" id="cb26-14" title="14">  <span class="kw">public</span> <span class="fu">CircleWithRadiusException</span>(<span class="dt">double</span> newRadius) {</a>
-<a class="sourceLine" id="cb26-15" title="15">    <span class="kw">try</span> {</a>
-<a class="sourceLine" id="cb26-16" title="16">      <span class="fu">setRadius</span>(newRadius);</a>
-<a class="sourceLine" id="cb26-17" title="17">      numberOfObjects++;</a>
-<a class="sourceLine" id="cb26-18" title="18">    }</a>
-<a class="sourceLine" id="cb26-19" title="19">    <span class="kw">catch</span> (InvalidRadiusException ex) {</a>
-<a class="sourceLine" id="cb26-20" title="20">      ex.<span class="fu">printStackTrace</span>();</a>
-<a class="sourceLine" id="cb26-21" title="21">    }</a>
-<a class="sourceLine" id="cb26-22" title="22">  }</a>
-<a class="sourceLine" id="cb26-23" title="23"></a>
-<a class="sourceLine" id="cb26-24" title="24">  <span class="co">/**</span> Return radius <span class="co">*/</span></a>
-<a class="sourceLine" id="cb26-25" title="25">  <span class="kw">public</span> <span class="dt">double</span> <span class="fu">getRadius</span>() {</a>
-<a class="sourceLine" id="cb26-26" title="26">    <span class="kw">return</span> radius;</a>
-<a class="sourceLine" id="cb26-27" title="27">  }</a>
-<a class="sourceLine" id="cb26-28" title="28"></a>
-<a class="sourceLine" id="cb26-29" title="29">  <span class="co">/**</span> Set a new radius <span class="co">*/</span></a>
-<a class="sourceLine" id="cb26-30" title="30">  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">setRadius</span>(<span class="dt">double</span> newRadius)</a>
-<a class="sourceLine" id="cb26-31" title="31">      <span class="kw">throws</span> InvalidRadiusException {</a>
-<a class="sourceLine" id="cb26-32" title="32">    <span class="kw">if</span> (newRadius &gt;= <span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb26-33" title="33">      radius =  newRadius;</a>
-<a class="sourceLine" id="cb26-34" title="34">    <span class="kw">else</span></a>
-<a class="sourceLine" id="cb26-35" title="35">      <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">InvalidRadiusException</span>(newRadius);</a>
-<a class="sourceLine" id="cb26-36" title="36">  }</a>
-<a class="sourceLine" id="cb26-37" title="37"></a>
-<a class="sourceLine" id="cb26-38" title="38">  <span class="co">/**</span> Return numberOfObjects <span class="co">*/</span></a>
-<a class="sourceLine" id="cb26-39" title="39">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">int</span> <span class="fu">getNumberOfObjects</span>() {</a>
-<a class="sourceLine" id="cb26-40" title="40">    <span class="kw">return</span> numberOfObjects;</a>
-<a class="sourceLine" id="cb26-41" title="41">  }</a>
-<a class="sourceLine" id="cb26-42" title="42"></a>
-<a class="sourceLine" id="cb26-43" title="43">  <span class="co">/**</span> Return the area of this circle <span class="co">*/</span></a>
-<a class="sourceLine" id="cb26-44" title="44">  <span class="kw">public</span> <span class="dt">double</span> <span class="fu">findArea</span>() {</a>
-<a class="sourceLine" id="cb26-45" title="45">    <span class="kw">return</span> radius * radius * <span class="fl">3.</span><span class="dv">14159</span>;</a>
-<a class="sourceLine" id="cb26-46" title="46">  }</a>
-<a class="sourceLine" id="cb26-47" title="47">}</a></code></pre></div>
-<div class="sourceCode" id="cb27"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb27-1" title="1"><span class="kw">public</span> <span class="kw">class</span> TestCircleWithRadiusException {</a>
-<a class="sourceLine" id="cb27-2" title="2">  <span class="co">/**</span> Main method <span class="co">*/</span></a>
-<a class="sourceLine" id="cb27-3" title="3">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
-<a class="sourceLine" id="cb27-4" title="4">    <span class="kw">try</span> {</a>
-<a class="sourceLine" id="cb27-5" title="5">      CircleWithRadiusException c1 = <span class="kw">new</span> <span class="fu">CircleWithRadiusException</span>(<span class="dv">5</span>);</a>
-<a class="sourceLine" id="cb27-6" title="6">      c1.<span class="fu">setRadius</span>(-<span class="dv">5</span>);</a>
-<a class="sourceLine" id="cb27-7" title="7">      CircleWithRadiusException c3 = <span class="kw">new</span> <span class="fu">CircleWithRadiusException</span>(<span class="dv">0</span>);</a>
-<a class="sourceLine" id="cb27-8" title="8">    }</a>
-<a class="sourceLine" id="cb27-9" title="9">    <span class="kw">catch</span> (InvalidRadiusException ex) {</a>
-<a class="sourceLine" id="cb27-10" title="10">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(ex);</a>
-<a class="sourceLine" id="cb27-11" title="11">    }</a>
-<a class="sourceLine" id="cb27-12" title="12"></a>
-<a class="sourceLine" id="cb27-13" title="13">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Number of objects created: &quot;</span> +</a>
-<a class="sourceLine" id="cb27-14" title="14">      CircleWithRadiusException.<span class="fu">getNumberOfObjects</span>());</a>
-<a class="sourceLine" id="cb27-15" title="15">  }</a>
-<a class="sourceLine" id="cb27-16" title="16">}</a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> InvalidRadiusException <span class="kw">extends</span> <span class="bu">Exception</span> <span class="op">{</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="dt">double</span> radius<span class="op">;</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">/**</span> Construct an exception <span class="co">*/</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="fu">InvalidRadiusException</span><span class="op">(</span><span class="dt">double</span> radius<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">super</span><span class="op">(</span><span class="st">&quot;Invalid radius &quot;</span> <span class="op">+</span> radius<span class="op">);</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">radius</span> <span class="op">=</span> radius<span class="op">;</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">/**</span> Return the radius <span class="co">*/</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">double</span> <span class="fu">getRadius</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> radius<span class="op">;</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> CircleWithRadiusException <span class="op">{</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">/**</span> The radius of the circle <span class="co">*/</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="dt">double</span> radius<span class="op">;</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">/**</span> The number of the objects created <span class="co">*/</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="dt">static</span> <span class="dt">int</span> numberOfObjects <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">/**</span> Construct a circle with radius <span class="co">1</span> <span class="co">*/</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="fu">CircleWithRadiusException</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">(</span><span class="fl">1.0</span><span class="op">);</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>  <span class="co">/**</span> Construct a circle with a specified radius <span class="co">*/</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="fu">CircleWithRadiusException</span><span class="op">(</span><span class="dt">double</span> newRadius<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span> <span class="op">{</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">setRadius</span><span class="op">(</span>newRadius<span class="op">);</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>      numberOfObjects<span class="op">++;</span></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">catch</span> <span class="op">(</span>InvalidRadiusException ex<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>      ex<span class="op">.</span><span class="fu">printStackTrace</span><span class="op">();</span></span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>  <span class="co">/**</span> Return radius <span class="co">*/</span></span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">double</span> <span class="fu">getRadius</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> radius<span class="op">;</span></span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a>  <span class="co">/**</span> Set a new radius <span class="co">*/</span></span>
+<span id="cb26-30"><a href="#cb26-30" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">setRadius</span><span class="op">(</span><span class="dt">double</span> newRadius<span class="op">)</span></span>
+<span id="cb26-31"><a href="#cb26-31" aria-hidden="true" tabindex="-1"></a>      <span class="kw">throws</span> InvalidRadiusException <span class="op">{</span></span>
+<span id="cb26-32"><a href="#cb26-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>newRadius <span class="op">&gt;=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb26-33"><a href="#cb26-33" aria-hidden="true" tabindex="-1"></a>      radius <span class="op">=</span>  newRadius<span class="op">;</span></span>
+<span id="cb26-34"><a href="#cb26-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb26-35"><a href="#cb26-35" aria-hidden="true" tabindex="-1"></a>      <span class="cf">throw</span> <span class="kw">new</span> <span class="fu">InvalidRadiusException</span><span class="op">(</span>newRadius<span class="op">);</span></span>
+<span id="cb26-36"><a href="#cb26-36" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb26-37"><a href="#cb26-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-38"><a href="#cb26-38" aria-hidden="true" tabindex="-1"></a>  <span class="co">/**</span> Return numberOfObjects <span class="co">*/</span></span>
+<span id="cb26-39"><a href="#cb26-39" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">int</span> <span class="fu">getNumberOfObjects</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb26-40"><a href="#cb26-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> numberOfObjects<span class="op">;</span></span>
+<span id="cb26-41"><a href="#cb26-41" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb26-42"><a href="#cb26-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-43"><a href="#cb26-43" aria-hidden="true" tabindex="-1"></a>  <span class="co">/**</span> Return the area of this circle <span class="co">*/</span></span>
+<span id="cb26-44"><a href="#cb26-44" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">double</span> <span class="fu">findArea</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb26-45"><a href="#cb26-45" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> radius <span class="op">*</span> radius <span class="op">*</span> <span class="fl">3.14159</span><span class="op">;</span></span>
+<span id="cb26-46"><a href="#cb26-46" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb26-47"><a href="#cb26-47" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> TestCircleWithRadiusException <span class="op">{</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">/**</span> Main method <span class="co">*/</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span> <span class="op">{</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>      CircleWithRadiusException c1 <span class="op">=</span> <span class="kw">new</span> <span class="fu">CircleWithRadiusException</span><span class="op">(</span><span class="dv">5</span><span class="op">);</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>      c1<span class="op">.</span><span class="fu">setRadius</span><span class="op">(-</span><span class="dv">5</span><span class="op">);</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>      CircleWithRadiusException c3 <span class="op">=</span> <span class="kw">new</span> <span class="fu">CircleWithRadiusException</span><span class="op">(</span><span class="dv">0</span><span class="op">);</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">catch</span> <span class="op">(</span>InvalidRadiusException ex<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>ex<span class="op">);</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;Number of objects created: &quot;</span> <span class="op">+</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>      CircleWithRadiusException<span class="op">.</span><span class="fu">getNumberOfObjects</span><span class="op">());</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="assertions">Assertions</h3>
 <p>An assertion is a Java statement that enables you to assert an assumption about your program. An assertion contains a Boolean expression that should be true during program execution. Assertions can be used to assure program correctness and avoid logic errors.</p>
 <p>An assertion is declared using the new Java keyword <code>assert</code> in JDK 1.4 as follows:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb28-1" title="1">assert assertion; or</a>
-<a class="sourceLine" id="cb28-2" title="2">assert assertion : detailMessage;</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>assert assertion<span class="op">;</span> or</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>assert assertion <span class="op">:</span> detailMessage<span class="op">;</span></span></code></pre></div>
 <p>where <code>assertion</code> is a Boolean expression and <code>detailMessage</code> is a primitive-type or an Object value.</p>
 <h4 id="executing-assertions">Executing Assertions</h4>
 <p>When an assertion statement is executed, Java evaluates the assertion. If it is <code>false</code>, an <code>AssertionError</code> will be thrown. The <code>AssertionError</code> class has a no-arg constructor and seven overloaded single-argument constructors of type <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>, <code>boolean</code>, <code>char</code>, and <code>Object</code>.</p>
 <p>For the first assert statement with no detail message, the no-arg constructor of <code>AssertionError</code> is used. For the second assert statement with a detail message, an appropriate <code>AssertionError</code> constructor is used to match the data type of the message. Since <code>AssertionError</code> is a subclass of <code>Error</code>, when an assertion becomes <code>false</code>, the program displays a message on the console and exits.</p>
 <p>Example:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb29-1" title="1"><span class="kw">public</span> <span class="kw">class</span> AssertionDemo {</a>
-<a class="sourceLine" id="cb29-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
-<a class="sourceLine" id="cb29-3" title="3">    <span class="dt">int</span> i; <span class="dt">int</span> sum = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb29-4" title="4">    <span class="kw">for</span> (i = <span class="dv">0</span>; i &lt; <span class="dv">10</span>; i++) {</a>
-<a class="sourceLine" id="cb29-5" title="5">      sum += i;</a>
-<a class="sourceLine" id="cb29-6" title="6">    }</a>
-<a class="sourceLine" id="cb29-7" title="7">    assert i == <span class="dv">10</span>;</a>
-<a class="sourceLine" id="cb29-8" title="8">    assert sum &gt; <span class="dv">10</span> &amp;&amp; sum &lt; <span class="dv">5</span> * <span class="dv">10</span> : <span class="st">&quot;sum is &quot;</span> + sum;</a>
-<a class="sourceLine" id="cb29-9" title="9">  }</a>
-<a class="sourceLine" id="cb29-10" title="10">}</a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> AssertionDemo <span class="op">{</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> i<span class="op">;</span> <span class="dt">int</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span>i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>      sum <span class="op">+=</span> i<span class="op">;</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    assert i <span class="op">==</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    assert sum <span class="op">&gt;</span> <span class="dv">10</span> <span class="op">&amp;&amp;</span> sum <span class="op">&lt;</span> <span class="dv">5</span> <span class="op">*</span> <span class="dv">10</span> <span class="op">:</span> <span class="st">&quot;sum is &quot;</span> <span class="op">+</span> sum<span class="op">;</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h4 id="running-programs-with-assertions">Running Programs with Assertions</h4>
 <p>By default, the assertions are disabled at runtime. To enable it, use the switch <code>–enableassertions</code>, or <code>–ea</code> for short, as follows:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb30-1" title="1">java –ea AssertionDemo</a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>java –ea AssertionDemo</span></code></pre></div>
 <p>Assertions can be selectively enabled or disabled at class level or package level. The disable switch is <code>–disableassertions</code> or <code>–da</code> for short. For example, the following command enables assertions in package package1 and disables assertions in class Class1.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb31-1" title="1">java –ea:package1 –da:Class1 AssertionDemo</a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>java –ea<span class="op">:</span>package1 –da<span class="op">:</span>Class1 AssertionDemo</span></code></pre></div>
 <h4 id="using-exception-handing-or-assertions">Using Exception Handing or Assertions</h4>
 <p>Assertion should not be used to replace exception handling. Exception handling deals with unusual circumstances during program execution. Assertions are to assure the correctness of the program. Exception handling addresses robustness and assertion addresses correctness. Like exception handling, assertions are not used for normal tests, but for internal consistency and validity checks. Assertions are checked at runtime and can be turned on or off at startup time.</p>
 <p><em>Do not use assertions for argument checking in public methods</em>. Valid arguments that may be passed to a public method are considered to be part of the method’s contract. The contract must always be obeyed whether assertions are enabled or disabled. For example, the following code in the Circle class should be rewritten using exception handling.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb32-1" title="1"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">setRadius</span>(<span class="dt">double</span> newRadius) {</a>
-<a class="sourceLine" id="cb32-2" title="2">  assert newRadius &gt;= <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb32-3" title="3">  radius =  newRadius;</a>
-<a class="sourceLine" id="cb32-4" title="4">}</a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">setRadius</span><span class="op">(</span><span class="dt">double</span> newRadius<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  assert newRadius <span class="op">&gt;=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  radius <span class="op">=</span>  newRadius<span class="op">;</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p><em>Use assertions to reaffirm assumptions</em>. This gives you more confidence to assure correctness of the program. A common use of assertions is to replace assumptions with assertions in the code.</p>
 <p>Another good use of assertions is place assertions in a switch statement without a default case. For example,</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb33-1" title="1"><span class="kw">switch</span> (month) {</a>
-<a class="sourceLine" id="cb33-2" title="2">  <span class="kw">case</span> <span class="dv">1</span>: <span class="kw">... </span>; <span class="kw">break</span>;</a>
-<a class="sourceLine" id="cb33-3" title="3">  <span class="kw">case</span> <span class="dv">2</span>: <span class="kw">... </span>; <span class="kw">break</span>;</a>
-<a class="sourceLine" id="cb33-4" title="4">  ...</a>
-<a class="sourceLine" id="cb33-5" title="5">  <span class="kw">case</span> <span class="dv">12</span>: <span class="kw">... </span>; <span class="kw">break</span>;</a>
-<a class="sourceLine" id="cb33-6" title="6">  <span class="kw">default</span>: assert <span class="kw">false</span> : <span class="st">&quot;Invalid month: &quot;</span> + month</a>
-<a class="sourceLine" id="cb33-7" title="7">}</a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="cf">switch</span> <span class="op">(</span>month<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">case</span> <span class="dv">1</span><span class="op">:</span> <span class="kw">...</span> <span class="op">;</span> <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">case</span> <span class="dv">2</span><span class="op">:</span> <span class="kw">...</span> <span class="op">;</span> <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">...</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">case</span> <span class="dv">12</span><span class="op">:</span> <span class="kw">...</span> <span class="op">;</span> <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">default</span><span class="op">:</span> assert <span class="kw">false</span> <span class="op">:</span> <span class="st">&quot;Invalid month: &quot;</span> <span class="op">+</span> month</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h2 id="objects-introduction">7.1 Objects: Introduction</h2>
 <h3 id="abstraction-or-information-hiding">Abstraction or Information hiding</h3>
 <p><strong>Abstraction</strong> means to have a user interact with an item at a high-level, with lower-level internal details hidden from the user (aka information hiding or encapsulation).</p>
@@ -887,16 +936,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>true if both Integers contain the same value. otherInteger may be an Integer object, int variable, or integer literal.</li>
 </ul>
-<div class="sourceCode" id="cb35"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb35-1" title="1">num1.<span class="fu">equals</span>(num2) <span class="co">// Evaluates to false</span></a>
-<a class="sourceLine" id="cb35-2" title="2">num1.<span class="fu">equals</span>(<span class="dv">10</span>)   <span class="co">// Evaluates to true</span></a>
-<a class="sourceLine" id="cb35-3" title="3">!(num2.<span class="fu">equals</span>(regularInt)) <span class="co">// Evaluates to true because 8 != 20</span></a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>num1<span class="op">.</span><span class="fu">equals</span><span class="op">(</span>num2<span class="op">)</span> <span class="co">// Evaluates to false</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>num1<span class="op">.</span><span class="fu">equals</span><span class="op">(</span><span class="dv">10</span><span class="op">)</span>   <span class="co">// Evaluates to true</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="op">!(</span>num2<span class="op">.</span><span class="fu">equals</span><span class="op">(</span>regularInt<span class="op">))</span> <span class="co">// Evaluates to true because 8 != 20</span></span></code></pre></div>
 <p><code>compareTo(otherInt)</code></p>
 <ul>
 <li>return 0 if the two Integer values are equal, returns a negative number if the Integer value is less than otherInteger’s value, and returns a positive number if the Integer value is greater than otherInteger’s value. otherInteger may be an Integer object, int variable, or integer literal.</li>
 </ul>
-<div class="sourceCode" id="cb36"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb36-1" title="1">num1.<span class="fu">compareTo</span>(num2) <span class="co">// Returns value greater than 0, because 10 &gt; 8</span></a>
-<a class="sourceLine" id="cb36-2" title="2">num2.<span class="fu">compareTo</span>(<span class="dv">8</span>)    <span class="co">// Returns 0 because 8 == 8</span></a>
-<a class="sourceLine" id="cb36-3" title="3">num1.<span class="fu">compareTo</span>(regularInt)   <span class="co">// Returns value less than 0, because 10 &lt; 20</span></a></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>num1<span class="op">.</span><span class="fu">compareTo</span><span class="op">(</span>num2<span class="op">)</span> <span class="co">// Returns value greater than 0, because 10 &gt; 8</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>num2<span class="op">.</span><span class="fu">compareTo</span><span class="op">(</span><span class="dv">8</span><span class="op">)</span>    <span class="co">// Returns 0 because 8 == 8</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>num1<span class="op">.</span><span class="fu">compareTo</span><span class="op">(</span>regularInt<span class="op">)</span>   <span class="co">// Returns value less than 0, because 10 &lt; 20</span></span></code></pre></div>
 <blockquote>
 <p>Other workaround with <code>objectVar</code> to <code>objectVar</code> <code>==</code> or <code>=!</code> comparison is to assign one <code>objectVar</code> to an instance of a primitive counterpart before the comparison.</p>
 </blockquote>
@@ -946,7 +995,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p>The block tag specification below creates a reference to ElapsedTime’s <code>printTime()</code> method.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb37-1" title="1"><span class="at">@see</span> ElapsedTime#<span class="fu">printTime</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="at">@see</span> ElapsedTime#<span class="fu">printTime</span><span class="op">()</span></span></code></pre></div>
 <p>Private class members are not included by default in the API documentation generated by the Javadoc tool. API documentation is meant to provide a summary of all functionality available to external applications interfacing with the described classes. Thus, private class members, which cannot be accessed by other classes, are not typically included in the documentation. The Java Scanner class specification, for example, only describes the public class members available to programmers using the class.</p>
 <p>Similarly, the resulting API documentation for the above classes need only include information that enables their use by other programmers. However, if a programmer needs to document a class’s complete structure, the Javadoc tool can be executed with the <code>-private</code> flag, as in <code>javadoc -private -d destination class1.java class2.java</code>, to enable the documentation of private class members.</p>
 <h2 id="parameters-of-reference-types">7.18 Parameters of Reference Types</h2>
@@ -1016,16 +1065,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The <code>@Override</code> annotation is placed above a method that overrides a base class method so the compiler verifies that an identical base class method exists. An <strong>annotation</strong> is an optional command beginning with the “@” symbol that can provide the compiler with information that helps the compiler detect errors better. The <code>@Override</code> annotation causes the compiler to produce an error when a programmer mistakenly specifies parameters that are different from the parameters of the method that should be overridden or misnames the overriding method. Good practice is to always include an <code>@Override</code> annotation with a method that is meant to override a base class method.</p>
 <h3 id="calling-a-base-class-method">Calling a base class method</h3>
 <p>An overriding method can call the overridden method by using the super keyword. Ex: <code>super.getDescription</code> The <strong>super</strong> keyword is a reference variable used to call the parent class’s methods or constructors.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Restaurant <span class="kw">extends</span> Business{</a>
-<a class="sourceLine" id="cb38-2" title="2">   ...</a>
-<a class="sourceLine" id="cb38-3" title="3"></a>
-<a class="sourceLine" id="cb38-4" title="4">   <span class="at">@Override</span></a>
-<a class="sourceLine" id="cb38-5" title="5">   <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getDescription</span>() {</a>
-<a class="sourceLine" id="cb38-6" title="6">      <span class="kw">return</span> <span class="kw">super</span>.<span class="fu">getDescription</span>() + <span class="st">&quot;</span><span class="sc">\n</span><span class="st">  Rating: &quot;</span> + rating;</a>
-<a class="sourceLine" id="cb38-7" title="7">   }</a>
-<a class="sourceLine" id="cb38-8" title="8"></a>
-<a class="sourceLine" id="cb38-9" title="9">   ...</a>
-<a class="sourceLine" id="cb38-10" title="10">}</a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Restaurant <span class="kw">extends</span> Business<span class="op">{</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">...</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>   <span class="at">@Override</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getDescription</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> <span class="kw">super</span><span class="op">.</span><span class="fu">getDescription</span><span class="op">()</span> <span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">  Rating: &quot;</span> <span class="op">+</span> rating<span class="op">;</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>   <span class="kw">...</span></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <blockquote>
 <p>A common error is to leave off super when wanting to call a base class method. Without the use of the super keyword, the call to getDescription() refers to itself (a recursive call), so getDescription() would call itself, which would call itself, etc., never actually printing anything.</p>
 </blockquote>
@@ -1039,32 +1088,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>One scenario requiring runtime polymorphism involves derived classes. Programmers commonly create a collection of objects of both base and derived class types. Ex: the statement <code>ArrayList&lt;GenericItem&gt; inventoryList = new ArrayList&lt;GenericItem&gt;();</code> declares an ArrayList that can contain references to objects of type <code>GenericItem</code> or ProduceItem. ProduceItem derives from GenericItem.</p>
 <h2 id="arraylists-of-objects">ArrayLists of Objects</h2>
 <p>Because all classes are derived from the Object class, programmers can take advantage of runtime polymorphism in order to create a collection (e.g., ArrayList) of objects of various class types and perform operations on the elements. The program below uses the Business class and other built-in classes to create and output a single ArrayList of differing types.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb39-1" title="1"><span class="kw">import</span><span class="im"> java.util.ArrayList;</span></a>
-<a class="sourceLine" id="cb39-2" title="2"></a>
-<a class="sourceLine" id="cb39-3" title="3"><span class="kw">public</span> <span class="kw">class</span> ArrayListPrinter {</a>
-<a class="sourceLine" id="cb39-4" title="4"></a>
-<a class="sourceLine" id="cb39-5" title="5">   <span class="co">// Method prints an ArrayList of Objects</span></a>
-<a class="sourceLine" id="cb39-6" title="6">   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">PrintArrayList</span>(<span class="bu">ArrayList</span>&lt;<span class="bu">Object</span>&gt; objList) {</a>
-<a class="sourceLine" id="cb39-7" title="7">      <span class="dt">int</span> i;</a>
-<a class="sourceLine" id="cb39-8" title="8"></a>
-<a class="sourceLine" id="cb39-9" title="9">      <span class="kw">for</span> (i = <span class="dv">0</span>; i &lt; objList.<span class="fu">size</span>(); ++i) {</a>
-<a class="sourceLine" id="cb39-10" title="10">         <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(objList.<span class="fu">get</span>(i));</a>
-<a class="sourceLine" id="cb39-11" title="11">      }</a>
-<a class="sourceLine" id="cb39-12" title="12">   }</a>
-<a class="sourceLine" id="cb39-13" title="13"></a>
-<a class="sourceLine" id="cb39-14" title="14">   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
-<a class="sourceLine" id="cb39-15" title="15">      <span class="bu">ArrayList</span>&lt;<span class="bu">Object</span>&gt; objList = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;<span class="bu">Object</span>&gt;();</a>
-<a class="sourceLine" id="cb39-16" title="16"></a>
-<a class="sourceLine" id="cb39-17" title="17">      <span class="co">// Add new instances of various classes to objList</span></a>
-<a class="sourceLine" id="cb39-18" title="18">      objList.<span class="fu">add</span>(<span class="kw">new</span> <span class="bu">Object</span>());</a>
-<a class="sourceLine" id="cb39-19" title="19">      objList.<span class="fu">add</span>(<span class="dv">12</span>);</a>
-<a class="sourceLine" id="cb39-20" title="20">      objList.<span class="fu">add</span>(<span class="fl">3.</span><span class="dv">14</span>);</a>
-<a class="sourceLine" id="cb39-21" title="21">      objList.<span class="fu">add</span>(<span class="kw">new</span> <span class="bu">String</span>(<span class="st">&quot;Hello!&quot;</span>));</a>
-<a class="sourceLine" id="cb39-22" title="22">      objList.<span class="fu">add</span>(<span class="kw">new</span> <span class="fu">Business</span>(<span class="st">&quot;ACME&quot;</span>, <span class="st">&quot;5 Main St&quot;</span>));</a>
-<a class="sourceLine" id="cb39-23" title="23"></a>
-<a class="sourceLine" id="cb39-24" title="24">      <span class="co">// Print list of Objects</span></a>
-<a class="sourceLine" id="cb39-25" title="25">      <span class="fu">PrintArrayList</span>(objList);</a>
-<a class="sourceLine" id="cb39-26" title="26">   }</a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">util</span><span class="op">.</span><span class="im">ArrayList</span><span class="op">;</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ArrayListPrinter <span class="op">{</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>   <span class="co">// Method prints an ArrayList of Objects</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">PrintArrayList</span><span class="op">(</span><span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">Object</span><span class="op">&gt;</span> objList<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">int</span> i<span class="op">;</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> <span class="op">(</span>i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> objList<span class="op">.</span><span class="fu">size</span><span class="op">();</span> <span class="op">++</span>i<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>         <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>objList<span class="op">.</span><span class="fu">get</span><span class="op">(</span>i<span class="op">));</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>      <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">Object</span><span class="op">&gt;</span> objList <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">Object</span><span class="op">&gt;();</span></span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Add new instances of various classes to objList</span></span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>      objList<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="kw">new</span> <span class="bu">Object</span><span class="op">());</span></span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a>      objList<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="dv">12</span><span class="op">);</span></span>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a>      objList<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="fl">3.14</span><span class="op">);</span></span>
+<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a>      objList<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="kw">new</span> <span class="bu">String</span><span class="op">(</span><span class="st">&quot;Hello!&quot;</span><span class="op">));</span></span>
+<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a>      objList<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="kw">new</span> <span class="fu">Business</span><span class="op">(</span><span class="st">&quot;ACME&quot;</span><span class="op">,</span> <span class="st">&quot;5 Main St&quot;</span><span class="op">));</span></span>
+<span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Print list of Objects</span></span>
+<span id="cb39-25"><a href="#cb39-25" aria-hidden="true" tabindex="-1"></a>      <span class="fu">PrintArrayList</span><span class="op">(</span>objList<span class="op">);</span></span>
+<span id="cb39-26"><a href="#cb39-26" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span></code></pre></div>
 <p>Note that a method operating on a collection of Object elements may only invoke the methods defined by the base class (e.g., the Object class). Thus, a statement that calls the <code>toString()</code> method on an element of an ArrayList of Objects called objList, such as <code>objList.get(i).toString()</code>, is valid because the Object class defines the <code>toString()</code> method. However, a statement that calls, for example, the Integer class’s <code>intValue()</code> method on the same element (i.e., <code>objList.get(i).intValue()</code>) results in a compiler error even if that particular element is an Integer object.</p>
 <h2 id="abstract-classes-introduction-generic">10.7 Abstract classes: Introduction (generic)</h2>
 <ul>
@@ -1079,41 +1128,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A <strong>concrete class</strong> is a class that is not abstract, and hence can be instantiated.</p>
 <h2 id="is-a-versus-has-a-relationships">10.9 Is-a versus has-a relationships</h2>
 <p>The ‘has-a’ relationship. A MotherInfo object ‘has a’ String object and ‘has a’ ArrayList of ChildInfo objects, but no inheritance is involved.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb40-1" title="1"><span class="kw">public</span> <span class="kw">class</span> ChildInfo {</a>
-<a class="sourceLine" id="cb40-2" title="2">   <span class="kw">public</span> <span class="bu">String</span> firstName;</a>
-<a class="sourceLine" id="cb40-3" title="3">   <span class="kw">public</span> <span class="bu">String</span> birthDate;</a>
-<a class="sourceLine" id="cb40-4" title="4">   <span class="kw">public</span> <span class="bu">String</span> schoolName;</a>
-<a class="sourceLine" id="cb40-5" title="5"></a>
-<a class="sourceLine" id="cb40-6" title="6">   ...</a>
-<a class="sourceLine" id="cb40-7" title="7">}</a>
-<a class="sourceLine" id="cb40-8" title="8"></a>
-<a class="sourceLine" id="cb40-9" title="9"><span class="kw">public</span> <span class="kw">class</span> MotherInfo {</a>
-<a class="sourceLine" id="cb40-10" title="10">   <span class="kw">public</span> <span class="bu">String</span> firstName;</a>
-<a class="sourceLine" id="cb40-11" title="11">   <span class="kw">public</span> <span class="bu">String</span> birthDate;</a>
-<a class="sourceLine" id="cb40-12" title="12">   <span class="kw">public</span> <span class="bu">String</span> spouseName;</a>
-<a class="sourceLine" id="cb40-13" title="13">   <span class="kw">public</span> <span class="bu">ArrayList</span>&lt;ChildInfo&gt; childrenData;</a>
-<a class="sourceLine" id="cb40-14" title="14"></a>
-<a class="sourceLine" id="cb40-15" title="15">   ...</a>
-<a class="sourceLine" id="cb40-16" title="16">}</a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ChildInfo <span class="op">{</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="bu">String</span> firstName<span class="op">;</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="bu">String</span> birthDate<span class="op">;</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="bu">String</span> schoolName<span class="op">;</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>   <span class="kw">...</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MotherInfo <span class="op">{</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="bu">String</span> firstName<span class="op">;</span></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="bu">String</span> birthDate<span class="op">;</span></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="bu">String</span> spouseName<span class="op">;</span></span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="bu">ArrayList</span><span class="op">&lt;</span>ChildInfo<span class="op">&gt;</span> childrenData<span class="op">;</span></span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>   <span class="kw">...</span></span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>The ‘is-a’ relationship. A MotherInfo object ‘is a’ kind of PersonInfo. The MotherInfo class thus inherits from the PersonInfo class. Likewise for the ChildInfo class.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb41-1" title="1"><span class="kw">public</span> <span class="kw">class</span> PersonInfo {</a>
-<a class="sourceLine" id="cb41-2" title="2">   <span class="kw">public</span> <span class="bu">String</span> firstName;</a>
-<a class="sourceLine" id="cb41-3" title="3">   <span class="kw">public</span> <span class="bu">String</span> birthdate;</a>
-<a class="sourceLine" id="cb41-4" title="4"></a>
-<a class="sourceLine" id="cb41-5" title="5">   ...</a>
-<a class="sourceLine" id="cb41-6" title="6">}</a>
-<a class="sourceLine" id="cb41-7" title="7"></a>
-<a class="sourceLine" id="cb41-8" title="8"><span class="kw">public</span> <span class="kw">class</span> ChildInfo <span class="kw">extends</span> PersonInfo {</a>
-<a class="sourceLine" id="cb41-9" title="9">   <span class="kw">public</span> <span class="bu">String</span> schoolName;</a>
-<a class="sourceLine" id="cb41-10" title="10"></a>
-<a class="sourceLine" id="cb41-11" title="11">   ...</a>
-<a class="sourceLine" id="cb41-12" title="12">}</a>
-<a class="sourceLine" id="cb41-13" title="13"></a>
-<a class="sourceLine" id="cb41-14" title="14"><span class="kw">public</span> <span class="kw">class</span> MotherInfo <span class="kw">extends</span> PersonInfo {</a>
-<a class="sourceLine" id="cb41-15" title="15">   <span class="kw">public</span> <span class="bu">String</span> spousename;</a>
-<a class="sourceLine" id="cb41-16" title="16">   <span class="kw">public</span> <span class="bu">ArrayList</span>&lt;ChildInfo&gt; childrenData;</a>
-<a class="sourceLine" id="cb41-17" title="17">  ...</a>
-<a class="sourceLine" id="cb41-18" title="18">}</a></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> PersonInfo <span class="op">{</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="bu">String</span> firstName<span class="op">;</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="bu">String</span> birthdate<span class="op">;</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>   <span class="kw">...</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ChildInfo <span class="kw">extends</span> PersonInfo <span class="op">{</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="bu">String</span> schoolName<span class="op">;</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>   <span class="kw">...</span></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MotherInfo <span class="kw">extends</span> PersonInfo <span class="op">{</span></span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="bu">String</span> spousename<span class="op">;</span></span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="bu">ArrayList</span><span class="op">&lt;</span>ChildInfo<span class="op">&gt;</span> childrenData<span class="op">;</span></span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">...</span></span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h2 id="uml-1">10.10 UML</h2>
 <h3 id="uml-class-diagrams">UML class diagrams</h3>
 <p>The <strong>Universal Modeling Language (UML)</strong> is a language for software design that uses different types of diagrams to visualize the structure and behavior of programs. A <strong>structural diagram</strong> visualizes static elements of software, such as the variables and methods used in the program. A <strong>behavioral diagram</strong> visualizes dynamic behavior of software, such as the flow of an algorithm.</p>
@@ -1124,52 +1173,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 id="interfaces">10.11 Interfaces</h2>
 <p>Java provides <strong>interfaces</strong> as another mechanism for programmers to state that a class adheres to rules defined by the interface. An <strong>interface</strong> can specify a set of abstract methods that an implementing class must override and define. In an interface, an abstract method does not need the abstract keyword in front of the method signature.</p>
 <p>To create an interface, a programmer uses the keyword interface. The following code illustrates two interfaces named Drawable and DrawableASCII.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb42-1" title="1"><span class="kw">import</span><span class="im"> java.awt.Graphics2D;</span></a>
-<a class="sourceLine" id="cb42-2" title="2"></a>
-<a class="sourceLine" id="cb42-3" title="3"><span class="kw">public</span> <span class="kw">interface</span> Drawable {</a>
-<a class="sourceLine" id="cb42-4" title="4">   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">draw</span>(<span class="bu">Graphics2D</span> graphicsObject);</a>
-<a class="sourceLine" id="cb42-5" title="5">}</a></code></pre></div>
-<div class="sourceCode" id="cb43"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb43-1" title="1"><span class="kw">public</span> <span class="kw">interface</span> DrawableASCII {</a>
-<a class="sourceLine" id="cb43-2" title="2">   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">drawASCII</span>(<span class="dt">char</span> drawChar);</a>
-<a class="sourceLine" id="cb43-3" title="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">awt</span><span class="op">.</span><span class="im">Graphics2D</span><span class="op">;</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">interface</span> Drawable <span class="op">{</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">draw</span><span class="op">(</span><span class="bu">Graphics2D</span> graphicsObject<span class="op">);</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">interface</span> DrawableASCII <span class="op">{</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">drawASCII</span><span class="op">(</span><span class="dt">char</span> drawChar<span class="op">);</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Any class that implements an interface must:</p>
 <ul>
 <li>List the interface name after the keyword implements</li>
 <li>Override and implement the interface’s abstract methods</li>
 </ul>
 <p>Although inheritance and polymorphism allow a class to override methods defined in the superclass, a class can only inherit from a single superclass. A class can implement multiple interfaces using a comma separated list. Each Interface a class implements means the class will adhere to the rules defined by the interface.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb44-1" title="1"><span class="kw">import</span><span class="im"> java.awt.Color;</span></a>
-<a class="sourceLine" id="cb44-2" title="2"><span class="kw">import</span><span class="im"> java.awt.Graphics2D;</span></a>
-<a class="sourceLine" id="cb44-3" title="3"><span class="kw">import</span><span class="im"> java.awt.Rectangle;</span></a>
-<a class="sourceLine" id="cb44-4" title="4"></a>
-<a class="sourceLine" id="cb44-5" title="5"><span class="kw">public</span> <span class="kw">class</span> Square <span class="kw">implements</span> Drawable, DrawableASCII {</a>
-<a class="sourceLine" id="cb44-6" title="6">   <span class="kw">private</span> <span class="dt">int</span> sideLength;</a>
-<a class="sourceLine" id="cb44-7" title="7"></a>
-<a class="sourceLine" id="cb44-8" title="8">   <span class="kw">public</span> <span class="fu">Square</span>(<span class="dt">int</span> sideLength) {</a>
-<a class="sourceLine" id="cb44-9" title="9">      <span class="kw">this</span>.<span class="fu">sideLength</span> = sideLength;</a>
-<a class="sourceLine" id="cb44-10" title="10">   }</a>
-<a class="sourceLine" id="cb44-11" title="11"></a>
-<a class="sourceLine" id="cb44-12" title="12">   <span class="at">@Override</span></a>
-<a class="sourceLine" id="cb44-13" title="13">   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">draw</span>(<span class="bu">Graphics2D</span> graphicsObject) {</a>
-<a class="sourceLine" id="cb44-14" title="14">      <span class="bu">Rectangle</span> shapeObject = <span class="kw">new</span> <span class="bu">Rectangle</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="kw">this</span>.<span class="fu">sideLength</span>, <span class="kw">this</span>.<span class="fu">sideLength</span>);</a>
-<a class="sourceLine" id="cb44-15" title="15">      <span class="bu">Color</span> colorObject = <span class="kw">new</span> <span class="bu">Color</span>(<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>);</a>
-<a class="sourceLine" id="cb44-16" title="16">      graphicsObject.<span class="fu">setColor</span>(colorObject);</a>
-<a class="sourceLine" id="cb44-17" title="17">      graphicsObject.<span class="fu">fill</span>(shapeObject);</a>
-<a class="sourceLine" id="cb44-18" title="18">   }</a>
-<a class="sourceLine" id="cb44-19" title="19"></a>
-<a class="sourceLine" id="cb44-20" title="20">   <span class="at">@Override</span></a>
-<a class="sourceLine" id="cb44-21" title="21">   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">drawASCII</span>(<span class="dt">char</span> drawChar) {</a>
-<a class="sourceLine" id="cb44-22" title="22">      <span class="dt">int</span> rowIndex;</a>
-<a class="sourceLine" id="cb44-23" title="23">      <span class="dt">int</span> columnIndex;</a>
-<a class="sourceLine" id="cb44-24" title="24"></a>
-<a class="sourceLine" id="cb44-25" title="25">      <span class="kw">for</span> (rowIndex = <span class="dv">0</span>; rowIndex &lt; <span class="kw">this</span>.<span class="fu">sideLength</span>; ++rowIndex) {</a>
-<a class="sourceLine" id="cb44-26" title="26">         <span class="kw">for</span> (columnIndex = <span class="dv">0</span>; columnIndex &lt; <span class="kw">this</span>.<span class="fu">sideLength</span>; ++columnIndex) {</a>
-<a class="sourceLine" id="cb44-27" title="27">            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(<span class="st">&quot;*&quot;</span>);</a>
-<a class="sourceLine" id="cb44-28" title="28">         }</a>
-<a class="sourceLine" id="cb44-29" title="29">         <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
-<a class="sourceLine" id="cb44-30" title="30">      }</a>
-<a class="sourceLine" id="cb44-31" title="31">   }</a>
-<a class="sourceLine" id="cb44-32" title="32">}</a></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">awt</span><span class="op">.</span><span class="im">Color</span><span class="op">;</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">awt</span><span class="op">.</span><span class="im">Graphics2D</span><span class="op">;</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">awt</span><span class="op">.</span><span class="im">Rectangle</span><span class="op">;</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Square <span class="kw">implements</span> Drawable<span class="op">,</span> DrawableASCII <span class="op">{</span></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="dt">int</span> sideLength<span class="op">;</span></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="fu">Square</span><span class="op">(</span><span class="dt">int</span> sideLength<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="fu">sideLength</span> <span class="op">=</span> sideLength<span class="op">;</span></span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>   <span class="at">@Override</span></span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">draw</span><span class="op">(</span><span class="bu">Graphics2D</span> graphicsObject<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a>      <span class="bu">Rectangle</span> shapeObject <span class="op">=</span> <span class="kw">new</span> <span class="bu">Rectangle</span><span class="op">(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="fu">sideLength</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="fu">sideLength</span><span class="op">);</span></span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a>      <span class="bu">Color</span> colorObject <span class="op">=</span> <span class="kw">new</span> <span class="bu">Color</span><span class="op">(</span><span class="dv">255</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">);</span></span>
+<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a>      graphicsObject<span class="op">.</span><span class="fu">setColor</span><span class="op">(</span>colorObject<span class="op">);</span></span>
+<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a>      graphicsObject<span class="op">.</span><span class="fu">fill</span><span class="op">(</span>shapeObject<span class="op">);</span></span>
+<span id="cb44-18"><a href="#cb44-18" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb44-19"><a href="#cb44-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-20"><a href="#cb44-20" aria-hidden="true" tabindex="-1"></a>   <span class="at">@Override</span></span>
+<span id="cb44-21"><a href="#cb44-21" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">drawASCII</span><span class="op">(</span><span class="dt">char</span> drawChar<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb44-22"><a href="#cb44-22" aria-hidden="true" tabindex="-1"></a>      <span class="dt">int</span> rowIndex<span class="op">;</span></span>
+<span id="cb44-23"><a href="#cb44-23" aria-hidden="true" tabindex="-1"></a>      <span class="dt">int</span> columnIndex<span class="op">;</span></span>
+<span id="cb44-24"><a href="#cb44-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-25"><a href="#cb44-25" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> <span class="op">(</span>rowIndex <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> rowIndex <span class="op">&lt;</span> <span class="kw">this</span><span class="op">.</span><span class="fu">sideLength</span><span class="op">;</span> <span class="op">++</span>rowIndex<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb44-26"><a href="#cb44-26" aria-hidden="true" tabindex="-1"></a>         <span class="cf">for</span> <span class="op">(</span>columnIndex <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> columnIndex <span class="op">&lt;</span> <span class="kw">this</span><span class="op">.</span><span class="fu">sideLength</span><span class="op">;</span> <span class="op">++</span>columnIndex<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb44-27"><a href="#cb44-27" aria-hidden="true" tabindex="-1"></a>            <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">&quot;*&quot;</span><span class="op">);</span></span>
+<span id="cb44-28"><a href="#cb44-28" aria-hidden="true" tabindex="-1"></a>         <span class="op">}</span></span>
+<span id="cb44-29"><a href="#cb44-29" aria-hidden="true" tabindex="-1"></a>         <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">();</span></span>
+<span id="cb44-30"><a href="#cb44-30" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb44-31"><a href="#cb44-31" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb44-32"><a href="#cb44-32" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <blockquote>
 <p>UML Diagrams denote interfaces using the keyword interface, inside double angle brackets, above the class name. Classes that implement the interface have a dashed line with an unfilled arrow pointing at the interface. Following UML conventions is important for clear communication between programmers.</p>
 </blockquote>

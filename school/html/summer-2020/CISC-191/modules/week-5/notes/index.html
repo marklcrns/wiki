@@ -12,6 +12,13 @@
 
     <title>Concurrency, Threads and Multiprocessing</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -23,26 +30,28 @@
     <link href="../../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -51,9 +60,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -129,14 +138,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#week-5-concurrency-threads-and-multiprocessing">Week 5: Concurrency, Threads and Multiprocessing</a><ul>
-          <li><a href="#the-thread-class">The Thread Class</a><ul>
+          <li><a href="#week-5-concurrency-threads-and-multiprocessing">Week 5: Concurrency, Threads and Multiprocessing</a>
+          <ul>
+          <li><a href="#the-thread-class">The Thread Class</a>
+          <ul>
           <li><a href="#the-static-yield-method">The Static yield() Method</a></li>
           <li><a href="#the-static-sleepmilliseconds-method">The Static sleep(milliseconds) Method</a></li>
           <li><a href="#the-join-method">The join() Method</a></li>
           <li><a href="#isalive-interrupt-and-isinterrupted">isAlive(), interrupt(), and isInterrupted()</a></li>
           </ul></li>
-          <li><a href="#thread-pools">Thread Pools</a><ul>
+          <li><a href="#thread-pools">Thread Pools</a>
+          <ul>
           <li><a href="#thread-synchronization">Thread Synchronization</a></li>
           <li><a href="#race-condition">Race Condition</a></li>
           <li><a href="#the-synchronized-keyword">The synchronized keyword</a></li>
@@ -146,16 +158,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li><a href="#synchronization-using-locks">Synchronization Using Locks</a></li>
           <li><a href="#fairness-policy">Fairness Policy</a></li>
           <li><a href="#cooperation-among-threads">Cooperation Among Threads</a></li>
-          <li><a href="#javas-built-in-monitors">Java’s Built-in Monitors</a><ul>
+          <li><a href="#javas-built-in-monitors">Java’s Built-in Monitors</a>
+          <ul>
           <li><a href="#wait-notify-and-notifyall">wait(), notify(), and notifyAll()</a></li>
           </ul></li>
-          <li><a href="#blocking-queues">Blocking Queues</a><ul>
+          <li><a href="#blocking-queues">Blocking Queues</a>
+          <ul>
           <li><a href="#concrete-blocking-queues">Concrete Blocking Queues</a></li>
           </ul></li>
-          <li><a href="#semaphores">Semaphores</a><ul>
+          <li><a href="#semaphores">Semaphores</a>
+          <ul>
           <li><a href="#creating-semaphores">Creating Semaphores</a></li>
           </ul></li>
-          <li><a href="#deadlock">Deadlock</a><ul>
+          <li><a href="#deadlock">Deadlock</a>
+          <ul>
           <li><a href="#preventing-deadlock">Preventing Deadlock</a></li>
           </ul></li>
           <li><a href="#thread-states">Thread States</a></li>
@@ -234,26 +250,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A class is said to be thread-safe if an object of the class does not cause a race condition in the presence of multiple threads.</p>
 <h3 id="the-synchronized-keyword">The synchronized keyword</h3>
 <p>To avoid race conditions, more than one thread must be prevented from simultaneously entering certain part of the program, known as critical region. The critical region in the Listing 32.5 is the entire deposit method. You can use the <code>synchronized</code> keyword to synchronize the method so that only one thread can access the method at a time. There are several ways to correct the problem in Listing 32.5, one approach is to make Account thread-safe by adding the <code>synchronized</code> keyword in the deposit method in Line 45 as follows:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">public</span> <span class="kw">synchronized</span> <span class="dt">void</span> <span class="fu">deposit</span>(<span class="dt">double</span> amount)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">synchronized</span> <span class="dt">void</span> <span class="fu">deposit</span><span class="op">(</span><span class="dt">double</span> amount<span class="op">)</span></span></code></pre></div>
 <h3 id="synchronizing-instance-methods-and-static-methods">Synchronizing Instance Methods and Static Methods</h3>
 <p>A synchronized method acquires a lock before it executes. In the case of an instance method, the lock is on the object for which the method was invoked. In the case of a static method, the lock is on the class. If one thread invokes a synchronized instance method (respectively, static method) on an object, the lock of that object (respectively, class) is acquired first, then the method is executed, and finally the lock is released. Another thread invoking the same method of that object (respectively, class) is blocked until the lock is released.</p>
 <h3 id="synchronizing-statements">Synchronizing Statements</h3>
 <p><strong>Invoking a synchronized instance method of an object acquires a lock on the object, and invoking a synchronized static method of a class acquires a lock on the class.</strong> A synchronized statement can be used to acquire a lock on any object, not just this object, when executing a block of the code in a method. This block is referred to as a synchronized block. The general form of a synchronized statement is as follows:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">synchronized</span> (expr) {</a>
-<a class="sourceLine" id="cb2-2" title="2">  statements;</a>
-<a class="sourceLine" id="cb2-3" title="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">synchronized</span> <span class="op">(</span>expr<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  statements<span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>The expression expr must evaluate to an object reference. If the object is already locked by another thread, the thread is blocked until the lock is released. When a lock is obtained on the object, the statements in the synchronized block are executed, and then the lock is released.</p>
 <h3 id="synchronizing-statements-vs.-methods">Synchronizing Statements vs. Methods</h3>
 <p>Any synchronized instance method can be converted into a synchronized statement. Suppose that the following is a synchronized instance method:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">public</span> <span class="kw">synchronized</span> <span class="dt">void</span> <span class="fu">xMethod</span>() {</a>
-<a class="sourceLine" id="cb3-2" title="2">  <span class="co">// method body</span></a>
-<a class="sourceLine" id="cb3-3" title="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">synchronized</span> <span class="dt">void</span> <span class="fu">xMethod</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// method body</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>This method is equivalent to</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">xMethod</span>() {</a>
-<a class="sourceLine" id="cb4-2" title="2">  <span class="kw">synchronized</span> (<span class="kw">this</span>) {</a>
-<a class="sourceLine" id="cb4-3" title="3">    <span class="co">// method body</span></a>
-<a class="sourceLine" id="cb4-4" title="4">  }</a>
-<a class="sourceLine" id="cb4-5" title="5">}</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">xMethod</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">synchronized</span> <span class="op">(</span><span class="kw">this</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// method body</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="synchronization-using-locks">Synchronization Using Locks</h3>
 <p>A synchronized instance method implicitly acquires a lock on the instance before it executes the method.</p>
 <p>JDK 1.5 enables you to use locks explicitly. The new locking features are flexible and give you more control for coordinating threads. A lock is an instance of the Lock interface, which declares the methods for acquiring and releasing locks. A lock may also use the <code>newCondition()</code> method to create any number of Condition objects, which can be used for thread communications.</p>
@@ -278,19 +294,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 id="deadlock">Deadlock</h3>
 <p>Sometimes two or more threads need to acquire the locks on several shared objects. This could cause deadlock, in which each thread has the lock on one of the objects and is waiting for the lock on the other object. Consider the scenario with two threads and two objects. Thread 1 acquired a lock on object1 and Thread 2 acquired a lock on object2. Now Thread 1 is waiting for the lock on object2 and Thread 2 for the lock on object1. The two threads wait for each other to release the in order to get the lock, and neither can continue to run.</p>
 <p>Thread 1</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">synchronized</span> (object1) {</a>
-<a class="sourceLine" id="cb5-2" title="2">  <span class="co">// do something here</span></a>
-<a class="sourceLine" id="cb5-3" title="3">  <span class="kw">synchronized</span> (object2) { <span class="co">// Wait for Thread 2 to release the lock on object 2</span></a>
-<a class="sourceLine" id="cb5-4" title="4">    <span class="co">// do something here</span></a>
-<a class="sourceLine" id="cb5-5" title="5">  }</a>
-<a class="sourceLine" id="cb5-6" title="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">synchronized</span> <span class="op">(</span>object1<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// do something here</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">synchronized</span> <span class="op">(</span>object2<span class="op">)</span> <span class="op">{</span> <span class="co">// Wait for Thread 2 to release the lock on object 2</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// do something here</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Thread 2</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">synchronized</span> (object2) {</a>
-<a class="sourceLine" id="cb6-2" title="2">  <span class="co">// do something here</span></a>
-<a class="sourceLine" id="cb6-3" title="3">  <span class="kw">synchronized</span> (object1) { <span class="co">// Wait for Thread 1 to release the lock on object 1</span></a>
-<a class="sourceLine" id="cb6-4" title="4">    <span class="co">// do something here</span></a>
-<a class="sourceLine" id="cb6-5" title="5">  }</a>
-<a class="sourceLine" id="cb6-6" title="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">synchronized</span> <span class="op">(</span>object2<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// do something here</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">synchronized</span> <span class="op">(</span>object1<span class="op">)</span> <span class="op">{</span> <span class="co">// Wait for Thread 1 to release the lock on object 1</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// do something here</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h4 id="preventing-deadlock">Preventing Deadlock</h4>
 <p>Deadlock can be easily avoided by using a simple technique known as resource ordering. With this technique, you assign an order on all the objects whose locks must be acquired and ensure that each thread acquires the locks in that order. For the example, suppose the objects are ordered as object1 and object2. Using the resource ordering technique, Thread 2 must acquire a lock on object1 first, then on object2. Once Thread 1 acquired a lock on object1, Thread 2 has to wait for a lock on object1. So Thread 1 will be able to acquire a lock on object2 and no deadlock would occur.</p>
 <h3 id="thread-states">Thread States</h3>
@@ -303,20 +319,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>JDK 7 introduces the new Fork/Join Framework for parallel programming, which utilizes the multicore processors.</p>
 <h3 id="vector-stack-and-hashtable">Vector, Stack, and Hashtable</h3>
 <p>Invoking synchronizedCollection(Collection c) returns a new Collection object, in which all the methods that access and update the original collection c are synchronized. These methods are implemented using the synchronized keyword. For example, the add method is implemented like this:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">add</span>(E o) {</a>
-<a class="sourceLine" id="cb7-2" title="2">  <span class="kw">synchronized</span> (<span class="kw">this</span>) { <span class="kw">return</span> c.<span class="fu">add</span>(o); }</a>
-<a class="sourceLine" id="cb7-3" title="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">add</span><span class="op">(</span>E o<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">synchronized</span> <span class="op">(</span><span class="kw">this</span><span class="op">)</span> <span class="op">{</span> <span class="cf">return</span> c<span class="op">.</span><span class="fu">add</span><span class="op">(</span>o<span class="op">);</span> <span class="op">}</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>The synchronized collections can be safely accessed and modified by multiple threads concurrently.</p>
 <p>The methods in java.util.Vector, java.util.Stack, and Hashtable are already synchronized. These are old classes introduced in JDK 1.0. In JDK 1.5, you should use java.util.ArrayList to replace Vector, java.util.LinkedList to replace Stack, and java.util.Map to replace Hashtable. If synchronization is needed, use a synchronization wrapper.</p>
 <h3 id="fail-fast">Fail-Fast</h3>
 <p>The synchronization wrapper classes are thread-safe, but the iterator is fail-fast. This means that if you are using an iterator to traverse a collection while the underlying collection is being modified by another thread, then the iterator will immediately fail by throwing <code>java.util.ConcurrentModificationException</code>, which is a subclass of <code>RuntimeException</code>. To avoid this error, you need to create a synchronized collection object and acquire a lock on the object when traversing it. For example, suppose you want to traverse a set, you have to write the code like this:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb8-1" title="1"><span class="bu">Set</span> hashSet = <span class="bu">Collections</span>.<span class="fu">synchronizedSet</span>(<span class="kw">new</span> <span class="bu">HashSet</span>());</a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="kw">synchronized</span> (hashSet) { <span class="co">// Must synchronize it</span></a>
-<a class="sourceLine" id="cb8-3" title="3">  <span class="bu">Iterator</span> iterator = hashSet.<span class="fu">iterator</span>();</a>
-<a class="sourceLine" id="cb8-4" title="4">  <span class="kw">while</span> (iterator.<span class="fu">hasNext</span>()) {</a>
-<a class="sourceLine" id="cb8-5" title="5">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(iterator.<span class="fu">next</span>());</a>
-<a class="sourceLine" id="cb8-6" title="6">  }</a>
-<a class="sourceLine" id="cb8-7" title="7">}</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Set</span> hashSet <span class="op">=</span> <span class="bu">Collections</span><span class="op">.</span><span class="fu">synchronizedSet</span><span class="op">(</span><span class="kw">new</span> <span class="bu">HashSet</span><span class="op">());</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">synchronized</span> <span class="op">(</span>hashSet<span class="op">)</span> <span class="op">{</span> <span class="co">// Must synchronize it</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">Iterator</span> iterator <span class="op">=</span> hashSet<span class="op">.</span><span class="fu">iterator</span><span class="op">();</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> <span class="op">(</span>iterator<span class="op">.</span><span class="fu">hasNext</span><span class="op">())</span> <span class="op">{</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>iterator<span class="op">.</span><span class="fu">next</span><span class="op">());</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Failure to do so may result in nondeterministic behavior, such as <code>ConcurrentModificationException</code>.</p>
 <p><br></p>
 <h1 id="resources">Resources</h1>

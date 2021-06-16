@@ -12,6 +12,13 @@
 
     <title>Bash Scripting Extras</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -23,26 +30,28 @@
     <link href="../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -51,9 +60,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -129,7 +138,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#extras">Extras</a><ul>
+          <li><a href="#extras">Extras</a>
+          <ul>
           <li><a href="#prevent-bash-script-from-being-executed">Prevent Bash Script From Being Executed</a></li>
           <li><a href="#get-script-paths-and-name">Get Script Paths and Name</a></li>
           <li><a href="#best-practices">Best Practices</a></li>
@@ -165,38 +175,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 id="extras">Extras</h1>
 <h2 id="prevent-bash-script-from-being-executed">Prevent Bash Script From Being Executed</h2>
 <p>Method 1: Remove file executable property with <code>chmod</code></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">chmod</span> -x /path/to/script</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> <span class="at">-x</span> /path/to/script</span></code></pre></div>
 <p>Method 2: With actual script</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">if</span><span class="bu"> [</span> <span class="va">${0##</span>*/<span class="va">}</span> <span class="ot">==</span> <span class="va">${BASH_SOURCE[0]##</span>*/<span class="va">}</span><span class="bu"> ]</span>; <span class="kw">then</span></a>
-<a class="sourceLine" id="cb2-2" title="2">  <span class="bu">echo</span> <span class="st">&quot;WARNING&quot;</span></a>
-<a class="sourceLine" id="cb2-3" title="3">  <span class="bu">echo</span> <span class="st">&quot;This script is not meant to be executed directly!&quot;</span></a>
-<a class="sourceLine" id="cb2-4" title="4">  <span class="bu">echo</span> <span class="st">&quot;Use this script only by sourcing it.&quot;</span></a>
-<a class="sourceLine" id="cb2-5" title="5">  <span class="bu">echo</span></a>
-<a class="sourceLine" id="cb2-6" title="6">  <span class="bu">exit</span> 1</a>
-<a class="sourceLine" id="cb2-7" title="7"><span class="kw">fi</span></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="va">${0</span><span class="op">##</span><span class="pp">*</span>/<span class="va">}</span> <span class="ot">==</span> <span class="va">${BASH_SOURCE</span><span class="op">[</span><span class="dv">0</span><span class="op">]##</span><span class="pp">*</span>/<span class="va">}</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">&quot;WARNING&quot;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">&quot;This script is not meant to be executed directly!&quot;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">&quot;Use this script only by sourcing it.&quot;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="bu">exit</span> 1</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://stackoverflow.com/questions/22962591/how-to-prevent-direct-bash-script-execution-and-allow-only-usage-from-other-scri">📄 How to prevent direct bash script execution and allow only usage from other script?</a></li>
 </ul>
 <h2 id="get-script-paths-and-name">Get Script Paths and Name</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># Script absolute path</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="va">SCRIPT_PATH=</span><span class="st">&quot;</span><span class="va">$(</span><span class="ex">realpath</span> -s <span class="va">$0)</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="co"># Script name</span></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="va">SCRIPT_NAME=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${0})</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb3-5" title="5"><span class="co"># Script directory</span></a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="va">SCRIPT_DIR=</span><span class="st">&quot;</span><span class="va">$(</span> <span class="bu">cd</span> <span class="st">&quot;</span><span class="va">$(</span> <span class="fu">dirname</span> <span class="st">&quot;</span><span class="va">$0</span><span class="st">&quot;</span> <span class="va">)</span><span class="st">&quot;</span> <span class="kw">&amp;&amp;</span> <span class="bu">pwd</span> <span class="va">)</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb3-7" title="7"><span class="va">SCRIPT_DIR=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">dirname</span> <span class="va">${SCRIPT_PATH})</span><span class="st">&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Script absolute path</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="va">SCRIPT_PATH</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$(</span><span class="ex">realpath</span> <span class="at">-s</span> <span class="va">$0)</span><span class="st">&quot;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Script name</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="va">SCRIPT_NAME</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${0})</span><span class="st">&quot;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Script directory</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="va">SCRIPT_DIR</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$(</span> <span class="bu">cd</span> <span class="st">&quot;</span><span class="va">$(</span> <span class="fu">dirname</span> <span class="st">&quot;</span><span class="va">$0</span><span class="st">&quot;</span> <span class="va">)</span><span class="st">&quot;</span> <span class="kw">&amp;&amp;</span> <span class="bu">pwd</span> <span class="va">)</span><span class="st">&quot;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="va">SCRIPT_DIR</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">dirname</span> <span class="va">${SCRIPT_PATH})</span><span class="st">&quot;</span></span></code></pre></div>
 <p>Better solution. Also resolves when script is symlink.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="va">SCRIPT_PATH=</span><span class="st">&quot;</span><span class="va">${BASH_SOURCE[0]}</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="kw">while</span><span class="bu"> [</span> <span class="ot">-h</span> <span class="st">&quot;</span><span class="va">$SCRIPT_PATH</span><span class="st">&quot;</span><span class="bu"> ]</span>; <span class="kw">do</span></a>
-<a class="sourceLine" id="cb4-3" title="3">  <span class="va">SCRIPT_DIR=</span><span class="st">&quot;</span><span class="va">$(</span><span class="bu">cd</span> -P <span class="st">&quot;</span><span class="va">$(</span><span class="fu">dirname</span> <span class="st">&quot;</span><span class="va">$SCRIPT_PATH</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span> <span class="op">&gt;</span>/dev/null <span class="op">2&gt;&amp;1</span> <span class="kw">&amp;&amp;</span> <span class="bu">pwd</span><span class="va">)</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb4-4" title="4">  <span class="va">SCRIPT_PATH=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">readlink</span> <span class="st">&quot;</span><span class="va">$SCRIPT_PATH</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb4-5" title="5">  [[ <span class="va">$SCRIPT_PATH</span> != <span class="ex">/*</span> ]] <span class="kw">&amp;&amp;</span> <span class="va">SCRIPT_PATH=</span><span class="st">&quot;</span><span class="va">$SCRIPT_DIR</span><span class="st">/</span><span class="va">$SCRIPT_PATH</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb4-6" title="6"><span class="kw">done</span></a>
-<a class="sourceLine" id="cb4-7" title="7"><span class="va">SCRIPT_DIR=</span><span class="st">&quot;</span><span class="va">$(</span><span class="bu">cd</span> -P <span class="st">&quot;</span><span class="va">$(</span><span class="fu">dirname</span> <span class="st">&quot;</span><span class="va">$SCRIPT_PATH</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span> <span class="op">&gt;</span>/dev/null <span class="op">2&gt;&amp;1</span> <span class="kw">&amp;&amp;</span> <span class="bu">pwd</span><span class="va">)</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb4-8" title="8"></a>
-<a class="sourceLine" id="cb4-9" title="9"><span class="bu">readonly</span> <span class="va">SCRIPT_PATH</span></a>
-<a class="sourceLine" id="cb4-10" title="10"><span class="bu">readonly</span> <span class="va">SCRIPT_DIR</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">SCRIPT_PATH</span><span class="op">=</span><span class="st">&quot;</span><span class="va">${BASH_SOURCE</span><span class="op">[</span><span class="dv">0</span><span class="op">]</span><span class="va">}</span><span class="st">&quot;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="bu">[</span> <span class="ot">-h</span> <span class="st">&quot;</span><span class="va">$SCRIPT_PATH</span><span class="st">&quot;</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="va">SCRIPT_DIR</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$(</span><span class="bu">cd</span> <span class="at">-P</span> <span class="st">&quot;</span><span class="va">$(</span><span class="fu">dirname</span> <span class="st">&quot;</span><span class="va">$SCRIPT_PATH</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span> <span class="op">&gt;</span>/dev/null <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span> <span class="kw">&amp;&amp;</span> <span class="bu">pwd</span><span class="va">)</span><span class="st">&quot;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="va">SCRIPT_PATH</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">readlink</span> <span class="st">&quot;</span><span class="va">$SCRIPT_PATH</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">[[</span> <span class="va">$SCRIPT_PATH</span> <span class="ot">!=</span> /<span class="pp">*</span> <span class="kw">]]</span> <span class="kw">&amp;&amp;</span> <span class="va">SCRIPT_PATH</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$SCRIPT_DIR</span><span class="st">/</span><span class="va">$SCRIPT_PATH</span><span class="st">&quot;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="va">SCRIPT_DIR</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$(</span><span class="bu">cd</span> <span class="at">-P</span> <span class="st">&quot;</span><span class="va">$(</span><span class="fu">dirname</span> <span class="st">&quot;</span><span class="va">$SCRIPT_PATH</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span> <span class="op">&gt;</span>/dev/null <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span> <span class="kw">&amp;&amp;</span> <span class="bu">pwd</span><span class="va">)</span><span class="st">&quot;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="bu">readonly</span> <span class="va">SCRIPT_PATH</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="bu">readonly</span> <span class="va">SCRIPT_DIR</span></span></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://stackoverflow.com/a/246128">📄 How can I get the source directory of a Bash script from within the script itself?</a></li>

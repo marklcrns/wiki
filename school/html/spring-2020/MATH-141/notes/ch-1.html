@@ -12,6 +12,13 @@
 
     <title>MATH 141 Chapter 1 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -22,7 +29,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -67,34 +89,42 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-1-the-basics">Chapter 1: The Basics</a><ul>
-          <li><a href="#sets-and-axioms">1.1 Sets and Axioms</a><ul>
+          <li><a href="#chapter-1-the-basics">Chapter 1: The Basics</a>
+          <ul>
+          <li><a href="#sets-and-axioms">1.1 Sets and Axioms</a>
+          <ul>
           <li><a href="#sets-of-numbers">Sets of Numbers</a></li>
           <li><a href="#axioms">Axioms</a></li>
           </ul></li>
           <li><a href="#add-subtract-multiply-divide-simplify-etc">1.2 Add, Subtract, Multiply, Divide, Simplify, etc</a></li>
-          <li><a href="#solving-polynomial-degree-1">1.3 Solving: Polynomial Degree 1</a><ul>
+          <li><a href="#solving-polynomial-degree-1">1.3 Solving: Polynomial Degree 1</a>
+          <ul>
           <li><a href="#solving-linear-equations-intro">Solving Linear Equations Intro</a></li>
-          <li><a href="#steps-in-solving-linear-equations">4 Steps in Solving Linear Equations</a><ul>
+          <li><a href="#steps-in-solving-linear-equations">4 Steps in Solving Linear Equations</a>
+          <ul>
           <li><a href="#step-4-kill-the-coefficient">Step 4: Kill the coefficient</a></li>
           <li><a href="#step-3-collect-xs">Step 3: Collect x’s</a></li>
           <li><a href="#step-2-move-xs">Step 2: Move x’s</a></li>
           <li><a href="#step-1-free-xs">Step 1: Free x’s</a></li>
           </ul></li>
           </ul></li>
-          <li><a href="#solving-polynomial-degree-3">1.5 Solving: Polynomial Degree 3+</a><ul>
+          <li><a href="#solving-polynomial-degree-3">1.5 Solving: Polynomial Degree 3+</a>
+          <ul>
           <li><a href="#synthetic-division">Synthetic Division</a></li>
           <li><a href="#rational-zero-theorem">Rational Zero Theorem</a></li>
           <li><a href="#descartes-rule-of-signs">Descartes’ Rule of Signs</a></li>
           </ul></li>
-          <li><a href="#solving-rational-equations">1.6 Solving Rational Equations</a><ul>
+          <li><a href="#solving-rational-equations">1.6 Solving Rational Equations</a>
+          <ul>
           <li><a href="#extras">Extras</a></li>
           </ul></li>
-          <li><a href="#solving-rational-inequalities">1.7 Solving Rational Inequalities</a><ul>
+          <li><a href="#solving-rational-inequalities">1.7 Solving Rational Inequalities</a>
+          <ul>
           <li><a href="#equations-and-inequalities">Equations and Inequalities</a></li>
           <li><a href="#radical-equations">Radical Equations</a></li>
           </ul></li>
-          <li><a href="#refreshers">Refreshers</a><ul>
+          <li><a href="#refreshers">Refreshers</a>
+          <ul>
           <li><a href="#radical-expressions">Radical Expressions</a></li>
           </ul></li>
           </ul></li>
@@ -408,9 +438,9 @@ x = 13 - 1/3 - 3 + 4/2
 </ul>
 <p>Video Lecture Notes:</p>
 <p><strong>Quadratic Formula</strong></p>
-<p><span class="math display">\[
+<p><span class="math display">
 x = \frac{-b \pm \sqrt{b^{2} - 4ac}}{2a}
-\]</span></p>
+</span></p>
 <blockquote>
 <p>Note: Getting the <strong>square root</strong> of a <strong>negative</strong> number is an imaginary number</p>
 </blockquote>
@@ -477,32 +507,32 @@ P(-x) -9x⁵ - 4x⁴ + 2x³ - x² - 5x - 7
 <ul>
 <li>Problem 1: 0:29
 <ul>
-<li><span class="math inline">\(\frac{3}{4x} = \frac{5}{2x} - \frac{7}{4}\)</span></li>
+<li><span class="math inline">\frac{3}{4x} = \frac{5}{2x} - \frac{7}{4}</span></li>
 </ul></li>
 <li>Problem 2: 4:05
 <ul>
-<li><span class="math inline">\(\frac{2}{3x + 1} = \frac{1}{x} - \frac{6x}{3x + 1}\)</span></li>
+<li><span class="math inline">\frac{2}{3x + 1} = \frac{1}{x} - \frac{6x}{3x + 1}</span></li>
 </ul></li>
 <li>Problem 3: 9:32
 <ul>
-<li><span class="math inline">\(\frac{x - 4}{x + 6} = \frac{2x}{2x - 1}\)</span></li>
+<li><span class="math inline">\frac{x - 4}{x + 6} = \frac{2x}{2x - 1}</span></li>
 </ul></li>
 <li>Problem 4: 12:26
 <ul>
-<li><span class="math inline">\(\frac{1}{x + 4} + \frac{x}{x - 4} = \frac{-8}{x^{2} - 16}\)</span></li>
+<li><span class="math inline">\frac{1}{x + 4} + \frac{x}{x - 4} = \frac{-8}{x^{2} - 16}</span></li>
 </ul></li>
 <li>Problem 5: 16:30
 <ul>
-<li><span class="math inline">\(\frac{1}{y - 1} + \frac{5}{12} = \frac{-2}{3y - 3}\)</span></li>
+<li><span class="math inline">\frac{1}{y - 1} + \frac{5}{12} = \frac{-2}{3y - 3}</span></li>
 </ul></li>
 <li>Problem 6: 20:36
 <ul>
-<li><span class="math inline">\(\frac{1}{y + 2} + \frac{3}{y + 7} = \frac{5}{y^{2} + 9y + 14}\)</span></li>
+<li><span class="math inline">\frac{1}{y + 2} + \frac{3}{y + 7} = \frac{5}{y^{2} + 9y + 14}</span></li>
 </ul></li>
 </ul>
 <p>Video Lecture Notes:</p>
 <ul>
-<li>The null set <span class="math inline">\(\emptyset\)</span>, also called the <strong>empty set</strong>, can be used to represent the answer of an equation with <strong>no solution</strong>.</li>
+<li>The null set <span class="math inline">\emptyset</span>, also called the <strong>empty set</strong>, can be used to represent the answer of an equation with <strong>no solution</strong>.</li>
 </ul>
 <p><strong>Extraneous Solutions</strong></p>
 <ul>
@@ -526,46 +556,46 @@ P(-x) -9x⁵ - 4x⁴ + 2x³ - x² - 5x - 7
 <p>Note these solutions were not verified and may be wrong as they were personally made</p>
 </blockquote>
 <ul>
-<li><span class="math inline">\(ax^{2}\)</span> <strong>+</strong> <span class="math inline">\(bx\)</span> <strong>+</strong> <span class="math inline">\(c\)</span>
+<li><span class="math inline">ax^{2}</span> <strong>+</strong> <span class="math inline">bx</span> <strong>+</strong> <span class="math inline">c</span>
 <ul>
-<li><span class="math inline">\((\)</span><strong>+</strong><span class="math inline">\(ax\)</span> <strong>+</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><strong>+</strong><span class="math inline">\(ax\)</span> <strong>+</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span></li>
-<li><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(ax\)</span> <strong>-</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(ax\)</span> <strong>-</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span> inverse</li>
+<li><span class="math inline">(</span><strong>+</strong><span class="math inline">ax</span> <strong>+</strong><span class="math inline">c</span><span class="math inline">)</span><span class="math inline">(</span><strong>+</strong><span class="math inline">ax</span> <strong>+</strong><span class="math inline">c</span><span class="math inline">)</span></li>
+<li><span class="math inline">(</span><strong>-</strong><span class="math inline">ax</span> <strong>-</strong><span class="math inline">c</span><span class="math inline">)</span><span class="math inline">(</span><strong>-</strong><span class="math inline">ax</span> <strong>-</strong><span class="math inline">c</span><span class="math inline">)</span> inverse</li>
 </ul></li>
-<li><span class="math inline">\(ax^{2}\)</span> <strong>+</strong> <span class="math inline">\(bx\)</span> <strong>-</strong> <span class="math inline">\(c\)</span>
+<li><span class="math inline">ax^{2}</span> <strong>+</strong> <span class="math inline">bx</span> <strong>-</strong> <span class="math inline">c</span>
 <ul>
-<li><span class="math inline">\((\)</span><strong>+</strong><span class="math inline">\(ax\)</span> <strong>-</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><strong>+</strong><span class="math inline">\(ax\)</span> <strong>+</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span></li>
-<li><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(ax\)</span> <strong>+</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(ax\)</span> <strong>-</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span> inverse</li>
+<li><span class="math inline">(</span><strong>+</strong><span class="math inline">ax</span> <strong>-</strong><span class="math inline">c</span><span class="math inline">)</span><span class="math inline">(</span><strong>+</strong><span class="math inline">ax</span> <strong>+</strong><span class="math inline">c</span><span class="math inline">)</span></li>
+<li><span class="math inline">(</span><strong>-</strong><span class="math inline">ax</span> <strong>+</strong><span class="math inline">c</span><span class="math inline">)</span><span class="math inline">(</span><strong>-</strong><span class="math inline">ax</span> <strong>-</strong><span class="math inline">c</span><span class="math inline">)</span> inverse</li>
 </ul></li>
-<li><span class="math inline">\(ax^{2}\)</span> <strong>-</strong> <span class="math inline">\(bx\)</span> <strong>+</strong> <span class="math inline">\(c\)</span>
+<li><span class="math inline">ax^{2}</span> <strong>-</strong> <span class="math inline">bx</span> <strong>+</strong> <span class="math inline">c</span>
 <ul>
-<li><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(ax\)</span> <strong>+</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(ax\)</span> <strong>+</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span></li>
-<li><span class="math inline">\((\)</span><strong>+</strong><span class="math inline">\(ax\)</span> <strong>-</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><strong>+</strong><span class="math inline">\(ax\)</span> <strong>-</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span> inverse</li>
+<li><span class="math inline">(</span><strong>-</strong><span class="math inline">ax</span> <strong>+</strong><span class="math inline">c</span><span class="math inline">)</span><span class="math inline">(</span><strong>-</strong><span class="math inline">ax</span> <strong>+</strong><span class="math inline">c</span><span class="math inline">)</span></li>
+<li><span class="math inline">(</span><strong>+</strong><span class="math inline">ax</span> <strong>-</strong><span class="math inline">c</span><span class="math inline">)</span><span class="math inline">(</span><strong>+</strong><span class="math inline">ax</span> <strong>-</strong><span class="math inline">c</span><span class="math inline">)</span> inverse</li>
 </ul></li>
-<li><span class="math inline">\(ax^{2}\)</span> <strong>-</strong> <span class="math inline">\(bx\)</span> <strong>-</strong> <span class="math inline">\(c\)</span>
+<li><span class="math inline">ax^{2}</span> <strong>-</strong> <span class="math inline">bx</span> <strong>-</strong> <span class="math inline">c</span>
 <ul>
-<li><span class="math inline">\((\)</span><strong>+</strong><span class="math inline">\(ax\)</span> <strong>+</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><strong>+</strong><span class="math inline">\(ax\)</span> <strong>-</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span></li>
-<li><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(ax\)</span> <strong>-</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(ax\)</span> <strong>+</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span> inverse</li>
+<li><span class="math inline">(</span><strong>+</strong><span class="math inline">ax</span> <strong>+</strong><span class="math inline">c</span><span class="math inline">)</span><span class="math inline">(</span><strong>+</strong><span class="math inline">ax</span> <strong>-</strong><span class="math inline">c</span><span class="math inline">)</span></li>
+<li><span class="math inline">(</span><strong>-</strong><span class="math inline">ax</span> <strong>-</strong><span class="math inline">c</span><span class="math inline">)</span><span class="math inline">(</span><strong>-</strong><span class="math inline">ax</span> <strong>+</strong><span class="math inline">c</span><span class="math inline">)</span> inverse</li>
 </ul></li>
-<li><strong>-</strong><span class="math inline">\(ax^{2}\)</span> <strong>-</strong> <span class="math inline">\(bx\)</span> <strong>+</strong> <span class="math inline">\(c\)</span>
+<li><strong>-</strong><span class="math inline">ax^{2}</span> <strong>-</strong> <span class="math inline">bx</span> <strong>+</strong> <span class="math inline">c</span>
 <ul>
-<li><span class="math inline">\((\)</span><strong>+</strong><span class="math inline">\(ax\)</span> <strong>+</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(ax\)</span> <strong>+</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span></li>
-<li><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(ax\)</span> <strong>-</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><strong>+</strong><span class="math inline">\(ax\)</span> <strong>-</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span> inverse</li>
+<li><span class="math inline">(</span><strong>+</strong><span class="math inline">ax</span> <strong>+</strong><span class="math inline">c</span><span class="math inline">)</span><span class="math inline">(</span><strong>-</strong><span class="math inline">ax</span> <strong>+</strong><span class="math inline">c</span><span class="math inline">)</span></li>
+<li><span class="math inline">(</span><strong>-</strong><span class="math inline">ax</span> <strong>-</strong><span class="math inline">c</span><span class="math inline">)</span><span class="math inline">(</span><strong>+</strong><span class="math inline">ax</span> <strong>-</strong><span class="math inline">c</span><span class="math inline">)</span> inverse</li>
 </ul></li>
-<li><strong>-</strong><span class="math inline">\(ax^{2}\)</span> <strong>-</strong> <span class="math inline">\(bx\)</span> <strong>-</strong> <span class="math inline">\(c\)</span>
+<li><strong>-</strong><span class="math inline">ax^{2}</span> <strong>-</strong> <span class="math inline">bx</span> <strong>-</strong> <span class="math inline">c</span>
 <ul>
-<li><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(ax\)</span> <strong>-</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><strong>+</strong><span class="math inline">\(ax\)</span> <strong>+</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span></li>
-<li><span class="math inline">\((\)</span><strong>+</strong><span class="math inline">\(ax\)</span> <strong>+</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(ax\)</span> <strong>-</strong><span class="math inline">\(c\)</span><span class="math inline">\()\)</span> inverse</li>
+<li><span class="math inline">(</span><strong>-</strong><span class="math inline">ax</span> <strong>-</strong><span class="math inline">c</span><span class="math inline">)</span><span class="math inline">(</span><strong>+</strong><span class="math inline">ax</span> <strong>+</strong><span class="math inline">c</span><span class="math inline">)</span></li>
+<li><span class="math inline">(</span><strong>+</strong><span class="math inline">ax</span> <strong>+</strong><span class="math inline">c</span><span class="math inline">)</span><span class="math inline">(</span><strong>-</strong><span class="math inline">ax</span> <strong>-</strong><span class="math inline">c</span><span class="math inline">)</span> inverse</li>
 </ul></li>
 </ul>
 <p>Extras</p>
 <ul>
-<li><span class="math inline">\(12x + 22\sqrt{x - 3} - 28\)</span>
+<li><span class="math inline">12x + 22\sqrt{x - 3} - 28</span>
 <ul>
-<li>Solution: <span class="math inline">\((4\sqrt{x - 3} + 2)(3\sqrt{x - 3} + 4)\)</span></li>
+<li>Solution: <span class="math inline">(4\sqrt{x - 3} + 2)(3\sqrt{x - 3} + 4)</span></li>
 </ul></li>
 </ul>
 <blockquote>
-<p>TIP: <span class="math inline">\(\sqrt{x} * \sqrt{x} = x\)</span> or <span class="math inline">\(\sqrt{x - 3 } * \sqrt{x - 3} = x - 3\)</span></p>
+<p>TIP: <span class="math inline">\sqrt{x} * \sqrt{x} = x</span> or <span class="math inline">\sqrt{x - 3 } * \sqrt{x - 3} = x - 3</span></p>
 </blockquote>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=KkJGUvCIrNI">📺 Factoring Trinomials Shortcut</a></li>
@@ -575,24 +605,24 @@ P(-x) -9x⁵ - 4x⁴ + 2x³ - x² - 5x - 7
 <p>Note these solutions were not verified and may be wrong as they were personally made</p>
 </blockquote>
 <ul>
-<li><span class="math inline">\(ax\)</span> <strong>+</strong> <span class="math inline">\(\frac{b}{x}\)</span>
+<li><span class="math inline">ax</span> <strong>+</strong> <span class="math inline">\frac{b}{x}</span>
 <ul>
-<li><span class="math inline">\((\)</span><span class="math inline">\(ax\)</span> <strong>+</strong> <span class="math inline">\(b\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><span class="math inline">\(\frac{b}{x}\)</span> <strong>+</strong> <span class="math inline">\(a\)</span><span class="math inline">\()\)</span></li>
-<li><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(ax\)</span> <strong>-</strong> <span class="math inline">\(b\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(\frac{b}{x}\)</span> <strong>-</strong> <span class="math inline">\(a\)</span><span class="math inline">\()\)</span> inverse</li>
+<li><span class="math inline">(</span><span class="math inline">ax</span> <strong>+</strong> <span class="math inline">b</span><span class="math inline">)</span><span class="math inline">(</span><span class="math inline">\frac{b}{x}</span> <strong>+</strong> <span class="math inline">a</span><span class="math inline">)</span></li>
+<li><span class="math inline">(</span><strong>-</strong><span class="math inline">ax</span> <strong>-</strong> <span class="math inline">b</span><span class="math inline">)</span><span class="math inline">(</span><strong>-</strong><span class="math inline">\frac{b}{x}</span> <strong>-</strong> <span class="math inline">a</span><span class="math inline">)</span> inverse</li>
 </ul></li>
-<li><span class="math inline">\(ax\)</span> <strong>-</strong> <span class="math inline">\(\frac{b}{x}\)</span>
+<li><span class="math inline">ax</span> <strong>-</strong> <span class="math inline">\frac{b}{x}</span>
 <ul>
-<li><span class="math inline">\((\)</span><span class="math inline">\(ax\)</span> <strong>-</strong> <span class="math inline">\(b\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><span class="math inline">\(\frac{b}{x}\)</span> <strong>+</strong> <span class="math inline">\(a\)</span><span class="math inline">\()\)</span></li>
-<li><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(ax\)</span> <strong>+</strong> <span class="math inline">\(b\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(\frac{b}{x}\)</span> <strong>-</strong> <span class="math inline">\(a\)</span><span class="math inline">\()\)</span> inverse</li>
-<li><span class="math inline">\((\)</span><span class="math inline">\(ax\)</span> <strong>+</strong> <span class="math inline">\(b\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(\frac{b}{x}\)</span> <strong>+</strong> <span class="math inline">\(a\)</span><span class="math inline">\()\)</span></li>
-<li><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(ax\)</span> <strong>-</strong> <span class="math inline">\(b\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><span class="math inline">\(\frac{b}{x}\)</span> <strong>-</strong> <span class="math inline">\(a\)</span><span class="math inline">\()\)</span> inverse</li>
+<li><span class="math inline">(</span><span class="math inline">ax</span> <strong>-</strong> <span class="math inline">b</span><span class="math inline">)</span><span class="math inline">(</span><span class="math inline">\frac{b}{x}</span> <strong>+</strong> <span class="math inline">a</span><span class="math inline">)</span></li>
+<li><span class="math inline">(</span><strong>-</strong><span class="math inline">ax</span> <strong>+</strong> <span class="math inline">b</span><span class="math inline">)</span><span class="math inline">(</span><strong>-</strong><span class="math inline">\frac{b}{x}</span> <strong>-</strong> <span class="math inline">a</span><span class="math inline">)</span> inverse</li>
+<li><span class="math inline">(</span><span class="math inline">ax</span> <strong>+</strong> <span class="math inline">b</span><span class="math inline">)</span><span class="math inline">(</span><strong>-</strong><span class="math inline">\frac{b}{x}</span> <strong>+</strong> <span class="math inline">a</span><span class="math inline">)</span></li>
+<li><span class="math inline">(</span><strong>-</strong><span class="math inline">ax</span> <strong>-</strong> <span class="math inline">b</span><span class="math inline">)</span><span class="math inline">(</span><span class="math inline">\frac{b}{x}</span> <strong>-</strong> <span class="math inline">a</span><span class="math inline">)</span> inverse</li>
 </ul></li>
-<li><strong>-</strong><span class="math inline">\(ax\)</span> <strong>+</strong> <span class="math inline">\(\frac{b}{x}\)</span>
+<li><strong>-</strong><span class="math inline">ax</span> <strong>+</strong> <span class="math inline">\frac{b}{x}</span>
 <ul>
-<li><span class="math inline">\((\)</span><span class="math inline">\(ax\)</span> <strong>+</strong> <span class="math inline">\(b\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><span class="math inline">\(\frac{b}{x}\)</span> <strong>-</strong> <span class="math inline">\(a\)</span><span class="math inline">\()\)</span></li>
-<li><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(ax\)</span> <strong>-</strong> <span class="math inline">\(b\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(\frac{b}{x}\)</span> <strong>+</strong> <span class="math inline">\(a\)</span><span class="math inline">\()\)</span> inverse</li>
-<li><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(ax\)</span> <strong>+</strong> <span class="math inline">\(b\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><span class="math inline">\(\frac{b}{x}\)</span> <strong>+</strong> <span class="math inline">\(a\)</span><span class="math inline">\()\)</span></li>
-<li><span class="math inline">\((\)</span><span class="math inline">\(ax\)</span> <strong>-</strong> <span class="math inline">\(b\)</span><span class="math inline">\()\)</span><span class="math inline">\((\)</span><strong>-</strong><span class="math inline">\(\frac{b}{x}\)</span> <strong>-</strong> <span class="math inline">\(a\)</span><span class="math inline">\()\)</span> inverse</li>
+<li><span class="math inline">(</span><span class="math inline">ax</span> <strong>+</strong> <span class="math inline">b</span><span class="math inline">)</span><span class="math inline">(</span><span class="math inline">\frac{b}{x}</span> <strong>-</strong> <span class="math inline">a</span><span class="math inline">)</span></li>
+<li><span class="math inline">(</span><strong>-</strong><span class="math inline">ax</span> <strong>-</strong> <span class="math inline">b</span><span class="math inline">)</span><span class="math inline">(</span><strong>-</strong><span class="math inline">\frac{b}{x}</span> <strong>+</strong> <span class="math inline">a</span><span class="math inline">)</span> inverse</li>
+<li><span class="math inline">(</span><strong>-</strong><span class="math inline">ax</span> <strong>+</strong> <span class="math inline">b</span><span class="math inline">)</span><span class="math inline">(</span><span class="math inline">\frac{b}{x}</span> <strong>+</strong> <span class="math inline">a</span><span class="math inline">)</span></li>
+<li><span class="math inline">(</span><span class="math inline">ax</span> <strong>-</strong> <span class="math inline">b</span><span class="math inline">)</span><span class="math inline">(</span><strong>-</strong><span class="math inline">\frac{b}{x}</span> <strong>-</strong> <span class="math inline">a</span><span class="math inline">)</span> inverse</li>
 </ul></li>
 </ul>
 <h5 id="finding-the-domain-of-a-function">Finding The Domain of a Function</h5>
@@ -616,11 +646,11 @@ P(-x) -9x⁵ - 4x⁴ + 2x³ - x² - 5x - 7
 <ul>
 <li>Problem 1: 1:40
 <ul>
-<li><span class="math inline">\(\frac{-2}{1 - x} &lt; 7\)</span></li>
+<li><span class="math inline">\frac{-2}{1 - x} &lt; 7</span></li>
 </ul></li>
 <li>Problem 2: 9:35
 <ul>
-<li><span class="math inline">\(\frac{5}{x - 3} \geq \frac{4}{x - 2}\)</span></li>
+<li><span class="math inline">\frac{5}{x - 3} \geq \frac{4}{x - 2}</span></li>
 </ul></li>
 </ul>
 <p>Video Lecture Notes:</p>
@@ -642,37 +672,37 @@ P(-x) -9x⁵ - 4x⁴ + 2x³ - x² - 5x - 7
 </ul>
 <p><strong>Linear Equations</strong></p>
 <ul>
-<li><span class="math inline">\(ax + b = 0\)</span>
+<li><span class="math inline">ax + b = 0</span>
 <ul>
-<li>if <span class="math inline">\(a \neq 0\)</span>, a linear equation has exactly one solution.</li>
-<li>if <span class="math inline">\(a = 0\)</span>, the equation has no solutions unless <span class="math inline">\(b = 0\)</span>.</li>
+<li>if <span class="math inline">a \neq 0</span>, a linear equation has exactly one solution.</li>
+<li>if <span class="math inline">a = 0</span>, the equation has no solutions unless <span class="math inline">b = 0</span>.</li>
 </ul></li>
 </ul>
 <p><strong>Quadratic Equations</strong></p>
 <p>Standard form</p>
 <ul>
-<li><span class="math inline">\(ax^{2} + bx + c = 0\)</span>, where <span class="math inline">\((a \neq 0)\)</span></li>
+<li><span class="math inline">ax^{2} + bx + c = 0</span>, where <span class="math inline">(a \neq 0)</span></li>
 </ul>
 <p><strong>Four methods for solving quadratic equations.</strong></p>
 <ol type="1">
-<li><strong>Factoring</strong>. If the polynomial <span class="math inline">\(ax^{2} + bx + c\)</span> has linear factors with rational coefficients, write it in factored form, then apply the zero-factor property that <span class="math inline">\(AB = 0\)</span> only if <span class="math inline">\(A = 0\)</span> or <span class="math inline">\(B = 0\)</span>.</li>
-<li><strong>Square Root Property</strong>. If the equation is in the form <span class="math inline">\(A^{2} = b\)</span>, where <span class="math inline">\(b\)</span> is a constant, then its solutions are found as <span class="math inline">\(A = \sqrt{b}\)</span> and <span class="math inline">\(A = −\sqrt{b}\)</span> , generally written <span class="math inline">\(A = \pm\sqrt{b}\)</span>.</li>
+<li><strong>Factoring</strong>. If the polynomial <span class="math inline">ax^{2} + bx + c</span> has linear factors with rational coefficients, write it in factored form, then apply the zero-factor property that <span class="math inline">AB = 0</span> only if <span class="math inline">A = 0</span> or <span class="math inline">B = 0</span>.</li>
+<li><strong>Square Root Property</strong>. If the equation is in the form <span class="math inline">A^{2} = b</span>, where <span class="math inline">b</span> is a constant, then its solutions are found as <span class="math inline">A = \sqrt{b}</span> and <span class="math inline">A = −\sqrt{b}</span> , generally written <span class="math inline">A = \pm\sqrt{b}</span>.</li>
 <li><strong>Completing the Square</strong>.</li>
 </ol>
 <ul>
-<li>Write the equation in the form <span class="math inline">\(x^{2} + px = q\)</span>.</li>
-<li>Add <span class="math inline">\(p^{2} /4\)</span> to both sides to form <span class="math inline">\(x^{2}+ px + p^{2}/4 = q + p^{2}/4\)</span>.</li>
-<li>The left side is now a perfect square. Write <span class="math inline">\((x + p/2)^{2} = q + p^{2}/4\)</span> and apply the square root property.</li>
+<li>Write the equation in the form <span class="math inline">x^{2} + px = q</span>.</li>
+<li>Add <span class="math inline">p^{2} /4</span> to both sides to form <span class="math inline">x^{2}+ px + p^{2}/4 = q + p^{2}/4</span>.</li>
+<li>The left side is now a perfect square. Write <span class="math inline">(x + p/2)^{2} = q + p^{2}/4</span> and apply the square root property.</li>
 <li><a href="https://www.youtube.com/watch?v=prx_Bf2hakw">📺 Youtube: Completing the Square Lecture</a></li>
 </ul>
 <ol start="4" type="1">
-<li><strong>Quadratic Formula</strong>. The solutions of <span class="math inline">\(ax^{2} + bx + c = 0\)</span>, <span class="math inline">\((a ≠ 0)\)</span> can always be written as:</li>
+<li><strong>Quadratic Formula</strong>. The solutions of <span class="math inline">ax^{2} + bx + c = 0</span>, <span class="math inline">(a ≠ 0)</span> can always be written as:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 x = \frac{-b \pm \sqrt{b^{2} - 4ac}}{2a}
-\]</span></p>
+</span></p>
 <p>In general, a quadratic equation is solved by first checking whether it is easily factorable. If it is, then the factoring method is used; otherwise the quadratic formula is used.</p>
-<p>In the quadratic formula, the quantity <span class="math inline">\(b^{2} − 4ac\)</span> is called the <em>discriminant</em>. The sign of this quantity determines the number and type of solutions of a quadratic equation</p>
+<p>In the quadratic formula, the quantity <span class="math inline">b^{2} − 4ac</span> is called the <em>discriminant</em>. The sign of this quantity determines the number and type of solutions of a quadratic equation</p>
 <table>
 <thead>
 <tr class="header">
@@ -696,16 +726,16 @@ x = \frac{-b \pm \sqrt{b^{2} - 4ac}}{2a}
 </tbody>
 </table>
 <h3 id="radical-equations">Radical Equations</h3>
-<p>Equations containing radicals require an additional operation: In general, the equation <span class="math inline">\(a = b\)</span> is not equivalent to the equation <span class="math inline">\(a^{n} = b^{n}\)</span> ; however, if <span class="math inline">\(n\)</span> is odd, they have the same real solutions. If <span class="math inline">\(n\)</span> is even, all solutions of <span class="math inline">\(a = b\)</span> are found among the solutions of <span class="math inline">\(a^{n} = b^{n}\)</span> . Hence it is permissible to raise both sides to an even power if all solutions of the resulting equation are checked to see if they are solutions of the original equation.</p>
+<p>Equations containing radicals require an additional operation: In general, the equation <span class="math inline">a = b</span> is not equivalent to the equation <span class="math inline">a^{n} = b^{n}</span> ; however, if <span class="math inline">n</span> is odd, they have the same real solutions. If <span class="math inline">n</span> is even, all solutions of <span class="math inline">a = b</span> are found among the solutions of <span class="math inline">a^{n} = b^{n}</span> . Hence it is permissible to raise both sides to an even power if all solutions of the resulting equation are checked to see if they are solutions of the original equation.</p>
 <h2 id="refreshers">Refreshers</h2>
 <ul>
 <li><a href="../../../../files/spring-2020/MATH-141/algebra_review.pdf">⬇ Algebra Review</a></li>
 </ul>
 <p>Geometric Series</p>
 <ul>
-<li><span class="math inline">\(x^{8} - 1\)</span>
+<li><span class="math inline">x^{8} - 1</span>
 <ul>
-<li>= <span class="math inline">\((x^{4} + 1)(x^{2} + 1)(x + 1)(x - 1)\)</span></li>
+<li>= <span class="math inline">(x^{4} + 1)(x^{2} + 1)(x + 1)(x - 1)</span></li>
 </ul></li>
 </ul>
 <h3 id="radical-expressions">Radical Expressions</h3>

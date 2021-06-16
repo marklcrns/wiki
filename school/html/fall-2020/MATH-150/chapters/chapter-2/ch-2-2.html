@@ -11,6 +11,13 @@
 
     <title>2.2 The Limit of a Function</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,7 +88,8 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#the-limit-of-a-function">2.2 The Limit of a Function</a><ul>
+          <li><a href="#the-limit-of-a-function">2.2 The Limit of a Function</a>
+          <ul>
           <li><a href="#one-sided-limits">One-Sided Limits</a></li>
           <li><a href="#infinite-limits">Infinite Limits</a></li>
           <li><a href="#video-lectures">Video Lectures</a></li>
@@ -101,14 +124,14 @@
 <!-- Contents -->
           <article class="contents">
 <h1 id="the-limit-of-a-function">2.2 The Limit of a Function</h1>
-<p>Behavior of the function <span class="math inline">\(f\)</span> defined by <span class="math inline">\(f(x) = x^{2} - x + 2\)</span> for values of <span class="math inline">\(x\)</span> near 2.</p>
-<p>The following table gives values of <span class="math inline">\(f(x)\)</span> for values of <span class="math inline">\(x\)</span> close to 2 but not equal to 2.</p>
+<p>Behavior of the function <span class="math inline">f</span> defined by <span class="math inline">f(x) = x^{2} - x + 2</span> for values of <span class="math inline">x</span> near 2.</p>
+<p>The following table gives values of <span class="math inline">f(x)</span> for values of <span class="math inline">x</span> close to 2 but not equal to 2.</p>
 <center>
 <table>
 <thead>
 <tr class="header">
-<th><span class="math inline">\(x\)</span></th>
-<th><span class="math inline">\(f(x)\)</span></th>
+<th><span class="math inline">x</span></th>
+<th><span class="math inline">f(x)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -179,97 +202,97 @@
 </tbody>
 </table>
 </center>
-<p>From the table and the graph of <span class="math inline">\(f\)</span>(a parabola) shown in Figure 1 we see that the closer <span class="math inline">\(x\)</span> is to 2 (on either side of 2), the closer <span class="math inline">\(f(x)\)</span> is to 4. In fact, it appears that we can make the values of <span class="math inline">\(f(x)\)</span> as close as we like to 4 by taking <span class="math inline">\(x\)</span> sufficiently close to 2. We express this by saying “the limit of the function <span class="math inline">\(f(x) = x^{2} - x + 2\)</span> as <span class="math inline">\(x\)</span> approaches 2 is equal to 4”. The notation for this is</p>
-<p><span class="math display">\[
+<p>From the table and the graph of <span class="math inline">f</span>(a parabola) shown in Figure 1 we see that the closer <span class="math inline">x</span> is to 2 (on either side of 2), the closer <span class="math inline">f(x)</span> is to 4. In fact, it appears that we can make the values of <span class="math inline">f(x)</span> as close as we like to 4 by taking <span class="math inline">x</span> sufficiently close to 2. We express this by saying “the limit of the function <span class="math inline">f(x) = x^{2} - x + 2</span> as <span class="math inline">x</span> approaches 2 is equal to 4”. The notation for this is</p>
+<p><span class="math display">
 \lim_{x \to 2} (x^{2} - x + 2) = 4
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.2_figure_1.png" alt="Figure 1" /><figcaption>Figure 1</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.2_figure_1.png" alt="Figure 1" /><figcaption aria-hidden="true">Figure 1</figcaption>
 </figure>
 <p><strong>Intuitive Definition of a Limit</strong></p>
-<p>Suppose <span class="math inline">\(f(x)\)</span> is defined when <span class="math inline">\(x\)</span> is near the number <span class="math inline">\(a\)</span>. (This means that <span class="math inline">\(f\)</span> is defined on some open interval that contains <span class="math inline">\(a\)</span>, except possibly at <span class="math inline">\(a\)</span> itself.) then we write</p>
-<p><span class="math display">\[
+<p>Suppose <span class="math inline">f(x)</span> is defined when <span class="math inline">x</span> is near the number <span class="math inline">a</span>. (This means that <span class="math inline">f</span> is defined on some open interval that contains <span class="math inline">a</span>, except possibly at <span class="math inline">a</span> itself.) then we write</p>
+<p><span class="math display">
 \lim_{x \to a} f(x) = L
-\]</span></p>
+</span></p>
 <p>and say</p>
-<p>“the limit of <span class="math inline">\(f(x)\)</span>, as <span class="math inline">\(x\)</span> approaches <span class="math inline">\(a\)</span>, equals <span class="math inline">\(L\)</span>”</p>
-<p>if we can make the value of <span class="math inline">\(f(x)\)</span> arbitrarily close to <span class="math inline">\(L\)</span> (as close to <span class="math inline">\(L\)</span> as we like) by restricting <span class="math inline">\(x\)</span> to be sufficiently close to <span class="math inline">\(a\)</span> (on either side of <span class="math inline">\(a\)</span>) but not equal to <span class="math inline">\(a\)</span>.</p>
+<p>“the limit of <span class="math inline">f(x)</span>, as <span class="math inline">x</span> approaches <span class="math inline">a</span>, equals <span class="math inline">L</span>”</p>
+<p>if we can make the value of <span class="math inline">f(x)</span> arbitrarily close to <span class="math inline">L</span> (as close to <span class="math inline">L</span> as we like) by restricting <span class="math inline">x</span> to be sufficiently close to <span class="math inline">a</span> (on either side of <span class="math inline">a</span>) but not equal to <span class="math inline">a</span>.</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.2_explore_it_graphical_idea_of_a_limit.png" alt="Explore It: Graphical Idea of a Limit" /><figcaption>Explore It: Graphical Idea of a Limit</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.2_explore_it_graphical_idea_of_a_limit.png" alt="Explore It: Graphical Idea of a Limit" /><figcaption aria-hidden="true">Explore It: Graphical Idea of a Limit</figcaption>
 </figure>
 <h2 id="one-sided-limits">One-Sided Limits</h2>
 <p>We write</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \lim_{x \to a^{-}} f(x) = L
-\]</span></p>
-<p>and say the <strong>left-hand limit of <span class="math inline">\(f(x)\)</span> as <span class="math inline">\(x\)</span> approaches <span class="math inline">\(a\)</span></strong> [or the <strong>limit of <span class="math inline">\(f(x)\)</span> as <span class="math inline">\(x\)</span> approaches <span class="math inline">\(a\)</span> from the left</strong>] is equal to <span class="math inline">\(L\)</span> we can make the values of <span class="math inline">\(f(x)\)</span> arbitrarily close to <span class="math inline">\(L\)</span> by taking <span class="math inline">\(x\)</span> to be sufficiently close to <span class="math inline">\(a\)</span> with <span class="math inline">\(x\)</span> less less than <span class="math inline">\(a\)</span>.</p>
-<p>Similarly, if we require that <span class="math inline">\(x\)</span> be greater than <span class="math inline">\(a\)</span> we get “the <strong>right-hand limit of <span class="math inline">\(f(x)\)</span> as <span class="math inline">\(x\)</span> approaches <span class="math inline">\(a\)</span></strong> is equal to <span class="math inline">\(L\)</span>” and we write</p>
-<p><span class="math display">\[
+</span></p>
+<p>and say the <strong>left-hand limit of <span class="math inline">f(x)</span> as <span class="math inline">x</span> approaches <span class="math inline">a</span></strong> [or the <strong>limit of <span class="math inline">f(x)</span> as <span class="math inline">x</span> approaches <span class="math inline">a</span> from the left</strong>] is equal to <span class="math inline">L</span> we can make the values of <span class="math inline">f(x)</span> arbitrarily close to <span class="math inline">L</span> by taking <span class="math inline">x</span> to be sufficiently close to <span class="math inline">a</span> with <span class="math inline">x</span> less less than <span class="math inline">a</span>.</p>
+<p>Similarly, if we require that <span class="math inline">x</span> be greater than <span class="math inline">a</span> we get “the <strong>right-hand limit of <span class="math inline">f(x)</span> as <span class="math inline">x</span> approaches <span class="math inline">a</span></strong> is equal to <span class="math inline">L</span>” and we write</p>
+<p><span class="math display">
 \lim_{x \to a^{+}} f(x) = L
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.2_figure_9.png" alt="Figure 9" /><figcaption>Figure 9</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.2_figure_9.png" alt="Figure 9" /><figcaption aria-hidden="true">Figure 9</figcaption>
 </figure>
-<p><span class="math display">\[
+<p><span class="math display">
 \lim_{x \to a} = L
 \text{\;\;if and only if\;\;}
 \lim_{x \to a^{-}} f(x) = L
 \text{\;\;and\;\;}
 \lim_{x \to a^{+}} f(x) = L
-\]</span></p>
+</span></p>
 <p>When a limit doesn’t approach the same value from both sides, we say that the limit doesn’t exist.</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.2_figure_10.png" alt="Figure 10" /><figcaption>Figure 10</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.2_figure_10.png" alt="Figure 10" /><figcaption aria-hidden="true">Figure 10</figcaption>
 </figure>
 <ul>
-<li><span class="math inline">\(\lim_{x \to 2^{-}} g(x) = 3\)</span> and</li>
-<li><span class="math inline">\(\lim_{x \to 2^{+}} g(x) = 1\)</span>
+<li><span class="math inline">\lim_{x \to 2^{-}} g(x) = 3</span> and</li>
+<li><span class="math inline">\lim_{x \to 2^{+}} g(x) = 1</span>
 <ul>
-<li>Since the left and right limits are different, we conclude that <span class="math inline">\(\lim_{x \to 2} g(x)\)</span> does not exist.</li>
+<li>Since the left and right limits are different, we conclude that <span class="math inline">\lim_{x \to 2} g(x)</span> does not exist.</li>
 </ul></li>
-<li><span class="math inline">\(\lim_{x \to 5^{-}} g(x) = 2\)</span> and</li>
-<li><span class="math inline">\(\lim_{x \to 5^{+}} g(x) = 2\)</span>
+<li><span class="math inline">\lim_{x \to 5^{-}} g(x) = 2</span> and</li>
+<li><span class="math inline">\lim_{x \to 5^{+}} g(x) = 2</span>
 <ul>
-<li>This time the left and right limits are the same and so we have <span class="math inline">\(\lim_{x \to 5} g(x) = 2\)</span></li>
+<li>This time the left and right limits are the same and so we have <span class="math inline">\lim_{x \to 5} g(x) = 2</span></li>
 </ul></li>
 </ul>
-<p>Despite this fact, notice that <span class="math inline">\(g(5) \neq 2\)</span>.</p>
+<p>Despite this fact, notice that <span class="math inline">g(5) \neq 2</span>.</p>
 <h2 id="infinite-limits">Infinite Limits</h2>
-<p>Let <span class="math inline">\(f\)</span> be a function defined on both sides of <span class="math inline">\(a\)</span>, except possibly at <span class="math inline">\(a\)</span>itself. then</p>
-<p><span class="math display">\[
+<p>Let <span class="math inline">f</span> be a function defined on both sides of <span class="math inline">a</span>, except possibly at <span class="math inline">a</span>itself. then</p>
+<p><span class="math display">
 \lim_{x \to a} f(x) = \infty
-\]</span></p>
-<p>means that the values of <span class="math inline">\(f(x)\)</span> can be made arbitrarily large (as large as we please) by taking <span class="math inline">\(x\)</span> sufficiently close to <span class="math inline">\(a\)</span>, but not equal to <span class="math inline">\(a\)</span>.</p>
+</span></p>
+<p>means that the values of <span class="math inline">f(x)</span> can be made arbitrarily large (as large as we please) by taking <span class="math inline">x</span> sufficiently close to <span class="math inline">a</span>, but not equal to <span class="math inline">a</span>.</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.2_infinite_limits.png" alt="The Limit of a Function" /><figcaption>The Limit of a Function</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.2_infinite_limits.png" alt="The Limit of a Function" /><figcaption aria-hidden="true">The Limit of a Function</figcaption>
 </figure>
-<p>Another notation for <span class="math inline">\(\lim_{x \to a} f(x) = \infty\)</span> is</p>
-<p><span class="math display">\[
+<p>Another notation for <span class="math inline">\lim_{x \to a} f(x) = \infty</span> is</p>
+<p><span class="math display">
 f(x) = \infty \;\;\; as \;\;\; x \to a
-\]</span></p>
+</span></p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.2_figure_12.png" alt="Figure 12" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.2_figure_13.png" alt="Figure 13" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.2_figure_14.png" alt="Figure 14" /></p>
-<p>The vertical line <span class="math inline">\(x = a\)</span> is called a <strong>vertical asymptote</strong> of the curve <span class="math inline">\(y = f(x)\)</span> if at least one of the following statements is true:</p>
-<p><span class="math display">\[
+<p>The vertical line <span class="math inline">x = a</span> is called a <strong>vertical asymptote</strong> of the curve <span class="math inline">y = f(x)</span> if at least one of the following statements is true:</p>
+<p><span class="math display">
 \lim_{x \to a} f(x) = \infty  \lim_{x \to a^{-}} f(x) = \infty \;\; \lim_{x \to a^{+}} = \infty \\
 \lim_{x \to a} f(x) = -\infty \;\; \lim_{x \to a^{-}} f(x) = -\infty \;\; \lim_{x \to a^{+}} f(x) = -\infty
-\]</span></p>
+</span></p>
 <p><strong>Example 10:</strong></p>
-<p>Find the vertical asymptote of <span class="math inline">\(f(x) = \tan(x)\)</span>.</p>
+<p>Find the vertical asymptote of <span class="math inline">f(x) = \tan(x)</span>.</p>
 <p><strong>Solution</strong></p>
 <p>Because</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \tan(x) = \frac{\sin(x)}{\cos(x)}
-\]</span></p>
-<p>There are potential vertical asymptotes where <span class="math inline">\(\cos(x) = 0\)</span>. In fact, since <span class="math inline">\(\cos(x) \to 0^{+}\)</span> as <span class="math inline">\(x \to (\pi/2)^{-}\)</span> and <span class="math inline">\(\cos(x) \to 0^{-}\)</span> as <span class="math inline">\(x \to (\pi/2)^{+}\)</span>, whereas <span class="math inline">\(\sin(x)\)</span> is positive (near 1) when <span class="math inline">\(x\)</span> is near <span class="math inline">\(\pi/2\)</span>, we have</p>
-<p><span class="math display">\[
+</span></p>
+<p>There are potential vertical asymptotes where <span class="math inline">\cos(x) = 0</span>. In fact, since <span class="math inline">\cos(x) \to 0^{+}</span> as <span class="math inline">x \to (\pi/2)^{-}</span> and <span class="math inline">\cos(x) \to 0^{-}</span> as <span class="math inline">x \to (\pi/2)^{+}</span>, whereas <span class="math inline">\sin(x)</span> is positive (near 1) when <span class="math inline">x</span> is near <span class="math inline">\pi/2</span>, we have</p>
+<p><span class="math display">
 \lim_{x \to (\pi/2)^{-}} \tan(x) = \infty
-\]</span></p>
+</span></p>
 <p>and</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \lim_{x \to (\pi/2)^{+}} \tan(x) = -\infty
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.2_figure_16.png" alt="Figure 16" /><figcaption>Figure 16</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.2_figure_16.png" alt="Figure 16" /><figcaption aria-hidden="true">Figure 16</figcaption>
 </figure>
 <h2 id="video-lectures">Video Lectures</h2>
 <ul>

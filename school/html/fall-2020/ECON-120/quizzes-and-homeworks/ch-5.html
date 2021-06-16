@@ -11,6 +11,13 @@
 
     <title>Chapter 5</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,7 +88,8 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-5">Chapter 5</a><ul>
+          <li><a href="#chapter-5">Chapter 5</a>
+          <ul>
           <li><a href="#homework">Homework</a></li>
           <li><a href="#quiz">Quiz</a></li>
           </ul></li>
@@ -155,24 +178,24 @@
 <ul>
 <li>Real GDP grew by <strong>7.79</strong> percent.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{27390 - 25410}{25410} \times 100  = 7.79 \text{ percent }
-\]</span></p>
+</span></p>
 <ul>
 <li>The price index for GDP (GDP Deflator) for 2012 using 2011 as the base year is <strong>113.20</strong></li>
 </ul>
 <blockquote>
-<p>GDP Deflator = <span class="math inline">\(\frac{\text{Nominal GDP}}{\text{Real GDP}} \times 100\)</span></p>
+<p>GDP Deflator = <span class="math inline">\frac{\text{Nominal GDP}}{\text{Real GDP}} \times 100</span></p>
 </blockquote>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{(120 \cdot 24) + (225 \cdot 125)}{(120 \cdot 22) + (225 \cdot 110)} \times 100 = 113.20
-\]</span></p>
+</span></p>
 <ul>
 <li>Prices increased by <strong>13.2</strong> percent</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{113.20 - 100}{100} = 0.132 = 13.2 \text{ percent }
-\]</span></p>
+</span></p>
 <p>Using a New Base Year to Calculate Real GDP and Inflation. Using the data from the table below, answer the following questions using 2012 prices.</p>
 <center>
 <table>
@@ -225,27 +248,27 @@
 <ul>
 <li>Real GDP grew by <strong>15.78</strong> percent</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{33020 - 28520}{28520} \times 100 = 15.78 \text{ percent }
-\]</span></p>
+</span></p>
 <ul>
 <li>The price index for GDP for 2012 using 2012 as the base year is <strong>100</strong></li>
 </ul>
 <blockquote>
-<p>GDP Deflator = <span class="math inline">\(\frac{\text{Nominal GDP}}{\text{Real GDP}} \times 100\)</span></p>
+<p>GDP Deflator = <span class="math inline">\frac{\text{Nominal GDP}}{\text{Real GDP}} \times 100</span></p>
 </blockquote>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{(120 \cdot 24) + (225 \cdot 125)}{(120 \cdot 24) + (225 \cdot 125)} \times 100 = 100
-\]</span></p>
+</span></p>
 <ul>
 <li>Prices increased by <strong>22.84</strong> percent.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{(130 \cdot 24) + (230 \cdot 130)}{(130 \cdot 21) + (230 \cdot 105)} \times 100 = 122.84
 ~\\
 ~\\
 \frac{122.84 - 100}{100} \times 100 = 22.84 \text{ percent }
-\]</span></p>
+</span></p>
 <blockquote>
 <p>To get the price change, calculate the difference in the GDP deflator between 2011 and 2012 and divide by the GDP deflator in 2011.</p>
 </blockquote>

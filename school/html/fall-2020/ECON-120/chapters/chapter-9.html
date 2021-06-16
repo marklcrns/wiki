@@ -11,6 +11,13 @@
 
     <title>Chapter 9</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,20 +88,25 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-9-aggregate-demand-and-aggregate-supply">Chapter 9: Aggregate Demand and Aggregate Supply</a><ul>
-          <li><a href="#sticky-prices-and-their-macroeconomic-consequences">9.1 Sticky Prices and Their Macroeconomic Consequences</a><ul>
+          <li><a href="#chapter-9-aggregate-demand-and-aggregate-supply">Chapter 9: Aggregate Demand and Aggregate Supply</a>
+          <ul>
+          <li><a href="#sticky-prices-and-their-macroeconomic-consequences">9.1 Sticky Prices and Their Macroeconomic Consequences</a>
+          <ul>
           <li><a href="#flexible-and-sticky-prices">9.1.1 Flexible and Sticky Prices</a></li>
           <li><a href="#how-demand-determines-output-in-the-short-run">9.1.2 How Demand Determines Output in the Short Run</a></li>
           </ul></li>
-          <li><a href="#understanding-aggregate-demand">9.2 Understanding Aggregate Demand</a><ul>
+          <li><a href="#understanding-aggregate-demand">9.2 Understanding Aggregate Demand</a>
+          <ul>
           <li><a href="#what-is-the-aggregate-demand-curve">9.2.1 What Is the Aggregate Demand Curve?</a></li>
           <li><a href="#the-components-of-aggregate-demand">9.2.2 The Components of Aggregate Demand</a></li>
-          <li><a href="#why-the-aggregate-demand-curve-slopes-downward">9.2.3 Why the Aggregate Demand Curve Slopes Downward</a><ul>
+          <li><a href="#why-the-aggregate-demand-curve-slopes-downward">9.2.3 Why the Aggregate Demand Curve Slopes Downward</a>
+          <ul>
           <li><a href="#the-wealth-effect">The Wealth Effect</a></li>
           <li><a href="#the-interest-rate-effect">The Interest Rate Effect</a></li>
           <li><a href="#the-international-trade-effect">The International Trade Effect</a></li>
           </ul></li>
-          <li><a href="#shifts-in-the-aggregate-demand-curve">9.2.4 Shifts in the Aggregate Demand Curve</a><ul>
+          <li><a href="#shifts-in-the-aggregate-demand-curve">9.2.4 Shifts in the Aggregate Demand Curve</a>
+          <ul>
           <li><a href="#changes-in-the-supply-of-money">Changes in the Supply of Money</a></li>
           <li><a href="#changes-in-taxes">Changes in Taxes</a></li>
           <li><a href="#changes-in-government-spending">Changes in Government Spending</a></li>
@@ -87,8 +114,10 @@
           </ul></li>
           <li><a href="#how-the-multiplier-makes-the-shift-bigger">9.2.5 How the Multiplier Makes the Shift Bigger</a></li>
           </ul></li>
-          <li><a href="#understanding-aggregate-supply">9.3 Understanding Aggregate Supply</a><ul>
-          <li><a href="#the-long-run-aggregate-supply-curve">9.3.1 The Long-Run Aggregate Supply Curve</a><ul>
+          <li><a href="#understanding-aggregate-supply">9.3 Understanding Aggregate Supply</a>
+          <ul>
+          <li><a href="#the-long-run-aggregate-supply-curve">9.3.1 The Long-Run Aggregate Supply Curve</a>
+          <ul>
           <li><a href="#determining-output-and-the-price-level">Determining Output and the Price Level</a></li>
           </ul></li>
           <li><a href="#the-short-run-aggregate-supply-curve">9.3.2 The Short-Run Aggregate Supply Curve</a></li>
@@ -154,7 +183,7 @@
 <li>A curve that shows the relationship between the level of prices and the quantity of real GDP demanded.</li>
 </ul>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-9/figure-9.1.png" alt="Figure 9.1" /><figcaption>Figure 9.1</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-9/figure-9.1.png" alt="Figure 9.1" /><figcaption aria-hidden="true">Figure 9.1</figcaption>
 </figure>
 <h3 id="the-components-of-aggregate-demand">9.2.2 The Components of Aggregate Demand</h3>
 <p>In our study of GDP accounting, we divided GDP into four components: consumption spending (C), investment spending (I), government purchases (G), and net exports (NX). These four components are also the four parts of aggregate demand because the aggregate demand curve really just describes the demand for total GDP at different price levels. As we will see, changes in demand coming from any of these four sources–C, I, G, or NX–will shift the aggregate demand curve.</p>
@@ -199,7 +228,7 @@
 <p>Any change in demand from households, firms, or the foreign sector will also change aggregate demand. For example, if the Chinese economy expands very rapidly and Chinese citizens buy more U.S. goods, U.S. aggregate demand will increase. Or, if U.S. households decide they want to spend more, consumption will increase and aggregate demand will increase. Expectations about the future also matter. For example, if firms become optimistic about the future and increase their investment spending, aggregate demand will also increase. However, if firms become pessimistic, they will cut their investment spending and aggregate demand will fall.</p>
 <p>When we discuss factors that shift aggregate demand, we must not include any changes in the demand for goods and services that arise from movements in the price level. <strong>Changes in aggregate demand that accompany changes in the price level are already included in the curve and do not shift the curve</strong>. The increase in consumer spending that occurs when the price level falls from the wealth effect, the interest rate effect, and the international trade effect is already in the curve and does not shift it.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-9/figure-9.2.png" alt="Figure 9.2" /><figcaption>Figure 9.2</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-9/figure-9.2.png" alt="Figure 9.2" /><figcaption aria-hidden="true">Figure 9.2</figcaption>
 </figure>
 <blockquote>
 <p><strong>Table 9.1</strong> Factors That Shift Aggregate Demand</p>
@@ -239,7 +268,7 @@
 <li>The ratio of the total shift in aggregate demand to the shift in aggregate demand.</li>
 </ul>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-9/figure-9.3.png" alt="Figure 9.3" /><figcaption>Figure 9.3</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-9/figure-9.3.png" alt="Figure 9.3" /><figcaption aria-hidden="true">Figure 9.3</figcaption>
 </figure>
 <p>Why does the aggregate demand curve shift more than the initial increase in desired spending? The logic goes back to the ideas of economist John Maynard Keynes. Here’s how it works: Keynes believed that as government spending increases and the aggregate demand curve shifts to the right, output will subsequently increase, too. As we saw with the circular flow in Chapter 5, increased output also means increased income for households, as firms pay households for their labor and for supplying other factors of production. Typically, households will wish to spend, or consume, part of that income, which will further increase aggregate demand. It is this additional spending by consumers, over and above what the government has already spent, that causes the further shift in the aggregate demand curve.</p>
 <p>The basic idea of how the multiplier works in an economy is simple. Let’s say the government invests $10 million to renovate a federal court building. Initially, total spending in the economy increases by this $10 million paid to a private construction firm. The construction workers and owners are paid $10 million for their work. Suppose the owners and workers spend $6 million of their income on new cars (although, as we will see, it does not really matter what they spend it on). To meet the increased demand for new cars, automobile producers will expand their production and earn an additional $6 million in wages and profits. They, in turn, will spend part of this additional income–let’s say, $3.6 million–on televisions. The workers and owners who produce televisions will then spend part of the $3.6 million they earn, and so on.</p>
@@ -248,34 +277,34 @@
 <ul>
 <li>The relationship between consumption spending and the level of income.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 C = C_{a} + by
-\]</span></p>
-<p>where consumption spending, <span class="math inline">\(C\)</span>, has two parts. The first part, <span class="math inline">\(C_{a}\)</span>, is a constant and is independent of income. Economists call this <strong>autonomous consumption spending</strong>.</p>
+</span></p>
+<p>where consumption spending, <span class="math inline">C</span>, has two parts. The first part, <span class="math inline">C_{a}</span>, is a constant and is independent of income. Economists call this <strong>autonomous consumption spending</strong>.</p>
 <p><a name="autonomous-consumption-spending-term"><strong>Autonomous consumption spending</strong></a></p>
 <ul>
 <li>The part of consumption spending that does not depend on income.</li>
 </ul>
-<p>Autonomous spending is spending that does not depend on the level of income. For example, all consumers, regardless of their current income, will have to purchase some food. The second part, <span class="math inline">\(by\)</span>, represents the part of consumption that is dependent on income. It is the product of a fraction, <span class="math inline">\(b\)</span>, called the <strong>marginal propensity to consume (MPC)</strong>, and the level of income, or <span class="math inline">\(y\)</span>, in the economy. The MPC (or <span class="math inline">\(b\)</span> in our formula) tells us how much consumption spending will increase for every dollar that income increases. For example, if <span class="math inline">\(b\)</span> is 0.6, then for every $1.00 that income increases, consumption increases by $0.60.</p>
+<p>Autonomous spending is spending that does not depend on the level of income. For example, all consumers, regardless of their current income, will have to purchase some food. The second part, <span class="math inline">by</span>, represents the part of consumption that is dependent on income. It is the product of a fraction, <span class="math inline">b</span>, called the <strong>marginal propensity to consume (MPC)</strong>, and the level of income, or <span class="math inline">y</span>, in the economy. The MPC (or <span class="math inline">b</span> in our formula) tells us how much consumption spending will increase for every dollar that income increases. For example, if <span class="math inline">b</span> is 0.6, then for every $1.00 that income increases, consumption increases by $0.60.</p>
 <p><a name="marginal-propensity-to-consume-term"><strong>Marginal propensity to consume (MPC)</strong></a></p>
 <ul>
 <li>The fraction of additional income that is spent</li>
 </ul>
 <p>Here is another way to think of the MPC: If a household receives some additional income, it will increase its consumption by some additional amount. The MPC is defined as the ratio of additional consumption to additional income, or</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ MPC } = \frac{\text{additional consumption}}{\text{additional income}}
-\]</span></p>
+</span></p>
 <p>For example, if the household receives an additional $100 and consumes an additional $70, the MPC will be</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{\$70}{\$100} = 0.7
-\]</span></p>
+</span></p>
 <p>You may wonder what happens to the other $30. Whatever the household does not spend out of income, it saves. Therefore, the <strong>marginal propensity to save (MPS)</strong> is defined as the ratio of additional savings to additional income</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ MPS } = \frac{\text{additional savings}}{\text{additional income}}
-\]</span></p>
+</span></p>
 <p>You may wonder what happens to the other $30. Whatever the household does not spend out of income, it saves. Therefore, the marginal propensity to save (MPS) is defined as the ratio of additional savings to additional income</p>
 <p>Now we are in a better position to understand the multiplier. Suppose the government increases its purchases of goods and services by $10 million. This will initially raise aggregate demand and income by $10 million. But because income has risen by $10 million, consumers will now wish to increase their spending by an amount equal to the marginal propensity to consume multiplied by the $10 million. (Remember that the MPC tells us how much consumption spending will increase for every dollar that income increases.) If the MPC were 0.6, then consumer spending would increase by $6 million when the government spends $10 million. Thus, the aggregate demand curve would continue to shift to the right by another $6 million in addition to the original $10 million, for a total of $16 million.</p>
-<p>But the process does not end there. As aggregate demand increases by $6 million, income will also increase by $6 million. Consumers will then wish to increase their spending by the <span class="math inline">\(\text{ MPC } \times \$6 \text{ million }\)</span> or, in our example, by $3.6 million <span class="math inline">\((0.6 \times \$6 \text{ million })\)</span>. The aggregate demand curve will continue to shift to the right, now by <em>another</em> $3.6 million. Adding $3.6 million to $16 million gives us a new aggregate demand total of $19.6 million. As you can see, this process will continue, as consumers now have an additional $3.6 million in income, part of which they will spend again. Where will it end?</p>
+<p>But the process does not end there. As aggregate demand increases by $6 million, income will also increase by $6 million. Consumers will then wish to increase their spending by the <span class="math inline">\text{ MPC } \times \$6 \text{ million }</span> or, in our example, by $3.6 million <span class="math inline">(0.6 \times \$6 \text{ million })</span>. The aggregate demand curve will continue to shift to the right, now by <em>another</em> $3.6 million. Adding $3.6 million to $16 million gives us a new aggregate demand total of $19.6 million. As you can see, this process will continue, as consumers now have an additional $3.6 million in income, part of which they will spend again. Where will it end?</p>
 <p>Table 9.2 shows how the multiplier works in detail. In the first round, there is an initial increase in government spending of $10 million. This additional demand leads to an initial increase in GDP and income of $10 million. Assuming that the MPC is 0.6, the $10 million of additional income will increase consumer spending by $6 million. The second round begins with this $6 million increase in consumer spending. Because of this increase in demand, GDP and income increase by $6 million. At the end of the second round, consumers will have an additional $6 million; with an MPC of 0.6, consumer spending will therefore increase by $0.6 $6 $, or $3.6 million. The process continues in the third round with an increase in consumer spending of $2.16 million. It continues, in diminishing amounts, through subsequent rounds. If we add up the spending in all the (infinite) rounds, we will find that the initial $10 million of spending leads to a $25 million increase in GDP and income. That’s 2.5 times what the government initially spent. So, in this case, the multiplier is 2.5.</p>
 <blockquote>
 <p><strong>Table 9.2</strong> The Multiplier in Action</p>
@@ -337,13 +366,13 @@ C = C_{a} + by
 </table>
 </center>
 <p>Instead of calculating spending round by round, we can use a simple formula to figure out what the multiplier is:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ multiplier } = \frac{1}{(1 - \text{ MPC })}
-\]</span></p>
+</span></p>
 <p>Thus, in the preceding example, when the MPC is 0.6, the multiplier would be:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{1}{(1 - 0.6)} = 2.5
-\]</span></p>
+</span></p>
 <p>Now you should clearly understand why the total shift in the aggregate demand curve from a to c in Figure 9.3 is greater than the initial shift in the curve from a to b. This is the multiplier in action. The multiplier is important because it means that relatively small changes in spending could lead to relatively large changes in output. For example, if firms cut back on their investment spending, the effects on output would be “multiplied,” and this decrease in spending could have a large, adverse impact on the economy.</p>
 <h2 id="understanding-aggregate-supply">9.3 Understanding Aggregate Supply</h2>
 <p>Now we turn to the supply side of our model. The <strong>aggregate supply curve (AS)</strong> shows the relationship between the level of prices and the total quantity of final goods and output that firms are willing and able to supply. The aggregate supply curve will complete our macroeconomic picture, uniting the economy’s demand for real output with firms’ willingness to supply output. To determine both the price level and real GDP, we need to combine both aggregate demand and aggregate supply. One slight complication is that because prices are “sticky” in the short run, we need to develop two different aggregate supply curves, one corresponding to the long run and one to the short run.</p>
@@ -352,19 +381,19 @@ C = C_{a} + by
 <li>A curve that shows the relationship between the level of prices and the quantity of output supplied.</li>
 </ul>
 <h3 id="the-long-run-aggregate-supply-curve">9.3.1 The Long-Run Aggregate Supply Curve</h3>
-<p>First, we consider the aggregate supply curve for the long run, that is, when the economy is at full employment. This curve is also called the <strong>long-run aggregate supply curve</strong>. In previous chapters, we saw that the level of full-employment output, <span class="math inline">\(y_{p}\)</span> (the “p” stands for potential), depends solely on the supply of factors–capital, labor–and the state of technology. These are the fundamental factors that determine output in the long run, that is, when the economy operates at full employment.</p>
+<p>First, we consider the aggregate supply curve for the long run, that is, when the economy is at full employment. This curve is also called the <strong>long-run aggregate supply curve</strong>. In previous chapters, we saw that the level of full-employment output, <span class="math inline">y_{p}</span> (the “p” stands for potential), depends solely on the supply of factors–capital, labor–and the state of technology. These are the fundamental factors that determine output in the long run, that is, when the economy operates at full employment.</p>
 <p><a name="long-run-aggregate-supply-curve-term"><strong>Long-run aggregate supply curve</strong></a></p>
 <ul>
 <li>A vertical aggregate supply curve that reflects the idea that in the long run, output is determined solely by the factors of production and technology.</li>
 </ul>
 <p>In the long run, the economy operates at full employment and changes in the price level do not affect employment. To illustrate why this is so, imagine that the price level in the economy increases by 50 percent. That means firms’ prices, on average, will also increase by 50 percent. However, so will their input costs. Their profits will be the same and, consequently, so will their output. Because the level of full-employment output does not depend on the price level, we can plot the long-run aggregate supply curve as a vertical line (unaffected by the price level), as shown in Figure 9.4.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-9/figure-9.4.png" alt="Figure 9.4" /><figcaption>Figure 9.4</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-9/figure-9.4.png" alt="Figure 9.4" /><figcaption aria-hidden="true">Figure 9.4</figcaption>
 </figure>
 <h4 id="determining-output-and-the-price-level">Determining Output and the Price Level</h4>
 <p>We combine the aggregate demand curve and the long-run aggregate supply curve in Figure 9.5. Together, the curves show us the price level and output in the long run when the economy returns to full employment. Combining the two curves will enable us to understand how changes in aggregate demand affect prices in the long run.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-9/figure-9.5.png" alt="Figure 9.5" /><figcaption>Figure 9.5</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-9/figure-9.5.png" alt="Figure 9.5" /><figcaption aria-hidden="true">Figure 9.5</figcaption>
 </figure>
 <p>The intersection of an aggregate demand curve and an aggregate supply curve determines the price level and equilibrium level of output. At that intersection point, the total amount of output demanded will just equal the total amount supplied by producers–the economy will be in macroeconomic equilibrium. The exact position of the aggregate demand curve will depend on the level of taxes, government spending, and the supply of money, although it will always slope downward. The level of full-employment output determines the long-run aggregate supply curve.</p>
 <p>An increase in aggregate demand (perhaps brought about by a tax cut or an increase in the supply of money) will shift the aggregate demand curve to the right, as shown in Figure 9.5. In the long run, the increase in aggregate demand will raise prices but leave the level of output unchanged. In general, shifts in the aggregate demand curve in the long run do not change the level of output in the economy, but only change the level of prices. Here is an important example to illustrate this idea: If the money supply is increased by 5 percent a year, the aggregate demand curve will also shift by 5 percent a year. In the long run, this means that prices will increase by 5 percent a year–that is, there will be 5 percent inflation. <strong>An important lesson: In the long run, increases in the supply of money do not increase real GDP–they only lead to inflation.</strong></p>
@@ -375,7 +404,7 @@ C = C_{a} + by
 <li>A relatively flat aggregate supply curve that represents the idea that prices do not change very much in the short run and that firms adjust production to meet demand.</li>
 </ul>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-9/figure-9.6.png" alt="Figure 9.6" /><figcaption>Figure 9.6</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-9/figure-9.6.png" alt="Figure 9.6" /><figcaption aria-hidden="true">Figure 9.6</figcaption>
 </figure>
 <p>The short-run aggregate supply curve has a relatively flat slope because we assume that in the short run firms supply all the output demanded, with small changes in prices. We’ve said that with formal and informal contracts firms will supply all the output demanded with only relatively small changes in prices.</p>
 <p>Most studies find that changes in demand have relatively little effect on prices within a few quarters. Thus, we can think of the aggregate supply curve as relatively flat over a limited time.</p>
@@ -386,7 +415,7 @@ C = C_{a} + by
 <li>Taxes, subsidies, or economic regulations</li>
 </ul>
 <p>Increases in input prices (e.g., from higher wages or oil prices) will increase firms’ costs. This will shift up the short-run aggregate supply curve. Improvement in technology will shift the curve down. Higher taxes or more onerous regulations raise costs and shift the curve up, while subsidies to production shift the curve down. As we shall see later in this chapter, when the economy is not at full employment, wages and other costs will change. These changes in costs will shift the entire short-run supply curve upward or downward as costs rise or fall.</p>
-<p>The intersection of the AD and AS curves at point <span class="math inline">\(a_{0}\)</span> determines the price level and the level of output. Because the aggregate supply curve is flat, aggregate demand primarily determines the level of output. In Figure 9.6, as aggregate demand increases, the new equilibrium will be at a slightly higher price, and output will increase from <span class="math inline">\(y_{0}\)</span> to <span class="math inline">\(y_{1}\)</span></p>
+<p>The intersection of the AD and AS curves at point <span class="math inline">a_{0}</span> determines the price level and the level of output. Because the aggregate supply curve is flat, aggregate demand primarily determines the level of output. In Figure 9.6, as aggregate demand increases, the new equilibrium will be at a slightly higher price, and output will increase from <span class="math inline">y_{0}</span> to <span class="math inline">y_{1}</span></p>
 <h3 id="supply-shocks">9.3.3 Supply Shocks</h3>
 <p>Up to this point, we have been exploring how changes in aggregate demand affect output and prices in the short run and in the long run. However, even in the short run, it is possible for external disturbances to hit the economy and cause the short-run aggregate supply curve to move. <strong>Supply shocks</strong> are external events that shift the aggregate supply curve.</p>
 <p><a name="supply-shocks-term"><strong>Supply shocks</strong></a></p>
@@ -394,19 +423,19 @@ C = C_{a} + by
 <li>External events that shift the aggregate supply curve.</li>
 </ul>
 <p>The most notable supply shocks for the world economy occurred in 1973 and again in 1979 when oil prices increased sharply. Oil is a vital input for many companies because it is used to both manufacture and transport their products to warehouses and stores around the country. The higher oil prices raised firms’ costs and reduced their profits. To maintain their profit levels, firms raised their product prices. As we have seen, increases in firms’ costs will shift up the short-run aggregate supply curve–increases in oil prices are a good example.</p>
-<p>Figure 9.7 illustrates a supply shock that raises prices. The short-run aggregate supply curve shifts up with the supply shock because, as their costs rise, firms will supply their output only at a higher price. The AS curve shifts up, raising the price level and lowering the level of output from <span class="math inline">\(y_{0}\)</span> to <span class="math inline">\(y_{1}\)</span>. Adverse supply shocks can therefore cause a recession (a fall in real output) with increasing prices. This phenomenon is known as stagflation, and it is precisely what happened in 1973 and 1979. The U.S. economy suffered on two grounds: rising prices and falling output. Favorable supply shocks, such as falling prices, are also possible, and changes in oil prices can affect aggregate demand.</p>
+<p>Figure 9.7 illustrates a supply shock that raises prices. The short-run aggregate supply curve shifts up with the supply shock because, as their costs rise, firms will supply their output only at a higher price. The AS curve shifts up, raising the price level and lowering the level of output from <span class="math inline">y_{0}</span> to <span class="math inline">y_{1}</span>. Adverse supply shocks can therefore cause a recession (a fall in real output) with increasing prices. This phenomenon is known as stagflation, and it is precisely what happened in 1973 and 1979. The U.S. economy suffered on two grounds: rising prices and falling output. Favorable supply shocks, such as falling prices, are also possible, and changes in oil prices can affect aggregate demand.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-9/figure-9.7.png" alt="Figure 9.7" /><figcaption>Figure 9.7</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-9/figure-9.7.png" alt="Figure 9.7" /><figcaption aria-hidden="true">Figure 9.7</figcaption>
 </figure>
 <h2 id="from-the-short-run-to-the-long-run">9.4 From the Short Run to the Long Run</h2>
-<p>In Figure 9.8, we show the aggregate demand curve intersecting the short-run aggregate supply curve at <span class="math inline">\(a_{0}\)</span> at an output level <span class="math inline">\(y_{0}\)</span>. We also depict the long-run aggregate supply curve in this figure. The level of output in the economy, $y_{0}$, exceeds the level of potential output, <span class="math inline">\(y_{p}\)</span>. In other words, this is a boom economy: Output exceeds potential.</p>
+<p>In Figure 9.8, we show the aggregate demand curve intersecting the short-run aggregate supply curve at <span class="math inline">a_{0}</span> at an output level <span class="math inline">y_{0}</span>. We also depict the long-run aggregate supply curve in this figure. The level of output in the economy, $y_{0}$, exceeds the level of potential output, <span class="math inline">y_{p}</span>. In other words, this is a boom economy: Output exceeds potential.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-9/figure-9.8.png" alt="Figure 9.8" /><figcaption>Figure 9.8</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-9/figure-9.8.png" alt="Figure 9.8" /><figcaption aria-hidden="true">Figure 9.8</figcaption>
 </figure>
 <p>What happens during a boom? Because the economy is producing at a level beyond its long-run potential, the level of unemployment will be very low. This will make it difficult for firms to recruit and retain workers. Firms will also find it more difficult to purchase needed raw materials and other inputs for production. As firms compete for labor and raw materials, the tendency will be for both wages and prices to increase over time.</p>
-<p>Increasing wages and prices will shift the short-run aggregate supply curve upward as the costs of inputs rise in the economy. Figure 9.9 shows how the short-run aggregate supply curve shifts upward over time. As long as the economy is producing at a level of output that exceeds potential output, there will be continuing competition for labor and raw materials that will lead to continuing increases in wages and prices. In the long run, the short-run aggregate supply curve will keep rising until it intersects the aggregate demand curve at <span class="math inline">\(a_{1}\)</span>. At this point, the economy reaches the long-run equilibrium–precisely the point where the aggregate demand curve intersects the long-run aggregate supply curve.</p>
+<p>Increasing wages and prices will shift the short-run aggregate supply curve upward as the costs of inputs rise in the economy. Figure 9.9 shows how the short-run aggregate supply curve shifts upward over time. As long as the economy is producing at a level of output that exceeds potential output, there will be continuing competition for labor and raw materials that will lead to continuing increases in wages and prices. In the long run, the short-run aggregate supply curve will keep rising until it intersects the aggregate demand curve at <span class="math inline">a_{1}</span>. At this point, the economy reaches the long-run equilibrium–precisely the point where the aggregate demand curve intersects the long-run aggregate supply curve.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-9/figure-9.9.png" alt="Figure 9.9" /><figcaption>Figure 9.9</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-9/figure-9.9.png" alt="Figure 9.9" /><figcaption aria-hidden="true">Figure 9.9</figcaption>
 </figure>
 <p>When the economy is producing below full employment or potential output, the process works in reverse. Unemployment will exceed the natural rate, and there will be excess unemployment. Firms will find it easy to hire and retain workers, and they will offer workers less wages. As firms cut wages, the average wage level in the economy falls. Because wages are the largest component of costs and costs are decreasing, the short-run aggregate supply curve shifts down, causing prices to fall as well.</p>
 <p><strong>The lesson here is that adjustments in wages and prices take the economy from the short-run equilibrium to the long-run equilibrium.</strong></p>

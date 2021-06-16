@@ -11,6 +11,13 @@
 
     <title>Section 8.3</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,11 +88,12 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#section-8.3-trigonometric-integrals">Section 8.3: Trigonometric Integrals</a><ul>
-          <li><a href="#integrating-powers-of-sinx-or-cosx">Integrating Powers of <span class="math inline">\(\sin(x)\)</span> or <span class="math inline">\(\cos(x)\)</span></a></li>
-          <li><a href="#integrating-products-of-powers-of-sinx-and-cosx">Integrating Products of Powers of <span class="math inline">\(\sin(x)\)</span> and <span class="math inline">\(\cos(x)\)</span></a></li>
+          <li><a href="#section-8.3-trigonometric-integrals">Section 8.3: Trigonometric Integrals</a>
+          <ul>
+          <li><a href="#integrating-powers-of-sinx-or-cosx">Integrating Powers of <span class="math inline">\sin(x)</span> or <span class="math inline">\cos(x)</span></a></li>
+          <li><a href="#integrating-products-of-powers-of-sinx-and-cosx">Integrating Products of Powers of <span class="math inline">\sin(x)</span> and <span class="math inline">\cos(x)</span></a></li>
           <li><a href="#reduction-formulas">Reduction Formulas</a></li>
-          <li><a href="#integrating-producsts-of-powers-of-tanx-and-secx">Integrating Producsts of Powers of <span class="math inline">\(\tan(x)\)</span> and <span class="math inline">\(\sec(x)\)</span></a></li>
+          <li><a href="#integrating-producsts-of-powers-of-tanx-and-secx">Integrating Producsts of Powers of <span class="math inline">\tan(x)</span> and <span class="math inline">\sec(x)</span></a></li>
           <li><a href="#external-video-lectures">External Video Lectures</a></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
@@ -103,22 +126,22 @@
 <!-- Contents -->
           <article class="contents">
 <h1 id="section-8.3-trigonometric-integrals">Section 8.3: Trigonometric Integrals</h1>
-<h2 id="integrating-powers-of-sinx-or-cosx">Integrating Powers of <span class="math inline">\(\sin(x)\)</span> or <span class="math inline">\(\cos(x)\)</span></h2>
+<h2 id="integrating-powers-of-sinx-or-cosx">Integrating Powers of <span class="math inline">\sin(x)</span> or <span class="math inline">\cos(x)</span></h2>
 <p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-3_example-1.1.png" alt="Example 1.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-3_example-1.2.png" alt="Example 1.2" /></p>
-<h2 id="integrating-products-of-powers-of-sinx-and-cosx">Integrating Products of Powers of <span class="math inline">\(\sin(x)\)</span> and <span class="math inline">\(\cos(x)\)</span></h2>
+<h2 id="integrating-products-of-powers-of-sinx-and-cosx">Integrating Products of Powers of <span class="math inline">\sin(x)</span> and <span class="math inline">\cos(x)</span></h2>
 <p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-3_example-2.1.png" alt="Example 2.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-3_example-2.2.png" alt="Example 2.2" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-3_table-8.2.png" alt="Table 8.2" /></p>
 <h2 id="reduction-formulas">Reduction Formulas</h2>
-<p>Assume <span class="math inline">\(n\)</span> is a positive integer.</p>
+<p>Assume <span class="math inline">n</span> is a positive integer.</p>
 <ol type="1">
-<li><p><span class="math inline">\(\int \sin^{n}(x)\;dx = \frac{\sin^{n - 1}(x)\cos(x) }{n} + \frac{n - 1}{n}\int \sin^{n - 2}(x)\;dx\)</span></p></li>
-<li><p><span class="math inline">\(\int \cos^{n}(x)\;dx = \frac{\cos^{n - 1}(x)\sin(x) }{n} + \frac{n - 1}{n}\int \cos^{n - 2}(x)\;dx\)</span></p></li>
-<li><p><span class="math inline">\(\int \tan^{n}(x)\;dx = \frac{\tan^{n - 1}(x)}{n - 1} - \int \tan^{n - 2}(x)\;dx, n \neq 1\)</span></p></li>
-<li><p><span class="math inline">\(\int \sec^{n}(x)\;dx = \frac{\sec^{n - 2}(x)\tan(x)}{n - 1} + \frac{n - 2}{n - 1}\int \sec^{n - 2}(x)\;dx, n \neq 1\)</span></p></li>
+<li><p><span class="math inline">\int \sin^{n}(x)\;dx = \frac{\sin^{n - 1}(x)\cos(x) }{n} + \frac{n - 1}{n}\int \sin^{n - 2}(x)\;dx</span></p></li>
+<li><p><span class="math inline">\int \cos^{n}(x)\;dx = \frac{\cos^{n - 1}(x)\sin(x) }{n} + \frac{n - 1}{n}\int \cos^{n - 2}(x)\;dx</span></p></li>
+<li><p><span class="math inline">\int \tan^{n}(x)\;dx = \frac{\tan^{n - 1}(x)}{n - 1} - \int \tan^{n - 2}(x)\;dx, n \neq 1</span></p></li>
+<li><p><span class="math inline">\int \sec^{n}(x)\;dx = \frac{\sec^{n - 2}(x)\tan(x)}{n - 1} + \frac{n - 2}{n - 1}\int \sec^{n - 2}(x)\;dx, n \neq 1</span></p></li>
 </ol>
 <figure>
-<img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-3_example-3.png" alt="Example 3" /><figcaption>Example 3</figcaption>
+<img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-3_example-3.png" alt="Example 3" /><figcaption aria-hidden="true">Example 3</figcaption>
 </figure>
-<h2 id="integrating-producsts-of-powers-of-tanx-and-secx">Integrating Producsts of Powers of <span class="math inline">\(\tan(x)\)</span> and <span class="math inline">\(\sec(x)\)</span></h2>
+<h2 id="integrating-producsts-of-powers-of-tanx-and-secx">Integrating Producsts of Powers of <span class="math inline">\tan(x)</span> and <span class="math inline">\sec(x)</span></h2>
 <p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-3_example-4.1.png" alt="Example 4.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-3_example-4.2.png" alt="Example 4.2" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-3_table-8.3.png" alt="Table 8.3" /></p>
 <h2 id="external-video-lectures">External Video Lectures</h2>
 <p><a href="https://www.youtube.com/watch?v=flvhNBoOsiA">📺 Trigonometric Integrals</a></p>

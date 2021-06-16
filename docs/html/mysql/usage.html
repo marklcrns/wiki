@@ -12,6 +12,13 @@
 
     <title>MySQL Usage</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -23,26 +30,28 @@
     <link href="../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -51,9 +60,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -129,10 +138,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#mysql-usage">MySQL Usage</a><ul>
-          <li><a href="#cli-usage">CLI Usage</a><ul>
+          <li><a href="#mysql-usage">MySQL Usage</a>
+          <ul>
+          <li><a href="#cli-usage">CLI Usage</a>
+          <ul>
           <li><a href="#logging-in">Logging In</a></li>
-          <li><a href="#mysql-basic-commands">MySQL Basic Commands</a><ul>
+          <li><a href="#mysql-basic-commands">MySQL Basic Commands</a>
+          <ul>
           <li><a href="#database">Database</a></li>
           <li><a href="#tables">Tables</a></li>
           </ul></li>
@@ -178,9 +190,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>mysql -u &lt;user&gt; -p</code></li>
 </ul>
 <p>Example:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">mysql</span> -u root -p</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="co"># or with sudo privileges</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="fu">sudo</span> mysql -u root -p</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mysql</span> <span class="at">-u</span> root <span class="at">-p</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># or with sudo privileges</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mysql <span class="at">-u</span> root <span class="at">-p</span></span></code></pre></div>
 <h3 id="mysql-basic-commands">MySQL Basic Commands</h3>
 <h4 id="database">Database</h4>
 <blockquote>
@@ -262,7 +274,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Renaming table(s):</strong></p>
 <ul>
 <li><code>RENAME TABLE &lt;table_name&gt; to &lt;new_table_name&gt;;</code></li>
-<li><code>RENAME TABLE &lt;table_name&gt; to &lt;new_table_name&gt;, &lt;table_name&gt; to &lt;new_table_name&gt; ...,</code></li>
+<li><code>RENAME TABLE &lt;table_name&gt; to &lt;new_table_name&gt;, &lt;table_name&gt; to     &lt;new_table_name&gt; ...,</code></li>
 </ul>
 <p><strong>Insert values into a table:</strong></p>
 <ul>
@@ -302,14 +314,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote>
 <p><strong>Getting all information with field value(s) condition:</strong></p>
 <ul>
-<li><code>SELECT &lt;field_name&gt;, &lt;field_name2&gt; ... FROM &lt;table_name&gt; WHERE &lt;field_name&gt;="&lt;field_value_match_condition&gt;";</code></li>
+<li><code>SELECT &lt;field_name&gt;, &lt;field_name2&gt; ... FROM &lt;table_name&gt; WHERE     &lt;field_name&gt;="&lt;field_value_match_condition&gt;";</code></li>
 </ul>
 <p>Samples:</p>
 <ul>
 <li><code>SELECT first_name FROM studnts WHERE state="WA";</code></li>
 <li><code>SELECT first_name, last_name FROM students WHERE YEAR(birth_date) &gt;= 1965;</code></li>
-<li><code>SELECT first_name, last_name, birthsdate FROM studentss WHERE MONTH(birth_date) = 2 OR state="CA";</code></li>
-<li><code>SELECT first_name, last_name, birthsdate FROM studentss WHERE DAY(birth_date) = 12 &amp;&amp; (state="CA" || state="NV");</code></li>
+<li><code>SELECT first_name, last_name, birthsdate FROM studentss WHERE     MONTH(birth_date) = 2 OR state="CA";</code></li>
+<li><code>SELECT first_name, last_name, birthsdate FROM studentss WHERE     DAY(birth_date) = 12 &amp;&amp; (state="CA" || state="NV");</code></li>
 <li><code>SELECT last_name FROM students WHERE last_name IS NOT NULL;</code></li>
 </ul>
 <blockquote>
@@ -317,20 +329,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote>
 <p><strong>Ordering selection by specific field values:</strong></p>
 <ul>
-<li><code>SELECT &lt;field_name1&gt;, &lt;field_name2&gt; ... FROM &lt;table_name&gt; ORDER BY &lt;field_name&gt;</code></li>
+<li><code>SELECT &lt;field_name1&gt;, &lt;field_name2&gt; ... FROM &lt;table_name&gt; ORDER BY     &lt;field_name&gt;</code></li>
 </ul>
 <p>Samples:</p>
 <ul>
 <li><code>SELECT first_name, last_name FROM students ORDER BY last_name;</code></li>
 <li><code>SELECT first_name, last_name FROM students ORDER BY last_name DESC;</code></li>
-<li><code>SELECT first_name, last_name FROM students ORDER BY state DESC, last_name ASC;</code></li>
+<li><code>SELECT first_name, last_name FROM students ORDER BY state DESC, last_name     ASC;</code></li>
 </ul>
 <blockquote>
 <p><code>ASC</code> for ascending order and <code>DESC</code> for descending order.</p>
 </blockquote>
 <p><strong>Limits result into specific number</strong></p>
 <ul>
-<li><code>SELECT &lt;field_name1&gt;, &lt;field_name2&gt; ... FROM &lt;table_name&gt; LIMIT &lt;limit_value&gt;</code></li>
+<li><code>SELECT &lt;field_name1&gt;, &lt;field_name2&gt; ... FROM &lt;table_name&gt; LIMIT     &lt;limit_value&gt;</code></li>
 </ul>
 <p>Samples:</p>
 <ul>
@@ -344,7 +356,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Samples</p>
 <ul>
 <li><code>SELECT CONCAT(first_name, " ", last_name) AS 'Name' FROM students;</code></li>
-<li><code>SELECT CONCAT(first_name, " ", last_name) AS 'Name', CONCAT(city, " ", state) AS 'Hometown' FROM students;</code></li>
+<li><code>SELECT CONCAT(first_name, " ", last_name) AS 'Name', CONCAT(city, " ",     state) AS 'Hometown' FROM students;</code></li>
 </ul>
 <p><strong>Adding new field(s) in an existing table:</strong></p>
 <ul>
@@ -357,13 +369,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Samples:</p>
 <ul>
-<li><code>SELECT last_name, first_name FROM students WHERE first_name LIKE 'D%' OR last_name LIKE '%n';</code></li>
+<li><code>SELECT last_name, first_name FROM students WHERE first_name LIKE 'D%' OR     last_name LIKE '%n';</code></li>
 </ul>
 <blockquote>
 <p>This matches all first name starting with letter ‘D’ <code>OR</code> last_name ending with letter ‘n’. <strong>NOTE</strong>: <code>%</code> is a pattern for strings that matches all characters just like the <code>*</code> wildcard for matching fields.</p>
 </blockquote>
 <ul>
-<li><code>SELECT last_name, first_name FROM students WHERE first_name LIKE '___y' FROM students;</code></li>
+<li><code>SELECT last_name, first_name FROM students WHERE first_name LIKE '___y'     FROM students;</code></li>
 </ul>
 <blockquote>
 <p>This matches all values with any (<code>_</code>) first three characters that ends with ‘y’ as the fourth letter.</p>

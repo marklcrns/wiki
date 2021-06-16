@@ -11,6 +11,13 @@
 
     <title>Chapter 12</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,18 +88,23 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-12-investment-and-financial-markets">Chapter 12: Investment and Financial Markets</a><ul>
+          <li><a href="#chapter-12-investment-and-financial-markets">Chapter 12: Investment and Financial Markets</a>
+          <ul>
           <li><a href="#an-investment-a-plunge-into-the-unknown">12.1 An Investment: A Plunge into the Unknown</a></li>
-          <li><a href="#evaluating-the-future">12.2 Evaluating the Future</a><ul>
-          <li><a href="#understanding-present-value">12.2.1 Understanding Present Value</a><ul>
+          <li><a href="#evaluating-the-future">12.2 Evaluating the Future</a>
+          <ul>
+          <li><a href="#understanding-present-value">12.2.1 Understanding Present Value</a>
+          <ul>
           <li><a href="#present-value-and-interest-rates">Present Value and Interest Rates</a></li>
           </ul></li>
           <li><a href="#real-and-nominal-interest-rates">12.2.2 Real and Nominal Interest Rates</a></li>
           </ul></li>
-          <li><a href="#understanding-investment-decisions">12.3 Understanding Investment Decisions</a><ul>
+          <li><a href="#understanding-investment-decisions">12.3 Understanding Investment Decisions</a>
+          <ul>
           <li><a href="#investment-and-the-stock-market">Investment and the Stock Market</a></li>
           </ul></li>
-          <li><a href="#how-financial-intermediaries-facilitate-investment">12.4 How Financial Intermediaries Facilitate Investment</a><ul>
+          <li><a href="#how-financial-intermediaries-facilitate-investment">12.4 How Financial Intermediaries Facilitate Investment</a>
+          <ul>
           <li><a href="#when-financial-intermediaries-malfunction">When Financial Intermediaries Malfunction</a></li>
           </ul></li>
           <li><a href="#chapter-summary">Chapter Summary</a></li>
@@ -126,7 +153,7 @@
 </ul>
 <p>It is likely that <em>both</em> projections for the future <em>and</em> Keynes’s animal spirits are closely associated with current investment. If this is the case, we would expect investment spending to be a very volatile component of GDP. As Figure 12.1 indicates, this is indeed the case.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-12/figure-12.1.png" alt="Figure 12.1" /><figcaption>Figure 12.1</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-12/figure-12.1.png" alt="Figure 12.1" /><figcaption aria-hidden="true">Figure 12.1</figcaption>
 </figure>
 <ul>
 <li>From 1970 to 2017, the share of investment as a component of GDP ranged from a high of 20 percent in 1978 to a low of 12 percent in 2009–a dramatic 8 percentage point difference.</li>
@@ -150,28 +177,28 @@
 <ul>
 <li>The maximum amount a person is willing to pay today to receive a payment in the future.</li>
 </ul>
-<p>Let’s think about how much you are willing to pay for the right to receive $105 in 1 year. Suppose you can earn 5 percent per year in a savings account or money market account. A moment of thought will show you that you would be willing to lend your friend $100. Here is why: If you kept your $100 in the bank at 5 percent interest, you would have $105 at the end of the year–just the amount your friend would repay you. While you would have sacrificed $5 in interest, you would have earned $5 on the loan <span class="math inline">\((\$105 − \$100)\)</span>.</p>
-<p>However, you would not want to lend your friend more than $100. If you lent more–say, $102–then your loss in interest of $5.10 (5 percent of $102) would be greater than your $3 gain on the loan <span class="math inline">\((\$105 − \$102)\)</span>. In this case, the amount you sacrifice will be greater than what you get in return.</p>
+<p>Let’s think about how much you are willing to pay for the right to receive $105 in 1 year. Suppose you can earn 5 percent per year in a savings account or money market account. A moment of thought will show you that you would be willing to lend your friend $100. Here is why: If you kept your $100 in the bank at 5 percent interest, you would have $105 at the end of the year–just the amount your friend would repay you. While you would have sacrificed $5 in interest, you would have earned $5 on the loan <span class="math inline">(\$105 − \$100)</span>.</p>
+<p>However, you would not want to lend your friend more than $100. If you lent more–say, $102–then your loss in interest of $5.10 (5 percent of $102) would be greater than your $3 gain on the loan <span class="math inline">(\$105 − \$102)</span>. In this case, the amount you sacrifice will be greater than what you get in return.</p>
 <p>Of course, you would like to lend your friend less than $100 and make even more profit. But the <em>maximum amount</em> you would be willing to pay today to receive $105 next year, when the interest rate is 5 percent, is $100. Thus, the present value of $105 in this example is $100.</p>
 <h4 id="present-value-and-interest-rates">Present Value and Interest Rates</h4>
-<p>Here is another useful way to think of present value. Suppose you want to buy a new car in 5 years for $20,000. You want to know how much you need to have in your bank account today, so that after 5 years you have the $20,000 to make the payment for the car. A simple formula can answer this and similar questions. If <span class="math inline">\(K\)</span> is an amount of money at some point in the future; <span class="math inline">\(t\)</span> is the amount of time, or years, in the future until you need the money; and i is the interest rate you earn on your account, then the amount you need today is just the present value of the <span class="math inline">\(K\)</span> dollars, which is</p>
-<p><span class="math display">\[
+<p>Here is another useful way to think of present value. Suppose you want to buy a new car in 5 years for $20,000. You want to know how much you need to have in your bank account today, so that after 5 years you have the $20,000 to make the payment for the car. A simple formula can answer this and similar questions. If <span class="math inline">K</span> is an amount of money at some point in the future; <span class="math inline">t</span> is the amount of time, or years, in the future until you need the money; and i is the interest rate you earn on your account, then the amount you need today is just the present value of the <span class="math inline">K</span> dollars, which is</p>
+<p><span class="math display">
 \text{ present value } = \frac{K}{(1 + i)^{t}}
-\]</span></p>
-<p>In the example of your friend, her payment (<span class="math inline">\(K\)</span>) is $105, the interval of time (<span class="math inline">\(t\)</span>) in which she’s going to pay it is 1 year, and the interest rate (<span class="math inline">\(i\)</span>) is 0.05. Using the present value formula, the present value of $105 in 1 year is $100:</p>
-<p><span class="math display">\[
+</span></p>
+<p>In the example of your friend, her payment (<span class="math inline">K</span>) is $105, the interval of time (<span class="math inline">t</span>) in which she’s going to pay it is 1 year, and the interest rate (<span class="math inline">i</span>) is 0.05. Using the present value formula, the present value of $105 in 1 year is $100:</p>
+<p><span class="math display">
 \text{ present value } = \frac{\$105}{(1 + 0.05)^{1}} = \$100
-\]</span></p>
+</span></p>
 <p>This is the maximum amount you are willing to lend her today to receive $105 from her in 1 year.</p>
 <p>Let’s consider another example. Suppose the interest rate were 10 percent and you were offered $1,000 to be paid to you in 20 years. How much is that $1,000 worth today? That is, how much of your money today would you be willing to “tie up” (loan out) to get $1,000 in 20 years? At an interest rate of 10 percent, this is how much:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ present value } = \frac{\$1,000}{(1 + 0.10)^{2}} = \$148.64
-\]</span></p>
+</span></p>
 <p>You would be willing to pay only $148.64 today to receive $1,000 in 20 years.</p>
 <p>Returning to our original example with your friend, what happens if the interest rate is 10 percent instead of 5 percent? If your friend still promises you $105 after 1 year but the interest rate is double, how much would you be willing to loan her today? Using the formula, you would loan only $95.45 today:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ present value } = \frac{\$105}{(1 + 0.10)^{1}} = \$95.45
-\]</span></p>
+</span></p>
 <p>What this means is that if the interest rate is higher, you will be willing to pay <em>less</em> for the same payment in the future.</p>
 <p>Let’s summarize our discussion of present value:</p>
 <ol type="1">
@@ -183,27 +210,27 @@
 <p><a href="../../../spring-2020/ECON-121/notes/ch-2.html#the-real-nominal-principle">📑 The Real-Nominal Principle</a></p>
 <p>When there is inflation, economists make a distinction between the interest rate quoted in the market, which is called the <strong>nominal interest rate</strong>, and the <strong>real interest rate</strong>, which is what you actually earn after taking account of inflation. The real interest rate is defined as the nominal interest rate minus the inflation rate:</p>
 <p><a name="nominal-interest-rate-term"><strong>Nominal interest rate</strong></a> - Interest rate quoted in the market.<br> <a name="real-interest-rate-term"><strong>Real interest rate</strong></a> - The nominal interest rate minus the inflation rate.<br></p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ real rate } = \text{ nominal rate } - \text{ inflation rate }
-\]</span></p>
-<p>If the nominal rate of interest is 6 percent per year and the inflation rate is 4 percent during the year, the real rate of interest is 2 percent <span class="math inline">\((6−4)\)</span>.</p>
-<p>Let’s see what happens when you borrow money. Suppose you borrow $100 at a 10 percent annual interest rate, but inflation is 6 percent during the year. At the end of the year, you must pay back $110 $($100 1.10)$. But with an inflation rate of 6 percent, the lender would need $6 of the $10 you paid in interest just to keep up with inflation. That means the lender would effectively get just a $4 gain <span class="math inline">\((\$10 − \$6)\)</span>, instead of the full $10 gain. Thus, when corrected for the effects of inflation, the real rate of interest you will have to pay is just 4 percent, or $4, on the original $100 loan.</p>
-<p>As an example, in 2002 if seniors invested their money in 3-month U.S. government Treasury bills, they would have earned an average interest rate of 1.6 percent. However, inflation, as measured by the Consumer Price Index, was 2.4 percent. In real terms, these seniors would have actually lost money during the year, earning a negative real rate of interest of <span class="math inline">\(−0.8\)</span> percent.</p>
+</span></p>
+<p>If the nominal rate of interest is 6 percent per year and the inflation rate is 4 percent during the year, the real rate of interest is 2 percent <span class="math inline">(6−4)</span>.</p>
+<p>Let’s see what happens when you borrow money. Suppose you borrow $100 at a 10 percent annual interest rate, but inflation is 6 percent during the year. At the end of the year, you must pay back $110 $($100 )$. But with an inflation rate of 6 percent, the lender would need $6 of the $10 you paid in interest just to keep up with inflation. That means the lender would effectively get just a $4 gain <span class="math inline">(\$10 − \$6)</span>, instead of the full $10 gain. Thus, when corrected for the effects of inflation, the real rate of interest you will have to pay is just 4 percent, or $4, on the original $100 loan.</p>
+<p>As an example, in 2002 if seniors invested their money in 3-month U.S. government Treasury bills, they would have earned an average interest rate of 1.6 percent. However, inflation, as measured by the Consumer Price Index, was 2.4 percent. In real terms, these seniors would have actually lost money during the year, earning a negative real rate of interest of <span class="math inline">−0.8</span> percent.</p>
 <p>We defined the real interest rate as the nominal interest rate minus the actual inflation rate. When firms or individuals borrow or lend money, they do not know what the rate of inflation will actually be in the future. Instead, they must form an expectation–an estimate–of what they believe the inflation rate will be. For a given nominal interest rate, we can define the <strong>expected real interest</strong> rate as the nominal interest rate minus the expected inflation rate. The expected real interest rate is the rate at which borrowers or lenders expect to make transactions.</p>
 <p><a name="expected-real-interest-rate-term"><strong>Expected real interest rate</strong></a></p>
 <ul>
 <li>The nominal interest rate minus the expected inflation rate.</li>
 </ul>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-12/figure-12.2.png" alt="Figure 12.2" /><figcaption>Figure 12.2</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-12/figure-12.2.png" alt="Figure 12.2" /><figcaption aria-hidden="true">Figure 12.2</figcaption>
 </figure>
 <h2 id="understanding-investment-decisions">12.3 Understanding Investment Decisions</h2>
 <p>Now that we understand the concept of present value and interest rates, we can use these tools to understand investment decisions. Consider a project we have to pay for today in order to benefit in the future. Here is the simple investment rule for such a project: Invest in a project if the cost you incur today is less than or equal to the present value of the future payments from the project.</p>
 <p>In our first present-value example, the “project” (the loan to your friend) pays $105 in 1 year, and the present value (with an interest rate of 5 percent) is $100. Because the cost of the project is also $100, the project is worthwhile.</p>
 <p>Consider a more complicated project that pays $110 in year 1 and in year 2. The interest rate is 10 percent. The present value of the benefits from this project is</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ present value } = \frac{\$110}{(1 + 0.10)} + \frac{\$110}{(1.10)^{2}} = \$191
-\]</span></p>
+</span></p>
 <p>As long as the cost of the project today is less than $191, it pays to invest in it.</p>
 <p>We can use our theory to develop the relationship between investment spending and the real rate of interest in the economy. In the economy as a whole, millions of different investment projects can be undertaken, nearly all providing different returns. Consider the array of investments A through E in Table 12.1. Each project costs $100 in the current period and provides a return one period later. The returns are expressed in real terms; that is, they have been adjusted for inflation.</p>
 <blockquote>
@@ -250,7 +277,7 @@
 <p>Let’s look at the present value of these investments at various interest rates. At an interest rate of 2 percent per year, only investment A is unprofitable. For the other investments, the present value of the return exceeds the cost. If the interest rate in the market increases to 4 percent, both A and B will be unprofitable. At an interest rate of 6 percent, A, B, and C will be unprofitable; D will be unprofitable as well if the market interest rate increases to 8 percent. If the interest rate exceeds 9 percent, all the investments will be unprofitable.</p>
 <p>As interest rates rise, there will be fewer profitable investments in which firms are willing to invest, and the total level of investment spending in the economy will decline. Figure 12.3 depicts the negative relationship, graphically represented as the downward-sloping line, between real interest rates and investment. As the graph indicates, high real interest rates will deter investment spending. As an example, during the early 1980s when real interest rates rose, business investment dropped sharply.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-12/figure-12.3.png" alt="Figure 12.3" /><figcaption>Figure 12.3</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-12/figure-12.3.png" alt="Figure 12.3" /><figcaption aria-hidden="true">Figure 12.3</figcaption>
 </figure>
 <p>In practice, firms need to take into account other factors besides interest rates in making their investment decisions. In the <strong>neoclassical theory of investment</strong>, pioneered by Dale Jorgenson of Harvard University, taxes along with real interest rates play a key role in determining investment spending. Jorgenson used his theory to analyze how investors respond to a variety of tax incentives, including investment tax credits.</p>
 <p><a name="neoclassical-theory-of-investment-term"><strong>Neoclassical theory of investment</strong></a></p>
@@ -263,7 +290,7 @@
 <p><a name="retained-earnings-term"><strong>Retained earnings</strong></a> - Corporate earnings that are not paid out as dividends to their owners.<br> <a name="corporate-bonds-term"><strong>Corporate bonds</strong></a> - A bond sold by a corporation to the public in order to borrow money.<br> <a name="q-theory-of-investment-term"><strong>Q-theory of investment</strong></a> - The theory of investment that links investment spendings to stock prices.<br></p>
 <p>During roughly this same time period, the stock market and investment spending appeared to be even more tightly linked than in the past. Figure 12.4 plots the Standard and Poor’s index of stock prices on the same graph as the share of investment spending as a component of GDP from 1995 to 2017. Looking at a historical example, both the stock market and investment spending rose sharply from 1997, peaking in mid-2000. They then both fell sharply–the stock market plunged, investment spending fell, and the economy entered a recession. This is a typical pattern. We can also see a sharp rise and fall in both series in 2006 to 2007.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-12/figure-12.4.png" alt="Figure 12.4" /><figcaption>Figure 12.4</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-12/figure-12.4.png" alt="Figure 12.4" /><figcaption aria-hidden="true">Figure 12.4</figcaption>
 </figure>
 <h2 id="how-financial-intermediaries-facilitate-investment">12.4 How Financial Intermediaries Facilitate Investment</h2>
 <p>Households save and invest their funds for different reasons than firms. A typical couple might be saving money for their retirement or for their children’s education, and they generally won’t like the idea of their savings being subject to risk. They do, however, want their savings to be readily accessible and convertible to money–what economists call <strong>liquid</strong>–in case they have a financial emergency. Funds deposited in a bank account, for example, provide a source of liquidity for households because they can be withdrawn at any time.</p>
@@ -273,7 +300,7 @@
 </ul>
 <p>Suppose individual entrepreneurs had to obtain funds directly from individual savers. First, they would have to negotiate with thousands of people to obtain sufficient funds. This would take a lot of time and be costly. Second, the savers would face extraordinarily high risks if they loaned all their money to a single entrepreneur who had a risky project to undertake. Not only would all their funds be tied up in a single project, it would not be easy to monitor the investor’s decisions. How could they be certain the entrepreneur wouldn’t run off with their money? Additionally, their investments would not be liquid. To compensate these savers for the risk they would be taking and the lack of liquidity they would face, entrepreneurs would have to pay them extremely high interest rates, but higher interest rates would make it harder, perhaps impossible, for the entrepreneur to make a profit. No prospect of profits would mean no one would invest in the project in the first place. In other words, society would not be able to turn its savings into profitable investment projects. Figure 12.5 depicts this dilemma. How can the problem be solved?</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-12/figure-12.5.png" alt="Figure 12.5" /><figcaption>Figure 12.5</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-12/figure-12.5.png" alt="Figure 12.5" /><figcaption aria-hidden="true">Figure 12.5</figcaption>
 </figure>
 <p>The answer is through financial intermediaries. <strong>Financial intermediaries</strong> include banks, savings and loans, insurance companies, brokerage firms, companies that run mutual funds, and other types of financial institutions. These institutions accept funds from savers and make loans to businesses and individuals. For example, a local bank accepts deposits from savers and uses the funds to make loans to local businesses. Savings and loan institutions will accept deposits in savings accounts and use these funds to make loans, often for housing. Insurance companies accept premium payments from individuals in exchange for the protection provided by the insurance payments. Then insurance companies lend the premiums received to earn returns from investments so they can pay off the insurance claims of individuals. Figure 12.6 shows how financial intermediaries create a valuable link between savers and investors. Pooling the funds of savers to make loans to individual borrowers reduces the costs of negotiation. Financial institutions also have more expertise to evaluate and monitor investments than most individual investors.</p>
 <p><a name="financial-intermediaries-term"><strong>Financial intermediaries</strong></a></p>
@@ -281,7 +308,7 @@
 <li>Organization that receive funds from savers and channel them to investors.</li>
 </ul>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-12/figure-12.6.png" alt="Figure 12.6" /><figcaption>Figure 12.6</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-12/figure-12.6.png" alt="Figure 12.6" /><figcaption aria-hidden="true">Figure 12.6</figcaption>
 </figure>
 <p>To some degree, these financial intermediaries also provide liquidity. In normal circumstances, not all households withdraw their money at the same time, so financial intermediaries can lend out most of the money and still have enough on hand to meet withdrawals by depositors.</p>
 <p>But how do financial intermediaries reduce risk? They do this by diversifying investors’ assets–by not putting “all the eggs in one basket,” so to speak. Intermediaries invest (that is, make loans) in a large number of projects whose returns, although uncertain, are independent of one another. By independent, we mean the return from one investment is unrelated to the return on another investment. Consider a bank investing in a large number of projects that all together produce an average return of 8 percent annually. Each project alone is risky and could pay a return either higher or lower than 8 percent. However, as long as the returns on all these projects are independent of one another, those with higher returns will likely offset those with lower returns. By investing in a large number of projects, the bank increases the odds that as a group the projects will earn 8 percent.</p>
@@ -308,11 +335,11 @@
 <li>Investments incur costs today but provide benefits in the future.<br />
 </li>
 <li>Investment spending is a volatile component of GDP because expectations about the future are uncertain and ever changing.</li>
-<li>We use the concept of <em>present value</em> to compare the costs and benefits of investments that occur at different points in time. The present value of a payment <span class="math inline">\(K\)</span>, <span class="math inline">\(t\)</span> years in the future, at an interest rate of <span class="math inline">\(i\)</span> is</li>
+<li>We use the concept of <em>present value</em> to compare the costs and benefits of investments that occur at different points in time. The present value of a payment <span class="math inline">K</span>, <span class="math inline">t</span> years in the future, at an interest rate of <span class="math inline">i</span> is</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ present value } = \frac{K}{(1 + i)^{t}}
-\]</span></p>
+</span></p>
 <ol start="4" type="1">
 <li>The <em>real interest</em> rate equals the <em>nominal interest</em> rate minus inflation.</li>
 <li>Investment spending depends inversely on real interest rates.</li>

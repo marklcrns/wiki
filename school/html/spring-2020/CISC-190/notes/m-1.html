@@ -12,6 +12,13 @@
 
     <title>CISC 190 Module 1 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -66,16 +73,20 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#module-1-using-methods-and-parameters">Module 1: Using Methods and Parameters</a><ul>
-          <li><a href="#chapter-2">Chapter 2</a><ul>
-          <li><a href="#java-basics">2.3 Java Basics</a><ul>
+          <li><a href="#module-1-using-methods-and-parameters">Module 1: Using Methods and Parameters</a>
+          <ul>
+          <li><a href="#chapter-2">Chapter 2</a>
+          <ul>
+          <li><a href="#java-basics">2.3 Java Basics</a>
+          <ul>
           <li><a href="#math-operators">2.3.1 Math Operators</a></li>
           <li><a href="#printing-the-result-of-a-statement">2.3.2 Printing the Result of a Statement</a></li>
           <li><a href="#data-types-in-math-expressions">2.3.3 Data Types in Math Expressions</a></li>
           <li><a href="#relational-operators">2.3.5 Relational Operators</a></li>
           <li><a href="#strings">2.3.6 Strings</a></li>
           </ul></li>
-          <li><a href="#variables">2.4 Variables</a><ul>
+          <li><a href="#variables">2.4 Variables</a>
+          <ul>
           <li><a href="#declaring-variables">2.4.1 Declaring Variables</a></li>
           <li><a href="#using-variables-in-calculations">2.4.2 Using Variables in Calculations</a></li>
           <li><a href="#memory-maps-of-variables">2.4.3 Memory Maps of Variables</a></li>
@@ -84,14 +95,17 @@
           <li><a href="#multiple-references-to-an-object">2.4.6 Multiple References to an Object</a></li>
           </ul></li>
           </ul></li>
-          <li><a href="#chapter-3-introduction-to-programming">Chapter 3: Introduction to Programming</a><ul>
+          <li><a href="#chapter-3-introduction-to-programming">Chapter 3: Introduction to Programming</a>
+          <ul>
           <li><a href="#programming-is-about-naming">3.1 Programming is About Naming</a></li>
           <li><a href="#files-and-their-names">3.2 Files and Their Names</a></li>
-          <li><a href="#class-and-object-methods">3.3 Class and Object Methods</a><ul>
+          <li><a href="#class-and-object-methods">3.3 Class and Object Methods</a>
+          <ul>
           <li><a href="#invoking-class-methods">3.3.1 Invoking Class Methods</a></li>
           <li><a href="#executing-object-methods">3.3.2 Executing Object Methods</a></li>
           </ul></li>
-          <li><a href="#working-with-turtles">3.4 Working With Turtles</a><ul>
+          <li><a href="#working-with-turtles">3.4 Working With Turtles</a>
+          <ul>
           <li><a href="#defining-classes">3.4.1 Defining Classes</a></li>
           <li><a href="#creating-objects">3.4.2 Creating Objects</a></li>
           <li><a href="#sending-messages-to-objects">3.4.3 Sending Messages to Objects</a></li>
@@ -169,9 +183,9 @@ or
 <ul>
 <li>Represented by <code>int</code>, <code>byte</code>, <code>short</code>, or <code>long</code>
 <ul>
-<li><code>byte</code> takes up <strong>8 bits</strong> of memory (1 byte)</li>
-<li><code>short</code> takes up <strong>16 bits</strong> of memory (2 bytes)</li>
-<li><code>int</code> takes up <strong>32 bits</strong> of memory (4 bytes)</li>
+<li><p><code>byte</code> takes up <strong>8 bits</strong> of memory (1 byte)</p></li>
+<li><p><code>short</code> takes up <strong>16 bits</strong> of memory (2 bytes)</p></li>
+<li><p><code>int</code> takes up <strong>32 bits</strong> of memory (4 bytes)</p></li>
 <li><p><code>long</code> takes up <strong>64 bits</strong> of memory (8 bytes)</p>
 <blockquote>
 <p>System.out.println(1.0/2.0); 0.5</p>
@@ -182,7 +196,7 @@ or
 <ul>
 <li>Represented by <code>double</code> or <code>float</code>
 <ul>
-<li><code>float</code> takes up <strong>32 bits</strong> of memory (4 bytes)</li>
+<li><p><code>float</code> takes up <strong>32 bits</strong> of memory (4 bytes)</p></li>
 <li><p><code>double</code> takes up <strong>64 bits</strong> of memory (8 bytes)</p>
 <blockquote>
 <p>System.out.println(1/2); 0</p>

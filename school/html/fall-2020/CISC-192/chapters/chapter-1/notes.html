@@ -12,6 +12,13 @@
 
     <title>Chapter 1 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -23,26 +30,28 @@
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -51,9 +60,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -129,13 +138,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-1-introduction-to-computers-and-programming">Chapter 1: Introduction to Computers and Programming</a><ul>
-          <li><a href="#textbook">Textbook</a><ul>
-          <li><a href="#programs-and-programming-languages">1.3 Programs and Programming Languages</a><ul>
+          <li><a href="#chapter-1-introduction-to-computers-and-programming">Chapter 1: Introduction to Computers and Programming</a>
+          <ul>
+          <li><a href="#textbook">Textbook</a>
+          <ul>
+          <li><a href="#programs-and-programming-languages">1.3 Programs and Programming Languages</a>
+          <ul>
           <li><a href="#programming-languages">Programming Languages</a></li>
           <li><a href="#source-code-object-code-and-executable-code">Source Code, Object Code, and Executable Code</a></li>
           </ul></li>
-          <li><a href="#what-is-a-program-made-of">1.4 What is a Program Made of?</a><ul>
+          <li><a href="#what-is-a-program-made-of">1.4 What is a Program Made of?</a>
+          <ul>
           <li><a href="#language-elements">Language Elements</a></li>
           <li><a href="#lines-and-statements">Lines and Statements</a></li>
           </ul></li>
@@ -179,29 +192,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>Program 1-1</p>
 </blockquote>
-<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb1-1" title="1"><span class="co">// This program calculates the user&#39;s pay.</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb1-4" title="4"></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb1-6" title="6">{</a>
-<a class="sourceLine" id="cb1-7" title="7">  <span class="dt">double</span> hours, rate, pay;</a>
-<a class="sourceLine" id="cb1-8" title="8"></a>
-<a class="sourceLine" id="cb1-9" title="9">  <span class="co">// Get the number of hours worked.</span></a>
-<a class="sourceLine" id="cb1-10" title="10">  cout &lt;&lt; <span class="st">&quot;How many hours did you work? &quot;</span>;</a>
-<a class="sourceLine" id="cb1-11" title="11">  cin &gt;&gt; hours;</a>
-<a class="sourceLine" id="cb1-12" title="12"></a>
-<a class="sourceLine" id="cb1-13" title="13">  <span class="co">// Get the hourly pay rate.</span></a>
-<a class="sourceLine" id="cb1-14" title="14">  cout &lt;&lt; <span class="st">&quot;How much do you get paid per hour? &quot;</span>;</a>
-<a class="sourceLine" id="cb1-15" title="15">  cin &gt;&gt; rate;</a>
-<a class="sourceLine" id="cb1-16" title="16"></a>
-<a class="sourceLine" id="cb1-17" title="17">  <span class="co">// Calculate the pay.</span></a>
-<a class="sourceLine" id="cb1-18" title="18">  pay = hours * rate;</a>
-<a class="sourceLine" id="cb1-19" title="19"></a>
-<a class="sourceLine" id="cb1-20" title="20">  <span class="co">// Display the pay.</span></a>
-<a class="sourceLine" id="cb1-21" title="21">  cout &lt;&lt; <span class="st">&quot;You have earned $&quot;</span> &lt;&lt; pay &lt;&lt; end1;</a>
-<a class="sourceLine" id="cb1-22" title="22">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb1-23" title="23">}</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program calculates the user&#39;s pay.</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">double</span> hours<span class="op">,</span> rate<span class="op">,</span> pay<span class="op">;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Get the number of hours worked.</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;How many hours did you work? &quot;</span><span class="op">;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  cin <span class="op">&gt;&gt;</span> hours<span class="op">;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Get the hourly pay rate.</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;How much do you get paid per hour? &quot;</span><span class="op">;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  cin <span class="op">&gt;&gt;</span> rate<span class="op">;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Calculate the pay.</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  pay <span class="op">=</span> hours <span class="op">*</span> rate<span class="op">;</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Display the pay.</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;You have earned $&quot;</span> <span class="op">&lt;&lt;</span> pay <span class="op">&lt;&lt;</span> end1<span class="op">;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <strong>Program Output with Example Input Shown in Bold</strong>
 <pre>
 How many hours did you work? <b>10[Enter]</b>
@@ -217,7 +230,7 @@ You have earned $150
 <p>After the source code is saved to a file, the process of translating it to machine language can begin. During the first phase of this process, a program called the <em>preprocessor</em> reads the source code. The preprocessor searches for special lines that begin with the <code>#</code> symbol. These lines contain commands, or <em>directives</em>, that cause the preprocessor to amend or process the source code in some way. During the next phase the <em>compiler</em> steps through the preprocessed source code, translating each source code instruction into the appropriate machine language instruction. This process will uncover any <em>syntax errors</em> that may be in the program. Syntax errors are illegal uses of key words, operators, punctuation, and other language elements. If the program is free of syntax errors, the compiler stores the translated machine language instructions, which are called <em>object code</em>, in an <em>object file</em>.</p>
 <p>Although an object file contains machine language instructions, it is not a complete program. Here is why. C++ is conveniently equipped with a library of prewritten code for performing common operations or sometimes-difficult tasks. For example, the library contains hardware-specific code for displaying messages on the screen and reading input from the keyboard. It also provides routines for mathematical functions, such as calculating the square root of a number. This collection of code, called the <em>run-time library</em>, is extensive. Programs almost always use some part of it. When the compiler generates an object file, however, it does not include machine code for any run-time library routines the programmer might have used. During the last phase of the translation process, another program called the <em>linker</em> combines the object file with the necessary library routines. Once the linker has finished with this step, an executable file is created. The <em>executable file</em> contains machine language instructions, or <em>executable code</em>, and is ready to run on the computer.</p>
 <figure>
-<img src="../../../../../files/fall-2020/CISC-192/chapter-1/figure_1-6.png" alt="Figure 1-6" /><figcaption>Figure 1-6</figcaption>
+<img src="../../../../../files/fall-2020/CISC-192/chapter-1/figure_1-6.png" alt="Figure 1-6" /><figcaption aria-hidden="true">Figure 1-6</figcaption>
 </figure>
 <p><a name="integrated-development-environments-term"><strong>Integrated Development Environments (IDE)</strong></a></p>
 <ul>

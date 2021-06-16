@@ -12,6 +12,13 @@
 
     <title>ECON 121 Chapter 12 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -22,7 +29,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -67,25 +89,31 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-12-oligopoly-and-strategic-behavior">Chapter 12: Oligopoly and Strategic Behavior</a><ul>
-          <li><a href="#cartel-pricing-and-the-duopolists-dilemma">12.1 Cartel Pricing and the Duopolists’ Dilemma</a><ul>
-          <li><a href="#cartel-pricing-and-the-duopolists-dilemma-1">12.1.1 Cartel Pricing and the Duopolists’ Dilemma</a><ul>
+          <li><a href="#chapter-12-oligopoly-and-strategic-behavior">Chapter 12: Oligopoly and Strategic Behavior</a>
+          <ul>
+          <li><a href="#cartel-pricing-and-the-duopolists-dilemma">12.1 Cartel Pricing and the Duopolists’ Dilemma</a>
+          <ul>
+          <li><a href="#cartel-pricing-and-the-duopolists-dilemma-1">12.1.1 Cartel Pricing and the Duopolists’ Dilemma</a>
+          <ul>
           <li><a href="#price-fixing-and-the-game-tree">Price fixing and the Game Tree</a></li>
           </ul></li>
           <li><a href="#equilibrium-of-the-price-fixing-game">12.1.2 Equilibrium of the Price-Fixing Game</a></li>
           <li><a href="#nash-equilibrium">12.1.3 Nash Equilibrium</a></li>
           </ul></li>
-          <li><a href="#overcoming-the-duopolists-dilemma">12.2 Overcoming the Duopolists’ Dilemma</a><ul>
+          <li><a href="#overcoming-the-duopolists-dilemma">12.2 Overcoming the Duopolists’ Dilemma</a>
+          <ul>
           <li><a href="#low-price-guarantees">12.2.1 Low-Price Guarantees</a></li>
           <li><a href="#repeated-pricing-games-with-retaliation-for-underpricing">12.2.2 Repeated Pricing Games with Retaliation for Underpricing</a></li>
           <li><a href="#price-fixing-and-the-law">12.2.3 Price Fixing and the Law</a></li>
           <li><a href="#price-leadership">12.3.4 Price Leadership</a></li>
           </ul></li>
-          <li><a href="#simultaneous-decision-making-and-the-payoff-matrix">12.3 Simultaneous Decision Making and the Payoff Matrix</a><ul>
+          <li><a href="#simultaneous-decision-making-and-the-payoff-matrix">12.3 Simultaneous Decision Making and the Payoff Matrix</a>
+          <ul>
           <li><a href="#simultaneous-price-fixing-game">12.3.1 Simultaneous Price-Fixing Game</a></li>
           <li><a href="#the-prisoners-dilemma">12.3.2 The Prisoner’s Dilemma</a></li>
           </ul></li>
-          <li><a href="#the-insecure-monopolist-and-entry-deterrence">12.4 The Insecure Monopolist and Entry Deterrence</a><ul>
+          <li><a href="#the-insecure-monopolist-and-entry-deterrence">12.4 The Insecure Monopolist and Entry Deterrence</a>
+          <ul>
           <li><a href="#entry-deterrence-and-limit-pricing">12.4.1 Entry Deterrence and Limit Pricing</a></li>
           <li><a href="#entry-deterrence-and-contestable-markets">12.4.2 Entry Deterrence and Contestable Markets</a></li>
           <li><a href="#when-is-the-passive-approach-better">When Is the Passive Approach Better?</a></li>
@@ -139,17 +167,17 @@
 <li>The percentage of the market output produced by the largest firms.</li>
 </ul>
 <p>An alternative measure of market concentration is the Herfindahl–Hirschman Index (HHI). It is calculated by squaring the market share of each firm in the market and then summing the resulting numbers. For example, consider a market with two firms, one with a 60 percent market share and a second with a 40 percent share. The HHI for the market is 5,200:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{HHI} = 60^{2} + 40^{2} = 3,600 = 1,600 = 5,200
-\]</span></p>
+</span></p>
 <p>In contrast, for a market with 10 firms, each with a 10 percent market share, the HHI is 1,000:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{HHI} = 10^{2} \times 10 = 100 \times 10 = 1,000
-\]</span></p>
+</span></p>
 <p>According to the guidelines established by the U.S. Department of Justice in 1992, a market is “unconcentrated” if the HHI is below 1,000 and “highly concentrated” if it is above 1,800. For example, a market with five firms, each with a 20 percent market share, has an HHI of 2,000 and would be considered highly concentrated:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{HHI} = 20^{2} \times 5 = 400 \times 5 = 2,000
-\]</span></p>
+</span></p>
 <p>An oligopoly–a market with just a few firms–occurs for three reasons:</p>
 <ol type="1">
 <li><em>Government barriers to entry</em>. As we saw in Chapters 6 and 10, the government may limit the number of firms in a market by issuing patents or controlling the number of business licenses.</li>
@@ -167,15 +195,15 @@
 <li>A group of firms that act in unison, coordinating their price and quantity decisions.</li>
 </ul>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-12/ch-12_figure-12.1.png" alt="Figure 12.1 A Cartel Picks the Monopoly Quantity and Price" /><figcaption>Figure 12.1 A Cartel Picks the Monopoly Quantity and Price</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-12/ch-12_figure-12.1.png" alt="Figure 12.1 A Cartel Picks the Monopoly Quantity and Price" /><figcaption aria-hidden="true">Figure 12.1 A Cartel Picks the Monopoly Quantity and Price</figcaption>
 </figure>
 <blockquote>
 <p>The monopoly outcome is shown by point a, where marginal revenue equals marginal cost. The monopoly quantity is 60 passengers and the price is $400. If the firms form a cartel, the price is $400 and each firm has 30 passengers (half the monopoly quantity). The profit per passenger is $300 (equal to the $400 price minus the $100 average cost), so the profit per firm is $9,000.</p>
 </blockquote>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{profit} = (\text{price} - \text{average cost}) \times \text{quantity per film} =
 (\text{\$400} - \text{\$100}) \times 30 = \$9,000
-\]</span></p>
+</span></p>
 <p><a name="price-fixing-term"><strong>Price fixing</strong></a></p>
 <ul>
 <li>An arrangement in which firms conspire to fix prices</li>
@@ -183,7 +211,7 @@
 </ul>
 <p>What would happen if the two firms competed rather than conspired to fix the price? If they competed, each firm would have its own demand curve. As we saw in the previous chapter, the firm-specific demand curve for the typical firm lies to the left of the market demand curve because consumers can choose from two firms. At a particular price, consumers will be divided between the two firms, so each firm will serve only part of the market. In Figure 12.2, the demand curve for the typical duopolist is below the market demand curve. For example, at a price of $300, point d shows that the market quantity is 80 passengers, while point b shows that each firm has 40 passengers.</p>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-12/ch-12_figure-12.2.png" alt="Figure 12.2 Competing Duopolists Pick a Lower Price" /><figcaption>Figure 12.2 Competing Duopolists Pick a Lower Price</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-12/ch-12_figure-12.2.png" alt="Figure 12.2 Competing Duopolists Pick a Lower Price" /><figcaption aria-hidden="true">Figure 12.2 Competing Duopolists Pick a Lower Price</figcaption>
 </figure>
 <blockquote>
 <ol type="A">
@@ -191,10 +219,10 @@
 </ol>
 </blockquote>
 <p>Panel A in Figure 12.2 shows the quantity and price choice of an individual firm. Given the firm-specific demand curve and marginal-revenue curve, the marginal principle is satisfied at point a, where marginal revenue equals marginal cost. The firm has 40 passengers at a price of $300 (point b). The two firms are identical, so each has 40 passengers at a price of $300. Given an average cost of $100, each firm earns a profit of $8,000:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{price} = (\text{price} - \text{average cost}) \times \text{quantity per
 firm} = (\text{\$300} - \text{\$100}) \times 40 = \$8,000
-\]</span></p>
+</span></p>
 <h4 id="price-fixing-and-the-game-tree">Price fixing and the Game Tree</h4>
 <p>Clearly, each firm will earn more profit under a price-fixing cartel, but will a cartel succeed, or will firms cheat on a cartel agreement? We can answer this question with the help of a game tree</p>
 <p><a name="game-tree-term"><strong>Game tree</strong></a></p>
@@ -202,7 +230,7 @@ firm} = (\text{\$300} - \text{\$100}) \times 40 = \$8,000
 <li>A graphical representation of the consequences of different actions in a strategic setting.</li>
 </ul>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-12/ch-12_figure-12.3.png" alt="Figure 12.3 Game Tree for the rice-Fixing Game" /><figcaption>Figure 12.3 Game Tree for the rice-Fixing Game</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-12/ch-12_figure-12.3.png" alt="Figure 12.3 Game Tree for the rice-Fixing Game" /><figcaption aria-hidden="true">Figure 12.3 Game Tree for the rice-Fixing Game</figcaption>
 </figure>
 <blockquote>
 <p>The equilibrium path of the game is square A to square C to rectangle 4: Each firm picks the low price and earns a profit of $8,000. The duopolists’ dilemma is that each firm would make more profit if both picked the high price, but both firms pick the low price.</p>
@@ -245,15 +273,15 @@ firm} = (\text{\$300} - \text{\$100}) \times 40 = \$8,000
 </tbody>
 </table>
 <p>In the first column of Table 12.2, Jill charges the high price and has only 10 passengers at a price of $400, so her profit is $3,000:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{profit} = (\text{price} - \text{average cost}) \times \text{quantity
 perfirm} = (\$400 - \$100) \times 10 = \$3,000
-\]</span></p>
+</span></p>
 <p>In the second column, Jack charges the low price and has 60 passengers at a price of $300, so his profit is $12,000:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{profit} = (\text{price} - \text{average cost}) \times \text{quantity per
 firm} = (\$300 - \$100) \times 60 = \$12,000
-\]</span></p>
+</span></p>
 <h3 id="equilibrium-of-the-price-fixing-game">12.1.2 Equilibrium of the Price-Fixing Game</h3>
 <p>We can predict the equilibrium of the price-fixing game by a process of elimination. We’ll eliminate the rectangles that would require one or both firms to act irrationally, leaving us with the rectangle showing the equilibrium of the game:</p>
 <ul>
@@ -291,7 +319,7 @@ you $400 and Jack’s price is only $300, I will pay you $100.</code></pre>
 </ul>
 <p>Suppose Jack makes a similar commitment to match a lower price from Jill. Figure 12.4 shows the effect of low-price guarantees on the game tree. Jill now has two decision nodes. As before, she starts the game in square A. If Jill picks the high price and then Jack picks the high price, we end up at rectangle 1, as before. But if Jill picks the high price and Jack picks the low price, we get to square D. Jill will issue a refund of $100 to each of her consumers. In effect, she has retroactively chosen the low price, and payoff rectangle 2 is the duopoly outcome, with both firms picking the low price. For the lower half of the game tree, recall that Jack has committed to match a lower price by Jill, so the old payoff rectangle 3 disappears, leaving us with rectangle 4, where both firms choose the low price and get the duopoly profit.</p>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-12/ch-12_figure-12.4.png" alt="Figure 12.4 Low-Price Guarantees Increase Prices" /><figcaption>Figure 12.4 Low-Price Guarantees Increase Prices</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-12/ch-12_figure-12.4.png" alt="Figure 12.4 Low-Price Guarantees Increase Prices" /><figcaption aria-hidden="true">Figure 12.4 Low-Price Guarantees Increase Prices</figcaption>
 </figure>
 <blockquote>
 <p>When both firms have a low-price guarantee, it is impossible for one firm to underprice the other. The only possible outcomes are a pair of high prices (rectangle 1) or a pair of low prices (rectangles 2 or 4). The equilibrium path of the game is square A to square B to rectangle 1. <strong>Each firm picks the high price and earns a profit of $9,000.</strong></p>
@@ -313,7 +341,7 @@ you $400 and Jack’s price is only $300, I will pay you $100.</code></pre>
 </ul>
 <p>Figure 12.5 shows how a tit-for-tat system works. Jack underprices Jill in the second month, so Jill chooses the low price for the third month, resulting in the duopoly outcome. To restore the cartel outcome, Jack must eventually choose the high price, allowing Jill to underprice him for one month. This happens in the fourth month, and the cartel is restored in the fifth month. Although Jack can gain at Jill’s expense in the second month, if he wants to restore cartel pricing, he must allow her to gain at his expense during some other month. Under a tit-for-tat strategy, a duopolist does exactly what his or her rival did the last round. This encourages firms to cooperate rather than compete. Several studies have shown that a tit-for-tat strategy is the most effective strategy to promote cooperation.</p>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-12/ch-12_figure-12.5.png" alt="Figure 12.5 A Tit-for-Tat Pricing Strategy" /><figcaption>Figure 12.5 A Tit-for-Tat Pricing Strategy</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-12/ch-12_figure-12.5.png" alt="Figure 12.5 A Tit-for-Tat Pricing Strategy" /><figcaption aria-hidden="true">Figure 12.5 A Tit-for-Tat Pricing Strategy</figcaption>
 </figure>
 <blockquote>
 <p>Under tit-for-tat retaliation, the first firm (Jill, the square) chooses whatever price the second firm (Jack, the circle) chose the preceding month.</p>
@@ -353,7 +381,7 @@ you $400 and Jack’s price is only $300, I will pay you $100.</code></pre>
 </ul>
 <h3 id="simultaneous-price-fixing-game">12.3.1 Simultaneous Price-Fixing Game</h3>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-12/ch-12_figure-12.6.png" alt="Figure 12.6 Payoff Matrix for the Price-Fixing Game" /><figcaption>Figure 12.6 Payoff Matrix for the Price-Fixing Game</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-12/ch-12_figure-12.6.png" alt="Figure 12.6 Payoff Matrix for the Price-Fixing Game" /><figcaption aria-hidden="true">Figure 12.6 Payoff Matrix for the Price-Fixing Game</figcaption>
 </figure>
 <blockquote>
 <p>Jill’s profit is in red, and Jack’s profit is in blue. If both firms pick the high price, each firm earns a profit of $9,000. Both firms will pick the low price, and each firm will earn a profit of only $8,000.</p>
@@ -373,7 +401,7 @@ you $400 and Jack’s price is only $300, I will pay you $100.</code></pre>
 <p>We can gain some insight into the duopolists’ dilemma by examining the classic prisoners’ dilemma. Consider two people, Bonnie and Clyde, who have been accused of committing a crime. The police give each person an opportunity to confess to the crime. The traditional version of the story is a simultaneous decision-making game: The two are put in separate rooms, and each makes a choice without knowing the other’s choice.</p>
 <p>The police confront Bonnie and Clyde with the payoff matrix in Figure 12.7. If both confess, each gets 5 years in prison, as shown in the southeast corner of the matrix. If neither confesses, the police can convict both of them on a lesser charge, and each gets 2 years, as shown in the northwest corner of the matrix. If only one confesses, he or she will implicate the other prisoner. The confessor is rewarded with a 1-year prison sentence, while the other prisoner gets 10 years. If Bonnie confesses and Clyde does not, we are in the southwest corner of the matrix. If the roles are reversed, we are in the northeast corner.</p>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-12/ch-12_figure-12.7.png" alt="Figure 12.7 Payoff Matrix for the Prisoners’ Dilemma" /><figcaption>Figure 12.7 Payoff Matrix for the Prisoners’ Dilemma</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-12/ch-12_figure-12.7.png" alt="Figure 12.7 Payoff Matrix for the Prisoners’ Dilemma" /><figcaption aria-hidden="true">Figure 12.7 Payoff Matrix for the Prisoners’ Dilemma</figcaption>
 </figure>
 <blockquote>
 <p>The prisoners’ dilemma is that each prisoner would be better off if neither confessed, but both people confess. The Nash equilibrium is shown in the southeast corner of the matrix. Each person gets 5 years of prison time.</p>
@@ -381,40 +409,40 @@ you $400 and Jack’s price is only $300, I will pay you $100.</code></pre>
 <p>If both prisoners confess and each gets 5 years in prison, we have a Nash equilibrium because each prisoner is doing the best he or she can, given the actions of the other prisoner. Although both would be better off if they kept quiet, they implicate each other because the police reward them for doing so. There is an incentive for squealing, just as there is an incentive for one duopolist to underprice the other.</p>
 <h2 id="the-insecure-monopolist-and-entry-deterrence">12.4 The Insecure Monopolist and Entry Deterrence</h2>
 <p>Suppose Mona initially has a secure monopoly in the market for air travel between two cities. When there is no threat of entry, Mona uses the marginal principle (marginal revenue equals marginal cost) to pick a quantity and a price. In Figure 12.8, we start at point c on the market demand curve, with a quantity of 60 passengers per day and a price of $400 per passenger. Her profit is $18,000:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{profit} = (\text{price} - \text{average cost}) \times \text{quantity per
 firm} = (\$400 - \$100) \times 60 = \$18,000
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-12/ch-12_figure-12.8.png" alt="Figure 12.8 Dettering Entry with Limit Pricing" /><figcaption>Figure 12.8 Dettering Entry with Limit Pricing</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-12/ch-12_figure-12.8.png" alt="Figure 12.8 Dettering Entry with Limit Pricing" /><figcaption aria-hidden="true">Figure 12.8 Dettering Entry with Limit Pricing</figcaption>
 </figure>
 <blockquote>
 <p>Point c shows a secure monopoly, point d shows a duopoly, and point z the zero-profit outcome. The minimum entry quantity is 20 passengers, so the entry-deterring quantity is 100 (equal to 120–), as shown by point e. The limit price is $200.</p>
 </blockquote>
 <p>If Mona discovers that a second airline is thinking about entering the market, what will she do? Now that her monopoly is insecure, she has two options: She can be passive and allow the second airline to enter the market, or she can try to prevent the other firm from entering the market.</p>
 <p>The passive approach will lead to the duopoly outcome we saw earlier in the chapter. In Figure 12.8, if the second firm enters the market, we move downward along the market demand curve from point c to point d. In a duopoly, each firm charges a price of $300 and serves 40 passengers, half the total quantity demanded at a price of $300. For each duopolist, the daily profit is $8,000:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{profit} = (\text{price} - \text{average cost}) \times quantity per firm =
 (\$300 - \$100) \times 40 = \$8,000
-\]</span></p>
+</span></p>
 <h3 id="entry-deterrence-and-limit-pricing">12.4.1 Entry Deterrence and Limit Pricing</h3>
 <p>To prevent the second firm from entering the market, Mona must commit herself to serving a large number of passengers. If she commits to a large passenger load, there won’t be enough passengers left for a potential entrant to make a profit. Suppose there are economies of scale in providing air travel, and the minimum entry quantity is 20 passengers per day: That is, it would be impractical for a firm to serve fewer than 20 passengers. In Figure 12.8, the long-run average cost curve is negatively sloped for relatively low levels of output, and the average cost for the minimum entry quantity of 20 passengers is just over $100, say $101.</p>
 <p>Mona must compute the quantity of output that is just large enough to prevent the second firm from entering the market. The quantity required to prevent the entry of the second firm is computed as follows:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 \text{deterring quantity} &amp;= \text{zero profit quantity} - \text{minimum entry quantity} \\
 100 &amp;= 120 -20
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>If Mona commits to serve 100 passengers and a second firm were to enter with the minimum quantity of 20 passengers, the price would drop to $100. Mona, with an average cost of $100 to serve 100 passengers, would break even. The second firm, with an average cost just above $100, would lose money. Specifically, if the average cost of 20 passengers is $101, the second firm would lose $1 per passenger, or $20 in total.</p>
 <p>Note that Mona cannot simply announce that she will serve 100 passengers. She must take actions that ensure that her most profitable output is in fact 100 passengers. In other words, she must commit to 100 passengers. She could commit to the larger passenger load by purchasing a large fleet of airplanes and signing labor contracts that require her to hire a large workforce.</p>
 <p>Which is more profitable, entry deterrence or the passive duopoly outcome? The deterrence strategy, shown by point e in Figure 12.8, generates a price of $200 and a profit of $10,000:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 \text{profit} &amp;= (\text{price} - \text{average cost}) \times \text{quantity per firm} \\
  &amp;= (\$200 - \$100) \times 100 = \$10,000
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>This is larger than the $8,000 profit under the passive approach, so <strong>deterrence is the best strategy.</strong></p>
 <p>Figure 12.9 uses a game tree to represent the entry-deterrence game. Mona makes the first move, and she considers the consequences of her two options:</p>
 <ul>
@@ -422,7 +450,7 @@ firm} = (\$400 - \$100) \times 60 = \$18,000
 <li>If Mona commits to serve 100 passengers, we reach the lower branch of the game tree. If Doug enters with the minimum entry quantity of 20 passengers, his average cost will be $101, which exceeds the market price of $100. Therefore, the best response is to stay out of the market and avoid losing money.</li>
 </ul>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-12/ch-12_figure-12.9.png" alt="Figure 12.9 Dettering Entry with Limit Pricing" /><figcaption>Figure 12.9 Dettering Entry with Limit Pricing</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-12/ch-12_figure-12.9.png" alt="Figure 12.9 Dettering Entry with Limit Pricing" /><figcaption aria-hidden="true">Figure 12.9 Dettering Entry with Limit Pricing</figcaption>
 </figure>
 <blockquote>
 <p>The path of the game is square A to square C to rectangle 4. Mona commits to the entry-deterring quantity of 100, so Doug stays out of the market. Mona’s profit of $10,000 is less than the monopoly profit but more than the duopoly profit of $8,000.</p>
@@ -444,19 +472,19 @@ firm} = (\$400 - \$100) \times 60 = \$18,000
 </ul>
 <h3 id="when-is-the-passive-approach-better">When Is the Passive Approach Better?</h3>
 <p>Although our example shows that entry deterrence is the best strategy for Mona, it won’t be the best strategy for all insecure monopolists. <strong>The key variable is the minimum entry quantity</strong>. Suppose that the scale economies in air travel were relatively small, so a second firm could enter the market with as few as 10 passengers. In this case, if Mona commits to serving only 100 passengers, that won’t be enough to deter entry: A firm entering with 10 passengers will still make a profit. If the minimum entry quantity is 10 passengers, the entry-deterring quantity rises to 110 passengers:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 \text{deterring quantity} &amp;= \text{zero profit quantity} - \text{minimum entry quantity} \\
                       110 &amp;= 120 - 10
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>Mona can commit to serving 110 passengers and thus prevent the second firm from entering the market, but is this the most profitable strategy? As shown by point f in Figure 12.8, the limit price associated with an entry-deterring quantity is $150. Mona’s profit from entry deterrence would be $5,500:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 \text{profit} &amp;= (\text{price} - \text{average cost} \times \text{quantity per firm}) \\
  &amp;= (\$150 - \$100) \times 110 = \$5,500
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>This is less than the $8,000 profit she could earn by being passive and letting the second firm enter the market. In this case, the minimum entry quantity is relatively small, so the entry-deterring quantity is large and the limit price is low. As a result, sharing a duopoly is more profitable than increasing output and cutting the price to keep the other firm out.</p>
 <h2 id="the-advertisers-dilemma">12.5 The Advertiser’s Dilemma</h2>
 <p>Consider the producers of two brands of aspirin. Each firm must decide whether to spend $7 million on an advertising campaign for its product. In Table 12.3, the first two columns show what happens if neither firm advertises. Each firm earns $8 million in net revenue (revenue minus production cost) and spends no money on advertising, so each firm earns $8 million in profits. The third and fourth columns show what happens if each firm spends $7 million on advertising. The net revenue for each firm increases by only $5 million, so the profit of each firm drops by $2 million, to $6 million.</p>
@@ -519,7 +547,7 @@ firm} = (\$400 - \$100) \times 60 = \$18,000
 <li>If Adeline advertises and Vern does not, we go from square A to square B to rectangle 2. Adeline earns $10 million, while Vern earns $5 million. If the roles are reversed, we end up in rectangle 3, with Vern the advertiser earning $10 million and Adeline earning only $5 million.</li>
 </ul>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-12/ch-12_figure-12.10.png" alt="Figure 12.10 Game Tree for the Advertisers’ Dilemma" /><figcaption>Figure 12.10 Game Tree for the Advertisers’ Dilemma</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-12/ch-12_figure-12.10.png" alt="Figure 12.10 Game Tree for the Advertisers’ Dilemma" /><figcaption aria-hidden="true">Figure 12.10 Game Tree for the Advertisers’ Dilemma</figcaption>
 </figure>
 <blockquote>
 <p>Adeline moves first, choosing to advertise or not. Vern’s best response is to advertise no matter what Adeline does. Knowing this, Adeline realizes that the only possible outcomes are shown by rectangles 1 and 3. From Adeline’s perspective, rectangle 1 ($6 million) is better than rectangle 3 ($5 million), so her best response is to advertise. Both Adeline and Vern advertise, and each earns a profit of $6 million.</p>

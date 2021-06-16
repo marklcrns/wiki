@@ -12,6 +12,13 @@
 
     <title>Advanced Git Commands</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -23,26 +30,28 @@
     <link href="../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -51,9 +60,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -129,7 +138,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#advanced-git-commands">Advanced Git Commands</a><ul>
+          <li><a href="#advanced-git-commands">Advanced Git Commands</a>
+          <ul>
           <li><a href="#reset">Reset</a></li>
           <li><a href="#branch">Branch</a></li>
           <li><a href="#fetch">Fetch</a></li>
@@ -196,23 +206,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <h2 id="branch">Branch</h2>
 <p><strong>Fetching all Git branches</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">for</span> <span class="ex">remote</span> in <span class="kw">`</span><span class="fu">git</span> branch -r<span class="kw">`;</span> <span class="kw">do</span> <span class="fu">git</span> branch --track <span class="va">${remote#</span>origin/<span class="va">}</span> <span class="va">$remote</span><span class="kw">;</span> <span class="kw">done</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="fu">git</span> fetch --all</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="fu">git</span> pull --all</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> remote <span class="kw">in</span> <span class="kw">`</span><span class="fu">git</span> branch <span class="at">-r</span><span class="kw">`;</span> <span class="cf">do</span> <span class="fu">git</span> branch <span class="at">--track</span> <span class="va">${remote</span><span class="op">#</span>origin/<span class="va">}</span> <span class="va">$remote</span><span class="kw">;</span> <span class="cf">done</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch <span class="at">--all</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull <span class="at">--all</span></span></code></pre></div>
 <p><strong>Remove tracking branches no longer on remote (Method 1)</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">git</span> checkout master</a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="fu">git</span> remote prune origin</a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="co"># List all branches merged into the current branch into vim buffer.</span></a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="co"># Once loaded in vim, delete branches you want to exclude from branch deletion.</span></a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="fu">git</span> branch --merged <span class="op">&gt;</span>/tmp/merged-branches <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
-<a class="sourceLine" id="cb2-6" title="6">  <span class="ex">vim</span> /tmp/merged-branches <span class="kw">&amp;&amp;</span> <span class="fu">xargs</span> git branch -d <span class="op">&lt;</span>/tmp/merged-branches</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout master</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote prune origin</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># List all branches merged into the current branch into vim buffer.</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Once loaded in vim, delete branches you want to exclude from branch deletion.</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">--merged</span> <span class="op">&gt;</span>/tmp/merged-branches <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">vim</span> /tmp/merged-branches <span class="kw">&amp;&amp;</span> <span class="fu">xargs</span> git branch <span class="at">-d</span> <span class="op">&lt;</span>/tmp/merged-branches</span></code></pre></div>
 <blockquote>
 <p><strong>NOTE:</strong> Both this method only removes merged branch and does not remove unmerged branch that exists in local but not from remote.</p>
 </blockquote>
 <p><strong>Remove tracking branches no longer on remote (Method 2)</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">git</span> fetch -p <span class="kw">&amp;&amp;</span> <span class="kw">for</span> <span class="ex">branch</span> in <span class="va">$(</span><span class="fu">git</span> branch -vv <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&#39;: gone]&#39;</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{print $1}&#39;</span><span class="va">)</span><span class="kw">;</span> <span class="kw">do</span> <span class="fu">git</span> branch -D <span class="va">$branch</span><span class="kw">;</span> <span class="kw">done</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="co"># Much safer way</span></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="fu">git</span> fetch -p <span class="kw">&amp;&amp;</span> <span class="kw">for</span> <span class="ex">branch</span> in <span class="va">$(</span><span class="fu">git</span> for-each-ref --format <span class="st">&#39;%(refname) %(upstream:track)&#39;</span> refs/heads <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;$2 == &quot;[gone]&quot; {sub(&quot;refs/heads/&quot;, &quot;&quot;, $1); print $1}&#39;</span><span class="va">)</span><span class="kw">;</span> <span class="kw">do</span> <span class="fu">git</span> branch -D <span class="va">$branch</span><span class="kw">;</span> <span class="kw">done</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch <span class="at">-p</span> <span class="kw">&amp;&amp;</span> <span class="cf">for</span> branch <span class="kw">in</span> <span class="va">$(</span><span class="fu">git</span> branch <span class="at">-vv</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&#39;: gone]&#39;</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{print $1}&#39;</span><span class="va">)</span><span class="kw">;</span> <span class="cf">do</span> <span class="fu">git</span> branch <span class="at">-D</span> <span class="va">$branch</span><span class="kw">;</span> <span class="cf">done</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Much safer way</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch <span class="at">-p</span> <span class="kw">&amp;&amp;</span> <span class="cf">for</span> branch <span class="kw">in</span> <span class="va">$(</span><span class="fu">git</span> for-each-ref <span class="at">--format</span> <span class="st">&#39;%(refname) %(upstream:track)&#39;</span> refs/heads <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;$2 == &quot;[gone]&quot; {sub(&quot;refs/heads/&quot;, &quot;&quot;, $1); print $1}&#39;</span><span class="va">)</span><span class="kw">;</span> <span class="cf">do</span> <span class="fu">git</span> branch <span class="at">-D</span> <span class="va">$branch</span><span class="kw">;</span> <span class="cf">done</span></span></code></pre></div>
 <blockquote>
 <p><strong>NOTE:</strong> This removes both merge and unmerged branch. To only remove merged branch, replace <code>git branch -D</code> with <code>git branch -d</code></p>
 </blockquote>
@@ -223,10 +233,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <h2 id="fetch">Fetch</h2>
 <p><strong>Log all new fetched remote changes</strong></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># First make sure to</span></a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="fu">git</span> fetch origin</a>
-<a class="sourceLine" id="cb4-3" title="3"><span class="co"># Then</span></a>
-<a class="sourceLine" id="cb4-4" title="4"><span class="fu">git</span> log origin/master ^master <span class="co"># Replace master with &lt;branch-name&gt; for other branch</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First make sure to</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch origin</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Then</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log origin/master ^master <span class="co"># Replace master with &lt;branch-name&gt; for other branch</span></span></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch">📄 Where to find chances due to git fetch</a></li>
@@ -242,33 +252,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>git pull origin master</code></li>
 </ul>
 <p>Solution 2: Set it up so that local master branch tracks github master branch as an upstream:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">git</span> branch --set-upstream-to=origin/master <span class="op">&lt;</span>current-branch<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="fu">git</span> pull</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">--set-upstream-to</span><span class="op">=</span>origin/master <span class="op">&lt;</span>current-branch<span class="op">&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://ducmanhphan.github.io/2019-02-17-Common-problems-with-git/">📄 Common problems with GIT</a></li>
 </ul>
 <h2 id="merge">Merge</h2>
 <p><strong>Manual interactive merging (with <code>git add --interactive</code>)</strong></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">git</span> merge --no-commit --no-ff <span class="op">&lt;</span>branch-to merge<span class="op">&gt;</span> <span class="co"># Merges with branch without committing</span></a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="fu">git</span> reset HEAD                                  <span class="co"># Unstage all merge changes</span></a>
-<a class="sourceLine" id="cb6-3" title="3"><span class="fu">git</span> add --interactive                           <span class="co"># Add pieces interactively</span></a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--no-commit</span> <span class="at">--no-ff</span> <span class="op">&lt;</span>branch-to merge<span class="op">&gt;</span> # Merges with branch without committing</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset HEAD                                  <span class="co"># Unstage all merge changes</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">--interactive</span>                           <span class="co"># Add pieces interactively</span></span></code></pre></div>
 <p><strong>Manual interactive merging (with <code>git mergetool</code>)</strong></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="fu">git</span> merge --no-commit --no-ff <span class="op">&lt;</span>branch-to-merge<span class="op">&gt;</span> <span class="co"># Merges with branch without committing</span></a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="fu">git</span> mergetool                                   <span class="co"># Resolve conflict manually with graphics</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--no-commit</span> <span class="at">--no-ff</span> <span class="op">&lt;</span>branch-to-merge<span class="op">&gt;</span> # Merges with branch without committing</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> mergetool                                   <span class="co"># Resolve conflict manually with graphics</span></span></code></pre></div>
 <p><strong>Other very manual way of merging</strong></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="co"># Merges with branch without committing</span></a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="fu">git</span> merge --no-commit --no-ff <span class="op">&lt;</span>branch-to-merge<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb8-3" title="3"></a>
-<a class="sourceLine" id="cb8-4" title="4"><span class="co"># Then you&#39;ll ask git for the file as it appeared in the two branches:</span></a>
-<a class="sourceLine" id="cb8-5" title="5"><span class="fu">git</span> show HEAD:filename <span class="op">&gt;</span>filename.HEAD</a>
-<a class="sourceLine" id="cb8-6" title="6"><span class="fu">git</span> show branch-to-merge:filename <span class="op">&gt;</span>filename.branch</a>
-<a class="sourceLine" id="cb8-7" title="7"></a>
-<a class="sourceLine" id="cb8-8" title="8"><span class="co"># and their merge base,</span></a>
-<a class="sourceLine" id="cb8-9" title="9"><span class="fu">git</span> show <span class="kw">`</span><span class="fu">git</span> merge-base HEAD <span class="op">&lt;</span>branch-to-merge<span class="op">&gt;</span><span class="kw">`</span>:filename  <span class="op">&gt;</span>filename.base</a>
-<a class="sourceLine" id="cb8-10" title="10"></a>
-<a class="sourceLine" id="cb8-11" title="11"><span class="co"># You&#39;ll merge them using whatever tool you want (e.g.)</span></a>
-<a class="sourceLine" id="cb8-12" title="12"><span class="ex">meld</span> filename.<span class="dt">{HEAD,branch,base}</span> <span class="co"># meld can be replaced by other diff tools</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Merges with branch without committing</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--no-commit</span> <span class="at">--no-ff</span> <span class="op">&lt;</span>branch-to-merge<span class="op">&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Then you&#39;ll ask git for the file as it appeared in the two branches:</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> show HEAD:filename <span class="op">&gt;</span>filename.HEAD</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> show branch-to-merge:filename <span class="op">&gt;</span>filename.branch</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># and their merge base,</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> show <span class="kw">`</span><span class="fu">git</span> merge-base HEAD <span class="op">&lt;</span>branch-to-merge<span class="op">&gt;</span><span class="kw">`</span>:filename  <span class="op">&gt;</span>filename.base</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># You&#39;ll merge them using whatever tool you want (e.g.)</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="ex">meld</span> filename.<span class="dt">{HEAD</span><span class="op">,</span><span class="dt">branch</span><span class="op">,</span><span class="dt">base}</span> <span class="co"># meld can be replaced by other diff tools</span></span></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://stackoverflow.com/a/22392289">📄 Interactive merging with git add –interactive</a></li>

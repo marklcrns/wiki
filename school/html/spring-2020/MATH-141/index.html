@@ -12,6 +12,13 @@
 
     <title>MATH 141</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -66,10 +73,12 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#math-141-pre-calculus">MATH 141 Pre-calculus</a><ul>
+          <li><a href="#math-141-pre-calculus">MATH 141 Pre-calculus</a>
+          <ul>
           <li><a href="#course-materials">Course Materials</a></li>
           <li><a href="#notes">Notes</a></li>
-          <li><a href="#quizzes">Quizzes</a><ul>
+          <li><a href="#quizzes">Quizzes</a>
+          <ul>
           <li><a href="#chapter-1">Chapter 1</a></li>
           <li><a href="#chapter-2">Chapter 2</a></li>
           <li><a href="#chapter-3">Chapter 3</a></li>
@@ -78,7 +87,8 @@
           <li><a href="#chapter-6">Chapter 6</a></li>
           <li><a href="#chapter-7">Chapter 7</a></li>
           </ul></li>
-          <li><a href="#exams">Exams</a><ul>
+          <li><a href="#exams">Exams</a>
+          <ul>
           <li><a href="#exam-1">Exam 1</a></li>
           <li><a href="#exam-2">Exam 2</a></li>
           <li><a href="#exam-3">Exam 3</a></li>

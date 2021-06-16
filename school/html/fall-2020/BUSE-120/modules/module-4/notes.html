@@ -11,6 +11,13 @@
 
     <title>Module 4 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,9 +88,12 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#notes">Notes</a><ul>
-          <li><a href="#buse-120-canvas-notes">BUSE 120 Canvas Notes</a><ul>
-          <li><a href="#time-value-of-money-tvm">4.2 Time Value of Money (TVM)</a><ul>
+          <li><a href="#notes">Notes</a>
+          <ul>
+          <li><a href="#buse-120-canvas-notes">BUSE 120 Canvas Notes</a>
+          <ul>
+          <li><a href="#time-value-of-money-tvm">4.2 Time Value of Money (TVM)</a>
+          <ul>
           <li><a href="#the-power-of-compound-interest">4.2.1 The Power of Compound Interest</a></li>
           <li><a href="#tvm-calculators">4.2.2 TVM Calculators</a></li>
           </ul></li>
@@ -128,13 +153,13 @@
 <ul>
 <li><a href="https://www.youtube.com/watch?v=nfkqCv3Rd_g">📺 Time Value of Money - Macroeconomics</a></li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{Future Value of \$100 in } t \text{ years } = \$100(1 + r)^{t}
-\]</span></p>
-<p>Where <span class="math inline">\(t\)</span> is equal to number of years in the future and <span class="math inline">\(r\)</span> as the interest rate in decimals.</p>
-<p><span class="math display">\[
+</span></p>
+<p>Where <span class="math inline">t</span> is equal to number of years in the future and <span class="math inline">r</span> as the interest rate in decimals.</p>
+<p><span class="math display">
 \text{Present Value of \$100 in } t \text{ years } = \frac{\$100}{(1 + r)^{t}}
-\]</span></p>
+</span></p>
 <h4 id="the-power-of-compound-interest">4.2.1 The Power of Compound Interest</h4>
 <p>The main reason why time is so important in TVM calculations is because of compound interest. Albert Einstein is credited as saying “compound interest is the most powerful force in the universe.” My roommates throughout college were all physics majors so it was fun to tease them with this quote. But what does it mean? Compound interest is a way to make your money grow exponentially faster by letting the interest you earn continue to earn interest over time. It’s a powerful application of the time value of money.</p>
 <ul>

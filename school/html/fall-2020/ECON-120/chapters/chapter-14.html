@@ -11,6 +11,13 @@
 
     <title>Chapter 14</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,29 +88,37 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-14-the-federal-reserve-and-monetary-policy">Chapter 14: The Federal Reserve and Monetary Policy</a><ul>
-          <li><a href="#the-demand-for-money">14.1 The Demand for Money</a><ul>
+          <li><a href="#chapter-14-the-federal-reserve-and-monetary-policy">Chapter 14: The Federal Reserve and Monetary Policy</a>
+          <ul>
+          <li><a href="#the-demand-for-money">14.1 The Demand for Money</a>
+          <ul>
           <li><a href="#interest-rates-affect-money-demands">14.1.1 Interest Rates Affect Money Demands</a></li>
           <li><a href="#other-components-of-money-demand">14.1.2 Other Components of Money Demand</a></li>
           </ul></li>
-          <li><a href="#how-the-federal-reserve-can-change-the-money-supply">14.2 How the Federal Reserve Can Change the Money Supply</a><ul>
+          <li><a href="#how-the-federal-reserve-can-change-the-money-supply">14.2 How the Federal Reserve Can Change the Money Supply</a>
+          <ul>
           <li><a href="#open-market-operations">14.2.1 Open Market Operations</a></li>
-          <li><a href="#other-tools-of-the-fed">14.2.2 Other Tools of the Fed</a><ul>
+          <li><a href="#other-tools-of-the-fed">14.2.2 Other Tools of the Fed</a>
+          <ul>
           <li><a href="#changing-reserve-requirements">Changing Reserve Requirements</a></li>
           <li><a href="#paying-interest-on-reserves">Paying Interest on Reserves</a></li>
           <li><a href="#changing-the-discount-rate">Changing the Discount Rate</a></li>
           </ul></li>
           </ul></li>
-          <li><a href="#how-interest-rates-are-determined-combining-the-demand-and-supply-of-money">14.3 How Interest Rates Are Determined: Combining the Demand and Supply of Money</a><ul>
-          <li><a href="#interest-rates-and-bond-prices">14.3.1 Interest Rates and Bond Prices</a><ul>
+          <li><a href="#how-interest-rates-are-determined-combining-the-demand-and-supply-of-money">14.3 How Interest Rates Are Determined: Combining the Demand and Supply of Money</a>
+          <ul>
+          <li><a href="#interest-rates-and-bond-prices">14.3.1 Interest Rates and Bond Prices</a>
+          <ul>
           <li><a href="#how-open-market-operations-directly-affect-bond-prices">How Open Market Operations Directly Affect Bond Prices</a></li>
           <li><a href="#good-news-for-the-economy-is-bad-news-for-bond-prices">Good News for the Economy is Bad News for Bond Prices</a></li>
           </ul></li>
           </ul></li>
-          <li><a href="#interest-rates-and-how-they-change-investment-and-output-gdp">14.4 Interest Rates and How They Change Investment and Output (GDP)</a><ul>
+          <li><a href="#interest-rates-and-how-they-change-investment-and-output-gdp">14.4 Interest Rates and How They Change Investment and Output (GDP)</a>
+          <ul>
           <li><a href="#monetary-policy-and-international-trade">14.4.1 Monetary Policy and International Trade</a></li>
           </ul></li>
-          <li><a href="#monetary-policy-challenges-for-the-fed">14.5 Monetary Policy Challenges for the Fed</a><ul>
+          <li><a href="#monetary-policy-challenges-for-the-fed">14.5 Monetary Policy Challenges for the Fed</a>
+          <ul>
           <li><a href="#lags-in-monetary-policy">14.5.1 Lags in Monetary Policy</a></li>
           <li><a href="#influencing-market-expectations-from-the-federal-funds-rate-to-interest-rates-on-long-term-bonds">14.5.2 Influencing Market Expectations: From the Federal Funds Rate to Interest Rates on Long-Term Bonds</a></li>
           </ul></li>
@@ -140,9 +170,9 @@
 </ul>
 <p>The opportunity cost of holding money is the return you could have earned by holding your wealth in other assets. We measure the opportunity cost of holding money by the interest rate. Suppose the interest rate available to you on a long-term bond is 6 percent per year. If you hold $100 of your wealth in the form of this bond, you’ll earn $6 a year. If you hold currency instead, you’ll earn no interest. So, the opportunity cost of holding $100 in currency is $6 per year, or 6 percent per year.</p>
 <p>As interest rates increase in the economy, the opportunity cost of holding money also increases. Economists have found that as the opportunity cost of holding money increases, the public demands less money. The quantity demanded of money will decrease with an increase in interest rates.</p>
-<p>In Figure 14.1, we draw a demand for money curve, <span class="math inline">\(M^{d}\)</span>, as a function of the interest rate. At higher interest rates, individuals will want to hold less money than they will at lower interest rates because the opportunity cost of holding money is higher. As interest rates rise from <span class="math inline">\(r_{0}\)</span> to <span class="math inline">\(r_{1}\)</span>, the quantity of money demanded falls from <span class="math inline">\(M^{0}\)</span> to <span class="math inline">\(M^{1}\)</span>.</p>
+<p>In Figure 14.1, we draw a demand for money curve, <span class="math inline">M^{d}</span>, as a function of the interest rate. At higher interest rates, individuals will want to hold less money than they will at lower interest rates because the opportunity cost of holding money is higher. As interest rates rise from <span class="math inline">r_{0}</span> to <span class="math inline">r_{1}</span>, the quantity of money demanded falls from <span class="math inline">M^{0}</span> to <span class="math inline">M^{1}</span>.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-14/figure-14.1.png" alt="Figure 14.1" /><figcaption>Figure 14.1</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-14/figure-14.1.png" alt="Figure 14.1" /><figcaption aria-hidden="true">Figure 14.1</figcaption>
 </figure>
 <h3 id="other-components-of-money-demand">14.1.2 Other Components of Money Demand</h3>
 <p>Traditionally, economists have identified other motives besides transactions for individuals or firms to hold money. If you hold your wealth in the form of property, such as a house or a boat, it is costly to sell it on short notice if you need to obtain funds. These forms of wealth are <strong>illiquid</strong>, meaning that they are not easily transferable into money. If you hold your wealth in currency or checking accounts, you do not have this problem. Economists recognize that people have a <strong>liquidity demand for money</strong>; they want to hold money to make transactions on quick notice.</p>
@@ -177,27 +207,27 @@
 <p><a name="discount-rate-term"><strong>Discount rate</strong></a> - The interest rate at which banks can borrow from the Fed.<br> <a name="federal-funds-market-term"><strong>Federal funds market</strong></a> - The market in which banks borrow and lend reserves to and from one another.<br> <a name="federal-funds-rate-term"><strong>Federal funds rate</strong></a> - The interest rate on reserves that banks lend each other.<br></p>
 <h2 id="how-interest-rates-are-determined-combining-the-demand-and-supply-of-money">14.3 How Interest Rates Are Determined: Combining the Demand and Supply of Money</h2>
 <p>Combining the demand for money, determined by the public, with the supply of money, determined by the Fed, we can see how interest rates are determined in the short run in a demand-and-supply model of the money market.</p>
-<p>Figure 14.3 depicts a model of the money market. The supply of money is determined by the Federal Reserve, and we assume for simplicity that it is independent of interest rates. We represent this independence by a vertical supply curve for money, <span class="math inline">\(M^{s}\)</span>. In the same graph, we draw the demand for money $M^{d}$. Market equilibrium occurs where the demand for money equals the supply of money, at an interest rate of <span class="math inline">\(r^{*}\)</span>.</p>
+<p>Figure 14.3 depicts a model of the money market. The supply of money is determined by the Federal Reserve, and we assume for simplicity that it is independent of interest rates. We represent this independence by a vertical supply curve for money, <span class="math inline">M^{s}</span>. In the same graph, we draw the demand for money $M^{d}$. Market equilibrium occurs where the demand for money equals the supply of money, at an interest rate of <span class="math inline">r^{*}</span>.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-14/figure-14.3.png" alt="Figure 14.3" /><figcaption>Figure 14.3</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-14/figure-14.3.png" alt="Figure 14.3" /><figcaption aria-hidden="true">Figure 14.3</figcaption>
 </figure>
-<p>At this equilibrium interest rate <span class="math inline">\(r^{*}\)</span>, the quantity of money demanded by the private sector equals the quantity of money supplied by the Federal Reserve. What happens if the interest rate is higher than <span class="math inline">\(r^{*}\)</span>? At a higher interest rate, the quantity of money demanded will be less than the fixed quantity supplied, so there will be an excess supply of money. In other markets, excess supplies cause the price to fall. The same result happens here. The “price of money” in the market for money is the interest rate. If the interest rate were below <span class="math inline">\(r^{*}\)</span>, the demand for money would exceed the fixed supply: There would be an excess demand for money. As in other markets when there are excess demands, the price rises. Here, the price of money or the interest rate would rise until it reached <span class="math inline">\(r^{*}\)</span>. As you can see, money-market equilibrium follows the same logic as any other economic equilibrium.</p>
+<p>At this equilibrium interest rate <span class="math inline">r^{*}</span>, the quantity of money demanded by the private sector equals the quantity of money supplied by the Federal Reserve. What happens if the interest rate is higher than <span class="math inline">r^{*}</span>? At a higher interest rate, the quantity of money demanded will be less than the fixed quantity supplied, so there will be an excess supply of money. In other markets, excess supplies cause the price to fall. The same result happens here. The “price of money” in the market for money is the interest rate. If the interest rate were below <span class="math inline">r^{*}</span>, the demand for money would exceed the fixed supply: There would be an excess demand for money. As in other markets when there are excess demands, the price rises. Here, the price of money or the interest rate would rise until it reached <span class="math inline">r^{*}</span>. As you can see, money-market equilibrium follows the same logic as any other economic equilibrium.</p>
 <p>we can use this simple model of the money market to understand the power of the Federal Reserve. Suppose the Federal Reserve increases the money supply through an open market purchase of bonds. In Panel A of Figure 14.4, an increase in the supply of money shifts the money supply curve to the right, leading to lower interest rates. A decrease in the money supply through the Fed’s open market sale of bonds, as depicted in Panel B of Figure 14.4, decreases the supply of money, shifting the money supply curve to the left and increasing interest rates.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-14/figure-14.4.png" alt="Figure 14.4" /><figcaption>Figure 14.4</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-14/figure-14.4.png" alt="Figure 14.4" /><figcaption aria-hidden="true">Figure 14.4</figcaption>
 </figure>
 <p>We can also think of the process from the perspective of banks. Recall our discussion of money creation through the banking system. After the Fed’s open market purchase of bonds, some of the money the Fed paid for the bonds gets deposited into banks. Banks will want to make loans to consumers and businesses with that money because holding it in their reserves with the Fed earns them no interest. To entice people to borrow, banks will lower the interest rates they charge on their loans. After an open market purchase of bonds by the Fed, interest rates will fall throughout the entire economy.</p>
 <h3 id="interest-rates-and-bond-prices">14.3.1 Interest Rates and Bond Prices</h3>
 <p>To see why, recall that bonds represent a promise to pay money in the future. If you own a bond, you are entitled to receive payments on it at a later time. But why do the prices of bonds move in the opposite direction of interest rates?</p>
 <p>Because a bond payment occurs in the future, we need to use the concept of present value from Chapter 12 to determine the value of this payment today. The price of a bond is simply the present value of its future payments. Consider a bond that makes a payment one period in the future. The price of the bond–the present value of the payment–is equal to</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ price of bonds } = \frac{\text{ promised payment }}{1 + \text{ interest rate }}
-\]</span></p>
+</span></p>
 <p>That is, the price of a bond is the payment promised, divided by one plus the interest rate.</p>
 <p>Suppose the promised payment next year is $106 and the interest rate is 6 percent per year. The price of the bond will be</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ price of bonds } = \frac{\$106}{1.06} = \$100
-\]</span></p>
+</span></p>
 <p>In this case, the bond would cost $100 if it were issued today. But what happens if interest rates in the economy change later? What if rates rise higher than 6 percent or fall lower than 6 percent? What will the bond you are holding be worth then, if you decided, for example, you needed the money and had to sell it to someone else? This is an important question because most of the bonds for sale on the market are not newly issued bonds–they are bonds that have already been issued with specific promised payments that people are buying and selling from one another.</p>
 <p>Let’s consider two examples:</p>
 <ul>
@@ -213,49 +243,49 @@
 <p>We can understand the behavior of the bond market by thinking about the demand for money. When real GDP increases, the demand for money will increase. As the demand for money increases, the money demand curve will shift to the right. From our model of the money market, we know that increased money demand will increase interest rates. Bond prices move in the opposite direction from interest rates. Therefore, good news for the economy is bad news for the bond market.</p>
 <h2 id="interest-rates-and-how-they-change-investment-and-output-gdp">14.4 Interest Rates and How They Change Investment and Output (GDP)</h2>
 <p>Higher or lower interest rates are just a means to an end, though, for the Fed. The Fed’s ultimate goal is to change output–either to slow or speed the economy by influencing aggregate demand.</p>
-<p>To show how the Fed affects the interest rate, which in turn affects investment (a component of GDP), and finally GDP itself, we combine our demand and supply for money with the curve that shows how investment spending is related to interest rates. This appears in Figure 14.5. Panel A in Figure 14.5 shows how interest rates are determined by the demand and supply for money. It is identical to Figure 14.3, which we studied earlier. The graph shows us the equilibrium interest rate for money. Now let’s move to Panel B in Figure 14.5. We can see that at the equilibrium interest rate <span class="math inline">\(r^{*}\)</span> the level of investment in the economy will be given by <span class="math inline">\(I^{*}\)</span>.</p>
+<p>To show how the Fed affects the interest rate, which in turn affects investment (a component of GDP), and finally GDP itself, we combine our demand and supply for money with the curve that shows how investment spending is related to interest rates. This appears in Figure 14.5. Panel A in Figure 14.5 shows how interest rates are determined by the demand and supply for money. It is identical to Figure 14.3, which we studied earlier. The graph shows us the equilibrium interest rate for money. Now let’s move to Panel B in Figure 14.5. We can see that at the equilibrium interest rate <span class="math inline">r^{*}</span> the level of investment in the economy will be given by <span class="math inline">I^{*}</span>.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-14/figure-14.5.png" alt="Figure 14.5" /><figcaption>Figure 14.5</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-14/figure-14.5.png" alt="Figure 14.5" /><figcaption aria-hidden="true">Figure 14.5</figcaption>
 </figure>
 <p>We should note that consumption as well as investment can depend on interest rates. That is, spending on consumer durables, such as automobiles and refrigerators, will also depend negatively on the rate of interest. Consumer durables are really investment goods for the household: If you buy an automobile, you incur the cost today and receive benefits, such as the ability to use the car, in the future. As interest rates rise, the opportunity costs of investing in an automobile will rise. Consumers will respond to the increase in opportunity cost by purchasing fewer cars. In this chapter, we discuss how changes in interest rates affect investment, but keep in mind that the purchases of consumer durables are affected, too.</p>
-<p>The equilibrium interest rate <span class="math inline">\(r^{*}\)</span> is determined in the money market. At that interest rate, investment spending is given by <span class="math inline">\(I^{*}\)</span>.</p>
-<p>In Figure 14.6, we show the effects of an increase in the money supply using our money market and investment graphs. As the supply of money increases, interest rates fall from <span class="math inline">\(r_{0}\)</span> to <span class="math inline">\(r_{1}\)</span>. With lower interest rates, investment spending will increase from <span class="math inline">\(I_{0}\)</span> to <span class="math inline">\(I_{1}\)</span>. This increase in investment spending will then increase aggregate demand–the total demand for goods and services in the economy–and shift the aggregate demand curve to the right.</p>
+<p>The equilibrium interest rate <span class="math inline">r^{*}</span> is determined in the money market. At that interest rate, investment spending is given by <span class="math inline">I^{*}</span>.</p>
+<p>In Figure 14.6, we show the effects of an increase in the money supply using our money market and investment graphs. As the supply of money increases, interest rates fall from <span class="math inline">r_{0}</span> to <span class="math inline">r_{1}</span>. With lower interest rates, investment spending will increase from <span class="math inline">I_{0}</span> to <span class="math inline">I_{1}</span>. This increase in investment spending will then increase aggregate demand–the total demand for goods and services in the economy–and shift the aggregate demand curve to the right.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-14/figure-14.6.png" alt="Figure 14.6" /><figcaption>Figure 14.6</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-14/figure-14.6.png" alt="Figure 14.6" /><figcaption aria-hidden="true">Figure 14.6</figcaption>
 </figure>
 <p>We show the shift of the aggregate demand curve in Figure 14.7. With the increase in aggregate demand, both output (y) and the price level (P) in the economy as a whole will increase in the short run. Thus, by reducing interest rates, the Fed affects output and prices in the economy.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-14/figure-14.7.png" alt="Figure 14.7" /><figcaption>Figure 14.7</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-14/figure-14.7.png" alt="Figure 14.7" /><figcaption aria-hidden="true">Figure 14.7</figcaption>
 </figure>
 <p>In summary, when the Fed increases the money supply, it leads to lower interest rates and increased investment spending. In turn, a higher level of investment spending will ultimately lead to a higher level of GDP.</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{lllllllll}
   \text{open} &amp;  &amp; \text{increase} &amp;  &amp; \text{fall in} &amp;  &amp; \text{rise in} &amp;  &amp; \text{increase}\\
   \text{market} &amp; \to &amp; \text{in money} &amp; \to &amp; \text{interest} &amp; \to &amp; \text{investment} &amp; \to &amp; \text{in} \\
   \text{bond purchases} &amp;  &amp; \text{supply} &amp;  &amp; \text{rates} &amp;  &amp; \text{spending} &amp;  &amp; \text{GDP} \\
 \end{array}
-\]</span></p>
+</span></p>
 <p>The Fed can also use its influence to increase interest rates, which will have the exact opposite effect. Investment spending will fall, along with aggregate demand. The aggregate demand curve will shift to the left, and the price level and output in the economy will fall, too. We can again represent this entire sequence of events:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{lllllllll}
   \text{open} &amp;  &amp; \text{decrease} &amp;  &amp; \text{rise in} &amp;  &amp; \text{fall in} &amp;  &amp; \text{decrease}\\
   \text{market sale} &amp; \to &amp; \text{in money} &amp; \to &amp; \text{interest} &amp; \to &amp; \text{investment} &amp; \to &amp; \text{in} \\
   \text{bond} &amp;  &amp; \text{supply} &amp;  &amp; \text{rates} &amp;  &amp; \text{spending} &amp;  &amp; \text{GDP} \\
 \end{array}
-\]</span></p>
+</span></p>
 <h3 id="monetary-policy-and-international-trade">14.4.1 Monetary Policy and International Trade</h3>
 <p>Suppose the Federal Reserve lowers U.S. interest rates through an open market purchase of bonds. As a result, investors in the United States will be earning lower interest rates and will seek to invest some of their funds abroad. To invest abroad, they will need to sell their U.S. dollars and buy the foreign currency of the country where they intend to invest. This will affect the <strong>exchange rate</strong>–the rate at which one currency trades for another currency in the market. As more investors sell their dollars to buy foreign currency, the exchange rate will fall. A fall in the exchange rate or a decrease in the value of a currency is called <strong>depreciation of a currency</strong>. Lower U.S. interest rates brought on by the Fed will cause the dollar to depreciate. This will ultimately change the demand and supply of goods and services around the globe because it will make U.S. goods cheaper than foreign goods. Let’s see why.</p>
 <p><a name="exchange-rate-term"><strong>Exchange rate</strong></a> - The price at which currencies trade for one another in the market.<br> <a name="depreciation-of-a-currency-term"><strong>Depreciation of a currency</strong></a> - A decrease in the value of a currency.<br></p>
 <p>In this case, the lower value of the dollar will mean that U.S. goods become relatively cheaper on world markets. Suppose the exchange rate is two Swiss francs to the dollar, meaning you will receive two Swiss francs for every dollar you exchange. If a U.S. machine sells for $100,000, it will cost 200,000 Swiss francs. Now suppose the value of the dollar depreciates so that one dollar now buys only one Swiss franc. The same U.S. machine will now cost Swiss residents half of what they used to pay for it–just 100,000 francs instead of 200,000. In other words, the lower value of the dollar makes U.S. goods cheaper for foreigners. As a result, foreign residents will want to buy more U.S. goods, and U.S. companies will want to export more goods to meet the higher foreign demand.</p>
 <p>That’s the good news about the lower value of the U.S. dollar. The bad news is that the lower value of the dollar will make it more expensive for U.S. residents to buy foreign goods. If the exchange rate were still two Swiss francs to the dollar as it originally was at the outset of our example, Swiss chemicals with a price tag of 60,000 francs would cost a U.S. resident $30,000. If the exchange rate of the dollar depreciates to one franc per dollar, however, the same chemicals will cost twice as much–$60,000. As the dollar depreciates, imports become more expensive, and U.S. residents tend to import fewer of them.</p>
 <p>Let’s recap this: As the exchange rate for the U.S. dollar falls, U.S. goods become cheaper and foreign goods become more expensive. The United States then exports more goods and imports fewer goods. Net exports increase, in other words. This increase in net exports increases the demand for U.S. goods and increases GDP. Remember that this all began with an open market purchase of bonds by the Fed that increased the money supply. Here is the sequence of events:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{lllllllllll}
   \text{open} &amp;  &amp; \text{decrease} &amp;  &amp; \text{fall in} &amp;  &amp; \text{fall in} &amp;  &amp; \text{increase in} &amp; &amp; \text{increase} \\
   \text{market} &amp; \to &amp; \text{in money} &amp; \to &amp; \text{interest} &amp; \to &amp; \text{exchange} &amp; \to &amp; \text{net} &amp; \to &amp; \text{in} \\
   \text{bond purchase} &amp;  &amp; \text{supply} &amp;  &amp; \text{rates} &amp;  &amp; \text{rate} &amp; &amp; \text{exports} &amp; &amp; \text{GDP} \\
 \end{array}
-\]</span></p>
+</span></p>
 <p>The three new links in the sequence are from interest rates to exchange rates, from exchange rates to net exports, and from net exports to GDP.</p>
 <p>This sequence also works in reverse. If the Fed conducts an open market sale of bonds, U.S. interest rates rise. As a result, foreign investors earning lower interest rates elsewhere will want to move their money to the United States where they can earn a higher return. As they buy more U.S. dollars, the exchange rate for the dollar will increase, and the dollar will increase in value. An increase in the value of a currency is called <strong>appreciation of a currency</strong>. The appreciation of the dollar will make U.S. goods more expensive for foreigners and imports cheaper for U.S. residents. Suppose the U.S. dollar appreciates, and each dollar can now be exchanged for three Swiss francs instead of two. The same machine the Swiss had to pay 200,000 francs for when the exchange rate was one dollar to two francs now costs 300,000 francs. The Swiss chemicals U.S. residents bought for $30,000 will now cost them less–just $20,000.</p>
 <p><a name="appreciation-of-a-currency-term"><strong>Appreciation of a currency</strong></a></p>
@@ -263,13 +293,13 @@
 <li>An increase in the value of a currency.</li>
 </ul>
 <p>When U.S. interest rates rise as a result of an open market sale by the Fed, we expect exports to decrease and imports to increase, decreasing net exports. The decrease in net exports will reduce the demand for U.S. goods and lead to a fall in output. Here is the sequence of events:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{lllllllllll}
   \text{open} &amp;  &amp; \text{decrease} &amp;  &amp; \text{rise in} &amp;  &amp; \text{rise in} &amp;  &amp; \text{decrease in} &amp; &amp; \text{decrease} \\
   \text{market} &amp; \to &amp; \text{in money} &amp; \to &amp; \text{interest} &amp; \to &amp; \text{exchange} &amp; \to &amp; \text{net} &amp; \to &amp; \text{in} \\
   \text{bond sale} &amp;  &amp; \text{supply} &amp;  &amp; \text{rates} &amp;  &amp; \text{rate} &amp; &amp; \text{exports} &amp; &amp; \text{GDP} \\
 \end{array}
-\]</span></p>
+</span></p>
 <p>To summarize, an increase in interest rates will reduce both investment spending (including consumer durables) and net exports. A decrease in interest rates will increase investment spending and net exports. As you can see, monetary policy in an open economy is even more powerful than monetary policy used in a closed economy.</p>
 <p>The Fed and other central banks are well aware of the power they have to influence exchange rates and international trade. Countries that depend extensively on international trade–such as Canada and Switzerland–find that the effects of monetary policy on exchange rates are critical to their economic well-being.</p>
 <h2 id="monetary-policy-challenges-for-the-fed">14.5 Monetary Policy Challenges for the Fed</h2>
@@ -285,7 +315,7 @@
 <h3 id="influencing-market-expectations-from-the-federal-funds-rate-to-interest-rates-on-long-term-bonds">14.5.2 Influencing Market Expectations: From the Federal Funds Rate to Interest Rates on Long-Term Bonds</h3>
 <p>It is important to recognize that through its traditional open market policies, the Fed directly controls only very short-term interest rates in the economy, not long-term interest rates. In fact, when the Fed makes its decisions on monetary policy, it really decides what the rate should be in the federal funds market–the market in which banks trade reserves overnight. Once the Fed decides what rate it wants in the market, it conducts open market operations–buying and selling short-term government bonds–to achieve this rate. Thus, when the Federal Reserve decides the course of monetary policy, it is really just setting a very short-term interest rate for the economy.</p>
 <p>However, when a firm is deciding on a long-term investment or a household is deciding whether to purchase a new home, it will base its decisions on the interest rate at which it can borrow money, and this will typically be a long-term interest rate–not a short-term rate. For example, a household might take out a 30-year mortgage to purchase a home. If the rate is too high, it might not take out the loan. So, for the Fed to control investment spending, it must also somehow influence long-term rates. It can do this indirectly by influencing short-term rates. Here’s how.</p>
-<p>Long-term interest rates can be thought of as averages of current and expected future short-term interest rates. To see why future short-term interest rates are important, consider putting $100 of your money in the bank for 2 years. If the interest rate is 5 percent for the first year, you would have $105 at the end of that year. If the interest rate for the following year were 10 percent, you would then have <span class="math inline">\(\$115.50(\$105 \times 1.10)\)</span></p>
+<p>Long-term interest rates can be thought of as averages of current and expected future short-term interest rates. To see why future short-term interest rates are important, consider putting $100 of your money in the bank for 2 years. If the interest rate is 5 percent for the first year, you would have $105 at the end of that year. If the interest rate for the following year were 10 percent, you would then have <span class="math inline">\$115.50(\$105 \times 1.10)</span></p>
 <h2 id="chapter-summary">Chapter Summary</h2>
 <p>This chapter showed how monetary policy affects aggregate demand and the economy in the short run. Together, the demand for money by the public and the supply of money determined by the Federal Reserve determine interest rates. Changes in interest rates will in turn affect investment and output. In the international economy, interest rates also affect exchange rates and net exports. Still, there are limits to what effective monetary policies can do. Here are the main points of the chapter:</p>
 <ol type="1">

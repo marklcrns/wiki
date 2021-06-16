@@ -12,6 +12,13 @@
 
     <title>MATH 141 Chapter 5 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -22,7 +29,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -67,18 +89,22 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-5-trigonometric-functions">Chapter 5: Trigonometric Functions</a><ul>
-          <li><a href="#ratio-nirvana-and-inverse-functions">5.1 Ratio Nirvana and Inverse Functions</a><ul>
+          <li><a href="#chapter-5-trigonometric-functions">Chapter 5: Trigonometric Functions</a>
+          <ul>
+          <li><a href="#ratio-nirvana-and-inverse-functions">5.1 Ratio Nirvana and Inverse Functions</a>
+          <ul>
           <li><a href="#video-lecture-1">Video Lecture 1</a></li>
           <li><a href="#video-lecture-2">Video Lecture 2</a></li>
           <li><a href="#video-lecture-3">Video Lecture 3</a></li>
           <li><a href="#daabz-questions">Daabz Questions</a></li>
           </ul></li>
-          <li><a href="#mission-accomplished">5.2 Mission Accomplished</a><ul>
+          <li><a href="#mission-accomplished">5.2 Mission Accomplished</a>
+          <ul>
           <li><a href="#video-lecture">Video Lecture</a></li>
           </ul></li>
           <li><a href="#the-reference-triangle-and-rest-of-functions">5.3 The Reference Triangle and Rest of Functions</a></li>
-          <li><a href="#inverse-functions">5.4 Inverse Functions</a><ul>
+          <li><a href="#inverse-functions">5.4 Inverse Functions</a>
+          <ul>
           <li><a href="#video-lecture-4">Video Lecture</a></li>
           </ul></li>
           </ul></li>
@@ -125,18 +151,18 @@
 <ul>
 <li>Functions that gives the ratios of 2 sides of a right triangle when the angle is known.
 <ul>
-<li><span class="math inline">\(\color{#ff0000}{S}in(\theta) = \frac{\color{#ff0000}{O}pp}{\color{#ff0000}{H}yp}\)</span>, aka sine.</li>
-<li><span class="math inline">\(\color{#ff0000}{C}os(\theta) = \frac{\color{#ff0000}{A}dj}{\color{#ff0000}{H}yp}\)</span>, aka cosine.</li>
-<li><span class="math inline">\(\color{#ff0000}{T}an(\theta) = \frac{\color{#ff0000}{O}pp}{\color{#ff0000}{A}dj}\)</span>, aka tangent.</li>
+<li><span class="math inline">\color{#ff0000}{S}in(\theta) = \frac{\color{#ff0000}{O}pp}{\color{#ff0000}{H}yp}</span>, aka sine.</li>
+<li><span class="math inline">\color{#ff0000}{C}os(\theta) = \frac{\color{#ff0000}{A}dj}{\color{#ff0000}{H}yp}</span>, aka cosine.</li>
+<li><span class="math inline">\color{#ff0000}{T}an(\theta) = \frac{\color{#ff0000}{O}pp}{\color{#ff0000}{A}dj}</span>, aka tangent.</li>
 </ul></li>
 </ul>
 <p><a name="inverse-functions"><strong>Inverse functions</strong></a></p>
 <ul>
 <li>Functions that gives the angles of a right triangle when the ratio is known.
 <ul>
-<li><span class="math inline">\(sin^{-1}(\frac{Opp}{Hyp}) = \theta\)</span>, aka arcsine.</li>
-<li><span class="math inline">\(cos^{-1}(\frac{Adj}{Hyp}) = \theta\)</span>, aka arccosine.</li>
-<li><span class="math inline">\(tan^{-1}(\frac{Opp}{Adj}) = \theta\)</span>, aka arctangent.</li>
+<li><span class="math inline">sin^{-1}(\frac{Opp}{Hyp}) = \theta</span>, aka arcsine.</li>
+<li><span class="math inline">cos^{-1}(\frac{Adj}{Hyp}) = \theta</span>, aka arccosine.</li>
+<li><span class="math inline">tan^{-1}(\frac{Opp}{Adj}) = \theta</span>, aka arctangent.</li>
 </ul></li>
 </ul>
 <h3 id="video-lecture-1">Video Lecture 1</h3>
@@ -162,9 +188,9 @@
 </ul>
 <h3 id="daabz-questions">Daabz Questions</h3>
 <ul>
-<li><span class="math inline">\(sin^{3}(x)\)</span> or <span class="math inline">\((sin(x))^{3}\)</span>
+<li><span class="math inline">sin^{3}(x)</span> or <span class="math inline">(sin(x))^{3}</span>
 <ul>
-<li><span class="math inline">\(sin(x) \cdot sin(x) \cdot sin(x)\)</span></li>
+<li><span class="math inline">sin(x) \cdot sin(x) \cdot sin(x)</span></li>
 </ul></li>
 </ul>
 <h2 id="mission-accomplished">5.2 Mission Accomplished</h2>
@@ -192,18 +218,18 @@
 <ul>
 <li><a href="../../../../files/spring-2020/MATH-141/ch-5/m-5_Handout-15.pdf">⬇ Handout 15: Ratios nirvana v2</a>
 <ul>
-<li>Reference Triangles: page 53</li>
+<li><p>Reference Triangles: page 53</p></li>
 <li><p>The Rest of the Trig: page 96</p></li>
-<li><strong>Reference angles</strong> are drawn starting from <em>positive</em> <span class="math inline">\(\mathit{X}\)</span> axis.</li>
-<li><strong>Positive angles</strong> are drawn counter-clockwise from <em>positive</em> <span class="math inline">\(\mathit{X}\)</span> axis.</li>
-<li><p><strong>Negative angles</strong> are drawn clockwise from <em>positive</em> <span class="math inline">\(\mathit{X}\)</span> axis.</p></li>
+<li><p><strong>Reference angles</strong> are drawn starting from <em>positive</em> <span class="math inline">\mathit{X}</span> axis.</p></li>
+<li><p><strong>Positive angles</strong> are drawn counter-clockwise from <em>positive</em> <span class="math inline">\mathit{X}</span> axis.</p></li>
+<li><p><strong>Negative angles</strong> are drawn clockwise from <em>positive</em> <span class="math inline">\mathit{X}</span> axis.</p></li>
 </ul></li>
 </ul>
 <p>Cosecant, Secant and Cotangent</p>
 <ul>
-<li><span class="math inline">\(sin(\theta^{\circ}) = \frac{\text{opp}}{\text{hyp}}\)</span>, <span class="math inline">\(csc(\theta^{\circ}) = \frac{\text{hyp}}{\text{opp}}\)</span></li>
-<li><span class="math inline">\(cos(\theta^{\circ}) = \frac{\text{adj}}{\text{hyp}}\)</span>, <span class="math inline">\(sec(\theta^{\circ}) = \frac{\text{hyp}}{\text{adj}}\)</span></li>
-<li><span class="math inline">\(tan(\theta^{\circ}) = \frac{\text{opp}}{\text{adj}}\)</span>, <span class="math inline">\(cot(\theta^{\circ}) = \frac{\text{adj}}{\text{opp}}\)</span></li>
+<li><span class="math inline">sin(\theta^{\circ}) = \frac{\text{opp}}{\text{hyp}}</span>, <span class="math inline">csc(\theta^{\circ}) = \frac{\text{hyp}}{\text{opp}}</span></li>
+<li><span class="math inline">cos(\theta^{\circ}) = \frac{\text{adj}}{\text{hyp}}</span>, <span class="math inline">sec(\theta^{\circ}) = \frac{\text{hyp}}{\text{adj}}</span></li>
+<li><span class="math inline">tan(\theta^{\circ}) = \frac{\text{opp}}{\text{adj}}</span>, <span class="math inline">cot(\theta^{\circ}) = \frac{\text{adj}}{\text{opp}}</span></li>
 </ul>
 <h2 id="inverse-functions">5.4 Inverse Functions</h2>
 <h3 id="video-lecture-4">Video Lecture</h3>

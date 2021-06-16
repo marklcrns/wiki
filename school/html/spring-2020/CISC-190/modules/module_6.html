@@ -12,6 +12,13 @@
 
     <title>CISC 190 Module 6</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -66,9 +73,11 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#module-6-creating-classes">Module 6: Creating Classes</a><ul>
+          <li><a href="#module-6-creating-classes">Module 6: Creating Classes</a>
+          <ul>
           <li><a href="#notes">Notes</a></li>
-          <li><a href="#homeworks">Homeworks</a><ul>
+          <li><a href="#homeworks">Homeworks</a>
+          <ul>
           <li><a href="#read-and-try">Read and Try</a></li>
           <li><a href="#participant">Participant</a></li>
           <li><a href="#field---extra-credit">Field - Extra Credit</a></li>
@@ -111,7 +120,7 @@
 <h2 id="homeworks">Homeworks</h2>
 <h3 id="read-and-try">Read and Try</h3>
 <figure>
-<img src="../../../../files/spring-2020/CISC-190/module-6/read-and-try/m-6_createStudent.png" alt="Create Student" /><figcaption>Create Student</figcaption>
+<img src="../../../../files/spring-2020/CISC-190/module-6/read-and-try/m-6_createStudent.png" alt="Create Student" /><figcaption aria-hidden="true">Create Student</figcaption>
 </figure>
 <ul>
 <li><a href="../../../../files/spring-2020/CISC-190/module-6/read-and-try/CreateStudent.java">⬇ CreateStudent.java</a></li>

@@ -11,6 +11,13 @@
 
     <title>Chapter 2</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,22 +88,27 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-2-kinematics">Chapter 2: Kinematics</a><ul>
-          <li><a href="#position-displacement-and-average-velocity">2.1 Position, Displacement, and Average Velocity</a><ul>
+          <li><a href="#chapter-2-kinematics">Chapter 2: Kinematics</a>
+          <ul>
+          <li><a href="#position-displacement-and-average-velocity">2.1 Position, Displacement, and Average Velocity</a>
+          <ul>
           <li><a href="#motion">Motion</a></li>
           <li><a href="#position-and-displacement">Position and Displacement</a></li>
           <li><a href="#average-velocity-and-average-speeed">Average Velocity and Average Speeed</a></li>
           </ul></li>
-          <li><a href="#instantaneous-velocity-and-speed">2.2 Instantaneous Velocity and Speed</a><ul>
+          <li><a href="#instantaneous-velocity-and-speed">2.2 Instantaneous Velocity and Speed</a>
+          <ul>
           <li><a href="#instantaneous-velocity-and-speed-1">Instantaneous Velocity and Speed</a></li>
           </ul></li>
-          <li><a href="#acceleration">2.3 Acceleration</a><ul>
+          <li><a href="#acceleration">2.3 Acceleration</a>
+          <ul>
           <li><a href="#acceleration-1">Acceleration</a></li>
           </ul></li>
           <li><a href="#constant-acceleration">2.4 Constant Acceleration</a></li>
           <li><a href="#free-fall-acceleration">2.5 Free-Fall Acceleration</a></li>
           <li><a href="#graphical-integration-in-motion-analysis">Graphical Integration in Motion Analysis</a></li>
-          <li><a href="#video-lectures">Video Lectures</a><ul>
+          <li><a href="#video-lectures">Video Lectures</a>
+          <ul>
           <li><a href="#kinematics">Kinematics</a></li>
           <li><a href="#cop-motorcycle">Cop &amp; Motorcycle</a></li>
           <li><a href="#when-is-the-instantaneous-velocity-equal-to-the-average-velocity">When is the Instantaneous Velocity Equal to the Average Velocity</a></li>
@@ -139,52 +166,52 @@
 </ul>
 <p><a name="displacement-term"><strong>Displacement</strong></a></p>
 <ul>
-<li>A change from position <span class="math inline">\(x_{1}\)</span> to position <span class="math inline">\(x_{2}\)</span>.</li>
+<li>A change from position <span class="math inline">x_{1}</span> to position <span class="math inline">x_{2}</span>.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \Delta{x} = x_{2} - x_{1}
-\]</span></p>
-<p>A plus sign for a displacement need not be shown, but a minus sign must always be shown. If we ignore the sign (and thus the direction) of a displace- ment, we are left with the <strong>magnitude</strong> (or absolute value) of the displacement. For example, a displacement of <span class="math inline">\(\Delta{x} = -4m\)</span> has a magnitude of <span class="math inline">\(4m\)</span>.</p>
+</span></p>
+<p>A plus sign for a displacement need not be shown, but a minus sign must always be shown. If we ignore the sign (and thus the direction) of a displace- ment, we are left with the <strong>magnitude</strong> (or absolute value) of the displacement. For example, a displacement of <span class="math inline">\Delta{x} = -4m</span> has a magnitude of <span class="math inline">4m</span>.</p>
 <h3 id="average-velocity-and-average-speeed">Average Velocity and Average Speeed</h3>
-<p>Several quantities are associated with the phrase “how fast.” One of them is the <strong>average velocity</strong> <span class="math inline">\(V_{avg}\)</span> or (<span class="math inline">\(\overline{a}\)</span>).</p>
-<p><span class="math display">\[
+<p>Several quantities are associated with the phrase “how fast.” One of them is the <strong>average velocity</strong> <span class="math inline">V_{avg}</span> or (<span class="math inline">\overline{a}</span>).</p>
+<p><span class="math display">
 V_{avg} = \frac{\Delta{x}}{\Delta{t}} = \frac{x_{2} - x_{1}}{t_{2} - t_{1}}
-\]</span></p>
-<p><strong>Average speed</strong> <span class="math inline">\(S_{avg}\)</span> is a different way of describing “how fast” a particle moves. Whereas the average velocity involves the particle’s displacement <span class="math inline">\(\Delta{x}\)</span>, the average speed involves the total distance covered.</p>
-<p><span class="math display">\[
+</span></p>
+<p><strong>Average speed</strong> <span class="math inline">S_{avg}</span> is a different way of describing “how fast” a particle moves. Whereas the average velocity involves the particle’s displacement <span class="math inline">\Delta{x}</span>, the average speed involves the total distance covered.</p>
+<p><span class="math display">
 S_{avg} = \frac{\text{total distance}}{\Delta{t}}
-\]</span></p>
+</span></p>
 <blockquote>
 <p>Average speed does <em>not</em> include direction, it lacks any algebraic sign.</p>
 </blockquote>
 <h2 id="instantaneous-velocity-and-speed">2.2 Instantaneous Velocity and Speed</h2>
 <h3 id="instantaneous-velocity-and-speed-1">Instantaneous Velocity and Speed</h3>
-<p>The phrase “how fast” more commonly refers to how fast a particle is moving at a given instant – its <strong>instantaneous velocity</strong> (or simply <strong>velocity)</strong> <span class="math inline">\(v\)</span>.</p>
-<p><span class="math display">\[
+<p>The phrase “how fast” more commonly refers to how fast a particle is moving at a given instant – its <strong>instantaneous velocity</strong> (or simply <strong>velocity)</strong> <span class="math inline">v</span>.</p>
+<p><span class="math display">
 v = \lim_{\Delta{t} \to 0} \frac{\Delta{x}}{\Delta{t}} = \frac{dx}{dt}
-\]</span></p>
+</span></p>
 <blockquote>
-<p>Note that <span class="math inline">\(v\)</span> is the rate at which position <span class="math inline">\(x\)</span> with respect to <span class="math inline">\(t\)</span>. Also note that <span class="math inline">\(v\)</span> at any instant is the slope of the position-time curve at the point representing that instant.</p>
+<p>Note that <span class="math inline">v</span> is the rate at which position <span class="math inline">x</span> with respect to <span class="math inline">t</span>. Also note that <span class="math inline">v</span> at any instant is the slope of the position-time curve at the point representing that instant.</p>
 </blockquote>
 <p><strong>Speed</strong> is the magnitude of velocity; that is, speed is velocity that has been stripped of any indication of direction.</p>
 <h2 id="acceleration">2.3 Acceleration</h2>
 <h3 id="acceleration-1">Acceleration</h3>
-<p>When a particle’s velocity changes, the particle is said to undergo <strong>acceleration</strong>. For motion along an axis, the <strong>average acceleration</strong> <span class="math inline">\(a_{avg}\)</span> over a time interval <span class="math inline">\(\Delta{t}\)</span> is</p>
-<p><span class="math display">\[
+<p>When a particle’s velocity changes, the particle is said to undergo <strong>acceleration</strong>. For motion along an axis, the <strong>average acceleration</strong> <span class="math inline">a_{avg}</span> over a time interval <span class="math inline">\Delta{t}</span> is</p>
+<p><span class="math display">
 a_{avg} = \frac{v_{2} - v_{1}}{t_{2} - t_{1}} = \frac{\Delta{v}}{\Delta{t}}
-\]</span></p>
-<p>where the particle has velocity <span class="math inline">\(v_{1}\)</span> at time <span class="math inline">\(t_{1}\)</span> and then velocity <span class="math inline">\(v_{2}\)</span> at time <span class="math inline">\(t_{2}\)</span>. The <strong>instantaneous acceleration</strong> (or simply <strong>acceleration</strong>) is</p>
-<p><span class="math display">\[
+</span></p>
+<p>where the particle has velocity <span class="math inline">v_{1}</span> at time <span class="math inline">t_{1}</span> and then velocity <span class="math inline">v_{2}</span> at time <span class="math inline">t_{2}</span>. The <strong>instantaneous acceleration</strong> (or simply <strong>acceleration</strong>) is</p>
+<p><span class="math display">
 a = \frac{dv}{dt} = \frac{d^{2}x}{dt^{2}}
-\]</span></p>
+</span></p>
 <p><strong>g Units.</strong> Large accelerations are sometimes expressed in terms of g units (gravity), with</p>
-<p><span class="math display">\[
+<p><span class="math display">
 1g = 9.8m/s^{2}
-\]</span></p>
+</span></p>
 <h2 id="constant-acceleration">2.4 Constant Acceleration</h2>
 <p>The following five Kinematic equations describe the motion of a particle with constant acceleration:</p>
 <blockquote>
-<p>The <span class="math inline">\(x\)</span> variable can be replaced by <span class="math inline">\(y\)</span> and would still be true.</p>
+<p>The <span class="math inline">x</span> variable can be replaced by <span class="math inline">y</span> and would still be true.</p>
 </blockquote>
 <table>
 <thead>
@@ -195,50 +222,50 @@ a = \frac{dv}{dt} = \frac{d^{2}x}{dt^{2}}
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(v_{f} = v_{0} + at\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(x - x_{0}\)</span> or <span class="math inline">\(\Delta{x}\)</span></td>
+<td style="text-align: center;"><span class="math inline">v_{f} = v_{0} + at</span></td>
+<td style="text-align: center;"><span class="math inline">x - x_{0}</span> or <span class="math inline">\Delta{x}</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(x - x_{0} = v_{0}t + \frac{1}{2}at^{2}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(v_{f}\)</span></td>
+<td style="text-align: center;"><span class="math inline">x - x_{0} = v_{0}t + \frac{1}{2}at^{2}</span></td>
+<td style="text-align: center;"><span class="math inline">v_{f}</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(x - x_{0} = v_{f}t - \frac{1}{2}at^{2}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(v_{0}\)</span></td>
+<td style="text-align: center;"><span class="math inline">x - x_{0} = v_{f}t - \frac{1}{2}at^{2}</span></td>
+<td style="text-align: center;"><span class="math inline">v_{0}</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(x - x_{0} = \frac{1}{2}(v_{f} + v_{0})t\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(a\)</span></td>
+<td style="text-align: center;"><span class="math inline">x - x_{0} = \frac{1}{2}(v_{f} + v_{0})t</span></td>
+<td style="text-align: center;"><span class="math inline">a</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(v_{f}^{2} = v_{0}^{2} + 2a(x - x_{0})\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(t\)</span></td>
+<td style="text-align: center;"><span class="math inline">v_{f}^{2} = v_{0}^{2} + 2a(x - x_{0})</span></td>
+<td style="text-align: center;"><span class="math inline">t</span></td>
 </tr>
 </tbody>
 </table>
 <blockquote>
-<p><span class="math inline">\(\Delta{x} = x - x_{0}\)</span>, <span class="math inline">\(v_{0} = \text{initial velocity}\)</span>, and <span class="math inline">\(v = \text{final velocity}\)</span></p>
+<p><span class="math inline">\Delta{x} = x - x_{0}</span>, <span class="math inline">v_{0} = \text{initial velocity}</span>, and <span class="math inline">v = \text{final velocity}</span></p>
 </blockquote>
 <p>These are <em>not</em> valid when the acceleration is not constant.</p>
 <p>Another equation for constant acceleration through Integration</p>
-<p><span class="math display">\[
+<p><span class="math display">
 x = v_{0}t + \frac{1}{2}at^{2} + C^{\prime}
-\]</span></p>
+</span></p>
 <h2 id="free-fall-acceleration">2.5 Free-Fall Acceleration</h2>
-<p>rate, and its magnitude is represented by <span class="math inline">\(g\)</span> (gravity), <span class="math inline">\(9.8 m/s^{2}\)</span>. <strong>Free-fall acceleration</strong> is the downward acceleration at a certain constant</p>
+<p>rate, and its magnitude is represented by <span class="math inline">g</span> (gravity), <span class="math inline">9.8 m/s^{2}</span>. <strong>Free-fall acceleration</strong> is the downward acceleration at a certain constant</p>
 <ul>
-<li>The directions of the motion is along a vertical <span class="math inline">\(y\)</span> axis instead of the <span class="math inline">\(x\)</span> axis, with the positive direction of <span class="math inline">\(y\)</span> upward.</li>
-<li>The free-fall acceleration is negative, that is, downward on the <span class="math inline">\(y\)</span> axis.</li>
+<li>The directions of the motion is along a vertical <span class="math inline">y</span> axis instead of the <span class="math inline">x</span> axis, with the positive direction of <span class="math inline">y</span> upward.</li>
+<li>The free-fall acceleration is negative, that is, downward on the <span class="math inline">y</span> axis.</li>
 </ul>
 <h2 id="graphical-integration-in-motion-analysis">Graphical Integration in Motion Analysis</h2>
-<p>On a graph of acceleration <span class="math inline">\(a\)</span> versus time <span class="math inline">\(t\)</span>, the change in the velocity is given by</p>
-<p><span class="math display">\[
+<p>On a graph of acceleration <span class="math inline">a</span> versus time <span class="math inline">t</span>, the change in the velocity is given by</p>
+<p><span class="math display">
 v_{1} - v_{0} = \int_{t_{0}}^{t_{1}} a\;dt
-\]</span></p>
-<p>On a graph of velocity <span class="math inline">\(v\)</span> versus time <span class="math inline">\(t\)</span>, the change in the position is given by</p>
-<p><span class="math display">\[
+</span></p>
+<p>On a graph of velocity <span class="math inline">v</span> versus time <span class="math inline">t</span>, the change in the position is given by</p>
+<p><span class="math display">
 x_{1} - x_{0} = \int_{t_{0}}^{t_{1}} v\;dt
-\]</span></p>
+</span></p>
 <h2 id="video-lectures">Video Lectures</h2>
 <h3 id="kinematics">Kinematics</h3>
 <ul>

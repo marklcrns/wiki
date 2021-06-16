@@ -11,6 +11,13 @@
 
     <title>Cheatsheet</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,25 +88,30 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#formulas">Formulas</a><ul>
-          <li><a href="#derivatives">Derivatives</a><ul>
+          <li><a href="#formulas">Formulas</a>
+          <ul>
+          <li><a href="#derivatives">Derivatives</a>
+          <ul>
           <li><a href="#product-rule">Product Rule</a></li>
           <li><a href="#quotient-rule">Quotient Rule</a></li>
           <li><a href="#chain-rule">Chain Rule</a></li>
           </ul></li>
-          <li><a href="#integration">Integration</a><ul>
+          <li><a href="#integration">Integration</a>
+          <ul>
           <li><a href="#length-of-a-curve">Length of a Curve</a></li>
           <li><a href="#area">Area</a></li>
           <li><a href="#area-between-curves">Area Between Curves</a></li>
           <li><a href="#area-of-a-surface-of-revolution">Area of a Surface of Revolution</a></li>
-          <li><a href="#volume">Volume</a><ul>
-          <li><a href="#disk-method-about-x-axis">Disk Method (about <span class="math inline">\(x\)</span>-axis)</a></li>
-          <li><a href="#shell-method-about-y-axis">Shell Method (about <span class="math inline">\(y\)</span>-axis)</a></li>
+          <li><a href="#volume">Volume</a>
+          <ul>
+          <li><a href="#disk-method-about-x-axis">Disk Method (about <span class="math inline">x</span>-axis)</a></li>
+          <li><a href="#shell-method-about-y-axis">Shell Method (about <span class="math inline">y</span>-axis)</a></li>
           </ul></li>
           <li><a href="#reduction-formulas">Reduction Formulas</a></li>
           <li><a href="#integration-by-parts-formula">Integration by Parts Formula</a></li>
           <li><a href="#trigonometric-substitution">Trigonometric Substitution</a></li>
-          <li><a href="#numerical-integration">Numerical Integration</a><ul>
+          <li><a href="#numerical-integration">Numerical Integration</a>
+          <ul>
           <li><a href="#absolute-and-relative-error">Absolute and Relative Error</a></li>
           <li><a href="#midpoint-rule">Midpoint Rule</a></li>
           <li><a href="#trapezoid-rule">Trapezoid Rule</a></li>
@@ -92,15 +119,18 @@
           </ul></li>
           </ul></li>
           <li><a href="#partial-fraction-decomposition">Partial Fraction Decomposition</a></li>
-          <li><a href="#physical-applications">Physical Applications</a><ul>
+          <li><a href="#physical-applications">Physical Applications</a>
+          <ul>
           <li><a href="#mass-of-a-one-dimensional-object">Mass of a One-Dimensional Object</a></li>
           <li><a href="#work">Work</a></li>
           <li><a href="#pumping-water">Pumping Water</a></li>
           <li><a href="#force-on-a-dam">Force on a Dam</a></li>
           </ul></li>
-          <li><a href="#sequences-and-infinite-series">Sequences and Infinite Series</a><ul>
+          <li><a href="#sequences-and-infinite-series">Sequences and Infinite Series</a>
+          <ul>
           <li><a href="#terminology-for-sequences">Terminology for Sequences</a></li>
-          <li><a href="#geometric-series">Geometric Series</a><ul>
+          <li><a href="#geometric-series">Geometric Series</a>
+          <ul>
           <li><a href="#the-limit-of-a-geometric-series">The Limit of a Geometric series</a></li>
           </ul></li>
           <li><a href="#telescoping-series">Telescoping Series</a></li>
@@ -108,13 +138,15 @@
           <li><a href="#taylor-series">Taylor Series</a></li>
           </ul></li>
           </ul></li>
-          <li><a href="#common-identities">Common Identities</a><ul>
+          <li><a href="#common-identities">Common Identities</a>
+          <ul>
           <li><a href="#polynomial">Polynomial</a></li>
           <li><a href="#trigonometric">Trigonometric</a></li>
           <li><a href="#logarithmic-identities">Logarithmic Identities</a></li>
           <li><a href="#limits">Limits</a></li>
           </ul></li>
-          <li><a href="#common-rules">Common Rules</a><ul>
+          <li><a href="#common-rules">Common Rules</a>
+          <ul>
           <li><a href="#product-rules">Product Rules</a></li>
           <li><a href="#quotient-rules">Quotient Rules</a></li>
           <li><a href="#exponent-rules">Exponent Rules</a></li>
@@ -122,11 +154,13 @@
           <li><a href="#zero-rules">Zero Rules</a></li>
           <li><a href="#derivative-rule">Derivative Rule</a></li>
           <li><a href="#integral-rule">Integral Rule</a></li>
-          <li><a href="#limit-laws">Limit Laws</a><ul>
+          <li><a href="#limit-laws">Limit Laws</a>
+          <ul>
           <li><a href="#limit-chain-rule">Limit Chain Rule</a></li>
           </ul></li>
           </ul></li>
-          <li><a href="#derivatives-1">Derivatives</a><ul>
+          <li><a href="#derivatives-1">Derivatives</a>
+          <ul>
           <li><a href="#polynomial-1">Polynomial</a></li>
           <li><a href="#trigonometric-functions">Trigonometric Functions</a></li>
           <li><a href="#hyperbolic-functions">Hyperbolic Functions</a></li>
@@ -135,7 +169,8 @@
           <li><a href="#logarithmic">Logarithmic</a></li>
           <li><a href="#exponential">Exponential</a></li>
           </ul></li>
-          <li><a href="#antiderivatives-integral">Antiderivatives (Integral)</a><ul>
+          <li><a href="#antiderivatives-integral">Antiderivatives (Integral)</a>
+          <ul>
           <li><a href="#table-of-integrals">Table of Integrals</a></li>
           <li><a href="#common-integration-formulas">Common Integration Formulas</a></li>
           <li><a href="#common-indefinite-integrals">Common Indefinite Integrals</a></li>
@@ -176,53 +211,53 @@
 <h1 id="formulas">Formulas</h1>
 <h2 id="derivatives">Derivatives</h2>
 <h3 id="product-rule">Product Rule</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{d}{dx}[f(x)g(x)] = f(x)\frac{d}{dx}[g(x)] + g(x)\frac{d}{dx}[f(x)]
-\]</span></p>
+</span></p>
 <h3 id="quotient-rule">Quotient Rule</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{d}{dx}\left [ \frac{f(x)}{g(x)} \right ] = \frac{g(x)\dfrac{d}{dx}[f(x)] - f(x)\dfrac{d}{dx}[g(x)]}{[g(x)]^{2}}
-\]</span></p>
+</span></p>
 <h3 id="chain-rule">Chain Rule</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 F^{\prime}(x) = f^{\prime}(g(x)) \cdot g^{\prime}(x)
-\]</span></p>
+</span></p>
 <h2 id="integration">Integration</h2>
 <h3 id="length-of-a-curve">Length of a Curve</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 L = \int_{a}^{b} \sqrt{1 + f^{\prime}(x)^{2}}\;dx
-\]</span></p>
+</span></p>
 <h3 id="area">Area</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 A = \int_{a}^{b} f(x)\;dx
-\]</span></p>
+</span></p>
 <h3 id="area-between-curves">Area Between Curves</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 A = \int_{a}^{b} \left | f(x) - g(x) \right |\;dx
-\]</span></p>
+</span></p>
 <h3 id="area-of-a-surface-of-revolution">Area of a Surface of Revolution</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 S = \int_{a}^{b} 2 \pi f(x)\sqrt{1 + f^{\prime}(x)^{2}}\;dx
-\]</span></p>
+</span></p>
 <h3 id="volume">Volume</h3>
-<h4 id="disk-method-about-x-axis">Disk Method (about <span class="math inline">\(x\)</span>-axis)</h4>
-<p><span class="math display">\[
+<h4 id="disk-method-about-x-axis">Disk Method (about <span class="math inline">x</span>-axis)</h4>
+<p><span class="math display">
 V = \int_{a}^{b} \pi f(x)^{2}\;dx
-\]</span></p>
-<h4 id="shell-method-about-y-axis">Shell Method (about <span class="math inline">\(y\)</span>-axis)</h4>
-<p><span class="math display">\[
+</span></p>
+<h4 id="shell-method-about-y-axis">Shell Method (about <span class="math inline">y</span>-axis)</h4>
+<p><span class="math display">
 V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\; \text{ where } 0 \le a \le b
-\]</span></p>
+</span></p>
 <h3 id="reduction-formulas">Reduction Formulas</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{ll}
   {\displaystyle \int x^{n}e^{ax}dx} = \dfrac{x^{n}e^{ax}}{a} - \dfrac{n}{a}{\displaystyle \int x^{n - 1}e^{ax}dx} &amp; \text{ for } a \neq 0 \\
   ~\\
   {\displaystyle \int \ln^{n}(x)dx} = x\ln^{n}(x) - n {\displaystyle \int \ln^{n - 1}(x)dx} \\
 \end{array}
-\]</span></p>
-<p>Assume <span class="math inline">\(n\)</span> is a positive integer.</p>
-<p><span class="math display">\[
+</span></p>
+<p>Assume <span class="math inline">n</span> is a positive integer.</p>
+<p><span class="math display">
 \begin{array}{ll}
   {\displaystyle \int x^{n}\cos(ax)dx} = \dfrac{x^{n}\sin(ax)}{a} - \dfrac{n}{a}{\displaystyle \int x^{n - 1}\sin(ax)d} &amp; \text{ for } a \neq 0 \\
   ~\\
@@ -232,144 +267,144 @@ V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\; \text{ where } 0 \le a \le b
   ~\\
   {\displaystyle \int \sec^{n}(x)\;dx} = \frac{\sec^{n - 2}(x)\tan(x)}{n - 1} + \frac{n - 2}{n - 1}{\displaystyle \int \sec^{n - 2}(x)\;dx} &amp; \text{ for } n \neq 1 \\
 \end{array}
-\]</span></p>
+</span></p>
 <h3 id="integration-by-parts-formula">Integration by Parts Formula</h3>
-<p>Use the acronym “LIPET” to help choosing the value when substituting for <span class="math inline">\(u\)</span>.</p>
+<p>Use the acronym “LIPET” to help choosing the value when substituting for <span class="math inline">u</span>.</p>
 <ul>
-<li><strong>L</strong>ogarithmic – e.g. <span class="math inline">\(\ln(x)\)</span></li>
-<li><strong>I</strong>nverse Trigonometric – e.g. <span class="math inline">\(\tan^{-1}(x)\)</span></li>
-<li><strong>P</strong>olynomial – e.g. <span class="math inline">\(x^{2}\)</span></li>
-<li><strong>E</strong>xponential – e.g. <span class="math inline">\(e^{x}\)</span></li>
-<li><strong>T</strong>rigonometric – e.g. <span class="math inline">\(\cos(x)\)</span></li>
+<li><strong>L</strong>ogarithmic – e.g. <span class="math inline">\ln(x)</span></li>
+<li><strong>I</strong>nverse Trigonometric – e.g. <span class="math inline">\tan^{-1}(x)</span></li>
+<li><strong>P</strong>olynomial – e.g. <span class="math inline">x^{2}</span></li>
+<li><strong>E</strong>xponential – e.g. <span class="math inline">e^{x}</span></li>
+<li><strong>T</strong>rigonometric – e.g. <span class="math inline">\cos(x)</span></li>
 </ul>
-<p>to prioritize choosing <span class="math inline">\(u\)</span> in the order of <strong>LICET</strong>, <strong>L</strong> being the first priority and <strong>T</strong> being the last.</p>
+<p>to prioritize choosing <span class="math inline">u</span> in the order of <strong>LICET</strong>, <strong>L</strong> being the first priority and <strong>T</strong> being the last.</p>
 <p><strong>Integration by Parts for Indefinite Integrals</strong></p>
-<p><span class="math display">\[
+<p><span class="math display">
 \int u\;dv = uv - \int v\;du
-\]</span></p>
+</span></p>
 <p><strong>Integration by Parts for Definite Integrals</strong></p>
-<p><span class="math display">\[
+<p><span class="math display">
 \int_{a}^{b} u(x)v^{\prime} (dx)dx = \left . u(x)v(x) \right |_{a}^{b} - \int_{a}^{b} v(x)u^{\prime}(x)dx
-\]</span></p>
+</span></p>
 <h3 id="trigonometric-substitution">Trigonometric Substitution</h3>
 <figure>
-<img src="../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-4_trig_substitutions.png" alt="Trig Substitutions" /><figcaption>Trig Substitutions</figcaption>
+<img src="../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-4_trig_substitutions.png" alt="Trig Substitutions" /><figcaption aria-hidden="true">Trig Substitutions</figcaption>
 </figure>
 <h3 id="numerical-integration">Numerical Integration</h3>
 <h4 id="absolute-and-relative-error">Absolute and Relative Error</h4>
-<p><span class="math display">\[
+<p><span class="math display">
 \textbf{absolute error} = \left | c - x \right | \\
 ~\\
 \textbf{relative error} = \frac{\left | c - x \right |}{\left [ x \right ]} \;\;\; (\text{if } x \neq 0).
-\]</span></p>
+</span></p>
 <h4 id="midpoint-rule">Midpoint Rule</h4>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
  M(n) &amp;= f(m_{1})\Delta{x} + f(m_{2})\Delta{x} + \cdots + f(m_{n})\Delta{x} \\
    &amp;= \sum_{k = 1}^{n} f(\frac{x_{k - 1} + x_{k}}{2})\;\Delta{x} \\
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>where</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \Delta{x} = \frac{b - a}{n}, \;\;\; x_{0} = a, \;\;\; x_{k} = a + k\Delta{x}, \;\;\; m_{k} = \frac{x_{k - 1} + x_{k}}{2}
-\]</span></p>
+</span></p>
 <h4 id="trapezoid-rule">Trapezoid Rule</h4>
-<p><span class="math display">\[
+<p><span class="math display">
 T(n) = \left ( \frac{1}{2}f(x_{0}) + \sum_{k = 1}^{n - 1} f(x_{k}) + \frac{1}{2}f(x_{n}) \right )\Delta{x}
-\]</span></p>
+</span></p>
 <p>where</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \Delta{x} = \frac{b - a}{n}, \;\;\; x_{k} = a + k\Delta{x}
-\]</span></p>
+</span></p>
 <h4 id="simpsons-rule">Simpson’s Rule</h4>
-<p><span class="math display">\[
+<p><span class="math display">
 S(n) = \left ( f(x_{0}) + 4f(x_{1}) + 2f(x_{2}) + 4f(x_{3}) + \cdots + 2f(x_{n - 2}) + 4f(x_{n - 1}) + f(x_{n}) \right )\frac{\Delta{x}}{3}
-\]</span></p>
+</span></p>
 <p>where</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \Delta{x} = \frac{b - a}{n}, \;\;\; x_{k} = a + k\Delta{x}
-\]</span></p>
+</span></p>
 <h2 id="partial-fraction-decomposition">Partial Fraction Decomposition</h2>
 <figure>
-<img src="../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-5_summary.png" alt="Partial Fraction Decomposition" /><figcaption>Partial Fraction Decomposition</figcaption>
+<img src="../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-5_summary.png" alt="Partial Fraction Decomposition" /><figcaption aria-hidden="true">Partial Fraction Decomposition</figcaption>
 </figure>
 <h2 id="physical-applications">Physical Applications</h2>
 <h3 id="mass-of-a-one-dimensional-object">Mass of a One-Dimensional Object</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 m = \int_{a}^{b} \rho(x)\;dx
-\]</span></p>
+</span></p>
 <h3 id="work">Work</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 W = \int_{a}^{b} F(x)\;dx
-\]</span></p>
+</span></p>
 <h3 id="pumping-water">Pumping Water</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 W = \int_{a}^{b} \rho gA(y)D(y)\;dy
-\]</span></p>
+</span></p>
 <h3 id="force-on-a-dam">Force on a Dam</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 F = \int_{0}^{a} \rho g(a - y)w(y)\;dy
-\]</span></p>
+</span></p>
 <h2 id="sequences-and-infinite-series">Sequences and Infinite Series</h2>
 <figure>
-<img src="../../../../files/winter-2021/MATH-151/notes/ch-10/sec_10-8_table-10.4.png" alt="Special Series and Convergence Tests" /><figcaption>Special Series and Convergence Tests</figcaption>
+<img src="../../../../files/winter-2021/MATH-151/notes/ch-10/sec_10-8_table-10.4.png" alt="Special Series and Convergence Tests" /><figcaption aria-hidden="true">Special Series and Convergence Tests</figcaption>
 </figure>
 <h3 id="terminology-for-sequences">Terminology for Sequences</h3>
 <figure>
-<img src="../../../../files/winter-2021/MATH-151/notes/ch-10/sec_10-2_terminology_for_sequences.png" alt="Terminology for Sequences" /><figcaption>Terminology for Sequences</figcaption>
+<img src="../../../../files/winter-2021/MATH-151/notes/ch-10/sec_10-2_terminology_for_sequences.png" alt="Terminology for Sequences" /><figcaption aria-hidden="true">Terminology for Sequences</figcaption>
 </figure>
 <h3 id="geometric-series">Geometric Series</h3>
-<p>Sum of geometric series <span class="math inline">\(\sum_{k = 0}^{n - 1} ar^{k}\)</span></p>
-<p><span class="math display">\[
+<p>Sum of geometric series <span class="math inline">\sum_{k = 0}^{n - 1} ar^{k}</span></p>
+<p><span class="math display">
 S_{n} = \frac{a(1 - r^{n})}{1 - r}, r \neq 1
-\]</span></p>
-<p>Geometric sum with <span class="math inline">\(n\)</span> terms has the form <span class="math inline">\(S_{n} = a + ar + ar^{2} + \cdots ar^{n - 1} = \sum_{k = 0}^{n - 1} ar^{k}\)</span>, where <span class="math inline">\(a \neq 0\)</span> and <span class="math inline">\(r\)</span> are real numbers, <span class="math inline">\(r\)</span> is called the ration of the sum and <span class="math inline">\(a\)</span> is its first term</p>
-<p><span class="math display">\[
+</span></p>
+<p>Geometric sum with <span class="math inline">n</span> terms has the form <span class="math inline">S_{n} = a + ar + ar^{2} + \cdots ar^{n - 1} = \sum_{k = 0}^{n - 1} ar^{k}</span>, where <span class="math inline">a \neq 0</span> and <span class="math inline">r</span> are real numbers, <span class="math inline">r</span> is called the ration of the sum and <span class="math inline">a</span> is its first term</p>
+<p><span class="math display">
 S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
-\]</span></p>
+</span></p>
 <h4 id="the-limit-of-a-geometric-series">The Limit of a Geometric series</h4>
-<p>The limiting behavior of a geometric series <span class="math inline">\(\sum_{k = 0}^{\infty} ar^{k}\)</span> is governed by the value of <span class="math inline">\(r\)</span>.</p>
+<p>The limiting behavior of a geometric series <span class="math inline">\sum_{k = 0}^{\infty} ar^{k}</span> is governed by the value of <span class="math inline">r</span>.</p>
 <ul>
-<li>if <span class="math inline">\(|r| \ge 1\)</span> then the series diverges</li>
-<li>if <span class="math inline">\(|r| &lt; 1\)</span> then the series converges to <span class="math inline">\(\frac{a}{1 -r}\)</span>.</li>
+<li>if <span class="math inline">|r| \ge 1</span> then the series diverges</li>
+<li>if <span class="math inline">|r| &lt; 1</span> then the series converges to <span class="math inline">\frac{a}{1 -r}</span>.</li>
 </ul>
-<p>for <span class="math inline">\(|r| &lt; 1\)</span>,</p>
-<p><span class="math display">\[
+<p>for <span class="math inline">|r| &lt; 1</span>,</p>
+<p><span class="math display">
 \sum_{k = 0}^{\infty} ar^{k} = \frac{a}{1 - r}
-\]</span></p>
-<p>where <span class="math inline">\(a\)</span> as the first term in the sequence and not equals to <span class="math inline">\(0\)</span>, and <span class="math inline">\(r\)</span> as the common ration.</p>
+</span></p>
+<p>where <span class="math inline">a</span> as the first term in the sequence and not equals to <span class="math inline">0</span>, and <span class="math inline">r</span> as the common ration.</p>
 <p>e.g.</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \sum_{m = 2}^{\infty} \frac{8}{9^{m}}
-\]</span></p>
-<p><span class="math inline">\(a = \dfrac{8}{9^{2}}\)</span>, <span class="math inline">\(r = \dfrac{1}{9}\)</span></p>
+</span></p>
+<p><span class="math inline">a = \dfrac{8}{9^{2}}</span>, <span class="math inline">r = \dfrac{1}{9}</span></p>
 <h3 id="telescoping-series">Telescoping Series</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 \sum_{k = 1}^{\infty}(b_{k} - b_{k + 1}) = b_{1}
-\]</span></p>
-<p>where <span class="math inline">\({\displaystyle \lim_{n \to \infty} b_{n} = 0}\)</span>.</p>
+</span></p>
+<p>where <span class="math inline">{\displaystyle \lim_{n \to \infty} b_{n} = 0}</span>.</p>
 <h3 id="growth-rates-of-sequences">Growth Rates of Sequences</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 \left \{ \ln_{q}(n) \right \} &lt;&lt; \left \{ n^{p} \right \} &lt;&lt; \left \{ n^{p}\ln_{r}(n) \right \} &lt;&lt; \left \{ n^{p + s} \right \} &lt;&lt; \left \{ b^{n} \right \} &lt;&lt; \left \{ n! \right \} &lt;&lt; \left \{ n^{n} \right \}
-\]</span></p>
+</span></p>
 <blockquote>
-<p>The ordering applies for positive real numbers <span class="math inline">\(p\)</span>, <span class="math inline">\(q\)</span>, <span class="math inline">\(r\)</span>, <span class="math inline">\(s\)</span>, and <span class="math inline">\(b &gt; 1\)</span></p>
+<p>The ordering applies for positive real numbers <span class="math inline">p</span>, <span class="math inline">q</span>, <span class="math inline">r</span>, <span class="math inline">s</span>, and <span class="math inline">b &gt; 1</span></p>
 </blockquote>
 <h3 id="taylor-series">Taylor Series</h3>
 <figure>
-<img src="../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-3_table-11.5.png" alt="Taylor Series" /><figcaption>Taylor Series</figcaption>
+<img src="../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-3_table-11.5.png" alt="Taylor Series" /><figcaption aria-hidden="true">Taylor Series</figcaption>
 </figure>
 <h1 id="common-identities">Common Identities</h1>
 <h2 id="polynomial">Polynomial</h2>
 <figure>
-<img src="../../../../files/winter-2021/MATH-151/notes/polynomial_identities.png" alt="Polynomial Identities" /><figcaption>Polynomial Identities</figcaption>
+<img src="../../../../files/winter-2021/MATH-151/notes/polynomial_identities.png" alt="Polynomial Identities" /><figcaption aria-hidden="true">Polynomial Identities</figcaption>
 </figure>
 <h2 id="trigonometric">Trigonometric</h2>
 <ul>
 <li><a href="../../../../files/spring-2020/MATH-141/ch-6/ch-6_handout-24.pdf">⬇ Famous Trig Identities</a></li>
 <li><a href="../../../../files/winter-2021/MATH-151/notes/trig_cheatsheet.pdf">⬇ Trig Cheatsheet</a></li>
 </ul>
-<p><span class="math inline">\(\theta = (cos(x), sin(x))\)</span></p>
+<p><span class="math inline">\theta = (cos(x), sin(x))</span></p>
 <p><img src="../../../../files/spring-2020/MATH-141/ch-4/unit_circle.png" alt="Unit Circle" /> <img src="../../../../files/winter-2021/MATH-151/notes/trig_table_half.png" alt="Trigonometric Functions Table Half" /> <img src="../../../../files/winter-2021/MATH-151/notes/trig_table.png" alt="Trigonometric Functions Table" /></p>
 <p>Ref:</p>
 <ul>
@@ -378,7 +413,7 @@ S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
 <li><a href="https://en.wikipedia.org/wiki/Trigonometric_functions">📄 Trigonometric Functions</a></li>
 </ul>
 <h2 id="logarithmic-identities">Logarithmic Identities</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{ll}
   \ln(1) &amp;=&amp; 0 \\
   ~\\
@@ -406,7 +441,7 @@ S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
   ~\\
   \log_{b}(x) &amp;=&amp; \dfrac{\ln(x)}{\ln(b)}
 \end{array}
-\]</span></p>
+</span></p>
 <h2 id="limits">Limits</h2>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/List_of_limits">📄 List of Limits</a></li>
@@ -418,19 +453,19 @@ S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
 </ul>
 <h1 id="common-rules">Common Rules</h1>
 <h2 id="product-rules">Product Rules</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{ll}
   a^{x} \cdot a^{y} = a^{x + y} &amp; a^{x} \cdot b^{x} = (a \cdot b)^{x} \\
 \end{array}
-\]</span></p>
+</span></p>
 <h2 id="quotient-rules">Quotient Rules</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{ll}
   \dfrac{a^{x}}{a^{y}} = a^{x - y} &amp; \dfrac{a^{x}}{a^{x}} = \left ( \dfrac{a}{b} \right )^{x} \\
 \end{array}
-\]</span></p>
+</span></p>
 <h2 id="exponent-rules">Exponent Rules</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{ll}
   \left ( b^{x} \right )^{y} = b^{x \cdot y} &amp; b^{x^{y}} = b^{(3^{2})} &amp;  \\
   ~\\
@@ -438,9 +473,9 @@ S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
   ~\\
   b^{x} = e^{\ln(b^{x})} &amp; b^{-x} = \dfrac{1}{b^{x}} \\
 \end{array}
-\]</span></p>
+</span></p>
 <h2 id="logarithm-rules">Logarithm Rules</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{ll}
   \ln(x) = \log_{e}(x) \\
   ~\\
@@ -460,23 +495,23 @@ S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
   ~\\
   \dfrac{d}{dx}\left [ \log_{b}(x) \right ] = \dfrac{1}{x\ln(b)}&amp; {\displaystyle \int \log_{b}(x)\;dx} = x\log_{b}(x) - \dfrac{x}{\ln(b)} + C \\
 \end{array}
-\]</span></p>
+</span></p>
 <h2 id="zero-rules">Zero Rules</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{ll}
   b^{0} = 1 &amp; 0^{x} = 0, \text{ for } n &gt; 0 \\
 \end{array}
-\]</span></p>
+</span></p>
 <h2 id="derivative-rule">Derivative Rule</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{d}{dx}(x^{n}) = n \cdot x^{n - 1}
-\]</span></p>
+</span></p>
 <h2 id="integral-rule">Integral Rule</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \int x^{n}\;dx = \frac{x^{n + 1}}{n + 1} + C
-\]</span></p>
+</span></p>
 <h2 id="limit-laws">Limit Laws</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \underline{\textbf{Sum Law}} \\
 ~\\
 1.\; \lim_{x \to a} [f(x) + g(x)] = \lim_{x \to a} f(x) + \lim_{x \to a} g(x) \\
@@ -514,20 +549,20 @@ S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
 11.\; \lim_{x \to a} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x \to a} f(x)} \; \text{ where } n \text{ is a positive integer } \\
 ~\\
 [\text{ if  } n \text{ is even, we assume that } \lim_{x \to a} f(x) &gt; 0 \text{. }]
-\]</span></p>
+</span></p>
 <h3 id="limit-chain-rule">Limit Chain Rule</h3>
-<p>First take the limit of <span class="math inline">\(g(x)\)</span>, then substitute the limit of <span class="math inline">\(g(x)\)</span> for <span class="math inline">\(u\)</span> into the original limit and update the limit bounds with <span class="math inline">\(u\)</span>.</p>
-<p><span class="math display">\[
+<p>First take the limit of <span class="math inline">g(x)</span>, then substitute the limit of <span class="math inline">g(x)</span> for <span class="math inline">u</span> into the original limit and update the limit bounds with <span class="math inline">u</span>.</p>
+<p><span class="math display">
 \lim_{x \to a} f(g(x)) = L
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \begin{array}{ll}
   \lim_{x \to a} g(x) = b &amp; \lim_{u \to b} f(u) = L \\
 \end{array}
-\]</span></p>
+</span></p>
 <h1 id="derivatives-1">Derivatives</h1>
 <h2 id="polynomial-1">Polynomial</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{ll}
   \dfrac{d}{dx}(x) &amp;=&amp; 1 \\
   ~\\
@@ -539,9 +574,9 @@ S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
   ~\\
   \dfrac{d}{dx}(mx^{n}) &amp;=&amp; mnx^{n - 1} \\
 \end{array}
-\]</span></p>
+</span></p>
 <h2 id="trigonometric-functions">Trigonometric Functions</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{ll}
   \dfrac{d}{dx}(\sin{x}) = \cos{x} &amp; \dfrac{d}{dx}(\csc{x}) = -\csc{x}\cot{x} \\
   ~\\
@@ -549,9 +584,9 @@ S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
   ~\\
   \dfrac{d}{dx}(\tan{x}) = \sec^{2}{x} &amp; \dfrac{d}{dx}(\cot{x}) = -\csc^{2}{x} \\
 \end{array}
-\]</span></p>
+</span></p>
 <h2 id="hyperbolic-functions">Hyperbolic Functions</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{ll}
   \dfrac{d}{dx}(\sinh{x}) = \cosh{x} &amp; \dfrac{d}{dx}(\operatorname{csch}{x}) = -\operatorname{csch}{x}\coth{x} \\
   ~\\
@@ -565,9 +600,9 @@ S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
   ~\\
   \dfrac{d}{dx}(\tanh{ax}) = a\operatorname{sech}^{2}ax &amp; \dfrac{d}{dx}(\coth{ax}) = -a\operatorname{csch}^{2}{ax} \\
 \end{array}
-\]</span></p>
+</span></p>
 <h2 id="inverse-trigonometric-functions">Inverse Trigonometric Functions</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{ll}
   \dfrac{d}{dx}(\sin^{-1}{x}) = \dfrac{1}{\sqrt{1 - x^{2}}} &amp; \dfrac{d}{dx}(\csc^{-1}{x}) = -\dfrac{1}{x\sqrt{x^{2} - 1}} \\
   ~\\
@@ -575,9 +610,9 @@ S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
   ~\\
   \dfrac{d}{dx}(\tan^{-1}{x}) = \dfrac{1}{1 + x^{2}} &amp; \dfrac{d}{dx}(\cot^{-1}{x}) = -\dfrac{1}{1 + x^{2}}
 \end{array}
-\]</span></p>
+</span></p>
 <h2 id="inverse-hyperbolic-functions">Inverse Hyperbolic Functions</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{ll}
   \dfrac{d}{dx}(\sinh^{-1}{x}) = \dfrac{1}{\sqrt{1 + x^{2}}} &amp; \dfrac{d}{dx}(\operatorname{csch}^{-1}{x}) = -\dfrac{1}{\left | x \right |\sqrt{x^{2} + 1}} \\
   ~\\
@@ -585,9 +620,9 @@ S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
   ~\\
   \dfrac{d}{dx}(\tanh^{-1}{x}) = \dfrac{1}{1 - x^{2}} &amp; \dfrac{d}{dx}(\coth^{-1}{x}) = \dfrac{1}{1 - x^{2}}
 \end{array}
-\]</span></p>
+</span></p>
 <h2 id="logarithmic">Logarithmic</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{ll}
   \dfrac{d}{dx}(\ln(x)) &amp;=&amp; \dfrac{1}{x} \\
   ~\\
@@ -605,9 +640,9 @@ S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
   ~\\
   \dfrac{d}{dx}(\log_{b}(mx^{n})) &amp;=&amp; \dfrac{n}{x\ln(b)} \\
 \end{array}
-\]</span></p>
+</span></p>
 <h2 id="exponential">Exponential</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{ll}
   \dfrac{d}{dx}(a^{x}) &amp;=&amp; \dfrac{d}{dx}\left [ (e^{\ln(a)})^{x} \right ] &amp;=&amp; a^{x}\ln(a) \\
   ~\\
@@ -617,16 +652,16 @@ S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
   ~\\
   \dfrac{d}{dx}(e^{nx}) &amp;=&amp; ne^{nx} \\
 \end{array}
-\]</span></p>
+</span></p>
 <h1 id="antiderivatives-integral">Antiderivatives (Integral)</h1>
 <h2 id="table-of-integrals">Table of Integrals</h2>
 <p><img src="../../../../files/winter-2021/MATH-151/notes/table_of_integrals-1.png" alt="Table of Integrals 1" /> <img src="../../../../files/winter-2021/MATH-151/notes/table_of_integrals-2.1.png" alt="Table of Integrals 2.1" /> <img src="../../../../files/winter-2021/MATH-151/notes/table_of_integrals-2.2.png" alt="Table of Integrals 2.2" /> <img src="../../../../files/winter-2021/MATH-151/notes/table_of_integrals-3.png" alt="Table of Integrals 3" /> <img src="../../../../files/winter-2021/MATH-151/notes/table_of_integrals-4.png" alt="Table of Integrals 4" /> <img src="../../../../files/winter-2021/MATH-151/notes/table_of_integrals-5.png" alt="Table of Integrals 5" /> <img src="../../../../files/winter-2021/MATH-151/notes/table_of_integrals-6.png" alt="Table of Integrals 6" /> <img src="../../../../files/winter-2021/MATH-151/notes/table_of_integrals-7.png" alt="Table of Integrals 7" /> <img src="../../../../files/winter-2021/MATH-151/notes/table_of_integrals-8.png" alt="Table of Integrals 8" /> <img src="../../../../files/winter-2021/MATH-151/notes/table_of_integrals-9.png" alt="Table of Integrals 9" /> <img src="../../../../files/winter-2021/MATH-151/notes/table_of_integrals-10.png" alt="Table of Integrals 10" /></p>
 <h2 id="common-integration-formulas">Common Integration Formulas</h2>
 <figure>
-<img src="../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-1_table-1.png" alt="Table 8.1" /><figcaption>Table 8.1</figcaption>
+<img src="../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-1_table-1.png" alt="Table 8.1" /><figcaption aria-hidden="true">Table 8.1</figcaption>
 </figure>
 <h2 id="common-indefinite-integrals">Common Indefinite Integrals</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{ll}
   \int cf(x)dx = c \int f(x)dx &amp; \int [f(x) + g(x)]dx = \int f(x)dx + \int g(x)dx \\
   ~\\
@@ -648,9 +683,9 @@ S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
   ~\\
   \int \sinh(x)dx = \cosh(x) + C &amp; \int \cosh(x)dx = \sinh(x) + C
 \end{array}
-\]</span></p>
+</span></p>
 <h2 id="polynomial-2">Polynomial</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{ll}
   \int x\;dx &amp;=&amp; \dfrac{x^{2}}{2} + C \\
   ~\\
@@ -664,9 +699,9 @@ S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
   ~\\
   \int \frac{1}{x}\;dx &amp;=&amp; \ln|x| + C \\
 \end{array}
-\]</span></p>
+</span></p>
 <h2 id="trigonometric-functions-1">Trigonometric Functions</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{lll}
   {\displaystyle \int \sin(x)} = -\cos(x) + C &amp; {\displaystyle \int \cos(x)} = \sin(x) + C \\
   ~\\
@@ -684,9 +719,9 @@ S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
   ~\\
   {\displaystyle \int \tan(mx)} = -\frac{1}{m}\ln \left | \cos(mx) \right | + C &amp; {\displaystyle \int cot(mx)} = \frac{1}{m}\ln \left | \sin(mx) \right | + C \\
 \end{array}
-\]</span></p>
+</span></p>
 <h2 id="logarithmic-1">Logarithmic</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{ll}
   \int \ln(x)\;dx &amp;=&amp; x\ln(x) - x + C \\
   ~\\
@@ -704,9 +739,9 @@ S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
   ~\\
   \int \log_{b}(mx^{n})\;dx &amp;=&amp; x\log_{b}(m) + n\left ( x\log_{b}(x) - \dfrac{x}{\ln(b)} \right ) + C \\
 \end{array}
-\]</span></p>
+</span></p>
 <h2 id="exponential-1">Exponential</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{ll}
   \int a^{x}\;dx = \dfrac{a^{x}}{\ln(a)} + C \\
   ~\\
@@ -720,16 +755,16 @@ S_{n} = \frac{a_{1}(r^{n} - 1)}{r - 1}
   ~\\
   \int e^{mx}\;dx = \dfrac{1}{m}e^{mx} + C \\
 \end{array}
-\]</span></p>
+</span></p>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
-<li><a href="../../../../files/spring-2020/MATH-141/ch-6/ch-6_handout-24.pdf">⬇ Famous Trig Identities</a></li>
-<li><a href="../../../../files/winter-2021/MATH-151/notes/trig_cheatsheet.pdf">⬇ Trig Cheatsheet</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Unit_circle">📄 Unit Circle</a></li>
-<li><a href="https://www.livingston.org/cms/lib9/NJ01000562/Centricity/Domain/742/calc/Trig%20functions%20chart%20-%20answers.pdf">📄 Table of Trigonometric Functions</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Trigonometric_functions">📄 Trigonometric Functions</a></li>
-<li><a href="https://en.wikipedia.org/wiki/List_of_limits">📄 List of Limits</a></li>
+<li><p><a href="../../../../files/spring-2020/MATH-141/ch-6/ch-6_handout-24.pdf">⬇ Famous Trig Identities</a></p></li>
+<li><p><a href="../../../../files/winter-2021/MATH-151/notes/trig_cheatsheet.pdf">⬇ Trig Cheatsheet</a></p></li>
+<li><p><a href="https://en.wikipedia.org/wiki/Unit_circle">📄 Unit Circle</a></p></li>
+<li><p><a href="https://www.livingston.org/cms/lib9/NJ01000562/Centricity/Domain/742/calc/Trig%20functions%20chart%20-%20answers.pdf">📄 Table of Trigonometric Functions</a></p></li>
+<li><p><a href="https://en.wikipedia.org/wiki/Trigonometric_functions">📄 Trigonometric Functions</a></p></li>
+<li><p><a href="https://en.wikipedia.org/wiki/List_of_limits">📄 List of Limits</a></p></li>
 <li><p><a href="https://www.pioneermathematics.com/some-important-limits-formula.html">📄 Some Important Limits</a></p></li>
 <li><p>Calculus, Early Transcendentals 3rd Edition - Briggs, Cochran, and Gillet</p></li>
 </ul>

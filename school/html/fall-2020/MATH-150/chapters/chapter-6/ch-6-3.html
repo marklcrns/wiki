@@ -11,6 +11,13 @@
 
     <title>Chapter 6.3 Volumes by Cylindrical Shells</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,7 +88,8 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-6.3-volumes-by-cylindrical-shells">Chapter 6.3: Volumes by Cylindrical Shells</a><ul>
+          <li><a href="#chapter-6.3-volumes-by-cylindrical-shells">Chapter 6.3: Volumes by Cylindrical Shells</a>
+          <ul>
           <li><a href="#volumes-by-cylindrical-shells">Volumes by Cylindrical Shells</a></li>
           <li><a href="#formula-1">Formula 1</a></li>
           <li><a href="#formula-2">Formula 2</a></li>
@@ -104,68 +127,68 @@
           <article class="contents">
 <h1 id="chapter-6.3-volumes-by-cylindrical-shells">Chapter 6.3: Volumes by Cylindrical Shells</h1>
 <h2 id="volumes-by-cylindrical-shells">Volumes by Cylindrical Shells</h2>
-<p>Some volume problems are very difficult to handle by the methods of the preceding section. For instance, let’s consider the problem of finding the volume of the solid obtained by rotating about the <span class="math inline">\(y\)</span>-axis the region bounded by <span class="math inline">\(y = 2x^{2} - x^{3}\)</span> and <span class="math inline">\(y = 0\)</span>. (See Figure 1.) If we slice perpendicular to the <span class="math inline">\(y\)</span>-axis, we get a washer. But to compute the inner radius and the outer radius of the washer, we’d have to solve the cubic equation <span class="math inline">\(y = 2x^{2} - x^{3}\)</span> for <span class="math inline">\(x\)</span> in terms of <span class="math inline">\(y\)</span>; that’s not easy.</p>
+<p>Some volume problems are very difficult to handle by the methods of the preceding section. For instance, let’s consider the problem of finding the volume of the solid obtained by rotating about the <span class="math inline">y</span>-axis the region bounded by <span class="math inline">y = 2x^{2} - x^{3}</span> and <span class="math inline">y = 0</span>. (See Figure 1.) If we slice perpendicular to the <span class="math inline">y</span>-axis, we get a washer. But to compute the inner radius and the outer radius of the washer, we’d have to solve the cubic equation <span class="math inline">y = 2x^{2} - x^{3}</span> for <span class="math inline">x</span> in terms of <span class="math inline">y</span>; that’s not easy.</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_figure-1.png" alt="Figure 1" /><figcaption>Figure 1</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_figure-1.png" alt="Figure 1" /><figcaption aria-hidden="true">Figure 1</figcaption>
 </figure>
-<p>Fortunately, there is a method, called the method of cylindrical shells, that is easier to use in such a case. Figure 2 shows a cylindrical shell with inner radius <span class="math inline">\(r_{1}\)</span>, outer radius <span class="math inline">\(r_{2}\)</span>, and height <span class="math inline">\(h\)</span>. Its volume <span class="math inline">\(V\)</span> is calculated by subtracting the volume <span class="math inline">\(V_{1}\)</span> of the inner cylinder from the volume <span class="math inline">\(V_{2}\)</span> of the outer cylinder:</p>
-<p><span class="math display">\[
+<p>Fortunately, there is a method, called the method of cylindrical shells, that is easier to use in such a case. Figure 2 shows a cylindrical shell with inner radius <span class="math inline">r_{1}</span>, outer radius <span class="math inline">r_{2}</span>, and height <span class="math inline">h</span>. Its volume <span class="math inline">V</span> is calculated by subtracting the volume <span class="math inline">V_{1}</span> of the inner cylinder from the volume <span class="math inline">V_{2}</span> of the outer cylinder:</p>
+<p><span class="math display">
 \begin{aligned}
   V &amp;= V_{2} - V_{1} \\
    &amp;= \pi r_{2}^{2}h - \pi r_{1}^{2} = \pi(r_{2}^{2} - r_{1}^{2})h \\
    &amp;= \pi(r_{2} + r_{1})h \\
    &amp;= 2 \pi \frac{r_{2} + r_{1}}{2}h(r_{2} - r_{1}) \\
 \end{aligned}
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_figure-2.png" alt="Figure 2" /><figcaption>Figure 2</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_figure-2.png" alt="Figure 2" /><figcaption aria-hidden="true">Figure 2</figcaption>
 </figure>
-<p>If we let <span class="math inline">\(\Delta{r} = r_{2} - r_{1}\)</span> (the thickness of the shell) and <span class="math inline">\(r = \frac{1}{2}(r_{2} + r_{1})\)</span> (the average radius of the shell), then this formula for the volume of a cylindrical shell becomes</p>
+<p>If we let <span class="math inline">\Delta{r} = r_{2} - r_{1}</span> (the thickness of the shell) and <span class="math inline">r = \frac{1}{2}(r_{2} + r_{1})</span> (the average radius of the shell), then this formula for the volume of a cylindrical shell becomes</p>
 <h2 id="formula-1">Formula 1</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 V = 2 \pi rh \Delta{r}
-\]</span></p>
+</span></p>
 <p>and it can be remembered as</p>
-<p><span class="math display">\[
+<p><span class="math display">
 V = [\text{circumference}][\text{height}][\text{thickness}]
-\]</span></p>
-<p>Now let <span class="math inline">\(S\)</span> be the solid obtained by rotating about the <span class="math inline">\(y\)</span>-axis the region bounded by <span class="math inline">\(y = f(X)\)</span> [where <span class="math inline">\(f(x) \ge 0\)</span>], <span class="math inline">\(y = 0\)</span>, <span class="math inline">\(x = a\)</span>, and <span class="math inline">\(b &gt; a \ge 0\)</span>, where. (See Figure 3.)</p>
+</span></p>
+<p>Now let <span class="math inline">S</span> be the solid obtained by rotating about the <span class="math inline">y</span>-axis the region bounded by <span class="math inline">y = f(X)</span> [where <span class="math inline">f(x) \ge 0</span>], <span class="math inline">y = 0</span>, <span class="math inline">x = a</span>, and <span class="math inline">b &gt; a \ge 0</span>, where. (See Figure 3.)</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_figure-3.png" alt="Figure 3" /><figcaption>Figure 3</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_figure-3.png" alt="Figure 3" /><figcaption aria-hidden="true">Figure 3</figcaption>
 </figure>
-<p>We divide the interval <span class="math inline">\([a, b]\)</span> into <span class="math inline">\(n\)</span> subintervals <span class="math inline">\([x_{i - 1}, x_{i}]\)</span> of equal width <span class="math inline">\(\Delta{x}\)</span> and let be the midpoint of the <span class="math inline">\(i\)</span>th subinterval. If the rectangle with base <span class="math inline">\([x_{i - 1}, x_{i}]\)</span> and height <span class="math inline">\(f(\overline{x}_{i})\)</span> is rotated about the <span class="math inline">\(y\)</span>-axis, then the result is a cylindrical shell with average radius <span class="math inline">\(\overline{x}_{i}\)</span>, height <span class="math inline">\(f(\overline{x}_{i})\)</span>, and thickness <span class="math inline">\(\Delta{x}\)</span> (See Figure 4). So by Formula 1 its volume is</p>
-<p><span class="math display">\[
+<p>We divide the interval <span class="math inline">[a, b]</span> into <span class="math inline">n</span> subintervals <span class="math inline">[x_{i - 1}, x_{i}]</span> of equal width <span class="math inline">\Delta{x}</span> and let be the midpoint of the <span class="math inline">i</span>th subinterval. If the rectangle with base <span class="math inline">[x_{i - 1}, x_{i}]</span> and height <span class="math inline">f(\overline{x}_{i})</span> is rotated about the <span class="math inline">y</span>-axis, then the result is a cylindrical shell with average radius <span class="math inline">\overline{x}_{i}</span>, height <span class="math inline">f(\overline{x}_{i})</span>, and thickness <span class="math inline">\Delta{x}</span> (See Figure 4). So by Formula 1 its volume is</p>
+<p><span class="math display">
 V_{i} = (2 \pi \overline{x}_{i})[f(\overline{x}_{i})]\Delta{x}
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_figure-4.png" alt="Figure 4" /><figcaption>Figure 4</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_figure-4.png" alt="Figure 4" /><figcaption aria-hidden="true">Figure 4</figcaption>
 </figure>
-<p>Therefore an approximation to the volume <span class="math inline">\(V\)</span> of <span class="math inline">\(S\)</span> is given by the sum of the volumes of these shells:</p>
-<p><span class="math display">\[
+<p>Therefore an approximation to the volume <span class="math inline">V</span> of <span class="math inline">S</span> is given by the sum of the volumes of these shells:</p>
+<p><span class="math display">
 V \approx \sum_{i = 1}^{n} V_{i} = \sum_{i = 1}^{n} 2 \pi \overline{x}_{i}f(\overline{x}_{i})\;\Delta{x}
-\]</span></p>
-<p>This approximation appears to become better as <span class="math inline">\(n \to \infty\)</span>. But, from the definition of an integral, we know that</p>
-<p><span class="math display">\[
+</span></p>
+<p>This approximation appears to become better as <span class="math inline">n \to \infty</span>. But, from the definition of an integral, we know that</p>
+<p><span class="math display">
 \lim_{n \to \infty} \sum_{i = 1}^{n} 2 \pi \overline{x}_{i}f(\overline{x}_{i})\;\Delta{x} = \int_{a}^{b} 2 \pi xf(x)\;dx
-\]</span></p>
+</span></p>
 <p>Thus the following appears plausible:</p>
 <h2 id="formula-2">Formula 2</h2>
-<p>The volume of the solid in Figure 3, obtained by rotating about the <span class="math inline">\(y\)</span>-axis the region under the curve <span class="math inline">\(y = f(x)\)</span> from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>, is</p>
-<p><span class="math display">\[
+<p>The volume of the solid in Figure 3, obtained by rotating about the <span class="math inline">y</span>-axis the region under the curve <span class="math inline">y = f(x)</span> from <span class="math inline">a</span> to <span class="math inline">b</span>, is</p>
+<p><span class="math display">
 V = \int_{a}^{b} 2 \pi xf(x)\;dx \;\;\;\;\; \text{ where } 0 \le a &lt; b
-\]</span></p>
+</span></p>
 <p>The argument using cylindrical shells makes Formula 2 seem reasonable, but later we will be able to prove it (See Exercise 7.1.73).</p>
-<p>The best way to remember Formula 2 is to think of a typical shell, cut and flattened as in Figure 5, with radius <span class="math inline">\(x\)</span>, circumference <span class="math inline">\(2 \pi x\)</span>, height <span class="math inline">\(f(x)\)</span>, and thickness <span class="math inline">\(\Delta{x}\)</span> or <span class="math inline">\(dx\)</span>:</p>
-<p><span class="math display">\[
+<p>The best way to remember Formula 2 is to think of a typical shell, cut and flattened as in Figure 5, with radius <span class="math inline">x</span>, circumference <span class="math inline">2 \pi x</span>, height <span class="math inline">f(x)</span>, and thickness <span class="math inline">\Delta{x}</span> or <span class="math inline">dx</span>:</p>
+<p><span class="math display">
 \begin{array}{cccc}
   \int_{a}^{b} &amp; \underbrace{2 \pi x} &amp; \underbrace{[f(x)]} &amp; \underbrace{dx} \\
    &amp; \text{circumference} &amp; \text{height} &amp; \text{thickness} \\
 \end{array}
-\]</span></p>
+</span></p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_figure-5.png" alt="Figure 5" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_example-1.png" alt="Example 1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_figure-7.png" alt="Figure 7" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_example-2.png" alt="Example 2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_example-3.png" alt="Example 3" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-6/6.3_example-4.png" alt="Example 4" /></p>
 <h2 id="disks-and-washers-versus-cylindrical-shells">Disks and Washers versus Cylindrical Shells</h2>
-<p>When computing the volume of a solid of revolution, how do we know whether to use disks (or washers) or cylindrical shells? There are several considerations to take into account: Is the region more easily described by top and bottom boundary curves of the form <span class="math inline">\(y = f(x)\)</span>, or by left and right boundaries <span class="math inline">\(x = g(y)\)</span>? Which choice is easier to work with? Are the limits of integration easier to find for one variable versus the other? Does the region require two separate integrals when using <span class="math inline">\(x\)</span> as the variable but only one integral in <span class="math inline">\(y\)</span>? Are we able to evaluate the integral we set up with our choice of variable?</p>
-<p>If we decide that one variable is easier to work with than the other, then this dictates which method to use. Draw a sample rectangle in the region, corresponding to a cross-section of the solid. The thickness of the rectangle, either <span class="math inline">\(\Delta{x}\)</span> or <span class="math inline">\(\Delta{y}\)</span>, corresponds to the integration variable. If you imagine the rectangle revolving, it becomes either a disk (washer) or a shell.</p>
+<p>When computing the volume of a solid of revolution, how do we know whether to use disks (or washers) or cylindrical shells? There are several considerations to take into account: Is the region more easily described by top and bottom boundary curves of the form <span class="math inline">y = f(x)</span>, or by left and right boundaries <span class="math inline">x = g(y)</span>? Which choice is easier to work with? Are the limits of integration easier to find for one variable versus the other? Does the region require two separate integrals when using <span class="math inline">x</span> as the variable but only one integral in <span class="math inline">y</span>? Are we able to evaluate the integral we set up with our choice of variable?</p>
+<p>If we decide that one variable is easier to work with than the other, then this dictates which method to use. Draw a sample rectangle in the region, corresponding to a cross-section of the solid. The thickness of the rectangle, either <span class="math inline">\Delta{x}</span> or <span class="math inline">\Delta{y}</span>, corresponds to the integration variable. If you imagine the rectangle revolving, it becomes either a disk (washer) or a shell.</p>
 <h2 id="video-lectures">Video Lectures</h2>
 <ul>
 <li><a href="https://www.khanacademy.org/math/old-ap-calculus-ab/ab-applications-definite-integrals/ab-shell-method/v/shell-method-for-rotating-around-vertical-line">📺 Shell method for rotating around vertical line</a></li>

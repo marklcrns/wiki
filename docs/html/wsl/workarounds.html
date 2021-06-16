@@ -12,6 +12,13 @@
 
     <title>WSL/WSL2 Workarounds</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -23,26 +30,28 @@
     <link href="../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -51,9 +60,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -129,7 +138,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#wslwsl2-workarounds">WSL/WSL2 Workarounds</a><ul>
+          <li><a href="#wslwsl2-workarounds">WSL/WSL2 Workarounds</a>
+          <ul>
           <li><a href="#clipboard">Clipboard</a></li>
           <li><a href="#audio-fix">Audio Fix</a></li>
           </ul></li>
@@ -162,10 +172,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 id="wslwsl2-workarounds">WSL/WSL2 Workarounds</h1>
 <h2 id="clipboard">Clipboard</h2>
 <p>This workaround was inspired by Neovide clipboard issue with WSL/WSL2. Also works with terminal neovim as long as <code>clipboard</code> is set to <code>unnamedplus</code>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">curl</span> -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="fu">unzip</span> -p /tmp/win32yank.zip win32yank.exe <span class="op">&gt;</span> /tmp/win32yank.exe</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="fu">chmod</span> +x /tmp/win32yank.exe</a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="fu">sudo</span> mv /tmp/win32yank.exe /usr/local/bin/</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-sLo</span>/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> <span class="at">-p</span> /tmp/win32yank.zip win32yank.exe <span class="op">&gt;</span> /tmp/win32yank.exe</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x /tmp/win32yank.exe</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mv /tmp/win32yank.exe /usr/local/bin/</span></code></pre></div>
 <blockquote>
 <p>NOTE: it is important that your shell source <code>win32yank.exe</code> before other clipboard tool such as <code>xclip</code> for Neovim/Neovide to recognize it as the default system clipboard. Hence, it should be in <code>/usr/local/bin</code> directory.</p>
 </blockquote>
@@ -180,30 +190,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol type="1">
 <li>Paste the following code in <code>~/.bashrc</code> or <code>~/.profile</code></li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="va">HOST_IP=$(</span><span class="ex">host</span> <span class="kw">`</span><span class="fu">hostname</span><span class="kw">`</span> <span class="kw">|</span> <span class="fu">grep</span> 192. <span class="kw">|</span> <span class="fu">tail</span> -1 <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ print $NF }&#39;</span> <span class="kw">|</span> <span class="fu">tr</span> -d <span class="st">&#39;\r&#39;</span><span class="va">)</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="bu">export</span> <span class="va">DISPLAY=$HOST_IP</span>:0.0</a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="bu">export</span> <span class="va">PULSE_SERVER=</span>tcp:<span class="va">$HOST_IP</span></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="bu">export</span> <span class="va">NO_AT_BRIDGE=</span>1</a>
-<a class="sourceLine" id="cb3-5" title="5"><span class="bu">export</span> <span class="va">LIBGL_ALWAYS_INDIRECT=</span>1</a>
-<a class="sourceLine" id="cb3-6" title="6"></a>
-<a class="sourceLine" id="cb3-7" title="7"><span class="co"># Workaround for WSL/WSL2 X Server not working</span></a>
-<a class="sourceLine" id="cb3-8" title="8"><span class="kw">if</span> <span class="fu">grep</span> -qE <span class="st">&quot;(Microsoft|WSL)&quot;</span> /proc/version <span class="op">&amp;&gt;</span>/dev/null<span class="kw">;</span> <span class="kw">then</span></a>
-<a class="sourceLine" id="cb3-9" title="9">  <span class="co">#WSL1</span></a>
-<a class="sourceLine" id="cb3-10" title="10">  <span class="bu">export</span> <span class="va">DISPLAY=</span><span class="st">&quot;</span><span class="va">${DISPLAY:-</span>localhost:0.0<span class="va">}</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb3-11" title="11">  <span class="bu">export</span> <span class="va">PULSE_SERVER=</span><span class="st">&quot;</span><span class="va">${PULSE_SERVER:-</span>tcp:127.0.0.1<span class="va">}</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb3-12" title="12"><span class="kw">elif</span> <span class="fu">grep</span> -q <span class="st">&quot;microsoft&quot;</span> /proc/version <span class="op">&amp;&gt;</span>/dev/null<span class="kw">;</span> <span class="kw">then</span></a>
-<a class="sourceLine" id="cb3-13" title="13">  <span class="co"># WSL2</span></a>
-<a class="sourceLine" id="cb3-14" title="14">  <span class="va">HOST_IP=$(</span><span class="ex">host</span> <span class="kw">`</span><span class="fu">hostname</span><span class="kw">`</span> <span class="kw">|</span> <span class="fu">grep</span> 192. <span class="kw">|</span> <span class="fu">tail</span> -1 <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ print $NF }&#39;</span> <span class="kw">|</span> <span class="fu">tr</span> -d <span class="st">&#39;\r&#39;</span><span class="va">)</span></a>
-<a class="sourceLine" id="cb3-15" title="15">  <span class="bu">export</span> <span class="va">DISPLAY=$HOST_IP</span>:0.0</a>
-<a class="sourceLine" id="cb3-16" title="16">  <span class="bu">export</span> <span class="va">PULSE_SERVER=</span>tcp:<span class="va">$HOST_IP</span></a>
-<a class="sourceLine" id="cb3-17" title="17"><span class="kw">fi</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">HOST_IP</span><span class="op">=</span><span class="va">$(</span><span class="ex">host</span> <span class="kw">`</span><span class="fu">hostname</span><span class="kw">`</span> <span class="kw">|</span> <span class="fu">grep</span> 192. <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-1</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ print $NF }&#39;</span> <span class="kw">|</span> <span class="fu">tr</span> <span class="at">-d</span> <span class="st">&#39;\r&#39;</span><span class="va">)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">DISPLAY</span><span class="op">=</span><span class="va">$HOST_IP</span>:0.0</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PULSE_SERVER</span><span class="op">=</span>tcp:<span class="va">$HOST_IP</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">NO_AT_BRIDGE</span><span class="op">=</span>1</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LIBGL_ALWAYS_INDIRECT</span><span class="op">=</span>1</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Workaround for WSL/WSL2 X Server not working</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="fu">grep</span> <span class="at">-qE</span> <span class="st">&quot;(Microsoft|WSL)&quot;</span> /proc/version <span class="op">&amp;&gt;</span>/dev/null<span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">#WSL1</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="bu">export</span> <span class="va">DISPLAY</span><span class="op">=</span><span class="st">&quot;</span><span class="va">${DISPLAY</span><span class="op">:-</span>localhost:0.0<span class="va">}</span><span class="st">&quot;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="bu">export</span> <span class="va">PULSE_SERVER</span><span class="op">=</span><span class="st">&quot;</span><span class="va">${PULSE_SERVER</span><span class="op">:-</span>tcp:127.0.0.1<span class="va">}</span><span class="st">&quot;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> <span class="fu">grep</span> <span class="at">-q</span> <span class="st">&quot;microsoft&quot;</span> /proc/version <span class="op">&amp;&gt;</span>/dev/null<span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># WSL2</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="va">HOST_IP</span><span class="op">=</span><span class="va">$(</span><span class="ex">host</span> <span class="kw">`</span><span class="fu">hostname</span><span class="kw">`</span> <span class="kw">|</span> <span class="fu">grep</span> 192. <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-1</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ print $NF }&#39;</span> <span class="kw">|</span> <span class="fu">tr</span> <span class="at">-d</span> <span class="st">&#39;\r&#39;</span><span class="va">)</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="bu">export</span> <span class="va">DISPLAY</span><span class="op">=</span><span class="va">$HOST_IP</span>:0.0</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="bu">export</span> <span class="va">PULSE_SERVER</span><span class="op">=</span>tcp:<span class="va">$HOST_IP</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code></pre></div>
 <p>Then run <code>source ~/.bashrc</code> or <code>source ~/.profile</code></p>
 <ol start="2" type="1">
 <li>Clean install pulseaudio in WSL</li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">sudo</span> apt-get remove --purge alsa-base pulseaudio</a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="fu">sudo</span> apt-get install alsa-base pulseaudio</a>
-<a class="sourceLine" id="cb4-3" title="3"><span class="fu">sudo</span> apt-get -f install <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> apt-get -y autoremove <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> apt-get autoclean <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> apt-get clean <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> sync <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> 3 <span class="kw">|</span> <span class="fu">sudo</span> tee /proc/sys/vm/drop_caches</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get remove <span class="at">--purge</span> alsa-base pulseaudio</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install alsa-base pulseaudio</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get <span class="at">-f</span> install <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> apt-get <span class="at">-y</span> autoremove <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> apt-get autoclean <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> apt-get clean <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> sync <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> 3 <span class="kw">|</span> <span class="fu">sudo</span> tee /proc/sys/vm/drop_caches</span></code></pre></div>
 <ol start="3" type="1">
 <li><p>Download <a href="http://code.x2go.org/releases/binary-win32/3rd-party/pulse/pulseaudio-5.0-rev18.zip">pusleaudio-5.0-rev18.zip</a> and extract to <code>C:\wsl\pulse</code> or to any known path.</p></li>
 <li><p>Create a <code>config.pa</code> inside pulse directory <code>C:\wsl\pulse</code> and add the following lines</p></li>
@@ -215,10 +225,10 @@ load-module module-waveout sink_name=output source_name=input record=0</code></p
 <ol start="5" type="1">
 <li>Remove pulseaudio configs</li>
 </ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">sudo</span> rm /etc/pulse/client.conf <span class="co">#or just make sure every line is commented by cat /etc/pulse/client.conf</span></a>
-<a class="sourceLine" id="cb6-2" title="2"></a>
-<a class="sourceLine" id="cb6-3" title="3"><span class="fu">rm</span> -rf ~/.config/pulse/*</a>
-<a class="sourceLine" id="cb6-4" title="4"><span class="ex">pax11publish</span> -e -r</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> rm /etc/pulse/client.conf <span class="co">#or just make sure every line is commented by cat /etc/pulse/client.conf</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> ~/.config/pulse/<span class="pp">*</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pax11publish</span> <span class="at">-e</span> <span class="at">-r</span></span></code></pre></div>
 <ol start="6" type="1">
 <li>Create <code>.bat</code> script and add the following to automate pulseaudio service.</li>
 </ol>
@@ -241,7 +251,7 @@ C:\wsl\ConsoleState /Hide</code></pre>
 <p>Another option is to create a Windows service to run PulseAudio everytime Windows start. <a href="https://github.com/microsoft/WSL/issues/5816.html#issuecomment-682242686">📄 Setting up pulseaudio in windows</a></p>
 <p>Now everytime you run the script, it will run your Xserver and pulseaudio service.</p>
 <p>Test if wsl has sounds:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="ex">paplay</span> /usr/share/sounds/freedesktop/stereo/bell.oga</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">paplay</span> /usr/share/sounds/freedesktop/stereo/bell.oga</span></code></pre></div>
 <p>If none of these steps work, refer to the resources below. Consider editing <code>/etc/pulse/default.pa</code> as an extra step. Link below.</p>
 <p>Ref:</p>
 <ul>

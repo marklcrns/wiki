@@ -12,6 +12,13 @@
 
     <title>ECON 121 Chapter 14 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -66,24 +73,29 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-14-imperfect-information-adverse-selection-and-moral-hazard">Chapter 14: Imperfect Information: Adverse Selection and Moral Hazard</a><ul>
-          <li><a href="#adverse-selection-for-buyers-the-lemons-and-problem">14.1 Adverse Selection for Buyers: The Lemons and Problem</a><ul>
+          <li><a href="#chapter-14-imperfect-information-adverse-selection-and-moral-hazard">Chapter 14: Imperfect Information: Adverse Selection and Moral Hazard</a>
+          <ul>
+          <li><a href="#adverse-selection-for-buyers-the-lemons-and-problem">14.1 Adverse Selection for Buyers: The Lemons and Problem</a>
+          <ul>
           <li><a href="#uninformed-buyers-and-knowledgeable-sellers">14.1.1 Uninformed Buyers and Knowledgeable Sellers</a></li>
           <li><a href="#equilibrium-with-all-low-quality-goods">14.1.2 Equilibrium with All Low-Quality Goods</a></li>
           <li><a href="#a-thin-market-equilibrium-with-some-high-quality-goods">14.1.3 A Thin Market: Equilibrium with Some High-Quality Goods</a></li>
           </ul></li>
-          <li><a href="#responding-to-the-lemons-problem">14.2 Responding to the Lemons Problem</a><ul>
+          <li><a href="#responding-to-the-lemons-problem">14.2 Responding to the Lemons Problem</a>
+          <ul>
           <li><a href="#buyers-invest-in-information">14.2.1 Buyers Invest in Information</a></li>
           <li><a href="#consumer-satisfaction-scores-from-angies-list-and-ebay">14.2.2 Consumer Satisfaction Scores from Angie‘s List and eBay</a></li>
           <li><a href="#guarantees-and-lemons-laws">14.2.3 Guarantees and Lemons Laws</a></li>
           </ul></li>
-          <li><a href="#adverse-selection-for-sellers-insurance">14.3 Adverse Selection for Sellers: Insurance</a><ul>
+          <li><a href="#adverse-selection-for-sellers-insurance">14.3 Adverse Selection for Sellers: Insurance</a>
+          <ul>
           <li><a href="#health-insurance">14.3.1 Health Insurance</a></li>
           <li><a href="#equilibrium-with-all-high-cost-consumers">14.3.2 Equilibrium with All High-Cost Consumers</a></li>
           <li><a href="#responding-to-adverse-selection-in-insurance-group-insurance">14.3.3 Responding to Adverse Selection in Insurance: Group Insurance</a></li>
           <li><a href="#the-uninsured">14.3.4 The Uninsured</a></li>
           </ul></li>
-          <li><a href="#insurance-and-moral-hazard">14.4 Insurance and Moral Hazard</a><ul>
+          <li><a href="#insurance-and-moral-hazard">14.4 Insurance and Moral Hazard</a>
+          <ul>
           <li><a href="#insurance-companies-and-moral-hazard">14.4.1 Insurance Companies and Moral Hazard</a></li>
           </ul></li>
           <li><a href="#chapter-summary">Chapter Summary</a></li>
@@ -141,7 +153,7 @@
 <li><em>Plum supply</em>. As shown by the upper curve, the minimum supply price for plums is $2,500: At any price less than $2,500, no plums will be supplied. Consistent with the law of supply, the higher the price of used cars, the larger the number of plums supplied. For example, 20 plums will be supplied at a price of $3,000 (point a).</li>
 </ol>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-14/ch-14_figure-14.1.png" alt="Figure 14.1 All Used Cars on the Matket are Lemons" /><figcaption>Figure 14.1 All Used Cars on the Matket are Lemons</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-14/ch-14_figure-14.1.png" alt="Figure 14.1 All Used Cars on the Matket are Lemons" /><figcaption aria-hidden="true">Figure 14.1 All Used Cars on the Matket are Lemons</figcaption>
 </figure>
 <blockquote>
 <p>If buyers assume that there is a 50–50 chance of getting a lemon or a plum, they are willing to pay $3,000 for a used car. At this price, 20 plums are supplied (point a) along with 80 lemons (point b). <strong>This is not an equilibrium because consumers’ expectations of a 50–50 split are not realized.</strong> If consumers become pessimistic and assume that all cars on the market will be lemons, they are willing to pay $2,000 for a used car. At this price, only lemons will be supplied (point c). Consumer expectations are realized, so the equilibrium is shown by point c, with an equilibrium price of $2,000.</p>
@@ -235,7 +247,7 @@
 </ul>
 <p>Figure 14.2 shows the situation that leads to a thin market. The minimum supply price for plums is $1,833, and the quantity of plums supplied increases with the price of used cars. Suppose consumers are initially pessimistic, assuming all cars for sale will be lemons. This means consumers are willing to pay only $2,000 for a used car. Because the minimum supply price for plums ($1,833) is now less than the willingness to pay for a lemon, some plums will be supplied at a price of $2,000. In Figure 14.2, 5 plums and 45 lemons are supplied at this price, so 1 of every 10 buyers will get a plum. In this case, pessimism is not an equilibrium because some buyers will get plums when they expect lemons. This is also shown in the first column of Table 14.2.</p>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-14/ch-14_figure-14.2.png" alt="Figure 14.2 The Market for High-Qualtiy Cars (Plums) Is Thin" /><figcaption>Figure 14.2 The Market for High-Qualtiy Cars (Plums) Is Thin</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-14/ch-14_figure-14.2.png" alt="Figure 14.2 The Market for High-Qualtiy Cars (Plums) Is Thin" /><figcaption aria-hidden="true">Figure 14.2 The Market for High-Qualtiy Cars (Plums) Is Thin</figcaption>
 </figure>
 <blockquote>
 <p>If buyers are pessimistic and assume that only lemons will be sold, they are willing to pay $2,000 for a used car. At this price, 5 plums are supplied (point a), along with 45 lemons (point b). This is not an equilibrium because 10 percent of consumers get plums, contrary to their expectations. If consumers assume that there is a 25 percent chance of getting a plum, they are willing to pay $2,500 for a used car. At this price, 20 plums are supplied (point c), along with 60 lemons (point d). This is an equilibrium because 25 percent of consumers get plums, consistent with their expectations. Consumer expectations are realized, so the equilibrium is shown by points c and d.</p>
@@ -338,7 +350,7 @@
 <p>Suppose that half the population is high cost and the other half is low cost. Let’s assume the insurance company is somewhat naive and initially assumes that he mix of insurance buyers will be the same as the population mix.</p>
 <p>There is asymmetric information in the insurance market because <strong>potential buyers know from everyday experience and family histories what type of customer they are, either low cost or high cost.</strong> For each person, the question is “Given the single market price for all insurance, for low-cost and high-cost people alike, should I buy insurance?” The answers to this question are shown in two demand curves in Figure 14.3. The demand curve for the high-cost people is higher than the curve for the low-cost people, reflecting their larger benefits from having medical insurance.</p>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-14/ch-14_figure-14.3.png" alt="Figure 14.3 All Insurance Customers Are High-Cost People" /><figcaption>Figure 14.3 All Insurance Customers Are High-Cost People</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-14/ch-14_figure-14.3.png" alt="Figure 14.3 All Insurance Customers Are High-Cost People" /><figcaption aria-hidden="true">Figure 14.3 All Insurance Customers Are High-Cost People</figcaption>
 </figure>
 <blockquote>
 <p>If insurance companies assume there will be a 50–50 split between high-cost and low-cost customers, the average cost of insurance and its price is $4,000. At this price, there are 25 low-cost customers (point a) and 75 high-cost customers (point b). This is not an equilibrium because 75 percent of insurance buyers are high-cost customers, contrary to the expectations of a 50–50 split. If insurance companies become pessimistic and assume that all buyers will be high-cost consumers, the average cost and price is $6,000. The insurance company’s expectations are realized, so the equilibrium is shown by point c.</p>

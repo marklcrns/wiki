@@ -12,6 +12,13 @@
 
     <title>Sorting Algorithms</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -22,7 +29,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -67,18 +89,23 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#sorting-algorithms">Sorting Algorithms</a><ul>
-          <li><a href="#selection-sort">Selection Sort</a><ul>
+          <li><a href="#sorting-algorithms">Sorting Algorithms</a>
+          <ul>
+          <li><a href="#selection-sort">Selection Sort</a>
+          <ul>
           <li><a href="#selection-sort-runtime">Selection sort runtime</a></li>
           </ul></li>
-          <li><a href="#insertion-sort">Insertion Sort</a><ul>
+          <li><a href="#insertion-sort">Insertion Sort</a>
+          <ul>
           <li><a href="#insertion-sort-runtime">Insertion Sort Runtime</a></li>
           </ul></li>
-          <li><a href="#quicksort">Quicksort</a><ul>
+          <li><a href="#quicksort">Quicksort</a>
+          <ul>
           <li><a href="#quicksort-runtime">Quicksort runtime</a></li>
           <li><a href="#worst-case-quicksort-runtime">Worst Case Quicksort Runtime</a></li>
           </ul></li>
-          <li><a href="#merge-sort">Merge Sort</a><ul>
+          <li><a href="#merge-sort">Merge Sort</a>
+          <ul>
           <li><a href="#merge-sort-runtime-and-memory-complexity.">Merge sort runtime and memory complexity.</a></li>
           </ul></li>
           </ul></li>
@@ -124,22 +151,22 @@
 <p>17.6.1: Selection sort.</p>
 </blockquote>
 <figure>
-<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/selection_sort_java.gif" alt="Selection Sort Java" /><figcaption>Selection Sort Java</figcaption>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/selection_sort_java.gif" alt="Selection Sort Java" /><figcaption aria-hidden="true">Selection Sort Java</figcaption>
 </figure>
 <blockquote>
 <p>from zyBooks.com</p>
 </blockquote>
-<p>Selection sort may require a large number of comparisons. The selection sort algorithm runtime is <span class="math inline">\(O(N^{2})\)</span>. If a list has N elements, the outer loop executes <span class="math inline">\(N - 1\)</span> times. For each of those <span class="math inline">\(N - 1\)</span> outer loop executions, the inner loop executes an average of <span class="math inline">\(\frac{N}{2}\)</span> times. So the total number of comparisons is proportional to <span class="math inline">\((N - 1) \cdot \frac{N}{2}\)</span>, or <span class="math inline">\(O(N^{2})\)</span>. Other sorting algorithms involve more complex algorithms but have faster execution times.</p>
+<p>Selection sort may require a large number of comparisons. The selection sort algorithm runtime is <span class="math inline">O(N^{2})</span>. If a list has N elements, the outer loop executes <span class="math inline">N - 1</span> times. For each of those <span class="math inline">N - 1</span> outer loop executions, the inner loop executes an average of <span class="math inline">\frac{N}{2}</span> times. So the total number of comparisons is proportional to <span class="math inline">(N - 1) \cdot \frac{N}{2}</span>, or <span class="math inline">O(N^{2})</span>. Other sorting algorithms involve more complex algorithms but have faster execution times.</p>
 <h3 id="selection-sort-runtime">Selection sort runtime</h3>
 <p><strong>Q: When sorting a list with 50 elements, indexSmallest will be assigned to a minimum of _____ times.</strong></p>
 <p>A: 49</p>
 <p>The outer loop always assigns to indexSmallest at the beginning of each iteration. The inner loop never assigns to indexSmallest if the list is already sorted. A list of 50 elements causes 49 outer loop iterations, and thus a minimum of 49 assignments to indexSmallest.</p>
 <p><strong>Q: How many times longer will sorting a list of 20 elements take compared to sorting a list of 10 elements?</strong></p>
-<p>A: <span class="math inline">\(20^{2} / 10^{2} = 400 / 100 = \boldsymbol{4}\)</span></p>
+<p>A: <span class="math inline">20^{2} / 10^{2} = 400 / 100 = \boldsymbol{4}</span></p>
 <p>A list with twice as many elements requires 4 times as many comparisons.</p>
 <p><strong>Q: How many times longer will sorting a list of 500 elements take compared to a list of 50 elements?</strong></p>
 <p>A: 100</p>
-<p><span class="math inline">\(500^{2} / 50^{2} = 250000 / 2500 = 100\)</span>. Selection sort’s runtime grows quadratically with the input size. If the input increases in size by <span class="math inline">\(X\)</span> times, the runtime increases <span class="math inline">\(X^{2}\)</span> times.</p>
+<p><span class="math inline">500^{2} / 50^{2} = 250000 / 2500 = 100</span>. Selection sort’s runtime grows quadratically with the input size. If the input increases in size by <span class="math inline">X</span> times, the runtime increases <span class="math inline">X^{2}</span> times.</p>
 <h2 id="insertion-sort">Insertion Sort</h2>
 <p><a name="insertion-sort-term"><strong>Insertion sort</strong></a></p>
 <ul>
@@ -149,24 +176,24 @@
 <p>17.7.1: Insertion sort.</p>
 </blockquote>
 <figure>
-<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/insertion_sort_java.gif" alt="Insertion Sort Java" /><figcaption>Insertion Sort Java</figcaption>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/insertion_sort_java.gif" alt="Insertion Sort Java" /><figcaption aria-hidden="true">Insertion Sort Java</figcaption>
 </figure>
 <blockquote>
 <p>from zyBooks.com</p>
 </blockquote>
-<p>Insertion sort’s typical runtime is <span class="math inline">\(O(N^{2})\)</span>. If a list has <span class="math inline">\(N\)</span> elements, the outer loop executes <span class="math inline">\(N - 1\)</span> times. For each outer loop execution, the inner loop may need to examine all elements in the sorted part. Thus, the inner loop executes on average <span class="math inline">\(\frac{N}{2}\)</span> times. So the total number of comparisons is proportional to <span class="math inline">\((N - 1) \cdot (\frac{N}{2})\)</span>, or <span class="math inline">\(O(N^{2})\)</span>. Other sorting algorithms involve more complex algorithms but faster execution.</p>
+<p>Insertion sort’s typical runtime is <span class="math inline">O(N^{2})</span>. If a list has <span class="math inline">N</span> elements, the outer loop executes <span class="math inline">N - 1</span> times. For each outer loop execution, the inner loop may need to examine all elements in the sorted part. Thus, the inner loop executes on average <span class="math inline">\frac{N}{2}</span> times. So the total number of comparisons is proportional to <span class="math inline">(N - 1) \cdot (\frac{N}{2})</span>, or <span class="math inline">O(N^{2})</span>. Other sorting algorithms involve more complex algorithms but faster execution.</p>
 <h3 id="insertion-sort-runtime">Insertion Sort Runtime</h3>
 <p><strong>Q: In the worst case, assuming each comparison takes 1 µs, how long will insertion sort algorithm take to sort a list of 10 elements?</strong></p>
-<p>A: <span class="math inline">\((1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9) \cdot 1 \mu s = \boldsymbol{45 \mu s}\)</span></p>
+<p>A: <span class="math inline">(1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9) \cdot 1 \mu s = \boldsymbol{45 \mu s}</span></p>
 <p><strong>Q: Using the Big O runtime complexity, how many times longer will sorting a list of 20 elements take compared to sorting a list of 10 elements?</strong></p>
-<p>A: <span class="math inline">\(20^{2} / 10^{2} = 400 /100 = \boldsymbol{4}\)</span></p>
-<p>For sorted or nearly sorted inputs, insertion sort’s runtime is <span class="math inline">\(O(N)\)</span>. A <strong>nearly sorted</strong> list only contains a few elements not in sorted order. Ex: {4, 5, 17, 25, 89, 14} is nearly sorted having only one element not in sorted position.</p>
-<p>For each outer loop execution, if the element is already in sorted position, only a single comparison is made. Each element not in sorted position requires at most N comparisons. If there are a constant number, C, of unsorted elements, sorting the N - C sorted elements requires one comparison each, and sorting the C unsorted elements requires at most N comparisons each. The runtime for nearly sorted inputs is <span class="math inline">\(O((N - C) * 1 + C * N) = \boldsymbol{O(N)}\)</span></p>
+<p>A: <span class="math inline">20^{2} / 10^{2} = 400 /100 = \boldsymbol{4}</span></p>
+<p>For sorted or nearly sorted inputs, insertion sort’s runtime is <span class="math inline">O(N)</span>. A <strong>nearly sorted</strong> list only contains a few elements not in sorted order. Ex: {4, 5, 17, 25, 89, 14} is nearly sorted having only one element not in sorted position.</p>
+<p>For each outer loop execution, if the element is already in sorted position, only a single comparison is made. Each element not in sorted position requires at most N comparisons. If there are a constant number, C, of unsorted elements, sorting the N - C sorted elements requires one comparison each, and sorting the C unsorted elements requires at most N comparisons each. The runtime for nearly sorted inputs is <span class="math inline">O((N - C) * 1 + C * N) = \boldsymbol{O(N)}</span></p>
 <blockquote>
 <p>17.7.5: Using insertion sort for nearly sorted list.</p>
 </blockquote>
 <figure>
-<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/insertion_sort_nearly_sorted.gif" alt="Insertion Sort Nearly Sorted" /><figcaption>Insertion Sort Nearly Sorted</figcaption>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/insertion_sort_nearly_sorted.gif" alt="Insertion Sort Nearly Sorted" /><figcaption aria-hidden="true">Insertion Sort Nearly Sorted</figcaption>
 </figure>
 <h2 id="quicksort">Quicksort</h2>
 <p><a name="quicksort-term"><strong>Quicksort</strong></a></p>
@@ -176,15 +203,15 @@
 </ul>
 <p>17.8.1: Quicksort partitions data into a low part with data less than/equal to a pivot value and a high part with data greater than/equal to a pivot value</p>
 <figure>
-<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/quicksort_partition_java.gif" alt="Quicksort Partitions Java" /><figcaption>Quicksort Partitions Java</figcaption>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/quicksort_partition_java.gif" alt="Quicksort Partitions Java" /><figcaption aria-hidden="true">Quicksort Partitions Java</figcaption>
 </figure>
 <blockquote>
 <p>from zyBooks.com</p>
 </blockquote>
 <p>To partition the input, the quicksort algorithm divides the array into two parts, referred to as the low partition and the high partition. All values in the low partition are less than or equal to the pivot value. All values in the high partition are greater than or equal to the pivot value. The values in each partition are not necessarily sorted. Ex: Partitioning {4 34 10 25 1} with a pivot value of 10 results in a low partition of {4 10 1} and a high partition of {34 25}. Values equal to the pivot may appear in either or both of the 9partitions.</p>
-<p>The quicksort algorithm’s runtime is typically <span class="math inline">\(O(N \log N)\)</span>. Quicksort has several partitioning levels , the first level dividing the input into 2 parts, the second into 4 parts, the third into 8 parts, etc. At each level, the algorithm does at most <span class="math inline">\(N\)</span> comparisons moving the <code>l</code> and <code>h</code> indices. If the pivot yields two equal-sized parts, then there will be <span class="math inline">\(\log N\)</span> levels, requiring the <span class="math inline">\(N \cdot \log N\)</span> comparisons.</p>
+<p>The quicksort algorithm’s runtime is typically <span class="math inline">O(N \log N)</span>. Quicksort has several partitioning levels , the first level dividing the input into 2 parts, the second into 4 parts, the third into 8 parts, etc. At each level, the algorithm does at most <span class="math inline">N</span> comparisons moving the <code>l</code> and <code>h</code> indices. If the pivot yields two equal-sized parts, then there will be <span class="math inline">\log N</span> levels, requiring the <span class="math inline">N \cdot \log N</span> comparisons.</p>
 <figure>
-<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/quicksort_java.gif" alt="Quicksort Java" /><figcaption>Quicksort Java</figcaption>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/quicksort_java.gif" alt="Quicksort Java" /><figcaption aria-hidden="true">Quicksort Java</figcaption>
 </figure>
 <h3 id="quicksort-runtime">Quicksort runtime</h3>
 <blockquote>
@@ -197,11 +224,11 @@
 3rd: {a} {b} {c} {d} {e} {f} {g} {h}</code></pre>
 <p><strong>Q: How many partitioning “levels” are required for a list of 1024 elements?</strong></p>
 <p>A: 10</p>
-<p><span class="math inline">\(\log_{2} 1024 = 10\)</span>. Assuming equal-size partitions, for <span class="math inline">\(N\)</span> elements, the number of levels is <span class="math inline">\(\log_{2} N\)</span>.</p>
+<p><span class="math inline">\log_{2} 1024 = 10</span>. Assuming equal-size partitions, for <span class="math inline">N</span> elements, the number of levels is <span class="math inline">\log_{2} N</span>.</p>
 <p><strong>Q: How many total comparisons are required to sort a list of 1024 elements?</strong></p>
 <p>A: 10240</p>
-<p><span class="math inline">\(\log_{2} 1024 \cdot 1024 = 10 \cdot 1024 = 10240\)</span> comparisons. There will be <span class="math inline">\(\log_{2} N\)</span> partitioning levels, and each level requires <span class="math inline">\(N\)</span> comparisons.</p>
-<p>For typical unsorted data, such equal partitioning occurs. However, partitioning may yield unequal sized part in some cases. If the pivot selected for partitioning is the smallest or largest element, one partition will have just 1 element, and the other partition will have all other elements. If this unequal partitioning happens at every level, there will be <span class="math inline">\(N - 1\)</span> levels, yielding <span class="math inline">\((N - 1) \cdot N\)</span>, which is <span class="math inline">\(O(N^{2})\)</span>. So the worst case runtime for the quicksort algorithm is <span class="math inline">\(O(N^{2})\)</span>. Fortunately, this worst case runtime rarely occurs.</p>
+<p><span class="math inline">\log_{2} 1024 \cdot 1024 = 10 \cdot 1024 = 10240</span> comparisons. There will be <span class="math inline">\log_{2} N</span> partitioning levels, and each level requires <span class="math inline">N</span> comparisons.</p>
+<p>For typical unsorted data, such equal partitioning occurs. However, partitioning may yield unequal sized part in some cases. If the pivot selected for partitioning is the smallest or largest element, one partition will have just 1 element, and the other partition will have all other elements. If this unequal partitioning happens at every level, there will be <span class="math inline">N - 1</span> levels, yielding <span class="math inline">(N - 1) \cdot N</span>, which is <span class="math inline">O(N^{2})</span>. So the worst case runtime for the quicksort algorithm is <span class="math inline">O(N^{2})</span>. Fortunately, this worst case runtime rarely occurs.</p>
 <h3 id="worst-case-quicksort-runtime">Worst Case Quicksort Runtime</h3>
 <blockquote>
 <p>Assume quicksort always chooses the smallest element as the pivot.</p>
@@ -217,10 +244,10 @@
 4th: {a} {b} {c} {d} {e}</code></pre>
 <p><strong>Q: How many partitioning “levels” are required for a list of 1024 elements?</strong></p>
 <p>A: 1023</p>
-<p>In the worst case, for <span class="math inline">\(N\)</span> elements, there will be <span class="math inline">\(N - 1\)</span> levels.</p>
+<p>In the worst case, for <span class="math inline">N</span> elements, there will be <span class="math inline">N - 1</span> levels.</p>
 <p><strong>Q: How many total comparisons are required to sort a list of 1024 elements?</strong></p>
 <p>A: 1047552</p>
-<p><span class="math inline">\((1024 - 1) \cdot 1024 = 1023 \cdot 1024 = 1047552\)</span> comparisons.</p>
+<p><span class="math inline">(1024 - 1) \cdot 1024 = 1023 \cdot 1024 = 1047552</span> comparisons.</p>
 <h2 id="merge-sort">Merge Sort</h2>
 <p><a name="merge-sort-term"><strong>Merge sort</strong></a></p>
 <ul>
@@ -230,7 +257,7 @@
 <p>17.9.1: Merge sort recursively divides the input into two halves, sorts each half, and merges the lists together.</p>
 </blockquote>
 <figure>
-<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/merge_sort.gif" alt="Merge Sort" /><figcaption>Merge Sort</figcaption>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/merge_sort.gif" alt="Merge Sort" /><figcaption aria-hidden="true">Merge Sort</figcaption>
 </figure>
 <blockquote>
 <p>from zyBooks.com</p>
@@ -240,13 +267,13 @@
 <p>17.9.3: Merging partitions: Smallest element from left or right partition is added one at a time to a temporary merged list. Once merged, temporary list is copied back to the original list.</p>
 </blockquote>
 <figure>
-<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/merge_sort_java.gif" alt="Merge Sort Java" /><figcaption>Merge Sort Java</figcaption>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/sorting-algorithms/merge_sort_java.gif" alt="Merge Sort Java" /><figcaption aria-hidden="true">Merge Sort Java</figcaption>
 </figure>
 <blockquote>
 <p>from zyBooks.com</p>
 </blockquote>
-<p>The merge sort algorithm’s runtime is <span class="math inline">\(O(N \log N)\)</span>. Merge sort divides the input in half until a list of 1 element is reached, which requires <span class="math inline">\(log N\)</span> partitioning levels. At each level, the algorithm does about <span class="math inline">\(N\)</span> comparisons selecting and copying elements from the left and right partitions, yielding <span class="math inline">\(N \cdot \log N\)</span> comparisons.</p>
-<p>Merge sort requires <span class="math inline">\(O(N)\)</span> additional memory elements for the temporary array of merged elements. For the final merge operation, the temporary list has the same number of elements as the input. Some sorting algorithms sort the list elements in place and require no additional memory, but are more complex to write and understand.</p>
+<p>The merge sort algorithm’s runtime is <span class="math inline">O(N \log N)</span>. Merge sort divides the input in half until a list of 1 element is reached, which requires <span class="math inline">log N</span> partitioning levels. At each level, the algorithm does about <span class="math inline">N</span> comparisons selecting and copying elements from the left and right partitions, yielding <span class="math inline">N \cdot \log N</span> comparisons.</p>
+<p>Merge sort requires <span class="math inline">O(N)</span> additional memory elements for the temporary array of merged elements. For the final merge operation, the temporary list has the same number of elements as the input. Some sorting algorithms sort the list elements in place and require no additional memory, but are more complex to write and understand.</p>
 <h3 id="merge-sort-runtime-and-memory-complexity.">Merge sort runtime and memory complexity.</h3>
 <p><strong>Q: How many recursive partitioning levels are required for a list of 8 elements?</strong></p>
 <p>A: 3</p>
@@ -257,7 +284,7 @@
 For $N$ elements, the number of levels is $log N$. $log 8 = 3$.</code></pre>
 <p><strong>Q: How many recursive partitioning levels are required for a list of 2048 elements?</strong></p>
 <p>A: 11</p>
-<p><span class="math inline">\(\log_{2} 2048 = 11\)</span></p>
+<p><span class="math inline">\log_{2} 2048 = 11</span></p>
 <p><strong>Q: How many elements will the temporary merge list have for merging two partitions with 250 elements each?</strong></p>
 <p>A: 500</p>
 <p>The temporary list must be large enough to merge all elements from the two partitions.</p>

@@ -11,6 +11,13 @@
 
     <title>Chapter 4 Indeterminate Forms and l’Hopital’s Rule</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,13 +88,16 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-4-indeterminate-forms-and-lhopitals-rule">Chapter 4: Indeterminate Forms and l’Hopital’s Rule</a><ul>
-          <li><a href="#indeterminate-forms-and-lhopitals-rule">Indeterminate Forms and l’Hopital’s Rule</a><ul>
+          <li><a href="#chapter-4-indeterminate-forms-and-lhopitals-rule">Chapter 4: Indeterminate Forms and l’Hopital’s Rule</a>
+          <ul>
+          <li><a href="#indeterminate-forms-and-lhopitals-rule">Indeterminate Forms and l’Hopital’s Rule</a>
+          <ul>
           <li><a href="#definition-1">Definition 1</a></li>
           <li><a href="#definition-2">Definition 2</a></li>
           <li><a href="#lhopitals-rule">L’Hopital’s Rule</a></li>
           </ul></li>
-          <li><a href="#indeterminate-products">Indeterminate Products</a><ul>
+          <li><a href="#indeterminate-products">Indeterminate Products</a>
+          <ul>
           <li><a href="#lhopital">L’Hopital</a></li>
           </ul></li>
           <li><a href="#indeterminate-differences">Indeterminate Differences</a></li>
@@ -111,142 +136,142 @@
 <h1 id="chapter-4-indeterminate-forms-and-lhopitals-rule">Chapter 4: Indeterminate Forms and l’Hopital’s Rule</h1>
 <h2 id="indeterminate-forms-and-lhopitals-rule">Indeterminate Forms and l’Hopital’s Rule</h2>
 <p>Suppose we are trying to analyze the behavior of the function</p>
-<p><span class="math display">\[
+<p><span class="math display">
 F(x) = \frac{\ln{x}}{x - 1}
-\]</span></p>
-<p>Although <span class="math inline">\(F\)</span> is not defined when <span class="math inline">\(x = 1\)</span>, we need to know how <span class="math inline">\(F\)</span> behaves near <span class="math inline">\(1\)</span>. In particular, we would like to know the value of the limit</p>
+</span></p>
+<p>Although <span class="math inline">F</span> is not defined when <span class="math inline">x = 1</span>, we need to know how <span class="math inline">F</span> behaves near <span class="math inline">1</span>. In particular, we would like to know the value of the limit</p>
 <h3 id="definition-1">Definition 1</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 \lim_{x \to 1}\frac{\ln{x}}{x - 1}
-\]</span></p>
+</span></p>
 <p>In computing this limit we can’t apply Law 5 of limits (the limit of a quotient is the quotient of the limits, see Section 2.3) because the limit of the denominator is. In fact, although the limit in (1) exists, its value is not obvious because both numerator and denominator approach and is not defined.</p>
 <p>In general, if we have a limit of the form</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \lim_{x \to a}\frac{f(x)}{g(x)}
-\]</span></p>
-<p>where both <span class="math inline">\(f(x) \to 0\)</span> and <span class="math inline">\(g(x) \to 0\)</span> as <span class="math inline">\(x \to a\)</span>, then this limit may or may not exist and is called an <strong>indeterminate form of type</strong> <span class="math inline">\(\frac{0}{0}\)</span>. We met some limits of this type in Chapter 2. For rational functions, we can cancel common factors:</p>
-<p><span class="math display">\[
+</span></p>
+<p>where both <span class="math inline">f(x) \to 0</span> and <span class="math inline">g(x) \to 0</span> as <span class="math inline">x \to a</span>, then this limit may or may not exist and is called an <strong>indeterminate form of type</strong> <span class="math inline">\frac{0}{0}</span>. We met some limits of this type in Chapter 2. For rational functions, we can cancel common factors:</p>
+<p><span class="math display">
 \lim_{x \to 1}\frac{x^{2} - x}{x^{2} - 1} = \lim_{x \to 1}\frac{x(x - 1)}{(x + 1)(x - 1)} = \lim_{x \to 1}\frac{x}{x + 1} = \frac{1}{2}
-\]</span></p>
+</span></p>
 <p>We used a geometric argument to show that</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \lim_{x \to 0}\frac{\sin{x}}{x} = 1
-\]</span></p>
+</span></p>
 <p>But these methods do not work for limits such as (1), so in this section we introduce a systematic method, known as <em>l’Hopital’s Rule</em>, for the evaluation of indeterminate forms.</p>
-<p>Another situation in which a limit is not obvious occurs when we look for a horizontal asymptote <span class="math inline">\(F\)</span> of and need to evaluate the limit</p>
+<p>Another situation in which a limit is not obvious occurs when we look for a horizontal asymptote <span class="math inline">F</span> of and need to evaluate the limit</p>
 <h3 id="definition-2">Definition 2</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 \lim_{x \to \infty}\frac{\ln{x}}{x - 1}
-\]</span></p>
-<p>It isn’t obvious how to evaluate this limit because both numerator and denominator become large as <span class="math inline">\(x \to \infty\)</span>. There is a struggle between numerator and denominator. If the numerator wins, the limit will be <span class="math inline">\(\infty\)</span> (the numerator was increasing significantly faster than the denominator); if the denominator wins, the answer will be. Or there may be some compromise, in which case the answer will be some finite positive number.</p>
+</span></p>
+<p>It isn’t obvious how to evaluate this limit because both numerator and denominator become large as <span class="math inline">x \to \infty</span>. There is a struggle between numerator and denominator. If the numerator wins, the limit will be <span class="math inline">\infty</span> (the numerator was increasing significantly faster than the denominator); if the denominator wins, the answer will be. Or there may be some compromise, in which case the answer will be some finite positive number.</p>
 <p>In general, if we have a limit of the form</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \lim_{x \to a}\frac{f(x)}{g(x)}
-\]</span></p>
-<p>where both <span class="math inline">\(f(x) \to \infty\)</span> (or <span class="math inline">\(-\infty\)</span>) and <span class="math inline">\(g(x) \to \infty\)</span> (or <span class="math inline">\(-\infty\)</span>), then the limit may or may not exist and is called an <strong>indeterminate form of type</strong> <span class="math inline">\(\infty/\infty\)</span>. We saw in Section 2.6 that this type of limit can be evaluated for certain functions, including rational functions, by dividing numerator and denominator by the highest power of that occurs in the denominator. For instance,</p>
-<p><span class="math display">\[
+</span></p>
+<p>where both <span class="math inline">f(x) \to \infty</span> (or <span class="math inline">-\infty</span>) and <span class="math inline">g(x) \to \infty</span> (or <span class="math inline">-\infty</span>), then the limit may or may not exist and is called an <strong>indeterminate form of type</strong> <span class="math inline">\infty/\infty</span>. We saw in Section 2.6 that this type of limit can be evaluated for certain functions, including rational functions, by dividing numerator and denominator by the highest power of that occurs in the denominator. For instance,</p>
+<p><span class="math display">
 \lim_{x \to \infty}\frac{x^{2} - 1}{2x^{2} + 1} = \lim_{x \to \infty}\frac{1 - \frac{1}{x^{2}}}{2 + \frac{1}{x^{2}}} = \frac{1 - 0}{2 + 0} = \frac{1}{2}
-\]</span></p>
+</span></p>
 <p>This method does not work for limits such as (2), but l’Hospital’s Rule also applies to this type of indeterminate form.</p>
 <h3 id="lhopitals-rule">L’Hopital’s Rule</h3>
-<p>Suppose <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are differentiable and <span class="math inline">\(g^{\prime}(x) \neq 0\)</span> on an open interval <span class="math inline">\(I\)</span> that contains <span class="math inline">\(a\)</span> (except possibly at <span class="math inline">\(a\)</span>). Suppose that</p>
-<p><span class="math display">\[
+<p>Suppose <span class="math inline">f</span> and <span class="math inline">g</span> are differentiable and <span class="math inline">g^{\prime}(x) \neq 0</span> on an open interval <span class="math inline">I</span> that contains <span class="math inline">a</span> (except possibly at <span class="math inline">a</span>). Suppose that</p>
+<p><span class="math display">
 \lim_{x \to a}f(x) = 0
-\]</span></p>
+</span></p>
 <p>and</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \lim_{x \to a}g(x) = 0
-\]</span></p>
+</span></p>
 <p>or that</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \lim_{x \to a}f(x) = \pm \infty
-\]</span></p>
+</span></p>
 <p>and</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \lim_{x \to a}g(x) = \pm \infty
-\]</span></p>
-<p>(In other words, we have an indeterminate form of type <span class="math inline">\(\frac{0}{0}\)</span> or <span class="math inline">\(\infty/\infty\)</span>.) Then</p>
-<p><span class="math display">\[
+</span></p>
+<p>(In other words, we have an indeterminate form of type <span class="math inline">\frac{0}{0}</span> or <span class="math inline">\infty/\infty</span>.) Then</p>
+<p><span class="math display">
 \lim_{x \to a}\frac{f(x)}{g(x)} = \lim_{x \to a}\frac{f^{\prime}(x)}{g^{\prime}(x)}
-\]</span></p>
-<p>if the limit on the right side exists (or is <span class="math inline">\(\infty\)</span> or <span class="math inline">\(-\infty\)</span>).</p>
+</span></p>
+<p>if the limit on the right side exists (or is <span class="math inline">\infty</span> or <span class="math inline">-\infty</span>).</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_figure-1.png" alt="Figure 1" /><figcaption>Figure 1</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_figure-1.png" alt="Figure 1" /><figcaption aria-hidden="true">Figure 1</figcaption>
 </figure>
 <blockquote>
-<p><strong>Note 1</strong> L’Hopital’s Rule says that the limit of a quotient of functions is equal to the limit of the quotient of their derivatives, provided that the given conditions are satisfied. It is especially important to verify the conditions regarding the limits of <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> before using l’Hopital’s Rule.</p>
+<p><strong>Note 1</strong> L’Hopital’s Rule says that the limit of a quotient of functions is equal to the limit of the quotient of their derivatives, provided that the given conditions are satisfied. It is especially important to verify the conditions regarding the limits of <span class="math inline">f</span> and <span class="math inline">g</span> before using l’Hopital’s Rule.</p>
 </blockquote>
 <blockquote>
-<p><strong>Note 2</strong> L’Hopital’s Rule is also valid for one-sided limits and for limits at infinity or negative infinity; that is, “<span class="math inline">\(x \to a\)</span>” can be replaced by any of the symbols <span class="math inline">\(x \to a^{+}\)</span>, <span class="math inline">\(x \to a^{-}\)</span>, <span class="math inline">\(x \to \infty\)</span>, or <span class="math inline">\(x \to -\infty\)</span>.</p>
+<p><strong>Note 2</strong> L’Hopital’s Rule is also valid for one-sided limits and for limits at infinity or negative infinity; that is, “<span class="math inline">x \to a</span>” can be replaced by any of the symbols <span class="math inline">x \to a^{+}</span>, <span class="math inline">x \to a^{-}</span>, <span class="math inline">x \to \infty</span>, or <span class="math inline">x \to -\infty</span>.</p>
 </blockquote>
 <blockquote>
-<p><strong>Note 3</strong> For the special case in which <span class="math inline">\(f(a) = g(a) = 0\)</span>, <span class="math inline">\(f^{\prime}\)</span> and <span class="math inline">\(g^{\prime}\)</span> are continuous, and <span class="math inline">\(g^{\prime}(a) \neq 0\)</span>, it is easy to see why l’hopital’s Rule is true. In fact, using the alternative form of the definition of a derivative, we have</p>
+<p><strong>Note 3</strong> For the special case in which <span class="math inline">f(a) = g(a) = 0</span>, <span class="math inline">f^{\prime}</span> and <span class="math inline">g^{\prime}</span> are continuous, and <span class="math inline">g^{\prime}(a) \neq 0</span>, it is easy to see why l’hopital’s Rule is true. In fact, using the alternative form of the definition of a derivative, we have</p>
 </blockquote>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 \lim_{x \to a}\frac{f^{\prime}(x)}{g^{\prime}(x)} &amp;= \frac{f^{\prime}(a)}{g^{\prime}(a)} = \frac{\lim_{x \to a}\frac{f(x) - f(a)}{x - a}}{\lim_{x \to a}\frac{g(x) - g(a)}{x - a}} = \lim_{x \to a}\frac{\frac{f(x) - f(a)}{x - a}}{\frac{g(x) - g(a)}{x - a}} \\
                                                   &amp;= \lim_{x \to a}\frac{f(x) - f(a)}{g(x) - g(a)} = \lim_{x \to a}\frac{f(x)}{g(x)} \;\;\;\;\; {\color{#ff0000}{[\text{ since } f(a) = g(a) = 0}]} \end{aligned}
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-1.png" alt="Example 1" /><figcaption>Example 1</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-1.png" alt="Example 1" /><figcaption aria-hidden="true">Example 1</figcaption>
 </figure>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-2.1.png" alt="Example 2.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-2.2.png" alt="Example 2.2" /></p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-3.1.png" alt="Example 3.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-3.2.png" alt="Example 3.2" /></p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-4.1.png" alt="Example 4.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-4.2.png" alt="Example 4.2" /></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-5.png" alt="Example 5" /><figcaption>Example 5</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-5.png" alt="Example 5" /><figcaption aria-hidden="true">Example 5</figcaption>
 </figure>
 <h2 id="indeterminate-products">Indeterminate Products</h2>
-<p>If <span class="math inline">\(\lim_{x \to a}f(x) = 0\)</span> and <span class="math inline">\(\lim_{x \to a}g(x) = \infty\)</span> (or <span class="math inline">\(-\infty\)</span>), then it isn’t clear what the value of <span class="math inline">\(\lim_{x \to a}[f(x)g(x)]\)</span>, if any, will be. There is a struggle between <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span>. If <span class="math inline">\(f\)</span> wins, the answer will be <span class="math inline">\(0\)</span>; if <span class="math inline">\(g\)</span> wins, the answer will be <span class="math inline">\(\infty\)</span> (or <span class="math inline">\(-\infty\)</span>). Or there may be a compromise where the answer is a finite nonzero number. This kind of limit is called an <strong>indeterminate form of type</strong> $0 $ We can deal with it by writing the product <span class="math inline">\(fg\)</span> as a quotient:</p>
-<p><span class="math display">\[
+<p>If <span class="math inline">\lim_{x \to a}f(x) = 0</span> and <span class="math inline">\lim_{x \to a}g(x) = \infty</span> (or <span class="math inline">-\infty</span>), then it isn’t clear what the value of <span class="math inline">\lim_{x \to a}[f(x)g(x)]</span>, if any, will be. There is a struggle between <span class="math inline">f</span> and <span class="math inline">g</span>. If <span class="math inline">f</span> wins, the answer will be <span class="math inline">0</span>; if <span class="math inline">g</span> wins, the answer will be <span class="math inline">\infty</span> (or <span class="math inline">-\infty</span>). Or there may be a compromise where the answer is a finite nonzero number. This kind of limit is called an <strong>indeterminate form of type</strong> $0 $ We can deal with it by writing the product <span class="math inline">fg</span> as a quotient:</p>
+<p><span class="math display">
 fg = \frac{f}{1/g}
-\]</span></p>
+</span></p>
 <p>or</p>
-<p><span class="math display">\[
+<p><span class="math display">
 fg = \frac{g}{1/f}
-\]</span></p>
-<p>This converts the given limit into an indeterminate form of type <span class="math inline">\(\frac{0}{0}\)</span> or <span class="math inline">\(\infty/\infty\)</span> so that we can use l’hopital’s Rule.</p>
+</span></p>
+<p>This converts the given limit into an indeterminate form of type <span class="math inline">\frac{0}{0}</span> or <span class="math inline">\infty/\infty</span> so that we can use l’hopital’s Rule.</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-6.png" alt="Example 6" /><figcaption>Example 6</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-6.png" alt="Example 6" /><figcaption aria-hidden="true">Example 6</figcaption>
 </figure>
 <h3 id="lhopital">L’Hopital</h3>
 <p>L’Hopital’s Rule is named after a French nobleman, the Marquis de l’hopital (1661–1704), but was discovered by a Swiss mathematician, John Bernoulli (1667–1748). You might sometimes see l’hopital spelled as l’Hôpital, but he spelled his own name l’hopital, as was common in the 17th century. See Exercise 83 for the example that the Marquis used to illustrate his rule. See the project for further historical details.</p>
 <h2 id="indeterminate-differences">Indeterminate Differences</h2>
-<p>If <span class="math inline">\(\lim_{x \to a}f(x) = \infty\)</span> and <span class="math inline">\(\lim_{x \to a}g(x) = \infty\)</span>, then the limit</p>
-<p><span class="math display">\[
+<p>If <span class="math inline">\lim_{x \to a}f(x) = \infty</span> and <span class="math inline">\lim_{x \to a}g(x) = \infty</span>, then the limit</p>
+<p><span class="math display">
 \lim_{x \to a}[f(x) - g(x)]
-\]</span></p>
-<p>is called an <strong>indeterminate form of type</strong> <span class="math inline">\(\infty - \infty\)</span>. Again there is a contest between <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span>. Will the answer be <span class="math inline">\(\infty\)</span> (<span class="math inline">\(f\)</span> wins) or will it be <span class="math inline">\(-\infty\)</span> (<span class="math inline">\(g\)</span> wins) or will they compromise on a finite number? To find out, we try to convert the difference into a quotient (for instance, by using a common denominator, or rationalization, or factoring out a common factor) so that we have an indeterminate form of type <span class="math inline">\(\frac{0}{0}\)</span> or <span class="math inline">\(\infty/\infty\)</span>.</p>
+</span></p>
+<p>is called an <strong>indeterminate form of type</strong> <span class="math inline">\infty - \infty</span>. Again there is a contest between <span class="math inline">f</span> and <span class="math inline">g</span>. Will the answer be <span class="math inline">\infty</span> (<span class="math inline">f</span> wins) or will it be <span class="math inline">-\infty</span> (<span class="math inline">g</span> wins) or will they compromise on a finite number? To find out, we try to convert the difference into a quotient (for instance, by using a common denominator, or rationalization, or factoring out a common factor) so that we have an indeterminate form of type <span class="math inline">\frac{0}{0}</span> or <span class="math inline">\infty/\infty</span>.</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-7.png" alt="Example 7" /><figcaption>Example 7</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-7.png" alt="Example 7" /><figcaption aria-hidden="true">Example 7</figcaption>
 </figure>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-8.png" alt="Example 8" /><figcaption>Example 8</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-8.png" alt="Example 8" /><figcaption aria-hidden="true">Example 8</figcaption>
 </figure>
 <h2 id="indeterminate-powers">Indeterminate Powers</h2>
 <p>Several indeterminate forms arise from the limit</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \lim_{x \to a} = [f(x)]^{g(x)}
-\]</span></p>
+</span></p>
 <ol type="1">
-<li><span class="math inline">\(\lim_{x \to a}f(x) = 0 \;\;\;\;\; \text{ and } \;\;\;\;\;\; \lim_{x \to a}g(x) = 0 \;\;\;\;\; \text{ type } 0^{0}\)</span></li>
-<li><span class="math inline">\(\lim_{x \to a}f(x) = \infty \;\;\;\;\; \text{ and } \;\;\;\;\; \lim_{x \to a}g(x) = 0 \;\;\;\;\; \text{ type } \infty^{0}\)</span></li>
-<li><span class="math inline">\(\lim_{x \to a}f(x) = 1 \;\;\;\;\; \text{ and } \;\;\;\;\; \lim_{x \to a}g(x) = \pm \infty \;\;\;\;\; \text{ type } 1^{\infty}\)</span></li>
+<li><span class="math inline">\lim_{x \to a}f(x) = 0 \;\;\;\;\; \text{ and } \;\;\;\;\;\; \lim_{x \to a}g(x) = 0 \;\;\;\;\; \text{ type } 0^{0}</span></li>
+<li><span class="math inline">\lim_{x \to a}f(x) = \infty \;\;\;\;\; \text{ and } \;\;\;\;\; \lim_{x \to a}g(x) = 0 \;\;\;\;\; \text{ type } \infty^{0}</span></li>
+<li><span class="math inline">\lim_{x \to a}f(x) = 1 \;\;\;\;\; \text{ and } \;\;\;\;\; \lim_{x \to a}g(x) = \pm \infty \;\;\;\;\; \text{ type } 1^{\infty}</span></li>
 </ol>
 <p>Each of these three cases can be treated either by taking the natural logarithm:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ let } y = [f(x)]^{g(x)}, \;\;\; \text{ then } \;\;\; \ln{y} = g(x)\ln{f(x)}
-\]</span></p>
+</span></p>
 <p>or by writing the function as an exponential:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 [f(x)]^{g(x)} = e^{g(x)\ln{f(x)}}
-\]</span></p>
-<p>(Recall that both of these methods were used in differentiating such functions.) In either method we are led to the indeterminate product <span class="math inline">\(g(x)\ln{f(x)}\)</span>, which is of type <span class="math inline">\(0 \cdot \infty\)</span>.</p>
+</span></p>
+<p>(Recall that both of these methods were used in differentiating such functions.) In either method we are led to the indeterminate product <span class="math inline">g(x)\ln{f(x)}</span>, which is of type <span class="math inline">0 \cdot \infty</span>.</p>
 <blockquote>
-<p><strong>Note</strong> Although forms of the type $0^{0}$, <span class="math inline">\(\infty^{0}\)</span>, <span class="math inline">\(1^{\infty}\)</span> and are indeterminate, the form <span class="math inline">\(0^{\infty}\)</span> is not indeterminate.</p>
+<p><strong>Note</strong> Although forms of the type $0^{0}$, <span class="math inline">\infty^{0}</span>, <span class="math inline">1^{\infty}</span> and are indeterminate, the form <span class="math inline">0^{\infty}</span> is not indeterminate.</p>
 </blockquote>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-9.png" alt="Example 9" /><figcaption>Example 9</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-9.png" alt="Example 9" /><figcaption aria-hidden="true">Example 9</figcaption>
 </figure>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-10.1.png" alt="Example 10.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.4_example-10.2.png" alt="Example 10.2" /></p>
 <h2 id="video-lectures">Video Lectures</h2>

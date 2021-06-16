@@ -11,6 +11,13 @@
 
     <title>leetcode-cli Plugins</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -22,26 +29,28 @@
     <link href="../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -50,9 +59,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -128,7 +137,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#plugins">Plugins</a><ul>
+          <li><a href="#plugins">Plugins</a>
+          <ul>
           <li><a href="#quick-start">Quick Start</a></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
@@ -159,25 +169,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <article class="contents">
 <h1 id="plugins">Plugins</h1>
 <h2 id="quick-start">Quick Start</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">leetcode</span> plugin -i <span class="op">&lt;</span>name<span class="op">&gt;</span>                          <span class="co"># install</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="ex">leetcode</span> plugin -d <span class="op">&lt;</span>name<span class="op">&gt;</span>                          <span class="co"># disable</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="ex">leetcode</span> plugin -e <span class="op">&lt;</span>name<span class="op">&gt;</span>                          <span class="co"># enable</span></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="ex">leetcode</span> plugin -D <span class="op">&lt;</span>name<span class="op">&gt;</span>                          <span class="co"># delete</span></a>
-<a class="sourceLine" id="cb1-5" title="5"></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="ex">leetcode</span> plugin -c <span class="op">&lt;</span>name<span class="op">&gt;</span>                          <span class="co"># show config</span></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="ex">leetcode</span> config plugins:<span class="op">&lt;</span>name<span class="op">&gt;</span>                     <span class="co"># show config</span></a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="ex">leetcode</span> config plugins:<span class="op">&lt;</span>name<span class="op">&gt;</span>:<span class="op">&lt;</span>key<span class="op">&gt;</span> <span class="op">&lt;</span>value<span class="op">&gt;</span>       <span class="co"># set config</span></a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="ex">leetcode</span> config -d plugins:<span class="op">&lt;</span>name<span class="op">&gt;</span>                  <span class="co"># delete config</span></a>
-<a class="sourceLine" id="cb1-10" title="10"></a>
-<a class="sourceLine" id="cb1-11" title="11"><span class="co"># Example</span></a>
-<a class="sourceLine" id="cb1-12" title="12"></a>
-<a class="sourceLine" id="cb1-13" title="13"><span class="ex">leetcode</span> plugin -i company                         <span class="co"># install compnay</span></a>
-<a class="sourceLine" id="cb1-14" title="14"><span class="ex">leetcode</span> plugin -D compnay                         <span class="co"># delete company</span></a>
-<a class="sourceLine" id="cb1-15" title="15"></a>
-<a class="sourceLine" id="cb1-16" title="16"><span class="ex">leetcode</span> plugin -c github                          <span class="co"># show github plugin config</span></a>
-<a class="sourceLine" id="cb1-17" title="17"><span class="ex">leetcode</span> config plugins:github                     <span class="co"># show github plugin config</span></a>
-<a class="sourceLine" id="cb1-18" title="18"><span class="ex">leetcode</span> config plugins:github:token 12345678      <span class="co"># set github plugin config</span></a>
-<a class="sourceLine" id="cb1-19" title="19"><span class="ex">leetcode</span> config -d plugins:github                  <span class="co"># delete github plugin config</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">leetcode</span> plugin <span class="at">-i</span> <span class="op">&lt;</span>name<span class="op">&gt;</span>                          # install</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">leetcode</span> plugin <span class="at">-d</span> <span class="op">&lt;</span>name<span class="op">&gt;</span>                          # disable</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">leetcode</span> plugin <span class="at">-e</span> <span class="op">&lt;</span>name<span class="op">&gt;</span>                          # enable</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">leetcode</span> plugin <span class="at">-D</span> <span class="op">&lt;</span>name<span class="op">&gt;</span>                          # delete</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">leetcode</span> plugin <span class="at">-c</span> <span class="op">&lt;</span>name<span class="op">&gt;</span>                          # show config</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">leetcode</span> config plugins:<span class="op">&lt;</span>name<span class="op">&gt;</span>                     # show config</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">leetcode</span> config plugins:<span class="op">&lt;</span>name<span class="op">&gt;</span>:<span class="op">&lt;</span>key<span class="op">&gt;</span> <span class="op">&lt;</span>value<span class="op">&gt;</span>       # set config</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ex">leetcode</span> config <span class="at">-d</span> plugins:<span class="op">&lt;</span>name<span class="op">&gt;</span>                  # delete config</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Example</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ex">leetcode</span> plugin <span class="at">-i</span> company                         <span class="co"># install compnay</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ex">leetcode</span> plugin <span class="at">-D</span> compnay                         <span class="co"># delete company</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ex">leetcode</span> plugin <span class="at">-c</span> github                          <span class="co"># show github plugin config</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ex">leetcode</span> config plugins:github                     <span class="co"># show github plugin config</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ex">leetcode</span> config plugins:github:token 12345678      <span class="co"># set github plugin config</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ex">leetcode</span> config <span class="at">-d</span> plugins:github                  <span class="co"># delete github plugin config</span></span></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://github.com/skygragon/leetcode-cli-plugins">📄 skygragon/leetcode-cli-plugins</a></li>

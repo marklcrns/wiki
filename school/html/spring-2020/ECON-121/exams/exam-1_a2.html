@@ -12,6 +12,13 @@
 
     <title>Exam 1 Attempt 1</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -22,7 +29,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -104,7 +126,7 @@
 <ol start="2" type="1">
 <li><p>A change in price causes movement along a demand curve and a change in <kbd>the quantity demanded</kbd>.</p></li>
 <li><p>Your savings account pays 8 percent per year: Each $100 in the bank grows to $108 over a one-year period. If prices increase by 8 percent per year, by keeping $100 in the bank for a year you actually gain $<kbd>0</kbd></p></li>
-<li>Demand is
+<li><p>Demand is</p>
 <ul>
 <li>elastic along the upper portion of a downward sloping linear demand curve,</li>
 <li>inelastic along the lower portion of a downward sloping linear demand curve, and</li>
@@ -112,7 +134,7 @@
 <li>perfectly inelastic for a vertical linear demand curve and</li>
 <li>perfectly elastic for a horizontal linear demand curve.</li>
 </ul></li>
-<li>A decrease in the supply of a product</li>
+<li><p>A decrease in the supply of a product</p></li>
 </ol>
 <ul>
 <li>increases the equilibrium price and</li>
@@ -228,7 +250,7 @@
 <p>*18. Meeting the Teenage Smoking Target. One of the stated objectives of the federal Tobacco Agreement of 1997 was to reduce teenage smoking by 60 percent. The price elasticity of demand for cigarettes by teenagers is 1.30. The price must increase by - 46 percent to achieve this target.</p>
 <ol start="19" type="1">
 <li><p>In 1990, the average income for an American worker was $1,518 per month. In 2000, the average income for an American worker was $2,632 per month. During this time period, a basket of necessities (food, housing, etc.) increased from $657 per month in 1990 to $1,402 per month in 2000. The real value of income - over that 10-year period.</p></li>
-<li>A change in a variable measured on an axis of a graph causes a
+<li><p>A change in a variable measured on an axis of a graph causes a</p>
 <ul>
 <li>movement along the curve, while a change in a relevant variable that is not measured on an axis causes a</li>
 <li>shift in the curve.</li>
@@ -299,7 +321,7 @@
 </ul></li>
 <li>A percentage change can be calculated as
 <ul>
-<li>D. <span class="math inline">\(\frac{\text{New Value - Initial Value}}{\text{Initial Value}} \times 100\)</span></li>
+<li>D. <span class="math inline">\frac{\text{New Value - Initial Value}}{\text{Initial Value}} \times 100</span></li>
 </ul></li>
 </ol>
 <p>*33. Should a Heart Surgeon Do Her Own Plumbing? A heart surgeon is skillful at unplugging arteries and rerouting the flow of blood, and these skills also make her a very skillful plumber. She can clear a clogged drain in 6 minutes, about 10 times faster than the most skillful plumber in town. Suppose the surgeon earns $20 per minute in heart surgery and the best plumber in town charges $75 per hour.</p>

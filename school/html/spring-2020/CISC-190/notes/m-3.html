@@ -12,6 +12,13 @@
 
     <title>CISC 190 Module 3 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -23,26 +30,28 @@
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -51,9 +60,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -85,7 +94,22 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
     </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -130,15 +154,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#module-3-loops-and-arrays">Module 3: Loops and Arrays</a><ul>
-          <li><a href="#chapter-3-introduction-to-programming">Chapter 3: Introduction to Programming</a><ul>
-          <li><a href="#working-with-media">3.6 Working With Media</a><ul>
+          <li><a href="#module-3-loops-and-arrays">Module 3: Loops and Arrays</a>
+          <ul>
+          <li><a href="#chapter-3-introduction-to-programming">Chapter 3: Introduction to Programming</a>
+          <ul>
+          <li><a href="#working-with-media">3.6 Working With Media</a>
+          <ul>
           <li><a href="#arrays">Arrays</a></li>
           <li><a href="#object-references">3.6.4 Object References</a></li>
           </ul></li>
           </ul></li>
-          <li><a href="#chapter-4-modifying-pictures-using-loops">Chapter 4: Modifying Pictures using Loops</a><ul>
-          <li><a href="#color-representations">Color Representations</a><ul>
+          <li><a href="#chapter-4-modifying-pictures-using-loops">Chapter 4: Modifying Pictures using Loops</a>
+          <ul>
+          <li><a href="#color-representations">Color Representations</a>
+          <ul>
           <li><a href="#picture-object-methods">Picture Object Methods</a></li>
           <li><a href="#pixel-object-methods">Pixel Object Methods</a></li>
           <li><a href="#color-object-methods">Color Object Methods</a></li>
@@ -185,18 +214,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <h3 id="working-with-media">3.6 Working With Media</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1">FileChooser.<span class="fu">pickAFile</span>();</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>FileChooser<span class="op">.</span><span class="fu">pickAFile</span><span class="op">();</span></span></code></pre></div>
 <ul>
 <li>Lets you choose a file using a dialog box. Then returns the full path of the file chosen.</li>
 </ul>
 <h4 id="arrays">Arrays</h4>
 <p>Created using the square brackets <code>[]</code></p>
 <p>For example:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1">Int[] intArray = {<span class="dv">12</span>, <span class="dv">1</span>, -<span class="dv">3</span>, <span class="dv">100</span>, <span class="dv">4</span>}</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Int<span class="op">[]</span> intArray <span class="op">=</span> <span class="op">{</span><span class="dv">12</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="op">-</span><span class="dv">3</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="dv">4</span><span class="op">}</span></span></code></pre></div>
 <p>This will create an array of type integers with 5 values inside</p>
 <p>To index an array (get a certain value from the array), we use <code>intArray[n]</code>, being the index number starting from 0.</p>
 <p>It may sound strange to say the first element of an array is at index 0 but the index is based on the distance from the beginning of the array to the element. Since the first item of the array is at the beginning of the array, the distance</p>
-<p>Array values are stored one after the other in memory. This makes it easy to find any element of the array by multiplying the size of each element by the index and adding to the address of the beginning of the array. If you are looking for the element at index 3 in an array, and the size of each element is 4 bytes long, and the array starts at memory location 26, then the 3rd element is at (<span class="math inline">\(3 \cdot 4 + 26\)</span>) or at location 38.</p>
+<p>Array values are stored one after the other in memory. This makes it easy to find any element of the array by multiplying the size of each element by the index and adding to the address of the beginning of the array. If you are looking for the element at index 3 in an array, and the size of each element is 4 bytes long, and the array starts at memory location 26, then the 3rd element is at (<span class="math inline">3 \cdot 4 + 26</span>) or at location 38.</p>
 <h4 id="object-references">3.6.4 Object References</h4>
 <p><strong>Object references</strong> or <strong>object variables</strong> are type of variable that is not a of <em>primitive type</em> (int, float, double, etc.). - Unlike primitive variables, object variables do not Reserve space for the value of the variable. The amount of space you need for an object depends on the number and types of fields (data) each object of that class has. - Object variables (references) reserve space for a <em>reference</em> to an object of the given class. A reference allows the computer to <em>determine</em> the address of the actual object (it isn’t just the address of the object).</p>
 <h2 id="chapter-4-modifying-pictures-using-loops">Chapter 4: Modifying Pictures using Loops</h2>
@@ -205,7 +234,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Short for <em>pixel element</em>.</li>
 <li>Each color component (sometimes called a <em>channel</em>) in a pixel is typically represented with a single byte, eight bits. Eight bits can represent 256 patterns. We typically use these patterns to represent the values 0 to 255.</li>
 <li>Each pixel uses 24 bits (or three 8 bytes for each of the RGB colors).</li>
-<li>There are <span class="math inline">\(2^{24}\)</span> (16,777,216 colors) possible patterns of 0’s and 1’s in those 24 bits</li>
+<li>There are <span class="math inline">2^{24}</span> (16,777,216 colors) possible patterns of 0’s and 1’s in those 24 bits</li>
 </ul>
 <p><strong>Matrix</strong></p>
 <ul>
@@ -319,31 +348,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 id="using-a-for-each-loop">4.3.1 Using a For-Each Loop</h3>
 <p>Loops through each elements of an array.</p>
 <p>Syntax:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">for</span> (<span class="bu">Type</span> variableName : array)</a>
-<a class="sourceLine" id="cb3-2" title="2">{</a>
-<a class="sourceLine" id="cb3-3" title="3">  <span class="co">// commands to be done inside loop</span></a>
-<a class="sourceLine" id="cb3-4" title="4">}</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span><span class="bu">Type</span> variableName <span class="op">:</span> array<span class="op">)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">// commands to be done inside loop</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="using-while-loops">4.3.2 Using While Loops</h3>
 <p>Executes a statements (command) or a group of statements in a block.</p>
 <p>Syntax:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">while</span> (test)</a>
-<a class="sourceLine" id="cb4-2" title="2">{</a>
-<a class="sourceLine" id="cb4-3" title="3">  <span class="co">// commands to be done inside loop</span></a>
-<a class="sourceLine" id="cb4-4" title="4">}</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="op">(</span>test<span class="op">)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">// commands to be done inside loop</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Example:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1"><span class="dt">int</span> count = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="kw">while</span> (count &lt; target)</a>
-<a class="sourceLine" id="cb5-3" title="3">{</a>
-<a class="sourceLine" id="cb5-4" title="4">  <span class="co">// commands to be done inside loop</span></a>
-<a class="sourceLine" id="cb5-5" title="5">  count = count + <span class="dv">1</span>;</a>
-<a class="sourceLine" id="cb5-6" title="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> count <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="op">(</span>count <span class="op">&lt;</span> target<span class="op">)</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">// commands to be done inside loop</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  count <span class="op">=</span> count <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="using-a-for-loop">4.3.7 Using a For Loop</h3>
 <p>A for loop executes a command or group of commands in block</p>
 <p>Syntax:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">for</span> (initialization area; continuation test; change area)</a>
-<a class="sourceLine" id="cb6-2" title="2">{</a>
-<a class="sourceLine" id="cb6-3" title="3">  <span class="co">/* commands in body of the loop */</span></a>
-<a class="sourceLine" id="cb6-4" title="4">}</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span>initialization area<span class="op">;</span> continuation test<span class="op">;</span> change area<span class="op">)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* commands in body of the loop */</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>

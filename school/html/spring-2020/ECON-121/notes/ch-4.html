@@ -12,6 +12,13 @@
 
     <title>ECON 121 Chapter 4 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -66,24 +73,29 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-4-demand-supply-and-market-equilibrium">Chapter 4: Demand, Supply, and Market Equilibrium</a><ul>
+          <li><a href="#chapter-4-demand-supply-and-market-equilibrium">Chapter 4: Demand, Supply, and Market Equilibrium</a>
+          <ul>
           <li><a href="#the-demand-curve">4.1 The Demand Curve</a></li>
-          <li><a href="#the-supply-curve">4.2 The Supply Curve</a><ul>
+          <li><a href="#the-supply-curve">4.2 The Supply Curve</a>
+          <ul>
           <li><a href="#why-is-the-individual-supply-curve-positively-sloped">4.2.2 Why Is the Individual Supply Curve Positively Sloped?</a></li>
           <li><a href="#from-individual-supply-to-market-supply">4.2.3 From Individual Supply To Market Supply</a></li>
           <li><a href="#why-is-the-market-supply-curve-positively-sloped">4.2.4 Why Is the Market Supply Curve Positively Sloped?</a></li>
           </ul></li>
-          <li><a href="#market-equilibrium-bringing-demand-and-supply-together">4.3 Market Equilibrium: Bringing Demand and Supply Together</a><ul>
+          <li><a href="#market-equilibrium-bringing-demand-and-supply-together">4.3 Market Equilibrium: Bringing Demand and Supply Together</a>
+          <ul>
           <li><a href="#excess-demand-causes-the-price-to-rise">4.3.1 Excess Demand Causes the Price to Rise</a></li>
           <li><a href="#excess-supply-causes-the-price-to-drop">4.3.2 Excess Supply Causes the Price to Drop</a></li>
           </ul></li>
-          <li><a href="#market-effects-of-changes-in-demand">4.4 Market Effects Of Changes in Demand</a><ul>
+          <li><a href="#market-effects-of-changes-in-demand">4.4 Market Effects Of Changes in Demand</a>
+          <ul>
           <li><a href="#change-in-quantity-demanded-versus-change-in-demand">4.4.1 Change in Quantity Demanded versus Change in Demand</a></li>
           <li><a href="#increases-in-demand-shift-the-demand-curve">4.4.2 Increases in Demand Shift the Demand Curve</a></li>
           <li><a href="#decreases-in-demand-shift-the-demand-curve">4.4.3 Decreases in Demand Shift the Demand Curve</a></li>
           <li><a href="#a-decrease-in-demand-decreases-the-equilibrium-price">4.4.4 A Decrease in Demand Decreases the Equilibrium Price</a></li>
           </ul></li>
-          <li><a href="#market-effects-of-changes-in-supply">4.5 Market Effects of Changes in Supply</a><ul>
+          <li><a href="#market-effects-of-changes-in-supply">4.5 Market Effects of Changes in Supply</a>
+          <ul>
           <li><a href="#change-in-quantity-supplied-versus-change-in-supply">4.5.1 Change in Quantity Supplied versus Change in Supply</a></li>
           <li><a href="#increases-in-supply-shift-the-supply-curve">4.5.2 Increases in Supply Shift the Supply Curve</a></li>
           <li><a href="#an-increase-in-supply-decreases-the-equilibrium-price">4.5.3 An Increase in Supply Decreases the Equilibrium Price</a></li>
@@ -144,7 +156,7 @@
 <li>A curve that shows the relationship between the price of a good and quantity demanded by an individual consumer, <em>ceteris paribus</em>.</li>
 </ul>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.1.png" alt="Figure 4.1" /><figcaption>Figure 4.1</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.1.png" alt="Figure 4.1" /><figcaption aria-hidden="true">Figure 4.1</figcaption>
 </figure>
 <center>
 <table>
@@ -185,7 +197,7 @@
 </table>
 </center>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.2.png" alt="Figure 4.2" /><figcaption>Figure 4.2</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.2.png" alt="Figure 4.2" /><figcaption aria-hidden="true">Figure 4.2</figcaption>
 </figure>
 <center>
 <p><strong>QUANTITY OF PIZZA DEMANDED</strong></p>
@@ -250,7 +262,7 @@
 <li>Remember that in a supply schedule, a change in quantity results from a change in price alone.</li>
 </ul>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.3.png" alt="Figure 4.3" /><figcaption>Figure 4.3</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.3.png" alt="Figure 4.3" /><figcaption aria-hidden="true">Figure 4.3</figcaption>
 </figure>
 <center>
 <p><strong>INDIVIDUAL SUPPLY SCHEDULE FOR PIZZA</strong></p>
@@ -315,7 +327,7 @@
 <li>A curve showing the relationship between the market price and quantity supplied by all firms, ceteris paribus.</li>
 </ul>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.4.png" alt="Figure 4.4" /><figcaption>Figure 4.4</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.4.png" alt="Figure 4.4" /><figcaption aria-hidden="true">Figure 4.4</figcaption>
 </figure>
 <center>
 <p><strong>QUANTITY OF PIZZA SUPPLIED</strong></p>
@@ -363,7 +375,7 @@
 </table>
 </center>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.5.png" alt="Figure 4.5" /><figcaption>Figure 4.5</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.5.png" alt="Figure 4.5" /><figcaption aria-hidden="true">Figure 4.5</figcaption>
 </figure>
 <h3 id="why-is-the-market-supply-curve-positively-sloped">4.2.4 Why Is the Market Supply Curve Positively Sloped?</h3>
 <ul>
@@ -383,7 +395,7 @@
 <li>Sometimes called a <em>shortage</em>.</li>
 </ul>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.6.png" alt="Figure 4.6" /><figcaption>Figure 4.6</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.6.png" alt="Figure 4.6" /><figcaption aria-hidden="true">Figure 4.6</figcaption>
 </figure>
 <p>An increase in price eliminates excess demand by changing both the quantity demanded and the quantity supplied. As the price increases, the excess demand shrinks for two reasons:</p>
 <ul>
@@ -412,7 +424,7 @@
 <h2 id="market-effects-of-changes-in-demand">4.4 Market Effects Of Changes in Demand</h2>
 <h3 id="change-in-quantity-demanded-versus-change-in-demand">4.4.1 Change in Quantity Demanded versus Change in Demand</h3>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.7.png" alt="Figure 4.7" /><figcaption>Figure 4.7</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.7.png" alt="Figure 4.7" /><figcaption aria-hidden="true">Figure 4.7</figcaption>
 </figure>
 <p><strong>Change in demand</strong></p>
 <ul>
@@ -421,7 +433,7 @@
 <h3 id="increases-in-demand-shift-the-demand-curve">4.4.2 Increases in Demand Shift the Demand Curve</h3>
 <p>What types of changes will increase the demand and shift the demand curve to the right, as shown in Figure 4.7? An increase in demand like the one represented in Figure 4.7 can occur for several reasons, listed in Table 4.1.</p>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_table_4.1.png" alt="Table 4.1" /><figcaption>Table 4.1</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_table_4.1.png" alt="Table 4.1" /><figcaption aria-hidden="true">Table 4.1</figcaption>
 </figure>
 <p><strong>Normal good</strong></p>
 <ul>
@@ -450,7 +462,7 @@
 <li><strong>Expectations of higher future prices</strong>. If consumers think next month’s pizza price will be higher than they had initially expected, they may buy a larger quantity today and a smaller quantity next month. That means the demand for pizza today will increase.</li>
 </ul>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.8.png" alt="Figure 4.8" /><figcaption>Figure 4.8</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.8.png" alt="Figure 4.8" /><figcaption aria-hidden="true">Figure 4.8</figcaption>
 </figure>
 <h3 id="decreases-in-demand-shift-the-demand-curve">4.4.3 Decreases in Demand Shift the Demand Curve</h3>
 <p><img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.9.png" alt="Figure 4.9" /> <img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_table_4.2.png" alt="Table 4.2" /></p>
@@ -468,7 +480,7 @@
 <h2 id="market-effects-of-changes-in-supply">4.5 Market Effects of Changes in Supply</h2>
 <h3 id="change-in-quantity-supplied-versus-change-in-supply">4.5.1 Change in Quantity Supplied versus Change in Supply</h3>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.10.png" alt="Figure 4.10" /><figcaption>Figure 4.10</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.10.png" alt="Figure 4.10" /><figcaption aria-hidden="true">Figure 4.10</figcaption>
 </figure>
 <p><strong>Change in quantity supplied</strong></p>
 <ul>
@@ -485,24 +497,24 @@
 </ul>
 <p>The supply curve shift downward and rightward (production cost have gotten cheaper) when these variables:</p>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_table_4.3.png" alt="Table 4.3" /><figcaption>Table 4.3</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_table_4.3.png" alt="Table 4.3" /><figcaption aria-hidden="true">Table 4.3</figcaption>
 </figure>
 <h3 id="an-increase-in-supply-decreases-the-equilibrium-price">4.5.3 An Increase in Supply Decreases the Equilibrium Price</h3>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.11.png" alt="Figure 4.11" /><figcaption>Figure 4.11</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.11.png" alt="Figure 4.11" /><figcaption aria-hidden="true">Figure 4.11</figcaption>
 </figure>
 <h3 id="decreases-in-supply-shift-the-supply-curve">4.5.4 Decreases in Supply Shift the Supply Curve</h3>
 <p>The supply curve shift upward and leftward (production cost have gotten more expensive) when these variables:</p>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_table_4.4.png" alt="Table 4.4" /><figcaption>Table 4.4</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_table_4.4.png" alt="Table 4.4" /><figcaption aria-hidden="true">Table 4.4</figcaption>
 </figure>
 <h3 id="a-decrease-in-supply-increases-the-equilibrium-price">4.5.5 A Decrease in Supply Increases the Equilibrium Price</h3>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.12.png" alt="Figure 4.12" /><figcaption>Figure 4.12</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.12.png" alt="Figure 4.12" /><figcaption aria-hidden="true">Figure 4.12</figcaption>
 </figure>
 <h3 id="simultaneous-changes-in-demand-and-supply">4.5.6 Simultaneous Changes in Demand and Supply</h3>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.13.png" alt="Figure 4.13" /><figcaption>Figure 4.13</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-4/ch-4_Figure_4.13.png" alt="Figure 4.13" /><figcaption aria-hidden="true">Figure 4.13</figcaption>
 </figure>
 <h2 id="predicting-and-explaining-market-changes">4.6 Predicting and Explaining Market Changes</h2>
 <p>Market effects of changes in demand or supply</p>

@@ -11,6 +11,13 @@
 
     <title>Exam 3 Attempt 1</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,7 +88,8 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#exam-3-attempt-1">Exam 3 Attempt 1</a><ul>
+          <li><a href="#exam-3-attempt-1">Exam 3 Attempt 1</a>
+          <ul>
           <li><a href="#q1">Q1</a></li>
           <li><a href="#q2">Q2</a></li>
           <li><a href="#q3">Q3</a></li>
@@ -185,7 +208,7 @@
 <h2 id="q15">Q15</h2>
 <p>A lottery game offers a prize of $200,000 at the end of thirty years. If the interest rate is 7%, the present value of this amount is $<strong>26273</strong>.</p>
 <blockquote>
-<p><span class="math inline">\(\frac{200,000}{(1 + 0.07)^{30}} \approx 26,273\)</span></p>
+<p><span class="math inline">\frac{200,000}{(1 + 0.07)^{30}} \approx 26,273</span></p>
 </blockquote>
 <h2 id="q16">Q16</h2>
 <p>When the money supply is <strong>decreased</strong>, investment spending decreases, shifting the AD curve to the <strong>left</strong>, and <strong>decreasing</strong> output and prices in the short run.</p>

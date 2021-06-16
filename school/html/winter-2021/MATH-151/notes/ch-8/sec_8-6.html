@@ -11,6 +11,13 @@
 
     <title>Section 8.6</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,7 +88,8 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#section-8.6-integration-strategies">Section 8.6: Integration Strategies</a><ul>
+          <li><a href="#section-8.6-integration-strategies">Section 8.6: Integration Strategies</a>
+          <ul>
           <li><a href="#recognize-a-common-pattern-present-in-the-integrand">Recognize A Common Pattern Present in the Integrand</a></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
@@ -102,9 +125,9 @@
 <p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-6_example-1.png" alt="Example 1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-6_example-2.png" alt="Example 2" /></p>
 <h2 id="recognize-a-common-pattern-present-in-the-integrand">Recognize A Common Pattern Present in the Integrand</h2>
 <ol type="1">
-<li>Integrating the product of two functions often calls for integration by parts <a href="./sec_8-2.html#section-8.2-integration-by-parts">📑 Section 8.2</a>, particularly if the factors of the product are a polynomial and a transcendental function (a logarithmic, exponential, trigonometric, or inverse trigonometric function). In some cases, integegration by parts is successful when the integrand is a single function (for example, <span class="math inline">\(\int  \ln(x)\;dx\)</span> or <span class="math inline">\(\int \sin^{-1}(x)\;dx\)</span>)</li>
-<li>Powers and products or <span class="math inline">\(\sin(x)\)</span> and <span class="math inline">\(\cos(x)\)</span>, <span class="math inline">\(\tan(x)\)</span> and <span class="math inline">\(\sec(x)\)</span>, or <span class="math inline">\(\cot(x)\)</span> and <span class="math inline">\(\csc(x)\)</span> are integrated using identities, reduction formulas, or the substitutions given in Tables 8.2 and 8.3 of <a href="./sec_8-3.html#section-8.3-trigonometric-integrals">📑 Section 8.3</a>.</li>
-<li>Integrals containing the expression <span class="math inline">\(a^{2} - x^{2}, a^{2} + x^{2}\)</span>, or <span class="math inline">\(x^{2}  - a^{2}\)</span> may yield to trigonometric substitution. Use the substitutions given in Table 8.4 of <a href="./sec_8-4.html#section-8.4-trigonometric-substitutions">📑 Section 8.4</a> to tackle such integrals, but don’t overlook a simpler solution. For example, <span class="math inline">\(\int  \frac{x}{1 - x^{2}}\;dx\)</span> is most easily evaluatied using the substitution <span class="math inline">\(u  = 1 - x^{2}\)</span> rather than <span class="math inline">\(x = \sin(\theta)\)</span></li>
+<li>Integrating the product of two functions often calls for integration by parts <a href="./sec_8-2.html#section-8.2-integration-by-parts">📑 Section 8.2</a>, particularly if the factors of the product are a polynomial and a transcendental function (a logarithmic, exponential, trigonometric, or inverse trigonometric function). In some cases, integegration by parts is successful when the integrand is a single function (for example, <span class="math inline">\int  \ln(x)\;dx</span> or <span class="math inline">\int \sin^{-1}(x)\;dx</span>)</li>
+<li>Powers and products or <span class="math inline">\sin(x)</span> and <span class="math inline">\cos(x)</span>, <span class="math inline">\tan(x)</span> and <span class="math inline">\sec(x)</span>, or <span class="math inline">\cot(x)</span> and <span class="math inline">\csc(x)</span> are integrated using identities, reduction formulas, or the substitutions given in Tables 8.2 and 8.3 of <a href="./sec_8-3.html#section-8.3-trigonometric-integrals">📑 Section 8.3</a>.</li>
+<li>Integrals containing the expression <span class="math inline">a^{2} - x^{2}, a^{2} + x^{2}</span>, or <span class="math inline">x^{2}  - a^{2}</span> may yield to trigonometric substitution. Use the substitutions given in Table 8.4 of <a href="./sec_8-4.html#section-8.4-trigonometric-substitutions">📑 Section 8.4</a> to tackle such integrals, but don’t overlook a simpler solution. For example, <span class="math inline">\int  \frac{x}{1 - x^{2}}\;dx</span> is most easily evaluatied using the substitution <span class="math inline">u  = 1 - x^{2}</span> rather than <span class="math inline">x = \sin(\theta)</span></li>
 <li>Use partial fraction decomposition (<a href="./sec_8-5.html#section-8.5-partial-fractions">📑 Section 8.5</a>) to integrate rational functions. Remember to first cancel common factors and to apply long division if the rational function is not proper.</li>
 </ol>
 <p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-6_example-3.png" alt="Example 3" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-6_example-4.png" alt="Example 4" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-6_example-5.png" alt="Example 5" /></p>

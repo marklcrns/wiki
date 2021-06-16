@@ -11,6 +11,13 @@
 
     <title>Chapter 3 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -22,26 +29,28 @@
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -50,9 +59,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -84,7 +93,22 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
     </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -129,33 +153,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-3-expression-and-interactivity">Chapter 3: Expression and Interactivity</a><ul>
-          <li><a href="#textbook">Textbook</a><ul>
-          <li><a href="#the-cin-object">3.1 The <code>cin</code> Object</a><ul>
+          <li><a href="#chapter-3-expression-and-interactivity">Chapter 3: Expression and Interactivity</a>
+          <ul>
+          <li><a href="#textbook">Textbook</a>
+          <ul>
+          <li><a href="#the-cin-object">3.1 The <code>cin</code> Object</a>
+          <ul>
           <li><a href="#entering-multiple-values">Entering Multiple Values</a></li>
           </ul></li>
-          <li><a href="#mathematical-expressions">3.2 Mathematical Expressions</a><ul>
+          <li><a href="#mathematical-expressions">3.2 Mathematical Expressions</a>
+          <ul>
           <li><a href="#operator-precedence">Operator Precedence</a></li>
           <li><a href="#associativity">Associativity</a></li>
           <li><a href="#grouping-with-parentheses">Grouping with parentheses</a></li>
           <li><a href="#converting-algebraic-expression-to-programming-statements">Converting Algebraic Expression to Programming Statements</a></li>
           </ul></li>
-          <li><a href="#data-type-conversion-and-type-casting">3.3 Data Type Conversion and Type Casting</a><ul>
+          <li><a href="#data-type-conversion-and-type-casting">3.3 Data Type Conversion and Type Casting</a>
+          <ul>
           <li><a href="#type-casting">Type Casting</a></li>
           <li><a href="#c-style-and-prestandard-c-type-cast-expressions">C-style and Prestandard C++ Type Cast Expressions</a></li>
           </ul></li>
           <li><a href="#overflow-and-underflow">3.4 Overflow and Underflow</a></li>
           <li><a href="#named-constants">3.5 Named Constants</a></li>
-          <li><a href="#multiple-and-combined-assignment">3.6 Multiple and Combined Assignment</a><ul>
+          <li><a href="#multiple-and-combined-assignment">3.6 Multiple and Combined Assignment</a>
+          <ul>
           <li><a href="#combined-assignment-operators">Combined Assignment Operators</a></li>
           </ul></li>
-          <li><a href="#formatting-output">3.7 Formatting Output</a><ul>
+          <li><a href="#formatting-output">3.7 Formatting Output</a>
+          <ul>
           <li><a href="#the-setprecision-manipulator">The <code>setprecision</code> Manipulator</a></li>
           <li><a href="#the-fixed-manipulator">The <code>fixed</code> Manipulator</a></li>
           <li><a href="#the-showpoint-manipulator">The <code>showpoint</code> Manipulator</a></li>
           <li><a href="#the-left-and-right-manipulators">The <code>left</code> and <code>right</code> Manipulators</a></li>
           </ul></li>
-          <li><a href="#working-with-characters-and-string">3.8 Working with Characters and String</a><ul>
+          <li><a href="#working-with-characters-and-string">3.8 Working with Characters and String</a>
+          <ul>
           <li><a href="#inputting-a-string">Inputting a String</a></li>
           <li><a href="#using-cin.get">Using <code>cin.get</code></a></li>
           <li><a href="#mixing-cin-and-cin.get">Mixing <code>cin &gt;&gt;</code> and <code>cin.get</code></a></li>
@@ -167,7 +199,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li><a href="#reading-a-line-of-input">Reading a Line of Input</a></li>
           </ul></li>
           <li><a href="#more-mathematical-library-functions">3.9 More Mathematical Library Functions</a></li>
-          <li><a href="#random-numbers">3.10 Random Numbers</a><ul>
+          <li><a href="#random-numbers">3.10 Random Numbers</a>
+          <ul>
           <li><a href="#limiting-the-range-of-a-random-number">Limiting the Range of a Random Number</a></li>
           </ul></li>
           <li><a href="#focus-on-debugging-hand-tracing-a-program">3.11 Focus on Debugging: Hand Tracing a Program</a></li>
@@ -215,107 +248,107 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>Program 3-1</p>
 </blockquote>
-<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb1-1" title="1"><span class="co">// This program calculates and displays the area of a rectangle.</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb1-4" title="4"></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb1-6" title="6">{</a>
-<a class="sourceLine" id="cb1-7" title="7">  <span class="dt">int</span> length, width, area;</a>
-<a class="sourceLine" id="cb1-8" title="8"></a>
-<a class="sourceLine" id="cb1-9" title="9">  cout &lt;&lt; <span class="st">&quot;This program calculates the area of a rectangle.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
-<a class="sourceLine" id="cb1-10" title="10"></a>
-<a class="sourceLine" id="cb1-11" title="11">  <span class="co">// Have the user input the rectangle&#39;s length and width</span></a>
-<a class="sourceLine" id="cb1-12" title="12">  cout &lt;&lt; <span class="st">&quot;What is the length of the rectangle? &quot;</span>;</a>
-<a class="sourceLine" id="cb1-13" title="13">  cin  &gt;&gt; length;</a>
-<a class="sourceLine" id="cb1-14" title="14">  cout &gt;&gt; <span class="st">&quot;What is the width of the rectangle? &quot;</span>;</a>
-<a class="sourceLine" id="cb1-15" title="15">  cin  &gt;&gt; width;</a>
-<a class="sourceLine" id="cb1-16" title="16"></a>
-<a class="sourceLine" id="cb1-17" title="17">  <span class="co">// Compute and display the area</span></a>
-<a class="sourceLine" id="cb1-18" title="18">  area = length * width;</a>
-<a class="sourceLine" id="cb1-19" title="19">  cout &lt;&lt; <span class="st">&quot;The area of the rectangle is &quot;</span> &lt;&lt; area &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb1-20" title="20">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb1-21" title="21">}</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program calculates and displays the area of a rectangle.</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> length<span class="op">,</span> width<span class="op">,</span> area<span class="op">;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;This program calculates the area of a rectangle.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Have the user input the rectangle&#39;s length and width</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;What is the length of the rectangle? &quot;</span><span class="op">;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&gt;&gt;</span> length<span class="op">;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&gt;&gt;</span> <span class="st">&quot;What is the width of the rectangle? &quot;</span><span class="op">;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&gt;&gt;</span> width<span class="op">;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Compute and display the area</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  area <span class="op">=</span> length <span class="op">*</span> width<span class="op">;</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;The area of the rectangle is &quot;</span> <span class="op">&lt;&lt;</span> area <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>The <code>&gt;&gt;</code> symbol is the <em>stream extraction operator</em>, which <em>extracts</em> characters from the input stream so they can be used in the program.</p>
 <h4 id="entering-multiple-values">Entering Multiple Values</h4>
 <blockquote>
 <p>Program 3-3</p>
 </blockquote>
-<div class="sourceCode" id="cb2"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb2-1" title="1"><span class="co">// This program calculates and displays the area of a rectangle.</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb2-4" title="4"></a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb2-6" title="6">{</a>
-<a class="sourceLine" id="cb2-7" title="7">  <span class="dt">int</span> length, width, area;</a>
-<a class="sourceLine" id="cb2-8" title="8"></a>
-<a class="sourceLine" id="cb2-9" title="9">  cout &lt;&lt; <span class="st">&quot;This program calculates the area of a rectangle.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
-<a class="sourceLine" id="cb2-10" title="10"></a>
-<a class="sourceLine" id="cb2-11" title="11">  <span class="co">// Have the user input the rectangle&#39;s length and width</span></a>
-<a class="sourceLine" id="cb2-12" title="12">  cout &lt;&lt; <span class="st">&quot;Enter the length and width of the rectangle &quot;</span>;</a>
-<a class="sourceLine" id="cb2-13" title="13">  cout &lt;&lt; <span class="st">&quot;separated by a space.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
-<a class="sourceLine" id="cb2-14" title="14">  cin  &gt;&gt; length &gt;&gt; width;</a>
-<a class="sourceLine" id="cb2-15" title="15"></a>
-<a class="sourceLine" id="cb2-16" title="16">  <span class="co">// Compute and display the area</span></a>
-<a class="sourceLine" id="cb2-17" title="17">  area = length * width;</a>
-<a class="sourceLine" id="cb2-18" title="18">  cout &lt;&lt; <span class="st">&quot;The area of the rectangle is &quot;</span> &lt;&lt; area &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb2-19" title="19">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb2-20" title="20">}</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program calculates and displays the area of a rectangle.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> length<span class="op">,</span> width<span class="op">,</span> area<span class="op">;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;This program calculates the area of a rectangle.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Have the user input the rectangle&#39;s length and width</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Enter the length and width of the rectangle &quot;</span><span class="op">;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;separated by a space.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&gt;&gt;</span> length <span class="op">&gt;&gt;</span> width<span class="op">;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Compute and display the area</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  area <span class="op">=</span> length <span class="op">*</span> width<span class="op">;</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;The area of the rectangle is &quot;</span> <span class="op">&lt;&lt;</span> area <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <blockquote>
 <p>Program 3-4</p>
 </blockquote>
-<div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb3-1" title="1"><span class="co">// This program demonstrates how cin can read multiple values</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="co">// of different data types.</span></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb3-5" title="5"></a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb3-7" title="7">{</a>
-<a class="sourceLine" id="cb3-8" title="8">  <span class="dt">int</span> whole;</a>
-<a class="sourceLine" id="cb3-9" title="9">  <span class="dt">double</span> fractional;</a>
-<a class="sourceLine" id="cb3-10" title="10">  <span class="dt">char</span> letter;</a>
-<a class="sourceLine" id="cb3-11" title="11"></a>
-<a class="sourceLine" id="cb3-12" title="12">  cout &lt;&lt; <span class="st">&quot;Enter an integer, a double, and a character: &quot;</span>;</a>
-<a class="sourceLine" id="cb3-13" title="13">  cin  &gt;&gt; whole &gt;&gt; fractional &gt;&gt; letter;</a>
-<a class="sourceLine" id="cb3-14" title="14"></a>
-<a class="sourceLine" id="cb3-15" title="15">  cout &lt;&lt; <span class="st">&quot;whole: &quot;</span> &lt;&lt; whole &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb3-16" title="16">  cout &lt;&lt; <span class="st">&quot;fraction: &quot;</span> &lt;&lt; fractional &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb3-17" title="17">  cout &lt;&lt; <span class="st">&quot;letter: &quot;</span> &lt;&lt; letter &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb3-18" title="18">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb3-19" title="19">}</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program demonstrates how cin can read multiple values</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">// of different data types.</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> whole<span class="op">;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">double</span> fractional<span class="op">;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">char</span> letter<span class="op">;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Enter an integer, a double, and a character: &quot;</span><span class="op">;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&gt;&gt;</span> whole <span class="op">&gt;&gt;</span> fractional <span class="op">&gt;&gt;</span> letter<span class="op">;</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;whole: &quot;</span> <span class="op">&lt;&lt;</span> whole <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;fraction: &quot;</span> <span class="op">&lt;&lt;</span> fractional <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;letter: &quot;</span> <span class="op">&lt;&lt;</span> letter <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <figure>
-<img src="../../../../../files/fall-2020/CISC-192/chapter-3/3.1_figure-3.1.png" alt="Figure 3.1" /><figcaption>Figure 3.1</figcaption>
+<img src="../../../../../files/fall-2020/CISC-192/chapter-3/3.1_figure-3.1.png" alt="Figure 3.1" /><figcaption aria-hidden="true">Figure 3.1</figcaption>
 </figure>
 <h3 id="mathematical-expressions">3.2 Mathematical Expressions</h3>
 <p><strong>CONCEPT:</strong> C++ allows you to construct complex mathematical expression using multiple operators and grouping symbols</p>
 <p>In Chapter 2 you were introduced to the basic mathematical operators, which are used to build mathematical expression. An <em>expression</em> is something that can be evaluated to produce a single value.</p>
 <p>Here are some additional assignment statements where the variable result is being assigned the value of an expression.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb4-1" title="1">result = x;</a>
-<a class="sourceLine" id="cb4-2" title="2">result = <span class="dv">4</span>;</a>
-<a class="sourceLine" id="cb4-3" title="3">result = <span class="dv">15</span> / <span class="dv">3</span>;</a>
-<a class="sourceLine" id="cb4-4" title="4">result = <span class="dv">22</span> * number;</a>
-<a class="sourceLine" id="cb4-5" title="5">result = <span class="kw">sizeof</span>(<span class="dt">int</span>);</a>
-<a class="sourceLine" id="cb4-6" title="6">result = a + b + c;</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> x<span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> <span class="dv">4</span><span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> <span class="dv">15</span> <span class="op">/</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> <span class="dv">22</span> <span class="op">*</span> number<span class="op">;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> <span class="kw">sizeof</span><span class="op">(</span><span class="dt">int</span><span class="op">);</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> a <span class="op">+</span> b <span class="op">+</span> c<span class="op">;</span></span></code></pre></div>
 <blockquote>
 <p>Program 3-5</p>
 </blockquote>
-<div class="sourceCode" id="cb5"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb5-1" title="1"><span class="co">// This program displays the decimal value of a fraction.</span></a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb5-4" title="4"></a>
-<a class="sourceLine" id="cb5-5" title="5"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb5-6" title="6">{</a>
-<a class="sourceLine" id="cb5-7" title="7">  <span class="dt">double</span> numerator, denominator;</a>
-<a class="sourceLine" id="cb5-8" title="8"></a>
-<a class="sourceLine" id="cb5-9" title="9">  cout &lt;&lt; <span class="st">&quot;This program shows the decimal value of a fraction.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
-<a class="sourceLine" id="cb5-10" title="10">  cin  &gt;&gt; numerator;</a>
-<a class="sourceLine" id="cb5-11" title="11">  cout &lt;&lt; <span class="st">&quot;Enter the denominator: &quot;</span>;</a>
-<a class="sourceLine" id="cb5-12" title="12">  cin  &gt;&gt; denominator;</a>
-<a class="sourceLine" id="cb5-13" title="13"></a>
-<a class="sourceLine" id="cb5-14" title="14">  <span class="co">// Compute and display the decimal value</span></a>
-<a class="sourceLine" id="cb5-15" title="15">  cout &lt;&lt; <span class="st">&quot;The decimal value is &quot;</span> &lt;&lt; (numerator / denominator) &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb5-16" title="16">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb5-17" title="17">}</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program displays the decimal value of a fraction.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">double</span> numerator<span class="op">,</span> denominator<span class="op">;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;This program shows the decimal value of a fraction.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&gt;&gt;</span> numerator<span class="op">;</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Enter the denominator: &quot;</span><span class="op">;</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&gt;&gt;</span> denominator<span class="op">;</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Compute and display the decimal value</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;The decimal value is &quot;</span> <span class="op">&lt;&lt;</span> <span class="op">(</span>numerator <span class="op">/</span> denominator<span class="op">)</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h4 id="operator-precedence">Operator Precedence</h4>
 <p><strong>Table 3-1</strong> Precedence of Arithmetic Operators (Highest to Lowest)</p>
 <center>
@@ -445,47 +478,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(y = 3\frac{x}{2}\)</span></td>
+<td><span class="math inline">y = 3\frac{x}{2}</span></td>
 <td><code>y = x / 2 * 3;</code></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(z = 3bc + 4\)</span></td>
+<td><span class="math inline">z = 3bc + 4</span></td>
 <td><code>z = 3 * b * c + 4;</code></td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(a = \frac{3x + 2}{4a - 1}\)</span></td>
+<td><span class="math inline">a = \frac{3x + 2}{4a - 1}</span></td>
 <td><code>a = (3 * x + 2) / (4 * a - 1)</code></td>
 </tr>
 </tbody>
 </table>
 </center>
 <p><strong>No Exponents Please!</strong>. Use <code>pow()</code> function from the <code>cmath</code> C++ library instead:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb6-1" title="1">area = pow(<span class="fl">4.0</span>, <span class="dv">2</span>);</a></code></pre></div>
-<p>This mathematical expression can be interpreted as <span class="math inline">\(4^{2}\)</span></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>area <span class="op">=</span> pow<span class="op">(</span><span class="fl">4.0</span><span class="op">,</span> <span class="dv">2</span><span class="op">);</span></span></code></pre></div>
+<p>This mathematical expression can be interpreted as <span class="math inline">4^{2}</span></p>
 <blockquote>
 <p>Program 3-6</p>
 </blockquote>
-<div class="sourceCode" id="cb7"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb7-1" title="1"><span class="co">// This program calculates the area of a circle. The formula for the</span></a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="co">// area of a circle is PI times the radius squared. PI is 3.14159.</span></a>
-<a class="sourceLine" id="cb7-3" title="3"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb7-4" title="4">include &lt;cmath&gt;   <span class="co">// Needed for the pow function</span></a>
-<a class="sourceLine" id="cb7-5" title="5"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb7-6" title="6"></a>
-<a class="sourceLine" id="cb7-7" title="7"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb7-8" title="8">{</a>
-<a class="sourceLine" id="cb7-9" title="9">  <span class="dt">double</span> area, radius;</a>
-<a class="sourceLine" id="cb7-10" title="10"></a>
-<a class="sourceLine" id="cb7-11" title="11">  cout &lt;&lt; <span class="st">&quot;This program calculates the area of a circle.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
-<a class="sourceLine" id="cb7-12" title="12"></a>
-<a class="sourceLine" id="cb7-13" title="13">  <span class="co">// Get the radius</span></a>
-<a class="sourceLine" id="cb7-14" title="14">  cout &lt;&lt; <span class="st">&quot;What is the radius of the circle? &quot;</span>;</a>
-<a class="sourceLine" id="cb7-15" title="15">  cin  &gt;&gt; radius;</a>
-<a class="sourceLine" id="cb7-16" title="16"></a>
-<a class="sourceLine" id="cb7-17" title="17">  <span class="co">// Compute and display the area</span></a>
-<a class="sourceLine" id="cb7-18" title="18">  area = <span class="fl">3.14159</span> * pow(radius, <span class="dv">2</span>);</a>
-<a class="sourceLine" id="cb7-19" title="19">  cout &lt;&lt; <span class="st">&quot;The area is &quot;</span> &lt;&lt; area &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb7-20" title="20">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb7-21" title="21">}</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program calculates the area of a circle. The formula for the</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">// area of a circle is PI times the radius squared. PI is 3.14159.</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>include <span class="op">&lt;</span>cmath<span class="op">&gt;</span>   <span class="co">// Needed for the pow function</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">double</span> area<span class="op">,</span> radius<span class="op">;</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;This program calculates the area of a circle.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Get the radius</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;What is the radius of the circle? &quot;</span><span class="op">;</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&gt;&gt;</span> radius<span class="op">;</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Compute and display the area</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  area <span class="op">=</span> <span class="fl">3.14159</span> <span class="op">*</span> pow<span class="op">(</span>radius<span class="op">,</span> <span class="dv">2</span><span class="op">);</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;The area is &quot;</span> <span class="op">&lt;&lt;</span> area <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="data-type-conversion-and-type-casting">3.3 Data Type Conversion and Type Casting</h3>
 <p><strong>CONCEPT:</strong> Sometimes it is necessary to convert a value from one data type to another. C++ provides ways to do this.</p>
 <p><strong>Table 3-7</strong> Data Type Ranking</p>
@@ -537,99 +570,99 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <h4 id="type-casting">Type Casting</h4>
 <p>A <em>type cast expression</em> lets you manually promote to demote a value. Its general format is</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">static_cast</span>&lt;DataType&gt;(Value)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">static_cast</span><span class="op">&lt;</span>DataType<span class="op">&gt;(</span>Value<span class="op">)</span></span></code></pre></div>
 <p>where <em>Value</em> is a variable or literal value that you wish to convert and <em>DataType</em> is the data type you wish to convert it to.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb9-1" title="1"><span class="dt">double</span> number = <span class="fl">3.7</span>;</a>
-<a class="sourceLine" id="cb9-2" title="2"><span class="dt">int</span> val;</a>
-<a class="sourceLine" id="cb9-3" title="3">val = <span class="kw">static_cast</span>&lt;<span class="dt">int</span>&gt;(number);</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> number <span class="op">=</span> <span class="fl">3.7</span><span class="op">;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> val<span class="op">;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>val <span class="op">=</span> <span class="kw">static_cast</span><span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;(</span>number<span class="op">);</span></span></code></pre></div>
 <p>Type cast expression are useful in situations where C++ will not perform the desired conversion automatically.</p>
 <blockquote>
 <p>Program 3-7</p>
 </blockquote>
-<div class="sourceCode" id="cb10"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb10-1" title="1"><span class="co">// This program uses a type cast to avoid an integer division.</span></a>
-<a class="sourceLine" id="cb10-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb10-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb10-4" title="4"></a>
-<a class="sourceLine" id="cb10-5" title="5"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb10-6" title="6">{</a>
-<a class="sourceLine" id="cb10-7" title="7">  <span class="dt">int</span>    books,</a>
-<a class="sourceLine" id="cb10-8" title="8">         months;</a>
-<a class="sourceLine" id="cb10-9" title="9">  <span class="dt">double</span> booksPerMonth;</a>
-<a class="sourceLine" id="cb10-10" title="10"></a>
-<a class="sourceLine" id="cb10-11" title="11">  <span class="co">// Get user inputs</span></a>
-<a class="sourceLine" id="cb10-12" title="12">  cout &lt;&lt; <span class="st">&quot;How many books do you plan to read? &quot;</span>;</a>
-<a class="sourceLine" id="cb10-13" title="13">  cin  &gt;&gt; books;</a>
-<a class="sourceLine" id="cb10-14" title="14">  cout &lt;&lt; <span class="st">&quot;How many months will it take you to read them? &quot;</span>;</a>
-<a class="sourceLine" id="cb10-15" title="15">  cin  &gt;&gt; months;</a>
-<a class="sourceLine" id="cb10-16" title="16"></a>
-<a class="sourceLine" id="cb10-17" title="17">  <span class="co">// Compute and display books read per month</span></a>
-<a class="sourceLine" id="cb10-18" title="18">  booksPerMonth = <span class="kw">static_cast</span>&lt;<span class="dt">double</span>&gt;(books) / months;</a>
-<a class="sourceLine" id="cb10-19" title="19">  cout &lt;&lt; <span class="st">&quot;That is &quot;</span> &lt;&lt; booksPerMonth &lt;&lt; <span class="st">&quot; books per month.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
-<a class="sourceLine" id="cb10-20" title="20">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb10-21" title="21">}</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program uses a type cast to avoid an integer division.</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span>    books<span class="op">,</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>         months<span class="op">;</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">double</span> booksPerMonth<span class="op">;</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Get user inputs</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;How many books do you plan to read? &quot;</span><span class="op">;</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&gt;&gt;</span> books<span class="op">;</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;How many months will it take you to read them? &quot;</span><span class="op">;</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&gt;&gt;</span> months<span class="op">;</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Compute and display books read per month</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  booksPerMonth <span class="op">=</span> <span class="kw">static_cast</span><span class="op">&lt;</span><span class="dt">double</span><span class="op">&gt;(</span>books<span class="op">)</span> <span class="op">/</span> months<span class="op">;</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;That is &quot;</span> <span class="op">&lt;&lt;</span> booksPerMonth <span class="op">&lt;&lt;</span> <span class="st">&quot; books per month.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <blockquote>
 <p><strong>WARNING!</strong> To prevent the integer division from taking place, one of the operands should be converted to a double prior to the division operation. This forces C++ to automatically convert the value of the other operand to a double.</p>
 </blockquote>
 <blockquote>
 <p>Program 3-8</p>
 </blockquote>
-<div class="sourceCode" id="cb11"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb11-1" title="1"><span class="co">// This program prints a character from its ASCII code.</span></a>
-<a class="sourceLine" id="cb11-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb11-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb11-4" title="4"></a>
-<a class="sourceLine" id="cb11-5" title="5"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb11-6" title="6">{</a>
-<a class="sourceLine" id="cb11-7" title="7">  <span class="dt">int</span> number = <span class="dv">65</span>;</a>
-<a class="sourceLine" id="cb11-8" title="8"></a>
-<a class="sourceLine" id="cb11-9" title="9">  <span class="co">// Display the value of the number variable</span></a>
-<a class="sourceLine" id="cb11-10" title="10">  cout &lt;&lt; number &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb11-11" title="11"></a>
-<a class="sourceLine" id="cb11-12" title="12">  <span class="co">// Use a type cast to display the value of number</span></a>
-<a class="sourceLine" id="cb11-13" title="13">  <span class="co">// converted to the char data type</span></a>
-<a class="sourceLine" id="cb11-14" title="14">  cout &lt;&lt; <span class="kw">static_cast</span>&lt;<span class="dt">char</span>&gt;(number) &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb11-15" title="15">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb11-16" title="16">}</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program prints a character from its ASCII code.</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> number <span class="op">=</span> <span class="dv">65</span><span class="op">;</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Display the value of the number variable</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> number <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Use a type cast to display the value of number</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="co">// converted to the char data type</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="kw">static_cast</span><span class="op">&lt;</span><span class="dt">char</span><span class="op">&gt;(</span>number<span class="op">)</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h4 id="c-style-and-prestandard-c-type-cast-expressions">C-style and Prestandard C++ Type Cast Expressions</h4>
 <p>Even though the <code>static_cast</code> is the preferred type cast expression in use today, C++ also supports two older forms that you should know about: The C-style form and the prestandard C++ form.</p>
 <p><strong>C-style form type cast</strong>. This typecast notation is called <em>prefix notation</em>.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb12-1" title="1">booksPerMonth = (<span class="dt">double</span>)books / months;</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>booksPerMonth <span class="op">=</span> <span class="op">(</span><span class="dt">double</span><span class="op">)</span>books <span class="op">/</span> months<span class="op">;</span></span></code></pre></div>
 <p><strong>Prestandard C++ form type cast</strong>. This typecast notation is called <em>functional notation</em>.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb13-1" title="1">booksPerMonth = <span class="dt">double</span>(books) / months;</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>booksPerMonth <span class="op">=</span> <span class="dt">double</span><span class="op">(</span>books<span class="op">)</span> <span class="op">/</span> months<span class="op">;</span></span></code></pre></div>
 <h3 id="overflow-and-underflow">3.4 Overflow and Underflow</h3>
 <p><strong>CONCEPT:</strong> When a value cannot fit in the number of bits provided by a variable’s data type, overflow or underflow occurs.</p>
 <figure>
-<img src="../../../../../files/fall-2020/CISC-192/chapter-3/3.4_overflow_underflow.png" alt="Overflow and Underflow" /><figcaption>Overflow and Underflow</figcaption>
+<img src="../../../../../files/fall-2020/CISC-192/chapter-3/3.4_overflow_underflow.png" alt="Overflow and Underflow" /><figcaption aria-hidden="true">Overflow and Underflow</figcaption>
 </figure>
 <blockquote>
 <p>Program 3-9</p>
 </blockquote>
-<div class="sourceCode" id="cb14"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb14-1" title="1"><span class="co">// This program demonstrates overflow and underflow</span></a>
-<a class="sourceLine" id="cb14-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb14-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb14-4" title="4"></a>
-<a class="sourceLine" id="cb14-5" title="5"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb14-6" title="6">{</a>
-<a class="sourceLine" id="cb14-7" title="7">  <span class="co">// Set intVar to the maximum value a short int can hold</span></a>
-<a class="sourceLine" id="cb14-8" title="8">  <span class="dt">short</span> intVar = <span class="dv">32767</span>;</a>
-<a class="sourceLine" id="cb14-9" title="9"></a>
-<a class="sourceLine" id="cb14-10" title="10">  <span class="co">// Set floatVar to a number too small to fit in a float</span></a>
-<a class="sourceLine" id="cb14-11" title="11">  <span class="dt">float</span> floatVar = <span class="fl">3.0E-47</span>;</a>
-<a class="sourceLine" id="cb14-12" title="12"></a>
-<a class="sourceLine" id="cb14-13" title="13">  <span class="co">// Display intVar</span></a>
-<a class="sourceLine" id="cb14-14" title="14">  cout &lt;&lt; <span class="st">&quot;Original value of intVar       &quot;</span> &lt;&lt; intVar &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb14-15" title="15"></a>
-<a class="sourceLine" id="cb14-16" title="16">  <span class="co">// Add 1 to intVar to make it overflow</span></a>
-<a class="sourceLine" id="cb14-17" title="17">  intVar = intVar + <span class="dv">1</span>;</a>
-<a class="sourceLine" id="cb14-18" title="18">  cout &lt;&lt; <span class="st">&quot;intVar after overflow          &quot;</span> &lt;&lt; intVar &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb14-19" title="19"></a>
-<a class="sourceLine" id="cb14-20" title="20">  <span class="co">// Subtract 1 from intVar to make it overflow again</span></a>
-<a class="sourceLine" id="cb14-21" title="21">  intVar = intVar - <span class="dv">1</span>;</a>
-<a class="sourceLine" id="cb14-22" title="22">  cout &lt;&lt; <span class="st">&quot;intVar after 2nd overflow      &quot;</span> &lt;&lt; intVar &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb14-23" title="23"></a>
-<a class="sourceLine" id="cb14-24" title="24">  <span class="co">// Display floatVar</span></a>
-<a class="sourceLine" id="cb14-25" title="25">  cout &lt;&lt; <span class="st">&quot;Value of very tiny floatVar    &quot;</span> &lt;&lt; floatVar;</a>
-<a class="sourceLine" id="cb14-26" title="26">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb14-27" title="27">}</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program demonstrates overflow and underflow</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Set intVar to the maximum value a short int can hold</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">short</span> intVar <span class="op">=</span> <span class="dv">32767</span><span class="op">;</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Set floatVar to a number too small to fit in a float</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">float</span> floatVar <span class="op">=</span> <span class="fl">3.0E-47</span><span class="op">;</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Display intVar</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Original value of intVar       &quot;</span> <span class="op">&lt;&lt;</span> intVar <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Add 1 to intVar to make it overflow</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>  intVar <span class="op">=</span> intVar <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;intVar after overflow          &quot;</span> <span class="op">&lt;&lt;</span> intVar <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Subtract 1 from intVar to make it overflow again</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>  intVar <span class="op">=</span> intVar <span class="op">-</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;intVar after 2nd overflow      &quot;</span> <span class="op">&lt;&lt;</span> intVar <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Display floatVar</span></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Value of very tiny floatVar    &quot;</span> <span class="op">&lt;&lt;</span> floatVar<span class="op">;</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <blockquote>
 <p>Program 3-9 Output</p>
 </blockquote>
@@ -640,15 +673,15 @@ Value of very tiny floatVar   0</code></pre>
 <h3 id="named-constants">3.5 Named Constants</h3>
 <p><strong>CONCEPT:</strong> Literals may be given names that symbolically represent them in a program.</p>
 <p>When a named constant is defined, it must be initialized with a value. It cannot be defined and then later assigned a value with an assignment statement.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb16-1" title="1"><span class="at">const</span> <span class="dt">double</span> INTEREST_RATE;     <span class="co">// illegal</span></a>
-<a class="sourceLine" id="cb16-2" title="2">INTEREST_RATE = <span class="fl">0.69</span>;           <span class="co">// illegal</span></a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="at">const</span> <span class="dt">double</span> INTEREST_RATE<span class="op">;</span>     <span class="co">// illegal</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>INTEREST_RATE <span class="op">=</span> <span class="fl">0.69</span><span class="op">;</span>           <span class="co">// illegal</span></span></code></pre></div>
 <p>An added advantage of using named constants is that they make programs more self-documenting. Once the named constant <code>INTEREST_RATE</code> has been correctly defined, the program statement</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb17-1" title="1">newAmount = balance * <span class="fl">0.69</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>newAmount <span class="op">=</span> balance <span class="op">*</span> <span class="fl">0.69</span><span class="op">;</span></span></code></pre></div>
 <p>can be changed to read</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb18-1" title="1">newAmount = balance * INTEREST_RATE;</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>newAmount <span class="op">=</span> balance <span class="op">*</span> INTEREST_RATE<span class="op">;</span></span></code></pre></div>
 <h3 id="multiple-and-combined-assignment">3.6 Multiple and Combined Assignment</h3>
 <p>C++ allows you to assign a value to multiple variables at once</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb19-1" title="1">a = b = c = d = <span class="dv">12</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> b <span class="op">=</span> c <span class="op">=</span> d <span class="op">=</span> <span class="dv">12</span><span class="op">;</span></span></code></pre></div>
 <h4 id="combined-assignment-operators">Combined Assignment Operators</h4>
 <blockquote>
 <p>Table 3-9 Combined Assignment Operators</p>
@@ -694,67 +727,67 @@ Value of very tiny floatVar   0</code></pre>
 <blockquote>
 <p>Program 3-11</p>
 </blockquote>
-<div class="sourceCode" id="cb20"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb20-1" title="1"><span class="co">// This program tracks the inventory of two widget stores.</span></a>
-<a class="sourceLine" id="cb20-2" title="2"><span class="co">// It illustrates the use of multiple and combined assignment.</span></a>
-<a class="sourceLine" id="cb20-3" title="3"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb20-4" title="4"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb20-5" title="5"></a>
-<a class="sourceLine" id="cb20-6" title="6"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb20-7" title="7">{</a>
-<a class="sourceLine" id="cb20-8" title="8">  <span class="dt">int</span> begInv,   <span class="co">// Beginning inventory for both stores</span></a>
-<a class="sourceLine" id="cb20-9" title="9">        sold,   <span class="co">// Number of widgets sold</span></a>
-<a class="sourceLine" id="cb20-10" title="10">      store1,   <span class="co">// Store 1&#39;s inventory</span></a>
-<a class="sourceLine" id="cb20-11" title="11">      store2;   <span class="co">// Store 2&#39;s inventory</span></a>
-<a class="sourceLine" id="cb20-12" title="12"></a>
-<a class="sourceLine" id="cb20-13" title="13">  <span class="co">// Get the beginning inventory for the two stores</span></a>
-<a class="sourceLine" id="cb20-14" title="14">  cout &lt;&lt; <span class="st">&quot;One week ago, 2 new widget stores opened</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
-<a class="sourceLine" id="cb20-15" title="15">  cout &lt;&lt; <span class="st">&quot;at the same time with the same beginning</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
-<a class="sourceLine" id="cb20-16" title="16">  cout &lt;&lt; <span class="st">&quot;inventory. What was the beginning inventory? &quot;</span>;</a>
-<a class="sourceLine" id="cb20-17" title="17">  cin  &gt;&gt; begInv;</a>
-<a class="sourceLine" id="cb20-18" title="18"></a>
-<a class="sourceLine" id="cb20-19" title="19">  <span class="co">// Set each store&#39;s inventory</span></a>
-<a class="sourceLine" id="cb20-20" title="20">  store1 = store2 = begInv;</a>
-<a class="sourceLine" id="cb20-21" title="21"></a>
-<a class="sourceLine" id="cb20-22" title="22">  <span class="co">// Get the number of widgets sold at each store</span></a>
-<a class="sourceLine" id="cb20-23" title="23">  cout &lt;&lt; <span class="st">&quot;How many widgets has store 1 sold? &quot;</span>;</a>
-<a class="sourceLine" id="cb20-24" title="24">  cin  &gt;&gt; sold;</a>
-<a class="sourceLine" id="cb20-25" title="25">  store1 -= sold;     <span class="co">// Adjust store 1&#39;s inventory</span></a>
-<a class="sourceLine" id="cb20-26" title="26"></a>
-<a class="sourceLine" id="cb20-27" title="27">  cout &lt;&lt; <span class="st">&quot;How many widgets has store 2 sold? &quot;</span>;</a>
-<a class="sourceLine" id="cb20-28" title="28">  cin  &gt;&gt; sold;</a>
-<a class="sourceLine" id="cb20-29" title="29">  store2 -= sold;     <span class="co">// Adjust store 2&#39;s inventory</span></a>
-<a class="sourceLine" id="cb20-30" title="30"></a>
-<a class="sourceLine" id="cb20-31" title="31">  <span class="co">// Display each store&#39;s current inventory</span></a>
-<a class="sourceLine" id="cb20-32" title="32">  cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">The current inventory of each store:</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
-<a class="sourceLine" id="cb20-33" title="33">  cout &lt;&lt; <span class="st">&quot;Store 1: &quot;</span> &lt;&lt; store1 &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb20-34" title="34">  cout &lt;&lt; <span class="st">&quot;Store 2: &quot;</span> &lt;&lt; store2 &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb20-35" title="35">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb20-36" title="36">}</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program tracks the inventory of two widget stores.</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">// It illustrates the use of multiple and combined assignment.</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> begInv<span class="op">,</span>   <span class="co">// Beginning inventory for both stores</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>        sold<span class="op">,</span>   <span class="co">// Number of widgets sold</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>      store1<span class="op">,</span>   <span class="co">// Store 1&#39;s inventory</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>      store2<span class="op">;</span>   <span class="co">// Store 2&#39;s inventory</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Get the beginning inventory for the two stores</span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;One week ago, 2 new widget stores opened</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;at the same time with the same beginning</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;inventory. What was the beginning inventory? &quot;</span><span class="op">;</span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&gt;&gt;</span> begInv<span class="op">;</span></span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Set each store&#39;s inventory</span></span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>  store1 <span class="op">=</span> store2 <span class="op">=</span> begInv<span class="op">;</span></span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Get the number of widgets sold at each store</span></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;How many widgets has store 1 sold? &quot;</span><span class="op">;</span></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&gt;&gt;</span> sold<span class="op">;</span></span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>  store1 <span class="op">-=</span> sold<span class="op">;</span>     <span class="co">// Adjust store 1&#39;s inventory</span></span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;How many widgets has store 2 sold? &quot;</span><span class="op">;</span></span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&gt;&gt;</span> sold<span class="op">;</span></span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>  store2 <span class="op">-=</span> sold<span class="op">;</span>     <span class="co">// Adjust store 2&#39;s inventory</span></span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Display each store&#39;s current inventory</span></span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">The current inventory of each store:</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Store 1: &quot;</span> <span class="op">&lt;&lt;</span> store1 <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Store 2: &quot;</span> <span class="op">&lt;&lt;</span> store2 <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="formatting-output">3.7 Formatting Output</h3>
 <p><strong>CONCEPT:</strong> <code>cout</code> provides ways to format data as it is being displayed. This affects the way data appears on the screen.</p>
 <blockquote>
 <p>Program 3-13</p>
 </blockquote>
-<div class="sourceCode" id="cb21"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb21-1" title="1"><span class="co">// This program uses setw to display three rows of number so they align.</span></a>
-<a class="sourceLine" id="cb21-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb21-3" title="3"><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span><span class="pp">      </span><span class="co">// Header file needed to use setw</span></a>
-<a class="sourceLine" id="cb21-4" title="4"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb21-5" title="5"></a>
-<a class="sourceLine" id="cb21-6" title="6"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb21-7" title="7">{</a>
-<a class="sourceLine" id="cb21-8" title="8">  <span class="dt">int</span> num1 = <span class="dv">2897</span>,  num2 = <span class="dv">5</span>,     num3 = <span class="dv">837</span>,</a>
-<a class="sourceLine" id="cb21-9" title="9">      num4 = <span class="dv">34</span>,    num5 = <span class="dv">7</span>,     num6 = <span class="dv">1623</span>,</a>
-<a class="sourceLine" id="cb21-10" title="10">      num7 = <span class="dv">390</span>,   num8 = <span class="dv">3456</span>,  num9 = <span class="dv">12</span>;</a>
-<a class="sourceLine" id="cb21-11" title="11"></a>
-<a class="sourceLine" id="cb21-12" title="12">  <span class="co">// Display the first row of numbers</span></a>
-<a class="sourceLine" id="cb21-13" title="13">  cout &lt;&lt; setw(<span class="dv">6</span>) &lt;&lt; num1 &lt;&lt; setw(<span class="dv">6</span>) &lt;&lt; num2 &lt;&lt; setw(<span class="dv">6</span>) &lt;&lt; num3 &lt;&lt;endl;</a>
-<a class="sourceLine" id="cb21-14" title="14">  <span class="co">// Display the second row of numbers</span></a>
-<a class="sourceLine" id="cb21-15" title="15">  cout &lt;&lt; setw(<span class="dv">6</span>) &lt;&lt; num4 &lt;&lt; setw(<span class="dv">6</span>) &lt;&lt; num5 &lt;&lt; setw(<span class="dv">6</span>) &lt;&lt; num6 &lt;&lt;endl;</a>
-<a class="sourceLine" id="cb21-16" title="16">  <span class="co">// Display the third row of numbers</span></a>
-<a class="sourceLine" id="cb21-17" title="17">  cout &lt;&lt; setw(<span class="dv">6</span>) &lt;&lt; num7 &lt;&lt; setw(<span class="dv">6</span>) &lt;&lt; num8 &lt;&lt; setw(<span class="dv">6</span>) &lt;&lt; num9 &lt;&lt;endl;</a>
-<a class="sourceLine" id="cb21-18" title="18"></a>
-<a class="sourceLine" id="cb21-19" title="19">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb21-20" title="20">}</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program uses setw to display three rows of number so they align.</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span><span class="pp">      </span><span class="co">// Header file needed to use setw</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> num1 <span class="op">=</span> <span class="dv">2897</span><span class="op">,</span>  num2 <span class="op">=</span> <span class="dv">5</span><span class="op">,</span>     num3 <span class="op">=</span> <span class="dv">837</span><span class="op">,</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>      num4 <span class="op">=</span> <span class="dv">34</span><span class="op">,</span>    num5 <span class="op">=</span> <span class="dv">7</span><span class="op">,</span>     num6 <span class="op">=</span> <span class="dv">1623</span><span class="op">,</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>      num7 <span class="op">=</span> <span class="dv">390</span><span class="op">,</span>   num8 <span class="op">=</span> <span class="dv">3456</span><span class="op">,</span>  num9 <span class="op">=</span> <span class="dv">12</span><span class="op">;</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Display the first row of numbers</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> setw<span class="op">(</span><span class="dv">6</span><span class="op">)</span> <span class="op">&lt;&lt;</span> num1 <span class="op">&lt;&lt;</span> setw<span class="op">(</span><span class="dv">6</span><span class="op">)</span> <span class="op">&lt;&lt;</span> num2 <span class="op">&lt;&lt;</span> setw<span class="op">(</span><span class="dv">6</span><span class="op">)</span> <span class="op">&lt;&lt;</span> num3 <span class="op">&lt;&lt;</span>endl<span class="op">;</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Display the second row of numbers</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> setw<span class="op">(</span><span class="dv">6</span><span class="op">)</span> <span class="op">&lt;&lt;</span> num4 <span class="op">&lt;&lt;</span> setw<span class="op">(</span><span class="dv">6</span><span class="op">)</span> <span class="op">&lt;&lt;</span> num5 <span class="op">&lt;&lt;</span> setw<span class="op">(</span><span class="dv">6</span><span class="op">)</span> <span class="op">&lt;&lt;</span> num6 <span class="op">&lt;&lt;</span>endl<span class="op">;</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Display the third row of numbers</span></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> setw<span class="op">(</span><span class="dv">6</span><span class="op">)</span> <span class="op">&lt;&lt;</span> num7 <span class="op">&lt;&lt;</span> setw<span class="op">(</span><span class="dv">6</span><span class="op">)</span> <span class="op">&lt;&lt;</span> num8 <span class="op">&lt;&lt;</span> setw<span class="op">(</span><span class="dv">6</span><span class="op">)</span> <span class="op">&lt;&lt;</span> num9 <span class="op">&lt;&lt;</span>endl<span class="op">;</span></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <blockquote>
 <p>Program 3-13 Output</p>
 </blockquote>
@@ -768,25 +801,25 @@ Value of very tiny floatVar   0</code></pre>
 <blockquote>
 <p>Program 3-15</p>
 </blockquote>
-<div class="sourceCode" id="cb23"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb23-1" title="1"><span class="co">// This program demonstrates how the setprecision manipulator</span></a>
-<a class="sourceLine" id="cb23-2" title="2"><span class="co">// affects the way a floating-point value is displayed.</span></a>
-<a class="sourceLine" id="cb23-3" title="3"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb23-4" title="4"><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span><span class="pp">        </span><span class="co">// Header file needed to use setprecision</span></a>
-<a class="sourceLine" id="cb23-5" title="5"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb23-6" title="6"></a>
-<a class="sourceLine" id="cb23-7" title="7"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb23-8" title="8">{</a>
-<a class="sourceLine" id="cb23-9" title="9">  <span class="dt">double</span> number1 = <span class="fl">132.364</span>, number2 = <span class="fl">26.91</span>;</a>
-<a class="sourceLine" id="cb23-10" title="10">  <span class="dt">double</span> quotient = number1 / number2;</a>
-<a class="sourceLine" id="cb23-11" title="11"></a>
-<a class="sourceLine" id="cb23-12" title="12">  cout &lt;&lt; quotient &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb23-13" title="13">  cout &lt;&lt; setprecision(<span class="dv">5</span>) &lt;&lt; quotient &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb23-14" title="14">  cout &lt;&lt; setprecision(<span class="dv">4</span>) &lt;&lt; quotient &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb23-15" title="15">  cout &lt;&lt; setprecision(<span class="dv">3</span>) &lt;&lt; quotient &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb23-16" title="16">  cout &lt;&lt; setprecision(<span class="dv">2</span>) &lt;&lt; quotient &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb23-17" title="17">  cout &lt;&lt; setprecision(<span class="dv">1</span>) &lt;&lt; quotient &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb23-18" title="18">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb23-19" title="19">}</a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program demonstrates how the setprecision manipulator</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">// affects the way a floating-point value is displayed.</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span><span class="pp">        </span><span class="co">// Header file needed to use setprecision</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">double</span> number1 <span class="op">=</span> <span class="fl">132.364</span><span class="op">,</span> number2 <span class="op">=</span> <span class="fl">26.91</span><span class="op">;</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">double</span> quotient <span class="op">=</span> number1 <span class="op">/</span> number2<span class="op">;</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> quotient <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> setprecision<span class="op">(</span><span class="dv">5</span><span class="op">)</span> <span class="op">&lt;&lt;</span> quotient <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> setprecision<span class="op">(</span><span class="dv">4</span><span class="op">)</span> <span class="op">&lt;&lt;</span> quotient <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> setprecision<span class="op">(</span><span class="dv">3</span><span class="op">)</span> <span class="op">&lt;&lt;</span> quotient <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> setprecision<span class="op">(</span><span class="dv">2</span><span class="op">)</span> <span class="op">&lt;&lt;</span> quotient <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> setprecision<span class="op">(</span><span class="dv">1</span><span class="op">)</span> <span class="op">&lt;&lt;</span> quotient <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <blockquote>
 <p>Program 3-15 Output</p>
 </blockquote>
@@ -798,36 +831,36 @@ Value of very tiny floatVar   0</code></pre>
 5</code></pre>
 <h4 id="the-fixed-manipulator">The <code>fixed</code> Manipulator</h4>
 <p>Indicates that floating-point output should be printed in <em>fixed-point</em>, or decimal, <em>notation</em>.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb25-1" title="1">cout &lt;&lt; fixed;</a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>cout <span class="op">&lt;&lt;</span> fixed<span class="op">;</span></span></code></pre></div>
 <p>With <code>fixed</code> and <code>setprecision</code> together</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb26-1" title="1">cout &lt;&lt; fixed &lt;&lt; setprecision(<span class="dv">2</span>);</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>cout <span class="op">&lt;&lt;</span> fixed <span class="op">&lt;&lt;</span> setprecision<span class="op">(</span><span class="dv">2</span><span class="op">);</span></span></code></pre></div>
 <h4 id="the-showpoint-manipulator">The <code>showpoint</code> Manipulator</h4>
 <p>By default, floating-point namers are displayed without trailing zeroes, and floating-point numbers with no fractional part are displayed without a decimal point. <code>showpoint</code> allows these defaults to be overridden.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb27-1" title="1"><span class="dt">double</span> x = <span class="fl">456.0</span>;</a>
-<a class="sourceLine" id="cb27-2" title="2">cout &lt;&lt; showpoint &lt;&lt; x &lt;&lt; endl</a></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> x <span class="op">=</span> <span class="fl">456.0</span><span class="op">;</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>cout <span class="op">&lt;&lt;</span> showpoint <span class="op">&lt;&lt;</span> x <span class="op">&lt;&lt;</span> endl</span></code></pre></div>
 <p><code>fixed</code>, <code>showpoint</code>, and <code>setprecision</code> manipulators together</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb28-1" title="1"><span class="dt">double</span> x = <span class="fl">456.0</span></a>
-<a class="sourceLine" id="cb28-2" title="2">cout &lt;&lt; fixed &lt;&lt; showpoint &lt;&lt; setprecision(<span class="dv">2</span>) &lt;&lt; x &lt;&lt; endl;</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> x <span class="op">=</span> <span class="fl">456.0</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>cout <span class="op">&lt;&lt;</span> fixed <span class="op">&lt;&lt;</span> showpoint <span class="op">&lt;&lt;</span> setprecision<span class="op">(</span><span class="dv">2</span><span class="op">)</span> <span class="op">&lt;&lt;</span> x <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span></code></pre></div>
 <blockquote>
 <p>Program 3-17</p>
 </blockquote>
-<div class="sourceCode" id="cb29"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb29-1" title="1"><span class="co">// This program illustrates the how the showpoint, setprecision, and</span></a>
-<a class="sourceLine" id="cb29-2" title="2"><span class="co">// fixed manipulators operate both individually and when used together.</span></a>
-<a class="sourceLine" id="cb29-3" title="3"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb29-4" title="4"><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span><span class="pp">      </span><span class="co">// Header file needed to use stream manipulators</span></a>
-<a class="sourceLine" id="cb29-5" title="5"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb29-6" title="6"></a>
-<a class="sourceLine" id="cb29-7" title="7"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb29-8" title="8">{</a>
-<a class="sourceLine" id="cb29-9" title="9">  <span class="dt">double</span> x = <span class="fl">6.0</span>;</a>
-<a class="sourceLine" id="cb29-10" title="10"></a>
-<a class="sourceLine" id="cb29-11" title="11">  cout &lt;&lt; x &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb29-12" title="12">  cout &lt;&lt; showpoint &lt;&lt; x &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb29-13" title="13">  cout &lt;&lt; setprecision(<span class="dv">2</span>) &lt;&lt; x &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb29-14" title="14">  cout &lt;&lt; fixed &lt;&lt; x &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb29-15" title="15"></a>
-<a class="sourceLine" id="cb29-16" title="16">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb29-17" title="17">}</a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program illustrates the how the showpoint, setprecision, and</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co">// fixed manipulators operate both individually and when used together.</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span><span class="pp">      </span><span class="co">// Header file needed to use stream manipulators</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">double</span> x <span class="op">=</span> <span class="fl">6.0</span><span class="op">;</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> x <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> showpoint <span class="op">&lt;&lt;</span> x <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> setprecision<span class="op">(</span><span class="dv">2</span><span class="op">)</span> <span class="op">&lt;&lt;</span> x <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> fixed <span class="op">&lt;&lt;</span> x <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <blockquote>
 <p>Program 3-17 Output</p>
 </blockquote>
@@ -837,38 +870,38 @@ Value of very tiny floatVar   0</code></pre>
 6.00</code></pre>
 <h4 id="the-left-and-right-manipulators">The <code>left</code> and <code>right</code> Manipulators</h4>
 <p>These manipulators can be used with any type of value, even a string.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb31-1" title="1"><span class="co">// This program illustrates the use of the left and right manipulators.</span></a>
-<a class="sourceLine" id="cb31-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span><span class="pp">     </span><span class="co">// Header file needed to use stream manipulators</span></a>
-<a class="sourceLine" id="cb31-3" title="3"><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span><span class="pp">      </span><span class="co">// Header file needed to use string objects</span></a>
-<a class="sourceLine" id="cb31-4" title="4"><span class="pp">#include </span><span class="im">&lt;string&gt;</span></a>
-<a class="sourceLine" id="cb31-5" title="5"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb31-6" title="6"></a>
-<a class="sourceLine" id="cb31-7" title="7"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb31-8" title="8">{</a>
-<a class="sourceLine" id="cb31-9" title="9">  string month1 = <span class="st">&quot;January&quot;</span>,</a>
-<a class="sourceLine" id="cb31-10" title="10">         month2 = <span class="st">&quot;February&quot;</span>,</a>
-<a class="sourceLine" id="cb31-11" title="11">         month3 = <span class="st">&quot;March&quot;</span>;</a>
-<a class="sourceLine" id="cb31-12" title="12"></a>
-<a class="sourceLine" id="cb31-13" title="13">  <span class="dt">int</span> days1 = <span class="dv">31</span>,</a>
-<a class="sourceLine" id="cb31-14" title="14">      days2 = <span class="dv">28</span>,</a>
-<a class="sourceLine" id="cb31-15" title="15">      days3 = <span class="dv">31</span>;</a>
-<a class="sourceLine" id="cb31-16" title="16"></a>
-<a class="sourceLine" id="cb31-17" title="17">  <span class="dt">double</span> high1 = <span class="fl">22.6</span>,</a>
-<a class="sourceLine" id="cb31-18" title="18">         high2 = <span class="fl">37.4</span>,</a>
-<a class="sourceLine" id="cb31-19" title="19">         high3 = <span class="fl">53.9</span>;</a>
-<a class="sourceLine" id="cb31-20" title="20"></a>
-<a class="sourceLine" id="cb31-21" title="21">  cout &lt;&lt; fixed &lt;&lt; showpoint &lt;&lt; setprecision(<span class="dv">1</span>);</a>
-<a class="sourceLine" id="cb31-22" title="22">  cout &lt;&lt; <span class="st">&quot;Month       Days     Heigh</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
-<a class="sourceLine" id="cb31-23" title="23"></a>
-<a class="sourceLine" id="cb31-24" title="24">  cout &lt;&lt; left  &lt;&lt; setw(<span class="dv">12</span>) &lt;&lt; month<span class="dv">1</span></a>
-<a class="sourceLine" id="cb31-25" title="25">       &lt;&lt; right &lt;&lt; setw(<span class="dv">4</span>)  &lt;&lt; days1 &lt;&lt; setw(<span class="dv">9</span>) &lt;&lt; high1 &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb31-26" title="26">  cout &lt;&lt; left  &lt;&lt; setw(<span class="dv">12</span>) &lt;&lt; month<span class="dv">2</span></a>
-<a class="sourceLine" id="cb31-27" title="27">       &lt;&lt; right &lt;&lt; setw(<span class="dv">4</span>)  &lt;&lt; days2 &lt;&lt; setw(<span class="dv">9</span>) &lt;&lt; high2 &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb31-28" title="28">  cout &lt;&lt; left  &lt;&lt; setw(<span class="dv">12</span>) &lt;&lt; month<span class="dv">3</span></a>
-<a class="sourceLine" id="cb31-29" title="29">       &lt;&lt; right &lt;&lt; setw(<span class="dv">4</span>)  &lt;&lt; days3 &lt;&lt; setw(<span class="dv">9</span>) &lt;&lt; high3 &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb31-30" title="30"></a>
-<a class="sourceLine" id="cb31-31" title="31">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb31-32" title="32">}</a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program illustrates the use of the left and right manipulators.</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span><span class="pp">     </span><span class="co">// Header file needed to use stream manipulators</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span><span class="pp">      </span><span class="co">// Header file needed to use string objects</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;string&gt;</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>  string month1 <span class="op">=</span> <span class="st">&quot;January&quot;</span><span class="op">,</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>         month2 <span class="op">=</span> <span class="st">&quot;February&quot;</span><span class="op">,</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>         month3 <span class="op">=</span> <span class="st">&quot;March&quot;</span><span class="op">;</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> days1 <span class="op">=</span> <span class="dv">31</span><span class="op">,</span></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>      days2 <span class="op">=</span> <span class="dv">28</span><span class="op">,</span></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>      days3 <span class="op">=</span> <span class="dv">31</span><span class="op">;</span></span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>  <span class="dt">double</span> high1 <span class="op">=</span> <span class="fl">22.6</span><span class="op">,</span></span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>         high2 <span class="op">=</span> <span class="fl">37.4</span><span class="op">,</span></span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>         high3 <span class="op">=</span> <span class="fl">53.9</span><span class="op">;</span></span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> fixed <span class="op">&lt;&lt;</span> showpoint <span class="op">&lt;&lt;</span> setprecision<span class="op">(</span><span class="dv">1</span><span class="op">);</span></span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Month       Days     Heigh</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> left  <span class="op">&lt;&lt;</span> setw<span class="op">(</span><span class="dv">12</span><span class="op">)</span> <span class="op">&lt;&lt;</span> month1</span>
+<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a>       <span class="op">&lt;&lt;</span> right <span class="op">&lt;&lt;</span> setw<span class="op">(</span><span class="dv">4</span><span class="op">)</span>  <span class="op">&lt;&lt;</span> days1 <span class="op">&lt;&lt;</span> setw<span class="op">(</span><span class="dv">9</span><span class="op">)</span> <span class="op">&lt;&lt;</span> high1 <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> left  <span class="op">&lt;&lt;</span> setw<span class="op">(</span><span class="dv">12</span><span class="op">)</span> <span class="op">&lt;&lt;</span> month2</span>
+<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a>       <span class="op">&lt;&lt;</span> right <span class="op">&lt;&lt;</span> setw<span class="op">(</span><span class="dv">4</span><span class="op">)</span>  <span class="op">&lt;&lt;</span> days2 <span class="op">&lt;&lt;</span> setw<span class="op">(</span><span class="dv">9</span><span class="op">)</span> <span class="op">&lt;&lt;</span> high2 <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> left  <span class="op">&lt;&lt;</span> setw<span class="op">(</span><span class="dv">12</span><span class="op">)</span> <span class="op">&lt;&lt;</span> month3</span>
+<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a>       <span class="op">&lt;&lt;</span> right <span class="op">&lt;&lt;</span> setw<span class="op">(</span><span class="dv">4</span><span class="op">)</span>  <span class="op">&lt;&lt;</span> days3 <span class="op">&lt;&lt;</span> setw<span class="op">(</span><span class="dv">9</span><span class="op">)</span> <span class="op">&lt;&lt;</span> high3 <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-31"><a href="#cb31-31" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb31-32"><a href="#cb31-32" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <blockquote>
 <p>Program 3-18 Output</p>
 </blockquote>
@@ -921,174 +954,174 @@ March         31     53.9</code></pre>
 <p><strong>CONCEPT:</strong> Special functions exist for working with characters and strings.</p>
 <h4 id="inputting-a-string">Inputting a String</h4>
 <p>Although it is possible to use <code>cin</code> with the <code>&gt;&gt;</code> operator to input strings, <strong>it can cause problems you need to be aware of</strong>. When <code>cin</code> reads data it passes over and ignores any leading <em>whitespace</em> characters (spaces, tabs, or line breaks). However, once it comes to first nonblank character and starts reading, it stops reading when it gets to the next whitespace character.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb33-1" title="1"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb33-2" title="2">{</a>
-<a class="sourceLine" id="cb33-3" title="3">  string name;</a>
-<a class="sourceLine" id="cb33-4" title="4">  string city;</a>
-<a class="sourceLine" id="cb33-5" title="5"></a>
-<a class="sourceLine" id="cb33-6" title="6">  cout &lt;&lt; <span class="st">&quot;Please enter your name: &quot;</span>;</a>
-<a class="sourceLine" id="cb33-7" title="7">  cin  &lt;&lt; name;</a>
-<a class="sourceLine" id="cb33-8" title="8">  cout &lt;&lt; <span class="st">&quot;Enter the city you live in: &quot;</span>;</a>
-<a class="sourceLine" id="cb33-9" title="9">  cin  &gt;&gt; city;</a>
-<a class="sourceLine" id="cb33-10" title="10">  cout &lt;&lt; <span class="st">&quot;Hello, &quot;</span> &lt;&lt; name &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb33-11" title="11">  cout &lt;&lt; <span class="st">&quot;You live in &quot;</span> &lt;&lt; city &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb33-12" title="12">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb33-13" title="13">}</a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  string name<span class="op">;</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  string city<span class="op">;</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Please enter your name: &quot;</span><span class="op">;</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&lt;&lt;</span> name<span class="op">;</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Enter the city you live in: &quot;</span><span class="op">;</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&gt;&gt;</span> city<span class="op">;</span></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Hello, &quot;</span> <span class="op">&lt;&lt;</span> name <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;You live in &quot;</span> <span class="op">&lt;&lt;</span> city <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>To solve this problem, you can use C++ function called <code>getline</code>. This function reads in an entire line, including leading and embedded spaces, and stores it in a sting object</p>
 <blockquote>
 <p>Program 3-20</p>
 </blockquote>
-<div class="sourceCode" id="cb34"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb34-1" title="1"><span class="co">// This program illustrates using the getline function</span></a>
-<a class="sourceLine" id="cb34-2" title="2"><span class="co">// to read character data into a string object.</span></a>
-<a class="sourceLine" id="cb34-3" title="3"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb34-4" title="4"><span class="pp">#include </span><span class="im">&lt;string&gt;</span><span class="pp">       </span><span class="co">// Header file needed to use string objects</span></a>
-<a class="sourceLine" id="cb34-5" title="5"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb34-6" title="6"></a>
-<a class="sourceLine" id="cb34-7" title="7"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb34-8" title="8">{</a>
-<a class="sourceLine" id="cb34-9" title="9">  string name;</a>
-<a class="sourceLine" id="cb34-10" title="10">  string city;</a>
-<a class="sourceLine" id="cb34-11" title="11"></a>
-<a class="sourceLine" id="cb34-12" title="12">  cout &lt;&lt; <span class="st">&quot;Please enter your name: &quot;</span>;</a>
-<a class="sourceLine" id="cb34-13" title="13">  getline(cin, name);</a>
-<a class="sourceLine" id="cb34-14" title="14">  cout &lt;&lt; <span class="st">&quot;Enter the city you live in: &quot;</span>;</a>
-<a class="sourceLine" id="cb34-15" title="15">  getline(cin, city);</a>
-<a class="sourceLine" id="cb34-16" title="16"></a>
-<a class="sourceLine" id="cb34-17" title="17">  cout &lt;&lt; <span class="st">&quot;Hello, &quot;</span> &lt;&lt; name &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb34-18" title="18">  cout &lt;&lt; <span class="st">&quot;You live in &quot;</span> &lt;&lt; city &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb34-19" title="19">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb34-20" title="20">}</a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program illustrates using the getline function</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co">// to read character data into a string object.</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;string&gt;</span><span class="pp">       </span><span class="co">// Header file needed to use string objects</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>  string name<span class="op">;</span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>  string city<span class="op">;</span></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Please enter your name: &quot;</span><span class="op">;</span></span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>  getline<span class="op">(</span>cin<span class="op">,</span> name<span class="op">);</span></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Enter the city you live in: &quot;</span><span class="op">;</span></span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>  getline<span class="op">(</span>cin<span class="op">,</span> city<span class="op">);</span></span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Hello, &quot;</span> <span class="op">&lt;&lt;</span> name <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;You live in &quot;</span> <span class="op">&lt;&lt;</span> city <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h4 id="using-cin.get">Using <code>cin.get</code></h4>
 <p>Becuase the get function is built into the <code>cin</code> object, we say that it is a <em>member function</em> of <code>cin</code>. The <code>get</code> member function reads a single character, including any whitespace character. If the program needs to store the character being read, the <code>get</code> member function can be called in either of the following ways</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb35-1" title="1">cin.get(ch);</a>
-<a class="sourceLine" id="cb35-2" title="2">ch = cin.get();</a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>cin<span class="op">.</span>get<span class="op">(</span>ch<span class="op">);</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>ch <span class="op">=</span> cin<span class="op">.</span>get<span class="op">();</span></span></code></pre></div>
 <p>If the program is using the <code>get</code> function simply to pause the screen until the [Enter] key is passed, and does not need to store the character</p>
 <pre><code>cin.get();</code></pre>
 <h4 id="mixing-cin-and-cin.get">Mixing <code>cin &gt;&gt;</code> and <code>cin.get</code></h4>
 <p><img src="../../../../../files/fall-2020/CISC-192/chapter-3/3.7_mixing_cin_and_cin.get_1.png" alt="Mixing cin &gt;&gt; and cin.get 1" /> <img src="../../../../../files/fall-2020/CISC-192/chapter-3/3.7_mixing_cin_and_cin.get_2.png" alt="Mixing cin &gt;&gt; and cin.get 2" /></p>
 <h4 id="using-cin.ignore">Using <code>cin.ignore</code></h4>
 <p>The <code>cin.ignore</code> function tells the <code>cin</code> object to skip one or more characters in the keyboard buffer. Here is its general form:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb37-1" title="1">cin.ignore(n, c);</a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>cin<span class="op">.</span>ignore<span class="op">(</span>n<span class="op">,</span> c<span class="op">);</span></span></code></pre></div>
 <p>The arguments shown in the parentheses are optional. If they are used, <code>n</code> is an integer and <code>c</code> is a character. They tell <code>cin</code> to skip <code>n</code> number of characters, or until the character <code>c</code> is encountered.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb38-1" title="1">cin.ignore(<span class="dv">20</span>, <span class="ch">&#39;</span><span class="sc">\n</span><span class="ch">&#39;</span>);</a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>cin<span class="op">.</span>ignore<span class="op">(</span><span class="dv">20</span><span class="op">,</span> <span class="ch">&#39;</span><span class="sc">\n</span><span class="ch">&#39;</span><span class="op">);</span></span></code></pre></div>
 <h4 id="useful-string-member-functions-and-operators">Useful <code>string</code> Member Functions and Operators</h4>
 <p>If you want to know the length of the string that is stored in a string object, you can call the object’s length member function.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb39-1" title="1">string state = <span class="st">&quot;New Jersey&quot;</span>;</a>
-<a class="sourceLine" id="cb39-2" title="2"><span class="dt">int</span> size = state.length();</a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>string state <span class="op">=</span> <span class="st">&quot;New Jersey&quot;</span><span class="op">;</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> size <span class="op">=</span> state<span class="op">.</span>length<span class="op">();</span></span></code></pre></div>
 <p>Another usefule member function is <code>assign</code>. One of the versions of this function lets you assign a set of repeated characters to a string without having to count the characters.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb40-1" title="1">spaces.assign(<span class="dv">22</span>, <span class="ch">&#39; &#39;</span>);</a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>spaces<span class="op">.</span>assign<span class="op">(</span><span class="dv">22</span><span class="op">,</span> <span class="ch">&#39; &#39;</span><span class="op">);</span></span></code></pre></div>
 <p>The <code>string</code> class also has special operators for working with strings. One of them is the <code>+</code> operator. This operator is used with string operands to <code>concatenate</code> them, or join them together.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb41-1" title="1">string greeting1 = <span class="st">&quot;Hello &quot;</span>,</a>
-<a class="sourceLine" id="cb41-2" title="2">       greeting2;</a>
-<a class="sourceLine" id="cb41-3" title="3"></a>
-<a class="sourceLine" id="cb41-4" title="4">string word1     = <span class="st">&quot;World&quot;</span>;</a>
-<a class="sourceLine" id="cb41-5" title="5">string word2     = <span class="st">&quot;People&quot;</span>;</a>
-<a class="sourceLine" id="cb41-6" title="6"></a>
-<a class="sourceLine" id="cb41-7" title="7">greeting2 = greeting1 + word;  <span class="co">// greeting2 now holds &quot;Hello World&quot;</span></a>
-<a class="sourceLine" id="cb41-8" title="8">greeting1 = greeting1 + word2; <span class="co">// greeting1 now holds &quot;Hello People&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>string greeting1 <span class="op">=</span> <span class="st">&quot;Hello &quot;</span><span class="op">,</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>       greeting2<span class="op">;</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>string word1     <span class="op">=</span> <span class="st">&quot;World&quot;</span><span class="op">;</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>string word2     <span class="op">=</span> <span class="st">&quot;People&quot;</span><span class="op">;</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>greeting2 <span class="op">=</span> greeting1 <span class="op">+</span> word<span class="op">;</span>  <span class="co">// greeting2 now holds &quot;Hello World&quot;</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>greeting1 <span class="op">=</span> greeting1 <span class="op">+</span> word2<span class="op">;</span> <span class="co">// greeting1 now holds &quot;Hello People&quot;</span></span></code></pre></div>
 <h4 id="using-c-strings">Using C-Strings</h4>
 <p>A group of contiguous 1-byte memory cells was set up to held them, with each cell holding just one character of the string. A group of memory like this is called an <em>array</em></p>
 <p>Here is a statement that defines word to be an array of characters that will hold a C-string and initializes it to “Hello”.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb42-1" title="1"><span class="dt">char</span> word[<span class="dv">10</span>] = <span class="st">&quot;Hello&quot;</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span> word<span class="op">[</span><span class="dv">10</span><span class="op">]</span> <span class="op">=</span> <span class="st">&quot;Hello&quot;</span><span class="op">;</span></span></code></pre></div>
 <p>The data type is specified first and then the variable name is given. The only difference is the [10] that follows the name of the variable. This is called a <em>size declarator</em>. It tells how many memory cells to set up to hold the characters in the C-string.</p>
 <figure>
-<img src="../../../../../files/fall-2020/CISC-192/chapter-3/3.8_figure-3.7.png" alt="Figure 3.7" /><figcaption>Figure 3.7</figcaption>
+<img src="../../../../../files/fall-2020/CISC-192/chapter-3/3.8_figure-3.7.png" alt="Figure 3.7" /><figcaption aria-hidden="true">Figure 3.7</figcaption>
 </figure>
 <h4 id="assigning-a-value-to-a-c-string">Assigning a Value to a C-String</h4>
 <p>To assign a value to a C-string, use a function called <code>strcpy</code> (pronounced string <em>copy</em>) to copy the contents of one string into another.</p>
 <blockquote>
 <p>Program 3-25</p>
 </blockquote>
-<div class="sourceCode" id="cb43"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb43-1" title="1"><span class="co">// This program uses the strcpy function to copy one C-string to another</span></a>
-<a class="sourceLine" id="cb43-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb43-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb43-4" title="4"></a>
-<a class="sourceLine" id="cb43-5" title="5"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb43-6" title="6">{</a>
-<a class="sourceLine" id="cb43-7" title="7">  <span class="at">const</span> <span class="dt">int</span> SIZE = <span class="dv">12</span>;</a>
-<a class="sourceLine" id="cb43-8" title="8">  <span class="dt">char</span> name1[SIZE],</a>
-<a class="sourceLine" id="cb43-9" title="9">       name2[SIZE];</a>
-<a class="sourceLine" id="cb43-10" title="10"></a>
-<a class="sourceLine" id="cb43-11" title="11">  strcpy(name1, <span class="st">&quot;Sebastian&quot;</span>);</a>
-<a class="sourceLine" id="cb43-12" title="12">  cout &lt;&lt; <span class="st">&quot;name1 now holds the string &quot;</span> &lt;&lt; name1 &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb43-13" title="13"></a>
-<a class="sourceLine" id="cb43-14" title="14">  strcpy(name2, name1);</a>
-<a class="sourceLine" id="cb43-15" title="15">  cout &lt;&lt; <span class="st">&quot;name2 now also holds the string &quot;</span> &lt;&lt; name2 &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb43-16" title="16"></a>
-<a class="sourceLine" id="cb43-17" title="17">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb43-18" title="18">}</a></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program uses the strcpy function to copy one C-string to another</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">const</span> <span class="dt">int</span> SIZE <span class="op">=</span> <span class="dv">12</span><span class="op">;</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">char</span> name1<span class="op">[</span>SIZE<span class="op">],</span></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>       name2<span class="op">[</span>SIZE<span class="op">];</span></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>  strcpy<span class="op">(</span>name1<span class="op">,</span> <span class="st">&quot;Sebastian&quot;</span><span class="op">);</span></span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;name1 now holds the string &quot;</span> <span class="op">&lt;&lt;</span> name1 <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>  strcpy<span class="op">(</span>name2<span class="op">,</span> name1<span class="op">);</span></span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;name2 now also holds the string &quot;</span> <span class="op">&lt;&lt;</span> name2 <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h4 id="keeping-track-of-how-much-a-c-string-can-hold">Keeping Track of How Much a C-String Can Hold</h4>
 <p>The ones that don’t fit will spill over into the following memory cells, overwriting whatever was previously stored there. This type of error, known as a <em>buffer overrun</em> can lead to serious problems.</p>
 <p>One way to prevent this from happening is to use the <code>setw</code> stream manipulator. This manipulator, which we used earlier to format output, can also be used to control the number of characters that <code>cin &gt;&gt;</code> inputs on its next read, as illustrated here:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb44-1" title="1"><span class="dt">char</span> word[<span class="dv">5</span>];</a>
-<a class="sourceLine" id="cb44-2" title="2">cin &gt;&gt; setw(<span class="dv">5</span>) &gt;&gt; word;</a></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span> word<span class="op">[</span><span class="dv">5</span><span class="op">];</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>cin <span class="op">&gt;&gt;</span> setw<span class="op">(</span><span class="dv">5</span><span class="op">)</span> <span class="op">&gt;&gt;</span> word<span class="op">;</span></span></code></pre></div>
 <p>Another way to do the same thing is by using the <code>cin</code> width function.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb45-1" title="1"><span class="dt">char</span> word[<span class="dv">5</span>];</a>
-<a class="sourceLine" id="cb45-2" title="2">cin.width(<span class="dv">5</span>);</a>
-<a class="sourceLine" id="cb45-3" title="3">cin &gt;&gt; word;</a></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span> word<span class="op">[</span><span class="dv">5</span><span class="op">];</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>cin<span class="op">.</span>width<span class="op">(</span><span class="dv">5</span><span class="op">);</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>cin <span class="op">&gt;&gt;</span> word<span class="op">;</span></span></code></pre></div>
 <blockquote>
 <p>Program 3-26</p>
 </blockquote>
-<div class="sourceCode" id="cb46"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb46-1" title="1"><span class="co">// This program uses setw with the cin object</span></a>
-<a class="sourceLine" id="cb46-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb46-3" title="3"><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span><span class="pp">      </span><span class="co">// Header file needed to use stream manipulators</span></a>
-<a class="sourceLine" id="cb46-4" title="4"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb46-5" title="5"></a>
-<a class="sourceLine" id="cb46-6" title="6"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb46-7" title="7">{</a>
-<a class="sourceLine" id="cb46-8" title="8">  <span class="at">const</span> <span class="dt">int</span> SIZE = <span class="dv">5</span>;</a>
-<a class="sourceLine" id="cb46-9" title="9">  <span class="dt">char</span> word[SIZE];</a>
-<a class="sourceLine" id="cb46-10" title="10"></a>
-<a class="sourceLine" id="cb46-11" title="11">  cout &lt;&lt; <span class="st">&quot;Enter a word: &quot;</span>;</a>
-<a class="sourceLine" id="cb46-12" title="12">  cin  &gt;&gt; setw(SIZE) &gt;&gt; word;</a>
-<a class="sourceLine" id="cb46-13" title="13">  cout &lt;&lt; <span class="st">&quot;You entered &quot;</span> &lt;&lt; word &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb46-14" title="14"></a>
-<a class="sourceLine" id="cb46-15" title="15">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb46-16" title="16">}</a></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program uses setw with the cin object</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span><span class="pp">      </span><span class="co">// Header file needed to use stream manipulators</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">const</span> <span class="dt">int</span> SIZE <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">char</span> word<span class="op">[</span>SIZE<span class="op">];</span></span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Enter a word: &quot;</span><span class="op">;</span></span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&gt;&gt;</span> setw<span class="op">(</span>SIZE<span class="op">)</span> <span class="op">&gt;&gt;</span> word<span class="op">;</span></span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;You entered &quot;</span> <span class="op">&lt;&lt;</span> word <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <blockquote>
 <p>Program 3-27</p>
 </blockquote>
-<div class="sourceCode" id="cb47"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb47-1" title="1"><span class="co">// This program uses cin&#39;s width function.</span></a>
-<a class="sourceLine" id="cb47-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb47-3" title="3"><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span><span class="pp">      </span><span class="co">// Header file needed to use stream manipulators</span></a>
-<a class="sourceLine" id="cb47-4" title="4"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb47-5" title="5"></a>
-<a class="sourceLine" id="cb47-6" title="6"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb47-7" title="7">{</a>
-<a class="sourceLine" id="cb47-8" title="8">  <span class="at">const</span> <span class="dt">int</span> SIZE = <span class="dv">5</span>;</a>
-<a class="sourceLine" id="cb47-9" title="9">  <span class="dt">char</span> word[SIZE];</a>
-<a class="sourceLine" id="cb47-10" title="10"></a>
-<a class="sourceLine" id="cb47-11" title="11">  cout &lt;&lt; <span class="st">&quot;Enter a word: &quot;</span>;</a>
-<a class="sourceLine" id="cb47-12" title="12">  cin.width(SIZE);</a>
-<a class="sourceLine" id="cb47-13" title="13">  cin &gt;&gt; word;</a>
-<a class="sourceLine" id="cb47-14" title="14">  cout &lt;&lt; <span class="st">&quot;You entered &quot;</span> &lt;&lt; word &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb47-15" title="15"></a>
-<a class="sourceLine" id="cb47-16" title="16">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb47-17" title="17">}</a></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program uses cin&#39;s width function.</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span><span class="pp">      </span><span class="co">// Header file needed to use stream manipulators</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">const</span> <span class="dt">int</span> SIZE <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">char</span> word<span class="op">[</span>SIZE<span class="op">];</span></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Enter a word: &quot;</span><span class="op">;</span></span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>  cin<span class="op">.</span>width<span class="op">(</span>SIZE<span class="op">);</span></span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>  cin <span class="op">&gt;&gt;</span> word<span class="op">;</span></span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;You entered &quot;</span> <span class="op">&lt;&lt;</span> word <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <figure>
-<img src="../../../../../files/fall-2020/CISC-192/chapter-3/3.8_figure-3.8.png" alt="Figure 3.8" /><figcaption>Figure 3.8</figcaption>
+<img src="../../../../../files/fall-2020/CISC-192/chapter-3/3.8_figure-3.8.png" alt="Figure 3.8" /><figcaption aria-hidden="true">Figure 3.8</figcaption>
 </figure>
 <h4 id="reading-a-line-of-input">Reading a Line of Input</h4>
 <p>To read a line of input, for example, you must use <code>cin.getline</code> rather than <code>getline</code>. Like <code>getline</code>, <code>cin.getline</code> allows you to read in a string containing spaces. It will continue reading until it has read the maximum specified number of characters, or until the [Enter] key is pressed.</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb48-1" title="1">cin.getline(sentence, <span class="dv">20</span>);</a></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>cin<span class="op">.</span>getline<span class="op">(</span>sentence<span class="op">,</span> <span class="dv">20</span><span class="op">);</span></span></code></pre></div>
 <blockquote>
 <p>Program 3-28</p>
 </blockquote>
-<div class="sourceCode" id="cb49"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb49-1" title="1"><span class="co">// This program demonstrates cin&#39;s getline function</span></a>
-<a class="sourceLine" id="cb49-2" title="2"><span class="co">// to read a line of text into a C-string.</span></a>
-<a class="sourceLine" id="cb49-3" title="3"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb49-4" title="4"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb49-5" title="5"></a>
-<a class="sourceLine" id="cb49-6" title="6"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb49-7" title="7">{</a>
-<a class="sourceLine" id="cb49-8" title="8">  <span class="at">const</span> <span class="dt">int</span> SIZE = <span class="dv">81</span>;</a>
-<a class="sourceLine" id="cb49-9" title="9">  <span class="dt">char</span> sentence[SIZE];</a>
-<a class="sourceLine" id="cb49-10" title="10"></a>
-<a class="sourceLine" id="cb49-11" title="11">  cout &lt;&lt; <span class="st">&quot;Enter a sentence: &quot;</span>;</a>
-<a class="sourceLine" id="cb49-12" title="12">  cin.getline(sentence, SIZE);</a>
-<a class="sourceLine" id="cb49-13" title="13">  cout &lt;&lt; <span class="st">&quot;You entered &quot;</span> &lt;&lt; sentence &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb49-14" title="14">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb49-15" title="15">}</a></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program demonstrates cin&#39;s getline function</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="co">// to read a line of text into a C-string.</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">const</span> <span class="dt">int</span> SIZE <span class="op">=</span> <span class="dv">81</span><span class="op">;</span></span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">char</span> sentence<span class="op">[</span>SIZE<span class="op">];</span></span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Enter a sentence: &quot;</span><span class="op">;</span></span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>  cin<span class="op">.</span>getline<span class="op">(</span>sentence<span class="op">,</span> SIZE<span class="op">);</span></span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;You entered &quot;</span> <span class="op">&lt;&lt;</span> sentence <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="more-mathematical-library-functions">3.9 More Mathematical Library Functions</h3>
 <p><strong>CONCEPT:</strong> The C++ run-time library provides functions for performing complex mathematical operations.</p>
 <blockquote>
@@ -1171,165 +1204,165 @@ March         31     53.9</code></pre>
 <blockquote>
 <p>Program 3-29</p>
 </blockquote>
-<div class="sourceCode" id="cb50"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb50-1" title="1"><span class="co">// This program inputs the lengths of the two sides of a right</span></a>
-<a class="sourceLine" id="cb50-2" title="2"><span class="co">// triangle, then calculates and displays the length of the hypotenuse.</span></a>
-<a class="sourceLine" id="cb50-3" title="3"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb50-4" title="4"><span class="pp">#include </span><span class="im">&lt;cmath&gt;</span><span class="pp"> </span><span class="co">// Header file needed to use the sqrt function</span></a>
-<a class="sourceLine" id="cb50-5" title="5"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb50-6" title="6"></a>
-<a class="sourceLine" id="cb50-7" title="7"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb50-8" title="8">{</a>
-<a class="sourceLine" id="cb50-9" title="9">  <span class="dt">double</span> a, b, c;</a>
-<a class="sourceLine" id="cb50-10" title="10">  <span class="co">// Get the length of the two sides</span></a>
-<a class="sourceLine" id="cb50-11" title="11">  cout &lt;&lt; <span class="st">&quot;Enter the length of side a: &quot;</span>;</a>
-<a class="sourceLine" id="cb50-12" title="12">  cin  &gt;&gt; a;</a>
-<a class="sourceLine" id="cb50-13" title="13">  cout &lt;&lt; <span class="st">&quot;Enter the length of side b: &quot;</span>;</a>
-<a class="sourceLine" id="cb50-14" title="14">  cin  &gt;&gt; b;</a>
-<a class="sourceLine" id="cb50-15" title="15"></a>
-<a class="sourceLine" id="cb50-16" title="16">  <span class="co">// Compute and display the length of the hypotenuse</span></a>
-<a class="sourceLine" id="cb50-17" title="17">  c = sqrt(pow(a, <span class="fl">2.0</span>) + pow(b, <span class="fl">2.0</span>));</a>
-<a class="sourceLine" id="cb50-18" title="18"></a>
-<a class="sourceLine" id="cb50-19" title="19">  cout &lt;&lt; <span class="st">&quot;The length of the hypotenuse is &quot;</span>;</a>
-<a class="sourceLine" id="cb50-20" title="20">  cout &lt;&lt; c &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb50-21" title="21">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb50-22" title="22">}</a></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program inputs the lengths of the two sides of a right</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="co">// triangle, then calculates and displays the length of the hypotenuse.</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cmath&gt;</span><span class="pp"> </span><span class="co">// Header file needed to use the sqrt function</span></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">double</span> a<span class="op">,</span> b<span class="op">,</span> c<span class="op">;</span></span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Get the length of the two sides</span></span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Enter the length of side a: &quot;</span><span class="op">;</span></span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&gt;&gt;</span> a<span class="op">;</span></span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Enter the length of side b: &quot;</span><span class="op">;</span></span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&gt;&gt;</span> b<span class="op">;</span></span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Compute and display the length of the hypotenuse</span></span>
+<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a>  c <span class="op">=</span> sqrt<span class="op">(</span>pow<span class="op">(</span>a<span class="op">,</span> <span class="fl">2.0</span><span class="op">)</span> <span class="op">+</span> pow<span class="op">(</span>b<span class="op">,</span> <span class="fl">2.0</span><span class="op">));</span></span>
+<span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-19"><a href="#cb50-19" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;The length of the hypotenuse is &quot;</span><span class="op">;</span></span>
+<span id="cb50-20"><a href="#cb50-20" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> c <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb50-21"><a href="#cb50-21" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb50-22"><a href="#cb50-22" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="random-numbers">3.10 Random Numbers</h3>
 <p><strong>CONCEPT:</strong> C++ offers a set of functions to generate and work with random numbers.</p>
 <blockquote>
 <p>Program 3-31</p>
 </blockquote>
-<div class="sourceCode" id="cb51"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb51-1" title="1"><span class="co">// This program demonstrates using random numbers when a</span></a>
-<a class="sourceLine" id="cb51-2" title="2"><span class="co">// &quot;seed&quot; is provided for the random number generator.</span></a>
-<a class="sourceLine" id="cb51-3" title="3"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb51-4" title="4"><span class="pp">#include </span><span class="im">&lt;cstdlib&gt;</span><span class="pp">        </span><span class="co">// Header file needed to use srand and rand</span></a>
-<a class="sourceLine" id="cb51-5" title="5"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb51-6" title="6"></a>
-<a class="sourceLine" id="cb51-7" title="7"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb51-8" title="8">{</a>
-<a class="sourceLine" id="cb51-9" title="9">  <span class="dt">unsigned</span> seed;          <span class="co">// Random generator seed</span></a>
-<a class="sourceLine" id="cb51-10" title="10"></a>
-<a class="sourceLine" id="cb51-11" title="11">  <span class="co">// Get a &quot;seed&quot; value from the user</span></a>
-<a class="sourceLine" id="cb51-12" title="12">  cout &lt;&lt; <span class="st">&quot;Enter a seed value: &quot;</span>;</a>
-<a class="sourceLine" id="cb51-13" title="13">  cin  &gt;&gt; seed;</a>
-<a class="sourceLine" id="cb51-14" title="14"></a>
-<a class="sourceLine" id="cb51-15" title="15">  <span class="co">// Set the random generator seed before calling rand()</span></a>
-<a class="sourceLine" id="cb51-16" title="16">  srand(seed);</a>
-<a class="sourceLine" id="cb51-17" title="17"></a>
-<a class="sourceLine" id="cb51-18" title="18">  <span class="co">// Now generate and print three random numbers</span></a>
-<a class="sourceLine" id="cb51-19" title="19">  cout &lt;&lt; rand() &lt;&lt; <span class="st">&quot;        &quot;</span> ;</a>
-<a class="sourceLine" id="cb51-20" title="20">  cout &lt;&lt; rand() &lt;&lt; <span class="st">&quot;        &quot;</span> ;</a>
-<a class="sourceLine" id="cb51-21" title="21">  cout &lt;&lt; rand() &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb51-22" title="22"></a>
-<a class="sourceLine" id="cb51-23" title="23">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb51-24" title="24">}</a></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program demonstrates using random numbers when a</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="co">// &quot;seed&quot; is provided for the random number generator.</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstdlib&gt;</span><span class="pp">        </span><span class="co">// Header file needed to use srand and rand</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">unsigned</span> seed<span class="op">;</span>          <span class="co">// Random generator seed</span></span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Get a &quot;seed&quot; value from the user</span></span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Enter a seed value: &quot;</span><span class="op">;</span></span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&gt;&gt;</span> seed<span class="op">;</span></span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Set the random generator seed before calling rand()</span></span>
+<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a>  srand<span class="op">(</span>seed<span class="op">);</span></span>
+<span id="cb51-17"><a href="#cb51-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-18"><a href="#cb51-18" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Now generate and print three random numbers</span></span>
+<span id="cb51-19"><a href="#cb51-19" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> rand<span class="op">()</span> <span class="op">&lt;&lt;</span> <span class="st">&quot;        &quot;</span> <span class="op">;</span></span>
+<span id="cb51-20"><a href="#cb51-20" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> rand<span class="op">()</span> <span class="op">&lt;&lt;</span> <span class="st">&quot;        &quot;</span> <span class="op">;</span></span>
+<span id="cb51-21"><a href="#cb51-21" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> rand<span class="op">()</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb51-22"><a href="#cb51-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-23"><a href="#cb51-23" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb51-24"><a href="#cb51-24" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h4 id="limiting-the-range-of-a-random-number">Limiting the Range of a Random Number</h4>
 <p>The general formula to this is:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb52-1" title="1">number = (rand() % (maxValue - minValue + <span class="dv">1</span>)) + minValue;</a></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="op">(</span>rand<span class="op">()</span> <span class="op">%</span> <span class="op">(</span>maxValue <span class="op">-</span> minValue <span class="op">+</span> <span class="dv">1</span><span class="op">))</span> <span class="op">+</span> minValue<span class="op">;</span></span></code></pre></div>
 <h3 id="focus-on-debugging-hand-tracing-a-program">3.11 Focus on Debugging: Hand Tracing a Program</h3>
 <p><em>Hand tracing</em> is a debugging process where you pretend that you are the computer executing a program. You step through each of the program’s statements one by one. As you look at a statement, you record the contents that each variable will have after the statement executes. This process is helpful in finding mathematical mistakes and other logic errors.</p>
 <h3 id="green-fields-landscaping-case-studypart-1">3.12 Green Fields Landscaping Case Study–Part 1</h3>
 <blockquote>
 <p>Program 3-34</p>
 </blockquote>
-<div class="sourceCode" id="cb53"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb53-1" title="1"><span class="co">// This program is used by Green Fields Landscaping to compute the</span></a>
-<a class="sourceLine" id="cb53-2" title="2"><span class="co">// number of cubic yards of mulch a customer needs and its price.</span></a>
-<a class="sourceLine" id="cb53-3" title="3"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb53-4" title="4"><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span></a>
-<a class="sourceLine" id="cb53-5" title="5"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb53-6" title="6"></a>
-<a class="sourceLine" id="cb53-7" title="7"><span class="at">const</span> <span class="dt">double</span> PRICE_PER_CUBIC_YD = <span class="fl">22.00</span>;</a>
-<a class="sourceLine" id="cb53-8" title="8"></a>
-<a class="sourceLine" id="cb53-9" title="9"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb53-10" title="10">{</a>
-<a class="sourceLine" id="cb53-11" title="11">  <span class="dt">double</span> squareFeet; <span class="co">// square feet of land to be covered</span></a>
-<a class="sourceLine" id="cb53-12" title="12">  <span class="dt">int</span> depth;         <span class="co">// inches deep the mulch is to be spread</span></a>
-<a class="sourceLine" id="cb53-13" title="13">  <span class="dt">double</span> cubicFeet,  <span class="co">// number of cubic feet of mulch needed</span></a>
-<a class="sourceLine" id="cb53-14" title="14">  cubicYards,        <span class="co">// number of cubic yards of mulch needed</span></a>
-<a class="sourceLine" id="cb53-15" title="15">  totalPrice;        <span class="co">// total price for all the cubic yards ordered</span></a>
-<a class="sourceLine" id="cb53-16" title="16"></a>
-<a class="sourceLine" id="cb53-17" title="17">  <span class="co">// Get inputs</span></a>
-<a class="sourceLine" id="cb53-18" title="18">  cout &lt;&lt; <span class="st">&quot;Number of square feet to be covered with mulch: &quot;</span>;</a>
-<a class="sourceLine" id="cb53-19" title="19">  cin  &gt;&gt; squareFeet;</a>
-<a class="sourceLine" id="cb53-20" title="20">  cout &lt;&lt; <span class="st">&quot;Number of inches deep: &quot;</span>;</a>
-<a class="sourceLine" id="cb53-21" title="21">  cin  &gt;&gt; depth;</a>
-<a class="sourceLine" id="cb53-22" title="22"></a>
-<a class="sourceLine" id="cb53-23" title="23">  <span class="co">// Perform calculations</span></a>
-<a class="sourceLine" id="cb53-24" title="24">  cubicFeet = squareFeet * (depth / <span class="fl">12.0</span>);</a>
-<a class="sourceLine" id="cb53-25" title="25">  cubicYards = cubicFeet / <span class="dv">27</span>;</a>
-<a class="sourceLine" id="cb53-26" title="26">  totalPrice = cubicYards * PRICE_PER_CUBIC_YD;</a>
-<a class="sourceLine" id="cb53-27" title="27"></a>
-<a class="sourceLine" id="cb53-28" title="28">  <span class="co">// Display outputs</span></a>
-<a class="sourceLine" id="cb53-29" title="29">  cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st"> Number of cubic yards needed: &quot;</span> &lt;&lt; cubicYards &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb53-30" title="30">  cout &lt;&lt; fixed &lt;&lt; showpoint &lt;&lt; setprecision(<span class="dv">2</span>);</a>
-<a class="sourceLine" id="cb53-31" title="31">  cout &lt;&lt; <span class="st">&quot;Price per cubic yard: $&quot;</span> &lt;&lt; setw(<span class="dv">7</span>)</a>
-<a class="sourceLine" id="cb53-32" title="32">       &lt;&lt; PRICE_PER_CUBIC_YD &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb53-33" title="33">  cout &lt;&lt; <span class="st">&quot;Total price:           $&quot;</span> &lt;&lt; setw(<span class="dv">7</span>)</a>
-<a class="sourceLine" id="cb53-34" title="34">       &lt;&lt; totalPrice &lt;&lt; endl &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb53-35" title="35"></a>
-<a class="sourceLine" id="cb53-36" title="36">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb53-37" title="37">}</a></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program is used by Green Fields Landscaping to compute the</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="co">// number of cubic yards of mulch a customer needs and its price.</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iomanip&gt;</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a><span class="at">const</span> <span class="dt">double</span> PRICE_PER_CUBIC_YD <span class="op">=</span> <span class="fl">22.00</span><span class="op">;</span></span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">double</span> squareFeet<span class="op">;</span> <span class="co">// square feet of land to be covered</span></span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> depth<span class="op">;</span>         <span class="co">// inches deep the mulch is to be spread</span></span>
+<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>  <span class="dt">double</span> cubicFeet<span class="op">,</span>  <span class="co">// number of cubic feet of mulch needed</span></span>
+<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a>  cubicYards<span class="op">,</span>        <span class="co">// number of cubic yards of mulch needed</span></span>
+<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a>  totalPrice<span class="op">;</span>        <span class="co">// total price for all the cubic yards ordered</span></span>
+<span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Get inputs</span></span>
+<span id="cb53-18"><a href="#cb53-18" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Number of square feet to be covered with mulch: &quot;</span><span class="op">;</span></span>
+<span id="cb53-19"><a href="#cb53-19" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&gt;&gt;</span> squareFeet<span class="op">;</span></span>
+<span id="cb53-20"><a href="#cb53-20" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Number of inches deep: &quot;</span><span class="op">;</span></span>
+<span id="cb53-21"><a href="#cb53-21" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&gt;&gt;</span> depth<span class="op">;</span></span>
+<span id="cb53-22"><a href="#cb53-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-23"><a href="#cb53-23" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Perform calculations</span></span>
+<span id="cb53-24"><a href="#cb53-24" aria-hidden="true" tabindex="-1"></a>  cubicFeet <span class="op">=</span> squareFeet <span class="op">*</span> <span class="op">(</span>depth <span class="op">/</span> <span class="fl">12.0</span><span class="op">);</span></span>
+<span id="cb53-25"><a href="#cb53-25" aria-hidden="true" tabindex="-1"></a>  cubicYards <span class="op">=</span> cubicFeet <span class="op">/</span> <span class="dv">27</span><span class="op">;</span></span>
+<span id="cb53-26"><a href="#cb53-26" aria-hidden="true" tabindex="-1"></a>  totalPrice <span class="op">=</span> cubicYards <span class="op">*</span> PRICE_PER_CUBIC_YD<span class="op">;</span></span>
+<span id="cb53-27"><a href="#cb53-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-28"><a href="#cb53-28" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Display outputs</span></span>
+<span id="cb53-29"><a href="#cb53-29" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st"> Number of cubic yards needed: &quot;</span> <span class="op">&lt;&lt;</span> cubicYards <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb53-30"><a href="#cb53-30" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> fixed <span class="op">&lt;&lt;</span> showpoint <span class="op">&lt;&lt;</span> setprecision<span class="op">(</span><span class="dv">2</span><span class="op">);</span></span>
+<span id="cb53-31"><a href="#cb53-31" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Price per cubic yard: $&quot;</span> <span class="op">&lt;&lt;</span> setw<span class="op">(</span><span class="dv">7</span><span class="op">)</span></span>
+<span id="cb53-32"><a href="#cb53-32" aria-hidden="true" tabindex="-1"></a>       <span class="op">&lt;&lt;</span> PRICE_PER_CUBIC_YD <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb53-33"><a href="#cb53-33" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Total price:           $&quot;</span> <span class="op">&lt;&lt;</span> setw<span class="op">(</span><span class="dv">7</span><span class="op">)</span></span>
+<span id="cb53-34"><a href="#cb53-34" aria-hidden="true" tabindex="-1"></a>       <span class="op">&lt;&lt;</span> totalPrice <span class="op">&lt;&lt;</span> endl <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb53-35"><a href="#cb53-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-36"><a href="#cb53-36" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb53-37"><a href="#cb53-37" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="trying-it-all-together-word-game">3.13 Trying It All Together: Word Game</h3>
 <blockquote>
 <p>Program 3-35</p>
 </blockquote>
-<div class="sourceCode" id="cb54"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb54-1" title="1"><span class="co">// This program uses strings to play a word game.</span></a>
-<a class="sourceLine" id="cb54-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb54-3" title="3"><span class="pp">#include </span><span class="im">&lt;string&gt;</span></a>
-<a class="sourceLine" id="cb54-4" title="4"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb54-5" title="5"></a>
-<a class="sourceLine" id="cb54-6" title="6"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb54-7" title="7">{ <span class="co">// Stored strings</span></a>
-<a class="sourceLine" id="cb54-8" title="8">  string s1 = <span class="st">&quot;There once was a person named &quot;</span>,</a>
-<a class="sourceLine" id="cb54-9" title="9">         s2 = <span class="st">&quot; who lived in &quot;</span>,</a>
-<a class="sourceLine" id="cb54-10" title="10">         s3 = <span class="st">&quot;</span><span class="sc">\n</span><span class="st">and who loved &quot;</span>,</a>
-<a class="sourceLine" id="cb54-11" title="11">         s4 = <span class="st">&quot;. At the age of &quot;</span>,</a>
-<a class="sourceLine" id="cb54-12" title="12">         s5 = <span class="st">&quot;, &quot;</span>,</a>
-<a class="sourceLine" id="cb54-13" title="13">         s6 = <span class="st">&quot; graduated </span><span class="sc">\n</span><span class="st">from high school and went to work in a &quot;</span>,</a>
-<a class="sourceLine" id="cb54-14" title="14">         s7 = <span class="st">&quot; factory.</span><span class="sc">\n</span><span class="st">&quot;</span>,</a>
-<a class="sourceLine" id="cb54-15" title="15">         s8 = <span class="st">&quot; got married and had &quot;</span>,</a>
-<a class="sourceLine" id="cb54-16" title="16">         s9 = <span class="st">&quot; children and a pet &quot;</span>,</a>
-<a class="sourceLine" id="cb54-17" title="17">         s10= <span class="st">&quot; named &quot;</span>,</a>
-<a class="sourceLine" id="cb54-18" title="18">         s11= <span class="st">&quot;.</span><span class="sc">\n</span><span class="st">Every weekend the family and &quot;</span>,</a>
-<a class="sourceLine" id="cb54-19" title="19">         s12= <span class="st">&quot; had fun &quot;</span>,</a>
-<a class="sourceLine" id="cb54-20" title="20">         s13= <span class="st">&quot; together.&quot;</span>;</a>
-<a class="sourceLine" id="cb54-21" title="21"></a>
-<a class="sourceLine" id="cb54-22" title="22">  <span class="co">// Values input by the user</span></a>
-<a class="sourceLine" id="cb54-23" title="23">  string name, city, activity, animal, product, petName;</a>
-<a class="sourceLine" id="cb54-24" title="24">  <span class="dt">int</span> age, kids;</a>
-<a class="sourceLine" id="cb54-25" title="25"></a>
-<a class="sourceLine" id="cb54-26" title="26">  cout &lt;&lt; <span class="st">&quot;Enter the following information and I</span><span class="sc">\&#39;</span><span class="st">ll &quot;</span></a>
-<a class="sourceLine" id="cb54-27" title="27">       &lt;&lt; <span class="st">&quot;tell you a story.</span><span class="sc">\n\n</span><span class="st">&quot;</span>;</a>
-<a class="sourceLine" id="cb54-28" title="28">  cout &lt;&lt; <span class="st">&quot;Your name: &quot;</span>;</a>
-<a class="sourceLine" id="cb54-29" title="29">  getline(cin, name);</a>
-<a class="sourceLine" id="cb54-30" title="30"></a>
-<a class="sourceLine" id="cb54-31" title="31">  cout &lt;&lt; <span class="st">&quot;The name of a city: &quot;</span>;</a>
-<a class="sourceLine" id="cb54-32" title="32">  getline(cin, city);</a>
-<a class="sourceLine" id="cb54-33" title="33"></a>
-<a class="sourceLine" id="cb54-34" title="34">  cout &lt;&lt; <span class="st">&quot;A physical activity (e.g. jogging, playing baseball): &quot;</span>;</a>
-<a class="sourceLine" id="cb54-35" title="35">  getline(cin, activity);</a>
-<a class="sourceLine" id="cb54-36" title="36"></a>
-<a class="sourceLine" id="cb54-37" title="37">  cout &lt;&lt; <span class="st">&quot;An animal: &quot;</span>;</a>
-<a class="sourceLine" id="cb54-38" title="38">  getline(cin, animal);</a>
-<a class="sourceLine" id="cb54-39" title="39"></a>
-<a class="sourceLine" id="cb54-40" title="40">  cout &lt;&lt; <span class="st">&quot;A food or product you can buy: &quot;</span>;</a>
-<a class="sourceLine" id="cb54-41" title="41">  getline(cin, product);</a>
-<a class="sourceLine" id="cb54-42" title="42"></a>
-<a class="sourceLine" id="cb54-43" title="43">  cout &lt;&lt; <span class="st">&quot;An adjective noun (e.g. blue car): &quot;</span>;</a>
-<a class="sourceLine" id="cb54-44" title="44">  getline(cin, petName);</a>
-<a class="sourceLine" id="cb54-45" title="45"></a>
-<a class="sourceLine" id="cb54-46" title="46">  cout &lt;&lt; <span class="st">&quot;A number between 10 and 50: &quot;</span>;</a>
-<a class="sourceLine" id="cb54-47" title="47">  cin  &gt;&gt; age;</a>
-<a class="sourceLine" id="cb54-48" title="48"></a>
-<a class="sourceLine" id="cb54-49" title="49">  cout &lt;&lt; <span class="st">&quot;A number between 0 and 15: &quot;</span>;</a>
-<a class="sourceLine" id="cb54-50" title="50">  cin  &gt;&gt; kids;</a>
-<a class="sourceLine" id="cb54-51" title="51"></a>
-<a class="sourceLine" id="cb54-52" title="52">  cout &lt;&lt; endl &lt;&lt; s1 &lt;&lt; name &lt;&lt; s2 &lt;&lt; city &lt;&lt; s3 &lt;&lt; activity;</a>
-<a class="sourceLine" id="cb54-53" title="53">  cout &lt;&lt; s4 &lt;&lt; age &lt;&lt; s5 &lt;&lt; name &lt;&lt; s6 &lt;&lt; product &lt;&lt; s7;</a>
-<a class="sourceLine" id="cb54-54" title="54">  cout &lt;&lt; name &lt;&lt; s8 &lt;&lt; kids &lt;&lt; s9 &lt;&lt; animal &lt;&lt; s10 &lt;&lt; petName;</a>
-<a class="sourceLine" id="cb54-55" title="55">  cout &lt;&lt; s11 &lt;&lt; petName &lt;&lt; s12 &lt;&lt; activity &lt;&lt; s13 &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb54-56" title="56"></a>
-<a class="sourceLine" id="cb54-57" title="57">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb54-58" title="58">}</a></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program uses strings to play a word game.</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;string&gt;</span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span> <span class="co">// Stored strings</span></span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>  string s1 <span class="op">=</span> <span class="st">&quot;There once was a person named &quot;</span><span class="op">,</span></span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>         s2 <span class="op">=</span> <span class="st">&quot; who lived in &quot;</span><span class="op">,</span></span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>         s3 <span class="op">=</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">and who loved &quot;</span><span class="op">,</span></span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>         s4 <span class="op">=</span> <span class="st">&quot;. At the age of &quot;</span><span class="op">,</span></span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>         s5 <span class="op">=</span> <span class="st">&quot;, &quot;</span><span class="op">,</span></span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>         s6 <span class="op">=</span> <span class="st">&quot; graduated </span><span class="sc">\n</span><span class="st">from high school and went to work in a &quot;</span><span class="op">,</span></span>
+<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>         s7 <span class="op">=</span> <span class="st">&quot; factory.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span></span>
+<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a>         s8 <span class="op">=</span> <span class="st">&quot; got married and had &quot;</span><span class="op">,</span></span>
+<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a>         s9 <span class="op">=</span> <span class="st">&quot; children and a pet &quot;</span><span class="op">,</span></span>
+<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a>         s10<span class="op">=</span> <span class="st">&quot; named &quot;</span><span class="op">,</span></span>
+<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a>         s11<span class="op">=</span> <span class="st">&quot;.</span><span class="sc">\n</span><span class="st">Every weekend the family and &quot;</span><span class="op">,</span></span>
+<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a>         s12<span class="op">=</span> <span class="st">&quot; had fun &quot;</span><span class="op">,</span></span>
+<span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a>         s13<span class="op">=</span> <span class="st">&quot; together.&quot;</span><span class="op">;</span></span>
+<span id="cb54-21"><a href="#cb54-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-22"><a href="#cb54-22" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Values input by the user</span></span>
+<span id="cb54-23"><a href="#cb54-23" aria-hidden="true" tabindex="-1"></a>  string name<span class="op">,</span> city<span class="op">,</span> activity<span class="op">,</span> animal<span class="op">,</span> product<span class="op">,</span> petName<span class="op">;</span></span>
+<span id="cb54-24"><a href="#cb54-24" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> age<span class="op">,</span> kids<span class="op">;</span></span>
+<span id="cb54-25"><a href="#cb54-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-26"><a href="#cb54-26" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Enter the following information and I</span><span class="sc">\&#39;</span><span class="st">ll &quot;</span></span>
+<span id="cb54-27"><a href="#cb54-27" aria-hidden="true" tabindex="-1"></a>       <span class="op">&lt;&lt;</span> <span class="st">&quot;tell you a story.</span><span class="sc">\n\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb54-28"><a href="#cb54-28" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Your name: &quot;</span><span class="op">;</span></span>
+<span id="cb54-29"><a href="#cb54-29" aria-hidden="true" tabindex="-1"></a>  getline<span class="op">(</span>cin<span class="op">,</span> name<span class="op">);</span></span>
+<span id="cb54-30"><a href="#cb54-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-31"><a href="#cb54-31" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;The name of a city: &quot;</span><span class="op">;</span></span>
+<span id="cb54-32"><a href="#cb54-32" aria-hidden="true" tabindex="-1"></a>  getline<span class="op">(</span>cin<span class="op">,</span> city<span class="op">);</span></span>
+<span id="cb54-33"><a href="#cb54-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-34"><a href="#cb54-34" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;A physical activity (e.g. jogging, playing baseball): &quot;</span><span class="op">;</span></span>
+<span id="cb54-35"><a href="#cb54-35" aria-hidden="true" tabindex="-1"></a>  getline<span class="op">(</span>cin<span class="op">,</span> activity<span class="op">);</span></span>
+<span id="cb54-36"><a href="#cb54-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-37"><a href="#cb54-37" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;An animal: &quot;</span><span class="op">;</span></span>
+<span id="cb54-38"><a href="#cb54-38" aria-hidden="true" tabindex="-1"></a>  getline<span class="op">(</span>cin<span class="op">,</span> animal<span class="op">);</span></span>
+<span id="cb54-39"><a href="#cb54-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-40"><a href="#cb54-40" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;A food or product you can buy: &quot;</span><span class="op">;</span></span>
+<span id="cb54-41"><a href="#cb54-41" aria-hidden="true" tabindex="-1"></a>  getline<span class="op">(</span>cin<span class="op">,</span> product<span class="op">);</span></span>
+<span id="cb54-42"><a href="#cb54-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-43"><a href="#cb54-43" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;An adjective noun (e.g. blue car): &quot;</span><span class="op">;</span></span>
+<span id="cb54-44"><a href="#cb54-44" aria-hidden="true" tabindex="-1"></a>  getline<span class="op">(</span>cin<span class="op">,</span> petName<span class="op">);</span></span>
+<span id="cb54-45"><a href="#cb54-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-46"><a href="#cb54-46" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;A number between 10 and 50: &quot;</span><span class="op">;</span></span>
+<span id="cb54-47"><a href="#cb54-47" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&gt;&gt;</span> age<span class="op">;</span></span>
+<span id="cb54-48"><a href="#cb54-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-49"><a href="#cb54-49" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;A number between 0 and 15: &quot;</span><span class="op">;</span></span>
+<span id="cb54-50"><a href="#cb54-50" aria-hidden="true" tabindex="-1"></a>  cin  <span class="op">&gt;&gt;</span> kids<span class="op">;</span></span>
+<span id="cb54-51"><a href="#cb54-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-52"><a href="#cb54-52" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> endl <span class="op">&lt;&lt;</span> s1 <span class="op">&lt;&lt;</span> name <span class="op">&lt;&lt;</span> s2 <span class="op">&lt;&lt;</span> city <span class="op">&lt;&lt;</span> s3 <span class="op">&lt;&lt;</span> activity<span class="op">;</span></span>
+<span id="cb54-53"><a href="#cb54-53" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> s4 <span class="op">&lt;&lt;</span> age <span class="op">&lt;&lt;</span> s5 <span class="op">&lt;&lt;</span> name <span class="op">&lt;&lt;</span> s6 <span class="op">&lt;&lt;</span> product <span class="op">&lt;&lt;</span> s7<span class="op">;</span></span>
+<span id="cb54-54"><a href="#cb54-54" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> name <span class="op">&lt;&lt;</span> s8 <span class="op">&lt;&lt;</span> kids <span class="op">&lt;&lt;</span> s9 <span class="op">&lt;&lt;</span> animal <span class="op">&lt;&lt;</span> s10 <span class="op">&lt;&lt;</span> petName<span class="op">;</span></span>
+<span id="cb54-55"><a href="#cb54-55" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> s11 <span class="op">&lt;&lt;</span> petName <span class="op">&lt;&lt;</span> s12 <span class="op">&lt;&lt;</span> activity <span class="op">&lt;&lt;</span> s13 <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb54-56"><a href="#cb54-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-57"><a href="#cb54-57" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb54-58"><a href="#cb54-58" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h2 id="video-lectures">Video Lectures</h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=gSpzyhbwfyU">📺 CISC 192 Section 3.1 The cin object</a></li>

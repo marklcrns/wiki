@@ -12,6 +12,13 @@
 
     <title>CISC 190 Module 5 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -23,26 +30,28 @@
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -51,9 +60,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -85,7 +94,22 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
     </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -130,13 +154,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#module-5-conditional-execution">Module 5: Conditional Execution</a><ul>
-          <li><a href="#chapter-6-conditionally-modifying-pixels">Chapter 6: Conditionally Modifying Pixels</a><ul>
-          <li><a href="#conditional-pixel-changes">6.1 Conditional Pixel Changes</a><ul>
+          <li><a href="#module-5-conditional-execution">Module 5: Conditional Execution</a>
+          <ul>
+          <li><a href="#chapter-6-conditionally-modifying-pixels">Chapter 6: Conditionally Modifying Pixels</a>
+          <ul>
+          <li><a href="#conditional-pixel-changes">6.1 Conditional Pixel Changes</a>
+          <ul>
           <li><a href="#comparing-colors">6.1.1 Comparing Colors</a></li>
           <li><a href="#replacing-colors">6.1.2 Replacing Colors</a></li>
           </ul></li>
-          <li><a href="#simple-edge-detection-conditionals-with-two-options">6.2 Simple Edge Detection: Conditionals with Two Options</a><ul>
+          <li><a href="#simple-edge-detection-conditionals-with-two-options">6.2 Simple Edge Detection: Conditionals with Two Options</a>
+          <ul>
           <li><a href="#negation">6.2.1 Negation</a></li>
           <li><a href="#testing-for-both-conditions">6.2.2 Testing for Both Conditions</a></li>
           <li><a href="#conditionals-with-two-options">6.2.3 Conditionals with Two Options</a></li>
@@ -184,432 +212,432 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 id="conditional-pixel-changes">6.1 Conditional Pixel Changes</h3>
 <p>One way to conditionally execute code in Java is with an <code>if (expression)</code> statement. The <code>if</code> is a keyword that means that if the expression in the parentheses evaluates to <code>true</code> then execute the following statement or block of statements. If false, then just skip the execution of that statement or block of statements.</p>
 <h4 id="comparing-colors">6.1.1 Comparing Colors</h4>
-<p>What does it mean to compare two colors? How can the computer tell if the color at the current pixel is “red”? The distance between two colors is the Cartesian distance between the colors as points in a three-dimensional space, where red, green, and blue are the three dimensions. Recall that the distance between two points <span class="math inline">\((x_{1},\, y_{1})\)</span> and <span class="math inline">\((x_{2},\, y_{2})\)</span> is:</p>
-<p><span class="math display">\[
+<p>What does it mean to compare two colors? How can the computer tell if the color at the current pixel is “red”? The distance between two colors is the Cartesian distance between the colors as points in a three-dimensional space, where red, green, and blue are the three dimensions. Recall that the distance between two points <span class="math inline">(x_{1},\, y_{1})</span> and <span class="math inline">(x_{2},\, y_{2})</span> is:</p>
+<p><span class="math display">
 \sqrt{(x_{1} - x_{2})^{2} + (y_{1} - y_{2})^{2}}
-\]</span></p>
-<p>The similar measure for two colors <span class="math inline">\((red_{1},\, green_{1},\, blue_{1})\)</span> and <span class="math inline">\(red_{2},\, green_{2},\, blue_{2})\)</span> is:</p>
-<p><span class="math display">\[
+</span></p>
+<p>The similar measure for two colors <span class="math inline">(red_{1},\, green_{1},\, blue_{1})</span> and <span class="math inline">red_{2},\, green_{2},\, blue_{2})</span> is:</p>
+<p><span class="math display">
 \sqrt{(red_{1} - red_{2})^{2} + (green_{1} - green_{2})^{2} + (blue_{1} -
 blue_{2})^{2}}
-\]</span></p>
+</span></p>
 <p>However, you won’t have to code this. The Pixel class has an object method colorDistance(Color color) which returns the distance between the color in the current Pixel object and the passed color. The hard part is determining what “close enough” is for two colors.</p>
 <h4 id="replacing-colors">6.1.2 Replacing Colors</h4>
 <p>Here’s a program that tries to replace brown color with red.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="co">/**</span> Program <span class="co">33:</span> Color Replacement<span class="co">:</span> Turn Brown into Red</a>
-<a class="sourceLine" id="cb1-2" title="2"> <span class="co">*</span> Method to turn the brown in a picture</a>
-<a class="sourceLine" id="cb1-3" title="3"> <span class="co">*</span> into red</a>
-<a class="sourceLine" id="cb1-4" title="4"> <span class="co">*/</span></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">turnBrownIntoRed</span>()</a>
-<a class="sourceLine" id="cb1-6" title="6">{</a>
-<a class="sourceLine" id="cb1-7" title="7">  <span class="bu">Color</span> brown = <span class="kw">new</span> <span class="bu">Color</span>(<span class="dv">42</span>, <span class="dv">25</span>, <span class="dv">15</span>);</a>
-<a class="sourceLine" id="cb1-8" title="8">  Pixel[] pixels = <span class="kw">this</span>.<span class="fu">getPixels</span>();</a>
-<a class="sourceLine" id="cb1-9" title="9">  Pixel pixel = <span class="kw">null</span>;</a>
-<a class="sourceLine" id="cb1-10" title="10"></a>
-<a class="sourceLine" id="cb1-11" title="11">  <span class="co">// loop through the pixels</span></a>
-<a class="sourceLine" id="cb1-12" title="12">  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; pixels.<span class="fu">length</span>; i++)</a>
-<a class="sourceLine" id="cb1-13" title="13">  {</a>
-<a class="sourceLine" id="cb1-14" title="14">    <span class="co">// get the current pixel</span></a>
-<a class="sourceLine" id="cb1-15" title="15">    pixel = pixels[i];</a>
-<a class="sourceLine" id="cb1-16" title="16"></a>
-<a class="sourceLine" id="cb1-17" title="17">    <span class="co">//check if in distance to brown and if so double red</span></a>
-<a class="sourceLine" id="cb1-18" title="18">    <span class="kw">if</span> (pixel.<span class="fu">colorDistance</span>(brown) &lt; <span class="fl">50.</span><span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb1-19" title="19">      pixel.<span class="fu">setColor</span>(<span class="kw">new</span> <span class="bu">Color</span>((<span class="dt">int</span>) (pixel.<span class="fu">getRed</span>() * <span class="fl">2.</span><span class="dv">0</span>),</a>
-<a class="sourceLine" id="cb1-20" title="20">                               pixel.<span class="fu">getGreen</span>(),</a>
-<a class="sourceLine" id="cb1-21" title="21">                               pixel.<span class="fu">getBlue</span>()));</a>
-<a class="sourceLine" id="cb1-22" title="22">  }</a>
-<a class="sourceLine" id="cb1-23" title="23">}</a></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="co">/**</span> Program <span class="co">35:</span> Color Replacement with Passing in the Range</a>
-<a class="sourceLine" id="cb2-2" title="2"> <span class="co">*</span> Method to turn brown to red in a rectangular area</a>
-<a class="sourceLine" id="cb2-3" title="3"> <span class="co">*</span> specified by startX<span class="co">,</span> endX<span class="co">-1,</span> startY<span class="co">,</span> endY<span class="co">-1</span></a>
-<a class="sourceLine" id="cb2-4" title="4"> <span class="co">* </span><span class="an">@param startX </span>the starting location to check in x</a>
-<a class="sourceLine" id="cb2-5" title="5"> <span class="co">*</span> <span class="an">@param endX </span>the last pixel check is one less than this in x</a>
-<a class="sourceLine" id="cb2-6" title="6"> <span class="co">*</span> <span class="an">@param startY </span>the starting location to check in y</a>
-<a class="sourceLine" id="cb2-7" title="7"> <span class="co">*</span> <span class="an">@param endY </span>the last pixel check is one less than this in y</a>
-<a class="sourceLine" id="cb2-8" title="8"> <span class="co">*/</span></a>
-<a class="sourceLine" id="cb2-9" title="9"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">turnBrownToRedInRectangle</span>(<span class="dt">int</span> startX, <span class="dt">int</span> endX,</a>
-<a class="sourceLine" id="cb2-10" title="10">                                      <span class="dt">int</span> startY, <span class="dt">int</span> endY,</a>
-<a class="sourceLine" id="cb2-11" title="11">                                      <span class="dt">double</span> distance)</a>
-<a class="sourceLine" id="cb2-12" title="12">{</a>
-<a class="sourceLine" id="cb2-13" title="13">  <span class="bu">Color</span> brown = <span class="kw">new</span> <span class="bu">Color</span>(<span class="dv">42</span>, <span class="dv">25</span>, <span class="dv">15</span>);</a>
-<a class="sourceLine" id="cb2-14" title="14">  Pixel pixel = <span class="kw">null</span>;</a>
-<a class="sourceLine" id="cb2-15" title="15"></a>
-<a class="sourceLine" id="cb2-16" title="16">  <span class="co">// loop through the x values</span></a>
-<a class="sourceLine" id="cb2-17" title="17">  <span class="kw">for</span> (<span class="dt">int</span> x = startX; x &lt; endX; x++)</a>
-<a class="sourceLine" id="cb2-18" title="18">  {</a>
-<a class="sourceLine" id="cb2-19" title="19">    <span class="kw">for</span> (<span class="dt">int</span> y = startY; y &lt; endY; y++)</a>
-<a class="sourceLine" id="cb2-20" title="20">    {</a>
-<a class="sourceLine" id="cb2-21" title="21">      <span class="co">// get the current pixel</span></a>
-<a class="sourceLine" id="cb2-22" title="22">      pixel = <span class="kw">this</span>.<span class="fu">getPixel</span>(x, y);</a>
-<a class="sourceLine" id="cb2-23" title="23"></a>
-<a class="sourceLine" id="cb2-24" title="24">      <span class="co">/* check if in distance to brown is less than</span></a>
-<a class="sourceLine" id="cb2-25" title="25"><span class="co">       * the passed distance and if so double the red</span></a>
-<a class="sourceLine" id="cb2-26" title="26"><span class="co">       */</span></a>
-<a class="sourceLine" id="cb2-27" title="27">      <span class="kw">if</span> (pixel.<span class="fu">colorDistance</span>(brown) &lt; distance)</a>
-<a class="sourceLine" id="cb2-28" title="28">        pixel.<span class="fu">setColor</span>(<span class="kw">new</span> <span class="bu">Color</span>((<span class="dt">int</span>) (pixel.<span class="fu">getRed</span>() * <span class="fl">2.</span><span class="dv">0</span>),</a>
-<a class="sourceLine" id="cb2-29" title="29">                                  pixel.<span class="fu">getGreen</span>(),</a>
-<a class="sourceLine" id="cb2-30" title="30">                                  pixel.<span class="fu">getBlue</span>()));</a>
-<a class="sourceLine" id="cb2-31" title="31">    }</a>
-<a class="sourceLine" id="cb2-32" title="32">  }</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span> Program <span class="co">33:</span> Color Replacement<span class="co">:</span> Turn Brown into Red</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> Method to turn the brown in a picture</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> into red</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a> <span class="co">*/</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">turnBrownIntoRed</span><span class="op">()</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="bu">Color</span> brown <span class="op">=</span> <span class="kw">new</span> <span class="bu">Color</span><span class="op">(</span><span class="dv">42</span><span class="op">,</span> <span class="dv">25</span><span class="op">,</span> <span class="dv">15</span><span class="op">);</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  Pixel<span class="op">[]</span> pixels <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getPixels</span><span class="op">();</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  Pixel pixel <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">// loop through the pixels</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> pixels<span class="op">.</span><span class="fu">length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">// get the current pixel</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    pixel <span class="op">=</span> pixels<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">//check if in distance to brown and if so double red</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>pixel<span class="op">.</span><span class="fu">colorDistance</span><span class="op">(</span>brown<span class="op">)</span> <span class="op">&lt;</span> <span class="fl">50.0</span><span class="op">)</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>      pixel<span class="op">.</span><span class="fu">setColor</span><span class="op">(</span><span class="kw">new</span> <span class="bu">Color</span><span class="op">((</span><span class="dt">int</span><span class="op">)</span> <span class="op">(</span>pixel<span class="op">.</span><span class="fu">getRed</span><span class="op">()</span> <span class="op">*</span> <span class="fl">2.0</span><span class="op">),</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>                               pixel<span class="op">.</span><span class="fu">getGreen</span><span class="op">(),</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                               pixel<span class="op">.</span><span class="fu">getBlue</span><span class="op">()));</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span> Program <span class="co">35:</span> Color Replacement with Passing in the Range</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> Method to turn brown to red in a rectangular area</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> specified by startX<span class="co">,</span> endX<span class="co">-1,</span> startY<span class="co">,</span> endY<span class="co">-1</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"> * @</span>param startX the starting location to check in x</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> <span class="co">@</span>param endX the last pixel check is one less than this in x</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> <span class="co">@</span>param startY the starting location to check in y</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> <span class="co">@</span>param endY the last pixel check is one less than this in y</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a> <span class="co">*/</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">turnBrownToRedInRectangle</span><span class="op">(</span><span class="dt">int</span> startX<span class="op">,</span> <span class="dt">int</span> endX<span class="op">,</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                                      <span class="dt">int</span> startY<span class="op">,</span> <span class="dt">int</span> endY<span class="op">,</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                                      <span class="dt">double</span> distance<span class="op">)</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="bu">Color</span> brown <span class="op">=</span> <span class="kw">new</span> <span class="bu">Color</span><span class="op">(</span><span class="dv">42</span><span class="op">,</span> <span class="dv">25</span><span class="op">,</span> <span class="dv">15</span><span class="op">);</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  Pixel pixel <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="co">// loop through the x values</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> x <span class="op">=</span> startX<span class="op">;</span> x <span class="op">&lt;</span> endX<span class="op">;</span> x<span class="op">++)</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> y <span class="op">=</span> startY<span class="op">;</span> y <span class="op">&lt;</span> endY<span class="op">;</span> y<span class="op">++)</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>      <span class="co">// get the current pixel</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>      pixel <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getPixel</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">);</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>      <span class="co">/* check if in distance to brown is less than</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co">       * the passed distance and if so double the red</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co">       */</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> <span class="op">(</span>pixel<span class="op">.</span><span class="fu">colorDistance</span><span class="op">(</span>brown<span class="op">)</span> <span class="op">&lt;</span> distance<span class="op">)</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>        pixel<span class="op">.</span><span class="fu">setColor</span><span class="op">(</span><span class="kw">new</span> <span class="bu">Color</span><span class="op">((</span><span class="dt">int</span><span class="op">)</span> <span class="op">(</span>pixel<span class="op">.</span><span class="fu">getRed</span><span class="op">()</span> <span class="op">*</span> <span class="fl">2.0</span><span class="op">),</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>                                  pixel<span class="op">.</span><span class="fu">getGreen</span><span class="op">(),</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>                                  pixel<span class="op">.</span><span class="fu">getBlue</span><span class="op">()));</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span></code></pre></div>
 <h3 id="simple-edge-detection-conditionals-with-two-options">6.2 Simple Edge Detection: Conditionals with Two Options</h3>
 <h4 id="negation">6.2.1 Negation</h4>
 <ul>
 <li><code>!</code> is the <em>logical not</em> operator that <em>negates</em> the condition.</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1">&gt; !<span class="kw">true</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="kw">false</span></a>
-<a class="sourceLine" id="cb3-3" title="3">&gt; !<span class="kw">false</span></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="kw">true</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="op">!</span><span class="kw">true</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">false</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="op">!</span><span class="kw">false</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">true</span></span></code></pre></div>
 <h4 id="testing-for-both-conditions">6.2.2 Testing for Both Conditions</h4>
-<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1">&gt; <span class="dt">int</span> x = <span class="dv">30</span>;</a>
-<a class="sourceLine" id="cb4-2" title="2">&gt; <span class="kw">if</span> (x &lt; <span class="dv">20</span>) <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Yes, the value is less than 20&quot;</span>);</a>
-<a class="sourceLine" id="cb4-3" title="3">&gt; <span class="kw">if</span> (x &gt;= <span class="dv">20</span>) <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;No, not less than 20&quot;</span>);</a>
-<a class="sourceLine" id="cb4-4" title="4">No, not less than <span class="dv">20</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="dt">int</span> x <span class="op">=</span> <span class="dv">30</span><span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="cf">if</span> <span class="op">(</span>x <span class="op">&lt;</span> <span class="dv">20</span><span class="op">)</span> <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;Yes, the value is less than 20&quot;</span><span class="op">);</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="cf">if</span> <span class="op">(</span>x <span class="op">&gt;=</span> <span class="dv">20</span><span class="op">)</span> <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;No, not less than 20&quot;</span><span class="op">);</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>No<span class="op">,</span> not less than <span class="dv">20</span></span></code></pre></div>
 <h4 id="conditionals-with-two-options">6.2.3 Conditionals with Two Options</h4>
 <p>The way to do this is with <code>if (expression)</code> and <code>else</code></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1">&gt; <span class="dt">int</span> x = <span class="dv">30</span>;</a>
-<a class="sourceLine" id="cb5-2" title="2">&gt; <span class="kw">if</span> (x &lt; <span class="dv">20</span>) <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Yes the value is less than 20&quot;</span>);</a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="kw">else</span> <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;No, this value is not less than 20&quot;</span>);</a>
-<a class="sourceLine" id="cb5-4" title="4"></a>
-<a class="sourceLine" id="cb5-5" title="5">No, <span class="kw">this</span> value is not less than <span class="dv">20</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="dt">int</span> x <span class="op">=</span> <span class="dv">30</span><span class="op">;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="cf">if</span> <span class="op">(</span>x <span class="op">&lt;</span> <span class="dv">20</span><span class="op">)</span> <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;Yes the value is less than 20&quot;</span><span class="op">);</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span> <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;No, this value is not less than 20&quot;</span><span class="op">);</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>No<span class="op">,</span> <span class="kw">this</span> value is not less than <span class="dv">20</span></span></code></pre></div>
 <h4 id="simple-edge-detection">6.2.4 Simple Edge Detection</h4>
 <ul>
 <li><code>getAverage()</code> = returns the average value of the pixel’s RGB components</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1"><span class="co">/**</span> Program <span class="co">37:</span> Edge Detection</a>
-<a class="sourceLine" id="cb6-2" title="2">  <span class="co">*</span> Method to do a simple edge detection by comparing the</a>
-<a class="sourceLine" id="cb6-3" title="3">  <span class="co">*</span> absolute value of the difference between the color</a>
-<a class="sourceLine" id="cb6-4" title="4">  <span class="co">*</span> intensities <span class="co">(</span>average of the color values<span class="co">)</span> between a</a>
-<a class="sourceLine" id="cb6-5" title="5">  <span class="co">*</span> pixel and the pixel below it<span class="co">. </span>If the absolute value</a>
-<a class="sourceLine" id="cb6-6" title="6">  <span class="co">*</span> of the difference between the color intensities is</a>
-<a class="sourceLine" id="cb6-7" title="7">  <span class="co">*</span> less than a passed amount the top pixel color</a>
-<a class="sourceLine" id="cb6-8" title="8">  <span class="co">*</span> will be set to white<span class="co">.</span> Otherwise it is set to black<span class="co">.</span></a>
-<a class="sourceLine" id="cb6-9" title="9">  <span class="co">*</span> <span class="an">@param amount </span>if the absolute value of the difference</a>
-<a class="sourceLine" id="cb6-10" title="10">  <span class="co">*</span> in the color average is less than this</a>
-<a class="sourceLine" id="cb6-11" title="11">  <span class="co">*</span> set the color to white<span class="co">,</span> else black</a>
-<a class="sourceLine" id="cb6-12" title="12">  <span class="co">*/</span></a>
-<a class="sourceLine" id="cb6-13" title="13"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">edgeDetection</span>(<span class="dt">double</span> amount) {</a>
-<a class="sourceLine" id="cb6-14" title="14">  Pixel topPixel = <span class="kw">null</span>;</a>
-<a class="sourceLine" id="cb6-15" title="15">  Pixel bottomPixel = <span class="kw">null</span>;</a>
-<a class="sourceLine" id="cb6-16" title="16">  <span class="dt">double</span> topAverage = <span class="fl">0.</span><span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb6-17" title="17">  <span class="dt">double</span> bottomAverage = <span class="fl">0.</span><span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb6-18" title="18">  <span class="dt">int</span> endY = <span class="kw">this</span>.<span class="fu">getHeight</span>() - <span class="dv">1</span>;</a>
-<a class="sourceLine" id="cb6-19" title="19"></a>
-<a class="sourceLine" id="cb6-20" title="20">  <span class="co">/* loop through y values from 0 to height - 1</span></a>
-<a class="sourceLine" id="cb6-21" title="21"><span class="co">    * (since compare to below pixel) */</span></a>
-<a class="sourceLine" id="cb6-22" title="22">  <span class="kw">for</span> (<span class="dt">int</span> y = <span class="dv">0</span>; y &lt; endY; y++) {</a>
-<a class="sourceLine" id="cb6-23" title="23">    <span class="co">// loop through the x values from 0 to width</span></a>
-<a class="sourceLine" id="cb6-24" title="24">    <span class="kw">for</span> (<span class="dt">int</span> x = <span class="dv">0</span>; x &lt; <span class="kw">this</span>.<span class="fu">getWidth</span>(); x++) {</a>
-<a class="sourceLine" id="cb6-25" title="25">      <span class="co">// get the top and bottom pixels</span></a>
-<a class="sourceLine" id="cb6-26" title="26">      topPixel = <span class="kw">this</span>.<span class="fu">getPixel</span>(x, y);</a>
-<a class="sourceLine" id="cb6-27" title="27">      bottomPixel = <span class="kw">this</span>.<span class="fu">getPixel</span>(x, y + <span class="dv">1</span>);</a>
-<a class="sourceLine" id="cb6-28" title="28"></a>
-<a class="sourceLine" id="cb6-29" title="29">      <span class="co">// get the color averages for the two pixels</span></a>
-<a class="sourceLine" id="cb6-30" title="30">      topAverage = topPixel.<span class="fu">getAverage</span>();</a>
-<a class="sourceLine" id="cb6-31" title="31">      bottomAverage = bottomPixel.<span class="fu">getAverage</span>();</a>
-<a class="sourceLine" id="cb6-32" title="32"></a>
-<a class="sourceLine" id="cb6-33" title="33">      <span class="co">/* check if the absolute value of the difference</span></a>
-<a class="sourceLine" id="cb6-34" title="34"><span class="co">        * is less than the amount */</span></a>
-<a class="sourceLine" id="cb6-35" title="35">      <span class="kw">if</span> (<span class="bu">Math</span>.<span class="fu">abs</span>(topAverage - bottomAverage) &lt; amount) {</a>
-<a class="sourceLine" id="cb6-36" title="36">        topPixel.<span class="fu">setColor</span>(<span class="bu">Color</span>.<span class="fu">WHITE</span>);</a>
-<a class="sourceLine" id="cb6-37" title="37">      } <span class="kw">else</span> {</a>
-<a class="sourceLine" id="cb6-38" title="38">        topPixel.<span class="fu">setColor</span>(<span class="bu">Color</span>.<span class="fu">BLACK</span>);</a>
-<a class="sourceLine" id="cb6-39" title="39">      }</a>
-<a class="sourceLine" id="cb6-40" title="40">    }</a>
-<a class="sourceLine" id="cb6-41" title="41">  }</a>
-<a class="sourceLine" id="cb6-42" title="42">}</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span> Program <span class="co">37:</span> Edge Detection</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">*</span> Method to do a simple edge detection by comparing the</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">*</span> absolute value of the difference between the color</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">*</span> intensities <span class="co">(</span>average of the color values<span class="co">)</span> between a</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">*</span> pixel and the pixel below it<span class="co">. </span>If the absolute value</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">*</span> of the difference between the color intensities is</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">*</span> less than a passed amount the top pixel color</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">*</span> will be set to white<span class="co">.</span> Otherwise it is set to black<span class="co">.</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">*</span> <span class="co">@</span>param amount if the absolute value of the difference</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">*</span> in the color average is less than this</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">*</span> set the color to white<span class="co">,</span> else black</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="co">*/</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">edgeDetection</span><span class="op">(</span><span class="dt">double</span> amount<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  Pixel topPixel <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  Pixel bottomPixel <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="dt">double</span> topAverage <span class="op">=</span> <span class="fl">0.0</span><span class="op">;</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="dt">double</span> bottomAverage <span class="op">=</span> <span class="fl">0.0</span><span class="op">;</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> endY <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getHeight</span><span class="op">()</span> <span class="op">-</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* loop through y values from 0 to height - 1</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co">    * (since compare to below pixel) */</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> y <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> y <span class="op">&lt;</span> endY<span class="op">;</span> y<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    <span class="co">// loop through the x values from 0 to width</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> x <span class="op">&lt;</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getWidth</span><span class="op">();</span> x<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>      <span class="co">// get the top and bottom pixels</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>      topPixel <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getPixel</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">);</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>      bottomPixel <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getPixel</span><span class="op">(</span>x<span class="op">,</span> y <span class="op">+</span> <span class="dv">1</span><span class="op">);</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>      <span class="co">// get the color averages for the two pixels</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>      topAverage <span class="op">=</span> topPixel<span class="op">.</span><span class="fu">getAverage</span><span class="op">();</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>      bottomAverage <span class="op">=</span> bottomPixel<span class="op">.</span><span class="fu">getAverage</span><span class="op">();</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>      <span class="co">/* check if the absolute value of the difference</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a><span class="co">        * is less than the amount */</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> <span class="op">(</span><span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span><span class="op">(</span>topAverage <span class="op">-</span> bottomAverage<span class="op">)</span> <span class="op">&lt;</span> amount<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>        topPixel<span class="op">.</span><span class="fu">setColor</span><span class="op">(</span><span class="bu">Color</span><span class="op">.</span><span class="fu">WHITE</span><span class="op">);</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>        topPixel<span class="op">.</span><span class="fu">setColor</span><span class="op">(</span><span class="bu">Color</span><span class="op">.</span><span class="fu">BLACK</span><span class="op">);</span></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h2 id="sepia-toned-and-posterized-pictures-using-multiple-conditionals-to-choose-the-color">Sepia-Toned and Posterized Pictures: Using Multiple Conditionals To Choose the Color</h2>
 <p>Inefficient way of using <code>if</code> statement</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb7-1" title="1">&gt; <span class="dt">int</span> y = <span class="dv">10</span>;</a>
-<a class="sourceLine" id="cb7-2" title="2">&gt; <span class="kw">if</span> (y &lt; <span class="dv">10</span>) <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;y is less than  10&quot;</span>);</a>
-<a class="sourceLine" id="cb7-3" title="3">&gt; <span class="kw">if</span> (y == <span class="dv">10</span>) <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;y is equal to 10&quot;</span>);</a>
-<a class="sourceLine" id="cb7-4" title="4">y is equal <span class="dv">10</span></a>
-<a class="sourceLine" id="cb7-5" title="5">&gt; <span class="kw">if</span> (y &gt; <span class="dv">10</span>) <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;y is greater than 10&quot;</span>);</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="dt">int</span> y <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="cf">if</span> <span class="op">(</span>y <span class="op">&lt;</span> <span class="dv">10</span><span class="op">)</span> <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;y is less than  10&quot;</span><span class="op">);</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="cf">if</span> <span class="op">(</span>y <span class="op">==</span> <span class="dv">10</span><span class="op">)</span> <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;y is equal to 10&quot;</span><span class="op">);</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>y is equal <span class="dv">10</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="cf">if</span> <span class="op">(</span>y <span class="op">&gt;</span> <span class="dv">10</span><span class="op">)</span> <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;y is greater than 10&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>Better way using <code>else if</code> statement</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb8-1" title="1">&gt; <span class="dt">int</span> y = <span class="dv">2</span>;</a>
-<a class="sourceLine" id="cb8-2" title="2">&gt; <span class="kw">if</span> (y &lt; <span class="dv">10</span>) <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;y is less than 10&quot;</span>);</a>
-<a class="sourceLine" id="cb8-3" title="3">  <span class="kw">else</span> <span class="kw">if</span> (y == <span class="dv">10</span>) <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;y is equal to 10&quot;</span>);</a>
-<a class="sourceLine" id="cb8-4" title="4">  <span class="kw">else</span> <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;y is greater than 10&quot;</span>);</a>
-<a class="sourceLine" id="cb8-5" title="5">y is less than <span class="dv">10</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="dt">int</span> y <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="cf">if</span> <span class="op">(</span>y <span class="op">&lt;</span> <span class="dv">10</span><span class="op">)</span> <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;y is less than 10&quot;</span><span class="op">);</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> <span class="op">(</span>y <span class="op">==</span> <span class="dv">10</span><span class="op">)</span> <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;y is equal to 10&quot;</span><span class="op">);</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;y is greater than 10&quot;</span><span class="op">);</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>y is less than <span class="dv">10</span></span></code></pre></div>
 <p>Sepia-Tone filter</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb9-1" title="1"><span class="co">/**</span> Program <span class="co">38:</span> Convert a Picture to Sepia<span class="co">-</span>Tones</a>
-<a class="sourceLine" id="cb9-2" title="2">  <span class="co">*</span> Method to change the current picture to a sepia</a>
-<a class="sourceLine" id="cb9-3" title="3">  <span class="co">*</span> tint <span class="co">(</span>modify the middle colors to a light brown and</a>
-<a class="sourceLine" id="cb9-4" title="4">  <span class="co">*</span> the light colors to a light yellow and make the</a>
-<a class="sourceLine" id="cb9-5" title="5">  <span class="co">*</span> shadows darker<span class="co">)</span></a>
-<a class="sourceLine" id="cb9-6" title="6">  <span class="co">*/</span></a>
-<a class="sourceLine" id="cb9-7" title="7"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">sepiaTint</span>()</a>
-<a class="sourceLine" id="cb9-8" title="8">{</a>
-<a class="sourceLine" id="cb9-9" title="9">  Pixel pixel = <span class="kw">null</span>;</a>
-<a class="sourceLine" id="cb9-10" title="10">  <span class="dt">double</span> redValue = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb9-11" title="11">  <span class="dt">double</span> greenValue = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb9-12" title="12">  <span class="dt">double</span> blueValue = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb9-13" title="13"></a>
-<a class="sourceLine" id="cb9-14" title="14">  <span class="co">// first change the current picture to grayscale</span></a>
-<a class="sourceLine" id="cb9-15" title="15">  <span class="kw">this</span>.<span class="fu">grayscale</span>();</a>
-<a class="sourceLine" id="cb9-16" title="16"></a>
-<a class="sourceLine" id="cb9-17" title="17">  <span class="co">// loop through the pixels</span></a>
-<a class="sourceLine" id="cb9-18" title="18">  <span class="kw">for</span> (<span class="dt">int</span> x = <span class="dv">0</span>; x &lt; <span class="kw">this</span>.<span class="fu">getWidth</span>(); x++)</a>
-<a class="sourceLine" id="cb9-19" title="19">  {</a>
-<a class="sourceLine" id="cb9-20" title="20">    <span class="kw">for</span> (<span class="dt">int</span> y = <span class="dv">0</span>; y &lt; <span class="kw">this</span>.<span class="fu">getHeight</span>(); y++)</a>
-<a class="sourceLine" id="cb9-21" title="21">    {</a>
-<a class="sourceLine" id="cb9-22" title="22">      <span class="co">// get the current pixel and color values</span></a>
-<a class="sourceLine" id="cb9-23" title="23">      pixel = <span class="kw">this</span>.<span class="fu">getPixel</span>(x, y);</a>
-<a class="sourceLine" id="cb9-24" title="24">      redValue = pixel.<span class="fu">getRed</span>();</a>
-<a class="sourceLine" id="cb9-25" title="25">      greenValue = pixel.<span class="fu">getGreen</span>();</a>
-<a class="sourceLine" id="cb9-26" title="26">      blueValue = pixel.<span class="fu">getBlue</span>();</a>
-<a class="sourceLine" id="cb9-27" title="27"></a>
-<a class="sourceLine" id="cb9-28" title="28">      <span class="co">// tint the shadow darker</span></a>
-<a class="sourceLine" id="cb9-29" title="29">      <span class="kw">if</span> (redValue &lt; <span class="dv">60</span>)</a>
-<a class="sourceLine" id="cb9-30" title="30">      {</a>
-<a class="sourceLine" id="cb9-31" title="31">        redValue = redValue * <span class="fl">0.</span><span class="dv">9</span>;</a>
-<a class="sourceLine" id="cb9-32" title="32">        greenValue = greenValue * <span class="fl">0.</span><span class="dv">9</span>;</a>
-<a class="sourceLine" id="cb9-33" title="33">        blueValue = blueValue * <span class="fl">0.</span><span class="dv">9</span>;</a>
-<a class="sourceLine" id="cb9-34" title="34">      }</a>
-<a class="sourceLine" id="cb9-35" title="35"></a>
-<a class="sourceLine" id="cb9-36" title="36">      <span class="co">// tint the midtones a light brown</span></a>
-<a class="sourceLine" id="cb9-37" title="37">      <span class="co">// by reducing the blue</span></a>
-<a class="sourceLine" id="cb9-38" title="38">      <span class="kw">else</span> <span class="kw">if</span> (redValue &lt; <span class="dv">190</span>)</a>
-<a class="sourceLine" id="cb9-39" title="39">      {</a>
-<a class="sourceLine" id="cb9-40" title="40">        blueValue = blueValue * <span class="fl">0.</span><span class="dv">8</span>;</a>
-<a class="sourceLine" id="cb9-41" title="41">      }</a>
-<a class="sourceLine" id="cb9-42" title="42"></a>
-<a class="sourceLine" id="cb9-43" title="43">      <span class="co">// tint the highlights a light yellow</span></a>
-<a class="sourceLine" id="cb9-44" title="44">      <span class="co">// by reducing the blue</span></a>
-<a class="sourceLine" id="cb9-45" title="45">      <span class="kw">else</span></a>
-<a class="sourceLine" id="cb9-46" title="46">      {</a>
-<a class="sourceLine" id="cb9-47" title="47">        blueValue = blueValue * <span class="fl">0.</span><span class="dv">9</span>;</a>
-<a class="sourceLine" id="cb9-48" title="48">      }</a>
-<a class="sourceLine" id="cb9-49" title="49"></a>
-<a class="sourceLine" id="cb9-50" title="50">      <span class="co">// set the colors</span></a>
-<a class="sourceLine" id="cb9-51" title="51">      pixel.<span class="fu">setRed</span>((<span class="dt">int</span>) redValue);</a>
-<a class="sourceLine" id="cb9-52" title="52">      pixel.<span class="fu">setGreen</span>((<span class="dt">int</span>) greenValue);</a>
-<a class="sourceLine" id="cb9-53" title="53">      pixel.<span class="fu">setBlue</span>((<span class="dt">int</span>) blueValue);</a>
-<a class="sourceLine" id="cb9-54" title="54">    }</a>
-<a class="sourceLine" id="cb9-55" title="55">  }</a>
-<a class="sourceLine" id="cb9-56" title="56">}</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span> Program <span class="co">38:</span> Convert a Picture to Sepia<span class="co">-</span>Tones</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">*</span> Method to change the current picture to a sepia</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">*</span> tint <span class="co">(</span>modify the middle colors to a light brown and</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">*</span> the light colors to a light yellow and make the</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">*</span> shadows darker<span class="co">)</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">*/</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">sepiaTint</span><span class="op">()</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  Pixel pixel <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">double</span> redValue <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">double</span> greenValue <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="dt">double</span> blueValue <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="co">// first change the current picture to grayscale</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="fu">grayscale</span><span class="op">();</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">// loop through the pixels</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> x <span class="op">&lt;</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getWidth</span><span class="op">();</span> x<span class="op">++)</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> y <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> y <span class="op">&lt;</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getHeight</span><span class="op">();</span> y<span class="op">++)</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>      <span class="co">// get the current pixel and color values</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>      pixel <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getPixel</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">);</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>      redValue <span class="op">=</span> pixel<span class="op">.</span><span class="fu">getRed</span><span class="op">();</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>      greenValue <span class="op">=</span> pixel<span class="op">.</span><span class="fu">getGreen</span><span class="op">();</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>      blueValue <span class="op">=</span> pixel<span class="op">.</span><span class="fu">getBlue</span><span class="op">();</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>      <span class="co">// tint the shadow darker</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> <span class="op">(</span>redValue <span class="op">&lt;</span> <span class="dv">60</span><span class="op">)</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>      <span class="op">{</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>        redValue <span class="op">=</span> redValue <span class="op">*</span> <span class="fl">0.9</span><span class="op">;</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>        greenValue <span class="op">=</span> greenValue <span class="op">*</span> <span class="fl">0.9</span><span class="op">;</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>        blueValue <span class="op">=</span> blueValue <span class="op">*</span> <span class="fl">0.9</span><span class="op">;</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>      <span class="co">// tint the midtones a light brown</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>      <span class="co">// by reducing the blue</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>      <span class="cf">else</span> <span class="cf">if</span> <span class="op">(</span>redValue <span class="op">&lt;</span> <span class="dv">190</span><span class="op">)</span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>      <span class="op">{</span></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>        blueValue <span class="op">=</span> blueValue <span class="op">*</span> <span class="fl">0.8</span><span class="op">;</span></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>      <span class="co">// tint the highlights a light yellow</span></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>      <span class="co">// by reducing the blue</span></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>      <span class="cf">else</span></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>      <span class="op">{</span></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>        blueValue <span class="op">=</span> blueValue <span class="op">*</span> <span class="fl">0.9</span><span class="op">;</span></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>      <span class="co">// set the colors</span></span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>      pixel<span class="op">.</span><span class="fu">setRed</span><span class="op">((</span><span class="dt">int</span><span class="op">)</span> redValue<span class="op">);</span></span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>      pixel<span class="op">.</span><span class="fu">setGreen</span><span class="op">((</span><span class="dt">int</span><span class="op">)</span> greenValue<span class="op">);</span></span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>      pixel<span class="op">.</span><span class="fu">setBlue</span><span class="op">((</span><span class="dt">int</span><span class="op">)</span> blueValue<span class="op">);</span></span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Posterize filter</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb10-1" title="1"><span class="co">/**</span> Module <span class="co">5</span> Program <span class="co">40:</span> Posterize by Levels</a>
-<a class="sourceLine" id="cb10-2" title="2">  <span class="co">*</span> Method to posterize <span class="co">(</span>reduce the number of colors<span class="co">)</span> in</a>
-<a class="sourceLine" id="cb10-3" title="3">  <span class="co">*</span> the picture</a>
-<a class="sourceLine" id="cb10-4" title="4">  <span class="co">* </span><span class="an">@param numLevels </span>the number of color levels to use</a>
-<a class="sourceLine" id="cb10-5" title="5">  <span class="co">*/</span></a>
-<a class="sourceLine" id="cb10-6" title="6"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">posterize</span>(<span class="dt">int</span> numLevels)</a>
-<a class="sourceLine" id="cb10-7" title="7">{</a>
-<a class="sourceLine" id="cb10-8" title="8">  Pixel pixel = <span class="kw">null</span>;</a>
-<a class="sourceLine" id="cb10-9" title="9">  <span class="dt">int</span> redValue = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb10-10" title="10">  <span class="dt">int</span> greenValue = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb10-11" title="11">  <span class="dt">int</span> blueValue = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb10-12" title="12">  <span class="dt">int</span> increment = (<span class="dt">int</span>) (<span class="fl">256.</span><span class="dv">0</span> / numLevels);</a>
-<a class="sourceLine" id="cb10-13" title="13">  <span class="dt">int</span> bottomValue, topValue, middleValue = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb10-14" title="14"></a>
-<a class="sourceLine" id="cb10-15" title="15">  <span class="co">// loop through the pixels</span></a>
-<a class="sourceLine" id="cb10-16" title="16">  <span class="kw">for</span> (<span class="dt">int</span> x = <span class="dv">0</span>; x &lt; <span class="kw">this</span>.<span class="fu">getWidth</span>(); x++)</a>
-<a class="sourceLine" id="cb10-17" title="17">  {</a>
-<a class="sourceLine" id="cb10-18" title="18">    <span class="kw">for</span> (<span class="dt">int</span> y = <span class="dv">0</span>; y &lt; <span class="kw">this</span>.<span class="fu">getHeight</span>(); y++)</a>
-<a class="sourceLine" id="cb10-19" title="19">    {</a>
-<a class="sourceLine" id="cb10-20" title="20">      <span class="co">// get the current pixel and colors</span></a>
-<a class="sourceLine" id="cb10-21" title="21">      pixel = <span class="kw">this</span>.<span class="fu">getPixel</span>(x, y);</a>
-<a class="sourceLine" id="cb10-22" title="22">      redValue = pixel.<span class="fu">getRed</span>();</a>
-<a class="sourceLine" id="cb10-23" title="23">      greenValue = pixel.<span class="fu">getGreen</span>();</a>
-<a class="sourceLine" id="cb10-24" title="24">      blueValue = pixel.<span class="fu">getBlue</span>();</a>
-<a class="sourceLine" id="cb10-25" title="25"></a>
-<a class="sourceLine" id="cb10-26" title="26">      <span class="co">// loop through the number of levels</span></a>
-<a class="sourceLine" id="cb10-27" title="27">      <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; numLevels; i++)</a>
-<a class="sourceLine" id="cb10-28" title="28">      {</a>
-<a class="sourceLine" id="cb10-29" title="29">        <span class="co">// compute the bottom, top, and middle values</span></a>
-<a class="sourceLine" id="cb10-30" title="30">        bottomValue = i * increment;</a>
-<a class="sourceLine" id="cb10-31" title="31">        topValue = (i + <span class="dv">1</span>) * increment;</a>
-<a class="sourceLine" id="cb10-32" title="32">        middleValue = (<span class="dt">int</span>) ((bottomValue + topValue - <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb10-33" title="33">                              / <span class="fl">2.</span><span class="dv">0</span>);</a>
-<a class="sourceLine" id="cb10-34" title="34">        <span class="co">/*</span></a>
-<a class="sourceLine" id="cb10-35" title="35"><span class="co">          * check if current values are in current range and</span></a>
-<a class="sourceLine" id="cb10-36" title="36"><span class="co">          * if so set them to the middle value</span></a>
-<a class="sourceLine" id="cb10-37" title="37"><span class="co">          */</span></a>
-<a class="sourceLine" id="cb10-38" title="38">        <span class="kw">if</span> (bottomValue &lt;= redValue &amp;&amp;</a>
-<a class="sourceLine" id="cb10-39" title="39">            redValue &lt; topValue)</a>
-<a class="sourceLine" id="cb10-40" title="40">          pixel.<span class="fu">setRed</span>(middleValue);</a>
-<a class="sourceLine" id="cb10-41" title="41">        <span class="kw">if</span> (bottomValue &lt;= greenValue &amp;&amp;</a>
-<a class="sourceLine" id="cb10-42" title="42">            greenValue &lt; topValue)</a>
-<a class="sourceLine" id="cb10-43" title="43">          pixel.<span class="fu">setGreen</span>(middleValue);</a>
-<a class="sourceLine" id="cb10-44" title="44">        <span class="kw">if</span> (bottomValue &lt;= blueValue &amp;&amp;</a>
-<a class="sourceLine" id="cb10-45" title="45">            blueValue &lt; topValue)</a>
-<a class="sourceLine" id="cb10-46" title="46">          pixel.<span class="fu">setBlue</span>(middleValue);</a>
-<a class="sourceLine" id="cb10-47" title="47">      }</a>
-<a class="sourceLine" id="cb10-48" title="48">    }</a>
-<a class="sourceLine" id="cb10-49" title="49">  }</a>
-<a class="sourceLine" id="cb10-50" title="50">}</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span> Module <span class="co">5</span> Program <span class="co">40:</span> Posterize by Levels</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">*</span> Method to posterize <span class="co">(</span>reduce the number of colors<span class="co">)</span> in</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">*</span> the picture</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">  * @</span>param numLevels the number of color levels to use</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">*/</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">posterize</span><span class="op">(</span><span class="dt">int</span> numLevels<span class="op">)</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  Pixel pixel <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> redValue <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> greenValue <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> blueValue <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> increment <span class="op">=</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span> <span class="op">(</span><span class="fl">256.0</span> <span class="op">/</span> numLevels<span class="op">);</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> bottomValue<span class="op">,</span> topValue<span class="op">,</span> middleValue <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="co">// loop through the pixels</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> x <span class="op">&lt;</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getWidth</span><span class="op">();</span> x<span class="op">++)</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> y <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> y <span class="op">&lt;</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getHeight</span><span class="op">();</span> y<span class="op">++)</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>      <span class="co">// get the current pixel and colors</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>      pixel <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getPixel</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">);</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>      redValue <span class="op">=</span> pixel<span class="op">.</span><span class="fu">getRed</span><span class="op">();</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>      greenValue <span class="op">=</span> pixel<span class="op">.</span><span class="fu">getGreen</span><span class="op">();</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>      blueValue <span class="op">=</span> pixel<span class="op">.</span><span class="fu">getBlue</span><span class="op">();</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>      <span class="co">// loop through the number of levels</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> numLevels<span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>      <span class="op">{</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>        <span class="co">// compute the bottom, top, and middle values</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>        bottomValue <span class="op">=</span> i <span class="op">*</span> increment<span class="op">;</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>        topValue <span class="op">=</span> <span class="op">(</span>i <span class="op">+</span> <span class="dv">1</span><span class="op">)</span> <span class="op">*</span> increment<span class="op">;</span></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>        middleValue <span class="op">=</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span> <span class="op">((</span>bottomValue <span class="op">+</span> topValue <span class="op">-</span> <span class="dv">1</span><span class="op">)</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>                              <span class="op">/</span> <span class="fl">2.0</span><span class="op">);</span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>        <span class="co">/*</span></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a><span class="co">          * check if current values are in current range and</span></span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a><span class="co">          * if so set them to the middle value</span></span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a><span class="co">          */</span></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span>bottomValue <span class="op">&lt;=</span> redValue <span class="op">&amp;&amp;</span></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>            redValue <span class="op">&lt;</span> topValue<span class="op">)</span></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>          pixel<span class="op">.</span><span class="fu">setRed</span><span class="op">(</span>middleValue<span class="op">);</span></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span>bottomValue <span class="op">&lt;=</span> greenValue <span class="op">&amp;&amp;</span></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>            greenValue <span class="op">&lt;</span> topValue<span class="op">)</span></span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>          pixel<span class="op">.</span><span class="fu">setGreen</span><span class="op">(</span>middleValue<span class="op">);</span></span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span>bottomValue <span class="op">&lt;=</span> blueValue <span class="op">&amp;&amp;</span></span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>            blueValue <span class="op">&lt;</span> topValue<span class="op">)</span></span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a>          pixel<span class="op">.</span><span class="fu">setBlue</span><span class="op">(</span>middleValue<span class="op">);</span></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h2 id="highlighting-extremes">6.4 Highlighting Extremes</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb11-1" title="1"><span class="co">/**</span> Module <span class="co">5</span> Program <span class="co">41:</span> Highllght Extreme</a>
-<a class="sourceLine" id="cb11-2" title="2"> <span class="co">*</span> Method to replace the pixel coTors in the current</a>
-<a class="sourceLine" id="cb11-3" title="3"> <span class="co">*</span> picture object that have a color distance less than</a>
-<a class="sourceLine" id="cb11-4" title="4"> <span class="co">*</span> the passed anount to white or black with the passed</a>
-<a class="sourceLine" id="cb11-5" title="5"> <span class="co">*</span> replacement co<span class="co">|</span>or</a>
-<a class="sourceLine" id="cb11-6" title="6"> <span class="co">*</span> <span class="co">@</span>paran replacementColor the new color to use</a>
-<a class="sourceLine" id="cb11-7" title="7"> <span class="co">*/</span></a>
-<a class="sourceLine" id="cb11-8" title="8"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">hightlightLightAndDark</span>(<span class="dt">double</span> amount,</a>
-<a class="sourceLine" id="cb11-9" title="9">                                  <span class="bu">Color</span> replacementColor) {</a>
-<a class="sourceLine" id="cb11-10" title="10">  Pixel pixel = <span class="kw">null</span>;</a>
-<a class="sourceLine" id="cb11-11" title="11">  <span class="co">// loop through all the pixels in the x direction</span></a>
-<a class="sourceLine" id="cb11-12" title="12">  <span class="kw">for</span> (<span class="dt">int</span> x = <span class="dv">0</span>; x &lt; <span class="fu">getWidth</span>(); x++) {</a>
-<a class="sourceLine" id="cb11-13" title="13">    <span class="co">// loop through all the pixels in the y direction</span></a>
-<a class="sourceLine" id="cb11-14" title="14">    <span class="kw">for</span> (<span class="dt">int</span> y = <span class="dv">0</span>; y &lt; <span class="fu">getHeight</span>(); y++) {</a>
-<a class="sourceLine" id="cb11-15" title="15">      <span class="co">// get the current pixel</span></a>
-<a class="sourceLine" id="cb11-16" title="16">      pixel = <span class="fu">getPixel</span>(x, y);</a>
-<a class="sourceLine" id="cb11-17" title="17"></a>
-<a class="sourceLine" id="cb11-18" title="18">      <span class="co">// if the distance from white or black is Tess than the</span></a>
-<a class="sourceLine" id="cb11-19" title="19">      <span class="co">// passed anount use the replace co1or instead</span></a>
-<a class="sourceLine" id="cb11-20" title="20">      <span class="kw">if</span> (pixel.<span class="fu">colorDistance</span>(<span class="bu">Color</span>.<span class="fu">white</span>) &lt; amount ||</a>
-<a class="sourceLine" id="cb11-21" title="21">          pixel.<span class="fu">colorDistance</span>(<span class="bu">Color</span>.<span class="fu">black</span>) &lt; amount) {</a>
-<a class="sourceLine" id="cb11-22" title="22">        pixel.<span class="fu">setColor</span>(replacementColor);</a>
-<a class="sourceLine" id="cb11-23" title="23">      }</a>
-<a class="sourceLine" id="cb11-24" title="24">    }</a>
-<a class="sourceLine" id="cb11-25" title="25">  }</a>
-<a class="sourceLine" id="cb11-26" title="26">}</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span> Module <span class="co">5</span> Program <span class="co">41:</span> Highllght Extreme</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> Method to replace the pixel coTors in the current</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> picture object that have a color distance less than</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> the passed anount to white or black with the passed</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> replacement co<span class="co">|</span>or</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> <span class="co">@</span>paran replacementColor the new color to use</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a> <span class="co">*/</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">hightlightLightAndDark</span><span class="op">(</span><span class="dt">double</span> amount<span class="op">,</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>                                  <span class="bu">Color</span> replacementColor<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  Pixel pixel <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">// loop through all the pixels in the x direction</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> x <span class="op">&lt;</span> <span class="fu">getWidth</span><span class="op">();</span> x<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">// loop through all the pixels in the y direction</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> y <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> y <span class="op">&lt;</span> <span class="fu">getHeight</span><span class="op">();</span> y<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>      <span class="co">// get the current pixel</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>      pixel <span class="op">=</span> <span class="fu">getPixel</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">);</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>      <span class="co">// if the distance from white or black is Tess than the</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>      <span class="co">// passed anount use the replace co1or instead</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> <span class="op">(</span>pixel<span class="op">.</span><span class="fu">colorDistance</span><span class="op">(</span><span class="bu">Color</span><span class="op">.</span><span class="fu">white</span><span class="op">)</span> <span class="op">&lt;</span> amount <span class="op">||</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>          pixel<span class="op">.</span><span class="fu">colorDistance</span><span class="op">(</span><span class="bu">Color</span><span class="op">.</span><span class="fu">black</span><span class="op">)</span> <span class="op">&lt;</span> amount<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>        pixel<span class="op">.</span><span class="fu">setColor</span><span class="op">(</span>replacementColor<span class="op">);</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Blur</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb12-1" title="1"><span class="co">/**</span> Program <span class="co">42:</span> A Simple Blur</a>
-<a class="sourceLine" id="cb12-2" title="2"> <span class="co">*</span> Method to blur the pixels</a>
-<a class="sourceLine" id="cb12-3" title="3"> <span class="co">* </span><span class="an">@param numPixels </span>the number of pixels to average in all</a>
-<a class="sourceLine" id="cb12-4" title="4"> <span class="co">*</span> directions so if the numPixels is <span class="co">2</span> then we will average</a>
-<a class="sourceLine" id="cb12-5" title="5"> <span class="co">*</span> all pixels in the rectangle defined by <span class="co">2</span> before the</a>
-<a class="sourceLine" id="cb12-6" title="6"> <span class="co">*</span> current pixel to <span class="co">2</span> after the current pixel</a>
-<a class="sourceLine" id="cb12-7" title="7"> <span class="co">*/</span></a>
-<a class="sourceLine" id="cb12-8" title="8"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">blur</span>(<span class="dt">int</span> numPixels)</a>
-<a class="sourceLine" id="cb12-9" title="9">{</a>
-<a class="sourceLine" id="cb12-10" title="10">  Pixel pixel = <span class="kw">null</span>;</a>
-<a class="sourceLine" id="cb12-11" title="11">  Pixel samplePixel = <span class="kw">null</span>;</a>
-<a class="sourceLine" id="cb12-12" title="12">  <span class="dt">int</span> redValue = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb12-13" title="13">  <span class="dt">int</span> greenValue = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb12-14" title="14">  <span class="dt">int</span> blueValue = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb12-15" title="15">  <span class="dt">int</span> count = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb12-16" title="16"></a>
-<a class="sourceLine" id="cb12-17" title="17">  <span class="co">// loop through the pixels</span></a>
-<a class="sourceLine" id="cb12-18" title="18">  <span class="kw">for</span> (<span class="dt">int</span> x = <span class="dv">0</span>; x &lt; <span class="kw">this</span>.<span class="fu">getWidth</span>(); x++)</a>
-<a class="sourceLine" id="cb12-19" title="19">  {</a>
-<a class="sourceLine" id="cb12-20" title="20">    <span class="kw">for</span> (<span class="dt">int</span> y = <span class="dv">0</span>; y &lt; <span class="kw">this</span>.<span class="fu">getHeight</span>(); y++)</a>
-<a class="sourceLine" id="cb12-21" title="21">    {</a>
-<a class="sourceLine" id="cb12-22" title="22">      <span class="co">// get the current pixel</span></a>
-<a class="sourceLine" id="cb12-23" title="23">      pixel = <span class="kw">this</span>.<span class="fu">getPixel</span>(x, y);</a>
-<a class="sourceLine" id="cb12-24" title="24"></a>
-<a class="sourceLine" id="cb12-25" title="25">      <span class="co">// reset the count and red, green, and blue values</span></a>
-<a class="sourceLine" id="cb12-26" title="26">      count = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb12-27" title="27">      redValue = greenValue = blueValue = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb12-28" title="28"></a>
-<a class="sourceLine" id="cb12-29" title="29">      <span class="co">/*</span></a>
-<a class="sourceLine" id="cb12-30" title="30"><span class="co">        * loop through pixel numPixels before x to</span></a>
-<a class="sourceLine" id="cb12-31" title="31"><span class="co">        * numPixels after x</span></a>
-<a class="sourceLine" id="cb12-32" title="32"><span class="co">        */</span></a>
-<a class="sourceLine" id="cb12-33" title="33">      <span class="kw">for</span> (<span class="dt">int</span> xSample = x - numPixels;</a>
-<a class="sourceLine" id="cb12-34" title="34">            xSample &lt;= x + numPixels;</a>
-<a class="sourceLine" id="cb12-35" title="35">            xSample++)</a>
-<a class="sourceLine" id="cb12-36" title="36">      {</a>
-<a class="sourceLine" id="cb12-37" title="37">        <span class="kw">for</span> (<span class="dt">int</span> ySample = y - numPixels;</a>
-<a class="sourceLine" id="cb12-38" title="38">              ySample &lt;= y + numPixels;</a>
-<a class="sourceLine" id="cb12-39" title="39">              ySample++)</a>
-<a class="sourceLine" id="cb12-40" title="40">        {</a>
-<a class="sourceLine" id="cb12-41" title="41">          <span class="co">/*</span></a>
-<a class="sourceLine" id="cb12-42" title="42"><span class="co">            * check that we are in the range of acceptable</span></a>
-<a class="sourceLine" id="cb12-43" title="43"><span class="co">            * pixels</span></a>
-<a class="sourceLine" id="cb12-44" title="44"><span class="co">            */</span></a>
-<a class="sourceLine" id="cb12-45" title="45">          <span class="kw">if</span> (xSample &gt;= <span class="dv">0</span> &amp;&amp; xSample &lt; <span class="kw">this</span>.<span class="fu">getWidth</span>() &amp;&amp;</a>
-<a class="sourceLine" id="cb12-46" title="46">              ySample &gt;= <span class="dv">0</span> &amp;&amp; ySample &lt; <span class="kw">this</span>.<span class="fu">getHeight</span>())</a>
-<a class="sourceLine" id="cb12-47" title="47">          {</a>
-<a class="sourceLine" id="cb12-48" title="48">            samplePixel = <span class="kw">this</span>.<span class="fu">getPixel</span>(xSample, ySample);</a>
-<a class="sourceLine" id="cb12-49" title="49">            redValue = redValue + samplePixel.<span class="fu">getRed</span>();</a>
-<a class="sourceLine" id="cb12-50" title="50">            greenValue = greenValue + samplePixel.<span class="fu">getGreen</span>();</a>
-<a class="sourceLine" id="cb12-51" title="51">            blueValue = blueValue + samplePixel.<span class="fu">getBlue</span>();</a>
-<a class="sourceLine" id="cb12-52" title="52">            count = count + <span class="dv">1</span>;</a>
-<a class="sourceLine" id="cb12-53" title="53">          }</a>
-<a class="sourceLine" id="cb12-54" title="54">        }</a>
-<a class="sourceLine" id="cb12-55" title="55">      }</a>
-<a class="sourceLine" id="cb12-56" title="56"></a>
-<a class="sourceLine" id="cb12-57" title="57">      <span class="co">// use average color of surrounding pixels</span></a>
-<a class="sourceLine" id="cb12-58" title="58">      <span class="bu">Color</span> newColor = <span class="kw">new</span> <span class="bu">Color</span>(redValue / count,</a>
-<a class="sourceLine" id="cb12-59" title="59">                                  greenValue / count,</a>
-<a class="sourceLine" id="cb12-60" title="60">                                  blueValue / count);</a>
-<a class="sourceLine" id="cb12-61" title="61">      pixel.<span class="fu">setColor</span>(newColor);</a>
-<a class="sourceLine" id="cb12-62" title="62">    }</a>
-<a class="sourceLine" id="cb12-63" title="63">  }</a>
-<a class="sourceLine" id="cb12-64" title="64">}</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span> Program <span class="co">42:</span> A Simple Blur</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> Method to blur the pixels</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"> * @</span>param numPixels the number of pixels to average in all</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> directions so if the numPixels is <span class="co">2</span> then we will average</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> all pixels in the rectangle defined by <span class="co">2</span> before the</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> current pixel to <span class="co">2</span> after the current pixel</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a> <span class="co">*/</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">blur</span><span class="op">(</span><span class="dt">int</span> numPixels<span class="op">)</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  Pixel pixel <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  Pixel samplePixel <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> redValue <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> greenValue <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> blueValue <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> count <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">// loop through the pixels</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> x <span class="op">&lt;</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getWidth</span><span class="op">();</span> x<span class="op">++)</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> y <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> y <span class="op">&lt;</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getHeight</span><span class="op">();</span> y<span class="op">++)</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>      <span class="co">// get the current pixel</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>      pixel <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getPixel</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">);</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>      <span class="co">// reset the count and red, green, and blue values</span></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>      count <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>      redValue <span class="op">=</span> greenValue <span class="op">=</span> blueValue <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>      <span class="co">/*</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="co">        * loop through pixel numPixels before x to</span></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="co">        * numPixels after x</span></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a><span class="co">        */</span></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> xSample <span class="op">=</span> x <span class="op">-</span> numPixels<span class="op">;</span></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>            xSample <span class="op">&lt;=</span> x <span class="op">+</span> numPixels<span class="op">;</span></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>            xSample<span class="op">++)</span></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>      <span class="op">{</span></span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> ySample <span class="op">=</span> y <span class="op">-</span> numPixels<span class="op">;</span></span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>              ySample <span class="op">&lt;=</span> y <span class="op">+</span> numPixels<span class="op">;</span></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>              ySample<span class="op">++)</span></span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>          <span class="co">/*</span></span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a><span class="co">            * check that we are in the range of acceptable</span></span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a><span class="co">            * pixels</span></span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a><span class="co">            */</span></span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>          <span class="cf">if</span> <span class="op">(</span>xSample <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> xSample <span class="op">&lt;</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getWidth</span><span class="op">()</span> <span class="op">&amp;&amp;</span></span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>              ySample <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> ySample <span class="op">&lt;</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getHeight</span><span class="op">())</span></span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>          <span class="op">{</span></span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>            samplePixel <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getPixel</span><span class="op">(</span>xSample<span class="op">,</span> ySample<span class="op">);</span></span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>            redValue <span class="op">=</span> redValue <span class="op">+</span> samplePixel<span class="op">.</span><span class="fu">getRed</span><span class="op">();</span></span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>            greenValue <span class="op">=</span> greenValue <span class="op">+</span> samplePixel<span class="op">.</span><span class="fu">getGreen</span><span class="op">();</span></span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a>            blueValue <span class="op">=</span> blueValue <span class="op">+</span> samplePixel<span class="op">.</span><span class="fu">getBlue</span><span class="op">();</span></span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a>            count <span class="op">=</span> count <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>          <span class="op">}</span></span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a>      <span class="co">// use average color of surrounding pixels</span></span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>      <span class="bu">Color</span> newColor <span class="op">=</span> <span class="kw">new</span> <span class="bu">Color</span><span class="op">(</span>redValue <span class="op">/</span> count<span class="op">,</span></span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a>                                  greenValue <span class="op">/</span> count<span class="op">,</span></span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a>                                  blueValue <span class="op">/</span> count<span class="op">);</span></span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a>      pixel<span class="op">.</span><span class="fu">setColor</span><span class="op">(</span>newColor<span class="op">);</span></span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h2 id="background-subtraction">6.6 Background Subtraction</h2>
 <p>Swap Background</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb13-1" title="1"><span class="co">/**</span> Program <span class="co">44:</span> Better Swap Background</a>
-<a class="sourceLine" id="cb13-2" title="2"> <span class="co">*</span> Method to replace the background in the current picture</a>
-<a class="sourceLine" id="cb13-3" title="3"> <span class="co">*</span> with the background from another picture</a>
-<a class="sourceLine" id="cb13-4" title="4"> <span class="co">* </span><span class="an">@param oldBackground </span>a picture with the old background</a>
-<a class="sourceLine" id="cb13-5" title="5"> <span class="co">*</span> to replace</a>
-<a class="sourceLine" id="cb13-6" title="6"> <span class="co">*</span> <span class="an">@param newBackground </span>a picture with the new background</a>
-<a class="sourceLine" id="cb13-7" title="7"> <span class="co">*</span> to use</a>
-<a class="sourceLine" id="cb13-8" title="8"> <span class="co">*</span> <span class="an">@param threshold </span>if the distance between the current</a>
-<a class="sourceLine" id="cb13-9" title="9"> <span class="co">*</span> pixel color and the background pixel color is less</a>
-<a class="sourceLine" id="cb13-10" title="10"> <span class="co">*</span> than this amount use the new background pixel color</a>
-<a class="sourceLine" id="cb13-11" title="11"> <span class="co">*/</span></a>
-<a class="sourceLine" id="cb13-12" title="12"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">swapBackground</span>(Picture oldBackground,</a>
-<a class="sourceLine" id="cb13-13" title="13">                            Picture newBackground,</a>
-<a class="sourceLine" id="cb13-14" title="14">                            <span class="dt">double</span> threshold)</a>
-<a class="sourceLine" id="cb13-15" title="15">{</a>
-<a class="sourceLine" id="cb13-16" title="16">  Pixel currPixel = <span class="kw">null</span>;</a>
-<a class="sourceLine" id="cb13-17" title="17">  Pixel oldPixel = <span class="kw">null</span>;</a>
-<a class="sourceLine" id="cb13-18" title="18">  Pixel newPixel = <span class="kw">null</span>;</a>
-<a class="sourceLine" id="cb13-19" title="19"></a>
-<a class="sourceLine" id="cb13-20" title="20">  <span class="co">// loop through the columns</span></a>
-<a class="sourceLine" id="cb13-21" title="21">  <span class="kw">for</span> (<span class="dt">int</span> x = <span class="dv">0</span>; x &lt; <span class="fu">getWidth</span>(); x++)</a>
-<a class="sourceLine" id="cb13-22" title="22">  {</a>
-<a class="sourceLine" id="cb13-23" title="23">    <span class="co">// loop through the rows</span></a>
-<a class="sourceLine" id="cb13-24" title="24">    <span class="kw">for</span> (<span class="dt">int</span> y = <span class="dv">0</span>; y &lt; <span class="fu">getHeight</span>(); y++)</a>
-<a class="sourceLine" id="cb13-25" title="25">    {</a>
-<a class="sourceLine" id="cb13-26" title="26">      currPixel = <span class="kw">this</span>.<span class="fu">getPixel</span>(x, y);</a>
-<a class="sourceLine" id="cb13-27" title="27">      oldPixel = oldBackground.<span class="fu">getPixel</span>(x, y);</a>
-<a class="sourceLine" id="cb13-28" title="28"></a>
-<a class="sourceLine" id="cb13-29" title="29">      <span class="co">/*</span></a>
-<a class="sourceLine" id="cb13-30" title="30"><span class="co">        * if the distance between the current pixel color</span></a>
-<a class="sourceLine" id="cb13-31" title="31"><span class="co">        * and the old background pixel color is less than</span></a>
-<a class="sourceLine" id="cb13-32" title="32"><span class="co">        * the threshold then swap in the new background</span></a>
-<a class="sourceLine" id="cb13-33" title="33"><span class="co">        * pixel</span></a>
-<a class="sourceLine" id="cb13-34" title="34"><span class="co">        */</span></a>
-<a class="sourceLine" id="cb13-35" title="35">      <span class="kw">if</span> (currPixel.<span class="fu">colorDistance</span>(oldPixel.<span class="fu">getColor</span>()) &lt;</a>
-<a class="sourceLine" id="cb13-36" title="36">                                  threshold)</a>
-<a class="sourceLine" id="cb13-37" title="37">      {</a>
-<a class="sourceLine" id="cb13-38" title="38">        newPixel = newBackground.<span class="fu">getPixel</span>(x, y);</a>
-<a class="sourceLine" id="cb13-39" title="39">        currPixel.<span class="fu">setColor</span>(newPixel.<span class="fu">getColor</span>());</a>
-<a class="sourceLine" id="cb13-40" title="40">      }</a>
-<a class="sourceLine" id="cb13-41" title="41">    }</a>
-<a class="sourceLine" id="cb13-42" title="42">  }</a>
-<a class="sourceLine" id="cb13-43" title="43">}</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span> Program <span class="co">44:</span> Better Swap Background</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> Method to replace the background in the current picture</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> with the background from another picture</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"> * @</span>param oldBackground a picture with the old background</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> to replace</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> <span class="co">@</span>param newBackground a picture with the new background</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> to use</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> <span class="co">@</span>param threshold if the distance between the current</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> pixel color and the background pixel color is less</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> than this amount use the new background pixel color</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a> <span class="co">*/</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">swapBackground</span><span class="op">(</span>Picture oldBackground<span class="op">,</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>                            Picture newBackground<span class="op">,</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>                            <span class="dt">double</span> threshold<span class="op">)</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  Pixel currPixel <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>  Pixel oldPixel <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  Pixel newPixel <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>  <span class="co">// loop through the columns</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> x <span class="op">&lt;</span> <span class="fu">getWidth</span><span class="op">();</span> x<span class="op">++)</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>    <span class="co">// loop through the rows</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> y <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> y <span class="op">&lt;</span> <span class="fu">getHeight</span><span class="op">();</span> y<span class="op">++)</span></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>      currPixel <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getPixel</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">);</span></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>      oldPixel <span class="op">=</span> oldBackground<span class="op">.</span><span class="fu">getPixel</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">);</span></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>      <span class="co">/*</span></span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="co">        * if the distance between the current pixel color</span></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="co">        * and the old background pixel color is less than</span></span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a><span class="co">        * the threshold then swap in the new background</span></span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a><span class="co">        * pixel</span></span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a><span class="co">        */</span></span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> <span class="op">(</span>currPixel<span class="op">.</span><span class="fu">colorDistance</span><span class="op">(</span>oldPixel<span class="op">.</span><span class="fu">getColor</span><span class="op">())</span> <span class="op">&lt;</span></span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>                                  threshold<span class="op">)</span></span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a>      <span class="op">{</span></span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a>        newPixel <span class="op">=</span> newBackground<span class="op">.</span><span class="fu">getPixel</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">);</span></span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>        currPixel<span class="op">.</span><span class="fu">setColor</span><span class="op">(</span>newPixel<span class="op">.</span><span class="fu">getColor</span><span class="op">());</span></span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h2 id="chromakey">6.7 Chromakey</h2>
 <p>Chromakey</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb14-1" title="1"><span class="co">/**</span> Program <span class="co">45:</span> Chromakey<span class="co">:</span> Replace all Blue with the New Background</a>
-<a class="sourceLine" id="cb14-2" title="2"> <span class="co">*</span> Method to do chromakey using a blue background</a>
-<a class="sourceLine" id="cb14-3" title="3"> <span class="co">* </span><span class="an">@param newBg</span></a>
-<a class="sourceLine" id="cb14-4" title="4"> <span class="co">*/</span></a>
-<a class="sourceLine" id="cb14-5" title="5"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">chromakey</span>(Picture newBg)</a>
-<a class="sourceLine" id="cb14-6" title="6">{</a>
-<a class="sourceLine" id="cb14-7" title="7">  Pixel currPixel = <span class="kw">null</span>;</a>
-<a class="sourceLine" id="cb14-8" title="8">  Pixel newPixel = <span class="kw">null</span>;</a>
-<a class="sourceLine" id="cb14-9" title="9"></a>
-<a class="sourceLine" id="cb14-10" title="10">  <span class="co">// loop through the columns</span></a>
-<a class="sourceLine" id="cb14-11" title="11">  <span class="kw">for</span> (<span class="dt">int</span> x = <span class="dv">0</span>; x &lt; <span class="fu">getWidth</span>(); x++)</a>
-<a class="sourceLine" id="cb14-12" title="12">  {</a>
-<a class="sourceLine" id="cb14-13" title="13">    <span class="co">//loop through the rows</span></a>
-<a class="sourceLine" id="cb14-14" title="14">    <span class="kw">for</span> (<span class="dt">int</span> y = <span class="dv">0</span>; y &lt; <span class="fu">getHeight</span>(); y++)</a>
-<a class="sourceLine" id="cb14-15" title="15">    {</a>
-<a class="sourceLine" id="cb14-16" title="16">      <span class="co">//get the current pixel</span></a>
-<a class="sourceLine" id="cb14-17" title="17">      currPixel = <span class="kw">this</span>.<span class="fu">getPixel</span>(x, y);</a>
-<a class="sourceLine" id="cb14-18" title="18"></a>
-<a class="sourceLine" id="cb14-19" title="19">      <span class="co">/*</span></a>
-<a class="sourceLine" id="cb14-20" title="20"><span class="co">        * if the color at the current pixel is mostly blue</span></a>
-<a class="sourceLine" id="cb14-21" title="21"><span class="co">        * (blue value is greater than red and green</span></a>
-<a class="sourceLine" id="cb14-22" title="22"><span class="co">        * combined), then use new background color</span></a>
-<a class="sourceLine" id="cb14-23" title="23"><span class="co">        */</span></a>
-<a class="sourceLine" id="cb14-24" title="24">      <span class="kw">if</span> (currPixel.<span class="fu">getRed</span>() + currPixel.<span class="fu">getGreen</span>() &lt;</a>
-<a class="sourceLine" id="cb14-25" title="25">          currPixel.<span class="fu">getBlue</span>())</a>
-<a class="sourceLine" id="cb14-26" title="26">      {</a>
-<a class="sourceLine" id="cb14-27" title="27">        newPixel = newBg.<span class="fu">getPixel</span>(x, y);</a>
-<a class="sourceLine" id="cb14-28" title="28">        currPixel.<span class="fu">setColor</span>(newPixel.<span class="fu">getColor</span>());</a>
-<a class="sourceLine" id="cb14-29" title="29">      }</a>
-<a class="sourceLine" id="cb14-30" title="30">    }</a>
-<a class="sourceLine" id="cb14-31" title="31">  }</a>
-<a class="sourceLine" id="cb14-32" title="32">}</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span> Program <span class="co">45:</span> Chromakey<span class="co">:</span> Replace all Blue with the New Background</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> Method to do chromakey using a blue background</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"> * @</span>param newBg</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a> <span class="co">*/</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">chromakey</span><span class="op">(</span>Picture newBg<span class="op">)</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  Pixel currPixel <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  Pixel newPixel <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">// loop through the columns</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> x <span class="op">&lt;</span> <span class="fu">getWidth</span><span class="op">();</span> x<span class="op">++)</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">//loop through the rows</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> y <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> y <span class="op">&lt;</span> <span class="fu">getHeight</span><span class="op">();</span> y<span class="op">++)</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>      <span class="co">//get the current pixel</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>      currPixel <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getPixel</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">);</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>      <span class="co">/*</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="co">        * if the color at the current pixel is mostly blue</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a><span class="co">        * (blue value is greater than red and green</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="co">        * combined), then use new background color</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="co">        */</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> <span class="op">(</span>currPixel<span class="op">.</span><span class="fu">getRed</span><span class="op">()</span> <span class="op">+</span> currPixel<span class="op">.</span><span class="fu">getGreen</span><span class="op">()</span> <span class="op">&lt;</span></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>          currPixel<span class="op">.</span><span class="fu">getBlue</span><span class="op">())</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>      <span class="op">{</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>        newPixel <span class="op">=</span> newBg<span class="op">.</span><span class="fu">getPixel</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">);</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>        currPixel<span class="op">.</span><span class="fu">setColor</span><span class="op">(</span>newPixel<span class="op">.</span><span class="fu">getColor</span><span class="op">());</span></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>

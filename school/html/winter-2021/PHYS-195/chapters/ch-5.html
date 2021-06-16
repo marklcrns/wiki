@@ -11,6 +11,13 @@
 
     <title>Chapter 5</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,7 +88,8 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-5-force-and-motion-i">Chapter 5: Force and Motion I</a><ul>
+          <li><a href="#chapter-5-force-and-motion-i">Chapter 5: Force and Motion I</a>
+          <ul>
           <li><a href="#newtons-first-and-second-laws-of-motion">5.1 Newton’s First and Second Laws of Motion</a></li>
           <li><a href="#applying-newtons-laws">5.3 Applying Newton’s Laws</a></li>
           </ul></li>
@@ -104,7 +127,7 @@
 <p><a name="newtons-first-law-term"><strong>Newton’s First Law</strong></a></p>
 <ul>
 <li>If no force acts on a body, the body’s velocity cannot change; that is, the body cannot accelerate.</li>
-<li>If no <em>net</em> force acts on a body (<span class="math inline">\(\vec{F}_{net} = 0\)</span>), the body’s velocity cannot change; that is, the body cannot accelerate.</li>
+<li>If no <em>net</em> force acts on a body (<span class="math inline">\vec{F}_{net} = 0</span>), the body’s velocity cannot change; that is, the body cannot accelerate.</li>
 </ul>
 <p><a name="inertial-reference-frame-term"><strong>Inertial Reference Frame</strong></a></p>
 <ul>
@@ -114,9 +137,9 @@
 <ul>
 <li>The net force on a body is equal to the product of the body’s mass and its acceleration.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \sum \vec{F}_{ext} = m\vec{a}
-\]</span></p>
+</span></p>
 <blockquote>
 <p>The acceleration component along a given axis is caused <em>only</em> by the sum of the force components along the <em>same</em> axis, and not by force components along any other axis.</p>
 </blockquote>
@@ -134,29 +157,29 @@
 <td>SI</td>
 <td>newton (N)</td>
 <td>kilogram (kg)</td>
-<td>m/s<span class="math inline">\(^{2}\)</span></td>
+<td>m/s<span class="math inline">^{2}</span></td>
 </tr>
 <tr class="even">
-<td>CGS<span class="math inline">\(^{a}\)</span></td>
+<td>CGS<span class="math inline">^{a}</span></td>
 <td>dyne</td>
 <td>gram (g)</td>
-<td>cm/s<span class="math inline">\(^{2}\)</span></td>
+<td>cm/s<span class="math inline">^{2}</span></td>
 </tr>
 <tr class="odd">
-<td>British<span class="math inline">\(^{b}\)</span></td>
+<td>British<span class="math inline">^{b}</span></td>
 <td>pound (lb)</td>
 <td>slug</td>
-<td>ft/s<span class="math inline">\(^{2}\)</span></td>
+<td>ft/s<span class="math inline">^{2}</span></td>
 </tr>
 </tbody>
 </table>
 <p>Weight is the downward force with which the Earth’s gravity exerts on it.</p>
-<p><span class="math display">\[
+<p><span class="math display">
 W = mg = \text{ mass } \cdot \text{ gravity }
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 g = 9.8\frac{N}{kg}
-\]</span></p>
+</span></p>
 <h2 id="applying-newtons-laws">5.3 Applying Newton’s Laws</h2>
 <p><a name="newtons-third-law-term"><strong>Newton’s Third Law</strong></a></p>
 <ul>

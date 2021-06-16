@@ -12,6 +12,13 @@
 
     <title>Java Database Programming</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -23,26 +30,28 @@
     <link href="../../../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -51,9 +60,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -129,8 +138,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#java-database-programming">Java Database Programming</a><ul>
-          <li><a href="#database-system">Database System</a><ul>
+          <li><a href="#java-database-programming">Java Database Programming</a>
+          <ul>
+          <li><a href="#database-system">Database System</a>
+          <ul>
           <li><a href="#rational-database-and-relational-data-model">Rational Database and Relational Data Model</a></li>
           <li><a href="#relational-structure">Relational Structure</a></li>
           <li><a href="#integrity-constraints">Integrity Constraints</a></li>
@@ -194,14 +205,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 id="domain-constraints">Domain Constraints</h3>
 <p><em>Domain constraints</em> specify the permissible values for an attribute. Domains can be specified using standard data types such as integers, floating-point numbers, fixed-length strings, and variant-length strings. The standard data type specifies a broad range of values. Additional constraints can be specified to narrow the ranges. You can also specify whether an attribute can be null.</p>
 <p>Domain Constraints Example</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">create</span> <span class="kw">table</span> Course (</a>
-<a class="sourceLine" id="cb1-2" title="2">  courseId <span class="dt">char</span>(<span class="dv">5</span>),</a>
-<a class="sourceLine" id="cb1-3" title="3">  subjectId <span class="dt">char</span>(<span class="dv">4</span>) <span class="kw">not</span> <span class="kw">null</span>,</a>
-<a class="sourceLine" id="cb1-4" title="4">  courseNumber <span class="dt">integer</span>,</a>
-<a class="sourceLine" id="cb1-5" title="5">  title <span class="dt">varchar</span>(<span class="dv">50</span>) <span class="kw">not</span> <span class="kw">null</span>,</a>
-<a class="sourceLine" id="cb1-6" title="6">  numOfCredits <span class="dt">integer</span>,</a>
-<a class="sourceLine" id="cb1-7" title="7">  <span class="kw">constraint</span> greaterThanOne</a>
-<a class="sourceLine" id="cb1-8" title="8">       <span class="kw">check</span> (numOfCredits <span class="op">&gt;=</span> <span class="dv">1</span>));</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">table</span> Course (</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  courseId <span class="dt">char</span>(<span class="dv">5</span>),</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  subjectId <span class="dt">char</span>(<span class="dv">4</span>) <span class="kw">not</span> <span class="kw">null</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  courseNumber <span class="dt">integer</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  title <span class="dt">varchar</span>(<span class="dv">50</span>) <span class="kw">not</span> <span class="kw">null</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  numOfCredits <span class="dt">integer</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">constraint</span> greaterThanOne</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>       <span class="kw">check</span> (numOfCredits <span class="op">&gt;=</span> <span class="dv">1</span>));</span></code></pre></div>
 <h3 id="superkey">Superkey</h3>
 <p>A <em>superkey</em> is an attribute or a set of attributes that uniquely identify the relation. That is, no two tuples have the same values on the superkey. By definition, a relation consists of a set of distinct tuples. The set of all attributes in the relation forms a superkey.</p>
 <h3 id="key-and-candidate-key">Key and Candidate Key</h3>
@@ -209,12 +220,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 id="primary-key">Primary Key</h3>
 <p>The primary key is one of the candidate keys designated by the database designer. The primary key is often used to identify tuples in a relation.</p>
 <p>Primary Key Example</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">create</span> <span class="kw">table</span> Course(</a>
-<a class="sourceLine" id="cb2-2" title="2">  subjectCode <span class="dt">char</span>(<span class="dv">4</span>),</a>
-<a class="sourceLine" id="cb2-3" title="3">  courseNumber <span class="dt">int</span>,</a>
-<a class="sourceLine" id="cb2-4" title="4">  title <span class="dt">varchar</span>(<span class="dv">50</span>), numOfCredits <span class="dt">int</span></a>
-<a class="sourceLine" id="cb2-5" title="5">    <span class="kw">constraint</span> greaterThanOne <span class="kw">check</span> (numOfCredits <span class="op">&gt;=</span> <span class="dv">1</span>),</a>
-<a class="sourceLine" id="cb2-6" title="6">  <span class="kw">primary</span> <span class="kw">key</span> (subjectCode, courseNumber));</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">table</span> Course(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  subjectCode <span class="dt">char</span>(<span class="dv">4</span>),</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  courseNumber <span class="dt">int</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  title <span class="dt">varchar</span>(<span class="dv">50</span>), numOfCredits <span class="dt">int</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">constraint</span> greaterThanOne <span class="kw">check</span> (numOfCredits <span class="op">&gt;=</span> <span class="dv">1</span>),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">primary</span> <span class="kw">key</span> (subjectCode, courseNumber));</span></code></pre></div>
 <h3 id="primary-key-constraints">Primary key Constraints</h3>
 <p>The <em>primary</em> key constraint specifies that the primary key value of a tuple cannot be null and no two tuples in the relation can have the same value on the primary key. The DBMS enforces the primary key constraint. For example, if you attempt to insert a record with the same primary key as an existing record in the table, the DBMS would report an error and reject the operation.</p>
 <h3 id="foreign-key-constraints">Foreign Key Constraints</h3>
@@ -225,15 +236,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>A non-null value on <em>FK</em> in <em>R</em> must match a primary key value in <em>T</em>.</li>
 </ul>
 <p>Foreign Key Constraints Example</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">create</span> <span class="kw">table</span> Enrollment (</a>
-<a class="sourceLine" id="cb3-2" title="2">  ssn <span class="dt">char</span>(<span class="dv">9</span>),</a>
-<a class="sourceLine" id="cb3-3" title="3">  courseId <span class="dt">char</span>(<span class="dv">5</span>),</a>
-<a class="sourceLine" id="cb3-4" title="4">  dateRegistered <span class="dt">date</span>,</a>
-<a class="sourceLine" id="cb3-5" title="5">  grade <span class="dt">char</span>(<span class="dv">1</span>),</a>
-<a class="sourceLine" id="cb3-6" title="6">  <span class="kw">primary</span> <span class="kw">key</span> (ssn, courseId),</a>
-<a class="sourceLine" id="cb3-7" title="7">  <span class="kw">foreign</span> <span class="kw">key</span> (ssn) <span class="kw">references</span> Student,</a>
-<a class="sourceLine" id="cb3-8" title="8">  <span class="kw">foreign</span> <span class="kw">key</span> (courseId) <span class="kw">references</span> Course</a>
-<a class="sourceLine" id="cb3-9" title="9">);</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">table</span> Enrollment (</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  ssn <span class="dt">char</span>(<span class="dv">9</span>),</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  courseId <span class="dt">char</span>(<span class="dv">5</span>),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  dateRegistered <span class="dt">date</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  grade <span class="dt">char</span>(<span class="dv">1</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">primary</span> <span class="kw">key</span> (ssn, courseId),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">foreign</span> <span class="kw">key</span> (ssn) <span class="kw">references</span> Student,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">foreign</span> <span class="kw">key</span> (courseId) <span class="kw">references</span> Course</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>);</span></code></pre></div>
 <h2 id="sql">SQL</h2>
 <p>Structured Query Language, pronounced S-Q-L, or Sequel</p>
 <p>To access or write applications for database systems, you need to use the Structured Query Language (SQL). SQL is the universal language for accessing relational database systems. Application programs may allow users to access database without directly using SQL, but these applications themselves must use SQL to access the database.</p>

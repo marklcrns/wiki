@@ -19,6 +19,13 @@ $endif$
 
     <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="$root_path$../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="$root_path$../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="$root_path$../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
 $if(toc)$
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">

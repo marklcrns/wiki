@@ -11,6 +11,13 @@
 
     <title>3.1 Derivatives of Polynomials and Exponential Functions</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,8 +88,10 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#derivatives-of-polynomials-and-exponential-functions">3.1 Derivatives of Polynomials and Exponential Functions</a><ul>
-          <li><a href="#power-functions">Power Functions</a><ul>
+          <li><a href="#derivatives-of-polynomials-and-exponential-functions">3.1 Derivatives of Polynomials and Exponential Functions</a>
+          <ul>
+          <li><a href="#power-functions">Power Functions</a>
+          <ul>
           <li><a href="#equation-1">Equation 1</a></li>
           <li><a href="#equation-2">Equation 2</a></li>
           <li><a href="#equation-3">Equation 3</a></li>
@@ -109,94 +133,94 @@
 <!-- Contents -->
           <article class="contents">
 <h1 id="derivatives-of-polynomials-and-exponential-functions">3.1 Derivatives of Polynomials and Exponential Functions</h1>
-<p>Let’s start with the simplest of all functions, the constant function <span class="math inline">\(f(x) = c\)</span>. The graph of this function is the horizontal line <span class="math inline">\(y = c\)</span>, which has slope , so we must have <span class="math inline">\(f^{\prime}(x) = 0\)</span>. (See Figure 1.) A formal proof, from the definition of a derivative, is also easy:</p>
-<p><span class="math display">\[
+<p>Let’s start with the simplest of all functions, the constant function <span class="math inline">f(x) = c</span>. The graph of this function is the horizontal line <span class="math inline">y = c</span>, which has slope , so we must have <span class="math inline">f^{\prime}(x) = 0</span>. (See Figure 1.) A formal proof, from the definition of a derivative, is also easy:</p>
+<p><span class="math display">
 f^{\prime}(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} = \lim_{h \to 0} \frac{c - c}{h} \lim_{h \to 0} 0 = 0
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_figure-1.png" alt="Figure 1" /><figcaption>Figure 1</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_figure-1.png" alt="Figure 1" /><figcaption aria-hidden="true">Figure 1</figcaption>
 </figure>
 <p>In Leibniz notation, we write this rule as follows.</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{d}{dx}(c) = 0
-\]</span></p>
+</span></p>
 <h2 id="power-functions">Power Functions</h2>
-<p>We next look at the function <span class="math inline">\(f(x) = x^{n}\)</span>, where <span class="math inline">\(n\)</span> is a positive integer. If <span class="math inline">\(n = 1\)</span>, the graph of <span class="math inline">\(f(x) = x\)</span> is the line <span class="math inline">\(y = x\)</span>, which has slope 1. (See Figure 2.) So</p>
+<p>We next look at the function <span class="math inline">f(x) = x^{n}</span>, where <span class="math inline">n</span> is a positive integer. If <span class="math inline">n = 1</span>, the graph of <span class="math inline">f(x) = x</span> is the line <span class="math inline">y = x</span>, which has slope 1. (See Figure 2.) So</p>
 <h3 id="equation-1">Equation 1</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{d}{dx}(x) = 1
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_figure-2.png" alt="Figure 2" /><figcaption>Figure 2</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_figure-2.png" alt="Figure 2" /><figcaption aria-hidden="true">Figure 2</figcaption>
 </figure>
 <h3 id="equation-2">Equation 2</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{d}{dx}(x^{2}) = 2x \;\;\; \frac{d}{dx}(x^{3}) = 3x^{2}
-\]</span></p>
-<p>For <span class="math inline">\(n = 4\)</span> we find the derivative of <span class="math inline">\(f(x) = x^{4}\)</span> as follows:</p>
-<p><span class="math display">\[
+</span></p>
+<p>For <span class="math inline">n = 4</span> we find the derivative of <span class="math inline">f(x) = x^{4}</span> as follows:</p>
+<p><span class="math display">
 \begin{aligned}
 f^{\prime}(x) &amp;= \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} = \lim_{h \to 0} \frac{(x + h)^{4} - x^{4}}{h} \\
  &amp;= \frac{x^{4} + 4x^{3} + 6x^{2}h^{2} + 4xh^{3} + h^{4} - x^{4}}{h} \\
  &amp;= \frac{4x^{3}h + 6x^{2}h^{2} + 4xh^{3} + h^{4}}{h} \\
  &amp;= \lim_{h \to 0} (4x^{3} + 6x^{2}h + 4xh^{2} + h^{3}) = 4x^{3}
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>Thus</p>
 <h3 id="equation-3">Equation 3</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{d}{dx}(x^{4}) = 4x^{3}
-\]</span></p>
+</span></p>
 <h3 id="the-power-rule">The Power Rule</h3>
-<p>If <span class="math inline">\(n\)</span> is a positive integer, then</p>
-<p><span class="math display">\[
+<p>If <span class="math inline">n</span> is a positive integer, then</p>
+<p><span class="math display">
 \frac{d}{dx}(x^{n}) = nx^{n - 1}
-\]</span></p>
+</span></p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_power_rule_proof-1.png" alt="Power Rule Proof 1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_power_rule_proof-2.png" alt="Power Rule Proof 2" /></p>
 <p>We illustrate the Power Rule using various notations in Example 1.</p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_example-1.1.png" alt="Example 1.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_example-1.2.png" alt="Example 1.2" /></p>
 <blockquote>
 <p>The Power Rule (General Version)</p>
 </blockquote>
-<p>If <span class="math inline">\(n\)</span> is any real number, then</p>
-<p><span class="math display">\[
+<p>If <span class="math inline">n</span> is any real number, then</p>
+<p><span class="math display">
 \frac{d}{dx}(x^{n}) = nx^{n - 1}
-\]</span></p>
+</span></p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_example-2.png" alt="Example 2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_figure-3.png" alt="Figure 3" /></p>
-<p>Observe from Figure 3 that the function <span class="math inline">\(y\)</span> in Example 2(b) is increasing when <span class="math inline">\(y^{\prime}\)</span> is positive and is decreasing when <span class="math inline">\(y^{\prime}\)</span> is negative. In Chapter 4 we will prove that, in general, a function increases when its derivative is positive and decreases when its derivative is negative.</p>
-<p>The Power Rule enables us to find tangent lines without having to resort to the definition of a derivative. It also enables us to find normal lines. The normal line to a curve <span class="math inline">\(C\)</span> at a point <span class="math inline">\(P\)</span> is the line through <span class="math inline">\(P\)</span> that is perpendicular to the tangent line at <span class="math inline">\(P\)</span>. (In the study of optics, one needs to consider the angle between a light ray and the normal line to a lens.)</p>
+<p>Observe from Figure 3 that the function <span class="math inline">y</span> in Example 2(b) is increasing when <span class="math inline">y^{\prime}</span> is positive and is decreasing when <span class="math inline">y^{\prime}</span> is negative. In Chapter 4 we will prove that, in general, a function increases when its derivative is positive and decreases when its derivative is negative.</p>
+<p>The Power Rule enables us to find tangent lines without having to resort to the definition of a derivative. It also enables us to find normal lines. The normal line to a curve <span class="math inline">C</span> at a point <span class="math inline">P</span> is the line through <span class="math inline">P</span> that is perpendicular to the tangent line at <span class="math inline">P</span>. (In the study of optics, one needs to consider the angle between a light ray and the normal line to a lens.)</p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_example-3.1.png" alt="Example 3.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_example-3.2.png" alt="Example 3.2" /></p>
 <h3 id="new-derivatives-from-old">New Derivatives from Old</h3>
 <p>When new functions are formed from old functions by addition, subtraction, or multiplication by a constant, their derivatives can be calculated in terms of derivatives of the old functions. In particular, the following formula says that <em>the derivative of a constant times a function is the constant times the derivative of the function</em>.</p>
 <blockquote>
 <p>The Constant Multiple Rule</p>
 </blockquote>
-<p>If <span class="math inline">\(c\)</span> is a constant and <span class="math inline">\(f\)</span> is a differentiable function, then</p>
-<p><span class="math display">\[
+<p>If <span class="math inline">c</span> is a constant and <span class="math inline">f</span> is a differentiable function, then</p>
+<p><span class="math display">
 \frac{d}{dx}[cf(x)] = c\frac{d}{dx}f(x)
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_constant_multiple_rule_proof.png" alt="Constant Multiple Rule Proof" /><figcaption>Constant Multiple Rule Proof</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_constant_multiple_rule_proof.png" alt="Constant Multiple Rule Proof" /><figcaption aria-hidden="true">Constant Multiple Rule Proof</figcaption>
 </figure>
 <ul>
 <li><a href="../chapter-2/ch-2-3.html#calculating-limits-using-the-limit-laws">📑 Limit Laws</a></li>
 </ul>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_example-4.png" alt="Example 4" /><figcaption>Example 4</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_example-4.png" alt="Example 4" /><figcaption aria-hidden="true">Example 4</figcaption>
 </figure>
 <blockquote>
 <p>The Sum Rule</p>
 </blockquote>
-<p>If <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are both differentiable, then</p>
-<p><span class="math display">\[
+<p>If <span class="math inline">f</span> and <span class="math inline">g</span> are both differentiable, then</p>
+<p><span class="math display">
 \frac{d}{dx}[f(x) + g(x)] = \frac{d}{dx}f(x) + \frac{d}{dx}g(x)
-\]</span></p>
+</span></p>
 <p>Using the prime notation, we can write the Sum Rule as</p>
-<p><span class="math display">\[
+<p><span class="math display">
 (f + g)^{\prime} = f^{\prime} + g^{\prime}
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_sum_rule_proof.png" alt="Sum Rule Proof" /><figcaption>Sum Rule Proof</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_sum_rule_proof.png" alt="Sum Rule Proof" /><figcaption aria-hidden="true">Sum Rule Proof</figcaption>
 </figure>
 <ul>
 <li><a href="../chapter-2/ch-2-3.html#calculating-limits-using-the-limit-laws">📑 Limit Laws</a></li>
@@ -204,48 +228,48 @@ f^{\prime}(x) &amp;= \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} = \lim_{h \to 0} \
 <blockquote>
 <p>The Difference Rule</p>
 </blockquote>
-<p>If <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are both differentiable, then</p>
-<p><span class="math display">\[
+<p>If <span class="math inline">f</span> and <span class="math inline">g</span> are both differentiable, then</p>
+<p><span class="math display">
 \frac{d}{dx}[f(x) - g(x)] = \frac{d}{dx}f(x) - \frac{d}{dx}g(x)
-\]</span></p>
+</span></p>
 <p>The Constant Multiple Rule, the Sum Rule, and the Difference Rule can be combined with the Power Rule to differentiate any polynomial, as the following examples demonstrate.</p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_example-5.png" alt="Example 5" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_example-6.png" alt="Example 6" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_example-7.png" alt="Example 7" /></p>
 <h3 id="exponential-functions">Exponential Functions</h3>
-<p>Let’s try to compute the derivative of the exponential function <span class="math inline">\(f(x) = b^{x}\)</span> using the definition of a derivative:</p>
-<p><span class="math display">\[
+<p>Let’s try to compute the derivative of the exponential function <span class="math inline">f(x) = b^{x}</span> using the definition of a derivative:</p>
+<p><span class="math display">
 \begin{aligned}
 f^{\prime} &amp;= \lim_{h \to 0}\frac{f(x + h) - f(x)}{h} = \lim_{h \to 0}\frac{b^{x + h} - b^{x}}{h} \\
  &amp;= \lim_{h \to 0}\frac{b^{x}b^{h} - b^{x}}{h} = \lim_{h \to 0}\frac{b^{x}(b^{h} - 1)}{h}
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>The factor doesn’t depend on , so we can take it in front of the limit:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 f^{\prime}(x) = b^{x} \lim_{h \to 0}\frac{b^{h} - 1}{h}
-\]</span></p>
+</span></p>
 <p>Notice that the limit is the value of the derivative of at , that is,</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \lim_{h \to 0}\frac{b^{h} - 1}{h} = f^{\prime}(0)
-\]</span></p>
-<p>Therefore we have shown that if the exponential function <span class="math inline">\(f(x) = b^{x}\)</span> is differentiable at <span class="math inline">\(0\)</span>, then it is differentiable everywhere and</p>
+</span></p>
+<p>Therefore we have shown that if the exponential function <span class="math inline">f(x) = b^{x}</span> is differentiable at <span class="math inline">0</span>, then it is differentiable everywhere and</p>
 <h3 id="equation-4">Equation 4</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 f^{\prime}(x) = f^{\prime}(0)b^{x}
-\]</span></p>
+</span></p>
 <p>This equation says that <em>the rate of change of any exponential function is proportional to the function itself</em>. (The slope is proportional to the height.)</p>
-<p>Numerical evidence for the existence of <span class="math inline">\(f^{\prime}(0)\)</span> is given in the table below for the cases <span class="math inline">\(b = 2\)</span> and <span class="math inline">\(b = 3\)</span>. (Values are stated correct to four decimal places.) It appears that the limits exist and</p>
-<p><span class="math display">\[
+<p>Numerical evidence for the existence of <span class="math inline">f^{\prime}(0)</span> is given in the table below for the cases <span class="math inline">b = 2</span> and <span class="math inline">b = 3</span>. (Values are stated correct to four decimal places.) It appears that the limits exist and</p>
+<p><span class="math display">
 \begin{aligned}
 \text{for } b &amp;= 2, f^{\prime}(0) = \lim_{h \to 0}\frac{2^{h} - 1}{h} \approx 0.69 \\
 \text{for } b &amp;= 3, f^{\prime}(0) = \lim_{h \to 0}\frac{3^{h} - 1}{h} \approx 1.10
 \end{aligned}
-\]</span></p>
+</span></p>
 <center>
 <table>
 <thead>
 <tr class="header">
-<th><span class="math inline">\(h\)</span></th>
-<th><span class="math inline">\(\frac{2^{h} - 1}{h}\)</span></th>
-<th><span class="math inline">\(\frac{3^{h} - 1}{h}\)</span></th>
+<th><span class="math inline">h</span></th>
+<th><span class="math inline">\frac{2^{h} - 1}{h}</span></th>
+<th><span class="math inline">\frac{3^{h} - 1}{h}</span></th>
 </tr>
 </thead>
 <tbody>
@@ -273,28 +297,28 @@ f^{\prime}(x) = f^{\prime}(0)b^{x}
 </table>
 </center>
 <p>In fact, it can be proved that these limits exist and, correct to six decimal places, the values are</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{d}{dx}(2^{x})\Bigl |_{x = 0} \approx 0.693147 \;\;\; \frac{d}{dx}(3^{3}) \Bigr |_{x = 0} \approx
-\]</span></p>
+</span></p>
 <h3 id="equation-5">Equation 5</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{d}{dx}(2^{x}) \approx (0.69)2^{x} \;\;\; \frac{d}{dx}(3^{3}) \approx (1.10)3^{x}
-\]</span></p>
-<p>Of all possible choices for the base in Equation 4, the simplest differentiation formula occurs when <span class="math inline">\(f^{\prime}(0) = 1\)</span>. In view of the estimates of <span class="math inline">\(f^{\prime}(0)\)</span> for <span class="math inline">\(b = 2\)</span> and <span class="math inline">\(b = 3\)</span>, it seems reasonable that there is a number <span class="math inline">\(b\)</span> between <span class="math inline">\(2\)</span> and <span class="math inline">\(3\)</span> for which <span class="math inline">\(f^{\prime}(0) = 1\)</span>. It is traditional to denote this value by the letter <span class="math inline">\(e\)</span>. (In fact, that is how we introduced in Section 1.4.) Thus we have the following definition.</p>
+</span></p>
+<p>Of all possible choices for the base in Equation 4, the simplest differentiation formula occurs when <span class="math inline">f^{\prime}(0) = 1</span>. In view of the estimates of <span class="math inline">f^{\prime}(0)</span> for <span class="math inline">b = 2</span> and <span class="math inline">b = 3</span>, it seems reasonable that there is a number <span class="math inline">b</span> between <span class="math inline">2</span> and <span class="math inline">3</span> for which <span class="math inline">f^{\prime}(0) = 1</span>. It is traditional to denote this value by the letter <span class="math inline">e</span>. (In fact, that is how we introduced in Section 1.4.) Thus we have the following definition.</p>
 <blockquote>
-<p>Definition of the Number <span class="math inline">\(e\)</span></p>
+<p>Definition of the Number <span class="math inline">e</span></p>
 </blockquote>
-<p><span class="math inline">\(e\)</span> is the number such that</p>
-<p><span class="math display">\[
+<p><span class="math inline">e</span> is the number such that</p>
+<p><span class="math display">
 \lim_{h \to 0}\frac{e^{h} - 1}{h} = 1
-\]</span></p>
+</span></p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_figure-6.png" alt="Figure 6" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_figure-7.png" alt="Figure 7" /></p>
 <blockquote>
 <p>Derivative of the Natural Exponential Function</p>
 </blockquote>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{d}{dx}(e^{x}) = e^{x}
-\]</span></p>
+</span></p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_explore_it.png" alt="Explore It" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_example-8.png" alt="Example 8" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.1_example-9.png" alt="Example 9" /></p>
 <h2 id="video-lectures">Video Lectures</h2>
 <ul>

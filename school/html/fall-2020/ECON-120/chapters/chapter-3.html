@@ -11,6 +11,13 @@
 
     <title>Chapter 3</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -65,20 +72,24 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-3-exchange-and-markets">Chapter 3: Exchange and Markets</a><ul>
-          <li><a href="#comparative-advantage-and-exchange">3.1 Comparative Advantage and Exchange</a><ul>
+          <li><a href="#chapter-3-exchange-and-markets">Chapter 3: Exchange and Markets</a>
+          <ul>
+          <li><a href="#comparative-advantage-and-exchange">3.1 Comparative Advantage and Exchange</a>
+          <ul>
           <li><a href="#specialization-and-the-gains-from-trade">3.1.2 Specialization and the Gains from Trade</a></li>
           <li><a href="#comparative-advantage-versus-absolute-advantage">3.1.2 Comparative Advantage versus Absolute Advantage</a></li>
           <li><a href="#the-division-of-labor-and-exchange">The Division of Labor and Exchange</a></li>
           <li><a href="#comparative-advantage-and-international-trade">3.1.4 Comparative Advantage and International Trade</a></li>
           <li><a href="#outsourcing">Outsourcing</a></li>
           </ul></li>
-          <li><a href="#markets">3.2 Markets</a><ul>
+          <li><a href="#markets">3.2 Markets</a>
+          <ul>
           <li><a href="#virtues-of-markets">3.2.1 Virtues of Markets</a></li>
           <li><a href="#the-role-of-entrepreneurs">3.2.2 The Role of Entrepreneurs</a></li>
           <li><a href="#example-of-the-emergence-of-markets-pow-camps">3.3.3 Example of the Emergence of Markets: POW camps</a></li>
           </ul></li>
-          <li><a href="#market-failure-and-the-role-of-government">3.3 Market Failure and the Role of Government</a><ul>
+          <li><a href="#market-failure-and-the-role-of-government">3.3 Market Failure and the Role of Government</a>
+          <ul>
           <li><a href="#government-enforces-the-rules-of-exchange">3.3.1 Government Enforces the Rules of Exchange</a></li>
           <li><a href="#government-can-reduce-economic-uncertainty">3.3.2 Government Can Reduce Economic Uncertainty</a></li>
           </ul></li>
@@ -162,7 +173,7 @@
 <p>Fred’s opportunity cost of one coconut is three fish–that’s how many fish he could catch in the time required to gather one coconut. Similarly, his opportunity cost of a fish is one-third coconut, the number of coconuts he could gather in the time required to catch one fish. For Kate, the opportunity cost of one coconut is one fish, and the opportunity cost of one fish is one coconut.</p>
 <p>To demonstrate the benefits of exchange, let’s imagine that both people are initially self-sufficient, with each producing enough of both goods to satisfy their own desires.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-3/figure-3.1.png" alt="Figure 3.1" /><figcaption>Figure 3.1</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-3/figure-3.1.png" alt="Figure 3.1" /><figcaption aria-hidden="true">Figure 3.1</figcaption>
 </figure>
 <p>Specialization will increase the total output of our little survivor economy. It is sensible for each person to specialize in the good for which he or she has a lower opportunity cost.</p>
 <p><a name="comparative-advantage-term"><strong>Comparative advantage</strong></a> - The ability of one person or nation to produce a good at a lower opportunity cost than another person or nation.</p>

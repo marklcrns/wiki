@@ -11,6 +11,13 @@
 
     <title>CISC 211</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -65,8 +72,10 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#cisc-211-computer-org-and-assembly-lang">CISC 211 Computer Org and Assembly Lang</a><ul>
-          <li><a href="#course-materials">Course Materials</a><ul>
+          <li><a href="#cisc-211-computer-org-and-assembly-lang">CISC 211 Computer Org and Assembly Lang</a>
+          <ul>
+          <li><a href="#course-materials">Course Materials</a>
+          <ul>
           <li><a href="#personal-course-materials">Personal Course Materials</a></li>
           </ul></li>
           <li><a href="#units">Units</a></li>
@@ -127,7 +136,7 @@
 <li><a href="https://azeria-labs.com/writing-arm-assembly-part-1/">📄 ARM Assembly Basics</a></li>
 </ul>
 <figure>
-<img src="../../../files/fall-2020/CISC-211/ARM_32-bit_CheatSheet.png" alt="ARM 32-bit Cheat Sheet" /><figcaption>ARM 32-bit Cheat Sheet</figcaption>
+<img src="../../../files/fall-2020/CISC-211/ARM_32-bit_CheatSheet.png" alt="ARM 32-bit Cheat Sheet" /><figcaption aria-hidden="true">ARM 32-bit Cheat Sheet</figcaption>
 </figure>
 <h2 id="units">Units</h2>
 <ul>

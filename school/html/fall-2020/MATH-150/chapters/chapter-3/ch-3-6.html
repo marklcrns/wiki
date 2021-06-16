@@ -11,6 +11,13 @@
 
     <title>3.6 Derivatives of Logarithmic Functions</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,15 +88,17 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-3.6-derivatives-of-logarithmic-functions">Chapter 3.6: Derivatives of Logarithmic Functions</a><ul>
+          <li><a href="#chapter-3.6-derivatives-of-logarithmic-functions">Chapter 3.6: Derivatives of Logarithmic Functions</a>
+          <ul>
           <li><a href="#equation-1">Equation 1</a></li>
           <li><a href="#equation-2">Equation 2</a></li>
           <li><a href="#equation-3">Equation 3</a></li>
           <li><a href="#equation-4">Equation 4</a></li>
-          <li><a href="#logarithmic-differentiation">Logarithmic Differentiation</a><ul>
+          <li><a href="#logarithmic-differentiation">Logarithmic Differentiation</a>
+          <ul>
           <li><a href="#the-power-rule">The Power Rule</a></li>
           </ul></li>
-          <li><a href="#the-number-e-as-a-limit">The Number <span class="math inline">\(e\)</span> as a Limit</a></li>
+          <li><a href="#the-number-e-as-a-limit">The Number <span class="math inline">e</span> as a Limit</a></li>
           <li><a href="#equation-5">Equation 5</a></li>
           <li><a href="#equation-6">Equation 6</a></li>
           <li><a href="#video-lectures">Video Lectures</a></li>
@@ -109,87 +133,87 @@
 <!-- Contents -->
           <article class="contents">
 <h1 id="chapter-3.6-derivatives-of-logarithmic-functions">Chapter 3.6: Derivatives of Logarithmic Functions</h1>
-<p>In this section we use implicit differentiation to find the derivatives of the logarithmic functions <span class="math inline">\(y = \log_{b}{x}\)</span> and, in particular, the natural logarithmic function <span class="math inline">\(y = \ln{x}\)</span>.</p>
+<p>In this section we use implicit differentiation to find the derivatives of the logarithmic functions <span class="math inline">y = \log_{b}{x}</span> and, in particular, the natural logarithmic function <span class="math inline">y = \ln{x}</span>.</p>
 <h2 id="equation-1">Equation 1</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{d}{dx}(\log_{b}{x}) = \frac{1}{x\ln{b}}
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.6_derivatives_of_logarithmic_proof.png" alt="Derivatives of Logarithmic Functions Proof" /><figcaption>Derivatives of Logarithmic Functions Proof</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.6_derivatives_of_logarithmic_proof.png" alt="Derivatives of Logarithmic Functions Proof" /><figcaption aria-hidden="true">Derivatives of Logarithmic Functions Proof</figcaption>
 </figure>
-<p>If we put <span class="math inline">\(b = e\)</span> in Formula 1, then the factor <span class="math inline">\(\ln{b}\)</span> on the right side becomes <span class="math inline">\(\ln{e} = 1\)</span> and we get the formula for the derivative of the natural logarithmic function <span class="math inline">\(\log_{e}{x} = \ln{x}\)</span>:</p>
+<p>If we put <span class="math inline">b = e</span> in Formula 1, then the factor <span class="math inline">\ln{b}</span> on the right side becomes <span class="math inline">\ln{e} = 1</span> and we get the formula for the derivative of the natural logarithmic function <span class="math inline">\log_{e}{x} = \ln{x}</span>:</p>
 <h2 id="equation-2">Equation 2</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{d}{dx}(\ln{x}) = \frac{1}{x}
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.6_example-1.png" alt="Example 1" /><figcaption>Example 1</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.6_example-1.png" alt="Example 1" /><figcaption aria-hidden="true">Example 1</figcaption>
 </figure>
 <h2 id="equation-3">Equation 3</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{d}{dx}(\ln{u}) = \frac{1}{u}\frac{du}{dx} \;\;\;\;\; \text{or} \;\;\;\;\; \frac{d}{dx}[\ln{g}(x)] = \frac{g^{\prime}(x)}{g(x)}
-\]</span></p>
+</span></p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.6_example-2.png" alt="Example 2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.6_example-3.png" alt="Example 3" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.6_example-4.png" alt="Example 4" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.6_example-5.1.png" alt="Example 5.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.6_example-5.2.png" alt="Example 5.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.6_example-6.1.png" alt="Example 6.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.6_example-6.2.png" alt="Example 6.2" /></p>
 <h2 id="equation-4">Equation 4</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{d}{dx}\ln{\left | x \right |} = \frac{1}{x}
-\]</span></p>
+</span></p>
 <h2 id="logarithmic-differentiation">Logarithmic Differentiation</h2>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.6_example-7.1.png" alt="Example 7.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.6_example-7.2.png" alt="Example 7.2" /></p>
 <blockquote>
 <p>Steps in Logarithmic Differentiation</p>
 </blockquote>
 <ol type="1">
-<li>Take natural logarithms of both sides of an equation <span class="math inline">\(y = f(x)\)</span> and use the Laws of Logarithms to simplify.</li>
-<li>Differentiate implicitly with respect to <span class="math inline">\(x\)</span>.</li>
-<li>Solve the resulting equation for <span class="math inline">\(y^{\prime}\)</span></li>
+<li>Take natural logarithms of both sides of an equation <span class="math inline">y = f(x)</span> and use the Laws of Logarithms to simplify.</li>
+<li>Differentiate implicitly with respect to <span class="math inline">x</span>.</li>
+<li>Solve the resulting equation for <span class="math inline">y^{\prime}</span></li>
 </ol>
 <h3 id="the-power-rule">The Power Rule</h3>
-<p>If <span class="math inline">\(n\)</span> is any real number and <span class="math inline">\(f(x) = x^{n}\)</span>, then</p>
-<p><span class="math display">\[
+<p>If <span class="math inline">n</span> is any real number and <span class="math inline">f(x) = x^{n}</span>, then</p>
+<p><span class="math display">
 f^{\prime}(x) = nx^{n - 1}
-\]</span></p>
+</span></p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.6_the_power_rule_proof-1.png" alt="The Power Rule Proof 1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.6_the_power_rule_proof-2.png" alt="The Power Rule Proof 2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.6_example-8.1.png" alt="Example 8.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.6_example-8.2.png" alt="Example 8.2" /></p>
-<h2 id="the-number-e-as-a-limit">The Number <span class="math inline">\(e\)</span> as a Limit</h2>
-<p>We have shown that if <span class="math inline">\(f(x) = \ln{x}\)</span>, then <span class="math inline">\(f^{\prime}(x) = 1/x\)</span>. Thus <span class="math inline">\(f^{\prime}(1) = 1\)</span>. We now use this fact to express the number <span class="math inline">\(e\)</span> as a limit.</p>
+<h2 id="the-number-e-as-a-limit">The Number <span class="math inline">e</span> as a Limit</h2>
+<p>We have shown that if <span class="math inline">f(x) = \ln{x}</span>, then <span class="math inline">f^{\prime}(x) = 1/x</span>. Thus <span class="math inline">f^{\prime}(1) = 1</span>. We now use this fact to express the number <span class="math inline">e</span> as a limit.</p>
 <p>From the definition of a derivative as a limit, we have</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 f^{\prime}(1) &amp;= \lim_{h \to 0}\frac{f(1 + h) - f(1)}{h} = \lim_{x \to 0}\frac{f(1 + x) - f(1)}{x} \\
               &amp;= \lim_{x \to 0}\frac{\ln{(1 + x) - \ln{1}}}{x} = \lim_{x \to 0}\frac{1}{x} \ln{(1 + x)} \\
               &amp;= \lim_{x \to 0}\ln{(1 + x)^{1/x}}
 \end{aligned}
-\]</span></p>
-<p>Because <span class="math inline">\(f^{\prime}(1) = 1\)</span>, we have</p>
-<p><span class="math display">\[
+</span></p>
+<p>Because <span class="math inline">f^{\prime}(1) = 1</span>, we have</p>
+<p><span class="math display">
 \lim_{x \to 0}\ln{(1 + x)^{1/x}} = 1
-\]</span></p>
+</span></p>
 <p>Then, by Theorem 2.5.8 and the continuity of the exponential function, we have</p>
-<p><span class="math display">\[
+<p><span class="math display">
 e = e^{1} = e^{\lim_{x \to 0}\ln{(1 + x)^{1/x}}} = \lim_{x \to 0}e^{\ln{(1 + x)^{1/x}}} = \lim_{x \to 0}(1 + x)^{1/x}
-\]</span></p>
+</span></p>
 <h2 id="equation-5">Equation 5</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 e = \lim_{x \to 0}(1 + x)^{1/x}
-\]</span></p>
-<p>Formula 5 is illustrated by the graph of the function <span class="math inline">\(y = (1 + x)^{1/x}\)</span> in Figure 4 and a table of values for small values of <span class="math inline">\(x\)</span>. This illustrates the fact that, correct to seven decimal places</p>
-<p><span class="math display">\[
+</span></p>
+<p>Formula 5 is illustrated by the graph of the function <span class="math inline">y = (1 + x)^{1/x}</span> in Figure 4 and a table of values for small values of <span class="math inline">x</span>. This illustrates the fact that, correct to seven decimal places</p>
+<p><span class="math display">
 e \approx 2.7182818
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.6_figure-4.png" alt="Figure 4" /><figcaption>Figure 4</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.6_figure-4.png" alt="Figure 4" /><figcaption aria-hidden="true">Figure 4</figcaption>
 </figure>
-<p>If we put <span class="math inline">\(n = 1/x\)</span> in Formula 5, then <span class="math inline">\(n \to \infty\)</span> as <span class="math inline">\(x \to 0^{+}\)</span> and so an alternative expression for <span class="math inline">\(e\)</span> is</p>
+<p>If we put <span class="math inline">n = 1/x</span> in Formula 5, then <span class="math inline">n \to \infty</span> as <span class="math inline">x \to 0^{+}</span> and so an alternative expression for <span class="math inline">e</span> is</p>
 <h2 id="equation-6">Equation 6</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 e = \lim_{n \to \infty}\left ( 1 + \frac{1}{n} \right )^{n}
-\]</span></p>
+</span></p>
 <center>
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
-<th style="text-align: center;"><span class="math inline">\((1 + x)^{1/x}\)</span></th>
+<th style="text-align: center;"><span class="math inline">x</span></th>
+<th style="text-align: center;"><span class="math inline">(1 + x)^{1/x}</span></th>
 </tr>
 </thead>
 <tbody>
@@ -236,8 +260,8 @@ e = \lim_{n \to \infty}\left ( 1 + \frac{1}{n} \right )^{n}
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-5b/v/differentiating-using-multiple-rules-strategy">📺 Differentiating using multiple rules: strategy</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-5b/v/applying-the-chain-rule-and-product-rule">📺 Applying the chain rule and product rule</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-5b/v/applying-chain-rule-twice">📺 Applying the chain rule twice</a></li>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-5b/v/using-the-product-rule-and-the-chain-rule">📺 Derivative of <span class="math inline">\(e^{\cos{x}} \cdot \cos{e^{x}}\)</span></a></li>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-5b/v/chain-rule-with-triple-composition">📺 Derivative of <span class="math inline">\(\sin{(\ln{(x^{2})})}\)</span></a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-5b/v/using-the-product-rule-and-the-chain-rule">📺 Derivative of <span class="math inline">e^{\cos{x}} \cdot \cos{e^{x}}</span></a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-5b/v/chain-rule-with-triple-composition">📺 Derivative of <span class="math inline">\sin{(\ln{(x^{2})})}</span></a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-6/v/second-derivatives">📺 Second derivatives</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-6/v/finding-second-derivative-implicit">📺 Second derivatives (implicit equations): find expression</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-6/v/evaluating-second-derivative-implicit">📺 Second derivatives (implicit equations): evaluate derivative</a></li>
@@ -251,8 +275,8 @@ e = \lim_{n \to \infty}\left ( 1 + \frac{1}{n} \right )^{n}
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-5b/v/differentiating-using-multiple-rules-strategy">📺 Differentiating using multiple rules: strategy</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-5b/v/applying-the-chain-rule-and-product-rule">📺 Applying the chain rule and product rule</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-5b/v/applying-chain-rule-twice">📺 Applying the chain rule twice</a></li>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-5b/v/using-the-product-rule-and-the-chain-rule">📺 Derivative of <span class="math inline">\(e^{\cos{x}} \cdot \cos{e^{x}}\)</span></a></li>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-5b/v/chain-rule-with-triple-composition">📺 Derivative of <span class="math inline">\(\sin{(\ln{(x^{2})})}\)</span></a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-5b/v/using-the-product-rule-and-the-chain-rule">📺 Derivative of <span class="math inline">e^{\cos{x}} \cdot \cos{e^{x}}</span></a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-5b/v/chain-rule-with-triple-composition">📺 Derivative of <span class="math inline">\sin{(\ln{(x^{2})})}</span></a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-6/v/second-derivatives">📺 Second derivatives</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-6/v/finding-second-derivative-implicit">📺 Second derivatives (implicit equations): find expression</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-6/v/evaluating-second-derivative-implicit">📺 Second derivatives (implicit equations): evaluate derivative</a></li>

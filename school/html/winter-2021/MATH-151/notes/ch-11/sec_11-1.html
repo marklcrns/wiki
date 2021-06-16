@@ -11,6 +11,13 @@
 
     <title>Section 11.1</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -65,12 +72,15 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#section-11.1-approximating-functions-with-polynomials">Section 11.1: Approximating Functions with Polynomials</a><ul>
+          <li><a href="#section-11.1-approximating-functions-with-polynomials">Section 11.1: Approximating Functions with Polynomials</a>
+          <ul>
           <li><a href="#what-is-a-power-series">What Is a Power Series?</a></li>
           <li><a href="#linear-and-quadratic-approximation">Linear and Quadratic Approximation</a></li>
-          <li><a href="#taylor-polynomials">Taylor Polynomials</a><ul>
+          <li><a href="#taylor-polynomials">Taylor Polynomials</a>
+          <ul>
           <li><a href="#approximations-with-taylor-polynomials">Approximations with Taylor Polynomials</a></li>
-          <li><a href="#remainder-in-a-taylor-polynomial">Remainder in a Taylor Polynomial</a><ul>
+          <li><a href="#remainder-in-a-taylor-polynomial">Remainder in a Taylor Polynomial</a>
+          <ul>
           <li><a href="#estimating-the-remainder">Estimating the Remainder</a></li>
           </ul></li>
           </ul></li>
@@ -109,7 +119,7 @@
 <p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_what_is_a_power_series-1.png" alt="What Is a Power Series 1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_what_is_a_power_series-2.png" alt="What Is a Power Series 2" /></p>
 <h2 id="linear-and-quadratic-approximation">Linear and Quadratic Approximation</h2>
 <figure>
-<img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-1.png" alt="Example 1" /><figcaption>Example 1</figcaption>
+<img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-1.png" alt="Example 1" /><figcaption aria-hidden="true">Example 1</figcaption>
 </figure>
 <h2 id="taylor-polynomials">Taylor Polynomials</h2>
 <p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_taylor_polynomials-1.png" alt="Taylor Polynomials 1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_taylor_polynomials-2.png" alt="Taylor Polynomials 2" /></p>
@@ -122,11 +132,11 @@
 <h4 id="estimating-the-remainder">Estimating the Remainder</h4>
 <p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_estimating_the_remainder-1.png" alt="Estimating the Remainder 1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_estimating_the_remainder-2.png" alt="Estimating the Remainder 2" /></p>
 <figure>
-<img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-5.png" alt="Example 5" /><figcaption>Example 5</figcaption>
+<img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-5.png" alt="Example 5" /><figcaption aria-hidden="true">Example 5</figcaption>
 </figure>
 <p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-6.1.png" alt="Example 6.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-6.2.png" alt="Example 6.2" /></p>
 <figure>
-<img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-7.png" alt="Example 7" /><figcaption>Example 7</figcaption>
+<img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-7.png" alt="Example 7" /><figcaption aria-hidden="true">Example 7</figcaption>
 </figure>
 <p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-8.1.png" alt="Example 8.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-11/sec_11-1_example-8.2.png" alt="Example 8.2" /></p>
 <p><br></p>

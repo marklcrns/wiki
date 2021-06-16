@@ -12,6 +12,13 @@
 
     <title>ECON 121 Chapter 6 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -66,29 +73,35 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-6-market-efficiency-and-government-intervention">Chapter 6: Market Efficiency and Government Intervention</a><ul>
-          <li><a href="#consumer-surplus-and-producer-surplus">6.1 Consumer Surplus and Producer Surplus</a><ul>
+          <li><a href="#chapter-6-market-efficiency-and-government-intervention">Chapter 6: Market Efficiency and Government Intervention</a>
+          <ul>
+          <li><a href="#consumer-surplus-and-producer-surplus">6.1 Consumer Surplus and Producer Surplus</a>
+          <ul>
           <li><a href="#the-demand-curve-and-consumer-surplus">6.1.1 The Demand Curve and Consumer Surplus</a></li>
           <li><a href="#the-supply-curve-and-producer-surplus">6.1.2 The Supply Curve and Producer Surplus</a></li>
           </ul></li>
-          <li><a href="#market-equilibrium-and-efficiency">6.2 Market Equilibrium and Efficiency</a><ul>
+          <li><a href="#market-equilibrium-and-efficiency">6.2 Market Equilibrium and Efficiency</a>
+          <ul>
           <li><a href="#total-surplus-is-lower-with-a-price-below-the-equilibrium-price">6.2.1 Total Surplus Is Lower with a Price below the Equilibrium Price</a></li>
           <li><a href="#total-surplus-is-lower-with-a-price-above-the-equilibrium-price">6.2.2 Total Surplus Is Lower with a Price above the Equilibrium Price</a></li>
           <li><a href="#efficiency-and-the-invisible-hand">6.2.3 Efficiency and the Invisible Hand</a></li>
           <li><a href="#government-intervention-in-efficient-markets">6.2.4 Government Intervention in Efficient Markets</a></li>
           </ul></li>
-          <li><a href="#controlling-pricesmaximum-and-minimum-prices">6.3 Controlling Prices–Maximum and Minimum Prices</a><ul>
+          <li><a href="#controlling-pricesmaximum-and-minimum-prices">6.3 Controlling Prices–Maximum and Minimum Prices</a>
+          <ul>
           <li><a href="#setting-maximum-prices">6.3.1 Setting Maximum Prices</a></li>
           <li><a href="#rent-control">6.3.2 Rent Control</a></li>
           <li><a href="#setting-minimum-prices">6.3.3 Setting Minimum Prices</a></li>
           </ul></li>
-          <li><a href="#controlling-quantitieslicensing-and-import-restrictions">6.4 Controlling Quantities–Licensing and Import Restrictions</a><ul>
+          <li><a href="#controlling-quantitieslicensing-and-import-restrictions">6.4 Controlling Quantities–Licensing and Import Restrictions</a>
+          <ul>
           <li><a href="#taxi-medallions">6.4.1 Taxi Medallions</a></li>
           <li><a href="#licensing-and-market-efficiency">6.4.2 Licensing and Market Efficiency</a></li>
           <li><a href="#winners-and-losers-from-licensing">6.4.3 Winners and Losers from Licensing</a></li>
           <li><a href="#import-restriction">6.4.4 Import Restriction</a></li>
           </ul></li>
-          <li><a href="#who-really-pays-taxes">6.5 Who Really Pays Taxes?</a><ul>
+          <li><a href="#who-really-pays-taxes">6.5 Who Really Pays Taxes?</a>
+          <ul>
           <li><a href="#tax-shifting-forward-and-backward">6.5.1 Tax Shifting: Forward and Backward</a></li>
           <li><a href="#tax-shifting-and-the-price-elasticity-of-demand">6.5.2 Tax Shifting and the Price Elasticity of Demand</a></li>
           <li><a href="#cigarette-taxes-and-tobacco-land">6.5.3 Cigarette Taxes and Tobacco Land</a></li>
@@ -208,7 +221,7 @@
 <li>The decrease in the total surplus of the market that results from a policy such as rent control.</li>
 </ul>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-6/ch-6_Figure_6.5.png" alt="Figure 6.5" /><figcaption>Figure 6.5</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-6/ch-6_Figure_6.5.png" alt="Figure 6.5" /><figcaption aria-hidden="true">Figure 6.5</figcaption>
 </figure>
 <p>In Figure 6.5, the deadweight loss is shown by the yellow triangle <em>abc</em>, the decrease in the total surplus of the market. This is a deadweight loss in the sense that it is not offset by a gain to anyone else. The consumers and producers who are excluded from the market by rent control lose the surpluses they could have received in the market. The loss of consumer surplus is shown by triangle <em>cad</em>, and the loss of producer surplus is shown by triangle <em>dab</em>. Adding these together, we get the deadweight loss shown by triangle <em>abc</em>.</p>
 <p>Three more subtle effects associated with rent control add to its inefficiency:</p>
@@ -227,7 +240,7 @@
 <p>What happens when the government controls the quantity of a particular product instead of its price? We consider two policies that control quantities. In the domestic economy, many state and local governments limit the number of firms in particular markets by limiting the number of business licenses to operate in those markets. Many national governments restrict imports, using import bans or quotas on the quantity of a product–for example, shoes or cheese–that can be imported.</p>
 <h3 id="taxi-medallions">6.4.1 Taxi Medallions</h3>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-6/ch-6_Figure_6.6.png" alt="Figure 6.6" /><figcaption>Figure 6.6</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-6/ch-6_Figure_6.6.png" alt="Figure 6.6" /><figcaption aria-hidden="true">Figure 6.6</figcaption>
 </figure>
 <h3 id="licensing-and-market-efficiency">6.4.2 Licensing and Market Efficiency</h3>
 <p>As shown by the points between points <em>c</em> and <em>a</em> on the demand curve, many consumers are willing to pay between $3.00 and $3.60 per mile for taxi service. Although there are plenty of drivers who would be willing to provide taxi service at these prices, they can’t do so without a medallion. Because the medallion policy prevents these riders and drivers from executing mutually beneficial transactions, the policy causes inefficiency.</p>
@@ -237,7 +250,7 @@
 <h3 id="import-restriction">6.4.4 Import Restriction</h3>
 <p>Another way to control quantity is to limit the imports of a particular good. Like a licensing policy, an import restriction increases the market price and decreases the total surplus of the market.</p>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-6/ch-6_Figure_6.7.png" alt="Figure 6.7" /><figcaption>Figure 6.7</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-6/ch-6_Figure_6.7.png" alt="Figure 6.7" /><figcaption aria-hidden="true">Figure 6.7</figcaption>
 </figure>
 <p>The import ban would ultimately decrease the total surplus in the sugar market.</p>
 <p>Import restrictions are often defended on the grounds that they increase employment in the “protected” industries, such as apparel and steel. But the protection of these jobs increases consumer prices, so there is a trade-off: more jobs in the protected industry, but higher prices for consumers.</p>
@@ -249,13 +262,13 @@
 <h3 id="tax-shifting-forward-and-backward">6.5.1 Tax Shifting: Forward and Backward</h3>
 <p>Suppose that your city imposes a tax of $100 per apartment and collects the tax from housing firms–the firms that own apartment buildings and rent out the apartments. You may think the burden of the tax falls exclusively on the housing firm because that’s who mails the check to the government. But some simple supply and demand analysis will show why this is incorrect. The housing firm will charge more for apartments and pay less for its inputs, such as labor and land, so the tax will actually be paid by consumers and input suppliers.</p>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-6/ch-6_Figure_6.8.png" alt="Figure 6.8" /><figcaption>Figure 6.8</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-6/ch-6_Figure_6.8.png" alt="Figure 6.8" /><figcaption aria-hidden="true">Figure 6.8</figcaption>
 </figure>
 <p>The apartment tax also affects the people who supply inputs such as land and labor to the housing industry. The tax decreases the output of the industry, so the industry needs smaller quantities of the inputs used to produce apartments. The resulting excess supply of inputs like labor and land will decrease land and labor prices, decreasing the cost of producing apartments. As a result, part of the $100 tax gets shifted backward onto input suppliers. Although housing firms pay the apartment tax in a legal sense, they get some of the money to pay the tax by paying less to workers and landowners.</p>
 <h3 id="tax-shifting-and-the-price-elasticity-of-demand">6.5.2 Tax Shifting and the Price Elasticity of Demand</h3>
 <p>The amount of the tax shifted forward to consumers depends on the price elasticity of demand for the taxed good. If the demand for a taxed good is inelastic–meaning that consumers are not very responsive to price changes–we need a large price hike to eliminate the excess demand caused by the tax. Therefore, consumers will be hit by a large increase in price, and so they will pay the bulk of the tax.</p>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-6/ch-6_Figure_6.9.png" alt="Figure 6.9" /><figcaption>Figure 6.9</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-6/ch-6_Figure_6.9.png" alt="Figure 6.9" /><figcaption aria-hidden="true">Figure 6.9</figcaption>
 </figure>
 <h3 id="cigarette-taxes-and-tobacco-land">6.5.3 Cigarette Taxes and Tobacco Land</h3>
 <p>In 1994, President Bill Clinton proposed an immediate $0.75 per pack increase in the cigarette tax. The tax had two purposes: to generate revenue for Clinton’s health-care reform plan and to decrease medical costs by discouraging smoking. Based on our discussion of the market effects of a tax, we would predict that the tax would be shared by consumers, who would pay higher prices, and the owners of land where tobacco is grown. It appears tobacco farmers and landowners understand the economics of cigarette taxes. Led by a group of representatives and senators from tobacco-growing areas in North Carolina, Kentucky, and Virginia, Congress scaled back Clinton’s proposed tax hike from $0.75 to $0.05. Although the government would have collected the tax from cigarette manufacturers, savvy tobacco farmers realized the tax would decrease the price of their tobacco-growing land.</p>
@@ -267,7 +280,7 @@
 <p>Because a tax causes people to change their behavior, the total burden of the tax exceeds the revenue generated by the tax.</p>
 </blockquote>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-6/ch-6_Figure_6.10.png" alt="Figure 6.10" /><figcaption>Figure 6.10</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-6/ch-6_Figure_6.10.png" alt="Figure 6.10" /><figcaption aria-hidden="true">Figure 6.10</figcaption>
 </figure>
 <p>In Figure 6.10 the fish tax increases the equilibrium price of fish from $2 to $3. Why does the price increase by an amount equal to the tax? The supply curve is horizontal because input prices are fixed, regardless of how much output is produced. There is no opportunity to shift the tax backward onto input suppliers, so consumers bear the full cost of the tax.</p>
 <p><br></p>

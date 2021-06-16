@@ -11,6 +11,13 @@
 
     <title>Chapter 6</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,12 +88,15 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-6-force-and-motion-ii">Chapter 6: Force and Motion II</a><ul>
-          <li><a href="#friction">6.1 Friction</a><ul>
+          <li><a href="#chapter-6-force-and-motion-ii">Chapter 6: Force and Motion II</a>
+          <ul>
+          <li><a href="#friction">6.1 Friction</a>
+          <ul>
           <li><a href="#static-friction">Static Friction</a></li>
           <li><a href="#kinetic-friction">Kinetic Friction</a></li>
           </ul></li>
-          <li><a href="#uniform-circular-motion">6.3 Uniform Circular Motion</a><ul>
+          <li><a href="#uniform-circular-motion">6.3 Uniform Circular Motion</a>
+          <ul>
           <li><a href="#centripetal-acceleration">Centripetal Acceleration</a></li>
           <li><a href="#magnitude-of-centripetal-force">Magnitude of Centripetal Force</a></li>
           </ul></li>
@@ -109,29 +134,29 @@
 <h2 id="friction">6.1 Friction</h2>
 <h3 id="static-friction">Static Friction</h3>
 <ul>
-<li>The force <span class="math inline">\(\vec{f_{s}}\)</span> that balances the net force acting on a body that prevents it from moving.</li>
+<li>The force <span class="math inline">\vec{f_{s}}</span> that balances the net force acting on a body that prevents it from moving.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 f_{s,\text{max}} = \mu_{s}F_{N}
-\]</span></p>
-<p>where <span class="math inline">\(\mu_{s}\)</span> is the <strong>coefficient of static friction</strong> and <span class="math inline">\(F_{N}\)</span> is the magnitude of the normal force on the body from the surface.</p>
+</span></p>
+<p>where <span class="math inline">\mu_{s}</span> is the <strong>coefficient of static friction</strong> and <span class="math inline">F_{N}</span> is the magnitude of the normal force on the body from the surface.</p>
 <h3 id="kinetic-friction">Kinetic Friction</h3>
 <ul>
-<li>The frictional force <span class="math inline">\(\vec{f_{k}}\)</span> that opposes a motion in the opposite direction once it starts moving from rest.</li>
+<li>The frictional force <span class="math inline">\vec{f_{k}}</span> that opposes a motion in the opposite direction once it starts moving from rest.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 f_{k} = \mu_{k}F_{N}
-\]</span></p>
+</span></p>
 <h2 id="uniform-circular-motion">6.3 Uniform Circular Motion</h2>
 <h3 id="centripetal-acceleration">Centripetal Acceleration</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 a = \frac{v^{2}}{R}
-\]</span></p>
-<p>where <span class="math inline">\(R\)</span> is the radius of the circle</p>
+</span></p>
+<p>where <span class="math inline">R</span> is the radius of the circle</p>
 <h3 id="magnitude-of-centripetal-force">Magnitude of Centripetal Force</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 F = \frac{mv^{2}}{R}
-\]</span></p>
+</span></p>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <p>Textbook</p>

@@ -12,6 +12,13 @@
 
     <title>Bash Scripting Variable</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -23,26 +30,28 @@
     <link href="../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -51,9 +60,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -129,7 +138,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#variable">Variable</a><ul>
+          <li><a href="#variable">Variable</a>
+          <ul>
           <li><a href="#increment-or-decrement-an-integer-variable">Increment or Decrement an Integer Variable</a></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
@@ -163,59 +173,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 id="variable">Variable</h1>
 <h2 id="increment-or-decrement-an-integer-variable">Increment or Decrement an Integer Variable</h2>
 <p><strong>With Arithmetic Expansion</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="va">var=$((</span>var+1<span class="va">))</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">((</span>var=var+1<span class="kw">))</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="kw">((</span>var+=1<span class="kw">))</span></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="kw">((</span>var++<span class="kw">))</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">var</span><span class="op">=</span><span class="va">$((var</span><span class="op">+</span><span class="dv">1</span><span class="va">))</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">((</span><span class="va">var</span><span class="op">=</span><span class="va">var</span><span class="op">+</span><span class="dv">1</span><span class="kw">))</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">((</span><span class="va">var</span><span class="op">+=</span><span class="dv">1</span><span class="kw">))</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">((</span><span class="va">var</span><span class="op">++</span><span class="kw">))</span></span></code></pre></div>
 <p><strong>With <code>let</code></strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="bu">let</span> <span class="st">&quot;var=var+1&quot;</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="bu">let</span> <span class="st">&quot;var+=1&quot;</span></a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="bu">let</span> <span class="st">&quot;var++&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">let</span> <span class="st">&quot;var=var+1&quot;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">let</span> <span class="st">&quot;var+=1&quot;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">let</span> <span class="st">&quot;var++&quot;</span></span></code></pre></div>
 <p><strong>Incrementing variable with another variable</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="va">total=$((</span> <span class="va">${var1_count}</span> + <span class="va">${var2_count}</span> <span class="va">))</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="co"># or</span></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="va">total=$(</span><span class="fu">expr</span> <span class="va">${var1_count}</span> + <span class="va">${var2_count})</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">total</span><span class="op">=</span><span class="va">$((</span> <span class="va">${var1_count}</span> <span class="op">+</span> <span class="va">${var2_count}</span> <span class="va">))</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># or</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="va">total</span><span class="op">=</span><span class="va">$(</span><span class="fu">expr</span> <span class="va">${var1_count}</span> + <span class="va">${var2_count})</span></span></code></pre></div>
 <p><strong>Finding best performing variable increment operation</strong></p>
 <p>Test Code</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># To focus exclusively on the performance of each type of increment</span></a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="co"># statement, we should exclude bash performing while loops from the</span></a>
-<a class="sourceLine" id="cb4-3" title="3"><span class="co"># performance measure. So, let&#39;s time individual scripts that</span></a>
-<a class="sourceLine" id="cb4-4" title="4"><span class="co"># increment $i in their own unique way.</span></a>
-<a class="sourceLine" id="cb4-5" title="5"></a>
-<a class="sourceLine" id="cb4-6" title="6"><span class="co"># Declare i as an integer for tests 12 and 13.</span></a>
-<a class="sourceLine" id="cb4-7" title="7"><span class="bu">echo</span> <span class="op">&gt;</span> t12 <span class="st">&#39;declare -i i; i=i+1&#39;</span></a>
-<a class="sourceLine" id="cb4-8" title="8"><span class="bu">echo</span> <span class="op">&gt;</span> t13 <span class="st">&#39;declare -i i; i+=1&#39;</span></a>
-<a class="sourceLine" id="cb4-9" title="9"><span class="co"># Set i for test 14.</span></a>
-<a class="sourceLine" id="cb4-10" title="10"><span class="bu">echo</span> <span class="op">&gt;</span> t14 <span class="st">&#39;i=0; i=$(expr $i + 1)&#39;</span></a>
-<a class="sourceLine" id="cb4-11" title="11"></a>
-<a class="sourceLine" id="cb4-12" title="12"><span class="va">x=</span>100000</a>
-<a class="sourceLine" id="cb4-13" title="13"><span class="kw">while</span> <span class="kw">((</span>x--<span class="kw">))</span>; <span class="kw">do</span></a>
-<a class="sourceLine" id="cb4-14" title="14">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t0 <span class="st">&#39;i=$((i+1))&#39;</span></a>
-<a class="sourceLine" id="cb4-15" title="15">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t1 <span class="st">&#39;i=$((i++))&#39;</span></a>
-<a class="sourceLine" id="cb4-16" title="16">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t2 <span class="st">&#39;((i=i+1))&#39;</span></a>
-<a class="sourceLine" id="cb4-17" title="17">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t3 <span class="st">&#39;((i+=1))&#39;</span></a>
-<a class="sourceLine" id="cb4-18" title="18">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t4 <span class="st">&#39;((i++))&#39;</span></a>
-<a class="sourceLine" id="cb4-19" title="19">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t5 <span class="st">&#39;((++i))&#39;</span></a>
-<a class="sourceLine" id="cb4-20" title="20">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t6 <span class="st">&#39;let &quot;i=i+1&quot;&#39;</span></a>
-<a class="sourceLine" id="cb4-21" title="21">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t7 <span class="st">&#39;let &quot;i+=1&quot;&#39;</span></a>
-<a class="sourceLine" id="cb4-22" title="22">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t8 <span class="st">&#39;let &quot;i++&quot;&#39;</span></a>
-<a class="sourceLine" id="cb4-23" title="23">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t9 <span class="st">&#39;let i=i+1&#39;</span></a>
-<a class="sourceLine" id="cb4-24" title="24">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t10 <span class="st">&#39;let i+=1&#39;</span></a>
-<a class="sourceLine" id="cb4-25" title="25">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t11 <span class="st">&#39;let i++&#39;</span></a>
-<a class="sourceLine" id="cb4-26" title="26">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t12 <span class="st">&#39;i=i+1&#39;</span></a>
-<a class="sourceLine" id="cb4-27" title="27">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t13 <span class="st">&#39;i+=1&#39;</span></a>
-<a class="sourceLine" id="cb4-28" title="28">    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t14 <span class="st">&#39;i=$(expr $i + 1)&#39;</span></a>
-<a class="sourceLine" id="cb4-29" title="29"><span class="kw">done</span></a>
-<a class="sourceLine" id="cb4-30" title="30"></a>
-<a class="sourceLine" id="cb4-31" title="31"><span class="kw">for</span> <span class="ex">script</span> in t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14<span class="kw">;</span> <span class="kw">do</span></a>
-<a class="sourceLine" id="cb4-32" title="32">    <span class="va">line1=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">head</span> -1 <span class="st">&quot;</span><span class="va">$script</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb4-33" title="33">    <span class="bu">printf</span> <span class="st">&quot;%-24s&quot;</span> <span class="st">&quot;</span><span class="va">$line1</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb4-34" title="34">    <span class="kw">{</span> <span class="bu">time</span> bash <span class="st">&quot;</span><span class="va">$script</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">}</span> <span class="kw">|&amp;</span> <span class="fu">grep</span> user</a>
-<a class="sourceLine" id="cb4-35" title="35">    <span class="co"># Since stderr is being piped to grep above, this will confirm</span></a>
-<a class="sourceLine" id="cb4-36" title="36">    <span class="co"># there are no errors from running the command:</span></a>
-<a class="sourceLine" id="cb4-37" title="37">    <span class="bu">eval</span> <span class="st">&quot;</span><span class="va">$line1</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb4-38" title="38">    <span class="fu">rm</span> <span class="st">&quot;</span><span class="va">$script</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb4-39" title="39"><span class="kw">done</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To focus exclusively on the performance of each type of increment</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># statement, we should exclude bash performing while loops from the</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># performance measure. So, let&#39;s time individual scripts that</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># increment $i in their own unique way.</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Declare i as an integer for tests 12 and 13.</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="op">&gt;</span> t12 <span class="st">&#39;declare -i i; i=i+1&#39;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="op">&gt;</span> t13 <span class="st">&#39;declare -i i; i+=1&#39;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Set i for test 14.</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="op">&gt;</span> t14 <span class="st">&#39;i=0; i=$(expr $i + 1)&#39;</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="va">x</span><span class="op">=</span>100000</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">((</span><span class="va">x</span><span class="op">--</span><span class="kw">));</span> <span class="cf">do</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t0 <span class="st">&#39;i=$((i+1))&#39;</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t1 <span class="st">&#39;i=$((i++))&#39;</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t2 <span class="st">&#39;((i=i+1))&#39;</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t3 <span class="st">&#39;((i+=1))&#39;</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t4 <span class="st">&#39;((i++))&#39;</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t5 <span class="st">&#39;((++i))&#39;</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t6 <span class="st">&#39;let &quot;i=i+1&quot;&#39;</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t7 <span class="st">&#39;let &quot;i+=1&quot;&#39;</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t8 <span class="st">&#39;let &quot;i++&quot;&#39;</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t9 <span class="st">&#39;let i=i+1&#39;</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t10 <span class="st">&#39;let i+=1&#39;</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t11 <span class="st">&#39;let i++&#39;</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t12 <span class="st">&#39;i=i+1&#39;</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t13 <span class="st">&#39;i+=1&#39;</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="op">&gt;&gt;</span> t14 <span class="st">&#39;i=$(expr $i + 1)&#39;</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> script <span class="kw">in</span> t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14<span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    <span class="va">line1</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">head</span> <span class="at">-1</span> <span class="st">&quot;</span><span class="va">$script</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    <span class="bu">printf</span> <span class="st">&quot;%-24s&quot;</span> <span class="st">&quot;</span><span class="va">$line1</span><span class="st">&quot;</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    <span class="kw">{</span> <span class="bu">time</span> bash <span class="st">&quot;</span><span class="va">$script</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">}</span> <span class="kw">|&amp;</span> <span class="fu">grep</span> user</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Since stderr is being piped to grep above, this will confirm</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>    <span class="co"># there are no errors from running the command:</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>    <span class="bu">eval</span> <span class="st">&quot;</span><span class="va">$line1</span><span class="st">&quot;</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rm</span> <span class="st">&quot;</span><span class="va">$script</span><span class="st">&quot;</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre></div>
 <p>Output</p>
 <pre><code>i=$((i+1))              user    0m0.992s
 i=$((i++))              user    0m0.964s

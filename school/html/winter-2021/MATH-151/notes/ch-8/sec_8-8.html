@@ -11,6 +11,13 @@
 
     <title>Section 8.8</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -65,7 +72,8 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#section-8.8-numerical-integration">Section 8.8: Numerical Integration</a><ul>
+          <li><a href="#section-8.8-numerical-integration">Section 8.8: Numerical Integration</a>
+          <ul>
           <li><a href="#absolute-and-relative-error">Absolute and Relative Error</a></li>
           <li><a href="#midpoint-rule">Midpoint Rule</a></li>
           <li><a href="#trapezoid-rule">Trapezoid Rule</a></li>
@@ -104,7 +112,7 @@
 <h1 id="section-8.8-numerical-integration">Section 8.8: Numerical Integration</h1>
 <h2 id="absolute-and-relative-error">Absolute and Relative Error</h2>
 <figure>
-<img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-8_example-1.png" alt="Example 1" /><figcaption>Example 1</figcaption>
+<img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-8_example-1.png" alt="Example 1" /><figcaption aria-hidden="true">Example 1</figcaption>
 </figure>
 <h2 id="midpoint-rule">Midpoint Rule</h2>
 <p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-8_example-2.1.png" alt="Example 2.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-8_example-2.2.png" alt="Example 2.2" /></p>
@@ -115,7 +123,7 @@
 <p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-8_example-7.png" alt="Example 7" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-8_example-8.1.png" alt="Example 8.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-8_example-8.2.png" alt="Example 8.2" /></p>
 <h2 id="errors-in-numerical-integration">Errors in Numerical Integration</h2>
 <figure>
-<img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-8_errors_in_numerical_integration.png" alt="Errors in Numerical Integration Theorem" /><figcaption>Errors in Numerical Integration Theorem</figcaption>
+<img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-8_errors_in_numerical_integration.png" alt="Errors in Numerical Integration Theorem" /><figcaption aria-hidden="true">Errors in Numerical Integration Theorem</figcaption>
 </figure>
 <p><br></p>
 <h1 id="resources">Resources</h1>

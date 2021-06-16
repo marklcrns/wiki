@@ -11,6 +11,13 @@
 
     <title>3.11 Hyperbolic Functions</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,7 +88,8 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-3.11-hyperbolic-functions">Chapter 3.11: Hyperbolic Functions</a><ul>
+          <li><a href="#chapter-3.11-hyperbolic-functions">Chapter 3.11: Hyperbolic Functions</a>
+          <ul>
           <li><a href="#hyperbolic-identities">Hyperbolic Identities</a></li>
           <li><a href="#derivatives-of-hyperbolic-functions-1">Derivatives of Hyperbolic Functions 1</a></li>
           <li><a href="#inverse-hyperbolic-functions-2">Inverse Hyperbolic Functions 2</a></li>
@@ -105,103 +128,103 @@
 <!-- Contents -->
           <article class="contents">
 <h1 id="chapter-3.11-hyperbolic-functions">Chapter 3.11: Hyperbolic Functions</h1>
-<p>Certain even and odd combinations of the exponential functions <span class="math inline">\(e^{x}\)</span> and <span class="math inline">\(e^{-x}\)</span> arise so frequently in mathematics and its applications that they deserve to be given special names. In many ways they are analogous to the trigonometric functions, and they have the same relationship to the hyperbola that the trigonometric functions have to the circle. For this reason they are collectively called hyperbolic functions and individually called hyperbolic sine, hyperbolic cosine, and so on.</p>
-<p><span class="math display">\[
+<p>Certain even and odd combinations of the exponential functions <span class="math inline">e^{x}</span> and <span class="math inline">e^{-x}</span> arise so frequently in mathematics and its applications that they deserve to be given special names. In many ways they are analogous to the trigonometric functions, and they have the same relationship to the hyperbola that the trigonometric functions have to the circle. For this reason they are collectively called hyperbolic functions and individually called hyperbolic sine, hyperbolic cosine, and so on.</p>
+<p><span class="math display">
 \begin{aligned}
 \sinh{x} &amp;= \frac{e^{x} - e^{-x}}{2} \;\;\;\;\;\;\;\;\;\;\; \operatorname{csch}{x} = \frac{1}{\sinh{x}} \\
 \cosh{x} &amp;= \frac{e^{x} + e^{-x}}{2} \;\;\;\;\;\;\;\;\;\;\; \operatorname{sech}{x} = \frac{1}{\cosh{x}} \\
 \tanh{x} &amp;= \frac{\sinh{x}}{\cosh{x}} \;\;\;\;\;\;\;\;\;\;\;\;\;\; \coth{x} = \frac{\cosh{x}}{\sinh{x}}
 \end{aligned}
-\]</span></p>
+</span></p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-1.png" alt="Figure 1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-2.png" alt="Figure 2" /></p>
-<p>Note that sinh has domain <span class="math inline">\(\mathbb{R}\)</span> and range <span class="math inline">\(\mathbb{R}\)</span>, while cosh has domain <span class="math inline">\(\mathbb{R}\)</span> and range <span class="math inline">\([1, \infty)\)</span>. The graph of tanh is shown in Figure 3. It has the horizontal asymptotes <span class="math inline">\(y = \pm 1\)</span>.</p>
+<p>Note that sinh has domain <span class="math inline">\mathbb{R}</span> and range <span class="math inline">\mathbb{R}</span>, while cosh has domain <span class="math inline">\mathbb{R}</span> and range <span class="math inline">[1, \infty)</span>. The graph of tanh is shown in Figure 3. It has the horizontal asymptotes <span class="math inline">y = \pm 1</span>.</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-3.png" alt="Figure 3" /><figcaption>Figure 3</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-3.png" alt="Figure 3" /><figcaption aria-hidden="true">Figure 3</figcaption>
 </figure>
-<p>Some of the mathematical uses of hyperbolic functions will be seen in Chapter 7. Applications to science and engineering occur whenever an entity such as light, velocity, electricity, or radioactivity is gradually absorbed or extinguished, for the decay can be represented by hyperbolic functions. The most famous application is the use of hyperbolic cosine to describe the shape of a hanging wire. It can be proved that if a heavy flexible cable (such as a telephone or power line) is suspended between two points at the same height, then it takes the shape of a curve with equation <span class="math inline">\(y = c + a \cosh{(x/a)}\)</span> called a catenary. (The Latin word catena means “chain.”)</p>
+<p>Some of the mathematical uses of hyperbolic functions will be seen in Chapter 7. Applications to science and engineering occur whenever an entity such as light, velocity, electricity, or radioactivity is gradually absorbed or extinguished, for the decay can be represented by hyperbolic functions. The most famous application is the use of hyperbolic cosine to describe the shape of a hanging wire. It can be proved that if a heavy flexible cable (such as a telephone or power line) is suspended between two points at the same height, then it takes the shape of a curve with equation <span class="math inline">y = c + a \cosh{(x/a)}</span> called a catenary. (The Latin word catena means “chain.”)</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-4.png" alt="Figure 4" /><figcaption>Figure 4</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-4.png" alt="Figure 4" /><figcaption aria-hidden="true">Figure 4</figcaption>
 </figure>
-<p>Another application of hyperbolic functions occurs in the description of ocean waves: The velocity of a water wave with length <span class="math inline">\(L\)</span> moving across a body of water with depth <span class="math inline">\(d\)</span> is modeled by the function</p>
-<p><span class="math display">\[
+<p>Another application of hyperbolic functions occurs in the description of ocean waves: The velocity of a water wave with length <span class="math inline">L</span> moving across a body of water with depth <span class="math inline">d</span> is modeled by the function</p>
+<p><span class="math display">
 v = \sqrt{\frac{gL}{2\pi} \tanh{\frac{2 \pi d}{L}}}
-\]</span></p>
-<p>where <span class="math inline">\(g\)</span> is the acceleration due to gravity.</p>
+</span></p>
+<p>where <span class="math inline">g</span> is the acceleration due to gravity.</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-5.png" alt="Figure 5" /><figcaption>Figure 5</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-5.png" alt="Figure 5" /><figcaption aria-hidden="true">Figure 5</figcaption>
 </figure>
 <h2 id="hyperbolic-identities">Hyperbolic Identities</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \sinh{(-x)} = -\sinh{h} \\
 \cosh{(-x)} = \cosh{x} \\
 \cosh^{2}{x} - \sinh^{2}{x} = 1 \\
 1 - \tanh^{2}{x} = \operatorname{sech}^{2}{x} \\
 \sinh{(x + y)} = \sinh{x} \cosh{y} + \cosh{x} \sinh{y} \\
 \cosh{(x + y)} = \cosh{x} \cosh{y} + \sinh{x} \sinh{y}
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_example-1.png" alt="Example 1" /><figcaption>Example 1</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_example-1.png" alt="Example 1" /><figcaption aria-hidden="true">Example 1</figcaption>
 </figure>
 <p>The identity proved in Example 1(a) gives a clue to the reason for the name “hyperbolic” functions:</p>
-<p>If <span class="math inline">\(t\)</span> is any real number, then the point <span class="math inline">\(P(\cos{t}, \sin{t})\)</span> lies on the unit circle <span class="math inline">\(x^{2} + y^{2} = 1\)</span> because <span class="math inline">\(\cos^{2}{t + \sin^{2}{t} = 1}\)</span>. In fact, <span class="math inline">\(t\)</span> can be interpreted as the radian measure of <span class="math inline">\(\angle{POQ}\)</span> in Figure 6. For this reason the trigonometric functions are sometimes called <em>circular</em> functions.</p>
+<p>If <span class="math inline">t</span> is any real number, then the point <span class="math inline">P(\cos{t}, \sin{t})</span> lies on the unit circle <span class="math inline">x^{2} + y^{2} = 1</span> because <span class="math inline">\cos^{2}{t + \sin^{2}{t} = 1}</span>. In fact, <span class="math inline">t</span> can be interpreted as the radian measure of <span class="math inline">\angle{POQ}</span> in Figure 6. For this reason the trigonometric functions are sometimes called <em>circular</em> functions.</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-6.png" alt="Figure 6" /><figcaption>Figure 6</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-6.png" alt="Figure 6" /><figcaption aria-hidden="true">Figure 6</figcaption>
 </figure>
-<p>Likewise, if <span class="math inline">\(t\)</span> is any real number, then the point <span class="math inline">\(P(\cosh{t}, \sinh{t})\)</span> lies on the right branch of the hyperbola <span class="math inline">\(x^{2} - y^{2} = 1\)</span> because <span class="math inline">\(\cosh^{2}{t} - \sinh^{2}{t} = 1\)</span> and <span class="math inline">\(\cosh{t} \ge 1\)</span>. This time, <span class="math inline">\(t\)</span> does not represent the measure of an angle. However, it turns out that <span class="math inline">\(t\)</span> represents twice the area of the shaded hyperbolic sector in Figure 7, just as in the trigonometric case <span class="math inline">\(t\)</span> represents twice the area of the shaded circular sector in Figure 6.</p>
+<p>Likewise, if <span class="math inline">t</span> is any real number, then the point <span class="math inline">P(\cosh{t}, \sinh{t})</span> lies on the right branch of the hyperbola <span class="math inline">x^{2} - y^{2} = 1</span> because <span class="math inline">\cosh^{2}{t} - \sinh^{2}{t} = 1</span> and <span class="math inline">\cosh{t} \ge 1</span>. This time, <span class="math inline">t</span> does not represent the measure of an angle. However, it turns out that <span class="math inline">t</span> represents twice the area of the shaded hyperbolic sector in Figure 7, just as in the trigonometric case <span class="math inline">t</span> represents twice the area of the shaded circular sector in Figure 6.</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-7.png" alt="Figure 7" /><figcaption>Figure 7</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-7.png" alt="Figure 7" /><figcaption aria-hidden="true">Figure 7</figcaption>
 </figure>
 <p>The derivatives of the hyperbolic functions are easily computed. For example,</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{d}{dx}(\sinh{x}) = \frac{d}{dx}(\frac{e^{x} - e^{-x}}{2}) = \frac{e^{x} + e^{-x}}{2} = \cosh{x}
-\]</span></p>
+</span></p>
 <h2 id="derivatives-of-hyperbolic-functions-1">Derivatives of Hyperbolic Functions 1</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 \frac{d}{dx}(\sinh{x}) &amp;= \cosh{x} \;\;\;\;\;\;\;\;\;\;\; \frac{d}{dx}(\operatorname{csch}{x}) = -\operatorname{csch}{x}\coth{x} \\
 \frac{d}{dx}(\cosh{x}) &amp;= \sinh{x} \;\;\;\;\;\;\;\;\;\;\; \frac{d}{dx}(\operatorname{sech}{x}) = -\operatorname{sech}{x}\tanh{x} \\
 \frac{d}{dx}(\tanh{x}) &amp;= \operatorname{sech}^{2}{x} \;\;\;\;\;\;\;\;\; \frac{d}{dx}(\coth{x}) = -\operatorname{csch}^{2}{x}
 \end{aligned}
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_example-2.png" alt="Example 2" /><figcaption>Example 2</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_example-2.png" alt="Example 2" /><figcaption aria-hidden="true">Example 2</figcaption>
 </figure>
 <h2 id="inverse-hyperbolic-functions-2">Inverse Hyperbolic Functions 2</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 y = \sinh^{-1}{x} \; &amp;\Leftrightarrow \; \sinh{y} = x \\
 y = \cosh^{-1}{x} \; &amp;\Leftrightarrow \; \cosh{y} = x \text{ and } y \ge 0 \\
 y = \tanh^{-1}{x} \; &amp;\Leftrightarrow \; \tanh{y} = x
 \end{aligned}
-\]</span></p>
-<p>We can sketch the graphs of $^{-1}$, <span class="math inline">\(\cosh^{-1}\)</span>, <span class="math inline">\(\tanh^{-1}\)</span> and in Figures 8, 9, and 10 by using Figures 1, 2, and 3.</p>
+</span></p>
+<p>We can sketch the graphs of $^{-1}$, <span class="math inline">\cosh^{-1}</span>, <span class="math inline">\tanh^{-1}</span> and in Figures 8, 9, and 10 by using Figures 1, 2, and 3.</p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-8.png" alt="Figure 8" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-9.png" alt="Figure 9" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_figure-10.png" alt="Figure 10" /></p>
 <p>Since the hyperbolic functions are defined in terms of exponential functions, it’s not surprising to learn that the inverse hyperbolic functions can be expressed in terms of logarithms. In particular, we have:</p>
 <h2 id="equation-3">Equation 3</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \sinh^{-1}{x} = \ln{(x + \sqrt{x^{2} + 1})} \;\;\; x \in \mathbb{R}
-\]</span></p>
+</span></p>
 <h2 id="equation-4">Equation 4</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \cosh^{-1}{x} = \ln{(x + \sqrt{x^{2} - 1})} \;\;\; x \ge 1
-\]</span></p>
+</span></p>
 <h2 id="equation-5">Equation 5</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \tanh^{-1}{x} = \frac{1}{2}\ln{(\frac{1 + x}{1 - x})} \;\;\; -1 &lt; x &lt; 1
-\]</span></p>
+</span></p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_example-3.1.png" alt="Example 3.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_example-3.2.png" alt="Example 3.2" /></p>
 <h2 id="derivatives-of-inverse-hyperbolic-functions-6">Derivatives of Inverse Hyperbolic Functions 6</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 \frac{d}{dx}(\sinh^{-1}{x}) &amp;= \frac{1}{\sqrt{1 + x^{2}}} \;\;\;\;\;\;\;\;\;\;\; \frac{d}{dx}(\operatorname{csch}^{-1}{x}) = -\frac{1}{\left | x \right |\sqrt{x^{2} + 1}} \\
 \frac{d}{dx}(\cosh^{-1}{x}) &amp;= \frac{1}{\sqrt{x^{2} - 1}} \;\;\;\;\;\;\;\;\;\;\; \frac{d}{dx}(\operatorname{sech}^{-1}{x}) = -\frac{1}{x\sqrt{1 - x^{2}}} \\
 \frac{d}{dx}(\tanh^{-1}{x}) &amp;= \frac{1}{1 - x^{2}} \;\;\;\;\;\;\;\;\;\;\;\;\;\; \frac{d}{dx}(\coth^{-1}{x}) = \frac{1}{1 - x^{2}}
 \end{aligned}
-\]</span></p>
+</span></p>
 <blockquote>
 <p><strong>NOTE</strong></p>
 </blockquote>
-<p>Notice that the formulas for the derivatives of <span class="math inline">\(\tanh^{-1}{x}\)</span> and <span class="math inline">\(\coth^{-1}{x}\)</span> appear to be identical. But the domains of these functions have no numbers in common: <span class="math inline">\(\tanh^{-1}{x}\)</span> is defined for <span class="math inline">\(\left | x \right | &lt; 1\)</span>, <span class="math inline">\(\coth^{-1}{x}\)</span> whereas is defined for <span class="math inline">\(\left | x \right | &gt; 1\)</span>.</p>
+<p>Notice that the formulas for the derivatives of <span class="math inline">\tanh^{-1}{x}</span> and <span class="math inline">\coth^{-1}{x}</span> appear to be identical. But the domains of these functions have no numbers in common: <span class="math inline">\tanh^{-1}{x}</span> is defined for <span class="math inline">\left | x \right | &lt; 1</span>, <span class="math inline">\coth^{-1}{x}</span> whereas is defined for <span class="math inline">\left | x \right | &gt; 1</span>.</p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_example-4.png" alt="Example 4" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.11_example-5.png" alt="Example 5" /></p>
 <p><br></p>
 <h1 id="resources">Resources</h1>

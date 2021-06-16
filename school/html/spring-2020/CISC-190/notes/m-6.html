@@ -12,6 +12,13 @@
 
     <title>CISC 190 Module 6</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -23,26 +30,28 @@
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -51,9 +60,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -129,9 +138,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#module-6-creating-your-own-classes">Module 6: Creating Your Own Classes</a><ul>
-          <li><a href="#chapter-11-creating-classes">Chapter 11: Creating Classes</a><ul>
-          <li><a href="#defining-a-class">11.2 Defining A Class</a><ul>
+          <li><a href="#module-6-creating-your-own-classes">Module 6: Creating Your Own Classes</a>
+          <ul>
+          <li><a href="#chapter-11-creating-classes">Chapter 11: Creating Classes</a>
+          <ul>
+          <li><a href="#defining-a-class">11.2 Defining A Class</a>
+          <ul>
           <li><a href="#defining-fields">11.2.1 Defining Fields</a></li>
           <li><a href="#inherited-methods">11.2.2 Inherited Methods</a></li>
           <li><a href="#overriding-inherited-methods">11.2.3 Overriding Inherited Methods</a></li>
@@ -139,22 +151,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li><a href="#declaring-constructors">11.2.5 Declaring Constructors</a></li>
           </ul></li>
           <li><a href="#overloading-constructors">11.3 Overloading Constructors</a></li>
-          <li><a href="#creating-and-initializing-an-array">11.4 Creating And Initializing An Array</a><ul>
+          <li><a href="#creating-and-initializing-an-array">11.4 Creating And Initializing An Array</a>
+          <ul>
           <li><a href="#calculating-the-grade-average">11.4.1 Calculating the Grade Average</a></li>
           </ul></li>
-          <li><a href="#creating-accessors-getters-and-modifiers-setters">11.5 Creating Accessors (Getters) And Modifiers (Setters)</a><ul>
+          <li><a href="#creating-accessors-getters-and-modifiers-setters">11.5 Creating Accessors (Getters) And Modifiers (Setters)</a>
+          <ul>
           <li><a href="#creating-accessors-getters">11.5.1 Creating Accessors (Getters)</a></li>
           <li><a href="#creating-modifiers-setters">11.5.2 Creating Modifiers (Setters)</a></li>
           </ul></li>
           <li><a href="#creating-a-main-method">11.6 Creating A Main Method</a></li>
-          <li><a href="#javadoc-comments">11.7 Javadoc Comments</a><ul>
+          <li><a href="#javadoc-comments">11.7 Javadoc Comments</a>
+          <ul>
           <li><a href="#class-comment">11.7.1 Class Comment</a></li>
           </ul></li>
-          <li><a href="#method-comments">11.7.2 Method Comments</a><ul>
+          <li><a href="#method-comments">11.7.2 Method Comments</a>
+          <ul>
           <li><a href="#constructor-comments">11.7.3 Constructor Comments</a></li>
           <li><a href="#generating-the-documentation">11.7.4 Generating the Documentation</a></li>
           </ul></li>
-          <li><a href="#creating-another-class">11.8 Creating Another Class</a><ul>
+          <li><a href="#creating-another-class">11.8 Creating Another Class</a>
+          <ul>
           <li><a href="#adding-constructors">11.8.1 Adding Constructors</a></li>
           <li><a href="#adding-accessors-and-modifiers">11.8.2 Adding Accessors and Modifiers</a></li>
           </ul></li>
@@ -191,39 +208,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 id="module-6-creating-your-own-classes">Module 6: Creating Your Own Classes</h1>
 <h2 id="chapter-11-creating-classes">Chapter 11: Creating Classes</h2>
 <h3 id="defining-a-class">11.2 Defining A Class</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Student</a>
-<a class="sourceLine" id="cb1-2" title="2">{</a>
-<a class="sourceLine" id="cb1-3" title="3">  \\ some code here</a>
-<a class="sourceLine" id="cb1-4" title="4">}</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Student</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  \\ some code here</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>or</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Student {</a>
-<a class="sourceLine" id="cb2-2" title="2">  \\ some code here</a>
-<a class="sourceLine" id="cb2-3" title="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Student <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  \\ some code here</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>This class <strong>MUST</strong> be saved in a file called <code>Student.java</code></p>
 <h4 id="defining-fields">11.2.1 Defining Fields</h4>
 <p>Inside a class, we declare fields by specifying the <code>visibility</code>, <code>type</code>, and <code>name</code> of the filed.</p>
 <p><em>visibility type name;</em></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">private</span> <span class="bu">String</span> name;</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> <span class="bu">String</span> name<span class="op">;</span></span></code></pre></div>
 <p>We can also specify an initial value for the field as the result of some expression.</p>
 <p><em>visibility type name = expression;</em></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">private</span> <span class="bu">String</span> name = <span class="st">&quot;Unknown&quot;</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> <span class="bu">String</span> name <span class="op">=</span> <span class="st">&quot;Unknown&quot;</span><span class="op">;</span></span></code></pre></div>
 <p>The <code>visibility</code> for fields is usually <code>private</code> so that an object can control its own data.</p>
 <p>The <code>type</code> is a class name if the field is an object or one of the primitive types (<code>int</code>, <code>double</code>, <code>boolean,</code> etc). Remember that you can declare an array by adding <code>[]</code> after the type. You can have arrays of primitives or objects.</p>
 <p>The <code>name</code> should be appropriate for what field represents. The convention for fields names is to <em>start with a lowercase letter and uppercase the first letter of additional word</em>.</p>
 <p>Fields are <em>automatically</em> initialized if no other initialization is specified in the declaration. The default is to initialize object references to <code>null</code>, numbers to <code>0</code>, and boolean variables to <code>false</code>.</p>
 <p>Program 95: A Student Class</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Student</a>
-<a class="sourceLine" id="cb5-2" title="2">{</a>
-<a class="sourceLine" id="cb5-3" title="3">  <span class="co">///////////// fields ////////////////</span></a>
-<a class="sourceLine" id="cb5-4" title="4">  <span class="kw">private</span> <span class="bu">String</span> name;</a>
-<a class="sourceLine" id="cb5-5" title="5">  <span class="kw">private</span> <span class="dt">double</span>[] gradeArray;</a>
-<a class="sourceLine" id="cb5-6" title="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Student</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">///////////// fields ////////////////</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="bu">String</span> name<span class="op">;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="dt">double</span><span class="op">[]</span> gradeArray<span class="op">;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h4 id="inherited-methods">11.2.2 Inherited Methods</h4>
 <p>Every class inherits all the methods from the class <code>Object</code>.</p>
 <p>You could explicitly name the parent class by using the <code>extends</code> keyword on the class definition followed by the name of the parent class.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Student <span class="kw">extends</span> <span class="bu">Object</span></a>
-<a class="sourceLine" id="cb6-2" title="2">{</a>
-<a class="sourceLine" id="cb6-3" title="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Student <span class="kw">extends</span> <span class="bu">Object</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>The parent class (<code>Object</code>) is the class the child class (<code>Student</code>) is inheriting from.</p>
 <blockquote>
 <p>The parent class is also called <em>superclass</em> or a <em>base class</em>. While the child class is also called a <em>subclass</em> or a <em>derived class</em>.</p>
@@ -236,158 +253,158 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4 id="overriding-inherited-methods">11.2.3 Overriding Inherited Methods</h4>
 <p>Creating a method with the same <em>method signature</em> (method name and parameter list) as a parent method, will result in that method being called <em>instead of</em> the method defined in the parent. This is called <em>overriding</em> a method.</p>
 <figure>
-<img src="../../../../files/spring-2020/CISC-190/module-6/cisc-190_ch-11_figure-11.3.png" alt="Figure 11.3" /><figcaption>Figure 11.3</figcaption>
+<img src="../../../../files/spring-2020/CISC-190/module-6/cisc-190_ch-11_figure-11.3.png" alt="Figure 11.3" /><figcaption aria-hidden="true">Figure 11.3</figcaption>
 </figure>
 <p>Program 96: Student Class with a Method</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Student</a>
-<a class="sourceLine" id="cb7-2" title="2">{</a>
-<a class="sourceLine" id="cb7-3" title="3">  <span class="co">//////////// fields ////////////</span></a>
-<a class="sourceLine" id="cb7-4" title="4">  <span class="kw">private</span> <span class="bu">String</span> name;</a>
-<a class="sourceLine" id="cb7-5" title="5">  <span class="kw">private</span> <span class="dt">double</span>[] gradeArray;</a>
-<a class="sourceLine" id="cb7-6" title="6"></a>
-<a class="sourceLine" id="cb7-7" title="7">  <span class="co">//////////// methods ////////////</span></a>
-<a class="sourceLine" id="cb7-8" title="8">  <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span>()</a>
-<a class="sourceLine" id="cb7-9" title="9">  {</a>
-<a class="sourceLine" id="cb7-10" title="10">    <span class="kw">return</span> <span class="st">&quot;Student object named: &quot;</span> + <span class="kw">this</span>.<span class="fu">name</span>;</a>
-<a class="sourceLine" id="cb7-11" title="11">  }</a>
-<a class="sourceLine" id="cb7-12" title="12">}</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Student</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">//////////// fields ////////////</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="bu">String</span> name<span class="op">;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="dt">double</span><span class="op">[]</span> gradeArray<span class="op">;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">//////////// methods ////////////</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span><span class="op">()</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;Student object named: &quot;</span> <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="fu">name</span><span class="op">;</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <blockquote>
 <p>You use <code>this</code> keyword to refer thee the current object inside of a method.</p>
 </blockquote>
 <p>If you create a student object and print it out you will get:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb8-1" title="1">&gt; <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="kw">new</span> <span class="fu">Student</span>());</a>
-<a class="sourceLine" id="cb8-2" title="2">Student object named: <span class="kw">null</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="kw">new</span> <span class="fu">Student</span><span class="op">());</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>Student object named<span class="op">:</span> <span class="kw">null</span></span></code></pre></div>
 <h4 id="default-field-initialization">11.2.4 Default Field Initialization</h4>
 <p>When an object is created, <em>all</em> of the fields of the object are initialized. Object fields that aren’t explicitly initialized by assignment statements in the declaration will be <code>null</code>, number fields will be <code>0</code>, and bollean fields will be <code>false</code>.</p>
 <h4 id="declaring-constructors">11.2.5 Declaring Constructors</h4>
 <p>A constructor is automatically called after a new object is created using the <em>new</em> operator. The constructor sets up the object, which usually means initializing the fields.</p>
 <p>If the compiler doesn’t see any constructors, it creates one that doesn’t take any parameters and doesn’t change the value of the fields. A constructor that doesn’t take any parameters is called the <em>no argument constructor</em>.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb9-1" title="1">visibility <span class="fu">ClassName</span>(paramList)</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>visibility <span class="fu">ClassName</span><span class="op">(</span>paramList<span class="op">)</span></span></code></pre></div>
 <blockquote>
 <p>Constructors usually have <code>public</code> visibility.<br> Constructors <strong>DOESN’T HAVE</strong> a return type. Return type is only for methods.</p>
 </blockquote>
 <p>Program 97: Student Class with a Constructor</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Student</a>
-<a class="sourceLine" id="cb10-2" title="2">{</a>
-<a class="sourceLine" id="cb10-3" title="3">  <span class="co">//////////// fields //////////////////</span></a>
-<a class="sourceLine" id="cb10-4" title="4">  <span class="kw">private</span> <span class="bu">String</span> name;</a>
-<a class="sourceLine" id="cb10-5" title="5">  <span class="kw">private</span> <span class="dt">double</span>[] gradeArray;</a>
-<a class="sourceLine" id="cb10-6" title="6"></a>
-<a class="sourceLine" id="cb10-7" title="7">  <span class="co">//////////// constructors ///////////</span></a>
-<a class="sourceLine" id="cb10-8" title="8">  <span class="kw">public</span> <span class="fu">Student</span>(<span class="bu">String</span> theName)</a>
-<a class="sourceLine" id="cb10-9" title="9">  {</a>
-<a class="sourceLine" id="cb10-10" title="10">    <span class="kw">this</span>.<span class="fu">name</span> = theName;</a>
-<a class="sourceLine" id="cb10-11" title="11">  }</a>
-<a class="sourceLine" id="cb10-12" title="12"></a>
-<a class="sourceLine" id="cb10-13" title="13">  <span class="co">/////////// methods ///////////////</span></a>
-<a class="sourceLine" id="cb10-14" title="14">  <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span>()</a>
-<a class="sourceLine" id="cb10-15" title="15">  {</a>
-<a class="sourceLine" id="cb10-16" title="16">    <span class="kw">return</span> <span class="st">&quot;Student object named: &quot;</span> + <span class="kw">this</span>.<span class="fu">name</span>;</a>
-<a class="sourceLine" id="cb10-17" title="17">  }</a>
-<a class="sourceLine" id="cb10-18" title="18">}</a></code></pre></div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb11-1" title="1"><span class="co">// with argument constructor</span></a>
-<a class="sourceLine" id="cb11-2" title="2">&gt; <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="kw">new</span> <span class="fu">Student</span>(<span class="st">&quot;Amy Clark&quot;</span>);</a>
-<a class="sourceLine" id="cb11-3" title="3">Student object named: Amy Clark</a>
-<a class="sourceLine" id="cb11-4" title="4"><span class="co">// with no argument constructor</span></a>
-<a class="sourceLine" id="cb11-5" title="5">&gt; <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="kw">new</span> <span class="fu">Student</span>());</a>
-<a class="sourceLine" id="cb11-6" title="6">java.<span class="fu">lang</span>.<span class="fu">NoSuchMethodException</span>: Student constructor</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Student</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">//////////// fields //////////////////</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="bu">String</span> name<span class="op">;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="dt">double</span><span class="op">[]</span> gradeArray<span class="op">;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">//////////// constructors ///////////</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="fu">Student</span><span class="op">(</span><span class="bu">String</span> theName<span class="op">)</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">name</span> <span class="op">=</span> theName<span class="op">;</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="co">/////////// methods ///////////////</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span><span class="op">()</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;Student object named: &quot;</span> <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="fu">name</span><span class="op">;</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">// with argument constructor</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="kw">new</span> <span class="fu">Student</span><span class="op">(</span><span class="st">&quot;Amy Clark&quot;</span><span class="op">);</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>Student object named<span class="op">:</span> Amy Clark</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">// with no argument constructor</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="kw">new</span> <span class="fu">Student</span><span class="op">());</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>java<span class="op">.</span><span class="fu">lang</span><span class="op">.</span><span class="fu">NoSuchMethodException</span><span class="op">:</span> Student constructor</span></code></pre></div>
 <p>Since theres one constructor in the class Student, the compiler will no longer add the no argument constructor that leaves all the field values alone:</p>
 <p>Program 98: Student Class with Multiple Constructors</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Student</a>
-<a class="sourceLine" id="cb12-2" title="2">{</a>
-<a class="sourceLine" id="cb12-3" title="3">  <span class="co">//////////// fields //////////////////</span></a>
-<a class="sourceLine" id="cb12-4" title="4">  <span class="kw">private</span> <span class="bu">String</span> name;</a>
-<a class="sourceLine" id="cb12-5" title="5">  <span class="kw">private</span> <span class="dt">double</span>[] gradeArray;</a>
-<a class="sourceLine" id="cb12-6" title="6"></a>
-<a class="sourceLine" id="cb12-7" title="7">  <span class="co">//////////// constructors ///////////</span></a>
-<a class="sourceLine" id="cb12-8" title="8">  <span class="kw">public</span> <span class="fu">Student</span>() {}</a>
-<a class="sourceLine" id="cb12-9" title="9"></a>
-<a class="sourceLine" id="cb12-10" title="10">  <span class="kw">public</span> <span class="fu">Student</span>(<span class="bu">String</span> theName)</a>
-<a class="sourceLine" id="cb12-11" title="11">  {</a>
-<a class="sourceLine" id="cb12-12" title="12">    <span class="kw">this</span>.<span class="fu">name</span> = theName;</a>
-<a class="sourceLine" id="cb12-13" title="13">  }</a>
-<a class="sourceLine" id="cb12-14" title="14"></a>
-<a class="sourceLine" id="cb12-15" title="15">  <span class="co">/////////// methods ///////////////</span></a>
-<a class="sourceLine" id="cb12-16" title="16">  <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span>()</a>
-<a class="sourceLine" id="cb12-17" title="17">  {</a>
-<a class="sourceLine" id="cb12-18" title="18">    <span class="kw">return</span> <span class="st">&quot;Student object named: &quot;</span> + <span class="kw">this</span>.<span class="fu">name</span>;</a>
-<a class="sourceLine" id="cb12-19" title="19">  }</a>
-<a class="sourceLine" id="cb12-20" title="20">}</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Student</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">//////////// fields //////////////////</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="bu">String</span> name<span class="op">;</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="dt">double</span><span class="op">[]</span> gradeArray<span class="op">;</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">//////////// constructors ///////////</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="fu">Student</span><span class="op">()</span> <span class="op">{}</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="fu">Student</span><span class="op">(</span><span class="bu">String</span> theName<span class="op">)</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">name</span> <span class="op">=</span> theName<span class="op">;</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="co">/////////// methods ///////////////</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span><span class="op">()</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;Student object named: &quot;</span> <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="fu">name</span><span class="op">;</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="overloading-constructors">11.3 Overloading Constructors</h3>
 <p>Program 99: Student Class with Three Constructors</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Student</a>
-<a class="sourceLine" id="cb13-2" title="2">{</a>
-<a class="sourceLine" id="cb13-3" title="3">  <span class="co">//////////// fields //////////////////</span></a>
-<a class="sourceLine" id="cb13-4" title="4">  <span class="kw">private</span> <span class="bu">String</span> name;</a>
-<a class="sourceLine" id="cb13-5" title="5">  <span class="kw">private</span> <span class="dt">double</span>[] gradeArray;</a>
-<a class="sourceLine" id="cb13-6" title="6"></a>
-<a class="sourceLine" id="cb13-7" title="7">  <span class="co">//////////// constructors ///////////</span></a>
-<a class="sourceLine" id="cb13-8" title="8">  <span class="kw">public</span> <span class="fu">Student</span>() {}</a>
-<a class="sourceLine" id="cb13-9" title="9"></a>
-<a class="sourceLine" id="cb13-10" title="10">  <span class="kw">public</span> <span class="fu">Student</span>(<span class="bu">String</span> theName)</a>
-<a class="sourceLine" id="cb13-11" title="11">  {</a>
-<a class="sourceLine" id="cb13-12" title="12">    <span class="kw">this</span>.<span class="fu">name</span> = theName;</a>
-<a class="sourceLine" id="cb13-13" title="13">  }</a>
-<a class="sourceLine" id="cb13-14" title="14"></a>
-<a class="sourceLine" id="cb13-15" title="15">  <span class="kw">public</span> <span class="fu">Student</span>(<span class="bu">String</span> theName, <span class="dt">double</span>[] theGradeArray)</a>
-<a class="sourceLine" id="cb13-16" title="16">  {</a>
-<a class="sourceLine" id="cb13-17" title="17">    <span class="kw">this</span>.<span class="fu">name</span> = theName;</a>
-<a class="sourceLine" id="cb13-18" title="18">    <span class="kw">this</span>.<span class="fu">gradeArray</span> = theGradeArray;</a>
-<a class="sourceLine" id="cb13-19" title="19">  }</a>
-<a class="sourceLine" id="cb13-20" title="20"></a>
-<a class="sourceLine" id="cb13-21" title="21">  <span class="co">/////////// methods ///////////////</span></a>
-<a class="sourceLine" id="cb13-22" title="22">  <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span>()</a>
-<a class="sourceLine" id="cb13-23" title="23">  {</a>
-<a class="sourceLine" id="cb13-24" title="24">    <span class="kw">return</span> <span class="st">&quot;Student object named: &quot;</span> + <span class="kw">this</span>.<span class="fu">name</span>;</a>
-<a class="sourceLine" id="cb13-25" title="25">  }</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Student</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">//////////// fields //////////////////</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="bu">String</span> name<span class="op">;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="dt">double</span><span class="op">[]</span> gradeArray<span class="op">;</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">//////////// constructors ///////////</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="fu">Student</span><span class="op">()</span> <span class="op">{}</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="fu">Student</span><span class="op">(</span><span class="bu">String</span> theName<span class="op">)</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">name</span> <span class="op">=</span> theName<span class="op">;</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="fu">Student</span><span class="op">(</span><span class="bu">String</span> theName<span class="op">,</span> <span class="dt">double</span><span class="op">[]</span> theGradeArray<span class="op">)</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">name</span> <span class="op">=</span> theName<span class="op">;</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">gradeArray</span> <span class="op">=</span> theGradeArray<span class="op">;</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  <span class="co">/////////// methods ///////////////</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span><span class="op">()</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;Student object named: &quot;</span> <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="fu">name</span><span class="op">;</span></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span></code></pre></div>
 <h3 id="creating-and-initializing-an-array">11.4 Creating And Initializing An Array</h3>
 <h4 id="calculating-the-grade-average">11.4.1 Calculating the Grade Average</h4>
 <p>Program 100: Student Class with Average Calculation</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Student</a>
-<a class="sourceLine" id="cb14-2" title="2">{</a>
-<a class="sourceLine" id="cb14-3" title="3">  <span class="co">//////////// fields //////////////////</span></a>
-<a class="sourceLine" id="cb14-4" title="4">  <span class="kw">private</span> <span class="bu">String</span> name;</a>
-<a class="sourceLine" id="cb14-5" title="5">  <span class="kw">private</span> <span class="dt">double</span>[] gradeArray;</a>
-<a class="sourceLine" id="cb14-6" title="6"></a>
-<a class="sourceLine" id="cb14-7" title="7">  <span class="co">//////////// constructors ///////////</span></a>
-<a class="sourceLine" id="cb14-8" title="8">  <span class="kw">public</span> <span class="fu">Student</span>() {}</a>
-<a class="sourceLine" id="cb14-9" title="9"></a>
-<a class="sourceLine" id="cb14-10" title="10">  <span class="kw">public</span> <span class="fu">Student</span>(<span class="bu">String</span> theName)</a>
-<a class="sourceLine" id="cb14-11" title="11">  {</a>
-<a class="sourceLine" id="cb14-12" title="12">    <span class="kw">this</span>.<span class="fu">name</span> = theName;</a>
-<a class="sourceLine" id="cb14-13" title="13">  }</a>
-<a class="sourceLine" id="cb14-14" title="14"></a>
-<a class="sourceLine" id="cb14-15" title="15">  <span class="kw">public</span> <span class="fu">Student</span>(<span class="bu">String</span> theName, <span class="dt">double</span>[] theGradeArray)</a>
-<a class="sourceLine" id="cb14-16" title="16">  {</a>
-<a class="sourceLine" id="cb14-17" title="17">    <span class="kw">this</span>.<span class="fu">name</span> = theName;</a>
-<a class="sourceLine" id="cb14-18" title="18">    <span class="kw">this</span>.<span class="fu">gradeArray</span> = theGradeArray;</a>
-<a class="sourceLine" id="cb14-19" title="19">  }</a>
-<a class="sourceLine" id="cb14-20" title="20"></a>
-<a class="sourceLine" id="cb14-21" title="21">  <span class="co">/////////// methods ///////////////</span></a>
-<a class="sourceLine" id="cb14-22" title="22">  <span class="kw">public</span> <span class="dt">double</span> <span class="fu">getAverage</span>()</a>
-<a class="sourceLine" id="cb14-23" title="23">  {</a>
-<a class="sourceLine" id="cb14-24" title="24">    <span class="dt">double</span> average = <span class="fl">0.</span><span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb14-25" title="25"></a>
-<a class="sourceLine" id="cb14-26" title="26">    <span class="kw">if</span> (<span class="kw">this</span>.<span class="fu">gradeArray</span> != <span class="kw">null</span> &amp;&amp; <span class="kw">this</span>.<span class="fu">gradeArray</span>.<span class="fu">length</span> &gt; <span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb14-27" title="27">    {</a>
-<a class="sourceLine" id="cb14-28" title="28">      <span class="dt">double</span> sum = <span class="fl">0.</span><span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb14-29" title="29">      <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="kw">this</span>.<span class="fu">gradeArray</span>.<span class="fu">length</span>; i++)</a>
-<a class="sourceLine" id="cb14-30" title="30">      {</a>
-<a class="sourceLine" id="cb14-31" title="31">        sum = sum + <span class="kw">this</span>.<span class="fu">gradeArray</span>[i];</a>
-<a class="sourceLine" id="cb14-32" title="32">      }</a>
-<a class="sourceLine" id="cb14-33" title="33">      average = sum / <span class="kw">this</span>.<span class="fu">gradeArray</span>.<span class="fu">length</span>;</a>
-<a class="sourceLine" id="cb14-34" title="34">    }</a>
-<a class="sourceLine" id="cb14-35" title="35">    <span class="kw">return</span> average;</a>
-<a class="sourceLine" id="cb14-36" title="36">  }</a>
-<a class="sourceLine" id="cb14-37" title="37"></a>
-<a class="sourceLine" id="cb14-38" title="38">  <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span>()</a>
-<a class="sourceLine" id="cb14-39" title="39">  {</a>
-<a class="sourceLine" id="cb14-40" title="40">    <span class="kw">return</span> <span class="st">&quot;Student object named: &quot;</span> + <span class="kw">this</span>.<span class="fu">name</span>;</a>
-<a class="sourceLine" id="cb14-41" title="41">  }</a>
-<a class="sourceLine" id="cb14-42" title="42">}</a></code></pre></div>
-<div class="sourceCode" id="cb15"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb15-1" title="1">&gt; <span class="dt">double</span>[] gArray = {<span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">95</span>, <span class="dv">87</span>, <span class="dv">98</span>};</a>
-<a class="sourceLine" id="cb15-2" title="2">&gt; <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="kw">new</span> <span class="fu">Student</span>(<span class="st">&quot;Ron Farmer&quot;</span>, gArray));</a>
-<a class="sourceLine" id="cb15-3" title="3">Student object named: Ron Farmer Average: <span class="fl">90.</span><span class="dv">0</span></a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Student</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">//////////// fields //////////////////</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="bu">String</span> name<span class="op">;</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="dt">double</span><span class="op">[]</span> gradeArray<span class="op">;</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">//////////// constructors ///////////</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="fu">Student</span><span class="op">()</span> <span class="op">{}</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="fu">Student</span><span class="op">(</span><span class="bu">String</span> theName<span class="op">)</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">name</span> <span class="op">=</span> theName<span class="op">;</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="fu">Student</span><span class="op">(</span><span class="bu">String</span> theName<span class="op">,</span> <span class="dt">double</span><span class="op">[]</span> theGradeArray<span class="op">)</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">name</span> <span class="op">=</span> theName<span class="op">;</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">gradeArray</span> <span class="op">=</span> theGradeArray<span class="op">;</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>  <span class="co">/////////// methods ///////////////</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">double</span> <span class="fu">getAverage</span><span class="op">()</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>    <span class="dt">double</span> average <span class="op">=</span> <span class="fl">0.0</span><span class="op">;</span></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span><span class="kw">this</span><span class="op">.</span><span class="fu">gradeArray</span> <span class="op">!=</span> <span class="kw">null</span> <span class="op">&amp;&amp;</span> <span class="kw">this</span><span class="op">.</span><span class="fu">gradeArray</span><span class="op">.</span><span class="fu">length</span> <span class="op">&gt;</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>      <span class="dt">double</span> sum <span class="op">=</span> <span class="fl">0.0</span><span class="op">;</span></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="kw">this</span><span class="op">.</span><span class="fu">gradeArray</span><span class="op">.</span><span class="fu">length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>      <span class="op">{</span></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>        sum <span class="op">=</span> sum <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="fu">gradeArray</span><span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>      average <span class="op">=</span> sum <span class="op">/</span> <span class="kw">this</span><span class="op">.</span><span class="fu">gradeArray</span><span class="op">.</span><span class="fu">length</span><span class="op">;</span></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> average<span class="op">;</span></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span><span class="op">()</span></span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;Student object named: &quot;</span> <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="fu">name</span><span class="op">;</span></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="dt">double</span><span class="op">[]</span> gArray <span class="op">=</span> <span class="op">{</span><span class="dv">80</span><span class="op">,</span> <span class="dv">90</span><span class="op">,</span> <span class="dv">95</span><span class="op">,</span> <span class="dv">87</span><span class="op">,</span> <span class="dv">98</span><span class="op">};</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="kw">new</span> <span class="fu">Student</span><span class="op">(</span><span class="st">&quot;Ron Farmer&quot;</span><span class="op">,</span> gArray<span class="op">));</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>Student object named<span class="op">:</span> Ron Farmer Average<span class="op">:</span> <span class="fl">90.0</span></span></code></pre></div>
 <h5 id="using-step-into-in-the-debugger">11.4.2 Using Step Into in the Debugger</h5>
 <ul>
 <li><p><kbd>STEP INTO</kbd> will take us <em>into</em> a method which is invoked on the current line.</p></li>
@@ -401,112 +418,112 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote>
 <h4 id="creating-accessors-getters">11.5.1 Creating Accessors (Getters)</h4>
 <p>In order to let objects of other classes access the information in private fields, we need to create public methods that access the private fields. <strong>Accessors</strong> are methods that return private field information. By convention these are declared as:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">public</span> type <span class="fu">getFieldName</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> type <span class="fu">getFieldName</span><span class="op">()</span></span></code></pre></div>
 <p>For example, this method will return the value of the <em>name</em>:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">public</span> <span class="bu">String</span> <span class="fu">getName</span>() { <span class="kw">return</span> <span class="kw">this</span>.<span class="fu">name</span>; }</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="bu">String</span> <span class="fu">getName</span><span class="op">()</span> <span class="op">{</span> <span class="cf">return</span> <span class="kw">this</span><span class="op">.</span><span class="fu">name</span><span class="op">;</span> <span class="op">}</span></span></code></pre></div>
 <p>This method returns the array of grades:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">public</span> <span class="dt">double</span> <span class="fu">getGrade</span>(<span class="dt">int</span> index)</a>
-<a class="sourceLine" id="cb18-2" title="2">{</a>
-<a class="sourceLine" id="cb18-3" title="3">  <span class="kw">return</span> <span class="kw">this</span>.<span class="fu">gradeArray</span>[index];</a>
-<a class="sourceLine" id="cb18-4" title="4">}</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">double</span> <span class="fu">getGrade</span><span class="op">(</span><span class="dt">int</span> index<span class="op">)</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">this</span><span class="op">.</span><span class="fu">gradeArray</span><span class="op">[</span>index<span class="op">];</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h4 id="creating-modifiers-setters">11.5.2 Creating Modifiers (Setters)</h4>
 <p>Methods that modify fields are called <strong>modifiers</strong> or <strong>mutators</strong>. The Java convention is to declare these as follows:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">public</span> returnType <span class="fu">setFieldName</span>(type param1Name,</a>
-<a class="sourceLine" id="cb19-2" title="2">                               type param2Name, ...)</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> returnType <span class="fu">setFieldName</span><span class="op">(</span>type param1Name<span class="op">,</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>                               type param2Name<span class="op">,</span> <span class="kw">...</span><span class="op">)</span></span></code></pre></div>
 <p>For example, this method tries to change the grade stored at a passed index to a passed new grade:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">setGrade</span>(<span class="dt">int</span> index, <span class="dt">double</span> newGrade)</a>
-<a class="sourceLine" id="cb20-2" title="2">{</a>
-<a class="sourceLine" id="cb20-3" title="3">  <span class="kw">if</span> (newGrade &lt;<span class="dv">0</span> || <span class="kw">this</span>.<span class="fu">gradeArray</span> == <span class="kw">null</span>)</a>
-<a class="sourceLine" id="cb20-4" title="4">    <span class="kw">return</span> <span class="kw">false</span>;</a>
-<a class="sourceLine" id="cb20-5" title="5">  <span class="kw">else</span></a>
-<a class="sourceLine" id="cb20-6" title="6">  {</a>
-<a class="sourceLine" id="cb20-7" title="7">    <span class="kw">this</span>.<span class="fu">gradeArray</span>[index] = newGrade;</a>
-<a class="sourceLine" id="cb20-8" title="8">    <span class="kw">return</span> <span class="kw">true</span>;</a>
-<a class="sourceLine" id="cb20-9" title="9">  }</a>
-<a class="sourceLine" id="cb20-10" title="10">}</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">setGrade</span><span class="op">(</span><span class="dt">int</span> index<span class="op">,</span> <span class="dt">double</span> newGrade<span class="op">)</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="op">(</span>newGrade <span class="op">&lt;</span><span class="dv">0</span> <span class="op">||</span> <span class="kw">this</span><span class="op">.</span><span class="fu">gradeArray</span> <span class="op">==</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">gradeArray</span><span class="op">[</span>index<span class="op">]</span> <span class="op">=</span> newGrade<span class="op">;</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>If the no argument constructor or the constructor that just takes the name was used to create a Student object, the grade array will be null. We need some way to set it. One way is to pass the grade array to use. We can decide to only allow this if the grade array is currently null.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">setGradeArray</span>(<span class="dt">double</span>[] theArray)</a>
-<a class="sourceLine" id="cb21-2" title="2">{</a>
-<a class="sourceLine" id="cb21-3" title="3">  <span class="kw">if</span> (<span class="kw">this</span>.<span class="fu">gradeArray</span> != <span class="kw">null</span>)</a>
-<a class="sourceLine" id="cb21-4" title="4">  {</a>
-<a class="sourceLine" id="cb21-5" title="5">    <span class="kw">return</span> <span class="kw">false</span>;</a>
-<a class="sourceLine" id="cb21-6" title="6">  }</a>
-<a class="sourceLine" id="cb21-7" title="7">  <span class="kw">else</span></a>
-<a class="sourceLine" id="cb21-8" title="8">  {</a>
-<a class="sourceLine" id="cb21-9" title="9">    <span class="kw">this</span>.<span class="fu">gradeArray</span> = theArray;</a>
-<a class="sourceLine" id="cb21-10" title="10">    <span class="kw">return</span> <span class="kw">true</span>;</a>
-<a class="sourceLine" id="cb21-11" title="11">  }</a>
-<a class="sourceLine" id="cb21-12" title="12">}</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">setGradeArray</span><span class="op">(</span><span class="dt">double</span><span class="op">[]</span> theArray<span class="op">)</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="op">(</span><span class="kw">this</span><span class="op">.</span><span class="fu">gradeArray</span> <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">gradeArray</span> <span class="op">=</span> theArray<span class="op">;</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Here is a method that will set the student’s name only if it is currently null; otherwise it will leave the current name alone. It will return true if the name is changed and false otherwise.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">setName</span>(<span class="bu">String</span> theName)</a>
-<a class="sourceLine" id="cb22-2" title="2">{</a>
-<a class="sourceLine" id="cb22-3" title="3">  <span class="dt">boolean</span> result = <span class="kw">false</span>;</a>
-<a class="sourceLine" id="cb22-4" title="4">  <span class="kw">if</span> (<span class="kw">this</span>.<span class="fu">name</span> == <span class="kw">null</span>)</a>
-<a class="sourceLine" id="cb22-5" title="5">  {</a>
-<a class="sourceLine" id="cb22-6" title="6">    <span class="kw">this</span>.<span class="fu">name</span> = theName;</a>
-<a class="sourceLine" id="cb22-7" title="7">    result = <span class="kw">true</span>;</a>
-<a class="sourceLine" id="cb22-8" title="8">  }</a>
-<a class="sourceLine" id="cb22-9" title="9">  <span class="kw">return</span> result;</a>
-<a class="sourceLine" id="cb22-10" title="10">}</a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">setName</span><span class="op">(</span><span class="bu">String</span> theName<span class="op">)</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">boolean</span> result <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="op">(</span><span class="kw">this</span><span class="op">.</span><span class="fu">name</span> <span class="op">==</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">name</span> <span class="op">=</span> theName<span class="op">;</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> result<span class="op">;</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>One of the advantages of object-oriented programming is that the data and methods are <em>encapsulated</em> in the class definition. This means that the data is grouped with the methods that affect it inside of a class. If the data get into an incorrect state, we know immediately that the class isn’t doing its job of protecting the data.</p>
 <h3 id="creating-a-main-method">11.6 Creating A Main Method</h3>
 <p><code>main</code> method is a special method that you can use to create objects and invoke methods. A main method must have the following method declaration:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args)</a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span></span></code></pre></div>
 <blockquote>
 <p>The convention is just to use the name <code>args</code>. It doesn’t matter if you call the array of string args or some other name.<br> It must be a <code>public</code> method so that it can be called by objects of other classes.<br> It must be <code>static</code> because no objects of the class exist when you start execution of the method.</p>
 </blockquote>
 <p>Here is a main method that you can use to create some students:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb24-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args)</a>
-<a class="sourceLine" id="cb24-2" title="2">{</a>
-<a class="sourceLine" id="cb24-3" title="3">  Student student1 = <span class="kw">new</span> <span class="fu">Student</span>(<span class="st">&quot;Barb Ericson&quot;</span>);</a>
-<a class="sourceLine" id="cb24-4" title="4">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(student1);</a>
-<a class="sourceLine" id="cb24-5" title="5">  <span class="dt">double</span>[] gradeArray1 = {<span class="dv">90</span>, <span class="dv">88</span>, <span class="dv">95</span>, <span class="dv">96</span>, <span class="dv">93</span>};</a>
-<a class="sourceLine" id="cb24-6" title="6">  Student student2 = <span class="kw">new</span> <span class="fu">Student</span>(<span class="st">&quot;Mark Guzdial&quot;</span>, gradeArrray);</a>
-<a class="sourceLine" id="cb24-7" title="7">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(student2);</a>
-<a class="sourceLine" id="cb24-8" title="8">}</a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  Student student1 <span class="op">=</span> <span class="kw">new</span> <span class="fu">Student</span><span class="op">(</span><span class="st">&quot;Barb Ericson&quot;</span><span class="op">);</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span>student1<span class="op">);</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">double</span><span class="op">[]</span> gradeArray1 <span class="op">=</span> <span class="op">{</span><span class="dv">90</span><span class="op">,</span> <span class="dv">88</span><span class="op">,</span> <span class="dv">95</span><span class="op">,</span> <span class="dv">96</span><span class="op">,</span> <span class="dv">93</span><span class="op">};</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  Student student2 <span class="op">=</span> <span class="kw">new</span> <span class="fu">Student</span><span class="op">(</span><span class="st">&quot;Mark Guzdial&quot;</span><span class="op">,</span> gradeArrray<span class="op">);</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span>student2<span class="op">);</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="javadoc-comments">11.7 Javadoc Comments</h3>
 <h4 id="class-comment">11.7.1 Class Comment</h4>
 <p>Example of a class comment</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb25-1" title="1"><span class="co">/**</span></a>
-<a class="sourceLine" id="cb25-2" title="2"> <span class="co">*</span> Class that describes a student<span class="co">. </span>A student has a name and an</a>
-<a class="sourceLine" id="cb25-3" title="3"> <span class="co">*</span> array of grades<span class="co">.</span> You can get information about a student</a>
-<a class="sourceLine" id="cb25-4" title="4"> <span class="co">*</span> such as her<span class="co">/</span>his name and grade average<span class="co">.</span></a>
-<a class="sourceLine" id="cb25-5" title="5"> <span class="co">*</span></a>
-<a class="sourceLine" id="cb25-6" title="6"> <span class="co">*</span> <span class="an">@author </span>Barb Ericson</a>
-<a class="sourceLine" id="cb25-7" title="7"> <span class="co">*/</span></a>
-<a class="sourceLine" id="cb25-8" title="8"><span class="kw">public</span> <span class="kw">class</span> Student</a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> Class that describes a student<span class="co">. </span>A student has a name and an</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> array of grades<span class="co">.</span> You can get information about a student</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> such as her<span class="co">/</span>his name and grade average<span class="co">.</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> <span class="co">@</span>author Barb Ericson</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a> <span class="co">*/</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Student</span></code></pre></div>
 <p>Notice that the Javadoc comment is just before the class declaration. It tells something about the purpose of the class. It also should tell who the author or authors are. If there is more than one author you just add another <code>@author</code> tag. The <code>@author</code> tag is just one of many special tags defined in Javadoc that will pull particular information out of the source code and format it in the HTML documentation.</p>
 <h3 id="method-comments">11.7.2 Method Comments</h3>
 <p>Example of a method comment</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb26-1" title="1"><span class="co">/**</span></a>
-<a class="sourceLine" id="cb26-2" title="2"> <span class="co">*</span> Method to set a grade in the grade array</a>
-<a class="sourceLine" id="cb26-3" title="3"> <span class="co">* </span><span class="an">@param index </span>the index to set the grade at</a>
-<a class="sourceLine" id="cb26-4" title="4"> <span class="co">*</span> <span class="an">@param newGrade </span>the new grade to use</a>
-<a class="sourceLine" id="cb26-5" title="5"> <span class="co">*</span> <span class="an">@return </span>true if success<span class="co">,</span> else false</a>
-<a class="sourceLine" id="cb26-6" title="6"> <span class="co">*/</span></a>
-<a class="sourceLine" id="cb26-7" title="7"><span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">setGrade</span>(<span class="dt">int</span> index, <span class="dt">double</span> newGrade)</a>
-<a class="sourceLine" id="cb26-8" title="8">{</a>
-<a class="sourceLine" id="cb26-9" title="9">  ...</a>
-<a class="sourceLine" id="cb26-10" title="10">}</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> Method to set a grade in the grade array</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"> * @</span>param index the index to set the grade at</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> <span class="co">@</span>param newGrade the new grade to use</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> <span class="co">@</span>return true if success<span class="co">,</span> else false</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a> <span class="co">*/</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">setGrade</span><span class="op">(</span><span class="dt">int</span> index<span class="op">,</span> <span class="dt">double</span> newGrade<span class="op">)</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">...</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h4 id="constructor-comments">11.7.3 Constructor Comments</h4>
 <p>You can add Javadoc comments to constructors as well. They look like method comments. Of course you won’t need any <code>@return</code> tags since constructors do not return a value.</p>
 <h4 id="generating-the-documentation">11.7.4 Generating the Documentation</h4>
 <p>Once you add Javadoc comments to your class you can generate HTML documentation in DrJava by clicking on the <kbd>JAVADOC</kbd> button.</p>
 <h3 id="creating-another-class">11.8 Creating Another Class</h3>
 <p>What if we want to represent a class period? We might want to keep track of the teacher’s name, the period number, and the students in that period.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb27-1" title="1"><span class="co">/**</span></a>
-<a class="sourceLine" id="cb27-2" title="2"> <span class="co">*</span> ClassPeriod represents a class period which has a teacher<span class="co">,</span></a>
-<a class="sourceLine" id="cb27-3" title="3"> <span class="co">*</span> a period number<span class="co">,</span> and an array of students</a>
-<a class="sourceLine" id="cb27-4" title="4"> <span class="co">*/</span></a>
-<a class="sourceLine" id="cb27-5" title="5"><span class="kw">public</span> <span class="kw">class</span> ClassPeriod</a>
-<a class="sourceLine" id="cb27-6" title="6">{</a>
-<a class="sourceLine" id="cb27-7" title="7">  <span class="co">///////////////// fields ///////////////////</span></a>
-<a class="sourceLine" id="cb27-8" title="8">  <span class="kw">private</span> <span class="bu">String</span> teacherName;</a>
-<a class="sourceLine" id="cb27-9" title="9">  <span class="kw">private</span> <span class="dt">int</span> periodNumber;</a>
-<a class="sourceLine" id="cb27-10" title="10">  <span class="kw">private</span> Student[] studentArray = <span class="kw">new</span> Student[<span class="dv">35</span>];</a>
-<a class="sourceLine" id="cb27-11" title="11">}</a></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> ClassPeriod represents a class period which has a teacher<span class="co">,</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> a period number<span class="co">,</span> and an array of students</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a> <span class="co">*/</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ClassPeriod</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">///////////////// fields ///////////////////</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="bu">String</span> teacherName<span class="op">;</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="dt">int</span> periodNumber<span class="op">;</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> Student<span class="op">[]</span> studentArray <span class="op">=</span> <span class="kw">new</span> Student<span class="op">[</span><span class="dv">35</span><span class="op">];</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <figure>
-<img src="../../../../files/spring-2020/CISC-190/module-6/cisc-190_ch-11_figure-11.16.png" alt="Figure 11.3" /><figcaption>Figure 11.3</figcaption>
+<img src="../../../../files/spring-2020/CISC-190/module-6/cisc-190_ch-11_figure-11.16.png" alt="Figure 11.3" /><figcaption aria-hidden="true">Figure 11.3</figcaption>
 </figure>
 <p><a name="unified-modeling-language"><strong>Unified modeling language (UML)</strong></a></p>
 <ul>
@@ -517,81 +534,81 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>The standard way to show object-oriented designs is to use a UML class diagram. In Figure 11.16, we see that we have two classes in our design so far: <code>Student</code> and <code>ClassPeriod</code> and that both of these inherit from the class <code>Object</code>. There is a line connecting Student and <code>ClassPeriod</code> with an arrow pointing to the <code>Student</code> class. This means that a <code>ClassPeriod</code> object will keep track of the <code>Student</code> objects in it. The ’*’ at the end of the line near the <code>Student</code> class shows us that a <code>ClassPeriod</code> object can have 0 to many <code>Student</code> objects associated with it. The ‘5…8’ at the <code>ClassPeriod</code> end means that a <code>Student</code> object can have five to eight <code>ClassPeriod</code> object associated with it.</p>
 <h4 id="adding-constructors">11.8.1 Adding Constructors</h4>
-<div class="sourceCode" id="cb28"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb28-1" title="1"><span class="co">/////////////// constructors //////////////////</span></a>
-<a class="sourceLine" id="cb28-2" title="2"><span class="co">/**</span></a>
-<a class="sourceLine" id="cb28-3" title="3"> <span class="co">*</span> No<span class="co">-</span>argument constructor<span class="co">. </span>Leaves fields with</a>
-<a class="sourceLine" id="cb28-4" title="4"> <span class="co">*</span> default values<span class="co">.</span></a>
-<a class="sourceLine" id="cb28-5" title="5"> <span class="co">*/</span></a>
-<a class="sourceLine" id="cb28-6" title="6"><span class="kw">public</span> <span class="fu">ClassPeriod</span>() {}</a>
-<a class="sourceLine" id="cb28-7" title="7"></a>
-<a class="sourceLine" id="cb28-8" title="8"><span class="co">/**</span></a>
-<a class="sourceLine" id="cb28-9" title="9"> <span class="co">*</span> Constructor that takes just the teacher<span class="co">&#39;</span>s name</a>
-<a class="sourceLine" id="cb28-10" title="10"> <span class="co">* </span><span class="an">@param name </span>the name for the teacher</a>
-<a class="sourceLine" id="cb28-11" title="11"> <span class="co">*/</span></a>
-<a class="sourceLine" id="cb28-12" title="12"><span class="kw">public</span> <span class="fu">ClassPeriod</span>(<span class="bu">String</span> name) { <span class="kw">this</span>.<span class="fu">teacherName</span> = name; }</a>
-<a class="sourceLine" id="cb28-13" title="13"></a>
-<a class="sourceLine" id="cb28-14" title="14"><span class="co">/**</span></a>
-<a class="sourceLine" id="cb28-15" title="15"> <span class="co">*</span> Constructor that takes the teacher<span class="co">&#39;</span>s name and period number</a>
-<a class="sourceLine" id="cb28-16" title="16"> <span class="co">* </span><span class="an">@param name </span>the name for the teacher</a>
-<a class="sourceLine" id="cb28-17" title="17"> <span class="co">*</span> <span class="an">@param num </span>the number for the class period</a>
-<a class="sourceLine" id="cb28-18" title="18"> <span class="co">*/</span></a>
-<a class="sourceLine" id="cb28-19" title="19"><span class="kw">public</span> <span class="fu">ClassPeriod</span>(<span class="bu">String</span> name, <span class="dt">int</span> num)</a>
-<a class="sourceLine" id="cb28-20" title="20">{</a>
-<a class="sourceLine" id="cb28-21" title="21">  <span class="kw">this</span>.<span class="fu">teacherName</span> = name;</a>
-<a class="sourceLine" id="cb28-22" title="22">  <span class="kw">this</span>.<span class="fu">periodNumber</span> = num;</a>
-<a class="sourceLine" id="cb28-23" title="23">}</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">/////////////// constructors //////////////////</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> No<span class="co">-</span>argument constructor<span class="co">. </span>Leaves fields with</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> default values<span class="co">.</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a> <span class="co">*/</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="fu">ClassPeriod</span><span class="op">()</span> <span class="op">{}</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> Constructor that takes just the teacher<span class="co">&#39;</span>s name</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co"> * @</span>param name the name for the teacher</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a> <span class="co">*/</span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="fu">ClassPeriod</span><span class="op">(</span><span class="bu">String</span> name<span class="op">)</span> <span class="op">{</span> <span class="kw">this</span><span class="op">.</span><span class="fu">teacherName</span> <span class="op">=</span> name<span class="op">;</span> <span class="op">}</span></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> Constructor that takes the teacher<span class="co">&#39;</span>s name and period number</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="co"> * @</span>param name the name for the teacher</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> <span class="co">@</span>param num the number for the class period</span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a> <span class="co">*/</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="fu">ClassPeriod</span><span class="op">(</span><span class="bu">String</span> name<span class="op">,</span> <span class="dt">int</span> num<span class="op">)</span></span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="fu">teacherName</span> <span class="op">=</span> name<span class="op">;</span></span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="fu">periodNumber</span> <span class="op">=</span> num<span class="op">;</span></span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h4 id="adding-accessors-and-modifiers">11.8.2 Adding Accessors and Modifiers</h4>
 <p>Accessors (Getters)</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb29-1" title="1"><span class="co">//////////////////// methods ////////////////////</span></a>
-<a class="sourceLine" id="cb29-2" title="2"><span class="co">/**</span></a>
-<a class="sourceLine" id="cb29-3" title="3"> <span class="co">*</span> Method to get the teacher<span class="co">&#39;</span>s name</a>
-<a class="sourceLine" id="cb29-4" title="4"> <span class="co">* </span><span class="an">@return </span>the name of the teacher<span class="co">,</span> or null if none yet</a>
-<a class="sourceLine" id="cb29-5" title="5"> <span class="co">*/</span></a>
-<a class="sourceLine" id="cb29-6" title="6"><span class="kw">public</span> <span class="bu">String</span> <span class="fu">getTeacherName</span>() { <span class="kw">return</span> teacherName; }</a>
-<a class="sourceLine" id="cb29-7" title="7"></a>
-<a class="sourceLine" id="cb29-8" title="8"><span class="co">/**</span></a>
-<a class="sourceLine" id="cb29-9" title="9"> <span class="co">*</span> Method to get a student based on the index</a>
-<a class="sourceLine" id="cb29-10" title="10"> <span class="co">* </span><span class="an">@return </span>the student at this index or null if none at this</a>
-<a class="sourceLine" id="cb29-11" title="11"> <span class="co">*</span> index</a>
-<a class="sourceLine" id="cb29-12" title="12"> <span class="co">*/</span></a>
-<a class="sourceLine" id="cb29-13" title="13"><span class="kw">public</span> Student <span class="fu">getStudent</span>(<span class="dt">int</span> index)</a>
-<a class="sourceLine" id="cb29-14" title="14">{</a>
-<a class="sourceLine" id="cb29-15" title="15">  <span class="kw">return</span> studentArray[index];</a>
-<a class="sourceLine" id="cb29-16" title="16">}</a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">//////////////////// methods ////////////////////</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> Method to get the teacher<span class="co">&#39;</span>s name</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"> * @</span>return the name of the teacher<span class="co">,</span> or null if none yet</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a> <span class="co">*/</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="bu">String</span> <span class="fu">getTeacherName</span><span class="op">()</span> <span class="op">{</span> <span class="cf">return</span> teacherName<span class="op">;</span> <span class="op">}</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> Method to get a student based on the index</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="co"> * @</span>return the student at this index or null if none at this</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> index</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a> <span class="co">*/</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> Student <span class="fu">getStudent</span><span class="op">(</span><span class="dt">int</span> index<span class="op">)</span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> studentArray<span class="op">[</span>index<span class="op">];</span></span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Modifiers (Setters)</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb30-1" title="1"><span class="co">/**</span></a>
-<a class="sourceLine" id="cb30-2" title="2"> <span class="co">*</span> Method to set the teacher<span class="co">&#39;</span>s name</a>
-<a class="sourceLine" id="cb30-3" title="3"> <span class="co">* </span><span class="an">@param name </span>the name to use</a>
-<a class="sourceLine" id="cb30-4" title="4"> <span class="co">*/</span></a>
-<a class="sourceLine" id="cb30-5" title="5"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">setTeacherName</span>(<span class="bu">String</span> name)</a>
-<a class="sourceLine" id="cb30-6" title="6">{</a>
-<a class="sourceLine" id="cb30-7" title="7">  <span class="kw">this</span>.<span class="fu">teacherName</span> = name;</a>
-<a class="sourceLine" id="cb30-8" title="8">}</a>
-<a class="sourceLine" id="cb30-9" title="9"></a>
-<a class="sourceLine" id="cb30-10" title="10"><span class="co">/**</span></a>
-<a class="sourceLine" id="cb30-11" title="11"> <span class="co">*</span> Method to set the period number <span class="co">(</span>if it hasn<span class="co">&#39;</span>t been set<span class="co">)</span></a>
-<a class="sourceLine" id="cb30-12" title="12"> <span class="co">* </span><span class="an">@param num </span>the number to use</a>
-<a class="sourceLine" id="cb30-13" title="13"> <span class="co">*</span> <span class="an">@return </span>flag to say if set worked</a>
-<a class="sourceLine" id="cb30-14" title="14"> <span class="co">*/</span></a>
-<a class="sourceLine" id="cb30-15" title="15"><span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">setPeriodNumber</span>(<span class="dt">int</span> num)</a>
-<a class="sourceLine" id="cb30-16" title="16">{</a>
-<a class="sourceLine" id="cb30-17" title="17">  <span class="kw">if</span> (<span class="kw">this</span>.<span class="fu">periodNumber</span> == <span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb30-18" title="18">  {</a>
-<a class="sourceLine" id="cb30-19" title="19">    <span class="kw">this</span>.<span class="fu">periodNumber</span> = nu;</a>
-<a class="sourceLine" id="cb30-20" title="20">    <span class="kw">return</span> <span class="kw">true</span>;</a>
-<a class="sourceLine" id="cb30-21" title="21">  }</a>
-<a class="sourceLine" id="cb30-22" title="22">  <span class="kw">else</span> <span class="kw">return</span> <span class="kw">false</span>;</a>
-<a class="sourceLine" id="cb30-23" title="23">}</a>
-<a class="sourceLine" id="cb30-24" title="24"></a>
-<a class="sourceLine" id="cb30-25" title="25"><span class="co">/**</span></a>
-<a class="sourceLine" id="cb30-26" title="26"> <span class="co">*</span> Method to set the student at an index</a>
-<a class="sourceLine" id="cb30-27" title="27"> <span class="co">* </span><span class="an">@param studentObj </span>the student object to use</a>
-<a class="sourceLine" id="cb30-28" title="28"> <span class="co">*</span> <span class="an">@param index </span>the index to set the student at</a>
-<a class="sourceLine" id="cb30-29" title="29"> <span class="co">*/</span></a>
-<a class="sourceLine" id="cb30-30" title="30"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">setStudent</span>(Student studentObj, <span class="dt">int</span> index)</a>
-<a class="sourceLine" id="cb30-31" title="31">{</a>
-<a class="sourceLine" id="cb30-32" title="32">  <span class="kw">this</span>.<span class="fu">studentArray</span>[index] = studentObj;</a>
-<a class="sourceLine" id="cb30-33" title="33">}</a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> Method to set the teacher<span class="co">&#39;</span>s name</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co"> * @</span>param name the name to use</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a> <span class="co">*/</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">setTeacherName</span><span class="op">(</span><span class="bu">String</span> name<span class="op">)</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="fu">teacherName</span> <span class="op">=</span> name<span class="op">;</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> Method to set the period number <span class="co">(</span>if it hasn<span class="co">&#39;</span>t been set<span class="co">)</span></span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a><span class="co"> * @</span>param num the number to use</span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> <span class="co">@</span>return flag to say if set worked</span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a> <span class="co">*/</span></span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">setPeriodNumber</span><span class="op">(</span><span class="dt">int</span> num<span class="op">)</span></span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="op">(</span><span class="kw">this</span><span class="op">.</span><span class="fu">periodNumber</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">periodNumber</span> <span class="op">=</span> nu<span class="op">;</span></span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span></span>
+<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> Method to set the student at an index</span>
+<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a><span class="co"> * @</span>param studentObj the student object to use</span>
+<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> <span class="co">@</span>param index the index to set the student at</span>
+<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a> <span class="co">*/</span></span>
+<span id="cb30-30"><a href="#cb30-30" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">setStudent</span><span class="op">(</span>Student studentObj<span class="op">,</span> <span class="dt">int</span> index<span class="op">)</span></span>
+<span id="cb30-31"><a href="#cb30-31" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb30-32"><a href="#cb30-32" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="fu">studentArray</span><span class="op">[</span>index<span class="op">]</span> <span class="op">=</span> studentObj<span class="op">;</span></span>
+<span id="cb30-33"><a href="#cb30-33" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>

@@ -11,6 +11,13 @@
 
     <title>Chapter 1</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,7 +88,8 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-1-measurements">Chapter 1: Measurements</a><ul>
+          <li><a href="#chapter-1-measurements">Chapter 1: Measurements</a>
+          <ul>
           <li><a href="#si-units">SI Units</a></li>
           <li><a href="#my-notes">My Notes</a></li>
           <li><a href="#video-lectures">Video Lectures</a></li>
@@ -103,16 +126,16 @@
 <h1 id="chapter-1-measurements">Chapter 1: Measurements</h1>
 <h2 id="si-units">SI Units</h2>
 <figure>
-<img src="../../../../files/winter-2021/PHYS-195/lectures/ch-1/si_units.png" alt="SI Units" /><figcaption>SI Units</figcaption>
+<img src="../../../../files/winter-2021/PHYS-195/lectures/ch-1/si_units.png" alt="SI Units" /><figcaption aria-hidden="true">SI Units</figcaption>
 </figure>
 <h2 id="my-notes">My Notes</h2>
 <p>When cancelling out units with different powers, match the smaller unit to the bigger one</p>
-<p>For example. Suppose we want to cancel out <span class="math inline">\(ft^{3}\)</span> with <span class="math inline">\(\frac{n}{ft}\)</span>:</p>
-<p><span class="math display">\[
+<p>For example. Suppose we want to cancel out <span class="math inline">ft^{3}</span> with <span class="math inline">\frac{n}{ft}</span>:</p>
+<p><span class="math display">
 \left ( \frac{3^{3}ft^{3}}{1^{3}yd^{3}} \right ) \left ( \frac{12in}{1ft} \right ) \to
 \left ( \frac{3^{3}ft^{3}}{1^{3}yd^{3}} \right ) \left ( \frac{12^{3}in^{3}}{1^{3}ft^{3}} \right )
-\]</span></p>
-<p>then we can cancel out the <span class="math inline">\(ft^{3}\)</span>.</p>
+</span></p>
+<p>then we can cancel out the <span class="math inline">ft^{3}</span>.</p>
 <h2 id="video-lectures">Video Lectures</h2>
 <ul>
 <li><a href="../../../../files/winter-2021/PHYS-195/lectures/ch-1/lecture1.pdf">⬇ Lecture 1</a></li>

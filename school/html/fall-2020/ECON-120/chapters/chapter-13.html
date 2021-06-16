@@ -11,6 +11,13 @@
 
     <title>Chapter 13</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,9 +88,12 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-13-money-and-the-banking-system">Chapter 13: Money and the Banking System</a><ul>
-          <li><a href="#what-is-money">13.1 What is Money?</a><ul>
-          <li><a href="#three-properties-of-money">13.1.1 Three Properties of Money</a><ul>
+          <li><a href="#chapter-13-money-and-the-banking-system">Chapter 13: Money and the Banking System</a>
+          <ul>
+          <li><a href="#what-is-money">13.1 What is Money?</a>
+          <ul>
+          <li><a href="#three-properties-of-money">13.1.1 Three Properties of Money</a>
+          <ul>
           <li><a href="#money-serves-as-a-medium-of-exchange">Money Serves as a Medium of Exchange</a></li>
           <li><a href="#money-serves-as-a-unit-of-account">Money Serves as a Unit of Account</a></li>
           <li><a href="#money-serves-as-a-store-of-value">Money Serves as a Store of Value</a></li>
@@ -76,14 +101,17 @@
           </ul></li>
           <li><a href="#measuring-money-in-the-u.s.-economy">13.1.2 Measuring Money in the U.S. Economy</a></li>
           </ul></li>
-          <li><a href="#how-banks-create-money">13.2 How Banks Create Money</a><ul>
+          <li><a href="#how-banks-create-money">13.2 How Banks Create Money</a>
+          <ul>
           <li><a href="#a-banks-balance-sheet-where-the-money-comes-from-and-where-it-goes">13.2.1 A Bank’s Balance Sheet: Where the Money Comes from and Where It Goes</a></li>
           <li><a href="#how-banks-create-money-1">13.2.2 How Banks Create Money</a></li>
           <li><a href="#how-the-money-multiplier-works">13.2.3 How the Money Multiplier Works</a></li>
           <li><a href="#how-th-money-multiplier-works-in-reverse">13.2.4 How th Money Multiplier Works in Reverse</a></li>
           </ul></li>
-          <li><a href="#a-bankers-bank-the-federal-reserve">13.3 A Banker’s Bank: The Federal Reserve</a><ul>
-          <li><a href="#functions-of-the-federal-reserve">13.3.1 Functions of the Federal Reserve</a><ul>
+          <li><a href="#a-bankers-bank-the-federal-reserve">13.3 A Banker’s Bank: The Federal Reserve</a>
+          <ul>
+          <li><a href="#functions-of-the-federal-reserve">13.3.1 Functions of the Federal Reserve</a>
+          <ul>
           <li><a href="#the-fed-supplies-currency-to-the-economy">The Fed Supplies Currency to The Economy</a></li>
           <li><a href="#the-fed-provides-a-system-of-check-collection-and-clearing">The Fed Provides a System of Check Collection and Clearing</a></li>
           <li><a href="#the-fed-holds-reserves-from-banks-and-other-depository-institutions-and-regulates-banks">The Fed Holds Reserves from Banks and Other Depository Institutions and Regulates Banks</a></li>
@@ -201,7 +229,7 @@
 </table>
 </center>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-13/figure-13.1.png" alt="Figure 13.1" /><figcaption>Figure 13.1</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-13/figure-13.1.png" alt="Figure 13.1" /><figcaption aria-hidden="true">Figure 13.1</figcaption>
 </figure>
 <p>The first part of M1 is currency held by the public, that is, all currency held outside bank vaults. The second component is deposits in checking accounts, called <em>demand deposits</em>. Until the 1980s, checking accounts did not pay interest. The third component, other checkable deposits, was introduced in the early 1980s and did pay interest. Today, the distinction between the two types of deposit accounts is not as meaningful as it used to be because many checking accounts earn interest if the balances are sufficiently high. Finally, traveler’s checks are included in M1 because they are regularly used in economic exchanges.</p>
 <p>Most of the currency in the official statistics is not used in ordinary commerce in the United States. Who is using and holding this currency? Some is used in illegal transactions such as the drug trade. Few drug dealers open bank accounts to deposit currency. In addition, a substantial fraction of U.S. currency is held abroad.</p>
@@ -211,7 +239,7 @@
 <li>M1 plus other assets, including deposits in savings and loans accounts and money market mutual funds.</li>
 </ul>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-13/figure-13.2.png" alt="Figure 13.2" /><figcaption>Figure 13.2</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-13/figure-13.2.png" alt="Figure 13.2" /><figcaption aria-hidden="true">Figure 13.2</figcaption>
 </figure>
 <p>Economists use different definitions of money because it is not always clear which assets are used primarily as money–that is, which assets are used for economic exchanges and which are used primarily for saving and investing. Money market mutual funds came into existence only in the late 1970s. Some people temporarily “park” their assets in these funds, anticipating they will move them into riskier, higher-earning stock market investments later. Others may use them to earn interest while avoiding the risks of the stock market or bond market. Sometimes, people use money market mutual funds like regular checking accounts or savings accounts. If money market mutual funds are used like checking accounts, they should be considered part of M1. If they are used like savings accounts, however, they should be part of M2. Economists keep an eye on both M1 and M2 because they don’t know precisely how people are using all these money market accounts.</p>
 <p>Although consumers commonly use credit cards to make transactions in our economy, they are not part of the money supply. Here’s why: Suppose you have a credit card from the First Union Bank and purchase a new television from an electronics store. As you use your credit card, you are effectively borrowing the amount you charge from the First Union Bank, which, in turn, will pay the electronics store on your behalf. When you receive your credit card bill from the bank, you must begin to pay off the loan. Credit cards enable you to purchase goods now but pay for them at a later date. Unlike money, a credit card is not a medium of exchange, a unit of account, or a store of value. Credit cards do make it easier to conduct business, but they are not an official part of the money supply.</p>
@@ -240,23 +268,23 @@
 <li>The ratio of reserves to deposits.</li>
 </ul>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-13/figure-13.4.png" alt="Figure 13.4" /><figcaption>Figure 13.4</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-13/figure-13.4.png" alt="Figure 13.4" /><figcaption aria-hidden="true">Figure 13.4</figcaption>
 </figure>
 <p>Suppose the First Bank of Hollywood loans the funds to an aspiring movie producer. The producer opens a checking account at the First Bank of Hollywood with the $900 he borrowed. He then buys film equipment from a supplier, who accepts his $900 check and deposits it in the Second Bank of Burbank. The next panel in Figure 13.4 shows what happens to the balance sheet of the Second Bank of Burbank. Liabilities increase by the deposit of $900. The bank holds $90 in reserves (10 percent of the $900 deposit) and can lend out $810.</p>
 <p>Suppose the Second Bank of Burbank lends the $810 to the owner of a coffeehouse and she opens a checking account there with the $810 as her balance. She then purchases $810 worth of coffee with a check made out to a coffee supplier, who deposits it into the Third Bank of Venice.</p>
 <p>The Third Bank of Venice receives a deposit of $810. It keeps $81 in reserves and can lend out $729. This process continues throughout the Los Angeles area with new loans and deposits. The Fourth Bank of Pasadena will receive a deposit of $729, hold $72.90 in reserves, and lend out $656.10. The Fifth Bank of Compton will receive a deposit of $656.10, and the process goes on.</p>
 <h3 id="how-the-money-multiplier-works">13.2.3 How the Money Multiplier Works</h3>
 <p>The original $1,000 cash deposit has created checking account balances throughout Los Angeles. What’s the total amount? Adding up the new accounts in all the banks (even the ones we have not named), we have</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \$1,000 + \$900 + \$810 + \$729 + 656.10 + \ldots = \$10,000
-\]</span></p>
+</span></p>
 <p>How did we come up with this sum? It’s from the following simple formula, which we derive in the appendix to this chapter:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ total increase in checking account balance throughout all banks } \\
 = (\text{initial cash deposit}) \times \frac{1}{(\text{reserve ratio})}
-\]</span></p>
+</span></p>
 <p>In our example, the reserve ratio is 0.1, so the increase in checking account balances is 1/0.1, or 10 times the initial cash deposit. The initial $1,000 deposit led to a total increase in checking account balances of $10,000 throughout all of the banks.</p>
-<p>Recall that the money supply, M1, is the sum of deposits at commercial banks plus currency held by the public. Therefore, the change in the money supply, M1, will be the change in deposits in checking accounts plus the change in currency held by the public. Notice that we referred to “change,” meaning an increase or decrease. Here’s why: In our example, the public, represented by the person who initially made the $1,000 deposit at the First Bank of Hollywood, holds $1,000 less in currency. However, deposits increased by $10,000. Therefore, the money supply, M1, increased by <span class="math inline">\(\$9,000(\$10,000−\$1,000)\)</span>. No single bank lent out more than it had in deposits. Yet, for the banking system as a whole, the money supply expanded by a multiple of the initial cash deposit.</p>
+<p>Recall that the money supply, M1, is the sum of deposits at commercial banks plus currency held by the public. Therefore, the change in the money supply, M1, will be the change in deposits in checking accounts plus the change in currency held by the public. Notice that we referred to “change,” meaning an increase or decrease. Here’s why: In our example, the public, represented by the person who initially made the $1,000 deposit at the First Bank of Hollywood, holds $1,000 less in currency. However, deposits increased by $10,000. Therefore, the money supply, M1, increased by <span class="math inline">\$9,000(\$10,000−\$1,000)</span>. No single bank lent out more than it had in deposits. Yet, for the banking system as a whole, the money supply expanded by a multiple of the initial cash deposit.</p>
 <p>The term 1/reserve ratio in the formula is called the <strong>money multiplier</strong>. It tells us what the total increase in checking account deposits would be for any initial cash deposit. Recall the multiplier for government spending in our demand-side models: An increase in government spending led to larger increases in output through the multiplier. The government-spending multiplier arose because additional rounds of consumption spending were triggered by an initial increase in government spending. In the banking system, an initial cash deposit triggers additional rounds of deposits and lending by banks. This leads to a multiple expansion of deposits.</p>
 <p><a name="money-multiplier-term"><strong>Money multiplier</strong></a></p>
 <ul>
@@ -290,7 +318,7 @@
 <li>One of twelve regional banks that are an official part of the Federal Reserve System.</li>
 </ul>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-13/figure-13.5.png" alt="Figure 13.5" /><figcaption>Figure 13.5</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-13/figure-13.5.png" alt="Figure 13.5" /><figcaption aria-hidden="true">Figure 13.5</figcaption>
 </figure>
 <p>The 12 Federal Reserve Banks are scattered across the United States. These district banks serve as a liaison between the Fed and the banks in their districts. Hawaii and Alaska are in the 12th district, which is headquartered in San Francisco.</p>
 <p>There are two other subgroups of the Fed in addition to the Federal Reserve Banks. The <strong>Board of Governors of the Federal Reserve</strong> is the true seat of power in the Federal Reserve System. Headquartered in Washington, D.C., the seven members of the board are appointed for 14-year terms by the president and confirmed by the Senate. The chairperson serves a 4-year term as the principal spokesperson for monetary policy in the United States. Financial markets throughout the world anticipate and carefully observe what the chairperson says.</p>
@@ -304,7 +332,7 @@
 <li>The group that decides on monetary policy: It consists of the seven members of the Board of Governors plus five of 12 regional bank presidents on a rotating basis.</li>
 </ul>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-13/figure-13.6.png" alt="Figure 13.6" /><figcaption>Figure 13.6</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-13/figure-13.6.png" alt="Figure 13.6" /><figcaption aria-hidden="true">Figure 13.6</figcaption>
 </figure>
 <p>On paper, monetary policymaking power appears to be spread throughout the government and the country. In practice, however, the Board of Governors, and especially the chairperson, has the real control. The Board of Governors operates with considerable independence. Presidents and members of Congress can bring political pressures on the Board of Governors, but their 14-year terms tend to insulate the members from external pressures. The current chairman of the Federal Reserve is Jerome Powell, who began his term on February 5, 2018.</p>
 <h3 id="the-independence-of-the-federal-reserve">13.3.3 The Independence of the Federal Reserve</h3>

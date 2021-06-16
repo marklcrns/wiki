@@ -11,6 +11,13 @@
 
     <title>Chapter 4</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,11 +88,13 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-4-motion-in-two-and-three-dimensions">Chapter 4: Motion in Two and Three Dimensions</a><ul>
+          <li><a href="#chapter-4-motion-in-two-and-three-dimensions">Chapter 4: Motion in Two and Three Dimensions</a>
+          <ul>
           <li><a href="#position-and-displacement">4.1 Position and Displacement</a></li>
           <li><a href="#average-velocity-and-instantaneous-velocity">4.2 Average Velocity and Instantaneous Velocity</a></li>
           <li><a href="#average-acceleration-and-instantaneous-acceleration">4.3 Average Acceleration and Instantaneous Acceleration</a></li>
-          <li><a href="#projectile-motion">4.4 Projectile Motion</a><ul>
+          <li><a href="#projectile-motion">4.4 Projectile Motion</a>
+          <ul>
           <li><a href="#two-golf-balls">Two Golf Balls</a></li>
           <li><a href="#the-horizontal-motion">The Horizontal Motion</a></li>
           <li><a href="#the-vertical-motion">The Vertical Motion</a></li>
@@ -110,12 +134,12 @@
           <article class="contents">
 <h1 id="chapter-4-motion-in-two-and-three-dimensions">Chapter 4: Motion in Two and Three Dimensions</h1>
 <h2 id="position-and-displacement">4.1 Position and Displacement</h2>
-<p><strong>Position vector</strong> <span class="math inline">\(\vec{r}\)</span> can be written in unit-vector notation</p>
-<p><span class="math display">\[
+<p><strong>Position vector</strong> <span class="math inline">\vec{r}</span> can be written in unit-vector notation</p>
+<p><span class="math display">
 \vec{r} = x\hat{i} + y\hat{j} + z\hat{k}
-\]</span></p>
-<p><strong>Displacement</strong> <span class="math inline">\(\vec{r}\)</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><strong>Displacement</strong> <span class="math inline">\vec{r}</span></p>
+<p><span class="math display">
 \Delta{\vec{r}} = \vec{r}_{2} - \vec{r}_{1} \\
 ~\\
 \text{or as} \\
@@ -124,59 +148,59 @@
 \Delta{\vec{r}} &amp;= (x_{2} - x_{1})\hat{i} + (y_{2} - y_{1})\hat{j} + (z_{2} - z_{1})\hat{k} \\
      &amp;= \Delta{x}\hat{i} + \Delta{y}\hat{j} + \Delta{z}\hat{k} \\
 \end{aligned}
-\]</span></p>
+</span></p>
 <h2 id="average-velocity-and-instantaneous-velocity">4.2 Average Velocity and Instantaneous Velocity</h2>
-<p><strong>Average velocity</strong> <span class="math inline">\(\vec{V}_{avg}\)</span></p>
-<p><span class="math display">\[
+<p><strong>Average velocity</strong> <span class="math inline">\vec{V}_{avg}</span></p>
+<p><span class="math display">
 \begin{aligned}
 \vec{V}_{avg} &amp;= \frac{\Delta{\vec{r}}}{\Delta{t}} \\
      &amp;= \frac{\Delta{x}\hat{i} + \Delta{y}\hat{j} \Delta{z}\hat{k}}{\Delta{t}} \\
 \end{aligned}
-\]</span></p>
-<p><strong>Instantanous velocity</strong> <span class="math inline">\(\vec{v}\)</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><strong>Instantanous velocity</strong> <span class="math inline">\vec{v}</span></p>
+<p><span class="math display">
 \vec{v} = \frac{d\vec{r}}{dt}
-\]</span></p>
+</span></p>
 <blockquote>
-<p><strong>NOTE:</strong> The direction of the instantaneous velocity <span class="math inline">\(\vec{v}\)</span> of a particle is always tangent to the particle’s path at the particle’s position.</p>
+<p><strong>NOTE:</strong> The direction of the instantaneous velocity <span class="math inline">\vec{v}</span> of a particle is always tangent to the particle’s path at the particle’s position.</p>
 </blockquote>
 <h2 id="average-acceleration-and-instantaneous-acceleration">4.3 Average Acceleration and Instantaneous Acceleration</h2>
-<p><strong>Average acceleration</strong> <span class="math inline">\(\vec{a}_{avg}\)</span></p>
-<p><span class="math display">\[
+<p><strong>Average acceleration</strong> <span class="math inline">\vec{a}_{avg}</span></p>
+<p><span class="math display">
 \vec{a}_{avg} = \frac{\vec{v}_{2} - \vec{v}_{1}}{\Delta{t}} = \frac{\Delta{\vec{v}}}{\Delta{t}}
-\]</span></p>
-<p><strong>Instantaneous acceleration</strong> <span class="math inline">\(\vec{a}\)</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><strong>Instantaneous acceleration</strong> <span class="math inline">\vec{a}</span></p>
+<p><span class="math display">
 \vec{a} = \frac{d\vec{v}}{dt}
-\]</span></p>
+</span></p>
 <h2 id="projectile-motion">4.4 Projectile Motion</h2>
-<p>A particle moves in a vertical plane with some initial velocity <span class="math inline">\(\vec{v}_{0}\)</span> but its acceleration is always the free-fall acceleration <span class="math inline">\(\vec{g}\)</span>, which is downward. Such a partical is called <strong>projectile</strong>, and its motion is called <strong>projectile motion</strong></p>
+<p>A particle moves in a vertical plane with some initial velocity <span class="math inline">\vec{v}_{0}</span> but its acceleration is always the free-fall acceleration <span class="math inline">\vec{g}</span>, which is downward. Such a partical is called <strong>projectile</strong>, and its motion is called <strong>projectile motion</strong></p>
 <h3 id="two-golf-balls">Two Golf Balls</h3>
 <p>the golf balls have the same vertical motion, both falling through the same vertical distance int the same interval of time. <em>The fact that one ball is moving horizontally while it is falling has no effect on its vertical motion</em>; that is, the horizontal and vertical motions are independent of each other.</p>
 <h3 id="the-horizontal-motion">The Horizontal Motion</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 x - x_{0} = (v_{0}\cos(\theta)_{0})t
-\]</span></p>
+</span></p>
 <h3 id="the-vertical-motion">The Vertical Motion</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 y - y_{0} &amp;= (v_{0}\sin(\theta)_{0})t - \frac{1}{2}gt^{2}, \\
 v_{y} &amp;= v_{0}\sin(\theta)_{0} - gt, \\
 v_{y}^{2} &amp;= (v_{0}\sin(\theta)_{0})^{2} - 2g(y - y_{0}). \\
 \end{aligned}
-\]</span></p>
+</span></p>
 <h3 id="the-equation-of-the-path">The Equation of the Path</h3>
 <p>The projectile’s path, also called <strong>trajectory</strong>.</p>
-<p><span class="math display">\[
+<p><span class="math display">
 y = (\tan(\theta)_{0})x - \frac{gx^{2}}{2(v_{0}\cos(\theta)_{0})^{2}}
-\]</span></p>
+</span></p>
 <h3 id="the-horizontal-range">The Horizontal Range</h3>
-<p>The <em>horizontal range</em> <span class="math inline">\(R\)</span> of the projectile is the <em>horizontal</em> distance the projectile has traveled when it returns to its initial height</p>
-<p><span class="math display">\[
+<p>The <em>horizontal range</em> <span class="math inline">R</span> of the projectile is the <em>horizontal</em> distance the projectile has traveled when it returns to its initial height</p>
+<p><span class="math display">
 R = \frac{v_{0}^{2}}{g}\sin(2\theta)_{0}
-\]</span></p>
+</span></p>
 <blockquote>
-<p><strong>NOTE:</strong> The horizontal range <span class="math inline">\(R\)</span> is maximum for a launch angle of <span class="math inline">\(45^{\circ}\)</span>. However, when the launch and landing heights differ, <span class="math inline">\(45^{\circ}\)</span> does not yield the maximum horizontal distance.</p>
+<p><strong>NOTE:</strong> The horizontal range <span class="math inline">R</span> is maximum for a launch angle of <span class="math inline">45^{\circ}</span>. However, when the launch and landing heights differ, <span class="math inline">45^{\circ}</span> does not yield the maximum horizontal distance.</p>
 </blockquote>
 <h2 id="external-resources">External Resources</h2>
 <p><a href="https://www.khanacademy.org/science/physics/two-dimensional-motion.html#two-dimensional-projectile-mot">📄 Two-dimensional motion</a></p>

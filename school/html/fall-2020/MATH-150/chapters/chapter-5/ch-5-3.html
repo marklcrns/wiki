@@ -11,6 +11,13 @@
 
     <title>5.3 The Fundamental Theorem of Calculus</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,14 +88,17 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-5.3-the-fundamental-theorem-of-calculus">Chapter 5.3: The Fundamental Theorem of Calculus</a><ul>
-          <li><a href="#the-fundamental-theorem-of-calculus">The Fundamental Theorem of Calculus</a><ul>
+          <li><a href="#chapter-5.3-the-fundamental-theorem-of-calculus">Chapter 5.3: The Fundamental Theorem of Calculus</a>
+          <ul>
+          <li><a href="#the-fundamental-theorem-of-calculus">The Fundamental Theorem of Calculus</a>
+          <ul>
           <li><a href="#definition-1">Definition 1</a></li>
           <li><a href="#the-fundamental-theorem-of-calculus-part-1">The Fundamental Theorem of Calculus, Part 1</a></li>
           <li><a href="#definition-5">Definition 5</a></li>
           <li><a href="#the-fundamental-theorem-of-calculus-part-2">The Fundamental Theorem of Calculus, Part 2</a></li>
           </ul></li>
-          <li><a href="#differentiation-and-integration-as-inverse-processes">Differentiation and Integration as Inverse Processes</a><ul>
+          <li><a href="#differentiation-and-integration-as-inverse-processes">Differentiation and Integration as Inverse Processes</a>
+          <ul>
           <li><a href="#the-fundamental-theorem-of-calculus-1">The Fundamental Theorem of Calculus</a></li>
           </ul></li>
           <li><a href="#video-lectures">Video Lectures</a></li>
@@ -112,41 +137,41 @@
 <p>The Fundamental Theorem of Calculus is appropriately named because it establishes a connection between the two branches of calculus: differential calculus and integral calculus. Differential calculus arose from the tangent problem, whereas integral calculus arose from a seemingly unrelated problem, the area problem. Newton’s mentor at Cambridge, Isaac Barrow (1630–1677), discovered that these two problems are actually closely related. In fact, he realized that differentiation and integration are inverse processes. The Fundamental Theorem of Calculus gives the precise inverse relationship between the derivative and the integral. It was Newton and Leibniz who exploited this relationship and used it to develop calculus into a systematic mathematical method. In particular, they saw that the Fundamental Theorem enabled them to compute areas and integrals very easily without having to compute them as limits of sums as we did in Sections 5.1 and 5.2.</p>
 <p>The first part of the Fundamental Theorem deals with functions defined by an equation of the form</p>
 <h3 id="definition-1">Definition 1</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 g(x) = \int_{a}^{x} f(t)dt
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_figure-1.png" alt="Figure 1" /><figcaption>Figure 1</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_figure-1.png" alt="Figure 1" /><figcaption aria-hidden="true">Figure 1</figcaption>
 </figure>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_example-1.1.png" alt="Example 1.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_example-1.2.png" alt="Example 1.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_example-1.3.png" alt="Example 1.3" /></p>
-<p>If we take <span class="math inline">\(f(t) = t\)</span> and <span class="math inline">\(a = 0\)</span>, then, using Exercise 5.2.27, we have</p>
-<p><span class="math display">\[
+<p>If we take <span class="math inline">f(t) = t</span> and <span class="math inline">a = 0</span>, then, using Exercise 5.2.27, we have</p>
+<p><span class="math display">
 g(x) = \int_{0}^{x} t\;dt = \frac{x^{2}}{2}
-\]</span></p>
-<p>Notice that <span class="math inline">\(g^{\prime}(x) = x\)</span>, that is, <span class="math inline">\(g^{\prime} = f\)</span>. In other words, if <span class="math inline">\(g\)</span> is defined as the integral of <span class="math inline">\(f\)</span> by Equation 1, then <span class="math inline">\(g\)</span> turns out to be an antiderivative of <span class="math inline">\(f\)</span>, at least in this case. And if we sketch the derivative of the function <span class="math inline">\(g\)</span> shown in Figure 4 by estimating slopes of tangents, we get a graph like that of <span class="math inline">\(f\)</span> in Figure 2. So we suspect that <span class="math inline">\(g^{\prime} = f\)</span> in Example 1 too.</p>
-<p>To see why this might be generally true we consider any continuous function <span class="math inline">\(f\)</span> with <span class="math inline">\(f(x) \ge 0\)</span>. Then <span class="math inline">\(g(x) = \int_{a}^{x} f(t)dt\)</span> can be interpreted as the area under the graph of <span class="math inline">\(f\)</span> from <span class="math inline">\(a\)</span> to <span class="math inline">\(x\)</span>, as in Figure 1.</p>
-<p>In order to compute <span class="math inline">\(g^{\prime}(x)\)</span> from the definition of a derivative we first observe that, for <span class="math inline">\(h &gt; 0\)</span>, <span class="math inline">\(g(x + h) - g(x)\)</span> is obtained by subtracting areas, so it is the area under the graph of <span class="math inline">\(f\)</span> from <span class="math inline">\(x\)</span> to <span class="math inline">\(x + h\)</span> (the blue area in Figure 5). For small <span class="math inline">\(h\)</span> you can see from the figure that this area is approximately equal to the area of the rectangle with height <span class="math inline">\(f(x)\)</span> and width <span class="math inline">\(h\)</span>:</p>
-<p><span class="math display">\[
+</span></p>
+<p>Notice that <span class="math inline">g^{\prime}(x) = x</span>, that is, <span class="math inline">g^{\prime} = f</span>. In other words, if <span class="math inline">g</span> is defined as the integral of <span class="math inline">f</span> by Equation 1, then <span class="math inline">g</span> turns out to be an antiderivative of <span class="math inline">f</span>, at least in this case. And if we sketch the derivative of the function <span class="math inline">g</span> shown in Figure 4 by estimating slopes of tangents, we get a graph like that of <span class="math inline">f</span> in Figure 2. So we suspect that <span class="math inline">g^{\prime} = f</span> in Example 1 too.</p>
+<p>To see why this might be generally true we consider any continuous function <span class="math inline">f</span> with <span class="math inline">f(x) \ge 0</span>. Then <span class="math inline">g(x) = \int_{a}^{x} f(t)dt</span> can be interpreted as the area under the graph of <span class="math inline">f</span> from <span class="math inline">a</span> to <span class="math inline">x</span>, as in Figure 1.</p>
+<p>In order to compute <span class="math inline">g^{\prime}(x)</span> from the definition of a derivative we first observe that, for <span class="math inline">h &gt; 0</span>, <span class="math inline">g(x + h) - g(x)</span> is obtained by subtracting areas, so it is the area under the graph of <span class="math inline">f</span> from <span class="math inline">x</span> to <span class="math inline">x + h</span> (the blue area in Figure 5). For small <span class="math inline">h</span> you can see from the figure that this area is approximately equal to the area of the rectangle with height <span class="math inline">f(x)</span> and width <span class="math inline">h</span>:</p>
+<p><span class="math display">
 g(x + h) - g(x) \approx hf(x)
-\]</span></p>
+</span></p>
 <p>so</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{g(x + h) - g(x)}{h} \approx f(x)
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_figure-5.png" alt="Figure 5" /><figcaption>Figure 5</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_figure-5.png" alt="Figure 5" /><figcaption aria-hidden="true">Figure 5</figcaption>
 </figure>
 <p>Intuitively, we therefore expect that</p>
-<p><span class="math display">\[
+<p><span class="math display">
 g^{\prime}(x) = \lim_{h \to 0} \frac{g(x + h) - g(x)}{h} = f(x)
-\]</span></p>
-<p>The fact that this is true, even when <span class="math inline">\(f\)</span> is not necessarily positive, is the first part of the Fundamental Theorem of Calculus.</p>
+</span></p>
+<p>The fact that this is true, even when <span class="math inline">f</span> is not necessarily positive, is the first part of the Fundamental Theorem of Calculus.</p>
 <h3 id="the-fundamental-theorem-of-calculus-part-1">The Fundamental Theorem of Calculus, Part 1</h3>
-<p>If <span class="math inline">\(f\)</span> is continuous on <span class="math inline">\([a, b]\)</span> then the function <span class="math inline">\(g\)</span> defined by</p>
-<p><span class="math display">\[
+<p>If <span class="math inline">f</span> is continuous on <span class="math inline">[a, b]</span> then the function <span class="math inline">g</span> defined by</p>
+<p><span class="math display">
 g(x) = \int_{a}^{x} f(t)dt \;\;\;\;\; a \le x \le b
-\]</span></p>
-<p>is continuous on <span class="math inline">\([a, b]\)</span>, and differentiable on <span class="math inline">\((a, b)\)</span>, and <span class="math inline">\(g^{\prime}(x) = f(x)\)</span>.</p>
+</span></p>
+<p>is continuous on <span class="math inline">[a, b]</span>, and differentiable on <span class="math inline">(a, b)</span>, and <span class="math inline">g^{\prime}(x) = f(x)</span>.</p>
 <blockquote>
 <p><strong>Note</strong></p>
 </blockquote>
@@ -154,65 +179,65 @@ g(x) = \int_{a}^{x} f(t)dt \;\;\;\;\; a \le x \le b
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_part-1_proof-1.1.png" alt="Proof 1.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_part-1_proof-1.2.png" alt="Proof 1.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_part-1_proof-1.3.png" alt="Proof 1.3" /></p>
 <p>Using Leibniz notation for derivatives, we can write FTC1 as</p>
 <h3 id="definition-5">Definition 5</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{d}{dx}\int_{a}^{x} f(t)dt = f(x)
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_example-2.png" alt="Example 2" /><figcaption>Example 2</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_example-2.png" alt="Example 2" /><figcaption aria-hidden="true">Example 2</figcaption>
 </figure>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_example-3.1.png" alt="Example 3.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_example-3.2.png" alt="Example 3.2" /></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_example-4.png" alt="Example 4" /><figcaption>Example 4</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_example-4.png" alt="Example 4" /><figcaption aria-hidden="true">Example 4</figcaption>
 </figure>
 <h3 id="the-fundamental-theorem-of-calculus-part-2">The Fundamental Theorem of Calculus, Part 2</h3>
-<p>If <span class="math inline">\(f\)</span> is continuous on <span class="math inline">\([a, b]\)</span>, then</p>
-<p>where <span class="math inline">\(F\)</span> is any antiderivative of <span class="math inline">\(f\)</span>, that is, a function such that <span class="math inline">\(F^{\prime} = f\)</span>.</p>
+<p>If <span class="math inline">f</span> is continuous on <span class="math inline">[a, b]</span>, then</p>
+<p>where <span class="math inline">F</span> is any antiderivative of <span class="math inline">f</span>, that is, a function such that <span class="math inline">F^{\prime} = f</span>.</p>
 <blockquote>
 <p><strong>Note</strong></p>
 </blockquote>
 <p>We abbreviate this theorem as FTC2.</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_part-2_proof.png" alt="Proof 2" /><figcaption>Proof 2</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_part-2_proof.png" alt="Proof 2" /><figcaption aria-hidden="true">Proof 2</figcaption>
 </figure>
-<p>Part 2 of the Fundamental Theorem states that if we know an antiderivative <span class="math inline">\(F\)</span> of <span class="math inline">\(f\)</span>, then we can evaluate <span class="math inline">\(\int_{a}^{b} f(x)dx\)</span> simply by subtracting the values of <span class="math inline">\(F\)</span> at the endpoints of the interval <span class="math inline">\([a, b]\)</span>. It’s very surprising that <span class="math inline">\(\int_{a}^{b} f(x)dx\)</span>, which was defined by a complicated procedure involving all of the values of <span class="math inline">\(f(x)\)</span> for <span class="math inline">\(a \le x \le b\)</span>, can be found by knowing the values of <span class="math inline">\(F(x)\)</span> at only two points, <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
-<p>Although the theorem may be surprising at first glance, it becomes plausible if we interpret it in physical terms. If <span class="math inline">\(v(t)\)</span> is the velocity of an object and <span class="math inline">\(s(t)\)</span> is its position at time <span class="math inline">\(t\)</span>, then <span class="math inline">\(v(t) = s^{\prime}(t)\)</span>, so <span class="math inline">\(s\)</span> is an antiderivative of <span class="math inline">\(v\)</span>. In Section 5.1 we considered an object that always moves in the positive direction and made the guess that the area under the velocity curve is equal to the distance traveled. In symbols:</p>
-<p><span class="math display">\[
+<p>Part 2 of the Fundamental Theorem states that if we know an antiderivative <span class="math inline">F</span> of <span class="math inline">f</span>, then we can evaluate <span class="math inline">\int_{a}^{b} f(x)dx</span> simply by subtracting the values of <span class="math inline">F</span> at the endpoints of the interval <span class="math inline">[a, b]</span>. It’s very surprising that <span class="math inline">\int_{a}^{b} f(x)dx</span>, which was defined by a complicated procedure involving all of the values of <span class="math inline">f(x)</span> for <span class="math inline">a \le x \le b</span>, can be found by knowing the values of <span class="math inline">F(x)</span> at only two points, <span class="math inline">a</span> and <span class="math inline">b</span>.</p>
+<p>Although the theorem may be surprising at first glance, it becomes plausible if we interpret it in physical terms. If <span class="math inline">v(t)</span> is the velocity of an object and <span class="math inline">s(t)</span> is its position at time <span class="math inline">t</span>, then <span class="math inline">v(t) = s^{\prime}(t)</span>, so <span class="math inline">s</span> is an antiderivative of <span class="math inline">v</span>. In Section 5.1 we considered an object that always moves in the positive direction and made the guess that the area under the velocity curve is equal to the distance traveled. In symbols:</p>
+<p><span class="math display">
 \int_{a}^{b} v(t)dt = s(b) - s(a)
-\]</span></p>
+</span></p>
 <p>That is exactly what FTC2 says in this context.</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_example-5.png" alt="Example 5" /><figcaption>Example 5</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_example-5.png" alt="Example 5" /><figcaption aria-hidden="true">Example 5</figcaption>
 </figure>
 <p>We often use the notation</p>
-<p><span class="math display">\[
+<p><span class="math display">
 F(x)]_{a}^{b} = F(b) - F(a)
-\]</span></p>
+</span></p>
 <p>So the equation of FTC2 can be written as</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \int_{a}^{b} f(x)dx = F(x)]_{a}^{b}
-\]</span></p>
+</span></p>
 <p>where</p>
-<p><span class="math display">\[
+<p><span class="math display">
 F^{\prime} = f
-\]</span></p>
-<p>Other common notations are <span class="math inline">\(F(x)|_{a}^{b}\)</span> and <span class="math inline">\([F(x)]_{a}^{b}\)</span>.</p>
+</span></p>
+<p>Other common notations are <span class="math inline">F(x)|_{a}^{b}</span> and <span class="math inline">[F(x)]_{a}^{b}</span>.</p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_example-6.png" alt="Example 6" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_example-7.png" alt="Example 7" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_example-8.png" alt="Example 8" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-5/5.3_example-9.png" alt="Example 9" /></p>
 <h2 id="differentiation-and-integration-as-inverse-processes">Differentiation and Integration as Inverse Processes</h2>
 <h3 id="the-fundamental-theorem-of-calculus-1">The Fundamental Theorem of Calculus</h3>
-<p>Suppose <span class="math inline">\(f\)</span> is continuous on <span class="math inline">\([a, b]\)</span>.</p>
+<p>Suppose <span class="math inline">f</span> is continuous on <span class="math inline">[a, b]</span>.</p>
 <ol type="1">
-<li><p>If <span class="math inline">\(g(x) = \int_{a}^{x} f(t)dt\)</span>, then <span class="math inline">\(g^{\prime}(x) = f(x)\)</span>.</p></li>
-<li><p><span class="math inline">\(\int_{a}^{b} f(x)dx = F(b) - F(a)\)</span>, where <span class="math inline">\(F\)</span> is any antiderivative of <span class="math inline">\(f\)</span>, that is, <span class="math inline">\(F^{\prime} = f\)</span>.</p></li>
+<li><p>If <span class="math inline">g(x) = \int_{a}^{x} f(t)dt</span>, then <span class="math inline">g^{\prime}(x) = f(x)</span>.</p></li>
+<li><p><span class="math inline">\int_{a}^{b} f(x)dx = F(b) - F(a)</span>, where <span class="math inline">F</span> is any antiderivative of <span class="math inline">f</span>, that is, <span class="math inline">F^{\prime} = f</span>.</p></li>
 </ol>
 <p>We noted that Part 1 can be rewritten as</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{d}{dx}\int_{a}^{x} f(t)dt = f(x)
-\]</span></p>
-<p>which says that if <span class="math inline">\(f\)</span> is integrated and then the result is differentiated, we arrive back at the original function <span class="math inline">\(f\)</span>. Since <span class="math inline">\(F^{\prime}(x) = f(x)\)</span>, Part 2 can be rewritten as</p>
-<p><span class="math display">\[
+</span></p>
+<p>which says that if <span class="math inline">f</span> is integrated and then the result is differentiated, we arrive back at the original function <span class="math inline">f</span>. Since <span class="math inline">F^{\prime}(x) = f(x)</span>, Part 2 can be rewritten as</p>
+<p><span class="math display">
 \int_{a}^{b} F^{\prime}(x)dx = F(b) - F(a)
-\]</span></p>
-<p>This version says that if we take a function <span class="math inline">\(F\)</span>, first differentiate it, and then integrate the result, we arrive back at the original function <span class="math inline">\(F\)</span>, but in the form <span class="math inline">\(F(b) - F(a)\)</span>. Taken together, the two parts of the Fundamental Theorem of Calculus say that differentiation and integration are inverse processes. Each undoes what the other does.</p>
+</span></p>
+<p>This version says that if we take a function <span class="math inline">F</span>, first differentiate it, and then integrate the result, we arrive back at the original function <span class="math inline">F</span>, but in the form <span class="math inline">F(b) - F(a)</span>. Taken together, the two parts of the Fundamental Theorem of Calculus say that differentiation and integration are inverse processes. Each undoes what the other does.</p>
 <p>The Fundamental Theorem of Calculus is unquestionably the most important theorem in calculus and, indeed, it ranks as one of the great accomplishments of the human mind. Before it was discovered, from the time of Eudoxus and Archimedes to the time of Galileo and Fermat, problems of finding areas, volumes, and lengths of curves were so difficult that only a genius could meet the challenge. But now, armed with the systematic method that Newton and Leibniz fashioned out of the Fundamental Theorem, we will see in the chapters to come that these challenging problems are accessible to all of us.</p>
 <h2 id="video-lectures">Video Lectures</h2>
 <ul>
@@ -241,7 +266,7 @@ F^{\prime} = f
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-8a/v/rewriting-integrand-before-integrating">📺 Rewriting before integrating</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-8a/a/reverse-power-rule-review">📄 Reverse power rule review</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-8b/v/antiderivative-of-x-1">📺 Indefinite integral of 1/x</a></li>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-8b/v/basic-trig-and-exponential-antiderivatives">📺 Indefinite integrals of <span class="math inline">\(\sin(x)\)</span>, <span class="math inline">\(\cos(x)\)</span>, and <span class="math inline">\(e^{x}\)</span></a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-8b/v/basic-trig-and-exponential-antiderivatives">📺 Indefinite integrals of <span class="math inline">\sin(x)</span>, <span class="math inline">\cos(x)</span>, and <span class="math inline">e^{x}</span></a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-8b/a/common-integrals-review">📄 Common integrals review</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-8c/v/reverse-power-rule-for-definite-integrals">📺 Definite integrals: reverse power rule</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-8c/v/evaluating-definite-integral-with-power-rule">📺 Definite integral of rational function</a></li>
@@ -277,7 +302,7 @@ F^{\prime} = f
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-8a/v/rewriting-integrand-before-integrating">📺 Rewriting before integrating</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-8a/a/reverse-power-rule-review">📄 Reverse power rule review</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-8b/v/antiderivative-of-x-1">📺 Indefinite integral of 1/x</a></li>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-8b/v/basic-trig-and-exponential-antiderivatives">📺 Indefinite integrals of <span class="math inline">\(\sin(x)\)</span>, <span class="math inline">\(\cos(x)\)</span>, and <span class="math inline">\(e^{x}\)</span></a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-8b/v/basic-trig-and-exponential-antiderivatives">📺 Indefinite integrals of <span class="math inline">\sin(x)</span>, <span class="math inline">\cos(x)</span>, and <span class="math inline">e^{x}</span></a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-8b/a/common-integrals-review">📄 Common integrals review</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-8c/v/reverse-power-rule-for-definite-integrals">📺 Definite integrals: reverse power rule</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-8c/v/evaluating-definite-integral-with-power-rule">📺 Definite integral of rational function</a></li>

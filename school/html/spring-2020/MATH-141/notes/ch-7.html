@@ -12,6 +12,13 @@
 
     <title>MATH 141 Chapter 7 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -22,7 +29,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -67,47 +89,64 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-7-misc-topics">Chapter 7: Misc Topics</a><ul>
-          <li><a href="#polar-coordinates-intro">7.1 Polar Coordinates Intro</a><ul>
-          <li><a href="#video-lecture">Video Lecture</a><ul>
+          <li><a href="#chapter-7-misc-topics">Chapter 7: Misc Topics</a>
+          <ul>
+          <li><a href="#polar-coordinates-intro">7.1 Polar Coordinates Intro</a>
+          <ul>
+          <li><a href="#video-lecture">Video Lecture</a>
+          <ul>
           <li><a href="#video-lecture-notes">Video Lecture Notes</a></li>
           </ul></li>
           </ul></li>
-          <li><a href="#polar-graphs">7.2 Polar Graphs</a><ul>
-          <li><a href="#video-lecture-1">Video Lecture 1</a><ul>
+          <li><a href="#polar-graphs">7.2 Polar Graphs</a>
+          <ul>
+          <li><a href="#video-lecture-1">Video Lecture 1</a>
+          <ul>
           <li><a href="#video-lecture-1-notes">Video Lecture 1 Notes</a></li>
           </ul></li>
-          <li><a href="#video-lecture-2">Video Lecture 2</a><ul>
+          <li><a href="#video-lecture-2">Video Lecture 2</a>
+          <ul>
           <li><a href="#video-lecture-2-notes">Video Lecture 2 Notes</a></li>
           </ul></li>
           </ul></li>
-          <li><a href="#complex-numbers-intro">7.3 Complex Numbers Intro</a><ul>
-          <li><a href="#video-lecture-3">Video Lecture</a><ul>
+          <li><a href="#complex-numbers-intro">7.3 Complex Numbers Intro</a>
+          <ul>
+          <li><a href="#video-lecture-3">Video Lecture</a>
+          <ul>
           <li><a href="#video-lecture-notes-1">Video Lecture Notes</a></li>
           </ul></li>
           </ul></li>
-          <li><a href="#complex-numbers-part-ii">7.4 Complex Numbers Part II</a><ul>
-          <li><a href="#video-lecture-4">Video Lecture</a><ul>
+          <li><a href="#complex-numbers-part-ii">7.4 Complex Numbers Part II</a>
+          <ul>
+          <li><a href="#video-lecture-4">Video Lecture</a>
+          <ul>
           <li><a href="#video-lecture-notes-2">Video Lecture Notes</a></li>
           </ul></li>
           </ul></li>
-          <li><a href="#eulers-identity">7.5 Eulers Identity</a><ul>
-          <li><a href="#video-lecture-5">Video Lecture</a><ul>
+          <li><a href="#eulers-identity">7.5 Eulers Identity</a>
+          <ul>
+          <li><a href="#video-lecture-5">Video Lecture</a>
+          <ul>
           <li><a href="#video-lecture-notes-3">Video Lecture Notes</a></li>
           </ul></li>
           <li><a href="#daabz-questions">Daabz Questions</a></li>
           </ul></li>
-          <li><a href="#introduction-to-vectors">7.6 Introduction To Vectors</a><ul>
-          <li><a href="#video-lecture-6">Video Lecture</a><ul>
+          <li><a href="#introduction-to-vectors">7.6 Introduction To Vectors</a>
+          <ul>
+          <li><a href="#video-lecture-6">Video Lecture</a>
+          <ul>
           <li><a href="#video-lecture-notes-4">Video Lecture Notes</a></li>
           </ul></li>
           </ul></li>
-          <li><a href="#introduction-to-the-dot-product">7.7 Introduction To The Dot Product</a><ul>
-          <li><a href="#video-lecture-7">Video Lecture</a><ul>
+          <li><a href="#introduction-to-the-dot-product">7.7 Introduction To The Dot Product</a>
+          <ul>
+          <li><a href="#video-lecture-7">Video Lecture</a>
+          <ul>
           <li><a href="#video-lecture-notes-5">Video Lecture Notes</a></li>
           </ul></li>
           </ul></li>
-          <li><a href="#comprehensive-review">Comprehensive Review</a><ul>
+          <li><a href="#comprehensive-review">Comprehensive Review</a>
+          <ul>
           <li><a href="#daabz-questions-1">Daabz Questions</a></li>
           </ul></li>
           </ul></li>
@@ -153,10 +192,12 @@
 <h4 id="video-lecture-notes">Video Lecture Notes</h4>
 <p>Polar coordinate system</p>
 <ul>
-<li><span class="math inline">\((r, \theta)\)</span>, where <span class="math inline">\(r\)</span> as the <em>radius</em> and <span class="math inline">\(\theta\)</span> as the <em>angle</em> form the origin.</li>
+<li><span class="math inline">(r, \theta)</span>, where <span class="math inline">r</span> as the <em>radius</em> and <span class="math inline">\theta</span> as the <em>angle</em> form the origin.</li>
 </ul>
 <h2 id="polar-graphs">7.2 Polar Graphs</h2>
-<img src="plots/sine_function.png" />
+<pre class="Rplot" data-files="sine_function.png"><code>x &lt;- seq(-pi, pi, 0.1)
+png(filename = &quot;sine_function.png&quot;)
+plot(x, sin(x), main=&quot;The Sine Function&quot;, ylab=&quot;sin(x)&quot;)</code></pre>
 <ul>
 <li><a href="../../../../files/spring-2020/MATH-141/ch-7/ch-7_handout-30.pdf">⬇ Handout 30: Converting Equations Polar &amp; Cartesian</a></li>
 </ul>
@@ -167,9 +208,9 @@
 <h4 id="video-lecture-1-notes">Video Lecture 1 Notes</h4>
 <ul>
 <li><p>Plotting points <a href="https://www.youtube.com/watch?v=u_Y7V5CSCcc&amp;t=184">(3:04)</a></p></li>
-<li><p>To get the shape of a polar equation, for example <span class="math inline">\(r = 7 + 10\cos(\theta)\)</span>, plot the <span class="math inline">\(0^{\circ}, 90^{\circ}, 180^{\circ}, 270^{\circ}\)</span> <a href="https://www.youtube.com/watch?v=u_Y7V5CSCcc&amp;t=658">(10:58)</a></p></li>
-<li><span class="math inline">\(-1 \ge \sin(\theta) \le 1\)</span> <a href="https://www.youtube.com/watch?v=u_Y7V5CSCcc&amp;t=1060">(17:40)</a></li>
-<li><p><span class="math inline">\(-1 \ge \cos(\theta) \le 1\)</span> <a href="https://www.youtube.com/watch?v=u_Y7V5CSCcc&amp;t=1514">(25:14)</a></p></li>
+<li><p>To get the shape of a polar equation, for example <span class="math inline">r = 7 + 10\cos(\theta)</span>, plot the <span class="math inline">0^{\circ}, 90^{\circ}, 180^{\circ}, 270^{\circ}</span> <a href="https://www.youtube.com/watch?v=u_Y7V5CSCcc&amp;t=658">(10:58)</a></p></li>
+<li><p><span class="math inline">-1 \ge \sin(\theta) \le 1</span> <a href="https://www.youtube.com/watch?v=u_Y7V5CSCcc&amp;t=1060">(17:40)</a></p></li>
+<li><p><span class="math inline">-1 \ge \cos(\theta) \le 1</span> <a href="https://www.youtube.com/watch?v=u_Y7V5CSCcc&amp;t=1514">(25:14)</a></p></li>
 </ul>
 <h3 id="video-lecture-2">Video Lecture 2</h3>
 <ul>
@@ -180,48 +221,48 @@
 <table>
 <thead>
 <tr class="header">
-<th><span class="math inline">\(x\)</span></th>
-<th><span class="math inline">\(r\cos(\theta)\)</span></th>
+<th><span class="math inline">x</span></th>
+<th><span class="math inline">r\cos(\theta)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(y\)</span></td>
-<td><span class="math inline">\(r\sin(\theta)\)</span></td>
+<td><span class="math inline">y</span></td>
+<td><span class="math inline">r\sin(\theta)</span></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(r^{2}\)</span></td>
-<td><span class="math inline">\(x^{2} + y^{2}\)</span></td>
+<td><span class="math inline">r^{2}</span></td>
+<td><span class="math inline">x^{2} + y^{2}</span></td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(r\)</span></td>
-<td><span class="math inline">\(\sqrt{x^{2} + y^{2}}\)</span></td>
+<td><span class="math inline">r</span></td>
+<td><span class="math inline">\sqrt{x^{2} + y^{2}}</span></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\theta\)</span></td>
-<td><span class="math inline">\(\tan^{-1}(\frac{y}{x})\)</span></td>
+<td><span class="math inline">\theta</span></td>
+<td><span class="math inline">\tan^{-1}(\frac{y}{x})</span></td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\frac{y}{x}\)</span></td>
-<td><span class="math inline">\(\tan(\theta)\)</span></td>
+<td><span class="math inline">\frac{y}{x}</span></td>
+<td><span class="math inline">\tan(\theta)</span></td>
 </tr>
 </tbody>
 </table>
 <p>Examples of Cartesian to Polar</p>
 <ul>
-<li><span class="math inline">\(y = x^{2}\)</span> <a href="https://www.youtube.com/watch?v=eWFJo--R8w4&amp;t=187">(3:07)</a>
+<li><span class="math inline">y = x^{2}</span> <a href="https://www.youtube.com/watch?v=eWFJo--R8w4&amp;t=187">(3:07)</a>
 <ul>
-<li><span class="math inline">\(r\sin(\theta) = r^{2}\cos^{2}(\theta)\)</span></li>
+<li><span class="math inline">r\sin(\theta) = r^{2}\cos^{2}(\theta)</span></li>
 </ul></li>
-<li><span class="math inline">\(r = 5\)</span> <a href="https://www.youtube.com/watch?v=eWFJo--R8w4&amp;t=281">(4:41)</a>
+<li><span class="math inline">r = 5</span> <a href="https://www.youtube.com/watch?v=eWFJo--R8w4&amp;t=281">(4:41)</a>
 <ul>
-<li><span class="math inline">\(x^{2} + y^{2} = 25\)</span></li>
+<li><span class="math inline">x^{2} + y^{2} = 25</span></li>
 </ul></li>
 </ul>
 <p>Examples of Polar to Cartesian</p>
 <ul>
-<li><span class="math inline">\(r = 6\cos(\theta)\)</span> <a href="https://www.youtube.com/watch?v=eWFJo--R8w4&amp;t=352">(5:52)</a></li>
-<li><span class="math inline">\(\theta = 2.5\)</span> <a href="https://www.youtube.com/watch?v=eWFJo--R8w4&amp;t=613">(10:13)</a></li>
+<li><span class="math inline">r = 6\cos(\theta)</span> <a href="https://www.youtube.com/watch?v=eWFJo--R8w4&amp;t=352">(5:52)</a></li>
+<li><span class="math inline">\theta = 2.5</span> <a href="https://www.youtube.com/watch?v=eWFJo--R8w4&amp;t=613">(10:13)</a></li>
 </ul>
 <h2 id="complex-numbers-intro">7.3 Complex Numbers Intro</h2>
 <ul>
@@ -236,40 +277,40 @@
 <table>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(i\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(i\)</span></td>
+<td style="text-align: center;"><span class="math inline">i</span></td>
+<td style="text-align: center;"><span class="math inline">i</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(i^{2}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\text{-}1\)</span></td>
+<td style="text-align: center;"><span class="math inline">i^{2}</span></td>
+<td style="text-align: center;"><span class="math inline">\text{-}1</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(i^{3}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\text{-}i\)</span></td>
+<td style="text-align: center;"><span class="math inline">i^{3}</span></td>
+<td style="text-align: center;"><span class="math inline">\text{-}i</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(i^{4}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">i^{4}</span></td>
+<td style="text-align: center;"><span class="math inline">1</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(i^{5}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(i\)</span></td>
+<td style="text-align: center;"><span class="math inline">i^{5}</span></td>
+<td style="text-align: center;"><span class="math inline">i</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(i^{6}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\text{-}1\)</span></td>
+<td style="text-align: center;"><span class="math inline">i^{6}</span></td>
+<td style="text-align: center;"><span class="math inline">\text{-}1</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(i^{7}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\text{-}i\)</span></td>
+<td style="text-align: center;"><span class="math inline">i^{7}</span></td>
+<td style="text-align: center;"><span class="math inline">\text{-}i</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(i^{8}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">i^{8}</span></td>
+<td style="text-align: center;"><span class="math inline">1</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(i^{9}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(i\)</span></td>
+<td style="text-align: center;"><span class="math inline">i^{9}</span></td>
+<td style="text-align: center;"><span class="math inline">i</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">…</td>
@@ -277,7 +318,7 @@
 </tr>
 </tbody>
 </table>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 i^{103} &amp;= i^{100} \cdot i^{3} \\
  &amp;= (i^{4})^{25} \cdot \\
@@ -285,16 +326,16 @@ i^{103} &amp;= i^{100} \cdot i^{3} \\
  &amp;=  1 \cdot i^{3} \\
  &amp;= -i
 \end{aligned}
-\]</span></p>
+</span></p>
 <p><a name="conjugates-term"><strong>Conjugates</strong></a></p>
 <ul>
 <li>Two binomials with all terms are identical except for the sign in between two terms of the binomial are opposite.</li>
-<li>Only works for <span class="math inline">\(+\)</span> and <span class="math inline">\(-\)</span> sign.</li>
+<li>Only works for <span class="math inline">+</span> and <span class="math inline">-</span> sign.</li>
 </ul>
 <p>Using Conjugates</p>
 <ul>
-<li><span class="math inline">\((3 + 2i)(3 - 2i)\)</span> <a href="https://www.youtube.com/watch?v=rShl_0B72To&amp;t=807">(13:27)</a></li>
-<li><span class="math inline">\(\dfrac{3}{2 + 5i}\)</span> <a href="https://www.youtube.com/watch?v=rShl_0B72To&amp;t=1172">(19:32)</a></li>
+<li><span class="math inline">(3 + 2i)(3 - 2i)</span> <a href="https://www.youtube.com/watch?v=rShl_0B72To&amp;t=807">(13:27)</a></li>
+<li><span class="math inline">\dfrac{3}{2 + 5i}</span> <a href="https://www.youtube.com/watch?v=rShl_0B72To&amp;t=1172">(19:32)</a></li>
 </ul>
 <h2 id="complex-numbers-part-ii">7.4 Complex Numbers Part II</h2>
 <ul>
@@ -307,23 +348,23 @@ i^{103} &amp;= i^{100} \cdot i^{3} \\
 </ul>
 <h4 id="video-lecture-notes-2">Video Lecture Notes</h4>
 <ul>
-<li><span class="math inline">\(i = e^{i \cdot 90^{\circ}}\)</span> <a href="https://www.youtube.com/watch?v=IoOKpGrL0RQ&amp;t=1286">(21:26)</a></li>
-<li><span class="math inline">\(0 = e^{i \pi} + 1\)</span></li>
+<li><span class="math inline">i = e^{i \cdot 90^{\circ}}</span> <a href="https://www.youtube.com/watch?v=IoOKpGrL0RQ&amp;t=1286">(21:26)</a></li>
+<li><span class="math inline">0 = e^{i \pi} + 1</span></li>
 </ul>
 <p><a name="euler's-identity-term"><strong>Euler’s identity</strong></a></p>
 <ul>
-<li><span class="math inline">\(e^{i\theta} = \cos(\theta) + i\sin(\theta)\)</span></li>
+<li><span class="math inline">e^{i\theta} = \cos(\theta) + i\sin(\theta)</span></li>
 </ul>
 <blockquote>
 <p>Euler’s uses <strong>RADIANS</strong> instead of degrees</p>
 </blockquote>
 <p>Converting complex numbers to Euler form</p>
 <ul>
-<li><span class="math inline">\(3 + 2i \to re^{i\theta}\)</span> <a href="https://www.youtube.com/watch?v=IoOKpGrL0RQ&amp;t=893">(14:53)</a></li>
+<li><span class="math inline">3 + 2i \to re^{i\theta}</span> <a href="https://www.youtube.com/watch?v=IoOKpGrL0RQ&amp;t=893">(14:53)</a></li>
 </ul>
 <p>Converting numbers to complex numbers</p>
 <ul>
-<li><span class="math inline">\(-1 \to \mathbb{C}\)</span> (Complex number) <a href="https://www.youtube.com/watch?v=IoOKpGrL0RQ&amp;t=1360">(22:40)</a></li>
+<li><span class="math inline">-1 \to \mathbb{C}</span> (Complex number) <a href="https://www.youtube.com/watch?v=IoOKpGrL0RQ&amp;t=1360">(22:40)</a></li>
 </ul>
 <h2 id="eulers-identity">7.5 Eulers Identity</h2>
 <ul>
@@ -338,64 +379,64 @@ i^{103} &amp;= i^{100} \cdot i^{3} \\
 <p>Converting complex numbers in standard form to Euler form and…</p>
 <p>Multiplying:</p>
 <ul>
-<li><span class="math inline">\((3 + 2i)(1 + 2i)\)</span> <a href="https://www.youtube.com/watch?v=mrADnifzTy0&amp;t=60">(1:00)</a></li>
-<li><span class="math inline">\((\frac{1}{2} + \frac{\sqrt{3}}{2}i)(\frac{\sqrt{3}}{2} + \frac{1}{2}i)\)</span> <a href="https://www.youtube.com/watch?v=mrADnifzTy0&amp;t=206">(3:26)</a></li>
+<li><span class="math inline">(3 + 2i)(1 + 2i)</span> <a href="https://www.youtube.com/watch?v=mrADnifzTy0&amp;t=60">(1:00)</a></li>
+<li><span class="math inline">(\frac{1}{2} + \frac{\sqrt{3}}{2}i)(\frac{\sqrt{3}}{2} + \frac{1}{2}i)</span> <a href="https://www.youtube.com/watch?v=mrADnifzTy0&amp;t=206">(3:26)</a></li>
 </ul>
 <blockquote>
 <p>Multiplying numbers with exponents with the same base: add the exponents together and copy the base.</p>
 </blockquote>
 <p>Dividing:</p>
 <ul>
-<li><span class="math inline">\(\dfrac{(3 + 2i)}{(1 + 2i)}\)</span> <a href="https://www.youtube.com/watch?v=mrADnifzTy0&amp;t=374">(6:14)</a></li>
+<li><span class="math inline">\dfrac{(3 + 2i)}{(1 + 2i)}</span> <a href="https://www.youtube.com/watch?v=mrADnifzTy0&amp;t=374">(6:14)</a></li>
 </ul>
 <blockquote>
 <p>Dividing numbers with exponents with the same base: subtract the exponents from the subtrahend and copy the base.</p>
 </blockquote>
 <p>Dealing with Complex numbers in standard form with powers:</p>
 <ul>
-<li><span class="math inline">\((3 + 2i)^{10}\)</span> <a href="https://www.youtube.com/watch?v=mrADnifzTy0&amp;t=605">(10:05)</a></li>
+<li><span class="math inline">(3 + 2i)^{10}</span> <a href="https://www.youtube.com/watch?v=mrADnifzTy0&amp;t=605">(10:05)</a></li>
 </ul>
 <p>Dealing with roots of complex numbers:</p>
 <ul>
-<li><span class="math inline">\(\sqrt{i} = e^{90^{\circ}i}\)</span> <a href="https://www.youtube.com/watch?v=mrADnifzTy0&amp;t=850">(14:10)</a></li>
+<li><span class="math inline">\sqrt{i} = e^{90^{\circ}i}</span> <a href="https://www.youtube.com/watch?v=mrADnifzTy0&amp;t=850">(14:10)</a></li>
 </ul>
 <p>Roots of unity <a href="https://www.youtube.com/watch?v=mrADnifzTy0&amp;t=1200">(20:00)</a></p>
 <h3 id="daabz-questions">Daabz Questions</h3>
 <ul>
-<li><span class="math inline">\([4e^{i(180^{\circ})}]^{\frac{1}{7}}\)</span>
+<li><span class="math inline">[4e^{i(180^{\circ})}]^{\frac{1}{7}}</span>
 <ul>
-<li><span class="math inline">\(4^{\frac{1}{7}}e^{i(\frac{180^{\circ}}{7})}\)</span></li>
-<li><span class="math inline">\(\sqrt[7]{4}e^{i(\frac{180^{\circ}}{7})}\)</span></li>
+<li><span class="math inline">4^{\frac{1}{7}}e^{i(\frac{180^{\circ}}{7})}</span></li>
+<li><span class="math inline">\sqrt[7]{4}e^{i(\frac{180^{\circ}}{7})}</span></li>
 </ul></li>
-<li>Suppose <span class="math inline">\(-7 + -2i = re^{i\theta}\)</span>
+<li>Suppose <span class="math inline">-7 + -2i = re^{i\theta}</span>
 <ul>
-<li><span class="math inline">\(\tan(\theta) = \frac{-2}{-7}\)</span></li>
-<li><span class="math inline">\(r^{2} = (-7)^{2} + (-2)^{2}\)</span></li>
+<li><span class="math inline">\tan(\theta) = \frac{-2}{-7}</span></li>
+<li><span class="math inline">r^{2} = (-7)^{2} + (-2)^{2}</span></li>
 </ul></li>
-<li><span class="math inline">\(\sqrt[3]{[9\cos(-180^{\circ}) + i9\sin(-180^{\circ})]}\)</span>
+<li><span class="math inline">\sqrt[3]{[9\cos(-180^{\circ}) + i9\sin(-180^{\circ})]}</span>
 <ul>
-<li><span class="math inline">\(\sqrt[3]{9}[\cos(\frac{-180^{\circ}}{3}) + i\sin(\frac{-180^{\circ}}{3}))]\)</span></li>
-<li><span class="math inline">\(\sqrt[3]{9}^{i(\frac{-180^{\circ}}{3})}\)</span></li>
-<li><span class="math inline">\(9^{\frac{1}{3}}e^{(\frac{-180^{\circ}}{3})}\)</span></li>
+<li><span class="math inline">\sqrt[3]{9}[\cos(\frac{-180^{\circ}}{3}) + i\sin(\frac{-180^{\circ}}{3}))]</span></li>
+<li><span class="math inline">\sqrt[3]{9}^{i(\frac{-180^{\circ}}{3})}</span></li>
+<li><span class="math inline">9^{\frac{1}{3}}e^{(\frac{-180^{\circ}}{3})}</span></li>
 </ul></li>
-<li><span class="math inline">\(9e^{i(-270^{\circ})} \cdot 2e^{i(-180^{\circ})}\)</span>
+<li><span class="math inline">9e^{i(-270^{\circ})} \cdot 2e^{i(-180^{\circ})}</span>
 <ul>
-<li><span class="math inline">\(18\cos(-450^{\circ}) + i18\sin(-450^{\circ})\)</span></li>
-<li><span class="math inline">\((9 \cdot 2) \cdot e^{i(-270^{\circ} + (-180^{\circ}))}\)</span></li>
+<li><span class="math inline">18\cos(-450^{\circ}) + i18\sin(-450^{\circ})</span></li>
+<li><span class="math inline">(9 \cdot 2) \cdot e^{i(-270^{\circ} + (-180^{\circ}))}</span></li>
 </ul></li>
-<li><span class="math inline">\(\frac{4\cos(-120^{\circ}) + i4\sin(-120^{\circ})}{5\cos(240^{\circ}) + i5\sin(240^{\circ})}\)</span>
+<li><span class="math inline">\frac{4\cos(-120^{\circ}) + i4\sin(-120^{\circ})}{5\cos(240^{\circ}) + i5\sin(240^{\circ})}</span>
 <ul>
-<li><span class="math inline">\(\frac{4}{5}\cos(-120^{\circ} - 240^{\circ}) + i\frac{4}{5}\sin(-120^{\circ} - 240^{\circ})\)</span></li>
-<li><span class="math inline">\(\frac{4}{5}\cos(-360^{\circ}) + i \cdot \frac{4}{5}\sin(-360^{\circ})\)</span></li>
+<li><span class="math inline">\frac{4}{5}\cos(-120^{\circ} - 240^{\circ}) + i\frac{4}{5}\sin(-120^{\circ} - 240^{\circ})</span></li>
+<li><span class="math inline">\frac{4}{5}\cos(-360^{\circ}) + i \cdot \frac{4}{5}\sin(-360^{\circ})</span></li>
 </ul></li>
-<li><span class="math inline">\(\sqrt[7]{3e^{i(330^{\circ})}}\)</span>
+<li><span class="math inline">\sqrt[7]{3e^{i(330^{\circ})}}</span>
 <ul>
-<li><span class="math inline">\(3^{\frac{1}{7}}e^{i(\frac{330^{\circ}}{7})}\)</span></li>
+<li><span class="math inline">3^{\frac{1}{7}}e^{i(\frac{330^{\circ}}{7})}</span></li>
 </ul></li>
-<li><span class="math inline">\(\frac{5e^{i(210^{\circ})}}{8e^{i(-150^{\circ})}}\)</span>
+<li><span class="math inline">\frac{5e^{i(210^{\circ})}}{8e^{i(-150^{\circ})}}</span>
 <ul>
-<li><span class="math inline">\(\frac{5}{8}\cos(360^{\circ}) + i \cdot \frac{5}{8}\sin(360^{\circ})\)</span></li>
-<li><span class="math inline">\(\frac{5}{8}\cos(210^{\circ}- (-150^{\circ}) + i\frac{5}{8}\sin(210^{\circ}) - (-150^{\circ}))\)</span></li>
+<li><span class="math inline">\frac{5}{8}\cos(360^{\circ}) + i \cdot \frac{5}{8}\sin(360^{\circ})</span></li>
+<li><span class="math inline">\frac{5}{8}\cos(210^{\circ}- (-150^{\circ}) + i\frac{5}{8}\sin(210^{\circ}) - (-150^{\circ}))</span></li>
 </ul></li>
 </ul>
 <h2 id="introduction-to-vectors">7.6 Introduction To Vectors</h2>
@@ -419,11 +460,11 @@ i^{103} &amp;= i^{100} \cdot i^{3} \\
 <ul>
 <li>Size of the hypotenuse that the vectors make</li>
 <li>Use pythagorean to get the magnitude</li>
-<li>Denoted by <span class="math inline">\(\|\vec{V}\|\)</span>, where <span class="math inline">\(\vec{V}\)</span> as the vector and <span class="math inline">\(\|\|\)</span> as the magnitude of the vector.</li>
+<li>Denoted by <span class="math inline">\|\vec{V}\|</span>, where <span class="math inline">\vec{V}</span> as the vector and <span class="math inline">\|\|</span> as the magnitude of the vector.</li>
 <li><strong>Normalized/Unit vector</strong> is a vector that has a magnitude exactly equals to 1.
 <ul>
-<li><span class="math inline">\(N_{\vec{v}}\)</span> Can be computed as <span class="math inline">\(\dfrac{1}{\|\vec{v}\|}\vec{v}\)</span></li>
-<li><span class="math inline">\(N_{\vec{v}}\)</span> only changes the magnitude, therefore, <span class="math inline">\(N_{\vec{v}}\)</span> has the same direction as <span class="math inline">\(\vec{v}\)</span></li>
+<li><span class="math inline">N_{\vec{v}}</span> Can be computed as <span class="math inline">\dfrac{1}{\|\vec{v}\|}\vec{v}</span></li>
+<li><span class="math inline">N_{\vec{v}}</span> only changes the magnitude, therefore, <span class="math inline">N_{\vec{v}}</span> has the same direction as <span class="math inline">\vec{v}</span></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -433,11 +474,11 @@ i^{103} &amp;= i^{100} \cdot i^{3} \\
 </ul>
 <p>Some famous Dot Product properties</p>
 <ul>
-<li><span class="math inline">\(u \cdot v = v \cdot u\)</span></li>
-<li><span class="math inline">\((u + w) \cdot v = u \cdot v + w \cdot v\)</span></li>
-<li><span class="math inline">\(u \cdot (cv) = c(u \cdot v)\)</span></li>
-<li><span class="math inline">\(u \cdot u \ge 0\)</span></li>
-<li><span class="math inline">\(u \cdot u = 0 \Longleftrightarrow u = 0\)</span></li>
+<li><span class="math inline">u \cdot v = v \cdot u</span></li>
+<li><span class="math inline">(u + w) \cdot v = u \cdot v + w \cdot v</span></li>
+<li><span class="math inline">u \cdot (cv) = c(u \cdot v)</span></li>
+<li><span class="math inline">u \cdot u \ge 0</span></li>
+<li><span class="math inline">u \cdot u = 0 \Longleftrightarrow u = 0</span></li>
 </ul>
 <h3 id="video-lecture-7">Video Lecture</h3>
 <ul>
@@ -445,78 +486,78 @@ i^{103} &amp;= i^{100} \cdot i^{3} \\
 </ul>
 <h4 id="video-lecture-notes-5">Video Lecture Notes</h4>
 <ul>
-<li><span class="math inline">\(\langle {\color{#ff0000}{1}}, {\color{#00ff00}{5}}, {\color{#0000ff}{0}} \rangle \cdot \langle {\color{#ff0000}{3}}, {\color{#00ff00}{1}}, {\color{#0000ff}{-5}} \rangle\)</span>
+<li><span class="math inline">\langle {\color{#ff0000}{1}}, {\color{#00ff00}{5}}, {\color{#0000ff}{0}} \rangle \cdot \langle {\color{#ff0000}{3}}, {\color{#00ff00}{1}}, {\color{#0000ff}{-5}} \rangle</span>
 <ul>
-<li>multiply each, <span class="math inline">\({\color{#ff0000}{3}} + {\color{#00ff00}{5}} + {\color{#0000ff}{0}}\)</span></li>
-<li><span class="math inline">\(8\)</span></li>
+<li>multiply each, <span class="math inline">{\color{#ff0000}{3}} + {\color{#00ff00}{5}} + {\color{#0000ff}{0}}</span></li>
+<li><span class="math inline">8</span></li>
 </ul></li>
 </ul>
 <p>Magnitude by Dot <a href="https://www.youtube.com/watch?v=VvoUzq6NLr8&amp;t=635">(10:35)</a></p>
 <ul>
-<li><span class="math inline">\(\|\vec{v}\|^{2} = \vec{v} \cdot \vec{v}\)</span></li>
+<li><span class="math inline">\|\vec{v}\|^{2} = \vec{v} \cdot \vec{v}</span></li>
 </ul>
 <p>Distance by Dot</p>
 <ul>
-<li><span class="math inline">\(\|\vec{w} - \vec{v}\|^2 = (\vec{w} - \vec{v}) \cdot (\vec{w} - \vec{v})\)</span></li>
-<li><span class="math inline">\(\|\vec{w} - \vec{v}\| = \sqrt{(\vec{w} - \vec{v}) \cdot (\vec{w} - \vec{v})}\)</span></li>
+<li><span class="math inline">\|\vec{w} - \vec{v}\|^2 = (\vec{w} - \vec{v}) \cdot (\vec{w} - \vec{v})</span></li>
+<li><span class="math inline">\|\vec{w} - \vec{v}\| = \sqrt{(\vec{w} - \vec{v}) \cdot (\vec{w} - \vec{v})}</span></li>
 </ul>
 <p>Angle between by Dot <a href="https://www.youtube.com/watch?v=vvoUzq6NLr8&amp;t=934">(15:34)</a></p>
 <ul>
-<li><span class="math inline">\(\cos(\theta) = \dfrac{\vec{v} \cdot \vec{w}}{\|\vec{v}\| \|\vec{w}\|}\)</span></li>
+<li><span class="math inline">\cos(\theta) = \dfrac{\vec{v} \cdot \vec{w}}{\|\vec{v}\| \|\vec{w}\|}</span></li>
 </ul>
-<p>Perpendicular <span class="math inline">\(\perp\)</span> Test by Dot <a href="https://www.youtube.com/watch?v=vvoUzq6NLr8&amp;t=1464">(24:24)</a></p>
+<p>Perpendicular <span class="math inline">\perp</span> Test by Dot <a href="https://www.youtube.com/watch?v=vvoUzq6NLr8&amp;t=1464">(24:24)</a></p>
 <ul>
 <li>If the <strong>Dot Product is zero</strong>, its <strong>perpendicular</strong></li>
-<li><span class="math inline">\(\vec{v} \perp \vec{w} \Longleftrightarrow \vec{v} \cdot \vec{w} = 0\)</span></li>
+<li><span class="math inline">\vec{v} \perp \vec{w} \Longleftrightarrow \vec{v} \cdot \vec{w} = 0</span></li>
 </ul>
 <p>Projections by Dot <a href="https://www.youtube.com/watch?v=vvoUzq6NLr8&amp;t=1710">(28:30)</a></p>
 <ul>
-<li><span class="math inline">\(proj_{\vec{w}}\vec{v} = \dfrac{\vec{v} \cdot \vec{w}}{\|\vec{w}\| \|\vec{w}\|} \cdot \vec{w}\)</span></li>
+<li><span class="math inline">proj_{\vec{w}}\vec{v} = \dfrac{\vec{v} \cdot \vec{w}}{\|\vec{w}\| \|\vec{w}\|} \cdot \vec{w}</span></li>
 </ul>
 <h2 id="comprehensive-review">Comprehensive Review</h2>
 <h3 id="daabz-questions-1">Daabz Questions</h3>
 <ul>
-<li>If the equation of a graph is modified by replacing <span class="math inline">\(x \to 5x -12\)</span>, the consequences on the graph are
+<li>If the equation of a graph is modified by replacing <span class="math inline">x \to 5x -12</span>, the consequences on the graph are
 <ul>
-<li>shift RIGHT 12 then SCALE <span class="math inline">\(x\)</span>’s by <span class="math inline">\(\frac{1}{5}\)</span></li>
+<li>shift RIGHT 12 then SCALE <span class="math inline">x</span>’s by <span class="math inline">\frac{1}{5}</span></li>
 </ul></li>
-<li>If the equation of a graph is modified by replacing <span class="math inline">\(y \to 3y -8\)</span>, the consequences on the graph are
+<li>If the equation of a graph is modified by replacing <span class="math inline">y \to 3y -8</span>, the consequences on the graph are
 <ul>
-<li>shift UP 8 then SCALE <span class="math inline">\(y\)</span>’s by <span class="math inline">\(\frac{1}{3}\)</span></li>
+<li>shift UP 8 then SCALE <span class="math inline">y</span>’s by <span class="math inline">\frac{1}{3}</span></li>
 </ul></li>
-<li><span class="math inline">\(\dfrac{\tan(A) - \tan(B)}{1 + \tan(A)\tan(B)}\)</span>
+<li><span class="math inline">\dfrac{\tan(A) - \tan(B)}{1 + \tan(A)\tan(B)}</span>
 <ul>
-<li><span class="math inline">\(\tan(A - B)\)</span></li>
+<li><span class="math inline">\tan(A - B)</span></li>
 </ul></li>
-<li><span class="math inline">\(\cot(x)\)</span>
+<li><span class="math inline">\cot(x)</span>
 <ul>
-<li><span class="math inline">\(\tan(\frac{\pi}{2} - x)\)</span></li>
+<li><span class="math inline">\tan(\frac{\pi}{2} - x)</span></li>
 </ul></li>
-<li>One solution to the equation <span class="math inline">\(0 = \sin(x) is 0\)</span>
+<li>One solution to the equation <span class="math inline">0 = \sin(x) is 0</span>
 <ul>
-<li><span class="math inline">\(x = 0 + \pi\)</span></li>
-<li><span class="math inline">\(x = \pi\)</span></li>
+<li><span class="math inline">x = 0 + \pi</span></li>
+<li><span class="math inline">x = \pi</span></li>
 </ul></li>
-<li><span class="math inline">\(\cos^{2}(x)\)</span> can be exchanged for
+<li><span class="math inline">\cos^{2}(x)</span> can be exchanged for
 <ul>
-<li><span class="math inline">\(1 - \dfrac{1}{\csc()^{2}(x)}\)</span></li>
+<li><span class="math inline">1 - \dfrac{1}{\csc()^{2}(x)}</span></li>
 </ul></li>
-<li>One slution to the equation <span class="math inline">\(-1 = \sin(x)\)</span> is <span class="math inline">\(-\frac{1}{2}\pi\)</span>, What is the NEXT real solution to the right?
+<li>One slution to the equation <span class="math inline">-1 = \sin(x)</span> is <span class="math inline">-\frac{1}{2}\pi</span>, What is the NEXT real solution to the right?
 <ul>
-<li><span class="math inline">\(x = \frac{3}{2}\pi\)</span></li>
-<li><span class="math inline">\(x = -\frac{1}{2}\pi + 2\pi\)</span></li>
+<li><span class="math inline">x = \frac{3}{2}\pi</span></li>
+<li><span class="math inline">x = -\frac{1}{2}\pi + 2\pi</span></li>
 </ul></li>
-<li><span class="math inline">\(\frac{d}{dx}[\cos(x)]\)</span>
+<li><span class="math inline">\frac{d}{dx}[\cos(x)]</span>
 <ul>
-<li><span class="math inline">\(-\sin(x)\)</span></li>
+<li><span class="math inline">-\sin(x)</span></li>
 </ul></li>
-<li><span class="math inline">\(\cos(x)\)</span> can be exchanged for
+<li><span class="math inline">\cos(x)</span> can be exchanged for
 <ul>
-<li><span class="math inline">\(-\sin(\frac{\pi}{2} - x)\)</span></li>
+<li><span class="math inline">-\sin(\frac{\pi}{2} - x)</span></li>
 </ul></li>
-<li><span class="math inline">\(\sin(2x)\)</span> can be exchanged for
+<li><span class="math inline">\sin(2x)</span> can be exchanged for
 <ul>
-<li><span class="math inline">\(2\sin(x)\cos(x)\)</span></li>
+<li><span class="math inline">2\sin(x)\cos(x)</span></li>
 </ul></li>
 </ul>
 <p><br></p>

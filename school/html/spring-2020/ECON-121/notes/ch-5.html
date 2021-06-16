@@ -12,6 +12,13 @@
 
     <title>ECON 121 Chapter 5 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -22,7 +29,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -67,26 +89,32 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-5-elasticity-a-measure-of-responsiveness">Chapter 5: Elasticity: A Measure of Responsiveness</a><ul>
-          <li><a href="#the-price-elasticity-of-demand">5.1 The Price Elasticity of Demand</a><ul>
+          <li><a href="#chapter-5-elasticity-a-measure-of-responsiveness">Chapter 5: Elasticity: A Measure of Responsiveness</a>
+          <ul>
+          <li><a href="#the-price-elasticity-of-demand">5.1 The Price Elasticity of Demand</a>
+          <ul>
           <li><a href="#computing-percentage-changes-and-elasticities">Computing Percentage Changes and Elasticities</a></li>
           <li><a href="#price-elasticity-and-the-demand-curve">5.1.2 Price Elasticity and the Demand Curve</a></li>
           <li><a href="#elasticity-and-the-availability-of-substitutes">5.1.3 Elasticity and the Availability of Substitutes</a></li>
           <li><a href="#other-determinants-of-the-price-elasticity-of-demand">5.1.4 Other Determinants of the Price Elasticity of Demand</a></li>
           </ul></li>
-          <li><a href="#using-price-elasticity">5.2 Using Price Elasticity</a><ul>
+          <li><a href="#using-price-elasticity">5.2 Using Price Elasticity</a>
+          <ul>
           <li><a href="#predicting-changes-in-quantity">5.2.1 Predicting Changes in Quantity</a></li>
           <li><a href="#price-elasticity-and-total-revenue">5.2.2 Price Elasticity and Total Revenue</a></li>
           </ul></li>
-          <li><a href="#other-elasticities-of-demand">5.4 Other Elasticities of Demand</a><ul>
+          <li><a href="#other-elasticities-of-demand">5.4 Other Elasticities of Demand</a>
+          <ul>
           <li><a href="#income-elasticity-of-demand">5.4.1 Income Elasticity of Demand</a></li>
           <li><a href="#cross-price-elasticity-of-demand">5.4.2 Cross-Price Elasticity of Demand</a></li>
           </ul></li>
-          <li><a href="#the-price-elasticity-of-supply">5.5 The Price Elasticity of Supply</a><ul>
+          <li><a href="#the-price-elasticity-of-supply">5.5 The Price Elasticity of Supply</a>
+          <ul>
           <li><a href="#the-role-of-time-short-run-versus-long-run-supply-elasticity">5.5.2 The Role of Time: Short-Run versus Long-Run Supply Elasticity</a></li>
           <li><a href="#extreme-cases-perfectly-inelastic-supply-and-perfectly-elastic-supply">5.5.3 Extreme Cases: Perfectly Inelastic Supply and Perfectly Elastic Supply</a></li>
           </ul></li>
-          <li><a href="#using-elasticities-to-predict-changes-in-prices">5.6 Using Elasticities to Predict Changes in Prices</a><ul>
+          <li><a href="#using-elasticities-to-predict-changes-in-prices">5.6 Using Elasticities to Predict Changes in Prices</a>
+          <ul>
           <li><a href="#the-price-effects-of-a-change-in-demand">5.6.1 The Price Effects of a Change in Demand</a></li>
           <li><a href="#the-price-effects-of-a-change-in-supply">5.6.2 The Price Effects of a Change in Supply</a></li>
           </ul></li>
@@ -119,26 +147,26 @@
           <article class="contents">
 <h1 id="chapter-5-elasticity-a-measure-of-responsiveness">Chapter 5: Elasticity: A Measure of Responsiveness</h1>
 <h2 id="the-price-elasticity-of-demand">5.1 The Price Elasticity of Demand</h2>
-<p><a name="price-elasticity-of-demand"><strong>Price elasticity of demand (<span class="math inline">\(E_d\)</span>)</strong></a></p>
+<p><a name="price-elasticity-of-demand"><strong>Price elasticity of demand (<span class="math inline">E_d</span>)</strong></a></p>
 <ul>
 <li>A measure of the responsiveness of the quantity demanded to changes in price; equal to the absolute values of the percentage change in quantity demanded.</li>
 <li>Result will always be a negative value, since the law of demand states that when supply rises, demand falls.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 E_{d} = \left |\frac{\text{percentage change in quantity demanded}}{\text{percentage change in price}}\right |
-\]</span></p>
+</span></p>
 <p>When the price elasticity is listed as a positive number, the interpretation of the elasticity is straightforward. If the elasticity number is large, it means that the demand for the product is very elastic, or very responsive to changes in price. In contrast, a small number indicates that the demand for a product is very inelastic.</p>
 <h3 id="computing-percentage-changes-and-elasticities">Computing Percentage Changes and Elasticities</h3>
 <p>Two ways to compute percentage change:</p>
 <p>For example, if a price increases from $20 to $22.</p>
 <p><a name="initial-value-method"><strong>Initial-value method</strong></a></p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{percent change with initial value} = \frac{22 - 20}{20} \cdot 100 = \frac{2}{20} \cdot 100 = 10\%
-\]</span></p>
+</span></p>
 <p><a name="midpoint-method"><strong>Midpoint method</strong></a></p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{percentage change with midpoint value} = \frac{\left | 22 - 20 \right |}{\frac{20 + 22}{2}} \cdot 100 = \frac{2}{21} \cdot 100 = 9.52\%
-\]</span></p>
+</span></p>
 <p>The advantage of the midpoint approach is that it generates the same absolute percentage change whether the variable has increased or decreased. The reason is that the denominator is the same in both cases. In contrast, the initial-value computation is based on the initial value, so our answer there depends on the direction of the change–which of the two values is the initial value.</p>
 <h3 id="price-elasticity-and-the-demand-curve">5.1.2 Price Elasticity and the Demand Curve</h3>
 <p><a name="elastic-demand"><strong>Elastic demand</strong></a></p>
@@ -182,7 +210,7 @@ E_{d} = \left |\frac{\text{percentage change in quantity demanded}}{\text{percen
 </ul></li>
 </ul>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-5/elasticity.png" alt="Elasticity and Demand Curves" /><figcaption>Elasticity and Demand Curves</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-5/elasticity.png" alt="Elasticity and Demand Curves" /><figcaption aria-hidden="true">Elasticity and Demand Curves</figcaption>
 </figure>
 <h3 id="elasticity-and-the-availability-of-substitutes">5.1.3 Elasticity and the Availability of Substitutes</h3>
 <p>The key factor in determining the price elasticity for a particular product is the availability of substitute products.</p>
@@ -359,26 +387,26 @@ E_{d} = \left |\frac{\text{percentage change in quantity demanded}}{\text{percen
 <h2 id="using-price-elasticity">5.2 Using Price Elasticity</h2>
 <h3 id="predicting-changes-in-quantity">5.2.1 Predicting Changes in Quantity</h3>
 <p>If we have values for two of the three variables in the elasticity formula, we can compute the value of the third. The three variables are (1) the price elasticity of demand itself, (2) the percentage change in quantity, and (3) the percentage change in price.</p>
-<p><strong>Elasticity Formula</strong> <span class="math display">\[
+<p><strong>Elasticity Formula</strong> <span class="math display">
 \text{percentage change in quantity demanded} = \text{percentage change in price} \times E_d
-\]</span></p>
+</span></p>
 <h3 id="price-elasticity-and-total-revenue">5.2.2 Price Elasticity and Total Revenue</h3>
 <p><strong>Total revenue</strong></p>
 <ul>
 <li>The money a firm generates from selling its product.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{total revenue} = \text{price per unit} \times  \text{quantity sold}
-\]</span></p>
+</span></p>
 <p>Suppose a firm increases the price of its product. Will its total sales revenue increase or decrease? The answer depends on the price elasticity of demand for the product. If you know the price elasticity, you can determine whether a price hike will increase or decrease the firm’s total revenue.</p>
 <ul>
 <li><em>Elastic demand</em>. The relationship between price and total revenue is negative: An increase in price decreases total revenue; a decrease in price increases total revenue.</li>
 <li><em>Inelastic demand</em>. The relationship between price and total revenue is positive: An increase in price increases total revenue; a decrease in price decreases total revenue.</li>
 <li><em>Unit elastic demand</em>. Total revenue does not vary with price.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{Elastic Demand:} E_d &gt; 1.0
-\]</span></p>
+</span></p>
 <table>
 <thead>
 <tr class="header">
@@ -389,20 +417,20 @@ E_{d} = \left |\frac{\text{percentage change in quantity demanded}}{\text{percen
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(\uparrow\)</span></td>
-<td><span class="math inline">\(\downarrow\)</span></td>
+<td><span class="math inline">\uparrow</span></td>
+<td><span class="math inline">\downarrow</span></td>
 <td>Larger than the percentage change in price.</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\downarrow\)</span></td>
-<td><span class="math inline">\(\uparrow\)</span></td>
+<td><span class="math inline">\downarrow</span></td>
+<td><span class="math inline">\uparrow</span></td>
 <td>Larger than the percentage change in price.</td>
 </tr>
 </tbody>
 </table>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{Inelastic Demand:} E_d &lt; 1.0
-\]</span></p>
+</span></p>
 <table>
 <thead>
 <tr class="header">
@@ -413,13 +441,13 @@ E_{d} = \left |\frac{\text{percentage change in quantity demanded}}{\text{percen
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(\uparrow\)</span></td>
-<td><span class="math inline">\(\uparrow\)</span></td>
+<td><span class="math inline">\uparrow</span></td>
+<td><span class="math inline">\uparrow</span></td>
 <td>Smaller than the percentage change in price.</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\downarrow\)</span></td>
-<td><span class="math inline">\(\downarrow\)</span></td>
+<td><span class="math inline">\downarrow</span></td>
+<td><span class="math inline">\downarrow</span></td>
 <td>Smaller than the percentage change in price.</td>
 </tr>
 </tbody>
@@ -430,9 +458,9 @@ E_{d} = \left |\frac{\text{percentage change in quantity demanded}}{\text{percen
 <ul>
 <li>A measure of the responsiveness of demand to changes in consumer income; equal to the percentage change in the quantity demanded divided by the percentage change in income.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 E_t = \frac{\text{percentage change in quantity demanded}}{\text{percentage change in income}}
-\]</span></p>
+</span></p>
 <p>If the income elasticity is <em>positive</em>–indicating a positive relationship between income and demand–we say that the good is normal. New cars and new clothes are products that have positive income elasticities and are thus considered normal goods. In contrast, if the income elasticity is <em>negative</em>–indicating a negative relationship between income and demand–we say the good is “inferior.” Some examples of inferior goods are intercity bus travel, used clothing, and used cars.</p>
 <h3 id="cross-price-elasticity-of-demand">5.4.2 Cross-Price Elasticity of Demand</h3>
 <p><strong>Cross-price elasticity of demand</strong></p>
@@ -442,9 +470,9 @@ E_t = \frac{\text{percentage change in quantity demanded}}{\text{percentage chan
 <li>divided by the percentage change in the price of another good (Y).</li>
 </ol></li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 E_{xy} = \frac{\text{percentage change in quantity of X demanded}}{\text{percentage change in price of Y}}
-\]</span></p>
+</span></p>
 <table>
 <thead>
 <tr class="header">
@@ -472,9 +500,9 @@ E_{xy} = \frac{\text{percentage change in quantity of X demanded}}{\text{percent
 <li>A measure of the responsiveness of the quantity supplied to changes in price; equal to the percentage change in quantity supplied divided by the percentage change in price.</li>
 <li>Result will always be a positive value.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 E_s = \frac{\text{percentage change in quantity supplied}}{\text{percentage change in price}}
-\]</span></p>
+</span></p>
 <h3 id="the-role-of-time-short-run-versus-long-run-supply-elasticity">5.5.2 The Role of Time: Short-Run versus Long-Run Supply Elasticity</h3>
 <ul>
 <li><em>Short run</em>. A higher price encourages existing firms to increase their output by purchasing more materials and hiring more workers.</li>
@@ -509,10 +537,10 @@ E_s = \frac{\text{percentage change in quantity supplied}}{\text{percentage chan
 <li><p><em>Highly elastic supply</em>. If producers are very responsive to changes in price, the increase in price caused by excess demand will cause a large increase in the quantity supplied. As a result, the excess demand will be eliminated with a relatively small increase in price.</p></li>
 </ul>
 <p><strong>Price-Change Formula</strong></p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{percentage change in equilibrium price} = \frac{\text{percentage change in
 demand}}{E_{s} + E_{d}}
-\]</span></p>
+</span></p>
 <h3 id="the-price-effects-of-a-change-in-supply">5.6.2 The Price Effects of a Change in Supply</h3>
 <p>Under what conditions will a <strong>decrease in supply</strong> cause a relatively small increase in price?</p>
 <ul>

@@ -12,6 +12,13 @@
 
     <title>List Stacks and Queues</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -23,26 +30,28 @@
     <link href="../../../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -51,9 +60,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -129,14 +138,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#list-stacks-and-queues">List, Stacks, and Queues</a><ul>
-          <li><a href="#lists">Lists</a><ul>
-          <li><a href="#array-lists">Array Lists</a><ul>
+          <li><a href="#list-stacks-and-queues">List, Stacks, and Queues</a>
+          <ul>
+          <li><a href="#lists">Lists</a>
+          <ul>
+          <li><a href="#array-lists">Array Lists</a>
+          <ul>
           <li><a href="#insertion">Insertion</a></li>
           <li><a href="#deletion">Deletion</a></li>
           </ul></li>
           </ul></li>
-          <li><a href="#linked-lists">Linked Lists</a><ul>
+          <li><a href="#linked-lists">Linked Lists</a>
+          <ul>
           <li><a href="#nodes-in-linked-lists">Nodes in Linked Lists</a></li>
           <li><a href="#adding-three-nodes">Adding Three Nodes</a></li>
           <li><a href="#traversing-all-elements-in-the-list">Traversing All Elements in the List</a></li>
@@ -145,7 +158,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li><a href="#circular-double-linked-lists">Circular Double Linked Lists</a></li>
           </ul></li>
           <li><a href="#stacks">Stacks</a></li>
-          <li><a href="#queues">Queues</a><ul>
+          <li><a href="#queues">Queues</a>
+          <ul>
           <li><a href="#priority-queue">Priority Queue</a></li>
           </ul></li>
           </ul></li>
@@ -196,34 +210,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Since MyArrayList is implemented using an array, the methods get(int index) and set(int index, Object o) for accessing and modifying an element through an index and the add(Object o) for adding an element at the end of the list are efficient. However, the methods add(int index, Object o) and remove(int index) are inefficient because it requires shifting potentially a large number of elements. You can use a linked structure to implement a list to improve efficiency for adding and removing an element anywhere in a list.</p>
 <h3 id="nodes-in-linked-lists">Nodes in Linked Lists</h3>
 <p>A linked list consists of nodes. Each node contains an element, and each node is linked to its next neighbor. Thus a node can be defined as a class, as follows:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">class</span> <span class="bu">Node</span>&lt;E&gt; {</a>
-<a class="sourceLine" id="cb1-2" title="2">  E element;</a>
-<a class="sourceLine" id="cb1-3" title="3">  <span class="bu">Node</span>&lt;E&gt; next;</a>
-<a class="sourceLine" id="cb1-4" title="4"></a>
-<a class="sourceLine" id="cb1-5" title="5">  <span class="kw">public</span> <span class="bu">Node</span>(E o ) {</a>
-<a class="sourceLine" id="cb1-6" title="6">    element = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb1-7" title="7">  }</a>
-<a class="sourceLine" id="cb1-8" title="8">}</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> <span class="bu">Node</span><span class="op">&lt;</span>E<span class="op">&gt;</span> <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  E element<span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">Node</span><span class="op">&lt;</span>E<span class="op">&gt;</span> next<span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="bu">Node</span><span class="op">(</span>E o <span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    element <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="adding-three-nodes">Adding Three Nodes</h3>
 <p>The variable <strong>head</strong> refers to the first node in the list, and the variable <strong>tail</strong> refers to the last node in the list. If the list is empty, both are <code>null</code>. For example, you can create three nodes to store three strings in a list, as follows: </p>
 <p>Step 1: Declare <code>head</code> and <code>tail</code></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="bu">Node</span>&lt;<span class="bu">String</span>&gt; head = <span class="kw">null</span>;</a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="bu">Node</span>&lt;<span class="bu">String</span>&gt; tail = <span class="kw">null</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Node</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> head <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Node</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> tail <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span></code></pre></div>
 <p>Step 2: Create the first node and insert it to the list:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1">head = <span class="kw">new</span> <span class="bu">Node</span>&lt;&gt;(<span class="st">&quot;Chicago&quot;</span>);</a>
-<a class="sourceLine" id="cb3-2" title="2">tail = head;</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>head <span class="op">=</span> <span class="kw">new</span> <span class="bu">Node</span><span class="op">&lt;&gt;(</span><span class="st">&quot;Chicago&quot;</span><span class="op">);</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tail <span class="op">=</span> head<span class="op">;</span></span></code></pre></div>
 <p>Step 3: Create the second node and insert it to the list:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1">tail.<span class="fu">next</span> = <span class="kw">new</span> <span class="bu">Node</span>&lt;&gt;(<span class="st">&quot;Denver&quot;</span>);</a>
-<a class="sourceLine" id="cb4-2" title="2">tail = tail.<span class="fu">next</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>tail<span class="op">.</span><span class="fu">next</span> <span class="op">=</span> <span class="kw">new</span> <span class="bu">Node</span><span class="op">&lt;&gt;(</span><span class="st">&quot;Denver&quot;</span><span class="op">);</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>tail <span class="op">=</span> tail<span class="op">.</span><span class="fu">next</span></span></code></pre></div>
 <p>Step 4: Create the third node and insert it to the list:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1">tail.<span class="fu">next</span> = <span class="kw">new</span> <span class="bu">Node</span>&lt;&gt;(<span class="st">&quot;Dallas&quot;</span>);</a>
-<a class="sourceLine" id="cb5-2" title="2">tail = tail.<span class="fu">next</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tail<span class="op">.</span><span class="fu">next</span> <span class="op">=</span> <span class="kw">new</span> <span class="bu">Node</span><span class="op">&lt;&gt;(</span><span class="st">&quot;Dallas&quot;</span><span class="op">);</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>tail <span class="op">=</span> tail<span class="op">.</span><span class="fu">next</span><span class="op">;</span></span></code></pre></div>
 <h3 id="traversing-all-elements-in-the-list">Traversing All Elements in the List</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1"><span class="bu">Node</span>&lt;E&gt; current = head;</a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="kw">while</span> (current != <span class="kw">null</span>) {</a>
-<a class="sourceLine" id="cb6-3" title="3">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(current.<span class="fu">element</span>);</a>
-<a class="sourceLine" id="cb6-4" title="4">  current = current.<span class="fu">next</span>;</a>
-<a class="sourceLine" id="cb6-5" title="5">}</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Node</span><span class="op">&lt;</span>E<span class="op">&gt;</span> current <span class="op">=</span> head<span class="op">;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="op">(</span>current <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>current<span class="op">.</span><span class="fu">element</span><span class="op">);</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  current <span class="op">=</span> current<span class="op">.</span><span class="fu">next</span><span class="op">;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="circular-linked-lists">Circular Linked Lists</h3>
 <p>A <em>circular</em>, <em>singly linked</em> list is like a singly linked list, except that the pointer of the last node points back to the first node.</p>
 <h3 id="doubly-linked-lists">Doubly Linked Lists</h3>

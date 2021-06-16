@@ -12,6 +12,13 @@
 
     <title>Week 5 Graded Discussion</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -104,7 +111,7 @@
 </ul>
 <h1 id="week-5-graded-discussion">Week 5 Graded Discussion</h1>
 <figure>
-<img src="../../../../../files/summer-2020/CISC-191/week-5/graded-discussion/sequence_diagram.png" alt="Sequence Diagram - Bank Account System" /><figcaption>Sequence Diagram - Bank Account System</figcaption>
+<img src="../../../../../files/summer-2020/CISC-191/week-5/graded-discussion/sequence_diagram.png" alt="Sequence Diagram - Bank Account System" /><figcaption aria-hidden="true">Sequence Diagram - Bank Account System</figcaption>
 </figure>
 <p>Not so sure if this is the right way to chart a sequence diagram but basically it is a Banking system (Account) in which the main functions are <code>deposit()</code> and <code>withdraw()</code>. The Timeline starts of with zero account balance so it starts with a DepositTask Thread that uses DepositTask class to deposit money into the account. Once it uses the Account method <code>deposit()</code>, it will acquire the lock from the ReentrantLock class and hold on to that lock until the <code>deposit()</code> method unlocks the lock. Once the lock has been released, <code>withdraw()</code> method can acquire the lock and proceed with interacting with the Account class by withdrawing money on one condition: if the amount of money to be withdrawn is less than the current balance, it will proceed on withdrawing from the Account to prevent “Overdrafting”, else, Thread2 (WithdrawTask) will wait for Thread1 (DepositTask) to make a <code>deposit()</code> in order for Thread2 to sufficiently withdraw the right amount.</p>
 <p>Repeat forever.</p>

@@ -11,6 +11,13 @@
 
     <title>Cheatsheet</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,13 +88,16 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#formulas">Formulas</a><ul>
+          <li><a href="#formulas">Formulas</a>
+          <ul>
           <li><a href="#si-units">SI Units</a></li>
-          <li><a href="#kinematics">Kinematics</a><ul>
+          <li><a href="#kinematics">Kinematics</a>
+          <ul>
           <li><a href="#constant-acceleration">Constant Acceleration</a></li>
           <li><a href="#free-fall-acceleration">2.5 Free-Fall Acceleration</a></li>
           </ul></li>
-          <li><a href="#projectile-motion">Projectile Motion</a><ul>
+          <li><a href="#projectile-motion">Projectile Motion</a>
+          <ul>
           <li><a href="#the-horizontal-motion">The Horizontal Motion</a></li>
           <li><a href="#the-vertical-motion">The Vertical Motion</a></li>
           <li><a href="#the-equation-of-the-path">The Equation of the Path</a></li>
@@ -111,13 +136,13 @@
 <h1 id="formulas">Formulas</h1>
 <h2 id="si-units">SI Units</h2>
 <figure>
-<img src="../../../../files/winter-2021/PHYS-195/lectures/ch-1/si_units.png" alt="SI Units" /><figcaption>SI Units</figcaption>
+<img src="../../../../files/winter-2021/PHYS-195/lectures/ch-1/si_units.png" alt="SI Units" /><figcaption aria-hidden="true">SI Units</figcaption>
 </figure>
 <h2 id="kinematics">Kinematics</h2>
 <h3 id="constant-acceleration">Constant Acceleration</h3>
 <p>The following five Kinematic equations describe the motion of a particle with constant acceleration:</p>
 <blockquote>
-<p>The <span class="math inline">\(x\)</span> variable can be replaced by <span class="math inline">\(y\)</span> and would still be true.</p>
+<p>The <span class="math inline">x</span> variable can be replaced by <span class="math inline">y</span> and would still be true.</p>
 </blockquote>
 <table>
 <thead>
@@ -128,62 +153,62 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(v_{f} = v_{0} + at\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(x - x_{0}\)</span> or <span class="math inline">\(\Delta{x}\)</span></td>
+<td style="text-align: center;"><span class="math inline">v_{f} = v_{0} + at</span></td>
+<td style="text-align: center;"><span class="math inline">x - x_{0}</span> or <span class="math inline">\Delta{x}</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(x - x_{0} = v_{0}t + \frac{1}{2}at^{2}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(v_{f}\)</span></td>
+<td style="text-align: center;"><span class="math inline">x - x_{0} = v_{0}t + \frac{1}{2}at^{2}</span></td>
+<td style="text-align: center;"><span class="math inline">v_{f}</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(x - x_{0} = v_{f}t - \frac{1}{2}at^{2}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(v_{0}\)</span></td>
+<td style="text-align: center;"><span class="math inline">x - x_{0} = v_{f}t - \frac{1}{2}at^{2}</span></td>
+<td style="text-align: center;"><span class="math inline">v_{0}</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(x - x_{0} = \frac{1}{2}(v_{f} + v_{0})t\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(a\)</span></td>
+<td style="text-align: center;"><span class="math inline">x - x_{0} = \frac{1}{2}(v_{f} + v_{0})t</span></td>
+<td style="text-align: center;"><span class="math inline">a</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(v_{f}^{2} = v_{0}^{2} + 2a(x - x_{0})\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(t\)</span></td>
+<td style="text-align: center;"><span class="math inline">v_{f}^{2} = v_{0}^{2} + 2a(x - x_{0})</span></td>
+<td style="text-align: center;"><span class="math inline">t</span></td>
 </tr>
 </tbody>
 </table>
 <blockquote>
-<p><span class="math inline">\(\Delta{x} = x - x_{0}\)</span>, <span class="math inline">\(v_{0} = \text{initial velocity}\)</span>, and <span class="math inline">\(v = \text{final velocity}\)</span></p>
+<p><span class="math inline">\Delta{x} = x - x_{0}</span>, <span class="math inline">v_{0} = \text{initial velocity}</span>, and <span class="math inline">v = \text{final velocity}</span></p>
 </blockquote>
 <p>These are <em>not</em> valid when the acceleration is not constant.</p>
 <p>Another equation for constant acceleration through Integration</p>
-<p><span class="math display">\[
+<p><span class="math display">
 x = v_{0}t + \frac{1}{2}at^{2} + C^{\prime}
-\]</span></p>
+</span></p>
 <h3 id="free-fall-acceleration">2.5 Free-Fall Acceleration</h3>
 <p><strong>Free-fall acceleration</strong> is the downward acceleration at a certain constant</p>
 <h2 id="projectile-motion">Projectile Motion</h2>
 <h3 id="the-horizontal-motion">The Horizontal Motion</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 x - x_{0} = (v_{0}\cos(\theta)_{0})t
-\]</span></p>
+</span></p>
 <h3 id="the-vertical-motion">The Vertical Motion</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 y - y_{0} &amp;= (v_{0}\sin(\theta)_{0})t - \frac{1}{2}gt^{2}, \\
 v_{y} &amp;= v_{0}\sin(\theta)_{0} - gt, \\
 v_{y}^{2} &amp;= (v_{0}\sin(\theta)_{0})^{2} - 2g(y - y_{0}). \\
 \end{aligned}
-\]</span></p>
+</span></p>
 <h3 id="the-equation-of-the-path">The Equation of the Path</h3>
 <p>The projectile’s path, also called <strong>trajectory</strong>.</p>
-<p><span class="math display">\[
+<p><span class="math display">
 y = (\tan(\theta)_{0})x - \frac{gx^{2}}{2(v_{0}\cos(\theta)_{0})^{2}}
-\]</span></p>
+</span></p>
 <h3 id="the-horizontal-range">The Horizontal Range</h3>
-<p>The <em>horizontal range</em> <span class="math inline">\(R\)</span> of the projectile is the <em>horizontal</em> distance the projectile has traveled when it returns to its initial height</p>
-<p><span class="math display">\[
+<p>The <em>horizontal range</em> <span class="math inline">R</span> of the projectile is the <em>horizontal</em> distance the projectile has traveled when it returns to its initial height</p>
+<p><span class="math display">
 R = \frac{v_{0}^{2}}{g}\sin(2\theta)_{0}
-\]</span></p>
+</span></p>
 <blockquote>
-<p><strong>NOTE:</strong> The horizontal range <span class="math inline">\(R\)</span> is maximum for a launch angle of <span class="math inline">\(45^{\circ}\)</span>. However, when the launch and landing heights differ, <span class="math inline">\(45^{\circ}\)</span> does not yield the maximum horizontal distance.</p>
+<p><strong>NOTE:</strong> The horizontal range <span class="math inline">R</span> is maximum for a launch angle of <span class="math inline">45^{\circ}</span>. However, when the launch and landing heights differ, <span class="math inline">45^{\circ}</span> does not yield the maximum horizontal distance.</p>
 </blockquote>
 <p><br></p>
 <h1 id="resources">Resources</h1>

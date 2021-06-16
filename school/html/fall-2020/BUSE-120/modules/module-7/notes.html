@@ -11,6 +11,13 @@
 
     <title>Module 7 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,16 +88,20 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#module-7-financial-management">Module 7: Financial Management</a><ul>
-          <li><a href="#buse-120-canvas-notes">BUSE 120 Canvas Notes</a><ul>
+          <li><a href="#module-7-financial-management">Module 7: Financial Management</a>
+          <ul>
+          <li><a href="#buse-120-canvas-notes">BUSE 120 Canvas Notes</a>
+          <ul>
           <li><a href="#checking-vs.-savings-accounts">7.2 Checking vs. Savings Accounts</a></li>
           <li><a href="#good-debt-vs.-bad-debt">7.3 Good Debt vs. Bad Debt</a></li>
           <li><a href="#credit-cards-and-payday-loans">7.4 Credit Cards and Payday Loans</a></li>
-          <li><a href="#credit-cards">Credit Cards</a><ul>
+          <li><a href="#credit-cards">Credit Cards</a>
+          <ul>
           <li><a href="#payday-loans">Payday Loans</a></li>
           <li><a href="#dealing-with-debt">7.5 Dealing with Debt</a></li>
           </ul></li>
-          <li><a href="#credit-ratings-and-scores">7.6 Credit Ratings and Scores</a><ul>
+          <li><a href="#credit-ratings-and-scores">7.6 Credit Ratings and Scores</a>
+          <ul>
           <li><a href="#your-credit-score">Your Credit Score</a></li>
           <li><a href="#how-to-improve-your-credit-score">How to Improve Your Credit Score</a></li>
           </ul></li>
@@ -135,9 +161,9 @@
 <li>Personal loan for a family vacation (bad because one the vacation is over there is no remaining value)</li>
 </ul>
 <p>How much “bad debt” is too much? I believe any amount of bad debt is too much, because it means that you’re spending “beyond your means” by borrowing in order to finance your lifestyle. However, I know that most of us (myself included) sometimes have some bad debt. You can calculate your amount of bad debt by using the following formula from Eric Tyson, MBA, author of “Personal Finance for Dummies”:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{Bad debt} / \text{annual income} = \text{Bad debt danger ratio}
-\]</span></p>
+</span></p>
 <p>There are different estimates about how large a “bad debt danger ratio” is OK. However, Tyson states that anything over 25% is well into the danger zone and will probably result in spiraling debt that gets out of control. (In other words, debt that can only be financed by borrowing more to pay the interest.) So if your bad debt exceeds 25% of your annual income, it’s time to come up with a plan to get out of it.</p>
 <p>How about good debt? It seems logical that taking on some amount of good debt is a good thing. For example, I believe I will save money in the long run by taking on a home mortgage to pay for my house. However, remember that all investments come with some degree of risk, so borrowing money to pay for investments has at least a certain amount of risk associated with it. For example, if you take out a loan to start your own business, there is a risk that the business will fail and leave you with the business debt and no asset to help pay for it. Also, it’s very important that you can finance the debt by using your income. In other words, you don’t want to take on debt (even good debt) that you can’t easily pay for within your budget.</p>
 <p>For these two reasons, it makes sense to limit the amount of good debt you have. The actual amount will depend on your own individual financial situation. For example, a small business owner might have a lot more good debt than someone employed by a corporation. But in any case I suggest you be prudent about the amount of debt you take on, aware of the associated risks, and able to meet the payments in your budget.</p>

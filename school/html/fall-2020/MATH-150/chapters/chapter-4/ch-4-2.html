@@ -11,6 +11,13 @@
 
     <title>Chapter 4.2 The Mean Value Theorem</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,7 +88,8 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-4.2-the-mean-value-theorem">Chapter 4.2: The Mean Value Theorem</a><ul>
+          <li><a href="#chapter-4.2-the-mean-value-theorem">Chapter 4.2: The Mean Value Theorem</a>
+          <ul>
           <li><a href="#rolles-theorem">Rolle’s Theorem</a></li>
           <li><a href="#the-mean-value-theorem">The Mean Value Theorem</a></li>
           <li><a href="#equation-1">Equation 1</a></li>
@@ -111,84 +134,84 @@
           <article class="contents">
 <h1 id="chapter-4.2-the-mean-value-theorem">Chapter 4.2: The Mean Value Theorem</h1>
 <h2 id="rolles-theorem">Rolle’s Theorem</h2>
-<p>Let <span class="math inline">\(f\)</span> be a function that satisfies the following three hypotheses:</p>
+<p>Let <span class="math inline">f</span> be a function that satisfies the following three hypotheses:</p>
 <ol type="1">
-<li><span class="math inline">\(f\)</span> is continuous on the closed interval <span class="math inline">\([a, b]\)</span>.</li>
-<li><span class="math inline">\(f\)</span> is differentiable on the open interval <span class="math inline">\((a, b)\)</span>.</li>
-<li><span class="math inline">\(f(a) = f(b)\)</span></li>
+<li><span class="math inline">f</span> is continuous on the closed interval <span class="math inline">[a, b]</span>.</li>
+<li><span class="math inline">f</span> is differentiable on the open interval <span class="math inline">(a, b)</span>.</li>
+<li><span class="math inline">f(a) = f(b)</span></li>
 </ol>
-<p>Then there is a number <span class="math inline">\(c\)</span> in <span class="math inline">\((a, b)\)</span> such that <span class="math inline">\(f^{\prime}(c) = 0\)</span>.</p>
-<p>Before giving the proof let’s take a look at the graphs of some typical functions that satisfy the three hypotheses. Figure 1 shows the graphs of four such functions. In each case it appears that there is at least one point <span class="math inline">\((c, f(c))\)</span> on the graph where the tangent is horizontal and therefore <span class="math inline">\(f^{\prime}(c) = 0\)</span>. Thus Rolle’s Theorem is plausible.</p>
+<p>Then there is a number <span class="math inline">c</span> in <span class="math inline">(a, b)</span> such that <span class="math inline">f^{\prime}(c) = 0</span>.</p>
+<p>Before giving the proof let’s take a look at the graphs of some typical functions that satisfy the three hypotheses. Figure 1 shows the graphs of four such functions. In each case it appears that there is at least one point <span class="math inline">(c, f(c))</span> on the graph where the tangent is horizontal and therefore <span class="math inline">f^{\prime}(c) = 0</span>. Thus Rolle’s Theorem is plausible.</p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.2_figure-1.png" alt="Figure 1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.2_rolles_theorem_proof.png" alt="Rolle’s Theorem Proof" /></p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.2_example-1.png" alt="Example 1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.2_example-2.1.png" alt="Example 2.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.2_example-2.2.png" alt="Example 2.2" /></p>
 <h2 id="the-mean-value-theorem">The Mean Value Theorem</h2>
 <p>Let be a function that satisfies the following hypotheses:</p>
 <ol type="1">
-<li><span class="math inline">\(f\)</span> is continuous on the closed interval <span class="math inline">\([a, b]\)</span>.</li>
-<li><span class="math inline">\(f\)</span> is differentiable on the open interval <span class="math inline">\((a, b)\)</span>.</li>
+<li><span class="math inline">f</span> is continuous on the closed interval <span class="math inline">[a, b]</span>.</li>
+<li><span class="math inline">f</span> is differentiable on the open interval <span class="math inline">(a, b)</span>.</li>
 </ol>
-<p>Then there is a number <span class="math inline">\(c\)</span> in <span class="math inline">\((a, b)\)</span> such that</p>
+<p>Then there is a number <span class="math inline">c</span> in <span class="math inline">(a, b)</span> such that</p>
 <h2 id="equation-1">Equation 1</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 f^{\prime}(c) = \frac{f(b) - f(a)}{b - a}
-\]</span></p>
+</span></p>
 <p>or, equivalently,</p>
 <h2 id="equation-2">Equation 2</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 f(b) - f(a) = f^{\prime}(c)(b - a)
-\]</span></p>
+</span></p>
 <blockquote>
 <p><strong>NOTE:</strong> The Mean Value Theorem is an example of what is called an existence theorem. Like the Intermediate Value Theorem, the Extreme Value Theorem, and Rolle’s Theorem, it guarantees that there exists a number with a certain property, but it doesn’t tell us how to find the number.</p>
 </blockquote>
-<p>Before proving this theorem, we can see that it is reasonable by interpreting it geometrically. Figures 3 and 4 show the points <span class="math inline">\(A(a, f(a))\)</span> and <span class="math inline">\(B(b, f(b))\)</span> on the graphs of two differentiable functions. The slope of the secant line <span class="math inline">\(AB\)</span> is</p>
+<p>Before proving this theorem, we can see that it is reasonable by interpreting it geometrically. Figures 3 and 4 show the points <span class="math inline">A(a, f(a))</span> and <span class="math inline">B(b, f(b))</span> on the graphs of two differentiable functions. The slope of the secant line <span class="math inline">AB</span> is</p>
 <h2 id="equation-3">Equation 3</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 m_{AB} = \frac{f(b) - f(a)}{b - a}
-\]</span></p>
+</span></p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.2_figure-3.png" alt="Figure 3" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.2_figure-4.png" alt="Figure 4" /></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.2_the_mean_value_theorem_proof.png" alt="The Mean Value Theorem Proof" /><figcaption>The Mean Value Theorem Proof</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.2_the_mean_value_theorem_proof.png" alt="The Mean Value Theorem Proof" /><figcaption aria-hidden="true">The Mean Value Theorem Proof</figcaption>
 </figure>
 <h2 id="equation-4">Equation 4</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 h(x) = f(x) - f(a) - \frac{f(b) - f(a)}{b - a}(x - a)
-\]</span></p>
+</span></p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.2_figure-5.1.png" alt="Figure 5.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.2_figure-5.2.png" alt="Figure 5.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.2_explore_it.png" alt="Explore It: Mean Value Theorem for Derivatives" /></p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.2_example-3.png" alt="Example 3" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.2_example-4.png" alt="Example 4" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.2_example-5.png" alt="Example 5" /></p>
 <h2 id="theorem-5">Theorem 5</h2>
-<p>If <span class="math inline">\(f^{\prime}(x) = 0\)</span> for all <span class="math inline">\(x\)</span> in an interval <span class="math inline">\((a, b)\)</span>, then <span class="math inline">\(f\)</span> is constant on <span class="math inline">\((a, b)\)</span>.</p>
+<p>If <span class="math inline">f^{\prime}(x) = 0</span> for all <span class="math inline">x</span> in an interval <span class="math inline">(a, b)</span>, then <span class="math inline">f</span> is constant on <span class="math inline">(a, b)</span>.</p>
 <blockquote>
 <p>Proof</p>
 </blockquote>
-<p>Let <span class="math inline">\(x_{1}\)</span> and <span class="math inline">\(x_{2}\)</span> be any two numbers in <span class="math inline">\((a, b)\)</span> with <span class="math inline">\(x_{1} &lt; x_{2}\)</span>. Since <span class="math inline">\(f\)</span> is differentiable on <span class="math inline">\((a, b)\)</span>, it must be differentiable on <span class="math inline">\((x_{1}, x_{2})\)</span> and continuous on <span class="math inline">\([x_{1}, x_{2}]\)</span>. By applying the Mean Value Theorem to <span class="math inline">\(f\)</span> on the interval <span class="math inline">\([x_{1}, x_{2}]\)</span>, we get a number <span class="math inline">\(c\)</span> such that <span class="math inline">\(x_{1} &lt; c &lt; x_{2}\)</span> and</p>
+<p>Let <span class="math inline">x_{1}</span> and <span class="math inline">x_{2}</span> be any two numbers in <span class="math inline">(a, b)</span> with <span class="math inline">x_{1} &lt; x_{2}</span>. Since <span class="math inline">f</span> is differentiable on <span class="math inline">(a, b)</span>, it must be differentiable on <span class="math inline">(x_{1}, x_{2})</span> and continuous on <span class="math inline">[x_{1}, x_{2}]</span>. By applying the Mean Value Theorem to <span class="math inline">f</span> on the interval <span class="math inline">[x_{1}, x_{2}]</span>, we get a number <span class="math inline">c</span> such that <span class="math inline">x_{1} &lt; c &lt; x_{2}</span> and</p>
 <h2 id="equation-6">Equation 6</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 f(x_{2}) - f(x_{1}) = f^{\prime}(c)(x_{2} - x_{1})
-\]</span></p>
-<p>Since <span class="math inline">\(f^{\prime}(x) = 0\)</span> for all <span class="math inline">\(x\)</span>, we have <span class="math inline">\(f^{\prime}(c)\)</span>, and so Equation 6 becomes</p>
-<p><span class="math display">\[
+</span></p>
+<p>Since <span class="math inline">f^{\prime}(x) = 0</span> for all <span class="math inline">x</span>, we have <span class="math inline">f^{\prime}(c)</span>, and so Equation 6 becomes</p>
+<p><span class="math display">
 f(x_{2}) - f(x_{1}) = 0
-\]</span></p>
+</span></p>
 <p>or</p>
-<p><span class="math display">\[
+<p><span class="math display">
 f(x_{2}) = f(x_{1})
-\]</span></p>
-<p>Therefore <span class="math inline">\(f\)</span> has the same value at any two numbers <span class="math inline">\(x_{1}\)</span> and <span class="math inline">\(x_{2}\)</span> in <span class="math inline">\((a, b)\)</span>. This means that <span class="math inline">\(f\)</span> is constant on <span class="math inline">\((a, b)\)</span>.</p>
+</span></p>
+<p>Therefore <span class="math inline">f</span> has the same value at any two numbers <span class="math inline">x_{1}</span> and <span class="math inline">x_{2}</span> in <span class="math inline">(a, b)</span>. This means that <span class="math inline">f</span> is constant on <span class="math inline">(a, b)</span>.</p>
 <h2 id="collary-7">Collary 7</h2>
-<p>If <span class="math inline">\(f^{\prime}(x) = g^{\prime}(x)\)</span> for all <span class="math inline">\(x\)</span> in an interval <span class="math inline">\((a, b)\)</span>, then <span class="math inline">\(f - g\)</span> is constant on <span class="math inline">\((a, b)\)</span>; that is <span class="math inline">\(f(x) = g(x) + c\)</span>, where <span class="math inline">\(c\)</span> is a constant.</p>
+<p>If <span class="math inline">f^{\prime}(x) = g^{\prime}(x)</span> for all <span class="math inline">x</span> in an interval <span class="math inline">(a, b)</span>, then <span class="math inline">f - g</span> is constant on <span class="math inline">(a, b)</span>; that is <span class="math inline">f(x) = g(x) + c</span>, where <span class="math inline">c</span> is a constant.</p>
 <blockquote>
 <p><strong>NOTE:</strong> Corollary 7 says that if two functions have the same derivatives on an interval, then their graphs must be vertical translations of each other there. In other words, the graphs have the same shape, but could be shifted up or down.</p>
 </blockquote>
 <blockquote>
 <p>Proof</p>
 </blockquote>
-<p>Let <span class="math inline">\(F(x) = f(x) - g(x)\)</span>. Then</p>
-<p><span class="math display">\[
+<p>Let <span class="math inline">F(x) = f(x) - g(x)</span>. Then</p>
+<p><span class="math display">
 F^{\prime}(x) = f^{\prime}(x) - g^{\prime}(x) = 0
-\]</span></p>
-<p>for all <span class="math inline">\(x\)</span> in <span class="math inline">\((a, b)\)</span>. Thus, by Theorem 5, <span class="math inline">\(F\)</span> is constant; that is, <span class="math inline">\(f - g\)</span> is constant.</p>
+</span></p>
+<p>for all <span class="math inline">x</span> in <span class="math inline">(a, b)</span>. Thus, by Theorem 5, <span class="math inline">F</span> is constant; that is, <span class="math inline">f - g</span> is constant.</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.2_example-6.png" alt="Example 6" /><figcaption>Example 6</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-4/4.2_example-6.png" alt="Example 6" /><figcaption aria-hidden="true">Example 6</figcaption>
 </figure>
 <h2 id="rolle">Rolle</h2>
 <p>Rolle’s Theorem was first published in 1691 by the French mathematician Michel Rolle (1652–1719) in a book entitled Méthode pour resoudre les Egalitez. He was a vocal critic of the methods of his day and attacked calculus as being a “collection of ingenious fallacies.” Later, however, he became convinced of the essential correctness of the methods of calculus.</p>

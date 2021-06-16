@@ -12,6 +12,13 @@
 
     <title>Java Networking</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -23,26 +30,28 @@
     <link href="../../../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -51,9 +60,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -129,11 +138,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#java-networking">Java Networking</a><ul>
-          <li><a href="#clientserver-communications">Client/Server Communications</a><ul>
+          <li><a href="#java-networking">Java Networking</a>
+          <ul>
+          <li><a href="#clientserver-communications">Client/Server Communications</a>
+          <ul>
           <li><a href="#the-inetaddress-class">The InetAddress Class</a></li>
           <li><a href="#serving-multiple-clients">Serving Multiple clients</a></li>
-          <li><a href="#stream-socket-vs-datagram-socket">Stream Socket vs Datagram Socket</a><ul>
+          <li><a href="#stream-socket-vs-datagram-socket">Stream Socket vs Datagram Socket</a>
+          <ul>
           <li><a href="#datagrampacket">DatagramPacket</a></li>
           <li><a href="#datagramsocket">DatagramSocket</a></li>
           <li><a href="#datagram-programming">Datagram Programming</a></li>
@@ -186,17 +198,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 id="clientserver-communications">Client/Server Communications</h2>
 <h3 id="the-inetaddress-class">The InetAddress Class</h3>
 <p>Occasionally, you would like to know who is connecting to the server. You can use the <code>InetAddress</code> class to find the client’s host name and IP address. The InetAddress class models an IP address. You can use the statement shown below to create an instance of InetAddress for the client on a socket.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">InetAddress</span> inetAddress = socket.<span class="fu">getInetAddress</span>();</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">InetAddress</span> inetAddress <span class="op">=</span> socket<span class="op">.</span><span class="fu">getInetAddress</span><span class="op">();</span></span></code></pre></div>
 <p>Next, you can display the client’s host name and IP address, as follows:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Client&#39;s host name is &quot;</span> + inetAddress.<span class="fu">getHostName</span>());</a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Client&#39;s IP Address is &quot;</span> + inetAddress.<span class="fu">getHostAddress</span>());</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;Client&#39;s host name is &quot;</span> <span class="op">+</span> inetAddress<span class="op">.</span><span class="fu">getHostName</span><span class="op">());</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;Client&#39;s IP Address is &quot;</span> <span class="op">+</span> inetAddress<span class="op">.</span><span class="fu">getHostAddress</span><span class="op">());</span></span></code></pre></div>
 <h3 id="serving-multiple-clients">Serving Multiple clients</h3>
 <p>Multiple clients are quite often connected to a single server at the same time. Typically, a server runs constantly on a server computer, and clients from all over the Internet may want to connect to it. You can use threads to handle the server’s multiple clients simultaneously. Simply create a thread for each connection. Here is how the server handles the establishment of a connection:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">while</span> (<span class="kw">true</span>) {</a>
-<a class="sourceLine" id="cb3-2" title="2">  <span class="bu">Socket</span> socket = serverSocket.<span class="fu">accept</span>();</a>
-<a class="sourceLine" id="cb3-3" title="3">  <span class="bu">Thread</span> thread = <span class="kw">new</span> <span class="fu">ThreadClass</span>(socket);</a>
-<a class="sourceLine" id="cb3-4" title="4">  thread.<span class="fu">start</span>();</a>
-<a class="sourceLine" id="cb3-5" title="5">}</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="op">(</span><span class="kw">true</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">Socket</span> socket <span class="op">=</span> serverSocket<span class="op">.</span><span class="fu">accept</span><span class="op">();</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">Thread</span> thread <span class="op">=</span> <span class="kw">new</span> <span class="fu">ThreadClass</span><span class="op">(</span>socket<span class="op">);</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  thread<span class="op">.</span><span class="fu">start</span><span class="op">();</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="stream-socket-vs-datagram-socket">Stream Socket vs Datagram Socket</h3>
 <p><a name="stream-socket-term"><strong>Stream socket</strong></a></p>
 <ul>

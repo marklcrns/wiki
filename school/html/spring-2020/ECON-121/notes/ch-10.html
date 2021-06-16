@@ -12,6 +12,13 @@
 
     <title>ECON 121 Chapter 10 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -22,7 +29,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -67,21 +89,26 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-10-monolopoly-and-price-discrimination">Chapter 10: Monolopoly and Price Discrimination</a><ul>
-          <li><a href="#the-monopolists-output-decision">10.1 The Monopolist’s Output Decision</a><ul>
+          <li><a href="#chapter-10-monolopoly-and-price-discrimination">Chapter 10: Monolopoly and Price Discrimination</a>
+          <ul>
+          <li><a href="#the-monopolists-output-decision">10.1 The Monopolist’s Output Decision</a>
+          <ul>
           <li><a href="#total-revenue-and-marginal-revenue">10.1.1 Total Revenue and Marginal Revenue</a></li>
           <li><a href="#a-formula-for-marginal-revenue">10.1.2 A formula for Marginal Revenue</a></li>
           <li><a href="#using-the-marginal-principle">10.1.3 Using the Marginal Principle</a></li>
           </ul></li>
-          <li><a href="#the-social-cost-of-monopoly">10.2 The Social Cost of Monopoly</a><ul>
+          <li><a href="#the-social-cost-of-monopoly">10.2 The Social Cost of Monopoly</a>
+          <ul>
           <li><a href="#deadweight-loss-from-monopoly">10.2.1 Deadweight Loss from Monopoly</a></li>
           <li><a href="#rent-seeking-using-resources-to-get-monopoly-power">10.2.2 Rent Seeking: Using Resources to Get Monopoly Power</a></li>
           <li><a href="#monopoly-and-public-policy">10.2.3 Monopoly and Public Policy</a></li>
           </ul></li>
-          <li><a href="#patents-and-monopoly-power">10.3 Patents and Monopoly Power</a><ul>
+          <li><a href="#patents-and-monopoly-power">10.3 Patents and Monopoly Power</a>
+          <ul>
           <li><a href="#trade-offs-from-patents">10.3.2 Trade-Offs from Patents</a></li>
           </ul></li>
-          <li><a href="#price-discrimination">10.4 Price Discrimination</a><ul>
+          <li><a href="#price-discrimination">10.4 Price Discrimination</a>
+          <ul>
           <li><a href="#senior-discounts-in-restaurants">10.4.1 Senior Discounts in Restaurants</a></li>
           <li><a href="#price-discrimination-and-the-elasticity-of-demand">10.4.2 Price Discrimination and the Elasticity of Demand</a></li>
           <li><a href="#examples-movie-admission-versus-popcorn-and-hardback-versus-paperback-books">10.4.3 Examples: Movie Admission versus Popcorn, and Hardback versus Paperback Books</a></li>
@@ -142,7 +169,7 @@
 <h2 id="the-monopolists-output-decision">10.1 The Monopolist’s Output Decision</h2>
 <h3 id="total-revenue-and-marginal-revenue">10.1.1 Total Revenue and Marginal Revenue</h3>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-10/ch-10_figure-10.1.png" alt="Figure 10.1 The Demand Curve and the Marginal-Revenue Curve" /><figcaption>Figure 10.1 The Demand Curve and the Marginal-Revenue Curve</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-10/ch-10_figure-10.1.png" alt="Figure 10.1 The Demand Curve and the Marginal-Revenue Curve" /><figcaption aria-hidden="true">Figure 10.1 The Demand Curve and the Marginal-Revenue Curve</figcaption>
 </figure>
 <blockquote>
 <p>Marginal revenue equals the price for the first unit sold, but is less than the price for additional units sold. To sell an additional unit, the firm cuts the price and receives less revenue on the units that could have been sold at the higher price. The marginal revenue is positive for the first four units, and negative for larger quantities.</p>
@@ -156,24 +183,24 @@
 <p>If a perfectly competitive firm sells one unit at $12, it can sell a second unit at the same price, so its marginal revenue is $12 for the second unit sold, just as it was $12 for the first unit sold. For a perfectly competitive firm, marginal revenue is always equal to the price, no matter how many units the firm sells. A perfectly competitive firm does not cut the price to sell more, so there is no bad news associated with selling more.</p>
 <h3 id="a-formula-for-marginal-revenue">10.1.2 A formula for Marginal Revenue</h3>
 <p>We can use a simple formula to compute marginal revenue. The formula quantifies the good news and bad news from selling one more unit:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{marginal revenue} = \text{new price} + (\text{slope of demand curve}
 \times \text{old quantity})
-\]</span></p>
+</span></p>
 <p>The first part of the formula is the good news, the money received for the extra unit sold. The second part is the bad news from selling one more unit, the revenue lost by cutting the price for the original customers. The revenue change equals the price change required to sell one more unitthe slope of the demand curve, which is a negative numbertimes the number of original customers who get a price cut.</p>
 <p>Suppose the monopolist wants to increase the quantity sold from two to three, so it cuts the price from $12 to $10. The new price is $10, the old quantity is two units, and the slope of the demand curve is -$2, so marginal revenue is $6:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{marginal revenue} = \$10 - (\$2\text{ per unit} \times 2 \text{ units}) = \$6
-\]</span></p>
+</span></p>
 <p>Similarly, to sell the fifth unit, the firm would cut the price from $8 to $6, and marginal revenue is actually negative:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{marginal revenue} = \$6 - (\$2 \text{ per unit} \times 4 \text{units} =
 -\$2
-\]</span></p>
+</span></p>
 <h3 id="using-the-marginal-principle">10.1.3 Using the Marginal Principle</h3>
 <p>A monopolist can use the <a href="ch-2.html#the-marginal-principle">marginal principle</a> to decide how much output to produce.</p>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-10/ch-10_figure-10.2.png" alt="Figure 10.2 The monopolist Picks a Quantity and a Price" /><figcaption>Figure 10.2 The monopolist Picks a Quantity and a Price</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-10/ch-10_figure-10.2.png" alt="Figure 10.2 The monopolist Picks a Quantity and a Price" /><figcaption aria-hidden="true">Figure 10.2 The monopolist Picks a Quantity and a Price</figcaption>
 </figure>
 <blockquote>
 <p>To maximize profit, the monopolist picks point a, where marginal revenue equals marginal cost. The monopolist produces 900 doses per hour at a price of $15 (point b). The average cost is $8 (point c), so the profit per dose is $7 (equal to the $15 price minus the $8 average cost) and the total profit is $6,300 (equal to $7 per dose times 900 doses). The profit is shown by the shaded rectangle.</p>
@@ -266,32 +293,32 @@
 </tbody>
 </table>
 <p>We can use the marginal-revenue formula explained earlier to compute marginal revenue for different quantities of output:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{marginal revenue} = new price + (\text{slope of demand curve} \times
 \text{old quantity})
-\]</span></p>
+</span></p>
 <p>For example, at a price of $18, the quantity sold is 600 doses, so marginal revenue is $12:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{marginal revenue} = \$18 - (\$0.01 \times \text{600 doses}) = \$12
-\]</span></p>
+</span></p>
 <p>Similarly, at a price of $15, the quantity is 900 doses and marginal revenue is $6:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{marginal revenue} = \$15 - (\$0.01 \times \text{900 doses}) = \$6
-\]</span></p>
+</span></p>
 <p>We can compute the firm’s profit in two ways. First, profit equals total revenue minus total cost:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{profit} = \text{total revenue} - \text{total cost} \\
 \text{profit} = \text{\$15 per dose} \times \text{900 doses} - \text{\$8 per
 dose} \times \text{900 doses} = \$6,300
-\]</span></p>
+</span></p>
 <p>Second, we can compute the profit per dose and multiply it by the number of doses:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{profit} = \text{profit per dose} \times \text{quantity of doses}
-\]</span></p>
-<p>The profit per dose is the price minus the average cost: <span class="math inline">\(\$7 = \$15 - \$8\)</span>:</p>
-<p><span class="math display">\[
+</span></p>
+<p>The profit per dose is the price minus the average cost: <span class="math inline">\$7 = \$15 - \$8</span>:</p>
+<p><span class="math display">
 \text{profit} = \text{\$7 per dose} \times \text{900 doses} = \$6,300
-\]</span></p>
+</span></p>
 <p>Why should the firm stop at 900 doses? Beyond 900 doses, the marginal revenue from an additional dose will be less than the marginal cost associated with producing it. Although the firm could cut its price and sell a larger quantity, an additional dose would add less to revenue than it adds to cost, so the firm’s total profit would decrease. As shown in the fifth row in the table in Figure 10.2, the firm could sell 1,000 doses at a price of $14, but the marginal revenue at this quantity is only $4, while the marginal cost at this quantity is $6.70. Producing the 1,000th dose would decrease the firm’s profit by $2.70.</p>
 <p>The three-step process how a monopolist picks a quantity and how to compute the monopoly profit:</p>
 <ol type="1">
@@ -302,7 +329,7 @@ dose} \times \text{900 doses} = \$6,300
 <h2 id="the-social-cost-of-monopoly">10.2 The Social Cost of Monopoly</h2>
 <h3 id="deadweight-loss-from-monopoly">10.2.1 Deadweight Loss from Monopoly</h3>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-10/ch-10_figure-10.3.png" alt="Figure 10.3 Monopoly versus Perfect Competition: Its Effect on Price and Quantity" /><figcaption>Figure 10.3 Monopoly versus Perfect Competition: Its Effect on Price and Quantity</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-10/ch-10_figure-10.3.png" alt="Figure 10.3 Monopoly versus Perfect Competition: Its Effect on Price and Quantity" /><figcaption aria-hidden="true">Figure 10.3 Monopoly versus Perfect Competition: Its Effect on Price and Quantity</figcaption>
 </figure>
 <blockquote>
 <ol type="A">
@@ -310,33 +337,33 @@ dose} \times \text{900 doses} = \$6,300
 </ol>
 </blockquote>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-10/ch-10_figure-10.4.png" alt="Figure 10.4 The Deadweight Loss from a Monopoly" /><figcaption>Figure 10.4 The Deadweight Loss from a Monopoly</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-10/ch-10_figure-10.4.png" alt="Figure 10.4 The Deadweight Loss from a Monopoly" /><figcaption aria-hidden="true">Figure 10.4 The Deadweight Loss from a Monopoly</figcaption>
 </figure>
 <blockquote>
 <p>A switch from perfect competition to monopoly increases the price from $8 to $18 and decreases the quantity sold from 400 to 200 doses. Consumer surplus decreases by an amount shown by the areas B and D, while profit increases by the amount shown by rectangle B. The net loss to society is shown by triangle D, the deadweight loss from monopoly.</p>
 </blockquote>
 <p>We can use some simple geometry to compute the reduction in consumer surplus. The formula for the area of a rectangle is</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{area of rectangle} = \text{base} \times \text{height}
-\]</span></p>
+</span></p>
 <p>In Figure 10.4, the base of rectangle B is 200 and the height is $10, so the area is $2,000:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{area of rectangle B} = \text{200 doses} \times \text{\$10 per dose} =
 \$2,000
-\]</span></p>
+</span></p>
 <p>The switch to monopoly increases the price by $10 per dose, so consumers pay $10 extra on the 200 doses they buy from the monopolist, resulting in a loss of $2,000. The other part of the consumer loss is triangle D. The formula for the area of a triangle is</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{area of triangle} = 1/2 \times \text{base} \times \text{height}
-\]</span></p>
+</span></p>
 <p>In Figure 10.4, the base of triangle D is 200 and the height is $10, so the area is $1,000:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{area of triangle D} = 1/2 \times \text{200 doses} \times \text{\$10 per
 dose} = \$1,000
-\]</span></p>
+</span></p>
 <p>The monopolist’s profit per dose is $10, the $18 price minus the $8 average cost. The monopolist’s profit is $2,000:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{profit} = \text{\$10 per dose} \times \text{200 doses} = \$2,000
-\]</span></p>
+</span></p>
 <p><strong>This $2,000 gain by the monopolist comes at the expense of consumers.</strong></p>
 <p><a name="deadweight-loss-from-monopoly"><strong>Deadweight loss from monopoly</strong></a></p>
 <ul>
@@ -384,7 +411,7 @@ dose} = \$1,000
 <p>The challenge for a firm is to figure out which groups of consumers should get discounts. Firms can experiment with different prices and identify groups of consumers that are most sensitive to price. Online retailers such as amazon.com vary prices randomly to see how consumers respond to price changes. Once an online retailer finds a pattern of consumer responses, the retailer can charge different prices to different consumers, depending on their characteristics as revealed by their online activity. For example, in late 2015, as pumpkin-pie season approached, Amazon’s price of pumpkin-pie spice was either $4.49 or $8.99, depending on when you looked. Amazon used the information collected in its pumpkin-spice price experiments to refine its pricing strategy. In principle, <strong>Amazon could use the data collected to develop systems of price discrimination, giving discounts to the most price-sensitive consumers</strong>. Other online retailers could also utilize customer data to engage in personal price discrimination.</p>
 <h3 id="senior-discounts-in-restaurants">10.4.1 Senior Discounts in Restaurants</h3>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-10/ch-10_figure-10.5.png" alt="Figure 10.5 The Marginal Principle and Price Discrimination" /><figcaption>Figure 10.5 The Marginal Principle and Price Discrimination</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-10/ch-10_figure-10.5.png" alt="Figure 10.5 The Marginal Principle and Price Discrimination" /><figcaption aria-hidden="true">Figure 10.5 The Marginal Principle and Price Discrimination</figcaption>
 </figure>
 <blockquote>
 <p>To engage in price discrimination, the firm divides potential customers into two groups and applies the marginal principle twice–once for each group. Using the marginal principle, the profit-maximizing prices are $3 for seniors (point b) and $6 for nonseniors (point d).</p>
@@ -396,8 +423,8 @@ dose} = \$1,000
 <li><p><strong>Good news</strong>: Demand is highly elastic, so total revenue increases by a large amount.</p></li>
 <li><p><strong>Bad news</strong>: More meals are served, so total cost increases.</p></li>
 </ul>
-<p>If the senior demand for meals is highly elastic–that is, <span class="math inline">\(E_d\)</span> is well above 1.0 the good news will dominate the bad news: The increase in revenue will more than offset the increase in cost. Consequently, a price cut will increase the firm’s profit.</p>
-<p>For nonseniors, the firm will have an incentive to increase the price above the initial common price of $5. Suppose nonseniors have a mildly elastic demand for meals, with <span class="math inline">\(E_d\)</span> just above 1.0. A price hike for nonseniors brings bad news on the revenue side and good news on the cost side:</p>
+<p>If the senior demand for meals is highly elastic–that is, <span class="math inline">E_d</span> is well above 1.0 the good news will dominate the bad news: The increase in revenue will more than offset the increase in cost. Consequently, a price cut will increase the firm’s profit.</p>
+<p>For nonseniors, the firm will have an incentive to increase the price above the initial common price of $5. Suppose nonseniors have a mildly elastic demand for meals, with <span class="math inline">E_d</span> just above 1.0. A price hike for nonseniors brings bad news on the revenue side and good news on the cost side:</p>
 <ul>
 <li><p><strong>Bad news</strong>: Demand is mildly elastic, so total revenue decreases by a small amount.</p></li>
 <li><p><strong>Good news</strong>: Fewer meals are served, so total cost decreases.</p></li>

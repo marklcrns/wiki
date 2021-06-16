@@ -11,6 +11,13 @@
 
     <title>Section 8.2</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,12 +88,15 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#section-8.2-integration-by-parts">Section 8.2: Integration by Parts</a><ul>
-          <li><a href="#integration-by-parts-for-indefinite-integrals">Integration by Parts for Indefinite Integrals</a><ul>
-          <li><a href="#tips-for-choosing-u-when-integrating-by-parts">Tips for Choosing <span class="math inline">\(u\)</span> When Integrating by Parts</a></li>
+          <li><a href="#section-8.2-integration-by-parts">Section 8.2: Integration by Parts</a>
+          <ul>
+          <li><a href="#integration-by-parts-for-indefinite-integrals">Integration by Parts for Indefinite Integrals</a>
+          <ul>
+          <li><a href="#tips-for-choosing-u-when-integrating-by-parts">Tips for Choosing <span class="math inline">u</span> When Integrating by Parts</a></li>
           </ul></li>
-          <li><a href="#integration-by-parts-for-definite-integrals">Integration by Parts for Definite Integrals</a><ul>
-          <li><a href="#integral-of-lnx">Integral of <span class="math inline">\(\ln(x)\)</span></a></li>
+          <li><a href="#integration-by-parts-for-definite-integrals">Integration by Parts for Definite Integrals</a>
+          <ul>
+          <li><a href="#integral-of-lnx">Integral of <span class="math inline">\ln(x)</span></a></li>
           </ul></li>
           <li><a href="#external-video-lectures">External Video Lectures</a></li>
           </ul></li>
@@ -106,33 +131,33 @@
           <article class="contents">
 <h1 id="section-8.2-integration-by-parts">Section 8.2: Integration by Parts</h1>
 <h2 id="integration-by-parts-for-indefinite-integrals">Integration by Parts for Indefinite Integrals</h2>
-<p>Suppose <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> are differentiable functions. Then</p>
-<p><span class="math display">\[
+<p>Suppose <span class="math inline">u</span> and <span class="math inline">v</span> are differentiable functions. Then</p>
+<p><span class="math display">
 \int u\;dv = uv - \int v\;du
-\]</span></p>
+</span></p>
 <p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-2_example-1.png" alt="Example 1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-2_example-2.png" alt="Example 2" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-2_example-3.1.png" alt="Example 3.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-2_example-3.2.png" alt="Example 3.2" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-2_example-4.png" alt="Example 4" /></p>
-<h3 id="tips-for-choosing-u-when-integrating-by-parts">Tips for Choosing <span class="math inline">\(u\)</span> When Integrating by Parts</h3>
-<p>Use the acronym “LIPET” to help choosing the value when substituting for <span class="math inline">\(u\)</span>.</p>
+<h3 id="tips-for-choosing-u-when-integrating-by-parts">Tips for Choosing <span class="math inline">u</span> When Integrating by Parts</h3>
+<p>Use the acronym “LIPET” to help choosing the value when substituting for <span class="math inline">u</span>.</p>
 <ul>
-<li><strong>L</strong>ogarithmic – e.g. <span class="math inline">\(\ln(x)\)</span></li>
-<li><strong>I</strong>nverse Trigonometric – e.g. <span class="math inline">\(\tan^{-1}(x)\)</span></li>
-<li><strong>P</strong>olynomial – e.g. <span class="math inline">\(x^{2}\)</span></li>
-<li><strong>E</strong>xponential – e.g. <span class="math inline">\(e^{x}\)</span></li>
-<li><strong>T</strong>rigonometric – e.g. <span class="math inline">\(\cos(x)\)</span></li>
+<li><strong>L</strong>ogarithmic – e.g. <span class="math inline">\ln(x)</span></li>
+<li><strong>I</strong>nverse Trigonometric – e.g. <span class="math inline">\tan^{-1}(x)</span></li>
+<li><strong>P</strong>olynomial – e.g. <span class="math inline">x^{2}</span></li>
+<li><strong>E</strong>xponential – e.g. <span class="math inline">e^{x}</span></li>
+<li><strong>T</strong>rigonometric – e.g. <span class="math inline">\cos(x)</span></li>
 </ul>
-<p>to prioritize choosing <span class="math inline">\(u\)</span> in the order of <strong>LIPET</strong>, <strong>L</strong> being the first priority and <strong>T</strong> being the last.</p>
+<p>to prioritize choosing <span class="math inline">u</span> in the order of <strong>LIPET</strong>, <strong>L</strong> being the first priority and <strong>T</strong> being the last.</p>
 <h2 id="integration-by-parts-for-definite-integrals">Integration by Parts for Definite Integrals</h2>
-<p>Let <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> be differentiable. Then</p>
-<p><span class="math display">\[
+<p>Let <span class="math inline">u</span> and <span class="math inline">v</span> be differentiable. Then</p>
+<p><span class="math display">
 \int_{a}^{b} u(x)v^{\prime}(dx)\;dx = \left . u(x)v(x) \right |_{a}^{b} - \int_{a}^{b} v(x)u^{\prime}(x)\;dx
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-2_example-5.png" alt="Example 5" /><figcaption>Example 5</figcaption>
+<img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-2_example-5.png" alt="Example 5" /><figcaption aria-hidden="true">Example 5</figcaption>
 </figure>
-<h3 id="integral-of-lnx">Integral of <span class="math inline">\(\ln(x)\)</span></h3>
-<p><span class="math display">\[
+<h3 id="integral-of-lnx">Integral of <span class="math inline">\ln(x)</span></h3>
+<p><span class="math display">
 \ln(x)\;dx = x\ln(x) - x + C
-\]</span></p>
+</span></p>
 <p><img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-2_example-6.1.png" alt="Example 6.1" /> <img src="../../../../../files/winter-2021/MATH-151/notes/ch-8/sec_8-2_example-6.2.png" alt="Example 6.2" /></p>
 <h2 id="external-video-lectures">External Video Lectures</h2>
 <p><a href="https://www.khanacademy.org/math/ap-calculus-bc/bc-integration-new/bc-6-11/v/deriving-integration-by-parts-formula">📺 Using integration by parts</a></p>

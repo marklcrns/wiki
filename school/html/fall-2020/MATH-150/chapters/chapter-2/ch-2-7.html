@@ -11,6 +11,13 @@
 
     <title>2.7 Derivatives and Rates of Change</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,15 +88,19 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-2.7-derivatives-and-rates-of-changes">Chapter 2.7: Derivatives and Rates of Changes</a><ul>
-          <li><a href="#tangents">Tangents</a><ul>
+          <li><a href="#chapter-2.7-derivatives-and-rates-of-changes">Chapter 2.7: Derivatives and Rates of Changes</a>
+          <ul>
+          <li><a href="#tangents">Tangents</a>
+          <ul>
           <li><a href="#definition">1 Definition</a></li>
           </ul></li>
           <li><a href="#velocities">Velocities</a></li>
-          <li><a href="#derivatives">Derivatives</a><ul>
+          <li><a href="#derivatives">Derivatives</a>
+          <ul>
           <li><a href="#definition-1">4 Definition</a></li>
           </ul></li>
-          <li><a href="#rates-of-change">Rates of Change</a><ul>
+          <li><a href="#rates-of-change">Rates of Change</a>
+          <ul>
           <li><a href="#instantaneous-rate-of-change">6 Instantaneous Rate of Change</a></li>
           </ul></li>
           <li><a href="#video-lectures">Video Lectures</a></li>
@@ -111,74 +137,74 @@
 <h1 id="chapter-2.7-derivatives-and-rates-of-changes">Chapter 2.7: Derivatives and Rates of Changes</h1>
 <p>The problem of finding the tangent line to a curve and the problem of finding the velocity of an object both involve finding the same type of limit, as we saw in <a href="ch-2-1.html#the-tangent-line-and-velocity-problem">📑 Section 2.1</a>. This special type of limit is called a <em>derivative</em> and we will see that it can be interpreted as a rate of change in any of the natural or social sciences or engineering.</p>
 <h2 id="tangents">Tangents</h2>
-<p>If a curve <span class="math inline">\(C\)</span> has equation <span class="math inline">\(y = f(x)\)</span> and we want to find the tangent line to <span class="math inline">\(C\)</span> at the point <span class="math inline">\(P(a, f(a))\)</span>, then we consider a nearby point <span class="math inline">\(Q(x, f(x))\)</span>, where <span class="math inline">\(x \neq a\)</span>, and compute the slope of the secant line <span class="math inline">\(PQ\)</span>:</p>
-<p><span class="math display">\[
+<p>If a curve <span class="math inline">C</span> has equation <span class="math inline">y = f(x)</span> and we want to find the tangent line to <span class="math inline">C</span> at the point <span class="math inline">P(a, f(a))</span>, then we consider a nearby point <span class="math inline">Q(x, f(x))</span>, where <span class="math inline">x \neq a</span>, and compute the slope of the secant line <span class="math inline">PQ</span>:</p>
+<p><span class="math display">
 m_{PQ} = \frac{f(x) - f(a)}{x - a}
-\]</span></p>
-<p>Then we let <span class="math inline">\(Q\)</span> approach <span class="math inline">\(P\)</span> along the curve <span class="math inline">\(C\)</span> by letting <span class="math inline">\(x\)</span> approach <span class="math inline">\(a\)</span>. If <span class="math inline">\(m_{PQ}\)</span> approaches a number <span class="math inline">\(m\)</span>, then we define the <span class="math inline">\(\text{tangent } t\)</span> to be the line through <span class="math inline">\(P\)</span> with slope <span class="math inline">\(m\)</span>. (This amounts to saying that the tangent line is the limiting position of the secant line <span class="math inline">\(PQ\)</span> as <span class="math inline">\(Q\)</span> approaches <span class="math inline">\(P\)</span>.)</p>
+</span></p>
+<p>Then we let <span class="math inline">Q</span> approach <span class="math inline">P</span> along the curve <span class="math inline">C</span> by letting <span class="math inline">x</span> approach <span class="math inline">a</span>. If <span class="math inline">m_{PQ}</span> approaches a number <span class="math inline">m</span>, then we define the <span class="math inline">\text{tangent } t</span> to be the line through <span class="math inline">P</span> with slope <span class="math inline">m</span>. (This amounts to saying that the tangent line is the limiting position of the secant line <span class="math inline">PQ</span> as <span class="math inline">Q</span> approaches <span class="math inline">P</span>.)</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_figure-1.png" alt="Figure 1" /><figcaption>Figure 1</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_figure-1.png" alt="Figure 1" /><figcaption aria-hidden="true">Figure 1</figcaption>
 </figure>
 <h3 id="definition">1 Definition</h3>
-<p>The <strong>tangent line</strong> to the curve <span class="math inline">\(y = f(x)\)</span> at the point <span class="math inline">\((a, f(a))\)</span> is the line through <span class="math inline">\(P\)</span> with slope</p>
-<p><span class="math display">\[
+<p>The <strong>tangent line</strong> to the curve <span class="math inline">y = f(x)</span> at the point <span class="math inline">(a, f(a))</span> is the line through <span class="math inline">P</span> with slope</p>
+<p><span class="math display">
 m = \lim_{x \to a} \frac{f(x) - f(a)}{x - a}
-\]</span></p>
+</span></p>
 <p>provided that this limit exists.</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_example-1.png" alt="Example 1" /><figcaption>Example 1</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_example-1.png" alt="Example 1" /><figcaption aria-hidden="true">Example 1</figcaption>
 </figure>
 <blockquote>
 <p>Point-slope Form Formula for tangent line equation</p>
 </blockquote>
-<p><span class="math display">\[
+<p><span class="math display">
 y - f(a) = f^{\prime}(a)(x - a)
-\]</span></p>
-<p>where <span class="math inline">\(f^{\prime}(a)\)</span> is equal to the slope of the tangent</p>
+</span></p>
+<p>where <span class="math inline">f^{\prime}(a)</span> is equal to the slope of the tangent</p>
 <p><br></p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_figure-2.png" alt="Figure 2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_figure-3.png" alt="Figure 3" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_example-2.png" alt="Example 2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_figure-4.png" alt="Figure 4" /></p>
 <h2 id="velocities">Velocities</h2>
 <p>In <a href="ch-2-1.html#the-velocity-problem">📑 Section 2.1</a> we investigated the motion of a ball dropped from the CN Tower and defined its velocity to be the limiting value of average velocities over shorter and shorter time periods.</p>
-<p>In general, suppose an object moves along a straight line according to an equation of motion <span class="math inline">\(s = f(t)\)</span>, where is the displacement (directed distance) of the object from the origin at time <span class="math inline">\(t\)</span>. The function that <span class="math inline">\(f\)</span> describes the motion is called the <strong>position function</strong> of the object. In the time interval from <span class="math inline">\(t = a\)</span> to <span class="math inline">\(t = a + h\)</span> the change in position is <span class="math inline">\(f(a + h) - f(a)\)</span>.</p>
+<p>In general, suppose an object moves along a straight line according to an equation of motion <span class="math inline">s = f(t)</span>, where is the displacement (directed distance) of the object from the origin at time <span class="math inline">t</span>. The function that <span class="math inline">f</span> describes the motion is called the <strong>position function</strong> of the object. In the time interval from <span class="math inline">t = a</span> to <span class="math inline">t = a + h</span> the change in position is <span class="math inline">f(a + h) - f(a)</span>.</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_figure-5.png" alt="Figure 5" /><figcaption>Figure 5</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_figure-5.png" alt="Figure 5" /><figcaption aria-hidden="true">Figure 5</figcaption>
 </figure>
 <p>The average velocity over this time interval is</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{average velocity } = \frac{\text{displacement}}{\text{time}} = \frac{f(a + h) - f(a)}{h}
-\]</span></p>
+</span></p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_figure-6.png" alt="Figure 6" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_example-3.1.png" alt="Example 3.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_example-3.2.png" alt="Example 3.2" /></p>
 <h2 id="derivatives">Derivatives</h2>
 <h3 id="definition-1">4 Definition</h3>
-<p>The <strong>derivative of a function <span class="math inline">\(f\)</span> at a number a</strong>, denoted by <span class="math inline">\(f^{\prime}(a)\)</span>, is</p>
-<p><span class="math display">\[
+<p>The <strong>derivative of a function <span class="math inline">f</span> at a number a</strong>, denoted by <span class="math inline">f^{\prime}(a)</span>, is</p>
+<p><span class="math display">
 f^{\prime}(a) = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}
-\]</span></p>
+</span></p>
 <p>if this limit exists.</p>
 <blockquote>
-<p>Note: <span class="math inline">\(f^{\prime}(a)\)</span> is read “<span class="math inline">\(f\)</span> prime of <span class="math inline">\(a\)</span>.”</p>
+<p>Note: <span class="math inline">f^{\prime}(a)</span> is read “<span class="math inline">f</span> prime of <span class="math inline">a</span>.”</p>
 </blockquote>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_example-4.png" alt="Example 4" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_example-5.png" alt="Example 5" /></p>
 <h2 id="rates-of-change">Rates of Change</h2>
-<p>Suppose <span class="math inline">\(y\)</span> is a quantity that depends on another quantity <span class="math inline">\(x\)</span>. Thus <span class="math inline">\(y\)</span> is a function of <span class="math inline">\(x\)</span> and we write <span class="math inline">\(y = f(x)\)</span>. If <span class="math inline">\(x\)</span> changes from <span class="math inline">\(x_{1}\)</span> to <span class="math inline">\(x_{2}\)</span>, then the change in <span class="math inline">\(x\)</span> (also called the <strong>increment</strong> of <span class="math inline">\(x\)</span>) is</p>
-<p><span class="math display">\[
+<p>Suppose <span class="math inline">y</span> is a quantity that depends on another quantity <span class="math inline">x</span>. Thus <span class="math inline">y</span> is a function of <span class="math inline">x</span> and we write <span class="math inline">y = f(x)</span>. If <span class="math inline">x</span> changes from <span class="math inline">x_{1}</span> to <span class="math inline">x_{2}</span>, then the change in <span class="math inline">x</span> (also called the <strong>increment</strong> of <span class="math inline">x</span>) is</p>
+<p><span class="math display">
 \Delta{x} = x_{2} - x_{1}
-\]</span></p>
-<p>and the corresponding change in <span class="math inline">\(y\)</span> is</p>
-<p><span class="math display">\[
+</span></p>
+<p>and the corresponding change in <span class="math inline">y</span> is</p>
+<p><span class="math display">
 \Delta{y} = f(x_{2}) - f(x_{1})
-\]</span></p>
+</span></p>
 <p>The difference quotient</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{\Delta{y}}{\Delta{x}} = \frac{f(x_{2}) - f(x_{1})}{x_{2} - x_{1}}
-\]</span></p>
-<p>is called the <strong>average rate of change if <span class="math inline">\(y\)</span> with respect to <span class="math inline">\(x\)</span></strong> over the interval <span class="math inline">\([x_{1}, x_{2}]\)</span> and can be interpreted as the slope of the secant line <span class="math inline">\(PQ\)</span> in Figure 8.</p>
+</span></p>
+<p>is called the <strong>average rate of change if <span class="math inline">y</span> with respect to <span class="math inline">x</span></strong> over the interval <span class="math inline">[x_{1}, x_{2}]</span> and can be interpreted as the slope of the secant line <span class="math inline">PQ</span> in Figure 8.</p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_figure-8.png" alt="Figure 8" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_explore-it.png" alt="Explore It: Graphical Definition of Derivatives - Rise/Run" /></p>
-<p>By analogy with velocity, we consider the average rate of change over smaller and smaller intervals by letting <span class="math inline">\(x_{2}\)</span> approach <span class="math inline">\(x_{1}\)</span> and therefore letting <span class="math inline">\(\Delta{x}\)</span> approach <span class="math inline">\(0\)</span>. The limit of these average rates of change is called the <strong>(instantaneous) rate of change of <span class="math inline">\(y\)</span> with respect to <span class="math inline">\(x\)</span> at <span class="math inline">\(x = x_{1}\)</span></strong>, which (as in the case of velocity) is interpreted as the slope of the tangent to the curve at <span class="math inline">\(y = f(x)\)</span> at <span class="math inline">\(P(x_{1}, f(x_{1}))\)</span>:</p>
+<p>By analogy with velocity, we consider the average rate of change over smaller and smaller intervals by letting <span class="math inline">x_{2}</span> approach <span class="math inline">x_{1}</span> and therefore letting <span class="math inline">\Delta{x}</span> approach <span class="math inline">0</span>. The limit of these average rates of change is called the <strong>(instantaneous) rate of change of <span class="math inline">y</span> with respect to <span class="math inline">x</span> at <span class="math inline">x = x_{1}</span></strong>, which (as in the case of velocity) is interpreted as the slope of the tangent to the curve at <span class="math inline">y = f(x)</span> at <span class="math inline">P(x_{1}, f(x_{1}))</span>:</p>
 <h3 id="instantaneous-rate-of-change">6 Instantaneous Rate of Change</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{instantaneous rate of change } = \lim_{\Delta{x} \to 0} \frac{\Delta{y}}{\Delta{x}} = \lim_{x_{2} \to x_{1}} \frac{f(x_{2}) - f(x_{1})}{x_{2} - x{1}}
-\]</span></p>
+</span></p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_figure-9.png" alt="Figure 9" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_example-6.1.png" alt="Example 6.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_example-6.2.png" alt="Example 6.2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_example-7.1.png" alt="Example 7.1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.7_example-7.2.png" alt="Example 7.2" /></p>
 <h2 id="video-lectures">Video Lectures</h2>
 <ul>
@@ -191,8 +217,8 @@ f^{\prime}(a) = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-2/v/alternate-form-of-the-derivative">📺 Formal and alternate form of the derivative</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-2/v/formal-and-alternate-form-of-the-derivative-for-ln-x">📺 Worked example: Derivative as a limit</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-2/v/formal-and-alternate-form-of-the-derivative-example-1">📺 Worked example: Derivative from limit expression</a></li>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-2/v/calculus-derivatives-2-new-hd-version">📺 The derivative of <span class="math inline">\(x^{2}\)</span> at <span class="math inline">\(x = 3\)</span> using the formal definition</a></li>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-2/v/calculus-derivatives-2-5-new-hd-version">📺 The derivative of <span class="math inline">\(x^{2}\)</span> at any point using the formal definition</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-2/v/calculus-derivatives-2-new-hd-version">📺 The derivative of <span class="math inline">x^{2}</span> at <span class="math inline">x = 3</span> using the formal definition</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-2/v/calculus-derivatives-2-5-new-hd-version">📺 The derivative of <span class="math inline">x^{2}</span> at any point using the formal definition</a></li>
 </ul>
 <p><br></p>
 <h1 id="resources">Resources</h1>
@@ -208,8 +234,8 @@ f^{\prime}(a) = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-2/v/alternate-form-of-the-derivative">📺 Formal and alternate form of the derivative</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-2/v/formal-and-alternate-form-of-the-derivative-for-ln-x">📺 Worked example: Derivative as a limit</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-2/v/formal-and-alternate-form-of-the-derivative-example-1">📺 Worked example: Derivative from limit expression</a></li>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-2/v/calculus-derivatives-2-new-hd-version">📺 The derivative of <span class="math inline">\(x^{2}\)</span> at <span class="math inline">\(x = 3\)</span> using the formal definition</a></li>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-2/v/calculus-derivatives-2-5-new-hd-version">📺 The derivative of <span class="math inline">\(x^{2}\)</span> at any point using the formal definition</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-2/v/calculus-derivatives-2-new-hd-version">📺 The derivative of <span class="math inline">x^{2}</span> at <span class="math inline">x = 3</span> using the formal definition</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-2/v/calculus-derivatives-2-5-new-hd-version">📺 The derivative of <span class="math inline">x^{2}</span> at any point using the formal definition</a></li>
 </ul>
 <p>Textbook</p>
 <ul>

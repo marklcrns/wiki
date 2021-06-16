@@ -12,6 +12,13 @@
 
     <title>Basic Git Commands</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -23,26 +30,28 @@
     <link href="../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -51,9 +60,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -129,7 +138,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#basic-git-commands">Basic Git Commands</a><ul>
+          <li><a href="#basic-git-commands">Basic Git Commands</a>
+          <ul>
           <li><a href="#init">Init</a></li>
           <li><a href="#clone">Clone</a></li>
           <li><a href="#status-add-commit-and-log">Status, Add, Commit and Log</a></li>
@@ -235,23 +245,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>git fetch --all</code> – fetch all local branches</li>
 </ul>
 <p><strong>Display new changes from remote branch after fetching</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">git</span> log origin/<span class="op">&lt;</span>branch-name<span class="op">&gt;</span> ^<span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb1-2" title="2"></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="co"># or</span></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="fu">git</span> log --oneline --decorate origin/<span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb1-5" title="5"></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="co"># or for files which will be modified with `git pull`</span></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="fu">git</span> fetch <span class="kw">&amp;&amp;</span> <span class="fu">git</span> diff HEAD @<span class="dt">{u}</span> --name-only</a>
-<a class="sourceLine" id="cb1-8" title="8"></a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="co"># or all the difference between the current version and the incoming</span></a>
-<a class="sourceLine" id="cb1-10" title="10"><span class="fu">git</span> fetch <span class="kw">&amp;&amp;</span> <span class="fu">git</span> diff @<span class="dt">{u}</span> --name-only</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log origin/<span class="op">&lt;</span>branch-name<span class="op">&gt;</span> ^<span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># or</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span> <span class="at">--decorate</span> origin/<span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># or for files which will be modified with `git pull`</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch <span class="kw">&amp;&amp;</span> <span class="fu">git</span> diff HEAD @{u} <span class="at">--name-only</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># or all the difference between the current version and the incoming</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch <span class="kw">&amp;&amp;</span> <span class="fu">git</span> diff @{u} <span class="at">--name-only</span></span></code></pre></div>
 <p><strong>Diff local branch against new changes from remote branch after fetching</strong></p>
 <ul>
 <li><code>git diff &lt;branch-name&gt; origin/&lt;branch-name&gt;</code></li>
 </ul>
 <p><strong>Checking out latest commits from remote branch after fetching</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">git</span> fetch</a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="fu">git</span> checkout <span class="op">&lt;</span>branch-name<span class="op">&gt;</span> origin/<span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="op">&lt;</span>branch-name<span class="op">&gt;</span> origin/<span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://stackoverflow.com/questions/10678495/where-to-find-changes-due-to-git-fetch">📄 Where to find changes due to <code>git fetch</code></a></li>
@@ -267,9 +277,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>git branch -a</code></li>
 </ul>
 <p><strong>Renaming current branch</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1">git branch -m &lt;<span class="kw">new</span>-branch-name&gt;</a>
-<a class="sourceLine" id="cb3-2" title="2">git push origin -u &lt;<span class="kw">new</span>-branch-name&gt;</a>
-<a class="sourceLine" id="cb3-3" title="3">git push origin --delete &lt;old-branch-name&gt;</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>git branch <span class="op">-</span>m <span class="op">&lt;</span><span class="kw">new</span><span class="op">-</span>branch<span class="op">-</span>name<span class="op">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>git push origin <span class="op">-</span>u <span class="op">&lt;</span><span class="kw">new</span><span class="op">-</span>branch<span class="op">-</span>name<span class="op">&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>git push origin <span class="op">--</span>delete <span class="op">&lt;</span>old<span class="op">-</span>branch<span class="op">-</span>name<span class="op">&gt;</span></span></code></pre></div>
 <p><strong>Switching local repo to different branch</strong></p>
 <ul>
 <li><code>git checkout &lt;branch-name&gt;</code></li>
@@ -324,11 +334,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 id="merge">Merge</h2>
 <p>Merge changes of one branch to another branch.</p>
 <p><strong>Merging branch to <em>master</em> branch</strong></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">git</span> checkout master</a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="fu">git</span> merge <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout master</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span></code></pre></div>
 <p><strong>Merging <em>master</em> branch to another branch</strong></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">git</span> checkout <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="fu">git</span> merge master</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge master</span></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=XX-Kct0PfFc">📺 Merging Branches Tutorial</a></li>
@@ -336,11 +346,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 id="rebase">Rebase</h2>
 <p>Rebase (re-anchor) current branch commit history against another branch to latest changes.</p>
 <p><strong>Rebase a branch against master branch</strong></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">git</span> checkout <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="fu">git</span> rebase master</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rebase master</span></code></pre></div>
 <p><strong>Rebase master branch against another branch</strong></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="fu">git</span> checkout master</a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="fu">git</span> rebase <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout master</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rebase <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span></code></pre></div>
 <p><strong>Undoing rebase</strong></p>
 <ul>
 <li><code>git reflog</code> – Logs all reference point to reset into</li>
@@ -372,7 +382,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><strong>Show all stashed changes</strong></p>
 <ul>
-<li><code>git stash show</code> – Show changes from the first stash on the <code>git stash list</code></li>
+<li><code>git stash show</code> – Show changes from the first stash on the <code>git stash     list</code></li>
 <li><code>git stash show stash@{&lt;stash-number&gt;}</code> – Show changes of specific stash on the <code>git stash list</code></li>
 </ul>
 <p><strong>Applying stashed changes</strong></p>
@@ -386,7 +396,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Drops (delete) a stash</strong></p>
 <ul>
 <li><code>git stash drop</code> – Drop the first stash on the <code>git stash list</code></li>
-<li><code>git stash drop stash@{&lt;stash-number&gt;}</code> – Drop specific stash from <code>git stash list</code></li>
+<li><code>git stash drop stash@{&lt;stash-number&gt;}</code> – Drop specific stash from <code>git stash     list</code></li>
 <li><code>git stash clear</code> – Drops all stash</li>
 </ul>
 <p><strong>Apply and drop (delete) stash</strong></p>
@@ -418,17 +428,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 id="forking-repos">Forking Repos</h2>
 <p>Make a copy of someone else’s repository and make it as your own. You can make <strong>pull requests</strong> to propose updates from your fork to the original repository, once approved by the original owner, will merge all commits in forked repo from when the pull request was made.</p>
 <p><strong>Updating your Fork</strong></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="co"># add the original repository as remote repository called &quot;upstream&quot;</span></a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="fu">git</span> remote add upstream https://github.com/<span class="op">&lt;</span>original-owner<span class="op">&gt;</span>/<span class="op">&lt;</span>repository<span class="op">&gt;</span>.git</a>
-<a class="sourceLine" id="cb8-3" title="3"></a>
-<a class="sourceLine" id="cb8-4" title="4"><span class="co"># fetch all changes from the upstream repository</span></a>
-<a class="sourceLine" id="cb8-5" title="5"><span class="fu">git</span> fetch upstream</a>
-<a class="sourceLine" id="cb8-6" title="6"></a>
-<a class="sourceLine" id="cb8-7" title="7"><span class="co"># switch to the master branch of your fork</span></a>
-<a class="sourceLine" id="cb8-8" title="8"><span class="fu">git</span> checkout master</a>
-<a class="sourceLine" id="cb8-9" title="9"></a>
-<a class="sourceLine" id="cb8-10" title="10"><span class="co"># merge changes from the upstream repository into your fork</span></a>
-<a class="sourceLine" id="cb8-11" title="11"><span class="fu">git</span> merge upstream/master</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add the original repository as remote repository called &quot;upstream&quot;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add upstream https://github.com/<span class="op">&lt;</span>original-owner<span class="op">&gt;</span>/<span class="op">&lt;</span>repository<span class="op">&gt;</span>.git</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># fetch all changes from the upstream repository</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch upstream</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># switch to the master branch of your fork</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout master</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># merge changes from the upstream repository into your fork</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge upstream/master</span></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://reflectoring.io/github-fork-and-pull/">📄 Github’s Fork &amp; Pull Workflow for Git Beginners</a></li>

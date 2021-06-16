@@ -12,6 +12,13 @@
 
     <title>Supported Github Markdown Emojis</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../templates/css/animated-toc.css" rel="stylesheet">
@@ -298,10 +305,10 @@
 <tr class="even">
 <td><span class="emoji" data-emoji="clap">👏</span> <code>:clap:</code></td>
 <td><span class="emoji" data-emoji="muscle">💪</span> <code>:muscle:</code></td>
-<td>:metal: <code>:metal:</code></td>
+<td><span class="emoji" data-emoji="metal">🤘</span> <code>:metal:</code></td>
 </tr>
 <tr class="odd">
-<td>:fu: <code>:fu:</code></td>
+<td><span class="emoji" data-emoji="fu">🖕</span> <code>:fu:</code></td>
 <td><span class="emoji" data-emoji="walking">🚶</span> <code>:walking:</code></td>
 <td><span class="emoji" data-emoji="runner">🏃</span> <code>:runner:</code></td>
 </tr>
@@ -317,7 +324,7 @@
 </tr>
 <tr class="even">
 <td><span class="emoji" data-emoji="dancers">👯</span> <code>:dancers:</code></td>
-<td><span class="emoji" data-emoji="ok_woman">🙆</span> <code>:ok_woman:</code></td>
+<td><span class="emoji" data-emoji="ok_woman">🙆‍♀️</span> <code>:ok_woman:</code></td>
 <td><span class="emoji" data-emoji="no_good">🙅</span> <code>:no_good:</code></td>
 </tr>
 <tr class="odd">
@@ -326,8 +333,8 @@
 <td><span class="emoji" data-emoji="bride_with_veil">👰</span> <code>:bride_with_veil:</code></td>
 </tr>
 <tr class="even">
-<td><span class="emoji" data-emoji="person_with_pouting_face">🙎</span> <code>:person_with_pouting_face:</code></td>
-<td><span class="emoji" data-emoji="person_frowning">🙍</span> <code>:person_frowning:</code></td>
+<td>:person_with_pouting_face: <code>:person_with_pouting_face:</code></td>
+<td>:person_frowning: <code>:person_frowning:</code></td>
 <td><span class="emoji" data-emoji="bow">🙇</span> <code>:bow:</code></td>
 </tr>
 <tr class="odd">
@@ -351,9 +358,9 @@
 <td><span class="emoji" data-emoji="older_man">👴</span> <code>:older_man:</code></td>
 </tr>
 <tr class="odd">
-<td><span class="emoji" data-emoji="person_with_blond_hair">👱</span> <code>:person_with_blond_hair:</code></td>
+<td>:person_with_blond_hair: <code>:person_with_blond_hair:</code></td>
 <td><span class="emoji" data-emoji="man_with_gua_pi_mao">👲</span> <code>:man_with_gua_pi_mao:</code></td>
-<td><span class="emoji" data-emoji="man_with_turban">👳</span> <code>:man_with_turban:</code></td>
+<td><span class="emoji" data-emoji="man_with_turban">👳‍♂️</span> <code>:man_with_turban:</code></td>
 </tr>
 <tr class="even">
 <td><span class="emoji" data-emoji="construction_worker">👷</span> <code>:construction_worker:</code></td>
@@ -386,7 +393,7 @@
 <td><span class="emoji" data-emoji="speak_no_evil">🙊</span> <code>:speak_no_evil:</code></td>
 </tr>
 <tr class="even">
-<td><span class="emoji" data-emoji="guardsman">💂</span> <code>:guardsman:</code></td>
+<td><span class="emoji" data-emoji="guardsman">💂‍♂️</span> <code>:guardsman:</code></td>
 <td><span class="emoji" data-emoji="skull">💀</span> <code>:skull:</code></td>
 <td><span class="emoji" data-emoji="feet">🐾</span> <code>:feet:</code></td>
 </tr>
@@ -867,7 +874,7 @@
 <tr class="even">
 <td><span class="emoji" data-emoji="basketball">🏀</span> <code>:basketball:</code></td>
 <td><span class="emoji" data-emoji="soccer">⚽</span> <code>:soccer:</code></td>
-<td><span class="emoji" data-emoji="baseball">⚾️</span> <code>:baseball:</code></td>
+<td><span class="emoji" data-emoji="baseball">⚾</span> <code>:baseball:</code></td>
 </tr>
 <tr class="odd">
 <td><span class="emoji" data-emoji="tennis">🎾</span> <code>:tennis:</code></td>
@@ -1025,7 +1032,7 @@
 <td><span class="emoji" data-emoji="dango">🍡</span> <code>:dango:</code></td>
 </tr>
 <tr class="even">
-<td><span class="emoji" data-emoji="egg">🍳</span> <code>:egg:</code></td>
+<td><span class="emoji" data-emoji="egg">🥚</span> <code>:egg:</code></td>
 <td><span class="emoji" data-emoji="bread">🍞</span> <code>:bread:</code></td>
 <td><span class="emoji" data-emoji="doughnut">🍩</span> <code>:doughnut:</code></td>
 </tr>
@@ -1331,11 +1338,11 @@
 <tr class="even">
 <td><span class="emoji" data-emoji="arrow_heading_down">⤵️</span> <code>:arrow_heading_down:</code></td>
 <td><span class="emoji" data-emoji="arrow_heading_up">⤴️</span> <code>:arrow_heading_up:</code></td>
-<td><span class="emoji" data-emoji="leftwards_arrow_with_hook">↩️</span> <code>:leftwards_arrow_with_hook:</code></td>
+<td><span class="emoji" data-emoji="leftwards_arrow_with_hook">↩︎️</span> <code>:leftwards_arrow_with_hook:</code></td>
 </tr>
 <tr class="odd">
 <td><span class="emoji" data-emoji="arrow_right_hook">↪️</span> <code>:arrow_right_hook:</code></td>
-<td><span class="emoji" data-emoji="left_right_arrow">↔️</span> <code>:left_right_arrow:</code></td>
+<td><span class="emoji" data-emoji="left_right_arrow">↔︎️</span> <code>:left_right_arrow:</code></td>
 <td><span class="emoji" data-emoji="arrow_up_down">↕️</span> <code>:arrow_up_down:</code></td>
 </tr>
 <tr class="even">

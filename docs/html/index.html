@@ -11,6 +11,13 @@
 
     <title>Docs</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../templates/css/animated-toc.css" rel="stylesheet">
@@ -65,18 +72,21 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#personal-wiki-documentations">Personal Wiki Documentations</a><ul>
+          <li><a href="#personal-wiki-documentations">Personal Wiki Documentations</a>
+          <ul>
           <li><a href="#bash">Bash</a></li>
           <li><a href="#databases">Databases</a></li>
           <li><a href="#programming-languages">Programming Languages</a></li>
           <li><a href="#ide">IDE</a></li>
-          <li><a href="#shell-applications">Shell Applications</a><ul>
+          <li><a href="#shell-applications">Shell Applications</a>
+          <ul>
           <li><a href="#linux">Linux</a></li>
           <li><a href="#windows">Windows</a></li>
           </ul></li>
           <li><a href="#package-managers">Package Managers</a></li>
           <li><a href="#wslwsl2">WSL/WSL2</a></li>
-          <li><a href="#desktop-applications">Desktop Applications</a><ul>
+          <li><a href="#desktop-applications">Desktop Applications</a>
+          <ul>
           <li><a href="#terminal">Terminal</a></li>
           <li><a href="#developer-apps">Developer Apps</a></li>
           </ul></li>

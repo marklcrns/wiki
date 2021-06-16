@@ -12,6 +12,13 @@
 
     <title>ECON 121 Chapter 8 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -22,7 +29,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -67,16 +89,19 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-8-production-technology-and-cost">Chapter 8: Production Technology and Cost</a><ul>
+          <li><a href="#chapter-8-production-technology-and-cost">Chapter 8: Production Technology and Cost</a>
+          <ul>
           <li><a href="#economic-cost-and-economic-profit">8.1 Economic Cost and Economic Profit</a></li>
-          <li><a href="#a-firm-with-a-fixed-production-facility-short-run-costs">8.2 A Firm with a Fixed Production Facility: Short-Run Costs</a><ul>
+          <li><a href="#a-firm-with-a-fixed-production-facility-short-run-costs">8.2 A Firm with a Fixed Production Facility: Short-Run Costs</a>
+          <ul>
           <li><a href="#production-and-marginal-product">8.2.1 Production and Marginal Product</a></li>
           <li><a href="#short-run-total-cost">8.2.2 Short-Run Total Cost</a></li>
           <li><a href="#short-run-average-costs">8.2.3 Short-Run Average Costs</a></li>
           <li><a href="#short-run-marginal-cost">8.2.4 Short-Run Marginal Cost</a></li>
           <li><a href="#the-relationship-between-marginal-cost-and-average-cost">8.2.5 The Relationship between Marginal Cost and Average Cost</a></li>
           </ul></li>
-          <li><a href="#production-and-cost-in-the-long-run">8.3 Production and Cost in the Long Run</a><ul>
+          <li><a href="#production-and-cost-in-the-long-run">8.3 Production and Cost in the Long Run</a>
+          <ul>
           <li><a href="#expansion-and-replication">8.3.1 Expansion and Replication</a></li>
           <li><a href="#reducing-output-with-indivisible-inputs">8.3.2 Reducing Output with Indivisible Inputs</a></li>
           <li><a href="#scaling-down-and-labor-specialization">8.3.3 Scaling Down and Labor Specialization</a></li>
@@ -119,16 +144,16 @@
 <ul>
 <li>Total revenue minus economic cost.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{economic profit} = \text{total revenue} - \text{economic cost}
-\]</span></p>
+</span></p>
 <p><a name="economic-cost"><strong>Economic cost</strong></a></p>
 <ul>
 <li>The opportunity cost of the inputs used in the production process; equal to explicit cost plus implicit cost.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{economic cost} = \text{explicit cost} + \text{implicit cost}
-\]</span></p>
+</span></p>
 <p>To compute a firm’s economic cost, we must determine what the firm sacrifices to use inputs in the production process. Economic cost is opportunity cost. See <a href="ch-2.html#the-principle-of-opportunity-cost">principle of opportunity cost</a>.</p>
 <p>Two types of economic cost:</p>
 <ol type="1">
@@ -152,17 +177,17 @@
 <li>The explicit costs of production.</li>
 <li>Ignores implicit cost</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{accounting cost} = \text{explicit cost}
-\]</span></p>
+</span></p>
 <p><a name="accounting-profit"><strong>Accounting profit</strong></a></p>
 <ul>
 <li>Total revenue minus accounting cost.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{accounting profit} = \text{total revenue} - \text{accounting cost (explicit
 cost)}
-\]</span></p>
+</span></p>
 <p>A firm’s accounting cost is always lower than its economic cost, so its accounting profit is always higher than its economic profit. For the rest of this book, when we refer to cost and profit, we mean economic cost and economic profit.</p>
 <p>Because accountants ignore implicit costs, accounting profit usually larger than economic profit.</p>
 <h2 id="a-firm-with-a-fixed-production-facility-short-run-costs">8.2 A Firm with a Fixed Production Facility: Short-Run Costs</h2>
@@ -232,9 +257,9 @@ cost)}
 <ul>
 <li>The total cost of production when at least one input is fixed; equal to fixed cost plus variable cost.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \mathit{TC} = \mathit{FC} + \mathit{VC}
-\]</span></p>
+</span></p>
 <p>Suppose the opportunity cost of your time is $50 per day, and you can hire workers for your workshop at the market wage of $50 per day. You can purchase your workshop, including the building and the paddle mold, for $365,000. If the interest rate you could have earned on that money is 10 percent per year, the opportunity cost of tying up your $365,000 in the workshop is $36,500 per year, or $100 per day.</p>
 <p>Table 8.2 Short-Run costs</p>
 <table>
@@ -343,37 +368,37 @@ cost)}
 </tbody>
 </table>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-8/ch-8_Figure_8.2.png" alt="Figure 8.2" /><figcaption>Figure 8.2</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-8/ch-8_Figure_8.2.png" alt="Figure 8.2" /><figcaption aria-hidden="true">Figure 8.2</figcaption>
 </figure>
 <h3 id="short-run-average-costs">8.2.3 Short-Run Average Costs</h3>
 <p><a name="average-fixed-cost"><strong>Average fixed cost (AFC)</strong></a></p>
 <ul>
 <li>Fixed cost divided by the quantity produced.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \mathit{AFC} = \frac{\mathit{FC}}{Q}
-\]</span></p>
+</span></p>
 <p><a name="average-variable-cost"><strong>Average variable cost (AVC)</strong></a></p>
 <ul>
 <li>Variable cost divided by the quantity produced.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \mathit{AVC} = \frac{\mathit{VC}}{\mathit{Q}}
-\]</span></p>
+</span></p>
 <p><a name="short-run-average-total-cost"><strong>Short-run average total cost (ATC)</strong></a></p>
 <ul>
 <li>Short-run total cost divided by the quantity produced; equal to AFC plus AVC.</li>
 <li>The short-run average-total-cost curve (ATC) is U-shaped because of the conflicting effects of (a) fixed costs being spread over a larger quantity of output and (b) diminishing returns.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \mathit{ATC}
 \color{#ff0000}{=} \frac{\mathit{TC}}{\mathit{Q}}
 \color{#ff0000}{=} \frac{\mathit{FC}}{\mathit{Q}}
 + \frac{\mathit{VC}}{\mathit{Q}}
 \color{#ff0000}{=} \mathit{AFC} + \mathit{AVC}
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-8/ch-8_Figure_8.3.png" alt="Figure 8.3" /><figcaption>Figure 8.3</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-8/ch-8_Figure_8.3.png" alt="Figure 8.3" /><figcaption aria-hidden="true">Figure 8.3</figcaption>
 </figure>
 <p>The ATC curve in Figure 8.3 is negatively sloped at quantities less than 10 paddles. The negative slope results from two forces that work together to push average cost down as output increases:</p>
 <ul>
@@ -390,15 +415,15 @@ cost)}
 <li>see <a href="ch-2.html#marginal-cost">Marginal cost</a>.</li>
 <li>To calculate marginal cost, take the change in TC with the previous row then it by the change in output with the previous row.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \mathit{MC}
 = \frac{\Delta \mathit{TC}}{\Delta \mathit{Q}}
 = \frac{\text{change in TC}}{\text{change in output}}
-\]</span></p>
+</span></p>
 <p>Whenever the <strong>marginal cost is less than the average cost</strong>, the <strong>average cost will fall</strong>; whenever the <strong>marginal cost exceeds the average cost</strong>, the <strong>average will rise</strong>; and whenever the <strong>marginal cost equals the average cost</strong>, the <strong>average will not change</strong>.</p>
 <h3 id="the-relationship-between-marginal-cost-and-average-cost">8.2.5 The Relationship between Marginal Cost and Average Cost</h3>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-8/ch-8_Figure_8.4.png" alt="Figure 8.4" /><figcaption>Figure 8.4</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-8/ch-8_Figure_8.4.png" alt="Figure 8.4" /><figcaption aria-hidden="true">Figure 8.4</figcaption>
 </figure>
 <h2 id="production-and-cost-in-the-long-run">8.3 Production and Cost in the Long Run</h2>
 <p>The key difference between the short run and the long run is that there are no diminishing returns in the long run. Recall that <a href="ch-2.html#the-principle-of-diminishing-returns">diminishing returns</a> occur because workers share a fixed production facility, so the larger the number of workers in the facility, the smaller the share of the facility available for each worker. In the long run, a firm can expand its production facility as its workforce grows, so there are no diminishing returns.</p>
@@ -409,7 +434,7 @@ cost)}
 <li>The total cost of production when a firm is perfectly flexible in choosing its inputs.</li>
 </ul>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-8/ch-8_Figure_8.5.png" alt="Figure 8.5" /><figcaption>Figure 8.5</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-8/ch-8_Figure_8.5.png" alt="Figure 8.5" /><figcaption aria-hidden="true">Figure 8.5</figcaption>
 </figure>
 <table>
 <colgroup>
@@ -479,9 +504,9 @@ cost)}
 <li>The long-run average-cost curve (LAC) is horizontal over some range of output because replication is an option, so doubling output will no more than double long-run total cost.</li>
 <li>The LAC is negatively sloped for small quantities of output because (a) there are indivisible inputs that cannot be scaled down and (b) a smaller operation has limited opportunities for labor specialization.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \mathit{LAC} = \frac{\mathit{LTC}}{Q}
-\]</span></p>
+</span></p>
 <p><a name="constant-returns-to-scale"><strong>Constant returns to scale</strong></a></p>
 <ul>
 <li>A situation in which the long-run total cost increases proportionately with output, so average cost is constant.</li>
@@ -491,9 +516,9 @@ cost)}
 <ul>
 <li>The change in long-run cost resulting from a one-unit increase in output.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \mathit{LMC} = \frac{\Delta \mathit{LTC}}{\Delta \mathit{Q}}
-\]</span></p>
+</span></p>
 <h3 id="reducing-output-with-indivisible-inputs">8.3.2 Reducing Output with Indivisible Inputs</h3>
 <p>What would happen if you decide to produce only 5 paddles per day instead of 10? Although it’s tempting to think that your total costs would be cut in half, that’s not necessarily the case. Remember that you use a single mold to produce 10 paddles per day. If you cut your output in half, you would still need the mold, so your capital costs won’t be cut in half. In addition, if each mold requires a fixed amount of floor space, you would still need the same floor space. Therefore, cutting output in half wouldn’t decrease the cost of your production facility at all. You would still have a cost of $100 per day for the mold and the workspace.</p>
 <p><a name="indivisible-input"><strong>Indivisible input</strong></a></p>
@@ -581,37 +606,37 @@ cost)}
 <tr class="even">
 <td>Fixed cost</td>
 <td>Cost that does not vary with the quantity produced</td>
-<td><span class="math inline">\(\mathit{FC}\)</span></td>
+<td><span class="math inline">\mathit{FC}</span></td>
 </tr>
 <tr class="odd">
 <td>Variable cost</td>
 <td>Cost that varies with the quantity produced</td>
-<td><span class="math inline">\(\mathit{VC}\)</span></td>
+<td><span class="math inline">\mathit{VC}</span></td>
 </tr>
 <tr class="even">
 <td>Short-run total cost</td>
 <td>The total cost of production when at least one input is fixed</td>
-<td><span class="math inline">\(\mathit{TC} = \mathit{FC} + \mathit{VC}\)</span></td>
+<td><span class="math inline">\mathit{TC} = \mathit{FC} + \mathit{VC}</span></td>
 </tr>
 <tr class="odd">
 <td>Short-run marginal cost</td>
 <td>The change in cost from a one-unit increase in output</td>
-<td><span class="math inline">\(\mathit{MC} = \Delta \mathit{TC} / \Delta \mathit{Q}\)</span></td>
+<td><span class="math inline">\mathit{MC} = \Delta \mathit{TC} / \Delta \mathit{Q}</span></td>
 </tr>
 <tr class="even">
 <td>Average fixed cost</td>
 <td>Fixed cost divided by the quantity produced</td>
-<td><span class="math inline">\(\mathit{AFC} = \mathit{FC} / \mathit{Q}\)</span></td>
+<td><span class="math inline">\mathit{AFC} = \mathit{FC} / \mathit{Q}</span></td>
 </tr>
 <tr class="odd">
 <td>Average variable cost</td>
 <td>Variable cost divided by the quantity produced</td>
-<td><span class="math inline">\(\mathit{AVC} = \mathit{VC} / \mathit{Q}\)</span></td>
+<td><span class="math inline">\mathit{AVC} = \mathit{VC} / \mathit{Q}</span></td>
 </tr>
 <tr class="even">
 <td>Short-run average total cost</td>
 <td>Short-run total cost divided by the quantity produced</td>
-<td><span class="math inline">\(\mathit{ATC} = \mathit{AFC} + \mathit{AVC}\)</span></td>
+<td><span class="math inline">\mathit{ATC} = \mathit{AFC} + \mathit{AVC}</span></td>
 </tr>
 <tr class="odd">
 <td>Long-Run Costs</td>
@@ -626,12 +651,12 @@ cost)}
 <tr class="odd">
 <td>Long-run average cost</td>
 <td>Long-run total cost divided by the quantity produced</td>
-<td><span class="math inline">\(\mathit{LAC} = \mathit{LTC} / \mathit{Q}\)</span></td>
+<td><span class="math inline">\mathit{LAC} = \mathit{LTC} / \mathit{Q}</span></td>
 </tr>
 <tr class="even">
 <td>Long-run marginal cost</td>
 <td>The change in long-run cost resulting from a one-unit increase in output</td>
-<td><span class="math inline">\(\mathit{LMC} = \Delta \mathit{LTC} / \Delta \mathit{Q}\)</span></td>
+<td><span class="math inline">\mathit{LMC} = \Delta \mathit{LTC} / \Delta \mathit{Q}</span></td>
 </tr>
 </tbody>
 </table>

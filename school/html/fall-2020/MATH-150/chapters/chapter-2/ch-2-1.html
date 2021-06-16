@@ -11,6 +11,13 @@
 
     <title>2.1 The Tangent Line and Velocity Problem</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,7 +88,8 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-2.1-the-tangent-line-and-velocity-problem">Chapter 2.1: The Tangent Line and Velocity Problem</a><ul>
+          <li><a href="#chapter-2.1-the-tangent-line-and-velocity-problem">Chapter 2.1: The Tangent Line and Velocity Problem</a>
+          <ul>
           <li><a href="#the-tangent-problem">The Tangent Problem</a></li>
           <li><a href="#the-velocity-problem">The Velocity Problem</a></li>
           <li><a href="#video-lectures">Video Lectures</a></li>
@@ -112,15 +135,15 @@
 <h2 id="the-tangent-problem">The Tangent Problem</h2>
 <p>Finding the slope of a tangent (approximation) using only the tangent point.</p>
 <p><strong>Example 1:</strong></p>
-<p>Find an equation of the tangent line to the parabola <span class="math inline">\(y = x^{2}\)</span></p>
+<p>Find an equation of the tangent line to the parabola <span class="math inline">y = x^{2}</span></p>
 <p><strong>Solution:</strong></p>
-<p><span class="math display">\[
+<p><span class="math display">
 m_{PQ} = \frac{x^{2} - 1}{x - 1}
-\]</span></p>
-<p>For instance, for the point <span class="math inline">\(Q\)</span> (1.5, 2.25) we have</p>
-<p><span class="math display">\[
+</span></p>
+<p>For instance, for the point <span class="math inline">Q</span> (1.5, 2.25) we have</p>
+<p><span class="math display">
 m_{PQ} = \frac{2.25 - 1}{1.5 - 1} = \frac{1.25}{0.5} = 2.5
-\]</span></p>
+</span></p>
 <center>
 <table>
 <tr>
@@ -128,8 +151,8 @@ m_{PQ} = \frac{2.25 - 1}{1.5 - 1} = \frac{1.25}{0.5} = 2.5
 <table>
 <thead>
 <tr class="header">
-<th><span class="math inline">\(x\)</span></th>
-<th><span class="math inline">\(m_{PQ}\)</span></th>
+<th><span class="math inline">x</span></th>
+<th><span class="math inline">m_{PQ}</span></th>
 </tr>
 </thead>
 <tbody>
@@ -160,8 +183,8 @@ m_{PQ} = \frac{2.25 - 1}{1.5 - 1} = \frac{1.25}{0.5} = 2.5
 <table>
 <thead>
 <tr class="header">
-<th><span class="math inline">\(x\)</span></th>
-<th><span class="math inline">\(m_{PQ}\)</span></th>
+<th><span class="math inline">x</span></th>
+<th><span class="math inline">m_{PQ}</span></th>
 </tr>
 </thead>
 <tbody>
@@ -191,28 +214,28 @@ m_{PQ} = \frac{2.25 - 1}{1.5 - 1} = \frac{1.25}{0.5} = 2.5
 </tr>
 </table>
 </center>
-<p>This suggests that the slope of the tangent line <span class="math inline">\(t\)</span> should be <span class="math inline">\(m = 2\)</span>.</p>
+<p>This suggests that the slope of the tangent line <span class="math inline">t</span> should be <span class="math inline">m = 2</span>.</p>
 <p>We say that the slope of the tangent line is the <em>limit</em> of the slopes of the secant lines, and we express this symbolically by writing</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \lim_{Q \to P} m_{PQ} = m
-\]</span></p>
+</span></p>
 <p>and</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \lim_{x \to 1} \frac{x^{2} - 1}{x - 1} = 2
-\]</span></p>
+</span></p>
 <p>Assuming that the slope of the tangent line is indeed 2, we use the point-slope form of the equation of a line <a href="../../../../spring-2020/MATH-141/notes/ch-2.html#point-slope-form-term">📑 Point-Slope Form</a> to write the equation of the tangent line through (1, 1) as</p>
-<p><span class="math display">\[
+<p><span class="math display">
 y - 1 = 2(x - 1)
-\]</span></p>
+</span></p>
 <p>or</p>
-<p><span class="math display">\[
+<p><span class="math display">
 y = 2x - 1
-\]</span></p>
+</span></p>
 <blockquote>
-<p>Figure 3 illustrates the limiting process that occurs in this example. As <span class="math inline">\(Q\)</span> approaches <span class="math inline">\(P\)</span> along the parabola, the corresponding secant lines rotate about <span class="math inline">\(P\)</span> and approach the tangent line <span class="math inline">\(t\)</span>. <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.1_figure_3.png" alt="Figure 3" /></p>
+<p>Figure 3 illustrates the limiting process that occurs in this example. As <span class="math inline">Q</span> approaches <span class="math inline">P</span> along the parabola, the corresponding secant lines rotate about <span class="math inline">P</span> and approach the tangent line <span class="math inline">t</span>. <img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.1_figure_3.png" alt="Figure 3" /></p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
-<p>Use the data to draw the graph of this function and estimate the slope of the tangent line at the point where <span class="math inline">\(t = 0.04\)</span></p>
+<p>Use the data to draw the graph of this function and estimate the slope of the tangent line at the point where <span class="math inline">t = 0.04</span></p>
 <center>
 <table>
 <thead>
@@ -250,17 +273,17 @@ y = 2x - 1
 </table>
 </center>
 <p><strong>Solution:</strong></p>
-<p>Given the points <span class="math inline">\(P(0.04, 67.03)\)</span> and <span class="math inline">\(R(0.00, 100.00)\)</span> on the graph, we find that the slope of the secant line <span class="math inline">\(PR\)</span> is</p>
-<p><span class="math display">\[
+<p>Given the points <span class="math inline">P(0.04, 67.03)</span> and <span class="math inline">R(0.00, 100.00)</span> on the graph, we find that the slope of the secant line <span class="math inline">PR</span> is</p>
+<p><span class="math display">
 m_{PR} = \frac{100.00 - 67.03}{0.00 - 0.04} = -824.25
-\]</span></p>
+</span></p>
 <p>The table below shows the results of similar calculations for the slopes of other secant lines.</p>
 <center>
 <table>
 <thead>
 <tr class="header">
-<th><span class="math inline">\(R\)</span></th>
-<th><span class="math inline">\(m_{PR}\)</span></th>
+<th><span class="math inline">R</span></th>
+<th><span class="math inline">m_{PR}</span></th>
 </tr>
 </thead>
 <tbody>
@@ -287,36 +310,36 @@ m_{PR} = \frac{100.00 - 67.03}{0.00 - 0.04} = -824.25
 </tbody>
 </table>
 </center>
-<p>From this table we would expect the slope of the tangent line at <span class="math inline">\(t= 0.04\)</span> to lie somewhere between <span class="math inline">\(-742\)</span> and <span class="math inline">\(-607.5\)</span>. In fact, the average of the slopes of the two closest secant lines is</p>
-<p><span class="math display">\[
+<p>From this table we would expect the slope of the tangent line at <span class="math inline">t= 0.04</span> to lie somewhere between <span class="math inline">-742</span> and <span class="math inline">-607.5</span>. In fact, the average of the slopes of the two closest secant lines is</p>
+<p><span class="math display">
 \frac{1}{2}(-742 - 607.5) = -674.75
-\]</span></p>
-<p>By this method, the slope of the tangent line is approximately <span class="math inline">\(\mathbf{-675}\)</span></p>
-<p>Another method is to draw an approximation to the tangent line at <span class="math inline">\(P\)</span> and measure the sides of the triangle <span class="math inline">\(ABC\)</span></p>
+</span></p>
+<p>By this method, the slope of the tangent line is approximately <span class="math inline">\mathbf{-675}</span></p>
+<p>Another method is to draw an approximation to the tangent line at <span class="math inline">P</span> and measure the sides of the triangle <span class="math inline">ABC</span></p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.1_figure_5.png" alt="Figure 5" /><figcaption>Figure 5</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.1_figure_5.png" alt="Figure 5" /><figcaption aria-hidden="true">Figure 5</figcaption>
 </figure>
 <p>This gives an estimate of the slop of the tangent line as</p>
-<p><span class="math display">\[
+<p><span class="math display">
 -\frac{\left | AB \right |}{\left | BC \right |} \approx
 - \frac{80.4 - 53.6}{0.06 - 0.02} = 670
-\]</span></p>
+</span></p>
 <h2 id="the-velocity-problem">The Velocity Problem</h2>
 <p><strong>Example 3:</strong></p>
-<p>Suppose that a ball is dropped from the upper observation deck of the CN Tower in Toronto, <span class="math inline">\(450 m\)</span> above the ground. Find the velocity of the ball after 5 seconds.</p>
+<p>Suppose that a ball is dropped from the upper observation deck of the CN Tower in Toronto, <span class="math inline">450 m</span> above the ground. Find the velocity of the ball after 5 seconds.</p>
 <p><strong>Solution:</strong></p>
-<p>If the distance fallen after <span class="math inline">\(t\)</span> seconds is denoted by <span class="math inline">\(s(t)\)</span> and measured in meters</p>
-<p><span class="math display">\[
+<p>If the distance fallen after <span class="math inline">t</span> seconds is denoted by <span class="math inline">s(t)</span> and measured in meters</p>
+<p><span class="math display">
 s(t) = 4.9t^{2}
-\]</span></p>
-<p>The difficulty in finding the velocity after 5 seconds is that we are dealing with a single instant of time <span class="math inline">\((t = 5)\)</span>, so no time interval is involved. However, we can approximate the desired quantity by computing the average velocity over the brief time interval of a tenth of a second from <span class="math inline">\(t = 5\)</span> to <span class="math inline">\(t = 5.1\)</span>:</p>
-<p><span class="math display">\[
+</span></p>
+<p>The difficulty in finding the velocity after 5 seconds is that we are dealing with a single instant of time <span class="math inline">(t = 5)</span>, so no time interval is involved. However, we can approximate the desired quantity by computing the average velocity over the brief time interval of a tenth of a second from <span class="math inline">t = 5</span> to <span class="math inline">t = 5.1</span>:</p>
+<p><span class="math display">
 \begin{aligned}
 \text{average velocity} &amp;= \tfrac{\text{change in position}}{\text{time elapsed}} \\
                         &amp;= \tfrac{s(5.1) - s(5)}{0.1} \\
                         &amp;= \tfrac{4.9(5.1)^{2} - 4.9(5)^{2}}{0.1} = 49.49m/s
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>The following table shows the results of similar calculations of the average velocity over successively smaller time periods.</p>
 <center>
 <table>
@@ -328,39 +351,39 @@ s(t) = 4.9t^{2}
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(5 \le t \le 6\)</span></td>
+<td><span class="math inline">5 \le t \le 6</span></td>
 <td>53.9</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(5 \le t \le 5.1\)</span></td>
+<td><span class="math inline">5 \le t \le 5.1</span></td>
 <td>49.49</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(5 \le t \le 5.05\)</span></td>
+<td><span class="math inline">5 \le t \le 5.05</span></td>
 <td>49.245</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(5 \le t \le 5.01\)</span></td>
+<td><span class="math inline">5 \le t \le 5.01</span></td>
 <td>49.049</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(5 \le t \le 5.001\)</span></td>
+<td><span class="math inline">5 \le t \le 5.001</span></td>
 <td>49.0049</td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>It appears that as we shorten the time period, the average velocity is becoming closer to <span class="math inline">\(49m/s\)</span>. The <strong>instantaneous velocity</strong> when <span class="math inline">\(t = 5\)</span> is defined to be the limiting value of these average velocities over shorter and shorter time periods that start at <span class="math inline">\(t = 5\)</span>. Thus it appears that the (instantaneous) velocity after 5 seconds is</p>
-<p><span class="math display">\[
+<p>It appears that as we shorten the time period, the average velocity is becoming closer to <span class="math inline">49m/s</span>. The <strong>instantaneous velocity</strong> when <span class="math inline">t = 5</span> is defined to be the limiting value of these average velocities over shorter and shorter time periods that start at <span class="math inline">t = 5</span>. Thus it appears that the (instantaneous) velocity after 5 seconds is</p>
+<p><span class="math display">
 v = 49m/s
-\]</span></p>
-<p>This is also related to the tangent problem and finding velocities. If we consider the points <span class="math inline">\(P(a, 4.9a^{2}\)</span> and <span class="math inline">\(Q(a + h, 4.9(a + h)^{2}\)</span> on the graph, then the slope of the secant line <span class="math inline">\(PQ\)</span> is</p>
-<p><span class="math display">\[
+</span></p>
+<p>This is also related to the tangent problem and finding velocities. If we consider the points <span class="math inline">P(a, 4.9a^{2}</span> and <span class="math inline">Q(a + h, 4.9(a + h)^{2}</span> on the graph, then the slope of the secant line <span class="math inline">PQ</span> is</p>
+<p><span class="math display">
 m_{PQ} = \frac{4.9(a + h)^{2} - 4.9a^{2}}{(a + h) + a}
-\]</span></p>
-<p>which is the same as the average velocity over the time interval <span class="math inline">\([a, a + h]\)</span>. Therefore the velocity at time <span class="math inline">\(t = a\)</span> (the limit of these average velocities as <span class="math inline">\(h\)</span> approaches <span class="math inline">\(0\)</span>) must be equal to the slope of the tangent line at <span class="math inline">\(P\)</span> (the limit of the slopes of the secant lines).</p>
+</span></p>
+<p>which is the same as the average velocity over the time interval <span class="math inline">[a, a + h]</span>. Therefore the velocity at time <span class="math inline">t = a</span> (the limit of these average velocities as <span class="math inline">h</span> approaches <span class="math inline">0</span>) must be equal to the slope of the tangent line at <span class="math inline">P</span> (the limit of the slopes of the secant lines).</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.1_figure_6.png" alt="Figure 6" /><figcaption>Figure 6</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-2/2.1_figure_6.png" alt="Figure 6" /><figcaption aria-hidden="true">Figure 6</figcaption>
 </figure>
 <h2 id="video-lectures">Video Lectures</h2>
 <ul>

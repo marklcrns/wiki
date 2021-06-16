@@ -11,6 +11,13 @@
 
     <title>Chapter 6</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,26 +88,32 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-6-unemployment-and-inflation">Chapter 6: Unemployment and Inflation</a><ul>
-          <li><a href="#examining-unemployment">6.1 Examining Unemployment</a><ul>
+          <li><a href="#chapter-6-unemployment-and-inflation">Chapter 6: Unemployment and Inflation</a>
+          <ul>
+          <li><a href="#examining-unemployment">6.1 Examining Unemployment</a>
+          <ul>
           <li><a href="#how-is-unemployment-defined-and-measured">6.1.1 How Is Unemployment Defined and Measured?</a></li>
           <li><a href="#alternative-measures-of-unemployment-and-why-they-are-important">6.1.2 Alternative Measures of Unemployment and Why They Are Important</a></li>
           <li><a href="#who-are-the-unemployed">6.1.3 Who Are the Unemployed?</a></li>
           </ul></li>
-          <li><a href="#categories-of-unemployment">6.2 Categories of Unemployment</a><ul>
+          <li><a href="#categories-of-unemployment">6.2 Categories of Unemployment</a>
+          <ul>
           <li><a href="#types-of-unemployment-cyclical-frictional-and-structural">6.2.1 Types of Unemployment: Cyclical, Frictional, and Structural</a></li>
           <li><a href="#the-natural-rate-of-unemployment">6.2.2 The Natural Rate of Unemployment</a></li>
           </ul></li>
           <li><a href="#the-costs-of-unemployment">6.3 The Costs of Unemployment</a></li>
-          <li><a href="#the-consumer-price-index-and-the-cost-of-living">6.4 The Consumer Price Index and the Cost of Living</a><ul>
+          <li><a href="#the-consumer-price-index-and-the-cost-of-living">6.4 The Consumer Price Index and the Cost of Living</a>
+          <ul>
           <li><a href="#the-cpi-versus-the-chain-index-for-gdp">6.4.1 The CPI versus the Chain Index for GDP</a></li>
           <li><a href="#problems-in-measuring-changes-in-prices">6.4.2 Problems in Measuring Changes in Prices</a></li>
           </ul></li>
-          <li><a href="#inflation">6.5 Inflation</a><ul>
+          <li><a href="#inflation">6.5 Inflation</a>
+          <ul>
           <li><a href="#historical-u.s.-inflation-rates">6.5.1 Historical U.S. Inflation Rates</a></li>
           <li><a href="#the-perils-of-deflation">6.5.2 The Perils of Deflation</a></li>
           </ul></li>
-          <li><a href="#the-costs-of-inflation">6.6 The Costs of Inflation</a><ul>
+          <li><a href="#the-costs-of-inflation">6.6 The Costs of Inflation</a>
+          <ul>
           <li><a href="#anticipated-inflation">6.6.1 Anticipated Inflation</a></li>
           <li><a href="#unanticipated-inflation">6.6.2 Unanticipated Inflation</a></li>
           </ul></li>
@@ -128,31 +156,31 @@
 <ul>
 <li>The total number of workers, both the employed and unemployed.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ labor force } = \text{ employed } + \text{ unemployed }
-\]</span></p>
+</span></p>
 <p><a name="unemployment-rate-term"><strong>Unemployment rate</strong></a></p>
 <ul>
 <li>The percentage of the labor force that is unemployed.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ unemployment rate } = \frac{\text{unemployed}}{\text{labor force}} \times 100
-\]</span></p>
+</span></p>
 <p><a name="labor-force-participation-rate-term"><strong>Labor force participation rate</strong></a></p>
 <ul>
 <li>The percentage of the population older than 16 years of age that is in the labor force.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ labor force participation rate } = \frac{\text{labor force}}{\text{population 16 years and older}} \times 100
-\]</span></p>
-<p>To illustrate these concepts, suppose an economy consists of 200,000 individuals 16 years of age and older. Of all these people, 122,000 are employed and 8,000 are unemployed. This means that 130,000 <span class="math inline">\((122,000 + 88,000)\)</span> people are in the labor force. The labor force participation rate is 0.65, or 65 percent (130,000/200,000), and the unemployment rate is 0.0615, or 6.15 percent (8,000/130,000).</p>
+</span></p>
+<p>To illustrate these concepts, suppose an economy consists of 200,000 individuals 16 years of age and older. Of all these people, 122,000 are employed and 8,000 are unemployed. This means that 130,000 <span class="math inline">(122,000 + 88,000)</span> people are in the labor force. The labor force participation rate is 0.65, or 65 percent (130,000/200,000), and the unemployment rate is 0.0615, or 6.15 percent (8,000/130,000).</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-6/figure-6.1.png" alt="Figure 6.1 Unemployment Data, January 2018" /><figcaption>Figure 6.1 Unemployment Data, January 2018</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-6/figure-6.1.png" alt="Figure 6.1 Unemployment Data, January 2018" /><figcaption aria-hidden="true">Figure 6.1 Unemployment Data, January 2018</figcaption>
 </figure>
 <p>One of the most important trends in the last 50 years has been the increase in the participation of women in the labor force. In 1948, the labor force participation rate for women 20 years and older was 32 percent. By 1970, it had grown to 43 percent, and by 1997 it had reached 60 percent. This trend reflected remarkable changes in our economy and society as women dramatically increased their presence in the workforce. In 2018, the participation rate for women had fallen to approximately 57 percent.</p>
 <p>Figure 6.2 contains international data on unemployment for 2017 for developed countries. Despite the fact these countries all have modern, industrial economies, notice the sharp differences in unemployment. <strong>For example, Spain had a 16.7 percent unemployment rate, whereas Japan had an unemployment rate of 2.7 percent. These sharp differences reflect a number of factors, including how much government support is provided to unemployed workers. In countries in which support is the most generous, there is less incentive to work and unemployment will tend to be higher.</strong></p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-6/figure-6.2.png" alt="Figure 6.2 Unemployment Rates in Developewd Countries" /><figcaption>Figure 6.2 Unemployment Rates in Developewd Countries</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-6/figure-6.2.png" alt="Figure 6.2 Unemployment Rates in Developewd Countries" /><figcaption aria-hidden="true">Figure 6.2 Unemployment Rates in Developewd Countries</figcaption>
 </figure>
 <h3 id="alternative-measures-of-unemployment-and-why-they-are-important">6.1.2 Alternative Measures of Unemployment and Why They Are Important</h3>
 <p>It is relatively straightforward in principle to determine who is employed: Just count the people who are working. What is more difficult is to distinguish between those who are unemployed and those who are not in the labor force. How are these two groups distinguished? The Bureau of Labor Statistics (BLS), which is part of the Department of Labor, interviews a large sample of households each month. The BLS asks about the employment situation of all household members 16 years of age and older. If someone in a household is not working, the interviewer asks whether the person is actively looking for work. If the answer is “yes,” he or she is classified as unemployed. If the answer is “no”–he or she is not actively looking for work–that person is classified as not being in the labor force.</p>
@@ -162,18 +190,18 @@
 <li>Workers who left the labor force because they could not find jobs.</li>
 </ul>
 <p>In addition to discouraged workers, there are individuals who would like to work and have searched for work in the recent past, but have stopped looking for work for a variety of reasons. These individuals are known as <em>marginally attached workers</em>. Marginally attached workers consist of two groups: discouraged workers (who left the labor force because they could not find jobs) and workers who are not looking for jobs for other reasons, including lack of transportation or childcare.</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ unemployment rate } = \frac{\text{ unemployed } + \text{ discouraged workers }}{\text{ labor force } + \text{ discouraged workers }} \times 100
-\]</span></p>
+</span></p>
 <p>Finally, there are those workers who would like to be employed full time but hold part-time jobs. These individuals are counted as employed in the BLS statistics because they have a job. However, they would like to be working more hours. They are known as <em>individuals working part time for economic reasons</em>. We do not include in this category individuals who prefer part-time employment.</p>
 <p>How important are these alternative measures? Figure 6.3 puts them into perspective. In January 2018, 6.68 million individuals were officially classified as unemployed. The number of discouraged workers was 0.45 million. Including the discouraged workers, there were 1.64 million marginally attached workers. If we add the marginally attached individuals to those who were involuntarily working part time, the total is 6.57 million. Thus, depending on the statistic you want to emphasize, there were anywhere between 6.68 million unemployed (the official number) and 13.25 million unemployed (the official number plus all those seeking full-time employment who did not have it). If we count those 13.25 million as unemployed and include the marginally attached in the labor force, the unemployment rate in 2018 would be 8.1 percent–substantially higher than the official rate of 4.1 percent. As we have seen, the official statistics for unemployment do not include the full range of individuals who would like to participate fully in the labor market.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-6/figure-6.3.png" alt="Figure 6.3 Alternative Measures of Unemployment, January 2018" /><figcaption>Figure 6.3 Alternative Measures of Unemployment, January 2018</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-6/figure-6.3.png" alt="Figure 6.3 Alternative Measures of Unemployment, January 2018" /><figcaption aria-hidden="true">Figure 6.3 Alternative Measures of Unemployment, January 2018</figcaption>
 </figure>
 <h3 id="who-are-the-unemployed">6.1.3 Who Are the Unemployed?</h3>
 <p>Another fact about unemployment is that different groups of people suffer more unemployment than others. Figure 6.4 contains some unemployment statistics for selected groups for January 2018. Adults have substantially lower unemployment rates than teenagers. Minorities have higher unemployment rates. African American teenagers have extremely high unemployment rates. On average, men and women have similar unemployment rates, but the unemployment rates for married men and married women are lower than unemployment rates of women who maintain families alone.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-6/figure-6.4.png" alt="Figure 6.4 Unemployment Rates for Selected Groups, January 2018" /><figcaption>Figure 6.4 Unemployment Rates for Selected Groups, January 2018</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-6/figure-6.4.png" alt="Figure 6.4 Unemployment Rates for Selected Groups, January 2018" /><figcaption aria-hidden="true">Figure 6.4 Unemployment Rates for Selected Groups, January 2018</figcaption>
 </figure>
 <p>These differentials do vary somewhat as GDP rises and falls. Teenage and minority unemployment rates often rise very sharply during poor economic times, as was the case in the most recent recession. In better times, a reduction of unemployment for all groups typically occurs. Nonetheless, teenage and minority unemployment remains relatively high at all times.</p>
 <p>Many economic time series, including employment and unemployment, are substantially influenced by seasonal factors. These are recurring calendar-related effects caused by, for example, the weather, holidays, the opening and closing of schools, and related factors. Unemployment due to recurring calendar effects is called <strong>seasonal unemployment</strong>. Examples of seasonal unemployment include higher rates of unemployment for farm workers and construction workers in the winter and higher unemployment rates for teenagers in the early summer as they look for summer jobs.</p>
@@ -266,25 +294,25 @@
 <li>A price index that measures the cost of a fixed basket of goods chosen to represent the consumption pattern of a typical consumer.</li>
 </ul>
 <p>The CPI is widely used to measure changes in the prices consumers face. It measures changes in prices of a fixed basket of goods—a collection of items chosen to represent the purchasing pattern of a typical consumer. We first find out how much this basket of goods costs in a given year. This is called the base year (it serves a similar purpose as the base year we designated for the GDP deflator). We then ask how much it costs in other years and measure changes in the cost of living relative to this base year. The CPI index for a given year, say year K, is defined as</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ CPI in year K } = \frac{\text{cost of basket in year K}}{\text{cost of basket in base year}} \times 100
-\]</span></p>
+</span></p>
 <p>Suppose a basket of goods costs $200 in 1992, which we’ll define as the base year. In 2004, the same basket of goods is $250. First, the value for the CPI in 1992 (the base year) is</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ CPI in 1992 } = \frac{200}{200} \times 100 = 100
-\]</span></p>
+</span></p>
 <p>That is, the CPI for 1992 is 100. Note that the base year for the CPI will always equal 100. Now let’s calculate the value of the CPI for 2004:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ CPI in 2004 } = \frac{250}{200} \times 100 = 125
-\]</span></p>
+</span></p>
 <p>The CPI in 2004 is 125. The CPI rose from 100 in 1992 to 125 in 2004 in this example, a 25 percent increase in average prices over this 12-year period.</p>
 <p>Here is how you would use this information. Suppose you had $300 in 1992. How much money would you need to be able to have the same standard of living in 2004? Find the answer by multiplying the $300 by the ratio of the CPI in 2004 to the CPI in 1992:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \$300 \times \frac{125}{100} = 375
-\]</span></p>
+</span></p>
 <p>You need $375 in 2004 just to maintain what was your standard of living in 1992. This is the type of calculation that economists do to evaluate changes in living standards over time.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-6/figure-6.5.png" alt="Figure 6.5 Components of the Consumer Price Index (CPI)" /><figcaption>Figure 6.5 Components of the Consumer Price Index (CPI)</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-6/figure-6.5.png" alt="Figure 6.5 Components of the Consumer Price Index (CPI)" /><figcaption aria-hidden="true">Figure 6.5 Components of the Consumer Price Index (CPI)</figcaption>
 </figure>
 <h3 id="the-cpi-versus-the-chain-index-for-gdp">6.4.1 The CPI versus the Chain Index for GDP</h3>
 <p>First, the CPI measures the costs of a typical basket of goods for consumers. It includes goods produced in prior years (such as older cars) as well as imported goods. The chain-weighted price index for GDP does not measure price changes from either used goods or imports. The reason is that it is based on the calculation of GDP, which, as we’ve seen, measures only goods and services produced in the United States in the current year.</p>
@@ -302,16 +330,16 @@
 <ul>
 <li>The percentage rate of change of a price index.</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ inflation rate } = \text{ percentage rate of change of a price index }
-\]</span></p>
+</span></p>
 <p>Here is an example. Suppose a price index in a country was 200 in 1998 and 210 in 1999. Then the inflation rate between 1998 and 1999 was</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ inflation rate } = \frac{210 - 200}{200} = 0.05 = 5\%
-\]</span></p>
+</span></p>
 <h3 id="historical-u.s.-inflation-rates">6.5.1 Historical U.S. Inflation Rates</h3>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-6/figure-6.6.png" alt="Figure 6.6 Price Index for U.S. GDP, 1875-2017" /><figcaption>Figure 6.6 Price Index for U.S. GDP, 1875-2017</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-6/figure-6.6.png" alt="Figure 6.6 Price Index for U.S. GDP, 1875-2017" /><figcaption aria-hidden="true">Figure 6.6 Price Index for U.S. GDP, 1875-2017</figcaption>
 </figure>
 <blockquote>
 <p><strong>Table 6.2</strong> Prices of Selected Goods, 1940s and 2018</p>
@@ -380,7 +408,7 @@
 </table>
 </center>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-6/figure-6.7.png" alt="Figure 6.7 U.S. Inflation Rate, 1950-2017, Based on Chain-Weighted Price Index" /><figcaption>Figure 6.7 U.S. Inflation Rate, 1950-2017, Based on Chain-Weighted Price Index</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-6/figure-6.7.png" alt="Figure 6.7 U.S. Inflation Rate, 1950-2017, Based on Chain-Weighted Price Index" /><figcaption aria-hidden="true">Figure 6.7 U.S. Inflation Rate, 1950-2017, Based on Chain-Weighted Price Index</figcaption>
 </figure>
 <h3 id="the-perils-of-deflation">6.5.2 The Perils of Deflation</h3>
 <p>Prices rarely fall today, but they have actually fallen at times in world history. You might think it would be great if prices fell and we had what economists term a deflation. It may surprise you, however, that we think you should hope <strong>deflation</strong> never occurs.</p>
@@ -422,17 +450,17 @@
 <ol type="1">
 <li>The unemployed are individuals who do not have jobs but who are actively seeking employment. The <em>labor force</em> comprises both the employed and the unemployed. The unemployment rate is the percentage of the labor force that is unemployed:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ unemployment rate } = \frac{\text{unemployed}}{\text{labor force}} \times 100
-\]</span></p>
+</span></p>
 <ol start="2" type="1">
 <li>Economists distinguish among different types of unemployment. Seasonal patterns of economic activity lead to <em>seasonal unemployment</em>. There are three other types of unemployment. <em>Frictional unemployment</em> occurs through the normal dynamics of the economy as workers change jobs and industries expand and contract. <em>Structural unemployment</em> arises because of a mismatch of workers’ skills with job opportunities. <em>Cyclical unemployment</em> occurs with the fluctuations in economic activity.</li>
 <li>Unemployment rates vary across demographic groups. Alternative measures of unemployment take into account individuals who would like to work full time, but who are no longer in the labor force or are holding part-time jobs.</li>
 <li>Economists measure changes in the cost of living through the <em>Consumer Price Index (CPI)</em>, which is based on the cost of purchasing a standard basket of goods and services. The CPI is used to measure changes in average prices over different periods of time. The CPI index for a given year, say year K, is defined as</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ CPI in year K } = \frac{\text{cost of basket in year K}}{\text{cost of basket in base year}} \times 100
-\]</span></p>
+</span></p>
 <ol start="5" type="1">
 <li>We measure <em>inflation</em> as the percentage change in the price level.</li>
 <li>Economists believe that most price indexes, including the CPI and the chain-weighted index for GDP, overstate true inflation because they fail to capture quality improvements in goods and services.</li>

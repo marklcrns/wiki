@@ -12,6 +12,13 @@
 
     <title>ECON 121 Chapter 9 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -22,7 +29,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -67,32 +89,39 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-9-perfect-competition">Chapter 9: Perfect Competition</a><ul>
+          <li><a href="#chapter-9-perfect-competition">Chapter 9: Perfect Competition</a>
+          <ul>
           <li><a href="#previous-of-the-four-market-structures">9.1 Previous of the Four Market Structures</a></li>
-          <li><a href="#the-firms-short-run-output-decision">9.2 The Firm’s Short-Run Output Decision</a><ul>
+          <li><a href="#the-firms-short-run-output-decision">9.2 The Firm’s Short-Run Output Decision</a>
+          <ul>
           <li><a href="#the-total-approach-computing-total-revenue-and-total-cost">9.2.1 The Total Approach: Computing Total Revenue and Total Cost</a></li>
           <li><a href="#the-marginal-approach">9.2.2 The Marginal Approach</a></li>
           <li><a href="#economic-profit-and-the-break-even-price">9.2.3 Economic Profit and the Break-Even Price</a></li>
           </ul></li>
-          <li><a href="#the-firms-shut-down-decision">9.3 The Firm’s Shut-Down Decision</a><ul>
+          <li><a href="#the-firms-shut-down-decision">9.3 The Firm’s Shut-Down Decision</a>
+          <ul>
           <li><a href="#total-revenue-variable-cost-and-the-shut-down-decision">9.3.1 Total Revenue, Variable Cost, and the Shut-Down Decision</a></li>
           <li><a href="#the-shut-down-price">9.3.2 The Shut-Down Price</a></li>
           <li><a href="#fixed-costs-and-sunk-costs">9.3.3 Fixed Costs and Sunk Costs</a></li>
           </ul></li>
-          <li><a href="#short-run-supply-curves">9.4 Short-Run Supply Curves</a><ul>
+          <li><a href="#short-run-supply-curves">9.4 Short-Run Supply Curves</a>
+          <ul>
           <li><a href="#the-firms-short-run-supply-curve">9.4.1 The Firm’s Short-Run Supply Curve</a></li>
           <li><a href="#the-short-run-market-supply-curve">9.4.2 The Short-Run Market Supply Curve</a></li>
           <li><a href="#market-equilibrium">9.4.3 Market Equilibrium</a></li>
           </ul></li>
-          <li><a href="#the-long-run-supply-curve-for-an-increasing-cost-industry">9.5 The Long-Run Supply Curve for an Increasing-Cost Industry</a><ul>
+          <li><a href="#the-long-run-supply-curve-for-an-increasing-cost-industry">9.5 The Long-Run Supply Curve for an Increasing-Cost Industry</a>
+          <ul>
           <li><a href="#production-cost-and-industry-size">9.5.1 Production Cost and Industry Size</a></li>
           <li><a href="#drawing-the-long-run-market-supply-curve">9.5.2 Drawing the Long-Run Market Supply Curve</a></li>
           </ul></li>
-          <li><a href="#short-run-and-long-run-effects-of-changes-in-demand">9.6 Short-Run and Long-Run Effects of Changes in Demand</a><ul>
+          <li><a href="#short-run-and-long-run-effects-of-changes-in-demand">9.6 Short-Run and Long-Run Effects of Changes in Demand</a>
+          <ul>
           <li><a href="#the-short-run-response-to-an-increase-in-demand">9.6.1 The Short-Run Response to an Increase in Demand</a></li>
           <li><a href="#the-long-run-response-to-an-increase-in-demand">9.6.2 The Long-Run Response to an Increase in Demand</a></li>
           </ul></li>
-          <li><a href="#long-run-supply-for-a-constant-cost-industry">9.7 Long-Run Supply for a Constant-Cost Industry</a><ul>
+          <li><a href="#long-run-supply-for-a-constant-cost-industry">9.7 Long-Run Supply for a Constant-Cost Industry</a>
+          <ul>
           <li><a href="#long-run-supply-curve-for-a-constant-cost-industry">9.7.1 Long-Run Supply Curve for a Constant-Cost Industry</a></li>
           <li><a href="#hurricane-andrew-and-the-price-of-ice">9.7.2 Hurricane Andrew and the Price of Ice</a></li>
           </ul></li>
@@ -154,7 +183,7 @@
 <li>A <em>perfectly competitive firm</em> can sell as much as it wants at the market price, but if it raises its price even a penny, it will sell nothing. <a href="ch-5.html#perfectly-elastic-demand">Perfectly elastic</a>.</li>
 </ul>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.1.png" alt="Figure 9.1 Monopoly versus Perfect Competition" /><figcaption>Figure 9.1 Monopoly versus Perfect Competition</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.1.png" alt="Figure 9.1 Monopoly versus Perfect Competition" /><figcaption aria-hidden="true">Figure 9.1 Monopoly versus Perfect Competition</figcaption>
 </figure>
 <blockquote>
 <p>In Panel A, the demand curve facing a monopolist is the market demand curve. In Panel B, a perfectly competitive firm takes the market price as given, so the firm-specific demand curve is horizontal. The firm can sell all it wants at the market price, but would sell nothing if it charged a higher price.</p>
@@ -230,7 +259,7 @@
 <h2 id="the-firms-short-run-output-decision">9.2 The Firm’s Short-Run Output Decision</h2>
 <h3 id="the-total-approach-computing-total-revenue-and-total-cost">9.2.1 The Total Approach: Computing Total Revenue and Total Cost</h3>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.2.png" alt="Figure 9.2 Using the Total Approach to Choose an Output Level" /><figcaption>Figure 9.2 Using the Total Approach to Choose an Output Level</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.2.png" alt="Figure 9.2 Using the Total Approach to Choose an Output Level" /><figcaption aria-hidden="true">Figure 9.2 Using the Total Approach to Choose an Output Level</figcaption>
 </figure>
 <blockquote>
 <p>Economic profit is shown by the vertical distance between the total-revenue curve and the total-cost curve. To maximize profit, the firm chooses the quantity of output that generates the largest vertical difference between the two curves.</p>
@@ -242,26 +271,26 @@
 <li>The change in total revenue from selling one more unit of output.</li>
 </ul>
 <p>A perfectly competitive firm takes the market price as given, so the marginal revenue–the change in total revenue from one more shirt–is simply the price:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{marginal revenue} = \text{price}
-\]</span></p>
+</span></p>
 <p>The marginal principle tells us that the firm will maximize its profit by choosing the quantity at which price equals marginal cost:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{To maximize profit, produce the quantity where price} = \text{marginal
 cost}
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.3.png" alt="Figure 9.3 The Marginal Approach to Picking an Output Level" /><figcaption>Figure 9.3 The Marginal Approach to Picking an Output Level</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.3.png" alt="Figure 9.3 The Marginal Approach to Picking an Output Level" /><figcaption aria-hidden="true">Figure 9.3 The Marginal Approach to Picking an Output Level</figcaption>
 </figure>
 <blockquote>
-<p>A perfectly competitive firm takes the market price as given, so the marginal benefit, or marginal revenue, equals the price. Using the marginal principle, the typical firm will maximize profit at point <span class="math inline">\(a\)</span>, where the $12 market price equals the marginal cost. Economic profit equals the difference between the price and the average cost ($4.125=$12−$7.875) times the quantity produced (eight shirts per minute), or $33 per minute.</p>
+<p>A perfectly competitive firm takes the market price as given, so the marginal benefit, or marginal revenue, equals the price. Using the marginal principle, the typical firm will maximize profit at point <span class="math inline">a</span>, where the $12 market price equals the marginal cost. Economic profit equals the difference between the price and the average cost ($4.125=$12−$7.875) times the quantity produced (eight shirts per minute), or $33 per minute.</p>
 </blockquote>
 <h3 id="economic-profit-and-the-break-even-price">9.2.3 Economic Profit and the Break-Even Price</h3>
 <p>We’ve seen that the perfectly competitive firm maximizes its profit by producing the quantity at which its marginal revenue (price) equals its marginal cost. How much profit does the firm earn? The firm’s economic profit equals its total revenue minus its total cost. One way to compute a firm’s total economic profit is to multiply the average profit per unit produced–the gap between the price and the average cost–by the quantity produced:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{economic profit} = (\text{price} - \text{average cost}) \times
 \text{quantity produced}
-\]</span></p>
+</span></p>
 <p>How would a decrease in price affect the firm’s output decision? A decrease in price shifts the marginal-revenue (price) line downward, so it will intersect the marginal-cost curve at a smaller quantity.</p>
 <p>This is the <a href="ch-4.html#law-of-supply">law of supply</a> in action: The lower the price, the smaller the quantity supplied.</p>
 <p><a name="break-even-price"><strong>Break-even price</strong></a></p>
@@ -369,23 +398,23 @@ cost}
 </table>
 <h3 id="total-revenue-variable-cost-and-the-shut-down-decision">9.3.1 Total Revenue, Variable Cost, and the Shut-Down Decision</h3>
 <p>The decision to operate or shut down is a short-run decision, a day-to-day decision to temporarily halt production in response to market conditions. Suppose our shirt factory hires workers by the day, so it makes the decision at the beginning of each day. The decision-making rule is</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{operate if total revenue} &gt; \text{variable cost} \\
 \text{shut down if total revenue} &lt; \text{variable cost}
-\]</span></p>
+</span></p>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.4.png" alt="Figure 9.4 The Shut-Down Decision and the Shut-Down Price" /><figcaption>Figure 9.4 The Shut-Down Decision and the Shut-Down Price</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.4.png" alt="Figure 9.4 The Shut-Down Decision and the Shut-Down Price" /><figcaption aria-hidden="true">Figure 9.4 The Shut-Down Decision and the Shut-Down Price</figcaption>
 </figure>
 <blockquote>
-<p>When the price is $4, marginal revenue equals marginal cost at four shirts (point <span class="math inline">\(a\)</span>). At this quantity, average cost is $7.50, so the firm loses $3.50 on each shirt, for a total loss of $14. Total revenue is $16 and the variable cost is only $13, so the firm is better off operating at a loss rather than shutting down and losing its fixed cost of $17. The shut-down price, shown by the minimum point of the <em>AVC</em> curve, is $3.00.</p>
+<p>When the price is $4, marginal revenue equals marginal cost at four shirts (point <span class="math inline">a</span>). At this quantity, average cost is $7.50, so the firm loses $3.50 on each shirt, for a total loss of $14. Total revenue is $16 and the variable cost is only $13, so the firm is better off operating at a loss rather than shutting down and losing its fixed cost of $17. The shut-down price, shown by the minimum point of the <em>AVC</em> curve, is $3.00.</p>
 </blockquote>
 <h3 id="the-shut-down-price">9.3.2 The Shut-Down Price</h3>
 <p>There is a shortcut for determining whether it is sensible to continue to operate: compare the price to the average variable cost. Total revenue equals the price times the quantity produced, and the variable cost equals the average variable cost times the quantity produced. Therefore, total revenue will exceed variable cost if the price exceeds the average variable cost. If that happens, the firm should continue to operate. Otherwise, the firm should shut down.</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{operate if price} &gt; \text{average variable cost} \\
 \text{shut down if price} &lt; \text{average variable cost}
-\]</span></p>
-<p>In Figure 9.4, with a price of $4, the marginal principle is satisfied at point a, and the average variable cost of producing four shirts is $3.25 (point <span class="math inline">\(c\)</span>). The price exceeds the average variable cost, so it is sensible to continue operating, even at a loss.</p>
+</span></p>
+<p>In Figure 9.4, with a price of $4, the marginal principle is satisfied at point a, and the average variable cost of producing four shirts is $3.25 (point <span class="math inline">c</span>). The price exceeds the average variable cost, so it is sensible to continue operating, even at a loss.</p>
 <p><a name="shut-down-price"><strong>Shut-down price</strong></a></p>
 <ul>
 <li>The price at which the firm is indifferent between operating and shutting down; equal to the minimum average variable cost.</li>
@@ -404,17 +433,17 @@ cost}
 <li>A curve showing the relationship between the market price of a product and the quantity of output supplied by a firm in the short run.</li>
 </ul>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.5.png" alt="Figure 9.5 Short-Run Supply Curves" /><figcaption>Figure 9.5 Short-Run Supply Curves</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.5.png" alt="Figure 9.5 Short-Run Supply Curves" /><figcaption aria-hidden="true">Figure 9.5 Short-Run Supply Curves</figcaption>
 </figure>
 <blockquote>
-<p>In Panel A, the firm’s short-run supply curve is the part of the marginal-cost curve above the shut-down price. In Panel B, there are 100 firms in the market, so the market supply at a given price is 100 times the quantity supplied by the typical firm. At a price of $7, each firm supplies six shirts per minute (point <span class="math inline">\(b\)</span>), so the market supply is 600 shirts per minute (point <span class="math inline">\(f\)</span>).</p>
+<p>In Panel A, the firm’s short-run supply curve is the part of the marginal-cost curve above the shut-down price. In Panel B, there are 100 firms in the market, so the market supply at a given price is 100 times the quantity supplied by the typical firm. At a price of $7, each firm supplies six shirts per minute (point <span class="math inline">b</span>), so the market supply is 600 shirts per minute (point <span class="math inline">f</span>).</p>
 </blockquote>
 <h3 id="the-short-run-market-supply-curve">9.4.2 The Short-Run Market Supply Curve</h3>
 <p><a name="short-run-market-supply-curve"><strong>Short-run market supply curve</strong></a></p>
 <ul>
 <li>A curve showing the relationship between the market price and the quantity supplied in the short run.</li>
 </ul>
-<p>Panel B of Figure 9.5 shows the short-run market supply curve when there are 100 identical shirt firms. For each price, we get the quantity supplied for the entire market by multiplying the quantity supplied by the typical firm (from the individual supply curve) by 100. At a price of $7, each firm produces six shirts (point <span class="math inline">\(b\)</span> in Panel A), so the market supply is 600 shirts (point <span class="math inline">\(f\)</span> in Panel B). If the price increases to $12, each firm increases production to eight shirts (point <span class="math inline">\(c\)</span> in Panel A), so the market supply is 800 shirts (point <span class="math inline">\(g\)</span> in Panel B).</p>
+<p>Panel B of Figure 9.5 shows the short-run market supply curve when there are 100 identical shirt firms. For each price, we get the quantity supplied for the entire market by multiplying the quantity supplied by the typical firm (from the individual supply curve) by 100. At a price of $7, each firm produces six shirts (point <span class="math inline">b</span> in Panel A), so the market supply is 600 shirts (point <span class="math inline">f</span> in Panel B). If the price increases to $12, each firm increases production to eight shirts (point <span class="math inline">c</span> in Panel A), so the market supply is 800 shirts (point <span class="math inline">g</span> in Panel B).</p>
 <h3 id="market-equilibrium">9.4.3 Market Equilibrium</h3>
 <p>Figure 9.6 shows a perfectly competitive market in equilibrium. For a short-run equilibrium, two conditions are satisfied:</p>
 <ol type="1">
@@ -422,9 +451,9 @@ cost}
 <li>The typical firm in the market maximizes its profit, given the market price. At a market price of $7, each of the 100 firms maximizes profit by producing six shirts per minute (Panel B).</li>
 </ol>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.6.png" alt="Figure 9.6 Market Equilibrium" /><figcaption>Figure 9.6 Market Equilibrium</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.6.png" alt="Figure 9.6 Market Equilibrium" /><figcaption aria-hidden="true">Figure 9.6 Market Equilibrium</figcaption>
 </figure>
-<p>In Panel A, the market demand curve intersects the short-run market supply curve at a price of $7. In Panel B, given the market price of $7, the typical firm satisfies the marginal principle at point <span class="math inline">\(b\)</span>, producing six shirts per minute. The $7 price equals the average cost at the equilibrium quantity, so economic profit is zero, and no other firms will enter the market.</p>
+<p>In Panel A, the market demand curve intersects the short-run market supply curve at a price of $7. In Panel B, given the market price of $7, the typical firm satisfies the marginal principle at point <span class="math inline">b</span>, producing six shirts per minute. The $7 price equals the average cost at the equilibrium quantity, so economic profit is zero, and no other firms will enter the market.</p>
 <h2 id="the-long-run-supply-curve-for-an-increasing-cost-industry">9.5 The Long-Run Supply Curve for an Increasing-Cost Industry</h2>
 <p><a name="long-run-market-supply-curve"><strong>Long-run market supply curve</strong></a></p>
 <ul>
@@ -485,7 +514,7 @@ cost}
 <h3 id="drawing-the-long-run-market-supply-curve">9.5.2 Drawing the Long-Run Market Supply Curve</h3>
 <p>The long-run supply curve tells us how much output will be produced at each price in the long run, when the number of firms in the market can change.</p>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.7.png" alt="Figure 9.7 Long-run Market Supply Curve" /><figcaption>Figure 9.7 Long-run Market Supply Curve</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.7.png" alt="Figure 9.7 Long-run Market Supply Curve" /><figcaption aria-hidden="true">Figure 9.7 Long-run Market Supply Curve</figcaption>
 </figure>
 <blockquote>
 <p>The long-run market supply curve shows the relationship between the price and quantity supplied in the long run, when firms can enter or leave the industry. At each point on the supply curve, the market price equals the long-run average cost of production. Because this is an increasing-cost industry, the long-run market supply curve is positively sloped.</p>
@@ -494,17 +523,17 @@ cost}
 <h2 id="short-run-and-long-run-effects-of-changes-in-demand">9.6 Short-Run and Long-Run Effects of Changes in Demand</h2>
 <h3 id="the-short-run-response-to-an-increase-in-demand">9.6.1 The Short-Run Response to an Increase in Demand</h3>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.8.png" alt="Figure 9.8 Short-Run Effects of an Increase in Demand" /><figcaption>Figure 9.8 Short-Run Effects of an Increase in Demand</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.8.png" alt="Figure 9.8 Short-Run Effects of an Increase in Demand" /><figcaption aria-hidden="true">Figure 9.8 Short-Run Effects of an Increase in Demand</figcaption>
 </figure>
 <blockquote>
 <p>An increase in demand for shirts increases the market price to $12, causing the typical firm to produce eight shirts instead of six. Price exceeds the average total cost at the eight-shirt quantity, so economic profit is positive. Firms will enter the profitable market.</p>
 </blockquote>
 <h3 id="the-long-run-response-to-an-increase-in-demand">9.6.2 The Long-Run Response to an Increase in Demand</h3>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.9.png" alt="Figure 9.9 Short-Run and Long-Run Effects of an Increase in Demand" /><figcaption>Figure 9.9 Short-Run and Long-Run Effects of an Increase in Demand</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.9.png" alt="Figure 9.9 Short-Run and Long-Run Effects of an Increase in Demand" /><figcaption aria-hidden="true">Figure 9.9 Short-Run and Long-Run Effects of an Increase in Demand</figcaption>
 </figure>
 <blockquote>
-<p>The short-run supply curve is steeper than the long-run supply curve because of diminishing returns in the short run. In the short run, an increase in demand increases the price from $7 (point <span class="math inline">\(a\)</span>) to $12 (point <span class="math inline">\(b\)</span>). But in the long run, firms can enter the industry and build more production facilities, so the price eventually drops to $10 (point <span class="math inline">\(c\)</span>). The large upward jump in price after the increase in demand is followed by a downward slide to the new long-run equilibrium price.</p>
+<p>The short-run supply curve is steeper than the long-run supply curve because of diminishing returns in the short run. In the short run, an increase in demand increases the price from $7 (point <span class="math inline">a</span>) to $12 (point <span class="math inline">b</span>). But in the long run, firms can enter the industry and build more production facilities, so the price eventually drops to $10 (point <span class="math inline">c</span>). The large upward jump in price after the increase in demand is followed by a downward slide to the new long-run equilibrium price.</p>
 </blockquote>
 <h2 id="long-run-supply-for-a-constant-cost-industry">9.7 Long-Run Supply for a Constant-Cost Industry</h2>
 <p><a name="constant-cost-industry"><strong>Constant-cost industry</strong></a></p>
@@ -513,7 +542,7 @@ cost}
 </ul>
 <h3 id="long-run-supply-curve-for-a-constant-cost-industry">9.7.1 Long-Run Supply Curve for a Constant-Cost Industry</h3>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.10.png" alt="Figure 9.10 Long-Run Supply Curve for a Constant-Cost Industry" /><figcaption>Figure 9.10 Long-Run Supply Curve for a Constant-Cost Industry</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.10.png" alt="Figure 9.10 Long-Run Supply Curve for a Constant-Cost Industry" /><figcaption aria-hidden="true">Figure 9.10 Long-Run Supply Curve for a Constant-Cost Industry</figcaption>
 </figure>
 <blockquote>
 <p>In a constant-cost industry, input prices do not change as the industry grows. Therefore, the average production cost is constant and the long-run supply curve is horizontal. For the candle industry, the cost per candle is constant at $0.05, so the supply curve is horizontal at $0.05 per candle.</p>
@@ -521,7 +550,7 @@ cost}
 <h3 id="hurricane-andrew-and-the-price-of-ice">9.7.2 Hurricane Andrew and the Price of Ice</h3>
 <p>For an example of the effects of an increase in demand in a constant-cost industry, let’s look at the short-run and long-run effects of a hurricane. In 1992, Hurricane Andrew struck the southeastern United States, leaving millions of people without electricity for several days. Figure 9.11 shows the short-run and long-run effects of the hurricane on the price of ice, which was used to cool and preserve food in areas without electricity. Before the hurricane, the market was at point a, with a price of $1 per bag of ice. The long-run supply curve is horizontal, indicating that the ice industry is a constant-cost industry.</p>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.11.png" alt="Figure 9.11 Hurricane Andrew and the Price of Ice" /><figcaption>Figure 9.11 Hurricane Andrew and the Price of Ice</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-9/ch-9_figure-9.11.png" alt="Figure 9.11 Hurricane Andrew and the Price of Ice" /><figcaption aria-hidden="true">Figure 9.11 Hurricane Andrew and the Price of Ice</figcaption>
 </figure>
 <blockquote>
 <p>A hurricane increases the demand for ice, shifting the demand curve to the right. In the short run, the supply curve is relatively steep, so the price rises by a large amount–from $1 to $5. In the long run, firms enter the industry, pulling the price back down. Because ice production is a constant-cost industry, the supply is horizontal, and the large upward jump in price is followed by a downward slide back to the original price.</p>

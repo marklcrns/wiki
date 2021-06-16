@@ -12,6 +12,13 @@
 
     <title>JavaFX GUI</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -23,26 +30,28 @@
     <link href="../../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -51,9 +60,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -129,7 +138,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#javafx">JavaFX</a><ul>
+          <li><a href="#javafx">JavaFX</a>
+          <ul>
           <li><a href="#introduction-to-graphical-user-interfaces-with-javafx">Introduction to graphical user interfaces with JavaFX</a></li>
           <li><a href="#positioning-gui-components-using-a-gridpane">Positioning GUI Components Using a GridPane</a></li>
           <li><a href="#input-and-event-handlers">Input and Event Handlers</a></li>
@@ -175,54 +185,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>Displaying a yearly salary using a GUI.</p>
 </blockquote>
-<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">import</span><span class="im"> javafx.application.Application;</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">import</span><span class="im"> javafx.stage.Stage;</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="kw">import</span><span class="im"> javafx.scene.Scene;</span></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="kw">import</span><span class="im"> javafx.scene.layout.Pane;</span></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="kw">import</span><span class="im"> javafx.scene.control.TextField;</span></a>
-<a class="sourceLine" id="cb1-6" title="6"></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="kw">public</span> <span class="kw">class</span> SalaryGuiFx <span class="kw">extends</span> Application {</a>
-<a class="sourceLine" id="cb1-8" title="8">   <span class="at">@Override</span></a>
-<a class="sourceLine" id="cb1-9" title="9">   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">start</span>(Stage applicationStage) {</a>
-<a class="sourceLine" id="cb1-10" title="10">      <span class="dt">int</span> hourlyWage;</a>
-<a class="sourceLine" id="cb1-11" title="11">      <span class="dt">int</span> yearlySalary;</a>
-<a class="sourceLine" id="cb1-12" title="12">      Scene scene = <span class="kw">null</span>;                  <span class="co">// Scene contains all content</span></a>
-<a class="sourceLine" id="cb1-13" title="13">      Pane pane = <span class="kw">null</span>;                    <span class="co">// Positions components within scene</span></a>
-<a class="sourceLine" id="cb1-14" title="14">      <span class="bu">TextField</span> outputField = <span class="kw">null</span>;        <span class="co">// Displays output salary</span></a>
-<a class="sourceLine" id="cb1-15" title="15"></a>
-<a class="sourceLine" id="cb1-16" title="16">      pane = <span class="kw">new</span> <span class="fu">Pane</span>();                   <span class="co">// Create an empty pane</span></a>
-<a class="sourceLine" id="cb1-17" title="17">      scene = <span class="kw">new</span> <span class="fu">Scene</span>(pane);             <span class="co">// Create a scene containing the pane</span></a>
-<a class="sourceLine" id="cb1-18" title="18"></a>
-<a class="sourceLine" id="cb1-19" title="19">      <span class="co">// Calculate yearly salary</span></a>
-<a class="sourceLine" id="cb1-20" title="20">      hourlyWage = <span class="dv">20</span>;</a>
-<a class="sourceLine" id="cb1-21" title="21">      yearlySalary = hourlyWage * <span class="dv">40</span> * <span class="dv">50</span>;</a>
-<a class="sourceLine" id="cb1-22" title="22"></a>
-<a class="sourceLine" id="cb1-23" title="23">      <span class="co">// Create text field and display program output using the text field</span></a>
-<a class="sourceLine" id="cb1-24" title="24">      outputField = <span class="kw">new</span> <span class="bu">TextField</span>();</a>
-<a class="sourceLine" id="cb1-25" title="25">      outputField.<span class="fu">setText</span>(<span class="st">&quot;An hourly wage of $&quot;</span> + hourlyWage + <span class="st">&quot;/hr &quot;</span> +</a>
-<a class="sourceLine" id="cb1-26" title="26">                          <span class="st">&quot;yields $&quot;</span> + yearlySalary + <span class="st">&quot;/yr.&quot;</span>);</a>
-<a class="sourceLine" id="cb1-27" title="27">      outputField.<span class="fu">setEditable</span>(<span class="kw">false</span>);      <span class="co">// Prevent user from editing text</span></a>
-<a class="sourceLine" id="cb1-28" title="28">      outputField.<span class="fu">setPrefColumnCount</span>(<span class="dv">22</span>);</a>
-<a class="sourceLine" id="cb1-29" title="29"></a>
-<a class="sourceLine" id="cb1-30" title="30">      pane.<span class="fu">getChildren</span>().<span class="fu">add</span>(outputField); <span class="co">// Add text field to pane</span></a>
-<a class="sourceLine" id="cb1-31" title="31"></a>
-<a class="sourceLine" id="cb1-32" title="32">      applicationStage.<span class="fu">setScene</span>(scene);    <span class="co">// Set window&#39;s scene</span></a>
-<a class="sourceLine" id="cb1-33" title="33">      applicationStage.<span class="fu">setTitle</span>(<span class="st">&quot;Salary&quot;</span>); <span class="co">// Set window&#39;s title</span></a>
-<a class="sourceLine" id="cb1-34" title="34">      applicationStage.<span class="fu">show</span>();             <span class="co">// Display window</span></a>
-<a class="sourceLine" id="cb1-35" title="35">   }</a>
-<a class="sourceLine" id="cb1-36" title="36"></a>
-<a class="sourceLine" id="cb1-37" title="37">   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span> [] args) {</a>
-<a class="sourceLine" id="cb1-38" title="38">      <span class="fu">launch</span>(args); <span class="co">// Launch application</span></a>
-<a class="sourceLine" id="cb1-39" title="39">   }</a>
-<a class="sourceLine" id="cb1-40" title="40">}</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">application</span><span class="op">.</span><span class="im">Application</span><span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">stage</span><span class="op">.</span><span class="im">Stage</span><span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">Scene</span><span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">layout</span><span class="op">.</span><span class="im">Pane</span><span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">control</span><span class="op">.</span><span class="im">TextField</span><span class="op">;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> SalaryGuiFx <span class="kw">extends</span> Application <span class="op">{</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>   <span class="at">@Override</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">start</span><span class="op">(</span>Stage applicationStage<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>      <span class="dt">int</span> hourlyWage<span class="op">;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>      <span class="dt">int</span> yearlySalary<span class="op">;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>      Scene scene <span class="op">=</span> <span class="kw">null</span><span class="op">;</span>                  <span class="co">// Scene contains all content</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>      Pane pane <span class="op">=</span> <span class="kw">null</span><span class="op">;</span>                    <span class="co">// Positions components within scene</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      <span class="bu">TextField</span> outputField <span class="op">=</span> <span class="kw">null</span><span class="op">;</span>        <span class="co">// Displays output salary</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>      pane <span class="op">=</span> <span class="kw">new</span> <span class="fu">Pane</span><span class="op">();</span>                   <span class="co">// Create an empty pane</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>      scene <span class="op">=</span> <span class="kw">new</span> <span class="fu">Scene</span><span class="op">(</span>pane<span class="op">);</span>             <span class="co">// Create a scene containing the pane</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Calculate yearly salary</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>      hourlyWage <span class="op">=</span> <span class="dv">20</span><span class="op">;</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>      yearlySalary <span class="op">=</span> hourlyWage <span class="op">*</span> <span class="dv">40</span> <span class="op">*</span> <span class="dv">50</span><span class="op">;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Create text field and display program output using the text field</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>      outputField <span class="op">=</span> <span class="kw">new</span> <span class="bu">TextField</span><span class="op">();</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>      outputField<span class="op">.</span><span class="fu">setText</span><span class="op">(</span><span class="st">&quot;An hourly wage of $&quot;</span> <span class="op">+</span> hourlyWage <span class="op">+</span> <span class="st">&quot;/hr &quot;</span> <span class="op">+</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&quot;yields $&quot;</span> <span class="op">+</span> yearlySalary <span class="op">+</span> <span class="st">&quot;/yr.&quot;</span><span class="op">);</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>      outputField<span class="op">.</span><span class="fu">setEditable</span><span class="op">(</span><span class="kw">false</span><span class="op">);</span>      <span class="co">// Prevent user from editing text</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>      outputField<span class="op">.</span><span class="fu">setPrefColumnCount</span><span class="op">(</span><span class="dv">22</span><span class="op">);</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>      pane<span class="op">.</span><span class="fu">getChildren</span><span class="op">().</span><span class="fu">add</span><span class="op">(</span>outputField<span class="op">);</span> <span class="co">// Add text field to pane</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>      applicationStage<span class="op">.</span><span class="fu">setScene</span><span class="op">(</span>scene<span class="op">);</span>    <span class="co">// Set window&#39;s scene</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>      applicationStage<span class="op">.</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">&quot;Salary&quot;</span><span class="op">);</span> <span class="co">// Set window&#39;s title</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>      applicationStage<span class="op">.</span><span class="fu">show</span><span class="op">();</span>             <span class="co">// Display window</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span> <span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>      <span class="fu">launch</span><span class="op">(</span>args<span class="op">);</span> <span class="co">// Launch application</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>A JavaFX GUI uses four classes/objects, namely Application, Stage, Scene, and Pane, to display graphical components. The following outlines one approach to create a JavaFX GUI, using the SalaryGuiFx class as the example application.</p>
 <ol type="1">
 <li><p>Extend and launch the application: An <code>Application</code> is a JavaFX class that provides the basic functionality for a JavaFX program and is available via the import statement <code>javafx.application.Application;</code>. The SalaryGuiFx class is derived from the Application class by appending extends Application after SalaryGuiFx in the class definition, as in class SalaryGuiFx extends Application. The SalaryGuiFx class inherits the functionality of the Application class, so that SalaryGuiFx can display a GUI. The concept of class inheritance is explained in more detail elsewhere.</p>
 <ul>
 <li>The <code>main()</code> method calls the <code>launch()</code> method using the statement <code>launch(args);</code>. The <code>launch()</code> method creates a SalaryGuiFx object and calls the SalaryGuiFx object’s <code>start()</code> method.</li>
 </ul></li>
-<li><p>Override the <code>start()</code> method: A JavaFX Application starts by executing the <code>start()</code> method, which must be overridden in the derived Application class. The <code>start()</code> method takes a Stage parameter, has a return type of void, as in <code>public void start(Stage applicationStage) {...}</code>, and is preceded by the annotation <span class="citation" data-cites="Override">@Override</span>. A Stage is a JavaFX top-level container that contains all content within a window and is available via the import statement <code>import javafx.stage.Stage;</code>.</p></li>
-<li><p>Create a pane and scene: A <code>Scene</code> is a JavaFX component that contains all graphical components that are displayed together and is available via the import statement <code>import javafx.scene.Scene;</code>. An application can have multiple scenes, but only one scene may be visible at a time. A <code>Pane</code> is a JavaFX component that controls the layout, i.e., position and size, of graphical components and is available via the import statement <code>import javafx.scene.layout.Pane;</code>. The statement <code>pane = new Pane();</code> creates an empty Pane object. The statement <code>scene = new Scene(pane);</code> creates a new Scene containing the pane object.</p></li>
+<li><p>Override the <code>start()</code> method: A JavaFX Application starts by executing the <code>start()</code> method, which must be overridden in the derived Application class. The <code>start()</code> method takes a Stage parameter, has a return type of void, as in <code>public void start(Stage applicationStage) {...}</code>, and is preceded by the annotation <span class="citation" data-cites="Override">@Override</span>. A Stage is a JavaFX top-level container that contains all content within a window and is available via the import statement <code>import    javafx.stage.Stage;</code>.</p></li>
+<li><p>Create a pane and scene: A <code>Scene</code> is a JavaFX component that contains all graphical components that are displayed together and is available via the import statement <code>import javafx.scene.Scene;</code>. An application can have multiple scenes, but only one scene may be visible at a time. A <code>Pane</code> is a JavaFX component that controls the layout, i.e., position and size, of graphical components and is available via the import statement <code>import    javafx.scene.layout.Pane;</code>. The statement <code>pane = new Pane();</code> creates an empty Pane object. The statement <code>scene = new Scene(pane);</code> creates a new Scene containing the pane object.</p></li>
 <li><p>Create and add graphical components to a pane: A TextField is a JavaFX GUI component that enables a programmer to display a line of text and is available via the import statement <code>import javafx.scene.control.TextField;</code>. The statement <code>outputField = new TextField();</code> creates a TextField object. A TextField’s <code>setText()</code> method specifies the text that will be displayed. Ex: <code>outputField.setText("An hourly ... ");</code>. By default, a TextField allows users to modify the text for the purposes of input (discussed elsewhere). A program can use TextField’s <code>setEditable()</code> method with an argument of false to prevent users from editing the text, as in <code>outputField.setEditable(false);</code>. A TextField’s width can be set using the <code>setPrefColumnCount()</code> method. Ex: <code>outputField.setPrefColumnCount(22)</code> sets the width to 22 columns.</p>
 <ul>
 <li>Graphical components are added to a scene by adding the components to the scene’s pane. A pane can contain numerous graphical components, which are called children. The <code>statement pane.getChildren().add(outputField);</code> adds a TextField object named outputField to the pane’s list of children.</li>
@@ -234,251 +244,251 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>Using a GridPane to arrange graphical components.</p>
 </blockquote>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">import</span><span class="im"> javafx.application.Application;</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="kw">import</span><span class="im"> javafx.geometry.Insets;</span></a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="kw">import</span><span class="im"> javafx.stage.Stage;</span></a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="kw">import</span><span class="im"> javafx.scene.Scene;</span></a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="kw">import</span><span class="im"> javafx.scene.control.Label;</span></a>
-<a class="sourceLine" id="cb2-6" title="6"><span class="kw">import</span><span class="im"> javafx.scene.control.TextField;</span></a>
-<a class="sourceLine" id="cb2-7" title="7"><span class="kw">import</span><span class="im"> javafx.scene.layout.GridPane;</span></a>
-<a class="sourceLine" id="cb2-8" title="8"></a>
-<a class="sourceLine" id="cb2-9" title="9"><span class="kw">public</span> <span class="kw">class</span> SalaryLabelGuiFx <span class="kw">extends</span> Application {</a>
-<a class="sourceLine" id="cb2-10" title="10">   <span class="at">@Override</span></a>
-<a class="sourceLine" id="cb2-11" title="11">   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">start</span>(Stage applicationStage) {</a>
-<a class="sourceLine" id="cb2-12" title="12">      <span class="dt">int</span> hourlyWage;</a>
-<a class="sourceLine" id="cb2-13" title="13">      <span class="dt">int</span> yearlySalary;</a>
-<a class="sourceLine" id="cb2-14" title="14">      Scene scene = <span class="kw">null</span>;         <span class="co">// Scene contains all content</span></a>
-<a class="sourceLine" id="cb2-15" title="15">      GridPane gridPane = <span class="kw">null</span>;   <span class="co">// Positions components within scene</span></a>
-<a class="sourceLine" id="cb2-16" title="16">      <span class="bu">Label</span> wageLabel = <span class="kw">null</span>;     <span class="co">// Label for hourly salary</span></a>
-<a class="sourceLine" id="cb2-17" title="17">      <span class="bu">Label</span> salaryLabel = <span class="kw">null</span>;   <span class="co">// Label for yearly salary</span></a>
-<a class="sourceLine" id="cb2-18" title="18">      <span class="bu">TextField</span> salField = <span class="kw">null</span>;  <span class="co">// Displays yearly salary</span></a>
-<a class="sourceLine" id="cb2-19" title="19">      <span class="bu">TextField</span> wageField = <span class="kw">null</span>; <span class="co">// Displays hourly wage</span></a>
-<a class="sourceLine" id="cb2-20" title="20">      <span class="bu">Insets</span> gridPadding = <span class="kw">null</span>;</a>
-<a class="sourceLine" id="cb2-21" title="21"></a>
-<a class="sourceLine" id="cb2-22" title="22">      gridPane = <span class="kw">new</span> <span class="fu">GridPane</span>();   <span class="co">// Create an empty pane</span></a>
-<a class="sourceLine" id="cb2-23" title="23">      scene = <span class="kw">new</span> <span class="fu">Scene</span>(gridPane); <span class="co">// Create scene containing the grid pane</span></a>
-<a class="sourceLine" id="cb2-24" title="24"></a>
-<a class="sourceLine" id="cb2-25" title="25">      <span class="co">// Calculate yearly salary</span></a>
-<a class="sourceLine" id="cb2-26" title="26">      hourlyWage = <span class="dv">20</span>;</a>
-<a class="sourceLine" id="cb2-27" title="27">      yearlySalary = hourlyWage * <span class="dv">40</span> * <span class="dv">50</span>;</a>
-<a class="sourceLine" id="cb2-28" title="28"></a>
-<a class="sourceLine" id="cb2-29" title="29">      <span class="co">// Set hourly and yearly salary</span></a>
-<a class="sourceLine" id="cb2-30" title="30">      wageLabel = <span class="kw">new</span> <span class="bu">Label</span>(<span class="st">&quot;Hourly wage:&quot;</span>);</a>
-<a class="sourceLine" id="cb2-31" title="31">      salaryLabel = <span class="kw">new</span> <span class="bu">Label</span>(<span class="st">&quot;Yearly salary:&quot;</span>);</a>
-<a class="sourceLine" id="cb2-32" title="32"></a>
-<a class="sourceLine" id="cb2-33" title="33">      <span class="co">// Create wage and salary text fields</span></a>
-<a class="sourceLine" id="cb2-34" title="34">      wageField = <span class="kw">new</span> <span class="bu">TextField</span>();</a>
-<a class="sourceLine" id="cb2-35" title="35">      wageField.<span class="fu">setPrefColumnCount</span>(<span class="dv">15</span>);</a>
-<a class="sourceLine" id="cb2-36" title="36">      wageField.<span class="fu">setEditable</span>(<span class="kw">false</span>);</a>
-<a class="sourceLine" id="cb2-37" title="37">      wageField.<span class="fu">setText</span>(<span class="bu">Integer</span>.<span class="fu">toString</span>(hourlyWage));</a>
-<a class="sourceLine" id="cb2-38" title="38"></a>
-<a class="sourceLine" id="cb2-39" title="39">      salField = <span class="kw">new</span> <span class="bu">TextField</span>();</a>
-<a class="sourceLine" id="cb2-40" title="40">      salField.<span class="fu">setPrefColumnCount</span>(<span class="dv">15</span>);</a>
-<a class="sourceLine" id="cb2-41" title="41">      salField.<span class="fu">setEditable</span>(<span class="kw">false</span>);</a>
-<a class="sourceLine" id="cb2-42" title="42">      salField.<span class="fu">setText</span>(<span class="bu">Integer</span>.<span class="fu">toString</span>(yearlySalary));</a>
-<a class="sourceLine" id="cb2-43" title="43"></a>
-<a class="sourceLine" id="cb2-44" title="44">      gridPane.<span class="fu">add</span>(wageLabel, <span class="dv">0</span>, <span class="dv">0</span>);   <span class="co">// Add wage label to location (0, 0)</span></a>
-<a class="sourceLine" id="cb2-45" title="45">      gridPane.<span class="fu">add</span>(wageField, <span class="dv">1</span>, <span class="dv">0</span>);   <span class="co">// Add wage text field to location (1, 0)</span></a>
-<a class="sourceLine" id="cb2-46" title="46">      gridPane.<span class="fu">add</span>(salaryLabel, <span class="dv">0</span>, <span class="dv">1</span>); <span class="co">// Add salary label to location (0, 1)</span></a>
-<a class="sourceLine" id="cb2-47" title="47">      gridPane.<span class="fu">add</span>(salField, <span class="dv">1</span>, <span class="dv">1</span>);    <span class="co">// Add salary text field to location (1, 1)</span></a>
-<a class="sourceLine" id="cb2-48" title="48"></a>
-<a class="sourceLine" id="cb2-49" title="49">      gridPadding = <span class="kw">new</span> <span class="bu">Insets</span>(<span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>); <span class="co">// Padding values for top, right, bottom, and left</span></a>
-<a class="sourceLine" id="cb2-50" title="50">      gridPane.<span class="fu">setPadding</span>(gridPadding);         <span class="co">// Set padding around  grid</span></a>
-<a class="sourceLine" id="cb2-51" title="51">      gridPane.<span class="fu">setHgap</span>(<span class="dv">10</span>);                     <span class="co">// Spacing between columns</span></a>
-<a class="sourceLine" id="cb2-52" title="52">      gridPane.<span class="fu">setVgap</span>(<span class="dv">10</span>);                     <span class="co">// Spacing between rows</span></a>
-<a class="sourceLine" id="cb2-53" title="53"></a>
-<a class="sourceLine" id="cb2-54" title="54">      applicationStage.<span class="fu">setScene</span>(scene);    <span class="co">// Set window&#39;s scene</span></a>
-<a class="sourceLine" id="cb2-55" title="55">      applicationStage.<span class="fu">setTitle</span>(<span class="st">&quot;Salary&quot;</span>); <span class="co">// Set window&#39;s title</span></a>
-<a class="sourceLine" id="cb2-56" title="56">      applicationStage.<span class="fu">show</span>();             <span class="co">// Display window</span></a>
-<a class="sourceLine" id="cb2-57" title="57">   }</a>
-<a class="sourceLine" id="cb2-58" title="58"></a>
-<a class="sourceLine" id="cb2-59" title="59">   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span> [] args) {</a>
-<a class="sourceLine" id="cb2-60" title="60">      <span class="fu">launch</span>(args); <span class="co">// Launch application</span></a>
-<a class="sourceLine" id="cb2-61" title="61">   }</a>
-<a class="sourceLine" id="cb2-62" title="62">}</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">application</span><span class="op">.</span><span class="im">Application</span><span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">geometry</span><span class="op">.</span><span class="im">Insets</span><span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">stage</span><span class="op">.</span><span class="im">Stage</span><span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">Scene</span><span class="op">;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">control</span><span class="op">.</span><span class="im">Label</span><span class="op">;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">control</span><span class="op">.</span><span class="im">TextField</span><span class="op">;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">layout</span><span class="op">.</span><span class="im">GridPane</span><span class="op">;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> SalaryLabelGuiFx <span class="kw">extends</span> Application <span class="op">{</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>   <span class="at">@Override</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">start</span><span class="op">(</span>Stage applicationStage<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      <span class="dt">int</span> hourlyWage<span class="op">;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>      <span class="dt">int</span> yearlySalary<span class="op">;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>      Scene scene <span class="op">=</span> <span class="kw">null</span><span class="op">;</span>         <span class="co">// Scene contains all content</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>      GridPane gridPane <span class="op">=</span> <span class="kw">null</span><span class="op">;</span>   <span class="co">// Positions components within scene</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>      <span class="bu">Label</span> wageLabel <span class="op">=</span> <span class="kw">null</span><span class="op">;</span>     <span class="co">// Label for hourly salary</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>      <span class="bu">Label</span> salaryLabel <span class="op">=</span> <span class="kw">null</span><span class="op">;</span>   <span class="co">// Label for yearly salary</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>      <span class="bu">TextField</span> salField <span class="op">=</span> <span class="kw">null</span><span class="op">;</span>  <span class="co">// Displays yearly salary</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>      <span class="bu">TextField</span> wageField <span class="op">=</span> <span class="kw">null</span><span class="op">;</span> <span class="co">// Displays hourly wage</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>      <span class="bu">Insets</span> gridPadding <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>      gridPane <span class="op">=</span> <span class="kw">new</span> <span class="fu">GridPane</span><span class="op">();</span>   <span class="co">// Create an empty pane</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>      scene <span class="op">=</span> <span class="kw">new</span> <span class="fu">Scene</span><span class="op">(</span>gridPane<span class="op">);</span> <span class="co">// Create scene containing the grid pane</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Calculate yearly salary</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>      hourlyWage <span class="op">=</span> <span class="dv">20</span><span class="op">;</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>      yearlySalary <span class="op">=</span> hourlyWage <span class="op">*</span> <span class="dv">40</span> <span class="op">*</span> <span class="dv">50</span><span class="op">;</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Set hourly and yearly salary</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>      wageLabel <span class="op">=</span> <span class="kw">new</span> <span class="bu">Label</span><span class="op">(</span><span class="st">&quot;Hourly wage:&quot;</span><span class="op">);</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>      salaryLabel <span class="op">=</span> <span class="kw">new</span> <span class="bu">Label</span><span class="op">(</span><span class="st">&quot;Yearly salary:&quot;</span><span class="op">);</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Create wage and salary text fields</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>      wageField <span class="op">=</span> <span class="kw">new</span> <span class="bu">TextField</span><span class="op">();</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>      wageField<span class="op">.</span><span class="fu">setPrefColumnCount</span><span class="op">(</span><span class="dv">15</span><span class="op">);</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>      wageField<span class="op">.</span><span class="fu">setEditable</span><span class="op">(</span><span class="kw">false</span><span class="op">);</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>      wageField<span class="op">.</span><span class="fu">setText</span><span class="op">(</span><span class="bu">Integer</span><span class="op">.</span><span class="fu">toString</span><span class="op">(</span>hourlyWage<span class="op">));</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>      salField <span class="op">=</span> <span class="kw">new</span> <span class="bu">TextField</span><span class="op">();</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>      salField<span class="op">.</span><span class="fu">setPrefColumnCount</span><span class="op">(</span><span class="dv">15</span><span class="op">);</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>      salField<span class="op">.</span><span class="fu">setEditable</span><span class="op">(</span><span class="kw">false</span><span class="op">);</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>      salField<span class="op">.</span><span class="fu">setText</span><span class="op">(</span><span class="bu">Integer</span><span class="op">.</span><span class="fu">toString</span><span class="op">(</span>yearlySalary<span class="op">));</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">add</span><span class="op">(</span>wageLabel<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">);</span>   <span class="co">// Add wage label to location (0, 0)</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">add</span><span class="op">(</span>wageField<span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">);</span>   <span class="co">// Add wage text field to location (1, 0)</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">add</span><span class="op">(</span>salaryLabel<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">);</span> <span class="co">// Add salary label to location (0, 1)</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">add</span><span class="op">(</span>salField<span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">);</span>    <span class="co">// Add salary text field to location (1, 1)</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>      gridPadding <span class="op">=</span> <span class="kw">new</span> <span class="bu">Insets</span><span class="op">(</span><span class="dv">10</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">10</span><span class="op">);</span> <span class="co">// Padding values for top, right, bottom, and left</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">setPadding</span><span class="op">(</span>gridPadding<span class="op">);</span>         <span class="co">// Set padding around  grid</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">setHgap</span><span class="op">(</span><span class="dv">10</span><span class="op">);</span>                     <span class="co">// Spacing between columns</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">setVgap</span><span class="op">(</span><span class="dv">10</span><span class="op">);</span>                     <span class="co">// Spacing between rows</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>      applicationStage<span class="op">.</span><span class="fu">setScene</span><span class="op">(</span>scene<span class="op">);</span>    <span class="co">// Set window&#39;s scene</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>      applicationStage<span class="op">.</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">&quot;Salary&quot;</span><span class="op">);</span> <span class="co">// Set window&#39;s title</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>      applicationStage<span class="op">.</span><span class="fu">show</span><span class="op">();</span>             <span class="co">// Display window</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span> <span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>      <span class="fu">launch</span><span class="op">(</span>args<span class="op">);</span> <span class="co">// Launch application</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>A <code>Label</code> is a JavaFX component that displays non-editable text and is available via the import statement import javafx.scene.control.Label;. Labels are typically for describing, or labeling, other GUI components. For example, the SalaryLabelGuiFx program uses two Labels, wageLabel and salaryLabel, to describe the contents of the wage and salary text fields, respectively.</p>
 <h2 id="input-and-event-handlers">Input and Event Handlers</h2>
 <p>A <code>Button</code> is a JavaFX GUI component that represents a labeled button that a user can press to interact with a program. A JavaFX GUI component that supports user input generates an <strong>action event</strong> to notify the program when a user interacts with the component, such as when pressing a button. An <strong>event handler</strong> defines how the program should respond to action events. The following GUI uses a text field to enable the user to enter an hourly wage as an input for the calculation of a yearly salary, which is triggered by a button press.</p>
 <blockquote>
 <p>Using a Button to trigger a yearly salary calculation.</p>
 </blockquote>
-<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">import</span><span class="im"> javafx.application.Application;</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="kw">import</span><span class="im"> javafx.stage.Stage;</span></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="kw">import</span><span class="im"> javafx.scene.Scene;</span></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="kw">import</span><span class="im"> javafx.scene.layout.GridPane;</span></a>
-<a class="sourceLine" id="cb3-5" title="5"><span class="kw">import</span><span class="im"> javafx.scene.control.Button;</span></a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="kw">import</span><span class="im"> javafx.scene.control.Label;</span></a>
-<a class="sourceLine" id="cb3-7" title="7"><span class="kw">import</span><span class="im"> javafx.scene.control.TextField;</span></a>
-<a class="sourceLine" id="cb3-8" title="8"><span class="kw">import</span><span class="im"> javafx.geometry.Insets;</span></a>
-<a class="sourceLine" id="cb3-9" title="9"><span class="kw">import</span><span class="im"> javafx.event.ActionEvent;</span></a>
-<a class="sourceLine" id="cb3-10" title="10"><span class="kw">import</span><span class="im"> javafx.event.EventHandler;</span></a>
-<a class="sourceLine" id="cb3-11" title="11"><span class="kw">import</span><span class="im"> javafx.scene.control.Alert;</span></a>
-<a class="sourceLine" id="cb3-12" title="12"><span class="kw">import</span><span class="im"> javafx.scene.control.Alert.AlertType;</span></a>
-<a class="sourceLine" id="cb3-13" title="13"></a>
-<a class="sourceLine" id="cb3-14" title="14"><span class="kw">public</span> <span class="kw">class</span> SalaryCalcButtonGuiFx <span class="kw">extends</span> Application {</a>
-<a class="sourceLine" id="cb3-15" title="15">   <span class="kw">private</span> <span class="bu">Label</span> wageLabel;     <span class="co">// Label for hourly salary</span></a>
-<a class="sourceLine" id="cb3-16" title="16">   <span class="kw">private</span> <span class="bu">Label</span> salLabel;      <span class="co">// Label for yearly salary</span></a>
-<a class="sourceLine" id="cb3-17" title="17">   <span class="kw">private</span> <span class="bu">TextField</span> salField;  <span class="co">// Displays hourly salary</span></a>
-<a class="sourceLine" id="cb3-18" title="18">   <span class="kw">private</span> <span class="bu">TextField</span> wageField; <span class="co">// Displays yearly salary</span></a>
-<a class="sourceLine" id="cb3-19" title="19">   <span class="kw">private</span> <span class="bu">Button</span> calcButton;   <span class="co">// Triggers salary calculation</span></a>
-<a class="sourceLine" id="cb3-20" title="20"></a>
-<a class="sourceLine" id="cb3-21" title="21">   <span class="at">@Override</span></a>
-<a class="sourceLine" id="cb3-22" title="22">   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">start</span>(Stage applicationStage) {</a>
-<a class="sourceLine" id="cb3-23" title="23">      Scene scene = <span class="kw">null</span>;         <span class="co">// Scene contains all content</span></a>
-<a class="sourceLine" id="cb3-24" title="24">      GridPane gridPane = <span class="kw">null</span>;   <span class="co">// Positions components within scene</span></a>
-<a class="sourceLine" id="cb3-25" title="25"></a>
-<a class="sourceLine" id="cb3-26" title="26">      gridPane = <span class="kw">new</span> <span class="fu">GridPane</span>();   <span class="co">// Create an empty pane</span></a>
-<a class="sourceLine" id="cb3-27" title="27">      scene = <span class="kw">new</span> <span class="fu">Scene</span>(gridPane); <span class="co">// Create scene containing the grid pane</span></a>
-<a class="sourceLine" id="cb3-28" title="28"></a>
-<a class="sourceLine" id="cb3-29" title="29">      <span class="co">// Set hourly and yearly salary</span></a>
-<a class="sourceLine" id="cb3-30" title="30">      wageLabel = <span class="kw">new</span> <span class="bu">Label</span>(<span class="st">&quot;Hourly wage:&quot;</span>);</a>
-<a class="sourceLine" id="cb3-31" title="31">      salLabel = <span class="kw">new</span> <span class="bu">Label</span>(<span class="st">&quot;Yearly salary:&quot;</span>);</a>
-<a class="sourceLine" id="cb3-32" title="32"></a>
-<a class="sourceLine" id="cb3-33" title="33">      wageField = <span class="kw">new</span> <span class="bu">TextField</span>();</a>
-<a class="sourceLine" id="cb3-34" title="34">      wageField.<span class="fu">setPrefColumnCount</span>(<span class="dv">15</span>);</a>
-<a class="sourceLine" id="cb3-35" title="35">      wageField.<span class="fu">setEditable</span>(<span class="kw">true</span>);</a>
-<a class="sourceLine" id="cb3-36" title="36">      wageField.<span class="fu">setText</span>(<span class="st">&quot;0&quot;</span>);</a>
-<a class="sourceLine" id="cb3-37" title="37"></a>
-<a class="sourceLine" id="cb3-38" title="38">      salField = <span class="kw">new</span> <span class="bu">TextField</span>();</a>
-<a class="sourceLine" id="cb3-39" title="39">      salField.<span class="fu">setPrefColumnCount</span>(<span class="dv">15</span>);</a>
-<a class="sourceLine" id="cb3-40" title="40">      salField.<span class="fu">setEditable</span>(<span class="kw">false</span>);</a>
-<a class="sourceLine" id="cb3-41" title="41"></a>
-<a class="sourceLine" id="cb3-42" title="42">      <span class="co">// Create a &quot;Calculate&quot; button</span></a>
-<a class="sourceLine" id="cb3-43" title="43">      calcButton = <span class="kw">new</span> <span class="bu">Button</span>(<span class="st">&quot;Calculate&quot;</span>);</a>
-<a class="sourceLine" id="cb3-44" title="44"></a>
-<a class="sourceLine" id="cb3-45" title="45">      gridPane.<span class="fu">setPadding</span>(<span class="kw">new</span> <span class="bu">Insets</span>(<span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>)); <span class="co">// Padding around  grid</span></a>
-<a class="sourceLine" id="cb3-46" title="46">      gridPane.<span class="fu">setHgap</span>(<span class="dv">10</span>);                            <span class="co">// Spacing between columns</span></a>
-<a class="sourceLine" id="cb3-47" title="47">      gridPane.<span class="fu">setVgap</span>(<span class="dv">10</span>);                            <span class="co">// Spacing between rows</span></a>
-<a class="sourceLine" id="cb3-48" title="48"></a>
-<a class="sourceLine" id="cb3-49" title="49">      gridPane.<span class="fu">add</span>(wageLabel, <span class="dv">0</span>, <span class="dv">0</span>);  <span class="co">// Add wage label to location (0, 0)</span></a>
-<a class="sourceLine" id="cb3-50" title="50">      gridPane.<span class="fu">add</span>(wageField, <span class="dv">1</span>, <span class="dv">0</span>);  <span class="co">// Add wage text field to location (1, 0)</span></a>
-<a class="sourceLine" id="cb3-51" title="51">      gridPane.<span class="fu">add</span>(salLabel, <span class="dv">0</span>, <span class="dv">1</span>);   <span class="co">// Add salary label to location (0, 1)</span></a>
-<a class="sourceLine" id="cb3-52" title="52">      gridPane.<span class="fu">add</span>(salField, <span class="dv">1</span>, <span class="dv">1</span>);   <span class="co">// Add salary text field to location (1, 1)</span></a>
-<a class="sourceLine" id="cb3-53" title="53">      gridPane.<span class="fu">add</span>(calcButton, <span class="dv">0</span>, <span class="dv">2</span>); <span class="co">// Add calculate button to location (0, 2)</span></a>
-<a class="sourceLine" id="cb3-54" title="54"></a>
-<a class="sourceLine" id="cb3-55" title="55">      <span class="co">// Set an event handler to handle button presses</span></a>
-<a class="sourceLine" id="cb3-56" title="56">      calcButton.<span class="fu">setOnAction</span>(<span class="kw">new</span> <span class="bu">EventHandler</span>&lt;<span class="bu">ActionEvent</span>&gt;() {</a>
-<a class="sourceLine" id="cb3-57" title="57">         <span class="co">/* Method is automatically called when an event</span></a>
-<a class="sourceLine" id="cb3-58" title="58"><span class="co">            occurs (e.g, button is pressed) */</span></a>
-<a class="sourceLine" id="cb3-59" title="59">         <span class="at">@Override</span></a>
-<a class="sourceLine" id="cb3-60" title="60">         <span class="kw">public</span> <span class="dt">void</span> <span class="fu">handle</span>(<span class="bu">ActionEvent</span> event) {</a>
-<a class="sourceLine" id="cb3-61" title="61">            <span class="bu">String</span> userInput;</a>
-<a class="sourceLine" id="cb3-62" title="62">            <span class="dt">int</span> hourlyWage;</a>
-<a class="sourceLine" id="cb3-63" title="63">            <span class="dt">int</span> yearlySalary;</a>
-<a class="sourceLine" id="cb3-64" title="64"></a>
-<a class="sourceLine" id="cb3-65" title="65">            <span class="co">// Get user&#39;s wage input and calculate yearly salary</span></a>
-<a class="sourceLine" id="cb3-66" title="66">            userInput = wageField.<span class="fu">getText</span>();</a>
-<a class="sourceLine" id="cb3-67" title="67">            hourlyWage = <span class="bu">Integer</span>.<span class="fu">parseInt</span>(userInput);</a>
-<a class="sourceLine" id="cb3-68" title="68">            yearlySalary = hourlyWage * <span class="dv">40</span> * <span class="dv">50</span>;</a>
-<a class="sourceLine" id="cb3-69" title="69"></a>
-<a class="sourceLine" id="cb3-70" title="70">            <span class="co">// Display calculated salary</span></a>
-<a class="sourceLine" id="cb3-71" title="71">            salField.<span class="fu">setText</span>(<span class="bu">Integer</span>.<span class="fu">toString</span>(yearlySalary));</a>
-<a class="sourceLine" id="cb3-72" title="72">         }</a>
-<a class="sourceLine" id="cb3-73" title="73">      });</a>
-<a class="sourceLine" id="cb3-74" title="74"></a>
-<a class="sourceLine" id="cb3-75" title="75">      applicationStage.<span class="fu">setScene</span>(scene);    <span class="co">// Set window&#39;s scene</span></a>
-<a class="sourceLine" id="cb3-76" title="76">      applicationStage.<span class="fu">setTitle</span>(<span class="st">&quot;Salary&quot;</span>); <span class="co">// Set window&#39;s title</span></a>
-<a class="sourceLine" id="cb3-77" title="77">      applicationStage.<span class="fu">show</span>();             <span class="co">// Display window</span></a>
-<a class="sourceLine" id="cb3-78" title="78">   }</a>
-<a class="sourceLine" id="cb3-79" title="79"></a>
-<a class="sourceLine" id="cb3-80" title="80">   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span> [] args) {</a>
-<a class="sourceLine" id="cb3-81" title="81">      <span class="fu">launch</span>(args); <span class="co">// Launch application</span></a>
-<a class="sourceLine" id="cb3-82" title="82">   }</a>
-<a class="sourceLine" id="cb3-83" title="83">}</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">application</span><span class="op">.</span><span class="im">Application</span><span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">stage</span><span class="op">.</span><span class="im">Stage</span><span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">Scene</span><span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">layout</span><span class="op">.</span><span class="im">GridPane</span><span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">control</span><span class="op">.</span><span class="im">Button</span><span class="op">;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">control</span><span class="op">.</span><span class="im">Label</span><span class="op">;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">control</span><span class="op">.</span><span class="im">TextField</span><span class="op">;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">geometry</span><span class="op">.</span><span class="im">Insets</span><span class="op">;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">event</span><span class="op">.</span><span class="im">ActionEvent</span><span class="op">;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">event</span><span class="op">.</span><span class="im">EventHandler</span><span class="op">;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">control</span><span class="op">.</span><span class="im">Alert</span><span class="op">;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">control</span><span class="op">.</span><span class="im">Alert</span><span class="op">.</span><span class="im">AlertType</span><span class="op">;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> SalaryCalcButtonGuiFx <span class="kw">extends</span> Application <span class="op">{</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="bu">Label</span> wageLabel<span class="op">;</span>     <span class="co">// Label for hourly salary</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="bu">Label</span> salLabel<span class="op">;</span>      <span class="co">// Label for yearly salary</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="bu">TextField</span> salField<span class="op">;</span>  <span class="co">// Displays hourly salary</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="bu">TextField</span> wageField<span class="op">;</span> <span class="co">// Displays yearly salary</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="bu">Button</span> calcButton<span class="op">;</span>   <span class="co">// Triggers salary calculation</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>   <span class="at">@Override</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">start</span><span class="op">(</span>Stage applicationStage<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>      Scene scene <span class="op">=</span> <span class="kw">null</span><span class="op">;</span>         <span class="co">// Scene contains all content</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>      GridPane gridPane <span class="op">=</span> <span class="kw">null</span><span class="op">;</span>   <span class="co">// Positions components within scene</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>      gridPane <span class="op">=</span> <span class="kw">new</span> <span class="fu">GridPane</span><span class="op">();</span>   <span class="co">// Create an empty pane</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>      scene <span class="op">=</span> <span class="kw">new</span> <span class="fu">Scene</span><span class="op">(</span>gridPane<span class="op">);</span> <span class="co">// Create scene containing the grid pane</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Set hourly and yearly salary</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>      wageLabel <span class="op">=</span> <span class="kw">new</span> <span class="bu">Label</span><span class="op">(</span><span class="st">&quot;Hourly wage:&quot;</span><span class="op">);</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>      salLabel <span class="op">=</span> <span class="kw">new</span> <span class="bu">Label</span><span class="op">(</span><span class="st">&quot;Yearly salary:&quot;</span><span class="op">);</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>      wageField <span class="op">=</span> <span class="kw">new</span> <span class="bu">TextField</span><span class="op">();</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>      wageField<span class="op">.</span><span class="fu">setPrefColumnCount</span><span class="op">(</span><span class="dv">15</span><span class="op">);</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>      wageField<span class="op">.</span><span class="fu">setEditable</span><span class="op">(</span><span class="kw">true</span><span class="op">);</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>      wageField<span class="op">.</span><span class="fu">setText</span><span class="op">(</span><span class="st">&quot;0&quot;</span><span class="op">);</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>      salField <span class="op">=</span> <span class="kw">new</span> <span class="bu">TextField</span><span class="op">();</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>      salField<span class="op">.</span><span class="fu">setPrefColumnCount</span><span class="op">(</span><span class="dv">15</span><span class="op">);</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>      salField<span class="op">.</span><span class="fu">setEditable</span><span class="op">(</span><span class="kw">false</span><span class="op">);</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Create a &quot;Calculate&quot; button</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>      calcButton <span class="op">=</span> <span class="kw">new</span> <span class="bu">Button</span><span class="op">(</span><span class="st">&quot;Calculate&quot;</span><span class="op">);</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">setPadding</span><span class="op">(</span><span class="kw">new</span> <span class="bu">Insets</span><span class="op">(</span><span class="dv">10</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">10</span><span class="op">));</span> <span class="co">// Padding around  grid</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">setHgap</span><span class="op">(</span><span class="dv">10</span><span class="op">);</span>                            <span class="co">// Spacing between columns</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">setVgap</span><span class="op">(</span><span class="dv">10</span><span class="op">);</span>                            <span class="co">// Spacing between rows</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">add</span><span class="op">(</span>wageLabel<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">);</span>  <span class="co">// Add wage label to location (0, 0)</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">add</span><span class="op">(</span>wageField<span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">);</span>  <span class="co">// Add wage text field to location (1, 0)</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">add</span><span class="op">(</span>salLabel<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">);</span>   <span class="co">// Add salary label to location (0, 1)</span></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">add</span><span class="op">(</span>salField<span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">);</span>   <span class="co">// Add salary text field to location (1, 1)</span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">add</span><span class="op">(</span>calcButton<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">2</span><span class="op">);</span> <span class="co">// Add calculate button to location (0, 2)</span></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Set an event handler to handle button presses</span></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>      calcButton<span class="op">.</span><span class="fu">setOnAction</span><span class="op">(</span><span class="kw">new</span> <span class="bu">EventHandler</span><span class="op">&lt;</span><span class="bu">ActionEvent</span><span class="op">&gt;()</span> <span class="op">{</span></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>         <span class="co">/* Method is automatically called when an event</span></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a><span class="co">            occurs (e.g, button is pressed) */</span></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>         <span class="at">@Override</span></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>         <span class="kw">public</span> <span class="dt">void</span> <span class="fu">handle</span><span class="op">(</span><span class="bu">ActionEvent</span> event<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>            <span class="bu">String</span> userInput<span class="op">;</span></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>            <span class="dt">int</span> hourlyWage<span class="op">;</span></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>            <span class="dt">int</span> yearlySalary<span class="op">;</span></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>            <span class="co">// Get user&#39;s wage input and calculate yearly salary</span></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>            userInput <span class="op">=</span> wageField<span class="op">.</span><span class="fu">getText</span><span class="op">();</span></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>            hourlyWage <span class="op">=</span> <span class="bu">Integer</span><span class="op">.</span><span class="fu">parseInt</span><span class="op">(</span>userInput<span class="op">);</span></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>            yearlySalary <span class="op">=</span> hourlyWage <span class="op">*</span> <span class="dv">40</span> <span class="op">*</span> <span class="dv">50</span><span class="op">;</span></span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>            <span class="co">// Display calculated salary</span></span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>            salField<span class="op">.</span><span class="fu">setText</span><span class="op">(</span><span class="bu">Integer</span><span class="op">.</span><span class="fu">toString</span><span class="op">(</span>yearlySalary<span class="op">));</span></span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>         <span class="op">}</span></span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>      <span class="op">});</span></span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>      applicationStage<span class="op">.</span><span class="fu">setScene</span><span class="op">(</span>scene<span class="op">);</span>    <span class="co">// Set window&#39;s scene</span></span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>      applicationStage<span class="op">.</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">&quot;Salary&quot;</span><span class="op">);</span> <span class="co">// Set window&#39;s title</span></span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>      applicationStage<span class="op">.</span><span class="fu">show</span><span class="op">();</span>             <span class="co">// Display window</span></span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span> <span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>      <span class="fu">launch</span><span class="op">(</span>args<span class="op">);</span> <span class="co">// Launch application</span></span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <blockquote>
 <p>Displaying an Alert for invalid wage inputs.</p>
 </blockquote>
-<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">import</span><span class="im"> javafx.application.Application;</span></a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="kw">import</span><span class="im"> javafx.event.ActionEvent;</span></a>
-<a class="sourceLine" id="cb4-3" title="3"><span class="kw">import</span><span class="im"> javafx.event.EventHandler;</span></a>
-<a class="sourceLine" id="cb4-4" title="4"><span class="kw">import</span><span class="im"> javafx.geometry.Insets;</span></a>
-<a class="sourceLine" id="cb4-5" title="5"><span class="kw">import</span><span class="im"> javafx.scene.Scene;</span></a>
-<a class="sourceLine" id="cb4-6" title="6"><span class="kw">import</span><span class="im"> javafx.scene.control.Alert;</span></a>
-<a class="sourceLine" id="cb4-7" title="7"><span class="kw">import</span><span class="im"> javafx.scene.control.Button;</span></a>
-<a class="sourceLine" id="cb4-8" title="8"><span class="kw">import</span><span class="im"> javafx.scene.control.Label;</span></a>
-<a class="sourceLine" id="cb4-9" title="9"><span class="kw">import</span><span class="im"> javafx.scene.control.TextField;</span></a>
-<a class="sourceLine" id="cb4-10" title="10"><span class="kw">import</span><span class="im"> javafx.scene.control.Alert.AlertType;</span></a>
-<a class="sourceLine" id="cb4-11" title="11"><span class="kw">import</span><span class="im"> javafx.scene.layout.GridPane;</span></a>
-<a class="sourceLine" id="cb4-12" title="12"><span class="kw">import</span><span class="im"> javafx.stage.Stage;</span></a>
-<a class="sourceLine" id="cb4-13" title="13"></a>
-<a class="sourceLine" id="cb4-14" title="14"><span class="kw">public</span> <span class="kw">class</span> SalaryCalcButtonErrorAlertGuiFx <span class="kw">extends</span> Application {</a>
-<a class="sourceLine" id="cb4-15" title="15">   <span class="kw">private</span> <span class="bu">Label</span> wageLabel;     <span class="co">// Label for hourly salary</span></a>
-<a class="sourceLine" id="cb4-16" title="16">   <span class="kw">private</span> <span class="bu">Label</span> salLabel;      <span class="co">// Label for yearly salary</span></a>
-<a class="sourceLine" id="cb4-17" title="17">   <span class="kw">private</span> <span class="bu">TextField</span> salField;  <span class="co">// Displays hourly salary</span></a>
-<a class="sourceLine" id="cb4-18" title="18">   <span class="kw">private</span> <span class="bu">TextField</span> wageField; <span class="co">// Displays yearly salary</span></a>
-<a class="sourceLine" id="cb4-19" title="19">   <span class="kw">private</span> <span class="bu">Button</span> calcButton;   <span class="co">// Triggers salary calculation</span></a>
-<a class="sourceLine" id="cb4-20" title="20"></a>
-<a class="sourceLine" id="cb4-21" title="21">   <span class="at">@Override</span></a>
-<a class="sourceLine" id="cb4-22" title="22">   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">start</span>(Stage applicationStage) {</a>
-<a class="sourceLine" id="cb4-23" title="23">      Scene scene = <span class="kw">null</span>;         <span class="co">// Scene contains all content</span></a>
-<a class="sourceLine" id="cb4-24" title="24">      GridPane gridPane = <span class="kw">null</span>;   <span class="co">// Positions components within scene</span></a>
-<a class="sourceLine" id="cb4-25" title="25"></a>
-<a class="sourceLine" id="cb4-26" title="26">      gridPane = <span class="kw">new</span> <span class="fu">GridPane</span>();   <span class="co">// Create an empty pane</span></a>
-<a class="sourceLine" id="cb4-27" title="27">      scene = <span class="kw">new</span> <span class="fu">Scene</span>(gridPane); <span class="co">// Create scene containing the grid pane</span></a>
-<a class="sourceLine" id="cb4-28" title="28"></a>
-<a class="sourceLine" id="cb4-29" title="29">      <span class="co">// Set hourly and yearly salary</span></a>
-<a class="sourceLine" id="cb4-30" title="30">      wageLabel = <span class="kw">new</span> <span class="bu">Label</span>(<span class="st">&quot;Hourly wage:&quot;</span>);</a>
-<a class="sourceLine" id="cb4-31" title="31">      salLabel = <span class="kw">new</span> <span class="bu">Label</span>(<span class="st">&quot;Yearly salary:&quot;</span>);</a>
-<a class="sourceLine" id="cb4-32" title="32"></a>
-<a class="sourceLine" id="cb4-33" title="33">      wageField = <span class="kw">new</span> <span class="bu">TextField</span>();</a>
-<a class="sourceLine" id="cb4-34" title="34">      wageField.<span class="fu">setPrefColumnCount</span>(<span class="dv">15</span>);</a>
-<a class="sourceLine" id="cb4-35" title="35">      wageField.<span class="fu">setEditable</span>(<span class="kw">true</span>);</a>
-<a class="sourceLine" id="cb4-36" title="36">      wageField.<span class="fu">setText</span>(<span class="st">&quot;0&quot;</span>);</a>
-<a class="sourceLine" id="cb4-37" title="37"></a>
-<a class="sourceLine" id="cb4-38" title="38">      salField = <span class="kw">new</span> <span class="bu">TextField</span>();</a>
-<a class="sourceLine" id="cb4-39" title="39">      salField.<span class="fu">setPrefColumnCount</span>(<span class="dv">15</span>);</a>
-<a class="sourceLine" id="cb4-40" title="40">      salField.<span class="fu">setEditable</span>(<span class="kw">false</span>);</a>
-<a class="sourceLine" id="cb4-41" title="41"></a>
-<a class="sourceLine" id="cb4-42" title="42">      <span class="co">// Create a &quot;Calculate&quot; button</span></a>
-<a class="sourceLine" id="cb4-43" title="43">      calcButton = <span class="kw">new</span> <span class="bu">Button</span>(<span class="st">&quot;Calculate&quot;</span>);</a>
-<a class="sourceLine" id="cb4-44" title="44"></a>
-<a class="sourceLine" id="cb4-45" title="45">      gridPane.<span class="fu">setPadding</span>(<span class="kw">new</span> <span class="bu">Insets</span>(<span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>)); <span class="co">// Padding around  grid</span></a>
-<a class="sourceLine" id="cb4-46" title="46">      gridPane.<span class="fu">setHgap</span>(<span class="dv">10</span>);                            <span class="co">// Spacing between columns</span></a>
-<a class="sourceLine" id="cb4-47" title="47">      gridPane.<span class="fu">setVgap</span>(<span class="dv">10</span>);                            <span class="co">// Spacing between rows</span></a>
-<a class="sourceLine" id="cb4-48" title="48"></a>
-<a class="sourceLine" id="cb4-49" title="49">      gridPane.<span class="fu">add</span>(wageLabel, <span class="dv">0</span>, <span class="dv">0</span>);  <span class="co">// Add wage label to location (0, 0)</span></a>
-<a class="sourceLine" id="cb4-50" title="50">      gridPane.<span class="fu">add</span>(wageField, <span class="dv">1</span>, <span class="dv">0</span>);  <span class="co">// Add wage text field to location (1, 0)</span></a>
-<a class="sourceLine" id="cb4-51" title="51">      gridPane.<span class="fu">add</span>(salLabel, <span class="dv">0</span>, <span class="dv">1</span>);   <span class="co">// Add salary label to location (0, 1)</span></a>
-<a class="sourceLine" id="cb4-52" title="52">      gridPane.<span class="fu">add</span>(salField, <span class="dv">1</span>, <span class="dv">1</span>);   <span class="co">// Add salary text field to location (1, 1)</span></a>
-<a class="sourceLine" id="cb4-53" title="53">      gridPane.<span class="fu">add</span>(calcButton, <span class="dv">0</span>, <span class="dv">2</span>); <span class="co">// Add calculate button to location (0, 2)</span></a>
-<a class="sourceLine" id="cb4-54" title="54"></a>
-<a class="sourceLine" id="cb4-55" title="55">      <span class="co">// Set an event handler to handle button presses</span></a>
-<a class="sourceLine" id="cb4-56" title="56">      calcButton.<span class="fu">setOnAction</span>(<span class="kw">new</span> <span class="bu">EventHandler</span>&lt;<span class="bu">ActionEvent</span>&gt;() {</a>
-<a class="sourceLine" id="cb4-57" title="57">         <span class="co">/* Method is automatically called when an event</span></a>
-<a class="sourceLine" id="cb4-58" title="58"><span class="co">            occurs (e.g, button is pressed) */</span></a>
-<a class="sourceLine" id="cb4-59" title="59">         <span class="at">@Override</span></a>
-<a class="sourceLine" id="cb4-60" title="60">         <span class="kw">public</span> <span class="dt">void</span> <span class="fu">handle</span>(<span class="bu">ActionEvent</span> event) {</a>
-<a class="sourceLine" id="cb4-61" title="61">            <span class="bu">String</span> userInput;</a>
-<a class="sourceLine" id="cb4-62" title="62">            <span class="dt">int</span> hourlyWage;</a>
-<a class="sourceLine" id="cb4-63" title="63">            <span class="dt">int</span> yearlySalary;</a>
-<a class="sourceLine" id="cb4-64" title="64"></a>
-<a class="sourceLine" id="cb4-65" title="65">            <span class="co">// Get user&#39;s wage input and calculate yearly salary</span></a>
-<a class="sourceLine" id="cb4-66" title="66">            userInput = wageField.<span class="fu">getText</span>();</a>
-<a class="sourceLine" id="cb4-67" title="67">            hourlyWage = <span class="bu">Integer</span>.<span class="fu">parseInt</span>(userInput);</a>
-<a class="sourceLine" id="cb4-68" title="68">            yearlySalary = hourlyWage * <span class="dv">40</span> * <span class="dv">50</span>;</a>
-<a class="sourceLine" id="cb4-69" title="69"></a>
-<a class="sourceLine" id="cb4-70" title="70">            <span class="kw">if</span> (hourlyWage &gt;= <span class="dv">0</span>) {</a>
-<a class="sourceLine" id="cb4-71" title="71">               <span class="co">// Display calculated salary</span></a>
-<a class="sourceLine" id="cb4-72" title="72">               salField.<span class="fu">setText</span>(<span class="bu">Integer</span>.<span class="fu">toString</span>(yearlySalary));</a>
-<a class="sourceLine" id="cb4-73" title="73">            }</a>
-<a class="sourceLine" id="cb4-74" title="74">            <span class="kw">else</span> {</a>
-<a class="sourceLine" id="cb4-75" title="75">               <span class="co">// Display an alert dialog</span></a>
-<a class="sourceLine" id="cb4-76" title="76">               Alert alert = <span class="kw">new</span> <span class="fu">Alert</span>(AlertType.<span class="fu">ERROR</span>,</a>
-<a class="sourceLine" id="cb4-77" title="77">                                       <span class="st">&quot;Enter a positive hourly wage value.&quot;</span>);</a>
-<a class="sourceLine" id="cb4-78" title="78">               alert.<span class="fu">showAndWait</span>();</a>
-<a class="sourceLine" id="cb4-79" title="79">            }</a>
-<a class="sourceLine" id="cb4-80" title="80">         }</a>
-<a class="sourceLine" id="cb4-81" title="81">      });</a>
-<a class="sourceLine" id="cb4-82" title="82"></a>
-<a class="sourceLine" id="cb4-83" title="83">      applicationStage.<span class="fu">setScene</span>(scene);    <span class="co">// Set window&#39;s scene</span></a>
-<a class="sourceLine" id="cb4-84" title="84">      applicationStage.<span class="fu">setTitle</span>(<span class="st">&quot;Salary&quot;</span>); <span class="co">// Set window&#39;s title</span></a>
-<a class="sourceLine" id="cb4-85" title="85">      applicationStage.<span class="fu">show</span>();             <span class="co">// Display window</span></a>
-<a class="sourceLine" id="cb4-86" title="86">   }</a>
-<a class="sourceLine" id="cb4-87" title="87"></a>
-<a class="sourceLine" id="cb4-88" title="88">   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span> [] args) {</a>
-<a class="sourceLine" id="cb4-89" title="89">      <span class="fu">launch</span>(args); <span class="co">// Launch application</span></a>
-<a class="sourceLine" id="cb4-90" title="90">   }</a>
-<a class="sourceLine" id="cb4-91" title="91">}</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">application</span><span class="op">.</span><span class="im">Application</span><span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">event</span><span class="op">.</span><span class="im">ActionEvent</span><span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">event</span><span class="op">.</span><span class="im">EventHandler</span><span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">geometry</span><span class="op">.</span><span class="im">Insets</span><span class="op">;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">Scene</span><span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">control</span><span class="op">.</span><span class="im">Alert</span><span class="op">;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">control</span><span class="op">.</span><span class="im">Button</span><span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">control</span><span class="op">.</span><span class="im">Label</span><span class="op">;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">control</span><span class="op">.</span><span class="im">TextField</span><span class="op">;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">control</span><span class="op">.</span><span class="im">Alert</span><span class="op">.</span><span class="im">AlertType</span><span class="op">;</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">layout</span><span class="op">.</span><span class="im">GridPane</span><span class="op">;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">stage</span><span class="op">.</span><span class="im">Stage</span><span class="op">;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> SalaryCalcButtonErrorAlertGuiFx <span class="kw">extends</span> Application <span class="op">{</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="bu">Label</span> wageLabel<span class="op">;</span>     <span class="co">// Label for hourly salary</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="bu">Label</span> salLabel<span class="op">;</span>      <span class="co">// Label for yearly salary</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="bu">TextField</span> salField<span class="op">;</span>  <span class="co">// Displays hourly salary</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="bu">TextField</span> wageField<span class="op">;</span> <span class="co">// Displays yearly salary</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="bu">Button</span> calcButton<span class="op">;</span>   <span class="co">// Triggers salary calculation</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>   <span class="at">@Override</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">start</span><span class="op">(</span>Stage applicationStage<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>      Scene scene <span class="op">=</span> <span class="kw">null</span><span class="op">;</span>         <span class="co">// Scene contains all content</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>      GridPane gridPane <span class="op">=</span> <span class="kw">null</span><span class="op">;</span>   <span class="co">// Positions components within scene</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>      gridPane <span class="op">=</span> <span class="kw">new</span> <span class="fu">GridPane</span><span class="op">();</span>   <span class="co">// Create an empty pane</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>      scene <span class="op">=</span> <span class="kw">new</span> <span class="fu">Scene</span><span class="op">(</span>gridPane<span class="op">);</span> <span class="co">// Create scene containing the grid pane</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Set hourly and yearly salary</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>      wageLabel <span class="op">=</span> <span class="kw">new</span> <span class="bu">Label</span><span class="op">(</span><span class="st">&quot;Hourly wage:&quot;</span><span class="op">);</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>      salLabel <span class="op">=</span> <span class="kw">new</span> <span class="bu">Label</span><span class="op">(</span><span class="st">&quot;Yearly salary:&quot;</span><span class="op">);</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>      wageField <span class="op">=</span> <span class="kw">new</span> <span class="bu">TextField</span><span class="op">();</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>      wageField<span class="op">.</span><span class="fu">setPrefColumnCount</span><span class="op">(</span><span class="dv">15</span><span class="op">);</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>      wageField<span class="op">.</span><span class="fu">setEditable</span><span class="op">(</span><span class="kw">true</span><span class="op">);</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>      wageField<span class="op">.</span><span class="fu">setText</span><span class="op">(</span><span class="st">&quot;0&quot;</span><span class="op">);</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>      salField <span class="op">=</span> <span class="kw">new</span> <span class="bu">TextField</span><span class="op">();</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>      salField<span class="op">.</span><span class="fu">setPrefColumnCount</span><span class="op">(</span><span class="dv">15</span><span class="op">);</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>      salField<span class="op">.</span><span class="fu">setEditable</span><span class="op">(</span><span class="kw">false</span><span class="op">);</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Create a &quot;Calculate&quot; button</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>      calcButton <span class="op">=</span> <span class="kw">new</span> <span class="bu">Button</span><span class="op">(</span><span class="st">&quot;Calculate&quot;</span><span class="op">);</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">setPadding</span><span class="op">(</span><span class="kw">new</span> <span class="bu">Insets</span><span class="op">(</span><span class="dv">10</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">10</span><span class="op">));</span> <span class="co">// Padding around  grid</span></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">setHgap</span><span class="op">(</span><span class="dv">10</span><span class="op">);</span>                            <span class="co">// Spacing between columns</span></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">setVgap</span><span class="op">(</span><span class="dv">10</span><span class="op">);</span>                            <span class="co">// Spacing between rows</span></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">add</span><span class="op">(</span>wageLabel<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">);</span>  <span class="co">// Add wage label to location (0, 0)</span></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">add</span><span class="op">(</span>wageField<span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">);</span>  <span class="co">// Add wage text field to location (1, 0)</span></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">add</span><span class="op">(</span>salLabel<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">);</span>   <span class="co">// Add salary label to location (0, 1)</span></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">add</span><span class="op">(</span>salField<span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">);</span>   <span class="co">// Add salary text field to location (1, 1)</span></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>      gridPane<span class="op">.</span><span class="fu">add</span><span class="op">(</span>calcButton<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">2</span><span class="op">);</span> <span class="co">// Add calculate button to location (0, 2)</span></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Set an event handler to handle button presses</span></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>      calcButton<span class="op">.</span><span class="fu">setOnAction</span><span class="op">(</span><span class="kw">new</span> <span class="bu">EventHandler</span><span class="op">&lt;</span><span class="bu">ActionEvent</span><span class="op">&gt;()</span> <span class="op">{</span></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>         <span class="co">/* Method is automatically called when an event</span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="co">            occurs (e.g, button is pressed) */</span></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>         <span class="at">@Override</span></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>         <span class="kw">public</span> <span class="dt">void</span> <span class="fu">handle</span><span class="op">(</span><span class="bu">ActionEvent</span> event<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>            <span class="bu">String</span> userInput<span class="op">;</span></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a>            <span class="dt">int</span> hourlyWage<span class="op">;</span></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>            <span class="dt">int</span> yearlySalary<span class="op">;</span></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>            <span class="co">// Get user&#39;s wage input and calculate yearly salary</span></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>            userInput <span class="op">=</span> wageField<span class="op">.</span><span class="fu">getText</span><span class="op">();</span></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>            hourlyWage <span class="op">=</span> <span class="bu">Integer</span><span class="op">.</span><span class="fu">parseInt</span><span class="op">(</span>userInput<span class="op">);</span></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>            yearlySalary <span class="op">=</span> hourlyWage <span class="op">*</span> <span class="dv">40</span> <span class="op">*</span> <span class="dv">50</span><span class="op">;</span></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="op">(</span>hourlyWage <span class="op">&gt;=</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>               <span class="co">// Display calculated salary</span></span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>               salField<span class="op">.</span><span class="fu">setText</span><span class="op">(</span><span class="bu">Integer</span><span class="op">.</span><span class="fu">toString</span><span class="op">(</span>yearlySalary<span class="op">));</span></span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a>               <span class="co">// Display an alert dialog</span></span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>               Alert alert <span class="op">=</span> <span class="kw">new</span> <span class="fu">Alert</span><span class="op">(</span>AlertType<span class="op">.</span><span class="fu">ERROR</span><span class="op">,</span></span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;Enter a positive hourly wage value.&quot;</span><span class="op">);</span></span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a>               alert<span class="op">.</span><span class="fu">showAndWait</span><span class="op">();</span></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a>         <span class="op">}</span></span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a>      <span class="op">});</span></span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>      applicationStage<span class="op">.</span><span class="fu">setScene</span><span class="op">(</span>scene<span class="op">);</span>    <span class="co">// Set window&#39;s scene</span></span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a>      applicationStage<span class="op">.</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">&quot;Salary&quot;</span><span class="op">);</span> <span class="co">// Set window&#39;s title</span></span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a>      applicationStage<span class="op">.</span><span class="fu">show</span><span class="op">();</span>             <span class="co">// Display window</span></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span> <span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a>      <span class="fu">launch</span><span class="op">(</span>args<span class="op">);</span> <span class="co">// Launch application</span></span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>An <code>Alert</code> is a separate JavaFX window, also known as a dialog or pop-up window, that displays a message to the user. Ex: <code>Alert alert = new Alert(AlertType.ERROR, "Enter a positive hourly wage value.");</code> creates an Alert object that displays an error message with the text “Enter a positive hourly wage value.”. The first argument specifies the Alert’s type. Ex: <code>AlertType.ERROR</code> specifies that the Alert window should indicate an error.</p>
 <p>Alert’s <code>showAndWait()</code> method makes the Alert visible to the user and waits for the user’s response. The program resumes execution after the user presses the Alert’s “OK” button, which closes the Alert window.</p>
 <h2 id="basic-graphics-with-javafx">Basic Graphics with JavaFX</h2>
@@ -486,86 +496,86 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>Template for creating a JavaFX application to draw 2D graphics.</p>
 </blockquote>
-<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1"></a>
-<a class="sourceLine" id="cb5-2" title="2"></a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="kw">import</span><span class="im"> javafx.application.Application;</span></a>
-<a class="sourceLine" id="cb5-4" title="4"><span class="kw">import</span><span class="im"> javafx.stage.Stage;</span></a>
-<a class="sourceLine" id="cb5-5" title="5"><span class="kw">import</span><span class="im"> javafx.scene.Scene;</span></a>
-<a class="sourceLine" id="cb5-6" title="6"><span class="kw">import</span><span class="im"> javafx.scene.layout.Pane;</span></a>
-<a class="sourceLine" id="cb5-7" title="7"><span class="kw">import</span><span class="im"> javafx.scene.canvas.Canvas;</span></a>
-<a class="sourceLine" id="cb5-8" title="8"><span class="kw">import</span><span class="im"> javafx.scene.canvas.GraphicsContext;</span></a>
-<a class="sourceLine" id="cb5-9" title="9"></a>
-<a class="sourceLine" id="cb5-10" title="10"><span class="kw">public</span> <span class="kw">class</span> EmptyCanvasFx <span class="kw">extends</span> Application {</a>
-<a class="sourceLine" id="cb5-11" title="11">   <span class="at">@Override</span></a>
-<a class="sourceLine" id="cb5-12" title="12">   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">start</span>(Stage applicationStage) {</a>
-<a class="sourceLine" id="cb5-13" title="13">      Pane pane = <span class="kw">new</span> <span class="fu">Pane</span>();                    <span class="co">// Create an empty pane</span></a>
-<a class="sourceLine" id="cb5-14" title="14">      Scene scene = <span class="kw">new</span> <span class="fu">Scene</span>(pane);             <span class="co">// Create a scene containing the pane</span></a>
-<a class="sourceLine" id="cb5-15" title="15">      <span class="bu">Canvas</span> canvas = <span class="kw">new</span> <span class="bu">Canvas</span>(<span class="dv">400</span>, <span class="dv">200</span>);      <span class="co">// Create a canvas in which to draw</span></a>
-<a class="sourceLine" id="cb5-16" title="16"></a>
-<a class="sourceLine" id="cb5-17" title="17">      <span class="co">// Get the canvas&#39; graphics context to draw</span></a>
-<a class="sourceLine" id="cb5-18" title="18">      GraphicsContext graphicsContext = canvas.<span class="fu">getGraphicsContext2D</span>();</a>
-<a class="sourceLine" id="cb5-19" title="19"></a>
-<a class="sourceLine" id="cb5-20" title="20">      <span class="co">// Write your drawing instructions here</span></a>
-<a class="sourceLine" id="cb5-21" title="21"></a>
-<a class="sourceLine" id="cb5-22" title="22">      pane.<span class="fu">getChildren</span>().<span class="fu">add</span>(canvas);            <span class="co">// Add canvas to pane</span></a>
-<a class="sourceLine" id="cb5-23" title="23">      applicationStage.<span class="fu">setTitle</span>(<span class="st">&quot;Empty canvas&quot;</span>); <span class="co">// Set window&#39;s title</span></a>
-<a class="sourceLine" id="cb5-24" title="24">      applicationStage.<span class="fu">setScene</span>(scene);          <span class="co">// Set window&#39;s scene</span></a>
-<a class="sourceLine" id="cb5-25" title="25">      applicationStage.<span class="fu">show</span>();                   <span class="co">// Display window</span></a>
-<a class="sourceLine" id="cb5-26" title="26">   }</a>
-<a class="sourceLine" id="cb5-27" title="27"></a>
-<a class="sourceLine" id="cb5-28" title="28">   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span> [] args) {</a>
-<a class="sourceLine" id="cb5-29" title="29">      <span class="fu">launch</span>(args); <span class="co">// Launch application</span></a>
-<a class="sourceLine" id="cb5-30" title="30">   }</a>
-<a class="sourceLine" id="cb5-31" title="31">}</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">application</span><span class="op">.</span><span class="im">Application</span><span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">stage</span><span class="op">.</span><span class="im">Stage</span><span class="op">;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">Scene</span><span class="op">;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">layout</span><span class="op">.</span><span class="im">Pane</span><span class="op">;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">canvas</span><span class="op">.</span><span class="im">Canvas</span><span class="op">;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">canvas</span><span class="op">.</span><span class="im">GraphicsContext</span><span class="op">;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> EmptyCanvasFx <span class="kw">extends</span> Application <span class="op">{</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>   <span class="at">@Override</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">start</span><span class="op">(</span>Stage applicationStage<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>      Pane pane <span class="op">=</span> <span class="kw">new</span> <span class="fu">Pane</span><span class="op">();</span>                    <span class="co">// Create an empty pane</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>      Scene scene <span class="op">=</span> <span class="kw">new</span> <span class="fu">Scene</span><span class="op">(</span>pane<span class="op">);</span>             <span class="co">// Create a scene containing the pane</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>      <span class="bu">Canvas</span> canvas <span class="op">=</span> <span class="kw">new</span> <span class="bu">Canvas</span><span class="op">(</span><span class="dv">400</span><span class="op">,</span> <span class="dv">200</span><span class="op">);</span>      <span class="co">// Create a canvas in which to draw</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Get the canvas&#39; graphics context to draw</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>      GraphicsContext graphicsContext <span class="op">=</span> canvas<span class="op">.</span><span class="fu">getGraphicsContext2D</span><span class="op">();</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Write your drawing instructions here</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>      pane<span class="op">.</span><span class="fu">getChildren</span><span class="op">().</span><span class="fu">add</span><span class="op">(</span>canvas<span class="op">);</span>            <span class="co">// Add canvas to pane</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>      applicationStage<span class="op">.</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">&quot;Empty canvas&quot;</span><span class="op">);</span> <span class="co">// Set window&#39;s title</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>      applicationStage<span class="op">.</span><span class="fu">setScene</span><span class="op">(</span>scene<span class="op">);</span>          <span class="co">// Set window&#39;s scene</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>      applicationStage<span class="op">.</span><span class="fu">show</span><span class="op">();</span>                   <span class="co">// Display window</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span> <span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>      <span class="fu">launch</span><span class="op">(</span>args<span class="op">);</span> <span class="co">// Launch application</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <blockquote>
 <p>Drawing a histogram.</p>
 </blockquote>
-<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">import</span><span class="im"> javafx.application.Application;</span></a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="kw">import</span><span class="im"> javafx.stage.Stage;</span></a>
-<a class="sourceLine" id="cb6-3" title="3"><span class="kw">import</span><span class="im"> javafx.scene.Scene;</span></a>
-<a class="sourceLine" id="cb6-4" title="4"><span class="kw">import</span><span class="im"> javafx.scene.layout.Pane;</span></a>
-<a class="sourceLine" id="cb6-5" title="5"><span class="kw">import</span><span class="im"> javafx.scene.canvas.Canvas;</span></a>
-<a class="sourceLine" id="cb6-6" title="6"><span class="kw">import</span><span class="im"> javafx.scene.canvas.GraphicsContext;</span></a>
-<a class="sourceLine" id="cb6-7" title="7"><span class="kw">import</span><span class="im"> javafx.scene.paint.Color;</span></a>
-<a class="sourceLine" id="cb6-8" title="8"></a>
-<a class="sourceLine" id="cb6-9" title="9"><span class="kw">public</span> <span class="kw">class</span> HistogramViewerFx <span class="kw">extends</span> Application {</a>
-<a class="sourceLine" id="cb6-10" title="10">   <span class="at">@Override</span></a>
-<a class="sourceLine" id="cb6-11" title="11">   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">start</span>(Stage applicationStage) {</a>
-<a class="sourceLine" id="cb6-12" title="12">      Pane pane = <span class="kw">new</span> <span class="fu">Pane</span>();                    <span class="co">// Create an empty pane</span></a>
-<a class="sourceLine" id="cb6-13" title="13">      Scene scene = <span class="kw">new</span> <span class="fu">Scene</span>(pane);             <span class="co">// Create a scene containing the pane</span></a>
-<a class="sourceLine" id="cb6-14" title="14">      <span class="bu">Canvas</span> canvas = <span class="kw">new</span> <span class="bu">Canvas</span>(<span class="dv">400</span>, <span class="dv">200</span>);      <span class="co">// Create a canvas in which to draw</span></a>
-<a class="sourceLine" id="cb6-15" title="15"></a>
-<a class="sourceLine" id="cb6-16" title="16">      <span class="co">// Get the canvas&#39; graphics context to draw</span></a>
-<a class="sourceLine" id="cb6-17" title="17">      GraphicsContext graphicsContext = canvas.<span class="fu">getGraphicsContext2D</span>();</a>
-<a class="sourceLine" id="cb6-18" title="18"></a>
-<a class="sourceLine" id="cb6-19" title="19">      <span class="co">// Draw 1st bin as an olive colored rectangle at (10,10)</span></a>
-<a class="sourceLine" id="cb6-20" title="20">      <span class="co">// with width = 200 and height = 50</span></a>
-<a class="sourceLine" id="cb6-21" title="21">      <span class="bu">Color</span> binColor1 = <span class="bu">Color</span>.<span class="fu">rgb</span>(<span class="dv">128</span>, <span class="dv">128</span>, <span class="dv">0</span>);</a>
-<a class="sourceLine" id="cb6-22" title="22">      graphicsContext.<span class="fu">setFill</span>(binColor1);</a>
-<a class="sourceLine" id="cb6-23" title="23">      graphicsContext.<span class="fu">fillRect</span>(<span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">200</span>, <span class="dv">50</span>);</a>
-<a class="sourceLine" id="cb6-24" title="24"></a>
-<a class="sourceLine" id="cb6-25" title="25">      <span class="co">// Draw 2nd bin as a teal blue rectangle at (10,75)</span></a>
-<a class="sourceLine" id="cb6-26" title="26">      <span class="co">// with width = 150 and height = 50</span></a>
-<a class="sourceLine" id="cb6-27" title="27">      <span class="bu">Color</span> binColor2 = <span class="bu">Color</span>.<span class="fu">rgb</span>(<span class="dv">0</span>, <span class="dv">200</span>, <span class="dv">200</span>);</a>
-<a class="sourceLine" id="cb6-28" title="28">      graphicsContext.<span class="fu">setFill</span>(binColor2);</a>
-<a class="sourceLine" id="cb6-29" title="29">      graphicsContext.<span class="fu">fillRect</span>(<span class="dv">10</span>, <span class="dv">75</span>, <span class="dv">150</span>, <span class="dv">50</span>);</a>
-<a class="sourceLine" id="cb6-30" title="30"></a>
-<a class="sourceLine" id="cb6-31" title="31">      <span class="co">// Draw 3rd bin as a gray rectangle at (10,140)</span></a>
-<a class="sourceLine" id="cb6-32" title="32">      <span class="co">// with width = 350 and height = 50</span></a>
-<a class="sourceLine" id="cb6-33" title="33">      <span class="bu">Color</span> binColor3 = <span class="bu">Color</span>.<span class="fu">rgb</span>(<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">100</span>);</a>
-<a class="sourceLine" id="cb6-34" title="34">      graphicsContext.<span class="fu">setFill</span>(binColor3);</a>
-<a class="sourceLine" id="cb6-35" title="35">      graphicsContext.<span class="fu">fillRect</span>(<span class="dv">10</span>, <span class="dv">140</span>, <span class="dv">350</span>, <span class="dv">50</span>);</a>
-<a class="sourceLine" id="cb6-36" title="36"></a>
-<a class="sourceLine" id="cb6-37" title="37">      pane.<span class="fu">getChildren</span>().<span class="fu">add</span>(canvas);                <span class="co">// Add canvas to pane</span></a>
-<a class="sourceLine" id="cb6-38" title="38">      applicationStage.<span class="fu">setTitle</span>(<span class="st">&quot;Histogram viewer&quot;</span>); <span class="co">// Set window&#39;s title</span></a>
-<a class="sourceLine" id="cb6-39" title="39">      applicationStage.<span class="fu">setScene</span>(scene);              <span class="co">// Set window&#39;s scene</span></a>
-<a class="sourceLine" id="cb6-40" title="40">      applicationStage.<span class="fu">show</span>();                       <span class="co">// Display window</span></a>
-<a class="sourceLine" id="cb6-41" title="41">   }</a>
-<a class="sourceLine" id="cb6-42" title="42"></a>
-<a class="sourceLine" id="cb6-43" title="43">   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span> [] args) {</a>
-<a class="sourceLine" id="cb6-44" title="44">       <span class="fu">launch</span>(args); <span class="co">// Launch application</span></a>
-<a class="sourceLine" id="cb6-45" title="45">   }</a>
-<a class="sourceLine" id="cb6-46" title="46">}</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">application</span><span class="op">.</span><span class="im">Application</span><span class="op">;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">stage</span><span class="op">.</span><span class="im">Stage</span><span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">Scene</span><span class="op">;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">layout</span><span class="op">.</span><span class="im">Pane</span><span class="op">;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">canvas</span><span class="op">.</span><span class="im">Canvas</span><span class="op">;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">canvas</span><span class="op">.</span><span class="im">GraphicsContext</span><span class="op">;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">javafx</span><span class="op">.</span><span class="im">scene</span><span class="op">.</span><span class="im">paint</span><span class="op">.</span><span class="im">Color</span><span class="op">;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> HistogramViewerFx <span class="kw">extends</span> Application <span class="op">{</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>   <span class="at">@Override</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">start</span><span class="op">(</span>Stage applicationStage<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>      Pane pane <span class="op">=</span> <span class="kw">new</span> <span class="fu">Pane</span><span class="op">();</span>                    <span class="co">// Create an empty pane</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>      Scene scene <span class="op">=</span> <span class="kw">new</span> <span class="fu">Scene</span><span class="op">(</span>pane<span class="op">);</span>             <span class="co">// Create a scene containing the pane</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>      <span class="bu">Canvas</span> canvas <span class="op">=</span> <span class="kw">new</span> <span class="bu">Canvas</span><span class="op">(</span><span class="dv">400</span><span class="op">,</span> <span class="dv">200</span><span class="op">);</span>      <span class="co">// Create a canvas in which to draw</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Get the canvas&#39; graphics context to draw</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>      GraphicsContext graphicsContext <span class="op">=</span> canvas<span class="op">.</span><span class="fu">getGraphicsContext2D</span><span class="op">();</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Draw 1st bin as an olive colored rectangle at (10,10)</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>      <span class="co">// with width = 200 and height = 50</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>      <span class="bu">Color</span> binColor1 <span class="op">=</span> <span class="bu">Color</span><span class="op">.</span><span class="fu">rgb</span><span class="op">(</span><span class="dv">128</span><span class="op">,</span> <span class="dv">128</span><span class="op">,</span> <span class="dv">0</span><span class="op">);</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>      graphicsContext<span class="op">.</span><span class="fu">setFill</span><span class="op">(</span>binColor1<span class="op">);</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>      graphicsContext<span class="op">.</span><span class="fu">fillRect</span><span class="op">(</span><span class="dv">10</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">200</span><span class="op">,</span> <span class="dv">50</span><span class="op">);</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Draw 2nd bin as a teal blue rectangle at (10,75)</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>      <span class="co">// with width = 150 and height = 50</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>      <span class="bu">Color</span> binColor2 <span class="op">=</span> <span class="bu">Color</span><span class="op">.</span><span class="fu">rgb</span><span class="op">(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">200</span><span class="op">,</span> <span class="dv">200</span><span class="op">);</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>      graphicsContext<span class="op">.</span><span class="fu">setFill</span><span class="op">(</span>binColor2<span class="op">);</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>      graphicsContext<span class="op">.</span><span class="fu">fillRect</span><span class="op">(</span><span class="dv">10</span><span class="op">,</span> <span class="dv">75</span><span class="op">,</span> <span class="dv">150</span><span class="op">,</span> <span class="dv">50</span><span class="op">);</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Draw 3rd bin as a gray rectangle at (10,140)</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>      <span class="co">// with width = 350 and height = 50</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>      <span class="bu">Color</span> binColor3 <span class="op">=</span> <span class="bu">Color</span><span class="op">.</span><span class="fu">rgb</span><span class="op">(</span><span class="dv">100</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="dv">100</span><span class="op">);</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>      graphicsContext<span class="op">.</span><span class="fu">setFill</span><span class="op">(</span>binColor3<span class="op">);</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>      graphicsContext<span class="op">.</span><span class="fu">fillRect</span><span class="op">(</span><span class="dv">10</span><span class="op">,</span> <span class="dv">140</span><span class="op">,</span> <span class="dv">350</span><span class="op">,</span> <span class="dv">50</span><span class="op">);</span></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>      pane<span class="op">.</span><span class="fu">getChildren</span><span class="op">().</span><span class="fu">add</span><span class="op">(</span>canvas<span class="op">);</span>                <span class="co">// Add canvas to pane</span></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>      applicationStage<span class="op">.</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">&quot;Histogram viewer&quot;</span><span class="op">);</span> <span class="co">// Set window&#39;s title</span></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>      applicationStage<span class="op">.</span><span class="fu">setScene</span><span class="op">(</span>scene<span class="op">);</span>              <span class="co">// Set window&#39;s scene</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>      applicationStage<span class="op">.</span><span class="fu">show</span><span class="op">();</span>                       <span class="co">// Display window</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span> <span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>       <span class="fu">launch</span><span class="op">(</span>args<span class="op">);</span> <span class="co">// Launch application</span></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>

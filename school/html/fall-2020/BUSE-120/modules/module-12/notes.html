@@ -11,6 +11,13 @@
 
     <title>Module 12 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -65,23 +72,29 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#module-12-investor-and-market-behavior">Module 12: Investor and Market Behavior</a><ul>
-          <li><a href="#buse-120-canvas-notes">BUSE 120 Canvas Notes</a><ul>
-          <li><a href="#our-biased-thinking">12.2 Our Biased Thinking</a><ul>
+          <li><a href="#module-12-investor-and-market-behavior">Module 12: Investor and Market Behavior</a>
+          <ul>
+          <li><a href="#buse-120-canvas-notes">BUSE 120 Canvas Notes</a>
+          <ul>
+          <li><a href="#our-biased-thinking">12.2 Our Biased Thinking</a>
+          <ul>
           <li><a href="#behavioral-biases">Behavioral Biases</a></li>
           <li><a href="#recency-bias">Recency Bias</a></li>
           <li><a href="#framing">Framing</a></li>
           </ul></li>
-          <li><a href="#financial-bubbles-and-fraud">12.3 Financial Bubbles and Fraud</a><ul>
+          <li><a href="#financial-bubbles-and-fraud">12.3 Financial Bubbles and Fraud</a>
+          <ul>
           <li><a href="#financial-bubbles">Financial Bubbles</a></li>
           <li><a href="#financial-fraud">Financial Fraud</a></li>
           </ul></li>
-          <li><a href="#getting-investment-information">12.4 Getting Investment Information</a><ul>
+          <li><a href="#getting-investment-information">12.4 Getting Investment Information</a>
+          <ul>
           <li><a href="#market-data">Market Data</a></li>
           <li><a href="#historical-stock-and-bond-returns">Historical Stock and Bond Returns</a></li>
           <li><a href="#evaluating-online-financial-information">Evaluating Online Financial Information</a></li>
           </ul></li>
-          <li><a href="#brokers-and-fiduciaries">12.5 Brokers and Fiduciaries</a><ul>
+          <li><a href="#brokers-and-fiduciaries">12.5 Brokers and Fiduciaries</a>
+          <ul>
           <li><a href="#about-brokers">About Brokers</a></li>
           <li><a href="#about-fiduciaries">About Fiduciaries</a></li>
           </ul></li>
@@ -176,7 +189,7 @@
 <p>Having a good feel for “normal” or historical average rates of return is important in planning our investments. In particular, it’s sometimes tempting to come up with high expectations of the return on our investment so we can feel like we’re investing enough money. Conversely, we sometimes underestimate how much we can earn on our investment because we want to “play it safe” or keep ourselves from having unrealistic expectations that will lead to future disappointment.</p>
 <p>According to David Blanchett in The Wall Street Journal, the average return on large-cap stocks (that is, stocks of large companies) has historically been around 7% after inflation. The average return for government bonds has been around 5% historically, but only around 2% in recent years. Of course, no one knows for sure what kids of returns stocks and bonds will provide in the future.</p>
 <h4 id="evaluating-online-financial-information">Evaluating Online Financial Information</h4>
-<p>You may have noticed that in this class I direct us to a lot of government-created or government-sponsored websites for information (although I use some that are not government websites as well.) There are several reasons I do that, but the most important is because government-funded sources of financial information are typically unbiased compared to many other sources of information. This is because the government is not trying to sell you anything or make a profit from your visit to their website. Many other sources of financial information are biased in one way or another because they are trying to influence you to buy a particular product or to link from that website to the website of one of their paid advertisers. In fact, some websites publish "“articles” that are really advertisements written to appear like articles and are produced by the website’s paid advertisers.</p>
+<p>You may have noticed that in this class I direct us to a lot of government-created or government-sponsored websites for information (although I use some that are not government websites as well.) There are several reasons I do that, but the most important is because government-funded sources of financial information are typically unbiased compared to many other sources of information. This is because the government is not trying to sell you anything or make a profit from your visit to their website. Many other sources of financial information are biased in one way or another because they are trying to influence you to buy a particular product or to link from that website to the website of one of their paid advertisers. In fact, some websites publish ““articles” that are really advertisements written to appear like articles and are produced by the website’s paid advertisers.</p>
 <p>When looking at any content online (or elsewhere for that matter), whether it’s about personal finance or any other topic, you should evaluate the reliability of the source and ask yourself what kind of content you’re looking at. Specifically, is it:</p>
 <ul>
 <li>Information (unbiased facts),</li>

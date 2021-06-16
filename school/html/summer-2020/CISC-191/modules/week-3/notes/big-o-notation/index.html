@@ -12,6 +12,13 @@
 
     <title>Big O Notation</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -23,26 +30,28 @@
     <link href="../../../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -51,9 +60,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -85,7 +94,22 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
     </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -130,7 +154,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#big-o-notation">Big O Notation</a><ul>
+          <li><a href="#big-o-notation">Big O Notation</a>
+          <ul>
           <li><a href="#growth-rates-for-different-input-sizes">Growth Rates for Different Input Sizes</a></li>
           <li><a href="#runtime-complexities-for-various-pseudocode-examples.">Runtime Complexities For Various Pseudocode Examples.</a></li>
           <li><a href="#worst-case-algorithm-analysis">Worst-Case Algorithm Analysis</a></li>
@@ -175,8 +200,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Big O notation is a mathematical way of describing how a function (running time of an algorithm) generally behaves in relation to the input size. In Big O notation, all functions that have the same growth rate (as determined by the highest order term of the function) are characterized using the same Big O notation. In essence, all functions that have the same growth rate are considered equivalent in Big O notation.</p>
 <p>Given a function that describes the running time of an algorithm, the Big O notation for that function can be determined using the following rules:</p>
 <ol type="1">
-<li>If <span class="math inline">\(f(x)\)</span> is a sum of several terms, the highest order term (the one with the fastest growth rate) is kept and others are discarded.</li>
-<li>If <span class="math inline">\(f(x)\)</span> has a term that is a product of several factors, all constants (those that are not in terms of x) are omitted.</li>
+<li>If <span class="math inline">f(x)</span> is a sum of several terms, the highest order term (the one with the fastest growth rate) is kept and others are discarded.</li>
+<li>If <span class="math inline">f(x)</span> has a term that is a product of several factors, all constants (those that are not in terms of x) are omitted.</li>
 </ol>
 <p>Rules for determining Big O notation of composite functions.</p>
 <table>
@@ -188,64 +213,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(c \cdot O(f(x))\)</span></td>
-<td><span class="math inline">\(O(f(x))\)</span></td>
+<td><span class="math inline">c \cdot O(f(x))</span></td>
+<td><span class="math inline">O(f(x))</span></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(c + O(f(x))\)</span></td>
-<td><span class="math inline">\(O(f(x))\)</span></td>
+<td><span class="math inline">c + O(f(x))</span></td>
+<td><span class="math inline">O(f(x))</span></td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(g(x) \cdot O(f(x))\)</span></td>
-<td><span class="math inline">\(O(g(x) \cdot O(f(x)))\)</span></td>
+<td><span class="math inline">g(x) \cdot O(f(x))</span></td>
+<td><span class="math inline">O(g(x) \cdot O(f(x)))</span></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(g(x) + O(f(x))\)</span></td>
-<td><span class="math inline">\(O(g(x) + O(f(x)))\)</span></td>
+<td><span class="math inline">g(x) + O(f(x))</span></td>
+<td><span class="math inline">O(g(x) + O(f(x)))</span></td>
 </tr>
 </tbody>
 </table>
 <p>Sample 1:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{Algorithm steps: } 5 + 13 \cdot N + 7 \cdot N^{2}
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \begin{aligned}
 \text{Big O notation: } O(5 + 13 \cdot N + 7 \cdot N^{2}) &amp;= O(7 \cdot N^{2}) \\
  &amp;= O(N^{2})
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>Sample 2:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{Algorithm steps: } 10 \cdot O(N^{2})
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \text{Big O notation: } 10 \cdot O(N^{2}) = O(10 \cdot N^{2}) = O(N^{2})
-\]</span></p>
+</span></p>
 <p>Sample 3:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{Algorithm steps: } 3 \cdot N \cdot O(N^{2})
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \begin{aligned}
 \text{Big O notation: } &amp;= 3 \cdot N \cdot O(N^{2}) \\
  &amp;= O(3 \cdot N \cdot N^{2}) \\
  &amp;= O(3 \cdot N^{3}) = O(N^{3})
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>Sample 4:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{Algorithm steps: } 2 \cdot N^{3} + O(N^{2})
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \begin{aligned}
 \text{Big O notation: } &amp;= 2 \cdot N^{3} + O(N^{2}) \\
  &amp;= O(2 \cdot N^{3} + N^{2}) \\
  &amp;= O(N^{3})
 \end{aligned}
-\]</span></p>
+</span></p>
 <h2 id="growth-rates-for-different-input-sizes">Growth Rates for Different Input Sizes</h2>
-<p>One consideration in evaluating algorithms is that the efficiency of the algorithm is most critical for large input sizes. Small inputs are likely to result in fast running times because <span class="math inline">\(N\)</span> is small, so efficiency is less of a concern. The table below shows the runtime to perform <span class="math inline">\(f(N)\)</span> instructions for different functions <span class="math inline">\(f\)</span> and different values of <span class="math inline">\(N\)</span>. For large <span class="math inline">\(N\)</span>, the difference in computation time varies greatly with the rate of growth of the function <span class="math inline">\(f\)</span>. The data assumes that a single instruction takes <span class="math inline">\(1 \mu s\)</span> to execute.</p>
+<p>One consideration in evaluating algorithms is that the efficiency of the algorithm is most critical for large input sizes. Small inputs are likely to result in fast running times because <span class="math inline">N</span> is small, so efficiency is less of a concern. The table below shows the runtime to perform <span class="math inline">f(N)</span> instructions for different functions <span class="math inline">f</span> and different values of <span class="math inline">N</span>. For large <span class="math inline">N</span>, the difference in computation time varies greatly with the rate of growth of the function <span class="math inline">f</span>. The data assumes that a single instruction takes <span class="math inline">1 \mu s</span> to execute.</p>
 <table>
 <thead>
 <tr class="header">
@@ -260,136 +285,136 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(log N\)</span></td>
-<td><span class="math inline">\(3.3 \mu s\)</span></td>
-<td><span class="math inline">\(5.65 \mu s\)</span></td>
-<td><span class="math inline">\(6.6 \mu s\)</span></td>
-<td><span class="math inline">\(9.9 \mu s\)</span></td>
-<td><span class="math inline">\(13.3 \mu s\)</span></td>
-<td><span class="math inline">\(16.6 \mu s\)</span></td>
+<td><span class="math inline">log N</span></td>
+<td><span class="math inline">3.3 \mu s</span></td>
+<td><span class="math inline">5.65 \mu s</span></td>
+<td><span class="math inline">6.6 \mu s</span></td>
+<td><span class="math inline">9.9 \mu s</span></td>
+<td><span class="math inline">13.3 \mu s</span></td>
+<td><span class="math inline">16.6 \mu s</span></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(N\)</span></td>
-<td><span class="math inline">\(10 \mu s\)</span></td>
-<td><span class="math inline">\(50 \mu s\)</span></td>
-<td><span class="math inline">\(100 \mu s\)</span></td>
-<td><span class="math inline">\(1000 \mu s\)</span></td>
-<td><span class="math inline">\(10 ms\)</span></td>
-<td><span class="math inline">\(0.1 s\)</span></td>
+<td><span class="math inline">N</span></td>
+<td><span class="math inline">10 \mu s</span></td>
+<td><span class="math inline">50 \mu s</span></td>
+<td><span class="math inline">100 \mu s</span></td>
+<td><span class="math inline">1000 \mu s</span></td>
+<td><span class="math inline">10 ms</span></td>
+<td><span class="math inline">0.1 s</span></td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(N log N\)</span></td>
-<td><span class="math inline">\(.03 ms\)</span></td>
-<td><span class="math inline">\(.28 ms\)</span></td>
-<td><span class="math inline">\(.66 ms\)</span></td>
-<td><span class="math inline">\(.099 s\)</span></td>
-<td><span class="math inline">\(.132 s\)</span></td>
-<td><span class="math inline">\(1.66 s\)</span></td>
+<td><span class="math inline">N log N</span></td>
+<td><span class="math inline">.03 ms</span></td>
+<td><span class="math inline">.28 ms</span></td>
+<td><span class="math inline">.66 ms</span></td>
+<td><span class="math inline">.099 s</span></td>
+<td><span class="math inline">.132 s</span></td>
+<td><span class="math inline">1.66 s</span></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(N^{2}\)</span></td>
-<td><span class="math inline">\(.1 ms\)</span></td>
-<td><span class="math inline">\(2.5 ms\)</span></td>
-<td><span class="math inline">\(10 ms\)</span></td>
-<td><span class="math inline">\(1 s\)</span></td>
-<td><span class="math inline">\(100 s\)</span></td>
-<td><span class="math inline">\(2.7 \text{ hours}\)</span></td>
+<td><span class="math inline">N^{2}</span></td>
+<td><span class="math inline">.1 ms</span></td>
+<td><span class="math inline">2.5 ms</span></td>
+<td><span class="math inline">10 ms</span></td>
+<td><span class="math inline">1 s</span></td>
+<td><span class="math inline">100 s</span></td>
+<td><span class="math inline">2.7 \text{ hours}</span></td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(N^{3}\)</span></td>
-<td><span class="math inline">\(1 ms\)</span></td>
-<td><span class="math inline">\(.125 s\)</span></td>
-<td><span class="math inline">\(1 s\)</span></td>
-<td><span class="math inline">\(16.7 \text{ min}\)</span></td>
-<td><span class="math inline">\(11.57 \text{ days}\)</span></td>
-<td><span class="math inline">\(31.7 \text{ years}\)</span></td>
+<td><span class="math inline">N^{3}</span></td>
+<td><span class="math inline">1 ms</span></td>
+<td><span class="math inline">.125 s</span></td>
+<td><span class="math inline">1 s</span></td>
+<td><span class="math inline">16.7 \text{ min}</span></td>
+<td><span class="math inline">11.57 \text{ days}</span></td>
+<td><span class="math inline">31.7 \text{ years}</span></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(2^{N}\)</span></td>
-<td><span class="math inline">\(.001 s\)</span></td>
-<td><span class="math inline">\(35.7 \text{ years}\)</span></td>
-<td><span class="math inline">\(*\)</span></td>
-<td><span class="math inline">\(*\)</span></td>
-<td><span class="math inline">\(*\)</span></td>
-<td><span class="math inline">\(*\)</span></td>
+<td><span class="math inline">2^{N}</span></td>
+<td><span class="math inline">.001 s</span></td>
+<td><span class="math inline">35.7 \text{ years}</span></td>
+<td><span class="math inline">*</span></td>
+<td><span class="math inline">*</span></td>
+<td><span class="math inline">*</span></td>
+<td><span class="math inline">*</span></td>
 </tr>
 </tbody>
 </table>
 <h2 id="runtime-complexities-for-various-pseudocode-examples.">Runtime Complexities For Various Pseudocode Examples.</h2>
-<p><span class="math inline">\(O(1)\)</span> <strong>Constant:</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">FindMin</span>(x, y) {</a>
-<a class="sourceLine" id="cb1-2" title="2">   <span class="kw">if</span> (x &lt; y) {</a>
-<a class="sourceLine" id="cb1-3" title="3">      <span class="kw">return</span> x</a>
-<a class="sourceLine" id="cb1-4" title="4">   }</a>
-<a class="sourceLine" id="cb1-5" title="5">   <span class="kw">else</span> {</a>
-<a class="sourceLine" id="cb1-6" title="6">      <span class="kw">return</span> y</a>
-<a class="sourceLine" id="cb1-7" title="7">   }</a>
-<a class="sourceLine" id="cb1-8" title="8">}</a></code></pre></div>
-<p><span class="math inline">\(O(\log N)\)</span> <strong>Logarithmic</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">BinarySearch</span>(numbers, N, key) {</a>
-<a class="sourceLine" id="cb2-2" title="2">    mid = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb2-3" title="3">   low = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb2-4" title="4">   high = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb2-5" title="5"></a>
-<a class="sourceLine" id="cb2-6" title="6">   high = N - <span class="dv">1</span>;</a>
-<a class="sourceLine" id="cb2-7" title="7"></a>
-<a class="sourceLine" id="cb2-8" title="8">   <span class="kw">while</span> (high &gt;= low) {</a>
-<a class="sourceLine" id="cb2-9" title="9">      mid = (high + low) / <span class="dv">2</span></a>
-<a class="sourceLine" id="cb2-10" title="10">      <span class="kw">if</span> (numbers[mid] &lt; key) {</a>
-<a class="sourceLine" id="cb2-11" title="11">         low = mid + <span class="dv">1</span></a>
-<a class="sourceLine" id="cb2-12" title="12">      }</a>
-<a class="sourceLine" id="cb2-13" title="13">      <span class="kw">else</span> <span class="kw">if</span> (numbers[mid] &gt; key) {</a>
-<a class="sourceLine" id="cb2-14" title="14">         high = mid - <span class="dv">1</span></a>
-<a class="sourceLine" id="cb2-15" title="15">      }</a>
-<a class="sourceLine" id="cb2-16" title="16">      <span class="kw">else</span> {</a>
-<a class="sourceLine" id="cb2-17" title="17">         <span class="kw">return</span> mid</a>
-<a class="sourceLine" id="cb2-18" title="18">      }</a>
-<a class="sourceLine" id="cb2-19" title="19">   }</a>
-<a class="sourceLine" id="cb2-20" title="20"></a>
-<a class="sourceLine" id="cb2-21" title="21">   <span class="kw">return</span> -<span class="dv">1</span>   <span class="co">// not found</span></a>
-<a class="sourceLine" id="cb2-22" title="22">}</a></code></pre></div>
-<p><span class="math inline">\(O(N)\)</span> <strong>Linear</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">LinearSearch</span>(numbers, N, key) {</a>
-<a class="sourceLine" id="cb3-2" title="2">  <span class="kw">for</span> (i = <span class="dv">0</span>; i &lt; N; ++i) {</a>
-<a class="sourceLine" id="cb3-3" title="3">      <span class="kw">if</span> (numbers[i] == key) {</a>
-<a class="sourceLine" id="cb3-4" title="4">         <span class="kw">return</span> i</a>
-<a class="sourceLine" id="cb3-5" title="5">      }</a>
-<a class="sourceLine" id="cb3-6" title="6">   }</a>
-<a class="sourceLine" id="cb3-7" title="7"></a>
-<a class="sourceLine" id="cb3-8" title="8">   <span class="kw">return</span> -<span class="dv">1</span> <span class="co">// not found</span></a>
-<a class="sourceLine" id="cb3-9" title="9">}</a></code></pre></div>
-<p><span class="math inline">\(O(N \log N)\)</span> <strong>Log-linear</strong></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">MergeSort</span>(numbers, i, k) {</a>
-<a class="sourceLine" id="cb4-2" title="2">   j = <span class="dv">0</span></a>
-<a class="sourceLine" id="cb4-3" title="3">   <span class="kw">if</span> (i &lt; k) {</a>
-<a class="sourceLine" id="cb4-4" title="4">      j = (i + k) / <span class="dv">2</span>              <span class="co">// Find midpoint</span></a>
-<a class="sourceLine" id="cb4-5" title="5"></a>
-<a class="sourceLine" id="cb4-6" title="6">      <span class="fu">MergeSort</span>(numbers, i, j)     <span class="co">// Sort left part</span></a>
-<a class="sourceLine" id="cb4-7" title="7">      <span class="fu">MergeSort</span>(numbers, j + <span class="dv">1</span>, k) <span class="co">// Sort right part</span></a>
-<a class="sourceLine" id="cb4-8" title="8">      <span class="fu">Merge</span>(numbers, i, j, k)      <span class="co">// Merge parts</span></a>
-<a class="sourceLine" id="cb4-9" title="9">   }</a>
-<a class="sourceLine" id="cb4-10" title="10">}</a></code></pre></div>
-<p><span class="math inline">\(O(N^{2})\)</span> <span class="math inline">\(Quadratic\)</span></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">SelectionSort</span>(number, N) {</a>
-<a class="sourceLine" id="cb5-2" title="2">   <span class="kw">for</span> (i = <span class="dv">0</span>; i &lt; N; ++i) {</a>
-<a class="sourceLine" id="cb5-3" title="3">      indexSmallest = i</a>
-<a class="sourceLine" id="cb5-4" title="4">      <span class="kw">for</span> (j = i + <span class="dv">1</span>; j &lt; N; ++j) {</a>
-<a class="sourceLine" id="cb5-5" title="5">         <span class="kw">if</span> (numbers[j] &lt; numbers[indexSmallest]) {</a>
-<a class="sourceLine" id="cb5-6" title="6">            indexSmallest = j</a>
-<a class="sourceLine" id="cb5-7" title="7">         }</a>
-<a class="sourceLine" id="cb5-8" title="8">      }</a>
-<a class="sourceLine" id="cb5-9" title="9"></a>
-<a class="sourceLine" id="cb5-10" title="10">      temp = numbers[i]</a>
-<a class="sourceLine" id="cb5-11" title="11">      numbers[i] = numbers[indexSmallest]</a>
-<a class="sourceLine" id="cb5-12" title="12">      numbers[indexSmallest] = temp</a>
-<a class="sourceLine" id="cb5-13" title="13">}</a></code></pre></div>
-<p><span class="math inline">\(O(c^{N})\)</span> <strong>Exponential</strong></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">Fibonacci</span>(N) {</a>
-<a class="sourceLine" id="cb6-2" title="2">  <span class="kw">if</span> ((<span class="dv">1</span> == N) || (<span class="dv">2</span> == N)) {</a>
-<a class="sourceLine" id="cb6-3" title="3">    <span class="kw">return</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb6-4" title="4">  }</a>
-<a class="sourceLine" id="cb6-5" title="5">  <span class="kw">return</span> <span class="fu">Fibonacci</span>(N-<span class="dv">1</span>) + <span class="fu">Fibonacci</span>(N-<span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb6-6" title="6">}</a></code></pre></div>
+<p><span class="math inline">O(1)</span> <strong>Constant:</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">FindMin</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> <span class="op">(</span>x <span class="op">&lt;</span> y<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> x</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>   <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> y</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p><span class="math inline">O(\log N)</span> <strong>Logarithmic</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">BinarySearch</span><span class="op">(</span>numbers<span class="op">,</span> N<span class="op">,</span> key<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    mid <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>   low <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>   high <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>   high <span class="op">=</span> N <span class="op">-</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>   <span class="cf">while</span> <span class="op">(</span>high <span class="op">&gt;=</span> low<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>      mid <span class="op">=</span> <span class="op">(</span>high <span class="op">+</span> low<span class="op">)</span> <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> <span class="op">(</span>numbers<span class="op">[</span>mid<span class="op">]</span> <span class="op">&lt;</span> key<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>         low <span class="op">=</span> mid <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>      <span class="cf">else</span> <span class="cf">if</span> <span class="op">(</span>numbers<span class="op">[</span>mid<span class="op">]</span> <span class="op">&gt;</span> key<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>         high <span class="op">=</span> mid <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>      <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>         <span class="cf">return</span> mid</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>   <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span>   <span class="co">// not found</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p><span class="math inline">O(N)</span> <strong>Linear</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">LinearSearch</span><span class="op">(</span>numbers<span class="op">,</span> N<span class="op">,</span> key<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> <span class="op">(</span>i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> N<span class="op">;</span> <span class="op">++</span>i<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> <span class="op">(</span>numbers<span class="op">[</span>i<span class="op">]</span> <span class="op">==</span> key<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>         <span class="cf">return</span> i</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>   <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span> <span class="co">// not found</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p><span class="math inline">O(N \log N)</span> <strong>Log-linear</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">MergeSort</span><span class="op">(</span>numbers<span class="op">,</span> i<span class="op">,</span> k<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>   j <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> <span class="op">(</span>i <span class="op">&lt;</span> k<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>      j <span class="op">=</span> <span class="op">(</span>i <span class="op">+</span> k<span class="op">)</span> <span class="op">/</span> <span class="dv">2</span>              <span class="co">// Find midpoint</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">MergeSort</span><span class="op">(</span>numbers<span class="op">,</span> i<span class="op">,</span> j<span class="op">)</span>     <span class="co">// Sort left part</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">MergeSort</span><span class="op">(</span>numbers<span class="op">,</span> j <span class="op">+</span> <span class="dv">1</span><span class="op">,</span> k<span class="op">)</span> <span class="co">// Sort right part</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">Merge</span><span class="op">(</span>numbers<span class="op">,</span> i<span class="op">,</span> j<span class="op">,</span> k<span class="op">)</span>      <span class="co">// Merge parts</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p><span class="math inline">O(N^{2})</span> <span class="math inline">Quadratic</span></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">SelectionSort</span><span class="op">(</span>number<span class="op">,</span> N<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> <span class="op">(</span>i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> N<span class="op">;</span> <span class="op">++</span>i<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>      indexSmallest <span class="op">=</span> i</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> <span class="op">(</span>j <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span><span class="op">;</span> j <span class="op">&lt;</span> N<span class="op">;</span> <span class="op">++</span>j<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>         <span class="cf">if</span> <span class="op">(</span>numbers<span class="op">[</span>j<span class="op">]</span> <span class="op">&lt;</span> numbers<span class="op">[</span>indexSmallest<span class="op">])</span> <span class="op">{</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>            indexSmallest <span class="op">=</span> j</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>         <span class="op">}</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>      temp <span class="op">=</span> numbers<span class="op">[</span>i<span class="op">]</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>      numbers<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> numbers<span class="op">[</span>indexSmallest<span class="op">]</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>      numbers<span class="op">[</span>indexSmallest<span class="op">]</span> <span class="op">=</span> temp</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p><span class="math inline">O(c^{N})</span> <strong>Exponential</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Fibonacci</span><span class="op">(</span>N<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="op">((</span><span class="dv">1</span> <span class="op">==</span> N<span class="op">)</span> <span class="op">||</span> <span class="op">(</span><span class="dv">2</span> <span class="op">==</span> N<span class="op">))</span> <span class="op">{</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="fu">Fibonacci</span><span class="op">(</span>N<span class="op">-</span><span class="dv">1</span><span class="op">)</span> <span class="op">+</span> <span class="fu">Fibonacci</span><span class="op">(</span>N<span class="op">-</span><span class="dv">2</span><span class="op">)</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h2 id="worst-case-algorithm-analysis">Worst-Case Algorithm Analysis</h2>
 <p>Worst-case algorithm analysis</p>
 <p>To analyze how runtime of an algorithm scales as the input size increases, we first determine how many operations the algorithm executes for a specific input size, N. Then, the big-O notation for that function is determined. Algorithm runtime analysis often focuses on the worst-case runtime complexity. The <strong>worst-case runtime</strong> of an algorithm is the runtime complexity for an input that results in the longest execution. Other runtime analyses include best-case runtime and average-case runtime. Determining the average-case runtime requires knowledge of the statistical properties of the expected data inputs.</p>
@@ -397,7 +422,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>17.4.1: Runtime analysis: Finding the max value.</p>
 </blockquote>
 <figure>
-<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/big-o-notation/runtime_analysis.gif" alt="Runtime analysis" /><figcaption>Runtime analysis</figcaption>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/big-o-notation/runtime_analysis.gif" alt="Runtime analysis" /><figcaption aria-hidden="true">Runtime analysis</figcaption>
 </figure>
 <blockquote>
 <p>from zyBooks.com</p>
@@ -408,7 +433,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>17.4.3: Simplified runtime analysis: A constant number of constant time operations is O(1).</p>
 </blockquote>
 <figure>
-<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/big-o-notation/simplified_runtime_analysis.gif" alt="Simplified Runtime Analysis" /><figcaption>Simplified Runtime Analysis</figcaption>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/big-o-notation/simplified_runtime_analysis.gif" alt="Simplified Runtime Analysis" /><figcaption aria-hidden="true">Simplified Runtime Analysis</figcaption>
 </figure>
 <blockquote>
 <p>from zyBooks.com</p>
@@ -419,15 +444,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>17.4.5: Runtime analysis of nested loop: Selection sort algorithm.</p>
 </blockquote>
 <figure>
-<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/big-o-notation/runtime_analysis_nested_loop.gif" alt="Runtime Analysis of Nested Loop" /><figcaption>Runtime Analysis of Nested Loop</figcaption>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/big-o-notation/runtime_analysis_nested_loop.gif" alt="Runtime Analysis of Nested Loop" /><figcaption aria-hidden="true">Runtime Analysis of Nested Loop</figcaption>
 </figure>
 <blockquote>
 <p>from zyBooks.com</p>
 </blockquote>
 <p>Common summation: Summation of consecutive numbers:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 (N - 1) + (N - 2) + \ldots + 2 + 1 = \dfrac{N(N - 1)}{2} = O(N^{2})
-\]</span></p>
+</span></p>
 <h2 id="common-data-structure-operations">Common Data Structure Operations</h2>
 <table style="width:100%;">
 <colgroup>
@@ -483,171 +508,171 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 <tr class="odd">
 <td>Array</td>
-<td><span class="math inline">\(\theta (1)\)</span></td>
-<td><span class="math inline">\(\theta (n)\)</span></td>
-<td><span class="math inline">\(\theta (n)\)</span></td>
-<td><span class="math inline">\(\theta (n)\)</span></td>
-<td><span class="math inline">\(O(1)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\theta (1)</span></td>
+<td><span class="math inline">\theta (n)</span></td>
+<td><span class="math inline">\theta (n)</span></td>
+<td><span class="math inline">\theta (n)</span></td>
+<td><span class="math inline">O(1)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
 </tr>
 <tr class="even">
 <td>Stack</td>
-<td><span class="math inline">\(\theta (n)\)</span></td>
-<td><span class="math inline">\(\theta (n)\)</span></td>
-<td><span class="math inline">\(\theta (1)\)</span></td>
-<td><span class="math inline">\(\theta (1)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(1)\)</span></td>
-<td><span class="math inline">\(O(1)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\theta (n)</span></td>
+<td><span class="math inline">\theta (n)</span></td>
+<td><span class="math inline">\theta (1)</span></td>
+<td><span class="math inline">\theta (1)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(1)</span></td>
+<td><span class="math inline">O(1)</span></td>
+<td><span class="math inline">O(n)</span></td>
 </tr>
 <tr class="odd">
 <td>Queue</td>
-<td><span class="math inline">\(\theta (n)\)</span></td>
-<td><span class="math inline">\(\theta (n)\)</span></td>
-<td><span class="math inline">\(\theta (1)\)</span></td>
-<td><span class="math inline">\(\theta (1)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(1)\)</span></td>
-<td><span class="math inline">\(O(1)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\theta (n)</span></td>
+<td><span class="math inline">\theta (n)</span></td>
+<td><span class="math inline">\theta (1)</span></td>
+<td><span class="math inline">\theta (1)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(1)</span></td>
+<td><span class="math inline">O(1)</span></td>
+<td><span class="math inline">O(n)</span></td>
 </tr>
 <tr class="even">
 <td>Singly-Linked List</td>
-<td><span class="math inline">\(\theta (n)\)</span></td>
-<td><span class="math inline">\(\theta (n)\)</span></td>
-<td><span class="math inline">\(\theta (1)\)</span></td>
-<td><span class="math inline">\(\theta (1)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(1)\)</span></td>
-<td><span class="math inline">\(O(1)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\theta (n)</span></td>
+<td><span class="math inline">\theta (n)</span></td>
+<td><span class="math inline">\theta (1)</span></td>
+<td><span class="math inline">\theta (1)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(1)</span></td>
+<td><span class="math inline">O(1)</span></td>
+<td><span class="math inline">O(n)</span></td>
 </tr>
 <tr class="odd">
 <td>Doubly-Linked List</td>
-<td><span class="math inline">\(\theta (n)\)</span></td>
-<td><span class="math inline">\(\theta (n)\)</span></td>
-<td><span class="math inline">\(\theta (1)\)</span></td>
-<td><span class="math inline">\(\theta (1)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(1)\)</span></td>
-<td><span class="math inline">\(O(1)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\theta (n)</span></td>
+<td><span class="math inline">\theta (n)</span></td>
+<td><span class="math inline">\theta (1)</span></td>
+<td><span class="math inline">\theta (1)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(1)</span></td>
+<td><span class="math inline">O(1)</span></td>
+<td><span class="math inline">O(n)</span></td>
 </tr>
 <tr class="even">
 <td>Skip List</td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n log(n))\)</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n log(n))</span></td>
 </tr>
 <tr class="odd">
 <td>Hash Table</td>
-<td><span class="math inline">\(N/A\)</span></td>
-<td><span class="math inline">\(\theta (1)\)</span></td>
-<td><span class="math inline">\(\theta (1)\)</span></td>
-<td><span class="math inline">\(\theta (1)\)</span></td>
-<td><span class="math inline">\(N/A\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">N/A</span></td>
+<td><span class="math inline">\theta (1)</span></td>
+<td><span class="math inline">\theta (1)</span></td>
+<td><span class="math inline">\theta (1)</span></td>
+<td><span class="math inline">N/A</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
 </tr>
 <tr class="even">
 <td>Binary Search Tree</td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
 </tr>
 <tr class="odd">
 <td>Cartesian Tree</td>
-<td><span class="math inline">\(N/A\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(N/A\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">N/A</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">N/A</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
 </tr>
 <tr class="even">
 <td>B-Tree</td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(O(log(n))\)</span></td>
-<td><span class="math inline">\(O(log(n))\)</span></td>
-<td><span class="math inline">\(O(log(n))\)</span></td>
-<td><span class="math inline">\(O(log(n))\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">O(log(n))</span></td>
+<td><span class="math inline">O(log(n))</span></td>
+<td><span class="math inline">O(log(n))</span></td>
+<td><span class="math inline">O(log(n))</span></td>
+<td><span class="math inline">O(n)</span></td>
 </tr>
 <tr class="odd">
 <td>Red-Black Tree</td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(O(log(n))\)</span></td>
-<td><span class="math inline">\(O(log(n))\)</span></td>
-<td><span class="math inline">\(O(log(n))\)</span></td>
-<td><span class="math inline">\(O(log(n))\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">O(log(n))</span></td>
+<td><span class="math inline">O(log(n))</span></td>
+<td><span class="math inline">O(log(n))</span></td>
+<td><span class="math inline">O(log(n))</span></td>
+<td><span class="math inline">O(n)</span></td>
 </tr>
 <tr class="even">
 <td>Splay Tree</td>
-<td><span class="math inline">\(N/A\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(N/A\)</span></td>
-<td><span class="math inline">\(O(log(n))\)</span></td>
-<td><span class="math inline">\(O(log(n))\)</span></td>
-<td><span class="math inline">\(O(log(n))\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">N/A</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">N/A</span></td>
+<td><span class="math inline">O(log(n))</span></td>
+<td><span class="math inline">O(log(n))</span></td>
+<td><span class="math inline">O(log(n))</span></td>
+<td><span class="math inline">O(n)</span></td>
 </tr>
 <tr class="odd">
 <td>AVL Tree</td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(O(log(n))\)</span></td>
-<td><span class="math inline">\(O(log(n))\)</span></td>
-<td><span class="math inline">\(O(log(n))\)</span></td>
-<td><span class="math inline">\(O(log(n))\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">O(log(n))</span></td>
+<td><span class="math inline">O(log(n))</span></td>
+<td><span class="math inline">O(log(n))</span></td>
+<td><span class="math inline">O(log(n))</span></td>
+<td><span class="math inline">O(n)</span></td>
 </tr>
 <tr class="even">
 <td>KD Tree</td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(\theta (log(n))\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">\theta (log(n))</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
+<td><span class="math inline">O(n)</span></td>
 </tr>
 </tbody>
 </table>
@@ -672,99 +697,99 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 <tr class="even">
 <td>Quicksort</td>
-<td><span class="math inline">\(\Omega (n log(n))\)</span></td>
-<td><span class="math inline">\(\theta (n log(n))\)</span></td>
-<td><span class="math inline">\(O(n^2)\)</span></td>
-<td><span class="math inline">\(O(log(n))\)</span></td>
+<td><span class="math inline">\Omega (n log(n))</span></td>
+<td><span class="math inline">\theta (n log(n))</span></td>
+<td><span class="math inline">O(n^2)</span></td>
+<td><span class="math inline">O(log(n))</span></td>
 </tr>
 <tr class="odd">
 <td>Mergesort</td>
-<td><span class="math inline">\(\Omega (n log(n))\)</span></td>
-<td><span class="math inline">\(\theta (n log(n))\)</span></td>
-<td><span class="math inline">\(O(n log(n))\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\Omega (n log(n))</span></td>
+<td><span class="math inline">\theta (n log(n))</span></td>
+<td><span class="math inline">O(n log(n))</span></td>
+<td><span class="math inline">O(n)</span></td>
 </tr>
 <tr class="even">
 <td>Timsort</td>
-<td><span class="math inline">\(\Omega (n)\)</span></td>
-<td><span class="math inline">\(\theta (n log(n))\)</span></td>
-<td><span class="math inline">\(O(n log(n))\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\Omega (n)</span></td>
+<td><span class="math inline">\theta (n log(n))</span></td>
+<td><span class="math inline">O(n log(n))</span></td>
+<td><span class="math inline">O(n)</span></td>
 </tr>
 <tr class="odd">
 <td>Heapsort</td>
-<td><span class="math inline">\(\Omega (n log(n))\)</span></td>
-<td><span class="math inline">\(\theta (n log(n))\)</span></td>
-<td><span class="math inline">\(O(n log(n))\)</span></td>
-<td><span class="math inline">\(O(1)\)</span></td>
+<td><span class="math inline">\Omega (n log(n))</span></td>
+<td><span class="math inline">\theta (n log(n))</span></td>
+<td><span class="math inline">O(n log(n))</span></td>
+<td><span class="math inline">O(1)</span></td>
 </tr>
 <tr class="even">
 <td>Bubble Sort</td>
-<td><span class="math inline">\(\Omega (n)\)</span></td>
-<td><span class="math inline">\(\theta (n^2)\)</span></td>
-<td><span class="math inline">\(O(n^2)\)</span></td>
-<td><span class="math inline">\(O(1)\)</span></td>
+<td><span class="math inline">\Omega (n)</span></td>
+<td><span class="math inline">\theta (n^2)</span></td>
+<td><span class="math inline">O(n^2)</span></td>
+<td><span class="math inline">O(1)</span></td>
 </tr>
 <tr class="odd">
 <td>Insertion Sort</td>
-<td><span class="math inline">\(\Omega (n)\)</span></td>
-<td><span class="math inline">\(\theta (n^2)\)</span></td>
-<td><span class="math inline">\(O(n^2)\)</span></td>
-<td><span class="math inline">\(O(1)\)</span></td>
+<td><span class="math inline">\Omega (n)</span></td>
+<td><span class="math inline">\theta (n^2)</span></td>
+<td><span class="math inline">O(n^2)</span></td>
+<td><span class="math inline">O(1)</span></td>
 </tr>
 <tr class="even">
 <td>Selection Sort</td>
-<td><span class="math inline">\(\Omega (n^2)\)</span></td>
-<td><span class="math inline">\(\theta (n^2)\)</span></td>
-<td><span class="math inline">\(O(n^2)\)</span></td>
-<td><span class="math inline">\(O(1)\)</span></td>
+<td><span class="math inline">\Omega (n^2)</span></td>
+<td><span class="math inline">\theta (n^2)</span></td>
+<td><span class="math inline">O(n^2)</span></td>
+<td><span class="math inline">O(1)</span></td>
 </tr>
 <tr class="odd">
 <td>Tree Sort</td>
-<td><span class="math inline">\(\Omega (n log(n))\)</span></td>
-<td><span class="math inline">\(\theta (n log(n))\)</span></td>
-<td><span class="math inline">\(O(n^2)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\Omega (n log(n))</span></td>
+<td><span class="math inline">\theta (n log(n))</span></td>
+<td><span class="math inline">O(n^2)</span></td>
+<td><span class="math inline">O(n)</span></td>
 </tr>
 <tr class="even">
 <td>Shell Sort</td>
-<td><span class="math inline">\(\Omega (n log(n))\)</span></td>
-<td><span class="math inline">\(\theta (n(log(n))^2)\)</span></td>
-<td><span class="math inline">\(O(n(log(n))^2)\)</span></td>
-<td><span class="math inline">\(O(1)\)</span></td>
+<td><span class="math inline">\Omega (n log(n))</span></td>
+<td><span class="math inline">\theta (n(log(n))^2)</span></td>
+<td><span class="math inline">O(n(log(n))^2)</span></td>
+<td><span class="math inline">O(1)</span></td>
 </tr>
 <tr class="odd">
 <td>Bucket Sort</td>
-<td><span class="math inline">\(\Omega (n+k)\)</span></td>
-<td><span class="math inline">\(\theta (n+k)\)</span></td>
-<td><span class="math inline">\(O(n^2)\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\Omega (n+k)</span></td>
+<td><span class="math inline">\theta (n+k)</span></td>
+<td><span class="math inline">O(n^2)</span></td>
+<td><span class="math inline">O(n)</span></td>
 </tr>
 <tr class="even">
 <td>Radix Sort</td>
-<td><span class="math inline">\(\Omega (nk)\)</span></td>
-<td><span class="math inline">\(\theta (nk)\)</span></td>
-<td><span class="math inline">\(O(nk)\)</span></td>
-<td><span class="math inline">\(O(n+k)\)</span></td>
+<td><span class="math inline">\Omega (nk)</span></td>
+<td><span class="math inline">\theta (nk)</span></td>
+<td><span class="math inline">O(nk)</span></td>
+<td><span class="math inline">O(n+k)</span></td>
 </tr>
 <tr class="odd">
 <td>Counting Sort</td>
-<td><span class="math inline">\(\Omega (n+k)\)</span></td>
-<td><span class="math inline">\(\theta (n+k)\)</span></td>
-<td><span class="math inline">\(O(n+k)\)</span></td>
-<td><span class="math inline">\(O(k)\)</span></td>
+<td><span class="math inline">\Omega (n+k)</span></td>
+<td><span class="math inline">\theta (n+k)</span></td>
+<td><span class="math inline">O(n+k)</span></td>
+<td><span class="math inline">O(k)</span></td>
 </tr>
 <tr class="even">
 <td>Cubesort</td>
-<td><span class="math inline">\(\Omega (n)\)</span></td>
-<td><span class="math inline">\(\theta (n log(n))\)</span></td>
-<td><span class="math inline">\(O(n log(n))\)</span></td>
-<td><span class="math inline">\(O(n)\)</span></td>
+<td><span class="math inline">\Omega (n)</span></td>
+<td><span class="math inline">\theta (n log(n))</span></td>
+<td><span class="math inline">O(n log(n))</span></td>
+<td><span class="math inline">O(n)</span></td>
 </tr>
 </tbody>
 </table>
 <blockquote>
-<p>Best case scenario is denoted by <span class="math inline">\(\Omega\)</span> sign, average case by <span class="math inline">\(\theta\)</span> sign and <span class="math inline">\(O\)</span> for the worst case scenario.</p>
+<p>Best case scenario is denoted by <span class="math inline">\Omega</span> sign, average case by <span class="math inline">\theta</span> sign and <span class="math inline">O</span> for the worst case scenario.</p>
 </blockquote>
 <p><br></p>
 <h1 id="resources">Resources</h1>

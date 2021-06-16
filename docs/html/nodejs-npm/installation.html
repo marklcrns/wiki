@@ -11,6 +11,13 @@
 
     <title>Node.js &amp; npm Installation</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -22,26 +29,28 @@
     <link href="../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -50,9 +59,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -128,9 +137,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#installation">Installation</a><ul>
-          <li><a href="#linux">Linux</a><ul>
-          <li><a href="#ubuntu-or-debian-based-system">Ubuntu or Debian Based System</a><ul>
+          <li><a href="#installation">Installation</a>
+          <ul>
+          <li><a href="#linux">Linux</a>
+          <ul>
+          <li><a href="#ubuntu-or-debian-based-system">Ubuntu or Debian Based System</a>
+          <ul>
           <li><a href="#using-nvm-recommended">Using NVM (Recommended)</a></li>
           <li><a href="#without-nvm">Without NVM</a></li>
           </ul></li>
@@ -177,50 +189,50 @@ permissions errors when you run npm packages globally.</code></pre>
 <h2 id="linux">Linux</h2>
 <h3 id="ubuntu-or-debian-based-system">Ubuntu or Debian Based System</h3>
 <h4 id="using-nvm-recommended">Using NVM (Recommended)</h4>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># NVM/NodeJS</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="kw">if</span> <span class="ex">curl</span> -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh <span class="kw">|</span> <span class="fu">bash</span><span class="kw">;</span> <span class="kw">then</span></a>
-<a class="sourceLine" id="cb2-3" title="3">  <span class="co"># source bashrc or zshrc</span></a>
-<a class="sourceLine" id="cb2-4" title="4">  <span class="kw">if [[</span> <span class="ot">-n</span> <span class="va">${BASH_VERSION}</span><span class="kw"> ]]</span>; <span class="kw">then</span></a>
-<a class="sourceLine" id="cb2-5" title="5">    <span class="bu">source</span> ~/.bashrc</a>
-<a class="sourceLine" id="cb2-6" title="6">  <span class="kw">elif [[</span> <span class="ot">-n</span> <span class="va">${ZSH_VERSION}</span><span class="kw"> ]]</span>; <span class="kw">then</span></a>
-<a class="sourceLine" id="cb2-7" title="7">    <span class="bu">source</span> ~/.zshrc</a>
-<a class="sourceLine" id="cb2-8" title="8">  <span class="kw">fi</span></a>
-<a class="sourceLine" id="cb2-9" title="9"></a>
-<a class="sourceLine" id="cb2-10" title="10">  <span class="co"># Source nvm script</span></a>
-<a class="sourceLine" id="cb2-11" title="11">  <span class="bu">source</span> <span class="va">$NVM_DIR</span>/nvm.sh</a>
-<a class="sourceLine" id="cb2-12" title="12"></a>
-<a class="sourceLine" id="cb2-13" title="13">  <span class="co"># Install latest node version and set as default</span></a>
-<a class="sourceLine" id="cb2-14" title="14">  <span class="ex">nvm</span> install node</a>
-<a class="sourceLine" id="cb2-15" title="15">  <span class="ex">nvm</span> use node</a>
-<a class="sourceLine" id="cb2-16" title="16">  <span class="ex">nvm</span> alias default node</a>
-<a class="sourceLine" id="cb2-17" title="17"></a>
-<a class="sourceLine" id="cb2-18" title="18">  <span class="co"># Alternative: Install LTS node version. Does not set to default as --lts does</span></a>
-<a class="sourceLine" id="cb2-19" title="19">  <span class="co"># not work as a command</span></a>
-<a class="sourceLine" id="cb2-20" title="20">  <span class="ex">nvm</span> install --lts</a>
-<a class="sourceLine" id="cb2-21" title="21">  <span class="ex">nvm</span> use --lts</a>
-<a class="sourceLine" id="cb2-22" title="22"><span class="kw">fi</span></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># NVM/NodeJS</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="ex">curl</span> <span class="at">-o-</span> https://raw.githubusercontent.com/creationix/nvm/master/install.sh <span class="kw">|</span> <span class="fu">bash</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># source bashrc or zshrc</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="kw">[[</span> <span class="ot">-n</span> <span class="va">${BASH_VERSION}</span> <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">source</span> ~/.bashrc</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">elif</span> <span class="kw">[[</span> <span class="ot">-n</span> <span class="va">${ZSH_VERSION}</span> <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">source</span> ~/.zshrc</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">fi</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Source nvm script</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="bu">source</span> <span class="va">$NVM_DIR</span>/nvm.sh</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Install latest node version and set as default</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="ex">nvm</span> install node</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="ex">nvm</span> use node</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="ex">nvm</span> alias default node</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Alternative: Install LTS node version. Does not set to default as --lts does</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># not work as a command</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="ex">nvm</span> install <span class="at">--lts</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="ex">nvm</span> use <span class="at">--lts</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code></pre></div>
 <h5 id="uninstall">Uninstall</h5>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="ex">nvm</span> uninstall <span class="op">&lt;</span>version<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="ex">nvm</span> uninstall node  <span class="co"># Uninstall latest</span></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="ex">nvm</span> uninstall --lts <span class="co"># Uninstall LTS</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> uninstall <span class="op">&lt;</span>version<span class="op">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> uninstall node  <span class="co"># Uninstall latest</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> uninstall <span class="at">--lts</span> <span class="co"># Uninstall LTS</span></span></code></pre></div>
 <h4 id="without-nvm">Without NVM</h4>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># Automatically installes npm</span></a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="fu">sudo</span> apt install nodejs</a>
-<a class="sourceLine" id="cb4-3" title="3"></a>
-<a class="sourceLine" id="cb4-4" title="4"><span class="co"># Update npm to latest version</span></a>
-<a class="sourceLine" id="cb4-5" title="5"><span class="ex">npm</span> install -g npm@latest</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Automatically installes npm</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install nodejs</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Update npm to latest version</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install <span class="at">-g</span> npm@latest</span></code></pre></div>
 <h5 id="issues">Issues</h5>
 <p>Permission errors npm has warned about when installing Node without package manager.</p>
 <ul>
 <li><a href="https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally">📄 Workaround for ‘Missing write access to /usr/local/lib error’</a></li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">mkdir</span> <span class="va">${HOME}</span>/.npm-global</a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="ex">npm</span> config set prefix <span class="st">&quot;</span><span class="va">${HOME}</span><span class="st">/.npm-global&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="va">${HOME}</span>/.npm-global</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> config set prefix <span class="st">&quot;</span><span class="va">${HOME}</span><span class="st">/.npm-global&quot;</span></span></code></pre></div>
 <blockquote>
 <p><strong>NOTE:</strong> <code>globalconfig</code> and/or <code>prefix</code> is not compatible with <code>nvm</code></p>
 </blockquote>
 <h5 id="uninstall-1">Uninstall</h5>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">sudo</span> apt remove nodejs npm</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt remove nodejs npm</span></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://ajaykarwal.com/uninstall-node-and-install-nvm">📄 Uninstall Node.js and install Node Version Manager (NVM)</a></li>

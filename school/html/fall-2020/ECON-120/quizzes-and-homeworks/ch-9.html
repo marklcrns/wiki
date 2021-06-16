@@ -11,6 +11,13 @@
 
     <title>Chapter 9</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,15 +88,18 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-9">Chapter 9</a><ul>
-          <li><a href="#homework">Homework</a><ul>
+          <li><a href="#chapter-9">Chapter 9</a>
+          <ul>
+          <li><a href="#homework">Homework</a>
+          <ul>
           <li><a href="#q1">Q1</a></li>
           <li><a href="#q2">Q2</a></li>
           <li><a href="#q3">Q3</a></li>
           <li><a href="#q4">Q4</a></li>
           <li><a href="#q5">Q5</a></li>
           </ul></li>
-          <li><a href="#quiz">Quiz</a><ul>
+          <li><a href="#quiz">Quiz</a>
+          <ul>
           <li><a href="#q1-1">Q1</a></li>
           <li><a href="#q2-1">Q2</a></li>
           <li><a href="#q3-1">Q3</a></li>
@@ -118,7 +143,7 @@
 <p>Determine the effect on aggregate demand.</p>
 <p>Using the line drawing tool, draw a new aggregate demand curve. Label this line ‘AD 1’.</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-9/homework_1.png" alt="Homework 1" /><figcaption>Homework 1</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-9/homework_1.png" alt="Homework 1" /><figcaption aria-hidden="true">Homework 1</figcaption>
 </figure>
 <h3 id="q2">Q2</h3>
 <p>The government spent $46 billion for various infrastructure upgrades. If the marginal propensity to consume is 0.62 , the marginal propensity to save is <strong>0.38</strong>.</p>
@@ -126,19 +151,19 @@
 <p>1 - 0.62 = 0.38</p>
 </blockquote>
 <p>The increased government spending created $<strong>121.05</strong> billion of additional spending.</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 \text{ Total spending increase } &amp;= \text{ Increased government spending } \times \frac{1}{1 - \text{ marginal propensity to consume }} \\
 \text{ Total spending increase } &amp;= 46 \times \frac{1}{1 - 0.62} \approx 121.05
 \end{aligned}
-\]</span></p>
+</span></p>
 <h3 id="q3">Q3</h3>
 <p>The short-run aggregate supply curve is shown at right. Suppose OPEC decides to reduce oil production. Using the line drawing tool, draw and label a new short-run aggregate supply.</p>
 <blockquote>
 <p>short-run aggregate supply shifts upward</p>
 </blockquote>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-9/homework_3.png" alt="Homework 3" /><figcaption>Homework 3</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-9/homework_3.png" alt="Homework 3" /><figcaption aria-hidden="true">Homework 3</figcaption>
 </figure>
 <p>The impact would result in</p>
 <ul>
@@ -151,7 +176,7 @@
 <li><p>Using the point drawing tool, locate the new long-run equilibrium point. Label it C.</p></li>
 </ol>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-9/homework_4.png" alt="Homework 4" /><figcaption>Homework 4</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-9/homework_4.png" alt="Homework 4" /><figcaption aria-hidden="true">Homework 4</figcaption>
 </figure>
 <h3 id="q5">Q5</h3>
 <p>A negative supply shock temporarily <strong>lowers</strong> output <strong>below</strong> full employment and <strong>raises</strong> prices.</p>
@@ -162,20 +187,20 @@
 <p>In the diagram to the right, the economy is currently at point A.</p>
 <p>President Donald Trump lowered taxes in 2018. The Congress also increased government spending that year. Ceteris paribus, these actions are represented by:</p>
 <figure>
-<img src="../../../../files/fall-2020/ECON-120/chapter-9/quiz_1.png" alt="quiz 1" /><figcaption>quiz 1</figcaption>
+<img src="../../../../files/fall-2020/ECON-120/chapter-9/quiz_1.png" alt="quiz 1" /><figcaption aria-hidden="true">quiz 1</figcaption>
 </figure>
 <ul>
-<li>a shift of the aggregate demand curve from <span class="math inline">\(AD_{1}\)</span> to <span class="math inline">\(AD_{2}\)</span> (point A to C).</li>
+<li>a shift of the aggregate demand curve from <span class="math inline">AD_{1}</span> to <span class="math inline">AD_{2}</span> (point A to C).</li>
 </ul>
 <h3 id="q2-1">Q2</h3>
 <p>Calculating the MPS and MPC. In one year, a consumer’s income increases by $300 and her savings increases by $180.</p>
 <p>Her marginal propensity to consume is equal to <strong>0.4</strong>.</p>
 <p>Her marginal propensity to save is equal to <strong>0.6</strong>.</p>
 <blockquote>
-<p>MPS = <span class="math inline">\(\frac{\text{additional savings}}{\text{additional income}}\)</span></p>
+<p>MPS = <span class="math inline">\frac{\text{additional savings}}{\text{additional income}}</span></p>
 </blockquote>
 <blockquote>
-<p>MPC = <span class="math inline">\(1 - \text{MPS}\)</span></p>
+<p>MPC = <span class="math inline">1 - \text{MPS}</span></p>
 </blockquote>
 <h3 id="q3-1">Q3</h3>
 <p>The short-run aggregate supply curve shows the short-run relationship between the</p>

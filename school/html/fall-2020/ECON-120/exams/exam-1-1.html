@@ -11,6 +11,13 @@
 
     <title>Exam 1 Attempt 1</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -22,26 +29,28 @@
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -50,9 +59,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -84,7 +93,22 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
     </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -189,22 +213,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol type="a">
 <li>Use the above information to calculate your total cost. (Enter your responses as whole numbers.)</li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># Truck rent</span></a>
-<a class="sourceLine" id="cb1-2" title="2">init <span class="op">=</span> <span class="dv">20</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="co"># per hour</span></a>
-<a class="sourceLine" id="cb1-4" title="4">wage <span class="op">=</span> <span class="dv">6</span></a>
-<a class="sourceLine" id="cb1-5" title="5"></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="bu">print</span>(<span class="st">&quot;4 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">4</span> <span class="op">*</span> wage <span class="op">+</span> init))    <span class="co"># 44</span></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="bu">print</span>(<span class="st">&quot;8 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">8</span> <span class="op">*</span> wage <span class="op">+</span> init))    <span class="co"># 68</span></a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="bu">print</span>(<span class="st">&quot;12 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">12</span> <span class="op">*</span> wage <span class="op">+</span> init))  <span class="co"># 92</span></a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="bu">print</span>(<span class="st">&quot;16 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">16</span> <span class="op">*</span> wage <span class="op">+</span> init))  <span class="co"># 116</span></a>
-<a class="sourceLine" id="cb1-10" title="10"><span class="bu">print</span>(<span class="st">&quot;20 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">20</span> <span class="op">*</span> wage <span class="op">+</span> init))  <span class="co"># 140</span></a></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1">y1 <span class="op">=</span> <span class="dv">44</span></a>
-<a class="sourceLine" id="cb2-2" title="2">y2 <span class="op">=</span> <span class="dv">68</span></a>
-<a class="sourceLine" id="cb2-3" title="3">x1 <span class="op">=</span> <span class="dv">4</span></a>
-<a class="sourceLine" id="cb2-4" title="4">x2 <span class="op">=</span> <span class="dv">8</span></a>
-<a class="sourceLine" id="cb2-5" title="5"></a>
-<a class="sourceLine" id="cb2-6" title="6"><span class="bu">print</span>(<span class="st">&quot;slope = &quot;</span> <span class="op">+</span> <span class="bu">str</span>((y2 <span class="op">-</span> y1) <span class="op">/</span> (x2 <span class="op">-</span> x1)))</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Truck rent</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>init <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># per hour</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>wage <span class="op">=</span> <span class="dv">6</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;4 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">4</span> <span class="op">*</span> wage <span class="op">+</span> init))    <span class="co"># 44</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;8 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">8</span> <span class="op">*</span> wage <span class="op">+</span> init))    <span class="co"># 68</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;12 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">12</span> <span class="op">*</span> wage <span class="op">+</span> init))  <span class="co"># 92</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;16 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">16</span> <span class="op">*</span> wage <span class="op">+</span> init))  <span class="co"># 116</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;20 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">20</span> <span class="op">*</span> wage <span class="op">+</span> init))  <span class="co"># 140</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>y1 <span class="op">=</span> <span class="dv">44</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>y2 <span class="op">=</span> <span class="dv">68</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> <span class="dv">8</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;slope = &quot;</span> <span class="op">+</span> <span class="bu">str</span>((y2 <span class="op">-</span> y1) <span class="op">/</span> (x2 <span class="op">-</span> x1)))</span></code></pre></div>
 <ol start="2" type="a">
 <li><p>The slope of your total cost curve is $<strong>6</strong> per delivery.</p></li>
 <li><p>To draw the total cost curve, what variable will be held fixed? Truck rental rate.</p></li>
@@ -214,12 +238,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol start="10" type="1">
 <li>Compute the percentage changes for the following (enter your responses as integers):</li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">def</span> percent_change(init, new):</a>
-<a class="sourceLine" id="cb3-2" title="2">  <span class="cf">return</span> <span class="dv">100</span> <span class="op">*</span> (new <span class="op">-</span> init) <span class="op">/</span> init</a>
-<a class="sourceLine" id="cb3-3" title="3"></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="bu">print</span>(<span class="st">&quot;200, 206 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(percent_change(<span class="dv">200</span>, <span class="dv">206</span>))) <span class="co"># 3</span></a>
-<a class="sourceLine" id="cb3-5" title="5"><span class="bu">print</span>(<span class="st">&quot;100, 104 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(percent_change(<span class="dv">100</span>, <span class="dv">104</span>))) <span class="co"># 4</span></a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="bu">print</span>(<span class="st">&quot;20, 25 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(percent_change(<span class="dv">20</span>, <span class="dv">25</span>)))     <span class="co"># 25</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> percent_change(init, new):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">100</span> <span class="op">*</span> (new <span class="op">-</span> init) <span class="op">/</span> init</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;200, 206 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(percent_change(<span class="dv">200</span>, <span class="dv">206</span>))) <span class="co"># 3</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;100, 104 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(percent_change(<span class="dv">100</span>, <span class="dv">104</span>))) <span class="co"># 4</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;20, 25 = &quot;</span> <span class="op">+</span> <span class="bu">str</span>(percent_change(<span class="dv">20</span>, <span class="dv">25</span>)))     <span class="co"># 25</span></span></code></pre></div>
 <p>0.67/X 11. Diminishing Returns and the Marginal Principle. Molly’s Espresso Shop has become busy, and the more hours Ted works, the more espressos Molly can sell. The price of espressos is $2 and Ted’s hourly wage is $11. Complete the following table. (Enter your responses as integers.)</p>
 <p>Answers: 11, 24, 12</p>
 <ol start="12" type="1">
@@ -294,9 +318,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>A percentage change can be calculated as</p></li>
 </ol>
 <ol start="2" type="A">
-<li><span class="math display">\[
+<li><span class="math display">
 \frac{\text{New Value - Initial Value}}{\text{Initial Value}} \times 100
-\]</span></li>
+</span></li>
 </ol>
 <ol start="36" type="1">
 <li>When there is a nonlinear relationship between two variables, the slope will</li>

@@ -11,6 +11,13 @@
 
     <title>Chapter 2 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -22,26 +29,28 @@
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -50,9 +59,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -84,7 +93,22 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
     </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -129,33 +153,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-2-introduction-to-c">Chapter 2 Introduction to C++</a><ul>
-          <li><a href="#textbook">Textbook</a><ul>
+          <li><a href="#chapter-2-introduction-to-c">Chapter 2 Introduction to C++</a>
+          <ul>
+          <li><a href="#textbook">Textbook</a>
+          <ul>
           <li><a href="#the-parts-of-a-c-program">2.1 The Parts of a C++ Program</a></li>
           <li><a href="#the-cout-object">2.2 The <code>cout</code> Object</a></li>
           <li><a href="#variables-and-the-assignment-statement">2.4 Variables and the Assignment Statement</a></li>
           <li><a href="#literals">2.5 Literals</a></li>
-          <li><a href="#identifiers">2.6 Identifiers</a><ul>
+          <li><a href="#identifiers">2.6 Identifiers</a>
+          <ul>
           <li><a href="#hexadecimal-and-octal-literals-enrichment">Hexadecimal and Octal Literals (enrichment)</a></li>
           </ul></li>
-          <li><a href="#floating-point-data-types">2.8 Floating-Point Data Types</a><ul>
+          <li><a href="#floating-point-data-types">2.8 Floating-Point Data Types</a>
+          <ul>
           <li><a href="#floating-point-literals">Floating-Point Literals</a></li>
           <li><a href="#assigning-floating-point-values-to-integer-variables">Assigning Floating-Point Values to Integer Variables</a></li>
           </ul></li>
-          <li><a href="#the-char-data-type">2.9 The <code>char</code> Data Type</a><ul>
+          <li><a href="#the-char-data-type">2.9 The <code>char</code> Data Type</a>
+          <ul>
           <li><a href="#the-difference-between-character-literals-and-string-literals">The Difference Between Character Literals and String Literals</a></li>
           </ul></li>
-          <li><a href="#the-c-string-class">2.10 The C++ <code>string</code> Class</a><ul>
+          <li><a href="#the-c-string-class">2.10 The C++ <code>string</code> Class</a>
+          <ul>
           <li><a href="#using-the-string-class">Using the <code>string</code> Class</a></li>
           </ul></li>
           <li><a href="#the-bool-data-type">2.11 The <code>bool</code> Data Type</a></li>
           <li><a href="#determining-the-size-of-a-data-type">2.12 Determining the Size of A Data Type</a></li>
-          <li><a href="#more-on-variable-assignments-and-initialization">2.13 More on Variable Assignments and Initialization</a><ul>
+          <li><a href="#more-on-variable-assignments-and-initialization">2.13 More on Variable Assignments and Initialization</a>
+          <ul>
           <li><a href="#declaring-variables-with-the-auto-key-word">Declaring Variables with the <code>auto</code> Key Word</a></li>
           </ul></li>
           <li><a href="#scope">2.14 Scope</a></li>
           <li><a href="#arithmetic-operators">2.15 Arithmetic Operators</a></li>
-          <li><a href="#comments">2.16 Comments</a><ul>
+          <li><a href="#comments">2.16 Comments</a>
+          <ul>
           <li><a href="#single-line-comments">Single Line Comments</a></li>
           <li><a href="#multi-line-comments">Multi-line Comments</a></li>
           </ul></li>
@@ -194,15 +226,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 id="chapter-2-introduction-to-c">Chapter 2 Introduction to C++</h1>
 <h2 id="textbook">Textbook</h2>
 <h3 id="the-parts-of-a-c-program">2.1 The Parts of a C++ Program</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb1-1" title="1"><span class="co">// A simple C++ program</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb1-4" title="4"></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb1-6" title="6">{</a>
-<a class="sourceLine" id="cb1-7" title="7">  cout &lt;&lt; <span class="st">&quot;Programming is great fun!&quot;</span>;</a>
-<a class="sourceLine" id="cb1-8" title="8">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb1-9" title="9">}</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// A simple C++ program</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Programming is great fun!&quot;</span><span class="op">;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>The <code>//</code> marks the beginning of a <em>comment</em>. The compiler ignores everything from the double-slash to the end of the line.</p>
 <p>When a line begins with a <code>#</code> it indicates it is a <strong>preprocessor directive</strong>. The preprocessor read your program before it is compiled and only executes those line beginning with a <code>#</code> symbol.</p>
 <p>The <code>#include</code> directive causes the preprocessor to include the contents of another file, known as a <em>header</em> file, in the program. The word that is enclosed in brackets, <code>&lt;iostream&gt;</code>, is the name of the header file that is to be included.</p>
@@ -271,20 +303,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote>
 <h3 id="the-cout-object">2.2 The <code>cout</code> Object</h3>
 <p>The simplest type of screen output that a program can display is <em>console output</em>, which is merely plain text.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb2-1" title="1">cout &lt;&lt; <span class="st">&quot;Programming is great fun!&quot;</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Programming is great fun!&quot;</span><span class="op">;</span></span></code></pre></div>
 <p>When the <code>&lt;&lt;</code> symbol is used this way, it is called the <em>stream-insertion operator</em>. The item immediately to the right of the operator is <em>inserted</em> into the output stream that is sent to <code>cout</code> to be displayed on the screen.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb3-1" title="1"><span class="co">// A well-adjusted printing program</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="pp">#</span><span class="er">inlcude &lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb3-4" title="4"></a>
-<a class="sourceLine" id="cb3-5" title="5"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb3-6" title="6">{</a>
-<a class="sourceLine" id="cb3-7" title="7">  cout &lt;&lt; <span class="st">&quot;The following items were top sellers&quot;</span> &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb3-8" title="8">  cout &lt;&lt; <span class="st">&quot;during the month of June:</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
-<a class="sourceLine" id="cb3-9" title="9">  cout &lt;&lt; <span class="st">&quot;Computer games</span><span class="sc">\n</span><span class="st">Coffee&quot;</span>;</a>
-<a class="sourceLine" id="cb3-10" title="10">  cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Aspirin</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
-<a class="sourceLine" id="cb3-11" title="11">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb3-12" title="12">}</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// A well-adjusted printing program</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#</span><span class="er">inlcude &lt;iostream&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;The following items were top sellers&quot;</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;during the month of June:</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Computer games</span><span class="sc">\n</span><span class="st">Coffee&quot;</span><span class="op">;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Aspirin</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <blockquote>
 <p><code>endl</code> is the same as the newline <em>escape sequence</em> <code>\n</code></p>
 </blockquote>
@@ -351,29 +383,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>Program 2-7</p>
 </blockquote>
-<div class="sourceCode" id="cb4"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb4-1" title="1"><span class="co">// This program has a variable.</span></a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb4-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb4-4" title="4"></a>
-<a class="sourceLine" id="cb4-5" title="5"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb4-6" title="6">{</a>
-<a class="sourceLine" id="cb4-7" title="7">  <span class="dt">int</span> number;</a>
-<a class="sourceLine" id="cb4-8" title="8"></a>
-<a class="sourceLine" id="cb4-9" title="9">  number = <span class="dv">5</span>;</a>
-<a class="sourceLine" id="cb4-10" title="10">  cout &lt;&lt; <span class="st">&quot;The value of number is &quot;</span> &lt;&lt; number &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb4-11" title="11"></a>
-<a class="sourceLine" id="cb4-12" title="12">  number = <span class="dv">7</span>;</a>
-<a class="sourceLine" id="cb4-13" title="13">  cout &lt;&lt; <span class="st">&quot;Now the value of number is &quot;</span> &lt;&lt; number &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb4-14" title="14"></a>
-<a class="sourceLine" id="cb4-15" title="15">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb4-16" title="16">}</a></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb5-1" title="1"><span class="dt">int</span> number;</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program has a variable.</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> number<span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  number <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;The value of number is &quot;</span> <span class="op">&lt;&lt;</span> number <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  number <span class="op">=</span> <span class="dv">7</span><span class="op">;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Now the value of number is &quot;</span> <span class="op">&lt;&lt;</span> number <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number<span class="op">;</span></span></code></pre></div>
 <p>This is called a <em>variable definition</em>. It tells the compiler the variable’s name and the type of data it will hold.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb6-1" title="1">number =  <span class="dv">5</span></a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span>  <span class="dv">5</span></span></code></pre></div>
 <p>This is an <em>assignment statement</em>, and the <code>=</code> sign is called the <em>assignment operator</em>. This operator copies the value on its right <code>5</code> into the variable named on its left <code>number</code>.</p>
 <h3 id="literals">2.5 Literals</h3>
 <p>A literal is a piece of data written directly into a program’s code. One of the most common uses of literals is to assign a value to a variable.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb7-1" title="1">number = <span class="dv">5</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span></code></pre></div>
 <h3 id="identifiers">2.6 Identifiers</h3>
 <p>An <em>identifier</em> is a programmer-defined name that represents some element of a program. Variable names are examples of identifiers. You may choose your own variable names in C++, as long as you do not use any of the C++ key words.</p>
 <blockquote>
@@ -564,45 +596,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>Program 2-9</p>
 </blockquote>
-<div class="sourceCode" id="cb8"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb8-1" title="1"><span class="co">// This program has variables of several of the integer types.</span></a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb8-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb8-4" title="4"></a>
-<a class="sourceLine" id="cb8-5" title="5"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb8-6" title="6">{</a>
-<a class="sourceLine" id="cb8-7" title="7">  <span class="dt">int</span> checking;</a>
-<a class="sourceLine" id="cb8-8" title="8">  <span class="dt">unsigned</span> <span class="dt">int</span> miles;</a>
-<a class="sourceLine" id="cb8-9" title="9">  <span class="dt">long</span> diameter;</a>
-<a class="sourceLine" id="cb8-10" title="10"></a>
-<a class="sourceLine" id="cb8-11" title="11">  checking = -<span class="dv">20</span>;</a>
-<a class="sourceLine" id="cb8-12" title="12">  miles = <span class="dv">4276</span>;</a>
-<a class="sourceLine" id="cb8-13" title="13">  diameter = <span class="dv">100000</span>;</a>
-<a class="sourceLine" id="cb8-14" title="14"></a>
-<a class="sourceLine" id="cb8-15" title="15">  cout &lt;&lt; <span class="st">&quot;We have made a journey of &quot;</span> &lt;&lt; miles &lt;&lt; <span class="st">&quot; miles.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
-<a class="sourceLine" id="cb8-16" title="16">  cout &lt;&lt; <span class="st">&quot;Our checking account balance is &quot;</span> &lt;&lt; checking &lt;&lt; <span class="st">&quot; dollars.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
-<a class="sourceLine" id="cb8-17" title="17">  cout &lt;&lt; <span class="st">&quot;The Milky Way galaxy is about &quot;</span> &lt;&lt; diameter;</a>
-<a class="sourceLine" id="cb8-18" title="18">  cout &lt;&lt; <span class="st">&quot;light years in diameter.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
-<a class="sourceLine" id="cb8-19" title="19">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb8-20" title="20">}</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program has variables of several of the integer types.</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> checking<span class="op">;</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">unsigned</span> <span class="dt">int</span> miles<span class="op">;</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">long</span> diameter<span class="op">;</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  checking <span class="op">=</span> <span class="op">-</span><span class="dv">20</span><span class="op">;</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  miles <span class="op">=</span> <span class="dv">4276</span><span class="op">;</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  diameter <span class="op">=</span> <span class="dv">100000</span><span class="op">;</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;We have made a journey of &quot;</span> <span class="op">&lt;&lt;</span> miles <span class="op">&lt;&lt;</span> <span class="st">&quot; miles.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Our checking account balance is &quot;</span> <span class="op">&lt;&lt;</span> checking <span class="op">&lt;&lt;</span> <span class="st">&quot; dollars.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;The Milky Way galaxy is about &quot;</span> <span class="op">&lt;&lt;</span> diameter<span class="op">;</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;light years in diameter.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <blockquote>
 <p>Program 2-10</p>
 </blockquote>
-<div class="sourceCode" id="cb9"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb9-1" title="1"><span class="co">// This program defines three variables in the same statement.</span></a>
-<a class="sourceLine" id="cb9-2" title="2"><span class="co">// They are given initial values at the time they are defined.</span></a>
-<a class="sourceLine" id="cb9-3" title="3"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb9-4" title="4"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb9-5" title="5"></a>
-<a class="sourceLine" id="cb9-6" title="6"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb9-7" title="7">{</a>
-<a class="sourceLine" id="cb9-8" title="8">  <span class="dt">int</span> floors = <span class="dv">15</span>,</a>
-<a class="sourceLine" id="cb9-9" title="9">  rooms = <span class="dv">300</span>,</a>
-<a class="sourceLine" id="cb9-10" title="10">  suites = <span class="dv">30</span>;</a>
-<a class="sourceLine" id="cb9-11" title="11"></a>
-<a class="sourceLine" id="cb9-12" title="12">  cout &lt;&lt; <span class="st">&quot;The Grande Hotel has &quot;</span> &lt;&lt; floors &lt;&lt; <span class="st">&quot; floors</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
-<a class="sourceLine" id="cb9-13" title="13">  cout &lt;&lt; <span class="st">&quot;with &quot;</span> &lt;&lt; rooms &lt;&lt; <span class="st">&quot; rooms and &quot;</span> &lt;&lt; suites;</a>
-<a class="sourceLine" id="cb9-14" title="14">  cout &lt;&lt; <span class="st">&quot; suites.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
-<a class="sourceLine" id="cb9-15" title="15">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb9-16" title="16">}</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program defines three variables in the same statement.</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">// They are given initial values at the time they are defined.</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> floors <span class="op">=</span> <span class="dv">15</span><span class="op">,</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  rooms <span class="op">=</span> <span class="dv">300</span><span class="op">,</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  suites <span class="op">=</span> <span class="dv">30</span><span class="op">;</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;The Grande Hotel has &quot;</span> <span class="op">&lt;&lt;</span> floors <span class="op">&lt;&lt;</span> <span class="st">&quot; floors</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;with &quot;</span> <span class="op">&lt;&lt;</span> rooms <span class="op">&lt;&lt;</span> <span class="st">&quot; rooms and &quot;</span> <span class="op">&lt;&lt;</span> suites<span class="op">;</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot; suites.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h4 id="hexadecimal-and-octal-literals-enrichment">Hexadecimal and Octal Literals (enrichment)</h4>
 <p>Programmers commonly express values in numbering systems other than decimal (or base 10). Hexadecimal (base 16) and octal (base 8) are popular because they make certain programming tasks more convenient than decimal numbers do.</p>
 <p>By default, C++ assumes that all integer literals are expressed in decimal. If you want to indicate that a literal value is a hexadecimal number, you must place 0x in front of it. (This is zero-x, not oh-x.) Here is how the hexadecimal number F4 would be expressed in C++:</p>
@@ -635,21 +667,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td>Single precision</td>
 <td>float</td>
 <td>4 bytes</td>
-<td>Numbers between <span class="math inline">\(\pm 3.4E-38\)</span> and <span class="math inline">\(\pm 3.4E38\)</span></td>
+<td>Numbers between <span class="math inline">\pm 3.4E-38</span> and <span class="math inline">\pm 3.4E38</span></td>
 <td>7</td>
 </tr>
 <tr class="even">
 <td>Double precision</td>
 <td>double</td>
 <td>8 bytes</td>
-<td>Numbers between <span class="math inline">\(\pm 1.7E-308\)</span> and <span class="math inline">\(\pm 1.7E308\)</span></td>
+<td>Numbers between <span class="math inline">\pm 1.7E-308</span> and <span class="math inline">\pm 1.7E308</span></td>
 <td>16</td>
 </tr>
 <tr class="odd">
 <td>Long double precision</td>
 <td>long double</td>
 <td>8 bytes*</td>
-<td>Numbers between <span class="math inline">\(\pm 1.7E-308\)</span> and <span class="math inline">\(\pm 1.7E308\)</span></td>
+<td>Numbers between <span class="math inline">\pm 1.7E-308</span> and <span class="math inline">\pm 1.7E308</span></td>
 <td>16</td>
 </tr>
 </tbody>
@@ -661,19 +693,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>Program 2-11</p>
 </blockquote>
-<div class="sourceCode" id="cb12"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb12-1" title="1"><span class="co">// This program uses two floating-point data types, float and double.</span></a>
-<a class="sourceLine" id="cb12-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb12-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb12-4" title="4"></a>
-<a class="sourceLine" id="cb12-5" title="5"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb12-6" title="6">{</a>
-<a class="sourceLine" id="cb12-7" title="7">  <span class="dt">float</span> distance = <span class="fl">1.496E8</span>; <span class="co">// in kilometers</span></a>
-<a class="sourceLine" id="cb12-8" title="8">  <span class="dt">double</span> mass = <span class="fl">1.989E30</span>; <span class="co">// in kilograms</span></a>
-<a class="sourceLine" id="cb12-9" title="9"></a>
-<a class="sourceLine" id="cb12-10" title="10">  cout &lt;&lt; <span class="st">&quot;The Sun is &quot;</span> &lt;&lt; distance &lt;&lt; <span class="st">&quot; kilometers away.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
-<a class="sourceLine" id="cb12-11" title="11">  cout &lt;&lt; <span class="st">&quot;The Sun</span><span class="sc">\&#39;</span><span class="st">s mass is &quot;</span> &lt;&lt; mass &lt;&lt; <span class="st">&quot; kilograms.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
-<a class="sourceLine" id="cb12-12" title="12">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb12-13" title="13">}</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program uses two floating-point data types, float and double.</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">float</span> distance <span class="op">=</span> <span class="fl">1.496E8</span><span class="op">;</span> <span class="co">// in kilometers</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">double</span> mass <span class="op">=</span> <span class="fl">1.989E30</span><span class="op">;</span> <span class="co">// in kilograms</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;The Sun is &quot;</span> <span class="op">&lt;&lt;</span> distance <span class="op">&lt;&lt;</span> <span class="st">&quot; kilometers away.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;The Sun</span><span class="sc">\&#39;</span><span class="st">s mass is &quot;</span> <span class="op">&lt;&lt;</span> mass <span class="op">&lt;&lt;</span> <span class="st">&quot; kilograms.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h4 id="floating-point-literals">Floating-Point Literals</h4>
 <p>All of the following floating-point literals are equivalent:</p>
 <pre><code>1.496E8
@@ -688,47 +720,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>1034.56L</code></pre>
 <h4 id="assigning-floating-point-values-to-integer-variables">Assigning Floating-Point Values to Integer Variables</h4>
 <p>When a floating-point value is assigned to an integer variable, the fractional part of the value (the part after the decimal point) is discarded.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb16-1" title="1"><span class="dt">int</span> number;</a>
-<a class="sourceLine" id="cb16-2" title="2">number = <span class="fl">7.8</span>;  <span class="co">// Assigns 7 to number</span></a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number<span class="op">;</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="fl">7.8</span><span class="op">;</span>  <span class="co">// Assigns 7 to number</span></span></code></pre></div>
 <h3 id="the-char-data-type">2.9 The <code>char</code> Data Type</h3>
 <p>The simplest character data type is the char data type. A variable of this type can hold only a single character and, on most systems, uses just one byte of memory.</p>
 <blockquote>
 <p>Program 2-12</p>
 </blockquote>
-<div class="sourceCode" id="cb17"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb17-1" title="1"><span class="co">// This program uses a char variable and several character literals.</span></a>
-<a class="sourceLine" id="cb17-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb17-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb17-4" title="4"></a>
-<a class="sourceLine" id="cb17-5" title="5"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb17-6" title="6">{</a>
-<a class="sourceLine" id="cb17-7" title="7">  <span class="dt">char</span> letter;</a>
-<a class="sourceLine" id="cb17-8" title="8"></a>
-<a class="sourceLine" id="cb17-9" title="9">  letter = <span class="ch">&#39;A&#39;</span>;</a>
-<a class="sourceLine" id="cb17-10" title="10">  cout &lt;&lt; letter &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb17-11" title="11"></a>
-<a class="sourceLine" id="cb17-12" title="12">  letter = <span class="ch">&#39;B&#39;</span>;</a>
-<a class="sourceLine" id="cb17-13" title="13">  cout &lt;&lt; letter &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb17-14" title="14">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb17-15" title="15">}</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program uses a char variable and several character literals.</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">char</span> letter<span class="op">;</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  letter <span class="op">=</span> <span class="ch">&#39;A&#39;</span><span class="op">;</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> letter <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  letter <span class="op">=</span> <span class="ch">&#39;B&#39;</span><span class="op">;</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> letter <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <blockquote>
 <p>Program 2-13</p>
 </blockquote>
-<div class="sourceCode" id="cb18"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb18-1" title="1"><span class="co">// This program demonstrates that characters are actually</span></a>
-<a class="sourceLine" id="cb18-2" title="2"><span class="co">// stored internally by their ASCII integer value.</span></a>
-<a class="sourceLine" id="cb18-3" title="3"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb18-4" title="4"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb18-5" title="5"></a>
-<a class="sourceLine" id="cb18-6" title="6"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb18-7" title="7">{</a>
-<a class="sourceLine" id="cb18-8" title="8">  <span class="dt">char</span> letter;</a>
-<a class="sourceLine" id="cb18-9" title="9"></a>
-<a class="sourceLine" id="cb18-10" title="10">  letter = <span class="dv">65</span>; <span class="co">// 65 is the ASCII code for the character A</span></a>
-<a class="sourceLine" id="cb18-11" title="11">  cout &lt;&lt; letter &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb18-12" title="12"></a>
-<a class="sourceLine" id="cb18-13" title="13">  letter = <span class="dv">66</span>; <span class="co">// 66 is the ASCII code for the character B</span></a>
-<a class="sourceLine" id="cb18-14" title="14">  cout &lt;&lt; letter &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb18-15" title="15">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb18-16" title="16">}</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program demonstrates that characters are actually</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">// stored internally by their ASCII integer value.</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">char</span> letter<span class="op">;</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  letter <span class="op">=</span> <span class="dv">65</span><span class="op">;</span> <span class="co">// 65 is the ASCII code for the character A</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> letter <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  letter <span class="op">=</span> <span class="dv">66</span><span class="op">;</span> <span class="co">// 66 is the ASCII code for the character B</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> letter <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h4 id="the-difference-between-character-literals-and-string-literals">The Difference Between Character Literals and String Literals</h4>
 <p>Because a string literal can be virtually any length, there must be some way for the program to know how long it is. In C++ this is done by appending an extra byte to its end and storing the number 0 in it. This is called the <em>null terminator</em> or <em>null character</em> <code>\0</code> and marks the end of the string.</p>
 <p>The null terminator is another example of something that sits quietly in the background. It doesn’t print on the screen when you display a string, but nevertheless, it is there silently doing its job.</p>
@@ -738,23 +770,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 id="the-c-string-class">2.10 The C++ <code>string</code> Class</h3>
 <h4 id="using-the-string-class">Using the <code>string</code> Class</h4>
 <p>The first step in using the string class is to <code>#include</code> the string header file. This is accomplished with the following preprocessor directive:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb19-1" title="1"><span class="pp">#include </span><span class="im">&lt;string&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;string&gt;</span></span></code></pre></div>
 <blockquote>
 <p>Program 2-15</p>
 </blockquote>
-<div class="sourceCode" id="cb20"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb20-1" title="1"><span class="co">// This program demonstrates the string class.</span></a>
-<a class="sourceLine" id="cb20-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb20-3" title="3"><span class="pp">#include </span><span class="im">&lt;string&gt;</span><span class="pp"> </span><span class="co">// Required for the string class.</span></a>
-<a class="sourceLine" id="cb20-4" title="4"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb20-5" title="5"></a>
-<a class="sourceLine" id="cb20-6" title="6"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb20-7" title="7">{</a>
-<a class="sourceLine" id="cb20-8" title="8">  string movieTitle;</a>
-<a class="sourceLine" id="cb20-9" title="9"></a>
-<a class="sourceLine" id="cb20-10" title="10">  movieTitle = <span class="st">&quot;Wheels of Fury&quot;</span>;</a>
-<a class="sourceLine" id="cb20-11" title="11">  cout &lt;&lt; <span class="st">&quot;My favorite movie is &quot;</span> &lt;&lt; movieTitle &lt;&lt; endl;</a>
-<a class="sourceLine" id="cb20-12" title="12">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb20-13" title="13">}</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program demonstrates the string class.</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;string&gt;</span><span class="pp"> </span><span class="co">// Required for the string class.</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  string movieTitle<span class="op">;</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  movieTitle <span class="op">=</span> <span class="st">&quot;Wheels of Fury&quot;</span><span class="op">;</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;My favorite movie is &quot;</span> <span class="op">&lt;&lt;</span> movieTitle <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="the-bool-data-type">2.11 The <code>bool</code> Data Type</h3>
 <p>Boolean variables are set to either <code>true</code> or <code>false</code>.</p>
 <h3 id="determining-the-size-of-a-data-type">2.12 Determining the Size of A Data Type</h3>
@@ -762,44 +794,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>Program 2-17</p>
 </blockquote>
-<div class="sourceCode" id="cb21"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb21-1" title="1"><span class="co">// This program displays the size of various data types.</span></a>
-<a class="sourceLine" id="cb21-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb21-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb21-4" title="4"></a>
-<a class="sourceLine" id="cb21-5" title="5"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb21-6" title="6">{</a>
-<a class="sourceLine" id="cb21-7" title="7">  <span class="dt">double</span> apple;</a>
-<a class="sourceLine" id="cb21-8" title="8"></a>
-<a class="sourceLine" id="cb21-9" title="9">  cout &lt;&lt; <span class="st">&quot;The size of a short integer is &quot;</span> &lt;&lt; <span class="kw">sizeof</span>(<span class="dt">short</span>)</a>
-<a class="sourceLine" id="cb21-10" title="10">       &lt;&lt; <span class="st">&quot; bytes.</span><span class="sc">\n</span><span class="st">&quot;</span>;</a>
-<a class="sourceLine" id="cb21-11" title="11"></a>
-<a class="sourceLine" id="cb21-12" title="12">  cout &lt;&lt; <span class="st">&quot;The size of a long integer is &quot;</span> &lt;&lt; <span class="kw">sizeof</span>(<span class="dt">long</span>)</a>
-<a class="sourceLine" id="cb21-13" title="13">       &lt;&lt; <span class="st">&quot; bytes.</span><span class="sc">\n</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb21-14" title="14"></a>
-<a class="sourceLine" id="cb21-15" title="15">  cout &lt;&lt; <span class="st">&quot;An apple can be eaten in &quot;</span> &lt;&lt; <span class="kw">sizeof</span>(apple)</a>
-<a class="sourceLine" id="cb21-16" title="16">       &lt;&lt; <span class="st">&quot; bytes!</span><span class="sc">\n</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb21-17" title="17">}</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program displays the size of various data types.</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">double</span> apple<span class="op">;</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;The size of a short integer is &quot;</span> <span class="op">&lt;&lt;</span> <span class="kw">sizeof</span><span class="op">(</span><span class="dt">short</span><span class="op">)</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>       <span class="op">&lt;&lt;</span> <span class="st">&quot; bytes.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;The size of a long integer is &quot;</span> <span class="op">&lt;&lt;</span> <span class="kw">sizeof</span><span class="op">(</span><span class="dt">long</span><span class="op">)</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>       <span class="op">&lt;&lt;</span> <span class="st">&quot; bytes.</span><span class="sc">\n</span><span class="st">&quot;</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;An apple can be eaten in &quot;</span> <span class="op">&lt;&lt;</span> <span class="kw">sizeof</span><span class="op">(</span>apple<span class="op">)</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>       <span class="op">&lt;&lt;</span> <span class="st">&quot; bytes!</span><span class="sc">\n</span><span class="st">&quot;</span></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="more-on-variable-assignments-and-initialization">2.13 More on Variable Assignments and Initialization</h3>
 <p>A variable can be assigned a value at the time it is defined. This is called variable initialization.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb22-1" title="1">string month = <span class="st">&quot;February&quot;</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>string month <span class="op">=</span> <span class="st">&quot;February&quot;</span><span class="op">;</span></span></code></pre></div>
 <h4 id="declaring-variables-with-the-auto-key-word">Declaring Variables with the <code>auto</code> Key Word</h4>
-<div class="sourceCode" id="cb23"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">auto</span> amount = <span class="dv">100</span>;        <span class="co">// int</span></a>
-<a class="sourceLine" id="cb23-2" title="2"><span class="kw">auto</span> stockCode = <span class="ch">&#39;D&#39;</span>;     <span class="co">// char</span></a>
-<a class="sourceLine" id="cb23-3" title="3"><span class="kw">auto</span> customerNum = <span class="dv">459</span><span class="bu">L</span>;  <span class="co">// long</span></a>
-<a class="sourceLine" id="cb23-4" title="4"><span class="kw">auto</span> interestRate = <span class="fl">12.0</span>; <span class="co">// double</span></a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">auto</span> amount <span class="op">=</span> <span class="dv">100</span><span class="op">;</span>        <span class="co">// int</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="kw">auto</span> stockCode <span class="op">=</span> <span class="ch">&#39;D&#39;</span><span class="op">;</span>     <span class="co">// char</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="kw">auto</span> customerNum <span class="op">=</span> <span class="dv">459</span><span class="bu">L</span><span class="op">;</span>  <span class="co">// long</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="kw">auto</span> interestRate <span class="op">=</span> <span class="fl">12.0</span><span class="op">;</span> <span class="co">// double</span></span></code></pre></div>
 <h3 id="scope">2.14 Scope</h3>
 <p>A variable’s scope is the part of the program that has access to the variable.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb24-1" title="1"><span class="co">// This program can&#39;t find its variable.</span></a>
-<a class="sourceLine" id="cb24-2" title="2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
-<a class="sourceLine" id="cb24-3" title="3"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
-<a class="sourceLine" id="cb24-4" title="4"></a>
-<a class="sourceLine" id="cb24-5" title="5"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb24-6" title="6">{</a>
-<a class="sourceLine" id="cb24-7" title="7">  cout &lt;&lt; value;      <span class="co">// ERROR! value has not been defined yet!</span></a>
-<a class="sourceLine" id="cb24-8" title="8"></a>
-<a class="sourceLine" id="cb24-9" title="9">  <span class="dt">int</span> value = <span class="dv">100</span>;</a>
-<a class="sourceLine" id="cb24-10" title="10">  <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb24-11" title="11">}</a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This program can&#39;t find its variable.</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> value<span class="op">;</span>      <span class="co">// ERROR! value has not been defined yet!</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> value <span class="op">=</span> <span class="dv">100</span><span class="op">;</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="arithmetic-operators">2.15 Arithmetic Operators</h3>
 <table>
 <thead>
@@ -839,10 +871,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <h3 id="comments">2.16 Comments</h3>
 <h4 id="single-line-comments">Single Line Comments</h4>
-<div class="sourceCode" id="cb25"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb25-1" title="1"><span class="co">// this is a sample of single line comment</span></a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">// this is a sample of single line comment</span></span></code></pre></div>
 <h4 id="multi-line-comments">Multi-line Comments</h4>
-<div class="sourceCode" id="cb26"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb26-1" title="1"><span class="co">/* This is a sample of a</span></a>
-<a class="sourceLine" id="cb26-2" title="2"><span class="co">   multi-line comment */</span></a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* This is a sample of a</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co">   multi-line comment */</span></span></code></pre></div>
 <h2 id="video-lectures">Video Lectures</h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=4aA7KjUv06Y">📺 CISC 192 Section 2.1 Parts of a C++ Program</a></li>

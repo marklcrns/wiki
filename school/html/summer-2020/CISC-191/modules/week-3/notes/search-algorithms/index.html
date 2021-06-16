@@ -12,6 +12,13 @@
 
     <title>Search Algorithms</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -22,7 +29,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -67,7 +89,8 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#search-algorithms">Search Algorithms</a><ul>
+          <li><a href="#search-algorithms">Search Algorithms</a>
+          <ul>
           <li><a href="#binary-search-algorithm">Binary Search Algorithm</a></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
@@ -114,7 +137,7 @@
 <p>17.2.3: Binary search efficiently searches sorted list by reducing the search space by half each iteration.</p>
 </blockquote>
 <figure>
-<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/searching-algorithms/binary_search.gif" alt="Binary Search" /><figcaption>Binary Search</figcaption>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/searching-algorithms/binary_search.gif" alt="Binary Search" /><figcaption aria-hidden="true">Binary Search</figcaption>
 </figure>
 <blockquote>
 <p>from zyBooks.com</p>
@@ -128,15 +151,15 @@
 <li>Array needs to be sorted</li>
 <li>Duplicates will cause search inaccuracy</li>
 </ul>
-<p>Binary search is incredibly efficient in finding an element within a sorted list. During each iteration or step of the algorithm, binary search reduces the search space (i.e., the remaining elements to search within) by half. The search terminates when the element is found or the search space is empty (element not found). For a 32 element list, if the search key is not found, the search space is halved to have 16 elements, then 8, 4, 2, 1, and finally none, requiring only 6 steps. For an N element list, the maximum number of steps required to reduce the search space to an empty sublist is <span class="math inline">\([\ \log_{2} N\ ] + 1\)</span></p>
-<p><span class="math display">\[
+<p>Binary search is incredibly efficient in finding an element within a sorted list. During each iteration or step of the algorithm, binary search reduces the search space (i.e., the remaining elements to search within) by half. The search terminates when the element is found or the search space is empty (element not found). For a 32 element list, if the search key is not found, the search space is halved to have 16 elements, then 8, 4, 2, 1, and finally none, requiring only 6 steps. For an N element list, the maximum number of steps required to reduce the search space to an empty sublist is <span class="math inline">[\ \log_{2} N\ ] + 1</span></p>
+<p><span class="math display">
 \text{Ex. }[\ \log_{2} N\ ] + 1 = 6
-\]</span></p>
+</span></p>
 <blockquote>
 <p>17.2.5: Speed of linear search versus binary search to find a number within a sorted list.</p>
 </blockquote>
 <figure>
-<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/searching-algorithms/linear_vs_binary_search.gif" alt="Linear versus Binary Search" /><figcaption>Linear versus Binary Search</figcaption>
+<img src="../../../../../../../files/summer-2020/CISC-191/week-3/notes/searching-algorithms/linear_vs_binary_search.gif" alt="Linear versus Binary Search" /><figcaption aria-hidden="true">Linear versus Binary Search</figcaption>
 </figure>
 <blockquote>
 <p>from zyBooks.com</p>

@@ -11,6 +11,13 @@
 
     <title>3.2 The Product and Quotient Rules</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,12 +88,15 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-3.2-the-product-and-quotient-rules">Chapter 3.2: The Product and Quotient Rules</a><ul>
-          <li><a href="#the-product-rule">The Product Rule</a><ul>
+          <li><a href="#chapter-3.2-the-product-and-quotient-rules">Chapter 3.2: The Product and Quotient Rules</a>
+          <ul>
+          <li><a href="#the-product-rule">The Product Rule</a>
+          <ul>
           <li><a href="#definition">1 Definition</a></li>
           <li><a href="#the-product-rule-1">The Product Rule</a></li>
           </ul></li>
-          <li><a href="#quotient-rule">Quotient Rule</a><ul>
+          <li><a href="#quotient-rule">Quotient Rule</a>
+          <ul>
           <li><a href="#the-quotient-rule">The Quotient Rule</a></li>
           </ul></li>
           <li><a href="#video-lectures">Video Lectures</a></li>
@@ -107,104 +132,104 @@
           <article class="contents">
 <h1 id="chapter-3.2-the-product-and-quotient-rules">Chapter 3.2: The Product and Quotient Rules</h1>
 <h2 id="the-product-rule">The Product Rule</h2>
-<p>Before stating the Product Rule, let’s see how we might discover it. We start by assuming that <span class="math inline">\(u = f(x)\)</span> and <span class="math inline">\(v = g(x)\)</span> are both positive differentiable functions. Then we can interpret the product <span class="math inline">\(uv\)</span> as an area of a rectangle (see Figure 1). If changes by an amount <span class="math inline">\(\Delta{x}\)</span>, then the corresponding changes in <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> are</p>
-<p><span class="math display">\[
+<p>Before stating the Product Rule, let’s see how we might discover it. We start by assuming that <span class="math inline">u = f(x)</span> and <span class="math inline">v = g(x)</span> are both positive differentiable functions. Then we can interpret the product <span class="math inline">uv</span> as an area of a rectangle (see Figure 1). If changes by an amount <span class="math inline">\Delta{x}</span>, then the corresponding changes in <span class="math inline">u</span> and <span class="math inline">v</span> are</p>
+<p><span class="math display">
 \Delta{u} = f(x + \Delta{x}) - f(x) \;\;\; \Delta{v} = g(x + \Delta{x}) - g(x)
-\]</span></p>
-<p>and the new value of the product, <span class="math inline">\((u + \Delta{u})(v + \Delta{v}\)</span>, can be interpreted as the area of the large rectangle in Figure 1 (provided that <span class="math inline">\(\Delta{u}\)</span> and <span class="math inline">\(\Delta{v}\)</span> happen to be positive).</p>
+</span></p>
+<p>and the new value of the product, <span class="math inline">(u + \Delta{u})(v + \Delta{v}</span>, can be interpreted as the area of the large rectangle in Figure 1 (provided that <span class="math inline">\Delta{u}</span> and <span class="math inline">\Delta{v}</span> happen to be positive).</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.2_figure-1.png" alt="Figure 1" /><figcaption>Figure 1</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.2_figure-1.png" alt="Figure 1" /><figcaption aria-hidden="true">Figure 1</figcaption>
 </figure>
 <p>The change in the area of the rectangle is</p>
 <h3 id="definition">1 Definition</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 \Delta{(uv)} &amp; = (u + \Delta{u})(v + \Delta{v}) - uv = u\Delta{v} + v\Delta{u} + \Delta{u}\Delta{v} \\
              &amp; = \text{The sum of the three shaded areas}
 \end{aligned}
-\]</span></p>
-<p>If we divide by <span class="math inline">\(\Delta{x}\)</span>, we get</p>
-<p><span class="math display">\[
+</span></p>
+<p>If we divide by <span class="math inline">\Delta{x}</span>, we get</p>
+<p><span class="math display">
 \frac{\Delta{(uv)}}{\Delta{x}} = u\frac{\Delta{v}}{\Delta{x}} + v\frac{\Delta{u}}{\Delta{x}} + \Delta{u}\frac{\Delta{v}}{\Delta{x}}
-\]</span></p>
-<p>If we not let <span class="math inline">\(\Delta{x} \to 0\)</span>, we get the derivative of <span class="math inline">\(uv\)</span>:</p>
-<p><span class="math display">\[
+</span></p>
+<p>If we not let <span class="math inline">\Delta{x} \to 0</span>, we get the derivative of <span class="math inline">uv</span>:</p>
+<p><span class="math display">
 \begin{aligned}
 \frac{d}{dx}(uv) &amp; = \lim_{x \to 0}\frac{\Delta{(uv)}}{\Delta{x}} = \lim_{x \to 0} \Bigl( u\frac{\Delta{v}}{\Delta{x}} + v\frac{\Delta{u}}{\Delta{x}} + \Delta{u}\frac{\Delta{v}}{\Delta{x}} \Bigr) \\
                  &amp; = u\lim_{\Delta{x} \to 0}\frac{\Delta{v}}{\Delta{x}} + v\lim_{\Delta{x} \to 0}\frac{\Delta{u}}{\Delta{x}} + \Bigl( \lim_{\Delta{x} \to 0}\Delta{u} \Bigr)\Bigl( \lim_{\Delta{x} \to 0}\frac{\Delta{v}}{\Delta{x}} \Bigr) \\
                  &amp; = u\frac{dv}{dx} + v\frac{du}{dx} + 0 \cdot \frac{dv}{dx} \\
 \frac{d}{dx}(uv) &amp; = u\frac{dv}{dx} + v\frac{du}{dx}
 \end{aligned}
-\]</span></p>
+</span></p>
 <blockquote>
 <p><strong>NOTE</strong></p>
 </blockquote>
 <p>Recall that in Leibniz notation the definition of a derivative can be written as</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{dy}{dx} = \lim_{x \to 0}\frac{\Delta{y}}{\Delta{x}}
-\]</span></p>
-<p>(Notice that <span class="math inline">\(\Delta{u} \to 0\)</span> as <span class="math inline">\(\Delta{x} \to 0\)</span> since <span class="math inline">\(f\)</span> is differentiable and therefore continuous).</p>
+</span></p>
+<p>(Notice that <span class="math inline">\Delta{u} \to 0</span> as <span class="math inline">\Delta{x} \to 0</span> since <span class="math inline">f</span> is differentiable and therefore continuous).</p>
 <h3 id="the-product-rule-1">The Product Rule</h3>
-<p>If <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are both differentiable, then</p>
-<p><span class="math display">\[
+<p>If <span class="math inline">f</span> and <span class="math inline">g</span> are both differentiable, then</p>
+<p><span class="math display">
 \frac{d}{dx}[f(x)g(x)] = f(x)\frac{d}{dx}[g(x)] + g(x)\frac{d}{dx}[f(x)]
-\]</span></p>
+</span></p>
 <blockquote>
 <p><strong>NOTE</strong></p>
 </blockquote>
 <p>In prime notation:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 (fg)^{\prime} = fg^{\prime} + gf^{\prime}
-\]</span></p>
+</span></p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.2_example-1.png" alt="Example 1" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.2_figure-1.png" alt="Figure 2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.2_example-2.png" alt="Example 2" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.2_example-3.png" alt="Example 3" /></p>
 <h2 id="quotient-rule">Quotient Rule</h2>
-<p>We find a rule for differentiating the quotient of two differentiable functions <span class="math inline">\(u = f(x)\)</span> and <span class="math inline">\(v = g(x)\)</span> in much the same way that we found the Product Rule. If <span class="math inline">\(x\)</span>, <span class="math inline">\(u\)</span>, and <span class="math inline">\(v\)</span> change by amounts <span class="math inline">\(\Delta{x}\)</span>, <span class="math inline">\(\Delta{u}\)</span>, and <span class="math inline">\(\Delta{v}\)</span>, then the corresponding change in the quotient <span class="math inline">\(u/v\)</span> is</p>
-<p><span class="math display">\[
+<p>We find a rule for differentiating the quotient of two differentiable functions <span class="math inline">u = f(x)</span> and <span class="math inline">v = g(x)</span> in much the same way that we found the Product Rule. If <span class="math inline">x</span>, <span class="math inline">u</span>, and <span class="math inline">v</span> change by amounts <span class="math inline">\Delta{x}</span>, <span class="math inline">\Delta{u}</span>, and <span class="math inline">\Delta{v}</span>, then the corresponding change in the quotient <span class="math inline">u/v</span> is</p>
+<p><span class="math display">
 \Delta{\left ( \frac{u}{v} \right )} = \frac{u + \Delta{u}}{v + \Delta{v}} - \frac{u}{v} = \frac{(u + \Delta{u})v - u(v + \Delta{v})}{v(v + \Delta{v})}
-\]</span></p>
+</span></p>
 <p>so</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{d}{dx}\left ( \frac{u}{v} \right ) = \lim_{x \to 0}\frac{\Delta{(u/v)}}{\Delta{x}} =\lim_{x \to 0}\frac{v\dfrac{\Delta{u}}{\Delta{x}} - u\dfrac{\Delta{v}}{\Delta{x}}}{v(v + \Delta{v})}
-\]</span></p>
-<p>As <span class="math inline">\(\Delta{x} \to 0\)</span>, <span class="math inline">\(\Delta{v} \to 0\)</span> also, because <span class="math inline">\(v = g(x)\)</span> is differentiable and therefore continuous. Thus, using the Limit Laws, we get</p>
-<p><span class="math display">\[
+</span></p>
+<p>As <span class="math inline">\Delta{x} \to 0</span>, <span class="math inline">\Delta{v} \to 0</span> also, because <span class="math inline">v = g(x)</span> is differentiable and therefore continuous. Thus, using the Limit Laws, we get</p>
+<p><span class="math display">
 \frac{d}{dx}\left ( \frac{u}{v} \right ) = \frac{v\lim_{\Delta{x} \to 0}\dfrac{\Delta{u}}{\Delta{x}} - u\lim_{\Delta{x} \to 0}\dfrac{\Delta{v}}{\Delta{x}}}{v\lim_{\Delta{x} \to 0}(v + \Delta{v})} = \frac{v\dfrac{du}{dx} - u\dfrac{dv}{dx}}{v^{2}}
-\]</span></p>
+</span></p>
 <h3 id="the-quotient-rule">The Quotient Rule</h3>
-<p>If <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are differentiable, then</p>
-<p><span class="math display">\[
+<p>If <span class="math inline">f</span> and <span class="math inline">g</span> are differentiable, then</p>
+<p><span class="math display">
 \frac{d}{dx}\left [ \frac{f(x)}{g(x)} \right ] = \frac{g(x)\dfrac{d}{dx}[f(x)] - f(x)\dfrac{d}{dx}[g(x)]}{[g(x)]^{2}}
-\]</span></p>
+</span></p>
 <blockquote>
 <p><strong>NOTE</strong></p>
 </blockquote>
 <p>In prime notation:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \left ( \frac{f}{g} \right )^{\prime} = \frac{gf^{\prime} - fg^{\prime}}{g^{2}}
-\]</span></p>
+</span></p>
 <p><img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.2_example-4.png" alt="Example 4" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.2_example-5.png" alt="Example 5" /> <img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.2_figure-4.png" alt="Figure 4" /></p>
 <blockquote>
 <p><strong>NOTE</strong></p>
 </blockquote>
 <p>Don’t use the Quotation Rule <strong>every</strong> time you see a quotient. Sometimes it’s easier to rewrite a quotient first to put it in a form that is simpler for the purpose of differentiation. For instance, although it is possible to differentiate the function</p>
-<p><span class="math display">\[
+<p><span class="math display">
 F(x) = \frac{3x^{2} + 2\sqrt{x}}{x}
-\]</span></p>
+</span></p>
 <p>using the Quotient Rule, it is much easier to perform the division first and write the function as</p>
-<p><span class="math display">\[
+<p><span class="math display">
 F(x) = 3x + 2x^{-1/2}
-\]</span></p>
+</span></p>
 <p>before differentiating.</p>
 <p>We summarize the differentiation formulas we have learned so far as follows.</p>
 <figure>
-<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.2_tables_of_differentiation_formulas.png" alt="Tables of Differentiation Formulas" /><figcaption>Tables of Differentiation Formulas</figcaption>
+<img src="../../../../../files/fall-2020/MATH-150/chapter-3/3.2_tables_of_differentiation_formulas.png" alt="Tables of Differentiation Formulas" /><figcaption aria-hidden="true">Tables of Differentiation Formulas</figcaption>
 </figure>
 <h2 id="video-lectures">Video Lectures</h2>
 <ul>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-7/v/derivatives-of-sinx-and-cosx">📺 Derivatives of <span class="math inline">\(\sin{x}\)</span> and <span class="math inline">\(\cos{x}\)</span></a></li>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-7/v/sine-and-cosine-differentiation">📺 Worked example: Derivatives of <span class="math inline">\(\sin{x}\)</span> and <span class="math inline">\(\cos(x)\)</span></a></li>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-7/v/derivative-of-ex">📺 Derivative of <span class="math inline">\(e^{x}\)</span></a></li>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-7/v/derivative-of-lnx">📺 Derivative of <span class="math inline">\(ln(x)\)</span></a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-7/v/derivatives-of-sinx-and-cosx">📺 Derivatives of <span class="math inline">\sin{x}</span> and <span class="math inline">\cos{x}</span></a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-7/v/sine-and-cosine-differentiation">📺 Worked example: Derivatives of <span class="math inline">\sin{x}</span> and <span class="math inline">\cos(x)</span></a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-7/v/derivative-of-ex">📺 Derivative of <span class="math inline">e^{x}</span></a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-7/v/derivative-of-lnx">📺 Derivative of <span class="math inline">ln(x)</span></a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-8/v/applying-the-product-rule-for-derivatives">📺 Product rule</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-8/v/differentiating-products">📺 Differentiating products</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-8/a/product-rule-review">📄 Product rule review</a></li>
@@ -215,10 +240,10 @@ F(x) = 3x + 2x^{-1/2}
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-7/v/derivatives-of-sinx-and-cosx">📺 Derivatives of <span class="math inline">\(\sin{x}\)</span> and <span class="math inline">\(\cos{x}\)</span></a></li>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-7/v/sine-and-cosine-differentiation">📺 Worked example: Derivatives of <span class="math inline">\(\sin{x}\)</span> and <span class="math inline">\(\cos(x)\)</span></a></li>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-7/v/derivative-of-ex">📺 Derivative of <span class="math inline">\(e^{x}\)</span></a></li>
-<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-7/v/derivative-of-lnx">📺 Derivative of <span class="math inline">\(ln(x)\)</span></a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-7/v/derivatives-of-sinx-and-cosx">📺 Derivatives of <span class="math inline">\sin{x}</span> and <span class="math inline">\cos{x}</span></a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-7/v/sine-and-cosine-differentiation">📺 Worked example: Derivatives of <span class="math inline">\sin{x}</span> and <span class="math inline">\cos(x)</span></a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-7/v/derivative-of-ex">📺 Derivative of <span class="math inline">e^{x}</span></a></li>
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-7/v/derivative-of-lnx">📺 Derivative of <span class="math inline">ln(x)</span></a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-8/v/applying-the-product-rule-for-derivatives">📺 Product rule</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-8/v/differentiating-products">📺 Differentiating products</a></li>
 <li><a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-8/a/product-rule-review">📄 Product rule review</a></li>

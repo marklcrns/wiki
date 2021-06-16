@@ -12,6 +12,13 @@
 
     <title>ECON 121 Chapter 15 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -22,7 +29,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -67,18 +89,22 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-15-public-goods-and-public-choice">Chapter 15: Public Goods and Public Choice</a><ul>
-          <li><a href="#external-benefits-and-public-goods">15.1 External Benefits and Public Goods</a><ul>
+          <li><a href="#chapter-15-public-goods-and-public-choice">Chapter 15: Public Goods and Public Choice</a>
+          <ul>
+          <li><a href="#external-benefits-and-public-goods">15.1 External Benefits and Public Goods</a>
+          <ul>
           <li><a href="#public-goods-and-the-free-rider-problem">15.1.1 Public Goods and the Free-Rider Problem</a></li>
           <li><a href="#behavioral-economics-and-free-riding">15.1.2 Behavioral Economics and Free Riding</a></li>
           <li><a href="#overcoming-the-free-rider-problem">15.1.3 Overcoming the Free-Rider Problem</a></li>
           </ul></li>
-          <li><a href="#private-goods-and-external-benefits">15.2 Private Goods and External Benefits</a><ul>
+          <li><a href="#private-goods-and-external-benefits">15.2 Private Goods and External Benefits</a>
+          <ul>
           <li><a href="#external-benefits-from-education">15.2.1 External Benefits from Education</a></li>
           <li><a href="#external-benefits-and-the-marginal-principle">15.2.2 External Benefits and the Marginal Principle</a></li>
           <li><a href="#other-private-goods-that-generate-external-benefits">Other Private Goods That Generate External Benefits</a></li>
           </ul></li>
-          <li><a href="#public-choice-and-the-median-voter">15.3 Public Choice and the Median Voter</a><ul>
+          <li><a href="#public-choice-and-the-median-voter">15.3 Public Choice and the Median Voter</a>
+          <ul>
           <li><a href="#voting-and-the-median-voter-rule">15.3.1 Voting and the Median-Voter Rule</a></li>
           <li><a href="#voting-with-feet">15.3.2 Voting with Feet</a></li>
           <li><a href="#the-median-voter-and-the-median-location">15.3.3 The Median Voter and the Median Location</a></li>
@@ -116,10 +142,10 @@
           <article class="contents">
 <h1 id="chapter-15-public-goods-and-public-choice">Chapter 15: Public Goods and Public Choice</h1>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-15/ch-15_figure-15.1.png" alt="Figure 15.1 Spending Programs for Local, State, and Federal Governments" /><figcaption>Figure 15.1 Spending Programs for Local, State, and Federal Governments</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-15/ch-15_figure-15.1.png" alt="Figure 15.1 Spending Programs for Local, State, and Federal Governments" /><figcaption aria-hidden="true">Figure 15.1 Spending Programs for Local, State, and Federal Governments</figcaption>
 </figure>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-15/ch-15_figure-15.2.png" alt="Figure 15.2 Revenue Sources for Local, State, and Federal Government" /><figcaption>Figure 15.2 Revenue Sources for Local, State, and Federal Government</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-15/ch-15_figure-15.2.png" alt="Figure 15.2 Revenue Sources for Local, State, and Federal Government" /><figcaption aria-hidden="true">Figure 15.2 Revenue Sources for Local, State, and Federal Government</figcaption>
 </figure>
 <h2 id="external-benefits-and-public-goods">15.1 External Benefits and Public Goods</h2>
 <p>As we saw earlier in the chapter on market efficiency, when there are neither external benefits nor external costs, the market equilibrium is efficient. When a government intervenes in an efficient market, the result is inefficiency. In this chapter, we see that a market with external benefits is inefficient, so there is an opportunity for government to promote efficiency.</p>
@@ -171,9 +197,9 @@
 <li><em>Crime externalities</em>. Educated people earn higher legal incomes and thus commit less crime. High school dropouts have relatively low wages and high crime rates, so increasing the high school graduation rate generates large reductions in crime.</li>
 </ol>
 <h3 id="external-benefits-and-the-marginal-principle">15.2.2 External Benefits and the Marginal Principle</h3>
-<p>In Figure 15.3, the marginal private benefit curve shows the extra benefit to the child from each additional book, measured as the increase in future income. Assume the marginal cost of books is constant at $8 per book. Applying the marginal principle, the parent will choose point <span class="math inline">\(a\)</span>, where the marginal benefit equals the marginal cost, and buy nine books.</p>
+<p>In Figure 15.3, the marginal private benefit curve shows the extra benefit to the child from each additional book, measured as the increase in future income. Assume the marginal cost of books is constant at $8 per book. Applying the marginal principle, the parent will choose point <span class="math inline">a</span>, where the marginal benefit equals the marginal cost, and buy nine books.</p>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-15/ch-15_figure-15.3.png" alt="Figure 15.3 External Benefits and the Marginal Principle" /><figcaption>Figure 15.3 External Benefits and the Marginal Principle</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-15/ch-15_figure-15.3.png" alt="Figure 15.3 External Benefits and the Marginal Principle" /><figcaption aria-hidden="true">Figure 15.3 External Benefits and the Marginal Principle</figcaption>
 </figure>
 <blockquote>
 <p>Education (represented here as the number of books read) generates external benefits, so the marginal social benefit exceeds the marginal private benefit. Using books as an example of education, an individual picks point a, where the marginal private benefit equals the marginal cost. Point b is the socially efficient point, where the marginal social benefit equals the marginal cost.</p>
@@ -194,19 +220,19 @@
 </ul>
 <p>To see the logic of the median-voter rule, consider a state where there are two candidates for governor—Penny and Buck—and the only issue in the election is how much the state should spend on education. Each citizen will vote for the candidate whose proposed education budget is closest to the citizen’s preferred budget. Figure 15.4 shows citizens’ preferences for education spending, with different preferred budgets on the horizontal axis and the number of voters on the vertical axis. For example, two citizens have a preferred budget of $1 billion, four have a preferred budget of $2 billion, and so on. The median budget, which splits the rest of the voters into two equal groups (20 voters on each side), is $5 billion.</p>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-15/ch-15_figure-15.4.png" alt="Figure 15.4 The Median-Voter Rule" /><figcaption>Figure 15.4 The Median-Voter Rule</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-15/ch-15_figure-15.4.png" alt="Figure 15.4 The Median-Voter Rule" /><figcaption aria-hidden="true">Figure 15.4 The Median-Voter Rule</figcaption>
 </figure>
 <blockquote>
 <p>If Penny proposes a $3 billion budget and Buck proposes a $7 billion budget, the election will result in a tie. By moving toward the median budget, Penny can increase her chance of being elected. In equilibrium, both candidates will propose a budget close to the $5 billion preferred budget of the median voter.</p>
 </blockquote>
 <p>Suppose the two candidates start out with very different proposed education budgets. Penny proposes a budget of $3 billion, and Buck proposes $7 billion. The 20 citizens with preferred budgets less than or equal to $4 billion will vote for Penny because her proposed budget is closest to their preferred budgets. Buck’s supporters include the 20 citizens with preferred budgets greater than or equal to $6 billion. The two candidates will split the 10 voters with a preferred budget of $5 billion (halfway between the two proposed budgets), so each candidate will get a total of 25 votes, resulting in a tie.</p>
-<p>Penny could increase her chance of being elected by increasing her proposed budget. Let’s say she proposes $4 billion instead of $3 billion. All the voters with a preferred budget of $5 billion will vote for Penny because Penny’s $4 billion proposal is now closer to their $5 billion preferred budget than Buck’s $7 billion proposal. Penny won’t lose any of her other votes either, so she will win the election by a vote of 30 (equal to <span class="math inline">\(2 + 4 + 6 + 8 + 10\)</span>) to 20 (equals <span class="math inline">\(8 + 8 + 4\)</span>). If Buck is smart, he will realize that he could get more votes by moving toward the median budget. For example, if he decreases his proposed budget to $6 billion, the election would result in a tie vote again. Penny and Buck will continue to move their proposed budgets toward the median budget ($5 billion) until they both propose budgets that are very close to the median budget.</p>
+<p>Penny could increase her chance of being elected by increasing her proposed budget. Let’s say she proposes $4 billion instead of $3 billion. All the voters with a preferred budget of $5 billion will vote for Penny because Penny’s $4 billion proposal is now closer to their $5 billion preferred budget than Buck’s $7 billion proposal. Penny won’t lose any of her other votes either, so she will win the election by a vote of 30 (equal to <span class="math inline">2 + 4 + 6 + 8 + 10</span>) to 20 (equals <span class="math inline">8 + 8 + 4</span>). If Buck is smart, he will realize that he could get more votes by moving toward the median budget. For example, if he decreases his proposed budget to $6 billion, the election would result in a tie vote again. Penny and Buck will continue to move their proposed budgets toward the median budget ($5 billion) until they both propose budgets that are very close to the median budget.</p>
 <p>Powerful forces pull the two candidates toward the preferences of the median voter. <strong>As long as Penny proposes a smaller budget than Buck, the people with small preferred budgets will continue to vote for her. The benefit of moving toward the median is that she can take some votes from Buck. Similarly, Buck doesn’t have to worry about people with large preferred budgets but can concentrate instead on the battle for voters in the middle.</strong> The result is that by election day the two candidates have adopted virtually the same position: The position of the median voter. Voters trying to choose between two candidates may feel they don’t have much choice. In fact, <strong>the median-voter rule says the choices made by government will match the preferences of the median voter, regardless of who wins the election.</strong></p>
 <h3 id="voting-with-feet">15.3.2 Voting with Feet</h3>
 <p>Although we usually think that people make political decisions by voting in elections, it is also possible to “vote with your feet.” In 1956 economist Charles M. Tiebout suggested that a household’s choice of which community to live in is based in part on the tax and spending policies of different communities. <strong>Households express their preferences by moving to communities that offer the best package of services and taxes. A community with inefficient public services will experience a loss in population, perhaps causing the local officials to make public services more efficient to attract new residents.</strong></p>
 <h3 id="the-median-voter-and-the-median-location">15.3.3 The Median Voter and the Median Location</h3>
 <figure>
-<img src="../../../../files/spring-2020/ECON-121/ch-15/ch-15_figure-15.5.png" alt="Figure 15.5 Competition on a Beach Leads to a Median Location for Both Sellers" /><figcaption>Figure 15.5 Competition on a Beach Leads to a Median Location for Both Sellers</figcaption>
+<img src="../../../../files/spring-2020/ECON-121/ch-15/ch-15_figure-15.5.png" alt="Figure 15.5 Competition on a Beach Leads to a Median Location for Both Sellers" /><figcaption aria-hidden="true">Figure 15.5 Competition on a Beach Leads to a Median Location for Both Sellers</figcaption>
 </figure>
 <blockquote>
 <ol type="A">

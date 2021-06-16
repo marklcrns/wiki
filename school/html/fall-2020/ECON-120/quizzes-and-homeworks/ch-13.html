@@ -11,6 +11,13 @@
 
     <title>Chapter 13</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -21,7 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -66,14 +88,17 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-13">Chapter 13</a><ul>
-          <li><a href="#homework">Homework</a><ul>
+          <li><a href="#chapter-13">Chapter 13</a>
+          <ul>
+          <li><a href="#homework">Homework</a>
+          <ul>
           <li><a href="#q1">Q1</a></li>
           <li><a href="#q2">Q2</a></li>
           <li><a href="#q3">Q3</a></li>
           <li><a href="#q4">Q4</a></li>
           </ul></li>
-          <li><a href="#assignment">Assignment</a><ul>
+          <li><a href="#assignment">Assignment</a>
+          <ul>
           <li><a href="#q1-1">Q1</a></li>
           <li><a href="#q2-1">Q2</a></li>
           <li><a href="#q3-1">Q3</a></li>
@@ -117,31 +142,31 @@
 <h3 id="q2">Q2</h3>
 <p>Suppose a retiree takes all his old coins that have been sitting in large jars at his house for years to the bank and deposits them. He deposits a total of $35,000.</p>
 <p>If the required reserve ratio is 9%, this transaction could increase the overall money supply by $.</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{ Total Increase in Checking Account Balances } = \text{ Increase in Excess Reserves } \times \frac{1}{\text{Required Reserve Ratio}} \\
 \text{ Total Increase in Checking Account Balances } = \frac{\$35,000}{0.09} = \$388,889 \\
 \text{ Total Increase in Overall Money Supply } = 388,889 - \$35,000 = \$353,889
-\]</span></p>
+</span></p>
 <h3 id="q3">Q3</h3>
 <p>If $100 is deposited into a checking account in a bank, then the money supply:</p>
 <p>B. does not change.</p>
 <p>If the bank that received the $100 deposit keeps 2 % of it as reserves and loans out the remainder, then the money supply will increase by $<strong>98</strong>.</p>
 <blockquote>
-<p><span class="math inline">\(100 - 100(0.02) = 98\)</span></p>
+<p><span class="math inline">100 - 100(0.02) = 98</span></p>
 </blockquote>
 <p>The money multiplier provides the maximum increase in checking account balances for any initial cash deposit. It is given by the ratio:</p>
-<p>C. <span class="math inline">\(\frac{1}{\text{Reserve ratio}}\)</span></p>
+<p>C. <span class="math inline">\frac{1}{\text{Reserve ratio}}</span></p>
 <p>Thus, if the reserve ratio is 2 %, then the money multiplier is <strong>50</strong>.</p>
 <blockquote>
-<p><span class="math inline">\(\frac{1}{0.02} = 50\)</span></p>
+<p><span class="math inline">\frac{1}{0.02} = 50</span></p>
 </blockquote>
 <p>If the reserve ratio is 2% for all banks, banks hold no excess reserves and checking account balances increase by the full amount of all loans made, then the initial $100 deposit will result in a maximum increase in checking account balances throughout all of the banks of $<strong>5000</strong></p>
 <blockquote>
-<p><span class="math inline">\(100 \times \frac{1}{0.02} = 5000\)</span></p>
+<p><span class="math inline">100 \times \frac{1}{0.02} = 5000</span></p>
 </blockquote>
 <p>and increase the money supply by $<strong>4900</strong>.</p>
 <blockquote>
-<p><span class="math inline">\(100 \times \frac{1}{0.02} - 100 = 4900\)</span></p>
+<p><span class="math inline">100 \times \frac{1}{0.02} - 100 = 4900</span></p>
 </blockquote>
 <h3 id="q4">Q4</h3>
 <p><strong>Balance sheet</strong>: An account statement for a bank that shows the sources of its funds (liabilities) as well as the uses of its funds (assets).</p>
@@ -156,7 +181,7 @@
 <h3 id="q2-1">Q2</h3>
 <p>Suppose a retiree takes all his old coins that have been sitting in large jars at his house for years to the bank and deposits them. He deposits a total of $20,000. If the required reserve ratio is 6%, this transaction could increase the overall money supply by $<strong>313333</strong>.</p>
 <blockquote>
-<p><span class="math inline">\(20,000(\frac{1}{0.06}) - 20,000 \approx \$313,333\)</span></p>
+<p><span class="math inline">20,000(\frac{1}{0.06}) - 20,000 \approx \$313,333</span></p>
 </blockquote>
 <h3 id="q3-1">Q3</h3>
 <p>Credit Cards. Credit cards are not considered part of the money supply because:</p>

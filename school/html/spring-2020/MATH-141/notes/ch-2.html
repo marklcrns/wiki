@@ -12,6 +12,13 @@
 
     <title>MATH 141 Chapter 2 Notes</title>
 
+    <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
+    <link href="../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="../../../../../templates/katex/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="../../../../../templates/css/animated-toc.css" rel="stylesheet">
@@ -22,7 +29,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -67,35 +89,45 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-2-functions">Chapter 2: Functions</a><ul>
-          <li><a href="#vocabulary-and-notations">2.1 Vocabulary and Notations</a><ul>
+          <li><a href="#chapter-2-functions">Chapter 2: Functions</a>
+          <ul>
+          <li><a href="#vocabulary-and-notations">2.1 Vocabulary and Notations</a>
+          <ul>
           <li><a href="#video-lecture">Video Lecture</a></li>
           <li><a href="#video-lecture-1">Video Lecture 1</a></li>
           <li><a href="#video-lecture-2">Video Lecture 2</a></li>
           </ul></li>
-          <li><a href="#polynomial-functions">2.2 Polynomial Functions</a><ul>
+          <li><a href="#polynomial-functions">2.2 Polynomial Functions</a>
+          <ul>
           <li><a href="#video-lecture-3">Video Lecture</a></li>
           </ul></li>
           <li><a href="#rational-functions">2.3 Rational Functions</a></li>
-          <li><a href="#linear-functions">2.4 Linear Functions</a><ul>
+          <li><a href="#linear-functions">2.4 Linear Functions</a>
+          <ul>
           <li><a href="#video-lecture-4">Video Lecture</a></li>
           </ul></li>
-          <li><a href="#exponential-function-and-factorials">2.6 Exponential Function and Factorials</a><ul>
-          <li><a href="#exponential-function">Exponential Function</a><ul>
+          <li><a href="#exponential-function-and-factorials">2.6 Exponential Function and Factorials</a>
+          <ul>
+          <li><a href="#exponential-function">Exponential Function</a>
+          <ul>
           <li><a href="#video-lecture-5">Video Lecture</a></li>
           </ul></li>
           <li><a href="#additional">Additional</a></li>
-          <li><a href="#factorials">Factorials</a><ul>
+          <li><a href="#factorials">Factorials</a>
+          <ul>
           <li><a href="#video-lecture-6">Video Lecture</a></li>
           </ul></li>
           </ul></li>
-          <li><a href="#logarithmic-functions">2.7 Logarithmic Functions</a><ul>
-          <li><a href="#logarithm-basics">Logarithm Basics</a><ul>
+          <li><a href="#logarithmic-functions">2.7 Logarithmic Functions</a>
+          <ul>
+          <li><a href="#logarithm-basics">Logarithm Basics</a>
+          <ul>
           <li><a href="#video-lecture-1-1">Video Lecture 1</a></li>
           <li><a href="#video-lecture-2-1">Video Lecture 2</a></li>
           <li><a href="#video-lecture-3-1">Video Lecture 3</a></li>
           </ul></li>
-          <li><a href="#logarithmic-equations">Logarithmic Equations</a><ul>
+          <li><a href="#logarithmic-equations">Logarithmic Equations</a>
+          <ul>
           <li><a href="#video-lecture-7">Video Lecture</a></li>
           </ul></li>
           <li><a href="#daabz-questions">Daabz Questions</a></li>
@@ -137,7 +169,7 @@
 <ul>
 <li>Input set, also called as the <strong>Domain</strong>.</li>
 <li>Output set, also called as the <strong>Range</strong></li>
-<li>Function notation: <span class="math inline">\(f(x) = y\)</span>, where <span class="math inline">\(x\)</span> is the input and <span class="math inline">\(y\)</span> is the range.</li>
+<li>Function notation: <span class="math inline">f(x) = y</span>, where <span class="math inline">x</span> is the input and <span class="math inline">y</span> is the range.</li>
 </ul>
 <p><strong>Set</strong> - a collection of values.</p>
 <ul>
@@ -148,14 +180,14 @@
 </blockquote>
 <p><strong>Vertical line test</strong></p>
 <ul>
-<li>A graphing test to see if there’s more than one output to every input (<span class="math inline">\(y&#39;s\)</span> to every <span class="math inline">\(x\)</span> in an ordered pair) of a function.</li>
+<li>A graphing test to see if there’s more than one output to every input (<span class="math inline">y&#39;s</span> to every <span class="math inline">x</span> in an ordered pair) of a function.</li>
 </ul>
 <h4 id="video-lecture-1">Video Lecture 1</h4>
 <p><a href="https://www.youtube.com/watch?v=xKNX8BUWR0g">VIDEO 1: Surjective and Injective functions</a></p>
 <p>Video lecture notes:</p>
 <p><strong>Surjective (onto)</strong></p>
 <ul>
-<li>A function is <em>surjective</em> if every member of a set of <em>range</em> (<span class="math inline">\(y\)</span>) maps to <strong>at least one</strong> <em>domain</em> (<span class="math inline">\(x\)</span>).</li>
+<li>A function is <em>surjective</em> if every member of a set of <em>range</em> (<span class="math inline">y</span>) maps to <strong>at least one</strong> <em>domain</em> (<span class="math inline">x</span>).</li>
 </ul>
 <p><strong>Injective (one-to-one)</strong></p>
 <ul>
@@ -185,19 +217,19 @@
 </ul>
 <h2 id="rational-functions">2.3 Rational Functions</h2>
 <ul>
-<li>A rational function is any function which can be specified by a rule written as <span class="math inline">\(f(x) = \frac{P(x)}{Q(x)}\)</span>, where <span class="math inline">\(P(x)\)</span> and <span class="math inline">\(Q(x)\)</span> are polynomial functions.</li>
+<li>A rational function is any function which can be specified by a rule written as <span class="math inline">f(x) = \frac{P(x)}{Q(x)}</span>, where <span class="math inline">P(x)</span> and <span class="math inline">Q(x)</span> are polynomial functions.</li>
 </ul>
 <p>Example 1:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 f(x) = \frac{12}{x}, g(x) = \frac{x^2}{x^2 - 9}, h(x) = \frac{(x + 1)(x -
 4)}{x(x - 2)(x + 3)}, k(x) = \frac{3x}{x^2 + 4}
-\]</span></p>
+</span></p>
 <p>These are examples of rational functions. The domains are, respectively:</p>
 <ul>
-<li>for <span class="math inline">\(f\)</span>, <span class="math inline">\(\big\{x \in \mathbb{R} \mid x \neq 0\big\}\)</span></li>
-<li>for <span class="math inline">\(g\)</span>, <span class="math inline">\(\big\{x \in \mathbb{R} \mid x \neq \pm 3\big\}\)</span></li>
-<li>for <span class="math inline">\(h\)</span>, <span class="math inline">\(\big\{x \in \mathbb{R} \mid x \neq 0,2,-3\big\}\)</span></li>
-<li>for <span class="math inline">\(k\)</span>, <span class="math inline">\(\mathbb{R}\)</span> (since the denominator polynomial is never 0)</li>
+<li>for <span class="math inline">f</span>, <span class="math inline">\big\{x \in \mathbb{R} \mid x \neq 0\big\}</span></li>
+<li>for <span class="math inline">g</span>, <span class="math inline">\big\{x \in \mathbb{R} \mid x \neq \pm 3\big\}</span></li>
+<li>for <span class="math inline">h</span>, <span class="math inline">\big\{x \in \mathbb{R} \mid x \neq 0,2,-3\big\}</span></li>
+<li>for <span class="math inline">k</span>, <span class="math inline">\mathbb{R}</span> (since the denominator polynomial is never 0)</li>
 </ul>
 <h2 id="linear-functions">2.4 Linear Functions</h2>
 <h3 id="video-lecture-4">Video Lecture</h3>
@@ -205,43 +237,43 @@ f(x) = \frac{12}{x}, g(x) = \frac{x^2}{x^2 - 9}, h(x) = \frac{(x + 1)(x -
 <p>Video lecture notes</p>
 <p><strong>Linear function</strong></p>
 <ul>
-<li>A <em>linear function</em> is any function specified by a rule of the form <span class="math inline">\(f: x \to mx + b\)</span>, where <span class="math inline">\(m \neq 0\)</span>. if <span class="math inline">\(m = 0\)</span>, the function is not considered to be a linear function.</li>
+<li>A <em>linear function</em> is any function specified by a rule of the form <span class="math inline">f: x \to mx + b</span>, where <span class="math inline">m \neq 0</span>. if <span class="math inline">m = 0</span>, the function is not considered to be a linear function.</li>
 <li>The graph of a linear function is always a <strong>straight line</strong>.</li>
-<li>Equation: <span class="math inline">\(f(x) ax + b\)</span>, <span class="math inline">\(y\)</span> as the independent variable and <span class="math inline">\(x\)</span> as the dependent variable, and <span class="math inline">\(b\)</span> as the constant</li>
+<li>Equation: <span class="math inline">f(x) ax + b</span>, <span class="math inline">y</span> as the independent variable and <span class="math inline">x</span> as the dependent variable, and <span class="math inline">b</span> as the constant</li>
 </ul>
 <p><strong>Slope</strong></p>
-<p><span class="math display">\[
+<p><span class="math display">
 m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{rise}{run}
-\]</span></p>
+</span></p>
 <p><strong>Horizontal and vertical lines</strong></p>
 <ul>
 <li>A <em>horizontal line</em> (a line parallel to the x-axis) <strong>has slope 0</strong>, since any two points on the line have the same y coordinates.
 <ul>
-<li>Equation: <span class="math inline">\(y = k\)</span></li>
+<li>Equation: <span class="math inline">y = k</span></li>
 </ul></li>
 <li>A <em>vertical line</em> (a line parallel to the y-axis) <strong>has undefined slope</strong>, since any two points on the line have the same x coordinates.
 <ul>
-<li>Equation: <span class="math inline">\(x = h\)</span></li>
+<li>Equation: <span class="math inline">x = h</span></li>
 </ul></li>
 </ul>
 <p>The equation of a line can be written in several forms:</p>
 <p><a name="slope-intercept-form-term"><strong>Slope-intercept form</strong></a></p>
 <ul>
-<li><span class="math inline">\(y = mx + b\)</span></li>
+<li><span class="math inline">y = mx + b</span></li>
 </ul>
 <p><a name="point-slope-form-term"><strong>Point-slope form</strong></a></p>
 <ul>
-<li><span class="math inline">\(y - y_0 = m(x - x_{1})\)</span></li>
+<li><span class="math inline">y - y_0 = m(x - x_{1})</span></li>
 </ul>
 <p><a name="standard-form-term"><strong>Standard form</strong></a></p>
 <ul>
-<li><span class="math inline">\(Ax + By = C\)</span>, where <span class="math inline">\(A, B, C\)</span> are integers with no common factors; <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are not both zero.</li>
+<li><span class="math inline">Ax + By = C</span>, where <span class="math inline">A, B, C</span> are integers with no common factors; <span class="math inline">A</span> and <span class="math inline">B</span> are not both zero.</li>
 </ul>
 <p><strong>Parallel and Perpendicular Lines</strong></p>
 <ul>
 <li>If two non-vertical lines are parallel, their slopes are equal. Conversely, if two lines have the same slope, they are parallel; two vertical lines are also parallel.</li>
 </ul>
-<p>If a line is horizontal, any line perpendicular to it is vertical, and conversely. If two nonvertical lines, with slopes <span class="math inline">\(m_1\)</span> and <span class="math inline">\(m_2\)</span>, are perpendicular, the their slopes satisfy <span class="math inline">\(m_1m_2 = -1\)</span> or <span class="math inline">\(m_2 = -1/m_1\)</span></p>
+<p>If a line is horizontal, any line perpendicular to it is vertical, and conversely. If two nonvertical lines, with slopes <span class="math inline">m_1</span> and <span class="math inline">m_2</span>, are perpendicular, the their slopes satisfy <span class="math inline">m_1m_2 = -1</span> or <span class="math inline">m_2 = -1/m_1</span></p>
 <h2 id="exponential-function-and-factorials">2.6 Exponential Function and Factorials</h2>
 <h3 id="exponential-function">Exponential Function</h3>
 <h4 id="video-lecture-5">Video Lecture</h4>
@@ -250,41 +282,41 @@ m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{rise}{run}
 <ul>
 <li>Problem 1: 0:00
 <ul>
-<li><span class="math inline">\(3^x = 5\)</span></li>
+<li><span class="math inline">3^x = 5</span></li>
 </ul></li>
 <li>Problem 2: 2:14
 <ul>
-<li><span class="math inline">\(5^{2x + 3} = 8\)</span></li>
+<li><span class="math inline">5^{2x + 3} = 8</span></li>
 </ul></li>
 <li>Problem 3: 3:44
 <ul>
-<li><span class="math inline">\(3^{x + 2} = 4^{2 - x}\)</span></li>
+<li><span class="math inline">3^{x + 2} = 4^{2 - x}</span></li>
 </ul></li>
 <li>Problem 4: 6:02
 <ul>
-<li><span class="math inline">\(27^{x + 1} = 9^{3 - x}\)</span></li>
+<li><span class="math inline">27^{x + 1} = 9^{3 - x}</span></li>
 </ul></li>
 <li>Problem 5: 7:23
 <ul>
-<li><span class="math inline">\(4^{x + 2} = 8^{3x - 1}\)</span></li>
+<li><span class="math inline">4^{x + 2} = 8^{3x - 1}</span></li>
 </ul></li>
 <li>Problem 6: 9:22
 <ul>
-<li><span class="math inline">\(16^{5x - 2} = 32^{3x + 1}\)</span></li>
+<li><span class="math inline">16^{5x - 2} = 32^{3x + 1}</span></li>
 </ul></li>
 </ul>
 <p>Video Lecture Notes:</p>
 <p>Quick solution</p>
 <ul>
-<li><span class="math inline">\(3^x = 5\)</span></li>
-<li><span class="math inline">\(x = \frac{\log 5}{\log 3}\)</span></li>
+<li><span class="math inline">3^x = 5</span></li>
+<li><span class="math inline">x = \frac{\log 5}{\log 3}</span></li>
 </ul>
 <p>Manual Solution</p>
 <ul>
-<li><span class="math inline">\(3^x = 5\)</span></li>
-<li><span class="math inline">\(x\log3 = \log5\)</span></li>
-<li><span class="math inline">\(x\frac{\log3}{\log3} = \frac{\log5}{\log3}\)</span></li>
-<li><span class="math inline">\(x = \frac{\log 5}{\log 3}\)</span></li>
+<li><span class="math inline">3^x = 5</span></li>
+<li><span class="math inline">x\log3 = \log5</span></li>
+<li><span class="math inline">x\frac{\log3}{\log3} = \frac{\log5}{\log3}</span></li>
+<li><span class="math inline">x = \frac{\log 5}{\log 3}</span></li>
 </ul>
 <h3 id="additional">Additional</h3>
 <ul>
@@ -298,64 +330,64 @@ m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{rise}{run}
 <ul>
 <li>Problem 1 2:26
 <ul>
-<li><span class="math inline">\(\frac{9!}{7!}\)</span></li>
+<li><span class="math inline">\frac{9!}{7!}</span></li>
 </ul></li>
 <li>Problem 2 3:21
 <ul>
-<li><span class="math inline">\(\frac{4! \cdot 5!}{6!}\)</span></li>
+<li><span class="math inline">\frac{4! \cdot 5!}{6!}</span></li>
 </ul></li>
 <li>Problem 3 4:25
 <ul>
-<li><span class="math inline">\(\frac{12!}{3! \cdot 10!}\)</span></li>
+<li><span class="math inline">\frac{12!}{3! \cdot 10!}</span></li>
 </ul></li>
 <li>Problem 4 5:10
 <ul>
-<li><span class="math inline">\(\frac{(n + 1)!}{n!}\)</span></li>
+<li><span class="math inline">\frac{(n + 1)!}{n!}</span></li>
 </ul></li>
 <li>Problem 5 7:32
 <ul>
-<li><span class="math inline">\(\frac{(n - 1)!}{n!}\)</span></li>
+<li><span class="math inline">\frac{(n - 1)!}{n!}</span></li>
 </ul></li>
 <li>Problem 6 8:53
 <ul>
-<li><span class="math inline">\(\frac{(n + 2)!}{n!}\)</span></li>
+<li><span class="math inline">\frac{(n + 2)!}{n!}</span></li>
 </ul></li>
 <li>Problem 7 10:19
 <ul>
-<li><span class="math inline">\(\frac{(2n + 1)!}{(2n)!}\)</span></li>
+<li><span class="math inline">\frac{(2n + 1)!}{(2n)!}</span></li>
 </ul></li>
 </ul>
 <p>Video Lecture Notes</p>
 <ul>
-<li><span class="math inline">\(0! = 1\)</span></li>
-<li><span class="math inline">\(4! = 4 \cdot 3 \cdot 2 \cdot 1\)</span>
+<li><span class="math inline">0! = 1</span></li>
+<li><span class="math inline">4! = 4 \cdot 3 \cdot 2 \cdot 1</span>
 <ul>
-<li><span class="math inline">\(24\)</span></li>
+<li><span class="math inline">24</span></li>
 </ul></li>
-<li><span class="math inline">\(6! = 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1\)</span>
+<li><span class="math inline">6! = 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1</span>
 <ul>
-<li><span class="math inline">\(720\)</span></li>
+<li><span class="math inline">720</span></li>
 </ul></li>
-<li><span class="math inline">\(\frac{9!}{7!} = \frac{9 \cdot 8 \cdot 7!}{7!}\)</span>
+<li><span class="math inline">\frac{9!}{7!} = \frac{9 \cdot 8 \cdot 7!}{7!}</span>
 <ul>
-<li><span class="math inline">\(9 \cdot 8 = 72\)</span></li>
+<li><span class="math inline">9 \cdot 8 = 72</span></li>
 </ul></li>
 </ul>
 <h2 id="logarithmic-functions">2.7 Logarithmic Functions</h2>
 <h3 id="logarithm-basics">Logarithm Basics</h3>
-<p>A logarithmic function, <span class="math inline">\(f(x) = \log_{a}x, a &gt; 0, a \neq 1\)</span>, is the inverse function to an exponential function <span class="math inline">\(F(x) = a^x\)</span>. Thus, if <span class="math inline">\(y = \log_{a}x\)</span>, then <span class="math inline">\(x = a^y\)</span>. That is, the logarithm of <span class="math inline">\(x\)</span> to the base <span class="math inline">\(a\)</span> is the exponent to which <span class="math inline">\(a\)</span> must be raised to obtain <span class="math inline">\(x\)</span>. Conversely, if <span class="math inline">\(x = a^y\)</span>, then <span class="math inline">\(y = \log_{a}x\)</span>. Therefore the relation between logarithmic and exponential functions can be described as:</p>
-<p><span class="math display">\[
+<p>A logarithmic function, <span class="math inline">f(x) = \log_{a}x, a &gt; 0, a \neq 1</span>, is the inverse function to an exponential function <span class="math inline">F(x) = a^x</span>. Thus, if <span class="math inline">y = \log_{a}x</span>, then <span class="math inline">x = a^y</span>. That is, the logarithm of <span class="math inline">x</span> to the base <span class="math inline">a</span> is the exponent to which <span class="math inline">a</span> must be raised to obtain <span class="math inline">x</span>. Conversely, if <span class="math inline">x = a^y</span>, then <span class="math inline">y = \log_{a}x</span>. Therefore the relation between logarithmic and exponential functions can be described as:</p>
+<p><span class="math display">
 \log_{a}a^x = x \text{ and } a^{\log_{a}x} = x
-\]</span></p>
+</span></p>
 <p>Logarithmic expressions can be rewritten in terms of other bases by means of the change-of-base formula:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \log_{a}x = \frac{\log_{b}x}{\log_{b}a}
-\]</span></p>
+</span></p>
 <h4 id="video-lecture-1-1">Video Lecture 1</h4>
 <p><a href="https://www.youtube.com/watch?v=Zw5t6BTQYRU">VIDEO 1: Logarithms… How? (NancyPi)</a></p>
 <p>Video 1 Lecture Notes:</p>
 <ul>
-<li><span class="math inline">\(\log_{b}m = x,\text{ is the inverse of exponential function } b^x = m\)</span></li>
+<li><span class="math inline">\log_{b}m = x,\text{ is the inverse of exponential function } b^x = m</span></li>
 </ul>
 <h4 id="video-lecture-2-1">Video Lecture 2</h4>
 <p><a href="https://www.youtube.com/watch?v=Kv2iHde7Xgw">VIDEO 2: Solving Logarithmic Equations | Khan Academy</a></p>
@@ -363,12 +395,12 @@ m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{rise}{run}
 <ul>
 <li>Problem 1: 0:00
 <ul>
-<li><span class="math inline">\(log\ x + log\ 3 = 2\ log\ 4 - log\ 2\)</span></li>
+<li><span class="math inline">log\ x + log\ 3 = 2\ log\ 4 - log\ 2</span></li>
 </ul></li>
 </ul>
 <p>Video 2 Lecture Notes:</p>
 <ul>
-<li><span class="math inline">\(log\)</span> without a base <span class="math inline">\(log_b\)</span> or common log, it is implicit to have a base of 10, <span class="math inline">\(log_{10}\)</span>.</li>
+<li><span class="math inline">log</span> without a base <span class="math inline">log_b</span> or common log, it is implicit to have a base of 10, <span class="math inline">log_{10}</span>.</li>
 </ul>
 <h4 id="video-lecture-3-1">Video Lecture 3</h4>
 <p><a href="https://www.youtube.com/watch?v=rBnQiLa2TYo">VIDEO 3: Solving Logarithmic Equations… How? (NancyPi)</a></p>
@@ -381,30 +413,30 @@ m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{rise}{run}
 </ul>
 <p>Video 3 Lecture Notes:</p>
 <ul>
-<li><p><span class="math inline">\(\log\)</span> of a negative number is undefined, so you would have to throw out that number.</p></li>
-<li><strong>Logarithmic Properties:</strong>
+<li><p><span class="math inline">\log</span> of a negative number is undefined, so you would have to throw out that number.</p></li>
+<li><p><strong>Logarithmic Properties:</strong></p>
 <ul>
 <li><em>Equality Property</em>
 <ul>
-<li><span class="math inline">\(\log_{b}m = \log_{b}n \Longleftrightarrow m = n\)</span></li>
+<li><span class="math inline">\log_{b}m = \log_{b}n \Longleftrightarrow m = n</span></li>
 <li>Only for bases that are positive and not equal to 1</li>
 </ul></li>
 <li><em>Product Property</em>
 <ul>
-<li><span class="math inline">\(\log_{a}b + \log_{a}c = \log_{a}bc\)</span></li>
+<li><span class="math inline">\log_{a}b + \log_{a}c = \log_{a}bc</span></li>
 </ul></li>
 <li><em>Power Property</em>
 <ul>
-<li><span class="math inline">\(\log_{b}a^p = p\log_{b}a\)</span></li>
+<li><span class="math inline">\log_{b}a^p = p\log_{b}a</span></li>
 </ul></li>
 <li><em>Quotient Property</em>
 <ul>
-<li><span class="math inline">\(\log_{a}b - \log_{a}c = \log_{a}\frac{b}{c}\)</span></li>
+<li><span class="math inline">\log_{a}b - \log_{a}c = \log_{a}\frac{b}{c}</span></li>
 </ul></li>
 <li>Additional Properties
 <ul>
-<li><span class="math inline">\(\log_{a}1 = 0\)</span></li>
-<li><span class="math inline">\(\log_{a}a = 1\)</span></li>
+<li><span class="math inline">\log_{a}1 = 0</span></li>
+<li><span class="math inline">\log_{a}a = 1</span></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -415,74 +447,74 @@ m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{rise}{run}
 <ul>
 <li>Problem 1 0:00
 <ul>
-<li><span class="math inline">\(\log_{4}(2x +7) = 2\)</span></li>
+<li><span class="math inline">\log_{4}(2x +7) = 2</span></li>
 </ul></li>
 <li>Problem 2 1:17
 <ul>
-<li><span class="math inline">\(\ln_{e}(\sqrt{5x - 4})\)</span></li>
+<li><span class="math inline">\ln_{e}(\sqrt{5x - 4})</span></li>
 </ul></li>
 <li>Problem 3 3:04
 <ul>
-<li><span class="math inline">\(\ln (x^3)= 8\)</span></li>
+<li><span class="math inline">\ln (x^3)= 8</span></li>
 </ul></li>
 <li>Problem 4 4:17
 <ul>
-<li><span class="math inline">\(\log_{5}(8x - 7) = \log_{5}(2x + 13)\)</span></li>
+<li><span class="math inline">\log_{5}(8x - 7) = \log_{5}(2x + 13)</span></li>
 </ul></li>
 <li>Problem 5 5:50
 <ul>
-<li><span class="math inline">\(\log_{2}(x + 5) + \log_{2}(x + 1) + 5\)</span></li>
+<li><span class="math inline">\log_{2}(x + 5) + \log_{2}(x + 1) + 5</span></li>
 </ul></li>
 <li>Problem 6 9:45
 <ul>
-<li><span class="math inline">\(\log_{3}(5x + 7) - \log_{3}(x + 5) = x - 3\)</span></li>
-<li><span class="math inline">\(\log_{3}(5x + 7) - \log_{3}(x + 5) = 1\)</span></li>
+<li><span class="math inline">\log_{3}(5x + 7) - \log_{3}(x + 5) = x - 3</span></li>
+<li><span class="math inline">\log_{3}(5x + 7) - \log_{3}(x + 5) = 1</span></li>
 </ul></li>
 </ul>
 <p>Video Lecture Notes</p>
 <ul>
-<li><span class="math inline">\(\log_{3}9 = 2\)</span>
+<li><span class="math inline">\log_{3}9 = 2</span>
 <ul>
-<li><span class="math inline">\(3^2 = 9\)</span></li>
+<li><span class="math inline">3^2 = 9</span></li>
 </ul></li>
-<li><span class="math inline">\(\log_{4}(2x + 7) = 2\)</span>
+<li><span class="math inline">\log_{4}(2x + 7) = 2</span>
 <ul>
-<li><span class="math inline">\(4^2 = 2x + 7\)</span></li>
-<li><span class="math inline">\(16 = 2x + 7\)</span></li>
-<li><span class="math inline">\(\frac{9}{2} = \frac{2x}{2}\)</span></li>
-<li><span class="math inline">\(x = \frac{9}{2}\)</span></li>
+<li><span class="math inline">4^2 = 2x + 7</span></li>
+<li><span class="math inline">16 = 2x + 7</span></li>
+<li><span class="math inline">\frac{9}{2} = \frac{2x}{2}</span></li>
+<li><span class="math inline">x = \frac{9}{2}</span></li>
 </ul></li>
 </ul>
-<p><span class="math inline">\(\ln\)</span> is a natural log and always has a base of <span class="math inline">\(e\)</span>, <span class="math inline">\(\ln_{e}\)</span></p>
+<p><span class="math inline">\ln</span> is a natural log and always has a base of <span class="math inline">e</span>, <span class="math inline">\ln_{e}</span></p>
 <h3 id="daabz-questions">Daabz Questions</h3>
 <ul>
-<li><span class="math inline">\(\frac{d}{dx}\ln a\)</span>
+<li><span class="math inline">\frac{d}{dx}\ln a</span>
 <ul>
-<li>Solution: <span class="math inline">\(\frac{\frac{d}{dx}a}{a}\)</span></li>
+<li>Solution: <span class="math inline">\frac{\frac{d}{dx}a}{a}</span></li>
 </ul></li>
-<li><span class="math inline">\(\frac{1}{\log_{a}(4)}\)</span>
+<li><span class="math inline">\frac{1}{\log_{a}(4)}</span>
 <ul>
-<li>Solution: <span class="math inline">\(\log_{4}(a)\)</span></li>
+<li>Solution: <span class="math inline">\log_{4}(a)</span></li>
 </ul></li>
-<li><span class="math inline">\(\log_{a}(x) = \frac{\log_{\theta}(x)}{\log_{\theta}(a)} = \frac{\log(x)}{\log(a)}\)</span>
+<li><span class="math inline">\log_{a}(x) = \frac{\log_{\theta}(x)}{\log_{\theta}(a)} = \frac{\log(x)}{\log(a)}</span>
 <ul>
 <li>Solution: true</li>
 </ul></li>
-<li><span class="math inline">\(\log_{2}(A)\)</span>
+<li><span class="math inline">\log_{2}(A)</span>
 <ul>
-<li>Solution: <span class="math inline">\(\frac{\ln(A)}{\ln(2)}\)</span> or <span class="math inline">\(\frac{\log(A)}{\log(2)}\)</span></li>
+<li>Solution: <span class="math inline">\frac{\ln(A)}{\ln(2)}</span> or <span class="math inline">\frac{\log(A)}{\log(2)}</span></li>
 </ul></li>
-<li><span class="math inline">\(\log_{5}(A)\)</span>
+<li><span class="math inline">\log_{5}(A)</span>
 <ul>
-<li>Solution: <span class="math inline">\(\frac{\log (A)}{\log (5)}\)</span></li>
+<li>Solution: <span class="math inline">\frac{\log (A)}{\log (5)}</span></li>
 </ul></li>
-<li><span class="math inline">\(\frac{d}{dx}\ln^2[e^x]\)</span>
+<li><span class="math inline">\frac{d}{dx}\ln^2[e^x]</span>
 <ul>
-<li>Solution: <span class="math inline">\(2\ln^1[e^x] \cdot \frac{1}{[e^x]}\frac{d}{dx}[e^x]\)</span></li>
+<li>Solution: <span class="math inline">2\ln^1[e^x] \cdot \frac{1}{[e^x]}\frac{d}{dx}[e^x]</span></li>
 </ul></li>
-<li><span class="math inline">\(\frac{d}{dw}\ln^{10}\alpha\)</span>
+<li><span class="math inline">\frac{d}{dw}\ln^{10}\alpha</span>
 <ul>
-<li><span class="math inline">\(10\ln^9\alpha \cdot \frac{1}{\alpha}\frac{d}{dw}\alpha\)</span></li>
+<li><span class="math inline">10\ln^9\alpha \cdot \frac{1}{\alpha}\frac{d}{dw}\alpha</span></li>
 </ul></li>
 </ul>
 <h3 id="additional-1">Additional</h3>
