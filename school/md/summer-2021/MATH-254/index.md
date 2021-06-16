@@ -8,7 +8,7 @@ date: Jun 14, 2021
 
 # MATH 254: Intro to Linear Algebra
 > Professor: Mohamed Benbourenane<br>
-> email: blederma@sdccd.edu<br>
+> email: mbenbour@sdccd.edu<br>
 > Campus: San Diego City College (online)<br>
 > Units: 3<br>
 > Component: Lecture<br>
@@ -17,3 +17,4 @@ date: Jun 14, 2021
 
 ## Course Materials
 
+- [⬇ Syllabus](file:../../../files/summer-2021/MATH-254/syllabus_math254.pdf)
