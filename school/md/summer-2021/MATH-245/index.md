@@ -19,3 +19,8 @@ date: Jun 14, 2021
 
 - [⬇ The Theory of Numbers Carmichael](file:../../../files/summer-2021/MATH-245/the_theory_of_numbers_carmichael.pdf)
 - [📺 245 Discrete Math Summer21 Playlist](https://www.youtube.com/playlist?list=PLlAdWXOWvotphezE9T5Njqd3li6MPrS5h)
+
+## WT Assignments
+
+- [📄 WT1](https://github.com/marklcrns/sieve-of-eratosthenes)
+
