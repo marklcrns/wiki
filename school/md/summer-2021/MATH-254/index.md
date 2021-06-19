@@ -18,3 +18,8 @@ date: Jun 14, 2021
 ## Course Materials
 
 - [⬇ Syllabus](file:../../../files/summer-2021/MATH-254/syllabus_math254.pdf)
+
+## Notes
+
+- [↪ Notes Index](notes/index)
+
