@@ -9,5 +9,6 @@ date: Jun 18, 2021
 # Chapter 1: Linear Equations in Linear Algebra
 
 - [↪ Section 1.1: Systems of Linear Equations](sec_1-1)
+- [↪ Section 1.2: Row Reduction and Echelon Forms](sec_1-2)
 
 

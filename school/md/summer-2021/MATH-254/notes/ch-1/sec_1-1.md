@@ -12,7 +12,7 @@ date: Jun 18, 2021
 
 [📺 1. The Geometry of Linear Equations](https://www.youtube.com/watch?v=J7DzL2_Na80)
 
-[![1. The Geometry of Linear Equations](https://img.youtube.com/vi/J7DzL2_Na80/2.jpg)](https://www.youtube.com/watch?v=J7DzL2_Na80 "1. The Geometry of Linear Equations")
+[<img src="https://img.youtube.com/vi/J7DzL2_Na80/0.jpg" alt="1. The Geometry of Linear Equations" width="200"/>](https://www.youtube.com/embed/J7DzL2_Na80 "1. The Geometry of Linear Equations")
 
 
 ## Textbook Notes
