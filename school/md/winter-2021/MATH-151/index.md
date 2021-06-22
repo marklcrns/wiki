@@ -87,7 +87,7 @@ Textbook
 
 ## Exams
 
-### Midterm
+### Midterms
 
 - [⬇ Midterm Practice Exam 1](file:../../../files/winter-2021/MATH-151/exams/midterm_exam-1_practice.pdf)
 - [⬇ Midterm Practice Exam 2](file:../../../files/winter-2021/MATH-151/exams/midterm_exam-2_practice.pdf)
@@ -95,4 +95,9 @@ Textbook
 - [⬇ Midterm Exam 1](file:../../../files/winter-2021/MATH-151/exams/midterm_exam-1.pdf)
 - [⬇ Midterm Exam 2](file:../../../files/winter-2021/MATH-151/exams/midterm_exam-2.pdf)
 - [⬇ Midterm Exam 3](file:../../../files/winter-2021/MATH-151/exams/midterm_exam-3.pdf)
+
+### Finals
+
+- [⬇ Final Exam Practice](file:../../../files/winter-2021/MATH-151/exams/final_exam_practice.pdf)
+- [⬇ Final Exam](file:../../../files/winter-2021/MATH-151/exams/final_exam.pdf)
 
