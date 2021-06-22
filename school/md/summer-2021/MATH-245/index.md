@@ -18,7 +18,11 @@ date: Jun 14, 2021
 ## Course Materials
 
 - [⬇ The Theory of Numbers Carmichael](file:../../../files/summer-2021/MATH-245/the_theory_of_numbers_carmichael.pdf)
-- [📺 245 Discrete Math Summer21 Playlist](https://www.youtube.com/playlist?list=PLlAdWXOWvotphezE9T5Njqd3li6MPrS5h)
+- [💽 245 Discrete Math Summer21](https://www.youtube.com/playlist?list=PLlAdWXOWvotphezE9T5Njqd3li6MPrS5h)
+
+## Personal Course Materials
+
+- [💽 Discrete Math 1](https://www.youtube.com/playlist?list=PLDDGPdw7e6Ag1EIznZ-m-qXu4XX3A0cIz)
 
 ## WT Assignments
 
