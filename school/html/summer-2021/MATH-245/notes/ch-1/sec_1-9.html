@@ -9,25 +9,41 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Lucernas">
 
-    <title>MATH 245</title>
+    <title>Section 1.9</title>
 
     <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
-    <link href="../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
     <!-- The loading of KaTeX is deferred to speed up page rendering -->
-    <script defer src="../../../../templates/katex/katex.min.js"></script>
+    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
     <!-- To automatically render math in text elements, include the auto-render extension: -->
-    <script defer src="../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
 
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
-    <link href="../../../../templates/css/animated-toc.css" rel="stylesheet">
+    <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
-    <link href="../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="../../../../templates/css/dashboard.css" rel="stylesheet">
+    <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -72,13 +88,11 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#math-245-discrete-mathematics">MATH 245: Discrete Mathematics</a>
+          <li><a href="#section-1.9-the-greatest-common-factor-of-two-or-more-integers">Section 1.9: The Greatest Common Factor of Two or More Integers</a>
           <ul>
-          <li><a href="#course-materials">Course Materials</a></li>
-          <li><a href="#personal-course-materials">Personal Course Materials</a></li>
-          <li><a href="#notes">Notes</a></li>
-          <li><a href="#wt-assignments">WT Assignments</a></li>
+          <li><a href="#video-lectures">Video Lectures</a></li>
           </ul></li>
+          <li><a href="#resources">Resources</a></li>
           </ul>
           <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
             <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
@@ -90,11 +104,11 @@
           <header>
             <div class="jumbotron">
               <div class="page-header">
-                <a href="../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
                 <h1 class="title">
-                  MATH 245
+                  Section 1.9
                   <small class="h3 text-muted subtitle">
-                    | Discrete Mathematics
+                    | The Greatest Common Factor of Two or More Integers
                   </small>
                 </h1>
               </div>
@@ -102,38 +116,47 @@
           </header>
           <div class="h5 text-muted">
             <h5 class="author">Mark Lucernas</h5>
-            <h5 class="date">Jun 14, 2021</h5>
+            <h5 class="date">Jun 23, 2021</h5>
           </div>
 
 <!-- Contents -->
           <article class="contents">
-<h1 id="math-245-discrete-mathematics">MATH 245: Discrete Mathematics</h1>
-<blockquote>
-<p>Professor: Barry Lederman<br> email: blederma@sdccd.edu<br> Campus: San Diego Miramar College (online)<br> Units: 3<br> Component: Lecture<br> Start: 2021-06-14<br> end: 2021-07-24<br></p>
-</blockquote>
-<h2 id="course-materials">Course Materials</h2>
+<h1 id="section-1.9-the-greatest-common-factor-of-two-or-more-integers">Section 1.9: The Greatest Common Factor of Two or More Integers</h1>
+<ol type="1">
+<li><p>The number <span class="math inline">n_{k}</span> to which the Euclidian algorithm leads is the greatest common divisor of <span class="math inline">m</span> and <span class="math inline">n</span>.</p>
+<p>In order to prove this theorem we have to show two things:</p>
+<ol type="1">
+<li>That <span class="math inline">n_{k}</span> is a divisor of both <span class="math inline">m</span> and <span class="math inline">n</span></li>
+<li>That the greatest common divisor <span class="math inline">d</span> of <span class="math inline">m</span> and <span class="math inline">n</span> is a divisor of <span class="math inline">n_{k}</span></li>
+</ol></li>
+<li><p>Any number <span class="math inline">n_{i}</span> in the above set of equations is the difference of multiples of <span class="math inline">m</span> and <span class="math inline">n</span></p>
+<p>From the first equation we have <span class="math display">
+ n_{i} = m - qn
+ </span></p></li>
+<li><p>If <span class="math inline">d</span> is the greatest common divisor of the positive integers <span class="math inline">m</span> and <span class="math inline">n</span>, then there exist positive integers <span class="math inline">\alpha</span> and <span class="math inline">\beta</span> such that <span class="math display">
+\alpha m - \beta m = \pm d
+</span></p></li>
+<li><p>A necessary and sufficient condition that <span class="math inline">m</span> and <span class="math inline">n</span> are relatively prime is that there exist integers <span class="math inline">\alpha</span> and <span class="math inline">\beta</span> such that <span class="math inline">\alpha m - \beta n = \pm 1</span></p></li>
+</ol>
+<h2 id="video-lectures">Video Lectures</h2>
 <ul>
-<li><a href="../../../files/summer-2021/MATH-245/the_theory_of_numbers_carmichael.pdf">⬇ The Theory of Numbers Carmichael</a></li>
-<li><a href="https://www.youtube.com/playlist?list=PLlAdWXOWvotphezE9T5Njqd3li6MPrS5h">💽 245 Discrete Math Summer21</a></li>
+<li><a href="https://www.youtube.com/watch?v=aq6A62rvpXE&amp;list=PLlAdWXOWvotphezE9T5Njqd3li6MPrS5h&amp;index=12">📺 1.9 Euclidean Algorithm</a></li>
+<li><a href="https://www.youtube.com/watch?v=M8JPiWTtzTo&amp;list=PLlAdWXOWvotphezE9T5Njqd3li6MPrS5h&amp;index=13">📺 1.9 Ex #4</a></li>
+<li><a href="https://www.youtube.com/watch?v=5LhWIaWlprM&amp;list=PLl-gb0E4MII28GykmtuBXNUNoej-vY5Rz&amp;index=50">📺 Discrete Math - 4.3.3 The Euclidean Algorithm</a></li>
+<li><a href="https://www.youtube.com/watch?v=OyRzpScJuvE&amp;list=PLl-gb0E4MII28GykmtuBXNUNoej-vY5Rz&amp;index=51">📺 Discrete Math - 4.3.4 Greatest Common Divisors as Linear Combinations</a></li>
 </ul>
-<h2 id="personal-course-materials">Personal Course Materials</h2>
+<p><br></p>
+<h1 id="resources">Resources</h1>
 <ul>
-<li><a href="https://www.youtube.com/playlist?list=PLDDGPdw7e6Ag1EIznZ-m-qXu4XX3A0cIz">💽 Discrete Math 1</a></li>
+<li><a href="https://www.youtube.com/watch?v=aq6A62rvpXE&amp;list=PLlAdWXOWvotphezE9T5Njqd3li6MPrS5h&amp;index=12">📺 1.9 Euclidean Algorithm</a></li>
+<li><a href="https://www.youtube.com/watch?v=M8JPiWTtzTo&amp;list=PLlAdWXOWvotphezE9T5Njqd3li6MPrS5h&amp;index=13">📺 1.9 Ex #4</a></li>
+<li><a href="https://www.youtube.com/watch?v=5LhWIaWlprM&amp;list=PLl-gb0E4MII28GykmtuBXNUNoej-vY5Rz&amp;index=50">📺 Discrete Math - 4.3.3 The Euclidean Algorithm</a></li>
+<li><a href="https://www.youtube.com/watch?v=OyRzpScJuvE&amp;list=PLl-gb0E4MII28GykmtuBXNUNoej-vY5Rz&amp;index=51">📺 Discrete Math - 4.3.4 Greatest Common Divisors as Linear Combinations</a></li>
 </ul>
-<h2 id="notes">Notes</h2>
+<p>Textbook</p>
 <ul>
-<li><a href="notes/index.html">↪ Notes Index</a></li>
+<li><a href="../../../../../files/summer-2021/MATH-245/the_theory_of_numbers_carmichael.pdf">⬇ The Theory of Numbers Carmichael</a></li>
 </ul>
-<h2 id="wt-assignments">WT Assignments</h2>
-<ul>
-<li><a href="https://github.com/marklcrns/sieve-of-eratosthenes">📄 WT1</a></li>
-</ul>
-<p>SHA Research Informative Essay</p>
-<p>What is Secure Hash Functions (SHA)</p>
-<p>Importance of SHA</p>
-<p>Usage of SHA</p>
-<p>SHA in Cryptography</p>
-<p>SHA in Cryptocurrency</p>
           </article>
           </div>
       </div>
@@ -142,11 +165,11 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../../../templates/js/jquery.min.js"></script>
+    <script src="../../../../../../templates/js/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../../../templates/js/bootstrap.min.js"></script>
+    <script src="../../../../../../templates/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
     <script>
         //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
 
@@ -163,6 +186,6 @@
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
-    <script src="../../../../templates/js/animated-toc.js"></script>
+    <script src="../../../../../../templates/js/animated-toc.js"></script>
   </body>
 </html>

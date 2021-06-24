@@ -24,7 +24,27 @@ date: Jun 14, 2021
 
 - [💽 Discrete Math 1](https://www.youtube.com/playlist?list=PLDDGPdw7e6Ag1EIznZ-m-qXu4XX3A0cIz)
 
+## Notes
+
+- [↪ Notes Index](notes/index)
+
 ## WT Assignments
 
 - [📄 WT1](https://github.com/marklcrns/sieve-of-eratosthenes)
+
+
+
+
+
+SHA Research Informative Essay
+
+What is Secure Hash Functions (SHA)
+
+Importance of SHA
+
+Usage of SHA
+
+SHA in Cryptography
+
+SHA in Cryptocurrency
 

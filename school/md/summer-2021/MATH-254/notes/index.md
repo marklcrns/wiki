@@ -1,11 +1,12 @@
 ---
-title: MATH 254 Notes
+title: Notes Index
+subtitle: MATH 254
 author: Mark Lucernas
 date: Jun 18, 2021
 ---
 
 
-# Chapter Notes
+# Notes Index
 
 - [↪ Chapter 1: Linear Equations in Linear Algebra](ch-1/index)
 
