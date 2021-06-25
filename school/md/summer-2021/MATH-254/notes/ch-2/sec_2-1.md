@@ -10,7 +10,7 @@ date: Jun 25, 2021
 
 ## Lecture Videos
 
-[📺 3. Multiplication and Inverse Matrices](https://www.youtube.com/watch?v=FX4C-JpTFgY&t=120s)
+[📺 3. Multiplication and Inverse Matrices](https://www.youtube.com/watch?v=FX4C-JpTFgY)
 
 [<img src="https://img.youtube.com/vi/FX4C-JpTFgY/0.jpg" alt="3. Multiplication and Inverse Matrices" width="200"/>](https://www.youtube.com/embed/FX4C-JpTFgY "3. Multiplication and Inverse Matrices")
 
@@ -18,7 +18,7 @@ date: Jun 25, 2021
 
 - [⬇ Section 2.1 Presentation](file:../../../../../files/summer-2021/MATH-254/notes/ch-2/sec_2-1_presentation.pptx)
 
-[⬇ Matrix Notation](file:../../../../../files/summer-2021/MATH-254/notes/ch-2/sec_2-1_matrix_notation.png)
+![Matrix Notation](../../../../../files/summer-2021/MATH-254/notes/ch-2/sec_2-1_matrix_notation.png)
 
 ### Sums and Scalar Multiples
 
@@ -66,6 +66,9 @@ date: Jun 25, 2021
 <br>
 
 # Resources
+
+- [📺 3. Multiplication and Inverse Matrices](https://www.youtube.com/watch?v=FX4C-JpTFgY)
+- [⬇ Section 2.1 Presentation](file:../../../../../files/summer-2021/MATH-254/notes/ch-2/sec_2-1_presentation.pptx)
 
 Textbook
 
