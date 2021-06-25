@@ -13,4 +13,5 @@ date: Jun 25, 2021
 - [↪ Section 2.3: Characterizations of Invertible Matrices](sec_2-3)
 - [↪ Section 2.4: Partitioned Matrices](sec_2-4)
 - [↪ Section 2.5: Matrix Factorizations](sec_2-5)
+- [↪ Section 2.8: Subspaces of R^n](sec_2-8)
 
