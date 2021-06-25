@@ -9,6 +9,7 @@ date: Jun 18, 2021
 # Notes Index
 
 - [↪ Chapter 1: Linear Equations in Linear Algebra](ch-1/index)
+- [↪ Chapter 2: Matrix Algebra](ch-2/index)
 
 <br>
 

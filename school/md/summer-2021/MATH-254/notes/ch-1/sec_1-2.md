@@ -8,7 +8,7 @@ date: Jun 18, 2021
 
 # Section 1.2: Row Reduction and Echelon Forms
 
-## Lecture Video
+## Lecture Videos
 
 [📺 2. Elimination with Matrices](https://www.youtube.com/watch?v=QVKj3LADCnA)
 

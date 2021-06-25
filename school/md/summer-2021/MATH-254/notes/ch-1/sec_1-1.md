@@ -8,7 +8,7 @@ date: Jun 18, 2021
 
 # Section 1.1: Systems of Linear Equations
 
-## Lecture Video
+## Lecture Videos
 
 [📺 1. The Geometry of Linear Equations](https://www.youtube.com/watch?v=J7DzL2_Na80)
 
@@ -32,7 +32,6 @@ date: Jun 18, 2021
 ![Example 3](../../../../../files/summer-2021/MATH-254/notes/ch-1/sec_1-1_example_3.png)
 
 ![Reasonable Answers](../../../../../files/summer-2021/MATH-254/notes/ch-1/sec_1-1_reasonable_answers.png)
-
 
 <br>
 

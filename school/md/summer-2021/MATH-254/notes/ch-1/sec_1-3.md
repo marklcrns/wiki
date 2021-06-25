@@ -45,7 +45,6 @@ a **vector**.
 
 ![Example 7](../../../../../files/summer-2021/MATH-254/notes/ch-1/sec_1-3_example_7.png)
 
-
 <br>
 
 # Resources
