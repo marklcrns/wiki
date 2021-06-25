@@ -18,6 +18,7 @@ date: Jun 14, 2021
 ## Course Materials
 
 - [⬇ Syllabus](file:../../../files/summer-2021/MATH-254/syllabus_math254.pdf)
+- [💽 MIT 18.06 Linear Algebra, Spring 2005](https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8)
 
 ## Notes
 
