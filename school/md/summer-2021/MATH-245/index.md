@@ -31,20 +31,9 @@ date: Jun 14, 2021
 ## WT Assignments
 
 - [📄 WT1](https://github.com/marklcrns/sieve-of-eratosthenes)
+- [⬇ WT2](file:../../../files/summer-2021/MATH-245/wt/wt_2.pdf)
 
+## Tests
 
-
-
-
-SHA Research Informative Essay
-
-What is Secure Hash Functions (SHA)
-
-Importance of SHA
-
-Usage of SHA
-
-SHA in Cryptography
-
-SHA in Cryptocurrency
+- [⬇ Test 1](file:../../../files/summer-2021/MATH-245/test/test_1.pdf)
 
