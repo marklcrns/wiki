@@ -12,4 +12,5 @@ date: Jun 25, 2021
 - [↪ Section 2.2: The Inverse of a Matrix](sec_2-2)
 - [↪ Section 2.3: Characterizations of Invertible Matrices](sec_2-3)
 - [↪ Section 2.4: Partitioned Matrices](sec_2-4)
+- [↪ Section 2.5: Matrix Factorizations](sec_2-5)
 
