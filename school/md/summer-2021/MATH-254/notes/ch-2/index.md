@@ -14,4 +14,5 @@ date: Jun 25, 2021
 - [↪ Section 2.4: Partitioned Matrices](sec_2-4)
 - [↪ Section 2.5: Matrix Factorizations](sec_2-5)
 - [↪ Section 2.8: Subspaces of R^n](sec_2-8)
+- [↪ Section 2.9: Dimension and Rank](sec_2-9)
 

@@ -50,6 +50,9 @@ date: Jun 25, 2021
 
 # Resources
 
+- [📺 6. Column Space and Nullspace](https://www.youtube.com/watch?v=8o5Cmfpeo6g)
+- [⬇ Section 2.8 Presentation](file:../../../../../files/summer-2021/MATH-254/notes/ch-2/sec_2-8_presentation.pptx)
+
 Textbook
 
 + Linear Algebra and Its Applications 6th Edition - David, Steven, Judi
