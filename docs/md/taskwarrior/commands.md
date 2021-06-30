@@ -30,7 +30,7 @@ task [<filter>] [<command>] [<modification>] [<miscellaneous>]
 ## Deleting Tasks
 
 - `task delete <ID>`
-- `task $(task uuid completed) delete`
+- `task $(task uuids completed) delete`
   * delete all completed tasks
 
 ## Recurring Tasks
