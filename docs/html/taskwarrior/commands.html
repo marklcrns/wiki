@@ -213,14 +213,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><code>task add &lt;description&gt; proj:&lt;project-name&gt; recur:&lt;duration&gt;</code></li>
 </ul>
-<p>Adding task every monday with <code>weekly</code> tag</p>
+<p>Adding a task every weekdays</p>
+<ul>
+<li><code>task add "Read a book" proj:Todo recur:weekdays due:eod</code></li>
+</ul>
+<p>Adding task every monday at 16:00 for two hours with <code>weekly</code> tag</p>
 <ul>
 <li><code>task add "Do Monday chores @ 4pm" proj:Chores recur:weekly sched:monday+16h due:sched+2h +weekly</code></li>
 </ul>
 <h3 id="ending-recurring-tasks">Ending Recurring Tasks</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">task</span> recurring</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Select the ID of recurring task</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">task</span> <span class="op">&lt;</span>ID<span class="op">&gt;</span> modify until:now</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># View all recurring tasks</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">task</span> recurring</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Select the ID of recurring task</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">task</span> <span class="op">&lt;</span>ID<span class="op">&gt;</span> modify until:now</span></code></pre></div>
 <p>Ref:</p>
 <ul>
 <li><a href="https://taskwarrior.org/docs/design/recurrence.html">📄 Taskwarrior Recurrence</a></li>

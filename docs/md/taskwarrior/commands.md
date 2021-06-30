@@ -39,13 +39,18 @@ task [<filter>] [<command>] [<modification>] [<miscellaneous>]
 
 - `task add <description> proj:<project-name> recur:<duration>`
 
-Adding task every monday with `weekly` tag
+Adding a task every weekdays
+
+- `task add "Read a book" proj:Todo recur:weekdays due:eod`
+
+Adding task every monday at 16:00 for two hours with `weekly` tag
 
 - `task add "Do Monday chores @ 4pm" proj:Chores recur:weekly sched:monday+16h due:sched+2h +weekly`
 
 ### Ending Recurring Tasks
 
 ```bash
+# View all recurring tasks
 task recurring
 # Select the ID of recurring task
 task <ID> modify until:now
