@@ -8,6 +8,12 @@ date: Jun 30, 2021
 
 # Section 3.3: Cramer's Rule, Volume, and Linear Transformations
 
+## Lecture Videos
+
+[📺 20. Cramer's Rule, Inverse Matrix, and Volume](https://www.youtube.com/watch?v=QNpj-gOXW9M)
+
+[<img src="https://img.youtube.com/vi/QNpj-gOXW9M/0.jpg" alt="20. Cramer's Rule, Inverse Matrix, and Volume" width="200"/>](https://www.youtube.com/embed/QNpj-gOXW9M "20. Cramer's Rule, Inverse Matrix, and Volume")
+
 ## Textbook Notes
 
 - [⬇ Section 3.3 Presentation](file:../../../../../../files/summer-2021/MATH-254/notes/ch-3/sec_3-3/sec_3-3_presentation.pptx)
@@ -48,6 +54,7 @@ date: Jun 30, 2021
 
 # Resources
 
+- [📺 20. Cramer's Rule, Inverse Matrix, and Volume](https://www.youtube.com/watch?v=QNpj-gOXW9M)
 - [⬇ Section 3.3 Presentation](file:../../../../../../files/summer-2021/MATH-254/notes/ch-3/sec_3-3/sec_3-3_presentation.pptx)
 
 Textbook
