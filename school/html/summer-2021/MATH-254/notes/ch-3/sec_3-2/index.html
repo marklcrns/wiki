@@ -9,24 +9,24 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Lucernas">
 
-    <title>Chapter 3</title>
+    <title>Section 3.2</title>
 
     <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
-    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <link href="../../../../../../../templates/katex/katex.min.css" rel="stylesheet">
     <!-- The loading of KaTeX is deferred to speed up page rendering -->
-    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <script defer src="../../../../../../../templates/katex/katex.min.js"></script>
     <!-- To automatically render math in text elements, include the auto-render extension: -->
-    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <script defer src="../../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
 
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
-    <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
+    <link href="../../../../../../../templates/css/animated-toc.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
-    <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
+    <link href="../../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
   </head>
 
@@ -72,7 +72,16 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-3-determinants">Chapter 3: Determinants</a></li>
+          <li><a href="#section-3.2-properties-of-determinants">Section 3.2: Properties of Determinants</a>
+          <ul>
+          <li><a href="#textbook-notes">Textbook Notes</a>
+          <ul>
+          <li><a href="#column-operations">Column Operations</a></li>
+          <li><a href="#multiplicative-property">Multiplicative Property</a></li>
+          <li><a href="#proofs-of-theorems-3-and-6">Proofs of Theorems 3 and 6</a></li>
+          </ul></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
           </ul>
           <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
             <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
@@ -84,11 +93,11 @@
           <header>
             <div class="jumbotron">
               <div class="page-header">
-                <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <a href="../../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
                 <h1 class="title">
-                  Chapter 3
+                  Section 3.2
                   <small class="h3 text-muted subtitle">
-                    | Determinants
+                    | Properties of Determinants
                   </small>
                 </h1>
               </div>
@@ -101,10 +110,46 @@
 
 <!-- Contents -->
           <article class="contents">
-<h1 id="chapter-3-determinants">Chapter 3: Determinants</h1>
+<h1 id="section-3.2-properties-of-determinants">Section 3.2: Properties of Determinants</h1>
+<h2 id="textbook-notes">Textbook Notes</h2>
 <ul>
-<li><a href="sec_3-1/index.html">↪ Section 3.1: Introduction to Determinants</a></li>
-<li><a href="sec_3-2/index.html">↪ Section 3.2: Properties of Determinants</a></li>
+<li><a href="../../../../../../files/summer-2021/MATH-254/notes/ch-3/sec_3-2/sec_3-2_presentation.pptx">⬇ Section 3.2 Presentation</a></li>
+</ul>
+<figure>
+<img src="../../../../../../files/summer-2021/MATH-254/notes/ch-3/sec_3-2/sec_3-2_theorem_3.png" alt="Theorem 3" /><figcaption aria-hidden="true">Theorem 3</figcaption>
+</figure>
+<p><img src="../../../../../../files/summer-2021/MATH-254/notes/ch-3/sec_3-2/sec_3-2_example_1-1.png" alt="Example 1.1" /> <img src="../../../../../../files/summer-2021/MATH-254/notes/ch-3/sec_3-2/sec_3-2_example_1-2.png" alt="Example 1.2" /> <img src="../../../../../../files/summer-2021/MATH-254/notes/ch-3/sec_3-2/sec_3-2_example_2.png" alt="Example 2" /></p>
+<figure>
+<img src="../../../../../../files/summer-2021/MATH-254/notes/ch-3/sec_3-2/sec_3-2_theorem_4.png" alt="Theorem 4" /><figcaption aria-hidden="true">Theorem 4</figcaption>
+</figure>
+<p><img src="../../../../../../files/summer-2021/MATH-254/notes/ch-3/sec_3-2/sec_3-2_example_3.png" alt="Example 3" /> <img src="../../../../../../files/summer-2021/MATH-254/notes/ch-3/sec_3-2/sec_3-2_example_4.png" alt="Example 4" /></p>
+<h3 id="column-operations">Column Operations</h3>
+<figure>
+<img src="../../../../../../files/summer-2021/MATH-254/notes/ch-3/sec_3-2/sec_3-2_theorem_5.png" alt="Theorem 5" /><figcaption aria-hidden="true">Theorem 5</figcaption>
+</figure>
+<h3 id="multiplicative-property">Multiplicative Property</h3>
+<figure>
+<img src="../../../../../../files/summer-2021/MATH-254/notes/ch-3/sec_3-2/sec_3-2_theorem_6.png" alt="Theorem 6" /><figcaption aria-hidden="true">Theorem 6</figcaption>
+</figure>
+<figure>
+<img src="../../../../../../files/summer-2021/MATH-254/notes/ch-3/sec_3-2/sec_3-2_example_5.png" alt="Example 5" /><figcaption aria-hidden="true">Example 5</figcaption>
+</figure>
+<h3 id="proofs-of-theorems-3-and-6">Proofs of Theorems 3 and 6</h3>
+<figure>
+<img src="../../../../../../files/summer-2021/MATH-254/notes/ch-3/sec_3-2/sec_3-2_theorem_3_proof.png" alt="Theorem 3 Proof" /><figcaption aria-hidden="true">Theorem 3 Proof</figcaption>
+</figure>
+<p><img src="../../../../../../files/summer-2021/MATH-254/notes/ch-3/sec_3-2/sec_3-2_theorem_6_proof-1.png" alt="Theorem 6 Proof 1" /> <img src="../../../../../../files/summer-2021/MATH-254/notes/ch-3/sec_3-2/sec_3-2_theorem_6_proof-2.png" alt="Theorem 6 Proof 2" /></p>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="../../../../../../files/summer-2021/MATH-254/notes/ch-3/sec_3-2/sec_3-2_presentation.pptx">⬇ Section 3.2 Presentation</a></li>
+</ul>
+<p>Textbook</p>
+<ul>
+<li>Linear Algebra and Its Applications 6th Edition - David, Steven, Judi
+<ul>
+<li>ISBN-13: 9780135851159</li>
+</ul></li>
 </ul>
           </article>
           </div>
@@ -114,11 +159,11 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../../../../../templates/js/jquery.min.js"></script>
+    <script src="../../../../../../../templates/js/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../../../../../templates/js/bootstrap.min.js"></script>
+    <script src="../../../../../../../templates/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
     <script>
         //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
 
@@ -135,6 +180,6 @@
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
-    <script src="../../../../../../templates/js/animated-toc.js"></script>
+    <script src="../../../../../../../templates/js/animated-toc.js"></script>
   </body>
 </html>
