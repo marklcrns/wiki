@@ -6,7 +6,7 @@ date: Jun 25, 2021
 ---
 
 
-# Section 2.8: : Subspaces of $\mathbb{R}^{n}$
+# Section 2.8: Subspaces of $\mathbb{R}^{n}$
 
 ## Lecture Videos
 
