@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Lucernas">
 
-    <title>Chapter 1</title>
+    <title>Section 1.12</title>
 
     <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
     <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
@@ -28,6 +28,22 @@
     <!-- Custom styles for this template -->
     <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -72,7 +88,8 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-1-elementary-properties-of-integers">Chapter 1: Elementary Properties of Integers</a></li>
+          <li><a href="#section-1.12-highest-power-of-a-prime-p-contained-in-n">Section 1.12: Highest Power of a Prime p Contained in n!</a></li>
+          <li><a href="#resources">Resources</a></li>
           </ul>
           <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
             <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
@@ -86,9 +103,9 @@
               <div class="page-header">
                 <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
                 <h1 class="title">
-                  Chapter 1
+                  Section 1.12
                   <small class="h3 text-muted subtitle">
-                    | Elementary Properties of Integers
+                    | Highest Power of a Prime p Contained in n!
                   </small>
                 </h1>
               </div>
@@ -96,24 +113,28 @@
           </header>
           <div class="h5 text-muted">
             <h5 class="author">Mark Lucernas</h5>
-            <h5 class="date">Jun 23, 2021</h5>
+            <h5 class="date">Jul 07, 2021</h5>
           </div>
 
 <!-- Contents -->
           <article class="contents">
-<h1 id="chapter-1-elementary-properties-of-integers">Chapter 1: Elementary Properties of Integers</h1>
+<h1 id="section-1.12-highest-power-of-a-prime-p-contained-in-n">Section 1.12: Highest Power of a Prime p Contained in n!</h1>
+<ol type="1">
+<li>The index of the highest power of a prime <span class="math inline">p</span> contained in n! is <span class="math display">
+\left [ \frac{n}{p} \right ] + \left [ \frac{n}{p^{2}} \right ] + \left [ \frac{n}{p^{3}} \right ] + \cdots
+</span></li>
+<li>If <span class="math inline">n</span> is represented in the scale of <span class="math inline">p</span> in the form <span class="math display">
+n = a_{0}p^{h} + a_{1}p^{h - 1} + \cdots + a_{h},
+</span></li>
+<li>If <span class="math inline">n, \alpha, \beta, \cdots, \lambda</span> are any positive integers such that <span class="math inline">n = \alpha + \beta + \cdots + \lambda</span>, then <span class="math display">
+\frac{n!}{\alpha!\beta!\cdots\lambda!}
+</span> if an integer.</li>
+</ol>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<p>Textbook</p>
 <ul>
-<li><a href="sec_1-1.html">↪ Section 1.1: Fundamental Notions and Laws</a></li>
-<li><a href="sec_1-2.html">↪ Section 1.2: Definition of Divisibility. The Unit</a></li>
-<li><a href="sec_1-3.html">↪ Section 1.3: Prime Numbers. Sieve of Eratosthenes</a></li>
-<li><a href="sec_1-4.html">↪ Section 1.4: The Number of Primes is Infinite</a></li>
-<li><a href="sec_1-5.html">↪ Section 1.5: The Fundamental Theorem of Euclid</a></li>
-<li><a href="sec_1-6.html">↪ Section 1.6: Divisibility by a Prime Number</a></li>
-<li><a href="sec_1-7.html">↪ Section 1.7: The Unique Factorization Theorem</a></li>
-<li><a href="sec_1-8.html">↪ Section 1.8: The Divisors of an Integer</a></li>
-<li><a href="sec_1-9.html">↪ Section 1.9: The Greatest Common Factor of Two or More Integers</a></li>
-<li><a href="sec_1-10.html">↪ Section 1.10: The Least Common Multiple of two or More Integers</a></li>
-<li><a href="sec_1-11.html">↪ Section 1.11: The Scales of Notation</a></li>
+<li><a href="../../../../../files/summer-2021/MATH-245/the_theory_of_numbers_carmichael.pdf">⬇ The Theory of Numbers Carmichael</a></li>
 </ul>
           </article>
           </div>

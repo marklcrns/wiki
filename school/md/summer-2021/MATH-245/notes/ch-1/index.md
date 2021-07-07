@@ -17,4 +17,6 @@ date: Jun 23, 2021
 - [↪ Section 1.7: The Unique Factorization Theorem](sec_1-7)
 - [↪ Section 1.8: The Divisors of an Integer](sec_1-8)
 - [↪ Section 1.9: The Greatest Common Factor of Two or More Integers](sec_1-9)
+- [↪ Section 1.10: The Least Common Multiple of two or More Integers](sec_1-10)
+- [↪ Section 1.11: The Scales of Notation](sec_1-11)
 
