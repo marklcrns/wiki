@@ -12,7 +12,7 @@ date: Jun 22, 2021
 
 - [⬇ Section 1.9 Presentation](file:../../../../../../files/summer-2021/MATH-254/notes/ch-1/sec_1-9/sec_1-9_presentation.pptx)
 
-![Example 1](../../../../../../files/summer-2021/MATH-254/notes/ch-1/sec_1-9/sec_1-1_example_1-1.png)
+![Example 1](../../../../../../files/summer-2021/MATH-254/notes/ch-1/sec_1-9/sec_1-9_example_1.png)
 
 ![Theorem 10](../../../../../../files/summer-2021/MATH-254/notes/ch-1/sec_1-9/sec_1-9_theorem_10.png)
 
