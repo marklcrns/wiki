@@ -11,6 +11,7 @@ date: Jun 18, 2021
 - [↪ Chapter 1: Linear Equations in Linear Algebra](ch-1/index)
 - [↪ Chapter 2: Matrix Algebra](ch-2/index)
 - [↪ Chapter 3: Determinants](ch-3/index)
+- [↪ Chapter 4: Determinants](ch-4/index)
 
 <br>
 

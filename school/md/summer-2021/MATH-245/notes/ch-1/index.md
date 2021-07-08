@@ -19,4 +19,5 @@ date: Jun 23, 2021
 - [↪ Section 1.9: The Greatest Common Factor of Two or More Integers](sec_1-9)
 - [↪ Section 1.10: The Least Common Multiple of two or More Integers](sec_1-10)
 - [↪ Section 1.11: The Scales of Notation](sec_1-11)
+- [↪ Section 1.12: Highest Power of a Prime p contained in n!](sec_1-12)
 
