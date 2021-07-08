@@ -13,4 +13,5 @@ date: Jul 07, 2021
 - [↪ Section 4.3: Linearly Independent Sets; Bases](sec_4-3/index)
 - [↪ Section 4.4: Coordinate Systems](sec_4-4/index)
 - [↪ Section 4.5: The Dimension of a Vector Space](sec_4-5/index)
+- [↪ Section 4.6: Change of Basis](sec_4-6/index)
 

@@ -9,25 +9,41 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Lucernas">
 
-    <title>Chapter 4</title>
+    <title>Section 4.6</title>
 
     <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
-    <link href="../../../../../../templates/katex/katex.min.css" rel="stylesheet">
+    <link href="../../../../../../../templates/katex/katex.min.css" rel="stylesheet">
     <!-- The loading of KaTeX is deferred to speed up page rendering -->
-    <script defer src="../../../../../../templates/katex/katex.min.js"></script>
+    <script defer src="../../../../../../../templates/katex/katex.min.js"></script>
     <!-- To automatically render math in text elements, include the auto-render extension: -->
-    <script defer src="../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <script defer src="../../../../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
 
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
-    <link href="../../../../../../templates/css/animated-toc.css" rel="stylesheet">
+    <link href="../../../../../../../templates/css/animated-toc.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
-    <link href="../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../../../../templates/css/bootstrap.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../../../../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="../../../../../../templates/css/dashboard.css" rel="stylesheet">
+    <link href="../../../../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
   </head>
 
   <body>
@@ -72,7 +88,14 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#chapter-4-vector-spaces">Chapter 4: Vector Spaces</a></li>
+          <li><a href="#section-4.6-change-of-basis">Section 4.6: Change of Basis</a>
+          <ul>
+          <li><a href="#textbook-notes">Textbook Notes</a>
+          <ul>
+          <li><a href="#change-of-basis-in-mathbbrn">Change of Basis in <span class="math inline">\mathbb{R}^{n}</span></a></li>
+          </ul></li>
+          </ul></li>
+          <li><a href="#resources">Resources</a></li>
           </ul>
           <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
             <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
@@ -84,11 +107,11 @@
           <header>
             <div class="jumbotron">
               <div class="page-header">
-                <a href="../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <a href="../../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
                 <h1 class="title">
-                  Chapter 4
+                  Section 4.6
                   <small class="h3 text-muted subtitle">
-                    | Vector Spaces
+                    | Change of Basis
                   </small>
                 </h1>
               </div>
@@ -101,14 +124,30 @@
 
 <!-- Contents -->
           <article class="contents">
-<h1 id="chapter-4-vector-spaces">Chapter 4: Vector Spaces</h1>
+<h1 id="section-4.6-change-of-basis">Section 4.6: Change of Basis</h1>
+<h2 id="textbook-notes">Textbook Notes</h2>
 <ul>
-<li><a href="sec_4-1/index.html">↪ Section 4.1: Vector Spaces and Subspaces</a></li>
-<li><a href="sec_4-2/index.html">↪ Section 4.2: Null Spaces, Column Spaces, Row Spaces, and Linear Transformations</a></li>
-<li><a href="sec_4-3/index.html">↪ Section 4.3: Linearly Independent Sets; Bases</a></li>
-<li><a href="sec_4-4/index.html">↪ Section 4.4: Coordinate Systems</a></li>
-<li><a href="sec_4-5/index.html">↪ Section 4.5: The Dimension of a Vector Space</a></li>
-<li><a href="sec_4-6/index.html">↪ Section 4.6: Change of Basis</a></li>
+<li><a href="../../../../../../files/summer-2021/MATH-254/notes/ch-4/sec_4-6/sec_4-6_presentation.pptx">⬇ Section 4.6 Presentation</a></li>
+</ul>
+<figure>
+<img src="../../../../../../files/summer-2021/MATH-254/notes/ch-4/sec_4-6/sec_4-6_example_1.png" alt="Example 1" /><figcaption aria-hidden="true">Example 1</figcaption>
+</figure>
+<figure>
+<img src="../../../../../../files/summer-2021/MATH-254/notes/ch-4/sec_4-6/sec_4-6_theorem_15.png" alt="Theorem 15" /><figcaption aria-hidden="true">Theorem 15</figcaption>
+</figure>
+<h3 id="change-of-basis-in-mathbbrn">Change of Basis in <span class="math inline">\mathbb{R}^{n}</span></h3>
+<p><img src="../../../../../../files/summer-2021/MATH-254/notes/ch-4/sec_4-6/sec_4-6_example_2-1.png" alt="Example 2.1" /> <img src="../../../../../../files/summer-2021/MATH-254/notes/ch-4/sec_4-6/sec_4-6_example_2-2.png" alt="Example 2.2" /></p>
+<p><br></p>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="../../../../../../files/summer-2021/MATH-254/notes/ch-4/sec_4-6/sec_4-6_presentation.pptx">⬇ Section 4.6 Presentation</a></li>
+</ul>
+<p>Textbook</p>
+<ul>
+<li>Linear Algebra and Its Applications 6th Edition - David, Steven, Judi
+<ul>
+<li>ISBN-13: 9780135851159</li>
+</ul></li>
 </ul>
           </article>
           </div>
@@ -118,11 +157,11 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../../../../../templates/js/jquery.min.js"></script>
+    <script src="../../../../../../../templates/js/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../../../../../templates/js/bootstrap.min.js"></script>
+    <script src="../../../../../../../templates/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../../../../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
     <script>
         //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
 
@@ -139,6 +178,6 @@
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
-    <script src="../../../../../../templates/js/animated-toc.js"></script>
+    <script src="../../../../../../../templates/js/animated-toc.js"></script>
   </body>
 </html>
