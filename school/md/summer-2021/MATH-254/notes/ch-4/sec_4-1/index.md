@@ -23,7 +23,7 @@ date: Jul 07, 2021
 ![Example 5.1](../../../../../../files/summer-2021/MATH-254/notes/ch-4/sec_4-1/sec_4-1_example_5-1.png)
 ![Example 5.2](../../../../../../files/summer-2021/MATH-254/notes/ch-4/sec_4-1/sec_4-1_example_5-2.png)
 
-## Subspaces
+### Subspaces
 
 ![Definition](../../../../../../files/summer-2021/MATH-254/notes/ch-4/sec_4-1/sec_4-1_definition_subspace.png)
 
@@ -33,7 +33,7 @@ date: Jul 07, 2021
 ![Example 9](../../../../../../files/summer-2021/MATH-254/notes/ch-4/sec_4-1/sec_4-1_example_9.png)
 ![Example 10](../../../../../../files/summer-2021/MATH-254/notes/ch-4/sec_4-1/sec_4-1_example_10.png)
 
-## A Subspace Spanned by a Set
+### A Subspace Spanned by a Set
 
 ![Example 11.1](../../../../../../files/summer-2021/MATH-254/notes/ch-4/sec_4-1/sec_4-1_example_11-1.png)
 ![Example 11.2](../../../../../../files/summer-2021/MATH-254/notes/ch-4/sec_4-1/sec_4-1_example_11-2.png)
