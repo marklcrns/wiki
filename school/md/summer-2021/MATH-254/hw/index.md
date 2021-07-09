@@ -23,4 +23,5 @@ date: Jun 21, 2021
 - [⬇ Homework 12: Partitioned Matrices](file:../../../../files/summer-2021/MATH-254/hw/hw_12.pdf)
 - [⬇ Homework 13: Matrix Factorizations](file:../../../../files/summer-2021/MATH-254/hw/hw_13.pdf)
 - [⬇ Homework 14: Subspaces of R^{n}](file:../../../../files/summer-2021/MATH-254/hw/hw_14.pdf)
+- [⬇ Homework 15: Dimension and Rank](file:../../../../files/summer-2021/MATH-254/hw/hw_15.pdf)
 
