@@ -28,3 +28,7 @@ date: Jun 14, 2021
 
 - [↪ Homeworks](hw/index)
 
+## Tests
+
+- [↪ Tests](test/index)
+
