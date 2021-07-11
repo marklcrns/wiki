@@ -26,4 +26,5 @@ date: Jun 21, 2021
 - [⬇ Homework 15: Dimension and Rank](file:../../../../files/summer-2021/MATH-254/hw/hw_15.pdf)
 - [⬇ Homework 16: Introduction to Determinants](file:../../../../files/summer-2021/MATH-254/hw/hw_16.pdf)
 - [⬇ Homework 17: Properties of Determinants](file:../../../../files/summer-2021/MATH-254/hw/hw_17.pdf)
+- [⬇ Homework 18: Cramer's Rule, Volume, and Linear Transformations](file:../../../../files/summer-2021/MATH-254/hw/hw_18.pdf)
 
