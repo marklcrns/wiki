@@ -454,7 +454,7 @@ $$
 ~\\
 11.\; \lim_{x \to a} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x \to a} f(x)} \; \text{ where } n \text{ is a positive integer } \\
 ~\\
-[\text{ if  } n \text{ is even, we assume that } \lim_{x \to a} f(x) > 0 \text{. }]
+\text{ if } n \text{ is even, we assume that } \lim_{x \to a} f(x) > 0
 $$
 
 ### Limit Chain Rule
