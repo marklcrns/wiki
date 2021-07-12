@@ -17,6 +17,9 @@ date: Jun 21, 2021
 - [⬇ Homework 6: Linear Independence](file:../../../../files/summer-2021/MATH-254/hw/hw_06.pdf)
 - [⬇ Homework 7: Introduction to Linear Transformations](file:../../../../files/summer-2021/MATH-254/hw/hw_07.pdf)
 - [⬇ Homework 8: The Matrix of a Linear Transformations](file:../../../../files/summer-2021/MATH-254/hw/hw_08.pdf)
+
+## Chapter 2
+
 - [⬇ Homework 9: Matrix Operations](file:../../../../files/summer-2021/MATH-254/hw/hw_09.pdf)
 - [⬇ Homework 10: The Inverse of a Matrix](file:../../../../files/summer-2021/MATH-254/hw/hw_10.pdf)
 - [⬇ Homework 11: Characterizations of Invertible Matrices](file:../../../../files/summer-2021/MATH-254/hw/hw_11.pdf)
@@ -24,7 +27,12 @@ date: Jun 21, 2021
 - [⬇ Homework 13: Matrix Factorizations](file:../../../../files/summer-2021/MATH-254/hw/hw_13.pdf)
 - [⬇ Homework 14: Subspaces of R^{n}](file:../../../../files/summer-2021/MATH-254/hw/hw_14.pdf)
 - [⬇ Homework 15: Dimension and Rank](file:../../../../files/summer-2021/MATH-254/hw/hw_15.pdf)
+
+## Chapter 3
+
 - [⬇ Homework 16: Introduction to Determinants](file:../../../../files/summer-2021/MATH-254/hw/hw_16.pdf)
 - [⬇ Homework 17: Properties of Determinants](file:../../../../files/summer-2021/MATH-254/hw/hw_17.pdf)
 - [⬇ Homework 18: Cramer's Rule, Volume, and Linear Transformations](file:../../../../files/summer-2021/MATH-254/hw/hw_18.pdf)
+
+## Chapter 4
 
