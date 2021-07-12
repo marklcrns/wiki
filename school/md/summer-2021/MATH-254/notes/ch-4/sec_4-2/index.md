@@ -30,6 +30,7 @@ date: Jul 07, 2021
 
 ![Definition](../../../../../../files/summer-2021/MATH-254/notes/ch-4/sec_4-2/sec_4-2_definition_column_space.png)
 
+![Theorem 3](../../../../../../files/summer-2021/MATH-254/notes/ch-4/sec_4-2/sec_4-2_theorem_3.png)
 
 ![Example 4](../../../../../../files/summer-2021/MATH-254/notes/ch-4/sec_4-2/sec_4-2_example_4.png)
 
