@@ -36,3 +36,5 @@ date: Jun 21, 2021
 
 ## Chapter 4
 
+- [⬇ Homework 19: Vector Spaces and Subspaces](file:../../../../files/summer-2021/MATH-254/hw/hw_19.pdf)
+- [⬇ Homework 20: Null Spaces, Column Spaces, Row Spaces, and Linear Transformations](file:../../../../files/summer-2021/MATH-254/hw/hw_20.pdf)
