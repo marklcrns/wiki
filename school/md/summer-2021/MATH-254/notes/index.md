@@ -12,6 +12,7 @@ date: Jun 18, 2021
 - [↪ Chapter 2: Matrix Algebra](ch-2/index)
 - [↪ Chapter 3: Determinants](ch-3/index)
 - [↪ Chapter 4: Vector Spaces](ch-4/index)
+- [↪ Chapter 5: Eigenvalues and Eigenvectors](ch-5/index)
 
 <br>
 
