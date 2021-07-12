@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Lucernas">
 
-    <title>Section 5.2</title>
+    <title>Section 5.3</title>
 
     <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
     <link href="../../../../../../../templates/katex/katex.min.css" rel="stylesheet">
@@ -72,14 +72,12 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#section-5.2-the-charactristic-equation">Section 5.2: The Charactristic Equation</a>
+          <li><a href="#section-5.3-diagonalization">Section 5.3: Diagonalization</a>
           <ul>
           <li><a href="#textbook-notes">Textbook Notes</a>
           <ul>
-          <li><a href="#determinants">Determinants</a></li>
-          <li><a href="#the-characteristic-equation">The Characteristic Equation</a></li>
-          <li><a href="#similarity">Similarity</a></li>
-          <li><a href="#application-to-dynamical-systems">Application to Dynamical Systems</a></li>
+          <li><a href="#diagonalizing-matrices">Diagonalizing Matrices</a></li>
+          <li><a href="#matrices-whose-eigenvalues-are-not-distinct">Matrices Whose Eigenvalues Are Not Distinct</a></li>
           </ul></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
@@ -96,9 +94,9 @@
               <div class="page-header">
                 <a href="../../../../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
                 <h1 class="title">
-                  Section 5.2
+                  Section 5.3
                   <small class="h3 text-muted subtitle">
-                    | The Charactristic Equation
+                    | Diagonalization
                   </small>
                 </h1>
               </div>
@@ -111,35 +109,37 @@
 
 <!-- Contents -->
           <article class="contents">
-<h1 id="section-5.2-the-charactristic-equation">Section 5.2: The Charactristic Equation</h1>
+<h1 id="section-5.3-diagonalization">Section 5.3: Diagonalization</h1>
 <h2 id="textbook-notes">Textbook Notes</h2>
 <ul>
-<li><a href="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-2/sec_5-2_presentation.pptx">⬇ Section 5.2 Presentation</a></li>
+<li><a href="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-3/sec_5-3_presentation.pptx">⬇ Section 5.3 Presentation</a></li>
 </ul>
-<p><img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-2/sec_5-2_example_1-1.png" alt="Example 1.1" /> <img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-2/sec_5-2_example_1-2.png" alt="Example 1.2" /></p>
-<h3 id="determinants">Determinants</h3>
+<p><img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-3/sec_5-3_example_1.png" alt="Example 1" /> <img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-3/sec_5-3_example_2.png" alt="Example 2" /></p>
 <figure>
-<img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-2/sec_5-2_example_2.png" alt="Example 2" /><figcaption aria-hidden="true">Example 2</figcaption>
+<img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-3/sec_5-3_theorem_5.png" alt="Theorem 5" /><figcaption aria-hidden="true">Theorem 5</figcaption>
 </figure>
-<p><img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-2/sec_5-2_theorem_3-1.png" alt="Theorem 3.1" /> <img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-2/sec_5-2_theorem_3-2.png" alt="Theorem 3.2" /></p>
+<h3 id="diagonalizing-matrices">Diagonalizing Matrices</h3>
+<p><img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-3/sec_5-3_example_3-1.png" alt="Example 3.1" /> <img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-3/sec_5-3_example_3-2.png" alt="Example 3.2" /> <img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-3/sec_5-3_example_3-3.png" alt="Example 3.3" /></p>
 <figure>
-<img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-2/sec_5-2_theorem_the_invertible_matrix_theorem_contd.png" alt="Theorem" /><figcaption aria-hidden="true">Theorem</figcaption>
+<img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-3/sec_5-3_example_4.png" alt="Example 4" /><figcaption aria-hidden="true">Example 4</figcaption>
 </figure>
-<h3 id="the-characteristic-equation">The Characteristic Equation</h3>
-<p><img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-2/sec_5-2_example_3-1.png" alt="Example 3.1" /> <img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-2/sec_5-2_example_3-2.png" alt="Example 3.2" /></p>
 <figure>
-<img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-2/sec_5-2_example_4.png" alt="Example 4" /><figcaption aria-hidden="true">Example 4</figcaption>
+<img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-3/sec_5-3_theorem_6.png" alt="Theorem 6" /><figcaption aria-hidden="true">Theorem 6</figcaption>
 </figure>
-<h3 id="similarity">Similarity</h3>
 <figure>
-<img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-2/sec_5-2_theorem_4.png" alt="Theorem 4" /><figcaption aria-hidden="true">Theorem 4</figcaption>
+<img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-3/sec_5-3_example_5.png" alt="Example 5" /><figcaption aria-hidden="true">Example 5</figcaption>
 </figure>
-<h3 id="application-to-dynamical-systems">Application to Dynamical Systems</h3>
-<p><img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-2/sec_5-2_example_5-1.png" alt="Example 5.1" /> <img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-2/sec_5-2_example_5-2.png" alt="Example 5.2" /></p>
+<h3 id="matrices-whose-eigenvalues-are-not-distinct">Matrices Whose Eigenvalues Are Not Distinct</h3>
+<figure>
+<img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-3/sec_5-3_theorem_7.png" alt="Theorem 7" /><figcaption aria-hidden="true">Theorem 7</figcaption>
+</figure>
+<figure>
+<img src="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-3/sec_5-3_example_6.png" alt="Example 6" /><figcaption aria-hidden="true">Example 6</figcaption>
+</figure>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
-<li><a href="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-2/sec_5-2_presentation.pptx">⬇ Section 5.2 Presentation</a></li>
+<li><a href="../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-3/sec_5-3_presentation.pptx">⬇ Section 5.3 Presentation</a></li>
 </ul>
 <p>Textbook</p>
 <ul>

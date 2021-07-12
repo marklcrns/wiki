@@ -44,6 +44,8 @@ date: Jul 12, 2021
 
 # Resources
 
+- [⬇ Section 5.2 Presentation](file:../../../../../../files/summer-2021/MATH-254/notes/ch-5/sec_5-2/sec_5-2_presentation.pptx)
+
 Textbook
 
 + Linear Algebra and Its Applications 6th Edition - David, Steven, Judi
