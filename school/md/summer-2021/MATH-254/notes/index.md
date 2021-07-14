@@ -13,6 +13,7 @@ date: Jun 18, 2021
 - [↪ Chapter 3: Determinants](ch-3/index)
 - [↪ Chapter 4: Vector Spaces](ch-4/index)
 - [↪ Chapter 5: Eigenvalues and Eigenvectors](ch-5/index)
+- [↪ Chapter 6: Orthogonality and Least Squares](ch-6/index)
 
 <br>
 
