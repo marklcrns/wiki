@@ -40,4 +40,6 @@ date: Jun 21, 2021
 - [⬇ Homework 20: Null Spaces, Column Spaces, Row Spaces, and Linear Transformations](file:../../../../files/summer-2021/MATH-254/hw/hw_20.pdf)
 - [⬇ Homework 21: Linearly Independent Sets; Bases](file:../../../../files/summer-2021/MATH-254/hw/hw_21.pdf)
 - [⬇ Homework 22: Coordinate Systems](file:../../../../files/summer-2021/MATH-254/hw/hw_22.pdf)
+- [⬇ Homework 23: The Dimension of a Vector Space](file:../../../../files/summer-2021/MATH-254/hw/hw_23.pdf)
+- [⬇ Homework 24: Change of Basis](file:../../../../files/summer-2021/MATH-254/hw/hw_24.pdf)
 
