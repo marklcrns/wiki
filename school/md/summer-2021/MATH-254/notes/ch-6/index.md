@@ -10,4 +10,5 @@ date: Jul 14, 2021
 
 - [↪ Section 6.1: Inner Product, Length, and Orthogonality](sec_6-1/index)
 - [↪ Section 6.2: Orthogonal Sets](sec_6-2/index)
+- [↪ Section 6.4: The Gram-Schmidt Process](sec_6-4/index)
 
