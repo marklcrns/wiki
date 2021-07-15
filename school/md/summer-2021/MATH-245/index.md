@@ -18,15 +18,19 @@ date: Jun 14, 2021
 ## Course Materials
 
 - [⬇ The Theory of Numbers Carmichael](file:../../../files/summer-2021/MATH-245/the_theory_of_numbers_carmichael.pdf)
+  - Chapter 1: 1.1 - 1.13
+  - Chapter 2: 2.1 - 2.4
+- [⬇ Applied Discrete Structures](file:../../../files/summer-2021/MATH-245/applied_discrete_structures.pdf)
+  - Chapter 1: 1.1 - 1.5
+  - Chapter 2: 2.1, 2.2, and 2.4
+  - Chapter 11: 11.2.3
 - [💽 245 Discrete Math Summer21](https://www.youtube.com/playlist?list=PLlAdWXOWvotphezE9T5Njqd3li6MPrS5h)
 
 ## Personal Course Materials
 
 - [💽 Discrete Math 1](https://www.youtube.com/playlist?list=PLDDGPdw7e6Ag1EIznZ-m-qXu4XX3A0cIz)
-
-## Notes
-
-- [↪ Notes Index](notes/index)
+- [💽 Discrete Math 1 (Entire Course)](https://www.youtube.com/playlist?list=PLl-gb0E4MII28GykmtuBXNUNoej-vY5Rz)
+- [💽 Discrete Math (Full Course: Sets, Logic, Proofs, Probability, Graph Theory, etc)](https://www.youtube.com/playlist?list=PLHXZ9OQGMqxersk8fUxiUMSIx0DBqsKZS)
 
 ## WT Assignments
 
