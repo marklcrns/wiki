@@ -1,13 +1,15 @@
 ---
 title: Crontab
-subtitle: Crontab Wiki
-summary: Schedule cron jobs to run on a time interval for the current user.
+subtitle: Schedule cron jobs to run on a time interval for the current user.
 author: Mark Lucernas
 date: Sep 09, 2020
 ---
 
 
 # Crontab
+
+- [📄 A Beginners Guide To Cron Jobs](https://ostechnix.com/a-beginners-guide-to-cron-jobs/)
+- [📄 Crontab Guru](https://crontab.guru/)
 
 ## Usage
 
@@ -41,15 +43,12 @@ Ref:
 - [📺 Linux/Mac Tutorial: Cron Jobs - How to Schedule Commands with crontab](https://www.youtube.com/watch?v=QZJ1drMQz1A)
 - [📄 Cron-Tasks snippets](https://github.com/CoreyMSchafer/code_snippets/blob/master/Cron-Tasks/snippets.txt)
 
-Other resources
-
-- [📄 Crontab.guru](https://crontab.guru/)
-
-
 <br>
 
 # Resources
 
+- [📄 A Beginners Guide To Cron Jobs](https://ostechnix.com/a-beginners-guide-to-cron-jobs/)
+- [📄 Crontab Guru](https://crontab.guru/)
 - [📺 Linux/Mac Tutorial: Cron Jobs - How to Schedule Commands with crontab](https://www.youtube.com/watch?v=QZJ1drMQz1A)
 - [📄 Cron-Tasks snippets](https://github.com/CoreyMSchafer/code_snippets/blob/master/Cron-Tasks/snippets.txt)
 - [📄 Crontab.guru](https://crontab.guru/)

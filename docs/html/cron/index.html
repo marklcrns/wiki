@@ -9,24 +9,24 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Lucernas">
 
-    <title>Crontab</title>
+    <title>Cron</title>
 
     <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
-    <link href="../../templates/katex/katex.min.css" rel="stylesheet">
+    <link href="../../../templates/katex/katex.min.css" rel="stylesheet">
     <!-- The loading of KaTeX is deferred to speed up page rendering -->
-    <script defer src="../../templates/katex/katex.min.js"></script>
+    <script defer src="../../../templates/katex/katex.min.js"></script>
     <!-- To automatically render math in text elements, include the auto-render extension: -->
-    <script defer src="../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <script defer src="../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
 
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
-    <link href="../../templates/css/animated-toc.css" rel="stylesheet">
+    <link href="../../../templates/css/animated-toc.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
-    <link href="../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../templates/css/bootstrap.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="../../templates/css/dashboard.css" rel="stylesheet">
+    <link href="../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
   </head>
 
@@ -72,11 +72,7 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#crontab">Crontab</a>
-          <ul>
-          <li><a href="#usage">Usage</a></li>
-          </ul></li>
-          <li><a href="#resources">Resources</a></li>
+          <li><a href="#cron">Cron</a></li>
           </ul>
           <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
             <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
@@ -88,65 +84,26 @@
           <header>
             <div class="jumbotron">
               <div class="page-header">
-                <a href="index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <a href="../index.html">Wiki Root</a> | <a href="../index.html">index</a>
                 <h1 class="title">
-                  Crontab
+                  Cron
                   <small class="h3 text-muted subtitle">
-                    | Crontab Wiki
+                    | Daemon to execute scheduled commands (Vixie Cron)
                   </small>
                 </h1>
-                <hr style="border: 1px solid grey;border-radius: 5px;">
-                <h4 class="summary" style="text-align: center;">Schedule cron jobs to run on a time interval for the current user.</h4>
               </div>
             </div>
           </header>
           <div class="h5 text-muted">
             <h5 class="author">Mark Lucernas</h5>
-            <h5 class="date">Sep 09, 2020</h5>
+            <h5 class="date">Jul 16, 2021</h5>
           </div>
 
 <!-- Contents -->
           <article class="contents">
-<h1 id="crontab">Crontab</h1>
-<h2 id="usage">Usage</h2>
+<h1 id="cron">Cron</h1>
 <ul>
-<li><code>crontab -l</code> – List all cron jobs for current user</li>
-<li><code>crontab -e</code> – Edit cron jobs for current user</li>
-<li><code>crontab -r</code> – Remove all cron jobs for current user</li>
-</ul>
-<pre><code># ┌───────────── minute (0 - 59)
-# │ ┌───────────── hour (0 - 23)
-# │ │ ┌───────────── day of month (1 - 31)
-# │ │ │ ┌───────────── month (1 - 12)
-# │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday;
-# │ │ │ │ │                                       7 is also Sunday on some systems)
-# │ │ │ │ │
-# │ │ │ │ │
-# * * * * *  command_to_execute
-
-
-###### Sample crontab ######
-
-# Empty temp folder every Friday at 5pm
-0 5 * * 5 rm -rf /tmp/*
-
-# Backup images to Google Drive every night at midnight
-0 0 * * * rsync -a ~/Pictures/ ~/Google\ Drive/Pictures/</code></pre>
-<p>Ref:</p>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=QZJ1drMQz1A">📺 Linux/Mac Tutorial: Cron Jobs - How to Schedule Commands with crontab</a></li>
-<li><a href="https://github.com/CoreyMSchafer/code_snippets/blob/master/Cron-Tasks/snippets.txt">📄 Cron-Tasks snippets</a></li>
-</ul>
-<p>Other resources</p>
-<ul>
-<li><a href="https://crontab.guru/">📄 Crontab.guru</a></li>
-</ul>
-<p><br></p>
-<h1 id="resources">Resources</h1>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=QZJ1drMQz1A">📺 Linux/Mac Tutorial: Cron Jobs - How to Schedule Commands with crontab</a></li>
-<li><a href="https://github.com/CoreyMSchafer/code_snippets/blob/master/Cron-Tasks/snippets.txt">📄 Cron-Tasks snippets</a></li>
-<li><a href="https://crontab.guru/">📄 Crontab.guru</a></li>
+<li><a href="crontab/index.html">↪ Crontab</a></li>
 </ul>
           </article>
           </div>
@@ -156,11 +113,11 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../templates/js/jquery.min.js"></script>
+    <script src="../../../templates/js/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../templates/js/bootstrap.min.js"></script>
+    <script src="../../../templates/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../../../templates/js/ie10-viewport-bug-workaround.js"></script>
     <script>
         //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
 
@@ -177,6 +134,6 @@
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
-    <script src="../../templates/js/animated-toc.js"></script>
+    <script src="../../../templates/js/animated-toc.js"></script>
   </body>
 </html>

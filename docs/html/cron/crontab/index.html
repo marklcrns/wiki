@@ -9,24 +9,24 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Lucernas">
 
-    <title>Docs</title>
+    <title>Crontab</title>
 
     <!-- KaTeX 0.13.11 https://katex.org/docs/browser.html -->
-    <link href="../../templates/katex/katex.min.css" rel="stylesheet">
+    <link href="../../../../templates/katex/katex.min.css" rel="stylesheet">
     <!-- The loading of KaTeX is deferred to speed up page rendering -->
-    <script defer src="../../templates/katex/katex.min.js"></script>
+    <script defer src="../../../../templates/katex/katex.min.js"></script>
     <!-- To automatically render math in text elements, include the auto-render extension: -->
-    <script defer src="../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <script defer src="../../../../templates/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
 
     <!-- For animated toc sidebar -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
-    <link href="../../templates/css/animated-toc.css" rel="stylesheet">
+    <link href="../../../../templates/css/animated-toc.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
-    <link href="../../templates/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../templates/css/bootstrap.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../../../../templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="../../templates/css/dashboard.css" rel="stylesheet">
+    <link href="../../../../templates/css/dashboard.css" rel="stylesheet">
     <style type="text/css">code{white-space: pre;}</style>
   </head>
 
@@ -72,26 +72,11 @@
 <!-- Table of Contents -->
         <nav id="sidebar" class="col-sm-3 col-md-2 sidebar toc">
           <ul>
-          <li><a href="#personal-wiki-documentations">Personal Wiki Documentations</a>
+          <li><a href="#crontab">Crontab</a>
           <ul>
-          <li><a href="#bash">Bash</a></li>
-          <li><a href="#databases">Databases</a></li>
-          <li><a href="#programming-languages">Programming Languages</a></li>
-          <li><a href="#ide">IDE</a></li>
-          <li><a href="#shell-applications">Shell Applications</a>
-          <ul>
-          <li><a href="#linux">Linux</a></li>
-          <li><a href="#windows">Windows</a></li>
+          <li><a href="#usage">Usage</a></li>
           </ul></li>
-          <li><a href="#package-managers">Package Managers</a></li>
-          <li><a href="#wslwsl2">WSL/WSL2</a></li>
-          <li><a href="#desktop-applications">Desktop Applications</a>
-          <ul>
-          <li><a href="#terminal">Terminal</a></li>
-          <li><a href="#developer-apps">Developer Apps</a></li>
-          </ul></li>
-          <li><a href="#misc">Misc</a></li>
-          </ul></li>
+          <li><a href="#resources">Resources</a></li>
           </ul>
           <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
             <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
@@ -103,11 +88,11 @@
           <header>
             <div class="jumbotron">
               <div class="page-header">
-                <a href="index.html">Wiki Root</a> | <a href="../index.html">index</a>
+                <a href="../../index.html">Wiki Root</a> | <a href="../index.html">index</a>
                 <h1 class="title">
-                  Docs
+                  Crontab
                   <small class="h3 text-muted subtitle">
-                    | Personal wiki documentations
+                    | Schedule cron jobs to run on a time interval for the current user.
                   </small>
                 </h1>
               </div>
@@ -115,76 +100,53 @@
           </header>
           <div class="h5 text-muted">
             <h5 class="author">Mark Lucernas</h5>
-            <h5 class="date">Feb 05, 2020</h5>
+            <h5 class="date">Sep 09, 2020</h5>
           </div>
 
 <!-- Contents -->
           <article class="contents">
-<h1 id="personal-wiki-documentations">Personal Wiki Documentations</h1>
-<h2 id="bash">Bash</h2>
+<h1 id="crontab">Crontab</h1>
 <ul>
-<li><a href="bash/index.html">↪ Bash</a></li>
+<li><a href="https://ostechnix.com/a-beginners-guide-to-cron-jobs/">📄 A Beginners Guide To Cron Jobs</a></li>
+<li><a href="https://crontab.guru/">📄 Crontab Guru</a></li>
 </ul>
-<h2 id="databases">Databases</h2>
+<h2 id="usage">Usage</h2>
 <ul>
-<li><a href="mysql/index.html">↪ MySQL</a></li>
+<li><code>crontab -l</code> – List all cron jobs for current user</li>
+<li><code>crontab -e</code> – Edit cron jobs for current user</li>
+<li><code>crontab -r</code> – Remove all cron jobs for current user</li>
 </ul>
-<h2 id="programming-languages">Programming Languages</h2>
+<pre><code># ┌───────────── minute (0 - 59)
+# │ ┌───────────── hour (0 - 23)
+# │ │ ┌───────────── day of month (1 - 31)
+# │ │ │ ┌───────────── month (1 - 12)
+# │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday;
+# │ │ │ │ │                                       7 is also Sunday on some systems)
+# │ │ │ │ │
+# │ │ │ │ │
+# * * * * *  command_to_execute
+
+
+###### Sample crontab ######
+
+# Empty temp folder every Friday at 5pm
+0 5 * * 5 rm -rf /tmp/*
+
+# Backup images to Google Drive every night at midnight
+0 0 * * * rsync -a ~/Pictures/ ~/Google\ Drive/Pictures/</code></pre>
+<p>Ref:</p>
 <ul>
-<li><a href="java/index.html">↪ Java</a></li>
+<li><a href="https://www.youtube.com/watch?v=QZJ1drMQz1A">📺 Linux/Mac Tutorial: Cron Jobs - How to Schedule Commands with crontab</a></li>
+<li><a href="https://github.com/CoreyMSchafer/code_snippets/blob/master/Cron-Tasks/snippets.txt">📄 Cron-Tasks snippets</a></li>
 </ul>
-<h2 id="ide">IDE</h2>
+<p><br></p>
+<h1 id="resources">Resources</h1>
 <ul>
-<li><a href="eclipse/index.html">↪ Eclipse</a></li>
-<li><a href="android_studio/index.html">↪ Android Studio</a></li>
-</ul>
-<h2 id="shell-applications">Shell Applications</h2>
-<h3 id="linux">Linux</h3>
-<ul>
-<li><a href="cron/index.html">↪ Cron</a></li>
-<li><a href="docker/index.html">↪ Docker</a></li>
-<li><a href="find/index.html">↪ Find</a></li>
-<li><a href="git/index.html">↪ Git</a></li>
-<li><a href="git-lfs/index.html">↪ Git-lfs</a></li>
-<li><a href="gpg/index.html">↪ Gpg</a></li>
-<li><a href="leetcode-cli/index.html">↪ leetcode-cli</a></li>
-<li><a href="mutt/index.html">↪ Mutt</a></li>
-<li><a href="neomutt/index.html">↪ Neomutt</a></li>
-<li><a href="pandoc/index.html">↪ Pandoc</a></li>
-<li><a href="taskwarrior/index.html">↪ Taskwarrior</a></li>
-<li><a href="timewarrior/index.html">↪ Timewarrior</a></li>
-<li><a href="tmux/index.html">↪ Tmux</a></li>
-<li><a href="vim/index.html">↪ Vim/Neovim</a></li>
-<li><a href="ydiff/index.html">↪ Ydiff</a></li>
-<li><a href="rust/index.html">↪ Rust</a></li>
-</ul>
-<h3 id="windows">Windows</h3>
-<ul>
-<li><a href="shell-apps/windows/choco/index.html">↪ Chocolately</a></li>
-<li><a href="mingw-w64/index.html">↪ Mingw-w64</a></li>
-</ul>
-<h2 id="package-managers">Package Managers</h2>
-<ul>
-<li><a href="nodejs-npm/index.html">↪ Node.js and npm</a></li>
-</ul>
-<h2 id="wslwsl2">WSL/WSL2</h2>
-<ul>
-<li><a href="wsl/index.html">↪ WSL/WSL2</a></li>
-</ul>
-<h2 id="desktop-applications">Desktop Applications</h2>
-<h3 id="terminal">Terminal</h3>
-<ul>
-<li><a href="desktop-apps/alacritty/index.html">↪ Alacritty</a></li>
-</ul>
-<h3 id="developer-apps">Developer Apps</h3>
-<ul>
-<li><a href="desktop-apps/genymotion/index.html">↪ Genymotion</a></li>
-</ul>
-<h2 id="misc">Misc</h2>
-<ul>
-<li><a href="emojis.html">↪ Supported Markdown Emojis by Pandoc</a></li>
-<li><a href="https://askubuntu.com/a/1232903">📄 Skype share screen audio fix for Ubuntu</a></li>
-<li><a href="https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_Windows">📄 Remapping Caps Lock to Escape</a></li>
+<li><a href="https://ostechnix.com/a-beginners-guide-to-cron-jobs/">📄 A Beginners Guide To Cron Jobs</a></li>
+<li><a href="https://crontab.guru/">📄 Crontab Guru</a></li>
+<li><a href="https://www.youtube.com/watch?v=QZJ1drMQz1A">📺 Linux/Mac Tutorial: Cron Jobs - How to Schedule Commands with crontab</a></li>
+<li><a href="https://github.com/CoreyMSchafer/code_snippets/blob/master/Cron-Tasks/snippets.txt">📄 Cron-Tasks snippets</a></li>
+<li><a href="https://crontab.guru/">📄 Crontab.guru</a></li>
 </ul>
           </article>
           </div>
@@ -194,11 +156,11 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../templates/js/jquery.min.js"></script>
+    <script src="../../../../templates/js/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../templates/js/bootstrap.min.js"></script>
+    <script src="../../../../templates/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../templates/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../../../../templates/js/ie10-viewport-bug-workaround.js"></script>
     <script>
         //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
 
@@ -215,6 +177,6 @@
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
-    <script src="../../templates/js/animated-toc.js"></script>
+    <script src="../../../../templates/js/animated-toc.js"></script>
   </body>
 </html>

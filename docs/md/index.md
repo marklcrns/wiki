@@ -29,7 +29,7 @@ date: Feb 05, 2020
 
 ### Linux
 
-- [↪ Crontab](crontab)
+- [↪ Cron](cron/index)
 - [↪ Docker](docker/index)
 - [↪ Find](find/index)
 - [↪ Git](git/index)
