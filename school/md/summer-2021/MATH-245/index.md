@@ -41,4 +41,5 @@ date: Jun 14, 2021
 
 - [⬇ Test 1](file:../../../files/summer-2021/MATH-245/test/test_1.pdf)
 - [⬇ Test 2](file:../../../files/summer-2021/MATH-245/test/test_2.pdf)
+- [⬇ Test 3](file:../../../files/summer-2021/MATH-245/test/test_3.pdf)
 
