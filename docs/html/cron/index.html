@@ -141,7 +141,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <ul>
           <li><a href="#cron-daemon">Cron Daemon</a></li>
           <li><a href="#crontab">Crontab</a></li>
-          <li><a href="#logs">Logs</a></li>
+          <li><a href="#logging-using-service">Logging Using <code>service</code></a></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
           </ul>
@@ -205,14 +205,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="crontab/index.html">↪ Crontab</a></li>
 </ul>
-<h2 id="logs">Logs</h2>
+<h2 id="logging-using-service">Logging Using <code>service</code></h2>
 <p>To enable cron logs</p>
 <p>Open the file <code>/etc/rsyslog.d/50-default.conf</code></p>
 <p>Find the line that starts with:</p>
 <pre><code>#cron.*</code></pre>
 <p>uncomment the line and restart rsyslog:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> service rsyslog restart</span></code></pre></div>
-<p>You should now see cron log file in <code>/var/log/cron.log</code> and in <code>/var/log/syslog</code></p>
+<p>You should now see cron log file in <code>/var/log/cron.log</code> and in <code>/var/log/syslog</code> everytime <code>cron</code> when running <code>service cron start</code>.</p>
 <hr />
 <p>To print all cron jobs</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /var/log/cron.log</span>

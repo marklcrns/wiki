@@ -54,7 +54,7 @@ Ref:
 
 - [↪ Crontab](crontab/index)
 
-## Logs
+## Logging Using `service`
 
 To enable cron logs
 
@@ -73,6 +73,7 @@ sudo service rsyslog restart
 ```
 
 You should now see cron log file in `/var/log/cron.log` and in `/var/log/syslog`
+everytime `cron` when running `service cron start`.
 
 ---
 
