@@ -36,6 +36,9 @@ date: Jun 14, 2021
 
 - [📄 WT1](https://github.com/marklcrns/sieve-of-eratosthenes)
 - [⬇ WT2](file:../../../files/summer-2021/MATH-245/wt/wt_2.pdf)
+- [📄 WT3](https://github.com/marklcrns/discrete-math)
+  * Partitions (Bell Numbers)
+- [⬇ WT4](file:../../../files/summer-2021/MATH-245/wt/wt_4.pdf)
 
 ## Tests
 
