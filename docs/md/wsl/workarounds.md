@@ -139,6 +139,76 @@ Ref:
 - [📄 Editing /etc/pulse/default.pa](https://github.com/microsoft/WSL/issues/5816#issuecomment-713702166)
 - [📄 Consolestate](https://www.robvanderwoude.com/battech_hideconsole.php)
 
+
+## Start Daemon Services Using With Task Scheduler
+
+### Start cron at Startup
+
+1. Create startup script.
+
+```bash
+echo "service cron start" | sudo tee /usr/local/bin/cronstart.sh
+sudo chmod +x /usr/local/bin/cronstart.sh
+```
+
+2. Create a file within `/etc/sudoers.d/` with purpose to allow your `$USER` to
+   execute `cronstart` by `sudo` **without password**.
+
+Run and copy the output:
+
+```bash
+echo "$USER ALL=(ALL) NOPASSWD: /usr/local/bin/cronstart.sh"
+```
+
+Run `sudo visudo -f /etc/sudoers.d/cronstart` then paste the content of the
+output. Save the file and exit.
+
+3. Run `cronstart.sh` on Windows startup
+
+**METHOD 1**: Using Task Scheduler (Recommended for administrator accounts)
+
+Run (as admin if current account isn't) _**Task Scheduler**_
+
+Click _**Task Scheduler Library**_ on the left and then _**Create Task...**_ on
+the right to create new task.
+
+- **General tab**:
+  * **Name**: Anything you want, like `WSL service cron start`
+  * Choose the option _**Run whether user is logged or not**_.
+  * Mark _**Do not store password**_ and _**Run with highest privileges**_.
+  * In the _**Configure for**_ dropdown select `Windows 10`.
+  * If you need to setup a task for another user click on the button `Change
+  User or Group`
+- Triggers tab:
+  * Click _**New**_ to add a new trigger for this task.
+  * In the _**Begin the task**_ dropdown select _**At startup**_.
+  * Within the Advanced settings you can check _**Delay task for**_ `1 minute`.
+- Actions tab:
+  * Click _**New**_ to add a new action for this task.
+  * Pick _**Start a program**_ for the action type and then enter
+  `C:\Windows\System32\wsl.exe` as the program to run.
+  * At _**Add arguments (optional)**_ set this: `sudo cronstart.sh`.
+
+**METHOD 2**: Using `bat` script in `shell:startup` folder.
+
+Open `Run`, or Windows explorer, and paste `shell:startup` (on the address bar
+for Windows explorer).
+
+Then create a file called `cronstart.bat` and paste the following:
+
+```bat
+C:\Windows\System32\wsl.exe sudo cronstart.sh
+```
+
+**FINALLY**
+
+Reboot system, then open WSL terminal and use `service cron status` to check if
+`cron is running`.
+
+Ref:
+
+- [📄 Ubuntu 18.04 on WSL cron daemon not running after reboot](https://askubuntu.com/a/1166012)
+
 <br>
 
 # Resources
@@ -152,3 +222,5 @@ Ref:
 - [📄 Remove pulse configs](https://github.com/microsoft/WSL/issues/5816#issuecomment-755409888)
 - [📄 Editing /etc/pulse/default.pa](https://github.com/microsoft/WSL/issues/5816#issuecomment-713702166)
 - [📄 Consolestate](https://www.robvanderwoude.com/battech_hideconsole.php)
+- [📄 Ubuntu 18.04 on WSL cron daemon not running after reboot](https://askubuntu.com/a/1166012)
+

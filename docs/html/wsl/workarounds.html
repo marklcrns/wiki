@@ -142,6 +142,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <ul>
           <li><a href="#clipboard">Clipboard</a></li>
           <li><a href="#audio-fix">Audio Fix</a></li>
+          <li><a href="#start-daemon-services-using-with-task-scheduler">Start Daemon Services Using With Task Scheduler</a>
+          <ul>
+          <li><a href="#start-cron-at-startup">Start cron at Startup</a></li>
+          </ul></li>
           </ul></li>
           <li><a href="#resources">Resources</a></li>
           </ul>
@@ -262,6 +266,57 @@ C:\wsl\ConsoleState /Hide</code></pre>
 <li><a href="https://github.com/microsoft/WSL/issues/5816.html#issuecomment-713702166">📄 Editing /etc/pulse/default.pa</a></li>
 <li><a href="https://www.robvanderwoude.com/battech_hideconsole.php">📄 Consolestate</a></li>
 </ul>
+<h2 id="start-daemon-services-using-with-task-scheduler">Start Daemon Services Using With Task Scheduler</h2>
+<h3 id="start-cron-at-startup">Start cron at Startup</h3>
+<ol type="1">
+<li>Create startup script.</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;service cron start&quot;</span> <span class="kw">|</span> <span class="fu">sudo</span> tee /usr/local/bin/cronstart.sh</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chmod +x /usr/local/bin/cronstart.sh</span></code></pre></div>
+<ol start="2" type="1">
+<li>Create a file within <code>/etc/sudoers.d/</code> with purpose to allow your <code>$USER</code> to execute <code>cronstart</code> by <code>sudo</code> <strong>without password</strong>.</li>
+</ol>
+<p>Run and copy the output:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$USER</span><span class="st"> ALL=(ALL) NOPASSWD: /usr/local/bin/cronstart.sh&quot;</span></span></code></pre></div>
+<p>Run <code>sudo visudo -f /etc/sudoers.d/cronstart</code> then paste the content of the output. Save the file and exit.</p>
+<ol start="3" type="1">
+<li>Run <code>cronstart.sh</code> on Windows startup</li>
+</ol>
+<p><strong>METHOD 1</strong>: Using Task Scheduler (Recommended for administrator accounts)</p>
+<p>Run (as admin if current account isn’t) <em><strong>Task Scheduler</strong></em></p>
+<p>Click <em><strong>Task Scheduler Library</strong></em> on the left and then <em><strong>Create Task…</strong></em> on the right to create new task.</p>
+<ul>
+<li><strong>General tab</strong>:
+<ul>
+<li><strong>Name</strong>: Anything you want, like <code>WSL service cron start</code></li>
+<li>Choose the option <em><strong>Run whether user is logged or not</strong></em>.</li>
+<li>Mark <em><strong>Do not store password</strong></em> and <em><strong>Run with highest privileges</strong></em>.</li>
+<li>In the <em><strong>Configure for</strong></em> dropdown select <code>Windows 10</code>.</li>
+<li>If you need to setup a task for another user click on the button <code>Change User or Group</code></li>
+</ul></li>
+<li>Triggers tab:
+<ul>
+<li>Click <em><strong>New</strong></em> to add a new trigger for this task.</li>
+<li>In the <em><strong>Begin the task</strong></em> dropdown select <em><strong>At startup</strong></em>.</li>
+<li>Within the Advanced settings you can check <em><strong>Delay task for</strong></em> <code>1 minute</code>.</li>
+</ul></li>
+<li>Actions tab:
+<ul>
+<li>Click <em><strong>New</strong></em> to add a new action for this task.</li>
+<li>Pick <em><strong>Start a program</strong></em> for the action type and then enter <code>C:\Windows\System32\wsl.exe</code> as the program to run.</li>
+<li>At <em><strong>Add arguments (optional)</strong></em> set this: <code>sudo cronstart.sh</code>.</li>
+</ul></li>
+</ul>
+<p><strong>METHOD 2</strong>: Using <code>bat</code> script in <code>shell:startup</code> folder.</p>
+<p>Open <code>Run</code>, or Windows explorer, and paste <code>shell:startup</code> (on the address bar for Windows explorer).</p>
+<p>Then create a file called <code>cronstart.bat</code> and paste the following:</p>
+<pre class="bat"><code>C:\Windows\System32\wsl.exe sudo cronstart.sh</code></pre>
+<p><strong>FINALLY</strong></p>
+<p>Reboot system, then open WSL terminal and use <code>service cron status</code> to check if <code>cron is running</code>.</p>
+<p>Ref:</p>
+<ul>
+<li><a href="https://askubuntu.com/a/1166012">📄 Ubuntu 18.04 on WSL cron daemon not running after reboot</a></li>
+</ul>
 <p><br></p>
 <h1 id="resources">Resources</h1>
 <ul>
@@ -274,6 +329,7 @@ C:\wsl\ConsoleState /Hide</code></pre>
 <li><a href="https://github.com/microsoft/WSL/issues/5816.html#issuecomment-755409888">📄 Remove pulse configs</a></li>
 <li><a href="https://github.com/microsoft/WSL/issues/5816.html#issuecomment-713702166">📄 Editing /etc/pulse/default.pa</a></li>
 <li><a href="https://www.robvanderwoude.com/battech_hideconsole.php">📄 Consolestate</a></li>
+<li><a href="https://askubuntu.com/a/1166012">📄 Ubuntu 18.04 on WSL cron daemon not running after reboot</a></li>
 </ul>
           </article>
           </div>
